@@ -59,11 +59,3 @@ openssl
 zlib
 credentials
 
-#Service Libs
-aws-cpp-sdk-cognito-identity
-aws-cpp-sdk-dynamodb
-aws-cpp-sdk-sqs
-aws-cpp-sdk-lambda
-aws-cpp-sdk-kinesis
-aws-cpp-sdk-s3
-

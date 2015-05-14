@@ -1,0 +1,198 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/lambda/model/FunctionConfiguration.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Lambda::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+FunctionConfiguration::FunctionConfiguration() : 
+    m_functionNameHasBeenSet(false),
+    m_functionArnHasBeenSet(false),
+    m_runtimeHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_handlerHasBeenSet(false),
+    m_codeSize(0),
+    m_codeSizeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false),
+    m_memorySize(0),
+    m_memorySizeHasBeenSet(false),
+    m_lastModifiedHasBeenSet(false)
+{
+}
+
+FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) : 
+    m_functionNameHasBeenSet(false),
+    m_functionArnHasBeenSet(false),
+    m_runtimeHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_handlerHasBeenSet(false),
+    m_codeSize(0),
+    m_codeSizeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false),
+    m_memorySize(0),
+    m_memorySizeHasBeenSet(false),
+    m_lastModifiedHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonValue)
+{
+  if(jsonValue.ValueExists("FunctionName"))
+  {
+    m_functionName = jsonValue.GetString("FunctionName");
+
+    m_functionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FunctionArn"))
+  {
+    m_functionArn = jsonValue.GetString("FunctionArn");
+
+    m_functionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Runtime"))
+  {
+    m_runtime = RuntimeMapper::GetRuntimeForName(jsonValue.GetString("Runtime"));
+
+    m_runtimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Role"))
+  {
+    m_role = jsonValue.GetString("Role");
+
+    m_roleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Handler"))
+  {
+    m_handler = jsonValue.GetString("Handler");
+
+    m_handlerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CodeSize"))
+  {
+    m_codeSize = jsonValue.GetInt64("CodeSize");
+
+    m_codeSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Timeout"))
+  {
+    m_timeout = jsonValue.GetInteger("Timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MemorySize"))
+  {
+    m_memorySize = jsonValue.GetInteger("MemorySize");
+
+    m_memorySizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModified"))
+  {
+    m_lastModified = jsonValue.GetString("LastModified");
+
+    m_lastModifiedHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue FunctionConfiguration::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_functionNameHasBeenSet)
+  {
+   payload.WithString("FunctionName", m_functionName);
+
+  }
+
+  if(m_functionArnHasBeenSet)
+  {
+   payload.WithString("FunctionArn", m_functionArn);
+
+  }
+
+  if(m_runtimeHasBeenSet)
+  {
+   payload.WithString("Runtime", RuntimeMapper::GetNameForRuntime(m_runtime));
+  }
+
+  if(m_roleHasBeenSet)
+  {
+   payload.WithString("Role", m_role);
+
+  }
+
+  if(m_handlerHasBeenSet)
+  {
+   payload.WithString("Handler", m_handler);
+
+  }
+
+  if(m_codeSizeHasBeenSet)
+  {
+   payload.WithInt64("CodeSize", m_codeSize);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_memorySizeHasBeenSet)
+  {
+   payload.WithInteger("MemorySize", m_memorySize);
+
+  }
+
+  if(m_lastModifiedHasBeenSet)
+  {
+   payload.WithString("LastModified", m_lastModified);
+
+  }
+
+  return std::move(payload);
+}

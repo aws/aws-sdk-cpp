@@ -1,0 +1,1819 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/client/CoreErrors.h>
+#include <aws/core/client/RetryStrategy.h>
+#include <aws/core/http/HttpClient.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/S3Endpoint.h>
+#include <aws/s3/S3ErrorMarshaller.h>
+#include <aws/s3/model/AbortMultipartUploadRequest.h>
+#include <aws/s3/model/CompleteMultipartUploadRequest.h>
+#include <aws/s3/model/CopyObjectRequest.h>
+#include <aws/s3/model/CreateBucketRequest.h>
+#include <aws/s3/model/CreateMultipartUploadRequest.h>
+#include <aws/s3/model/DeleteBucketRequest.h>
+#include <aws/s3/model/DeleteBucketCorsRequest.h>
+#include <aws/s3/model/DeleteBucketLifecycleRequest.h>
+#include <aws/s3/model/DeleteBucketPolicyRequest.h>
+#include <aws/s3/model/DeleteBucketReplicationRequest.h>
+#include <aws/s3/model/DeleteBucketTaggingRequest.h>
+#include <aws/s3/model/DeleteBucketWebsiteRequest.h>
+#include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/DeleteObjectsRequest.h>
+#include <aws/s3/model/GetBucketAclRequest.h>
+#include <aws/s3/model/GetBucketCorsRequest.h>
+#include <aws/s3/model/GetBucketLifecycleRequest.h>
+#include <aws/s3/model/GetBucketLocationRequest.h>
+#include <aws/s3/model/GetBucketLoggingRequest.h>
+#include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
+#include <aws/s3/model/GetBucketPolicyRequest.h>
+#include <aws/s3/model/GetBucketReplicationRequest.h>
+#include <aws/s3/model/GetBucketRequestPaymentRequest.h>
+#include <aws/s3/model/GetBucketTaggingRequest.h>
+#include <aws/s3/model/GetBucketVersioningRequest.h>
+#include <aws/s3/model/GetBucketWebsiteRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/GetObjectAclRequest.h>
+#include <aws/s3/model/GetObjectTorrentRequest.h>
+#include <aws/s3/model/HeadBucketRequest.h>
+#include <aws/s3/model/HeadObjectRequest.h>
+#include <aws/s3/model/ListMultipartUploadsRequest.h>
+#include <aws/s3/model/ListObjectVersionsRequest.h>
+#include <aws/s3/model/ListObjectsRequest.h>
+#include <aws/s3/model/ListPartsRequest.h>
+#include <aws/s3/model/PutBucketAclRequest.h>
+#include <aws/s3/model/PutBucketCorsRequest.h>
+#include <aws/s3/model/PutBucketLifecycleRequest.h>
+#include <aws/s3/model/PutBucketLoggingRequest.h>
+#include <aws/s3/model/PutBucketNotificationConfigurationRequest.h>
+#include <aws/s3/model/PutBucketPolicyRequest.h>
+#include <aws/s3/model/PutBucketReplicationRequest.h>
+#include <aws/s3/model/PutBucketRequestPaymentRequest.h>
+#include <aws/s3/model/PutBucketTaggingRequest.h>
+#include <aws/s3/model/PutBucketVersioningRequest.h>
+#include <aws/s3/model/PutBucketWebsiteRequest.h>
+#include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/PutObjectAclRequest.h>
+#include <aws/s3/model/RestoreObjectRequest.h>
+#include <aws/s3/model/UploadPartRequest.h>
+#include <aws/s3/model/UploadPartCopyRequest.h>
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace Aws::S3;
+using namespace Aws::S3::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Xml;
+
+
+static const char* SERVICE_NAME = "s3";
+static const char* ALLOCATION_TAG = "S3Client";
+
+S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), SERVICE_NAME, clientConfiguration.region),
+    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG), "s3.amazonaws.com"),
+    m_executor(clientConfiguration.executor)
+{
+  init(clientConfiguration);
+}
+
+S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME, clientConfiguration.region),
+    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG), "s3.amazonaws.com"),
+    m_executor(clientConfiguration.executor)
+{
+  init(clientConfiguration);
+}
+
+S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+  const Client::ClientConfiguration& clientConfiguration, const std::shared_ptr<HttpClientFactory const>& httpClientFactory) :
+  BASECLASS(httpClientFactory != nullptr ? httpClientFactory : Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME, clientConfiguration.region),
+    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG), "s3.amazonaws.com"),
+    m_executor(clientConfiguration.executor)
+{
+  init(clientConfiguration);
+}
+
+S3Client::~S3Client()
+{
+}
+
+void S3Client::init(const ClientConfiguration& config)
+{
+  Aws::StringStream ss;
+  ss << SchemeMapper::ToString(config.scheme) << "://";
+
+  if(config.endpointOverride.empty())
+  {
+    ss << S3Endpoint::ForRegion(config.region);
+  }
+  else
+  {
+    ss << config.endpointOverride;
+  }
+
+  m_uri = ss.str();
+}
+
+AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return AbortMultipartUploadOutcome(AbortMultipartUploadResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AbortMultipartUploadOutcome(outcome.GetError());
+  }
+}
+
+AbortMultipartUploadOutcomeCallable S3Client::AbortMultipartUploadCallable(const AbortMultipartUploadRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::AbortMultipartUpload, this, request);
+}
+
+void S3Client::AbortMultipartUploadAsync(const AbortMultipartUploadRequest& request) const
+{
+  m_executor->Submit(&S3Client::AbortMultipartUploadAsyncHelper, this, request);
+}
+
+void S3Client::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRequest& request) const
+{
+  m_onAbortMultipartUploadOutcomeReceived(this, request, AbortMultipartUpload(request));
+}
+
+CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CompleteMultipartUploadOutcome(CompleteMultipartUploadResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CompleteMultipartUploadOutcome(outcome.GetError());
+  }
+}
+
+CompleteMultipartUploadOutcomeCallable S3Client::CompleteMultipartUploadCallable(const CompleteMultipartUploadRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::CompleteMultipartUpload, this, request);
+}
+
+void S3Client::CompleteMultipartUploadAsync(const CompleteMultipartUploadRequest& request) const
+{
+  m_executor->Submit(&S3Client::CompleteMultipartUploadAsyncHelper, this, request);
+}
+
+void S3Client::CompleteMultipartUploadAsyncHelper(const CompleteMultipartUploadRequest& request) const
+{
+  m_onCompleteMultipartUploadOutcomeReceived(this, request, CompleteMultipartUpload(request));
+}
+
+CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return CopyObjectOutcome(CopyObjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyObjectOutcome(outcome.GetError());
+  }
+}
+
+CopyObjectOutcomeCallable S3Client::CopyObjectCallable(const CopyObjectRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::CopyObject, this, request);
+}
+
+void S3Client::CopyObjectAsync(const CopyObjectRequest& request) const
+{
+  m_executor->Submit(&S3Client::CopyObjectAsyncHelper, this, request);
+}
+
+void S3Client::CopyObjectAsyncHelper(const CopyObjectRequest& request) const
+{
+  m_onCopyObjectOutcomeReceived(this, request, CopyObject(request));
+}
+
+CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return CreateBucketOutcome(CreateBucketResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBucketOutcome(outcome.GetError());
+  }
+}
+
+CreateBucketOutcomeCallable S3Client::CreateBucketCallable(const CreateBucketRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::CreateBucket, this, request);
+}
+
+void S3Client::CreateBucketAsync(const CreateBucketRequest& request) const
+{
+  m_executor->Submit(&S3Client::CreateBucketAsyncHelper, this, request);
+}
+
+void S3Client::CreateBucketAsyncHelper(const CreateBucketRequest& request) const
+{
+  m_onCreateBucketOutcomeReceived(this, request, CreateBucket(request));
+}
+
+CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipartUploadRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?uploads";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateMultipartUploadOutcome(CreateMultipartUploadResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateMultipartUploadOutcome(outcome.GetError());
+  }
+}
+
+CreateMultipartUploadOutcomeCallable S3Client::CreateMultipartUploadCallable(const CreateMultipartUploadRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::CreateMultipartUpload, this, request);
+}
+
+void S3Client::CreateMultipartUploadAsync(const CreateMultipartUploadRequest& request) const
+{
+  m_executor->Submit(&S3Client::CreateMultipartUploadAsyncHelper, this, request);
+}
+
+void S3Client::CreateMultipartUploadAsyncHelper(const CreateMultipartUploadRequest& request) const
+{
+  m_onCreateMultipartUploadOutcomeReceived(this, request, CreateMultipartUpload(request));
+}
+
+DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketOutcomeCallable S3Client::DeleteBucketCallable(const DeleteBucketRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucket, this, request);
+}
+
+void S3Client::DeleteBucketAsync(const DeleteBucketRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketAsyncHelper(const DeleteBucketRequest& request) const
+{
+  m_onDeleteBucketOutcomeReceived(this, request, DeleteBucket(request));
+}
+
+DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?cors";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketCorsOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketCorsOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketCorsOutcomeCallable S3Client::DeleteBucketCorsCallable(const DeleteBucketCorsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucketCors, this, request);
+}
+
+void S3Client::DeleteBucketCorsAsync(const DeleteBucketCorsRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketCorsAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketCorsAsyncHelper(const DeleteBucketCorsRequest& request) const
+{
+  m_onDeleteBucketCorsOutcomeReceived(this, request, DeleteBucketCors(request));
+}
+
+DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketLifecycleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?lifecycle";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketLifecycleOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketLifecycleOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketLifecycleOutcomeCallable S3Client::DeleteBucketLifecycleCallable(const DeleteBucketLifecycleRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucketLifecycle, this, request);
+}
+
+void S3Client::DeleteBucketLifecycleAsync(const DeleteBucketLifecycleRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketLifecycleAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketLifecycleAsyncHelper(const DeleteBucketLifecycleRequest& request) const
+{
+  m_onDeleteBucketLifecycleOutcomeReceived(this, request, DeleteBucketLifecycle(request));
+}
+
+DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?policy";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketPolicyOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketPolicyOutcomeCallable S3Client::DeleteBucketPolicyCallable(const DeleteBucketPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucketPolicy, this, request);
+}
+
+void S3Client::DeleteBucketPolicyAsync(const DeleteBucketPolicyRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketPolicyAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketPolicyAsyncHelper(const DeleteBucketPolicyRequest& request) const
+{
+  m_onDeleteBucketPolicyOutcomeReceived(this, request, DeleteBucketPolicy(request));
+}
+
+DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?replication";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketReplicationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketReplicationOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketReplicationOutcomeCallable S3Client::DeleteBucketReplicationCallable(const DeleteBucketReplicationRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucketReplication, this, request);
+}
+
+void S3Client::DeleteBucketReplicationAsync(const DeleteBucketReplicationRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketReplicationAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketReplicationAsyncHelper(const DeleteBucketReplicationRequest& request) const
+{
+  m_onDeleteBucketReplicationOutcomeReceived(this, request, DeleteBucketReplication(request));
+}
+
+DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?tagging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketTaggingOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketTaggingOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketTaggingOutcomeCallable S3Client::DeleteBucketTaggingCallable(const DeleteBucketTaggingRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucketTagging, this, request);
+}
+
+void S3Client::DeleteBucketTaggingAsync(const DeleteBucketTaggingRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketTaggingAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketTaggingAsyncHelper(const DeleteBucketTaggingRequest& request) const
+{
+  m_onDeleteBucketTaggingOutcomeReceived(this, request, DeleteBucketTagging(request));
+}
+
+DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsiteRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?website";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketWebsiteOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketWebsiteOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketWebsiteOutcomeCallable S3Client::DeleteBucketWebsiteCallable(const DeleteBucketWebsiteRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteBucketWebsite, this, request);
+}
+
+void S3Client::DeleteBucketWebsiteAsync(const DeleteBucketWebsiteRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteBucketWebsiteAsyncHelper, this, request);
+}
+
+void S3Client::DeleteBucketWebsiteAsyncHelper(const DeleteBucketWebsiteRequest& request) const
+{
+  m_onDeleteBucketWebsiteOutcomeReceived(this, request, DeleteBucketWebsite(request));
+}
+
+DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteObjectOutcome(DeleteObjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteObjectOutcome(outcome.GetError());
+  }
+}
+
+DeleteObjectOutcomeCallable S3Client::DeleteObjectCallable(const DeleteObjectRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteObject, this, request);
+}
+
+void S3Client::DeleteObjectAsync(const DeleteObjectRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteObjectAsyncHelper, this, request);
+}
+
+void S3Client::DeleteObjectAsyncHelper(const DeleteObjectRequest& request) const
+{
+  m_onDeleteObjectOutcomeReceived(this, request, DeleteObject(request));
+}
+
+DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?delete";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteObjectsOutcome(DeleteObjectsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteObjectsOutcome(outcome.GetError());
+  }
+}
+
+DeleteObjectsOutcomeCallable S3Client::DeleteObjectsCallable(const DeleteObjectsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::DeleteObjects, this, request);
+}
+
+void S3Client::DeleteObjectsAsync(const DeleteObjectsRequest& request) const
+{
+  m_executor->Submit(&S3Client::DeleteObjectsAsyncHelper, this, request);
+}
+
+void S3Client::DeleteObjectsAsyncHelper(const DeleteObjectsRequest& request) const
+{
+  m_onDeleteObjectsOutcomeReceived(this, request, DeleteObjects(request));
+}
+
+GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?acl";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketAclOutcome(GetBucketAclResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketAclOutcome(outcome.GetError());
+  }
+}
+
+GetBucketAclOutcomeCallable S3Client::GetBucketAclCallable(const GetBucketAclRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketAcl, this, request);
+}
+
+void S3Client::GetBucketAclAsync(const GetBucketAclRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketAclAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketAclAsyncHelper(const GetBucketAclRequest& request) const
+{
+  m_onGetBucketAclOutcomeReceived(this, request, GetBucketAcl(request));
+}
+
+GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?cors";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketCorsOutcome(GetBucketCorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketCorsOutcome(outcome.GetError());
+  }
+}
+
+GetBucketCorsOutcomeCallable S3Client::GetBucketCorsCallable(const GetBucketCorsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketCors, this, request);
+}
+
+void S3Client::GetBucketCorsAsync(const GetBucketCorsRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketCorsAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketCorsAsyncHelper(const GetBucketCorsRequest& request) const
+{
+  m_onGetBucketCorsOutcomeReceived(this, request, GetBucketCors(request));
+}
+
+GetBucketLifecycleOutcome S3Client::GetBucketLifecycle(const GetBucketLifecycleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?lifecycle";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketLifecycleOutcome(GetBucketLifecycleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketLifecycleOutcome(outcome.GetError());
+  }
+}
+
+GetBucketLifecycleOutcomeCallable S3Client::GetBucketLifecycleCallable(const GetBucketLifecycleRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketLifecycle, this, request);
+}
+
+void S3Client::GetBucketLifecycleAsync(const GetBucketLifecycleRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketLifecycleAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketLifecycleAsyncHelper(const GetBucketLifecycleRequest& request) const
+{
+  m_onGetBucketLifecycleOutcomeReceived(this, request, GetBucketLifecycle(request));
+}
+
+GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?location";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketLocationOutcome(GetBucketLocationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketLocationOutcome(outcome.GetError());
+  }
+}
+
+GetBucketLocationOutcomeCallable S3Client::GetBucketLocationCallable(const GetBucketLocationRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketLocation, this, request);
+}
+
+void S3Client::GetBucketLocationAsync(const GetBucketLocationRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketLocationAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketLocationAsyncHelper(const GetBucketLocationRequest& request) const
+{
+  m_onGetBucketLocationOutcomeReceived(this, request, GetBucketLocation(request));
+}
+
+GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?logging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketLoggingOutcome(GetBucketLoggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketLoggingOutcome(outcome.GetError());
+  }
+}
+
+GetBucketLoggingOutcomeCallable S3Client::GetBucketLoggingCallable(const GetBucketLoggingRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketLogging, this, request);
+}
+
+void S3Client::GetBucketLoggingAsync(const GetBucketLoggingRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketLoggingAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketLoggingAsyncHelper(const GetBucketLoggingRequest& request) const
+{
+  m_onGetBucketLoggingOutcomeReceived(this, request, GetBucketLogging(request));
+}
+
+GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfiguration(const GetBucketNotificationConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?notification";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketNotificationConfigurationOutcome(GetBucketNotificationConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketNotificationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetBucketNotificationConfigurationOutcomeCallable S3Client::GetBucketNotificationConfigurationCallable(const GetBucketNotificationConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketNotificationConfiguration, this, request);
+}
+
+void S3Client::GetBucketNotificationConfigurationAsync(const GetBucketNotificationConfigurationRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketNotificationConfigurationAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketNotificationConfigurationAsyncHelper(const GetBucketNotificationConfigurationRequest& request) const
+{
+  m_onGetBucketNotificationConfigurationOutcomeReceived(this, request, GetBucketNotificationConfiguration(request));
+}
+
+GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?policy";
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketPolicyOutcome(GetBucketPolicyResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return GetBucketPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetBucketPolicyOutcomeCallable S3Client::GetBucketPolicyCallable(const GetBucketPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketPolicy, this, request);
+}
+
+void S3Client::GetBucketPolicyAsync(const GetBucketPolicyRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketPolicyAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketPolicyAsyncHelper(const GetBucketPolicyRequest& request) const
+{
+  m_onGetBucketPolicyOutcomeReceived(this, request, GetBucketPolicy(request));
+}
+
+GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplicationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?replication";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketReplicationOutcome(GetBucketReplicationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketReplicationOutcome(outcome.GetError());
+  }
+}
+
+GetBucketReplicationOutcomeCallable S3Client::GetBucketReplicationCallable(const GetBucketReplicationRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketReplication, this, request);
+}
+
+void S3Client::GetBucketReplicationAsync(const GetBucketReplicationRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketReplicationAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketReplicationAsyncHelper(const GetBucketReplicationRequest& request) const
+{
+  m_onGetBucketReplicationOutcomeReceived(this, request, GetBucketReplication(request));
+}
+
+GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucketRequestPaymentRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?requestPayment";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketRequestPaymentOutcome(GetBucketRequestPaymentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketRequestPaymentOutcome(outcome.GetError());
+  }
+}
+
+GetBucketRequestPaymentOutcomeCallable S3Client::GetBucketRequestPaymentCallable(const GetBucketRequestPaymentRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketRequestPayment, this, request);
+}
+
+void S3Client::GetBucketRequestPaymentAsync(const GetBucketRequestPaymentRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketRequestPaymentAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketRequestPaymentAsyncHelper(const GetBucketRequestPaymentRequest& request) const
+{
+  m_onGetBucketRequestPaymentOutcomeReceived(this, request, GetBucketRequestPayment(request));
+}
+
+GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?tagging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketTaggingOutcome(GetBucketTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketTaggingOutcome(outcome.GetError());
+  }
+}
+
+GetBucketTaggingOutcomeCallable S3Client::GetBucketTaggingCallable(const GetBucketTaggingRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketTagging, this, request);
+}
+
+void S3Client::GetBucketTaggingAsync(const GetBucketTaggingRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketTaggingAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketTaggingAsyncHelper(const GetBucketTaggingRequest& request) const
+{
+  m_onGetBucketTaggingOutcomeReceived(this, request, GetBucketTagging(request));
+}
+
+GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioningRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?versioning";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketVersioningOutcome(GetBucketVersioningResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketVersioningOutcome(outcome.GetError());
+  }
+}
+
+GetBucketVersioningOutcomeCallable S3Client::GetBucketVersioningCallable(const GetBucketVersioningRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketVersioning, this, request);
+}
+
+void S3Client::GetBucketVersioningAsync(const GetBucketVersioningRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketVersioningAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketVersioningAsyncHelper(const GetBucketVersioningRequest& request) const
+{
+  m_onGetBucketVersioningOutcomeReceived(this, request, GetBucketVersioning(request));
+}
+
+GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?website";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketWebsiteOutcome(GetBucketWebsiteResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketWebsiteOutcome(outcome.GetError());
+  }
+}
+
+GetBucketWebsiteOutcomeCallable S3Client::GetBucketWebsiteCallable(const GetBucketWebsiteRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetBucketWebsite, this, request);
+}
+
+void S3Client::GetBucketWebsiteAsync(const GetBucketWebsiteRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetBucketWebsiteAsyncHelper, this, request);
+}
+
+void S3Client::GetBucketWebsiteAsyncHelper(const GetBucketWebsiteRequest& request) const
+{
+  m_onGetBucketWebsiteOutcomeReceived(this, request, GetBucketWebsite(request));
+}
+
+GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectOutcome(GetObjectResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return GetObjectOutcome(outcome.GetError());
+  }
+}
+
+GetObjectOutcomeCallable S3Client::GetObjectCallable(const GetObjectRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetObject, this, request);
+}
+
+void S3Client::GetObjectAsync(const GetObjectRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetObjectAsyncHelper, this, request);
+}
+
+void S3Client::GetObjectAsyncHelper(const GetObjectRequest& request) const
+{
+  m_onGetObjectOutcomeReceived(this, request, GetObject(request));
+}
+
+GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?acl";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectAclOutcome(GetObjectAclResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetObjectAclOutcome(outcome.GetError());
+  }
+}
+
+GetObjectAclOutcomeCallable S3Client::GetObjectAclCallable(const GetObjectAclRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetObjectAcl, this, request);
+}
+
+void S3Client::GetObjectAclAsync(const GetObjectAclRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetObjectAclAsyncHelper, this, request);
+}
+
+void S3Client::GetObjectAclAsyncHelper(const GetObjectAclRequest& request) const
+{
+  m_onGetObjectAclOutcomeReceived(this, request, GetObjectAcl(request));
+}
+
+GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?torrent";
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectTorrentOutcome(GetObjectTorrentResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return GetObjectTorrentOutcome(outcome.GetError());
+  }
+}
+
+GetObjectTorrentOutcomeCallable S3Client::GetObjectTorrentCallable(const GetObjectTorrentRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::GetObjectTorrent, this, request);
+}
+
+void S3Client::GetObjectTorrentAsync(const GetObjectTorrentRequest& request) const
+{
+  m_executor->Submit(&S3Client::GetObjectTorrentAsyncHelper, this, request);
+}
+
+void S3Client::GetObjectTorrentAsyncHelper(const GetObjectTorrentRequest& request) const
+{
+  m_onGetObjectTorrentOutcomeReceived(this, request, GetObjectTorrent(request));
+}
+
+HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_HEAD);
+  if(outcome.IsSuccess())
+  {
+    return HeadBucketOutcome(NoResult());
+  }
+  else
+  {
+    return HeadBucketOutcome(outcome.GetError());
+  }
+}
+
+HeadBucketOutcomeCallable S3Client::HeadBucketCallable(const HeadBucketRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::HeadBucket, this, request);
+}
+
+void S3Client::HeadBucketAsync(const HeadBucketRequest& request) const
+{
+  m_executor->Submit(&S3Client::HeadBucketAsyncHelper, this, request);
+}
+
+void S3Client::HeadBucketAsyncHelper(const HeadBucketRequest& request) const
+{
+  m_onHeadBucketOutcomeReceived(this, request, HeadBucket(request));
+}
+
+HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_HEAD);
+  if(outcome.IsSuccess())
+  {
+    return HeadObjectOutcome(HeadObjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return HeadObjectOutcome(outcome.GetError());
+  }
+}
+
+HeadObjectOutcomeCallable S3Client::HeadObjectCallable(const HeadObjectRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::HeadObject, this, request);
+}
+
+void S3Client::HeadObjectAsync(const HeadObjectRequest& request) const
+{
+  m_executor->Submit(&S3Client::HeadObjectAsyncHelper, this, request);
+}
+
+void S3Client::HeadObjectAsyncHelper(const HeadObjectRequest& request) const
+{
+  m_onHeadObjectOutcomeReceived(this, request, HeadObject(request));
+}
+
+ListBucketsOutcome S3Client::ListBuckets() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListBucketsOutcome(ListBucketsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBucketsOutcome(outcome.GetError());
+  }
+}
+
+ListBucketsOutcomeCallable S3Client::ListBucketsCallable() const
+{
+  return std::async(std::launch::async, &S3Client::ListBuckets, this);
+}
+
+void S3Client::ListBucketsAsync() const
+{
+  m_executor->Submit(&S3Client::ListBucketsAsyncHelper, this);
+}
+
+void S3Client::ListBucketsAsyncHelper() const
+{
+  m_onListBucketsOutcomeReceived(this, ListBuckets());
+}
+
+ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?uploads";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListMultipartUploadsOutcome(ListMultipartUploadsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListMultipartUploadsOutcome(outcome.GetError());
+  }
+}
+
+ListMultipartUploadsOutcomeCallable S3Client::ListMultipartUploadsCallable(const ListMultipartUploadsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::ListMultipartUploads, this, request);
+}
+
+void S3Client::ListMultipartUploadsAsync(const ListMultipartUploadsRequest& request) const
+{
+  m_executor->Submit(&S3Client::ListMultipartUploadsAsyncHelper, this, request);
+}
+
+void S3Client::ListMultipartUploadsAsyncHelper(const ListMultipartUploadsRequest& request) const
+{
+  m_onListMultipartUploadsOutcomeReceived(this, request, ListMultipartUploads(request));
+}
+
+ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?versions";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListObjectVersionsOutcome(ListObjectVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListObjectVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListObjectVersionsOutcomeCallable S3Client::ListObjectVersionsCallable(const ListObjectVersionsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::ListObjectVersions, this, request);
+}
+
+void S3Client::ListObjectVersionsAsync(const ListObjectVersionsRequest& request) const
+{
+  m_executor->Submit(&S3Client::ListObjectVersionsAsyncHelper, this, request);
+}
+
+void S3Client::ListObjectVersionsAsyncHelper(const ListObjectVersionsRequest& request) const
+{
+  m_onListObjectVersionsOutcomeReceived(this, request, ListObjectVersions(request));
+}
+
+ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListObjectsOutcome(ListObjectsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListObjectsOutcome(outcome.GetError());
+  }
+}
+
+ListObjectsOutcomeCallable S3Client::ListObjectsCallable(const ListObjectsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::ListObjects, this, request);
+}
+
+void S3Client::ListObjectsAsync(const ListObjectsRequest& request) const
+{
+  m_executor->Submit(&S3Client::ListObjectsAsyncHelper, this, request);
+}
+
+void S3Client::ListObjectsAsyncHelper(const ListObjectsRequest& request) const
+{
+  m_onListObjectsOutcomeReceived(this, request, ListObjects(request));
+}
+
+ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListPartsOutcome(ListPartsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPartsOutcome(outcome.GetError());
+  }
+}
+
+ListPartsOutcomeCallable S3Client::ListPartsCallable(const ListPartsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::ListParts, this, request);
+}
+
+void S3Client::ListPartsAsync(const ListPartsRequest& request) const
+{
+  m_executor->Submit(&S3Client::ListPartsAsyncHelper, this, request);
+}
+
+void S3Client::ListPartsAsyncHelper(const ListPartsRequest& request) const
+{
+  m_onListPartsOutcomeReceived(this, request, ListParts(request));
+}
+
+PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?acl";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketAclOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketAclOutcome(outcome.GetError());
+  }
+}
+
+PutBucketAclOutcomeCallable S3Client::PutBucketAclCallable(const PutBucketAclRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketAcl, this, request);
+}
+
+void S3Client::PutBucketAclAsync(const PutBucketAclRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketAclAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketAclAsyncHelper(const PutBucketAclRequest& request) const
+{
+  m_onPutBucketAclOutcomeReceived(this, request, PutBucketAcl(request));
+}
+
+PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?cors";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketCorsOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketCorsOutcome(outcome.GetError());
+  }
+}
+
+PutBucketCorsOutcomeCallable S3Client::PutBucketCorsCallable(const PutBucketCorsRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketCors, this, request);
+}
+
+void S3Client::PutBucketCorsAsync(const PutBucketCorsRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketCorsAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketCorsAsyncHelper(const PutBucketCorsRequest& request) const
+{
+  m_onPutBucketCorsOutcomeReceived(this, request, PutBucketCors(request));
+}
+
+PutBucketLifecycleOutcome S3Client::PutBucketLifecycle(const PutBucketLifecycleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?lifecycle";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketLifecycleOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketLifecycleOutcome(outcome.GetError());
+  }
+}
+
+PutBucketLifecycleOutcomeCallable S3Client::PutBucketLifecycleCallable(const PutBucketLifecycleRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketLifecycle, this, request);
+}
+
+void S3Client::PutBucketLifecycleAsync(const PutBucketLifecycleRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketLifecycleAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketLifecycleAsyncHelper(const PutBucketLifecycleRequest& request) const
+{
+  m_onPutBucketLifecycleOutcomeReceived(this, request, PutBucketLifecycle(request));
+}
+
+PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?logging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketLoggingOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketLoggingOutcome(outcome.GetError());
+  }
+}
+
+PutBucketLoggingOutcomeCallable S3Client::PutBucketLoggingCallable(const PutBucketLoggingRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketLogging, this, request);
+}
+
+void S3Client::PutBucketLoggingAsync(const PutBucketLoggingRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketLoggingAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketLoggingAsyncHelper(const PutBucketLoggingRequest& request) const
+{
+  m_onPutBucketLoggingOutcomeReceived(this, request, PutBucketLogging(request));
+}
+
+PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfiguration(const PutBucketNotificationConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?notification";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketNotificationConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketNotificationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutBucketNotificationConfigurationOutcomeCallable S3Client::PutBucketNotificationConfigurationCallable(const PutBucketNotificationConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketNotificationConfiguration, this, request);
+}
+
+void S3Client::PutBucketNotificationConfigurationAsync(const PutBucketNotificationConfigurationRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketNotificationConfigurationAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketNotificationConfigurationAsyncHelper(const PutBucketNotificationConfigurationRequest& request) const
+{
+  m_onPutBucketNotificationConfigurationOutcomeReceived(this, request, PutBucketNotificationConfiguration(request));
+}
+
+PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?policy";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketPolicyOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutBucketPolicyOutcomeCallable S3Client::PutBucketPolicyCallable(const PutBucketPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketPolicy, this, request);
+}
+
+void S3Client::PutBucketPolicyAsync(const PutBucketPolicyRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketPolicyAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketPolicyAsyncHelper(const PutBucketPolicyRequest& request) const
+{
+  m_onPutBucketPolicyOutcomeReceived(this, request, PutBucketPolicy(request));
+}
+
+PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplicationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?replication";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketReplicationOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketReplicationOutcome(outcome.GetError());
+  }
+}
+
+PutBucketReplicationOutcomeCallable S3Client::PutBucketReplicationCallable(const PutBucketReplicationRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketReplication, this, request);
+}
+
+void S3Client::PutBucketReplicationAsync(const PutBucketReplicationRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketReplicationAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketReplicationAsyncHelper(const PutBucketReplicationRequest& request) const
+{
+  m_onPutBucketReplicationOutcomeReceived(this, request, PutBucketReplication(request));
+}
+
+PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucketRequestPaymentRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?requestPayment";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketRequestPaymentOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketRequestPaymentOutcome(outcome.GetError());
+  }
+}
+
+PutBucketRequestPaymentOutcomeCallable S3Client::PutBucketRequestPaymentCallable(const PutBucketRequestPaymentRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketRequestPayment, this, request);
+}
+
+void S3Client::PutBucketRequestPaymentAsync(const PutBucketRequestPaymentRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketRequestPaymentAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketRequestPaymentAsyncHelper(const PutBucketRequestPaymentRequest& request) const
+{
+  m_onPutBucketRequestPaymentOutcomeReceived(this, request, PutBucketRequestPayment(request));
+}
+
+PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?tagging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketTaggingOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketTaggingOutcome(outcome.GetError());
+  }
+}
+
+PutBucketTaggingOutcomeCallable S3Client::PutBucketTaggingCallable(const PutBucketTaggingRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketTagging, this, request);
+}
+
+void S3Client::PutBucketTaggingAsync(const PutBucketTaggingRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketTaggingAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketTaggingAsyncHelper(const PutBucketTaggingRequest& request) const
+{
+  m_onPutBucketTaggingOutcomeReceived(this, request, PutBucketTagging(request));
+}
+
+PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioningRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?versioning";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketVersioningOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketVersioningOutcome(outcome.GetError());
+  }
+}
+
+PutBucketVersioningOutcomeCallable S3Client::PutBucketVersioningCallable(const PutBucketVersioningRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketVersioning, this, request);
+}
+
+void S3Client::PutBucketVersioningAsync(const PutBucketVersioningRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketVersioningAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketVersioningAsyncHelper(const PutBucketVersioningRequest& request) const
+{
+  m_onPutBucketVersioningOutcomeReceived(this, request, PutBucketVersioning(request));
+}
+
+PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?website";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketWebsiteOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketWebsiteOutcome(outcome.GetError());
+  }
+}
+
+PutBucketWebsiteOutcomeCallable S3Client::PutBucketWebsiteCallable(const PutBucketWebsiteRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutBucketWebsite, this, request);
+}
+
+void S3Client::PutBucketWebsiteAsync(const PutBucketWebsiteRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutBucketWebsiteAsyncHelper, this, request);
+}
+
+void S3Client::PutBucketWebsiteAsyncHelper(const PutBucketWebsiteRequest& request) const
+{
+  m_onPutBucketWebsiteOutcomeReceived(this, request, PutBucketWebsite(request));
+}
+
+PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutObjectOutcome(PutObjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutObjectOutcome(outcome.GetError());
+  }
+}
+
+PutObjectOutcomeCallable S3Client::PutObjectCallable(const PutObjectRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutObject, this, request);
+}
+
+void S3Client::PutObjectAsync(const PutObjectRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutObjectAsyncHelper, this, request);
+}
+
+void S3Client::PutObjectAsyncHelper(const PutObjectRequest& request) const
+{
+  m_onPutObjectOutcomeReceived(this, request, PutObject(request));
+}
+
+PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?acl";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutObjectAclOutcome(PutObjectAclResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutObjectAclOutcome(outcome.GetError());
+  }
+}
+
+PutObjectAclOutcomeCallable S3Client::PutObjectAclCallable(const PutObjectAclRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::PutObjectAcl, this, request);
+}
+
+void S3Client::PutObjectAclAsync(const PutObjectAclRequest& request) const
+{
+  m_executor->Submit(&S3Client::PutObjectAclAsyncHelper, this, request);
+}
+
+void S3Client::PutObjectAclAsyncHelper(const PutObjectAclRequest& request) const
+{
+  m_onPutObjectAclOutcomeReceived(this, request, PutObjectAcl(request));
+}
+
+RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?restore";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreObjectOutcome(RestoreObjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreObjectOutcome(outcome.GetError());
+  }
+}
+
+RestoreObjectOutcomeCallable S3Client::RestoreObjectCallable(const RestoreObjectRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::RestoreObject, this, request);
+}
+
+void S3Client::RestoreObjectAsync(const RestoreObjectRequest& request) const
+{
+  m_executor->Submit(&S3Client::RestoreObjectAsyncHelper, this, request);
+}
+
+void S3Client::RestoreObjectAsyncHelper(const RestoreObjectRequest& request) const
+{
+  m_onRestoreObjectOutcomeReceived(this, request, RestoreObject(request));
+}
+
+UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UploadPartOutcome(UploadPartResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UploadPartOutcome(outcome.GetError());
+  }
+}
+
+UploadPartOutcomeCallable S3Client::UploadPartCallable(const UploadPartRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::UploadPart, this, request);
+}
+
+void S3Client::UploadPartAsync(const UploadPartRequest& request) const
+{
+  m_executor->Submit(&S3Client::UploadPartAsyncHelper, this, request);
+}
+
+void S3Client::UploadPartAsyncHelper(const UploadPartRequest& request) const
+{
+  m_onUploadPartOutcomeReceived(this, request, UploadPart(request));
+}
+
+UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UploadPartCopyOutcome(UploadPartCopyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UploadPartCopyOutcome(outcome.GetError());
+  }
+}
+
+UploadPartCopyOutcomeCallable S3Client::UploadPartCopyCallable(const UploadPartCopyRequest& request) const
+{
+  return std::async(std::launch::async, &S3Client::UploadPartCopy, this, request);
+}
+
+void S3Client::UploadPartCopyAsync(const UploadPartCopyRequest& request) const
+{
+  m_executor->Submit(&S3Client::UploadPartCopyAsyncHelper, this, request);
+}
+
+void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request) const
+{
+  m_onUploadPartCopyOutcomeReceived(this, request, UploadPartCopy(request));
+}
+

@@ -1,0 +1,81 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/s3/model/LifecycleExpiration.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::S3::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+LifecycleExpiration::LifecycleExpiration() : 
+    m_dateHasBeenSet(false),
+    m_days(0),
+    m_daysHasBeenSet(false)
+{
+}
+
+LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode) : 
+    m_dateHasBeenSet(false),
+    m_days(0),
+    m_daysHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+LifecycleExpiration& LifecycleExpiration::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode dateNode = resultNode.FirstChild("Date");
+    if(!dateNode.IsNull())
+    {
+      m_date = StringUtils::Trim(dateNode.GetText().c_str());
+      m_dateHasBeenSet = true;
+    }
+    XmlNode daysNode = resultNode.FirstChild("Days");
+    if(!daysNode.IsNull())
+    {
+      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
+      m_daysHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void LifecycleExpiration::AddToNode(XmlNode& parentNode) const
+{
+  Aws::StringStream ss;
+  if(m_dateHasBeenSet)
+  {
+   XmlNode dateNode = parentNode.CreateChildElement("Date");
+   dateNode.SetText(m_date);
+  }
+
+  if(m_daysHasBeenSet)
+  {
+   XmlNode daysNode = parentNode.CreateChildElement("Days");
+  ss << m_days;
+   daysNode.SetText(ss.str());
+  ss.str("");
+  }
+
+}
