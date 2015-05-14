@@ -1,0 +1,69 @@
+# IDE Artifacts
+.metadata
+.build
+.idea
+*.d
+Debug
+Release
+*~
+*#
+
+#Vagrant stuff
+Vagrantfile
+.vagrant
+
+#Mac stuff
+.DS_Store
+
+#cmake artifacts
+dependencies
+_build
+build
+_build_*
+cmake/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Android Junk
+AndroidTestOutput.txt
+curl
+external
+openssl
+zlib
+credentials
+
+#Service Libs
+aws-cpp-sdk-cognito-identity
+aws-cpp-sdk-dynamodb
+aws-cpp-sdk-sqs
+aws-cpp-sdk-lambda
+aws-cpp-sdk-kinesis
+aws-cpp-sdk-s3
+

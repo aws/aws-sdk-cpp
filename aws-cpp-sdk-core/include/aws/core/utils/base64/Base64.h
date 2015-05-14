@@ -1,0 +1,73 @@
+/*
+  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * 
+  * Licensed under the Apache License, Version 2.0 (the "License").
+  * You may not use this file except in compliance with the License.
+  * A copy of the License is located at
+  * 
+  *  http://aws.amazon.com/apache2.0
+  * 
+  * or in the "license" file accompanying this file. This file is distributed
+  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+  * express or implied. See the License for the specific language governing
+  * permissions and limitations under the License.
+  */
+
+#pragma once
+
+#ifdef __APPLE__
+
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+#endif // __APPLE__
+
+#include <aws/core/Core_EXPORTS.h>
+
+#include <aws/core/utils/Array.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Base64
+{
+
+/**
+* interface for platform specific Base64 encoding/decoding.
+*/
+class AWS_CORE_API Base64
+{
+public:
+    #ifdef _WIN32
+        Base64();
+    #endif
+
+    /**
+    * Encode a byte buffer into a base64 stream.
+    *
+    * throws Base64Exception if encoding fails.
+    */
+    Aws::String Encode(const ByteBuffer&) const;
+
+    /**
+    * Decode a base64 string into a byte buffer.
+    */
+    ByteBuffer Decode(const Aws::String&) const;
+
+    /**
+    * Calculates the required length of a base64 buffer after decoding the
+    * input string.
+    */
+    static int CalculateBase64Length(const Aws::String& b64input);
+
+private:
+
+    Base64& operator=(const Base64& rhs);
+
+};
+
+} // namespace Base64
+} // namespace Utils
+} // namespace Aws
+
