@@ -56,7 +56,7 @@ You will notice that there are several directories appended with *integration-te
 For Linux, in order to compile, you will need the header files for libcurl and libopenssl. These packages are usually available in your package manager:
 
 example:
-   sudo apt-get install libcurl-dev
+   `sudo apt-get install libcurl-dev`
    
   
 
