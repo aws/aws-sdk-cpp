@@ -1,6 +1,6 @@
 # aws-sdk-cpp
 
-#Building:
+##Building:
 
 Recommended Procedure for Out of Source Build:
 
@@ -11,7 +11,7 @@ Next create your build directory. For these instructions, let's call it BUILD_DI
 
 cd BUILD_DIR
 cmake <path-to-root-of-this-source-code>
---For Non-Windows systems
+//For Non-Windows systems
 make
 --For Windows
 msbuild ALL_BUILD.vcxproj
