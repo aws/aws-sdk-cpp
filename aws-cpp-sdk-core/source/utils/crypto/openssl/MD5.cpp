@@ -49,6 +49,7 @@ HashResult MD5::Calculate(Aws::IStream& stream)
     MD5_CTX md5;
     MD5_Init(&md5);
 
+    unsigned currentPos = stream.tellg();
     stream.seekg(0, stream.beg);
 
     char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -64,6 +65,7 @@ HashResult MD5::Calculate(Aws::IStream& stream)
     }
 
     stream.clear();
+    stream.seekg(currentPos, stream.beg);
 
     ByteBuffer hash(MD5_DIGEST_LENGTH);
     MD5_Final(hash.GetUnderlyingData(), &md5);

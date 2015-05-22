@@ -267,7 +267,7 @@ TEST_F(BucketAndObjectOperationTest, TestBucketCreationAndListing)
 
     CreateBucketRequest createBucketRequest;
     createBucketRequest.SetBucket(fullBucketName);
-    createBucketRequest.SetACL(BucketCannedACL::public_read_write);
+    createBucketRequest.SetACL(BucketCannedACL::private_);
 
     CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
     ASSERT_TRUE(createBucketOutcome.IsSuccess());
@@ -320,7 +320,7 @@ TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
 
     CreateBucketRequest createBucketRequest;
     createBucketRequest.SetBucket(fullBucketName);
-    createBucketRequest.SetACL(BucketCannedACL::public_read_write);
+    createBucketRequest.SetACL(BucketCannedACL::private_);
 
     CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
     ASSERT_TRUE(createBucketOutcome.IsSuccess());
@@ -398,7 +398,7 @@ TEST_F(BucketAndObjectOperationTest, TestMultiPartObjectOperations)
     Aws::String fullBucketName = CalculateBucketName(PUT_MULTIPART_BUCKET_NAME);
     CreateBucketRequest createBucketRequest;
     createBucketRequest.SetBucket(fullBucketName);
-    createBucketRequest.SetACL(BucketCannedACL::public_read_write);
+    createBucketRequest.SetACL(BucketCannedACL::private_);
 
     CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
     ASSERT_TRUE(createBucketOutcome.IsSuccess());
@@ -549,6 +549,7 @@ TEST_F(BucketAndObjectOperationTest, TestThatErrorsParse)
 
     CreateBucketRequest createBucketRequest;
     createBucketRequest.SetBucket(fullBucketName);
+    createBucketRequest.SetACL(BucketCannedACL::private_);
 
     CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
     ASSERT_TRUE(createBucketOutcome.IsSuccess());

@@ -27,105 +27,117 @@
 
 namespace Aws
 {
-namespace Internal
-{
-class EC2MetadataClient; //forward declaration;
-} // namespace Internal
-namespace Auth
-{
-static int REFRESH_THRESHOLD = 1000 * 60 * 15;
-
-class AWS_CORE_API AWSCredentials
-{
-public:
-    AWSCredentials(const Aws::String& accessKeyId, const Aws::String& secretKey, const Aws::String& sessionToken = "") :
-        m_accessKeyId(accessKeyId), m_secretKey(secretKey), m_sessionToken(sessionToken)
+    namespace Internal
     {
-    }
-
-    inline const Aws::String& GetAWSAccessKeyId() const
+        class EC2MetadataClient; //forward declaration;
+    } // namespace Internal
+    namespace Auth
     {
-        return m_accessKeyId;
-    }
+        static int REFRESH_THRESHOLD = 1000 * 60 * 15;
 
-    inline const Aws::String& GetAWSSecretKey() const
-    {
-        return m_secretKey;
-    }
+        class AWS_CORE_API AWSCredentials
+        {
+        public:
+            AWSCredentials(const Aws::String& accessKeyId, const Aws::String& secretKey, const Aws::String& sessionToken = "") :
+                    m_accessKeyId(accessKeyId), m_secretKey(secretKey), m_sessionToken(sessionToken)
+            {
+            }
 
-    inline const Aws::String& GetSessionToken() const
-    {
-        return m_sessionToken;
-    }
+            inline const Aws::String& GetAWSAccessKeyId() const
+            {
+                return m_accessKeyId;
+            }
 
-private:
-    Aws::String m_accessKeyId;
-    Aws::String m_secretKey;
-    Aws::String m_sessionToken;
-};
+            inline const Aws::String& GetAWSSecretKey() const
+            {
+                return m_secretKey;
+            }
 
-/**
-  * Abstract class for retrieving AWS credentials. Create a derived class from this to allow
-  * various methods of storing and retrieving credentials. Examples would be odin, some encrypted store etc...
-  */
-class AWS_CORE_API AWSCredentialsProvider
-{
-public:
-    AWSCredentialsProvider() : m_lastLoadedMs(0)
-    {
-    }
+            inline const Aws::String& GetSessionToken() const
+            {
+                return m_sessionToken;
+            }
 
-    virtual ~AWSCredentialsProvider() {};
-    virtual AWSCredentials GetAWSCredentials() = 0;
+        private:
+            Aws::String m_accessKeyId;
+            Aws::String m_secretKey;
+            Aws::String m_sessionToken;
+        };
 
-protected:
-    virtual bool IsTimeToRefresh(long reloadFrequency);
+        /**
+          * Abstract class for retrieving AWS credentials. Create a derived class from this to allow
+          * various methods of storing and retrieving credentials. Examples would be odin, some encrypted store etc...
+          */
+        class AWS_CORE_API AWSCredentialsProvider
+        {
+        public:
+            AWSCredentialsProvider() : m_lastLoadedMs(0)
+            {
+            }
 
-private:
-    long long m_lastLoadedMs;
-};
+            virtual ~AWSCredentialsProvider()
+            { };
 
-/**
-  * A simple string provider. It takes the AccessKeyId and the SecretKey as constructor args and
-  * provides them through the interface. This is the default class for AWSClients that take string
-  * arguments for credentials.
-  */
-class AWS_CORE_API SimpleAWSCredentialsProvider : public AWSCredentialsProvider
-{
-public:
-    inline SimpleAWSCredentialsProvider(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey, const Aws::String& sessionToken = "")
-        : m_accessKeyId(awsAccessKeyId), m_secretAccessKey(awsSecretAccessKey), m_sessionToken(sessionToken) {}
+            virtual AWSCredentials GetAWSCredentials() = 0;
 
-    inline SimpleAWSCredentialsProvider(const AWSCredentials& credentials)
-        : m_accessKeyId(credentials.GetAWSAccessKeyId()), m_secretAccessKey(credentials.GetAWSSecretKey()), m_sessionToken(credentials.GetSessionToken()) {}
+        protected:
+            virtual bool IsTimeToRefresh(long reloadFrequency);
 
-    AWSCredentials GetAWSCredentials()
-    {
-        return AWSCredentials(m_accessKeyId, m_secretAccessKey, m_sessionToken);
-    }
+        private:
+            long long m_lastLoadedMs;
+        };
 
-private:
-    Aws::String m_accessKeyId;
-    Aws::String m_secretAccessKey;
-    Aws::String m_sessionToken;
-};
+        class AWS_CORE_API AnonymousAWSCredentialsProvider : public AWSCredentialsProvider
+        {
+        public:
+            inline AWSCredentials GetAWSCredentials() override
+            { return AWSCredentials("", ""); }
+        };
+
+        /**
+          * A simple string provider. It takes the AccessKeyId and the SecretKey as constructor args and
+          * provides them through the interface. This is the default class for AWSClients that take string
+          * arguments for credentials.
+          */
+        class AWS_CORE_API SimpleAWSCredentialsProvider : public AWSCredentialsProvider
+        {
+        public:
+            inline SimpleAWSCredentialsProvider(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey, const Aws::String& sessionToken = "")
+                    : m_accessKeyId(awsAccessKeyId), m_secretAccessKey(awsSecretAccessKey), m_sessionToken(sessionToken)
+            { }
+
+            inline SimpleAWSCredentialsProvider(const AWSCredentials& credentials)
+                    : m_accessKeyId(credentials.GetAWSAccessKeyId()), m_secretAccessKey(credentials.GetAWSSecretKey()),
+                      m_sessionToken(credentials.GetSessionToken())
+            { }
+
+            inline AWSCredentials GetAWSCredentials() override
+            {
+                return AWSCredentials(m_accessKeyId, m_secretAccessKey, m_sessionToken);
+            }
+
+        private:
+            Aws::String m_accessKeyId;
+            Aws::String m_secretAccessKey;
+            Aws::String m_sessionToken;
+        };
 
 /**
 * Reads AWS credentials from the Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_KEY_ID if they exist. If they
 * are not found, empty credentials are returned.
 */
-class AWS_CORE_API EnvironmentAWSCredentialsProvider : public AWSCredentialsProvider
-{
-public:
-    EnvironmentAWSCredentialsProvider();
+        class AWS_CORE_API EnvironmentAWSCredentialsProvider : public AWSCredentialsProvider
+        {
+        public:
+            EnvironmentAWSCredentialsProvider();
 
-    AWSCredentials GetAWSCredentials();
+            AWSCredentials GetAWSCredentials() override;
 
-private:
+        private:
 
-    EnvironmentAWSCredentialsProvider &operator =(const EnvironmentAWSCredentialsProvider &rhs);
+            EnvironmentAWSCredentialsProvider& operator=(const EnvironmentAWSCredentialsProvider& rhs);
 
-};
+        };
 
 /**
 * Reads credentials profile from the default Profile Config File. Refreshes at set interval for credential rotation.
@@ -133,75 +145,78 @@ private:
 * to ~/.aws/credentials and default. Optionally a user can specify the profile and it will override the environment variable
 * and defaults. To alter the file this pulls from, then the user should alter the AWS_CREDENTIAL_PROFILES_FILE variable.
 */
-class AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
-{
-public:
+        class AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
+        {
+        public:
 
-    /**
-    * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 1 minute.
-    */
-    ProfileConfigFileAWSCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
+            /**
+            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 1 minute.
+            */
+            ProfileConfigFileAWSCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
-    /**
-    * Initializes with a profile override and
-    * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 1 minute.
-    */
-    ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
+            /**
+            * Initializes with a profile override and
+            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 1 minute.
+            */
+            ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
-    /**
-    * Retrieves the credentials if found, otherwise returns empty credential set.
-    */
-    AWSCredentials GetAWSCredentials();
+            /**
+            * Retrieves the credentials if found, otherwise returns empty credential set.
+            */
+            AWSCredentials GetAWSCredentials() override;
 
-    //TODO: move these back to private member functions as soon as IAM is implemented.
-    static Aws::String GetProfileFilename();
-    static Aws::String GetProfileFilenameNoPath();
-    static Aws::String GetProfileDirectory();
+            //TODO: move these back to private member functions as soon as IAM is implemented.
+            static Aws::String GetProfileFilename();
 
-    //TODO: move these back to private member functions as soon as IAM is implemented.
-    /**
-    * Parses the Profile Config File.
-    */
-    static Aws::Map<Aws::String, Aws::String> ParseProfileConfigFile(const Aws::String& filename);
-    static Aws::String GetAccountIdForProfile(const Aws::String& profileName);
+            static Aws::String GetProfileFilenameNoPath();
 
-private:
-    /**
-    * Checks to see if the refresh interval has expired and reparses the file if it has.
-    */
-    void RefreshIfExpired();
+            static Aws::String GetProfileDirectory();
 
-    Aws::String m_fileName;
-    Aws::String m_profileToUse;
-    std::shared_ptr<AWSCredentials> m_credentials;
-    mutable std::mutex m_reloadMutex;
-    long m_loadFrequencyMs;
-};
+            //TODO: move these back to private member functions as soon as IAM is implemented.
+            /**
+            * Parses the Profile Config File.
+            */
+            static Aws::Map<Aws::String, Aws::String> ParseProfileConfigFile(const Aws::String& filename);
+
+            static Aws::String GetAccountIdForProfile(const Aws::String& profileName);
+
+        private:
+            /**
+            * Checks to see if the refresh interval has expired and reparses the file if it has.
+            */
+            void RefreshIfExpired();
+
+            Aws::String m_fileName;
+            Aws::String m_profileToUse;
+            std::shared_ptr<AWSCredentials> m_credentials;
+            mutable std::mutex m_reloadMutex;
+            long m_loadFrequencyMs;
+        };
 
 /**
 * Credentials provider implementation that loads credentials from the Amazon
 * EC2 Instance Metadata Service.
 */
-class AWS_CORE_API InstanceProfileCredentialsProvider : public AWSCredentialsProvider
-{
-public:
-    InstanceProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
+        class AWS_CORE_API InstanceProfileCredentialsProvider : public AWSCredentialsProvider
+        {
+        public:
+            InstanceProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
-    InstanceProfileCredentialsProvider(std::shared_ptr<Internal::EC2MetadataClient>, long refreshRateMs = REFRESH_THRESHOLD);
+            InstanceProfileCredentialsProvider(std::shared_ptr<Internal::EC2MetadataClient>, long refreshRateMs = REFRESH_THRESHOLD);
 
-    /**
-    * Retrieves the credentials if found, otherwise returns empty credential set.
-    */
-    AWSCredentials GetAWSCredentials();
+            /**
+            * Retrieves the credentials if found, otherwise returns empty credential set.
+            */
+            AWSCredentials GetAWSCredentials() override;
 
-private:
-    void RefreshIfExpired();
+        private:
+            void RefreshIfExpired();
 
-    std::shared_ptr<Internal::EC2MetadataClient> m_metadataClient;
-    std::shared_ptr<AWSCredentials> m_credentials;
-    long m_loadFrequencyMs;
-    mutable std::mutex m_reloadMutex;
-};
-} // namespace Auth
+            std::shared_ptr<Internal::EC2MetadataClient> m_metadataClient;
+            std::shared_ptr<AWSCredentials> m_credentials;
+            long m_loadFrequencyMs;
+            mutable std::mutex m_reloadMutex;
+        };
+    } // namespace Auth
 } // namespace Aws
 

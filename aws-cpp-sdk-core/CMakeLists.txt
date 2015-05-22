@@ -118,6 +118,7 @@ if(PLATFORM_WINDOWS)
   file(GLOB UTILS_BASE64_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/windows/*.cpp")
   file(GLOB UTILS_CRYPTO_WINDOWS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/windows/*.h")
   file(GLOB UTILS_CRYPTO_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/windows/*.cpp")
+  file(GLOB UTILS_WINDOWS_SOURCE = "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/windows/*.cpp")
   file(GLOB HTTP_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
   file(GLOB HTTP_WINDOWS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/http/windows/*.h")
 
@@ -125,12 +126,14 @@ if(PLATFORM_WINDOWS)
     ${UTILS_BASE64_WINDOWS_SOURCE}
     ${UTILS_CRYPTO_WINDOWS_SOURCE}
     ${UTILS_CRYPTO_WINDOWS_HEADERS}
+    ${UTILS_WINDOWS_SOURCE}
     ${HTTP_WINDOWS_SOURCE}
     ${HTTP_WINDOWS_HEADERS}
   )
 
   #if we are compiling for visual studio, create a sane directory tree.
   if(MSVC)
+     SET(UTILS_SOURCE ${UTILS_SOURCE} ${UTILS_WINDOWS_SOURCE})
      source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS})
      source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
      source_group("Header Files\\aws\\core\\client" FILES ${AWS_CLIENT_HEADERS})
@@ -176,13 +179,14 @@ if(PLATFORM_WINDOWS)
      source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SOURCE})
    endif(MSVC)
 
-elseif(PLATFORM_LINUX OR PLATFORM_ANDROID)
+elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
 
   #add unix specific impl stuff here.
   file(GLOB UTILS_BASE64_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/openssl/*.cpp")
   file(GLOB UTILS_CRYPTO_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/openssl/*.cpp")
   file(GLOB HTTP_CURL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
   file(GLOB HTTP_CURL_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/http/curl/*.h")
+  file(GLOB UTILS_UNIX_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/unix/*.cpp")
 
   if(PLATFORM_ANDROID)
     file(GLOB UTILS_LOGGING_ANDROID_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging/android/*.cpp")
@@ -196,6 +200,7 @@ elseif(PLATFORM_LINUX OR PLATFORM_ANDROID)
      ${HTTP_CURL_SOURCE}
      ${UTILS_LOGGING_ANDROID_SOURCE}
      ${UTILS_LOGGING_ANDROID_HEADERS}
+     ${UTILS_UNIX_SOURCE}
    )
 endif()
 

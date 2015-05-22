@@ -207,7 +207,7 @@ bool WindowsHashImpl::HashStream(Aws::IStream& stream)
 
     char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
     NTSTATUS status = 0;
-
+    stream.seekg(0, stream.beg);
     while(stream.good())
     {
         stream.read(streamBuffer, Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE);

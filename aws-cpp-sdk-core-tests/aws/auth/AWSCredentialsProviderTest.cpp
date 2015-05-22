@@ -22,6 +22,7 @@
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/FileSystemUtils.h>
 
 #include <stdlib.h>
 #include <thread>
@@ -85,48 +86,19 @@
 static const char *AllocationTag = "AWSCredentialsProviderTest";
 
 using namespace Aws::Auth;
-
-void CreateDirectoryIfItDoesNotExist()
-{
-    Aws::String profileDir = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
-
-    #ifndef _WIN32
-        mkdir(profileDir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
-    #else
-        CreateDirectoryA(profileDir.c_str(), nullptr);
-    #endif
-}
-
-void RemoveFile(const char* fileName)
-{
-    #ifndef _WIN32
-        remove(fileName);
-    #else
-        DeleteFileA(fileName);
-    #endif
-}
-
-void RelocateFile(const char* from, const char* to)
-{
-    #ifndef _WIN32
-        std::rename(from, to);
-    #else
-        MoveFileA(from, to);
-    #endif
-}
+using namespace Aws::Utils;
 
 #ifndef __ANDROID__
 
 TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
-
-    CreateDirectoryIfItDoesNotExist();
+    FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
     Aws::String tempFileName = configFileName + "_tempMv";
 
-    RelocateFile(configFileName.c_str(), tempFileName.c_str());
+    FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
 
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
@@ -153,13 +125,13 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    RemoveFile(configFileName.c_str());
+    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    RelocateFile(tempFileName.c_str(), configFileName.c_str());
+    FileSystemUtils::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
@@ -169,7 +141,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVars)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    CreateDirectoryIfItDoesNotExist();
+    FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
   
@@ -210,7 +182,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVarsButSpecifiedPro
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    CreateDirectoryIfItDoesNotExist();
+    FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
 

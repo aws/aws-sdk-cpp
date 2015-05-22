@@ -33,6 +33,7 @@
 #include <aws/sqs/model/RemovePermissionRequest.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesRequest.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/testing/ProxyConfig.h>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -76,6 +77,13 @@ protected:
         ClientConfiguration config;
         config.scheme = Scheme::HTTPS;
         config.region = Region::US_EAST_1;
+
+        if(USE_PROXY_FOR_TESTS)
+        {
+            config.proxyHost = PROXY_HOST;
+            config.proxyPort = PROXY_PORT;
+        }
+
         sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
 
         // delete queues, just in case

@@ -71,8 +71,6 @@ static const char* KINESIS_STREAM_ARN = "arn:aws:kinesis:us-east-1:554229317296:
 //This was manually created
 static const char* IAM_ROLE = "arn:aws:iam::554229317296:role/awsnativesdk_lambda_integration_test";
 
-static const char* LOG_TAG = "LambdaIntegrationTests";
-
 namespace {
 
 class FunctionTest : public ::testing::Test {

@@ -87,7 +87,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
                 m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
                 m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
-            m_proxyPort(clientConfig.proxyPort)
+            m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL)
 {
 }
 
@@ -148,8 +148,17 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEDATA, &writeContext);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, &CurlHttpClient::WriteHeader);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, response.get());
-        curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, true);
-        curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 2);
+
+        if(m_verifySSL)
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, true);
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 2);
+        }
+        else
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, false);
+            curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 0);
+        }
         //curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
 
         if(m_isUsingProxy)

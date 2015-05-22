@@ -49,6 +49,7 @@ HashResult Sha256::Calculate(Aws::IStream& stream)
     SHA256_CTX sha256;
     SHA256_Init(&sha256);
 
+    unsigned currentPos = stream.tellg();
     stream.seekg(0, stream.beg);
 
     char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -64,6 +65,7 @@ HashResult Sha256::Calculate(Aws::IStream& stream)
     }
 
     stream.clear();
+    stream.seekg(currentPos, stream.beg);
 
     ByteBuffer hash(SHA256_DIGEST_LENGTH);
     SHA256_Final(hash.GetUnderlyingData(), &sha256);
