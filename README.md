@@ -1,6 +1,6 @@
 # aws-sdk-cpp
 
-Building:
+#Building:
 
 Recommended Procedure for Out of Source Build:
 
@@ -11,18 +11,18 @@ Next create your build directory. For these instructions, let's call it BUILD_DI
 
 cd BUILD_DIR
 cmake <path-to-root-of-this-source-code>
-#For Non-Windows systems
+--For Non-Windows systems
 make
-#For Windows
+--For Windows
 msbuild ALL_BUILD.vcxproj
 
-#alternatively for release builds, you can run
-#For non-windows systems
+--alternatively for release builds, you can run
+--For non-windows systems
 cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
 make
 sudo make install
 
-#For windows systems
+--For windows systems
 cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
 msbuild INSTALL.vcxproj /p:Configuration=Release
 
