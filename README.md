@@ -9,8 +9,10 @@ and available in your executable path.
 
 Next create your build directory. For these instructions, let's call it BUILD_DIR.
 
-`cd BUILD_DIR`
-`cmake <path-to-root-of-this-source-code>`
+```
+cd BUILD_DIR
+cmake <path-to-root-of-this-source-code>
+```
 ######For Non-Windows systems
 `make`
 ######For Windows
@@ -18,14 +20,16 @@ Next create your build directory. For these instructions, let's call it BUILD_DI
 
 ######alternatively for release builds, you can run
 ######For non-windows systems
-`cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>`
-`make`
-`sudo make install`
-
+```
+cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
+make
+sudo make install
+```
 ######For windows systems
-`cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"`
-`msbuild INSTALL.vcxproj /p:Configuration=Release`
-
+```
+cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
+msbuild INSTALL.vcxproj /p:Configuration=Release
+```
 That's it! This will build the entire source tree for your platform, run unit tests, and build integration tests.
 
 ####CMake Variables:
