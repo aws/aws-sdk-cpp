@@ -1,4 +1,7 @@
 # aws-sdk-cpp
+The goal of the Aws Native SDK is to provide a modern C++ ( Version >= C++ 11) interface for Amazon Web Services. We want it to be performant, fully functioning, with low-level and high-level sdks. Yet, we also want to minimize dependencies, and provide platform portability. This includes Windows, OSX, Linux, and Mobile platforms. 
+
+This SDK has been specifically designed with game dev in mind, but we have also worked hard to maintain an interface that will work for systems engineering tasks as well as other projects that simply need the efficiency of native code.
 
 ###Building:
 
