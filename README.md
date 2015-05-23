@@ -135,7 +135,7 @@ Our current plan to address this is to focus primarily on the Request model obje
 - every Init/Set function that takes a string has an overload that takes const char*
 - every Init/Set function that takes a container (map/vector mostly) has an Add variant that takes a single entry
 - every Init/Set that takes binary data has an overload that takes a pointer to the data and a length value
-(if needed) every Init/Set function that takes a string has an overload that takes (non-zero-terminated) const char * and a length value.
+- (if needed) every Init/Set function that takes a string has an overload that takes (non-zero-terminated) const char * and a length value.
 This removes most of the temporaries/allocation that currently happen when service calls are made by developers not using STL.
 
 #####Note to Native SDK developers regarding memory controls
