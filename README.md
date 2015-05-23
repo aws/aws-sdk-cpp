@@ -307,7 +307,35 @@ Now you are ready to use your DynamoDb client.
 The default http client was chosen for ease of portability and stability for each platform. For Windows, this is WinInet, and for everything else this is curl. You shouldn't need to change this functionality, but if you do, you can simply create a custom HttpClientFactory and pass it to any Service Client's constructor.
 
 #####Provided Utilities
------ Coming Soon -----
+######Http Stack
+path: /aws/core/http/
+The Http Client is entirely reusable for whatever purposes you need. It provides connection pooling and is entirely thread safe. See the ClientConfiguration notes mentioned above.
+######String Utils
+/aws/core/utils/StringUtils.h
+Provides core string functionalities such as trim, toLowerCase, numeric conversions etc...
+######Hashing Utils
+/aws/core/utils/HashingUtils.h
+Provides hashing functions for SHA256, MD5, Base64, and SHA256_HMAC
+######Json Parser
+/aws/core/utils/json/JsonSerializer.h
+Provides fully functioning, yet light-weight Json parser.
+######Xml Parser
+/aws/core/utils/xml/XmlSerializer.h
+Light-weight Xml Parser.
+
+#####Controlling IOStreams used by the HttpClient and the AWSClient
+By default all responses use an input stream backed by a stringbuf. Obviously this is not performant for large response bodies. It is your responsibility to override this behavior if you want something else. For instance, when you are using S3 GetObject, you do not want to load the entire file into memory. Use the IOStreamFactory in the AmazonWebServiceRequest to pass a lambda creating a file stream for you.
+
+For Example:
+```
+GetObjectRequest getObjectRequest;
+getObjectRequest.SetBucket(fullBucketName);
+getObjectRequest.SetKey(keyName);
+getObjectRequest.SetResponseStreamFactory([](){ return Aws::New<Aws::FStream>( ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out ); });
+
+GetObjectOutcome getObjectOutcome2 = s3Client->GetObject(getObjectRequest);
+```
+
 
 
 
