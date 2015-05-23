@@ -308,21 +308,26 @@ The default http client was chosen for ease of portability and stability for eac
 
 #####Provided Utilities
 ######Http Stack
-path: /aws/core/http/
+/aws/core/http/
+
 The Http Client is entirely reusable for whatever purposes you need. It provides connection pooling and is entirely thread safe. See the ClientConfiguration notes mentioned above.
+
 ######String Utils
 /aws/core/utils/StringUtils.h
+
 Provides core string functionalities such as trim, toLowerCase, numeric conversions etc...
 ######Hashing Utils
 /aws/core/utils/HashingUtils.h
+
 Provides hashing functions for SHA256, MD5, Base64, and SHA256_HMAC
 ######Json Parser
 /aws/core/utils/json/JsonSerializer.h
+
 Provides fully functioning, yet light-weight Json parser.
 ######Xml Parser
 /aws/core/utils/xml/XmlSerializer.h
-Light-weight Xml Parser.
 
+Light-weight Xml Parser.
 #####Controlling IOStreams used by the HttpClient and the AWSClient
 By default all responses use an input stream backed by a stringbuf. Obviously this is not performant for large response bodies. It is your responsibility to override this behavior if you want something else. For instance, when you are using S3 GetObject, you do not want to load the entire file into memory. Use the IOStreamFactory in the AmazonWebServiceRequest to pass a lambda creating a file stream for you.
 
