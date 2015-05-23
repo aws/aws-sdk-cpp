@@ -106,6 +106,7 @@ Custom memory management is only available when using a version of the library t
 
 If initialized with a memory manager, the native SDK will defer all allocation and deallocation to it. In the absence of a memory manager, the SDK falls back to global new and delete. But the SDK makes heavy use of STL and STL does plenty of memory allocation. How do we handle that?
 If you use custom STL allocators in your code, you are forced to alter the type signatures of all your STL objects to match the allocation policy. STL is used prominently within the SDK's implementation and interface (although the interface will become less STL-centric in the near future). This means that a one-size-fits-all approach within the SDK would either prevent developers who don't care about memory management from directly passing "standard"/default STL objects into the SDK (because everything's using custom allocators) or hardcore developers who do care about memory wouldn't be able to control STL allocation (because everything's using the default std::allocator). Using a hybrid approach -- use the custom allocators internally but the interface allows both default std:: objects (which get converted into custom allocator ones) as well as ones with custom allocators -- bloats the interface, and more dangerously, makes memory issues potentially much more difficult to track down if the SDK developer makes a mistake. We can revisit this if people feel strongly that the compile-time switch is a bad idea; I was extremely wary of debugging/mixing STL objects with two different allocation methods.
+
 Our solution to these semi-conflicting requirements is to have the memory system compile switch -- AWS_CUSTOM_MEMORY_MANAGEMENT -- control what stl types the native SDK uses. If the compile switch is on, then the types resolve to stl types with a custom allocator that hooks into the AWS memory system. If the compile switch is off, then all Aws::* types resolve to the default std::* corresponding type. This is better explained by a few code snippets from the SDK:
 In AWSAllocator.h:
 ```
@@ -131,10 +132,10 @@ When the SDK is released, in addition to the standard debug/release and 32/64 bi
 #####Future Steps
 While we've given developers the ability to control all memory allocation within the SDK, a problem remains in that STL types dominate the public interface (primarily string parameters to the model object initialize/set methods). As it currently stands, developers that forgo STL entirely (rolling their own strings/containers/etc...) are forced to create many temporaries (incurring the cost of allocation/copy/deallocation) every time they want to make a service call. This is not desirable.
 Our current plan to address this is to focus primarily on the Request model objects and we have done the following:
--every Init/Set function that takes a string has an overload that takes const char*
--every Init/Set function that takes a container (map/vector mostly) has an Add variant that takes a single entry
--every Init/Set that takes binary data has an overload that takes a pointer to the data and a length value
-(if needed) every Init/Set function that takes a string has an overload that takes (non-zero-terminated) const char * and a length value
+- every Init/Set function that takes a string has an overload that takes const char*
+- every Init/Set function that takes a container (map/vector mostly) has an Add variant that takes a single entry
+- every Init/Set that takes binary data has an overload that takes a pointer to the data and a length value
+(if needed) every Init/Set function that takes a string has an overload that takes (non-zero-terminated) const char * and a length value.
 This removes most of the temporaries/allocation that currently happen when service calls are made by developers not using STL.
 
 #####Note to Native SDK developers regarding memory controls
