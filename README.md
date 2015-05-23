@@ -252,6 +252,60 @@ If you turn this off, you might as well turn SSL off; but if you must, set this 
 #####Write Rate Limiter and Read Rate Limiter
 These throttle the bandwidth used by the transport layer to help you with resource budgets. The default is wide open. If you just want to set a budget then use our default implementation with your desired rates. You can also subclass RateLimiterInterface and inject your own instance.
 
+####Credentials Providers
+The fundamental way of providing credentials to the AWS auth signing process is through the AWSCredentialProvider interface. You can implement this interface to provide your own method of credentials deployment. For convenience we've written some of these for you and provide them by default.
+
+#####Default Credential Provider Chain
+The default credential provider chain does the following:
+1. Checks your environment variables for AWS Credentials
+2. Checks your $HOME/.aws/credentials file for a profile and credentials.
+3. Contacts the EC2MetadataInstanceProfile Service to ask for credentials.
+
+The simplest way to communicate with AWS without hardcoding your credentials in your source code or configuration files is to make sure we can find your credentials in 1 of those 3 places.
+
+#####Other methods
+You can also just provide us with credentials in your client's constructor.
+
+Furthermore, we provide a full identity-management solution via the Cognito-Identity Service. To take advantage of this, use the CognitoCaching*CredentialsProviders classes in the identity-management project, and read the cognito-identity documentation.
+
+####Using a Service Client
+Now that we have discussed the main interfaces in the system, we can use these items to construct a service client. Note, it is not necessary to do anything extra for a client. The default constructor will serve your needs most of the time. Yet, many times you may want to configure these things, so we will illustrate with DynamoDb.
+
+```
+auto m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
+
+// Create a client
+ClientConfiguration config;
+config.scheme = Scheme::HTTPS;
+config.connectTimeoutMs = 30000;
+config.requestTimeoutMs = 30000;
+config.readRateLimiter = m_limiter;
+config.writeRateLimiter = m_limiter;
+
+ auto m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
+```
+
+This code creates a DynamoDb client using a specialized ClientConfiguration, the default credentials provider chain, and the default http client factory.
+
+Alternatively, you could do this:
+
+`auto m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, AWSCredentials("access_key_id", "secret_key"), config);`
+
+to manually pass credentials, or you could do
+
+`auto m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, Aws::MakeShared<CognitoCachingAnonymousCredentialsProvider>(ALLOCATION_TAG, "identityPoolId", "accountId"), config);`
+
+to use a custom credentials provider.
+
+Now you are ready to use your DynamoDb client. 
+
+####Advanced Topics
+#####Overriding your Http Client
+The default http client was chosen for ease of portability and stability for each platform. For Windows, this is WinInet, and for everything else this is curl. You shouldn't need to change this functionality, but if you do, you can simply create a custom HttpClientFactory and pass it to any Service Client's constructor.
+
+#####Provided Utilities
+----- Coming Soon -----
+
 
 
 
