@@ -2,7 +2,7 @@
 
 ###Building:
 
-####Recommended Procedure for Out of Source Build:
+####Recommended Procedure for Out-of-Source Build:
 
 First, you need to make sure cmake and the relevant build tools for your platform are installed
 and available in your executable path.
@@ -63,7 +63,7 @@ example:
    `sudo apt-get install libcurl-dev`
    
 ###Using the SDK
-The individual service clients are very similar to the other SDKs such as Java and .NET after you get them constructed. Here I'll explain the details of how core works, how to use each feature, and then how to then construct and individual client.
+The individual service clients are very similar to the other SDKs such as Java and .NET after you get them constructed. Here I'll explain the details of how core works, how to use each feature, and then how to then construct an individual client.
 *aws-cpp-sdk-core* does the heavy lifting of the system. In fact, you can trivially write a client to connect to any AWS service using just core itself. The individual service clients just make things a bit easier for you.
 
 ####Memory Management
