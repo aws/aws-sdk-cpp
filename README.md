@@ -190,6 +190,70 @@ int main(int argc, char** argv)
 }
 ```
 
+####Client Configuration
+The client configuration is the way that you control most functionality in the SDK. I'll now explain each piece of the client config.
+
+Here is the declaration for ClientConfiguration:
+
+```
+struct AWS_CORE_API ClientConfiguration
+{
+    ClientConfiguration();
+
+    Aws::String userAgent;
+    Aws::Http::Scheme scheme;
+    Aws::Region region;
+    unsigned maxConnections;
+    long requestTimeoutMs;
+    long connectTimeoutMs;
+    std::shared_ptr<RetryStrategy> retryStrategy;
+    Aws::String endpointOverride;
+    Aws::String proxyHost;
+    unsigned proxyPort;
+    Aws::String proxyUserName;
+    Aws::String proxyPassword;
+    std::shared_ptr<Aws::Utils::Threading::Executor> executor;
+    bool verifySSL;
+    std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
+    std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
+};
+```
+
+#####User Agent
+You shouldn't alter this, this pulls various bits of information from your operating system and is built in the constructor.
+
+#####Scheme
+Defaults to HTTPS, if the information you are passing is not sensitive and the service you are connecting to supports an HTTP endpoint, then feel free to set this to HTTP. AWS Auth protects you from tampering.
+
+#####Region
+This is the region that you want the client to communicate with eg. us-east-1, us-west-1 etc... It is your reponsibility to make sure the service you are using has an endpoint in the region configure here.
+
+#####Max Connections
+This is the maximum number of connections to allow to a single server for your http communications. For windows, either set this to 2 or see this documentation https://support.microsoft.com/en-us/kb/183110. For other systems, set this as high as you think you can support the bandwidth for. We recommend somewhere around 25.  The default for this value is 25.
+
+#####Request Timeout and Connection Timeout
+In Milliseconds, how long to wait before timing out a request. Consider raising this value if you are doing large file transfers such as in S3 or cloud front.
+
+#####Retry Strategy
+Defaults to exponential backoff. If you want to override this, Implement a subclass of RetryStrategy and pass an instance here.
+
+#####Endpoint Override
+Don't use this unless you already know what it's for.... 
+
+#####Proxy Host, Port, User Name, and Password
+This allows you to configure a proxy for all communication with AWS. This is particularly useful at debug time in conjunction with the Burp suite. However, some users may use a proxy to actually connect to the internet. Configure that stuff here.
+
+#####Executor
+This defaults to creating a thread for each async call and detaching it. If you want different behavior, implement a subclass of Executor and pass an instance of it here.
+
+#####Verify SSL
+If you turn this off, you might as well turn SSL off; but if you must, set this to false to disable SSL certificate verification.
+
+#####Write Rate Limiter and Read Rate Limiter
+These throttle the bandwidth used by the transport layer to help you with resource budgets. The default is wide open. If you just want to set a budget then use our default implementation with your desired rates. You can also subclass RateLimiterInterface and inject your own instance.
+
+
+
 
 
 
