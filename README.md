@@ -257,9 +257,12 @@ The fundamental way of providing credentials to the AWS auth signing process is 
 
 #####Default Credential Provider Chain
 The default credential provider chain does the following:
-1. Checks your environment variables for AWS Credentials
-2. Checks your $HOME/.aws/credentials file for a profile and credentials.
-3. Contacts the EC2MetadataInstanceProfile Service to ask for credentials.
+
+1.  Checks your environment variables for AWS Credentials
+
+2.  Checks your $HOME/.aws/credentials file for a profile and credentials.
+  
+3.  Contacts the EC2MetadataInstanceProfile Service to ask for credentials.
 
 The simplest way to communicate with AWS without hardcoding your credentials in your source code or configuration files is to make sure we can find your credentials in 1 of those 3 places.
 
