@@ -143,11 +143,17 @@ Some new rules that need to be followed by code inside the SDK:
 *new[] and delete[] should never be used. Use Aws::NewArray<> and Aws::DeleteArray<>.
 *use Aws::MakeShared; never use std::make_shared
 *If you want to use a unique_ptr to a single object, you need to make Aws::Deleter<T> the second type parameter, ie:
+
 `std::unique_ptr<MyClass, Aws::Deleter<MyClass>> somePointer = Aws::New<MyClass>(...);`
+
 *If you want to use a unique_ptr to an array of objects, you need to make Aws::ArrayDelete<T> the second type parameter, ie:
+
 `std::unique_ptr<MyClass, Aws::ArrayDelete<MyClass>> somePointer = Aws::NewArray<MyClass>(...);`
+
 *Never use stl containers directly. Use one of the Aws:: typedefs, or if one does not exist, add a typedef for the desired container.
+
 `Aws::Map<Aws::String, Aws::String> m_kvPairs;`
+
 *Any external pointer passed into the SDK that the SDK is expected to manage (ie cleanup) must be a shared_ptr. It is the responsibility of the developer to initialize the shared pointer with a destruction policy that matches how the object was allocated. If the SDK is not expected to cleanup a pointer, then a raw pointer is fine.
 
 
