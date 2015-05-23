@@ -331,7 +331,7 @@ bool CreateTableAndWaitForItToBeActive()
      DescribeTableRequest describeTableRequest;
      describeTableRequest.SetTableName(tableName);
      bool shouldContinue = true;
-     DescribeTableOutcome outcome = m_client->DescribeTable(describeTableRequest);
+     DescribeTableOutcome outcome = dynamoDbClient->DescribeTable(describeTableRequest);
 
      while (shouldContinue)
      {       
