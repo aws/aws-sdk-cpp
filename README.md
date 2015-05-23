@@ -162,12 +162,12 @@ The SDK has configurable logging support. When initializing the logging system y
 
 To set the logging options, you'll need to initialize the logging system at the beginning of your program:
 
-```Amazon::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Amazon::Utils::Logging::DefaultLogSystem>("RunUnitTests", Amazon::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));```
+`Amazon::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Amazon::Utils::Logging::DefaultLogSystem>("RunUnitTests", Amazon::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
 
 If you do not call InitializeAWSLogging in your program, the SDK will not do any logging.
 Don't forget to shut it down at the end of your program:
 
-```Amazon::Utils::Logging::ShutdownAWSLogging();```
+`Amazon::Utils::Logging::ShutdownAWSLogging();`
 
 For example, we do something like this in our integration tests:
 
