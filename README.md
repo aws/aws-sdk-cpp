@@ -303,7 +303,57 @@ to manually pass credentials, or you could do
 
 to use a custom credentials provider.
 
-Now you are ready to use your DynamoDb client. 
+Now you are ready to use your DynamoDb client.
+
+####Error Handling
+Largely for the sake of game development, we did not use exceptions. That is not to say that this library is not exception safe. Feel free to use exceptions in your own code--this library will be safe. Every service client returns an outcome object containing a result and an error code. Here is a sample of handling error conditions:
+
+```
+bool CreateTableAndWaitForItToBeActive()
+{
+  CreateTableRequest createTableRequest;
+  AttributeDefinition hashKey;
+  hashKey.SetAttributeName(HASH_KEY_NAME);
+  hashKey.SetAttributeType(ScalarAttributeType::S);
+  createTableRequest.AddAttributeDefinitions(hashKey);
+  KeySchemaElement hashKeySchemaElement;
+  hashKeySchemaElement.WithAttributeName(HASH_KEY_NAME).WithKeyType(KeyType::HASH);
+  createTableRequest.AddKeySchema(hashKeySchemaElement);
+  ProvisionedThroughput provisionedThroughput;
+  provisionedThroughput.SetReadCapacityUnits(readCap);
+  provisionedThroughput.SetWriteCapacityUnits(writeCap);
+  createTableRequest.WithProvisionedThroughput(provisionedThroughput);
+  createTableRequest.WithTableName(tableName);
+
+  CreateTableOutcome createTableOutcome = dynamoDbClient->CreateTable(createTableRequest);
+  if (createTableOutcome.IsSuccess())
+  {
+     DescribeTableRequest describeTableRequest;
+     describeTableRequest.SetTableName(tableName);
+     bool shouldContinue = true;
+     DescribeTableOutcome outcome = m_client->DescribeTable(describeTableRequest);
+
+     while (shouldContinue)
+     {       
+         if (outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
+         {
+            break;
+         }
+         else
+         {
+             std::this_thread::sleep_for(std::chrono::seconds(1));
+         }
+     }
+     return true
+  }
+  else if(createTableOutcome.GetError().GetErrorType() == DynamoDBErrors::RESOURCE_IN_USE)
+  {
+     return true;
+  }
+
+  return false;
+}
+```
 
 ####Advanced Topics
 #####Overriding your Http Client
