@@ -27,15 +27,19 @@ using namespace Aws;
 
 HeadObjectResult::HeadObjectResult() : 
     m_deleteMarker(false),
+    m_lastModified(0.0),
     m_contentLength(0),
-    m_missingMeta(0)
+    m_missingMeta(0),
+    m_expires(0.0)
 {
 }
 
 HeadObjectResult::HeadObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_deleteMarker(false),
+    m_lastModified(0.0),
     m_contentLength(0),
-    m_missingMeta(0)
+    m_missingMeta(0),
+    m_expires(0.0)
 {
   *this = result;
 }
@@ -77,7 +81,7 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = lastModifiedIter->second;
+     m_lastModified = StringUtils::ConvertToDouble(lastModifiedIter->second.c_str());
   }
 
   const auto& contentLengthIter = headers.find("content-length");
@@ -137,7 +141,7 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-    m_expires = expiresIter->second;
+     m_expires = StringUtils::ConvertToDouble(expiresIter->second.c_str());
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");

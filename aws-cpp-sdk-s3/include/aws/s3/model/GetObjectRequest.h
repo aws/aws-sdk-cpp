@@ -83,26 +83,16 @@ namespace Model
     /*
      Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).
     */
-    inline const Aws::String& GetIfModifiedSince() const{ return m_ifModifiedSince; }
+    inline double GetIfModifiedSince() const{ return m_ifModifiedSince; }
     /*
      Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).
     */
-    inline void SetIfModifiedSince(const Aws::String& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
+    inline void SetIfModifiedSince(double value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
 
     /*
      Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).
     */
-    inline void SetIfModifiedSince(const char* value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince.assign(value); }
-
-    /*
-     Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).
-    */
-    inline GetObjectRequest&  WithIfModifiedSince(const Aws::String& value) { SetIfModifiedSince(value); return *this;}
-
-    /*
-     Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).
-    */
-    inline GetObjectRequest& WithIfModifiedSince(const char* value) { SetIfModifiedSince(value); return *this;}
+    inline GetObjectRequest&  WithIfModifiedSince(double value) { SetIfModifiedSince(value); return *this;}
 
     /*
      Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).
@@ -131,26 +121,16 @@ namespace Model
     /*
      Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).
     */
-    inline const Aws::String& GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
+    inline double GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
     /*
      Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).
     */
-    inline void SetIfUnmodifiedSince(const Aws::String& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
+    inline void SetIfUnmodifiedSince(double value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
 
     /*
      Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).
     */
-    inline void SetIfUnmodifiedSince(const char* value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince.assign(value); }
-
-    /*
-     Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).
-    */
-    inline GetObjectRequest&  WithIfUnmodifiedSince(const Aws::String& value) { SetIfUnmodifiedSince(value); return *this;}
-
-    /*
-     Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).
-    */
-    inline GetObjectRequest& WithIfUnmodifiedSince(const char* value) { SetIfUnmodifiedSince(value); return *this;}
+    inline GetObjectRequest&  WithIfUnmodifiedSince(double value) { SetIfUnmodifiedSince(value); return *this;}
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -313,26 +293,16 @@ namespace Model
     /*
      Sets the Expires header of the response.
     */
-    inline const Aws::String& GetResponseExpires() const{ return m_responseExpires; }
+    inline double GetResponseExpires() const{ return m_responseExpires; }
     /*
      Sets the Expires header of the response.
     */
-    inline void SetResponseExpires(const Aws::String& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
+    inline void SetResponseExpires(double value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
 
     /*
      Sets the Expires header of the response.
     */
-    inline void SetResponseExpires(const char* value) { m_responseExpiresHasBeenSet = true; m_responseExpires.assign(value); }
-
-    /*
-     Sets the Expires header of the response.
-    */
-    inline GetObjectRequest&  WithResponseExpires(const Aws::String& value) { SetResponseExpires(value); return *this;}
-
-    /*
-     Sets the Expires header of the response.
-    */
-    inline GetObjectRequest& WithResponseExpires(const char* value) { SetResponseExpires(value); return *this;}
+    inline GetObjectRequest&  WithResponseExpires(double value) { SetResponseExpires(value); return *this;}
 
     /*
      VersionId used to reference a specific version of the object.
@@ -442,11 +412,11 @@ namespace Model
     Aws::String m_bucket;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
-    Aws::String m_ifModifiedSince;
+    double m_ifModifiedSince;
     bool m_ifModifiedSinceHasBeenSet;
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet;
-    Aws::String m_ifUnmodifiedSince;
+    double m_ifUnmodifiedSince;
     bool m_ifUnmodifiedSinceHasBeenSet;
     Aws::String m_key;
     Aws::String m_range;
@@ -461,7 +431,7 @@ namespace Model
     bool m_responseContentLanguageHasBeenSet;
     Aws::String m_responseContentType;
     bool m_responseContentTypeHasBeenSet;
-    Aws::String m_responseExpires;
+    double m_responseExpires;
     bool m_responseExpiresHasBeenSet;
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;

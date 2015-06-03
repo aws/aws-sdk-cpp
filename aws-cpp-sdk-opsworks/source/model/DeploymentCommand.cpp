@@ -1,0 +1,80 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/opsworks/model/DeploymentCommand.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::OpsWorks::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+DeploymentCommand::DeploymentCommand() : 
+    m_argsHasBeenSet(false)
+{
+}
+
+DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) : 
+    m_argsHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+DeploymentCommand& DeploymentCommand::operator =(const JsonValue& jsonValue)
+{
+  m_name = DeploymentCommandNameMapper::GetDeploymentCommandNameForName(jsonValue.GetString("Name"));
+
+  if(jsonValue.ValueExists("Args"))
+  {
+    Aws::Map<Aws::String, JsonValue> argsJsonMap = jsonValue.GetObject("Args").GetAllObjects();
+    for(auto& argsItem : argsJsonMap)
+    {
+      Array<JsonValue> stringsJsonList = argsItem.second.GetArray("Strings");
+      Aws::Vector<Aws::String> stringsList((size_t)stringsJsonList.GetLength());
+      for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
+      {
+        stringsList.push_back(stringsJsonList[stringsIndex].AsString());
+      }
+      m_args[argsItem.first] = std::move(stringsList);
+    }
+    m_argsHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue DeploymentCommand::Jsonize() const
+{
+  JsonValue payload;
+
+  payload.WithString("Name", DeploymentCommandNameMapper::GetNameForDeploymentCommandName(m_name));
+  if(m_argsHasBeenSet)
+  {
+   JsonValue argsJsonMap;
+   for(auto& argsItem : m_args)
+   {
+     Array<JsonValue> stringsJsonList(argsItem.second.size());
+     for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
+     {
+       stringsJsonList[stringsIndex].AsString(argsItem.second[stringsIndex]);
+     }
+     argsJsonMap.WithArray(argsItem.first, std::move(stringsJsonList));
+   }
+   payload.WithObject("Strings", std::move(argsJsonMap));
+
+  }
+
+  return std::move(payload);
+}

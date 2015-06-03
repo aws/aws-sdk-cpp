@@ -15,6 +15,7 @@
 #include <aws/dynamodb/model/ScanResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -44,7 +45,7 @@ ScanResult& ScanResult::operator =(const AmazonWebServiceResult<JsonValue>& resu
     Array<JsonValue> itemsJsonList = jsonValue.GetArray("Items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
-      Aws::Map<Aws::String, JsonValue> attributeMapJsonMap = itemsJsonList[itemsIndex].GetObject("AttributeMap").GetAllObjects();
+      Aws::Map<Aws::String, JsonValue> attributeMapJsonMap = itemsJsonList[itemsIndex].GetAllObjects();
       Aws::Map<Aws::String, AttributeValue> attributeMapMap;
       for(auto& attributeMapItem : attributeMapJsonMap)
       {

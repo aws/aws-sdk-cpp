@@ -38,11 +38,11 @@ LifecycleConfiguration& LifecycleConfiguration::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
-    XmlNode ruleNode = resultNode.FirstChild("Rule");
-    while(!ruleNode.IsNull())
+    XmlNode rulesNode = resultNode.FirstChild("Rules");
+    while(!rulesNode.IsNull())
     {
-      m_rules.push_back(ruleNode);
-      ruleNode = ruleNode.NextNode("Rule");
+      m_rules.push_back(rulesNode);
+      rulesNode = rulesNode.NextNode("Rules");
     }
 
   }

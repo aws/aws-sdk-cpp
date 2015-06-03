@@ -57,7 +57,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::EXPIRED_ITERATOR), false);
   }
-
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 

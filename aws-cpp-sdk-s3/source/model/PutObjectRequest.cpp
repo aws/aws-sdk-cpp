@@ -33,7 +33,7 @@ PutObjectRequest::PutObjectRequest() :
     m_contentLength(0),
     m_contentLengthHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
+    m_expires(0.0),
     m_expiresHasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),
@@ -100,13 +100,6 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
   {
    ss << m_contentMD5;
    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
-   ss.str("");
-  }
-
-  if(m_contentTypeHasBeenSet)
-  {
-   ss << m_contentType;
-   headers.insert(Aws::Http::HeaderValuePair("content-type", ss.str()));
    ss.str("");
   }
 

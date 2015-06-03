@@ -125,26 +125,16 @@ namespace Model
     /*
      Last modified date of the object
     */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     /*
      Last modified date of the object
     */
-    inline void SetLastModified(const Aws::String& value) { m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModified = value; }
 
     /*
      Last modified date of the object
     */
-    inline void SetLastModified(const char* value) { m_lastModified.assign(value); }
-
-    /*
-     Last modified date of the object
-    */
-    inline HeadObjectResult&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    /*
-     Last modified date of the object
-    */
-    inline HeadObjectResult& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline HeadObjectResult&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
     /*
      Size of the body in bytes.
@@ -345,26 +335,16 @@ namespace Model
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline const Aws::String& GetExpires() const{ return m_expires; }
+    inline double GetExpires() const{ return m_expires; }
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline void SetExpires(const Aws::String& value) { m_expires = value; }
+    inline void SetExpires(double value) { m_expires = value; }
 
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline void SetExpires(const char* value) { m_expires.assign(value); }
-
-    /*
-     The date and time at which the object is no longer cacheable.
-    */
-    inline HeadObjectResult&  WithExpires(const Aws::String& value) { SetExpires(value); return *this;}
-
-    /*
-     The date and time at which the object is no longer cacheable.
-    */
-    inline HeadObjectResult& WithExpires(const char* value) { SetExpires(value); return *this;}
+    inline HeadObjectResult&  WithExpires(double value) { SetExpires(value); return *this;}
 
     /*
      If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.
@@ -521,7 +501,7 @@ namespace Model
     Aws::String m_acceptRanges;
     Aws::String m_expiration;
     Aws::String m_restore;
-    Aws::String m_lastModified;
+    double m_lastModified;
     long m_contentLength;
     Aws::String m_eTag;
     long m_missingMeta;
@@ -531,7 +511,7 @@ namespace Model
     Aws::String m_contentEncoding;
     Aws::String m_contentLanguage;
     Aws::String m_contentType;
-    Aws::String m_expires;
+    double m_expires;
     Aws::String m_websiteRedirectLocation;
     ServerSideEncryption m_serverSideEncryption;
     Aws::Map<Aws::String, Aws::String> m_metadata;

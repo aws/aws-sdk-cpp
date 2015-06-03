@@ -1,0 +1,84 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/redshift/model/ClusterParameterGroupStatus.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::Redshift::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+ClusterParameterGroupStatus::ClusterParameterGroupStatus() : 
+    m_parameterGroupNameHasBeenSet(false),
+    m_parameterApplyStatusHasBeenSet(false)
+{
+}
+
+ClusterParameterGroupStatus::ClusterParameterGroupStatus(const XmlNode& xmlNode) : 
+    m_parameterGroupNameHasBeenSet(false),
+    m_parameterApplyStatusHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+ClusterParameterGroupStatus& ClusterParameterGroupStatus::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
+    if(!parameterGroupNameNode.IsNull())
+    {
+      m_parameterGroupName = StringUtils::Trim(parameterGroupNameNode.GetText().c_str());
+      m_parameterGroupNameHasBeenSet = true;
+    }
+    XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
+    if(!parameterApplyStatusNode.IsNull())
+    {
+      m_parameterApplyStatus = StringUtils::Trim(parameterApplyStatusNode.GetText().c_str());
+      m_parameterApplyStatusHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_parameterGroupNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  }
+  if(m_parameterApplyStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
+  }
+}
+
+void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_parameterGroupNameHasBeenSet)
+  {
+      oStream << location << ".ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  }
+  if(m_parameterApplyStatusHasBeenSet)
+  {
+      oStream << location << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
+  }
+}

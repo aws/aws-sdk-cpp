@@ -1,0 +1,133 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/model/ClusterStatus.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace EMR
+{
+namespace Model
+{
+  /*
+    <p>The summary description of the cluster.</p>
+  */
+  class AWS_EMR_API ClusterSummary
+  {
+  public:
+    ClusterSummary();
+    ClusterSummary(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClusterSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline const Aws::String& GetId() const{ return m_id; }
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline ClusterSummary&  WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /*
+     <p>The unique identifier for the cluster.</p>
+    */
+    inline ClusterSummary& WithId(const char* value) { SetId(value); return *this;}
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline const Aws::String& GetName() const{ return m_name; }
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline ClusterSummary&  WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name of the cluster.</p>
+    */
+    inline ClusterSummary& WithName(const char* value) { SetName(value); return *this;}
+
+    /*
+     <p>The details about the current status of the cluster.</p>
+    */
+    inline const ClusterStatus& GetStatus() const{ return m_status; }
+    /*
+     <p>The details about the current status of the cluster.</p>
+    */
+    inline void SetStatus(const ClusterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The details about the current status of the cluster.</p>
+    */
+    inline ClusterSummary&  WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    */
+    inline long GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+    /*
+     <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    */
+    inline void SetNormalizedInstanceHours(long value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
+
+    /*
+     <p>An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    */
+    inline ClusterSummary&  WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
+
+  private:
+    Aws::String m_id;
+    bool m_idHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    ClusterStatus m_status;
+    bool m_statusHasBeenSet;
+    long m_normalizedInstanceHours;
+    bool m_normalizedInstanceHoursHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

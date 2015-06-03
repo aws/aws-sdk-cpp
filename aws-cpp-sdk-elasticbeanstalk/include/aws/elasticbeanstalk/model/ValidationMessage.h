@@ -1,0 +1,146 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/model/ValidationSeverity.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace ElasticBeanstalk
+{
+namespace Model
+{
+  /*
+    <p> An error or warning for a desired configuration option value. </p>
+  */
+  class AWS_ELASTICBEANSTALK_API ValidationMessage
+  {
+  public:
+    ValidationMessage();
+    ValidationMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    ValidationMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline ValidationMessage&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /*
+     <p> A message describing the error or warning. </p>
+    */
+    inline ValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+    /*
+     <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
+    */
+    inline const ValidationSeverity& GetSeverity() const{ return m_severity; }
+    /*
+     <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
+    */
+    inline void SetSeverity(const ValidationSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /*
+     <p> An indication of the severity of this message: </p> <enumValues> <value name="error"> <p> error: This message indicates that this is not a valid setting for an option. </p> </value> <value name="warning"> <p> warning: This message is providing information you should take into account. </p> </value> </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is providing information you should take into account. </li> </ul>
+    */
+    inline ValidationMessage&  WithSeverity(const ValidationSeverity& value) { SetSeverity(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    /*
+     <p></p>
+    */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /*
+     <p></p>
+    */
+    inline ValidationMessage&  WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline ValidationMessage& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline const Aws::String& GetOptionName() const{ return m_optionName; }
+    /*
+     <p></p>
+    */
+    inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
+
+    /*
+     <p></p>
+    */
+    inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
+
+    /*
+     <p></p>
+    */
+    inline ValidationMessage&  WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
+
+    /*
+     <p></p>
+    */
+    inline ValidationMessage& WithOptionName(const char* value) { SetOptionName(value); return *this;}
+
+  private:
+    Aws::String m_message;
+    bool m_messageHasBeenSet;
+    ValidationSeverity m_severity;
+    bool m_severityHasBeenSet;
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
+    Aws::String m_optionName;
+    bool m_optionNameHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

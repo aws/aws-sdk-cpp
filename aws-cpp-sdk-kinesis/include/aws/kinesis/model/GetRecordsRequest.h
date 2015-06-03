@@ -25,7 +25,7 @@ namespace Model
 {
 
   /*
-    <p>Represents the input for <code>GetRecords</code>.</p>
+    <p>Represents the input for <a>GetRecords</a>.</p>
   */
   class AWS_KINESIS_API GetRecordsRequest : public KinesisRequest
   {
@@ -61,16 +61,16 @@ namespace Model
     inline GetRecordsRequest& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
 
     /*
-     <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>.</p>
+     <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>
     */
     inline long GetLimit() const{ return m_limit; }
     /*
-     <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>.</p>
+     <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>
     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /*
-     <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>.</p>
+     <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>
     */
     inline GetRecordsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
 

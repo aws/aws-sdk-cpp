@@ -17,23 +17,27 @@ file(GLOB DYNAMODB_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-dynamodb-integration-
 file(GLOB SQS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-sqs-integration-tests/QueueOperationTest.cpp")
 file(GLOB S3_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-integration-tests/BucketAndObjectOperationTest.cpp")
 file(GLOB LAMBDA_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda-integration-tests/FunctionTest.cpp")
+file(GLOB COGNITO_IDENTITY_IDENTITY_POOL_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/IdentityPoolOperationTest.cpp")
+file(GLOB COGNITO_IDENTITY_CREDENTIALS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/GetCredentialsTest.cpp")
 file(GLOB TEST_SRC "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp")
 
 file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC 
     ${CORE_AWS_SRC}
-	  ${CORE_AWS_AUTH_SRC}
-	  ${CORE_AWS_CLIENT_SRC}
-	  ${CORE_HTTP_SRC}
-	  ${CORE_UTILS_SRC}
-	  ${CORE_UTILS_JSON_SRC}
-	  ${CORE_UTILS_LOGGING_SRC}
-	  ${CORE_UTILS_MEMORY_SRC}
-	  ${CORE_UTILS_RATE_LIMITER_SRC}
-	  ${CORE_UTILS_XML_SRC}
-	  ${DYNAMODB_SRC}
-	  ${SQS_SRC}
-	  ${S3_SRC}
-	  ${LAMBDA_SRC}
+    ${CORE_AWS_AUTH_SRC}
+    ${CORE_AWS_CLIENT_SRC}
+    ${CORE_HTTP_SRC}
+    ${CORE_UTILS_SRC}
+    ${CORE_UTILS_JSON_SRC}
+    ${CORE_UTILS_LOGGING_SRC}
+    ${CORE_UTILS_MEMORY_SRC}
+    ${CORE_UTILS_RATE_LIMITER_SRC}
+    ${CORE_UTILS_XML_SRC}
+    ${DYNAMODB_SRC}
+    ${SQS_SRC}
+    ${S3_SRC}
+    ${LAMBDA_SRC}
+    ${COGNITO_IDENTITY_IDENTITY_POOL_SRC}
+    ${COGNITO_IDENTITY_CREDENTIALS_SRC}
     ${TEST_SRC}
 )
 
@@ -48,6 +52,7 @@ set(AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kinesis/include/"
+    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
     "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
 )
 
@@ -60,12 +65,13 @@ SET(SUFFIX so)
 add_library(android-unified-tests ${LIBTYPE} ${AWS_UNIFIED_INTEGRATION_TESTS_SRC})
 target_link_libraries(android-unified-tests 
                       aws-cpp-sdk-dynamodb 
-		              aws-cpp-sdk-sqs 
-		              aws-cpp-sdk-s3 
-		              aws-cpp-sdk-lambda 
-		              aws-cpp-sdk-kinesis 
-		              testing-resources 
-		              aws-cpp-sdk-core 
-		              ${PLATFORM_DEP_LIBS})
+		      aws-cpp-sdk-sqs 
+		      aws-cpp-sdk-s3 
+		      aws-cpp-sdk-lambda 
+		      aws-cpp-sdk-kinesis
+		      aws-cpp-sdk-cognito-identity
+		      testing-resources 
+		      aws-cpp-sdk-core 
+		      ${PLATFORM_DEP_LIBS})
 
 

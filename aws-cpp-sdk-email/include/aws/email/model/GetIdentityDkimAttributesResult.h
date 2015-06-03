@@ -1,0 +1,87 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/email/SES_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/email/model/ResponseMetadata.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/model/IdentityDkimAttributes.h>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Xml
+{
+  class XmlDocument;
+} // namespace Xml
+} // namespace Utils
+namespace SES
+{
+namespace Model
+{
+  /*
+    <p>Represents a list of all the DKIM attributes for the specified identity.</p>
+  */
+  class AWS_SES_API GetIdentityDkimAttributesResult
+  {
+  public:
+    GetIdentityDkimAttributesResult();
+    GetIdentityDkimAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityDkimAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /*
+     <p>The DKIM attributes for an email address or a domain. </p>
+    */
+    inline const Aws::Map<Aws::String, IdentityDkimAttributes>& GetDkimAttributes() const{ return m_dkimAttributes; }
+    /*
+     <p>The DKIM attributes for an email address or a domain. </p>
+    */
+    inline void SetDkimAttributes(const Aws::Map<Aws::String, IdentityDkimAttributes>& value) { m_dkimAttributes = value; }
+
+    /*
+     <p>The DKIM attributes for an email address or a domain. </p>
+    */
+    inline GetIdentityDkimAttributesResult&  WithDkimAttributes(const Aws::Map<Aws::String, IdentityDkimAttributes>& value) { SetDkimAttributes(value); return *this;}
+
+    /*
+     <p>The DKIM attributes for an email address or a domain. </p>
+    */
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
+
+    /*
+     <p>The DKIM attributes for an email address or a domain. </p>
+    */
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
+
+    
+    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+    
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
+
+    
+    inline GetIdentityDkimAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+  private:
+    Aws::Map<Aws::String, IdentityDkimAttributes> m_dkimAttributes;
+    ResponseMetadata m_responseMetadata;
+  };
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

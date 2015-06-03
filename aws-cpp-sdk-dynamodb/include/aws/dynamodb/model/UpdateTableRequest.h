@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
 
@@ -110,6 +111,14 @@ namespace Model
     */
     inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(const GlobalSecondaryIndexUpdate& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
 
+    
+    inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
+    
+    inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
+
+    
+    inline UpdateTableRequest&  WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
+
   private:
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
     bool m_attributeDefinitionsHasBeenSet;
@@ -118,6 +127,8 @@ namespace Model
     bool m_provisionedThroughputHasBeenSet;
     Aws::Vector<GlobalSecondaryIndexUpdate> m_globalSecondaryIndexUpdates;
     bool m_globalSecondaryIndexUpdatesHasBeenSet;
+    StreamSpecification m_streamSpecification;
+    bool m_streamSpecificationHasBeenSet;
   };
 
 } // namespace Model

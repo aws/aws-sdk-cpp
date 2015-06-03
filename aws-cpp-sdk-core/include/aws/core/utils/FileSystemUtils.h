@@ -50,6 +50,8 @@ namespace Aws
              * Moves the file. Returns true on success
              */
             static bool RelocateFileOrDirectory(const char* from, const char* to);
+
+	    static const char* GetPathDelimiter() { return PATH_DELIM; }
         };
     }
 }

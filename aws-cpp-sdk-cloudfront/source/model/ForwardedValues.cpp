@@ -1,0 +1,75 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudfront/model/ForwardedValues.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudFront::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+ForwardedValues::ForwardedValues() : 
+    m_queryString(false),
+    m_headersHasBeenSet(false)
+{
+}
+
+ForwardedValues::ForwardedValues(const XmlNode& xmlNode) : 
+    m_queryString(false),
+    m_headersHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+ForwardedValues& ForwardedValues::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode queryStringNode = resultNode.FirstChild("QueryString");
+    m_queryString = StringUtils::ConvertToBool(StringUtils::Trim(queryStringNode.GetText().c_str()).c_str());
+    XmlNode cookiesNode = resultNode.FirstChild("Cookies");
+    m_cookies = cookiesNode;
+    XmlNode headersNode = resultNode.FirstChild("Headers");
+    if(!headersNode.IsNull())
+    {
+      m_headers = headersNode;
+      m_headersHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void ForwardedValues::AddToNode(XmlNode& parentNode) const
+{
+  Aws::StringStream ss;
+  XmlNode queryStringNode = parentNode.CreateChildElement("QueryString");
+  ss << m_queryString;
+  queryStringNode.SetText(ss.str());
+  ss.str("");
+  XmlNode cookiesNode = parentNode.CreateChildElement("Cookies");
+  m_cookies.AddToNode(cookiesNode);
+  if(m_headersHasBeenSet)
+  {
+   XmlNode headersNode = parentNode.CreateChildElement("Headers");
+   m_headers.AddToNode(headersNode);
+  }
+
+}

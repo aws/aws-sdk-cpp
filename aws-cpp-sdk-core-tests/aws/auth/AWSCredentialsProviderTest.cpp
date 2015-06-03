@@ -319,7 +319,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
     ASSERT_STREQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(11));
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_STREQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 

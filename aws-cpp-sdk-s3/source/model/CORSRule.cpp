@@ -50,52 +50,52 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode allowedHeaderNode = resultNode.FirstChild("AllowedHeader");
-    if(!allowedHeaderNode.IsNull())
+    XmlNode allowedHeadersNode = resultNode.FirstChild("AllowedHeaders");
+    if(!allowedHeadersNode.IsNull())
     {
-      while(!allowedHeaderNode.IsNull())
+      while(!allowedHeadersNode.IsNull())
       {
-        m_allowedHeaders.push_back(StringUtils::Trim(allowedHeaderNode.GetText().c_str()));
-        allowedHeaderNode = allowedHeaderNode.NextNode("AllowedHeader");
+        m_allowedHeaders.push_back(StringUtils::Trim(allowedHeadersNode.GetText().c_str()));
+        allowedHeadersNode = allowedHeadersNode.NextNode("AllowedHeaders");
       }
 
       m_allowedHeadersHasBeenSet = true;
     }
-    XmlNode allowedMethodNode = resultNode.FirstChild("AllowedMethod");
-    if(!allowedMethodNode.IsNull())
+    XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethods");
+    if(!allowedMethodsNode.IsNull())
     {
-      while(!allowedMethodNode.IsNull())
+      while(!allowedMethodsNode.IsNull())
       {
-        m_allowedMethods.push_back(StringUtils::Trim(allowedMethodNode.GetText().c_str()));
-        allowedMethodNode = allowedMethodNode.NextNode("AllowedMethod");
+        m_allowedMethods.push_back(StringUtils::Trim(allowedMethodsNode.GetText().c_str()));
+        allowedMethodsNode = allowedMethodsNode.NextNode("AllowedMethods");
       }
 
       m_allowedMethodsHasBeenSet = true;
     }
-    XmlNode allowedOriginNode = resultNode.FirstChild("AllowedOrigin");
-    if(!allowedOriginNode.IsNull())
+    XmlNode allowedOriginsNode = resultNode.FirstChild("AllowedOrigins");
+    if(!allowedOriginsNode.IsNull())
     {
-      while(!allowedOriginNode.IsNull())
+      while(!allowedOriginsNode.IsNull())
       {
-        m_allowedOrigins.push_back(StringUtils::Trim(allowedOriginNode.GetText().c_str()));
-        allowedOriginNode = allowedOriginNode.NextNode("AllowedOrigin");
+        m_allowedOrigins.push_back(StringUtils::Trim(allowedOriginsNode.GetText().c_str()));
+        allowedOriginsNode = allowedOriginsNode.NextNode("AllowedOrigins");
       }
 
       m_allowedOriginsHasBeenSet = true;
     }
-    XmlNode exposeHeaderNode = resultNode.FirstChild("ExposeHeader");
-    if(!exposeHeaderNode.IsNull())
+    XmlNode exposeHeadersNode = resultNode.FirstChild("ExposeHeaders");
+    if(!exposeHeadersNode.IsNull())
     {
-      while(!exposeHeaderNode.IsNull())
+      while(!exposeHeadersNode.IsNull())
       {
-        m_exposeHeaders.push_back(StringUtils::Trim(exposeHeaderNode.GetText().c_str()));
-        exposeHeaderNode = exposeHeaderNode.NextNode("ExposeHeader");
+        m_exposeHeaders.push_back(StringUtils::Trim(exposeHeadersNode.GetText().c_str()));
+        exposeHeadersNode = exposeHeadersNode.NextNode("ExposeHeaders");
       }
 
       m_exposeHeadersHasBeenSet = true;
     }
     XmlNode maxAgeSecondsNode = resultNode.FirstChild("MaxAgeSeconds");
-    if(!exposeHeaderNode.IsNull())
+    if(!exposeHeadersNode.IsNull())
     {
       m_maxAgeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(maxAgeSecondsNode.GetText().c_str()).c_str());
       m_maxAgeSecondsHasBeenSet = true;

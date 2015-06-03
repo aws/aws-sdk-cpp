@@ -1,0 +1,120 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/datapipeline/DataPipeline_EXPORTS.h>
+#include <aws/datapipeline/DataPipelineRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace Aws
+{
+namespace DataPipeline
+{
+namespace Model
+{
+
+  /*
+    <p>Contains the parameters for SetStatus.</p>
+  */
+  class AWS_DATAPIPELINE_API SetStatusRequest : public DataPipelineRequest
+  {
+  public:
+    SetStatusRequest();
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /*
+     <p>The ID of the pipeline that contains the objects.</p>
+    */
+    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    /*
+     <p>The ID of the pipeline that contains the objects.</p>
+    */
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+
+    /*
+     <p>The ID of the pipeline that contains the objects.</p>
+    */
+    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+
+    /*
+     <p>The ID of the pipeline that contains the objects.</p>
+    */
+    inline SetStatusRequest&  WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The ID of the pipeline that contains the objects.</p>
+    */
+    inline SetStatusRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
+    /*
+     <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetObjectIds() const{ return m_objectIds; }
+    /*
+     <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    */
+    inline void SetObjectIds(const Aws::Vector<Aws::String>& value) { m_objectIds = value; }
+
+    /*
+     <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    */
+    inline SetStatusRequest&  WithObjectIds(const Aws::Vector<Aws::String>& value) { SetObjectIds(value); return *this;}
+
+    /*
+     <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    */
+    inline SetStatusRequest& AddObjectIds(const Aws::String& value) { m_objectIds.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    */
+    inline SetStatusRequest& AddObjectIds(const char* value) { m_objectIds.push_back(value); return *this; }
+
+    /*
+     <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    */
+    inline const Aws::String& GetStatus() const{ return m_status; }
+    /*
+     <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    */
+    inline void SetStatus(const Aws::String& value) { m_status = value; }
+
+    /*
+     <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    */
+    inline void SetStatus(const char* value) { m_status.assign(value); }
+
+    /*
+     <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    */
+    inline SetStatusRequest&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    */
+    inline SetStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+
+  private:
+    Aws::String m_pipelineId;
+    Aws::Vector<Aws::String> m_objectIds;
+    Aws::String m_status;
+  };
+
+} // namespace Model
+} // namespace DataPipeline
+} // namespace Aws

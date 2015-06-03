@@ -1,0 +1,115 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudfront/model/StreamingDistributionConfig.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudFront::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+StreamingDistributionConfig::StreamingDistributionConfig() : 
+    m_aliasesHasBeenSet(false),
+    m_loggingHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false)
+{
+}
+
+StreamingDistributionConfig::StreamingDistributionConfig(const XmlNode& xmlNode) : 
+    m_aliasesHasBeenSet(false),
+    m_loggingHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false)
+{
+  *this = xmlNode;
+}
+
+StreamingDistributionConfig& StreamingDistributionConfig::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
+    m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+    XmlNode s3OriginNode = resultNode.FirstChild("S3Origin");
+    m_s3Origin = s3OriginNode;
+    XmlNode aliasesNode = resultNode.FirstChild("Aliases");
+    if(!aliasesNode.IsNull())
+    {
+      m_aliases = aliasesNode;
+      m_aliasesHasBeenSet = true;
+    }
+    XmlNode commentNode = resultNode.FirstChild("Comment");
+    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    XmlNode loggingNode = resultNode.FirstChild("Logging");
+    if(!loggingNode.IsNull())
+    {
+      m_logging = loggingNode;
+      m_loggingHasBeenSet = true;
+    }
+    XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
+    m_trustedSigners = trustedSignersNode;
+    XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
+    if(!priceClassNode.IsNull())
+    {
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
+      m_priceClassHasBeenSet = true;
+    }
+    XmlNode enabledNode = resultNode.FirstChild("Enabled");
+    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+  }
+
+  return *this;
+}
+
+void StreamingDistributionConfig::AddToNode(XmlNode& parentNode) const
+{
+  Aws::StringStream ss;
+  XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+  callerReferenceNode.SetText(m_callerReference);
+  XmlNode s3OriginNode = parentNode.CreateChildElement("S3Origin");
+  m_s3Origin.AddToNode(s3OriginNode);
+  if(m_aliasesHasBeenSet)
+  {
+   XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
+   m_aliases.AddToNode(aliasesNode);
+  }
+
+  XmlNode commentNode = parentNode.CreateChildElement("Comment");
+  commentNode.SetText(m_comment);
+  if(m_loggingHasBeenSet)
+  {
+   XmlNode loggingNode = parentNode.CreateChildElement("Logging");
+   m_logging.AddToNode(loggingNode);
+  }
+
+  XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
+  m_trustedSigners.AddToNode(trustedSignersNode);
+  if(m_priceClassHasBeenSet)
+  {
+   XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
+   priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
+  }
+
+  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  ss << m_enabled;
+  enabledNode.SetText(ss.str());
+  ss.str("");
+}

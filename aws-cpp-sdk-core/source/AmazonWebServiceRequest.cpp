@@ -15,11 +15,12 @@
 
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/memory/stl/AWSFunction.h>
 
 using namespace Aws;
 
 AmazonWebServiceRequest::AmazonWebServiceRequest() :
-    m_responseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod)
+    m_responseStreamFactory(AWS_BUILD_FUNCTION(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod))
 {
 }
 

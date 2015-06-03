@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 
 Object::Object() : 
     m_keyHasBeenSet(false),
+    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_eTagHasBeenSet(false),
     m_size(0),
@@ -36,6 +37,7 @@ Object::Object() :
 
 Object::Object(const XmlNode& xmlNode) : 
     m_keyHasBeenSet(false),
+    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_eTagHasBeenSet(false),
     m_size(0),
@@ -61,7 +63,7 @@ Object& Object::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::Trim(lastModifiedNode.GetText().c_str());
+      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
@@ -105,7 +107,9 @@ void Object::AddToNode(XmlNode& parentNode) const
   if(m_lastModifiedHasBeenSet)
   {
    XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-   lastModifiedNode.SetText(m_lastModified);
+  ss << m_lastModified;
+   lastModifiedNode.SetText(ss.str());
+  ss.str("");
   }
 
   if(m_eTagHasBeenSet)

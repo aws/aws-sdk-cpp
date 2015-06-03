@@ -46,14 +46,14 @@ namespace Aws
 
             virtual CognitoIdentity::Model::GetCredentialsForIdentityOutcome GetCredentialsFromCognito() const = 0;
 
-            bool IsTimeExpired(long long expiry);
+            bool IsTimeExpired(double expiry);
 
             std::shared_ptr<CognitoIdentity::CognitoIdentityClient> m_cognitoIdentityClient;
             std::shared_ptr<PersistentCognitoIdentityProvider> m_identityRepository;
 
         private:
             AWSCredentials m_cachedCredentials;
-            std::atomic<long long> m_expiry;
+            std::atomic<double> m_expiry;
             std::mutex m_credsMutex;
         };
 

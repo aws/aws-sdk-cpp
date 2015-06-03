@@ -1,0 +1,214 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancing/model/Listener.h>
+#include <aws/elasticloadbalancing/model/Tag.h>
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
+
+  /*
+  */
+  class AWS_ELASTICLOADBALANCING_API CreateLoadBalancerRequest : public ElasticLoadBalancingRequest
+  {
+  public:
+    CreateLoadBalancerRequest();
+    Aws::String SerializePayload() const override;
+
+
+    /*
+     <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    */
+    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    /*
+     <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    */
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+
+    /*
+     <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    */
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+
+    /*
+     <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    */
+    inline CreateLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
+    /*
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listeners = value; }
+
+    /*
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
+
+    /*
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline CreateLoadBalancerRequest& AddListeners(const Listener& value) { m_listeners.push_back(value); return *this; }
+
+    /*
+     <p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p> <p>You must specify at least one Availability Zone.</p> <p>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    /*
+     <p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p> <p>You must specify at least one Availability Zone.</p> <p>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    */
+    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /*
+     <p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p> <p>You must specify at least one Availability Zone.</p> <p>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /*
+     <p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p> <p>You must specify at least one Availability Zone.</p> <p>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    */
+    inline CreateLoadBalancerRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p> <p>You must specify at least one Availability Zone.</p> <p>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    */
+    inline CreateLoadBalancerRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+    /*
+     <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    */
+    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+
+    /*
+     <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+
+    /*
+     <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    */
+    inline CreateLoadBalancerRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    */
+    inline CreateLoadBalancerRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the security groups to assign to the load balancer.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    /*
+     <p>The IDs of the security groups to assign to the load balancer.</p>
+    */
+    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+
+    /*
+     <p>The IDs of the security groups to assign to the load balancer.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+
+    /*
+     <p>The IDs of the security groups to assign to the load balancer.</p>
+    */
+    inline CreateLoadBalancerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of the security groups to assign to the load balancer.</p>
+    */
+    inline CreateLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS name, which resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>Specify <code>internal</code> to create an internal load balancer with a DNS name that resolves to private IP addresses.</p>
+    */
+    inline const Aws::String& GetScheme() const{ return m_scheme; }
+    /*
+     <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS name, which resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>Specify <code>internal</code> to create an internal load balancer with a DNS name that resolves to private IP addresses.</p>
+    */
+    inline void SetScheme(const Aws::String& value) { m_schemeHasBeenSet = true; m_scheme = value; }
+
+    /*
+     <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS name, which resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>Specify <code>internal</code> to create an internal load balancer with a DNS name that resolves to private IP addresses.</p>
+    */
+    inline void SetScheme(const char* value) { m_schemeHasBeenSet = true; m_scheme.assign(value); }
+
+    /*
+     <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS name, which resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>Specify <code>internal</code> to create an internal load balancer with a DNS name that resolves to private IP addresses.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithScheme(const Aws::String& value) { SetScheme(value); return *this;}
+
+    /*
+     <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS name, which resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>Specify <code>internal</code> to create an internal load balancer with a DNS name that resolves to private IP addresses.</p>
+    */
+    inline CreateLoadBalancerRequest& WithScheme(const char* value) { SetScheme(value); return *this;}
+
+    /*
+     <p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    /*
+     <p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /*
+     <p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline CreateLoadBalancerRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /*
+     <p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+    */
+    inline CreateLoadBalancerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+  private:
+    Aws::String m_loadBalancerName;
+    Aws::Vector<Listener> m_listeners;
+    Aws::Vector<Aws::String> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet;
+    Aws::Vector<Aws::String> m_subnets;
+    bool m_subnetsHasBeenSet;
+    Aws::Vector<Aws::String> m_securityGroups;
+    bool m_securityGroupsHasBeenSet;
+    Aws::String m_scheme;
+    bool m_schemeHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

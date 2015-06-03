@@ -107,26 +107,16 @@ namespace Model
     /*
      Copies the object if it has been modified since the specified time.
     */
-    inline const Aws::String& GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
+    inline double GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
     /*
      Copies the object if it has been modified since the specified time.
     */
-    inline void SetCopySourceIfModifiedSince(const Aws::String& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
+    inline void SetCopySourceIfModifiedSince(double value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
 
     /*
      Copies the object if it has been modified since the specified time.
     */
-    inline void SetCopySourceIfModifiedSince(const char* value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince.assign(value); }
-
-    /*
-     Copies the object if it has been modified since the specified time.
-    */
-    inline UploadPartCopyRequest&  WithCopySourceIfModifiedSince(const Aws::String& value) { SetCopySourceIfModifiedSince(value); return *this;}
-
-    /*
-     Copies the object if it has been modified since the specified time.
-    */
-    inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(const char* value) { SetCopySourceIfModifiedSince(value); return *this;}
+    inline UploadPartCopyRequest&  WithCopySourceIfModifiedSince(double value) { SetCopySourceIfModifiedSince(value); return *this;}
 
     /*
      Copies the object if its entity tag (ETag) is different than the specified ETag.
@@ -155,26 +145,16 @@ namespace Model
     /*
      Copies the object if it hasn't been modified since the specified time.
     */
-    inline const Aws::String& GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
+    inline double GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
     /*
      Copies the object if it hasn't been modified since the specified time.
     */
-    inline void SetCopySourceIfUnmodifiedSince(const Aws::String& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
+    inline void SetCopySourceIfUnmodifiedSince(double value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
 
     /*
      Copies the object if it hasn't been modified since the specified time.
     */
-    inline void SetCopySourceIfUnmodifiedSince(const char* value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince.assign(value); }
-
-    /*
-     Copies the object if it hasn't been modified since the specified time.
-    */
-    inline UploadPartCopyRequest&  WithCopySourceIfUnmodifiedSince(const Aws::String& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
-
-    /*
-     Copies the object if it hasn't been modified since the specified time.
-    */
-    inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(const char* value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
+    inline UploadPartCopyRequest&  WithCopySourceIfUnmodifiedSince(double value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
 
     /*
      The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first ten bytes of the source. You can copy a range only if the source object is greater than 5 GB.
@@ -409,11 +389,11 @@ namespace Model
     Aws::String m_copySource;
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet;
-    Aws::String m_copySourceIfModifiedSince;
+    double m_copySourceIfModifiedSince;
     bool m_copySourceIfModifiedSinceHasBeenSet;
     Aws::String m_copySourceIfNoneMatch;
     bool m_copySourceIfNoneMatchHasBeenSet;
-    Aws::String m_copySourceIfUnmodifiedSince;
+    double m_copySourceIfUnmodifiedSince;
     bool m_copySourceIfUnmodifiedSinceHasBeenSet;
     Aws::String m_copySourceRange;
     bool m_copySourceRangeHasBeenSet;

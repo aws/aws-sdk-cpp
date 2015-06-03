@@ -28,7 +28,8 @@ LocalSecondaryIndexDescription::LocalSecondaryIndexDescription() :
     m_indexSizeBytes(0),
     m_indexSizeBytesHasBeenSet(false),
     m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+    m_itemCountHasBeenSet(false),
+    m_indexArnHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,8 @@ LocalSecondaryIndexDescription::LocalSecondaryIndexDescription(const JsonValue& 
     m_indexSizeBytes(0),
     m_indexSizeBytesHasBeenSet(false),
     m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+    m_itemCountHasBeenSet(false),
+    m_indexArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,13 @@ LocalSecondaryIndexDescription& LocalSecondaryIndexDescription::operator =(const
     m_itemCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IndexArn"))
+  {
+    m_indexArn = jsonValue.GetString("IndexArn");
+
+    m_indexArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue LocalSecondaryIndexDescription::Jsonize() const
   if(m_itemCountHasBeenSet)
   {
    payload.WithInt64("ItemCount", m_itemCount);
+
+  }
+
+  if(m_indexArnHasBeenSet)
+  {
+   payload.WithString("IndexArn", m_indexArn);
 
   }
 

@@ -131,26 +131,16 @@ namespace Model
     /*
      <p>The UTC time string indicating the last time the event mapping was updated.</p>
     */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     /*
      <p>The UTC time string indicating the last time the event mapping was updated.</p>
     */
-    inline void SetLastModified(const Aws::String& value) { m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModified = value; }
 
     /*
      <p>The UTC time string indicating the last time the event mapping was updated.</p>
     */
-    inline void SetLastModified(const char* value) { m_lastModified.assign(value); }
-
-    /*
-     <p>The UTC time string indicating the last time the event mapping was updated.</p>
-    */
-    inline GetEventSourceMappingResult&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    /*
-     <p>The UTC time string indicating the last time the event mapping was updated.</p>
-    */
-    inline GetEventSourceMappingResult& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline GetEventSourceMappingResult&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
     /*
      <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
@@ -229,7 +219,7 @@ namespace Model
     long m_batchSize;
     Aws::String m_eventSourceArn;
     Aws::String m_functionArn;
-    Aws::String m_lastModified;
+    double m_lastModified;
     Aws::String m_lastProcessingResult;
     Aws::String m_state;
     Aws::String m_stateTransitionReason;

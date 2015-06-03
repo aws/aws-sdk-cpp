@@ -65,16 +65,95 @@ namespace Model
     /*
      <p>Based64-encoded .zip file containing your packaged source code.</p>
     */
-    inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFile = value; }
+    inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /*
      <p>Based64-encoded .zip file containing your packaged source code.</p>
     */
     inline UpdateFunctionCodeRequest&  WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
+    /*
+     <p>Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside in the same AWS region where you are creating the Lambda function.</p>
+    */
+    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    /*
+     <p>Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside in the same AWS region where you are creating the Lambda function.</p>
+    */
+    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+
+    /*
+     <p>Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside in the same AWS region where you are creating the Lambda function.</p>
+    */
+    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
+
+    /*
+     <p>Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside in the same AWS region where you are creating the Lambda function.</p>
+    */
+    inline UpdateFunctionCodeRequest&  WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
+
+    /*
+     <p>Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside in the same AWS region where you are creating the Lambda function.</p>
+    */
+    inline UpdateFunctionCodeRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+
+    /*
+     <p>The Amazon S3 object (the deployment package) key name you want to upload. </p>
+    */
+    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    /*
+     <p>The Amazon S3 object (the deployment package) key name you want to upload. </p>
+    */
+    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
+
+    /*
+     <p>The Amazon S3 object (the deployment package) key name you want to upload. </p>
+    */
+    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
+
+    /*
+     <p>The Amazon S3 object (the deployment package) key name you want to upload. </p>
+    */
+    inline UpdateFunctionCodeRequest&  WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
+
+    /*
+     <p>The Amazon S3 object (the deployment package) key name you want to upload. </p>
+    */
+    inline UpdateFunctionCodeRequest& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+
+    /*
+     <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
+    */
+    inline const Aws::String& GetS3ObjectVersion() const{ return m_s3ObjectVersion; }
+    /*
+     <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
+    */
+    inline void SetS3ObjectVersion(const Aws::String& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = value; }
+
+    /*
+     <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
+    */
+    inline void SetS3ObjectVersion(const char* value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion.assign(value); }
+
+    /*
+     <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
+    */
+    inline UpdateFunctionCodeRequest&  WithS3ObjectVersion(const Aws::String& value) { SetS3ObjectVersion(value); return *this;}
+
+    /*
+     <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
+    */
+    inline UpdateFunctionCodeRequest& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
+
   private:
     Aws::String m_functionName;
     Aws::Utils::ByteBuffer m_zipFile;
+    bool m_zipFileHasBeenSet;
+    Aws::String m_s3Bucket;
+    bool m_s3BucketHasBeenSet;
+    Aws::String m_s3Key;
+    bool m_s3KeyHasBeenSet;
+    Aws::String m_s3ObjectVersion;
+    bool m_s3ObjectVersionHasBeenSet;
   };
 
 } // namespace Model

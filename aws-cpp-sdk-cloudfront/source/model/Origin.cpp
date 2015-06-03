@@ -1,0 +1,99 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudfront/model/Origin.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudFront::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+Origin::Origin() : 
+    m_originPathHasBeenSet(false),
+    m_s3OriginConfigHasBeenSet(false),
+    m_customOriginConfigHasBeenSet(false)
+{
+}
+
+Origin::Origin(const XmlNode& xmlNode) : 
+    m_originPathHasBeenSet(false),
+    m_s3OriginConfigHasBeenSet(false),
+    m_customOriginConfigHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+Origin& Origin::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode idNode = resultNode.FirstChild("Id");
+    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    XmlNode domainNameNode = resultNode.FirstChild("DomainName");
+    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    XmlNode originPathNode = resultNode.FirstChild("OriginPath");
+    if(!originPathNode.IsNull())
+    {
+      m_originPath = StringUtils::Trim(originPathNode.GetText().c_str());
+      m_originPathHasBeenSet = true;
+    }
+    XmlNode s3OriginConfigNode = resultNode.FirstChild("S3OriginConfig");
+    if(!s3OriginConfigNode.IsNull())
+    {
+      m_s3OriginConfig = s3OriginConfigNode;
+      m_s3OriginConfigHasBeenSet = true;
+    }
+    XmlNode customOriginConfigNode = resultNode.FirstChild("CustomOriginConfig");
+    if(!customOriginConfigNode.IsNull())
+    {
+      m_customOriginConfig = customOriginConfigNode;
+      m_customOriginConfigHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void Origin::AddToNode(XmlNode& parentNode) const
+{
+  Aws::StringStream ss;
+  XmlNode idNode = parentNode.CreateChildElement("Id");
+  idNode.SetText(m_id);
+  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+  domainNameNode.SetText(m_domainName);
+  if(m_originPathHasBeenSet)
+  {
+   XmlNode originPathNode = parentNode.CreateChildElement("OriginPath");
+   originPathNode.SetText(m_originPath);
+  }
+
+  if(m_s3OriginConfigHasBeenSet)
+  {
+   XmlNode s3OriginConfigNode = parentNode.CreateChildElement("S3OriginConfig");
+   m_s3OriginConfig.AddToNode(s3OriginConfigNode);
+  }
+
+  if(m_customOriginConfigHasBeenSet)
+  {
+   XmlNode customOriginConfigNode = parentNode.CreateChildElement("CustomOriginConfig");
+   m_customOriginConfig.AddToNode(customOriginConfigNode);
+  }
+
+}

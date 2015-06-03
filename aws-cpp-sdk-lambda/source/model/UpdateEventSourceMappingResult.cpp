@@ -15,6 +15,7 @@
 #include <aws/lambda/model/UpdateEventSourceMappingResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -24,12 +25,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateEventSourceMappingResult::UpdateEventSourceMappingResult() : 
-    m_batchSize(0)
+    m_batchSize(0),
+    m_lastModified(0.0)
 {
 }
 
 UpdateEventSourceMappingResult::UpdateEventSourceMappingResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_batchSize(0)
+    m_batchSize(0),
+    m_lastModified(0.0)
 {
   *this = result;
 }
@@ -63,7 +66,7 @@ UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator =(const
 
   if(jsonValue.ValueExists("LastModified"))
   {
-    m_lastModified = jsonValue.GetString("LastModified");
+    m_lastModified = jsonValue.GetDouble("LastModified");
 
   }
 

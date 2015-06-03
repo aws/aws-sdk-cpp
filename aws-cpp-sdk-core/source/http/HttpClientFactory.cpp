@@ -15,10 +15,10 @@
 
 #include <aws/core/http/HttpClientFactory.h>
 
-#if _WIN32
-    #include <aws/core/http/windows/WinINetSyncHttpClient.h>
-#elif __ANDROID || __linux__  || __APPLE__
+#if USE_CURL_CLIENT
     #include <aws/core/http/curl/CurlHttpClient.h>
+#else
+    #include <aws/core/http/windows/WinINetSyncHttpClient.h>
 #endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>

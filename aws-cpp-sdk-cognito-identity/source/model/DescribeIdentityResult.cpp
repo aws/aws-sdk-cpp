@@ -15,6 +15,7 @@
 #include <aws/cognito-identity/model/DescribeIdentityResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -23,11 +24,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityResult::DescribeIdentityResult()
+DescribeIdentityResult::DescribeIdentityResult() : 
+    m_creationDate(0.0),
+    m_lastModifiedDate(0.0)
 {
 }
 
-DescribeIdentityResult::DescribeIdentityResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeIdentityResult::DescribeIdentityResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_creationDate(0.0),
+    m_lastModifiedDate(0.0)
 {
   *this = result;
 }
@@ -52,13 +57,13 @@ DescribeIdentityResult& DescribeIdentityResult::operator =(const AmazonWebServic
 
   if(jsonValue.ValueExists("CreationDate"))
   {
-    m_creationDate = jsonValue.GetString("CreationDate");
+    m_creationDate = jsonValue.GetDouble("CreationDate");
 
   }
 
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
-    m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
+    m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
 
   }
 

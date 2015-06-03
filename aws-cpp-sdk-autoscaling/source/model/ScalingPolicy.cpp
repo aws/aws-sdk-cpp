@@ -1,0 +1,300 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/autoscaling/model/ScalingPolicy.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::AutoScaling::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+ScalingPolicy::ScalingPolicy() : 
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
+    m_policyARNHasBeenSet(false),
+    m_policyTypeHasBeenSet(false),
+    m_adjustmentTypeHasBeenSet(false),
+    m_minAdjustmentStep(0),
+    m_minAdjustmentStepHasBeenSet(false),
+    m_minAdjustmentMagnitude(0),
+    m_minAdjustmentMagnitudeHasBeenSet(false),
+    m_scalingAdjustment(0),
+    m_scalingAdjustmentHasBeenSet(false),
+    m_cooldown(0),
+    m_cooldownHasBeenSet(false),
+    m_stepAdjustmentsHasBeenSet(false),
+    m_metricAggregationTypeHasBeenSet(false),
+    m_estimatedInstanceWarmup(0),
+    m_estimatedInstanceWarmupHasBeenSet(false),
+    m_alarmsHasBeenSet(false)
+{
+}
+
+ScalingPolicy::ScalingPolicy(const XmlNode& xmlNode) : 
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
+    m_policyARNHasBeenSet(false),
+    m_policyTypeHasBeenSet(false),
+    m_adjustmentTypeHasBeenSet(false),
+    m_minAdjustmentStep(0),
+    m_minAdjustmentStepHasBeenSet(false),
+    m_minAdjustmentMagnitude(0),
+    m_minAdjustmentMagnitudeHasBeenSet(false),
+    m_scalingAdjustment(0),
+    m_scalingAdjustmentHasBeenSet(false),
+    m_cooldown(0),
+    m_cooldownHasBeenSet(false),
+    m_stepAdjustmentsHasBeenSet(false),
+    m_metricAggregationTypeHasBeenSet(false),
+    m_estimatedInstanceWarmup(0),
+    m_estimatedInstanceWarmupHasBeenSet(false),
+    m_alarmsHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
+    if(!autoScalingGroupNameNode.IsNull())
+    {
+      m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+      m_autoScalingGroupNameHasBeenSet = true;
+    }
+    XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
+    if(!policyNameNode.IsNull())
+    {
+      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyNameHasBeenSet = true;
+    }
+    XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
+    if(!policyARNNode.IsNull())
+    {
+      m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());
+      m_policyARNHasBeenSet = true;
+    }
+    XmlNode policyTypeNode = resultNode.FirstChild("PolicyType");
+    if(!policyTypeNode.IsNull())
+    {
+      m_policyType = StringUtils::Trim(policyTypeNode.GetText().c_str());
+      m_policyTypeHasBeenSet = true;
+    }
+    XmlNode adjustmentTypeNode = resultNode.FirstChild("AdjustmentType");
+    if(!adjustmentTypeNode.IsNull())
+    {
+      m_adjustmentType = StringUtils::Trim(adjustmentTypeNode.GetText().c_str());
+      m_adjustmentTypeHasBeenSet = true;
+    }
+    XmlNode minAdjustmentStepNode = resultNode.FirstChild("MinAdjustmentStep");
+    if(!minAdjustmentStepNode.IsNull())
+    {
+      m_minAdjustmentStep = StringUtils::ConvertToInt32(StringUtils::Trim(minAdjustmentStepNode.GetText().c_str()).c_str());
+      m_minAdjustmentStepHasBeenSet = true;
+    }
+    XmlNode minAdjustmentMagnitudeNode = resultNode.FirstChild("MinAdjustmentMagnitude");
+    if(!minAdjustmentMagnitudeNode.IsNull())
+    {
+      m_minAdjustmentMagnitude = StringUtils::ConvertToInt32(StringUtils::Trim(minAdjustmentMagnitudeNode.GetText().c_str()).c_str());
+      m_minAdjustmentMagnitudeHasBeenSet = true;
+    }
+    XmlNode scalingAdjustmentNode = resultNode.FirstChild("ScalingAdjustment");
+    if(!scalingAdjustmentNode.IsNull())
+    {
+      m_scalingAdjustment = StringUtils::ConvertToInt32(StringUtils::Trim(scalingAdjustmentNode.GetText().c_str()).c_str());
+      m_scalingAdjustmentHasBeenSet = true;
+    }
+    XmlNode cooldownNode = resultNode.FirstChild("Cooldown");
+    if(!cooldownNode.IsNull())
+    {
+      m_cooldown = StringUtils::ConvertToInt32(StringUtils::Trim(cooldownNode.GetText().c_str()).c_str());
+      m_cooldownHasBeenSet = true;
+    }
+    XmlNode stepAdjustmentsNode = resultNode.FirstChild("StepAdjustments");
+    if(!stepAdjustmentsNode.IsNull())
+    {
+      while(!stepAdjustmentsNode.IsNull())
+      {
+        m_stepAdjustments.push_back(stepAdjustmentsNode);
+        stepAdjustmentsNode = stepAdjustmentsNode.NextNode("StepAdjustments");
+      }
+
+      m_stepAdjustmentsHasBeenSet = true;
+    }
+    XmlNode metricAggregationTypeNode = resultNode.FirstChild("MetricAggregationType");
+    if(!stepAdjustmentsNode.IsNull())
+    {
+      m_metricAggregationType = StringUtils::Trim(metricAggregationTypeNode.GetText().c_str());
+      m_metricAggregationTypeHasBeenSet = true;
+    }
+    XmlNode estimatedInstanceWarmupNode = resultNode.FirstChild("EstimatedInstanceWarmup");
+    if(!stepAdjustmentsNode.IsNull())
+    {
+      m_estimatedInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(estimatedInstanceWarmupNode.GetText().c_str()).c_str());
+      m_estimatedInstanceWarmupHasBeenSet = true;
+    }
+    XmlNode alarmsNode = resultNode.FirstChild("Alarms");
+    if(!alarmsNode.IsNull())
+    {
+      while(!alarmsNode.IsNull())
+      {
+        m_alarms.push_back(alarmsNode);
+        alarmsNode = alarmsNode.NextNode("Alarms");
+      }
+
+      m_alarmsHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_policyNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
+  if(m_policyARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PolicyARN=" << StringUtils::URLEncode(m_policyARN.c_str()) << "&";
+  }
+  if(m_policyTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PolicyType=" << StringUtils::URLEncode(m_policyType.c_str()) << "&";
+  }
+  if(m_adjustmentTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
+  }
+  if(m_minAdjustmentStepHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinAdjustmentStep=" << m_minAdjustmentStep << "&";
+  }
+  if(m_minAdjustmentMagnitudeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinAdjustmentMagnitude=" << m_minAdjustmentMagnitude << "&";
+  }
+  if(m_scalingAdjustmentHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ScalingAdjustment=" << m_scalingAdjustment << "&";
+  }
+  if(m_cooldownHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Cooldown=" << m_cooldown << "&";
+  }
+  if(m_stepAdjustmentsHasBeenSet)
+  {
+      for(auto& item : m_stepAdjustments)
+      {
+        Aws::StringStream stepAdjustmentsSs;
+        stepAdjustmentsSs << location << index << locationValue << ".StepAdjustments";
+        item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
+      }
+  }
+  if(m_metricAggregationTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MetricAggregationType=" << StringUtils::URLEncode(m_metricAggregationType.c_str()) << "&";
+  }
+  if(m_estimatedInstanceWarmupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EstimatedInstanceWarmup=" << m_estimatedInstanceWarmup << "&";
+  }
+  if(m_alarmsHasBeenSet)
+  {
+      for(auto& item : m_alarms)
+      {
+        Aws::StringStream alarmsSs;
+        alarmsSs << location << index << locationValue << ".Alarms";
+        item.OutputToStream(oStream, alarmsSs.str().c_str());
+      }
+  }
+}
+
+void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+      oStream << location << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_policyNameHasBeenSet)
+  {
+      oStream << location << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
+  if(m_policyARNHasBeenSet)
+  {
+      oStream << location << ".PolicyARN=" << StringUtils::URLEncode(m_policyARN.c_str()) << "&";
+  }
+  if(m_policyTypeHasBeenSet)
+  {
+      oStream << location << ".PolicyType=" << StringUtils::URLEncode(m_policyType.c_str()) << "&";
+  }
+  if(m_adjustmentTypeHasBeenSet)
+  {
+      oStream << location << ".AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
+  }
+  if(m_minAdjustmentStepHasBeenSet)
+  {
+      oStream << location << ".MinAdjustmentStep=" << m_minAdjustmentStep << "&";
+  }
+  if(m_minAdjustmentMagnitudeHasBeenSet)
+  {
+      oStream << location << ".MinAdjustmentMagnitude=" << m_minAdjustmentMagnitude << "&";
+  }
+  if(m_scalingAdjustmentHasBeenSet)
+  {
+      oStream << location << ".ScalingAdjustment=" << m_scalingAdjustment << "&";
+  }
+  if(m_cooldownHasBeenSet)
+  {
+      oStream << location << ".Cooldown=" << m_cooldown << "&";
+  }
+  if(m_stepAdjustmentsHasBeenSet)
+  {
+      for(auto& item : m_stepAdjustments)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".StepAdjustments";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
+  }
+  if(m_metricAggregationTypeHasBeenSet)
+  {
+      oStream << location << ".MetricAggregationType=" << StringUtils::URLEncode(m_metricAggregationType.c_str()) << "&";
+  }
+  if(m_estimatedInstanceWarmupHasBeenSet)
+  {
+      oStream << location << ".EstimatedInstanceWarmup=" << m_estimatedInstanceWarmup << "&";
+  }
+  if(m_alarmsHasBeenSet)
+  {
+      for(auto& item : m_alarms)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".Alarms";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
+  }
+}

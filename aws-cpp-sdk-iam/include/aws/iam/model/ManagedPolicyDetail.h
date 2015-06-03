@@ -1,0 +1,284 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/iam/IAM_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/PolicyVersion.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace IAM
+{
+namespace Model
+{
+  /*
+    <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p> <p>For more information about managed policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
+  */
+  class AWS_IAM_API ManagedPolicyDetail
+  {
+  public:
+    ManagedPolicyDetail();
+    ManagedPolicyDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    ManagedPolicyDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p>The friendly name (not ARN) identifying the policy.</p>
+    */
+    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    /*
+     <p>The friendly name (not ARN) identifying the policy.</p>
+    */
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+
+    /*
+     <p>The friendly name (not ARN) identifying the policy.</p>
+    */
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
+
+    /*
+     <p>The friendly name (not ARN) identifying the policy.</p>
+    */
+    inline ManagedPolicyDetail&  WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The friendly name (not ARN) identifying the policy.</p>
+    */
+    inline ManagedPolicyDetail& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
+    /*
+     <p>The stable and unique string identifying the policy. </p> <p>For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    /*
+     <p>The stable and unique string identifying the policy. </p> <p>For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+
+    /*
+     <p>The stable and unique string identifying the policy. </p> <p>For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
+
+    /*
+     <p>The stable and unique string identifying the policy. </p> <p>For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline ManagedPolicyDetail&  WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
+
+    /*
+     <p>The stable and unique string identifying the policy. </p> <p>For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline ManagedPolicyDetail& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+
+    
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    
+    inline ManagedPolicyDetail&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline ManagedPolicyDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
+    /*
+     <p>The path to the policy.</p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline const Aws::String& GetPath() const{ return m_path; }
+    /*
+     <p>The path to the policy.</p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /*
+     <p>The path to the policy.</p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
+
+    /*
+     <p>The path to the policy.</p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline ManagedPolicyDetail&  WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /*
+     <p>The path to the policy.</p> <p>For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
+    */
+    inline ManagedPolicyDetail& WithPath(const char* value) { SetPath(value); return *this;}
+
+    /*
+     <p>The identifier for the version of the policy that is set as the default (operative) version. </p> <p>For more information about policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline const Aws::String& GetDefaultVersionId() const{ return m_defaultVersionId; }
+    /*
+     <p>The identifier for the version of the policy that is set as the default (operative) version. </p> <p>For more information about policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = value; }
+
+    /*
+     <p>The identifier for the version of the policy that is set as the default (operative) version. </p> <p>For more information about policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline void SetDefaultVersionId(const char* value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId.assign(value); }
+
+    /*
+     <p>The identifier for the version of the policy that is set as the default (operative) version. </p> <p>For more information about policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ManagedPolicyDetail&  WithDefaultVersionId(const Aws::String& value) { SetDefaultVersionId(value); return *this;}
+
+    /*
+     <p>The identifier for the version of the policy that is set as the default (operative) version. </p> <p>For more information about policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+    */
+    inline ManagedPolicyDetail& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
+
+    /*
+     <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
+    */
+    inline long GetAttachmentCount() const{ return m_attachmentCount; }
+    /*
+     <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
+    */
+    inline void SetAttachmentCount(long value) { m_attachmentCountHasBeenSet = true; m_attachmentCount = value; }
+
+    /*
+     <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
+    */
+    inline ManagedPolicyDetail&  WithAttachmentCount(long value) { SetAttachmentCount(value); return *this;}
+
+    /*
+     <p>Specifies whether the policy can be attached to an IAM user, group, or role. </p>
+    */
+    inline bool GetIsAttachable() const{ return m_isAttachable; }
+    /*
+     <p>Specifies whether the policy can be attached to an IAM user, group, or role. </p>
+    */
+    inline void SetIsAttachable(bool value) { m_isAttachableHasBeenSet = true; m_isAttachable = value; }
+
+    /*
+     <p>Specifies whether the policy can be attached to an IAM user, group, or role. </p>
+    */
+    inline ManagedPolicyDetail&  WithIsAttachable(bool value) { SetIsAttachable(value); return *this;}
+
+    /*
+     <p>A friendly description of the policy.</p>
+    */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    /*
+     <p>A friendly description of the policy.</p>
+    */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /*
+     <p>A friendly description of the policy.</p>
+    */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /*
+     <p>A friendly description of the policy.</p>
+    */
+    inline ManagedPolicyDetail&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A friendly description of the policy.</p>
+    */
+    inline ManagedPolicyDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /*
+     <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
+    */
+    inline double GetCreateDate() const{ return m_createDate; }
+    /*
+     <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
+    */
+    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /*
+     <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
+    */
+    inline ManagedPolicyDetail&  WithCreateDate(double value) { SetCreateDate(value); return *this;}
+
+    /*
+     <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p> <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created. </p>
+    */
+    inline double GetUpdateDate() const{ return m_updateDate; }
+    /*
+     <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p> <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created. </p>
+    */
+    inline void SetUpdateDate(double value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+
+    /*
+     <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p> <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created. </p>
+    */
+    inline ManagedPolicyDetail&  WithUpdateDate(double value) { SetUpdateDate(value); return *this;}
+
+    /*
+     <p>A list containing information about the versions of the policy.</p>
+    */
+    inline const Aws::Vector<PolicyVersion>& GetPolicyVersionList() const{ return m_policyVersionList; }
+    /*
+     <p>A list containing information about the versions of the policy.</p>
+    */
+    inline void SetPolicyVersionList(const Aws::Vector<PolicyVersion>& value) { m_policyVersionListHasBeenSet = true; m_policyVersionList = value; }
+
+    /*
+     <p>A list containing information about the versions of the policy.</p>
+    */
+    inline ManagedPolicyDetail&  WithPolicyVersionList(const Aws::Vector<PolicyVersion>& value) { SetPolicyVersionList(value); return *this;}
+
+    /*
+     <p>A list containing information about the versions of the policy.</p>
+    */
+    inline ManagedPolicyDetail& AddPolicyVersionList(const PolicyVersion& value) { m_policyVersionListHasBeenSet = true; m_policyVersionList.push_back(value); return *this; }
+
+  private:
+    Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
+    Aws::String m_policyId;
+    bool m_policyIdHasBeenSet;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+    Aws::String m_path;
+    bool m_pathHasBeenSet;
+    Aws::String m_defaultVersionId;
+    bool m_defaultVersionIdHasBeenSet;
+    long m_attachmentCount;
+    bool m_attachmentCountHasBeenSet;
+    bool m_isAttachable;
+    bool m_isAttachableHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+    double m_createDate;
+    bool m_createDateHasBeenSet;
+    double m_updateDate;
+    bool m_updateDateHasBeenSet;
+    Aws::Vector<PolicyVersion> m_policyVersionList;
+    bool m_policyVersionListHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

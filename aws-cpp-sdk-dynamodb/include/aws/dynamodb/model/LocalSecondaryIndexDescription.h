@@ -122,6 +122,20 @@ namespace Model
     */
     inline LocalSecondaryIndexDescription&  WithItemCount(long long value) { SetItemCount(value); return *this;}
 
+    
+    inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
+    
+    inline void SetIndexArn(const Aws::String& value) { m_indexArnHasBeenSet = true; m_indexArn = value; }
+
+    
+    inline void SetIndexArn(const char* value) { m_indexArnHasBeenSet = true; m_indexArn.assign(value); }
+
+    
+    inline LocalSecondaryIndexDescription&  WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
+
+    
+    inline LocalSecondaryIndexDescription& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
+
   private:
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
@@ -133,6 +147,8 @@ namespace Model
     bool m_indexSizeBytesHasBeenSet;
     long long m_itemCount;
     bool m_itemCountHasBeenSet;
+    Aws::String m_indexArn;
+    bool m_indexArnHasBeenSet;
   };
 
 } // namespace Model

@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 UpdateTableRequest::UpdateTableRequest() : 
     m_attributeDefinitionsHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
-    m_globalSecondaryIndexUpdatesHasBeenSet(false)
+    m_globalSecondaryIndexUpdatesHasBeenSet(false),
+    m_streamSpecificationHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
      globalSecondaryIndexUpdatesJsonList[globalSecondaryIndexUpdatesIndex].AsObject(m_globalSecondaryIndexUpdates[globalSecondaryIndexUpdatesIndex].Jsonize());
    }
    payload.WithArray("GlobalSecondaryIndexUpdates", std::move(globalSecondaryIndexUpdatesJsonList));
+
+  }
+
+  if(m_streamSpecificationHasBeenSet)
+  {
+   payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
 
   }
 

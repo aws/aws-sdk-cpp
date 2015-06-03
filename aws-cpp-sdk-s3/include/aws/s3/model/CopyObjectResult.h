@@ -57,22 +57,16 @@ namespace Model
     inline CopyObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
     
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     
-    inline void SetLastModified(const Aws::String& value) { m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModified = value; }
 
     
-    inline void SetLastModified(const char* value) { m_lastModified.assign(value); }
-
-    
-    inline CopyObjectResult&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    
-    inline CopyObjectResult& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline CopyObjectResult&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:
     Aws::String m_eTag;
-    Aws::String m_lastModified;
+    double m_lastModified;
   };
 
 } // namespace Model

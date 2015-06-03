@@ -91,10 +91,6 @@ protected:
         }
 
         Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config);
-        DeleteBucket(CalculateBucketName(CREATE_BUCKET_TEST_NAME));
-        DeleteBucket(CalculateBucketName(PUT_OBJECTS_BUCKET_NAME));
-        DeleteBucket(CalculateBucketName(PUT_MULTIPART_BUCKET_NAME));
-        DeleteBucket(CalculateBucketName(ERRORS_TESTING_BUCKET));
     }
 
     static void TearDownTestCase()

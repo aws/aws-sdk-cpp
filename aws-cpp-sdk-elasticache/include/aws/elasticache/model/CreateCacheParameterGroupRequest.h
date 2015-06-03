@@ -1,0 +1,117 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
+#include <aws/elasticache/ElastiCacheRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
+
+  /*
+    <p>Represents the input of a <i>CreateCacheParameterGroup</i> action.</p>
+  */
+  class AWS_ELASTICACHE_API CreateCacheParameterGroupRequest : public ElastiCacheRequest
+  {
+  public:
+    CreateCacheParameterGroupRequest();
+    Aws::String SerializePayload() const override;
+
+
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
+
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
+
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline CreateCacheParameterGroupRequest&  WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+
+    /*
+     <p>A user-specified name for the cache parameter group.</p>
+    */
+    inline CreateCacheParameterGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamily = value; }
+
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamily.assign(value); }
+
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline CreateCacheParameterGroupRequest&  WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
+
+    /*
+     <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
+    */
+    inline CreateCacheParameterGroupRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
+
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline CreateCacheParameterGroupRequest&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /*
+     <p>A user-specified description for the cache parameter group.</p>
+    */
+    inline CreateCacheParameterGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+  private:
+    Aws::String m_cacheParameterGroupName;
+    Aws::String m_cacheParameterGroupFamily;
+    Aws::String m_description;
+  };
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

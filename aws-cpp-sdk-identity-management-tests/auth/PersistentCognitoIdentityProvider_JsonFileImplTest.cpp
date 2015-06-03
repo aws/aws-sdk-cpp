@@ -47,7 +47,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenNoFileI
     ASSERT_EQ("accountId", identityProvider.GetAccountId());
 
     Aws::String filePath = ComputeIdentityFilePath();
-    std::ifstream shouldNotExist(filePath);
+    std::ifstream shouldNotExist(filePath.c_str());
     ASSERT_FALSE(shouldNotExist.good());
 }
 
@@ -70,7 +70,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsA
     FileSystemUtils::CreateDirectoryIfNotExists(ComputeAwsDirPath().c_str());
 
     Aws::String filePath = ComputeIdentityFilePath();
-    std::ofstream identityFile(filePath);
+    std::ofstream identityFile(filePath.c_str());
     identityFile << identityDoc.WriteReadable();
     identityFile.close();
 
@@ -96,7 +96,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     FileSystemUtils::CreateDirectoryIfNotExists(ComputeAwsDirPath().c_str());
 
     Aws::String filePath = ComputeIdentityFilePath();
-    std::ofstream identityFile(filePath);
+    std::ofstream identityFile(filePath.c_str());
     identityFile << identityDoc.WriteReadable();
     identityFile.close();
 
@@ -114,7 +114,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     EXPECT_EQ("LoginName", identityProvider.GetLogins().begin()->first);
     EXPECT_EQ("LoginValue", identityProvider.GetLogins().begin()->second);
 
-    std::ifstream identityFileInput(filePath);
+    std::ifstream identityFileInput(filePath.c_str());
     JsonValue finalIdentityDoc(identityFileInput);
     identityFileInput.close();
 

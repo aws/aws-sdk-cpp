@@ -38,7 +38,9 @@ ScanRequest::ScanRequest() :
     m_projectionExpressionHasBeenSet(false),
     m_filterExpressionHasBeenSet(false),
     m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false)
+    m_expressionAttributeValuesHasBeenSet(false),
+    m_consistentRead(false),
+    m_consistentReadHasBeenSet(false)
 {
 }
 
@@ -151,6 +153,12 @@ Aws::String ScanRequest::SerializePayload() const
      expressionAttributeValuesJsonMap.WithObject(expressionAttributeValuesItem.first, expressionAttributeValuesItem.second.Jsonize());
    }
    payload.WithObject("ExpressionAttributeValues", std::move(expressionAttributeValuesJsonMap));
+
+  }
+
+  if(m_consistentReadHasBeenSet)
+  {
+   payload.WithBool("ConsistentRead", m_consistentRead);
 
   }
 

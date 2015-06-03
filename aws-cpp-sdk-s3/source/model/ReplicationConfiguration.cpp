@@ -40,11 +40,11 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
   {
     XmlNode roleNode = resultNode.FirstChild("Role");
     m_role = StringUtils::Trim(roleNode.GetText().c_str());
-    XmlNode replicationRuleNode = resultNode.FirstChild("ReplicationRule");
-    while(!replicationRuleNode.IsNull())
+    XmlNode rulesNode = resultNode.FirstChild("Rules");
+    while(!rulesNode.IsNull())
     {
-      m_rules.push_back(replicationRuleNode);
-      replicationRuleNode = replicationRuleNode.NextNode("ReplicationRule");
+      m_rules.push_back(rulesNode);
+      rulesNode = rulesNode.NextNode("Rules");
     }
 
   }

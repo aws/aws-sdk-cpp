@@ -28,6 +28,7 @@ static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedEx
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int INVALID_IDENTITY_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidIdentityPoolConfigurationException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int EXTERNAL_SERVICE_HASH = HashingUtils::HashString("ExternalServiceException");
 
 namespace Aws
 {
@@ -72,7 +73,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::RESOURCE_CONFLICT), false);
   }
-
+  else if (hashCode == EXTERNAL_SERVICE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::EXTERNAL_SERVICE), false);
+  }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 

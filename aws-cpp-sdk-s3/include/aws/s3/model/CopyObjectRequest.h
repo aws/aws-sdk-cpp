@@ -240,26 +240,16 @@ namespace Model
     /*
      Copies the object if it has been modified since the specified time.
     */
-    inline const Aws::String& GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
+    inline double GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
     /*
      Copies the object if it has been modified since the specified time.
     */
-    inline void SetCopySourceIfModifiedSince(const Aws::String& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
+    inline void SetCopySourceIfModifiedSince(double value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
 
     /*
      Copies the object if it has been modified since the specified time.
     */
-    inline void SetCopySourceIfModifiedSince(const char* value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince.assign(value); }
-
-    /*
-     Copies the object if it has been modified since the specified time.
-    */
-    inline CopyObjectRequest&  WithCopySourceIfModifiedSince(const Aws::String& value) { SetCopySourceIfModifiedSince(value); return *this;}
-
-    /*
-     Copies the object if it has been modified since the specified time.
-    */
-    inline CopyObjectRequest& WithCopySourceIfModifiedSince(const char* value) { SetCopySourceIfModifiedSince(value); return *this;}
+    inline CopyObjectRequest&  WithCopySourceIfModifiedSince(double value) { SetCopySourceIfModifiedSince(value); return *this;}
 
     /*
      Copies the object if its entity tag (ETag) is different than the specified ETag.
@@ -288,50 +278,30 @@ namespace Model
     /*
      Copies the object if it hasn't been modified since the specified time.
     */
-    inline const Aws::String& GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
+    inline double GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
     /*
      Copies the object if it hasn't been modified since the specified time.
     */
-    inline void SetCopySourceIfUnmodifiedSince(const Aws::String& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
-
-    /*
-     Copies the object if it hasn't been modified since the specified time.
-    */
-    inline void SetCopySourceIfUnmodifiedSince(const char* value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince.assign(value); }
+    inline void SetCopySourceIfUnmodifiedSince(double value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
 
     /*
      Copies the object if it hasn't been modified since the specified time.
     */
-    inline CopyObjectRequest&  WithCopySourceIfUnmodifiedSince(const Aws::String& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
-
-    /*
-     Copies the object if it hasn't been modified since the specified time.
-    */
-    inline CopyObjectRequest& WithCopySourceIfUnmodifiedSince(const char* value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
+    inline CopyObjectRequest&  WithCopySourceIfUnmodifiedSince(double value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
 
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline const Aws::String& GetExpires() const{ return m_expires; }
+    inline double GetExpires() const{ return m_expires; }
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline void SetExpires(const Aws::String& value) { m_expiresHasBeenSet = true; m_expires = value; }
+    inline void SetExpires(double value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline void SetExpires(const char* value) { m_expiresHasBeenSet = true; m_expires.assign(value); }
-
-    /*
-     The date and time at which the object is no longer cacheable.
-    */
-    inline CopyObjectRequest&  WithExpires(const Aws::String& value) { SetExpires(value); return *this;}
-
-    /*
-     The date and time at which the object is no longer cacheable.
-    */
-    inline CopyObjectRequest& WithExpires(const char* value) { SetExpires(value); return *this;}
+    inline CopyObjectRequest&  WithExpires(double value) { SetExpires(value); return *this;}
 
     /*
      Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -726,13 +696,13 @@ namespace Model
     Aws::String m_copySource;
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet;
-    Aws::String m_copySourceIfModifiedSince;
+    double m_copySourceIfModifiedSince;
     bool m_copySourceIfModifiedSinceHasBeenSet;
     Aws::String m_copySourceIfNoneMatch;
     bool m_copySourceIfNoneMatchHasBeenSet;
-    Aws::String m_copySourceIfUnmodifiedSince;
+    double m_copySourceIfUnmodifiedSince;
     bool m_copySourceIfUnmodifiedSinceHasBeenSet;
-    Aws::String m_expires;
+    double m_expires;
     bool m_expiresHasBeenSet;
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet;

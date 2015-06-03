@@ -1,0 +1,158 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/CloudWatchRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/monitoring/model/HistoryItemType.h>
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
+
+  /*
+  */
+  class AWS_CLOUDWATCH_API DescribeAlarmHistoryRequest : public CloudWatchRequest
+  {
+  public:
+    DescribeAlarmHistoryRequest();
+    Aws::String SerializePayload() const override;
+
+
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
+
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline DescribeAlarmHistoryRequest&  WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+
+    /*
+     <p> The name of the alarm. </p>
+    */
+    inline DescribeAlarmHistoryRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
+    /*
+     <p> The type of alarm histories to retrieve. </p>
+    */
+    inline const HistoryItemType& GetHistoryItemType() const{ return m_historyItemType; }
+    /*
+     <p> The type of alarm histories to retrieve. </p>
+    */
+    inline void SetHistoryItemType(const HistoryItemType& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
+
+    /*
+     <p> The type of alarm histories to retrieve. </p>
+    */
+    inline DescribeAlarmHistoryRequest&  WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
+
+    /*
+     <p> The starting date to retrieve alarm history. </p>
+    */
+    inline double GetStartDate() const{ return m_startDate; }
+    /*
+     <p> The starting date to retrieve alarm history. </p>
+    */
+    inline void SetStartDate(double value) { m_startDateHasBeenSet = true; m_startDate = value; }
+
+    /*
+     <p> The starting date to retrieve alarm history. </p>
+    */
+    inline DescribeAlarmHistoryRequest&  WithStartDate(double value) { SetStartDate(value); return *this;}
+
+    /*
+     <p> The ending date to retrieve alarm history. </p>
+    */
+    inline double GetEndDate() const{ return m_endDate; }
+    /*
+     <p> The ending date to retrieve alarm history. </p>
+    */
+    inline void SetEndDate(double value) { m_endDateHasBeenSet = true; m_endDate = value; }
+
+    /*
+     <p> The ending date to retrieve alarm history. </p>
+    */
+    inline DescribeAlarmHistoryRequest&  WithEndDate(double value) { SetEndDate(value); return *this;}
+
+    /*
+     <p> The maximum number of alarm history records to retrieve. </p>
+    */
+    inline long GetMaxRecords() const{ return m_maxRecords; }
+    /*
+     <p> The maximum number of alarm history records to retrieve. </p>
+    */
+    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+
+    /*
+     <p> The maximum number of alarm history records to retrieve. </p>
+    */
+    inline DescribeAlarmHistoryRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline DescribeAlarmHistoryRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /*
+     <p> The token returned by a previous call to indicate that there is more data available. </p>
+    */
+    inline DescribeAlarmHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+  private:
+    Aws::String m_alarmName;
+    bool m_alarmNameHasBeenSet;
+    HistoryItemType m_historyItemType;
+    bool m_historyItemTypeHasBeenSet;
+    double m_startDate;
+    bool m_startDateHasBeenSet;
+    double m_endDate;
+    bool m_endDateHasBeenSet;
+    long m_maxRecords;
+    bool m_maxRecordsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

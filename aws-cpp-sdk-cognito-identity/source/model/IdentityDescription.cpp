@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 IdentityDescription::IdentityDescription() : 
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
+    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
+    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
 }
@@ -32,7 +34,9 @@ IdentityDescription::IdentityDescription() :
 IdentityDescription::IdentityDescription(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
+    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
+    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -59,14 +63,14 @@ IdentityDescription& IdentityDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CreationDate"))
   {
-    m_creationDate = jsonValue.GetString("CreationDate");
+    m_creationDate = jsonValue.GetDouble("CreationDate");
 
     m_creationDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
-    m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
+    m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
 
     m_lastModifiedDateHasBeenSet = true;
   }
@@ -97,13 +101,13 @@ JsonValue IdentityDescription::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithString("CreationDate", m_creationDate);
+   payload.WithDouble("CreationDate", m_creationDate);
 
   }
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithString("LastModifiedDate", m_lastModifiedDate);
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
 
   }
 

@@ -21,8 +21,7 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdentityPoolRolesRequest::GetIdentityPoolRolesRequest() : 
-    m_identityPoolIdHasBeenSet(false)
+GetIdentityPoolRolesRequest::GetIdentityPoolRolesRequest()
 {
 }
 
@@ -30,11 +29,7 @@ Aws::String GetIdentityPoolRolesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
-  }
+  payload.WithString("IdentityPoolId", m_identityPoolId);
 
   return payload.WriteReadable();
 }

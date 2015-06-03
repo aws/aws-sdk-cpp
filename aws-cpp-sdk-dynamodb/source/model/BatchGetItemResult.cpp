@@ -15,6 +15,7 @@
 #include <aws/dynamodb/model/BatchGetItemResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -44,7 +45,7 @@ BatchGetItemResult& BatchGetItemResult::operator =(const AmazonWebServiceResult<
       Aws::Vector<Aws::Map<Aws::String, AttributeValue>> itemListList((size_t)itemListJsonList.GetLength());
       for(unsigned itemListIndex = 0; itemListIndex < itemListJsonList.GetLength(); ++itemListIndex)
       {
-        Aws::Map<Aws::String, JsonValue> attributeMapJsonMap = itemListJsonList[itemListIndex].GetObject("AttributeMap").GetAllObjects();
+        Aws::Map<Aws::String, JsonValue> attributeMapJsonMap = itemListJsonList[itemListIndex].GetAllObjects();
         Aws::Map<Aws::String, AttributeValue> attributeMapMap;
         for(auto& attributeMapItem : attributeMapJsonMap)
         {

@@ -24,6 +24,12 @@ if(GENERATE_VERSION_INFO)
   )
 endif()
 
+if(USE_CURL_CLIENT)
+    set(HTTP_CLIENT_DIR "curl")
+else()
+    set(HTTP_CLIENT_DIR "windows")
+endif()
+
 # Pretty sure we can use a regex here...
 # Go ahead and glob every directory so we can work around Visual Studio's crap.
 file(GLOB AWS_HEADERS "include/aws/core/*.h")
@@ -32,6 +38,7 @@ file(GLOB AWS_CLIENT_HEADERS "include/aws/core/client/*.h")
 file(GLOB AWS_INTERNAL_HEADERS "include/aws/core/internal/*.h")
 file(GLOB HTTP_HEADERS "include/aws/core/http/*.h")
 file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
+file(GLOB HTTP_CLIENT_HEADERS "include/aws/core/http/${HTTP_CLIENT_DIR}/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
 file(GLOB UTILS_EVENT_HEADERS "include/aws/core/utils/event/*.h")
 file(GLOB UTILS_BASE64_HEADERS "include/aws/core/utils/base64/*.h")
@@ -55,6 +62,7 @@ file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp
 file(GLOB AWS_MODEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/aws/model/*.cpp")
 file(GLOB HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/*.cpp")
 file(GLOB HTTP_STANDARD_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/standard/*.cpp")
+file(GLOB HTTP_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/${HTTP_CLIENT_DIR}/*.cpp")
 file(GLOB UTILS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/*.cpp")
 file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.cpp")
 file(GLOB UTILS_BASE64_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/*.cpp")
@@ -66,6 +74,7 @@ file(GLOB UTILS_LOGGING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging
 file(GLOB UTILS_MEMORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memory/*.cpp")
 file(GLOB UTILS_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/stream/*.cpp")
 
+
 file(GLOB AWSNativeSDK_SHARED_SRC
   ${AWS_HEADERS}
   ${AWS_AUTH_HEADERS}
@@ -73,6 +82,7 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${AWS_INTERNAL_HEADERS}
   ${HTTP_HEADERS}
   ${HTTP_STANDARD_HEADERS}
+  ${HTTP_CLIENT_HEADERS}
   ${UTILS_HEADERS}
   ${UTILS_EVENT_HEADERS}
   ${UTILS_BASE64_HEADERS}
@@ -97,6 +107,7 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${AWS_INTERNAL_SOURCE}
   ${HTTP_SOURCE}
   ${HTTP_STANDARD_SOURCE}
+  ${HTTP_CLIENT_SOURCE}
   ${UTILS_SOURCE}
   ${UTILS_EVENT_SOURCE}
   ${UTILS_BASE64_SOURCE}
@@ -119,16 +130,12 @@ if(PLATFORM_WINDOWS)
   file(GLOB UTILS_CRYPTO_WINDOWS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/windows/*.h")
   file(GLOB UTILS_CRYPTO_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/windows/*.cpp")
   file(GLOB UTILS_WINDOWS_SOURCE = "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/windows/*.cpp")
-  file(GLOB HTTP_WINDOWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
-  file(GLOB HTTP_WINDOWS_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/http/windows/*.h")
 
   file(GLOB AWSNativeSDK_PLATFORM_SRC 
     ${UTILS_BASE64_WINDOWS_SOURCE}
     ${UTILS_CRYPTO_WINDOWS_SOURCE}
     ${UTILS_CRYPTO_WINDOWS_HEADERS}
     ${UTILS_WINDOWS_SOURCE}
-    ${HTTP_WINDOWS_SOURCE}
-    ${HTTP_WINDOWS_HEADERS}
   )
 
   #if we are compiling for visual studio, create a sane directory tree.
@@ -140,7 +147,7 @@ if(PLATFORM_WINDOWS)
      source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
      source_group("Header Files\\aws\\core\\http" FILES ${HTTP_HEADERS})
      source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
-     source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_HEADERS})
+     source_group("Header Files\\aws\\core\\http\\${HTTP_CLIENT_DIR}" FILES ${HTTP_CLIENT_HEADERS})
      source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
      source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
      source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
@@ -164,7 +171,7 @@ if(PLATFORM_WINDOWS)
      source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
      source_group("Source Files\\http" FILES ${HTTP_SOURCE})
      source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
-     source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_SOURCE})
+     source_group("Source Files\\http\\${HTTP_CLIENT_DIR}" FILES ${HTTP_CLIENT_SOURCE})
      source_group("Source Files\\utils" FILES ${UTILS_SOURCE})
      source_group("Source Files\\utils\\base64" FILES ${UTILS_BASE64_SOURCE})
      source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SOURCE})
@@ -177,15 +184,13 @@ if(PLATFORM_WINDOWS)
      source_group("Source Files\\utils\\crypto\\windows" FILES ${UTILS_CRYPTO_WINDOWS_SOURCE})
      source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SOURCE})
      source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SOURCE})
-   endif(MSVC)
+  endif(MSVC)
 
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
 
   #add unix specific impl stuff here.
   file(GLOB UTILS_BASE64_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/openssl/*.cpp")
   file(GLOB UTILS_CRYPTO_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/openssl/*.cpp")
-  file(GLOB HTTP_CURL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
-  file(GLOB HTTP_CURL_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/http/curl/*.h")
   file(GLOB UTILS_UNIX_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/unix/*.cpp")
 
   if(PLATFORM_ANDROID)
@@ -196,8 +201,6 @@ elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
   file(GLOB AWSNativeSDK_PLATFORM_SRC 
      ${UTILS_BASE64_OPENSSL_SOURCE}
      ${UTILS_CRYPTO_OPENSSL_SOURCE}
-     ${HTTP_CURL_HEADERS}
-     ${HTTP_CURL_SOURCE}
      ${UTILS_LOGGING_ANDROID_SOURCE}
      ${UTILS_LOGGING_ANDROID_HEADERS}
      ${UTILS_UNIX_SOURCE}
@@ -243,6 +246,7 @@ install (FILES ${AWS_CLIENT_HEADERS} DESTINATION include/aws/core/client)
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION include/aws/core/internal)
 install (FILES ${HTTP_HEADERS} DESTINATION include/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION include/aws/core/http/standard)
+install (FILES ${HTTP_CLIENT_HEADERS} DESTINATION include/aws/core/http/${HTTP_CLIENT_DIR})
 install (FILES ${UTILS_HEADERS} DESTINATION include/aws/core/utils)
 install (FILES ${UTILS_EVENT_HEADERS} DESTINATION include/aws/core/utils/event)
 install (FILES ${UTILS_BASE64_HEADERS} DESTINATION include/aws/core/utils/base64)
@@ -262,8 +266,5 @@ install (FILES ${TINYXML2_HEADERS} DESTINATION include/aws/external)
 #platform specific headers
 if(PLATFORM_WINDOWS)
   install (FILES ${UTILS_CRYPTO_WINDOWS_HEADERS} DESTINATION include/aws/core/utils/crypto/windows)
-  install (FILES ${HTTP_WINDOWS_HEADERS} DESTINATION include/aws/core/http/windows)
-elseif(PLATFORM_LINUX OR PLATFORM_ANDROID)
-  install (FILES ${HTTP_CURL_HEADERS} DESTINATION include/aws/core/http/curl)
 endif()
 

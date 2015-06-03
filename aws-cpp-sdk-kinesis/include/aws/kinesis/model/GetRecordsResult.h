@@ -35,7 +35,7 @@ namespace Kinesis
 namespace Model
 {
   /*
-    <p>Represents the output for <code>GetRecords</code>.</p>
+    <p>Represents the output for <a>GetRecords</a>.</p>
   */
   class AWS_KINESIS_API GetRecordsResult
   {
@@ -87,12 +87,18 @@ namespace Model
     */
     inline GetRecordsResult& WithNextShardIterator(const char* value) { SetNextShardIterator(value); return *this;}
 
-    
+    /*
+     <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>
+    */
     inline long long GetMillisBehindLatest() const{ return m_millisBehindLatest; }
-    
+    /*
+     <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>
+    */
     inline void SetMillisBehindLatest(long long value) { m_millisBehindLatest = value; }
 
-    
+    /*
+     <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>
+    */
     inline GetRecordsResult&  WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
 
   private:

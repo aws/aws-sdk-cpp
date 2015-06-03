@@ -15,6 +15,7 @@
 #include <aws/sqs/model/ChangeMessageVisibilityBatchRequestEntry.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -62,7 +63,7 @@ void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStr
   oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   if(m_visibilityTimeoutHasBeenSet)
   {
-    oStream << location << index << locationValue << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
+      oStream << location << index << locationValue << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
 }
 
@@ -72,6 +73,6 @@ void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStr
   oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   if(m_visibilityTimeoutHasBeenSet)
   {
-    oStream << location << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
+      oStream << location << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
 }

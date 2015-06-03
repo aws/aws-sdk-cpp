@@ -15,6 +15,7 @@
 #include <aws/sqs/model/SendMessageBatchResultEntry.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -63,7 +64,7 @@ void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const ch
   oStream << location << index << locationValue << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
-    oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
+      oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
 }
 
@@ -74,6 +75,6 @@ void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const ch
   oStream << location << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
-    oStream << location << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
+      oStream << location << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
 }

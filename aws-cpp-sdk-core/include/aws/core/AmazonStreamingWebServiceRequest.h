@@ -48,7 +48,8 @@ public:
         return std::move(headers);
     }
 
-    virtual inline const Aws::String& GetContentType() const { return m_contentType; }
+    const Aws::String& GetContentType() const { return m_contentType; }
+    void SetContentType(const Aws::String& contentType) { m_contentType = contentType; }
 
 protected:
     virtual Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const  { return Aws::Http::HeaderValueCollection(); };

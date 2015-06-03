@@ -42,15 +42,15 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode objectIdentifierNode = resultNode.FirstChild("ObjectIdentifier");
-    while(!objectIdentifierNode.IsNull())
+    XmlNode objectsNode = resultNode.FirstChild("Objects");
+    while(!objectsNode.IsNull())
     {
-      m_objects.push_back(objectIdentifierNode);
-      objectIdentifierNode = objectIdentifierNode.NextNode("ObjectIdentifier");
+      m_objects.push_back(objectsNode);
+      objectsNode = objectsNode.NextNode("Objects");
     }
 
     XmlNode quietNode = resultNode.FirstChild("Quiet");
-    if(!objectIdentifierNode.IsNull())
+    if(!objectsNode.IsNull())
     {
       m_quiet = StringUtils::ConvertToBool(StringUtils::Trim(quietNode.GetText().c_str()).c_str());
       m_quietHasBeenSet = true;

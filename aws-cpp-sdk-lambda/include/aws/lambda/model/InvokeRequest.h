@@ -112,20 +112,6 @@ namespace Model
     */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 
-    
-    inline const Aws::String& GetContentType() const override { return m_contentType; }
-    
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-
-    
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-
-    
-    inline InvokeRequest&  WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    
-    inline InvokeRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
-
   private:
     Aws::String m_functionName;
     InvocationType m_invocationType;
@@ -134,7 +120,6 @@ namespace Model
     bool m_logTypeHasBeenSet;
     Aws::String m_clientContext;
     bool m_clientContextHasBeenSet;
-    Aws::String m_contentType;
   };
 
 } // namespace Model

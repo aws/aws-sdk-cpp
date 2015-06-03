@@ -45,7 +45,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(const JsonValue& jsonValue)
   Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
   for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
   {
-    Aws::Map<Aws::String, JsonValue> keyJsonMap = keysJsonList[keysIndex].GetObject("Key").GetAllObjects();
+    Aws::Map<Aws::String, JsonValue> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
     Aws::Map<Aws::String, AttributeValue> keyMap;
     for(auto& keyItem : keyJsonMap)
     {

@@ -15,6 +15,7 @@
 #include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -54,7 +55,7 @@ void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_requestIdHasBeenSet)
   {
-    oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
+      oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
   }
 }
 
@@ -62,6 +63,6 @@ void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_requestIdHasBeenSet)
   {
-    oStream << location << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
+      oStream << location << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
   }
 }

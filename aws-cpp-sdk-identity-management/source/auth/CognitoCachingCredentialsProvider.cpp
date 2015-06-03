@@ -19,6 +19,7 @@
 #include <aws/cognito-identity/model/GetIdRequest.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/DateTime.h>
 
 using namespace Aws::Auth;
 using namespace Aws::CognitoIdentity;
@@ -33,7 +34,7 @@ CognitoCachingCredentialsProvider::CognitoCachingCredentialsProvider
                                 Aws::MakeShared<CognitoIdentityClient>(MEM_TAG, Aws::MakeShared<AnonymousAWSCredentialsProvider>(MEM_TAG))),
         m_identityRepository(identityRepository),
         m_cachedCredentials("", ""),
-        m_expiry(0)
+        m_expiry(0.0)
 {
 }
 
@@ -55,7 +56,7 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
 
                 m_cachedCredentials = AWSCredentials(cognitoCreds.GetAccessKeyId(), cognitoCreds.GetSecretKey(),
                                                      cognitoCreds.GetSessionToken());
-                m_expiry = atoll(cognitoCreds.GetExpiration().c_str());
+                m_expiry = cognitoCreds.GetExpiration();
                 AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry);
             }
             else
@@ -70,14 +71,13 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
     return m_cachedCredentials;
 }
 
-bool CognitoCachingCredentialsProvider::IsTimeExpired(long long expiry)
+bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
 {
     using namespace std::chrono;
     //30s grace buffer so requests have time to finish before expiry.
-    static const long long GRACE_BUFFER = 30;
+    static const double GRACE_BUFFER = 30.0;   
 
-    auto now = duration_cast<seconds>(high_resolution_clock::now().time_since_epoch());
-    return expiry < (now.count() - GRACE_BUFFER);
+    return expiry < (Utils::DateTime::ComputeCurrentTimestampInAmazonFormat() - GRACE_BUFFER);
 }
 
 GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdentityClient& cognitoIdentityClient,

@@ -1,0 +1,91 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/codedeploy/model/LifecycleErrorCode.h>
+#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+static const int Success_HASH = HashingUtils::HashString("Success");
+static const int ScriptMissing_HASH = HashingUtils::HashString("ScriptMissing");
+static const int ScriptNotExecutable_HASH = HashingUtils::HashString("ScriptNotExecutable");
+static const int ScriptTimedOut_HASH = HashingUtils::HashString("ScriptTimedOut");
+static const int ScriptFailed_HASH = HashingUtils::HashString("ScriptFailed");
+static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
+
+namespace Aws
+{
+namespace codedeploy
+{
+namespace Model
+{
+namespace LifecycleErrorCodeMapper
+{
+LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
+{
+  int hashCode = HashingUtils::HashString(name.c_str());
+
+  if (hashCode == Success_HASH)
+  {
+    return LifecycleErrorCode::Success;
+  }
+  else if (hashCode == ScriptMissing_HASH)
+  {
+    return LifecycleErrorCode::ScriptMissing;
+  }
+  else if (hashCode == ScriptNotExecutable_HASH)
+  {
+    return LifecycleErrorCode::ScriptNotExecutable;
+  }
+  else if (hashCode == ScriptTimedOut_HASH)
+  {
+    return LifecycleErrorCode::ScriptTimedOut;
+  }
+  else if (hashCode == ScriptFailed_HASH)
+  {
+    return LifecycleErrorCode::ScriptFailed;
+  }
+  else if (hashCode == UnknownError_HASH)
+  {
+    return LifecycleErrorCode::UnknownError;
+  }
+
+  return LifecycleErrorCode::Success;
+}
+
+Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode value)
+{
+  switch(value)
+  {
+  case LifecycleErrorCode::Success:
+    return "Success";
+  case LifecycleErrorCode::ScriptMissing:
+    return "ScriptMissing";
+  case LifecycleErrorCode::ScriptNotExecutable:
+    return "ScriptNotExecutable";
+  case LifecycleErrorCode::ScriptTimedOut:
+    return "ScriptTimedOut";
+  case LifecycleErrorCode::ScriptFailed:
+    return "ScriptFailed";
+  case LifecycleErrorCode::UnknownError:
+    return "UnknownError";
+  default:
+    return "Success";
+  }
+}
+
+} // namespace LifecycleErrorCodeMapper
+} // namespace Model
+} // namespace codedeploy
+} // namespace Aws

@@ -62,7 +62,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::NO_SUCH_BUCKET), false);
   }
-
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 

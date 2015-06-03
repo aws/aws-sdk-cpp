@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 
 Bucket::Bucket() : 
     m_nameHasBeenSet(false),
+    m_creationDate(0.0),
     m_creationDateHasBeenSet(false)
 {
 }
 
 Bucket::Bucket(const XmlNode& xmlNode) : 
     m_nameHasBeenSet(false),
+    m_creationDate(0.0),
     m_creationDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -51,7 +53,7 @@ Bucket& Bucket::operator =(const XmlNode& xmlNode)
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = StringUtils::Trim(creationDateNode.GetText().c_str());
+      m_creationDate = StringUtils::ConvertToDouble(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str());
       m_creationDateHasBeenSet = true;
     }
   }
@@ -71,7 +73,9 @@ void Bucket::AddToNode(XmlNode& parentNode) const
   if(m_creationDateHasBeenSet)
   {
    XmlNode creationDateNode = parentNode.CreateChildElement("CreationDate");
-   creationDateNode.SetText(m_creationDate);
+  ss << m_creationDate;
+   creationDateNode.SetText(ss.str());
+  ss.str("");
   }
 
 }

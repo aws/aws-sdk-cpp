@@ -50,19 +50,19 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
-    XmlNode eventNode = resultNode.FirstChild("Event");
-    if(!eventNode.IsNull())
+    XmlNode eventsNode = resultNode.FirstChild("Events");
+    if(!eventsNode.IsNull())
     {
-      while(!eventNode.IsNull())
+      while(!eventsNode.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventNode.GetText().c_str())));
-        eventNode = eventNode.NextNode("Event");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
+        eventsNode = eventsNode.NextNode("Events");
       }
 
       m_eventsHasBeenSet = true;
     }
     XmlNode topicNode = resultNode.FirstChild("Topic");
-    if(!eventNode.IsNull())
+    if(!eventsNode.IsNull())
     {
       m_topic = StringUtils::Trim(topicNode.GetText().c_str());
       m_topicHasBeenSet = true;

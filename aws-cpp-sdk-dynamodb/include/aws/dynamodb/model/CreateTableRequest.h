@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
@@ -150,6 +151,14 @@ namespace Model
     
     inline CreateTableRequest&  WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
+    
+    inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
+    
+    inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
+
+    
+    inline CreateTableRequest&  WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
+
   private:
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
     Aws::String m_tableName;
@@ -159,6 +168,8 @@ namespace Model
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
     ProvisionedThroughput m_provisionedThroughput;
+    StreamSpecification m_streamSpecification;
+    bool m_streamSpecificationHasBeenSet;
   };
 
 } // namespace Model

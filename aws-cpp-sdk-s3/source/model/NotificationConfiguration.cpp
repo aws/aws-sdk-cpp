@@ -44,35 +44,35 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
 
   if(!resultNode.IsNull())
   {
-    XmlNode topicConfigurationNode = resultNode.FirstChild("TopicConfiguration");
-    if(!topicConfigurationNode.IsNull())
+    XmlNode topicConfigurationsNode = resultNode.FirstChild("TopicConfigurations");
+    if(!topicConfigurationsNode.IsNull())
     {
-      while(!topicConfigurationNode.IsNull())
+      while(!topicConfigurationsNode.IsNull())
       {
-        m_topicConfigurations.push_back(topicConfigurationNode);
-        topicConfigurationNode = topicConfigurationNode.NextNode("TopicConfiguration");
+        m_topicConfigurations.push_back(topicConfigurationsNode);
+        topicConfigurationsNode = topicConfigurationsNode.NextNode("TopicConfigurations");
       }
 
       m_topicConfigurationsHasBeenSet = true;
     }
-    XmlNode queueConfigurationNode = resultNode.FirstChild("QueueConfiguration");
-    if(!queueConfigurationNode.IsNull())
+    XmlNode queueConfigurationsNode = resultNode.FirstChild("QueueConfigurations");
+    if(!queueConfigurationsNode.IsNull())
     {
-      while(!queueConfigurationNode.IsNull())
+      while(!queueConfigurationsNode.IsNull())
       {
-        m_queueConfigurations.push_back(queueConfigurationNode);
-        queueConfigurationNode = queueConfigurationNode.NextNode("QueueConfiguration");
+        m_queueConfigurations.push_back(queueConfigurationsNode);
+        queueConfigurationsNode = queueConfigurationsNode.NextNode("QueueConfigurations");
       }
 
       m_queueConfigurationsHasBeenSet = true;
     }
-    XmlNode lambdaFunctionConfigurationNode = resultNode.FirstChild("LambdaFunctionConfiguration");
-    if(!lambdaFunctionConfigurationNode.IsNull())
+    XmlNode lambdaFunctionConfigurationsNode = resultNode.FirstChild("LambdaFunctionConfigurations");
+    if(!lambdaFunctionConfigurationsNode.IsNull())
     {
-      while(!lambdaFunctionConfigurationNode.IsNull())
+      while(!lambdaFunctionConfigurationsNode.IsNull())
       {
-        m_lambdaFunctionConfigurations.push_back(lambdaFunctionConfigurationNode);
-        lambdaFunctionConfigurationNode = lambdaFunctionConfigurationNode.NextNode("LambdaFunctionConfiguration");
+        m_lambdaFunctionConfigurations.push_back(lambdaFunctionConfigurationsNode);
+        lambdaFunctionConfigurationsNode = lambdaFunctionConfigurationsNode.NextNode("LambdaFunctionConfigurations");
       }
 
       m_lambdaFunctionConfigurationsHasBeenSet = true;

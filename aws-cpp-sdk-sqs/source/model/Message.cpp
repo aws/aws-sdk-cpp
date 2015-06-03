@@ -15,6 +15,7 @@
 #include <aws/sqs/model/Message.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -118,26 +119,26 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_messageIdHasBeenSet)
   {
-    oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
+      oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
   }
   if(m_receiptHandleHasBeenSet)
   {
-    oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+      oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
   if(m_mD5OfBodyHasBeenSet)
   {
-    oStream << location << index << locationValue << ".MD5OfBody=" << StringUtils::URLEncode(m_mD5OfBody.c_str()) << "&";
+      oStream << location << index << locationValue << ".MD5OfBody=" << StringUtils::URLEncode(m_mD5OfBody.c_str()) << "&";
   }
   if(m_bodyHasBeenSet)
   {
-    oStream << location << index << locationValue << ".Body=" << StringUtils::URLEncode(m_body.c_str()) << "&";
+      oStream << location << index << locationValue << ".Body=" << StringUtils::URLEncode(m_body.c_str()) << "&";
   }
   if(m_attributesHasBeenSet)
   {
   }
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
-    oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
+      oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
   if(m_messageAttributesHasBeenSet)
   {
@@ -148,26 +149,26 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_messageIdHasBeenSet)
   {
-    oStream << location << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
+      oStream << location << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
   }
   if(m_receiptHandleHasBeenSet)
   {
-    oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+      oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
   if(m_mD5OfBodyHasBeenSet)
   {
-    oStream << location << ".MD5OfBody=" << StringUtils::URLEncode(m_mD5OfBody.c_str()) << "&";
+      oStream << location << ".MD5OfBody=" << StringUtils::URLEncode(m_mD5OfBody.c_str()) << "&";
   }
   if(m_bodyHasBeenSet)
   {
-    oStream << location << ".Body=" << StringUtils::URLEncode(m_body.c_str()) << "&";
+      oStream << location << ".Body=" << StringUtils::URLEncode(m_body.c_str()) << "&";
   }
   if(m_attributesHasBeenSet)
   {
   }
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
-    oStream << location << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
+      oStream << location << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
   if(m_messageAttributesHasBeenSet)
   {

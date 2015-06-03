@@ -48,11 +48,11 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
     }
     XmlNode lambdaFunctionArnNode = resultNode.FirstChild("LambdaFunctionArn");
     m_lambdaFunctionArn = StringUtils::Trim(lambdaFunctionArnNode.GetText().c_str());
-    XmlNode eventNode = resultNode.FirstChild("Event");
-    while(!eventNode.IsNull())
+    XmlNode eventsNode = resultNode.FirstChild("Events");
+    while(!eventsNode.IsNull())
     {
-      m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventNode.GetText().c_str())));
-      eventNode = eventNode.NextNode("Event");
+      m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
+      eventsNode = eventsNode.NextNode("Events");
     }
 
   }

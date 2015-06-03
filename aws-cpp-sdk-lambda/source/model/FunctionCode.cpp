@@ -23,12 +23,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 FunctionCode::FunctionCode() : 
-    m_zipFileHasBeenSet(false)
+    m_zipFileHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
+    m_s3KeyHasBeenSet(false),
+    m_s3ObjectVersionHasBeenSet(false)
 {
 }
 
 FunctionCode::FunctionCode(const JsonValue& jsonValue) : 
-    m_zipFileHasBeenSet(false)
+    m_zipFileHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
+    m_s3KeyHasBeenSet(false),
+    m_s3ObjectVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,6 +48,27 @@ FunctionCode& FunctionCode::operator =(const JsonValue& jsonValue)
     m_zipFileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3Bucket"))
+  {
+    m_s3Bucket = jsonValue.GetString("S3Bucket");
+
+    m_s3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3Key"))
+  {
+    m_s3Key = jsonValue.GetString("S3Key");
+
+    m_s3KeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3ObjectVersion"))
+  {
+    m_s3ObjectVersion = jsonValue.GetString("S3ObjectVersion");
+
+    m_s3ObjectVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -52,6 +79,24 @@ JsonValue FunctionCode::Jsonize() const
   if(m_zipFileHasBeenSet)
   {
    payload.WithString("ZipFile", HashingUtils::Base64Encode(m_zipFile));
+  }
+
+  if(m_s3BucketHasBeenSet)
+  {
+   payload.WithString("S3Bucket", m_s3Bucket);
+
+  }
+
+  if(m_s3KeyHasBeenSet)
+  {
+   payload.WithString("S3Key", m_s3Key);
+
+  }
+
+  if(m_s3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("S3ObjectVersion", m_s3ObjectVersion);
+
   }
 
   return std::move(payload);

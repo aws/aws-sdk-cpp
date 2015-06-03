@@ -24,9 +24,7 @@ namespace Model
 {
   enum class Runtime
   {
-    nodejs,
-    jvm,
-    python
+    nodejs
   };
 
 namespace RuntimeMapper

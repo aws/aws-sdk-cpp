@@ -18,6 +18,7 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
+#include <aws/core/utils/memory/stl/AWSFunction.h>
 
 #include <algorithm>
 #include <mutex>
@@ -40,7 +41,7 @@ class DefaultRateLimiter : public RateLimiterInterface
         using InternalTimePointType = std::chrono::time_point<CLOCK>;
         using ElapsedTimeFunctionType = std::function< InternalTimePointType() >;
 
-        DefaultRateLimiter(int64_t maxRate, ElapsedTimeFunctionType elapsedTimeFunction = CLOCK::now) :
+        DefaultRateLimiter(int64_t maxRate, ElapsedTimeFunctionType elapsedTimeFunction = AWS_BUILD_FUNCTION(CLOCK::now)) :
             m_elapsedTimeFunction(elapsedTimeFunction),
             m_maxRate(0),
             m_accumulatorLock(),

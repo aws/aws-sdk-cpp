@@ -76,19 +76,19 @@ namespace DynamoDB
 
 namespace Model
 {
-  class BatchGetItemRequest;
-  class BatchWriteItemRequest;
-  class CreateTableRequest;
-  class DeleteItemRequest;
-  class DeleteTableRequest;
-  class DescribeTableRequest;
-  class GetItemRequest;
-  class ListTablesRequest;
-  class PutItemRequest;
-  class QueryRequest;
-  class ScanRequest;
-  class UpdateItemRequest;
-  class UpdateTableRequest;
+    class BatchGetItemRequest;
+    class BatchWriteItemRequest;
+    class CreateTableRequest;
+    class DeleteItemRequest;
+    class DeleteTableRequest;
+    class DescribeTableRequest;
+    class GetItemRequest;
+    class ListTablesRequest;
+    class PutItemRequest;
+    class QueryRequest;
+    class ScanRequest;
+    class UpdateItemRequest;
+    class UpdateTableRequest;
 
   typedef Utils::Outcome<BatchGetItemResult, Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
   typedef Utils::Outcome<BatchWriteItemResult, Client::AWSError<DynamoDBErrors>> BatchWriteItemOutcome;

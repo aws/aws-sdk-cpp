@@ -53,9 +53,6 @@ Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() cons
    ss.str("");
   }
 
-  ss << m_contentType;
-  headers.insert(Aws::Http::HeaderValuePair("content-type", ss.str()));
-  ss.str("");
   return std::move(headers);
 
 }

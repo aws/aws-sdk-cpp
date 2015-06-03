@@ -68,31 +68,21 @@ namespace Model
     /*
      Date and time at which the object was uploaded.
     */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     /*
      Date and time at which the object was uploaded.
     */
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /*
      Date and time at which the object was uploaded.
     */
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-
-    /*
-     Date and time at which the object was uploaded.
-    */
-    inline CopyPartResult&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    /*
-     Date and time at which the object was uploaded.
-    */
-    inline CopyPartResult& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline CopyPartResult&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    Aws::String m_lastModified;
+    double m_lastModified;
     bool m_lastModifiedHasBeenSet;
   };
 

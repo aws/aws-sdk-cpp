@@ -15,6 +15,7 @@
 #include <aws/sqs/model/SendMessageBatchRequestEntry.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -78,7 +79,7 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
   oStream << location << index << locationValue << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
   if(m_delaySecondsHasBeenSet)
   {
-    oStream << location << index << locationValue << ".DelaySeconds=" << m_delaySeconds << "&";
+      oStream << location << index << locationValue << ".DelaySeconds=" << m_delaySeconds << "&";
   }
   if(m_messageAttributesHasBeenSet)
   {
@@ -91,7 +92,7 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
   oStream << location << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
   if(m_delaySecondsHasBeenSet)
   {
-    oStream << location << ".DelaySeconds=" << m_delaySeconds << "&";
+      oStream << location << ".DelaySeconds=" << m_delaySeconds << "&";
   }
   if(m_messageAttributesHasBeenSet)
   {

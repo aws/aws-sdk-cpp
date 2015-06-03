@@ -95,26 +95,16 @@ namespace Model
     /*
      Date and time at which the multipart upload was initiated.
     */
-    inline const Aws::String& GetInitiated() const{ return m_initiated; }
+    inline double GetInitiated() const{ return m_initiated; }
     /*
      Date and time at which the multipart upload was initiated.
     */
-    inline void SetInitiated(const Aws::String& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
+    inline void SetInitiated(double value) { m_initiatedHasBeenSet = true; m_initiated = value; }
 
     /*
      Date and time at which the multipart upload was initiated.
     */
-    inline void SetInitiated(const char* value) { m_initiatedHasBeenSet = true; m_initiated.assign(value); }
-
-    /*
-     Date and time at which the multipart upload was initiated.
-    */
-    inline MultipartUpload&  WithInitiated(const Aws::String& value) { SetInitiated(value); return *this;}
-
-    /*
-     Date and time at which the multipart upload was initiated.
-    */
-    inline MultipartUpload& WithInitiated(const char* value) { SetInitiated(value); return *this;}
+    inline MultipartUpload&  WithInitiated(double value) { SetInitiated(value); return *this;}
 
     /*
      The class of storage used to store the object.
@@ -157,7 +147,7 @@ namespace Model
     bool m_uploadIdHasBeenSet;
     Aws::String m_key;
     bool m_keyHasBeenSet;
-    Aws::String m_initiated;
+    double m_initiated;
     bool m_initiatedHasBeenSet;
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;

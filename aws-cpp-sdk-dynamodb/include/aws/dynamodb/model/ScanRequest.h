@@ -337,6 +337,14 @@ namespace Model
     */
     inline ScanRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
 
+    
+    inline bool GetConsistentRead() const{ return m_consistentRead; }
+    
+    inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
+
+    
+    inline ScanRequest&  WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
+
   private:
     Aws::String m_tableName;
     Aws::String m_indexName;
@@ -367,6 +375,8 @@ namespace Model
     bool m_expressionAttributeNamesHasBeenSet;
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
     bool m_expressionAttributeValuesHasBeenSet;
+    bool m_consistentRead;
+    bool m_consistentReadHasBeenSet;
   };
 
 } // namespace Model

@@ -48,10 +48,6 @@ Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject thisRef )
   Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Trace));
   ::testing::InitGoogleTest(&dummy, &dummy2);
   auto result = RUN_ALL_TESTS();
-  
-  AWS_LOGSTREAM_ERROR("LogTest", "Derp");
-  AWS_LOG_ERROR("LogTest", "DoubleDerp");
-  AWS_LOG_WARN("WarnTest", "Warnings appeared earlier");
 
   std::this_thread::sleep_for(std::chrono::seconds(3));
 

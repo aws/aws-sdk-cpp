@@ -26,8 +26,10 @@ using namespace Aws::Http;
 
 UploadPartCopyRequest::UploadPartCopyRequest() : 
     m_copySourceIfMatchHasBeenSet(false),
+    m_copySourceIfModifiedSince(0.0),
     m_copySourceIfModifiedSinceHasBeenSet(false),
     m_copySourceIfNoneMatchHasBeenSet(false),
+    m_copySourceIfUnmodifiedSince(0.0),
     m_copySourceIfUnmodifiedSinceHasBeenSet(false),
     m_copySourceRangeHasBeenSet(false),
     m_partNumber(0),

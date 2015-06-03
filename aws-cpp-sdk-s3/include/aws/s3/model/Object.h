@@ -58,18 +58,12 @@ namespace Model
     inline Object& WithKey(const char* value) { SetKey(value); return *this;}
 
     
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-
-    
-    inline Object&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    
-    inline Object& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline Object&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
@@ -118,7 +112,7 @@ namespace Model
   private:
     Aws::String m_key;
     bool m_keyHasBeenSet;
-    Aws::String m_lastModified;
+    double m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;

@@ -22,7 +22,11 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFunctionCodeRequest::UpdateFunctionCodeRequest()
+UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() : 
+    m_zipFileHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
+    m_s3KeyHasBeenSet(false),
+    m_s3ObjectVersionHasBeenSet(false)
 {
 }
 
@@ -30,7 +34,29 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ZipFile", HashingUtils::Base64Encode(m_zipFile));
+  if(m_zipFileHasBeenSet)
+  {
+   payload.WithString("ZipFile", HashingUtils::Base64Encode(m_zipFile));
+  }
+
+  if(m_s3BucketHasBeenSet)
+  {
+   payload.WithString("S3Bucket", m_s3Bucket);
+
+  }
+
+  if(m_s3KeyHasBeenSet)
+  {
+   payload.WithString("S3Key", m_s3Key);
+
+  }
+
+  if(m_s3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("S3ObjectVersion", m_s3ObjectVersion);
+
+  }
+
   return payload.WriteReadable();
 }
 

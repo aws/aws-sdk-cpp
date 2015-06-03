@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 
 CopyPartResult::CopyPartResult() : 
     m_eTagHasBeenSet(false),
+    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false)
 {
 }
 
 CopyPartResult::CopyPartResult(const XmlNode& xmlNode) : 
     m_eTagHasBeenSet(false),
+    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false)
 {
   *this = xmlNode;
@@ -51,7 +53,7 @@ CopyPartResult& CopyPartResult::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::Trim(lastModifiedNode.GetText().c_str());
+      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
       m_lastModifiedHasBeenSet = true;
     }
   }
@@ -71,7 +73,9 @@ void CopyPartResult::AddToNode(XmlNode& parentNode) const
   if(m_lastModifiedHasBeenSet)
   {
    XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-   lastModifiedNode.SetText(m_lastModified);
+  ss << m_lastModified;
+   lastModifiedNode.SetText(ss.str());
+  ss.str("");
   }
 
 }

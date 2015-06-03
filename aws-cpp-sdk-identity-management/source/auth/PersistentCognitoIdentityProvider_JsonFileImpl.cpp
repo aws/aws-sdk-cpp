@@ -96,7 +96,7 @@ JsonValue PersistentCognitoIdentityProvider_JsonFileImpl::LoadJsonDocFromFile() 
     if(FileSystemUtils::CreateDirectoryIfNotExists(identitiesDir.c_str()))
     {
         Aws::String identitiesFile = identitiesDir + PATH_DELIM + FILENAME;
-        std::ifstream infile(identitiesFile);
+        std::ifstream infile(identitiesFile.c_str());
         if (infile.is_open() && infile.good())
         {
             return JsonValue(infile);
@@ -114,7 +114,7 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistChangesToFile(const 
 {
     //the assumption here is that we've already created the directory by the time we make it here.
     Aws::String identitiesFile = FileSystemUtils::GetHomeDirectory() + PATH_DELIM + DIR + PATH_DELIM + FILENAME;
-    std::ofstream outfile(identitiesFile, std::ios_base::trunc | std::ios_base::out);
+    std::ofstream outfile(identitiesFile.c_str(), std::ios_base::trunc | std::ios_base::out);
 
     if(outfile.is_open() && outfile.good())
     {

@@ -115,26 +115,16 @@ namespace Model
     /*
      <p>The date at which these credentials will expire.</p>
     */
-    inline const Aws::String& GetExpiration() const{ return m_expiration; }
+    inline double GetExpiration() const{ return m_expiration; }
     /*
      <p>The date at which these credentials will expire.</p>
     */
-    inline void SetExpiration(const Aws::String& value) { m_expirationHasBeenSet = true; m_expiration = value; }
+    inline void SetExpiration(double value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /*
      <p>The date at which these credentials will expire.</p>
     */
-    inline void SetExpiration(const char* value) { m_expirationHasBeenSet = true; m_expiration.assign(value); }
-
-    /*
-     <p>The date at which these credentials will expire.</p>
-    */
-    inline Credentials&  WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
-
-    /*
-     <p>The date at which these credentials will expire.</p>
-    */
-    inline Credentials& WithExpiration(const char* value) { SetExpiration(value); return *this;}
+    inline Credentials&  WithExpiration(double value) { SetExpiration(value); return *this;}
 
   private:
     Aws::String m_accessKeyId;
@@ -143,7 +133,7 @@ namespace Model
     bool m_secretKeyHasBeenSet;
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
-    Aws::String m_expiration;
+    double m_expiration;
     bool m_expirationHasBeenSet;
   };
 

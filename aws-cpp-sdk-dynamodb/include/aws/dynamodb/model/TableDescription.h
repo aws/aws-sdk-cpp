@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/TableStatus.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
+#include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -189,6 +190,20 @@ namespace Model
     */
     inline TableDescription&  WithItemCount(long long value) { SetItemCount(value); return *this;}
 
+    
+    inline const Aws::String& GetTableArn() const{ return m_tableArn; }
+    
+    inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
+
+    
+    inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
+
+    
+    inline TableDescription&  WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
+
+    
+    inline TableDescription& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+
     /*
      <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given hash key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul> </li> <li> <p><i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li> </ul> </li> <li> <p><i>IndexSizeBytes</i> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li> <li> <p><i>ItemCount</i> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li> </ul> <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
     */
@@ -227,6 +242,42 @@ namespace Model
     */
     inline TableDescription& AddGlobalSecondaryIndexes(const GlobalSecondaryIndexDescription& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
 
+    
+    inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
+    
+    inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
+
+    
+    inline TableDescription&  WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
+
+    
+    inline const Aws::String& GetLatestStreamLabel() const{ return m_latestStreamLabel; }
+    
+    inline void SetLatestStreamLabel(const Aws::String& value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel = value; }
+
+    
+    inline void SetLatestStreamLabel(const char* value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel.assign(value); }
+
+    
+    inline TableDescription&  WithLatestStreamLabel(const Aws::String& value) { SetLatestStreamLabel(value); return *this;}
+
+    
+    inline TableDescription& WithLatestStreamLabel(const char* value) { SetLatestStreamLabel(value); return *this;}
+
+    
+    inline const Aws::String& GetLatestStreamArn() const{ return m_latestStreamArn; }
+    
+    inline void SetLatestStreamArn(const Aws::String& value) { m_latestStreamArnHasBeenSet = true; m_latestStreamArn = value; }
+
+    
+    inline void SetLatestStreamArn(const char* value) { m_latestStreamArnHasBeenSet = true; m_latestStreamArn.assign(value); }
+
+    
+    inline TableDescription&  WithLatestStreamArn(const Aws::String& value) { SetLatestStreamArn(value); return *this;}
+
+    
+    inline TableDescription& WithLatestStreamArn(const char* value) { SetLatestStreamArn(value); return *this;}
+
   private:
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
     bool m_attributeDefinitionsHasBeenSet;
@@ -244,10 +295,18 @@ namespace Model
     bool m_tableSizeBytesHasBeenSet;
     long long m_itemCount;
     bool m_itemCountHasBeenSet;
+    Aws::String m_tableArn;
+    bool m_tableArnHasBeenSet;
     Aws::Vector<LocalSecondaryIndexDescription> m_localSecondaryIndexes;
     bool m_localSecondaryIndexesHasBeenSet;
     Aws::Vector<GlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
+    StreamSpecification m_streamSpecification;
+    bool m_streamSpecificationHasBeenSet;
+    Aws::String m_latestStreamLabel;
+    bool m_latestStreamLabelHasBeenSet;
+    Aws::String m_latestStreamArn;
+    bool m_latestStreamArnHasBeenSet;
   };
 
 } // namespace Model

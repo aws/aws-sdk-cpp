@@ -18,8 +18,6 @@
 using namespace Aws::Utils;
 
 static const int nodejs_HASH = HashingUtils::HashString("nodejs");
-static const int jvm_HASH = HashingUtils::HashString("jvm");
-static const int python_HASH = HashingUtils::HashString("python");
 
 namespace Aws
 {
@@ -37,14 +35,6 @@ Runtime GetRuntimeForName(const Aws::String& name)
   {
     return Runtime::nodejs;
   }
-  else if (hashCode == jvm_HASH)
-  {
-    return Runtime::jvm;
-  }
-  else if (hashCode == python_HASH)
-  {
-    return Runtime::python;
-  }
 
   return Runtime::nodejs;
 }
@@ -55,10 +45,6 @@ Aws::String GetNameForRuntime(Runtime value)
   {
   case Runtime::nodejs:
     return "nodejs";
-  case Runtime::jvm:
-    return "jvm";
-  case Runtime::python:
-    return "python";
   default:
     return "nodejs";
   }

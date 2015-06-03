@@ -57,7 +57,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::PROVISIONED_THROUGHPUT_EXCEEDED), true);
   }
-
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 

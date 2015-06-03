@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 Part::Part() : 
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
+    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_eTagHasBeenSet(false),
     m_size(0),
@@ -36,6 +37,7 @@ Part::Part() :
 Part::Part(const XmlNode& xmlNode) : 
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
+    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_eTagHasBeenSet(false),
     m_size(0),
@@ -59,7 +61,7 @@ Part& Part::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::Trim(lastModifiedNode.GetText().c_str());
+      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
@@ -93,7 +95,9 @@ void Part::AddToNode(XmlNode& parentNode) const
   if(m_lastModifiedHasBeenSet)
   {
    XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-   lastModifiedNode.SetText(m_lastModified);
+  ss << m_lastModified;
+   lastModifiedNode.SetText(ss.str());
+  ss.str("");
   }
 
   if(m_eTagHasBeenSet)

@@ -1,0 +1,185 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudfront/model/DistributionConfig.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudFront::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+DistributionConfig::DistributionConfig() : 
+    m_aliasesHasBeenSet(false),
+    m_defaultRootObjectHasBeenSet(false),
+    m_cacheBehaviorsHasBeenSet(false),
+    m_customErrorResponsesHasBeenSet(false),
+    m_loggingHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false),
+    m_viewerCertificateHasBeenSet(false),
+    m_restrictionsHasBeenSet(false)
+{
+}
+
+DistributionConfig::DistributionConfig(const XmlNode& xmlNode) : 
+    m_aliasesHasBeenSet(false),
+    m_defaultRootObjectHasBeenSet(false),
+    m_cacheBehaviorsHasBeenSet(false),
+    m_customErrorResponsesHasBeenSet(false),
+    m_loggingHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false),
+    m_viewerCertificateHasBeenSet(false),
+    m_restrictionsHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
+    m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+    XmlNode aliasesNode = resultNode.FirstChild("Aliases");
+    if(!aliasesNode.IsNull())
+    {
+      m_aliases = aliasesNode;
+      m_aliasesHasBeenSet = true;
+    }
+    XmlNode defaultRootObjectNode = resultNode.FirstChild("DefaultRootObject");
+    if(!defaultRootObjectNode.IsNull())
+    {
+      m_defaultRootObject = StringUtils::Trim(defaultRootObjectNode.GetText().c_str());
+      m_defaultRootObjectHasBeenSet = true;
+    }
+    XmlNode originsNode = resultNode.FirstChild("Origins");
+    m_origins = originsNode;
+    XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
+    m_defaultCacheBehavior = defaultCacheBehaviorNode;
+    XmlNode cacheBehaviorsNode = resultNode.FirstChild("CacheBehaviors");
+    if(!cacheBehaviorsNode.IsNull())
+    {
+      m_cacheBehaviors = cacheBehaviorsNode;
+      m_cacheBehaviorsHasBeenSet = true;
+    }
+    XmlNode customErrorResponsesNode = resultNode.FirstChild("CustomErrorResponses");
+    if(!customErrorResponsesNode.IsNull())
+    {
+      m_customErrorResponses = customErrorResponsesNode;
+      m_customErrorResponsesHasBeenSet = true;
+    }
+    XmlNode commentNode = resultNode.FirstChild("Comment");
+    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    XmlNode loggingNode = resultNode.FirstChild("Logging");
+    if(!loggingNode.IsNull())
+    {
+      m_logging = loggingNode;
+      m_loggingHasBeenSet = true;
+    }
+    XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
+    if(!priceClassNode.IsNull())
+    {
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
+      m_priceClassHasBeenSet = true;
+    }
+    XmlNode enabledNode = resultNode.FirstChild("Enabled");
+    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    XmlNode viewerCertificateNode = resultNode.FirstChild("ViewerCertificate");
+    if(!viewerCertificateNode.IsNull())
+    {
+      m_viewerCertificate = viewerCertificateNode;
+      m_viewerCertificateHasBeenSet = true;
+    }
+    XmlNode restrictionsNode = resultNode.FirstChild("Restrictions");
+    if(!restrictionsNode.IsNull())
+    {
+      m_restrictions = restrictionsNode;
+      m_restrictionsHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void DistributionConfig::AddToNode(XmlNode& parentNode) const
+{
+  Aws::StringStream ss;
+  XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+  callerReferenceNode.SetText(m_callerReference);
+  if(m_aliasesHasBeenSet)
+  {
+   XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
+   m_aliases.AddToNode(aliasesNode);
+  }
+
+  if(m_defaultRootObjectHasBeenSet)
+  {
+   XmlNode defaultRootObjectNode = parentNode.CreateChildElement("DefaultRootObject");
+   defaultRootObjectNode.SetText(m_defaultRootObject);
+  }
+
+  XmlNode originsNode = parentNode.CreateChildElement("Origins");
+  m_origins.AddToNode(originsNode);
+  XmlNode defaultCacheBehaviorNode = parentNode.CreateChildElement("DefaultCacheBehavior");
+  m_defaultCacheBehavior.AddToNode(defaultCacheBehaviorNode);
+  if(m_cacheBehaviorsHasBeenSet)
+  {
+   XmlNode cacheBehaviorsNode = parentNode.CreateChildElement("CacheBehaviors");
+   m_cacheBehaviors.AddToNode(cacheBehaviorsNode);
+  }
+
+  if(m_customErrorResponsesHasBeenSet)
+  {
+   XmlNode customErrorResponsesNode = parentNode.CreateChildElement("CustomErrorResponses");
+   m_customErrorResponses.AddToNode(customErrorResponsesNode);
+  }
+
+  XmlNode commentNode = parentNode.CreateChildElement("Comment");
+  commentNode.SetText(m_comment);
+  if(m_loggingHasBeenSet)
+  {
+   XmlNode loggingNode = parentNode.CreateChildElement("Logging");
+   m_logging.AddToNode(loggingNode);
+  }
+
+  if(m_priceClassHasBeenSet)
+  {
+   XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
+   priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
+  }
+
+  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  ss << m_enabled;
+  enabledNode.SetText(ss.str());
+  ss.str("");
+  if(m_viewerCertificateHasBeenSet)
+  {
+   XmlNode viewerCertificateNode = parentNode.CreateChildElement("ViewerCertificate");
+   m_viewerCertificate.AddToNode(viewerCertificateNode);
+  }
+
+  if(m_restrictionsHasBeenSet)
+  {
+   XmlNode restrictionsNode = parentNode.CreateChildElement("Restrictions");
+   m_restrictions.AddToNode(restrictionsNode);
+  }
+
+}

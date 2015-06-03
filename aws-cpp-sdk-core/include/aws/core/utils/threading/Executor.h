@@ -18,7 +18,7 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <functional>
-
+#include <aws/core/utils/memory/stl/AWSFunction.h>
 namespace Aws
 {
 namespace Utils
@@ -38,7 +38,7 @@ namespace Threading
         template<class Fn, class ... Args>
         bool Submit(Fn&& fn, Args&& ... args)
         {
-            return SubmitToThread(std::bind(std::forward<Fn>(fn), std::forward<Args>(args)...));
+            return SubmitToThread(AWS_BUILD_TYPED_FUNCTION(std::bind(std::forward<Fn>(fn), std::forward<Args>(args)...), void()));
         }
 
     protected:

@@ -15,6 +15,7 @@
 #include <aws/sqs/model/BatchResultErrorEntry.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -65,7 +66,7 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
   if(m_messageHasBeenSet)
   {
-    oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+      oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
 
@@ -76,6 +77,6 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   oStream << location << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
   if(m_messageHasBeenSet)
   {
-    oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+      oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }

@@ -32,8 +32,12 @@ TableDescription::TableDescription() :
     m_tableSizeBytesHasBeenSet(false),
     m_itemCount(0),
     m_itemCountHasBeenSet(false),
+    m_tableArnHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_streamSpecificationHasBeenSet(false),
+    m_latestStreamLabelHasBeenSet(false),
+    m_latestStreamArnHasBeenSet(false)
 {
 }
 
@@ -48,8 +52,12 @@ TableDescription::TableDescription(const JsonValue& jsonValue) :
     m_tableSizeBytesHasBeenSet(false),
     m_itemCount(0),
     m_itemCountHasBeenSet(false),
+    m_tableArnHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_streamSpecificationHasBeenSet(false),
+    m_latestStreamLabelHasBeenSet(false),
+    m_latestStreamArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +126,13 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
     m_itemCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableArn"))
+  {
+    m_tableArn = jsonValue.GetString("TableArn");
+
+    m_tableArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
     Array<JsonValue> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
@@ -136,6 +151,27 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
     }
     m_globalSecondaryIndexesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StreamSpecification"))
+  {
+    m_streamSpecification = jsonValue.GetObject("StreamSpecification");
+
+    m_streamSpecificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LatestStreamLabel"))
+  {
+    m_latestStreamLabel = jsonValue.GetString("LatestStreamLabel");
+
+    m_latestStreamLabelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LatestStreamArn"))
+  {
+    m_latestStreamArn = jsonValue.GetString("LatestStreamArn");
+
+    m_latestStreamArnHasBeenSet = true;
   }
 
   return *this;
@@ -202,6 +238,12 @@ JsonValue TableDescription::Jsonize() const
 
   }
 
+  if(m_tableArnHasBeenSet)
+  {
+   payload.WithString("TableArn", m_tableArn);
+
+  }
+
   if(m_localSecondaryIndexesHasBeenSet)
   {
    Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
@@ -221,6 +263,24 @@ JsonValue TableDescription::Jsonize() const
      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
    }
    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
+
+  }
+
+  if(m_streamSpecificationHasBeenSet)
+  {
+   payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
+
+  }
+
+  if(m_latestStreamLabelHasBeenSet)
+  {
+   payload.WithString("LatestStreamLabel", m_latestStreamLabel);
+
+  }
+
+  if(m_latestStreamArnHasBeenSet)
+  {
+   payload.WithString("LatestStreamArn", m_latestStreamArn);
 
   }
 

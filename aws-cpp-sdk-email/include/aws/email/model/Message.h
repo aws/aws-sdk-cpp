@@ -1,0 +1,82 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/email/SES_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/email/model/Content.h>
+#include <aws/email/model/Body.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace SES
+{
+namespace Model
+{
+  /*
+    <p>Represents the message to be sent, composed of a subject and a body.</p>
+  */
+  class AWS_SES_API Message
+  {
+  public:
+    Message();
+    Message(const Aws::Utils::Xml::XmlNode& xmlNode);
+    Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    */
+    inline const Content& GetSubject() const{ return m_subject; }
+    /*
+     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    */
+    inline void SetSubject(const Content& value) { m_subject = value; }
+
+    /*
+     <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    */
+    inline Message&  WithSubject(const Content& value) { SetSubject(value); return *this;}
+
+    /*
+     <p>The message body.</p>
+    */
+    inline const Body& GetBody() const{ return m_body; }
+    /*
+     <p>The message body.</p>
+    */
+    inline void SetBody(const Body& value) { m_body = value; }
+
+    /*
+     <p>The message body.</p>
+    */
+    inline Message&  WithBody(const Body& value) { SetBody(value); return *this;}
+
+  private:
+    Content m_subject;
+    Body m_body;
+  };
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

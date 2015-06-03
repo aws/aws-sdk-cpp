@@ -191,26 +191,16 @@ namespace Model
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline const Aws::String& GetExpires() const{ return m_expires; }
+    inline double GetExpires() const{ return m_expires; }
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline void SetExpires(const Aws::String& value) { m_expiresHasBeenSet = true; m_expires = value; }
+    inline void SetExpires(double value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /*
      The date and time at which the object is no longer cacheable.
     */
-    inline void SetExpires(const char* value) { m_expiresHasBeenSet = true; m_expires.assign(value); }
-
-    /*
-     The date and time at which the object is no longer cacheable.
-    */
-    inline CreateMultipartUploadRequest&  WithExpires(const Aws::String& value) { SetExpires(value); return *this;}
-
-    /*
-     The date and time at which the object is no longer cacheable.
-    */
-    inline CreateMultipartUploadRequest& WithExpires(const char* value) { SetExpires(value); return *this;}
+    inline CreateMultipartUploadRequest&  WithExpires(double value) { SetExpires(value); return *this;}
 
     /*
      Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -516,7 +506,7 @@ namespace Model
     bool m_contentLanguageHasBeenSet;
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
-    Aws::String m_expires;
+    double m_expires;
     bool m_expiresHasBeenSet;
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet;

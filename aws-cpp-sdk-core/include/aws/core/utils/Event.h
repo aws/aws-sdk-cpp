@@ -17,6 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
+#include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <functional>
@@ -51,7 +52,7 @@ public:
     void Subscribe(const EventHandler& toSubscribe)
     {
         std::lock_guard<std::mutex> locker(m_callbackMutex);
-        m_callbacks.push_back(toSubscribe);
+        m_callbacks.push_back(AWS_BUILD_FUNCTION(toSubscribe));
     }
 
     void Clear()

@@ -47,6 +47,11 @@ public:
     */
     static int CalculateCurrentHour();
 
+    /**
+     * The amazon timestamp format is a double with seconds.milliseconds
+     */
+    static double ComputeCurrentTimestampInAmazonFormat();
+
 private:
     static std::mutex timeMutex;
 };

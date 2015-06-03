@@ -115,26 +115,16 @@ namespace Model
     /*
      Date and time the object was last modified.
     */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     /*
      Date and time the object was last modified.
     */
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /*
      Date and time the object was last modified.
     */
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-
-    /*
-     Date and time the object was last modified.
-    */
-    inline DeleteMarkerEntry&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    /*
-     Date and time the object was last modified.
-    */
-    inline DeleteMarkerEntry& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline DeleteMarkerEntry&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
   private:
     Owner m_owner;
@@ -145,7 +135,7 @@ namespace Model
     bool m_versionIdHasBeenSet;
     bool m_isLatest;
     bool m_isLatestHasBeenSet;
-    Aws::String m_lastModified;
+    double m_lastModified;
     bool m_lastModifiedHasBeenSet;
   };
 

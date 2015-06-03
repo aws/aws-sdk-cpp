@@ -68,31 +68,21 @@ namespace Model
     /*
      Date the bucket was created.
     */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline double GetCreationDate() const{ return m_creationDate; }
     /*
      Date the bucket was created.
     */
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /*
      Date the bucket was created.
     */
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-
-    /*
-     Date the bucket was created.
-    */
-    inline Bucket&  WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-
-    /*
-     Date the bucket was created.
-    */
-    inline Bucket& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    inline Bucket&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    Aws::String m_creationDate;
+    double m_creationDate;
     bool m_creationDateHasBeenSet;
   };
 

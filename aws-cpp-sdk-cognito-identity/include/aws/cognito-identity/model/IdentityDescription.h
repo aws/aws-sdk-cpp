@@ -92,59 +92,39 @@ namespace Model
     /*
      <p>Date on which the identity was created.</p>
     */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline double GetCreationDate() const{ return m_creationDate; }
     /*
      <p>Date on which the identity was created.</p>
     */
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /*
-     <p>Date on which the identity was created.</p>
-    */
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
+    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /*
      <p>Date on which the identity was created.</p>
     */
-    inline IdentityDescription&  WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-
-    /*
-     <p>Date on which the identity was created.</p>
-    */
-    inline IdentityDescription& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    inline IdentityDescription&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
     /*
      <p>Date on which the identity was last modified.</p>
     */
-    inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
     /*
      <p>Date on which the identity was last modified.</p>
     */
-    inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /*
      <p>Date on which the identity was last modified.</p>
     */
-    inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-
-    /*
-     <p>Date on which the identity was last modified.</p>
-    */
-    inline IdentityDescription&  WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-
-    /*
-     <p>Date on which the identity was last modified.</p>
-    */
-    inline IdentityDescription& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    inline IdentityDescription&  WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
 
   private:
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
     Aws::Vector<Aws::String> m_logins;
     bool m_loginsHasBeenSet;
-    Aws::String m_creationDate;
+    double m_creationDate;
     bool m_creationDateHasBeenSet;
-    Aws::String m_lastModifiedDate;
+    double m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
   };
 

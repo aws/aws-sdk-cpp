@@ -1,0 +1,499 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/autoscaling/AutoScaling_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/autoscaling/model/InstanceMonitoring.h>
+#include <aws/autoscaling/model/BlockDeviceMapping.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace AutoScaling
+{
+namespace Model
+{
+  /*
+    <p>Describes a launch configuration.</p>
+  */
+  class AWS_AUTOSCALING_API LaunchConfiguration
+  {
+  public:
+    LaunchConfiguration();
+    LaunchConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    LaunchConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline LaunchConfiguration&  WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
+
+    /*
+     <p>The name of the launch configuration.</p>
+    */
+    inline LaunchConfiguration& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
+    */
+    inline const Aws::String& GetLaunchConfigurationARN() const{ return m_launchConfigurationARN; }
+    /*
+     <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
+    */
+    inline void SetLaunchConfigurationARN(const Aws::String& value) { m_launchConfigurationARNHasBeenSet = true; m_launchConfigurationARN = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
+    */
+    inline void SetLaunchConfigurationARN(const char* value) { m_launchConfigurationARNHasBeenSet = true; m_launchConfigurationARN.assign(value); }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
+    */
+    inline LaunchConfiguration&  WithLaunchConfigurationARN(const Aws::String& value) { SetLaunchConfigurationARN(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
+    */
+    inline LaunchConfiguration& WithLaunchConfigurationARN(const char* value) { SetLaunchConfigurationARN(value); return *this;}
+
+    /*
+     <p>The ID of the Amazon Machine Image (AMI).</p>
+    */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    /*
+     <p>The ID of the Amazon Machine Image (AMI).</p>
+    */
+    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
+
+    /*
+     <p>The ID of the Amazon Machine Image (AMI).</p>
+    */
+    inline void SetImageId(const char* value) { m_imageId.assign(value); }
+
+    /*
+     <p>The ID of the Amazon Machine Image (AMI).</p>
+    */
+    inline LaunchConfiguration&  WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /*
+     <p>The ID of the Amazon Machine Image (AMI).</p>
+    */
+    inline LaunchConfiguration& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+    /*
+     <p>The name of the key pair.</p>
+    */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    /*
+     <p>The name of the key pair.</p>
+    */
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+
+    /*
+     <p>The name of the key pair.</p>
+    */
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+
+    /*
+     <p>The name of the key pair.</p>
+    */
+    inline LaunchConfiguration&  WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+
+    /*
+     <p>The name of the key pair.</p>
+    */
+    inline LaunchConfiguration& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
+    /*
+     <p>The security groups to associate with the EC2 instances.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    /*
+     <p>The security groups to associate with the EC2 instances.</p>
+    */
+    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+
+    /*
+     <p>The security groups to associate with the EC2 instances.</p>
+    */
+    inline LaunchConfiguration&  WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+
+    /*
+     <p>The security groups to associate with the EC2 instances.</p>
+    */
+    inline LaunchConfiguration& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The security groups to associate with the EC2 instances.</p>
+    */
+    inline LaunchConfiguration& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you are launching EC2-Classic instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
+    /*
+     <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you are launching EC2-Classic instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
+
+    /*
+     <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you are launching EC2-Classic instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
+
+    /*
+     <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you are launching EC2-Classic instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline LaunchConfiguration&  WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
+
+    /*
+     <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you are launching EC2-Classic instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
+
+    /*
+     <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
+    /*
+     <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
+
+    /*
+     <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline LaunchConfiguration&  WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
+
+    /*
+     <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    */
+    inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p>The user data available to the EC2 instances.</p>
+    */
+    inline const Aws::String& GetUserData() const{ return m_userData; }
+    /*
+     <p>The user data available to the EC2 instances.</p>
+    */
+    inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
+
+    /*
+     <p>The user data available to the EC2 instances.</p>
+    */
+    inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
+
+    /*
+     <p>The user data available to the EC2 instances.</p>
+    */
+    inline LaunchConfiguration&  WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
+
+    /*
+     <p>The user data available to the EC2 instances.</p>
+    */
+    inline LaunchConfiguration& WithUserData(const char* value) { SetUserData(value); return *this;}
+
+    /*
+     <p>The instance type for the EC2 instances.</p>
+    */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    /*
+     <p>The instance type for the EC2 instances.</p>
+    */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
+
+    /*
+     <p>The instance type for the EC2 instances.</p>
+    */
+    inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
+
+    /*
+     <p>The instance type for the EC2 instances.</p>
+    */
+    inline LaunchConfiguration&  WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /*
+     <p>The instance type for the EC2 instances.</p>
+    */
+    inline LaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+    /*
+     <p>The ID of the kernel associated with the AMI.</p>
+    */
+    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    /*
+     <p>The ID of the kernel associated with the AMI.</p>
+    */
+    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+
+    /*
+     <p>The ID of the kernel associated with the AMI.</p>
+    */
+    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
+
+    /*
+     <p>The ID of the kernel associated with the AMI.</p>
+    */
+    inline LaunchConfiguration&  WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
+
+    /*
+     <p>The ID of the kernel associated with the AMI.</p>
+    */
+    inline LaunchConfiguration& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+
+    /*
+     <p>The ID of the RAM disk associated with the AMI.</p>
+    */
+    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+    /*
+     <p>The ID of the RAM disk associated with the AMI.</p>
+    */
+    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+
+    /*
+     <p>The ID of the RAM disk associated with the AMI.</p>
+    */
+    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
+
+    /*
+     <p>The ID of the RAM disk associated with the AMI.</p>
+    */
+    inline LaunchConfiguration&  WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
+
+    /*
+     <p>The ID of the RAM disk associated with the AMI.</p>
+    */
+    inline LaunchConfiguration& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+
+    /*
+     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+    */
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    /*
+     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+    */
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+
+    /*
+     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+    */
+    inline LaunchConfiguration&  WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /*
+     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+    */
+    inline LaunchConfiguration& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+
+    /*
+     <p>Controls whether instances in this group are launched with detailed monitoring.</p>
+    */
+    inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
+    /*
+     <p>Controls whether instances in this group are launched with detailed monitoring.</p>
+    */
+    inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
+
+    /*
+     <p>Controls whether instances in this group are launched with detailed monitoring.</p>
+    */
+    inline LaunchConfiguration&  WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
+
+    /*
+     <p>The price to bid when launching Spot Instances.</p>
+    */
+    inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+    /*
+     <p>The price to bid when launching Spot Instances.</p>
+    */
+    inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
+
+    /*
+     <p>The price to bid when launching Spot Instances.</p>
+    */
+    inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
+
+    /*
+     <p>The price to bid when launching Spot Instances.</p>
+    */
+    inline LaunchConfiguration&  WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
+
+    /*
+     <p>The price to bid when launching Spot Instances.</p>
+    */
+    inline LaunchConfiguration& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.</p>
+    */
+    inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.</p>
+    */
+    inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.</p>
+    */
+    inline void SetIamInstanceProfile(const char* value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile.assign(value); }
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.</p>
+    */
+    inline LaunchConfiguration&  WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
+
+    /*
+     <p>The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.</p>
+    */
+    inline LaunchConfiguration& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
+
+    /*
+     <p>The creation date and time for the launch configuration.</p>
+    */
+    inline double GetCreatedTime() const{ return m_createdTime; }
+    /*
+     <p>The creation date and time for the launch configuration.</p>
+    */
+    inline void SetCreatedTime(double value) { m_createdTime = value; }
+
+    /*
+     <p>The creation date and time for the launch configuration.</p>
+    */
+    inline LaunchConfiguration&  WithCreatedTime(double value) { SetCreatedTime(value); return *this;}
+
+    /*
+     <p>Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).</p>
+    */
+    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    /*
+     <p>Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).</p>
+    */
+    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
+
+    /*
+     <p>Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).</p>
+    */
+    inline LaunchConfiguration&  WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
+    /*
+     <p>Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
+    */
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+    /*
+     <p>Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
+    */
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
+
+    /*
+     <p>Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
+    */
+    inline LaunchConfiguration&  WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+
+    /*
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+    */
+    inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
+    /*
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+    */
+    inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
+
+    /*
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+    */
+    inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
+
+    /*
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+    */
+    inline LaunchConfiguration&  WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
+
+    /*
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+    */
+    inline LaunchConfiguration& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
+
+  private:
+    Aws::String m_launchConfigurationName;
+    Aws::String m_launchConfigurationARN;
+    bool m_launchConfigurationARNHasBeenSet;
+    Aws::String m_imageId;
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet;
+    Aws::Vector<Aws::String> m_securityGroups;
+    bool m_securityGroupsHasBeenSet;
+    Aws::String m_classicLinkVPCId;
+    bool m_classicLinkVPCIdHasBeenSet;
+    Aws::Vector<Aws::String> m_classicLinkVPCSecurityGroups;
+    bool m_classicLinkVPCSecurityGroupsHasBeenSet;
+    Aws::String m_userData;
+    bool m_userDataHasBeenSet;
+    Aws::String m_instanceType;
+    Aws::String m_kernelId;
+    bool m_kernelIdHasBeenSet;
+    Aws::String m_ramdiskId;
+    bool m_ramdiskIdHasBeenSet;
+    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
+    bool m_blockDeviceMappingsHasBeenSet;
+    InstanceMonitoring m_instanceMonitoring;
+    bool m_instanceMonitoringHasBeenSet;
+    Aws::String m_spotPrice;
+    bool m_spotPriceHasBeenSet;
+    Aws::String m_iamInstanceProfile;
+    bool m_iamInstanceProfileHasBeenSet;
+    double m_createdTime;
+    bool m_ebsOptimized;
+    bool m_ebsOptimizedHasBeenSet;
+    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddressHasBeenSet;
+    Aws::String m_placementTenancy;
+    bool m_placementTenancyHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

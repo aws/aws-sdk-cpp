@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 CreateTableRequest::CreateTableRequest() : 
     m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+    m_globalSecondaryIndexesHasBeenSet(false),
+    m_streamSpecificationHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   }
 
   payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  if(m_streamSpecificationHasBeenSet)
+  {
+   payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
+
+  }
 
   return payload.WriteReadable();
 }

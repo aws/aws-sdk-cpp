@@ -49,6 +49,7 @@ enum class AWS_COGNITOIDENTITY_API CognitoIdentityErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DEVELOPER_USER_ALREADY_REGISTERED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXTERNAL_SERVICE,
   INTERNAL_ERROR,
   INVALID_IDENTITY_POOL_CONFIGURATION,
   INVALID_PARAMETER,

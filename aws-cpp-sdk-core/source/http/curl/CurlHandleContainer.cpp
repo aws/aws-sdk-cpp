@@ -17,6 +17,8 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <algorithm>
 
+#undef min
+
 using namespace Aws::Utils::Logging;
 using namespace Aws::Http;
 

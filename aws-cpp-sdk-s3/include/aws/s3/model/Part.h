@@ -58,26 +58,16 @@ namespace Model
     /*
      Date and time at which the part was uploaded.
     */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline double GetLastModified() const{ return m_lastModified; }
     /*
      Date and time at which the part was uploaded.
     */
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /*
      Date and time at which the part was uploaded.
     */
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-
-    /*
-     Date and time at which the part was uploaded.
-    */
-    inline Part&  WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-
-    /*
-     Date and time at which the part was uploaded.
-    */
-    inline Part& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    inline Part&  WithLastModified(double value) { SetLastModified(value); return *this;}
 
     /*
      Entity tag returned when the part was uploaded.
@@ -120,7 +110,7 @@ namespace Model
   private:
     long m_partNumber;
     bool m_partNumberHasBeenSet;
-    Aws::String m_lastModified;
+    double m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;

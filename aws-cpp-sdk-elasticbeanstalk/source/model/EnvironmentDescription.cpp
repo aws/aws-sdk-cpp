@@ -1,0 +1,328 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/elasticbeanstalk/model/EnvironmentDescription.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::ElasticBeanstalk::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+EnvironmentDescription::EnvironmentDescription() : 
+    m_environmentNameHasBeenSet(false),
+    m_environmentIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false),
+    m_versionLabelHasBeenSet(false),
+    m_solutionStackNameHasBeenSet(false),
+    m_templateNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_endpointURLHasBeenSet(false),
+    m_cNAMEHasBeenSet(false),
+    m_dateCreated(0.0),
+    m_dateCreatedHasBeenSet(false),
+    m_dateUpdated(0.0),
+    m_dateUpdatedHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_abortableOperationInProgress(false),
+    m_abortableOperationInProgressHasBeenSet(false),
+    m_healthHasBeenSet(false),
+    m_resourcesHasBeenSet(false),
+    m_tierHasBeenSet(false)
+{
+}
+
+EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) : 
+    m_environmentNameHasBeenSet(false),
+    m_environmentIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false),
+    m_versionLabelHasBeenSet(false),
+    m_solutionStackNameHasBeenSet(false),
+    m_templateNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_endpointURLHasBeenSet(false),
+    m_cNAMEHasBeenSet(false),
+    m_dateCreated(0.0),
+    m_dateCreatedHasBeenSet(false),
+    m_dateUpdated(0.0),
+    m_dateUpdatedHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_abortableOperationInProgress(false),
+    m_abortableOperationInProgressHasBeenSet(false),
+    m_healthHasBeenSet(false),
+    m_resourcesHasBeenSet(false),
+    m_tierHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
+    if(!environmentNameNode.IsNull())
+    {
+      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+      m_environmentNameHasBeenSet = true;
+    }
+    XmlNode environmentIdNode = resultNode.FirstChild("EnvironmentId");
+    if(!environmentIdNode.IsNull())
+    {
+      m_environmentId = StringUtils::Trim(environmentIdNode.GetText().c_str());
+      m_environmentIdHasBeenSet = true;
+    }
+    XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
+    if(!applicationNameNode.IsNull())
+    {
+      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationNameHasBeenSet = true;
+    }
+    XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
+    if(!versionLabelNode.IsNull())
+    {
+      m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+      m_versionLabelHasBeenSet = true;
+    }
+    XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
+    if(!solutionStackNameNode.IsNull())
+    {
+      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+      m_solutionStackNameHasBeenSet = true;
+    }
+    XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
+    if(!templateNameNode.IsNull())
+    {
+      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+      m_templateNameHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
+    XmlNode endpointURLNode = resultNode.FirstChild("EndpointURL");
+    if(!endpointURLNode.IsNull())
+    {
+      m_endpointURL = StringUtils::Trim(endpointURLNode.GetText().c_str());
+      m_endpointURLHasBeenSet = true;
+    }
+    XmlNode cNAMENode = resultNode.FirstChild("CNAME");
+    if(!cNAMENode.IsNull())
+    {
+      m_cNAME = StringUtils::Trim(cNAMENode.GetText().c_str());
+      m_cNAMEHasBeenSet = true;
+    }
+    XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
+    if(!dateCreatedNode.IsNull())
+    {
+      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+      m_dateCreatedHasBeenSet = true;
+    }
+    XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
+    if(!dateUpdatedNode.IsNull())
+    {
+      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+      m_dateUpdatedHasBeenSet = true;
+    }
+    XmlNode statusNode = resultNode.FirstChild("Status");
+    if(!statusNode.IsNull())
+    {
+      m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
+    XmlNode abortableOperationInProgressNode = resultNode.FirstChild("AbortableOperationInProgress");
+    if(!abortableOperationInProgressNode.IsNull())
+    {
+      m_abortableOperationInProgress = StringUtils::ConvertToBool(StringUtils::Trim(abortableOperationInProgressNode.GetText().c_str()).c_str());
+      m_abortableOperationInProgressHasBeenSet = true;
+    }
+    XmlNode healthNode = resultNode.FirstChild("Health");
+    if(!healthNode.IsNull())
+    {
+      m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(healthNode.GetText().c_str()).c_str());
+      m_healthHasBeenSet = true;
+    }
+    XmlNode resourcesNode = resultNode.FirstChild("Resources");
+    if(!resourcesNode.IsNull())
+    {
+      m_resources = resourcesNode;
+      m_resourcesHasBeenSet = true;
+    }
+    XmlNode tierNode = resultNode.FirstChild("Tier");
+    if(!tierNode.IsNull())
+    {
+      m_tier = tierNode;
+      m_tierHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_environmentNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  }
+  if(m_environmentIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
+  }
+  if(m_applicationNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_versionLabelHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  }
+  if(m_solutionStackNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+  }
+  if(m_templateNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_endpointURLHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EndpointURL=" << StringUtils::URLEncode(m_endpointURL.c_str()) << "&";
+  }
+  if(m_cNAMEHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CNAME=" << StringUtils::URLEncode(m_cNAME.c_str()) << "&";
+  }
+  if(m_dateCreatedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DateCreated=" << m_dateCreated << "&";
+  }
+  if(m_dateUpdatedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DateUpdated=" << m_dateUpdated << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status) << "&";
+  }
+  if(m_abortableOperationInProgressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AbortableOperationInProgress=" << m_abortableOperationInProgress << "&";
+  }
+  if(m_healthHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
+  }
+  if(m_resourcesHasBeenSet)
+  {
+      Aws::StringStream resourcesLocationAndMemberSs;
+      resourcesLocationAndMemberSs << location << index << locationValue << ".Resources";
+      m_resources.OutputToStream(oStream, resourcesLocationAndMemberSs.str().c_str());
+  }
+  if(m_tierHasBeenSet)
+  {
+      Aws::StringStream tierLocationAndMemberSs;
+      tierLocationAndMemberSs << location << index << locationValue << ".Tier";
+      m_tier.OutputToStream(oStream, tierLocationAndMemberSs.str().c_str());
+  }
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
+}
+
+void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_environmentNameHasBeenSet)
+  {
+      oStream << location << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  }
+  if(m_environmentIdHasBeenSet)
+  {
+      oStream << location << ".EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
+  }
+  if(m_applicationNameHasBeenSet)
+  {
+      oStream << location << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_versionLabelHasBeenSet)
+  {
+      oStream << location << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  }
+  if(m_solutionStackNameHasBeenSet)
+  {
+      oStream << location << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+  }
+  if(m_templateNameHasBeenSet)
+  {
+      oStream << location << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_endpointURLHasBeenSet)
+  {
+      oStream << location << ".EndpointURL=" << StringUtils::URLEncode(m_endpointURL.c_str()) << "&";
+  }
+  if(m_cNAMEHasBeenSet)
+  {
+      oStream << location << ".CNAME=" << StringUtils::URLEncode(m_cNAME.c_str()) << "&";
+  }
+  if(m_dateCreatedHasBeenSet)
+  {
+      oStream << location << ".DateCreated=" << m_dateCreated << "&";
+  }
+  if(m_dateUpdatedHasBeenSet)
+  {
+      oStream << location << ".DateUpdated=" << m_dateUpdated << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status) << "&";
+  }
+  if(m_abortableOperationInProgressHasBeenSet)
+  {
+      oStream << location << ".AbortableOperationInProgress=" << m_abortableOperationInProgress << "&";
+  }
+  if(m_healthHasBeenSet)
+  {
+      oStream << location << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
+  }
+  if(m_resourcesHasBeenSet)
+  {
+      Aws::String resourcesLocationAndMember(location);
+      resourcesLocationAndMember += ".Resources";
+      m_resources.OutputToStream(oStream, resourcesLocationAndMember.c_str());
+  }
+  if(m_tierHasBeenSet)
+  {
+      Aws::String tierLocationAndMember(location);
+      tierLocationAndMember += ".Tier";
+      m_tier.OutputToStream(oStream, tierLocationAndMember.c_str());
+  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
+}

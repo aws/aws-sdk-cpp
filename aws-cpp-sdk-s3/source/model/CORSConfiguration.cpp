@@ -40,13 +40,13 @@ CORSConfiguration& CORSConfiguration::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode cORSRuleNode = resultNode.FirstChild("CORSRule");
-    if(!cORSRuleNode.IsNull())
+    XmlNode cORSRulesNode = resultNode.FirstChild("CORSRules");
+    if(!cORSRulesNode.IsNull())
     {
-      while(!cORSRuleNode.IsNull())
+      while(!cORSRulesNode.IsNull())
       {
-        m_cORSRules.push_back(cORSRuleNode);
-        cORSRuleNode = cORSRuleNode.NextNode("CORSRule");
+        m_cORSRules.push_back(cORSRulesNode);
+        cORSRulesNode = cORSRulesNode.NextNode("CORSRules");
       }
 
       m_cORSRulesHasBeenSet = true;

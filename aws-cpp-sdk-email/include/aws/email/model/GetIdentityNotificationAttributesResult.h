@@ -1,0 +1,87 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/email/SES_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/email/model/ResponseMetadata.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/model/IdentityNotificationAttributes.h>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Xml
+{
+  class XmlDocument;
+} // namespace Xml
+} // namespace Utils
+namespace SES
+{
+namespace Model
+{
+  /*
+    <p>Describes whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and specifies whether feedback forwarding is enabled for bounce and complaint notifications.</p>
+  */
+  class AWS_SES_API GetIdentityNotificationAttributesResult
+  {
+  public:
+    GetIdentityNotificationAttributesResult();
+    GetIdentityNotificationAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityNotificationAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline const Aws::Map<Aws::String, IdentityNotificationAttributes>& GetNotificationAttributes() const{ return m_notificationAttributes; }
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline void SetNotificationAttributes(const Aws::Map<Aws::String, IdentityNotificationAttributes>& value) { m_notificationAttributes = value; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult&  WithNotificationAttributes(const Aws::Map<Aws::String, IdentityNotificationAttributes>& value) { SetNotificationAttributes(value); return *this;}
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(const Aws::String& key, const IdentityNotificationAttributes& value) { m_notificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identity to IdentityNotificationAttributes.</p>
+    */
+    inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(const char* key, const IdentityNotificationAttributes& value) { m_notificationAttributes[key] = value; return *this; }
+
+    
+    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+    
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
+
+    
+    inline GetIdentityNotificationAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+  private:
+    Aws::Map<Aws::String, IdentityNotificationAttributes> m_notificationAttributes;
+    ResponseMetadata m_responseMetadata;
+  };
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

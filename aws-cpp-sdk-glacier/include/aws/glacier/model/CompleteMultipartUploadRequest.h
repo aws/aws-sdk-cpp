@@ -1,0 +1,171 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/glacier/Glacier_EXPORTS.h>
+#include <aws/glacier/GlacierRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
+
+  /*
+    <p>Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon Glacier can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Amazon Glacier returns the URI path of the newly created archive resource.</p>
+  */
+  class AWS_GLACIER_API CompleteMultipartUploadRequest : public GlacierRequest
+  {
+  public:
+    CompleteMultipartUploadRequest();
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline CompleteMultipartUploadRequest&  WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /*
+     <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</p>
+    */
+    inline CompleteMultipartUploadRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline void SetVaultName(const Aws::String& value) { m_vaultName = value; }
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline void SetVaultName(const char* value) { m_vaultName.assign(value); }
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline CompleteMultipartUploadRequest&  WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
+
+    /*
+     <p>The name of the vault.</p>
+    */
+    inline CompleteMultipartUploadRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
+    /*
+     <p>The upload ID of the multipart upload.</p>
+    */
+    inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+    /*
+     <p>The upload ID of the multipart upload.</p>
+    */
+    inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
+
+    /*
+     <p>The upload ID of the multipart upload.</p>
+    */
+    inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
+
+    /*
+     <p>The upload ID of the multipart upload.</p>
+    */
+    inline CompleteMultipartUploadRequest&  WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
+
+    /*
+     <p>The upload ID of the multipart upload.</p>
+    */
+    inline CompleteMultipartUploadRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+
+    /*
+     <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    */
+    inline const Aws::String& GetArchiveSize() const{ return m_archiveSize; }
+    /*
+     <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    */
+    inline void SetArchiveSize(const Aws::String& value) { m_archiveSizeHasBeenSet = true; m_archiveSize = value; }
+
+    /*
+     <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    */
+    inline void SetArchiveSize(const char* value) { m_archiveSizeHasBeenSet = true; m_archiveSize.assign(value); }
+
+    /*
+     <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    */
+    inline CompleteMultipartUploadRequest&  WithArchiveSize(const Aws::String& value) { SetArchiveSize(value); return *this;}
+
+    /*
+     <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    */
+    inline CompleteMultipartUploadRequest& WithArchiveSize(const char* value) { SetArchiveSize(value); return *this;}
+
+    /*
+     <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
+    */
+    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    /*
+     <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
+    */
+    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
+
+    /*
+     <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
+    */
+    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
+
+    /*
+     <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
+    */
+    inline CompleteMultipartUploadRequest&  WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
+
+    /*
+     <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
+    */
+    inline CompleteMultipartUploadRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+
+  private:
+    Aws::String m_accountId;
+    Aws::String m_vaultName;
+    Aws::String m_uploadId;
+    Aws::String m_archiveSize;
+    bool m_archiveSizeHasBeenSet;
+    Aws::String m_checksum;
+    bool m_checksumHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

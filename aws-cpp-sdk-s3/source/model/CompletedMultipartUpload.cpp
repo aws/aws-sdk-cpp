@@ -40,13 +40,13 @@ CompletedMultipartUpload& CompletedMultipartUpload::operator =(const XmlNode& xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode completedPartNode = resultNode.FirstChild("CompletedPart");
-    if(!completedPartNode.IsNull())
+    XmlNode partsNode = resultNode.FirstChild("Parts");
+    if(!partsNode.IsNull())
     {
-      while(!completedPartNode.IsNull())
+      while(!partsNode.IsNull())
       {
-        m_parts.push_back(completedPartNode);
-        completedPartNode = completedPartNode.NextNode("CompletedPart");
+        m_parts.push_back(partsNode);
+        partsNode = partsNode.NextNode("Parts");
       }
 
       m_partsHasBeenSet = true;

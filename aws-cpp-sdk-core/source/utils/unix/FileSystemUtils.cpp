@@ -15,10 +15,12 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
-#if  !defined(__ANDROID__)
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/stat.h>
+
+#if __ANDROID__
+#include <cerrno>
 #endif
 
 using namespace Aws::Utils;
@@ -67,7 +69,12 @@ bool FileSystemUtils::RelocateFileOrDirectory(const char* from, const char* to)
 {
     AWS_LOGSTREAM_INFO(LOG_TAG, "Moving file at " << from << " to " << to);
 
+#if __ANDROID__
+    int errorCode = rename(from, to);
+#else
     int errorCode = std::rename(from, to);
+#endif // __ANDROID__
+
     AWS_LOGSTREAM_DEBUG(LOG_TAG,  "The moving operation of file at " << from << " to " << to << " Returned error code of " << errno);
     return errorCode == 0;
 }

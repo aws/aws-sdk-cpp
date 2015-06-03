@@ -14,7 +14,7 @@
  */
 
 #include <aws/external/gtest.h>
-
+#include <aws/testing/ProxyConfig.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -78,12 +78,11 @@ protected:
         config.scheme = Scheme::HTTPS;
         config.region = Region::US_EAST_1;
 
-        if(USE_PROXY_FOR_TESTS)
-        {
-            config.proxyHost = PROXY_HOST;
-            config.proxyPort = PROXY_PORT;
-        }
-
+#if USE_PROXY_FOR_TESTS
+        config.scheme = Scheme::HTTP;
+        config.proxyHost = PROXY_HOST;
+        config.proxyPort = PROXY_PORT;
+#endif
         sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
 
         // delete queues, just in case
@@ -133,6 +132,19 @@ protected:
             DeleteQueueRequest deleteQueueRequest;
             deleteQueueRequest.WithQueueUrl(url);
             DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
+        }
+
+        bool done = false;
+        while(!done)
+        {
+            listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);
+            listQueuesResult = listQueuesOutcome.GetResult();
+            if(listQueuesResult.GetQueueUrls().size() == 0)
+            {
+                break;
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }
 

@@ -1,0 +1,93 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/opsworks/OpsWorks_EXPORTS.h>
+#include <aws/opsworks/OpsWorksRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
+
+  /*
+  */
+  class AWS_OPSWORKS_API DetachElasticLoadBalancerRequest : public OpsWorksRequest
+  {
+  public:
+    DetachElasticLoadBalancerRequest();
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline const Aws::String& GetElasticLoadBalancerName() const{ return m_elasticLoadBalancerName; }
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerName = value; }
+
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline void SetElasticLoadBalancerName(const char* value) { m_elasticLoadBalancerName.assign(value); }
+
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline DetachElasticLoadBalancerRequest&  WithElasticLoadBalancerName(const Aws::String& value) { SetElasticLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The Elastic Load Balancing instance's name.</p>
+    */
+    inline DetachElasticLoadBalancerRequest& WithElasticLoadBalancerName(const char* value) { SetElasticLoadBalancerName(value); return *this;}
+
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline const Aws::String& GetLayerId() const{ return m_layerId; }
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
+
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline void SetLayerId(const char* value) { m_layerId.assign(value); }
+
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline DetachElasticLoadBalancerRequest&  WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
+
+    /*
+     <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    */
+    inline DetachElasticLoadBalancerRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+
+  private:
+    Aws::String m_elasticLoadBalancerName;
+    Aws::String m_layerId;
+  };
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

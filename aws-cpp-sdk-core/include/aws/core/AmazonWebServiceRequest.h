@@ -17,6 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
+#include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpTypes.h>
@@ -42,7 +43,7 @@ public:
     virtual void AddQueryStringParameters(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
 
     const Aws::IOStreamFactory& GetResponseStreamFactory() const { return m_responseStreamFactory; }
-    void SetResponseStreamFactory(const Aws::IOStreamFactory& factory) { m_responseStreamFactory = factory; }
+    void SetResponseStreamFactory(const Aws::IOStreamFactory& factory) { m_responseStreamFactory = AWS_BUILD_FUNCTION(factory); }
 
 private:
 

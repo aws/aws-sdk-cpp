@@ -1,0 +1,77 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/iam/IAM_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace IAM
+{
+namespace Model
+{
+  /*
+    <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
+  */
+  class AWS_IAM_API PolicyRole
+  {
+  public:
+    PolicyRole();
+    PolicyRole(const Aws::Utils::Xml::XmlNode& xmlNode);
+    PolicyRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline PolicyRole&  WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
+
+    /*
+     <p>The name (friendly name, not ARN) identifying the role.</p>
+    */
+    inline PolicyRole& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
+  private:
+    Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

@@ -15,6 +15,7 @@
 #include <aws/kinesis/model/ListTagsForStreamResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 

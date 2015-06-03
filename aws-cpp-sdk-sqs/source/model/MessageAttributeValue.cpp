@@ -15,6 +15,7 @@
 #include <aws/sqs/model/MessageAttributeValue.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
@@ -90,25 +91,25 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_stringValueHasBeenSet)
   {
-    oStream << location << index << locationValue << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
+      oStream << location << index << locationValue << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
   }
   if(m_binaryValueHasBeenSet)
   {
-    oStream << location << index << locationValue << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
+      oStream << location << index << locationValue << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
   }
   if(m_stringListValuesHasBeenSet)
   {
-    for(auto& item : m_stringListValues)
-    {
-      oStream << location << index << locationValue << ".StringListValue=" << StringUtils::URLEncode(item.c_str()) << "&";
-    }
+      for(auto& item : m_stringListValues)
+      {
+        oStream << location << index << locationValue << ".StringListValue=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_binaryListValuesHasBeenSet)
   {
-    for(auto& item : m_binaryListValues)
-    {
-      oStream << location << index << locationValue << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
-    }
+      for(auto& item : m_binaryListValues)
+      {
+        oStream << location << index << locationValue << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+      }
   }
   oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
 }
@@ -117,25 +118,25 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_stringValueHasBeenSet)
   {
-    oStream << location << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
+      oStream << location << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
   }
   if(m_binaryValueHasBeenSet)
   {
-    oStream << location << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
+      oStream << location << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
   }
   if(m_stringListValuesHasBeenSet)
   {
-    for(auto& item : m_stringListValues)
-    {
-      oStream << location << ".StringListValue=" << StringUtils::URLEncode(item.c_str()) << "&";
-    }
+      for(auto& item : m_stringListValues)
+      {
+        oStream << location << ".StringListValue=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_binaryListValuesHasBeenSet)
   {
-    for(auto& item : m_binaryListValues)
-    {
-      oStream << location << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
-    }
+      for(auto& item : m_binaryListValues)
+      {
+        oStream << location << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+      }
   }
   oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
 }

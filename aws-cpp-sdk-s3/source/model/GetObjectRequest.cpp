@@ -26,8 +26,10 @@ using namespace Aws::Http;
 
 GetObjectRequest::GetObjectRequest() : 
     m_ifMatchHasBeenSet(false),
+    m_ifModifiedSince(0.0),
     m_ifModifiedSinceHasBeenSet(false),
     m_ifNoneMatchHasBeenSet(false),
+    m_ifUnmodifiedSince(0.0),
     m_ifUnmodifiedSinceHasBeenSet(false),
     m_rangeHasBeenSet(false),
     m_responseCacheControlHasBeenSet(false),
@@ -35,6 +37,7 @@ GetObjectRequest::GetObjectRequest() :
     m_responseContentEncodingHasBeenSet(false),
     m_responseContentLanguageHasBeenSet(false),
     m_responseContentTypeHasBeenSet(false),
+    m_responseExpires(0.0),
     m_responseExpiresHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_sSECustomerAlgorithmHasBeenSet(false),

@@ -1,0 +1,100 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/opsworks/OpsWorks_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace OpsWorks
+{
+namespace Model
+{
+  /*
+    <p>Describes the configuration manager.</p>
+  */
+  class AWS_OPSWORKS_API StackConfigurationManager
+  {
+  public:
+    StackConfigurationManager();
+    StackConfigurationManager(const Aws::Utils::Json::JsonValue& jsonValue);
+    StackConfigurationManager& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline const Aws::String& GetName() const{ return m_name; }
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline StackConfigurationManager&  WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The name. This parameter must be set to "Chef".</p>
+    */
+    inline StackConfigurationManager& WithName(const char* value) { SetName(value); return *this;}
+
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline StackConfigurationManager&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.</p>
+    */
+    inline StackConfigurationManager& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+  private:
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

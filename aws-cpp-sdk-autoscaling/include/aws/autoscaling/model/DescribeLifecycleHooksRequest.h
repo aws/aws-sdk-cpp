@@ -1,0 +1,93 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/autoscaling/AutoScaling_EXPORTS.h>
+#include <aws/autoscaling/AutoScalingRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
+
+  /*
+  */
+  class AWS_AUTOSCALING_API DescribeLifecycleHooksRequest : public AutoScalingRequest
+  {
+  public:
+    DescribeLifecycleHooksRequest();
+    Aws::String SerializePayload() const override;
+
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeLifecycleHooksRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name of the group.</p>
+    */
+    inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const{ return m_lifecycleHookNames; }
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline void SetLifecycleHookNames(const Aws::Vector<Aws::String>& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = value; }
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline DescribeLifecycleHooksRequest&  WithLifecycleHookNames(const Aws::Vector<Aws::String>& value) { SetLifecycleHookNames(value); return *this;}
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const Aws::String& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
+
+    /*
+     <p>The names of one or more lifecycle hooks.</p>
+    */
+    inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const char* value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
+
+  private:
+    Aws::String m_autoScalingGroupName;
+    Aws::Vector<Aws::String> m_lifecycleHookNames;
+    bool m_lifecycleHookNamesHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

@@ -1,0 +1,175 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/opsworks/OpsWorks_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opsworks/model/InstancesCount.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace OpsWorks
+{
+namespace Model
+{
+  /*
+    <p>Summarizes the number of layers, instances, and apps in a stack.</p>
+  */
+  class AWS_OPSWORKS_API StackSummary
+  {
+  public:
+    StackSummary();
+    StackSummary(const Aws::Utils::Json::JsonValue& jsonValue);
+    StackSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline StackSummary&  WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack ID.</p>
+    */
+    inline StackSummary& WithStackId(const char* value) { SetStackId(value); return *this;}
+
+    /*
+     <p>The stack name.</p>
+    */
+    inline const Aws::String& GetName() const{ return m_name; }
+    /*
+     <p>The stack name.</p>
+    */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /*
+     <p>The stack name.</p>
+    */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /*
+     <p>The stack name.</p>
+    */
+    inline StackSummary&  WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /*
+     <p>The stack name.</p>
+    */
+    inline StackSummary& WithName(const char* value) { SetName(value); return *this;}
+
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline StackSummary&  WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /*
+     <p>The stack's ARN.</p>
+    */
+    inline StackSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
+    /*
+     <p>The number of layers.</p>
+    */
+    inline long GetLayersCount() const{ return m_layersCount; }
+    /*
+     <p>The number of layers.</p>
+    */
+    inline void SetLayersCount(long value) { m_layersCountHasBeenSet = true; m_layersCount = value; }
+
+    /*
+     <p>The number of layers.</p>
+    */
+    inline StackSummary&  WithLayersCount(long value) { SetLayersCount(value); return *this;}
+
+    /*
+     <p>The number of apps.</p>
+    */
+    inline long GetAppsCount() const{ return m_appsCount; }
+    /*
+     <p>The number of apps.</p>
+    */
+    inline void SetAppsCount(long value) { m_appsCountHasBeenSet = true; m_appsCount = value; }
+
+    /*
+     <p>The number of apps.</p>
+    */
+    inline StackSummary&  WithAppsCount(long value) { SetAppsCount(value); return *this;}
+
+    /*
+     <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    */
+    inline const InstancesCount& GetInstancesCount() const{ return m_instancesCount; }
+    /*
+     <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    */
+    inline void SetInstancesCount(const InstancesCount& value) { m_instancesCountHasBeenSet = true; m_instancesCount = value; }
+
+    /*
+     <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    */
+    inline StackSummary&  WithInstancesCount(const InstancesCount& value) { SetInstancesCount(value); return *this;}
+
+  private:
+    Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+    long m_layersCount;
+    bool m_layersCountHasBeenSet;
+    long m_appsCount;
+    bool m_appsCountHasBeenSet;
+    InstancesCount m_instancesCount;
+    bool m_instancesCountHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

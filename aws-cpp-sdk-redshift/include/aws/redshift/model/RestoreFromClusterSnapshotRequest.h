@@ -1,0 +1,469 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/RedshiftRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
+
+  /*
+    <p></p>
+  */
+  class AWS_REDSHIFT_API RestoreFromClusterSnapshotRequest : public RedshiftRequest
+  {
+  public:
+    RestoreFromClusterSnapshotRequest();
+    Aws::String SerializePayload() const override;
+
+
+    /*
+     <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
+    */
+    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    /*
+     <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
+    */
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+
+    /*
+     <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
+    */
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+
+    /*
+     <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+    /*
+     <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifier = value; }
+
+    /*
+     <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifier.assign(value); }
+
+    /*
+     <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
+    /*
+     <p> The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
+
+    /*
+     <p> The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline void SetSnapshotClusterIdentifier(const char* value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier.assign(value); }
+
+    /*
+     <p> The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
+
+    /*
+     <p> The port number on which the cluster accepts connections. </p> <p>Default: The same port as the original cluster.</p> <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    */
+    inline long GetPort() const{ return m_port; }
+    /*
+     <p> The port number on which the cluster accepts connections. </p> <p>Default: The same port as the original cluster.</p> <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    */
+    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+
+    /*
+     <p> The port number on which the cluster accepts connections. </p> <p>Default: The same port as the original cluster.</p> <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithPort(long value) { SetPort(value); return *this;}
+
+    /*
+     <p> The Amazon EC2 Availability Zone in which to restore the cluster. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    /*
+     <p> The Amazon EC2 Availability Zone in which to restore the cluster. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /*
+     <p> The Amazon EC2 Availability Zone in which to restore the cluster. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+
+    /*
+     <p> The Amazon EC2 Availability Zone in which to restore the cluster. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p> The Amazon EC2 Availability Zone in which to restore the cluster. </p> <p>Default: A random, system-chosen Availability Zone.</p> <p>Example: <code>us-east-1a</code></p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+    /*
+     <p> If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p> <p>Default: <code>true</code></p>
+    */
+    inline bool GetAllowVersionUpgrade() const{ return m_allowVersionUpgrade; }
+    /*
+     <p> If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p> <p>Default: <code>true</code></p>
+    */
+    inline void SetAllowVersionUpgrade(bool value) { m_allowVersionUpgradeHasBeenSet = true; m_allowVersionUpgrade = value; }
+
+    /*
+     <p> If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p> <p>Default: <code>true</code></p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithAllowVersionUpgrade(bool value) { SetAllowVersionUpgrade(value); return *this;}
+
+    /*
+     <p> The name of the subnet group where you want to cluster restored. </p> <p> A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored. </p>
+    */
+    inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
+    /*
+     <p> The name of the subnet group where you want to cluster restored. </p> <p> A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored. </p>
+    */
+    inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+
+    /*
+     <p> The name of the subnet group where you want to cluster restored. </p> <p> A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored. </p>
+    */
+    inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
+
+    /*
+     <p> The name of the subnet group where you want to cluster restored. </p> <p> A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
+
+    /*
+     <p> The name of the subnet group where you want to cluster restored. </p> <p> A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
+
+    /*
+     <p> If <code>true</code>, the cluster can be accessed from a public network. </p>
+    */
+    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    /*
+     <p> If <code>true</code>, the cluster can be accessed from a public network. </p>
+    */
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+
+    /*
+     <p> If <code>true</code>, the cluster can be accessed from a public network. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
+    /*
+     <p> The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot. </p>
+    */
+    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+    /*
+     <p> The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot. </p>
+    */
+    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+
+    /*
+     <p> The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot. </p>
+    */
+    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
+
+    /*
+     <p> The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
+
+    /*
+     <p> The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+
+    /*
+     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    */
+    inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
+    /*
+     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    */
+    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+
+    /*
+     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    */
+    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
+
+    /*
+     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+
+    /*
+     <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
+
+    /*
+     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    */
+    inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
+    /*
+     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    */
+    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+
+    /*
+     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    */
+    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
+
+    /*
+     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
+
+    /*
+     <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
+
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
+
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p>The elastic IP (EIP) address for the cluster.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+
+    /*
+     <p> The name of the parameter group to be associated with this cluster. </p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+    */
+    inline const Aws::String& GetClusterParameterGroupName() const{ return m_clusterParameterGroupName; }
+    /*
+     <p> The name of the parameter group to be associated with this cluster. </p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+    */
+    inline void SetClusterParameterGroupName(const Aws::String& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = value; }
+
+    /*
+     <p> The name of the parameter group to be associated with this cluster. </p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+    */
+    inline void SetClusterParameterGroupName(const char* value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName.assign(value); }
+
+    /*
+     <p> The name of the parameter group to be associated with this cluster. </p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithClusterParameterGroupName(const Aws::String& value) { SetClusterParameterGroupName(value); return *this;}
+
+    /*
+     <p> The name of the parameter group to be associated with this cluster. </p> <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithClusterParameterGroupName(const char* value) { SetClusterParameterGroupName(value); return *this;}
+
+    /*
+     <p> A list of security groups to be associated with this cluster. </p> <p> Default: The default cluster security group for Amazon Redshift. </p> <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    */
+    inline const Aws::Vector<Aws::String>& GetClusterSecurityGroups() const{ return m_clusterSecurityGroups; }
+    /*
+     <p> A list of security groups to be associated with this cluster. </p> <p> Default: The default cluster security group for Amazon Redshift. </p> <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    */
+    inline void SetClusterSecurityGroups(const Aws::Vector<Aws::String>& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = value; }
+
+    /*
+     <p> A list of security groups to be associated with this cluster. </p> <p> Default: The default cluster security group for Amazon Redshift. </p> <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithClusterSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClusterSecurityGroups(value); return *this;}
+
+    /*
+     <p> A list of security groups to be associated with this cluster. </p> <p> Default: The default cluster security group for Amazon Redshift. </p> <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& AddClusterSecurityGroups(const Aws::String& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p> A list of security groups to be associated with this cluster. </p> <p> Default: The default cluster security group for Amazon Redshift. </p> <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& AddClusterSecurityGroups(const char* value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p> A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. </p> <p> Default: The default VPC security group is associated with the cluster. </p> <p> VPC security groups only apply to clusters in VPCs. </p>
+    */
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    /*
+     <p> A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. </p> <p> Default: The default VPC security group is associated with the cluster. </p> <p> VPC security groups only apply to clusters in VPCs. </p>
+    */
+    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /*
+     <p> A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. </p> <p> Default: The default VPC security group is associated with the cluster. </p> <p> VPC security groups only apply to clusters in VPCs. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /*
+     <p> A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. </p> <p> Default: The default VPC security group is associated with the cluster. </p> <p> VPC security groups only apply to clusters in VPCs. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p> A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. </p> <p> Default: The default VPC security group is associated with the cluster. </p> <p> VPC security groups only apply to clusters in VPCs. </p>
+    */
+    inline RestoreFromClusterSnapshotRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p> The weekly time range (in UTC) during which automated cluster maintenance can occur. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+    */
+    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    /*
+     <p> The weekly time range (in UTC) during which automated cluster maintenance can occur. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+    */
+    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+
+    /*
+     <p> The weekly time range (in UTC) during which automated cluster maintenance can occur. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+    */
+    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
+
+    /*
+     <p> The weekly time range (in UTC) during which automated cluster maintenance can occur. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
+
+    /*
+     <p> The weekly time range (in UTC) during which automated cluster maintenance can occur. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+
+    /*
+     <p> The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p> Default: The value selected for the cluster from which the snapshot was taken. </p> <p>Constraints: Must be a value from 0 to 35.</p>
+    */
+    inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+    /*
+     <p> The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p> Default: The value selected for the cluster from which the snapshot was taken. </p> <p>Constraints: Must be a value from 0 to 35.</p>
+    */
+    inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
+
+    /*
+     <p> The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p> Default: The value selected for the cluster from which the snapshot was taken. </p> <p>Constraints: Must be a value from 0 to 35.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+
+    /*
+     <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    /*
+     <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /*
+     <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /*
+     <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest&  WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /*
+     <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    */
+    inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+  private:
+    Aws::String m_clusterIdentifier;
+    Aws::String m_snapshotIdentifier;
+    Aws::String m_snapshotClusterIdentifier;
+    bool m_snapshotClusterIdentifierHasBeenSet;
+    long m_port;
+    bool m_portHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
+    bool m_allowVersionUpgrade;
+    bool m_allowVersionUpgradeHasBeenSet;
+    Aws::String m_clusterSubnetGroupName;
+    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_publiclyAccessible;
+    bool m_publiclyAccessibleHasBeenSet;
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet;
+    Aws::String m_hsmClientCertificateIdentifier;
+    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    Aws::String m_hsmConfigurationIdentifier;
+    bool m_hsmConfigurationIdentifierHasBeenSet;
+    Aws::String m_elasticIp;
+    bool m_elasticIpHasBeenSet;
+    Aws::String m_clusterParameterGroupName;
+    bool m_clusterParameterGroupNameHasBeenSet;
+    Aws::Vector<Aws::String> m_clusterSecurityGroups;
+    bool m_clusterSecurityGroupsHasBeenSet;
+    Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+    bool m_vpcSecurityGroupIdsHasBeenSet;
+    Aws::String m_preferredMaintenanceWindow;
+    bool m_preferredMaintenanceWindowHasBeenSet;
+    long m_automatedSnapshotRetentionPeriod;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

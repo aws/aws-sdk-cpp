@@ -1,0 +1,87 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/email/SES_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/email/model/ResponseMetadata.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/model/IdentityVerificationAttributes.h>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Xml
+{
+  class XmlDocument;
+} // namespace Xml
+} // namespace Utils
+namespace SES
+{
+namespace Model
+{
+  /*
+    <p>Represents the verification attributes for a list of identities.</p>
+  */
+  class AWS_SES_API GetIdentityVerificationAttributesResult
+  {
+  public:
+    GetIdentityVerificationAttributesResult();
+    GetIdentityVerificationAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityVerificationAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline const Aws::Map<Aws::String, IdentityVerificationAttributes>& GetVerificationAttributes() const{ return m_verificationAttributes; }
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline void SetVerificationAttributes(const Aws::Map<Aws::String, IdentityVerificationAttributes>& value) { m_verificationAttributes = value; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult&  WithVerificationAttributes(const Aws::Map<Aws::String, IdentityVerificationAttributes>& value) { SetVerificationAttributes(value); return *this;}
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const Aws::String& key, const IdentityVerificationAttributes& value) { m_verificationAttributes[key] = value; return *this; }
+
+    /*
+     <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    */
+    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const char* key, const IdentityVerificationAttributes& value) { m_verificationAttributes[key] = value; return *this; }
+
+    
+    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+    
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
+
+    
+    inline GetIdentityVerificationAttributesResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+  private:
+    Aws::Map<Aws::String, IdentityVerificationAttributes> m_verificationAttributes;
+    ResponseMetadata m_responseMetadata;
+  };
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

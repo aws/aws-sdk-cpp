@@ -1,0 +1,80 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/iam/model/ServerCertificate.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::IAM::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+ServerCertificate::ServerCertificate() : 
+    m_certificateChainHasBeenSet(false)
+{
+}
+
+ServerCertificate::ServerCertificate(const XmlNode& xmlNode) : 
+    m_certificateChainHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+ServerCertificate& ServerCertificate::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode serverCertificateMetadataNode = resultNode.FirstChild("ServerCertificateMetadata");
+    m_serverCertificateMetadata = serverCertificateMetadataNode;
+    XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
+    m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
+    XmlNode certificateChainNode = resultNode.FirstChild("CertificateChain");
+    if(!certificateChainNode.IsNull())
+    {
+      m_certificateChain = StringUtils::Trim(certificateChainNode.GetText().c_str());
+      m_certificateChainHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  Aws::StringStream serverCertificateMetadataLocationAndMemberSs;
+  serverCertificateMetadataLocationAndMemberSs << location << index << locationValue << ".ServerCertificateMetadata";
+  m_serverCertificateMetadata.OutputToStream(oStream, serverCertificateMetadataLocationAndMemberSs.str().c_str());
+  oStream << location << index << locationValue << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  if(m_certificateChainHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";
+  }
+}
+
+void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  Aws::String serverCertificateMetadataLocationAndMember(location);
+  serverCertificateMetadataLocationAndMember += ".ServerCertificateMetadata";
+  m_serverCertificateMetadata.OutputToStream(oStream, serverCertificateMetadataLocationAndMember.c_str());
+  oStream << location << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  if(m_certificateChainHasBeenSet)
+  {
+      oStream << location << ".CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";
+  }
+}

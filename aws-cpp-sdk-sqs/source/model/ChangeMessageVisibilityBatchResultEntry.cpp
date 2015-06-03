@@ -15,6 +15,7 @@
 #include <aws/sqs/model/ChangeMessageVisibilityBatchResultEntry.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 

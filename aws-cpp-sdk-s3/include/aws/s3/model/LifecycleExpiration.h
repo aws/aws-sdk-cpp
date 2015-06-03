@@ -14,7 +14,6 @@
 */
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
@@ -44,26 +43,16 @@ namespace Model
     /*
      Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
     */
-    inline const Aws::String& GetDate() const{ return m_date; }
+    inline double GetDate() const{ return m_date; }
     /*
      Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
     */
-    inline void SetDate(const Aws::String& value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
 
     /*
      Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
     */
-    inline void SetDate(const char* value) { m_dateHasBeenSet = true; m_date.assign(value); }
-
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
-    inline LifecycleExpiration&  WithDate(const Aws::String& value) { SetDate(value); return *this;}
-
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
-    inline LifecycleExpiration& WithDate(const char* value) { SetDate(value); return *this;}
+    inline LifecycleExpiration&  WithDate(double value) { SetDate(value); return *this;}
 
     /*
      Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
@@ -80,7 +69,7 @@ namespace Model
     inline LifecycleExpiration&  WithDays(long value) { SetDays(value); return *this;}
 
   private:
-    Aws::String m_date;
+    double m_date;
     bool m_dateHasBeenSet;
     long m_days;
     bool m_daysHasBeenSet;

@@ -29,6 +29,7 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_contentEncodingHasBeenSet(false),
     m_contentLanguageHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
+    m_expires(0.0),
     m_expiresHasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),

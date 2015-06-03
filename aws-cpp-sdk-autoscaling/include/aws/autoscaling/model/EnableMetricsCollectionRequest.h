@@ -1,0 +1,118 @@
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/autoscaling/AutoScaling_EXPORTS.h>
+#include <aws/autoscaling/AutoScalingRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
+
+  /*
+  */
+  class AWS_AUTOSCALING_API EnableMetricsCollectionRequest : public AutoScalingRequest
+  {
+  public:
+    EnableMetricsCollectionRequest();
+    Aws::String SerializePayload() const override;
+
+
+    /*
+     <p>The name or ARN of the Auto Scaling group.</p>
+    */
+    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    /*
+     <p>The name or ARN of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+
+    /*
+     <p>The name or ARN of the Auto Scaling group.</p>
+    */
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+
+    /*
+     <p>The name or ARN of the Auto Scaling group.</p>
+    */
+    inline EnableMetricsCollectionRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>The name or ARN of the Auto Scaling group.</p>
+    */
+    inline EnableMetricsCollectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
+    /*
+     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+    */
+    inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
+    /*
+     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+    */
+    inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /*
+     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+    */
+    inline EnableMetricsCollectionRequest&  WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
+
+    /*
+     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+    */
+    inline EnableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+
+    /*
+     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+    */
+    inline EnableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+
+    /*
+     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+    */
+    inline const Aws::String& GetGranularity() const{ return m_granularity; }
+    /*
+     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+    */
+    inline void SetGranularity(const Aws::String& value) { m_granularity = value; }
+
+    /*
+     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+    */
+    inline void SetGranularity(const char* value) { m_granularity.assign(value); }
+
+    /*
+     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+    */
+    inline EnableMetricsCollectionRequest&  WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
+
+    /*
+     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+    */
+    inline EnableMetricsCollectionRequest& WithGranularity(const char* value) { SetGranularity(value); return *this;}
+
+  private:
+    Aws::String m_autoScalingGroupName;
+    Aws::Vector<Aws::String> m_metrics;
+    bool m_metricsHasBeenSet;
+    Aws::String m_granularity;
+  };
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws
