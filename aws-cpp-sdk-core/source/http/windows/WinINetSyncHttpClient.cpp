@@ -137,8 +137,9 @@ static void AddHeadersToRequest(const HttpRequest& request, HINTERNET hHttpReque
             ss << header.first << ": " << header.second << "\r\n";
         }
 
-        AWS_LOG_DEBUG(logTag, ss.str().c_str());
-        HttpAddRequestHeadersA(hHttpRequest, ss.str().c_str(), (DWORD)ss.str().length(), HTTP_ADDREQ_FLAG_REPLACE | HTTP_ADDREQ_FLAG_ADD);
+        Aws::String headerString = ss.str();
+        AWS_LOGSTREAM_DEBUG(logTag, headerString);
+        HttpAddRequestHeadersA(hHttpRequest, headerString.c_str(), (DWORD)headerString.length(), HTTP_ADDREQ_FLAG_REPLACE | HTTP_ADDREQ_FLAG_ADD);
     }
     else
     {
@@ -223,7 +224,7 @@ std::shared_ptr<HttpResponse> BuildSuccessResponse(const Aws::Http::HttpRequest&
     if (contentTypeStr[0] != NULL)
     {
         response->SetContentType(contentTypeStr);
-        AWS_LOG_DEBUG(logTag, "Received content type %s.", contentTypeStr);
+        AWS_LOGSTREAM_DEBUG(logTag, "Received content type " << contentTypeStr);
     }
 
     char headerStr[1024];
@@ -233,7 +234,7 @@ std::shared_ptr<HttpResponse> BuildSuccessResponse(const Aws::Http::HttpRequest&
     AWS_LOG_DEBUG(logTag, "Received headers:");
     while (HttpQueryInfoA(hHttpRequest, HTTP_QUERY_RAW_HEADERS_CRLF, headerStr, &dwSize, &read) && dwSize > 0)
     {
-        AWS_LOG_DEBUG(logTag, headerStr);
+        AWS_LOGSTREAM_DEBUG(logTag, headerStr);
         ss << headerStr;
     }
 

@@ -111,8 +111,9 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
     {
         headerStream.str("");
         headerStream << requestHeader.first << ": " << requestHeader.second;
-        AWS_LOG_TRACE(CurlTag, headerStream.str().c_str());
-        headers = curl_slist_append(headers, headerStream.str().c_str());
+        Aws::String headerString = headerStream.str();
+        AWS_LOGSTREAM_TRACE(CurlTag, headerString);
+        headers = curl_slist_append(headers, headerString.c_str());
     }
     headers = curl_slist_append(headers, "transfer-encoding:");
 
@@ -237,7 +238,7 @@ size_t CurlHttpClient::WriteHeader(char *ptr, size_t size, size_t nmemb, void* u
 {
     if (ptr)
     {
-        AWS_LOG_TRACE(CurlTag, ptr);
+        AWS_LOGSTREAM_TRACE(CurlTag, ptr);
         HttpResponse* response = (HttpResponse*) userdata;
         Aws::String headerLine(ptr);
         Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(headerLine, ':');
