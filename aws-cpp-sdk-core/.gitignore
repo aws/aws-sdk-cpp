@@ -4,3 +4,4 @@
 !source/http/curl
 !source/external
 !include/aws/external
+!include/aws/core/http/curl
