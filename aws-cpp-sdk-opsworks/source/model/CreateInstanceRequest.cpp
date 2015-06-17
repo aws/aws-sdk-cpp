@@ -22,6 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateInstanceRequest::CreateInstanceRequest() : 
+    m_stackIdHasBeenSet(false),
+    m_layerIdsHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_autoScalingTypeHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_osHasBeenSet(false),
@@ -36,7 +39,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_installUpdatesOnBoot(false),
     m_installUpdatesOnBootHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -44,16 +48,28 @@ Aws::String CreateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
-
-  Array<JsonValue> layerIdsJsonList(m_layerIds.size());
-  for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+  if(m_stackIdHasBeenSet)
   {
-    layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
-  }
-  payload.WithArray("LayerIds", std::move(layerIdsJsonList));
+   payload.WithString("StackId", m_stackId);
 
-  payload.WithString("InstanceType", m_instanceType);
+  }
+
+  if(m_layerIdsHasBeenSet)
+  {
+   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+   {
+     layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
+   }
+   payload.WithArray("LayerIds", std::move(layerIdsJsonList));
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", m_instanceType);
+
+  }
 
   if(m_autoScalingTypeHasBeenSet)
   {
@@ -132,6 +148,12 @@ Aws::String CreateInstanceRequest::SerializePayload() const
   if(m_ebsOptimizedHasBeenSet)
   {
    payload.WithBool("EbsOptimized", m_ebsOptimized);
+
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
 
   }
 

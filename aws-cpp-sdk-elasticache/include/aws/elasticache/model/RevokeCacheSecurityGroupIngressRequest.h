@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the cache security group to revoke ingress from.</p>
     */
-    inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupName = value; }
+    inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /*
      <p>The name of the cache security group to revoke ingress from.</p>
     */
-    inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupName.assign(value); }
+    inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
     /*
      <p>The name of the cache security group to revoke ingress from.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the Amazon EC2 security group to revoke access from.</p>
     */
-    inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupName = value; }
+    inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /*
      <p>The name of the Amazon EC2 security group to revoke access from.</p>
     */
-    inline void SetEC2SecurityGroupName(const char* value) { m_eC2SecurityGroupName.assign(value); }
+    inline void SetEC2SecurityGroupName(const char* value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName.assign(value); }
 
     /*
      <p>The name of the Amazon EC2 security group to revoke access from.</p>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p>The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must provide a valid AWS account number for this parameter.</p>
     */
-    inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerId = value; }
+    inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /*
      <p>The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must provide a valid AWS account number for this parameter.</p>
     */
-    inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerId.assign(value); }
+    inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
     /*
      <p>The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must provide a valid AWS account number for this parameter.</p>
@@ -108,8 +108,11 @@ namespace Model
 
   private:
     Aws::String m_cacheSecurityGroupName;
+    bool m_cacheSecurityGroupNameHasBeenSet;
     Aws::String m_eC2SecurityGroupName;
+    bool m_eC2SecurityGroupNameHasBeenSet;
     Aws::String m_eC2SecurityGroupOwnerId;
+    bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };
 
 } // namespace Model

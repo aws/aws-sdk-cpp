@@ -24,6 +24,8 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Origin::Origin() : 
+    m_idHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
     m_originPathHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
     m_customOriginConfigHasBeenSet(false)
@@ -31,6 +33,8 @@ Origin::Origin() :
 }
 
 Origin::Origin(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
     m_originPathHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
     m_customOriginConfigHasBeenSet(false)
@@ -45,9 +49,17 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    if(!domainNameNode.IsNull())
+    {
+      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainNameHasBeenSet = true;
+    }
     XmlNode originPathNode = resultNode.FirstChild("OriginPath");
     if(!originPathNode.IsNull())
     {
@@ -74,10 +86,18 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
 void Origin::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-  domainNameNode.SetText(m_domainName);
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+   domainNameNode.SetText(m_domainName);
+  }
+
   if(m_originPathHasBeenSet)
   {
    XmlNode originPathNode = parentNode.CreateChildElement("OriginPath");

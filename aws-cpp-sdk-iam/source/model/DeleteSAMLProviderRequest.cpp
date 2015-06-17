@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteSAMLProviderRequest::DeleteSAMLProviderRequest()
+DeleteSAMLProviderRequest::DeleteSAMLProviderRequest() : 
+    m_sAMLProviderArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteSAMLProvider&";
-  ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  if(m_sAMLProviderArnHasBeenSet)
+  {
+    ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

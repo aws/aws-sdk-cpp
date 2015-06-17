@@ -64,13 +64,14 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
-    XmlNode subnetNode = resultNode.FirstChild("Subnet");
+    XmlNode subnetNodeParent = resultNode.FirstChild("Subnet");
+    XmlNode subnetNode = subnetNodeParent.FirstChild("member");
     if(!subnetNode.IsNull())
     {
       while(!subnetNode.IsNull())
       {
         m_subnets.push_back(subnetNode);
-        subnetNode = subnetNode.NextNode("Subnet");
+        subnetNode = subnetNode.NextNode("member");
       }
 
       m_subnetsHasBeenSet = true;

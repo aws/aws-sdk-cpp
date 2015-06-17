@@ -20,7 +20,8 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 ExitStandbyRequest::ExitStandbyRequest() : 
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_autoScalingGroupNameHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,10 @@ Aws::String ExitStandbyRequest::SerializePayload() const
       instanceIdsCount++;
     }
   }
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

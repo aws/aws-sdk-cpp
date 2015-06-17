@@ -38,6 +38,7 @@
 #include <aws/elastictranscoder/model/UpdatePipelineResult.h>
 #include <aws/elastictranscoder/model/UpdatePipelineNotificationsResult.h>
 #include <aws/elastictranscoder/model/UpdatePipelineStatusResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -137,23 +138,23 @@ namespace Model
 
   class ElasticTranscoderClient;
 
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CancelJobRequest&, const Model::CancelJobOutcome&> CancelJobOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CreateJobRequest&, const Model::CreateJobOutcome&> CreateJobOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CreatePipelineRequest&, const Model::CreatePipelineOutcome&> CreatePipelineOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CreatePresetRequest&, const Model::CreatePresetOutcome&> CreatePresetOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&> DeletePipelineOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&> DeletePresetOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListJobsByPipelineRequest&, const Model::ListJobsByPipelineOutcome&> ListJobsByPipelineOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListJobsByStatusRequest&, const Model::ListJobsByStatusOutcome&> ListJobsByStatusOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&> ListPipelinesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&> ListPresetsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ReadJobRequest&, const Model::ReadJobOutcome&> ReadJobOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ReadPipelineRequest&, const Model::ReadPipelineOutcome&> ReadPipelineOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ReadPresetRequest&, const Model::ReadPresetOutcome&> ReadPresetOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::TestRoleRequest&, const Model::TestRoleOutcome&> TestRoleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&> UpdatePipelineOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::UpdatePipelineNotificationsRequest&, const Model::UpdatePipelineNotificationsOutcome&> UpdatePipelineNotificationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::UpdatePipelineStatusRequest&, const Model::UpdatePipelineStatusOutcome&> UpdatePipelineStatusOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const Aws::Client::AsyncCallerContext*> CancelJobOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const Aws::Client::AsyncCallerContext*> CreateJobOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CreatePipelineRequest&, const Model::CreatePipelineOutcome&, const Aws::Client::AsyncCallerContext*> CreatePipelineOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::CreatePresetRequest&, const Model::CreatePresetOutcome&, const Aws::Client::AsyncCallerContext*> CreatePresetOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&, const Aws::Client::AsyncCallerContext*> DeletePipelineOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const Aws::Client::AsyncCallerContext*> DeletePresetOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListJobsByPipelineRequest&, const Model::ListJobsByPipelineOutcome&, const Aws::Client::AsyncCallerContext*> ListJobsByPipelineOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListJobsByStatusRequest&, const Model::ListJobsByStatusOutcome&, const Aws::Client::AsyncCallerContext*> ListJobsByStatusOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const Aws::Client::AsyncCallerContext*> ListPipelinesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&, const Aws::Client::AsyncCallerContext*> ListPresetsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ReadJobRequest&, const Model::ReadJobOutcome&, const Aws::Client::AsyncCallerContext*> ReadJobOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ReadPipelineRequest&, const Model::ReadPipelineOutcome&, const Aws::Client::AsyncCallerContext*> ReadPipelineOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::ReadPresetRequest&, const Model::ReadPresetOutcome&, const Aws::Client::AsyncCallerContext*> ReadPresetOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::TestRoleRequest&, const Model::TestRoleOutcome&, const Aws::Client::AsyncCallerContext*> TestRoleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const Aws::Client::AsyncCallerContext*> UpdatePipelineOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::UpdatePipelineNotificationsRequest&, const Model::UpdatePipelineNotificationsOutcome&, const Aws::Client::AsyncCallerContext*> UpdatePipelineNotificationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticTranscoderClient, const Model::UpdatePipelineStatusRequest&, const Model::UpdatePipelineStatusOutcome&, const Aws::Client::AsyncCallerContext*> UpdatePipelineStatusOutcomeReceivedEvent;
 
   /*
     <fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic Transcoder Service.</p>
@@ -202,7 +203,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CancelJobAsync(const Model::CancelJobRequest& request) const;
+     void CancelJobAsync(const Model::CancelJobRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>
@@ -221,7 +222,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateJobAsync(const Model::CreateJobRequest& request) const;
+     void CreateJobAsync(const Model::CreateJobRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
@@ -240,7 +241,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreatePipelineAsync(const Model::CreatePipelineRequest& request) const;
+     void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>
@@ -259,7 +260,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreatePresetAsync(const Model::CreatePresetRequest& request) const;
+     void CreatePresetAsync(const Model::CreatePresetRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>
@@ -278,7 +279,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeletePipelineAsync(const Model::DeletePipelineRequest& request) const;
+     void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>
@@ -297,7 +298,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeletePresetAsync(const Model::DeletePresetRequest& request) const;
+     void DeletePresetAsync(const Model::DeletePresetRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>
@@ -316,7 +317,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListJobsByPipelineAsync(const Model::ListJobsByPipelineRequest& request) const;
+     void ListJobsByPipelineAsync(const Model::ListJobsByPipelineRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>
@@ -335,7 +336,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListJobsByStatusAsync(const Model::ListJobsByStatusRequest& request) const;
+     void ListJobsByStatusAsync(const Model::ListJobsByStatusRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
@@ -354,7 +355,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListPipelinesAsync(const Model::ListPipelinesRequest& request) const;
+     void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>
@@ -373,7 +374,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListPresetsAsync(const Model::ListPresetsRequest& request) const;
+     void ListPresetsAsync(const Model::ListPresetsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ReadJob operation returns detailed information about a job.</p>
@@ -392,7 +393,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ReadJobAsync(const Model::ReadJobRequest& request) const;
+     void ReadJobAsync(const Model::ReadJobRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
@@ -411,7 +412,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ReadPipelineAsync(const Model::ReadPipelineRequest& request) const;
+     void ReadPipelineAsync(const Model::ReadPipelineRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The ReadPreset operation gets detailed information about a preset.</p>
@@ -430,7 +431,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ReadPresetAsync(const Model::ReadPresetRequest& request) const;
+     void ReadPresetAsync(const Model::ReadPresetRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>
@@ -449,7 +450,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void TestRoleAsync(const Model::TestRoleRequest& request) const;
+     void TestRoleAsync(const Model::TestRoleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>
@@ -468,7 +469,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request) const;
+     void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
@@ -487,7 +488,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdatePipelineNotificationsAsync(const Model::UpdatePipelineNotificationsRequest& request) const;
+     void UpdatePipelineNotificationsAsync(const Model::UpdatePipelineNotificationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>
@@ -506,7 +507,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdatePipelineStatusAsync(const Model::UpdatePipelineStatusRequest& request) const;
+     void UpdatePipelineStatusAsync(const Model::UpdatePipelineStatusRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for CancelJobAsync to call upon completion to the handler chain. You need to call this to
@@ -801,23 +802,23 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void CancelJobAsyncHelper(const Model::CancelJobRequest& request) const;
-    void CreateJobAsyncHelper(const Model::CreateJobRequest& request) const;
-    void CreatePipelineAsyncHelper(const Model::CreatePipelineRequest& request) const;
-    void CreatePresetAsyncHelper(const Model::CreatePresetRequest& request) const;
-    void DeletePipelineAsyncHelper(const Model::DeletePipelineRequest& request) const;
-    void DeletePresetAsyncHelper(const Model::DeletePresetRequest& request) const;
-    void ListJobsByPipelineAsyncHelper(const Model::ListJobsByPipelineRequest& request) const;
-    void ListJobsByStatusAsyncHelper(const Model::ListJobsByStatusRequest& request) const;
-    void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request) const;
-    void ListPresetsAsyncHelper(const Model::ListPresetsRequest& request) const;
-    void ReadJobAsyncHelper(const Model::ReadJobRequest& request) const;
-    void ReadPipelineAsyncHelper(const Model::ReadPipelineRequest& request) const;
-    void ReadPresetAsyncHelper(const Model::ReadPresetRequest& request) const;
-    void TestRoleAsyncHelper(const Model::TestRoleRequest& request) const;
-    void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request) const;
-    void UpdatePipelineNotificationsAsyncHelper(const Model::UpdatePipelineNotificationsRequest& request) const;
-    void UpdatePipelineStatusAsyncHelper(const Model::UpdatePipelineStatusRequest& request) const;
+    void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreatePipelineAsyncHelper(const Model::CreatePipelineRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreatePresetAsyncHelper(const Model::CreatePresetRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeletePipelineAsyncHelper(const Model::DeletePipelineRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeletePresetAsyncHelper(const Model::DeletePresetRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListJobsByPipelineAsyncHelper(const Model::ListJobsByPipelineRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListJobsByStatusAsyncHelper(const Model::ListJobsByStatusRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListPresetsAsyncHelper(const Model::ListPresetsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ReadJobAsyncHelper(const Model::ReadJobRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ReadPipelineAsyncHelper(const Model::ReadPipelineRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ReadPresetAsyncHelper(const Model::ReadPresetRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void TestRoleAsyncHelper(const Model::TestRoleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdatePipelineNotificationsAsyncHelper(const Model::UpdatePipelineNotificationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdatePipelineStatusAsyncHelper(const Model::UpdatePipelineStatusRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

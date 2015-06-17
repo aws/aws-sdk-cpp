@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     */
-    inline void SetProtocol(const Aws::String& value) { m_protocol = value; }
+    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     */
-    inline void SetProtocol(const char* value) { m_protocol.assign(value); }
+    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /*
      <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
@@ -68,16 +68,16 @@ namespace Model
     inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
     /*
-     <p>The port on which the load balancer is listening: 25, 80, 443, 465, 587, or 1024-65535.</p>
+     <p>The port on which the load balancer is listening. The supported ports are: 25, 80, 443, 465, 587, and 1024-65535.</p>
     */
     inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
     /*
-     <p>The port on which the load balancer is listening: 25, 80, 443, 465, 587, or 1024-65535.</p>
+     <p>The port on which the load balancer is listening. The supported ports are: 25, 80, 443, 465, 587, and 1024-65535.</p>
     */
-    inline void SetLoadBalancerPort(long value) { m_loadBalancerPort = value; }
+    inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /*
-     <p>The port on which the load balancer is listening: 25, 80, 443, 465, 587, or 1024-65535.</p>
+     <p>The port on which the load balancer is listening. The supported ports are: 25, 80, 443, 465, 587, and 1024-65535.</p>
     */
     inline Listener&  WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
 
@@ -106,16 +106,16 @@ namespace Model
     inline Listener& WithInstanceProtocol(const char* value) { SetInstanceProtocol(value); return *this;}
 
     /*
-     <p>The port on which the instance server is listening - 25, 80, 443, 465, 587, or 1024-65535.</p>
+     <p>The port on which the instance is listening.</p>
     */
     inline long GetInstancePort() const{ return m_instancePort; }
     /*
-     <p>The port on which the instance server is listening - 25, 80, 443, 465, 587, or 1024-65535.</p>
+     <p>The port on which the instance is listening.</p>
     */
-    inline void SetInstancePort(long value) { m_instancePort = value; }
+    inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /*
-     <p>The port on which the instance server is listening - 25, 80, 443, 465, 587, or 1024-65535.</p>
+     <p>The port on which the instance is listening.</p>
     */
     inline Listener&  WithInstancePort(long value) { SetInstancePort(value); return *this;}
 
@@ -145,10 +145,13 @@ namespace Model
 
   private:
     Aws::String m_protocol;
+    bool m_protocolHasBeenSet;
     long m_loadBalancerPort;
+    bool m_loadBalancerPortHasBeenSet;
     Aws::String m_instanceProtocol;
     bool m_instanceProtocolHasBeenSet;
     long m_instancePort;
+    bool m_instancePortHasBeenSet;
     Aws::String m_sSLCertificateId;
     bool m_sSLCertificateIdHasBeenSet;
   };

@@ -20,6 +20,7 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListTagsForResource&";
-  ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
+  if(m_resourceArnHasBeenSet)
+  {
+    ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
+  }
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";

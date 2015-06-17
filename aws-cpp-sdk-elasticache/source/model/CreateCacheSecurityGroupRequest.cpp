@@ -19,7 +19,9 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateCacheSecurityGroupRequest::CreateCacheSecurityGroupRequest()
+CreateCacheSecurityGroupRequest::CreateCacheSecurityGroupRequest() : 
+    m_cacheSecurityGroupNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String CreateCacheSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateCacheSecurityGroup&";
-  ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
-  ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if(m_cacheSecurityGroupNameHasBeenSet)
+  {
+    ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

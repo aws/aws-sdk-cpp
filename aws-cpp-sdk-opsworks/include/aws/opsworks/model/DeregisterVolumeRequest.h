@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     */
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
+    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /*
      <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     */
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
+    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /*
      <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
@@ -61,6 +61,7 @@ namespace Model
 
   private:
     Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
   };
 
 } // namespace Model

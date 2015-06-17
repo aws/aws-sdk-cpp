@@ -36,7 +36,11 @@ CreatePipelineResult::CreatePipelineResult(const AmazonWebServiceResult<JsonValu
 CreatePipelineResult& CreatePipelineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  m_pipelineId = jsonValue.GetString("pipelineId");
+  if(jsonValue.ValueExists("pipelineId"))
+  {
+    m_pipelineId = jsonValue.GetString("pipelineId");
+
+  }
 
 
 

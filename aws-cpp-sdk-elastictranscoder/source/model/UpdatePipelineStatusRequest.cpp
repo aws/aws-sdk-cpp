@@ -21,7 +21,9 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePipelineStatusRequest::UpdatePipelineStatusRequest()
+UpdatePipelineStatusRequest::UpdatePipelineStatusRequest() : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -29,7 +31,11 @@ Aws::String UpdatePipelineStatusRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Status", m_status);
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", m_status);
+
+  }
 
   return payload.WriteReadable();
 }

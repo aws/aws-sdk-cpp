@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
@@ -60,10 +60,10 @@ namespace Model
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
     
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
+    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
     inline AttachUserPolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
@@ -73,7 +73,9 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet;
   };
 
 } // namespace Model

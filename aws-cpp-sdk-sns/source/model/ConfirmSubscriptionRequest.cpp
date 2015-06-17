@@ -20,6 +20,8 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 ConfirmSubscriptionRequest::ConfirmSubscriptionRequest() : 
+    m_topicArnHasBeenSet(false),
+    m_tokenHasBeenSet(false),
     m_authenticateOnUnsubscribeHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String ConfirmSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ConfirmSubscription&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  ss << "Token=" << StringUtils::URLEncode(m_token.c_str()) << "&";
+  if(m_topicArnHasBeenSet)
+  {
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
+  if(m_tokenHasBeenSet)
+  {
+    ss << "Token=" << StringUtils::URLEncode(m_token.c_str()) << "&";
+  }
   if(m_authenticateOnUnsubscribeHasBeenSet)
   {
     ss << "AuthenticateOnUnsubscribe=" << StringUtils::URLEncode(m_authenticateOnUnsubscribe.c_str()) << "&";

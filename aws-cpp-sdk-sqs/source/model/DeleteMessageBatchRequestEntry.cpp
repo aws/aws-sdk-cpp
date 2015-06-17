@@ -23,11 +23,15 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry()
+DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry() : 
+    m_idHasBeenSet(false),
+    m_receiptHandleHasBeenSet(false)
 {
 }
 
-DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(const XmlNode& xmlNode)
+DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_receiptHandleHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
-    m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
+    if(!receiptHandleNode.IsNull())
+    {
+      m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
+      m_receiptHandleHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,12 +61,24 @@ DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator =(const
 
 void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_receiptHandleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  }
 }
 
 void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_receiptHandleHasBeenSet)
+  {
+      oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  }
 }

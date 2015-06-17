@@ -20,6 +20,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 EnableLoggingRequest::EnableLoggingRequest() : 
+    m_clusterIdentifierHasBeenSet(false),
+    m_bucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String EnableLoggingRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=EnableLogging&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
-  ss << "BucketName=" << StringUtils::URLEncode(m_bucketName.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+  if(m_bucketNameHasBeenSet)
+  {
+    ss << "BucketName=" << StringUtils::URLEncode(m_bucketName.c_str()) << "&";
+  }
   if(m_s3KeyPrefixHasBeenSet)
   {
     ss << "S3KeyPrefix=" << StringUtils::URLEncode(m_s3KeyPrefix.c_str()) << "&";

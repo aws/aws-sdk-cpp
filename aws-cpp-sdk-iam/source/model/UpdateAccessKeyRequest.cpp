@@ -20,7 +20,9 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UpdateAccessKeyRequest::UpdateAccessKeyRequest() : 
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_accessKeyIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -32,8 +34,14 @@ Aws::String UpdateAccessKeyRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
-  ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
-  ss << "Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  if(m_accessKeyIdHasBeenSet)
+  {
+    ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+    ss << "Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

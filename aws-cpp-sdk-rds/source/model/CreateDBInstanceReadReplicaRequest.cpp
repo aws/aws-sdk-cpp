@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_sourceDBInstanceIdentifierHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_port(0),
@@ -41,8 +43,14 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateDBInstanceReadReplica&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
-  ss << "SourceDBInstanceIdentifier=" << StringUtils::URLEncode(m_sourceDBInstanceIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
+  if(m_sourceDBInstanceIdentifierHasBeenSet)
+  {
+    ss << "SourceDBInstanceIdentifier=" << StringUtils::URLEncode(m_sourceDBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";

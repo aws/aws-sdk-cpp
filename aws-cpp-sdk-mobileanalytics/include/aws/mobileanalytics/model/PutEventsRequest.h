@@ -45,7 +45,7 @@ namespace Model
     /*
      <p>An array of Event JSON objects</p>
     */
-    inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
+    inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /*
      <p>An array of Event JSON objects</p>
@@ -55,7 +55,7 @@ namespace Model
     /*
      <p>An array of Event JSON objects</p>
     */
-    inline PutEventsRequest& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
+    inline PutEventsRequest& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
     */
-    inline void SetClientContext(const Aws::String& value) { m_clientContext = value; }
+    inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
     */
-    inline void SetClientContext(const char* value) { m_clientContext.assign(value); }
+    inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
 
     /*
      <p>The client context including the client ID, app title, app version and package name.</p>
@@ -107,7 +107,9 @@ namespace Model
 
   private:
     Aws::Vector<Event> m_events;
+    bool m_eventsHasBeenSet;
     Aws::String m_clientContext;
+    bool m_clientContextHasBeenSet;
     Aws::String m_clientContextEncoding;
     bool m_clientContextEncodingHasBeenSet;
   };

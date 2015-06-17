@@ -41,11 +41,12 @@ DescribeLifecycleHookTypesResult& DescribeLifecycleHookTypesResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode lifecycleHookTypesNode = resultNode.FirstChild("LifecycleHookTypes");
+    XmlNode lifecycleHookTypesNodeParent = resultNode.FirstChild("LifecycleHookTypes");
+    XmlNode lifecycleHookTypesNode = lifecycleHookTypesNodeParent.FirstChild("member");
     while(!lifecycleHookTypesNode.IsNull())
     {
       m_lifecycleHookTypes.push_back(StringUtils::Trim(lifecycleHookTypesNode.GetText().c_str()));
-      lifecycleHookTypesNode = lifecycleHookTypesNode.NextNode("LifecycleHookTypes");
+      lifecycleHookTypesNode = lifecycleHookTypesNode.NextNode("member");
     }
 
   }

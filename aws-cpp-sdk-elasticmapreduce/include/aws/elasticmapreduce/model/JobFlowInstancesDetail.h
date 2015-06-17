@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The Amazon EC2 master node instance type.</p>
     */
-    inline void SetMasterInstanceType(const Aws::String& value) { m_masterInstanceType = value; }
+    inline void SetMasterInstanceType(const Aws::String& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
 
     /*
      <p>The Amazon EC2 master node instance type.</p>
     */
-    inline void SetMasterInstanceType(const char* value) { m_masterInstanceType.assign(value); }
+    inline void SetMasterInstanceType(const char* value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType.assign(value); }
 
     /*
      <p>The Amazon EC2 master node instance type.</p>
@@ -122,12 +122,12 @@ namespace Model
     /*
      <p>The Amazon EC2 slave node instance type.</p>
     */
-    inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceType = value; }
+    inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
 
     /*
      <p>The Amazon EC2 slave node instance type.</p>
     */
-    inline void SetSlaveInstanceType(const char* value) { m_slaveInstanceType.assign(value); }
+    inline void SetSlaveInstanceType(const char* value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType.assign(value); }
 
     /*
      <p>The Amazon EC2 slave node instance type.</p>
@@ -146,7 +146,7 @@ namespace Model
     /*
      <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.</p>
     */
-    inline void SetInstanceCount(long value) { m_instanceCount = value; }
+    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /*
      <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.</p>
@@ -302,12 +302,15 @@ namespace Model
 
   private:
     Aws::String m_masterInstanceType;
+    bool m_masterInstanceTypeHasBeenSet;
     Aws::String m_masterPublicDnsName;
     bool m_masterPublicDnsNameHasBeenSet;
     Aws::String m_masterInstanceId;
     bool m_masterInstanceIdHasBeenSet;
     Aws::String m_slaveInstanceType;
+    bool m_slaveInstanceTypeHasBeenSet;
     long m_instanceCount;
+    bool m_instanceCountHasBeenSet;
     Aws::Vector<InstanceGroupDetail> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
     long m_normalizedInstanceHours;

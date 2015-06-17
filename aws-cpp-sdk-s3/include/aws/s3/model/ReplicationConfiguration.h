@@ -50,12 +50,12 @@ namespace Model
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
     */
-    inline void SetRole(const Aws::String& value) { m_role = value; }
+    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
     */
-    inline void SetRole(const char* value) { m_role.assign(value); }
+    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /*
      Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
@@ -74,7 +74,7 @@ namespace Model
     /*
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
     */
-    inline void SetRules(const Aws::Vector<ReplicationRule>& value) { m_rules = value; }
+    inline void SetRules(const Aws::Vector<ReplicationRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /*
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
@@ -84,11 +84,13 @@ namespace Model
     /*
      Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.
     */
-    inline ReplicationConfiguration& AddRules(const ReplicationRule& value) { m_rules.push_back(value); return *this; }
+    inline ReplicationConfiguration& AddRules(const ReplicationRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
   private:
     Aws::String m_role;
+    bool m_roleHasBeenSet;
     Aws::Vector<ReplicationRule> m_rules;
+    bool m_rulesHasBeenSet;
   };
 
 } // namespace Model

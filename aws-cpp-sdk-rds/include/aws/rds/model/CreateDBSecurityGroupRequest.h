@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
     */
-    inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupName = value; }
+    inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
     */
-    inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupName.assign(value); }
+    inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
     /*
      <p> The name for the DB security group. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> <p>Example: <code>mysecuritygroup</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The description for the DB security group. </p>
     */
-    inline void SetDBSecurityGroupDescription(const Aws::String& value) { m_dBSecurityGroupDescription = value; }
+    inline void SetDBSecurityGroupDescription(const Aws::String& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = value; }
 
     /*
      <p> The description for the DB security group. </p>
     */
-    inline void SetDBSecurityGroupDescription(const char* value) { m_dBSecurityGroupDescription.assign(value); }
+    inline void SetDBSecurityGroupDescription(const char* value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription.assign(value); }
 
     /*
      <p> The description for the DB security group. </p>
@@ -97,7 +97,9 @@ namespace Model
 
   private:
     Aws::String m_dBSecurityGroupName;
+    bool m_dBSecurityGroupNameHasBeenSet;
     Aws::String m_dBSecurityGroupDescription;
+    bool m_dBSecurityGroupDescriptionHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

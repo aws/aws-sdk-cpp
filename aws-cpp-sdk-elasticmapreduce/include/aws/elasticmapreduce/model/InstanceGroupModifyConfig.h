@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>Unique ID of the instance group to expand or shrink.</p>
     */
-    inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupId = value; }
+    inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
     /*
      <p>Unique ID of the instance group to expand or shrink.</p>
     */
-    inline void SetInstanceGroupId(const char* value) { m_instanceGroupId.assign(value); }
+    inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
 
     /*
      <p>Unique ID of the instance group to expand or shrink.</p>
@@ -105,6 +105,7 @@ namespace Model
 
   private:
     Aws::String m_instanceGroupId;
+    bool m_instanceGroupIdHasBeenSet;
     long m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;

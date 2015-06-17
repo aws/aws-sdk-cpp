@@ -43,11 +43,12 @@ DescribeReservedNodesResult& DescribeReservedNodesResult::operator =(const Amazo
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedNodeNode = resultNode.FirstChild("ReservedNode");
+    XmlNode reservedNodeNodeParent = resultNode.FirstChild("ReservedNode");
+    XmlNode reservedNodeNode = reservedNodeNodeParent.FirstChild("member");
     while(!reservedNodeNode.IsNull())
     {
       m_reservedNodes.push_back(reservedNodeNode);
-      reservedNodeNode = reservedNodeNode.NextNode("ReservedNode");
+      reservedNodeNode = reservedNodeNode.NextNode("member");
     }
 
   }

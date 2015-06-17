@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListInstancesRequest::ListInstancesRequest() : 
+    m_clusterIdHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
     m_instanceGroupTypesHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -32,7 +33,11 @@ Aws::String ListInstancesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ClusterId", m_clusterId);
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
+
+  }
 
   if(m_instanceGroupIdHasBeenSet)
   {

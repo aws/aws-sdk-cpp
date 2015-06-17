@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArn = value; }
+    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline void SetIamUserArn(const char* value) { m_iamUserArn.assign(value); }
+    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /*
      <p>The user's IAM ARN.</p>
@@ -137,7 +137,9 @@ namespace Model
 
   private:
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
     Aws::String m_iamUserArn;
+    bool m_iamUserArnHasBeenSet;
     bool m_allowSsh;
     bool m_allowSshHasBeenSet;
     bool m_allowSudo;

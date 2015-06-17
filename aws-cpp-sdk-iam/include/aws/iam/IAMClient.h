@@ -78,6 +78,7 @@
 #include <aws/iam/model/UploadServerCertificateResult.h>
 #include <aws/iam/model/UploadSigningCertificateResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -438,110 +439,110 @@ namespace Model
 
   class IAMClient;
 
-  typedef Aws::Utils::Event<IAMClient, const Model::AddClientIDToOpenIDConnectProviderRequest&, const Model::AddClientIDToOpenIDConnectProviderOutcome&> AddClientIDToOpenIDConnectProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::AddRoleToInstanceProfileRequest&, const Model::AddRoleToInstanceProfileOutcome&> AddRoleToInstanceProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::AddUserToGroupRequest&, const Model::AddUserToGroupOutcome&> AddUserToGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::AttachGroupPolicyRequest&, const Model::AttachGroupPolicyOutcome&> AttachGroupPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::AttachRolePolicyRequest&, const Model::AttachRolePolicyOutcome&> AttachRolePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::AttachUserPolicyRequest&, const Model::AttachUserPolicyOutcome&> AttachUserPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ChangePasswordRequest&, const Model::ChangePasswordOutcome&> ChangePasswordOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateAccessKeyRequest&, const Model::CreateAccessKeyOutcome&> CreateAccessKeyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateAccountAliasRequest&, const Model::CreateAccountAliasOutcome&> CreateAccountAliasOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&> CreateGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateInstanceProfileRequest&, const Model::CreateInstanceProfileOutcome&> CreateInstanceProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateLoginProfileRequest&, const Model::CreateLoginProfileOutcome&> CreateLoginProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateOpenIDConnectProviderRequest&, const Model::CreateOpenIDConnectProviderOutcome&> CreateOpenIDConnectProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreatePolicyRequest&, const Model::CreatePolicyOutcome&> CreatePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreatePolicyVersionRequest&, const Model::CreatePolicyVersionOutcome&> CreatePolicyVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateRoleRequest&, const Model::CreateRoleOutcome&> CreateRoleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateSAMLProviderRequest&, const Model::CreateSAMLProviderOutcome&> CreateSAMLProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateUserRequest&, const Model::CreateUserOutcome&> CreateUserOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::CreateVirtualMFADeviceRequest&, const Model::CreateVirtualMFADeviceOutcome&> CreateVirtualMFADeviceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeactivateMFADeviceRequest&, const Model::DeactivateMFADeviceOutcome&> DeactivateMFADeviceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteAccessKeyRequest&, const Model::DeleteAccessKeyOutcome&> DeleteAccessKeyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteAccountAliasRequest&, const Model::DeleteAccountAliasOutcome&> DeleteAccountAliasOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteAccountPasswordPolicyRequest&, const Model::DeleteAccountPasswordPolicyOutcome&> DeleteAccountPasswordPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&> DeleteGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteGroupPolicyRequest&, const Model::DeleteGroupPolicyOutcome&> DeleteGroupPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteInstanceProfileRequest&, const Model::DeleteInstanceProfileOutcome&> DeleteInstanceProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteLoginProfileRequest&, const Model::DeleteLoginProfileOutcome&> DeleteLoginProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteOpenIDConnectProviderRequest&, const Model::DeleteOpenIDConnectProviderOutcome&> DeleteOpenIDConnectProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&> DeletePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeletePolicyVersionRequest&, const Model::DeletePolicyVersionOutcome&> DeletePolicyVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteRoleRequest&, const Model::DeleteRoleOutcome&> DeleteRoleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteRolePolicyRequest&, const Model::DeleteRolePolicyOutcome&> DeleteRolePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteSAMLProviderRequest&, const Model::DeleteSAMLProviderOutcome&> DeleteSAMLProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteServerCertificateRequest&, const Model::DeleteServerCertificateOutcome&> DeleteServerCertificateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteSigningCertificateRequest&, const Model::DeleteSigningCertificateOutcome&> DeleteSigningCertificateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&> DeleteUserOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteUserPolicyRequest&, const Model::DeleteUserPolicyOutcome&> DeleteUserPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DeleteVirtualMFADeviceRequest&, const Model::DeleteVirtualMFADeviceOutcome&> DeleteVirtualMFADeviceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DetachGroupPolicyRequest&, const Model::DetachGroupPolicyOutcome&> DetachGroupPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DetachRolePolicyRequest&, const Model::DetachRolePolicyOutcome&> DetachRolePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::DetachUserPolicyRequest&, const Model::DetachUserPolicyOutcome&> DetachUserPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::EnableMFADeviceRequest&, const Model::EnableMFADeviceOutcome&> EnableMFADeviceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GenerateCredentialReportRequest&, const Model::GenerateCredentialReportOutcome&> GenerateCredentialReportOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetAccessKeyLastUsedRequest&, const Model::GetAccessKeyLastUsedOutcome&> GetAccessKeyLastUsedOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetAccountAuthorizationDetailsRequest&, const Model::GetAccountAuthorizationDetailsOutcome&> GetAccountAuthorizationDetailsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetAccountPasswordPolicyRequest&, const Model::GetAccountPasswordPolicyOutcome&> GetAccountPasswordPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetAccountSummaryRequest&, const Model::GetAccountSummaryOutcome&> GetAccountSummaryOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetCredentialReportRequest&, const Model::GetCredentialReportOutcome&> GetCredentialReportOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetGroupRequest&, const Model::GetGroupOutcome&> GetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetGroupPolicyRequest&, const Model::GetGroupPolicyOutcome&> GetGroupPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetInstanceProfileRequest&, const Model::GetInstanceProfileOutcome&> GetInstanceProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetLoginProfileRequest&, const Model::GetLoginProfileOutcome&> GetLoginProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetOpenIDConnectProviderRequest&, const Model::GetOpenIDConnectProviderOutcome&> GetOpenIDConnectProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&> GetPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetPolicyVersionRequest&, const Model::GetPolicyVersionOutcome&> GetPolicyVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetRoleRequest&, const Model::GetRoleOutcome&> GetRoleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetRolePolicyRequest&, const Model::GetRolePolicyOutcome&> GetRolePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetSAMLProviderRequest&, const Model::GetSAMLProviderOutcome&> GetSAMLProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetServerCertificateRequest&, const Model::GetServerCertificateOutcome&> GetServerCertificateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetUserRequest&, const Model::GetUserOutcome&> GetUserOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::GetUserPolicyRequest&, const Model::GetUserPolicyOutcome&> GetUserPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListAccessKeysRequest&, const Model::ListAccessKeysOutcome&> ListAccessKeysOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListAccountAliasesRequest&, const Model::ListAccountAliasesOutcome&> ListAccountAliasesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListAttachedGroupPoliciesRequest&, const Model::ListAttachedGroupPoliciesOutcome&> ListAttachedGroupPoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListAttachedRolePoliciesRequest&, const Model::ListAttachedRolePoliciesOutcome&> ListAttachedRolePoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListAttachedUserPoliciesRequest&, const Model::ListAttachedUserPoliciesOutcome&> ListAttachedUserPoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListEntitiesForPolicyRequest&, const Model::ListEntitiesForPolicyOutcome&> ListEntitiesForPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListGroupPoliciesRequest&, const Model::ListGroupPoliciesOutcome&> ListGroupPoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&> ListGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListGroupsForUserRequest&, const Model::ListGroupsForUserOutcome&> ListGroupsForUserOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListInstanceProfilesRequest&, const Model::ListInstanceProfilesOutcome&> ListInstanceProfilesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListInstanceProfilesForRoleRequest&, const Model::ListInstanceProfilesForRoleOutcome&> ListInstanceProfilesForRoleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListMFADevicesRequest&, const Model::ListMFADevicesOutcome&> ListMFADevicesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListOpenIDConnectProvidersRequest&, const Model::ListOpenIDConnectProvidersOutcome&> ListOpenIDConnectProvidersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&> ListPoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListPolicyVersionsRequest&, const Model::ListPolicyVersionsOutcome&> ListPolicyVersionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListRolePoliciesRequest&, const Model::ListRolePoliciesOutcome&> ListRolePoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListRolesRequest&, const Model::ListRolesOutcome&> ListRolesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListSAMLProvidersRequest&, const Model::ListSAMLProvidersOutcome&> ListSAMLProvidersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListServerCertificatesRequest&, const Model::ListServerCertificatesOutcome&> ListServerCertificatesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListSigningCertificatesRequest&, const Model::ListSigningCertificatesOutcome&> ListSigningCertificatesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListUserPoliciesRequest&, const Model::ListUserPoliciesOutcome&> ListUserPoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListUsersRequest&, const Model::ListUsersOutcome&> ListUsersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ListVirtualMFADevicesRequest&, const Model::ListVirtualMFADevicesOutcome&> ListVirtualMFADevicesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::PutGroupPolicyRequest&, const Model::PutGroupPolicyOutcome&> PutGroupPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::PutRolePolicyRequest&, const Model::PutRolePolicyOutcome&> PutRolePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::PutUserPolicyRequest&, const Model::PutUserPolicyOutcome&> PutUserPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::RemoveClientIDFromOpenIDConnectProviderRequest&, const Model::RemoveClientIDFromOpenIDConnectProviderOutcome&> RemoveClientIDFromOpenIDConnectProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::RemoveRoleFromInstanceProfileRequest&, const Model::RemoveRoleFromInstanceProfileOutcome&> RemoveRoleFromInstanceProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::RemoveUserFromGroupRequest&, const Model::RemoveUserFromGroupOutcome&> RemoveUserFromGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::ResyncMFADeviceRequest&, const Model::ResyncMFADeviceOutcome&> ResyncMFADeviceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::SetDefaultPolicyVersionRequest&, const Model::SetDefaultPolicyVersionOutcome&> SetDefaultPolicyVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateAccessKeyRequest&, const Model::UpdateAccessKeyOutcome&> UpdateAccessKeyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateAccountPasswordPolicyRequest&, const Model::UpdateAccountPasswordPolicyOutcome&> UpdateAccountPasswordPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateAssumeRolePolicyRequest&, const Model::UpdateAssumeRolePolicyOutcome&> UpdateAssumeRolePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&> UpdateGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateLoginProfileRequest&, const Model::UpdateLoginProfileOutcome&> UpdateLoginProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateOpenIDConnectProviderThumbprintRequest&, const Model::UpdateOpenIDConnectProviderThumbprintOutcome&> UpdateOpenIDConnectProviderThumbprintOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateSAMLProviderRequest&, const Model::UpdateSAMLProviderOutcome&> UpdateSAMLProviderOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateServerCertificateRequest&, const Model::UpdateServerCertificateOutcome&> UpdateServerCertificateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateSigningCertificateRequest&, const Model::UpdateSigningCertificateOutcome&> UpdateSigningCertificateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&> UpdateUserOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UploadServerCertificateRequest&, const Model::UploadServerCertificateOutcome&> UploadServerCertificateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<IAMClient, const Model::UploadSigningCertificateRequest&, const Model::UploadSigningCertificateOutcome&> UploadSigningCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::AddClientIDToOpenIDConnectProviderRequest&, const Model::AddClientIDToOpenIDConnectProviderOutcome&, const Aws::Client::AsyncCallerContext*> AddClientIDToOpenIDConnectProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::AddRoleToInstanceProfileRequest&, const Model::AddRoleToInstanceProfileOutcome&, const Aws::Client::AsyncCallerContext*> AddRoleToInstanceProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::AddUserToGroupRequest&, const Model::AddUserToGroupOutcome&, const Aws::Client::AsyncCallerContext*> AddUserToGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::AttachGroupPolicyRequest&, const Model::AttachGroupPolicyOutcome&, const Aws::Client::AsyncCallerContext*> AttachGroupPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::AttachRolePolicyRequest&, const Model::AttachRolePolicyOutcome&, const Aws::Client::AsyncCallerContext*> AttachRolePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::AttachUserPolicyRequest&, const Model::AttachUserPolicyOutcome&, const Aws::Client::AsyncCallerContext*> AttachUserPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ChangePasswordRequest&, const Model::ChangePasswordOutcome&, const Aws::Client::AsyncCallerContext*> ChangePasswordOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateAccessKeyRequest&, const Model::CreateAccessKeyOutcome&, const Aws::Client::AsyncCallerContext*> CreateAccessKeyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateAccountAliasRequest&, const Model::CreateAccountAliasOutcome&, const Aws::Client::AsyncCallerContext*> CreateAccountAliasOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateInstanceProfileRequest&, const Model::CreateInstanceProfileOutcome&, const Aws::Client::AsyncCallerContext*> CreateInstanceProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateLoginProfileRequest&, const Model::CreateLoginProfileOutcome&, const Aws::Client::AsyncCallerContext*> CreateLoginProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateOpenIDConnectProviderRequest&, const Model::CreateOpenIDConnectProviderOutcome&, const Aws::Client::AsyncCallerContext*> CreateOpenIDConnectProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreatePolicyRequest&, const Model::CreatePolicyOutcome&, const Aws::Client::AsyncCallerContext*> CreatePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreatePolicyVersionRequest&, const Model::CreatePolicyVersionOutcome&, const Aws::Client::AsyncCallerContext*> CreatePolicyVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateRoleRequest&, const Model::CreateRoleOutcome&, const Aws::Client::AsyncCallerContext*> CreateRoleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateSAMLProviderRequest&, const Model::CreateSAMLProviderOutcome&, const Aws::Client::AsyncCallerContext*> CreateSAMLProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const Aws::Client::AsyncCallerContext*> CreateUserOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::CreateVirtualMFADeviceRequest&, const Model::CreateVirtualMFADeviceOutcome&, const Aws::Client::AsyncCallerContext*> CreateVirtualMFADeviceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeactivateMFADeviceRequest&, const Model::DeactivateMFADeviceOutcome&, const Aws::Client::AsyncCallerContext*> DeactivateMFADeviceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteAccessKeyRequest&, const Model::DeleteAccessKeyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteAccessKeyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteAccountAliasRequest&, const Model::DeleteAccountAliasOutcome&, const Aws::Client::AsyncCallerContext*> DeleteAccountAliasOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteAccountPasswordPolicyRequest&, const Model::DeleteAccountPasswordPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteAccountPasswordPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteGroupPolicyRequest&, const Model::DeleteGroupPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteGroupPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteInstanceProfileRequest&, const Model::DeleteInstanceProfileOutcome&, const Aws::Client::AsyncCallerContext*> DeleteInstanceProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteLoginProfileRequest&, const Model::DeleteLoginProfileOutcome&, const Aws::Client::AsyncCallerContext*> DeleteLoginProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteOpenIDConnectProviderRequest&, const Model::DeleteOpenIDConnectProviderOutcome&, const Aws::Client::AsyncCallerContext*> DeleteOpenIDConnectProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeletePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeletePolicyVersionRequest&, const Model::DeletePolicyVersionOutcome&, const Aws::Client::AsyncCallerContext*> DeletePolicyVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteRoleRequest&, const Model::DeleteRoleOutcome&, const Aws::Client::AsyncCallerContext*> DeleteRoleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteRolePolicyRequest&, const Model::DeleteRolePolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteRolePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteSAMLProviderRequest&, const Model::DeleteSAMLProviderOutcome&, const Aws::Client::AsyncCallerContext*> DeleteSAMLProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteServerCertificateRequest&, const Model::DeleteServerCertificateOutcome&, const Aws::Client::AsyncCallerContext*> DeleteServerCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteSigningCertificateRequest&, const Model::DeleteSigningCertificateOutcome&, const Aws::Client::AsyncCallerContext*> DeleteSigningCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const Aws::Client::AsyncCallerContext*> DeleteUserOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteUserPolicyRequest&, const Model::DeleteUserPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteUserPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DeleteVirtualMFADeviceRequest&, const Model::DeleteVirtualMFADeviceOutcome&, const Aws::Client::AsyncCallerContext*> DeleteVirtualMFADeviceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DetachGroupPolicyRequest&, const Model::DetachGroupPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DetachGroupPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DetachRolePolicyRequest&, const Model::DetachRolePolicyOutcome&, const Aws::Client::AsyncCallerContext*> DetachRolePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::DetachUserPolicyRequest&, const Model::DetachUserPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DetachUserPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::EnableMFADeviceRequest&, const Model::EnableMFADeviceOutcome&, const Aws::Client::AsyncCallerContext*> EnableMFADeviceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GenerateCredentialReportRequest&, const Model::GenerateCredentialReportOutcome&, const Aws::Client::AsyncCallerContext*> GenerateCredentialReportOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetAccessKeyLastUsedRequest&, const Model::GetAccessKeyLastUsedOutcome&, const Aws::Client::AsyncCallerContext*> GetAccessKeyLastUsedOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetAccountAuthorizationDetailsRequest&, const Model::GetAccountAuthorizationDetailsOutcome&, const Aws::Client::AsyncCallerContext*> GetAccountAuthorizationDetailsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetAccountPasswordPolicyRequest&, const Model::GetAccountPasswordPolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetAccountPasswordPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetAccountSummaryRequest&, const Model::GetAccountSummaryOutcome&, const Aws::Client::AsyncCallerContext*> GetAccountSummaryOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetCredentialReportRequest&, const Model::GetCredentialReportOutcome&, const Aws::Client::AsyncCallerContext*> GetCredentialReportOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const Aws::Client::AsyncCallerContext*> GetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetGroupPolicyRequest&, const Model::GetGroupPolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetGroupPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetInstanceProfileRequest&, const Model::GetInstanceProfileOutcome&, const Aws::Client::AsyncCallerContext*> GetInstanceProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetLoginProfileRequest&, const Model::GetLoginProfileOutcome&, const Aws::Client::AsyncCallerContext*> GetLoginProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetOpenIDConnectProviderRequest&, const Model::GetOpenIDConnectProviderOutcome&, const Aws::Client::AsyncCallerContext*> GetOpenIDConnectProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetPolicyVersionRequest&, const Model::GetPolicyVersionOutcome&, const Aws::Client::AsyncCallerContext*> GetPolicyVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetRoleRequest&, const Model::GetRoleOutcome&, const Aws::Client::AsyncCallerContext*> GetRoleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetRolePolicyRequest&, const Model::GetRolePolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetRolePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetSAMLProviderRequest&, const Model::GetSAMLProviderOutcome&, const Aws::Client::AsyncCallerContext*> GetSAMLProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetServerCertificateRequest&, const Model::GetServerCertificateOutcome&, const Aws::Client::AsyncCallerContext*> GetServerCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetUserRequest&, const Model::GetUserOutcome&, const Aws::Client::AsyncCallerContext*> GetUserOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::GetUserPolicyRequest&, const Model::GetUserPolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetUserPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListAccessKeysRequest&, const Model::ListAccessKeysOutcome&, const Aws::Client::AsyncCallerContext*> ListAccessKeysOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListAccountAliasesRequest&, const Model::ListAccountAliasesOutcome&, const Aws::Client::AsyncCallerContext*> ListAccountAliasesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListAttachedGroupPoliciesRequest&, const Model::ListAttachedGroupPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListAttachedGroupPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListAttachedRolePoliciesRequest&, const Model::ListAttachedRolePoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListAttachedRolePoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListAttachedUserPoliciesRequest&, const Model::ListAttachedUserPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListAttachedUserPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListEntitiesForPolicyRequest&, const Model::ListEntitiesForPolicyOutcome&, const Aws::Client::AsyncCallerContext*> ListEntitiesForPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListGroupPoliciesRequest&, const Model::ListGroupPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListGroupPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const Aws::Client::AsyncCallerContext*> ListGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListGroupsForUserRequest&, const Model::ListGroupsForUserOutcome&, const Aws::Client::AsyncCallerContext*> ListGroupsForUserOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListInstanceProfilesRequest&, const Model::ListInstanceProfilesOutcome&, const Aws::Client::AsyncCallerContext*> ListInstanceProfilesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListInstanceProfilesForRoleRequest&, const Model::ListInstanceProfilesForRoleOutcome&, const Aws::Client::AsyncCallerContext*> ListInstanceProfilesForRoleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListMFADevicesRequest&, const Model::ListMFADevicesOutcome&, const Aws::Client::AsyncCallerContext*> ListMFADevicesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListOpenIDConnectProvidersRequest&, const Model::ListOpenIDConnectProvidersOutcome&, const Aws::Client::AsyncCallerContext*> ListOpenIDConnectProvidersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListPolicyVersionsRequest&, const Model::ListPolicyVersionsOutcome&, const Aws::Client::AsyncCallerContext*> ListPolicyVersionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListRolePoliciesRequest&, const Model::ListRolePoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListRolePoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListRolesRequest&, const Model::ListRolesOutcome&, const Aws::Client::AsyncCallerContext*> ListRolesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListSAMLProvidersRequest&, const Model::ListSAMLProvidersOutcome&, const Aws::Client::AsyncCallerContext*> ListSAMLProvidersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListServerCertificatesRequest&, const Model::ListServerCertificatesOutcome&, const Aws::Client::AsyncCallerContext*> ListServerCertificatesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListSigningCertificatesRequest&, const Model::ListSigningCertificatesOutcome&, const Aws::Client::AsyncCallerContext*> ListSigningCertificatesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListUserPoliciesRequest&, const Model::ListUserPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListUserPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const Aws::Client::AsyncCallerContext*> ListUsersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ListVirtualMFADevicesRequest&, const Model::ListVirtualMFADevicesOutcome&, const Aws::Client::AsyncCallerContext*> ListVirtualMFADevicesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::PutGroupPolicyRequest&, const Model::PutGroupPolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutGroupPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::PutRolePolicyRequest&, const Model::PutRolePolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutRolePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::PutUserPolicyRequest&, const Model::PutUserPolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutUserPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::RemoveClientIDFromOpenIDConnectProviderRequest&, const Model::RemoveClientIDFromOpenIDConnectProviderOutcome&, const Aws::Client::AsyncCallerContext*> RemoveClientIDFromOpenIDConnectProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::RemoveRoleFromInstanceProfileRequest&, const Model::RemoveRoleFromInstanceProfileOutcome&, const Aws::Client::AsyncCallerContext*> RemoveRoleFromInstanceProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::RemoveUserFromGroupRequest&, const Model::RemoveUserFromGroupOutcome&, const Aws::Client::AsyncCallerContext*> RemoveUserFromGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::ResyncMFADeviceRequest&, const Model::ResyncMFADeviceOutcome&, const Aws::Client::AsyncCallerContext*> ResyncMFADeviceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::SetDefaultPolicyVersionRequest&, const Model::SetDefaultPolicyVersionOutcome&, const Aws::Client::AsyncCallerContext*> SetDefaultPolicyVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateAccessKeyRequest&, const Model::UpdateAccessKeyOutcome&, const Aws::Client::AsyncCallerContext*> UpdateAccessKeyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateAccountPasswordPolicyRequest&, const Model::UpdateAccountPasswordPolicyOutcome&, const Aws::Client::AsyncCallerContext*> UpdateAccountPasswordPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateAssumeRolePolicyRequest&, const Model::UpdateAssumeRolePolicyOutcome&, const Aws::Client::AsyncCallerContext*> UpdateAssumeRolePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const Aws::Client::AsyncCallerContext*> UpdateGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateLoginProfileRequest&, const Model::UpdateLoginProfileOutcome&, const Aws::Client::AsyncCallerContext*> UpdateLoginProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateOpenIDConnectProviderThumbprintRequest&, const Model::UpdateOpenIDConnectProviderThumbprintOutcome&, const Aws::Client::AsyncCallerContext*> UpdateOpenIDConnectProviderThumbprintOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateSAMLProviderRequest&, const Model::UpdateSAMLProviderOutcome&, const Aws::Client::AsyncCallerContext*> UpdateSAMLProviderOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateServerCertificateRequest&, const Model::UpdateServerCertificateOutcome&, const Aws::Client::AsyncCallerContext*> UpdateServerCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateSigningCertificateRequest&, const Model::UpdateSigningCertificateOutcome&, const Aws::Client::AsyncCallerContext*> UpdateSigningCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const Aws::Client::AsyncCallerContext*> UpdateUserOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UploadServerCertificateRequest&, const Model::UploadServerCertificateOutcome&, const Aws::Client::AsyncCallerContext*> UploadServerCertificateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<IAMClient, const Model::UploadSigningCertificateRequest&, const Model::UploadSigningCertificateOutcome&, const Aws::Client::AsyncCallerContext*> UploadSigningCertificateOutcomeReceivedEvent;
 
   /*
     <fullname>AWS Identity and Access Management</fullname> <p>AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under your AWS account. This guide provides descriptions of IAM actions that you can call programmatically. For general information about IAM, see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>. For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>. </p> <note>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to IAM and AWS. For example, the SDKs take care of tasks such as cryptographically signing requests (see below), managing errors, and retrying requests automatically. For information about the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a> page. </note> <p>We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However, you can also use the IAM Query API to make direct calls to the IAM web service. To learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests for all actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request. </p> <p> <b>Signing Requests</b> </p> <p>Requests must be signed using an access key ID and a secret access key. We strongly recommend that you do not use your AWS account access key ID and secret access key for everyday work with IAM. You can use the access key ID and secret access key for an IAM user or you can use the AWS Security Token Service to generate temporary security credentials and use those to sign requests. </p> <p>To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However, some operations now require Signature Version 4. The documentation for operations that require version 4 indicate this requirement. </p> <p> <b>Additional Resources</b> </p> <p>For more information, see the following:</p> <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>. This topic provides general information about the types of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic presents a list of suggestions for using the IAM service to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security Token Service</a>. This guide describes how to create and use temporary security credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>. This set of topics walk you through the process of signing a request using an access key ID and secret access key. </li> </ul>
@@ -590,7 +591,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddClientIDToOpenIDConnectProviderAsync(const Model::AddClientIDToOpenIDConnectProviderRequest& request) const;
+     void AddClientIDToOpenIDConnectProviderAsync(const Model::AddClientIDToOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Adds the specified role to the specified instance profile. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. </p>
@@ -609,7 +610,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddRoleToInstanceProfileAsync(const Model::AddRoleToInstanceProfileRequest& request) const;
+     void AddRoleToInstanceProfileAsync(const Model::AddRoleToInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Adds the specified user to the specified group.</p>
@@ -628,7 +629,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddUserToGroupAsync(const Model::AddUserToGroupRequest& request) const;
+     void AddUserToGroupAsync(const Model::AddUserToGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Attaches the specified managed policy to the specified group.</p> <p>You use this API to attach a managed policy to a group. To embed an inline policy in a group, use <a>PutGroupPolicy</a>. </p> <p>For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -647,7 +648,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AttachGroupPolicyAsync(const Model::AttachGroupPolicyRequest& request) const;
+     void AttachGroupPolicyAsync(const Model::AttachGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Attaches the specified managed policy to the specified role.</p> <p>When you attach a managed policy to a role, the managed policy is used as the role's access (permissions) policy. You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. </p> <p>Use this API to attach a managed policy to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.</p>
@@ -666,7 +667,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AttachRolePolicyAsync(const Model::AttachRolePolicyRequest& request) const;
+     void AttachRolePolicyAsync(const Model::AttachRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Attaches the specified managed policy to the specified user.</p> <p>You use this API to attach a managed policy to a user. To embed an inline policy in a user, use <a>PutUserPolicy</a>. </p> <p>For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -685,7 +686,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AttachUserPolicyAsync(const Model::AttachUserPolicyRequest& request) const;
+     void AttachUserPolicyAsync(const Model::AttachUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Changes the password of the IAM user who is calling this action. The root account password is not affected by this action. </p> <p>To change the password for a different user, see <a>UpdateLoginProfile</a>. For more information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing Passwords</a> in the <i>Using IAM</i> guide. </p>
@@ -704,7 +705,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ChangePasswordAsync(const Model::ChangePasswordRequest& request) const;
+     void ChangePasswordAsync(const Model::ChangePasswordRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default status for new keys is <code>Active</code>. </p> <p> If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <p> For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <important> To ensure the security of your AWS account, the secret access key is accessible only during key and user creation. You must save the key (for example, in a text file) if you want to be able to access it again. If a secret key is lost, you can delete the access keys for the associated user and then create new keys. </important>
@@ -723,7 +724,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateAccessKeyAsync(const Model::CreateAccessKeyRequest& request) const;
+     void CreateAccessKeyAsync(const Model::CreateAccessKeyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an alias for your AWS account. For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. </p>
@@ -742,7 +743,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateAccountAliasAsync(const Model::CreateAccountAliasRequest& request) const;
+     void CreateAccountAliasAsync(const Model::CreateAccountAliasRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new group.</p> <p> For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>
@@ -761,7 +762,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateGroupAsync(const Model::CreateGroupRequest& request) const;
+     void CreateGroupAsync(const Model::CreateGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new instance profile. For information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. </p> <p> For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>
@@ -780,7 +781,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateInstanceProfileAsync(const Model::CreateInstanceProfileRequest& request) const;
+     void CreateInstanceProfileAsync(const Model::CreateInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For more information about managing passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing Passwords</a> in the <i>Using IAM</i> guide. </p>
@@ -799,7 +800,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateLoginProfileAsync(const Model::CreateLoginProfileRequest& request) const;
+     void CreateLoginProfileAsync(const Model::CreateLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an IAM entity to describe an identity provider (IdP) that supports <a href="http://openid.net/connect/">OpenID Connect (OIDC)</a>. </p> <p>The OIDC provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between AWS and the OIDC provider. </p> <p>When you create the IAM OIDC provider, you specify the URL of the OIDC identity provider (IdP) to trust, a list of client IDs (also known as audiences) that identify the application or applications that are allowed to authenticate using the OIDC provider, and a list of thumbprints of the server certificate(s) that the IdP uses. You get all of this information from the OIDC IdP that you want to use for access to AWS. </p> <note>Because trust for the OIDC provider is ultimately derived from the IAM provider that this action creates, it is a best practice to limit access to the <a>CreateOpenIDConnectProvider</a> action to highly-privileged users. </note>
@@ -818,7 +819,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateOpenIDConnectProviderAsync(const Model::CreateOpenIDConnectProviderRequest& request) const;
+     void CreateOpenIDConnectProviderAsync(const Model::CreateOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new managed policy for your AWS account. </p> <p>This operation creates a policy version with a version identifier of <code>v1</code> and sets v1 as the policy's default version. For more information about policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p> <p>For more information about managed policies in general, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -837,7 +838,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreatePolicyAsync(const Model::CreatePolicyRequest& request) const;
+     void CreatePolicyAsync(const Model::CreatePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new version of the specified managed policy. To update a managed policy, you create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a> before you create a new version. </p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to. </p> <p>For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -856,7 +857,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request) const;
+     void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new role for your AWS account. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <p>The policy in the following example grants permission to an EC2 instance to assume the role.</p>
@@ -875,7 +876,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateRoleAsync(const Model::CreateRoleRequest& request) const;
+     void CreateRoleAsync(const Model::CreateRoleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.</p> <p> The SAML provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between AWS and a SAML identity provider. You can create an IAM role that supports Web-based single sign-on (SSO) to the AWS Management Console or one that supports API access to AWS. </p> <p> When you create the SAML provider, you upload an a SAML metadata document that you get from your IdP and that includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response (assertions) that are received from the IdP. You must generate the metadata document using the identity management software that is used as your organization's IdP. </p> <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. </note> <p> For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html">Giving Console Access Using SAML</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating Temporary Security Credentials for SAML Federation</a> in the <i>Using Temporary Credentials</i> guide. </p>
@@ -894,7 +895,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateSAMLProviderAsync(const Model::CreateSAMLProviderRequest& request) const;
+     void CreateSAMLProviderAsync(const Model::CreateSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new user for your AWS account.</p> <p> For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>
@@ -913,7 +914,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateUserAsync(const Model::CreateUserRequest& request) const;
+     void CreateUserAsync(const Model::CreateUserRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of MFA devices you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on Entities</a> in the <i>Using IAM</i> guide. </p> <important>The seed information contained in the QR code and the Base32 string should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual device, you should ensure that the information is destroyed following secure procedures. </important>
@@ -932,7 +933,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateVirtualMFADeviceAsync(const Model::CreateVirtualMFADeviceRequest& request) const;
+     void CreateVirtualMFADeviceAsync(const Model::CreateVirtualMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled. </p> <p>For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
@@ -951,7 +952,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeactivateMFADeviceAsync(const Model::DeactivateMFADeviceRequest& request) const;
+     void DeactivateMFADeviceAsync(const Model::DeactivateMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the access key associated with the specified user.</p> <p> If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>
@@ -970,7 +971,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteAccessKeyAsync(const Model::DeleteAccessKeyRequest& request) const;
+     void DeleteAccessKeyAsync(const Model::DeleteAccessKeyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the specified AWS account alias. For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. </p>
@@ -989,7 +990,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteAccountAliasAsync(const Model::DeleteAccountAliasRequest& request) const;
+     void DeleteAccountAliasAsync(const Model::DeleteAccountAliasRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the password policy for the AWS account.</p>
@@ -1008,7 +1009,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteAccountPasswordPolicyAsync(const Model::DeleteAccountPasswordPolicyRequest& request) const;
+     void DeleteAccountPasswordPolicyAsync(const Model::DeleteAccountPasswordPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the specified group. The group must not contain any users or have any attached policies. </p>
@@ -1027,7 +1028,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteGroupAsync(const Model::DeleteGroupRequest& request) const;
+     void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified inline policy that is embedded in the specified group.</p> <p>A group can also have managed policies attached to it. To detach a managed policy from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1046,7 +1047,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteGroupPolicyAsync(const Model::DeleteGroupPolicyRequest& request) const;
+     void DeleteGroupPolicyAsync(const Model::DeleteGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified instance profile. The instance profile must not have an associated role. </p> <important> Make sure you do not have any Amazon EC2 instances running with the instance profile you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance. </important> <p>For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. </p>
@@ -1065,7 +1066,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteInstanceProfileAsync(const Model::DeleteInstanceProfileRequest& request) const;
+     void DeleteInstanceProfileAsync(const Model::DeleteInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management Console. </p> <important> Deleting a user's password does not prevent a user from accessing IAM through the command line interface or the API. To prevent all user access you must also either make the access key inactive or delete it. For more information about making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </important>
@@ -1084,7 +1085,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteLoginProfileAsync(const Model::DeleteLoginProfileRequest& request) const;
+     void DeleteLoginProfileAsync(const Model::DeleteLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes an IAM OpenID Connect identity provider.</p> <p>Deleting an OIDC provider does not update any roles that reference the provider as a principal in their trust policies. Any attempt to assume a role that references a provider that has been deleted will fail. </p> <p>This action is idempotent; it does not fail or return an error if you call the action for a provider that was already deleted.</p>
@@ -1103,7 +1104,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteOpenIDConnectProviderAsync(const Model::DeleteOpenIDConnectProviderRequest& request) const;
+     void DeleteOpenIDConnectProviderAsync(const Model::DeleteOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified managed policy.</p> <p>Before you can delete a managed policy, you must detach the policy from all users, groups, and roles that it is attached to, and you must delete all of the policy's versions. The following steps describe the process for deleting a managed policy: <ol> <li>Detach the policy from all users, groups, and roles that the policy is attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>. </li> <li>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's versions, use <a>ListPolicyVersions</a>. You cannot use <a>DeletePolicyVersion</a> to delete the version that is marked as the default version. You delete the policy's default version in the next step of the process. </li> <li>Delete the policy (this automatically deletes the policy's default version) using this API. </li> </ol> </p> <p>For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1122,7 +1123,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeletePolicyAsync(const Model::DeletePolicyRequest& request) const;
+     void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified version of the specified managed policy.</p> <p>You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use <a>ListPolicyVersions</a>. </p> <p>For information about versions for managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1141,7 +1142,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeletePolicyVersionAsync(const Model::DeletePolicyVersionRequest& request) const;
+     void DeletePolicyVersionAsync(const Model::DeletePolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. </p> <important>Make sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance. </important>
@@ -1160,7 +1161,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteRoleAsync(const Model::DeleteRoleRequest& request) const;
+     void DeleteRoleAsync(const Model::DeleteRoleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified inline policy that is embedded in the specified role.</p> <p>A role can also have managed policies attached to it. To detach a managed policy from a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1179,7 +1180,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteRolePolicyAsync(const Model::DeleteRolePolicyRequest& request) const;
+     void DeleteRolePolicyAsync(const Model::DeleteRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a SAML provider.</p> <p> Deleting the provider does not update any roles that reference the SAML provider as a principal in their trust policies. Any attempt to assume a role that references a SAML provider that has been deleted will fail. </p> <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. </note>
@@ -1198,7 +1199,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteSAMLProviderAsync(const Model::DeleteSAMLProviderRequest& request) const;
+     void DeleteSAMLProviderAsync(const Model::DeleteSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified server certificate.</p> <important> If you are using a server certificate with Elastic Load Balancing, deleting the certificate could have implications for your application. If Elastic Load Balancing doesn't detect the deletion of bound certificates, it may continue to use the certificates. This could cause Elastic Load Balancing to stop accepting traffic. We recommend that you remove the reference to the certificate from Elastic Load Balancing before using this command to delete the certificate. For more information, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API Reference</i>. </important>
@@ -1217,7 +1218,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request) const;
+     void DeleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified signing certificate associated with the specified user.</p> <p>If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>
@@ -1236,7 +1237,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteSigningCertificateAsync(const Model::DeleteSigningCertificateRequest& request) const;
+     void DeleteSigningCertificateAsync(const Model::DeleteSigningCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached policies. </p>
@@ -1255,7 +1256,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteUserAsync(const Model::DeleteUserRequest& request) const;
+     void DeleteUserAsync(const Model::DeleteUserRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified inline policy that is embedded in the specified user.</p> <p>A user can also have managed policies attached to it. To detach a managed policy from a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1274,7 +1275,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteUserPolicyAsync(const Model::DeleteUserPolicyRequest& request) const;
+     void DeleteUserPolicyAsync(const Model::DeleteUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a virtual MFA device.</p> <note> You must deactivate a user's virtual MFA device before you can delete it. For information about deactivating MFA devices, see <a>DeactivateMFADevice</a>. </note>
@@ -1293,7 +1294,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteVirtualMFADeviceAsync(const Model::DeleteVirtualMFADeviceRequest& request) const;
+     void DeleteVirtualMFADeviceAsync(const Model::DeleteVirtualMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes the specified managed policy from the specified group. </p> <p>A group can also have inline policies embedded with it. To delete an inline policy, use the <a>DeleteGroupPolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1312,7 +1313,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DetachGroupPolicyAsync(const Model::DetachGroupPolicyRequest& request) const;
+     void DetachGroupPolicyAsync(const Model::DetachGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes the specified managed policy from the specified role. </p> <p>A role can also have inline policies embedded with it. To delete an inline policy, use the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1331,7 +1332,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DetachRolePolicyAsync(const Model::DetachRolePolicyRequest& request) const;
+     void DetachRolePolicyAsync(const Model::DetachRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes the specified managed policy from the specified user. </p> <p>A user can also have inline policies embedded with it. To delete an inline policy, use the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1350,7 +1351,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request) const;
+     void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every subsequent login by the user name associated with the device. </p>
@@ -1369,7 +1370,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void EnableMFADeviceAsync(const Model::EnableMFADeviceRequest& request) const;
+     void EnableMFADeviceAsync(const Model::EnableMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Generates a credential report for the AWS account. For more information about the credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in the <i>Using IAM</i> guide. </p>
@@ -1388,7 +1389,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GenerateCredentialReportAsync(const Model::GenerateCredentialReportRequest& request) const;
+     void GenerateCredentialReportAsync(const Model::GenerateCredentialReportRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about when the specified access key was last used. The information includes the date and time of last use, along with the AWS service and region that were specified in the last request made with that key.</p>
@@ -1407,7 +1408,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetAccessKeyLastUsedAsync(const Model::GetAccessKeyLastUsedRequest& request) const;
+     void GetAccessKeyLastUsedAsync(const Model::GetAccessKeyLastUsedRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about all IAM users, groups, roles, and policies in your account, including their relationships to one another. Use this API to obtain a snapshot of the configuration of IAM permissions (users, groups, roles, and policies) in your account.</p> <p>You can optionally filter the results using the <code>Filter</code> parameter. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
@@ -1426,7 +1427,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetAccountAuthorizationDetailsAsync(const Model::GetAccountAuthorizationDetailsRequest& request) const;
+     void GetAccountAuthorizationDetailsAsync(const Model::GetAccountAuthorizationDetailsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM Password Policy</a>. </p>
@@ -1445,7 +1446,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetAccountPasswordPolicyAsync(const Model::GetAccountPasswordPolicyRequest& request) const;
+     void GetAccountPasswordPolicyAsync(const Model::GetAccountPasswordPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about IAM entity usage and IAM quotas in the AWS account.</p> <p> For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>
@@ -1464,7 +1465,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetAccountSummaryAsync(const Model::GetAccountSummaryRequest& request) const;
+     void GetAccountSummaryAsync(const Model::GetAccountSummaryRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Retrieves a credential report for the AWS account. For more information about the credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in the <i>Using IAM</i> guide. </p>
@@ -1483,7 +1484,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetCredentialReportAsync(const Model::GetCredentialReportRequest& request) const;
+     void GetCredentialReportAsync(const Model::GetCredentialReportRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of users that are in the specified group. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1502,7 +1503,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetGroupAsync(const Model::GetGroupRequest& request) const;
+     void GetGroupAsync(const Model::GetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the specified inline policy document that is embedded in the specified group. </p> <p>A group can also have managed policies attached to it. To retrieve a managed policy document that is attached to a group, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1521,7 +1522,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetGroupPolicyAsync(const Model::GetGroupPolicyRequest& request) const;
+     void GetGroupPolicyAsync(const Model::GetGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. For more information about ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>. </p>
@@ -1540,7 +1541,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetInstanceProfileAsync(const Model::GetInstanceProfileRequest& request) const;
+     void GetInstanceProfileAsync(const Model::GetInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the user name and password-creation date for the specified user. If the user has not been assigned a password, the action returns a 404 (<code>NoSuchEntity</code>) error. </p>
@@ -1559,7 +1560,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetLoginProfileAsync(const Model::GetLoginProfileRequest& request) const;
+     void GetLoginProfileAsync(const Model::GetLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns information about the specified OpenID Connect provider.</p>
@@ -1578,7 +1579,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetOpenIDConnectProviderAsync(const Model::GetOpenIDConnectProviderRequest& request) const;
+     void GetOpenIDConnectProviderAsync(const Model::GetOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about the specified managed policy, including the policy's default version and the total number of users, groups, and roles that the policy is attached to. For a list of the specific users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata about the policy. To retrieve the policy document for a specific version of the policy, use <a>GetPolicyVersion</a>. </p> <p>This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded with a user, group, or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1597,7 +1598,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetPolicyAsync(const Model::GetPolicyRequest& request) const;
+     void GetPolicyAsync(const Model::GetPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about the specified version of the specified managed policy, including the policy document. </p> <p>To list the available versions for a policy, use <a>ListPolicyVersions</a>. </p> <p>This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information about the types of policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1616,7 +1617,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetPolicyVersionAsync(const Model::GetPolicyVersionRequest& request) const;
+     void GetPolicyVersionAsync(const Model::GetPolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to assume the role. For more information about ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. </p>
@@ -1635,7 +1636,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetRoleAsync(const Model::GetRoleRequest& request) const;
+     void GetRoleAsync(const Model::GetRoleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the specified inline policy document that is embedded with the specified role. </p> <p>A role can also have managed policies attached to it. To retrieve a managed policy document that is attached to a role, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions and Federate Identities</a>. </p>
@@ -1654,7 +1655,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetRolePolicyAsync(const Model::GetRolePolicyRequest& request) const;
+     void GetRolePolicyAsync(const Model::GetRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the SAML provider metadocument that was uploaded when the provider was created or updated. </p> <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. </note>
@@ -1673,7 +1674,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetSAMLProviderAsync(const Model::GetSAMLProviderRequest& request) const;
+     void GetSAMLProviderAsync(const Model::GetSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about the specified server certificate.</p>
@@ -1692,7 +1693,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetServerCertificateAsync(const Model::GetServerCertificateRequest& request) const;
+     void GetServerCertificateAsync(const Model::GetServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves information about the specified user, including the user's creation date, path, unique ID, and ARN. </p> <p>If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID used to sign the request. </p>
@@ -1711,7 +1712,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetUserAsync(const Model::GetUserRequest& request) const;
+     void GetUserAsync(const Model::GetUserRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the specified inline policy document that is embedded in the specified user. </p> <p>A user can also have managed policies attached to it. To retrieve a managed policy document that is attached to a user, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1730,7 +1731,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetUserPolicyAsync(const Model::GetUserPolicyRequest& request) const;
+     void GetUserPolicyAsync(const Model::GetUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns information about the access key IDs associated with the specified user. If there are none, the action returns an empty list. </p> <p>Although each user is limited to a small number of keys, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <note>To ensure the security of your AWS account, the secret access key is accessible only during key and user creation. </note>
@@ -1749,7 +1750,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request) const;
+     void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Lists the account aliases associated with the account. For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. </p> <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1768,7 +1769,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListAccountAliasesAsync(const Model::ListAccountAliasesRequest& request) const;
+     void ListAccountAliasesAsync(const Model::ListAccountAliasesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all managed policies that are attached to the specified group.</p> <p>A group can also have inline policies embedded with it. To list the inline policies for a group, use the <a>ListGroupPolicies</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the action returns an empty list. </p>
@@ -1787,7 +1788,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListAttachedGroupPoliciesAsync(const Model::ListAttachedGroupPoliciesRequest& request) const;
+     void ListAttachedGroupPoliciesAsync(const Model::ListAttachedGroupPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all managed policies that are attached to the specified role. </p> <p>A role can also have inline policies embedded with it. To list the inline policies for a role, use the <a>ListRolePolicies</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified role (or none that match the specified path prefix), the action returns an empty list. </p>
@@ -1806,7 +1807,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListAttachedRolePoliciesAsync(const Model::ListAttachedRolePoliciesRequest& request) const;
+     void ListAttachedRolePoliciesAsync(const Model::ListAttachedRolePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all managed policies that are attached to the specified user. </p> <p>A user can also have inline policies embedded with it. To list the inline policies for a user, use the <a>ListUserPolicies</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the action returns an empty list. </p>
@@ -1825,7 +1826,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListAttachedUserPoliciesAsync(const Model::ListAttachedUserPoliciesRequest& request) const;
+     void ListAttachedUserPoliciesAsync(const Model::ListAttachedUserPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all users, groups, and roles that the specified managed policy is attached to. </p> <p>You can use the optional <code>EntityFilter</code> parameter to limit the results to a particular type of entity (users, groups, or roles). For example, to list only the roles that are attached to the specified policy, set <code>EntityFilter</code> to <code>Role</code>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1844,7 +1845,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListEntitiesForPolicyAsync(const Model::ListEntitiesForPolicyRequest& request) const;
+     void ListEntitiesForPolicyAsync(const Model::ListEntitiesForPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the names of the inline policies that are embedded in the specified group. </p> <p>A group can also have managed policies attached to it. To list the managed policies that are attached to a group, use <a>ListAttachedGroupPolicies</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified group, the action returns an empty list. </p>
@@ -1863,7 +1864,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListGroupPoliciesAsync(const Model::ListGroupPoliciesRequest& request) const;
+     void ListGroupPoliciesAsync(const Model::ListGroupPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the groups that have the specified path prefix.</p> <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1882,7 +1883,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListGroupsAsync(const Model::ListGroupsRequest& request) const;
+     void ListGroupsAsync(const Model::ListGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the groups the specified user belongs to.</p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1901,7 +1902,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListGroupsForUserAsync(const Model::ListGroupsForUserRequest& request) const;
+     void ListGroupsForUserAsync(const Model::ListGroupsForUserRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1920,7 +1921,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListInstanceProfilesAsync(const Model::ListInstanceProfilesRequest& request) const;
+     void ListInstanceProfilesAsync(const Model::ListInstanceProfilesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1939,7 +1940,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListInstanceProfilesForRoleAsync(const Model::ListInstanceProfilesForRoleRequest& request) const;
+     void ListInstanceProfilesForRoleAsync(const Model::ListInstanceProfilesForRoleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -1958,7 +1959,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListMFADevicesAsync(const Model::ListMFADevicesRequest& request) const;
+     void ListMFADevicesAsync(const Model::ListMFADevicesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists information about the OpenID Connect providers in the AWS account. </p>
@@ -1977,7 +1978,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListOpenIDConnectProvidersAsync(const Model::ListOpenIDConnectProvidersRequest& request) const;
+     void ListOpenIDConnectProvidersAsync(const Model::ListOpenIDConnectProvidersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all the managed policies that are available to your account, including your own customer managed policies and all AWS managed policies. </p> <p>You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>. To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -1996,7 +1997,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListPoliciesAsync(const Model::ListPoliciesRequest& request) const;
+     void ListPoliciesAsync(const Model::ListPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists information about the versions of the specified managed policy, including the version that is set as the policy's default version. </p> <p>For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -2015,7 +2016,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request) const;
+     void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the names of the inline policies that are embedded in the specified role. </p> <p>A role can also have managed policies attached to it. To list the managed policies that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified role, the action returns an empty list. </p>
@@ -2034,7 +2035,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListRolePoliciesAsync(const Model::ListRolePoliciesRequest& request) const;
+     void ListRolePoliciesAsync(const Model::ListRolePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -2053,7 +2054,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListRolesAsync(const Model::ListRolesRequest& request) const;
+     void ListRolesAsync(const Model::ListRolesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the SAML providers in the account.</p> <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. </note>
@@ -2072,7 +2073,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListSAMLProvidersAsync(const Model::ListSAMLProvidersRequest& request) const;
+     void ListSAMLProvidersAsync(const Model::ListSAMLProvidersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list. </p> <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -2091,7 +2092,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListServerCertificatesAsync(const Model::ListServerCertificatesRequest& request) const;
+     void ListServerCertificatesAsync(const Model::ListServerCertificatesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty list. </p> <p>Although each user is limited to a small number of signing certificates, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>
@@ -2110,7 +2111,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListSigningCertificatesAsync(const Model::ListSigningCertificatesRequest& request) const;
+     void ListSigningCertificatesAsync(const Model::ListSigningCertificatesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the names of the inline policies embedded in the specified user. </p> <p>A user can also have managed policies attached to it. To list the managed policies that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified user, the action returns an empty list. </p>
@@ -2129,7 +2130,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListUserPoliciesAsync(const Model::ListUserPoliciesRequest& request) const;
+     void ListUserPoliciesAsync(const Model::ListUserPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the IAM users that have the specified path prefix. If no path prefix is specified, the action returns all users in the AWS account. If there are none, the action returns an empty list. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -2148,7 +2149,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListUsersAsync(const Model::ListUsersRequest& request) const;
+     void ListUsersAsync(const Model::ListUsersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action returns a list of all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
@@ -2167,7 +2168,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListVirtualMFADevicesAsync(const Model::ListVirtualMFADevicesRequest& request) const;
+     void ListVirtualMFADevicesAsync(const Model::ListVirtualMFADevicesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Adds (or updates) an inline policy document that is embedded in the specified group. </p> <p>A user can also have managed policies attached to it. To attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of inline policies that you can embed in a group, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because policy documents can be large, you should use POST rather than GET when calling <code>PutGroupPolicy</code>. For general information about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
@@ -2186,7 +2187,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutGroupPolicyAsync(const Model::PutGroupPolicyRequest& request) const;
+     void PutGroupPolicyAsync(const Model::PutGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Adds (or updates) an inline policy document that is embedded in the specified role. </p> <p>When you embed an inline policy in a role, the inline policy is used as the role's access (permissions) policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions and Federate Identities</a>. </p> <p>A role can also have a managed policy attached to it. To attach a managed policy to a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of inline policies that you can embed with a role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because policy documents can be large, you should use POST rather than GET when calling <code>PutRolePolicy</code>. For general information about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
@@ -2205,7 +2206,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutRolePolicyAsync(const Model::PutRolePolicyRequest& request) const;
+     void PutRolePolicyAsync(const Model::PutRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Adds (or updates) an inline policy document that is embedded in the specified user. </p> <p>A user can also have a managed policy attached to it. To attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of inline policies that you can embed in a user, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because policy documents can be large, you should use POST rather than GET when calling <code>PutUserPolicy</code>. For general information about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
@@ -2224,7 +2225,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutUserPolicyAsync(const Model::PutUserPolicyRequest& request) const;
+     void PutUserPolicyAsync(const Model::PutUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes the specified client ID (also known as audience) from the list of client IDs registered for the specified IAM OpenID Connect provider.</p> <p>This action is idempotent; it does not fail or return an error if you try to remove a client ID that was removed previously.</p>
@@ -2243,7 +2244,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveClientIDFromOpenIDConnectProviderAsync(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request) const;
+     void RemoveClientIDFromOpenIDConnectProviderAsync(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes the specified role from the specified instance profile.</p> <important> Make sure you do not have any Amazon EC2 instances running with the role you are about to remove from the instance profile. Removing a role from an instance profile that is associated with a running instance will break any applications running on the instance. </important> <p> For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>. </p>
@@ -2262,7 +2263,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveRoleFromInstanceProfileAsync(const Model::RemoveRoleFromInstanceProfileRequest& request) const;
+     void RemoveRoleFromInstanceProfileAsync(const Model::RemoveRoleFromInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes the specified user from the specified group.</p>
@@ -2281,7 +2282,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request) const;
+     void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Synchronizes the specified MFA device with AWS servers.</p> <p>For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
@@ -2300,7 +2301,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ResyncMFADeviceAsync(const Model::ResyncMFADeviceRequest& request) const;
+     void ResyncMFADeviceAsync(const Model::ResyncMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets the specified version of the specified policy as the policy's default (operative) version. </p> <p>This action affects all users, groups, and roles that the policy is attached to. To list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. </p> <p>For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
@@ -2319,7 +2320,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request) const;
+     void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to disable a user's key as part of a key rotation work flow. </p> <p>If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <p>For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing Keys and Certificates</a> in the <i>Using IAM</i> guide. </p>
@@ -2338,7 +2339,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateAccessKeyAsync(const Model::UpdateAccessKeyRequest& request) const;
+     void UpdateAccessKeyAsync(const Model::UpdateAccessKeyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the password policy settings for the AWS account.</p> <note> <p>This action does not support partial updates. No parameters are required, but if you do not specify a parameter, that parameter's value reverts to its default value. See the <b>Request Parameters</b> section for each parameter's default value. </p> </note> <p> For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM Password Policy</a> in the <i>Using IAM</i> guide. </p>
@@ -2357,7 +2358,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateAccountPasswordPolicyAsync(const Model::UpdateAccountPasswordPolicyRequest& request) const;
+     void UpdateAccountPasswordPolicyAsync(const Model::UpdateAccountPasswordPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Updates the policy that grants an entity permission to assume a role. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions and Federate Identities</a>. </p>
@@ -2376,7 +2377,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateAssumeRolePolicyAsync(const Model::UpdateAssumeRolePolicyRequest& request) const;
+     void UpdateAssumeRolePolicyAsync(const Model::UpdateAssumeRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the name and/or the path of the specified group.</p> <important> You should understand the implications of changing a group's path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note>To change a group name the requester must have appropriate permissions on both the source object and the target object. For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on all (*). For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html" target="blank">Permissions and Policies</a>. </note>
@@ -2395,7 +2396,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateGroupAsync(const Model::UpdateGroupRequest& request) const;
+     void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Changes the password for the specified user.</p> <p>Users can change their own passwords by calling <a>ChangePassword</a>. For more information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing Passwords</a> in the <i>Using IAM</i> guide. </p>
@@ -2414,7 +2415,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateLoginProfileAsync(const Model::UpdateLoginProfileRequest& request) const;
+     void UpdateLoginProfileAsync(const Model::UpdateLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Replaces the existing list of server certificate thumbprints with a new list. </p> <p>The list that you pass with this action completely replaces the existing list of thumbprints. (The lists are not merged.)</p> <p>Typically, you need to update a thumbprint only when the identity provider's certificate changes, which occurs rarely. However, if the provider's certificate <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC provider as a principal will fail until the certificate thumbprint is updated.</p> <note>Because trust for the OpenID Connect provider is ultimately derived from the provider's certificate and is validated by the thumbprint, it is a best practice to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to highly-privileged users. </note>
@@ -2433,7 +2434,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateOpenIDConnectProviderThumbprintAsync(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request) const;
+     void UpdateOpenIDConnectProviderThumbprintAsync(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the metadata document for an existing SAML provider.</p> <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. </note>
@@ -2452,7 +2453,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateSAMLProviderAsync(const Model::UpdateSAMLProviderRequest& request) const;
+     void UpdateSAMLProviderAsync(const Model::UpdateSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the name and/or the path of the specified server certificate.</p> <important> You should understand the implications of changing a server certificate's path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note>To change a server certificate name the requester must have appropriate permissions on both the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request must have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html" target="blank">Permissions and Policies</a>. </note>
@@ -2471,7 +2472,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateServerCertificateAsync(const Model::UpdateServerCertificateRequest& request) const;
+     void UpdateServerCertificateAsync(const Model::UpdateServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a user's signing certificate as part of a certificate rotation work flow. </p> <p>If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>
@@ -2490,7 +2491,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateSigningCertificateAsync(const Model::UpdateSigningCertificateRequest& request) const;
+     void UpdateSigningCertificateAsync(const Model::UpdateSigningCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the name and/or the path of the specified user.</p> <important> You should understand the implications of changing a user's path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change a user name the requester must have appropriate permissions on both the source object and the target object. For example, to change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all (*). For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html" target="blank">Permissions and Policies</a>. </note>
@@ -2509,7 +2510,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateUserAsync(const Model::UpdateUserRequest& request) const;
+     void UpdateUserAsync(const Model::UpdateUserRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an optional certificate chain, which should all be PEM-encoded. </p> <p>For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>. For information about setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
@@ -2528,7 +2529,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UploadServerCertificateAsync(const Model::UploadServerCertificateRequest& request) const;
+     void UploadServerCertificateAsync(const Model::UploadServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <code>Active</code>. </p> <p>If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <note>Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling <code>UploadSigningCertificate</code>. For information about setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <i>Using IAM</i>guide. </note>
@@ -2547,7 +2548,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UploadSigningCertificateAsync(const Model::UploadSigningCertificateRequest& request) const;
+     void UploadSigningCertificateAsync(const Model::UploadSigningCertificateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddClientIDToOpenIDConnectProviderAsync to call upon completion to the handler chain. You need to call this to
@@ -4321,110 +4322,110 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddClientIDToOpenIDConnectProviderAsyncHelper(const Model::AddClientIDToOpenIDConnectProviderRequest& request) const;
-    void AddRoleToInstanceProfileAsyncHelper(const Model::AddRoleToInstanceProfileRequest& request) const;
-    void AddUserToGroupAsyncHelper(const Model::AddUserToGroupRequest& request) const;
-    void AttachGroupPolicyAsyncHelper(const Model::AttachGroupPolicyRequest& request) const;
-    void AttachRolePolicyAsyncHelper(const Model::AttachRolePolicyRequest& request) const;
-    void AttachUserPolicyAsyncHelper(const Model::AttachUserPolicyRequest& request) const;
-    void ChangePasswordAsyncHelper(const Model::ChangePasswordRequest& request) const;
-    void CreateAccessKeyAsyncHelper(const Model::CreateAccessKeyRequest& request) const;
-    void CreateAccountAliasAsyncHelper(const Model::CreateAccountAliasRequest& request) const;
-    void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request) const;
-    void CreateInstanceProfileAsyncHelper(const Model::CreateInstanceProfileRequest& request) const;
-    void CreateLoginProfileAsyncHelper(const Model::CreateLoginProfileRequest& request) const;
-    void CreateOpenIDConnectProviderAsyncHelper(const Model::CreateOpenIDConnectProviderRequest& request) const;
-    void CreatePolicyAsyncHelper(const Model::CreatePolicyRequest& request) const;
-    void CreatePolicyVersionAsyncHelper(const Model::CreatePolicyVersionRequest& request) const;
-    void CreateRoleAsyncHelper(const Model::CreateRoleRequest& request) const;
-    void CreateSAMLProviderAsyncHelper(const Model::CreateSAMLProviderRequest& request) const;
-    void CreateUserAsyncHelper(const Model::CreateUserRequest& request) const;
-    void CreateVirtualMFADeviceAsyncHelper(const Model::CreateVirtualMFADeviceRequest& request) const;
-    void DeactivateMFADeviceAsyncHelper(const Model::DeactivateMFADeviceRequest& request) const;
-    void DeleteAccessKeyAsyncHelper(const Model::DeleteAccessKeyRequest& request) const;
-    void DeleteAccountAliasAsyncHelper(const Model::DeleteAccountAliasRequest& request) const;
-    void DeleteAccountPasswordPolicyAsyncHelper(const Model::DeleteAccountPasswordPolicyRequest& request) const;
-    void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request) const;
-    void DeleteGroupPolicyAsyncHelper(const Model::DeleteGroupPolicyRequest& request) const;
-    void DeleteInstanceProfileAsyncHelper(const Model::DeleteInstanceProfileRequest& request) const;
-    void DeleteLoginProfileAsyncHelper(const Model::DeleteLoginProfileRequest& request) const;
-    void DeleteOpenIDConnectProviderAsyncHelper(const Model::DeleteOpenIDConnectProviderRequest& request) const;
-    void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request) const;
-    void DeletePolicyVersionAsyncHelper(const Model::DeletePolicyVersionRequest& request) const;
-    void DeleteRoleAsyncHelper(const Model::DeleteRoleRequest& request) const;
-    void DeleteRolePolicyAsyncHelper(const Model::DeleteRolePolicyRequest& request) const;
-    void DeleteSAMLProviderAsyncHelper(const Model::DeleteSAMLProviderRequest& request) const;
-    void DeleteServerCertificateAsyncHelper(const Model::DeleteServerCertificateRequest& request) const;
-    void DeleteSigningCertificateAsyncHelper(const Model::DeleteSigningCertificateRequest& request) const;
-    void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request) const;
-    void DeleteUserPolicyAsyncHelper(const Model::DeleteUserPolicyRequest& request) const;
-    void DeleteVirtualMFADeviceAsyncHelper(const Model::DeleteVirtualMFADeviceRequest& request) const;
-    void DetachGroupPolicyAsyncHelper(const Model::DetachGroupPolicyRequest& request) const;
-    void DetachRolePolicyAsyncHelper(const Model::DetachRolePolicyRequest& request) const;
-    void DetachUserPolicyAsyncHelper(const Model::DetachUserPolicyRequest& request) const;
-    void EnableMFADeviceAsyncHelper(const Model::EnableMFADeviceRequest& request) const;
-    void GenerateCredentialReportAsyncHelper(const Model::GenerateCredentialReportRequest& request) const;
-    void GetAccessKeyLastUsedAsyncHelper(const Model::GetAccessKeyLastUsedRequest& request) const;
-    void GetAccountAuthorizationDetailsAsyncHelper(const Model::GetAccountAuthorizationDetailsRequest& request) const;
-    void GetAccountPasswordPolicyAsyncHelper(const Model::GetAccountPasswordPolicyRequest& request) const;
-    void GetAccountSummaryAsyncHelper(const Model::GetAccountSummaryRequest& request) const;
-    void GetCredentialReportAsyncHelper(const Model::GetCredentialReportRequest& request) const;
-    void GetGroupAsyncHelper(const Model::GetGroupRequest& request) const;
-    void GetGroupPolicyAsyncHelper(const Model::GetGroupPolicyRequest& request) const;
-    void GetInstanceProfileAsyncHelper(const Model::GetInstanceProfileRequest& request) const;
-    void GetLoginProfileAsyncHelper(const Model::GetLoginProfileRequest& request) const;
-    void GetOpenIDConnectProviderAsyncHelper(const Model::GetOpenIDConnectProviderRequest& request) const;
-    void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request) const;
-    void GetPolicyVersionAsyncHelper(const Model::GetPolicyVersionRequest& request) const;
-    void GetRoleAsyncHelper(const Model::GetRoleRequest& request) const;
-    void GetRolePolicyAsyncHelper(const Model::GetRolePolicyRequest& request) const;
-    void GetSAMLProviderAsyncHelper(const Model::GetSAMLProviderRequest& request) const;
-    void GetServerCertificateAsyncHelper(const Model::GetServerCertificateRequest& request) const;
-    void GetUserAsyncHelper(const Model::GetUserRequest& request) const;
-    void GetUserPolicyAsyncHelper(const Model::GetUserPolicyRequest& request) const;
-    void ListAccessKeysAsyncHelper(const Model::ListAccessKeysRequest& request) const;
-    void ListAccountAliasesAsyncHelper(const Model::ListAccountAliasesRequest& request) const;
-    void ListAttachedGroupPoliciesAsyncHelper(const Model::ListAttachedGroupPoliciesRequest& request) const;
-    void ListAttachedRolePoliciesAsyncHelper(const Model::ListAttachedRolePoliciesRequest& request) const;
-    void ListAttachedUserPoliciesAsyncHelper(const Model::ListAttachedUserPoliciesRequest& request) const;
-    void ListEntitiesForPolicyAsyncHelper(const Model::ListEntitiesForPolicyRequest& request) const;
-    void ListGroupPoliciesAsyncHelper(const Model::ListGroupPoliciesRequest& request) const;
-    void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request) const;
-    void ListGroupsForUserAsyncHelper(const Model::ListGroupsForUserRequest& request) const;
-    void ListInstanceProfilesAsyncHelper(const Model::ListInstanceProfilesRequest& request) const;
-    void ListInstanceProfilesForRoleAsyncHelper(const Model::ListInstanceProfilesForRoleRequest& request) const;
-    void ListMFADevicesAsyncHelper(const Model::ListMFADevicesRequest& request) const;
-    void ListOpenIDConnectProvidersAsyncHelper(const Model::ListOpenIDConnectProvidersRequest& request) const;
-    void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request) const;
-    void ListPolicyVersionsAsyncHelper(const Model::ListPolicyVersionsRequest& request) const;
-    void ListRolePoliciesAsyncHelper(const Model::ListRolePoliciesRequest& request) const;
-    void ListRolesAsyncHelper(const Model::ListRolesRequest& request) const;
-    void ListSAMLProvidersAsyncHelper(const Model::ListSAMLProvidersRequest& request) const;
-    void ListServerCertificatesAsyncHelper(const Model::ListServerCertificatesRequest& request) const;
-    void ListSigningCertificatesAsyncHelper(const Model::ListSigningCertificatesRequest& request) const;
-    void ListUserPoliciesAsyncHelper(const Model::ListUserPoliciesRequest& request) const;
-    void ListUsersAsyncHelper(const Model::ListUsersRequest& request) const;
-    void ListVirtualMFADevicesAsyncHelper(const Model::ListVirtualMFADevicesRequest& request) const;
-    void PutGroupPolicyAsyncHelper(const Model::PutGroupPolicyRequest& request) const;
-    void PutRolePolicyAsyncHelper(const Model::PutRolePolicyRequest& request) const;
-    void PutUserPolicyAsyncHelper(const Model::PutUserPolicyRequest& request) const;
-    void RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request) const;
-    void RemoveRoleFromInstanceProfileAsyncHelper(const Model::RemoveRoleFromInstanceProfileRequest& request) const;
-    void RemoveUserFromGroupAsyncHelper(const Model::RemoveUserFromGroupRequest& request) const;
-    void ResyncMFADeviceAsyncHelper(const Model::ResyncMFADeviceRequest& request) const;
-    void SetDefaultPolicyVersionAsyncHelper(const Model::SetDefaultPolicyVersionRequest& request) const;
-    void UpdateAccessKeyAsyncHelper(const Model::UpdateAccessKeyRequest& request) const;
-    void UpdateAccountPasswordPolicyAsyncHelper(const Model::UpdateAccountPasswordPolicyRequest& request) const;
-    void UpdateAssumeRolePolicyAsyncHelper(const Model::UpdateAssumeRolePolicyRequest& request) const;
-    void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request) const;
-    void UpdateLoginProfileAsyncHelper(const Model::UpdateLoginProfileRequest& request) const;
-    void UpdateOpenIDConnectProviderThumbprintAsyncHelper(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request) const;
-    void UpdateSAMLProviderAsyncHelper(const Model::UpdateSAMLProviderRequest& request) const;
-    void UpdateServerCertificateAsyncHelper(const Model::UpdateServerCertificateRequest& request) const;
-    void UpdateSigningCertificateAsyncHelper(const Model::UpdateSigningCertificateRequest& request) const;
-    void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request) const;
-    void UploadServerCertificateAsyncHelper(const Model::UploadServerCertificateRequest& request) const;
-    void UploadSigningCertificateAsyncHelper(const Model::UploadSigningCertificateRequest& request) const;
+    void AddClientIDToOpenIDConnectProviderAsyncHelper(const Model::AddClientIDToOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddRoleToInstanceProfileAsyncHelper(const Model::AddRoleToInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddUserToGroupAsyncHelper(const Model::AddUserToGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AttachGroupPolicyAsyncHelper(const Model::AttachGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AttachRolePolicyAsyncHelper(const Model::AttachRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AttachUserPolicyAsyncHelper(const Model::AttachUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ChangePasswordAsyncHelper(const Model::ChangePasswordRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateAccessKeyAsyncHelper(const Model::CreateAccessKeyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateAccountAliasAsyncHelper(const Model::CreateAccountAliasRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateInstanceProfileAsyncHelper(const Model::CreateInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateLoginProfileAsyncHelper(const Model::CreateLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateOpenIDConnectProviderAsyncHelper(const Model::CreateOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreatePolicyAsyncHelper(const Model::CreatePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreatePolicyVersionAsyncHelper(const Model::CreatePolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateRoleAsyncHelper(const Model::CreateRoleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateSAMLProviderAsyncHelper(const Model::CreateSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateVirtualMFADeviceAsyncHelper(const Model::CreateVirtualMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeactivateMFADeviceAsyncHelper(const Model::DeactivateMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteAccessKeyAsyncHelper(const Model::DeleteAccessKeyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteAccountAliasAsyncHelper(const Model::DeleteAccountAliasRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteAccountPasswordPolicyAsyncHelper(const Model::DeleteAccountPasswordPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteGroupPolicyAsyncHelper(const Model::DeleteGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteInstanceProfileAsyncHelper(const Model::DeleteInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteLoginProfileAsyncHelper(const Model::DeleteLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteOpenIDConnectProviderAsyncHelper(const Model::DeleteOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeletePolicyVersionAsyncHelper(const Model::DeletePolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteRoleAsyncHelper(const Model::DeleteRoleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteRolePolicyAsyncHelper(const Model::DeleteRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteSAMLProviderAsyncHelper(const Model::DeleteSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteServerCertificateAsyncHelper(const Model::DeleteServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteSigningCertificateAsyncHelper(const Model::DeleteSigningCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteUserPolicyAsyncHelper(const Model::DeleteUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteVirtualMFADeviceAsyncHelper(const Model::DeleteVirtualMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DetachGroupPolicyAsyncHelper(const Model::DetachGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DetachRolePolicyAsyncHelper(const Model::DetachRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DetachUserPolicyAsyncHelper(const Model::DetachUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void EnableMFADeviceAsyncHelper(const Model::EnableMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GenerateCredentialReportAsyncHelper(const Model::GenerateCredentialReportRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetAccessKeyLastUsedAsyncHelper(const Model::GetAccessKeyLastUsedRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetAccountAuthorizationDetailsAsyncHelper(const Model::GetAccountAuthorizationDetailsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetAccountPasswordPolicyAsyncHelper(const Model::GetAccountPasswordPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetAccountSummaryAsyncHelper(const Model::GetAccountSummaryRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetCredentialReportAsyncHelper(const Model::GetCredentialReportRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetGroupPolicyAsyncHelper(const Model::GetGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetInstanceProfileAsyncHelper(const Model::GetInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetLoginProfileAsyncHelper(const Model::GetLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetOpenIDConnectProviderAsyncHelper(const Model::GetOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetPolicyVersionAsyncHelper(const Model::GetPolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetRoleAsyncHelper(const Model::GetRoleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetRolePolicyAsyncHelper(const Model::GetRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetSAMLProviderAsyncHelper(const Model::GetSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetServerCertificateAsyncHelper(const Model::GetServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetUserAsyncHelper(const Model::GetUserRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetUserPolicyAsyncHelper(const Model::GetUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListAccessKeysAsyncHelper(const Model::ListAccessKeysRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListAccountAliasesAsyncHelper(const Model::ListAccountAliasesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListAttachedGroupPoliciesAsyncHelper(const Model::ListAttachedGroupPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListAttachedRolePoliciesAsyncHelper(const Model::ListAttachedRolePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListAttachedUserPoliciesAsyncHelper(const Model::ListAttachedUserPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListEntitiesForPolicyAsyncHelper(const Model::ListEntitiesForPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListGroupPoliciesAsyncHelper(const Model::ListGroupPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListGroupsForUserAsyncHelper(const Model::ListGroupsForUserRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListInstanceProfilesAsyncHelper(const Model::ListInstanceProfilesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListInstanceProfilesForRoleAsyncHelper(const Model::ListInstanceProfilesForRoleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListMFADevicesAsyncHelper(const Model::ListMFADevicesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListOpenIDConnectProvidersAsyncHelper(const Model::ListOpenIDConnectProvidersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListPolicyVersionsAsyncHelper(const Model::ListPolicyVersionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListRolePoliciesAsyncHelper(const Model::ListRolePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListRolesAsyncHelper(const Model::ListRolesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListSAMLProvidersAsyncHelper(const Model::ListSAMLProvidersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListServerCertificatesAsyncHelper(const Model::ListServerCertificatesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListSigningCertificatesAsyncHelper(const Model::ListSigningCertificatesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListUserPoliciesAsyncHelper(const Model::ListUserPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListVirtualMFADevicesAsyncHelper(const Model::ListVirtualMFADevicesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutGroupPolicyAsyncHelper(const Model::PutGroupPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutRolePolicyAsyncHelper(const Model::PutRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutUserPolicyAsyncHelper(const Model::PutUserPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveRoleFromInstanceProfileAsyncHelper(const Model::RemoveRoleFromInstanceProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveUserFromGroupAsyncHelper(const Model::RemoveUserFromGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ResyncMFADeviceAsyncHelper(const Model::ResyncMFADeviceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetDefaultPolicyVersionAsyncHelper(const Model::SetDefaultPolicyVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateAccessKeyAsyncHelper(const Model::UpdateAccessKeyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateAccountPasswordPolicyAsyncHelper(const Model::UpdateAccountPasswordPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateAssumeRolePolicyAsyncHelper(const Model::UpdateAssumeRolePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateLoginProfileAsyncHelper(const Model::UpdateLoginProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateOpenIDConnectProviderThumbprintAsyncHelper(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateSAMLProviderAsyncHelper(const Model::UpdateSAMLProviderRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateServerCertificateAsyncHelper(const Model::UpdateServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateSigningCertificateAsyncHelper(const Model::UpdateSigningCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UploadServerCertificateAsyncHelper(const Model::UploadServerCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UploadSigningCertificateAsyncHelper(const Model::UploadSigningCertificateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

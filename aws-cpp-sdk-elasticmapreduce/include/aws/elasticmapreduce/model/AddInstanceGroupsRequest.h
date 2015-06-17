@@ -45,7 +45,7 @@ namespace Model
     /*
      <p>Instance Groups to add.</p>
     */
-    inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroups = value; }
+    inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /*
      <p>Instance Groups to add.</p>
@@ -55,7 +55,7 @@ namespace Model
     /*
      <p>Instance Groups to add.</p>
     */
-    inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroups.push_back(value); return *this; }
+    inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /*
      <p>Job flow in which to add the instance groups.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>Job flow in which to add the instance groups.</p>
     */
-    inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
+    inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
 
     /*
      <p>Job flow in which to add the instance groups.</p>
     */
-    inline void SetJobFlowId(const char* value) { m_jobFlowId.assign(value); }
+    inline void SetJobFlowId(const char* value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId.assign(value); }
 
     /*
      <p>Job flow in which to add the instance groups.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
+    bool m_instanceGroupsHasBeenSet;
     Aws::String m_jobFlowId;
+    bool m_jobFlowIdHasBeenSet;
   };
 
 } // namespace Model

@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteAccountAliasRequest::DeleteAccountAliasRequest()
+DeleteAccountAliasRequest::DeleteAccountAliasRequest() : 
+    m_accountAliasHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteAccountAliasRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteAccountAlias&";
-  ss << "AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
+  if(m_accountAliasHasBeenSet)
+  {
+    ss << "AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

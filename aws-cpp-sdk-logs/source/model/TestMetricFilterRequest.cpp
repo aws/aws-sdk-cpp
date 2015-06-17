@@ -21,7 +21,9 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestMetricFilterRequest::TestMetricFilterRequest()
+TestMetricFilterRequest::TestMetricFilterRequest() : 
+    m_filterPatternHasBeenSet(false),
+    m_logEventMessagesHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String TestMetricFilterRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("filterPattern", m_filterPattern);
-
-  Array<JsonValue> logEventMessagesJsonList(m_logEventMessages.size());
-  for(unsigned logEventMessagesIndex = 0; logEventMessagesIndex < logEventMessagesJsonList.GetLength(); ++logEventMessagesIndex)
+  if(m_filterPatternHasBeenSet)
   {
-    logEventMessagesJsonList[logEventMessagesIndex].AsString(m_logEventMessages[logEventMessagesIndex]);
+   payload.WithString("filterPattern", m_filterPattern);
+
   }
-  payload.WithArray("logEventMessages", std::move(logEventMessagesJsonList));
+
+  if(m_logEventMessagesHasBeenSet)
+  {
+   Array<JsonValue> logEventMessagesJsonList(m_logEventMessages.size());
+   for(unsigned logEventMessagesIndex = 0; logEventMessagesIndex < logEventMessagesJsonList.GetLength(); ++logEventMessagesIndex)
+   {
+     logEventMessagesJsonList[logEventMessagesIndex].AsString(m_logEventMessages[logEventMessagesIndex]);
+   }
+   payload.WithArray("logEventMessages", std::move(logEventMessagesJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

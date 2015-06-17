@@ -41,11 +41,12 @@ DescribeClusterParametersResult& DescribeClusterParametersResult::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode parameterNode = resultNode.FirstChild("Parameter");
+    XmlNode parameterNodeParent = resultNode.FirstChild("Parameter");
+    XmlNode parameterNode = parameterNodeParent.FirstChild("member");
     while(!parameterNode.IsNull())
     {
       m_parameters.push_back(parameterNode);
-      parameterNode = parameterNode.NextNode("Parameter");
+      parameterNode = parameterNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

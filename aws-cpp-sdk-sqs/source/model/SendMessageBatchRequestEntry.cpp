@@ -24,6 +24,8 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() : 
+    m_idHasBeenSet(false),
+    m_messageBodyHasBeenSet(false),
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
     m_messageAttributesHasBeenSet(false)
@@ -31,6 +33,8 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() :
 }
 
 SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_messageBodyHasBeenSet(false),
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
     m_messageAttributesHasBeenSet(false)
@@ -45,9 +49,17 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode messageBodyNode = resultNode.FirstChild("MessageBody");
-    m_messageBody = StringUtils::Trim(messageBodyNode.GetText().c_str());
+    if(!messageBodyNode.IsNull())
+    {
+      m_messageBody = StringUtils::Trim(messageBodyNode.GetText().c_str());
+      m_messageBodyHasBeenSet = true;
+    }
     XmlNode delaySecondsNode = resultNode.FirstChild("DelaySeconds");
     if(!delaySecondsNode.IsNull())
     {
@@ -75,8 +87,14 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
 
 void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << index << locationValue << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_messageBodyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+  }
   if(m_delaySecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DelaySeconds=" << m_delaySeconds << "&";
@@ -88,8 +106,14 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
 
 void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_messageBodyHasBeenSet)
+  {
+      oStream << location << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+  }
   if(m_delaySecondsHasBeenSet)
   {
       oStream << location << ".DelaySeconds=" << m_delaySeconds << "&";

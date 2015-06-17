@@ -21,7 +21,9 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromStreamRequest::RemoveTagsFromStreamRequest()
+RemoveTagsFromStreamRequest::RemoveTagsFromStreamRequest() : 
+    m_streamNameHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String RemoveTagsFromStreamRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
-
-  Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-  for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
+  if(m_streamNameHasBeenSet)
   {
-    tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+   payload.WithString("StreamName", m_streamName);
+
   }
-  payload.WithArray("TagKeys", std::move(tagKeysJsonList));
+
+  if(m_tagKeysHasBeenSet)
+  {
+   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
+   {
+     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+   }
+   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

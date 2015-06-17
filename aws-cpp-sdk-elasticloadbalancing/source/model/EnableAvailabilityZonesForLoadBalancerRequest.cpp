@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-EnableAvailabilityZonesForLoadBalancerRequest::EnableAvailabilityZonesForLoadBalancerRequest()
+EnableAvailabilityZonesForLoadBalancerRequest::EnableAvailabilityZonesForLoadBalancerRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String EnableAvailabilityZonesForLoadBalancerRequest::SerializePayload() co
 {
   Aws::StringStream ss;
   ss << "Action=EnableAvailabilityZonesForLoadBalancer&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned availabilityZonesCount = 1;
-  for(auto& item : m_availabilityZones)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    ss << "AvailabilityZones." << availabilityZonesCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    availabilityZonesCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_availabilityZonesHasBeenSet)
+  {
+    unsigned availabilityZonesCount = 1;
+    for(auto& item : m_availabilityZones)
+    {
+      ss << "AvailabilityZones." << availabilityZonesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      availabilityZonesCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

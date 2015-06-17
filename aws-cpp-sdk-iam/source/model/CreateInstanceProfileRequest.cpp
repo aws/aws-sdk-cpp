@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreateInstanceProfileRequest::CreateInstanceProfileRequest() : 
+    m_instanceProfileNameHasBeenSet(false),
     m_pathHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String CreateInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateInstanceProfile&";
-  ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  if(m_instanceProfileNameHasBeenSet)
+  {
+    ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  }
   if(m_pathHasBeenSet)
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";

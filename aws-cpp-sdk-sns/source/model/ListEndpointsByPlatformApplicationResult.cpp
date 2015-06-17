@@ -41,11 +41,12 @@ ListEndpointsByPlatformApplicationResult& ListEndpointsByPlatformApplicationResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode endpointsNode = resultNode.FirstChild("Endpoints");
+    XmlNode endpointsNodeParent = resultNode.FirstChild("Endpoints");
+    XmlNode endpointsNode = endpointsNodeParent.FirstChild("member");
     while(!endpointsNode.IsNull())
     {
       m_endpoints.push_back(endpointsNode);
-      endpointsNode = endpointsNode.NextNode("Endpoints");
+      endpointsNode = endpointsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

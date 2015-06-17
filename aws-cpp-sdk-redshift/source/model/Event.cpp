@@ -72,13 +72,14 @@ Event& Event::operator =(const XmlNode& xmlNode)
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
       m_messageHasBeenSet = true;
     }
-    XmlNode eventCategoryNode = resultNode.FirstChild("EventCategory");
+    XmlNode eventCategoryNodeParent = resultNode.FirstChild("EventCategory");
+    XmlNode eventCategoryNode = eventCategoryNodeParent.FirstChild("member");
     if(!eventCategoryNode.IsNull())
     {
       while(!eventCategoryNode.IsNull())
       {
         m_eventCategories.push_back(StringUtils::Trim(eventCategoryNode.GetText().c_str()));
-        eventCategoryNode = eventCategoryNode.NextNode("EventCategory");
+        eventCategoryNode = eventCategoryNode.NextNode("member");
       }
 
       m_eventCategoriesHasBeenSet = true;

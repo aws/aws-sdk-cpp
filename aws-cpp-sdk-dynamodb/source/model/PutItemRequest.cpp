@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutItemRequest::PutItemRequest() : 
+    m_tableNameHasBeenSet(false),
+    m_itemHasBeenSet(false),
     m_expectedHasBeenSet(false),
     m_returnValuesHasBeenSet(false),
     m_returnConsumedCapacityHasBeenSet(false),
@@ -37,14 +39,22 @@ Aws::String PutItemRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("TableName", m_tableName);
-
-  JsonValue itemJsonMap;
-  for(auto& itemItem : m_item)
+  if(m_tableNameHasBeenSet)
   {
-    itemJsonMap.WithObject(itemItem.first, itemItem.second.Jsonize());
+   payload.WithString("TableName", m_tableName);
+
   }
-  payload.WithObject("Item", std::move(itemJsonMap));
+
+  if(m_itemHasBeenSet)
+  {
+   JsonValue itemJsonMap;
+   for(auto& itemItem : m_item)
+   {
+     itemJsonMap.WithObject(itemItem.first, itemItem.second.Jsonize());
+   }
+   payload.WithObject("Item", std::move(itemJsonMap));
+
+  }
 
   if(m_expectedHasBeenSet)
   {

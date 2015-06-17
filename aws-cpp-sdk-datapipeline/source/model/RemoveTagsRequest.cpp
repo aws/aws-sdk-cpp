@@ -21,7 +21,9 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsRequest::RemoveTagsRequest()
+RemoveTagsRequest::RemoveTagsRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String RemoveTagsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
-
-  Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-  for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
+  if(m_pipelineIdHasBeenSet)
   {
-    tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+   payload.WithString("pipelineId", m_pipelineId);
+
   }
-  payload.WithArray("tagKeys", std::move(tagKeysJsonList));
+
+  if(m_tagKeysHasBeenSet)
+  {
+   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
+   {
+     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+   }
+   payload.WithArray("tagKeys", std::move(tagKeysJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

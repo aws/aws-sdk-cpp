@@ -43,11 +43,12 @@ DescribeClusterVersionsResult& DescribeClusterVersionsResult::operator =(const A
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode clusterVersionNode = resultNode.FirstChild("ClusterVersion");
+    XmlNode clusterVersionNodeParent = resultNode.FirstChild("ClusterVersion");
+    XmlNode clusterVersionNode = clusterVersionNodeParent.FirstChild("member");
     while(!clusterVersionNode.IsNull())
     {
       m_clusterVersions.push_back(clusterVersionNode);
-      clusterVersionNode = clusterVersionNode.NextNode("ClusterVersion");
+      clusterVersionNode = clusterVersionNode.NextNode("member");
     }
 
   }

@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The name of the service that you want to update.</p>
     */
-    inline void SetService(const Aws::String& value) { m_service = value; }
+    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /*
      <p>The name of the service that you want to update.</p>
     */
-    inline void SetService(const char* value) { m_service.assign(value); }
+    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /*
      <p>The name of the service that you want to update.</p>
@@ -125,6 +125,7 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::String m_service;
+    bool m_serviceHasBeenSet;
     long m_desiredCount;
     bool m_desiredCountHasBeenSet;
     Aws::String m_taskDefinition;

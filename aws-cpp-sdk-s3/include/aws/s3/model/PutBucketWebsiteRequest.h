@@ -39,10 +39,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutBucketWebsiteRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -67,16 +67,18 @@ namespace Model
     
     inline const WebsiteConfiguration& GetWebsiteConfiguration() const{ return m_websiteConfiguration; }
     
-    inline void SetWebsiteConfiguration(const WebsiteConfiguration& value) { m_websiteConfiguration = value; }
+    inline void SetWebsiteConfiguration(const WebsiteConfiguration& value) { m_websiteConfigurationHasBeenSet = true; m_websiteConfiguration = value; }
 
     
     inline PutBucketWebsiteRequest&  WithWebsiteConfiguration(const WebsiteConfiguration& value) { SetWebsiteConfiguration(value); return *this;}
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
     WebsiteConfiguration m_websiteConfiguration;
+    bool m_websiteConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
     */
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The name of the vault.</p>
     */
-    inline void SetVaultName(const Aws::String& value) { m_vaultName = value; }
+    inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /*
      <p>The name of the vault.</p>
     */
-    inline void SetVaultName(const char* value) { m_vaultName.assign(value); }
+    inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
 
     /*
      <p>The name of the vault.</p>
@@ -90,12 +90,12 @@ namespace Model
     /*
      <p>The upload ID of the multipart upload.</p>
     */
-    inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
+    inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /*
      <p>The upload ID of the multipart upload.</p>
     */
-    inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
+    inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
     /*
      <p>The upload ID of the multipart upload.</p>
@@ -157,8 +157,11 @@ namespace Model
 
   private:
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
     Aws::String m_vaultName;
+    bool m_vaultNameHasBeenSet;
     Aws::String m_uploadId;
+    bool m_uploadIdHasBeenSet;
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
     Aws::String m_range;

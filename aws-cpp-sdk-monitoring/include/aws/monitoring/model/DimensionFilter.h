@@ -50,12 +50,12 @@ namespace Model
     /*
      <p> The dimension name to be matched. </p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p> The dimension name to be matched. </p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p> The dimension name to be matched. </p>
@@ -93,6 +93,7 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

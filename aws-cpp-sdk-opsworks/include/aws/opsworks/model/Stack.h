@@ -484,6 +484,20 @@ namespace Model
     */
     inline Stack&  WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
 
+    
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    
+    inline Stack&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    
+    inline Stack& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
@@ -527,6 +541,8 @@ namespace Model
     bool m_createdAtHasBeenSet;
     RootDeviceType m_defaultRootDeviceType;
     bool m_defaultRootDeviceTypeHasBeenSet;
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeletePolicyVersionRequest::DeletePolicyVersionRequest()
+DeletePolicyVersionRequest::DeletePolicyVersionRequest() : 
+    m_policyArnHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeletePolicyVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeletePolicyVersion&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
-  ss << "VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
+  if(m_versionIdHasBeenSet)
+  {
+    ss << "VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

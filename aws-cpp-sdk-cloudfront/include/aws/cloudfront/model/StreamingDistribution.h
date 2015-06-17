@@ -50,12 +50,12 @@ namespace Model
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
@@ -74,12 +74,12 @@ namespace Model
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -112,12 +112,12 @@ namespace Model
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
@@ -136,7 +136,7 @@ namespace Model
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
-    inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSigners = value; }
+    inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
@@ -150,7 +150,7 @@ namespace Model
     /*
      The current configuration information for the streaming distribution.
     */
-    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfig = value; }
+    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /*
      The current configuration information for the streaming distribution.
@@ -159,12 +159,17 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
     double m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     ActiveTrustedSigners m_activeTrustedSigners;
+    bool m_activeTrustedSignersHasBeenSet;
     StreamingDistributionConfig m_streamingDistributionConfig;
+    bool m_streamingDistributionConfigHasBeenSet;
   };
 
 } // namespace Model

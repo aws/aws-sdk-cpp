@@ -22,13 +22,17 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/email/model/DeleteIdentityResult.h>
+#include <aws/email/model/DeleteIdentityPolicyResult.h>
 #include <aws/email/model/GetIdentityDkimAttributesResult.h>
 #include <aws/email/model/GetIdentityNotificationAttributesResult.h>
+#include <aws/email/model/GetIdentityPoliciesResult.h>
 #include <aws/email/model/GetIdentityVerificationAttributesResult.h>
 #include <aws/email/model/GetSendQuotaResult.h>
 #include <aws/email/model/GetSendStatisticsResult.h>
 #include <aws/email/model/ListIdentitiesResult.h>
+#include <aws/email/model/ListIdentityPoliciesResult.h>
 #include <aws/email/model/ListVerifiedEmailAddressesResult.h>
+#include <aws/email/model/PutIdentityPolicyResult.h>
 #include <aws/email/model/SendEmailResult.h>
 #include <aws/email/model/SendRawEmailResult.h>
 #include <aws/email/model/SetIdentityDkimEnabledResult.h>
@@ -38,6 +42,7 @@
 #include <aws/email/model/VerifyDomainIdentityResult.h>
 #include <aws/email/model/VerifyEmailIdentityResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -81,14 +86,18 @@ namespace SES
 namespace Model
 {
   class DeleteIdentityRequest;
+  class DeleteIdentityPolicyRequest;
   class DeleteVerifiedEmailAddressRequest;
   class GetIdentityDkimAttributesRequest;
   class GetIdentityNotificationAttributesRequest;
+  class GetIdentityPoliciesRequest;
   class GetIdentityVerificationAttributesRequest;
   class GetSendQuotaRequest;
   class GetSendStatisticsRequest;
   class ListIdentitiesRequest;
+  class ListIdentityPoliciesRequest;
   class ListVerifiedEmailAddressesRequest;
+  class PutIdentityPolicyRequest;
   class SendEmailRequest;
   class SendRawEmailRequest;
   class SetIdentityDkimEnabledRequest;
@@ -100,14 +109,18 @@ namespace Model
   class VerifyEmailIdentityRequest;
 
   typedef Utils::Outcome<DeleteIdentityResult, Client::AWSError<SESErrors>> DeleteIdentityOutcome;
+  typedef Utils::Outcome<DeleteIdentityPolicyResult, Client::AWSError<SESErrors>> DeleteIdentityPolicyOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<SESErrors>> DeleteVerifiedEmailAddressOutcome;
   typedef Utils::Outcome<GetIdentityDkimAttributesResult, Client::AWSError<SESErrors>> GetIdentityDkimAttributesOutcome;
   typedef Utils::Outcome<GetIdentityNotificationAttributesResult, Client::AWSError<SESErrors>> GetIdentityNotificationAttributesOutcome;
+  typedef Utils::Outcome<GetIdentityPoliciesResult, Client::AWSError<SESErrors>> GetIdentityPoliciesOutcome;
   typedef Utils::Outcome<GetIdentityVerificationAttributesResult, Client::AWSError<SESErrors>> GetIdentityVerificationAttributesOutcome;
   typedef Utils::Outcome<GetSendQuotaResult, Client::AWSError<SESErrors>> GetSendQuotaOutcome;
   typedef Utils::Outcome<GetSendStatisticsResult, Client::AWSError<SESErrors>> GetSendStatisticsOutcome;
   typedef Utils::Outcome<ListIdentitiesResult, Client::AWSError<SESErrors>> ListIdentitiesOutcome;
+  typedef Utils::Outcome<ListIdentityPoliciesResult, Client::AWSError<SESErrors>> ListIdentityPoliciesOutcome;
   typedef Utils::Outcome<ListVerifiedEmailAddressesResult, Client::AWSError<SESErrors>> ListVerifiedEmailAddressesOutcome;
+  typedef Utils::Outcome<PutIdentityPolicyResult, Client::AWSError<SESErrors>> PutIdentityPolicyOutcome;
   typedef Utils::Outcome<SendEmailResult, Client::AWSError<SESErrors>> SendEmailOutcome;
   typedef Utils::Outcome<SendRawEmailResult, Client::AWSError<SESErrors>> SendRawEmailOutcome;
   typedef Utils::Outcome<SetIdentityDkimEnabledResult, Client::AWSError<SESErrors>> SetIdentityDkimEnabledOutcome;
@@ -119,14 +132,18 @@ namespace Model
   typedef Utils::Outcome<VerifyEmailIdentityResult, Client::AWSError<SESErrors>> VerifyEmailIdentityOutcome;
 
   typedef std::future<DeleteIdentityOutcome> DeleteIdentityOutcomeCallable;
+  typedef std::future<DeleteIdentityPolicyOutcome> DeleteIdentityPolicyOutcomeCallable;
   typedef std::future<DeleteVerifiedEmailAddressOutcome> DeleteVerifiedEmailAddressOutcomeCallable;
   typedef std::future<GetIdentityDkimAttributesOutcome> GetIdentityDkimAttributesOutcomeCallable;
   typedef std::future<GetIdentityNotificationAttributesOutcome> GetIdentityNotificationAttributesOutcomeCallable;
+  typedef std::future<GetIdentityPoliciesOutcome> GetIdentityPoliciesOutcomeCallable;
   typedef std::future<GetIdentityVerificationAttributesOutcome> GetIdentityVerificationAttributesOutcomeCallable;
   typedef std::future<GetSendQuotaOutcome> GetSendQuotaOutcomeCallable;
   typedef std::future<GetSendStatisticsOutcome> GetSendStatisticsOutcomeCallable;
   typedef std::future<ListIdentitiesOutcome> ListIdentitiesOutcomeCallable;
+  typedef std::future<ListIdentityPoliciesOutcome> ListIdentityPoliciesOutcomeCallable;
   typedef std::future<ListVerifiedEmailAddressesOutcome> ListVerifiedEmailAddressesOutcomeCallable;
+  typedef std::future<PutIdentityPolicyOutcome> PutIdentityPolicyOutcomeCallable;
   typedef std::future<SendEmailOutcome> SendEmailOutcomeCallable;
   typedef std::future<SendRawEmailOutcome> SendRawEmailOutcomeCallable;
   typedef std::future<SetIdentityDkimEnabledOutcome> SetIdentityDkimEnabledOutcomeCallable;
@@ -140,24 +157,28 @@ namespace Model
 
   class SESClient;
 
-  typedef Aws::Utils::Event<SESClient, const Model::DeleteIdentityRequest&, const Model::DeleteIdentityOutcome&> DeleteIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::DeleteVerifiedEmailAddressRequest&, const Model::DeleteVerifiedEmailAddressOutcome&> DeleteVerifiedEmailAddressOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityDkimAttributesRequest&, const Model::GetIdentityDkimAttributesOutcome&> GetIdentityDkimAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityNotificationAttributesRequest&, const Model::GetIdentityNotificationAttributesOutcome&> GetIdentityNotificationAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityVerificationAttributesRequest&, const Model::GetIdentityVerificationAttributesOutcome&> GetIdentityVerificationAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::GetSendQuotaRequest&, const Model::GetSendQuotaOutcome&> GetSendQuotaOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::GetSendStatisticsRequest&, const Model::GetSendStatisticsOutcome&> GetSendStatisticsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&> ListIdentitiesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::ListVerifiedEmailAddressesRequest&, const Model::ListVerifiedEmailAddressesOutcome&> ListVerifiedEmailAddressesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::SendEmailRequest&, const Model::SendEmailOutcome&> SendEmailOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::SendRawEmailRequest&, const Model::SendRawEmailOutcome&> SendRawEmailOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::SetIdentityDkimEnabledRequest&, const Model::SetIdentityDkimEnabledOutcome&> SetIdentityDkimEnabledOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::SetIdentityFeedbackForwardingEnabledRequest&, const Model::SetIdentityFeedbackForwardingEnabledOutcome&> SetIdentityFeedbackForwardingEnabledOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&> SetIdentityNotificationTopicOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::VerifyDomainDkimRequest&, const Model::VerifyDomainDkimOutcome&> VerifyDomainDkimOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::VerifyDomainIdentityRequest&, const Model::VerifyDomainIdentityOutcome&> VerifyDomainIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::VerifyEmailAddressRequest&, const Model::VerifyEmailAddressOutcome&> VerifyEmailAddressOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SESClient, const Model::VerifyEmailIdentityRequest&, const Model::VerifyEmailIdentityOutcome&> VerifyEmailIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::DeleteIdentityRequest&, const Model::DeleteIdentityOutcome&, const Aws::Client::AsyncCallerContext*> DeleteIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::DeleteIdentityPolicyRequest&, const Model::DeleteIdentityPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteIdentityPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::DeleteVerifiedEmailAddressRequest&, const Model::DeleteVerifiedEmailAddressOutcome&, const Aws::Client::AsyncCallerContext*> DeleteVerifiedEmailAddressOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityDkimAttributesRequest&, const Model::GetIdentityDkimAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetIdentityDkimAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityNotificationAttributesRequest&, const Model::GetIdentityNotificationAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetIdentityNotificationAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityPoliciesRequest&, const Model::GetIdentityPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> GetIdentityPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::GetIdentityVerificationAttributesRequest&, const Model::GetIdentityVerificationAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetIdentityVerificationAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::GetSendQuotaRequest&, const Model::GetSendQuotaOutcome&, const Aws::Client::AsyncCallerContext*> GetSendQuotaOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::GetSendStatisticsRequest&, const Model::GetSendStatisticsOutcome&, const Aws::Client::AsyncCallerContext*> GetSendStatisticsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&, const Aws::Client::AsyncCallerContext*> ListIdentitiesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::ListIdentityPoliciesRequest&, const Model::ListIdentityPoliciesOutcome&, const Aws::Client::AsyncCallerContext*> ListIdentityPoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::ListVerifiedEmailAddressesRequest&, const Model::ListVerifiedEmailAddressesOutcome&, const Aws::Client::AsyncCallerContext*> ListVerifiedEmailAddressesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::PutIdentityPolicyRequest&, const Model::PutIdentityPolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutIdentityPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::SendEmailRequest&, const Model::SendEmailOutcome&, const Aws::Client::AsyncCallerContext*> SendEmailOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::SendRawEmailRequest&, const Model::SendRawEmailOutcome&, const Aws::Client::AsyncCallerContext*> SendRawEmailOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::SetIdentityDkimEnabledRequest&, const Model::SetIdentityDkimEnabledOutcome&, const Aws::Client::AsyncCallerContext*> SetIdentityDkimEnabledOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::SetIdentityFeedbackForwardingEnabledRequest&, const Model::SetIdentityFeedbackForwardingEnabledOutcome&, const Aws::Client::AsyncCallerContext*> SetIdentityFeedbackForwardingEnabledOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&, const Aws::Client::AsyncCallerContext*> SetIdentityNotificationTopicOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::VerifyDomainDkimRequest&, const Model::VerifyDomainDkimOutcome&, const Aws::Client::AsyncCallerContext*> VerifyDomainDkimOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::VerifyDomainIdentityRequest&, const Model::VerifyDomainIdentityOutcome&, const Aws::Client::AsyncCallerContext*> VerifyDomainIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::VerifyEmailAddressRequest&, const Model::VerifyEmailAddressOutcome&, const Aws::Client::AsyncCallerContext*> VerifyEmailAddressOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SESClient, const Model::VerifyEmailIdentityRequest&, const Model::VerifyEmailIdentityOutcome&, const Aws::Client::AsyncCallerContext*> VerifyEmailIdentityOutcomeReceivedEvent;
 
   /*
     <fullname>Amazon Simple Email Service</fullname> <p> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>. </p> <note>For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the Amazon SES Developer Guide. </note>
@@ -206,7 +227,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteIdentityAsync(const Model::DeleteIdentityRequest& request) const;
+     void DeleteIdentityAsync(const Model::DeleteIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>Deletes an identity resource policy for the given identity (email address, domain, or ARN) if it exists. If no such policy exists, this does nothing.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+     */
+     Model::DeleteIdentityPolicyOutcome DeleteIdentityPolicy(const Model::DeleteIdentityPolicyRequest& request) const;
+
+     /*
+       <p>Deletes an identity resource policy for the given identity (email address, domain, or ARN) if it exists. If no such policy exists, this does nothing.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::DeleteIdentityPolicyOutcomeCallable DeleteIdentityPolicyCallable(const Model::DeleteIdentityPolicyRequest& request) const;
+
+     /*
+       <p>Deletes an identity resource policy for the given identity (email address, domain, or ARN) if it exists. If no such policy exists, this does nothing.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void DeleteIdentityPolicyAsync(const Model::DeleteIdentityPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified email address from the list of verified addresses.</p> <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
@@ -225,7 +265,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteVerifiedEmailAddressAsync(const Model::DeleteVerifiedEmailAddressRequest& request) const;
+     void DeleteVerifiedEmailAddressAsync(const Model::DeleteVerifiedEmailAddressRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p> <p>This action takes a list of identities as input and returns the following information for each:</p> <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li> <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</li> </ul> <p>This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
@@ -244,7 +284,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetIdentityDkimAttributesAsync(const Model::GetIdentityDkimAttributesRequest& request) const;
+     void GetIdentityDkimAttributesAsync(const Model::GetIdentityDkimAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p> <p>This action is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
@@ -263,7 +303,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetIdentityNotificationAttributesAsync(const Model::GetIdentityNotificationAttributesRequest& request) const;
+     void GetIdentityNotificationAttributesAsync(const Model::GetIdentityNotificationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>Returns a map of policy names to identity resource policies for the given identity (email address, domain, or ARN). No more than 20 policies can be retrieved at a time.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+     */
+     Model::GetIdentityPoliciesOutcome GetIdentityPolicies(const Model::GetIdentityPoliciesRequest& request) const;
+
+     /*
+       <p>Returns a map of policy names to identity resource policies for the given identity (email address, domain, or ARN). No more than 20 policies can be retrieved at a time.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::GetIdentityPoliciesOutcomeCallable GetIdentityPoliciesCallable(const Model::GetIdentityPoliciesRequest& request) const;
+
+     /*
+       <p>Returns a map of policy names to identity resource policies for the given identity (email address, domain, or ARN). No more than 20 policies can be retrieved at a time.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void GetIdentityPoliciesAsync(const Model::GetIdentityPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p> <p>This action is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>
@@ -282,7 +341,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetIdentityVerificationAttributesAsync(const Model::GetIdentityVerificationAttributesRequest& request) const;
+     void GetIdentityVerificationAttributesAsync(const Model::GetIdentityVerificationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the user's current sending limits.</p> <p>This action is throttled at one request per second.</p>
@@ -301,7 +360,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetSendQuotaAsync(const Model::GetSendQuotaRequest& request) const;
+     void GetSendQuotaAsync(const Model::GetSendQuotaRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity. </p> <p>Each data point in the list contains statistics for a 15-minute interval.</p> <p>This action is throttled at one request per second.</p>
@@ -320,7 +379,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetSendStatisticsAsync(const Model::GetSendStatisticsRequest& request) const;
+     void GetSendStatisticsAsync(const Model::GetSendStatisticsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification status.</p> <p>This action is throttled at one request per second.</p>
@@ -339,7 +398,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListIdentitiesAsync(const Model::ListIdentitiesRequest& request) const;
+     void ListIdentitiesAsync(const Model::ListIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>Returns a list of identity resource policies for the given identity (email address, domain, or ARN).</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+     */
+     Model::ListIdentityPoliciesOutcome ListIdentityPolicies(const Model::ListIdentityPoliciesRequest& request) const;
+
+     /*
+       <p>Returns a list of identity resource policies for the given identity (email address, domain, or ARN).</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::ListIdentityPoliciesOutcomeCallable ListIdentityPoliciesCallable(const Model::ListIdentityPoliciesRequest& request) const;
+
+     /*
+       <p>Returns a list of identity resource policies for the given identity (email address, domain, or ARN).</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void ListIdentityPoliciesAsync(const Model::ListIdentityPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list containing all of the email addresses that have been verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now preferred.</important> <p>This action is throttled at one request per second.</p>
@@ -358,7 +436,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListVerifiedEmailAddressesAsync(const Model::ListVerifiedEmailAddressesRequest& request) const;
+     void ListVerifiedEmailAddressesAsync(const Model::ListVerifiedEmailAddressesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>Adds or updates an identity resource policy for the specified identity (email address, domain, or ARN). Identity resource policies can be used to enable other accounts to send with identities that they do not own. Each policy is identified by a name scoped to the identity it applies to. An identity may have no more than 20 policies associated with it.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+     */
+     Model::PutIdentityPolicyOutcome PutIdentityPolicy(const Model::PutIdentityPolicyRequest& request) const;
+
+     /*
+       <p>Adds or updates an identity resource policy for the specified identity (email address, domain, or ARN). Identity resource policies can be used to enable other accounts to send with identities that they do not own. Each policy is identified by a name scoped to the identity it applies to. An identity may have no more than 20 policies associated with it.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::PutIdentityPolicyOutcomeCallable PutIdentityPolicyCallable(const Model::PutIdentityPolicyRequest& request) const;
+
+     /*
+       <p>Adds or updates an identity resource policy for the specified identity (email address, domain, or ARN). Identity resource policies can be used to enable other accounts to send with identities that they do not own. Each policy is identified by a name scoped to the identity it applies to. An identity may have no more than 20 policies associated with it.</p> <p>This action is throttled at one request per second.</p> <p>For more information about sending authorization with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void PutIdentityPolicyAsync(const Model::PutIdentityPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Composes an email message based on input data, and then immediately queues the message for sending. </p> <important> You can only send email from verified email addresses and domains. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>. </important> <p>The total size of the message cannot exceed 10 MB.</p> <p>Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </p> <p>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>. </p>
@@ -377,7 +474,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SendEmailAsync(const Model::SendEmailRequest& request) const;
+     void SendEmailAsync(const Model::SendEmailRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </p> <important> You can only send email from verified email addresses and domains. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>. </important> <p>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</p> <p>Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </p> <p>The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group list counts towards the 50-recipient limit. </p> <p>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>. </p>
@@ -396,7 +493,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SendRawEmailAsync(const Model::SendRawEmailRequest& request) const;
+     void SendRawEmailAsync(const Model::SendRawEmailRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Enables or disables Easy DKIM signing of email sent from an identity:</p> <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li> </ul> <p>For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one request per second.</p> <p>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
@@ -415,7 +512,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetIdentityDkimEnabledAsync(const Model::SetIdentityDkimEnabledRequest& request) const;
+     void SetIdentityDkimEnabledAsync(const Model::SetIdentityDkimEnabledRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Given an identity (email address or domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email. Feedback forwarding can only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified for both bounces and complaints.</p> <note>Feedback forwarding does not apply to delivery notifications. Delivery notifications are only available through Amazon SNS.</note> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
@@ -434,7 +531,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetIdentityFeedbackForwardingEnabledAsync(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
+     void SetIdentityFeedbackForwardingEnabledAsync(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Given an identity (email address or domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note> <p>This action is throttled at one request per second.</p> <p>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
@@ -453,7 +550,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetIdentityNotificationTopicAsync(const Model::SetIdentityNotificationTopicRequest& request) const;
+     void SetIdentityNotificationTopicAsync(const Model::SetIdentityNotificationTopicRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain.</p> <p>This action is throttled at one request per second.</p> <p>To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
@@ -472,7 +569,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void VerifyDomainDkimAsync(const Model::VerifyDomainDkimRequest& request) const;
+     void VerifyDomainDkimAsync(const Model::VerifyDomainDkimRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Verifies a domain.</p> <p>This action is throttled at one request per second.</p>
@@ -491,7 +588,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void VerifyDomainIdentityAsync(const Model::VerifyDomainIdentityRequest& request) const;
+     void VerifyDomainIdentityAsync(const Model::VerifyDomainIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The VerifyEmailIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
@@ -510,7 +607,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void VerifyEmailAddressAsync(const Model::VerifyEmailAddressRequest& request) const;
+     void VerifyEmailAddressAsync(const Model::VerifyEmailAddressRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <p>This action is throttled at one request per second.</p>
@@ -529,7 +626,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void VerifyEmailIdentityAsync(const Model::VerifyEmailIdentityRequest& request) const;
+     void VerifyEmailIdentityAsync(const Model::VerifyEmailIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for DeleteIdentityAsync to call upon completion to the handler chain. You need to call this to
@@ -546,6 +643,23 @@ namespace Model
     inline void ClearAllDeleteIdentityOutcomeReceivedHandlers()
     {
       m_onDeleteIdentityOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for DeleteIdentityPolicyAsync to call upon completion to the handler chain. You need to call this to
+    * use DeleteIdentityPolicyAsync.
+    */
+    inline void RegisterDeleteIdentityPolicyOutcomeReceivedHandler(const DeleteIdentityPolicyOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onDeleteIdentityPolicyOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for DeleteIdentityPolicy.
+    */
+    inline void ClearAllDeleteIdentityPolicyOutcomeReceivedHandlers()
+    {
+      m_onDeleteIdentityPolicyOutcomeReceived.Clear();
     }
 
    /**
@@ -597,6 +711,23 @@ namespace Model
     inline void ClearAllGetIdentityNotificationAttributesOutcomeReceivedHandlers()
     {
       m_onGetIdentityNotificationAttributesOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for GetIdentityPoliciesAsync to call upon completion to the handler chain. You need to call this to
+    * use GetIdentityPoliciesAsync.
+    */
+    inline void RegisterGetIdentityPoliciesOutcomeReceivedHandler(const GetIdentityPoliciesOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onGetIdentityPoliciesOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for GetIdentityPolicies.
+    */
+    inline void ClearAllGetIdentityPoliciesOutcomeReceivedHandlers()
+    {
+      m_onGetIdentityPoliciesOutcomeReceived.Clear();
     }
 
    /**
@@ -668,6 +799,23 @@ namespace Model
     }
 
    /**
+    * Adds an event handler for ListIdentityPoliciesAsync to call upon completion to the handler chain. You need to call this to
+    * use ListIdentityPoliciesAsync.
+    */
+    inline void RegisterListIdentityPoliciesOutcomeReceivedHandler(const ListIdentityPoliciesOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onListIdentityPoliciesOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for ListIdentityPolicies.
+    */
+    inline void ClearAllListIdentityPoliciesOutcomeReceivedHandlers()
+    {
+      m_onListIdentityPoliciesOutcomeReceived.Clear();
+    }
+
+   /**
     * Adds an event handler for ListVerifiedEmailAddressesAsync to call upon completion to the handler chain. You need to call this to
     * use ListVerifiedEmailAddressesAsync.
     */
@@ -682,6 +830,23 @@ namespace Model
     inline void ClearAllListVerifiedEmailAddressesOutcomeReceivedHandlers()
     {
       m_onListVerifiedEmailAddressesOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for PutIdentityPolicyAsync to call upon completion to the handler chain. You need to call this to
+    * use PutIdentityPolicyAsync.
+    */
+    inline void RegisterPutIdentityPolicyOutcomeReceivedHandler(const PutIdentityPolicyOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onPutIdentityPolicyOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for PutIdentityPolicy.
+    */
+    inline void ClearAllPutIdentityPolicyOutcomeReceivedHandlers()
+    {
+      m_onPutIdentityPolicyOutcomeReceived.Clear();
     }
 
    /**
@@ -841,38 +1006,46 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void DeleteIdentityAsyncHelper(const Model::DeleteIdentityRequest& request) const;
-    void DeleteVerifiedEmailAddressAsyncHelper(const Model::DeleteVerifiedEmailAddressRequest& request) const;
-    void GetIdentityDkimAttributesAsyncHelper(const Model::GetIdentityDkimAttributesRequest& request) const;
-    void GetIdentityNotificationAttributesAsyncHelper(const Model::GetIdentityNotificationAttributesRequest& request) const;
-    void GetIdentityVerificationAttributesAsyncHelper(const Model::GetIdentityVerificationAttributesRequest& request) const;
-    void GetSendQuotaAsyncHelper(const Model::GetSendQuotaRequest& request) const;
-    void GetSendStatisticsAsyncHelper(const Model::GetSendStatisticsRequest& request) const;
-    void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request) const;
-    void ListVerifiedEmailAddressesAsyncHelper(const Model::ListVerifiedEmailAddressesRequest& request) const;
-    void SendEmailAsyncHelper(const Model::SendEmailRequest& request) const;
-    void SendRawEmailAsyncHelper(const Model::SendRawEmailRequest& request) const;
-    void SetIdentityDkimEnabledAsyncHelper(const Model::SetIdentityDkimEnabledRequest& request) const;
-    void SetIdentityFeedbackForwardingEnabledAsyncHelper(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
-    void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request) const;
-    void VerifyDomainDkimAsyncHelper(const Model::VerifyDomainDkimRequest& request) const;
-    void VerifyDomainIdentityAsyncHelper(const Model::VerifyDomainIdentityRequest& request) const;
-    void VerifyEmailAddressAsyncHelper(const Model::VerifyEmailAddressRequest& request) const;
-    void VerifyEmailIdentityAsyncHelper(const Model::VerifyEmailIdentityRequest& request) const;
+    void DeleteIdentityAsyncHelper(const Model::DeleteIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteIdentityPolicyAsyncHelper(const Model::DeleteIdentityPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteVerifiedEmailAddressAsyncHelper(const Model::DeleteVerifiedEmailAddressRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetIdentityDkimAttributesAsyncHelper(const Model::GetIdentityDkimAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetIdentityNotificationAttributesAsyncHelper(const Model::GetIdentityNotificationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetIdentityPoliciesAsyncHelper(const Model::GetIdentityPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetIdentityVerificationAttributesAsyncHelper(const Model::GetIdentityVerificationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetSendQuotaAsyncHelper(const Model::GetSendQuotaRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetSendStatisticsAsyncHelper(const Model::GetSendStatisticsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListIdentityPoliciesAsyncHelper(const Model::ListIdentityPoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListVerifiedEmailAddressesAsyncHelper(const Model::ListVerifiedEmailAddressesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutIdentityPolicyAsyncHelper(const Model::PutIdentityPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SendEmailAsyncHelper(const Model::SendEmailRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SendRawEmailAsyncHelper(const Model::SendRawEmailRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetIdentityDkimEnabledAsyncHelper(const Model::SetIdentityDkimEnabledRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetIdentityFeedbackForwardingEnabledAsyncHelper(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void VerifyDomainDkimAsyncHelper(const Model::VerifyDomainDkimRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void VerifyDomainIdentityAsyncHelper(const Model::VerifyDomainIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void VerifyEmailAddressAsyncHelper(const Model::VerifyEmailAddressRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void VerifyEmailIdentityAsyncHelper(const Model::VerifyEmailIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
 
     /** events **/
     DeleteIdentityOutcomeReceivedEvent m_onDeleteIdentityOutcomeReceived;
+    DeleteIdentityPolicyOutcomeReceivedEvent m_onDeleteIdentityPolicyOutcomeReceived;
     DeleteVerifiedEmailAddressOutcomeReceivedEvent m_onDeleteVerifiedEmailAddressOutcomeReceived;
     GetIdentityDkimAttributesOutcomeReceivedEvent m_onGetIdentityDkimAttributesOutcomeReceived;
     GetIdentityNotificationAttributesOutcomeReceivedEvent m_onGetIdentityNotificationAttributesOutcomeReceived;
+    GetIdentityPoliciesOutcomeReceivedEvent m_onGetIdentityPoliciesOutcomeReceived;
     GetIdentityVerificationAttributesOutcomeReceivedEvent m_onGetIdentityVerificationAttributesOutcomeReceived;
     GetSendQuotaOutcomeReceivedEvent m_onGetSendQuotaOutcomeReceived;
     GetSendStatisticsOutcomeReceivedEvent m_onGetSendStatisticsOutcomeReceived;
     ListIdentitiesOutcomeReceivedEvent m_onListIdentitiesOutcomeReceived;
+    ListIdentityPoliciesOutcomeReceivedEvent m_onListIdentityPoliciesOutcomeReceived;
     ListVerifiedEmailAddressesOutcomeReceivedEvent m_onListVerifiedEmailAddressesOutcomeReceived;
+    PutIdentityPolicyOutcomeReceivedEvent m_onPutIdentityPolicyOutcomeReceived;
     SendEmailOutcomeReceivedEvent m_onSendEmailOutcomeReceived;
     SendRawEmailOutcomeReceivedEvent m_onSendRawEmailOutcomeReceived;
     SetIdentityDkimEnabledOutcomeReceivedEvent m_onSetIdentityDkimEnabledOutcomeReceived;

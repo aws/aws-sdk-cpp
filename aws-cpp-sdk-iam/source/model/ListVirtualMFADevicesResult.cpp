@@ -43,11 +43,12 @@ ListVirtualMFADevicesResult& ListVirtualMFADevicesResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode virtualMFADevicesNode = resultNode.FirstChild("VirtualMFADevices");
+    XmlNode virtualMFADevicesNodeParent = resultNode.FirstChild("VirtualMFADevices");
+    XmlNode virtualMFADevicesNode = virtualMFADevicesNodeParent.FirstChild("member");
     while(!virtualMFADevicesNode.IsNull())
     {
       m_virtualMFADevices.push_back(virtualMFADevicesNode);
-      virtualMFADevicesNode = virtualMFADevicesNode.NextNode("VirtualMFADevices");
+      virtualMFADevicesNode = virtualMFADevicesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

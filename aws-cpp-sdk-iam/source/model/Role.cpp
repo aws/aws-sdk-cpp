@@ -24,13 +24,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Role::Role() : 
+    m_pathHasBeenSet(false),
+    m_roleNameHasBeenSet(false),
+    m_roleIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_createDate(0.0),
+    m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false)
 {
 }
 
 Role::Role(const XmlNode& xmlNode) : 
+    m_pathHasBeenSet(false),
+    m_roleNameHasBeenSet(false),
+    m_roleIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_createDate(0.0),
+    m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,15 +53,35 @@ Role& Role::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
-    m_path = StringUtils::Trim(pathNode.GetText().c_str());
+    if(!pathNode.IsNull())
+    {
+      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_pathHasBeenSet = true;
+    }
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
-    m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
+    if(!roleNameNode.IsNull())
+    {
+      m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
+      m_roleNameHasBeenSet = true;
+    }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
-    m_roleId = StringUtils::Trim(roleIdNode.GetText().c_str());
+    if(!roleIdNode.IsNull())
+    {
+      m_roleId = StringUtils::Trim(roleIdNode.GetText().c_str());
+      m_roleIdHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+    if(!arnNode.IsNull())
+    {
+      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arnHasBeenSet = true;
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    if(!createDateNode.IsNull())
+    {
+      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDateHasBeenSet = true;
+    }
     XmlNode assumeRolePolicyDocumentNode = resultNode.FirstChild("AssumeRolePolicyDocument");
     if(!assumeRolePolicyDocumentNode.IsNull())
     {
@@ -65,11 +95,26 @@ Role& Role::operator =(const XmlNode& xmlNode)
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_roleNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_roleIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  }
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
@@ -78,11 +123,26 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  oStream << location << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
-  oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  oStream << location << ".CreateDate=" << m_createDate << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_roleNameHasBeenSet)
+  {
+      oStream << location << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_roleIdHasBeenSet)
+  {
+      oStream << location << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << ".CreateDate=" << m_createDate << "&";
+  }
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
       oStream << location << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";

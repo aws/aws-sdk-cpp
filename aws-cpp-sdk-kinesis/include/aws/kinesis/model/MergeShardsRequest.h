@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the stream for the merge.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream for the merge.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The name of the stream for the merge.</p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     */
-    inline void SetShardToMerge(const Aws::String& value) { m_shardToMerge = value; }
+    inline void SetShardToMerge(const Aws::String& value) { m_shardToMergeHasBeenSet = true; m_shardToMerge = value; }
 
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     */
-    inline void SetShardToMerge(const char* value) { m_shardToMerge.assign(value); }
+    inline void SetShardToMerge(const char* value) { m_shardToMergeHasBeenSet = true; m_shardToMerge.assign(value); }
 
     /*
      <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>
     */
-    inline void SetAdjacentShardToMerge(const Aws::String& value) { m_adjacentShardToMerge = value; }
+    inline void SetAdjacentShardToMerge(const Aws::String& value) { m_adjacentShardToMergeHasBeenSet = true; m_adjacentShardToMerge = value; }
 
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>
     */
-    inline void SetAdjacentShardToMerge(const char* value) { m_adjacentShardToMerge.assign(value); }
+    inline void SetAdjacentShardToMerge(const char* value) { m_adjacentShardToMergeHasBeenSet = true; m_adjacentShardToMerge.assign(value); }
 
     /*
      <p>The shard ID of the adjacent shard for the merge.</p>
@@ -110,8 +110,11 @@ namespace Model
 
   private:
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
     Aws::String m_shardToMerge;
+    bool m_shardToMergeHasBeenSet;
     Aws::String m_adjacentShardToMerge;
+    bool m_adjacentShardToMergeHasBeenSet;
   };
 
 } // namespace Model

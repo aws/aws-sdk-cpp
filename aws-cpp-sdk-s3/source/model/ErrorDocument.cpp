@@ -23,11 +23,13 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ErrorDocument::ErrorDocument()
+ErrorDocument::ErrorDocument() : 
+    m_keyHasBeenSet(false)
 {
 }
 
-ErrorDocument::ErrorDocument(const XmlNode& xmlNode)
+ErrorDocument::ErrorDocument(const XmlNode& xmlNode) : 
+    m_keyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ ErrorDocument& ErrorDocument::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_keyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +54,10 @@ ErrorDocument& ErrorDocument::operator =(const XmlNode& xmlNode)
 void ErrorDocument::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode keyNode = parentNode.CreateChildElement("Key");
-  keyNode.SetText(m_key);
+  if(m_keyHasBeenSet)
+  {
+   XmlNode keyNode = parentNode.CreateChildElement("Key");
+   keyNode.SetText(m_key);
+  }
+
 }

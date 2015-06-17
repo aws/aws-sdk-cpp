@@ -37,26 +37,26 @@ namespace Model
 
 
     /*
-     <p> The name of the log group to query </p>
+     <p> The name of the log group to query. </p>
     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
     /*
-     <p> The name of the log group to query </p>
+     <p> The name of the log group to query. </p>
     */
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /*
-     <p> The name of the log group to query </p>
+     <p> The name of the log group to query. </p>
     */
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /*
-     <p> The name of the log group to query </p>
+     <p> The name of the log group to query. </p>
     */
     inline FilterLogEventsRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /*
-     <p> The name of the log group to query </p>
+     <p> The name of the log group to query. </p>
     */
     inline FilterLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
@@ -85,30 +85,30 @@ namespace Model
     inline FilterLogEventsRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
     /*
-     <p> A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned. </p>
+     <p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>
     */
     inline long long GetStartTime() const{ return m_startTime; }
     /*
-     <p> A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned. </p>
+     <p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>
     */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
-     <p> A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned. </p>
+     <p>A unix timestamp indicating the start time of the range for the request. If provided, events with a timestamp prior to this time will not be returned.</p>
     */
     inline FilterLogEventsRequest&  WithStartTime(long long value) { SetStartTime(value); return *this;}
 
     /*
-     <p> A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned. </p>
+     <p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>
     */
     inline long long GetEndTime() const{ return m_endTime; }
     /*
-     <p> A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned. </p>
+     <p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>
     */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /*
-     <p> A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned. </p>
+     <p>A unix timestamp indicating the end time of the range for the request. If provided, events with a timestamp later than this time will not be returned.</p>
     */
     inline FilterLogEventsRequest&  WithEndTime(long long value) { SetEndTime(value); return *this;}
 
@@ -137,59 +137,60 @@ namespace Model
     inline FilterLogEventsRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
     /*
-     <p> A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. </p>
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     /*
-     <p> A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. </p>
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /*
-     <p> A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. </p>
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /*
-     <p> A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. </p>
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline FilterLogEventsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /*
-     <p> A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results. </p>
+     <p>A pagination token obtained from a <code class="code">FilterLogEvents</code> response to continue paginating the FilterLogEvents results.</p>
     */
     inline FilterLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /*
-     <p> The maximum number of events to return in a page of results. Default is 10,000 events. </p>
+     <p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>
     */
     inline long GetLimit() const{ return m_limit; }
     /*
-     <p> The maximum number of events to return in a page of results. Default is 10,000 events. </p>
+     <p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>
     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /*
-     <p> The maximum number of events to return in a page of results. Default is 10,000 events. </p>
+     <p>The maximum number of events to return in a page of results. Default is 10,000 events.</p>
     */
     inline FilterLogEventsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
 
     /*
-     <p> If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc. </p>
+     <p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>
     */
     inline bool GetInterleaved() const{ return m_interleaved; }
     /*
-     <p> If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc. </p>
+     <p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>
     */
     inline void SetInterleaved(bool value) { m_interleavedHasBeenSet = true; m_interleaved = value; }
 
     /*
-     <p> If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc. </p>
+     <p>If provided, the API will make a best effort to provide responses that contain events from multiple log streams within the log group interleaved in a single response. If not provided, all the matched log events in the first log stream will be searched first, then those in the next log stream, etc.</p>
     */
     inline FilterLogEventsRequest&  WithInterleaved(bool value) { SetInterleaved(value); return *this;}
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_logStreamNames;
     bool m_logStreamNamesHasBeenSet;
     long long m_startTime;

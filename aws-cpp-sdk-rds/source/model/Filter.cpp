@@ -23,11 +23,15 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Filter::Filter()
+Filter::Filter() : 
+    m_nameHasBeenSet(false),
+    m_valuesHasBeenSet(false)
 {
 }
 
-Filter::Filter(const XmlNode& xmlNode)
+Filter::Filter(const XmlNode& xmlNode) : 
+    m_nameHasBeenSet(false),
+    m_valuesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,14 +43,23 @@ Filter& Filter::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
-    XmlNode valueNode = resultNode.FirstChild("Value");
-    while(!valueNode.IsNull())
+    if(!nameNode.IsNull())
     {
-      m_values.push_back(StringUtils::Trim(valueNode.GetText().c_str()));
-      valueNode = valueNode.NextNode("Value");
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
     }
+    XmlNode valueNodeParent = resultNode.FirstChild("Value");
+    XmlNode valueNode = valueNodeParent.FirstChild("member");
+    if(!valueNode.IsNull())
+    {
+      while(!valueNode.IsNull())
+      {
+        m_values.push_back(StringUtils::Trim(valueNode.GetText().c_str()));
+        valueNode = valueNode.NextNode("member");
+      }
 
+      m_valuesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -54,18 +67,30 @@ Filter& Filter::operator =(const XmlNode& xmlNode)
 
 void Filter::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  for(auto& item : m_values)
+  if(m_nameHasBeenSet)
   {
-    oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(item.c_str()) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_valuesHasBeenSet)
+  {
+      for(auto& item : m_values)
+      {
+        oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 
 void Filter::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  for(auto& item : m_values)
+  if(m_nameHasBeenSet)
   {
-    oStream << location << ".Value=" << StringUtils::URLEncode(item.c_str()) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_valuesHasBeenSet)
+  {
+      for(auto& item : m_values)
+      {
+        oStream << location << ".Value=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }

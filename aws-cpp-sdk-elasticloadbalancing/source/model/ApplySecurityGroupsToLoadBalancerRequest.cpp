@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-ApplySecurityGroupsToLoadBalancerRequest::ApplySecurityGroupsToLoadBalancerRequest()
+ApplySecurityGroupsToLoadBalancerRequest::ApplySecurityGroupsToLoadBalancerRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ApplySecurityGroupsToLoadBalancer&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned securityGroupsCount = 1;
-  for(auto& item : m_securityGroups)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    ss << "SecurityGroups." << securityGroupsCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    securityGroupsCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_securityGroupsHasBeenSet)
+  {
+    unsigned securityGroupsCount = 1;
+    for(auto& item : m_securityGroups)
+    {
+      ss << "SecurityGroups." << securityGroupsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupsCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

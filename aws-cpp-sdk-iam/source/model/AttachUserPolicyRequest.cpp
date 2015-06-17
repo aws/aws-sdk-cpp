@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-AttachUserPolicyRequest::AttachUserPolicyRequest()
+AttachUserPolicyRequest::AttachUserPolicyRequest() : 
+    m_userNameHasBeenSet(false),
+    m_policyArnHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String AttachUserPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AttachUserPolicy&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

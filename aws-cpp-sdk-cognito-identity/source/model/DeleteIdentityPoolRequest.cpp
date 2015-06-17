@@ -21,7 +21,8 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIdentityPoolRequest::DeleteIdentityPoolRequest()
+DeleteIdentityPoolRequest::DeleteIdentityPoolRequest() : 
+    m_identityPoolIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteIdentityPoolRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
+  if(m_identityPoolIdHasBeenSet)
+  {
+   payload.WithString("IdentityPoolId", m_identityPoolId);
+
+  }
 
   return payload.WriteReadable();
 }

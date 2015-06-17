@@ -42,12 +42,12 @@ namespace Model
     /*
      <p> The unique identifier of the cluster to be modified. </p> <p>Example: <code>examplecluster</code></p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The unique identifier of the cluster to be modified. </p> <p>Example: <code>examplecluster</code></p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The unique identifier of the cluster to be modified. </p> <p>Example: <code>examplecluster</code></p>
@@ -367,6 +367,7 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
     Aws::String m_nodeType;

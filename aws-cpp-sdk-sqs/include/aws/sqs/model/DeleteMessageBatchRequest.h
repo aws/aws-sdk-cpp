@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
+    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>A list of receipt handles for the messages to be deleted.</p>
     */
-    inline void SetEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { m_entries = value; }
+    inline void SetEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /*
      <p>A list of receipt handles for the messages to be deleted.</p>
@@ -76,11 +76,13 @@ namespace Model
     /*
      <p>A list of receipt handles for the messages to be deleted.</p>
     */
-    inline DeleteMessageBatchRequest& AddEntries(const DeleteMessageBatchRequestEntry& value) { m_entries.push_back(value); return *this; }
+    inline DeleteMessageBatchRequest& AddEntries(const DeleteMessageBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
   private:
     Aws::String m_queueUrl;
+    bool m_queueUrlHasBeenSet;
     Aws::Vector<DeleteMessageBatchRequestEntry> m_entries;
+    bool m_entriesHasBeenSet;
   };
 
 } // namespace Model

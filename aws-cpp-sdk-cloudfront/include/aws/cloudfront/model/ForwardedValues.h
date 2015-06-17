@@ -49,7 +49,7 @@ namespace Model
     /*
      Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.
     */
-    inline void SetQueryString(bool value) { m_queryString = value; }
+    inline void SetQueryString(bool value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /*
      Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.
@@ -63,7 +63,7 @@ namespace Model
     /*
      A complex type that specifies how CloudFront handles cookies.
     */
-    inline void SetCookies(const CookiePreference& value) { m_cookies = value; }
+    inline void SetCookies(const CookiePreference& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
 
     /*
      A complex type that specifies how CloudFront handles cookies.
@@ -86,7 +86,9 @@ namespace Model
 
   private:
     bool m_queryString;
+    bool m_queryStringHasBeenSet;
     CookiePreference m_cookies;
+    bool m_cookiesHasBeenSet;
     Headers m_headers;
     bool m_headersHasBeenSet;
   };

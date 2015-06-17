@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 ExecutePolicyRequest::ExecutePolicyRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
     m_honorCooldown(false),
     m_honorCooldownHasBeenSet(false),
     m_metricValue(0.0),
@@ -38,7 +39,10 @@ Aws::String ExecutePolicyRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
-  ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  if(m_policyNameHasBeenSet)
+  {
+    ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
   if(m_honorCooldownHasBeenSet)
   {
     ss << "HonorCooldown=" << m_honorCooldown << "&";

@@ -43,11 +43,12 @@ DescribeDBParameterGroupsResult& DescribeDBParameterGroupsResult::operator =(con
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBParameterGroupNode = resultNode.FirstChild("DBParameterGroup");
+    XmlNode dBParameterGroupNodeParent = resultNode.FirstChild("DBParameterGroup");
+    XmlNode dBParameterGroupNode = dBParameterGroupNodeParent.FirstChild("member");
     while(!dBParameterGroupNode.IsNull())
     {
       m_dBParameterGroups.push_back(dBParameterGroupNode);
-      dBParameterGroupNode = dBParameterGroupNode.NextNode("DBParameterGroup");
+      dBParameterGroupNode = dBParameterGroupNode.NextNode("member");
     }
 
   }

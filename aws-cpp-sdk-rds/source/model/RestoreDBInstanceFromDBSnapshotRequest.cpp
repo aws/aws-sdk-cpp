@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_dBSnapshotIdentifierHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -48,8 +50,14 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RestoreDBInstanceFromDBSnapshot&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
-  ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
+  if(m_dBSnapshotIdentifierHasBeenSet)
+  {
+    ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
+  }
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";

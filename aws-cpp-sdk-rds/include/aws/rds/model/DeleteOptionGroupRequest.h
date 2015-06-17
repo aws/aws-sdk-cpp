@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the option group to be deleted. </p> <note>You cannot delete default option groups.</note>
     */
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupName = value; }
+    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p> The name of the option group to be deleted. </p> <note>You cannot delete default option groups.</note>
     */
-    inline void SetOptionGroupName(const char* value) { m_optionGroupName.assign(value); }
+    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /*
      <p> The name of the option group to be deleted. </p> <note>You cannot delete default option groups.</note>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_optionGroupName;
+    bool m_optionGroupNameHasBeenSet;
   };
 
 } // namespace Model

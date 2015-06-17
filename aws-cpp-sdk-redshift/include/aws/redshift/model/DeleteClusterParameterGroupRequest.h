@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
     */
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
+    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
     */
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupName.assign(value); }
+    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
 
     /*
      <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot delete a default cluster parameter group.</li> </ul>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_parameterGroupName;
+    bool m_parameterGroupNameHasBeenSet;
   };
 
 } // namespace Model

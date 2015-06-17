@@ -21,6 +21,9 @@ using namespace Aws::Utils;
 
 UploadServerCertificateRequest::UploadServerCertificateRequest() : 
     m_pathHasBeenSet(false),
+    m_serverCertificateNameHasBeenSet(false),
+    m_certificateBodyHasBeenSet(false),
+    m_privateKeyHasBeenSet(false),
     m_certificateChainHasBeenSet(false)
 {
 }
@@ -33,9 +36,18 @@ Aws::String UploadServerCertificateRequest::SerializePayload() const
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
-  ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
-  ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
-  ss << "PrivateKey=" << StringUtils::URLEncode(m_privateKey.c_str()) << "&";
+  if(m_serverCertificateNameHasBeenSet)
+  {
+    ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  }
+  if(m_certificateBodyHasBeenSet)
+  {
+    ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  }
+  if(m_privateKeyHasBeenSet)
+  {
+    ss << "PrivateKey=" << StringUtils::URLEncode(m_privateKey.c_str()) << "&";
+  }
   if(m_certificateChainHasBeenSet)
   {
     ss << "CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";

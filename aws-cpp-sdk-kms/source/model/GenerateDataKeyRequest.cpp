@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GenerateDataKeyRequest::GenerateDataKeyRequest() : 
+    m_keyIdHasBeenSet(false),
     m_encryptionContextHasBeenSet(false),
     m_numberOfBytes(0),
     m_numberOfBytesHasBeenSet(false),
@@ -34,7 +35,11 @@ Aws::String GenerateDataKeyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("KeyId", m_keyId);
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
+
+  }
 
   if(m_encryptionContextHasBeenSet)
   {

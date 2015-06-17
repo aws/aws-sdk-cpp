@@ -45,7 +45,7 @@ namespace Model
     /*
      <p>Ciphertext to be decrypted. The blob includes metadata.</p>
     */
-    inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
+    inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
 
     /*
      <p>Ciphertext to be decrypted. The blob includes metadata.</p>
@@ -102,6 +102,7 @@ namespace Model
 
   private:
     Aws::Utils::ByteBuffer m_ciphertextBlob;
+    bool m_ciphertextBlobHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
     bool m_encryptionContextHasBeenSet;
     Aws::Vector<Aws::String> m_grantTokens;

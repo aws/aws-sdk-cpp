@@ -48,7 +48,7 @@ namespace Model
     /*
      An operation, either replace or remove.
     */
-    inline void SetOp(const Operation& value) { m_op = value; }
+    inline void SetOp(const Operation& value) { m_opHasBeenSet = true; m_op = value; }
 
     /*
      An operation, either replace or remove.
@@ -62,12 +62,12 @@ namespace Model
     /*
      The key associated with the record patch.
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The key associated with the record patch.
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      The key associated with the record patch.
@@ -110,7 +110,7 @@ namespace Model
     /*
      Last known server sync count for this record. Set to 0 if unknown.
     */
-    inline void SetSyncCount(long long value) { m_syncCount = value; }
+    inline void SetSyncCount(long long value) { m_syncCountHasBeenSet = true; m_syncCount = value; }
 
     /*
      Last known server sync count for this record. Set to 0 if unknown.
@@ -133,10 +133,13 @@ namespace Model
 
   private:
     Operation m_op;
+    bool m_opHasBeenSet;
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_value;
     bool m_valueHasBeenSet;
     long long m_syncCount;
+    bool m_syncCountHasBeenSet;
     double m_deviceLastModifiedDate;
     bool m_deviceLastModifiedDateHasBeenSet;
   };

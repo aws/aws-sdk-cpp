@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
     */
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroups = value; }
+    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /*
      <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
@@ -75,16 +75,18 @@ namespace Model
     /*
      <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
     */
-    inline ApplySecurityGroupsToLoadBalancerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroups.push_back(value); return *this; }
+    inline ApplySecurityGroupsToLoadBalancerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /*
      <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
     */
-    inline ApplySecurityGroupsToLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
+    inline ApplySecurityGroupsToLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroups;
+    bool m_securityGroupsHasBeenSet;
   };
 
 } // namespace Model

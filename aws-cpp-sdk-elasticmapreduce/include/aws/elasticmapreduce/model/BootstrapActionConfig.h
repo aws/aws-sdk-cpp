@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>The name of the bootstrap action.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the bootstrap action.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the bootstrap action.</p>
@@ -72,7 +72,7 @@ namespace Model
     /*
      <p>The script run by the bootstrap action.</p>
     */
-    inline void SetScriptBootstrapAction(const ScriptBootstrapActionConfig& value) { m_scriptBootstrapAction = value; }
+    inline void SetScriptBootstrapAction(const ScriptBootstrapActionConfig& value) { m_scriptBootstrapActionHasBeenSet = true; m_scriptBootstrapAction = value; }
 
     /*
      <p>The script run by the bootstrap action.</p>
@@ -81,7 +81,9 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     ScriptBootstrapActionConfig m_scriptBootstrapAction;
+    bool m_scriptBootstrapActionHasBeenSet;
   };
 
 } // namespace Model

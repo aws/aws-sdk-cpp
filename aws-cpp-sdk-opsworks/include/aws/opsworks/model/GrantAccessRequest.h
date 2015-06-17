@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The instance's AWS OpsWorks ID.</p>
@@ -75,6 +75,7 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     long m_validForInMinutes;
     bool m_validForInMinutesHasBeenSet;
   };

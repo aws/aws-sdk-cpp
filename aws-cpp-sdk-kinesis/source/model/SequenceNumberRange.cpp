@@ -22,11 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SequenceNumberRange::SequenceNumberRange() : 
+    m_startingSequenceNumberHasBeenSet(false),
     m_endingSequenceNumberHasBeenSet(false)
 {
 }
 
 SequenceNumberRange::SequenceNumberRange(const JsonValue& jsonValue) : 
+    m_startingSequenceNumberHasBeenSet(false),
     m_endingSequenceNumberHasBeenSet(false)
 {
   *this = jsonValue;
@@ -34,7 +36,12 @@ SequenceNumberRange::SequenceNumberRange(const JsonValue& jsonValue) :
 
 SequenceNumberRange& SequenceNumberRange::operator =(const JsonValue& jsonValue)
 {
-  m_startingSequenceNumber = jsonValue.GetString("StartingSequenceNumber");
+  if(jsonValue.ValueExists("StartingSequenceNumber"))
+  {
+    m_startingSequenceNumber = jsonValue.GetString("StartingSequenceNumber");
+
+    m_startingSequenceNumberHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("EndingSequenceNumber"))
   {
@@ -50,7 +57,11 @@ JsonValue SequenceNumberRange::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("StartingSequenceNumber", m_startingSequenceNumber);
+  if(m_startingSequenceNumberHasBeenSet)
+  {
+   payload.WithString("StartingSequenceNumber", m_startingSequenceNumber);
+
+  }
 
   if(m_endingSequenceNumberHasBeenSet)
   {

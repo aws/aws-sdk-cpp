@@ -20,6 +20,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 CreateClusterSnapshotRequest::CreateClusterSnapshotRequest() : 
+    m_snapshotIdentifierHasBeenSet(false),
+    m_clusterIdentifierHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String CreateClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateClusterSnapshot&";
-  ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  if(m_snapshotIdentifierHasBeenSet)
+  {
+    ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

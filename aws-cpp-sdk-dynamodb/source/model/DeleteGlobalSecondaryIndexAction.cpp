@@ -21,18 +21,25 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction()
+DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction() : 
+    m_indexNameHasBeenSet(false)
 {
 }
 
-DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(const JsonValue& jsonValue)
+DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(const JsonValue& jsonValue) : 
+    m_indexNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DeleteGlobalSecondaryIndexAction& DeleteGlobalSecondaryIndexAction::operator =(const JsonValue& jsonValue)
 {
-  m_indexName = jsonValue.GetString("IndexName");
+  if(jsonValue.ValueExists("IndexName"))
+  {
+    m_indexName = jsonValue.GetString("IndexName");
+
+    m_indexNameHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -41,7 +48,11 @@ JsonValue DeleteGlobalSecondaryIndexAction::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("IndexName", m_indexName);
+  if(m_indexNameHasBeenSet)
+  {
+   payload.WithString("IndexName", m_indexName);
+
+  }
 
   return std::move(payload);
 }

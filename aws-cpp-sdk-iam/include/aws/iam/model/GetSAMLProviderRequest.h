@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
     */
-    inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
+    inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
     */
-    inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
+    inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider to get information about.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_sAMLProviderArn;
+    bool m_sAMLProviderArnHasBeenSet;
   };
 
 } // namespace Model

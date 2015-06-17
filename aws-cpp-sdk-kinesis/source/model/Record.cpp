@@ -22,22 +22,43 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Record::Record()
+Record::Record() : 
+    m_sequenceNumberHasBeenSet(false),
+    m_dataHasBeenSet(false),
+    m_partitionKeyHasBeenSet(false)
 {
 }
 
-Record::Record(const JsonValue& jsonValue)
+Record::Record(const JsonValue& jsonValue) : 
+    m_sequenceNumberHasBeenSet(false),
+    m_dataHasBeenSet(false),
+    m_partitionKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Record& Record::operator =(const JsonValue& jsonValue)
 {
-  m_sequenceNumber = jsonValue.GetString("SequenceNumber");
+  if(jsonValue.ValueExists("SequenceNumber"))
+  {
+    m_sequenceNumber = jsonValue.GetString("SequenceNumber");
 
-  m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
+    m_sequenceNumberHasBeenSet = true;
+  }
 
-  m_partitionKey = jsonValue.GetString("PartitionKey");
+  if(jsonValue.ValueExists("Data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
+
+    m_dataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PartitionKey"))
+  {
+    m_partitionKey = jsonValue.GetString("PartitionKey");
+
+    m_partitionKeyHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -46,10 +67,22 @@ JsonValue Record::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("SequenceNumber", m_sequenceNumber);
+  if(m_sequenceNumberHasBeenSet)
+  {
+   payload.WithString("SequenceNumber", m_sequenceNumber);
 
-  payload.WithString("Data", HashingUtils::Base64Encode(m_data));
-  payload.WithString("PartitionKey", m_partitionKey);
+  }
+
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("Data", HashingUtils::Base64Encode(m_data));
+  }
+
+  if(m_partitionKeyHasBeenSet)
+  {
+   payload.WithString("PartitionKey", m_partitionKey);
+
+  }
 
   return std::move(payload);
 }

@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 StartTaskRequest::StartTaskRequest() : 
     m_clusterHasBeenSet(false),
+    m_taskDefinitionHasBeenSet(false),
     m_overridesHasBeenSet(false),
+    m_containerInstancesHasBeenSet(false),
     m_startedByHasBeenSet(false)
 {
 }
@@ -38,7 +40,11 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   }
 
-  payload.WithString("taskDefinition", m_taskDefinition);
+  if(m_taskDefinitionHasBeenSet)
+  {
+   payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
 
   if(m_overridesHasBeenSet)
   {
@@ -46,12 +52,16 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   }
 
-  Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
-  for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
+  if(m_containerInstancesHasBeenSet)
   {
-    containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
+   Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
+   for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
+   {
+     containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
+   }
+   payload.WithArray("containerInstances", std::move(containerInstancesJsonList));
+
   }
-  payload.WithArray("containerInstances", std::move(containerInstancesJsonList));
 
   if(m_startedByHasBeenSet)
   {

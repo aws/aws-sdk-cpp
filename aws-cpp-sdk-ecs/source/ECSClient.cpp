@@ -135,14 +135,14 @@ CreateClusterOutcomeCallable ECSClient::CreateClusterCallable(const CreateCluste
   return std::async(std::launch::async, &ECSClient::CreateCluster, this, request);
 }
 
-void ECSClient::CreateClusterAsync(const CreateClusterRequest& request) const
+void ECSClient::CreateClusterAsync(const CreateClusterRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::CreateClusterAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::CreateClusterAsyncHelper, this, request, context);
 }
 
-void ECSClient::CreateClusterAsyncHelper(const CreateClusterRequest& request) const
+void ECSClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateClusterOutcomeReceived(this, request, CreateCluster(request));
+  m_onCreateClusterOutcomeReceived(this, request, CreateCluster(request), context);
 }
 
 CreateServiceOutcome ECSClient::CreateService(const CreateServiceRequest& request) const
@@ -166,14 +166,14 @@ CreateServiceOutcomeCallable ECSClient::CreateServiceCallable(const CreateServic
   return std::async(std::launch::async, &ECSClient::CreateService, this, request);
 }
 
-void ECSClient::CreateServiceAsync(const CreateServiceRequest& request) const
+void ECSClient::CreateServiceAsync(const CreateServiceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::CreateServiceAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::CreateServiceAsyncHelper, this, request, context);
 }
 
-void ECSClient::CreateServiceAsyncHelper(const CreateServiceRequest& request) const
+void ECSClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateServiceOutcomeReceived(this, request, CreateService(request));
+  m_onCreateServiceOutcomeReceived(this, request, CreateService(request), context);
 }
 
 DeleteClusterOutcome ECSClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -197,14 +197,14 @@ DeleteClusterOutcomeCallable ECSClient::DeleteClusterCallable(const DeleteCluste
   return std::async(std::launch::async, &ECSClient::DeleteCluster, this, request);
 }
 
-void ECSClient::DeleteClusterAsync(const DeleteClusterRequest& request) const
+void ECSClient::DeleteClusterAsync(const DeleteClusterRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DeleteClusterAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DeleteClusterAsyncHelper, this, request, context);
 }
 
-void ECSClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request) const
+void ECSClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteClusterOutcomeReceived(this, request, DeleteCluster(request));
+  m_onDeleteClusterOutcomeReceived(this, request, DeleteCluster(request), context);
 }
 
 DeleteServiceOutcome ECSClient::DeleteService(const DeleteServiceRequest& request) const
@@ -228,14 +228,14 @@ DeleteServiceOutcomeCallable ECSClient::DeleteServiceCallable(const DeleteServic
   return std::async(std::launch::async, &ECSClient::DeleteService, this, request);
 }
 
-void ECSClient::DeleteServiceAsync(const DeleteServiceRequest& request) const
+void ECSClient::DeleteServiceAsync(const DeleteServiceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DeleteServiceAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DeleteServiceAsyncHelper, this, request, context);
 }
 
-void ECSClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request) const
+void ECSClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteServiceOutcomeReceived(this, request, DeleteService(request));
+  m_onDeleteServiceOutcomeReceived(this, request, DeleteService(request), context);
 }
 
 DeregisterContainerInstanceOutcome ECSClient::DeregisterContainerInstance(const DeregisterContainerInstanceRequest& request) const
@@ -259,14 +259,14 @@ DeregisterContainerInstanceOutcomeCallable ECSClient::DeregisterContainerInstanc
   return std::async(std::launch::async, &ECSClient::DeregisterContainerInstance, this, request);
 }
 
-void ECSClient::DeregisterContainerInstanceAsync(const DeregisterContainerInstanceRequest& request) const
+void ECSClient::DeregisterContainerInstanceAsync(const DeregisterContainerInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DeregisterContainerInstanceAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DeregisterContainerInstanceAsyncHelper, this, request, context);
 }
 
-void ECSClient::DeregisterContainerInstanceAsyncHelper(const DeregisterContainerInstanceRequest& request) const
+void ECSClient::DeregisterContainerInstanceAsyncHelper(const DeregisterContainerInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeregisterContainerInstanceOutcomeReceived(this, request, DeregisterContainerInstance(request));
+  m_onDeregisterContainerInstanceOutcomeReceived(this, request, DeregisterContainerInstance(request), context);
 }
 
 DeregisterTaskDefinitionOutcome ECSClient::DeregisterTaskDefinition(const DeregisterTaskDefinitionRequest& request) const
@@ -290,14 +290,14 @@ DeregisterTaskDefinitionOutcomeCallable ECSClient::DeregisterTaskDefinitionCalla
   return std::async(std::launch::async, &ECSClient::DeregisterTaskDefinition, this, request);
 }
 
-void ECSClient::DeregisterTaskDefinitionAsync(const DeregisterTaskDefinitionRequest& request) const
+void ECSClient::DeregisterTaskDefinitionAsync(const DeregisterTaskDefinitionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DeregisterTaskDefinitionAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DeregisterTaskDefinitionAsyncHelper, this, request, context);
 }
 
-void ECSClient::DeregisterTaskDefinitionAsyncHelper(const DeregisterTaskDefinitionRequest& request) const
+void ECSClient::DeregisterTaskDefinitionAsyncHelper(const DeregisterTaskDefinitionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeregisterTaskDefinitionOutcomeReceived(this, request, DeregisterTaskDefinition(request));
+  m_onDeregisterTaskDefinitionOutcomeReceived(this, request, DeregisterTaskDefinition(request), context);
 }
 
 DescribeClustersOutcome ECSClient::DescribeClusters(const DescribeClustersRequest& request) const
@@ -321,14 +321,14 @@ DescribeClustersOutcomeCallable ECSClient::DescribeClustersCallable(const Descri
   return std::async(std::launch::async, &ECSClient::DescribeClusters, this, request);
 }
 
-void ECSClient::DescribeClustersAsync(const DescribeClustersRequest& request) const
+void ECSClient::DescribeClustersAsync(const DescribeClustersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DescribeClustersAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DescribeClustersAsyncHelper, this, request, context);
 }
 
-void ECSClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& request) const
+void ECSClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeClustersOutcomeReceived(this, request, DescribeClusters(request));
+  m_onDescribeClustersOutcomeReceived(this, request, DescribeClusters(request), context);
 }
 
 DescribeContainerInstancesOutcome ECSClient::DescribeContainerInstances(const DescribeContainerInstancesRequest& request) const
@@ -352,14 +352,14 @@ DescribeContainerInstancesOutcomeCallable ECSClient::DescribeContainerInstancesC
   return std::async(std::launch::async, &ECSClient::DescribeContainerInstances, this, request);
 }
 
-void ECSClient::DescribeContainerInstancesAsync(const DescribeContainerInstancesRequest& request) const
+void ECSClient::DescribeContainerInstancesAsync(const DescribeContainerInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DescribeContainerInstancesAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DescribeContainerInstancesAsyncHelper, this, request, context);
 }
 
-void ECSClient::DescribeContainerInstancesAsyncHelper(const DescribeContainerInstancesRequest& request) const
+void ECSClient::DescribeContainerInstancesAsyncHelper(const DescribeContainerInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeContainerInstancesOutcomeReceived(this, request, DescribeContainerInstances(request));
+  m_onDescribeContainerInstancesOutcomeReceived(this, request, DescribeContainerInstances(request), context);
 }
 
 DescribeServicesOutcome ECSClient::DescribeServices(const DescribeServicesRequest& request) const
@@ -383,14 +383,14 @@ DescribeServicesOutcomeCallable ECSClient::DescribeServicesCallable(const Descri
   return std::async(std::launch::async, &ECSClient::DescribeServices, this, request);
 }
 
-void ECSClient::DescribeServicesAsync(const DescribeServicesRequest& request) const
+void ECSClient::DescribeServicesAsync(const DescribeServicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DescribeServicesAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DescribeServicesAsyncHelper, this, request, context);
 }
 
-void ECSClient::DescribeServicesAsyncHelper(const DescribeServicesRequest& request) const
+void ECSClient::DescribeServicesAsyncHelper(const DescribeServicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeServicesOutcomeReceived(this, request, DescribeServices(request));
+  m_onDescribeServicesOutcomeReceived(this, request, DescribeServices(request), context);
 }
 
 DescribeTaskDefinitionOutcome ECSClient::DescribeTaskDefinition(const DescribeTaskDefinitionRequest& request) const
@@ -414,14 +414,14 @@ DescribeTaskDefinitionOutcomeCallable ECSClient::DescribeTaskDefinitionCallable(
   return std::async(std::launch::async, &ECSClient::DescribeTaskDefinition, this, request);
 }
 
-void ECSClient::DescribeTaskDefinitionAsync(const DescribeTaskDefinitionRequest& request) const
+void ECSClient::DescribeTaskDefinitionAsync(const DescribeTaskDefinitionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DescribeTaskDefinitionAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DescribeTaskDefinitionAsyncHelper, this, request, context);
 }
 
-void ECSClient::DescribeTaskDefinitionAsyncHelper(const DescribeTaskDefinitionRequest& request) const
+void ECSClient::DescribeTaskDefinitionAsyncHelper(const DescribeTaskDefinitionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeTaskDefinitionOutcomeReceived(this, request, DescribeTaskDefinition(request));
+  m_onDescribeTaskDefinitionOutcomeReceived(this, request, DescribeTaskDefinition(request), context);
 }
 
 DescribeTasksOutcome ECSClient::DescribeTasks(const DescribeTasksRequest& request) const
@@ -445,14 +445,14 @@ DescribeTasksOutcomeCallable ECSClient::DescribeTasksCallable(const DescribeTask
   return std::async(std::launch::async, &ECSClient::DescribeTasks, this, request);
 }
 
-void ECSClient::DescribeTasksAsync(const DescribeTasksRequest& request) const
+void ECSClient::DescribeTasksAsync(const DescribeTasksRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DescribeTasksAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DescribeTasksAsyncHelper, this, request, context);
 }
 
-void ECSClient::DescribeTasksAsyncHelper(const DescribeTasksRequest& request) const
+void ECSClient::DescribeTasksAsyncHelper(const DescribeTasksRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeTasksOutcomeReceived(this, request, DescribeTasks(request));
+  m_onDescribeTasksOutcomeReceived(this, request, DescribeTasks(request), context);
 }
 
 DiscoverPollEndpointOutcome ECSClient::DiscoverPollEndpoint(const DiscoverPollEndpointRequest& request) const
@@ -476,14 +476,14 @@ DiscoverPollEndpointOutcomeCallable ECSClient::DiscoverPollEndpointCallable(cons
   return std::async(std::launch::async, &ECSClient::DiscoverPollEndpoint, this, request);
 }
 
-void ECSClient::DiscoverPollEndpointAsync(const DiscoverPollEndpointRequest& request) const
+void ECSClient::DiscoverPollEndpointAsync(const DiscoverPollEndpointRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::DiscoverPollEndpointAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::DiscoverPollEndpointAsyncHelper, this, request, context);
 }
 
-void ECSClient::DiscoverPollEndpointAsyncHelper(const DiscoverPollEndpointRequest& request) const
+void ECSClient::DiscoverPollEndpointAsyncHelper(const DiscoverPollEndpointRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDiscoverPollEndpointOutcomeReceived(this, request, DiscoverPollEndpoint(request));
+  m_onDiscoverPollEndpointOutcomeReceived(this, request, DiscoverPollEndpoint(request), context);
 }
 
 ListClustersOutcome ECSClient::ListClusters(const ListClustersRequest& request) const
@@ -507,14 +507,14 @@ ListClustersOutcomeCallable ECSClient::ListClustersCallable(const ListClustersRe
   return std::async(std::launch::async, &ECSClient::ListClusters, this, request);
 }
 
-void ECSClient::ListClustersAsync(const ListClustersRequest& request) const
+void ECSClient::ListClustersAsync(const ListClustersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::ListClustersAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::ListClustersAsyncHelper, this, request, context);
 }
 
-void ECSClient::ListClustersAsyncHelper(const ListClustersRequest& request) const
+void ECSClient::ListClustersAsyncHelper(const ListClustersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListClustersOutcomeReceived(this, request, ListClusters(request));
+  m_onListClustersOutcomeReceived(this, request, ListClusters(request), context);
 }
 
 ListContainerInstancesOutcome ECSClient::ListContainerInstances(const ListContainerInstancesRequest& request) const
@@ -538,14 +538,14 @@ ListContainerInstancesOutcomeCallable ECSClient::ListContainerInstancesCallable(
   return std::async(std::launch::async, &ECSClient::ListContainerInstances, this, request);
 }
 
-void ECSClient::ListContainerInstancesAsync(const ListContainerInstancesRequest& request) const
+void ECSClient::ListContainerInstancesAsync(const ListContainerInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::ListContainerInstancesAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::ListContainerInstancesAsyncHelper, this, request, context);
 }
 
-void ECSClient::ListContainerInstancesAsyncHelper(const ListContainerInstancesRequest& request) const
+void ECSClient::ListContainerInstancesAsyncHelper(const ListContainerInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListContainerInstancesOutcomeReceived(this, request, ListContainerInstances(request));
+  m_onListContainerInstancesOutcomeReceived(this, request, ListContainerInstances(request), context);
 }
 
 ListServicesOutcome ECSClient::ListServices(const ListServicesRequest& request) const
@@ -569,14 +569,14 @@ ListServicesOutcomeCallable ECSClient::ListServicesCallable(const ListServicesRe
   return std::async(std::launch::async, &ECSClient::ListServices, this, request);
 }
 
-void ECSClient::ListServicesAsync(const ListServicesRequest& request) const
+void ECSClient::ListServicesAsync(const ListServicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::ListServicesAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::ListServicesAsyncHelper, this, request, context);
 }
 
-void ECSClient::ListServicesAsyncHelper(const ListServicesRequest& request) const
+void ECSClient::ListServicesAsyncHelper(const ListServicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListServicesOutcomeReceived(this, request, ListServices(request));
+  m_onListServicesOutcomeReceived(this, request, ListServices(request), context);
 }
 
 ListTaskDefinitionFamiliesOutcome ECSClient::ListTaskDefinitionFamilies(const ListTaskDefinitionFamiliesRequest& request) const
@@ -600,14 +600,14 @@ ListTaskDefinitionFamiliesOutcomeCallable ECSClient::ListTaskDefinitionFamiliesC
   return std::async(std::launch::async, &ECSClient::ListTaskDefinitionFamilies, this, request);
 }
 
-void ECSClient::ListTaskDefinitionFamiliesAsync(const ListTaskDefinitionFamiliesRequest& request) const
+void ECSClient::ListTaskDefinitionFamiliesAsync(const ListTaskDefinitionFamiliesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::ListTaskDefinitionFamiliesAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::ListTaskDefinitionFamiliesAsyncHelper, this, request, context);
 }
 
-void ECSClient::ListTaskDefinitionFamiliesAsyncHelper(const ListTaskDefinitionFamiliesRequest& request) const
+void ECSClient::ListTaskDefinitionFamiliesAsyncHelper(const ListTaskDefinitionFamiliesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListTaskDefinitionFamiliesOutcomeReceived(this, request, ListTaskDefinitionFamilies(request));
+  m_onListTaskDefinitionFamiliesOutcomeReceived(this, request, ListTaskDefinitionFamilies(request), context);
 }
 
 ListTaskDefinitionsOutcome ECSClient::ListTaskDefinitions(const ListTaskDefinitionsRequest& request) const
@@ -631,14 +631,14 @@ ListTaskDefinitionsOutcomeCallable ECSClient::ListTaskDefinitionsCallable(const 
   return std::async(std::launch::async, &ECSClient::ListTaskDefinitions, this, request);
 }
 
-void ECSClient::ListTaskDefinitionsAsync(const ListTaskDefinitionsRequest& request) const
+void ECSClient::ListTaskDefinitionsAsync(const ListTaskDefinitionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::ListTaskDefinitionsAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::ListTaskDefinitionsAsyncHelper, this, request, context);
 }
 
-void ECSClient::ListTaskDefinitionsAsyncHelper(const ListTaskDefinitionsRequest& request) const
+void ECSClient::ListTaskDefinitionsAsyncHelper(const ListTaskDefinitionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListTaskDefinitionsOutcomeReceived(this, request, ListTaskDefinitions(request));
+  m_onListTaskDefinitionsOutcomeReceived(this, request, ListTaskDefinitions(request), context);
 }
 
 ListTasksOutcome ECSClient::ListTasks(const ListTasksRequest& request) const
@@ -662,14 +662,14 @@ ListTasksOutcomeCallable ECSClient::ListTasksCallable(const ListTasksRequest& re
   return std::async(std::launch::async, &ECSClient::ListTasks, this, request);
 }
 
-void ECSClient::ListTasksAsync(const ListTasksRequest& request) const
+void ECSClient::ListTasksAsync(const ListTasksRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::ListTasksAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::ListTasksAsyncHelper, this, request, context);
 }
 
-void ECSClient::ListTasksAsyncHelper(const ListTasksRequest& request) const
+void ECSClient::ListTasksAsyncHelper(const ListTasksRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListTasksOutcomeReceived(this, request, ListTasks(request));
+  m_onListTasksOutcomeReceived(this, request, ListTasks(request), context);
 }
 
 RegisterContainerInstanceOutcome ECSClient::RegisterContainerInstance(const RegisterContainerInstanceRequest& request) const
@@ -693,14 +693,14 @@ RegisterContainerInstanceOutcomeCallable ECSClient::RegisterContainerInstanceCal
   return std::async(std::launch::async, &ECSClient::RegisterContainerInstance, this, request);
 }
 
-void ECSClient::RegisterContainerInstanceAsync(const RegisterContainerInstanceRequest& request) const
+void ECSClient::RegisterContainerInstanceAsync(const RegisterContainerInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::RegisterContainerInstanceAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::RegisterContainerInstanceAsyncHelper, this, request, context);
 }
 
-void ECSClient::RegisterContainerInstanceAsyncHelper(const RegisterContainerInstanceRequest& request) const
+void ECSClient::RegisterContainerInstanceAsyncHelper(const RegisterContainerInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRegisterContainerInstanceOutcomeReceived(this, request, RegisterContainerInstance(request));
+  m_onRegisterContainerInstanceOutcomeReceived(this, request, RegisterContainerInstance(request), context);
 }
 
 RegisterTaskDefinitionOutcome ECSClient::RegisterTaskDefinition(const RegisterTaskDefinitionRequest& request) const
@@ -724,14 +724,14 @@ RegisterTaskDefinitionOutcomeCallable ECSClient::RegisterTaskDefinitionCallable(
   return std::async(std::launch::async, &ECSClient::RegisterTaskDefinition, this, request);
 }
 
-void ECSClient::RegisterTaskDefinitionAsync(const RegisterTaskDefinitionRequest& request) const
+void ECSClient::RegisterTaskDefinitionAsync(const RegisterTaskDefinitionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::RegisterTaskDefinitionAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::RegisterTaskDefinitionAsyncHelper, this, request, context);
 }
 
-void ECSClient::RegisterTaskDefinitionAsyncHelper(const RegisterTaskDefinitionRequest& request) const
+void ECSClient::RegisterTaskDefinitionAsyncHelper(const RegisterTaskDefinitionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRegisterTaskDefinitionOutcomeReceived(this, request, RegisterTaskDefinition(request));
+  m_onRegisterTaskDefinitionOutcomeReceived(this, request, RegisterTaskDefinition(request), context);
 }
 
 RunTaskOutcome ECSClient::RunTask(const RunTaskRequest& request) const
@@ -755,14 +755,14 @@ RunTaskOutcomeCallable ECSClient::RunTaskCallable(const RunTaskRequest& request)
   return std::async(std::launch::async, &ECSClient::RunTask, this, request);
 }
 
-void ECSClient::RunTaskAsync(const RunTaskRequest& request) const
+void ECSClient::RunTaskAsync(const RunTaskRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::RunTaskAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::RunTaskAsyncHelper, this, request, context);
 }
 
-void ECSClient::RunTaskAsyncHelper(const RunTaskRequest& request) const
+void ECSClient::RunTaskAsyncHelper(const RunTaskRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRunTaskOutcomeReceived(this, request, RunTask(request));
+  m_onRunTaskOutcomeReceived(this, request, RunTask(request), context);
 }
 
 StartTaskOutcome ECSClient::StartTask(const StartTaskRequest& request) const
@@ -786,14 +786,14 @@ StartTaskOutcomeCallable ECSClient::StartTaskCallable(const StartTaskRequest& re
   return std::async(std::launch::async, &ECSClient::StartTask, this, request);
 }
 
-void ECSClient::StartTaskAsync(const StartTaskRequest& request) const
+void ECSClient::StartTaskAsync(const StartTaskRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::StartTaskAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::StartTaskAsyncHelper, this, request, context);
 }
 
-void ECSClient::StartTaskAsyncHelper(const StartTaskRequest& request) const
+void ECSClient::StartTaskAsyncHelper(const StartTaskRequest& request, const AsyncCallerContext* context) const
 {
-  m_onStartTaskOutcomeReceived(this, request, StartTask(request));
+  m_onStartTaskOutcomeReceived(this, request, StartTask(request), context);
 }
 
 StopTaskOutcome ECSClient::StopTask(const StopTaskRequest& request) const
@@ -817,14 +817,14 @@ StopTaskOutcomeCallable ECSClient::StopTaskCallable(const StopTaskRequest& reque
   return std::async(std::launch::async, &ECSClient::StopTask, this, request);
 }
 
-void ECSClient::StopTaskAsync(const StopTaskRequest& request) const
+void ECSClient::StopTaskAsync(const StopTaskRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::StopTaskAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::StopTaskAsyncHelper, this, request, context);
 }
 
-void ECSClient::StopTaskAsyncHelper(const StopTaskRequest& request) const
+void ECSClient::StopTaskAsyncHelper(const StopTaskRequest& request, const AsyncCallerContext* context) const
 {
-  m_onStopTaskOutcomeReceived(this, request, StopTask(request));
+  m_onStopTaskOutcomeReceived(this, request, StopTask(request), context);
 }
 
 SubmitContainerStateChangeOutcome ECSClient::SubmitContainerStateChange(const SubmitContainerStateChangeRequest& request) const
@@ -848,14 +848,14 @@ SubmitContainerStateChangeOutcomeCallable ECSClient::SubmitContainerStateChangeC
   return std::async(std::launch::async, &ECSClient::SubmitContainerStateChange, this, request);
 }
 
-void ECSClient::SubmitContainerStateChangeAsync(const SubmitContainerStateChangeRequest& request) const
+void ECSClient::SubmitContainerStateChangeAsync(const SubmitContainerStateChangeRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::SubmitContainerStateChangeAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::SubmitContainerStateChangeAsyncHelper, this, request, context);
 }
 
-void ECSClient::SubmitContainerStateChangeAsyncHelper(const SubmitContainerStateChangeRequest& request) const
+void ECSClient::SubmitContainerStateChangeAsyncHelper(const SubmitContainerStateChangeRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSubmitContainerStateChangeOutcomeReceived(this, request, SubmitContainerStateChange(request));
+  m_onSubmitContainerStateChangeOutcomeReceived(this, request, SubmitContainerStateChange(request), context);
 }
 
 SubmitTaskStateChangeOutcome ECSClient::SubmitTaskStateChange(const SubmitTaskStateChangeRequest& request) const
@@ -879,14 +879,14 @@ SubmitTaskStateChangeOutcomeCallable ECSClient::SubmitTaskStateChangeCallable(co
   return std::async(std::launch::async, &ECSClient::SubmitTaskStateChange, this, request);
 }
 
-void ECSClient::SubmitTaskStateChangeAsync(const SubmitTaskStateChangeRequest& request) const
+void ECSClient::SubmitTaskStateChangeAsync(const SubmitTaskStateChangeRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::SubmitTaskStateChangeAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::SubmitTaskStateChangeAsyncHelper, this, request, context);
 }
 
-void ECSClient::SubmitTaskStateChangeAsyncHelper(const SubmitTaskStateChangeRequest& request) const
+void ECSClient::SubmitTaskStateChangeAsyncHelper(const SubmitTaskStateChangeRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSubmitTaskStateChangeOutcomeReceived(this, request, SubmitTaskStateChange(request));
+  m_onSubmitTaskStateChangeOutcomeReceived(this, request, SubmitTaskStateChange(request), context);
 }
 
 UpdateContainerAgentOutcome ECSClient::UpdateContainerAgent(const UpdateContainerAgentRequest& request) const
@@ -910,14 +910,14 @@ UpdateContainerAgentOutcomeCallable ECSClient::UpdateContainerAgentCallable(cons
   return std::async(std::launch::async, &ECSClient::UpdateContainerAgent, this, request);
 }
 
-void ECSClient::UpdateContainerAgentAsync(const UpdateContainerAgentRequest& request) const
+void ECSClient::UpdateContainerAgentAsync(const UpdateContainerAgentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::UpdateContainerAgentAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::UpdateContainerAgentAsyncHelper, this, request, context);
 }
 
-void ECSClient::UpdateContainerAgentAsyncHelper(const UpdateContainerAgentRequest& request) const
+void ECSClient::UpdateContainerAgentAsyncHelper(const UpdateContainerAgentRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateContainerAgentOutcomeReceived(this, request, UpdateContainerAgent(request));
+  m_onUpdateContainerAgentOutcomeReceived(this, request, UpdateContainerAgent(request), context);
 }
 
 UpdateServiceOutcome ECSClient::UpdateService(const UpdateServiceRequest& request) const
@@ -941,13 +941,13 @@ UpdateServiceOutcomeCallable ECSClient::UpdateServiceCallable(const UpdateServic
   return std::async(std::launch::async, &ECSClient::UpdateService, this, request);
 }
 
-void ECSClient::UpdateServiceAsync(const UpdateServiceRequest& request) const
+void ECSClient::UpdateServiceAsync(const UpdateServiceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ECSClient::UpdateServiceAsyncHelper, this, request);
+  m_executor->Submit(&ECSClient::UpdateServiceAsyncHelper, this, request, context);
 }
 
-void ECSClient::UpdateServiceAsyncHelper(const UpdateServiceRequest& request) const
+void ECSClient::UpdateServiceAsyncHelper(const UpdateServiceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateServiceOutcomeReceived(this, request, UpdateService(request));
+  m_onUpdateServiceOutcomeReceived(this, request, UpdateService(request), context);
 }
 

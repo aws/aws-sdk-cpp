@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a get deployment instance operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API GetDeploymentInstanceResult
   {
@@ -42,18 +42,12 @@ namespace Model
     GetDeploymentInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    
     inline const InstanceSummary& GetInstanceSummary() const{ return m_instanceSummary; }
-    /*
-     <p>Information about the instance.</p>
-    */
+    
     inline void SetInstanceSummary(const InstanceSummary& value) { m_instanceSummary = value; }
 
-    /*
-     <p>Information about the instance.</p>
-    */
+    
     inline GetDeploymentInstanceResult&  WithInstanceSummary(const InstanceSummary& value) { SetInstanceSummary(value); return *this;}
 
   private:

@@ -41,11 +41,12 @@ DescribeAutoScalingNotificationTypesResult& DescribeAutoScalingNotificationTypes
 
   if(!resultNode.IsNull())
   {
-    XmlNode autoScalingNotificationTypesNode = resultNode.FirstChild("AutoScalingNotificationTypes");
+    XmlNode autoScalingNotificationTypesNodeParent = resultNode.FirstChild("AutoScalingNotificationTypes");
+    XmlNode autoScalingNotificationTypesNode = autoScalingNotificationTypesNodeParent.FirstChild("member");
     while(!autoScalingNotificationTypesNode.IsNull())
     {
       m_autoScalingNotificationTypes.push_back(StringUtils::Trim(autoScalingNotificationTypesNode.GetText().c_str()));
-      autoScalingNotificationTypesNode = autoScalingNotificationTypesNode.NextNode("AutoScalingNotificationTypes");
+      autoScalingNotificationTypesNode = autoScalingNotificationTypesNode.NextNode("member");
     }
 
   }

@@ -43,11 +43,12 @@ DescribeCacheSecurityGroupsResult& DescribeCacheSecurityGroupsResult::operator =
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
+    XmlNode cacheSecurityGroupNodeParent = resultNode.FirstChild("CacheSecurityGroup");
+    XmlNode cacheSecurityGroupNode = cacheSecurityGroupNodeParent.FirstChild("member");
     while(!cacheSecurityGroupNode.IsNull())
     {
       m_cacheSecurityGroups.push_back(cacheSecurityGroupNode);
-      cacheSecurityGroupNode = cacheSecurityGroupNode.NextNode("CacheSecurityGroup");
+      cacheSecurityGroupNode = cacheSecurityGroupNode.NextNode("member");
     }
 
   }

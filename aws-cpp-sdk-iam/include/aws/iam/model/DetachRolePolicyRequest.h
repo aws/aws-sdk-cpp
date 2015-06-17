@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
@@ -60,10 +60,10 @@ namespace Model
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
     
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
+    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
     inline DetachRolePolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
@@ -73,7 +73,9 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet;
   };
 
 } // namespace Model

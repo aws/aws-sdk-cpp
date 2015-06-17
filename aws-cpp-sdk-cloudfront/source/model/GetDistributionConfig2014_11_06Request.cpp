@@ -21,7 +21,8 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetDistributionConfig2014_11_06Request::GetDistributionConfig2014_11_06Request()
+GetDistributionConfig2014_11_06Request::GetDistributionConfig2014_11_06Request() : 
+    m_idHasBeenSet(false)
 {
 }
 

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>
     */
-    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>
     */
-    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifier.assign(value); }
+    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
 
     /*
      <p>The identifier of the HSM client certificate to be deleted.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_hsmClientCertificateIdentifier;
+    bool m_hsmClientCertificateIdentifierHasBeenSet;
   };
 
 } // namespace Model

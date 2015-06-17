@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the DB parameter group. </p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <note>This value is stored as a lower-case string.</note>
     */
-    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /*
      <p> The name of the DB parameter group. </p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <note>This value is stored as a lower-case string.</note>
     */
-    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /*
      <p> The name of the DB parameter group. </p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <note>This value is stored as a lower-case string.</note>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family. </p>
     */
-    inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamily = value; }
+    inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /*
      <p> The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family. </p>
     */
-    inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamily.assign(value); }
+    inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /*
      <p> The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family. </p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p> The description for the DB parameter group. </p>
     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p> The description for the DB parameter group. </p>
     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
      <p> The description for the DB parameter group. </p>
@@ -121,8 +121,11 @@ namespace Model
 
   private:
     Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
     Aws::String m_dBParameterGroupFamily;
+    bool m_dBParameterGroupFamilyHasBeenSet;
     Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

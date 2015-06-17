@@ -41,11 +41,12 @@ DescribeOptionGroupsResult& DescribeOptionGroupsResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode optionGroupNode = resultNode.FirstChild("OptionGroup");
+    XmlNode optionGroupNodeParent = resultNode.FirstChild("OptionGroup");
+    XmlNode optionGroupNode = optionGroupNodeParent.FirstChild("member");
     while(!optionGroupNode.IsNull())
     {
       m_optionGroupsList.push_back(optionGroupNode);
-      optionGroupNode = optionGroupNode.NextNode("OptionGroup");
+      optionGroupNode = optionGroupNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

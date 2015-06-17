@@ -43,18 +43,20 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode parameterNode = resultNode.FirstChild("Parameter");
+    XmlNode parameterNodeParent = resultNode.FirstChild("Parameter");
+    XmlNode parameterNode = parameterNodeParent.FirstChild("member");
     while(!parameterNode.IsNull())
     {
       m_parameters.push_back(parameterNode);
-      parameterNode = parameterNode.NextNode("Parameter");
+      parameterNode = parameterNode.NextNode("member");
     }
 
-    XmlNode cacheNodeTypeSpecificParameterNode = resultNode.FirstChild("CacheNodeTypeSpecificParameter");
+    XmlNode cacheNodeTypeSpecificParameterNodeParent = resultNode.FirstChild("CacheNodeTypeSpecificParameter");
+    XmlNode cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNodeParent.FirstChild("member");
     while(!cacheNodeTypeSpecificParameterNode.IsNull())
     {
       m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParameterNode);
-      cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNode.NextNode("CacheNodeTypeSpecificParameter");
+      cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNode.NextNode("member");
     }
 
   }

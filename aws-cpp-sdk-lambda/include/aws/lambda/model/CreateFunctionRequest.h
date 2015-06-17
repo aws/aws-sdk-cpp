@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The name you want to assign to the function you are uploading. You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. </p>
     */
-    inline void SetFunctionName(const Aws::String& value) { m_functionName = value; }
+    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>The name you want to assign to the function you are uploading. You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. </p>
     */
-    inline void SetFunctionName(const char* value) { m_functionName.assign(value); }
+    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /*
      <p>The name you want to assign to the function you are uploading. You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. </p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</p>
     */
-    inline void SetRuntime(const Runtime& value) { m_runtime = value; }
+    inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /*
      <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</p>
@@ -80,12 +80,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> </p>
     */
-    inline void SetRole(const Aws::String& value) { m_role = value; }
+    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> </p>
     */
-    inline void SetRole(const char* value) { m_role.assign(value); }
+    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> </p>
@@ -104,12 +104,12 @@ namespace Model
     /*
      <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
     */
-    inline void SetHandler(const Aws::String& value) { m_handler = value; }
+    inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
 
     /*
      <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
     */
-    inline void SetHandler(const char* value) { m_handler.assign(value); }
+    inline void SetHandler(const char* value) { m_handlerHasBeenSet = true; m_handler.assign(value); }
 
     /*
      <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
@@ -174,24 +174,28 @@ namespace Model
     inline CreateFunctionRequest&  WithMemorySize(long value) { SetMemorySize(value); return *this;}
 
     /*
-     <p>A structure that includes ZipFile. </p>
+     <p>The code for the Lambda function. </p>
     */
     inline const FunctionCode& GetCode() const{ return m_code; }
     /*
-     <p>A structure that includes ZipFile. </p>
+     <p>The code for the Lambda function. </p>
     */
-    inline void SetCode(const FunctionCode& value) { m_code = value; }
+    inline void SetCode(const FunctionCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /*
-     <p>A structure that includes ZipFile. </p>
+     <p>The code for the Lambda function. </p>
     */
     inline CreateFunctionRequest&  WithCode(const FunctionCode& value) { SetCode(value); return *this;}
 
   private:
     Aws::String m_functionName;
+    bool m_functionNameHasBeenSet;
     Runtime m_runtime;
+    bool m_runtimeHasBeenSet;
     Aws::String m_role;
+    bool m_roleHasBeenSet;
     Aws::String m_handler;
+    bool m_handlerHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     long m_timeout;
@@ -199,6 +203,7 @@ namespace Model
     long m_memorySize;
     bool m_memorySizeHasBeenSet;
     FunctionCode m_code;
+    bool m_codeHasBeenSet;
   };
 
 } // namespace Model

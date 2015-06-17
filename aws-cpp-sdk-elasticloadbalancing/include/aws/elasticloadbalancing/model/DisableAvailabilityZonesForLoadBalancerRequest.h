@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The Availability Zones.</p>
     */
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZones = value; }
+    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /*
      <p>The Availability Zones.</p>
@@ -75,16 +75,18 @@ namespace Model
     /*
      <p>The Availability Zones.</p>
     */
-    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZones.push_back(value); return *this; }
+    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>The Availability Zones.</p>
     */
-    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const char* value) { m_availabilityZones.push_back(value); return *this; }
+    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::Vector<Aws::String> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet;
   };
 
 } // namespace Model

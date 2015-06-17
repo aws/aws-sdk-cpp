@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The instance ID.</p>
@@ -89,6 +89,7 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     bool m_deleteElasticIp;
     bool m_deleteElasticIpHasBeenSet;
     bool m_deleteVolumes;

@@ -31,7 +31,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Information about a tag filter.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API EC2TagFilter
   {
@@ -41,66 +41,40 @@ namespace Model
     EC2TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The tag filter key.</p>
-    */
+    
     inline const Aws::String& GetKey() const{ return m_key; }
-    /*
-     <p>The tag filter key.</p>
-    */
+    
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The tag filter key.</p>
-    */
+    
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>The tag filter key.</p>
-    */
+    
     inline EC2TagFilter&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The tag filter key.</p>
-    */
+    
     inline EC2TagFilter& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     <p>The tag filter value.</p>
-    */
+    
     inline const Aws::String& GetValue() const{ return m_value; }
-    /*
-     <p>The tag filter value.</p>
-    */
+    
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>The tag filter value.</p>
-    */
+    
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p>The tag filter value.</p>
-    */
+    
     inline EC2TagFilter&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p>The tag filter value.</p>
-    */
+    
     inline EC2TagFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
-    /*
-     <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
-    */
+    
     inline const EC2TagFilterType& GetType() const{ return m_type; }
-    /*
-     <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
-    */
+    
     inline void SetType(const EC2TagFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /*
-     <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
-    */
+    
     inline EC2TagFilter&  WithType(const EC2TagFilterType& value) { SetType(value); return *this;}
 
   private:

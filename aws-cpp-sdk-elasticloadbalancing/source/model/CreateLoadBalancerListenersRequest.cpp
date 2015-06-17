@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-CreateLoadBalancerListenersRequest::CreateLoadBalancerListenersRequest()
+CreateLoadBalancerListenersRequest::CreateLoadBalancerListenersRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_listenersHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String CreateLoadBalancerListenersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateLoadBalancerListeners&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned listenersCount = 1;
-  for(auto& item : m_listeners)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Listeners.", listenersCount, "");
-    listenersCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_listenersHasBeenSet)
+  {
+    unsigned listenersCount = 1;
+    for(auto& item : m_listeners)
+    {
+      item.OutputToStream(ss, "Listeners.", listenersCount, "");
+      listenersCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

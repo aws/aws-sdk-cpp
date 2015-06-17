@@ -20,6 +20,9 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CreateDBSubnetGroupRequest::CreateDBSubnetGroupRequest() : 
+    m_dBSubnetGroupNameHasBeenSet(false),
+    m_dBSubnetGroupDescriptionHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,14 +31,23 @@ Aws::String CreateDBSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateDBSubnetGroup&";
-  ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
-  ss << "DBSubnetGroupDescription=" << StringUtils::URLEncode(m_dBSubnetGroupDescription.c_str()) << "&";
-  unsigned subnetIdsCount = 1;
-  for(auto& item : m_subnetIds)
+  if(m_dBSubnetGroupNameHasBeenSet)
   {
-    ss << "SubnetIdentifier." << subnetIdsCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    subnetIdsCount++;
+    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
+  if(m_dBSubnetGroupDescriptionHasBeenSet)
+  {
+    ss << "DBSubnetGroupDescription=" << StringUtils::URLEncode(m_dBSubnetGroupDescription.c_str()) << "&";
+  }
+  if(m_subnetIdsHasBeenSet)
+  {
+    unsigned subnetIdsCount = 1;
+    for(auto& item : m_subnetIds)
+    {
+      ss << "SubnetIdentifier." << subnetIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      subnetIdsCount++;
+    }
   }
   if(m_tagsHasBeenSet)
   {

@@ -38,6 +38,7 @@
 #include <aws/sns/model/PublishResult.h>
 #include <aws/sns/model/SubscribeResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -170,34 +171,34 @@ namespace Model
 
   class SNSClient;
 
-  typedef Aws::Utils::Event<SNSClient, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&> AddPermissionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&> AddTagsToResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ConfirmSubscriptionRequest&, const Model::ConfirmSubscriptionOutcome&> ConfirmSubscriptionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::CreatePlatformApplicationRequest&, const Model::CreatePlatformApplicationOutcome&> CreatePlatformApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::CreatePlatformEndpointRequest&, const Model::CreatePlatformEndpointOutcome&> CreatePlatformEndpointOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::CreateTopicRequest&, const Model::CreateTopicOutcome&> CreateTopicOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&> DeleteEndpointOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::DeletePlatformApplicationRequest&, const Model::DeletePlatformApplicationOutcome&> DeletePlatformApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::DeleteTopicRequest&, const Model::DeleteTopicOutcome&> DeleteTopicOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::GetEndpointAttributesRequest&, const Model::GetEndpointAttributesOutcome&> GetEndpointAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::GetPlatformApplicationAttributesRequest&, const Model::GetPlatformApplicationAttributesOutcome&> GetPlatformApplicationAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::GetSubscriptionAttributesRequest&, const Model::GetSubscriptionAttributesOutcome&> GetSubscriptionAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::GetTopicAttributesRequest&, const Model::GetTopicAttributesOutcome&> GetTopicAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ListEndpointsByPlatformApplicationRequest&, const Model::ListEndpointsByPlatformApplicationOutcome&> ListEndpointsByPlatformApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ListPlatformApplicationsRequest&, const Model::ListPlatformApplicationsOutcome&> ListPlatformApplicationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&> ListSubscriptionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ListSubscriptionsByTopicRequest&, const Model::ListSubscriptionsByTopicOutcome&> ListSubscriptionsByTopicOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&> ListTagsForResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&> ListTopicsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::PublishRequest&, const Model::PublishOutcome&> PublishOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&> RemovePermissionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&> RemoveTagsFromResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::SetEndpointAttributesRequest&, const Model::SetEndpointAttributesOutcome&> SetEndpointAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::SetPlatformApplicationAttributesRequest&, const Model::SetPlatformApplicationAttributesOutcome&> SetPlatformApplicationAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::SetSubscriptionAttributesRequest&, const Model::SetSubscriptionAttributesOutcome&> SetSubscriptionAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::SetTopicAttributesRequest&, const Model::SetTopicAttributesOutcome&> SetTopicAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::SubscribeRequest&, const Model::SubscribeOutcome&> SubscribeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SNSClient, const Model::UnsubscribeRequest&, const Model::UnsubscribeOutcome&> UnsubscribeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const Aws::Client::AsyncCallerContext*> AddPermissionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const Aws::Client::AsyncCallerContext*> AddTagsToResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ConfirmSubscriptionRequest&, const Model::ConfirmSubscriptionOutcome&, const Aws::Client::AsyncCallerContext*> ConfirmSubscriptionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::CreatePlatformApplicationRequest&, const Model::CreatePlatformApplicationOutcome&, const Aws::Client::AsyncCallerContext*> CreatePlatformApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::CreatePlatformEndpointRequest&, const Model::CreatePlatformEndpointOutcome&, const Aws::Client::AsyncCallerContext*> CreatePlatformEndpointOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::CreateTopicRequest&, const Model::CreateTopicOutcome&, const Aws::Client::AsyncCallerContext*> CreateTopicOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const Aws::Client::AsyncCallerContext*> DeleteEndpointOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::DeletePlatformApplicationRequest&, const Model::DeletePlatformApplicationOutcome&, const Aws::Client::AsyncCallerContext*> DeletePlatformApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::DeleteTopicRequest&, const Model::DeleteTopicOutcome&, const Aws::Client::AsyncCallerContext*> DeleteTopicOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::GetEndpointAttributesRequest&, const Model::GetEndpointAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetEndpointAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::GetPlatformApplicationAttributesRequest&, const Model::GetPlatformApplicationAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetPlatformApplicationAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::GetSubscriptionAttributesRequest&, const Model::GetSubscriptionAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetSubscriptionAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::GetTopicAttributesRequest&, const Model::GetTopicAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetTopicAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ListEndpointsByPlatformApplicationRequest&, const Model::ListEndpointsByPlatformApplicationOutcome&, const Aws::Client::AsyncCallerContext*> ListEndpointsByPlatformApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ListPlatformApplicationsRequest&, const Model::ListPlatformApplicationsOutcome&, const Aws::Client::AsyncCallerContext*> ListPlatformApplicationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&, const Aws::Client::AsyncCallerContext*> ListSubscriptionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ListSubscriptionsByTopicRequest&, const Model::ListSubscriptionsByTopicOutcome&, const Aws::Client::AsyncCallerContext*> ListSubscriptionsByTopicOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const Aws::Client::AsyncCallerContext*> ListTagsForResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&, const Aws::Client::AsyncCallerContext*> ListTopicsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::PublishRequest&, const Model::PublishOutcome&, const Aws::Client::AsyncCallerContext*> PublishOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const Aws::Client::AsyncCallerContext*> RemovePermissionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const Aws::Client::AsyncCallerContext*> RemoveTagsFromResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::SetEndpointAttributesRequest&, const Model::SetEndpointAttributesOutcome&, const Aws::Client::AsyncCallerContext*> SetEndpointAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::SetPlatformApplicationAttributesRequest&, const Model::SetPlatformApplicationAttributesOutcome&, const Aws::Client::AsyncCallerContext*> SetPlatformApplicationAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::SetSubscriptionAttributesRequest&, const Model::SetSubscriptionAttributesOutcome&, const Aws::Client::AsyncCallerContext*> SetSubscriptionAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::SetTopicAttributesRequest&, const Model::SetTopicAttributesOutcome&, const Aws::Client::AsyncCallerContext*> SetTopicAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::SubscribeRequest&, const Model::SubscribeOutcome&, const Aws::Client::AsyncCallerContext*> SubscribeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<SNSClient, const Model::UnsubscribeRequest&, const Model::UnsubscribeOutcome&, const Aws::Client::AsyncCallerContext*> UnsubscribeOutcomeReceivedEvent;
 
   /*
     <fullname>Amazon Simple Notification Service</fullname> <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a>. </p> <p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. </p>
@@ -246,7 +247,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddPermissionAsync(const Model::AddPermissionRequest& request) const;
+     void AddPermissionAsync(const Model::AddPermissionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -265,7 +266,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request) const;
+     void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p>
@@ -284,7 +285,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ConfirmSubscriptionAsync(const Model::ConfirmSubscriptionRequest& request) const;
+     void ConfirmSubscriptionAsync(const Model::ConfirmSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a platform application object for one of the supported push notification services, such as APNS and GCM, to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned when using <code>CreatePlatformApplication</code> is then used as an attribute for the <code>CreatePlatformEndpoint</code> action. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -303,7 +304,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreatePlatformApplicationAsync(const Model::CreatePlatformApplicationRequest& request) const;
+     void CreatePlatformApplicationAsync(const Model::CreatePlatformApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn that is returned from <code>CreatePlatformApplication</code>. The EndpointArn that is returned when using <code>CreatePlatformEndpoint</code> can then be used by the <code>Publish</code> action to send a message to a mobile app or by the <code>Subscribe</code> action for subscription to a topic. The <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p> <p>When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId. The token field must also contain the ChannelId. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint for Baidu</a>. </p>
@@ -322,7 +323,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreatePlatformEndpointAsync(const Model::CreatePlatformEndpointRequest& request) const;
+     void CreatePlatformEndpointAsync(const Model::CreatePlatformEndpointRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a topic to which notifications can be published. Users can create at most 3000 topics. For more information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.</p>
@@ -341,7 +342,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateTopicAsync(const Model::CreateTopicRequest& request) const;
+     void CreateTopicAsync(const Model::CreateTopicRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the endpoint from Amazon SNS. This action is idempotent. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -360,7 +361,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request) const;
+     void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -379,7 +380,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeletePlatformApplicationAsync(const Model::DeletePlatformApplicationRequest& request) const;
+     void DeletePlatformApplicationAsync(const Model::DeletePlatformApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>
@@ -398,7 +399,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteTopicAsync(const Model::DeleteTopicRequest& request) const;
+     void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -417,7 +418,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetEndpointAttributesAsync(const Model::GetEndpointAttributesRequest& request) const;
+     void GetEndpointAttributesAsync(const Model::GetEndpointAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the attributes of the platform application object for the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -436,7 +437,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetPlatformApplicationAttributesAsync(const Model::GetPlatformApplicationAttributesRequest& request) const;
+     void GetPlatformApplicationAttributesAsync(const Model::GetPlatformApplicationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns all of the properties of a subscription.</p>
@@ -455,7 +456,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetSubscriptionAttributesAsync(const Model::GetSubscriptionAttributesRequest& request) const;
+     void GetSubscriptionAttributesAsync(const Model::GetSubscriptionAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user. </p>
@@ -474,7 +475,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetTopicAttributesAsync(const Model::GetTopicAttributesRequest& request) const;
+     void GetTopicAttributesAsync(const Model::GetTopicAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -493,7 +494,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListEndpointsByPlatformApplicationAsync(const Model::ListEndpointsByPlatformApplicationRequest& request) const;
+     void ListEndpointsByPlatformApplicationAsync(const Model::ListEndpointsByPlatformApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the platform application objects for the supported push notification services, such as APNS and GCM. The results for <code>ListPlatformApplications</code> are paginated and return a limited list of applications, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -512,7 +513,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListPlatformApplicationsAsync(const Model::ListPlatformApplicationsRequest& request) const;
+     void ListPlatformApplicationsAsync(const Model::ListPlatformApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code> call to get further results.</p>
@@ -531,7 +532,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListSubscriptionsAsync(const Model::ListSubscriptionsRequest& request) const;
+     void ListSubscriptionsAsync(const Model::ListSubscriptionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.</p>
@@ -550,7 +551,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListSubscriptionsByTopicAsync(const Model::ListSubscriptionsByTopicRequest& request) const;
+     void ListSubscriptionsByTopicAsync(const Model::ListSubscriptionsByTopicRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -569,7 +570,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request) const;
+     void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get further results.</p>
@@ -588,7 +589,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTopicsAsync(const Model::ListTopicsRequest& request) const;
+     void ListTopicsAsync(const Model::ListTopicsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the notification protocol selected.</p> <p>To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn. The EndpointArn is returned when making a call with the <code>CreatePlatformEndpoint</code> action. The second example below shows a request and response for publishing to a mobile endpoint. </p>
@@ -607,7 +608,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PublishAsync(const Model::PublishRequest& request) const;
+     void PublishAsync(const Model::PublishRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes a statement from a topic's access control policy.</p>
@@ -626,7 +627,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemovePermissionAsync(const Model::RemovePermissionRequest& request) const;
+     void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -645,7 +646,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request) const;
+     void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -664,7 +665,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetEndpointAttributesAsync(const Model::SetEndpointAttributesRequest& request) const;
+     void SetEndpointAttributesAsync(const Model::SetEndpointAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -683,7 +684,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetPlatformApplicationAttributesAsync(const Model::SetPlatformApplicationAttributesRequest& request) const;
+     void SetPlatformApplicationAttributesAsync(const Model::SetPlatformApplicationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Allows a subscription owner to set an attribute of the topic to a new value.</p>
@@ -702,7 +703,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetSubscriptionAttributesAsync(const Model::SetSubscriptionAttributesRequest& request) const;
+     void SetSubscriptionAttributesAsync(const Model::SetSubscriptionAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
@@ -721,7 +722,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetTopicAttributesAsync(const Model::SetTopicAttributesRequest& request) const;
+     void SetTopicAttributesAsync(const Model::SetTopicAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the confirmation message. Confirmation tokens are valid for three days.</p>
@@ -740,7 +741,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SubscribeAsync(const Model::SubscribeRequest& request) const;
+     void SubscribeAsync(const Model::SubscribeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p>
@@ -759,7 +760,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UnsubscribeAsync(const Model::UnsubscribeRequest& request) const;
+     void UnsubscribeAsync(const Model::UnsubscribeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddPermissionAsync to call upon completion to the handler chain. You need to call this to
@@ -1241,34 +1242,34 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request) const;
-    void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request) const;
-    void ConfirmSubscriptionAsyncHelper(const Model::ConfirmSubscriptionRequest& request) const;
-    void CreatePlatformApplicationAsyncHelper(const Model::CreatePlatformApplicationRequest& request) const;
-    void CreatePlatformEndpointAsyncHelper(const Model::CreatePlatformEndpointRequest& request) const;
-    void CreateTopicAsyncHelper(const Model::CreateTopicRequest& request) const;
-    void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request) const;
-    void DeletePlatformApplicationAsyncHelper(const Model::DeletePlatformApplicationRequest& request) const;
-    void DeleteTopicAsyncHelper(const Model::DeleteTopicRequest& request) const;
-    void GetEndpointAttributesAsyncHelper(const Model::GetEndpointAttributesRequest& request) const;
-    void GetPlatformApplicationAttributesAsyncHelper(const Model::GetPlatformApplicationAttributesRequest& request) const;
-    void GetSubscriptionAttributesAsyncHelper(const Model::GetSubscriptionAttributesRequest& request) const;
-    void GetTopicAttributesAsyncHelper(const Model::GetTopicAttributesRequest& request) const;
-    void ListEndpointsByPlatformApplicationAsyncHelper(const Model::ListEndpointsByPlatformApplicationRequest& request) const;
-    void ListPlatformApplicationsAsyncHelper(const Model::ListPlatformApplicationsRequest& request) const;
-    void ListSubscriptionsAsyncHelper(const Model::ListSubscriptionsRequest& request) const;
-    void ListSubscriptionsByTopicAsyncHelper(const Model::ListSubscriptionsByTopicRequest& request) const;
-    void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request) const;
-    void ListTopicsAsyncHelper(const Model::ListTopicsRequest& request) const;
-    void PublishAsyncHelper(const Model::PublishRequest& request) const;
-    void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request) const;
-    void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request) const;
-    void SetEndpointAttributesAsyncHelper(const Model::SetEndpointAttributesRequest& request) const;
-    void SetPlatformApplicationAttributesAsyncHelper(const Model::SetPlatformApplicationAttributesRequest& request) const;
-    void SetSubscriptionAttributesAsyncHelper(const Model::SetSubscriptionAttributesRequest& request) const;
-    void SetTopicAttributesAsyncHelper(const Model::SetTopicAttributesRequest& request) const;
-    void SubscribeAsyncHelper(const Model::SubscribeRequest& request) const;
-    void UnsubscribeAsyncHelper(const Model::UnsubscribeRequest& request) const;
+    void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ConfirmSubscriptionAsyncHelper(const Model::ConfirmSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreatePlatformApplicationAsyncHelper(const Model::CreatePlatformApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreatePlatformEndpointAsyncHelper(const Model::CreatePlatformEndpointRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateTopicAsyncHelper(const Model::CreateTopicRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeletePlatformApplicationAsyncHelper(const Model::DeletePlatformApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteTopicAsyncHelper(const Model::DeleteTopicRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetEndpointAttributesAsyncHelper(const Model::GetEndpointAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetPlatformApplicationAttributesAsyncHelper(const Model::GetPlatformApplicationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetSubscriptionAttributesAsyncHelper(const Model::GetSubscriptionAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetTopicAttributesAsyncHelper(const Model::GetTopicAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListEndpointsByPlatformApplicationAsyncHelper(const Model::ListEndpointsByPlatformApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListPlatformApplicationsAsyncHelper(const Model::ListPlatformApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListSubscriptionsAsyncHelper(const Model::ListSubscriptionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListSubscriptionsByTopicAsyncHelper(const Model::ListSubscriptionsByTopicRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTopicsAsyncHelper(const Model::ListTopicsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PublishAsyncHelper(const Model::PublishRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetEndpointAttributesAsyncHelper(const Model::SetEndpointAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetPlatformApplicationAttributesAsyncHelper(const Model::SetPlatformApplicationAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetSubscriptionAttributesAsyncHelper(const Model::SetSubscriptionAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetTopicAttributesAsyncHelper(const Model::SetTopicAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SubscribeAsyncHelper(const Model::SubscribeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UnsubscribeAsyncHelper(const Model::UnsubscribeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

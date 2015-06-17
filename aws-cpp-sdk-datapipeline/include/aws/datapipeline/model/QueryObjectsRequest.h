@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -82,12 +82,12 @@ namespace Model
     /*
      <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     */
-    inline void SetSphere(const Aws::String& value) { m_sphere = value; }
+    inline void SetSphere(const Aws::String& value) { m_sphereHasBeenSet = true; m_sphere = value; }
 
     /*
      <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     */
-    inline void SetSphere(const char* value) { m_sphere.assign(value); }
+    inline void SetSphere(const char* value) { m_sphereHasBeenSet = true; m_sphere.assign(value); }
 
     /*
      <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
@@ -139,9 +139,11 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Query m_query;
     bool m_queryHasBeenSet;
     Aws::String m_sphere;
+    bool m_sphereHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
     long m_limit;

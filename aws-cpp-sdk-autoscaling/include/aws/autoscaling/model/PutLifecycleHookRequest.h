@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the lifecycle hook.</p>
     */
-    inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookName = value; }
+    inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /*
      <p>The name of the lifecycle hook.</p>
     */
-    inline void SetLifecycleHookName(const char* value) { m_lifecycleHookName.assign(value); }
+    inline void SetLifecycleHookName(const char* value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName.assign(value); }
 
     /*
      <p>The name of the lifecycle hook.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group to which you want to assign the lifecycle hook.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group to which you want to assign the lifecycle hook.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the Auto Scaling group to which you want to assign the lifecycle hook.</p>
@@ -217,7 +217,9 @@ namespace Model
 
   private:
     Aws::String m_lifecycleHookName;
+    bool m_lifecycleHookNameHasBeenSet;
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_lifecycleTransition;
     bool m_lifecycleTransitionHasBeenSet;
     Aws::String m_roleARN;

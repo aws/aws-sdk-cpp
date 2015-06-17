@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() : 
+    m_stateHasBeenSet(false),
     m_creationDateTime(0.0),
+    m_creationDateTimeHasBeenSet(false),
     m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
     m_readyDateTime(0.0),
@@ -34,7 +36,9 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() :
 }
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(const JsonValue& jsonValue) : 
+    m_stateHasBeenSet(false),
     m_creationDateTime(0.0),
+    m_creationDateTimeHasBeenSet(false),
     m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
     m_readyDateTime(0.0),
@@ -48,9 +52,19 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(const JsonValue& json
 
 JobFlowExecutionStatusDetail& JobFlowExecutionStatusDetail::operator =(const JsonValue& jsonValue)
 {
-  m_state = JobFlowExecutionStateMapper::GetJobFlowExecutionStateForName(jsonValue.GetString("State"));
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = JobFlowExecutionStateMapper::GetJobFlowExecutionStateForName(jsonValue.GetString("State"));
 
-  m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreationDateTime"))
+  {
+    m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+
+    m_creationDateTimeHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("StartDateTime"))
   {
@@ -87,8 +101,16 @@ JsonValue JobFlowExecutionStatusDetail::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("State", JobFlowExecutionStateMapper::GetNameForJobFlowExecutionState(m_state));
-  payload.WithDouble("CreationDateTime", m_creationDateTime);
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", JobFlowExecutionStateMapper::GetNameForJobFlowExecutionState(m_state));
+  }
+
+  if(m_creationDateTimeHasBeenSet)
+  {
+   payload.WithDouble("CreationDateTime", m_creationDateTime);
+
+  }
 
   if(m_startDateTimeHasBeenSet)
   {

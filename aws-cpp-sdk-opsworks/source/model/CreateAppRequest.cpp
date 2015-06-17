@@ -22,9 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAppRequest::CreateAppRequest() : 
+    m_stackIdHasBeenSet(false),
     m_shortnameHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dataSourcesHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_appSourceHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_enableSsl(false),
@@ -39,7 +42,11 @@ Aws::String CreateAppRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
+
+  }
 
   if(m_shortnameHasBeenSet)
   {
@@ -47,7 +54,11 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   }
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -66,7 +77,11 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   }
 
-  payload.WithString("Type", AppTypeMapper::GetNameForAppType(m_type));
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", AppTypeMapper::GetNameForAppType(m_type));
+  }
+
   if(m_appSourceHasBeenSet)
   {
    payload.WithObject("AppSource", m_appSource.Jsonize());

@@ -24,16 +24,22 @@ using namespace Aws::Utils;
 InstanceGroupConfig::InstanceGroupConfig() : 
     m_nameHasBeenSet(false),
     m_marketHasBeenSet(false),
+    m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
-    m_instanceCount(0)
+    m_instanceTypeHasBeenSet(false),
+    m_instanceCount(0),
+    m_instanceCountHasBeenSet(false)
 {
 }
 
 InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_marketHasBeenSet(false),
+    m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
-    m_instanceCount(0)
+    m_instanceTypeHasBeenSet(false),
+    m_instanceCount(0),
+    m_instanceCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -54,7 +60,12 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
     m_marketHasBeenSet = true;
   }
 
-  m_instanceRole = InstanceRoleTypeMapper::GetInstanceRoleTypeForName(jsonValue.GetString("InstanceRole"));
+  if(jsonValue.ValueExists("InstanceRole"))
+  {
+    m_instanceRole = InstanceRoleTypeMapper::GetInstanceRoleTypeForName(jsonValue.GetString("InstanceRole"));
+
+    m_instanceRoleHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("BidPrice"))
   {
@@ -63,9 +74,19 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
     m_bidPriceHasBeenSet = true;
   }
 
-  m_instanceType = jsonValue.GetString("InstanceType");
+  if(jsonValue.ValueExists("InstanceType"))
+  {
+    m_instanceType = jsonValue.GetString("InstanceType");
 
-  m_instanceCount = jsonValue.GetInteger("InstanceCount");
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceCount"))
+  {
+    m_instanceCount = jsonValue.GetInteger("InstanceCount");
+
+    m_instanceCountHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -85,16 +106,28 @@ JsonValue InstanceGroupConfig::Jsonize() const
    payload.WithString("Market", MarketTypeMapper::GetNameForMarketType(m_market));
   }
 
-  payload.WithString("InstanceRole", InstanceRoleTypeMapper::GetNameForInstanceRoleType(m_instanceRole));
+  if(m_instanceRoleHasBeenSet)
+  {
+   payload.WithString("InstanceRole", InstanceRoleTypeMapper::GetNameForInstanceRoleType(m_instanceRole));
+  }
+
   if(m_bidPriceHasBeenSet)
   {
    payload.WithString("BidPrice", m_bidPrice);
 
   }
 
-  payload.WithString("InstanceType", m_instanceType);
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", m_instanceType);
 
-  payload.WithInteger("InstanceCount", m_instanceCount);
+  }
+
+  if(m_instanceCountHasBeenSet)
+  {
+   payload.WithInteger("InstanceCount", m_instanceCount);
+
+  }
 
   return std::move(payload);
 }

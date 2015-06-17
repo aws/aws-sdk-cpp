@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
+    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</p>
     */
-    inline void SetMessageBody(const Aws::String& value) { m_messageBody = value; }
+    inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /*
      <p>The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</p>
     */
-    inline void SetMessageBody(const char* value) { m_messageBody.assign(value); }
+    inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
 
     /*
      <p>The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</p>
@@ -123,7 +123,9 @@ namespace Model
 
   private:
     Aws::String m_queueUrl;
+    bool m_queueUrlHasBeenSet;
     Aws::String m_messageBody;
+    bool m_messageBodyHasBeenSet;
     long m_delaySeconds;
     bool m_delaySecondsHasBeenSet;
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;

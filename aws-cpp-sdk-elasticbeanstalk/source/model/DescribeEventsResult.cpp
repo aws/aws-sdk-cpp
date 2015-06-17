@@ -41,11 +41,12 @@ DescribeEventsResult& DescribeEventsResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode eventsNode = resultNode.FirstChild("Events");
+    XmlNode eventsNodeParent = resultNode.FirstChild("Events");
+    XmlNode eventsNode = eventsNodeParent.FirstChild("member");
     while(!eventsNode.IsNull())
     {
       m_events.push_back(eventsNode);
-      eventsNode = eventsNode.NextNode("Events");
+      eventsNode = eventsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 CookiePreference::CookiePreference() : 
+    m_forwardHasBeenSet(false),
     m_whitelistedNamesHasBeenSet(false)
 {
 }
 
 CookiePreference::CookiePreference(const XmlNode& xmlNode) : 
+    m_forwardHasBeenSet(false),
     m_whitelistedNamesHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ CookiePreference& CookiePreference::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode forwardNode = resultNode.FirstChild("Forward");
-    m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(forwardNode.GetText().c_str()).c_str());
+    if(!forwardNode.IsNull())
+    {
+      m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(forwardNode.GetText().c_str()).c_str());
+      m_forwardHasBeenSet = true;
+    }
     XmlNode whitelistedNamesNode = resultNode.FirstChild("WhitelistedNames");
     if(!whitelistedNamesNode.IsNull())
     {
@@ -56,8 +62,12 @@ CookiePreference& CookiePreference::operator =(const XmlNode& xmlNode)
 void CookiePreference::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode forwardNode = parentNode.CreateChildElement("Forward");
-  forwardNode.SetText(ItemSelectionMapper::GetNameForItemSelection(m_forward));
+  if(m_forwardHasBeenSet)
+  {
+   XmlNode forwardNode = parentNode.CreateChildElement("Forward");
+   forwardNode.SetText(ItemSelectionMapper::GetNameForItemSelection(m_forward));
+  }
+
   if(m_whitelistedNamesHasBeenSet)
   {
    XmlNode whitelistedNamesNode = parentNode.CreateChildElement("WhitelistedNames");

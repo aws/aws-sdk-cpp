@@ -20,6 +20,7 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateApplication&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";

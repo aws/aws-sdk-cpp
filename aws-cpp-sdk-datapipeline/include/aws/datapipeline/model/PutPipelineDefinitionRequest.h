@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -71,7 +71,7 @@ namespace Model
     /*
      <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
     */
-    inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjects = value; }
+    inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = value; }
 
     /*
      <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
@@ -81,7 +81,7 @@ namespace Model
     /*
      <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
     */
-    inline PutPipelineDefinitionRequest& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjects.push_back(value); return *this; }
+    inline PutPipelineDefinitionRequest& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.push_back(value); return *this; }
 
     /*
      <p>The parameter objects used with the pipeline.</p>
@@ -123,7 +123,9 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::Vector<PipelineObject> m_pipelineObjects;
+    bool m_pipelineObjectsHasBeenSet;
     Aws::Vector<ParameterObject> m_parameterObjects;
     bool m_parameterObjectsHasBeenSet;
     Aws::Vector<ParameterValue> m_parameterValues;

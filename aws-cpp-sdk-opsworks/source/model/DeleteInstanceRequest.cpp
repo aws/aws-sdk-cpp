@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteInstanceRequest::DeleteInstanceRequest() : 
+    m_instanceIdHasBeenSet(false),
     m_deleteElasticIp(false),
     m_deleteElasticIpHasBeenSet(false),
     m_deleteVolumes(false),
@@ -33,7 +34,11 @@ Aws::String DeleteInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("InstanceId", m_instanceId);
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
 
   if(m_deleteElasticIpHasBeenSet)
   {

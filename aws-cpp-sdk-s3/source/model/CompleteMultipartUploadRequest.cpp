@@ -25,7 +25,10 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() : 
+    m_bucketHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_multipartUploadHasBeenSet(false),
+    m_uploadIdHasBeenSet(false),
     m_requestPayerHasBeenSet(false)
 {
 }
@@ -49,9 +52,13 @@ Aws::String CompleteMultipartUploadRequest::SerializePayload() const
 void CompleteMultipartUploadRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    ss << m_uploadId;
-    uri.AddQueryStringParameter("uploadId", ss.str());
-    ss.str("");
+    if(m_uploadIdHasBeenSet)
+    {
+     ss << m_uploadId;
+     uri.AddQueryStringParameter("uploadId", ss.str());
+     ss.str("");
+    }
+
 }
 
 Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpecificHeaders() const

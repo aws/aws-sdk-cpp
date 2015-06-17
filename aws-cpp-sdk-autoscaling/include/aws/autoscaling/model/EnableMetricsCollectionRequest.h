@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name or ARN of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name or ARN of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name or ARN of the Auto Scaling group.</p>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
     */
-    inline void SetGranularity(const Aws::String& value) { m_granularity = value; }
+    inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /*
      <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
     */
-    inline void SetGranularity(const char* value) { m_granularity.assign(value); }
+    inline void SetGranularity(const char* value) { m_granularityHasBeenSet = true; m_granularity.assign(value); }
 
     /*
      <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
@@ -108,9 +108,11 @@ namespace Model
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_metrics;
     bool m_metricsHasBeenSet;
     Aws::String m_granularity;
+    bool m_granularityHasBeenSet;
   };
 
 } // namespace Model

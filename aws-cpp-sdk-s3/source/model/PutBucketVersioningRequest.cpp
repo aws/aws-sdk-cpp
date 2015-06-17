@@ -23,8 +23,10 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 PutBucketVersioningRequest::PutBucketVersioningRequest() : 
+    m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
-    m_mFAHasBeenSet(false)
+    m_mFAHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false)
 {
 }
 

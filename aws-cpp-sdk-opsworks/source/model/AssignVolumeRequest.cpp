@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AssignVolumeRequest::AssignVolumeRequest() : 
+    m_volumeIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false)
 {
 }
@@ -30,7 +31,11 @@ Aws::String AssignVolumeRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("VolumeId", m_volumeId);
+  if(m_volumeIdHasBeenSet)
+  {
+   payload.WithString("VolumeId", m_volumeId);
+
+  }
 
   if(m_instanceIdHasBeenSet)
   {

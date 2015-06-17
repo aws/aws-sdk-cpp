@@ -41,11 +41,12 @@ DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode processesNode = resultNode.FirstChild("Processes");
+    XmlNode processesNodeParent = resultNode.FirstChild("Processes");
+    XmlNode processesNode = processesNodeParent.FirstChild("member");
     while(!processesNode.IsNull())
     {
       m_processes.push_back(processesNode);
-      processesNode = processesNode.NextNode("Processes");
+      processesNode = processesNode.NextNode("member");
     }
 
   }

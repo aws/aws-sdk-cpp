@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user, which can be used for signing in to the AWS Management Console.</p>
@@ -74,7 +74,7 @@ namespace Model
     /*
      <p>The date when the password for the user was created.</p>
     */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /*
      <p>The date when the password for the user was created.</p>
@@ -97,7 +97,9 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     double m_createDate;
+    bool m_createDateHasBeenSet;
     bool m_passwordResetRequired;
     bool m_passwordResetRequiredHasBeenSet;
   };

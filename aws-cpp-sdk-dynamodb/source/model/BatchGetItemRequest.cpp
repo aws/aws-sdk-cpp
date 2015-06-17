@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchGetItemRequest::BatchGetItemRequest() : 
+    m_requestItemsHasBeenSet(false),
     m_returnConsumedCapacityHasBeenSet(false)
 {
 }
@@ -30,12 +31,16 @@ Aws::String BatchGetItemRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  JsonValue requestItemsJsonMap;
-  for(auto& requestItemsItem : m_requestItems)
+  if(m_requestItemsHasBeenSet)
   {
-    requestItemsJsonMap.WithObject(requestItemsItem.first, requestItemsItem.second.Jsonize());
+   JsonValue requestItemsJsonMap;
+   for(auto& requestItemsItem : m_requestItems)
+   {
+     requestItemsJsonMap.WithObject(requestItemsItem.first, requestItemsItem.second.Jsonize());
+   }
+   payload.WithObject("RequestItems", std::move(requestItemsJsonMap));
+
   }
-  payload.WithObject("RequestItems", std::move(requestItemsJsonMap));
 
   if(m_returnConsumedCapacityHasBeenSet)
   {

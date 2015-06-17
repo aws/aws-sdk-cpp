@@ -19,7 +19,11 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-AddPermissionRequest::AddPermissionRequest()
+AddPermissionRequest::AddPermissionRequest() : 
+    m_topicArnHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_aWSAccountIdHasBeenSet(false),
+    m_actionNameHasBeenSet(false)
 {
 }
 
@@ -27,21 +31,33 @@ Aws::String AddPermissionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AddPermission&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
-  unsigned aWSAccountIdCount = 1;
-  for(auto& item : m_aWSAccountId)
+  if(m_topicArnHasBeenSet)
   {
-    ss << "AWSAccountId." << aWSAccountIdCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    aWSAccountIdCount++;
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
-  unsigned actionNameCount = 1;
-  for(auto& item : m_actionName)
+  if(m_labelHasBeenSet)
   {
-    ss << "ActionName." << actionNameCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    actionNameCount++;
+    ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+  }
+  if(m_aWSAccountIdHasBeenSet)
+  {
+    unsigned aWSAccountIdCount = 1;
+    for(auto& item : m_aWSAccountId)
+    {
+      ss << "AWSAccountId." << aWSAccountIdCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      aWSAccountIdCount++;
+    }
+  }
+  if(m_actionNameHasBeenSet)
+  {
+    unsigned actionNameCount = 1;
+    for(auto& item : m_actionName)
+    {
+      ss << "ActionName." << actionNameCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      actionNameCount++;
+    }
   }
   ss << "Version=2010-03-31";
   return ss.str();

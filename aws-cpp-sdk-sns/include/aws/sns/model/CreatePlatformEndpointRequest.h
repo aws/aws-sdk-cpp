@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
     */
-    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArn = value; }
+    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
     */
-    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArn.assign(value); }
+    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
     /*
      <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called the registration ID.</p>
     */
-    inline void SetToken(const Aws::String& value) { m_token = value; }
+    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /*
      <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called the registration ID.</p>
     */
-    inline void SetToken(const char* value) { m_token.assign(value); }
+    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /*
      <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called the registration ID.</p>
@@ -133,7 +133,9 @@ namespace Model
 
   private:
     Aws::String m_platformApplicationArn;
+    bool m_platformApplicationArnHasBeenSet;
     Aws::String m_token;
+    bool m_tokenHasBeenSet;
     Aws::String m_customUserData;
     bool m_customUserDataHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_attributes;

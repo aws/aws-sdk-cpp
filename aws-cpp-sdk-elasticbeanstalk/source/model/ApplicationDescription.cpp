@@ -78,24 +78,26 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
       m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
       m_dateUpdatedHasBeenSet = true;
     }
-    XmlNode versionsNode = resultNode.FirstChild("Versions");
+    XmlNode versionsNodeParent = resultNode.FirstChild("Versions");
+    XmlNode versionsNode = versionsNodeParent.FirstChild("member");
     if(!versionsNode.IsNull())
     {
       while(!versionsNode.IsNull())
       {
         m_versions.push_back(StringUtils::Trim(versionsNode.GetText().c_str()));
-        versionsNode = versionsNode.NextNode("Versions");
+        versionsNode = versionsNode.NextNode("member");
       }
 
       m_versionsHasBeenSet = true;
     }
-    XmlNode configurationTemplatesNode = resultNode.FirstChild("ConfigurationTemplates");
+    XmlNode configurationTemplatesNodeParent = resultNode.FirstChild("ConfigurationTemplates");
+    XmlNode configurationTemplatesNode = configurationTemplatesNodeParent.FirstChild("member");
     if(!configurationTemplatesNode.IsNull())
     {
       while(!configurationTemplatesNode.IsNull())
       {
         m_configurationTemplates.push_back(StringUtils::Trim(configurationTemplatesNode.GetText().c_str()));
-        configurationTemplatesNode = configurationTemplatesNode.NextNode("ConfigurationTemplates");
+        configurationTemplatesNode = configurationTemplatesNode.NextNode("member");
       }
 
       m_configurationTemplatesHasBeenSet = true;

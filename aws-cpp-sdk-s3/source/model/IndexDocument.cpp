@@ -23,11 +23,13 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-IndexDocument::IndexDocument()
+IndexDocument::IndexDocument() : 
+    m_suffixHasBeenSet(false)
 {
 }
 
-IndexDocument::IndexDocument(const XmlNode& xmlNode)
+IndexDocument::IndexDocument(const XmlNode& xmlNode) : 
+    m_suffixHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode suffixNode = resultNode.FirstChild("Suffix");
-    m_suffix = StringUtils::Trim(suffixNode.GetText().c_str());
+    if(!suffixNode.IsNull())
+    {
+      m_suffix = StringUtils::Trim(suffixNode.GetText().c_str());
+      m_suffixHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +54,10 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
 void IndexDocument::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode suffixNode = parentNode.CreateChildElement("Suffix");
-  suffixNode.SetText(m_suffix);
+  if(m_suffixHasBeenSet)
+  {
+   XmlNode suffixNode = parentNode.CreateChildElement("Suffix");
+   suffixNode.SetText(m_suffix);
+  }
+
 }

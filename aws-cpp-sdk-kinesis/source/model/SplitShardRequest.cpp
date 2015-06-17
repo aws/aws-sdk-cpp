@@ -21,7 +21,10 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SplitShardRequest::SplitShardRequest()
+SplitShardRequest::SplitShardRequest() : 
+    m_streamNameHasBeenSet(false),
+    m_shardToSplitHasBeenSet(false),
+    m_newStartingHashKeyHasBeenSet(false)
 {
 }
 
@@ -29,11 +32,23 @@ Aws::String SplitShardRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
 
-  payload.WithString("ShardToSplit", m_shardToSplit);
+  }
 
-  payload.WithString("NewStartingHashKey", m_newStartingHashKey);
+  if(m_shardToSplitHasBeenSet)
+  {
+   payload.WithString("ShardToSplit", m_shardToSplit);
+
+  }
+
+  if(m_newStartingHashKeyHasBeenSet)
+  {
+   payload.WithString("NewStartingHashKey", m_newStartingHashKey);
+
+  }
 
   return payload.WriteReadable();
 }

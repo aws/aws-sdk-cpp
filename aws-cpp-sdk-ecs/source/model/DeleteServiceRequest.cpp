@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteServiceRequest::DeleteServiceRequest() : 
-    m_clusterHasBeenSet(false)
+    m_clusterHasBeenSet(false),
+    m_serviceHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,11 @@ Aws::String DeleteServiceRequest::SerializePayload() const
 
   }
 
-  payload.WithString("service", m_service);
+  if(m_serviceHasBeenSet)
+  {
+   payload.WithString("service", m_service);
+
+  }
 
   return payload.WriteReadable();
 }

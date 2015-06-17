@@ -40,12 +40,12 @@ namespace Model
     /*
      <p> The name of a cluster parameter group for which to return details. </p>
     */
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
+    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of a cluster parameter group for which to return details. </p>
     */
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupName.assign(value); }
+    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
 
     /*
      <p> The name of a cluster parameter group for which to return details. </p>
@@ -121,6 +121,7 @@ namespace Model
 
   private:
     Aws::String m_parameterGroupName;
+    bool m_parameterGroupNameHasBeenSet;
     Aws::String m_source;
     bool m_sourceHasBeenSet;
     long m_maxRecords;

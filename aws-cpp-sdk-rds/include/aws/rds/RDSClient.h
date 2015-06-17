@@ -74,6 +74,7 @@
 #include <aws/rds/model/RestoreDBInstanceToPointInTimeResult.h>
 #include <aws/rds/model/RevokeDBSecurityGroupIngressResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -296,64 +297,64 @@ namespace Model
 
   class RDSClient;
 
-  typedef Aws::Utils::Event<RDSClient, const Model::AddSourceIdentifierToSubscriptionRequest&, const Model::AddSourceIdentifierToSubscriptionOutcome&> AddSourceIdentifierToSubscriptionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&> AddTagsToResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&> ApplyPendingMaintenanceActionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::AuthorizeDBSecurityGroupIngressRequest&, const Model::AuthorizeDBSecurityGroupIngressOutcome&> AuthorizeDBSecurityGroupIngressOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CopyDBParameterGroupRequest&, const Model::CopyDBParameterGroupOutcome&> CopyDBParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CopyDBSnapshotRequest&, const Model::CopyDBSnapshotOutcome&> CopyDBSnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CopyOptionGroupRequest&, const Model::CopyOptionGroupOutcome&> CopyOptionGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBInstanceRequest&, const Model::CreateDBInstanceOutcome&> CreateDBInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBInstanceReadReplicaRequest&, const Model::CreateDBInstanceReadReplicaOutcome&> CreateDBInstanceReadReplicaOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBParameterGroupRequest&, const Model::CreateDBParameterGroupOutcome&> CreateDBParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBSecurityGroupRequest&, const Model::CreateDBSecurityGroupOutcome&> CreateDBSecurityGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBSnapshotRequest&, const Model::CreateDBSnapshotOutcome&> CreateDBSnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBSubnetGroupRequest&, const Model::CreateDBSubnetGroupOutcome&> CreateDBSubnetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&> CreateEventSubscriptionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::CreateOptionGroupRequest&, const Model::CreateOptionGroupOutcome&> CreateOptionGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBInstanceRequest&, const Model::DeleteDBInstanceOutcome&> DeleteDBInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBParameterGroupRequest&, const Model::DeleteDBParameterGroupOutcome&> DeleteDBParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBSecurityGroupRequest&, const Model::DeleteDBSecurityGroupOutcome&> DeleteDBSecurityGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBSnapshotRequest&, const Model::DeleteDBSnapshotOutcome&> DeleteDBSnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBSubnetGroupRequest&, const Model::DeleteDBSubnetGroupOutcome&> DeleteDBSubnetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&> DeleteEventSubscriptionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DeleteOptionGroupRequest&, const Model::DeleteOptionGroupOutcome&> DeleteOptionGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&> DescribeAccountAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&> DescribeCertificatesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBEngineVersionsRequest&, const Model::DescribeDBEngineVersionsOutcome&> DescribeDBEngineVersionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBInstancesRequest&, const Model::DescribeDBInstancesOutcome&> DescribeDBInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBLogFilesRequest&, const Model::DescribeDBLogFilesOutcome&> DescribeDBLogFilesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBParameterGroupsRequest&, const Model::DescribeDBParameterGroupsOutcome&> DescribeDBParameterGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBParametersRequest&, const Model::DescribeDBParametersOutcome&> DescribeDBParametersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBSecurityGroupsRequest&, const Model::DescribeDBSecurityGroupsOutcome&> DescribeDBSecurityGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBSnapshotsRequest&, const Model::DescribeDBSnapshotsOutcome&> DescribeDBSnapshotsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBSubnetGroupsRequest&, const Model::DescribeDBSubnetGroupsOutcome&> DescribeDBSubnetGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEngineDefaultParametersRequest&, const Model::DescribeEngineDefaultParametersOutcome&> DescribeEngineDefaultParametersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&> DescribeEventCategoriesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&> DescribeEventSubscriptionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&> DescribeEventsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeOptionGroupOptionsRequest&, const Model::DescribeOptionGroupOptionsOutcome&> DescribeOptionGroupOptionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeOptionGroupsRequest&, const Model::DescribeOptionGroupsOutcome&> DescribeOptionGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeOrderableDBInstanceOptionsRequest&, const Model::DescribeOrderableDBInstanceOptionsOutcome&> DescribeOrderableDBInstanceOptionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribePendingMaintenanceActionsRequest&, const Model::DescribePendingMaintenanceActionsOutcome&> DescribePendingMaintenanceActionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeReservedDBInstancesRequest&, const Model::DescribeReservedDBInstancesOutcome&> DescribeReservedDBInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DescribeReservedDBInstancesOfferingsRequest&, const Model::DescribeReservedDBInstancesOfferingsOutcome&> DescribeReservedDBInstancesOfferingsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::DownloadDBLogFilePortionRequest&, const Model::DownloadDBLogFilePortionOutcome&> DownloadDBLogFilePortionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&> ListTagsForResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ModifyDBInstanceRequest&, const Model::ModifyDBInstanceOutcome&> ModifyDBInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ModifyDBParameterGroupRequest&, const Model::ModifyDBParameterGroupOutcome&> ModifyDBParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&> ModifyDBSubnetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&> ModifyEventSubscriptionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ModifyOptionGroupRequest&, const Model::ModifyOptionGroupOutcome&> ModifyOptionGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::PromoteReadReplicaRequest&, const Model::PromoteReadReplicaOutcome&> PromoteReadReplicaOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::PurchaseReservedDBInstancesOfferingRequest&, const Model::PurchaseReservedDBInstancesOfferingOutcome&> PurchaseReservedDBInstancesOfferingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::RebootDBInstanceRequest&, const Model::RebootDBInstanceOutcome&> RebootDBInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::RemoveSourceIdentifierFromSubscriptionRequest&, const Model::RemoveSourceIdentifierFromSubscriptionOutcome&> RemoveSourceIdentifierFromSubscriptionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&> RemoveTagsFromResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::ResetDBParameterGroupRequest&, const Model::ResetDBParameterGroupOutcome&> ResetDBParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::RestoreDBInstanceFromDBSnapshotRequest&, const Model::RestoreDBInstanceFromDBSnapshotOutcome&> RestoreDBInstanceFromDBSnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::RestoreDBInstanceToPointInTimeRequest&, const Model::RestoreDBInstanceToPointInTimeOutcome&> RestoreDBInstanceToPointInTimeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<RDSClient, const Model::RevokeDBSecurityGroupIngressRequest&, const Model::RevokeDBSecurityGroupIngressOutcome&> RevokeDBSecurityGroupIngressOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::AddSourceIdentifierToSubscriptionRequest&, const Model::AddSourceIdentifierToSubscriptionOutcome&, const Aws::Client::AsyncCallerContext*> AddSourceIdentifierToSubscriptionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const Aws::Client::AsyncCallerContext*> AddTagsToResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const Aws::Client::AsyncCallerContext*> ApplyPendingMaintenanceActionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::AuthorizeDBSecurityGroupIngressRequest&, const Model::AuthorizeDBSecurityGroupIngressOutcome&, const Aws::Client::AsyncCallerContext*> AuthorizeDBSecurityGroupIngressOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CopyDBParameterGroupRequest&, const Model::CopyDBParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> CopyDBParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CopyDBSnapshotRequest&, const Model::CopyDBSnapshotOutcome&, const Aws::Client::AsyncCallerContext*> CopyDBSnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CopyOptionGroupRequest&, const Model::CopyOptionGroupOutcome&, const Aws::Client::AsyncCallerContext*> CopyOptionGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBInstanceRequest&, const Model::CreateDBInstanceOutcome&, const Aws::Client::AsyncCallerContext*> CreateDBInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBInstanceReadReplicaRequest&, const Model::CreateDBInstanceReadReplicaOutcome&, const Aws::Client::AsyncCallerContext*> CreateDBInstanceReadReplicaOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBParameterGroupRequest&, const Model::CreateDBParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateDBParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBSecurityGroupRequest&, const Model::CreateDBSecurityGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateDBSecurityGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBSnapshotRequest&, const Model::CreateDBSnapshotOutcome&, const Aws::Client::AsyncCallerContext*> CreateDBSnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateDBSubnetGroupRequest&, const Model::CreateDBSubnetGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateDBSubnetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const Aws::Client::AsyncCallerContext*> CreateEventSubscriptionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::CreateOptionGroupRequest&, const Model::CreateOptionGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateOptionGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBInstanceRequest&, const Model::DeleteDBInstanceOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDBInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBParameterGroupRequest&, const Model::DeleteDBParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDBParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBSecurityGroupRequest&, const Model::DeleteDBSecurityGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDBSecurityGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBSnapshotRequest&, const Model::DeleteDBSnapshotOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDBSnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteDBSubnetGroupRequest&, const Model::DeleteDBSubnetGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDBSubnetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const Aws::Client::AsyncCallerContext*> DeleteEventSubscriptionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DeleteOptionGroupRequest&, const Model::DeleteOptionGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteOptionGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAccountAttributesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCertificatesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBEngineVersionsRequest&, const Model::DescribeDBEngineVersionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBEngineVersionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBInstancesRequest&, const Model::DescribeDBInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBLogFilesRequest&, const Model::DescribeDBLogFilesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBLogFilesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBParameterGroupsRequest&, const Model::DescribeDBParameterGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBParameterGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBParametersRequest&, const Model::DescribeDBParametersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBParametersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBSecurityGroupsRequest&, const Model::DescribeDBSecurityGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBSecurityGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBSnapshotsRequest&, const Model::DescribeDBSnapshotsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBSnapshotsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeDBSubnetGroupsRequest&, const Model::DescribeDBSubnetGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDBSubnetGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEngineDefaultParametersRequest&, const Model::DescribeEngineDefaultParametersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEngineDefaultParametersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEventCategoriesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEventSubscriptionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeOptionGroupOptionsRequest&, const Model::DescribeOptionGroupOptionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeOptionGroupOptionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeOptionGroupsRequest&, const Model::DescribeOptionGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeOptionGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeOrderableDBInstanceOptionsRequest&, const Model::DescribeOrderableDBInstanceOptionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeOrderableDBInstanceOptionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribePendingMaintenanceActionsRequest&, const Model::DescribePendingMaintenanceActionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribePendingMaintenanceActionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeReservedDBInstancesRequest&, const Model::DescribeReservedDBInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeReservedDBInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DescribeReservedDBInstancesOfferingsRequest&, const Model::DescribeReservedDBInstancesOfferingsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeReservedDBInstancesOfferingsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::DownloadDBLogFilePortionRequest&, const Model::DownloadDBLogFilePortionOutcome&, const Aws::Client::AsyncCallerContext*> DownloadDBLogFilePortionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const Aws::Client::AsyncCallerContext*> ListTagsForResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ModifyDBInstanceRequest&, const Model::ModifyDBInstanceOutcome&, const Aws::Client::AsyncCallerContext*> ModifyDBInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ModifyDBParameterGroupRequest&, const Model::ModifyDBParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> ModifyDBParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&, const Aws::Client::AsyncCallerContext*> ModifyDBSubnetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const Aws::Client::AsyncCallerContext*> ModifyEventSubscriptionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ModifyOptionGroupRequest&, const Model::ModifyOptionGroupOutcome&, const Aws::Client::AsyncCallerContext*> ModifyOptionGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::PromoteReadReplicaRequest&, const Model::PromoteReadReplicaOutcome&, const Aws::Client::AsyncCallerContext*> PromoteReadReplicaOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::PurchaseReservedDBInstancesOfferingRequest&, const Model::PurchaseReservedDBInstancesOfferingOutcome&, const Aws::Client::AsyncCallerContext*> PurchaseReservedDBInstancesOfferingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::RebootDBInstanceRequest&, const Model::RebootDBInstanceOutcome&, const Aws::Client::AsyncCallerContext*> RebootDBInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::RemoveSourceIdentifierFromSubscriptionRequest&, const Model::RemoveSourceIdentifierFromSubscriptionOutcome&, const Aws::Client::AsyncCallerContext*> RemoveSourceIdentifierFromSubscriptionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const Aws::Client::AsyncCallerContext*> RemoveTagsFromResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::ResetDBParameterGroupRequest&, const Model::ResetDBParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> ResetDBParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::RestoreDBInstanceFromDBSnapshotRequest&, const Model::RestoreDBInstanceFromDBSnapshotOutcome&, const Aws::Client::AsyncCallerContext*> RestoreDBInstanceFromDBSnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::RestoreDBInstanceToPointInTimeRequest&, const Model::RestoreDBInstanceToPointInTimeOutcome&, const Aws::Client::AsyncCallerContext*> RestoreDBInstanceToPointInTimeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<RDSClient, const Model::RevokeDBSecurityGroupIngressRequest&, const Model::RevokeDBSecurityGroupIngressOutcome&, const Aws::Client::AsyncCallerContext*> RevokeDBSecurityGroupIngressOutcomeReceivedEvent;
 
   /*
     <fullname>Amazon Relational Database Service</fullname> <p> Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks, freeing up developers to focus on what makes their applications and businesses unique. </p> <p> Amazon RDS gives you access to the capabilities of a MySQL, PostgreSQL, Microsoft SQL Server, Oracle, or Aurora database server. This means the code, applications, and tools you already use today with your existing databases work with Amazon RDS without modification. Amazon RDS automatically backs up your database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can scale your database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services, there are no up-front investments, and you pay only for the resources you use. </p> <p> This is an interface reference for Amazon RDS. It contains documentation for a programming or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is asynchronous, which means that some interfaces may require techniques such as polling or callback functions to determine when a command has been applied. In this reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the maintenance window. For a summary of the Amazon RDS interfaces, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available RDS Interfaces</a>. </p>
@@ -402,7 +403,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddSourceIdentifierToSubscriptionAsync(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
+     void AddSourceIdentifierToSubscriptionAsync(const Model::AddSourceIdentifierToSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon RDS resources, or used in Condition statement in IAM policy for Amazon RDS.</p> <p>For an overview on tagging Amazon RDS resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS Resources</a>.</p>
@@ -421,7 +422,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request) const;
+     void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Applies a pending maintenance action to a resource (for example, a DB instance).</p>
@@ -440,7 +441,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ApplyPendingMaintenanceActionAsync(const Model::ApplyPendingMaintenanceActionRequest& request) const;
+     void ApplyPendingMaintenanceActionAsync(const Model::ApplyPendingMaintenanceActionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another. </note> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
@@ -459,7 +460,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AuthorizeDBSecurityGroupIngressAsync(const Model::AuthorizeDBSecurityGroupIngressRequest& request) const;
+     void AuthorizeDBSecurityGroupIngressAsync(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Copies the specified DB parameter group. </p>
@@ -478,7 +479,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CopyDBParameterGroupAsync(const Model::CopyDBParameterGroupRequest& request) const;
+     void CopyDBParameterGroupAsync(const Model::CopyDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </p>
@@ -497,7 +498,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CopyDBSnapshotAsync(const Model::CopyDBSnapshotRequest& request) const;
+     void CopyDBSnapshotAsync(const Model::CopyDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Copies the specified option group. </p>
@@ -516,7 +517,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CopyOptionGroupAsync(const Model::CopyOptionGroupRequest& request) const;
+     void CopyOptionGroupAsync(const Model::CopyOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new DB instance. </p>
@@ -535,7 +536,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request) const;
+     void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a DB instance that acts as a Read Replica of a source DB instance. </p> <p> All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance, except as specified below. </p> <important> <p> The source DB instance must have backup retention enabled. </p> </important>
@@ -554,7 +555,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDBInstanceReadReplicaAsync(const Model::CreateDBInstanceReadReplicaRequest& request) const;
+     void CreateDBInstanceReadReplicaAsync(const Model::CreateDBInstanceReadReplicaRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new DB parameter group. </p> <p> A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've created a DB parameter group, you need to associate it with your DB instance using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect. </p> <important> <p>After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB parameter group has been created or modified.</p> </important>
@@ -573,7 +574,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDBParameterGroupAsync(const Model::CreateDBParameterGroupRequest& request) const;
+     void CreateDBParameterGroupAsync(const Model::CreateDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new DB security group. DB security groups control access to a DB instance. </p>
@@ -592,7 +593,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDBSecurityGroupAsync(const Model::CreateDBSecurityGroupRequest& request) const;
+     void CreateDBSecurityGroupAsync(const Model::CreateDBSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a DBSnapshot. The source DBInstance must be in "available" state. </p>
@@ -611,7 +612,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDBSnapshotAsync(const Model::CreateDBSnapshotRequest& request) const;
+     void CreateDBSnapshotAsync(const Model::CreateDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
@@ -630,7 +631,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDBSubnetGroupAsync(const Model::CreateDBSubnetGroupRequest& request) const;
+     void CreateDBSubnetGroupAsync(const Model::CreateDBSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.</p>
@@ -649,7 +650,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request) const;
+     void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new option group. You can create up to 20 option groups. </p>
@@ -668,7 +669,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateOptionGroupAsync(const Model::CreateOptionGroupRequest& request) const;
+     void CreateOptionGroupAsync(const Model::CreateOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the request was received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted. </p> <p> If a final DB snapshot is requested the status of the RDS instance will be "deleting" until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this operation. The action cannot be canceled or reverted once submitted. </p>
@@ -687,7 +688,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request) const;
+     void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB instances. </p>
@@ -706,7 +707,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDBParameterGroupAsync(const Model::DeleteDBParameterGroupRequest& request) const;
+     void DeleteDBParameterGroupAsync(const Model::DeleteDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes a DB security group. </p> <note>The specified DB security group must not be associated with any DB instances.</note>
@@ -725,7 +726,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDBSecurityGroupAsync(const Model::DeleteDBSecurityGroupRequest& request) const;
+     void DeleteDBSecurityGroupAsync(const Model::DeleteDBSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated. </p> <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
@@ -744,7 +745,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDBSnapshotAsync(const Model::DeleteDBSnapshotRequest& request) const;
+     void DeleteDBSnapshotAsync(const Model::DeleteDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes a DB subnet group. </p> <note>The specified database subnet group must not be associated with any DB instances.</note>
@@ -763,7 +764,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDBSubnetGroupAsync(const Model::DeleteDBSubnetGroupRequest& request) const;
+     void DeleteDBSubnetGroupAsync(const Model::DeleteDBSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes an RDS event notification subscription.</p>
@@ -782,7 +783,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request) const;
+     void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes an existing option group. </p>
@@ -801,7 +802,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteOptionGroupAsync(const Model::DeleteOptionGroupRequest& request) const;
+     void DeleteOptionGroupAsync(const Model::DeleteOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all of the attributes for a customer account. The attributes include Amazon RDS quotas for the account, such as the number of DB instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value. </p> <p>This command does not take any parameters.</p>
@@ -820,7 +821,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request) const;
+     void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Lists the set of CA certificates provided by Amazon RDS for this AWS account. </p>
@@ -839,7 +840,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCertificatesAsync(const Model::DescribeCertificatesRequest& request) const;
+     void DescribeCertificatesAsync(const Model::DescribeCertificatesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of the available DB engines. </p>
@@ -858,7 +859,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBEngineVersionsAsync(const Model::DescribeDBEngineVersionsRequest& request) const;
+     void DescribeDBEngineVersionsAsync(const Model::DescribeDBEngineVersionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns information about provisioned RDS instances. This API supports pagination. </p>
@@ -877,7 +878,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request) const;
+     void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of DB log files for the DB instance. </p>
@@ -896,7 +897,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBLogFilesAsync(const Model::DescribeDBLogFilesRequest& request) const;
+     void DescribeDBLogFilesAsync(const Model::DescribeDBLogFilesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified, the list will contain only the description of the specified DB parameter group. </p>
@@ -915,7 +916,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBParameterGroupsAsync(const Model::DescribeDBParameterGroupsRequest& request) const;
+     void DescribeDBParameterGroupsAsync(const Model::DescribeDBParameterGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns the detailed parameter list for a particular DB parameter group. </p>
@@ -934,7 +935,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request) const;
+     void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified, the list will contain only the descriptions of the specified DB security group. </p>
@@ -953,7 +954,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request) const;
+     void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns information about DB snapshots. This API supports pagination. </p>
@@ -972,7 +973,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBSnapshotsAsync(const Model::DescribeDBSnapshotsRequest& request) const;
+     void DescribeDBSnapshotsAsync(const Model::DescribeDBSnapshotsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>. </p>
@@ -991,7 +992,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDBSubnetGroupsAsync(const Model::DescribeDBSubnetGroupsRequest& request) const;
+     void DescribeDBSubnetGroupsAsync(const Model::DescribeDBSubnetGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns the default engine and system parameter information for the specified database engine. </p>
@@ -1010,7 +1011,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request) const;
+     void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the Amazon RDS User Guide.</p>
@@ -1029,7 +1030,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request) const;
+     void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you specify a SubscriptionName, lists the description for that subscription.</p>
@@ -1048,7 +1049,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request) const;
+     void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned. </p>
@@ -1067,7 +1068,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEventsAsync(const Model::DescribeEventsRequest& request) const;
+     void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Describes all available options. </p>
@@ -1086,7 +1087,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeOptionGroupOptionsAsync(const Model::DescribeOptionGroupOptionsRequest& request) const;
+     void DescribeOptionGroupOptionsAsync(const Model::DescribeOptionGroupOptionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Describes the available option groups. </p>
@@ -1105,7 +1106,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeOptionGroupsAsync(const Model::DescribeOptionGroupsRequest& request) const;
+     void DescribeOptionGroupsAsync(const Model::DescribeOptionGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of orderable DB instance options for the specified engine. </p>
@@ -1124,7 +1125,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeOrderableDBInstanceOptionsAsync(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
+     void DescribeOrderableDBInstanceOptionsAsync(const Model::DescribeOrderableDBInstanceOptionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.</p>
@@ -1143,7 +1144,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribePendingMaintenanceActionsAsync(const Model::DescribePendingMaintenanceActionsRequest& request) const;
+     void DescribePendingMaintenanceActionsAsync(const Model::DescribePendingMaintenanceActionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns information about reserved DB instances for this account, or about a specified reserved DB instance. </p>
@@ -1162,7 +1163,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeReservedDBInstancesAsync(const Model::DescribeReservedDBInstancesRequest& request) const;
+     void DescribeReservedDBInstancesAsync(const Model::DescribeReservedDBInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Lists available reserved DB instance offerings. </p>
@@ -1181,7 +1182,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeReservedDBInstancesOfferingsAsync(const Model::DescribeReservedDBInstancesOfferingsRequest& request) const;
+     void DescribeReservedDBInstancesOfferingsAsync(const Model::DescribeReservedDBInstancesOfferingsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Downloads all or a portion of the specified log file. </p>
@@ -1200,7 +1201,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DownloadDBLogFilePortionAsync(const Model::DownloadDBLogFilePortionRequest& request) const;
+     void DownloadDBLogFilePortionAsync(const Model::DownloadDBLogFilePortionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS Resources</a>.</p>
@@ -1219,7 +1220,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request) const;
+     void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. </p>
@@ -1238,7 +1239,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyDBInstanceAsync(const Model::ModifyDBInstanceRequest& request) const;
+     void ModifyDBInstanceAsync(const Model::ModifyDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <note> <p> Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB instance associated with the parameter group before the change can take effect. </p> </note> <important> <p>After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the modify action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB parameter group has been created or modified.</p> </important>
@@ -1257,7 +1258,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyDBParameterGroupAsync(const Model::ModifyDBParameterGroupRequest& request) const;
+     void ModifyDBParameterGroupAsync(const Model::ModifyDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>
@@ -1276,7 +1277,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request) const;
+     void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.</p>
@@ -1295,7 +1296,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request) const;
+     void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Modifies an existing option group. </p>
@@ -1314,7 +1315,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyOptionGroupAsync(const Model::ModifyOptionGroupRequest& request) const;
+     void ModifyOptionGroupAsync(const Model::ModifyOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Promotes a Read Replica DB instance to a standalone DB instance. </p> <note> <p>We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary instance, backups are taken based on your backup settings.</p> </note>
@@ -1333,7 +1334,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PromoteReadReplicaAsync(const Model::PromoteReadReplicaRequest& request) const;
+     void PromoteReadReplicaAsync(const Model::PromoteReadReplicaRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Purchases a reserved DB instance offering. </p>
@@ -1352,7 +1353,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PurchaseReservedDBInstancesOfferingAsync(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
+     void PurchaseReservedDBInstancesOfferingAsync(const Model::PurchaseReservedDBInstancesOfferingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. An Amazon RDS event is created when the reboot is completed. </p> <p> If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force a failover to test the availability of your DB instance deployment or to restore operations to the original AZ after a failover occurs. </p> <p> The time required to reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions. </p>
@@ -1371,7 +1372,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RebootDBInstanceAsync(const Model::RebootDBInstanceRequest& request) const;
+     void RebootDBInstanceAsync(const Model::RebootDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes a source identifier from an existing RDS event notification subscription.</p>
@@ -1390,7 +1391,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveSourceIdentifierFromSubscriptionAsync(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
+     void RemoveSourceIdentifierFromSubscriptionAsync(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Removes metadata tags from an Amazon RDS resource.</p> <p>For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS Resources</a>.</p>
@@ -1409,7 +1410,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request) const;
+     void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request. </p>
@@ -1428,7 +1429,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ResetDBParameterGroupAsync(const Model::ResetDBParameterGroupRequest& request) const;
+     void ResetDBParameterGroupAsync(const Model::ResetDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as the original source database, except that the new RDS instance is created with the default security group. </p> <p>If your intent is to replace your original DB instance with the new, restored DB instance, then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB instances with the same name. Once you have renamed your original DB instance with a different identifier, then you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB instance created from the snapshot.</p>
@@ -1447,7 +1448,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RestoreDBInstanceFromDBSnapshotAsync(const Model::RestoreDBInstanceFromDBSnapshotRequest& request) const;
+     void RestoreDBInstanceFromDBSnapshotAsync(const Model::RestoreDBInstanceFromDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Restores a DB instance to an arbitrary point-in-time. Users can restore to any point in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database except that the DB instance is created with the default DB security group. </p>
@@ -1466,7 +1467,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RestoreDBInstanceToPointInTimeAsync(const Model::RestoreDBInstanceToPointInTimeRequest& request) const;
+     void RestoreDBInstanceToPointInTimeAsync(const Model::RestoreDBInstanceToPointInTimeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId). </p>
@@ -1485,7 +1486,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RevokeDBSecurityGroupIngressAsync(const Model::RevokeDBSecurityGroupIngressRequest& request) const;
+     void RevokeDBSecurityGroupIngressAsync(const Model::RevokeDBSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddSourceIdentifierToSubscriptionAsync to call upon completion to the handler chain. You need to call this to
@@ -2477,64 +2478,64 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddSourceIdentifierToSubscriptionAsyncHelper(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
-    void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request) const;
-    void ApplyPendingMaintenanceActionAsyncHelper(const Model::ApplyPendingMaintenanceActionRequest& request) const;
-    void AuthorizeDBSecurityGroupIngressAsyncHelper(const Model::AuthorizeDBSecurityGroupIngressRequest& request) const;
-    void CopyDBParameterGroupAsyncHelper(const Model::CopyDBParameterGroupRequest& request) const;
-    void CopyDBSnapshotAsyncHelper(const Model::CopyDBSnapshotRequest& request) const;
-    void CopyOptionGroupAsyncHelper(const Model::CopyOptionGroupRequest& request) const;
-    void CreateDBInstanceAsyncHelper(const Model::CreateDBInstanceRequest& request) const;
-    void CreateDBInstanceReadReplicaAsyncHelper(const Model::CreateDBInstanceReadReplicaRequest& request) const;
-    void CreateDBParameterGroupAsyncHelper(const Model::CreateDBParameterGroupRequest& request) const;
-    void CreateDBSecurityGroupAsyncHelper(const Model::CreateDBSecurityGroupRequest& request) const;
-    void CreateDBSnapshotAsyncHelper(const Model::CreateDBSnapshotRequest& request) const;
-    void CreateDBSubnetGroupAsyncHelper(const Model::CreateDBSubnetGroupRequest& request) const;
-    void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request) const;
-    void CreateOptionGroupAsyncHelper(const Model::CreateOptionGroupRequest& request) const;
-    void DeleteDBInstanceAsyncHelper(const Model::DeleteDBInstanceRequest& request) const;
-    void DeleteDBParameterGroupAsyncHelper(const Model::DeleteDBParameterGroupRequest& request) const;
-    void DeleteDBSecurityGroupAsyncHelper(const Model::DeleteDBSecurityGroupRequest& request) const;
-    void DeleteDBSnapshotAsyncHelper(const Model::DeleteDBSnapshotRequest& request) const;
-    void DeleteDBSubnetGroupAsyncHelper(const Model::DeleteDBSubnetGroupRequest& request) const;
-    void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request) const;
-    void DeleteOptionGroupAsyncHelper(const Model::DeleteOptionGroupRequest& request) const;
-    void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request) const;
-    void DescribeCertificatesAsyncHelper(const Model::DescribeCertificatesRequest& request) const;
-    void DescribeDBEngineVersionsAsyncHelper(const Model::DescribeDBEngineVersionsRequest& request) const;
-    void DescribeDBInstancesAsyncHelper(const Model::DescribeDBInstancesRequest& request) const;
-    void DescribeDBLogFilesAsyncHelper(const Model::DescribeDBLogFilesRequest& request) const;
-    void DescribeDBParameterGroupsAsyncHelper(const Model::DescribeDBParameterGroupsRequest& request) const;
-    void DescribeDBParametersAsyncHelper(const Model::DescribeDBParametersRequest& request) const;
-    void DescribeDBSecurityGroupsAsyncHelper(const Model::DescribeDBSecurityGroupsRequest& request) const;
-    void DescribeDBSnapshotsAsyncHelper(const Model::DescribeDBSnapshotsRequest& request) const;
-    void DescribeDBSubnetGroupsAsyncHelper(const Model::DescribeDBSubnetGroupsRequest& request) const;
-    void DescribeEngineDefaultParametersAsyncHelper(const Model::DescribeEngineDefaultParametersRequest& request) const;
-    void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request) const;
-    void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request) const;
-    void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request) const;
-    void DescribeOptionGroupOptionsAsyncHelper(const Model::DescribeOptionGroupOptionsRequest& request) const;
-    void DescribeOptionGroupsAsyncHelper(const Model::DescribeOptionGroupsRequest& request) const;
-    void DescribeOrderableDBInstanceOptionsAsyncHelper(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
-    void DescribePendingMaintenanceActionsAsyncHelper(const Model::DescribePendingMaintenanceActionsRequest& request) const;
-    void DescribeReservedDBInstancesAsyncHelper(const Model::DescribeReservedDBInstancesRequest& request) const;
-    void DescribeReservedDBInstancesOfferingsAsyncHelper(const Model::DescribeReservedDBInstancesOfferingsRequest& request) const;
-    void DownloadDBLogFilePortionAsyncHelper(const Model::DownloadDBLogFilePortionRequest& request) const;
-    void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request) const;
-    void ModifyDBInstanceAsyncHelper(const Model::ModifyDBInstanceRequest& request) const;
-    void ModifyDBParameterGroupAsyncHelper(const Model::ModifyDBParameterGroupRequest& request) const;
-    void ModifyDBSubnetGroupAsyncHelper(const Model::ModifyDBSubnetGroupRequest& request) const;
-    void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request) const;
-    void ModifyOptionGroupAsyncHelper(const Model::ModifyOptionGroupRequest& request) const;
-    void PromoteReadReplicaAsyncHelper(const Model::PromoteReadReplicaRequest& request) const;
-    void PurchaseReservedDBInstancesOfferingAsyncHelper(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
-    void RebootDBInstanceAsyncHelper(const Model::RebootDBInstanceRequest& request) const;
-    void RemoveSourceIdentifierFromSubscriptionAsyncHelper(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
-    void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request) const;
-    void ResetDBParameterGroupAsyncHelper(const Model::ResetDBParameterGroupRequest& request) const;
-    void RestoreDBInstanceFromDBSnapshotAsyncHelper(const Model::RestoreDBInstanceFromDBSnapshotRequest& request) const;
-    void RestoreDBInstanceToPointInTimeAsyncHelper(const Model::RestoreDBInstanceToPointInTimeRequest& request) const;
-    void RevokeDBSecurityGroupIngressAsyncHelper(const Model::RevokeDBSecurityGroupIngressRequest& request) const;
+    void AddSourceIdentifierToSubscriptionAsyncHelper(const Model::AddSourceIdentifierToSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ApplyPendingMaintenanceActionAsyncHelper(const Model::ApplyPendingMaintenanceActionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AuthorizeDBSecurityGroupIngressAsyncHelper(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CopyDBParameterGroupAsyncHelper(const Model::CopyDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CopyDBSnapshotAsyncHelper(const Model::CopyDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CopyOptionGroupAsyncHelper(const Model::CopyOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDBInstanceAsyncHelper(const Model::CreateDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDBInstanceReadReplicaAsyncHelper(const Model::CreateDBInstanceReadReplicaRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDBParameterGroupAsyncHelper(const Model::CreateDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDBSecurityGroupAsyncHelper(const Model::CreateDBSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDBSnapshotAsyncHelper(const Model::CreateDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDBSubnetGroupAsyncHelper(const Model::CreateDBSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateOptionGroupAsyncHelper(const Model::CreateOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDBInstanceAsyncHelper(const Model::DeleteDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDBParameterGroupAsyncHelper(const Model::DeleteDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDBSecurityGroupAsyncHelper(const Model::DeleteDBSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDBSnapshotAsyncHelper(const Model::DeleteDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDBSubnetGroupAsyncHelper(const Model::DeleteDBSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteOptionGroupAsyncHelper(const Model::DeleteOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCertificatesAsyncHelper(const Model::DescribeCertificatesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBEngineVersionsAsyncHelper(const Model::DescribeDBEngineVersionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBInstancesAsyncHelper(const Model::DescribeDBInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBLogFilesAsyncHelper(const Model::DescribeDBLogFilesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBParameterGroupsAsyncHelper(const Model::DescribeDBParameterGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBParametersAsyncHelper(const Model::DescribeDBParametersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBSecurityGroupsAsyncHelper(const Model::DescribeDBSecurityGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBSnapshotsAsyncHelper(const Model::DescribeDBSnapshotsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDBSubnetGroupsAsyncHelper(const Model::DescribeDBSubnetGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEngineDefaultParametersAsyncHelper(const Model::DescribeEngineDefaultParametersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeOptionGroupOptionsAsyncHelper(const Model::DescribeOptionGroupOptionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeOptionGroupsAsyncHelper(const Model::DescribeOptionGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeOrderableDBInstanceOptionsAsyncHelper(const Model::DescribeOrderableDBInstanceOptionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribePendingMaintenanceActionsAsyncHelper(const Model::DescribePendingMaintenanceActionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeReservedDBInstancesAsyncHelper(const Model::DescribeReservedDBInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeReservedDBInstancesOfferingsAsyncHelper(const Model::DescribeReservedDBInstancesOfferingsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DownloadDBLogFilePortionAsyncHelper(const Model::DownloadDBLogFilePortionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyDBInstanceAsyncHelper(const Model::ModifyDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyDBParameterGroupAsyncHelper(const Model::ModifyDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyDBSubnetGroupAsyncHelper(const Model::ModifyDBSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyOptionGroupAsyncHelper(const Model::ModifyOptionGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PromoteReadReplicaAsyncHelper(const Model::PromoteReadReplicaRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PurchaseReservedDBInstancesOfferingAsyncHelper(const Model::PurchaseReservedDBInstancesOfferingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RebootDBInstanceAsyncHelper(const Model::RebootDBInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveSourceIdentifierFromSubscriptionAsyncHelper(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ResetDBParameterGroupAsyncHelper(const Model::ResetDBParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RestoreDBInstanceFromDBSnapshotAsyncHelper(const Model::RestoreDBInstanceFromDBSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RestoreDBInstanceToPointInTimeAsyncHelper(const Model::RestoreDBInstanceToPointInTimeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RevokeDBSecurityGroupIngressAsyncHelper(const Model::RevokeDBSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

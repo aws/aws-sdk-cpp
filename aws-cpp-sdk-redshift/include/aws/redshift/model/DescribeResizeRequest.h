@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive. </p> <p>By default, resize operations for all clusters defined for an AWS account are returned. </p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
   };
 
 } // namespace Model

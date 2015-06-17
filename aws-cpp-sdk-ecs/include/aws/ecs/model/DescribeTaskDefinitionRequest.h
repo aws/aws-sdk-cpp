@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The <code>family</code> for the latest revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition that you want to describe.</p>
     */
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinition = value; }
+    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /*
      <p>The <code>family</code> for the latest revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition that you want to describe.</p>
     */
-    inline void SetTaskDefinition(const char* value) { m_taskDefinition.assign(value); }
+    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /*
      <p>The <code>family</code> for the latest revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition that you want to describe.</p>
@@ -61,6 +61,7 @@ namespace Model
 
   private:
     Aws::String m_taskDefinition;
+    bool m_taskDefinitionHasBeenSet;
   };
 
 } // namespace Model

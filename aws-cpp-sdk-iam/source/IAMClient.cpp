@@ -213,14 +213,14 @@ AddClientIDToOpenIDConnectProviderOutcomeCallable IAMClient::AddClientIDToOpenID
   return std::async(std::launch::async, &IAMClient::AddClientIDToOpenIDConnectProvider, this, request);
 }
 
-void IAMClient::AddClientIDToOpenIDConnectProviderAsync(const AddClientIDToOpenIDConnectProviderRequest& request) const
+void IAMClient::AddClientIDToOpenIDConnectProviderAsync(const AddClientIDToOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::AddClientIDToOpenIDConnectProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::AddClientIDToOpenIDConnectProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::AddClientIDToOpenIDConnectProviderAsyncHelper(const AddClientIDToOpenIDConnectProviderRequest& request) const
+void IAMClient::AddClientIDToOpenIDConnectProviderAsyncHelper(const AddClientIDToOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddClientIDToOpenIDConnectProviderOutcomeReceived(this, request, AddClientIDToOpenIDConnectProvider(request));
+  m_onAddClientIDToOpenIDConnectProviderOutcomeReceived(this, request, AddClientIDToOpenIDConnectProvider(request), context);
 }
 
 AddRoleToInstanceProfileOutcome IAMClient::AddRoleToInstanceProfile(const AddRoleToInstanceProfileRequest& request) const
@@ -244,14 +244,14 @@ AddRoleToInstanceProfileOutcomeCallable IAMClient::AddRoleToInstanceProfileCalla
   return std::async(std::launch::async, &IAMClient::AddRoleToInstanceProfile, this, request);
 }
 
-void IAMClient::AddRoleToInstanceProfileAsync(const AddRoleToInstanceProfileRequest& request) const
+void IAMClient::AddRoleToInstanceProfileAsync(const AddRoleToInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::AddRoleToInstanceProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::AddRoleToInstanceProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::AddRoleToInstanceProfileAsyncHelper(const AddRoleToInstanceProfileRequest& request) const
+void IAMClient::AddRoleToInstanceProfileAsyncHelper(const AddRoleToInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddRoleToInstanceProfileOutcomeReceived(this, request, AddRoleToInstanceProfile(request));
+  m_onAddRoleToInstanceProfileOutcomeReceived(this, request, AddRoleToInstanceProfile(request), context);
 }
 
 AddUserToGroupOutcome IAMClient::AddUserToGroup(const AddUserToGroupRequest& request) const
@@ -275,14 +275,14 @@ AddUserToGroupOutcomeCallable IAMClient::AddUserToGroupCallable(const AddUserToG
   return std::async(std::launch::async, &IAMClient::AddUserToGroup, this, request);
 }
 
-void IAMClient::AddUserToGroupAsync(const AddUserToGroupRequest& request) const
+void IAMClient::AddUserToGroupAsync(const AddUserToGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::AddUserToGroupAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::AddUserToGroupAsyncHelper, this, request, context);
 }
 
-void IAMClient::AddUserToGroupAsyncHelper(const AddUserToGroupRequest& request) const
+void IAMClient::AddUserToGroupAsyncHelper(const AddUserToGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddUserToGroupOutcomeReceived(this, request, AddUserToGroup(request));
+  m_onAddUserToGroupOutcomeReceived(this, request, AddUserToGroup(request), context);
 }
 
 AttachGroupPolicyOutcome IAMClient::AttachGroupPolicy(const AttachGroupPolicyRequest& request) const
@@ -306,14 +306,14 @@ AttachGroupPolicyOutcomeCallable IAMClient::AttachGroupPolicyCallable(const Atta
   return std::async(std::launch::async, &IAMClient::AttachGroupPolicy, this, request);
 }
 
-void IAMClient::AttachGroupPolicyAsync(const AttachGroupPolicyRequest& request) const
+void IAMClient::AttachGroupPolicyAsync(const AttachGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::AttachGroupPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::AttachGroupPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::AttachGroupPolicyAsyncHelper(const AttachGroupPolicyRequest& request) const
+void IAMClient::AttachGroupPolicyAsyncHelper(const AttachGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAttachGroupPolicyOutcomeReceived(this, request, AttachGroupPolicy(request));
+  m_onAttachGroupPolicyOutcomeReceived(this, request, AttachGroupPolicy(request), context);
 }
 
 AttachRolePolicyOutcome IAMClient::AttachRolePolicy(const AttachRolePolicyRequest& request) const
@@ -337,14 +337,14 @@ AttachRolePolicyOutcomeCallable IAMClient::AttachRolePolicyCallable(const Attach
   return std::async(std::launch::async, &IAMClient::AttachRolePolicy, this, request);
 }
 
-void IAMClient::AttachRolePolicyAsync(const AttachRolePolicyRequest& request) const
+void IAMClient::AttachRolePolicyAsync(const AttachRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::AttachRolePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::AttachRolePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::AttachRolePolicyAsyncHelper(const AttachRolePolicyRequest& request) const
+void IAMClient::AttachRolePolicyAsyncHelper(const AttachRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAttachRolePolicyOutcomeReceived(this, request, AttachRolePolicy(request));
+  m_onAttachRolePolicyOutcomeReceived(this, request, AttachRolePolicy(request), context);
 }
 
 AttachUserPolicyOutcome IAMClient::AttachUserPolicy(const AttachUserPolicyRequest& request) const
@@ -368,14 +368,14 @@ AttachUserPolicyOutcomeCallable IAMClient::AttachUserPolicyCallable(const Attach
   return std::async(std::launch::async, &IAMClient::AttachUserPolicy, this, request);
 }
 
-void IAMClient::AttachUserPolicyAsync(const AttachUserPolicyRequest& request) const
+void IAMClient::AttachUserPolicyAsync(const AttachUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::AttachUserPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::AttachUserPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::AttachUserPolicyAsyncHelper(const AttachUserPolicyRequest& request) const
+void IAMClient::AttachUserPolicyAsyncHelper(const AttachUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAttachUserPolicyOutcomeReceived(this, request, AttachUserPolicy(request));
+  m_onAttachUserPolicyOutcomeReceived(this, request, AttachUserPolicy(request), context);
 }
 
 ChangePasswordOutcome IAMClient::ChangePassword(const ChangePasswordRequest& request) const
@@ -399,14 +399,14 @@ ChangePasswordOutcomeCallable IAMClient::ChangePasswordCallable(const ChangePass
   return std::async(std::launch::async, &IAMClient::ChangePassword, this, request);
 }
 
-void IAMClient::ChangePasswordAsync(const ChangePasswordRequest& request) const
+void IAMClient::ChangePasswordAsync(const ChangePasswordRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ChangePasswordAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ChangePasswordAsyncHelper, this, request, context);
 }
 
-void IAMClient::ChangePasswordAsyncHelper(const ChangePasswordRequest& request) const
+void IAMClient::ChangePasswordAsyncHelper(const ChangePasswordRequest& request, const AsyncCallerContext* context) const
 {
-  m_onChangePasswordOutcomeReceived(this, request, ChangePassword(request));
+  m_onChangePasswordOutcomeReceived(this, request, ChangePassword(request), context);
 }
 
 CreateAccessKeyOutcome IAMClient::CreateAccessKey(const CreateAccessKeyRequest& request) const
@@ -430,14 +430,14 @@ CreateAccessKeyOutcomeCallable IAMClient::CreateAccessKeyCallable(const CreateAc
   return std::async(std::launch::async, &IAMClient::CreateAccessKey, this, request);
 }
 
-void IAMClient::CreateAccessKeyAsync(const CreateAccessKeyRequest& request) const
+void IAMClient::CreateAccessKeyAsync(const CreateAccessKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateAccessKeyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateAccessKeyAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateAccessKeyAsyncHelper(const CreateAccessKeyRequest& request) const
+void IAMClient::CreateAccessKeyAsyncHelper(const CreateAccessKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateAccessKeyOutcomeReceived(this, request, CreateAccessKey(request));
+  m_onCreateAccessKeyOutcomeReceived(this, request, CreateAccessKey(request), context);
 }
 
 CreateAccountAliasOutcome IAMClient::CreateAccountAlias(const CreateAccountAliasRequest& request) const
@@ -461,14 +461,14 @@ CreateAccountAliasOutcomeCallable IAMClient::CreateAccountAliasCallable(const Cr
   return std::async(std::launch::async, &IAMClient::CreateAccountAlias, this, request);
 }
 
-void IAMClient::CreateAccountAliasAsync(const CreateAccountAliasRequest& request) const
+void IAMClient::CreateAccountAliasAsync(const CreateAccountAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateAccountAliasAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateAccountAliasAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateAccountAliasAsyncHelper(const CreateAccountAliasRequest& request) const
+void IAMClient::CreateAccountAliasAsyncHelper(const CreateAccountAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateAccountAliasOutcomeReceived(this, request, CreateAccountAlias(request));
+  m_onCreateAccountAliasOutcomeReceived(this, request, CreateAccountAlias(request), context);
 }
 
 CreateGroupOutcome IAMClient::CreateGroup(const CreateGroupRequest& request) const
@@ -492,14 +492,14 @@ CreateGroupOutcomeCallable IAMClient::CreateGroupCallable(const CreateGroupReque
   return std::async(std::launch::async, &IAMClient::CreateGroup, this, request);
 }
 
-void IAMClient::CreateGroupAsync(const CreateGroupRequest& request) const
+void IAMClient::CreateGroupAsync(const CreateGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateGroupAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateGroupAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateGroupAsyncHelper(const CreateGroupRequest& request) const
+void IAMClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateGroupOutcomeReceived(this, request, CreateGroup(request));
+  m_onCreateGroupOutcomeReceived(this, request, CreateGroup(request), context);
 }
 
 CreateInstanceProfileOutcome IAMClient::CreateInstanceProfile(const CreateInstanceProfileRequest& request) const
@@ -523,14 +523,14 @@ CreateInstanceProfileOutcomeCallable IAMClient::CreateInstanceProfileCallable(co
   return std::async(std::launch::async, &IAMClient::CreateInstanceProfile, this, request);
 }
 
-void IAMClient::CreateInstanceProfileAsync(const CreateInstanceProfileRequest& request) const
+void IAMClient::CreateInstanceProfileAsync(const CreateInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateInstanceProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateInstanceProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateInstanceProfileAsyncHelper(const CreateInstanceProfileRequest& request) const
+void IAMClient::CreateInstanceProfileAsyncHelper(const CreateInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateInstanceProfileOutcomeReceived(this, request, CreateInstanceProfile(request));
+  m_onCreateInstanceProfileOutcomeReceived(this, request, CreateInstanceProfile(request), context);
 }
 
 CreateLoginProfileOutcome IAMClient::CreateLoginProfile(const CreateLoginProfileRequest& request) const
@@ -554,14 +554,14 @@ CreateLoginProfileOutcomeCallable IAMClient::CreateLoginProfileCallable(const Cr
   return std::async(std::launch::async, &IAMClient::CreateLoginProfile, this, request);
 }
 
-void IAMClient::CreateLoginProfileAsync(const CreateLoginProfileRequest& request) const
+void IAMClient::CreateLoginProfileAsync(const CreateLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateLoginProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateLoginProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateLoginProfileAsyncHelper(const CreateLoginProfileRequest& request) const
+void IAMClient::CreateLoginProfileAsyncHelper(const CreateLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLoginProfileOutcomeReceived(this, request, CreateLoginProfile(request));
+  m_onCreateLoginProfileOutcomeReceived(this, request, CreateLoginProfile(request), context);
 }
 
 CreateOpenIDConnectProviderOutcome IAMClient::CreateOpenIDConnectProvider(const CreateOpenIDConnectProviderRequest& request) const
@@ -585,14 +585,14 @@ CreateOpenIDConnectProviderOutcomeCallable IAMClient::CreateOpenIDConnectProvide
   return std::async(std::launch::async, &IAMClient::CreateOpenIDConnectProvider, this, request);
 }
 
-void IAMClient::CreateOpenIDConnectProviderAsync(const CreateOpenIDConnectProviderRequest& request) const
+void IAMClient::CreateOpenIDConnectProviderAsync(const CreateOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateOpenIDConnectProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateOpenIDConnectProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateOpenIDConnectProviderAsyncHelper(const CreateOpenIDConnectProviderRequest& request) const
+void IAMClient::CreateOpenIDConnectProviderAsyncHelper(const CreateOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateOpenIDConnectProviderOutcomeReceived(this, request, CreateOpenIDConnectProvider(request));
+  m_onCreateOpenIDConnectProviderOutcomeReceived(this, request, CreateOpenIDConnectProvider(request), context);
 }
 
 CreatePolicyOutcome IAMClient::CreatePolicy(const CreatePolicyRequest& request) const
@@ -616,14 +616,14 @@ CreatePolicyOutcomeCallable IAMClient::CreatePolicyCallable(const CreatePolicyRe
   return std::async(std::launch::async, &IAMClient::CreatePolicy, this, request);
 }
 
-void IAMClient::CreatePolicyAsync(const CreatePolicyRequest& request) const
+void IAMClient::CreatePolicyAsync(const CreatePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreatePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreatePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request) const
+void IAMClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreatePolicyOutcomeReceived(this, request, CreatePolicy(request));
+  m_onCreatePolicyOutcomeReceived(this, request, CreatePolicy(request), context);
 }
 
 CreatePolicyVersionOutcome IAMClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const
@@ -647,14 +647,14 @@ CreatePolicyVersionOutcomeCallable IAMClient::CreatePolicyVersionCallable(const 
   return std::async(std::launch::async, &IAMClient::CreatePolicyVersion, this, request);
 }
 
-void IAMClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request) const
+void IAMClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreatePolicyVersionAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreatePolicyVersionAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest& request) const
+void IAMClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreatePolicyVersionOutcomeReceived(this, request, CreatePolicyVersion(request));
+  m_onCreatePolicyVersionOutcomeReceived(this, request, CreatePolicyVersion(request), context);
 }
 
 CreateRoleOutcome IAMClient::CreateRole(const CreateRoleRequest& request) const
@@ -678,14 +678,14 @@ CreateRoleOutcomeCallable IAMClient::CreateRoleCallable(const CreateRoleRequest&
   return std::async(std::launch::async, &IAMClient::CreateRole, this, request);
 }
 
-void IAMClient::CreateRoleAsync(const CreateRoleRequest& request) const
+void IAMClient::CreateRoleAsync(const CreateRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateRoleAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateRoleAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateRoleAsyncHelper(const CreateRoleRequest& request) const
+void IAMClient::CreateRoleAsyncHelper(const CreateRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateRoleOutcomeReceived(this, request, CreateRole(request));
+  m_onCreateRoleOutcomeReceived(this, request, CreateRole(request), context);
 }
 
 CreateSAMLProviderOutcome IAMClient::CreateSAMLProvider(const CreateSAMLProviderRequest& request) const
@@ -709,14 +709,14 @@ CreateSAMLProviderOutcomeCallable IAMClient::CreateSAMLProviderCallable(const Cr
   return std::async(std::launch::async, &IAMClient::CreateSAMLProvider, this, request);
 }
 
-void IAMClient::CreateSAMLProviderAsync(const CreateSAMLProviderRequest& request) const
+void IAMClient::CreateSAMLProviderAsync(const CreateSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateSAMLProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateSAMLProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateSAMLProviderAsyncHelper(const CreateSAMLProviderRequest& request) const
+void IAMClient::CreateSAMLProviderAsyncHelper(const CreateSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateSAMLProviderOutcomeReceived(this, request, CreateSAMLProvider(request));
+  m_onCreateSAMLProviderOutcomeReceived(this, request, CreateSAMLProvider(request), context);
 }
 
 CreateUserOutcome IAMClient::CreateUser(const CreateUserRequest& request) const
@@ -740,14 +740,14 @@ CreateUserOutcomeCallable IAMClient::CreateUserCallable(const CreateUserRequest&
   return std::async(std::launch::async, &IAMClient::CreateUser, this, request);
 }
 
-void IAMClient::CreateUserAsync(const CreateUserRequest& request) const
+void IAMClient::CreateUserAsync(const CreateUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateUserAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateUserAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateUserAsyncHelper(const CreateUserRequest& request) const
+void IAMClient::CreateUserAsyncHelper(const CreateUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateUserOutcomeReceived(this, request, CreateUser(request));
+  m_onCreateUserOutcomeReceived(this, request, CreateUser(request), context);
 }
 
 CreateVirtualMFADeviceOutcome IAMClient::CreateVirtualMFADevice(const CreateVirtualMFADeviceRequest& request) const
@@ -771,14 +771,14 @@ CreateVirtualMFADeviceOutcomeCallable IAMClient::CreateVirtualMFADeviceCallable(
   return std::async(std::launch::async, &IAMClient::CreateVirtualMFADevice, this, request);
 }
 
-void IAMClient::CreateVirtualMFADeviceAsync(const CreateVirtualMFADeviceRequest& request) const
+void IAMClient::CreateVirtualMFADeviceAsync(const CreateVirtualMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::CreateVirtualMFADeviceAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::CreateVirtualMFADeviceAsyncHelper, this, request, context);
 }
 
-void IAMClient::CreateVirtualMFADeviceAsyncHelper(const CreateVirtualMFADeviceRequest& request) const
+void IAMClient::CreateVirtualMFADeviceAsyncHelper(const CreateVirtualMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateVirtualMFADeviceOutcomeReceived(this, request, CreateVirtualMFADevice(request));
+  m_onCreateVirtualMFADeviceOutcomeReceived(this, request, CreateVirtualMFADevice(request), context);
 }
 
 DeactivateMFADeviceOutcome IAMClient::DeactivateMFADevice(const DeactivateMFADeviceRequest& request) const
@@ -802,14 +802,14 @@ DeactivateMFADeviceOutcomeCallable IAMClient::DeactivateMFADeviceCallable(const 
   return std::async(std::launch::async, &IAMClient::DeactivateMFADevice, this, request);
 }
 
-void IAMClient::DeactivateMFADeviceAsync(const DeactivateMFADeviceRequest& request) const
+void IAMClient::DeactivateMFADeviceAsync(const DeactivateMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeactivateMFADeviceAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeactivateMFADeviceAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeactivateMFADeviceAsyncHelper(const DeactivateMFADeviceRequest& request) const
+void IAMClient::DeactivateMFADeviceAsyncHelper(const DeactivateMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeactivateMFADeviceOutcomeReceived(this, request, DeactivateMFADevice(request));
+  m_onDeactivateMFADeviceOutcomeReceived(this, request, DeactivateMFADevice(request), context);
 }
 
 DeleteAccessKeyOutcome IAMClient::DeleteAccessKey(const DeleteAccessKeyRequest& request) const
@@ -833,14 +833,14 @@ DeleteAccessKeyOutcomeCallable IAMClient::DeleteAccessKeyCallable(const DeleteAc
   return std::async(std::launch::async, &IAMClient::DeleteAccessKey, this, request);
 }
 
-void IAMClient::DeleteAccessKeyAsync(const DeleteAccessKeyRequest& request) const
+void IAMClient::DeleteAccessKeyAsync(const DeleteAccessKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteAccessKeyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteAccessKeyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteAccessKeyAsyncHelper(const DeleteAccessKeyRequest& request) const
+void IAMClient::DeleteAccessKeyAsyncHelper(const DeleteAccessKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAccessKeyOutcomeReceived(this, request, DeleteAccessKey(request));
+  m_onDeleteAccessKeyOutcomeReceived(this, request, DeleteAccessKey(request), context);
 }
 
 DeleteAccountAliasOutcome IAMClient::DeleteAccountAlias(const DeleteAccountAliasRequest& request) const
@@ -864,14 +864,14 @@ DeleteAccountAliasOutcomeCallable IAMClient::DeleteAccountAliasCallable(const De
   return std::async(std::launch::async, &IAMClient::DeleteAccountAlias, this, request);
 }
 
-void IAMClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request) const
+void IAMClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteAccountAliasAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteAccountAliasAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteAccountAliasAsyncHelper(const DeleteAccountAliasRequest& request) const
+void IAMClient::DeleteAccountAliasAsyncHelper(const DeleteAccountAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAccountAliasOutcomeReceived(this, request, DeleteAccountAlias(request));
+  m_onDeleteAccountAliasOutcomeReceived(this, request, DeleteAccountAlias(request), context);
 }
 
 DeleteAccountPasswordPolicyOutcome IAMClient::DeleteAccountPasswordPolicy(const DeleteAccountPasswordPolicyRequest& request) const
@@ -895,14 +895,14 @@ DeleteAccountPasswordPolicyOutcomeCallable IAMClient::DeleteAccountPasswordPolic
   return std::async(std::launch::async, &IAMClient::DeleteAccountPasswordPolicy, this, request);
 }
 
-void IAMClient::DeleteAccountPasswordPolicyAsync(const DeleteAccountPasswordPolicyRequest& request) const
+void IAMClient::DeleteAccountPasswordPolicyAsync(const DeleteAccountPasswordPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteAccountPasswordPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteAccountPasswordPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteAccountPasswordPolicyAsyncHelper(const DeleteAccountPasswordPolicyRequest& request) const
+void IAMClient::DeleteAccountPasswordPolicyAsyncHelper(const DeleteAccountPasswordPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAccountPasswordPolicyOutcomeReceived(this, request, DeleteAccountPasswordPolicy(request));
+  m_onDeleteAccountPasswordPolicyOutcomeReceived(this, request, DeleteAccountPasswordPolicy(request), context);
 }
 
 DeleteGroupOutcome IAMClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -926,14 +926,14 @@ DeleteGroupOutcomeCallable IAMClient::DeleteGroupCallable(const DeleteGroupReque
   return std::async(std::launch::async, &IAMClient::DeleteGroup, this, request);
 }
 
-void IAMClient::DeleteGroupAsync(const DeleteGroupRequest& request) const
+void IAMClient::DeleteGroupAsync(const DeleteGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteGroupAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteGroupAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request) const
+void IAMClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteGroupOutcomeReceived(this, request, DeleteGroup(request));
+  m_onDeleteGroupOutcomeReceived(this, request, DeleteGroup(request), context);
 }
 
 DeleteGroupPolicyOutcome IAMClient::DeleteGroupPolicy(const DeleteGroupPolicyRequest& request) const
@@ -957,14 +957,14 @@ DeleteGroupPolicyOutcomeCallable IAMClient::DeleteGroupPolicyCallable(const Dele
   return std::async(std::launch::async, &IAMClient::DeleteGroupPolicy, this, request);
 }
 
-void IAMClient::DeleteGroupPolicyAsync(const DeleteGroupPolicyRequest& request) const
+void IAMClient::DeleteGroupPolicyAsync(const DeleteGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteGroupPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteGroupPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteGroupPolicyAsyncHelper(const DeleteGroupPolicyRequest& request) const
+void IAMClient::DeleteGroupPolicyAsyncHelper(const DeleteGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteGroupPolicyOutcomeReceived(this, request, DeleteGroupPolicy(request));
+  m_onDeleteGroupPolicyOutcomeReceived(this, request, DeleteGroupPolicy(request), context);
 }
 
 DeleteInstanceProfileOutcome IAMClient::DeleteInstanceProfile(const DeleteInstanceProfileRequest& request) const
@@ -988,14 +988,14 @@ DeleteInstanceProfileOutcomeCallable IAMClient::DeleteInstanceProfileCallable(co
   return std::async(std::launch::async, &IAMClient::DeleteInstanceProfile, this, request);
 }
 
-void IAMClient::DeleteInstanceProfileAsync(const DeleteInstanceProfileRequest& request) const
+void IAMClient::DeleteInstanceProfileAsync(const DeleteInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteInstanceProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteInstanceProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteInstanceProfileAsyncHelper(const DeleteInstanceProfileRequest& request) const
+void IAMClient::DeleteInstanceProfileAsyncHelper(const DeleteInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteInstanceProfileOutcomeReceived(this, request, DeleteInstanceProfile(request));
+  m_onDeleteInstanceProfileOutcomeReceived(this, request, DeleteInstanceProfile(request), context);
 }
 
 DeleteLoginProfileOutcome IAMClient::DeleteLoginProfile(const DeleteLoginProfileRequest& request) const
@@ -1019,14 +1019,14 @@ DeleteLoginProfileOutcomeCallable IAMClient::DeleteLoginProfileCallable(const De
   return std::async(std::launch::async, &IAMClient::DeleteLoginProfile, this, request);
 }
 
-void IAMClient::DeleteLoginProfileAsync(const DeleteLoginProfileRequest& request) const
+void IAMClient::DeleteLoginProfileAsync(const DeleteLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteLoginProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteLoginProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteLoginProfileAsyncHelper(const DeleteLoginProfileRequest& request) const
+void IAMClient::DeleteLoginProfileAsyncHelper(const DeleteLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLoginProfileOutcomeReceived(this, request, DeleteLoginProfile(request));
+  m_onDeleteLoginProfileOutcomeReceived(this, request, DeleteLoginProfile(request), context);
 }
 
 DeleteOpenIDConnectProviderOutcome IAMClient::DeleteOpenIDConnectProvider(const DeleteOpenIDConnectProviderRequest& request) const
@@ -1050,14 +1050,14 @@ DeleteOpenIDConnectProviderOutcomeCallable IAMClient::DeleteOpenIDConnectProvide
   return std::async(std::launch::async, &IAMClient::DeleteOpenIDConnectProvider, this, request);
 }
 
-void IAMClient::DeleteOpenIDConnectProviderAsync(const DeleteOpenIDConnectProviderRequest& request) const
+void IAMClient::DeleteOpenIDConnectProviderAsync(const DeleteOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteOpenIDConnectProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteOpenIDConnectProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteOpenIDConnectProviderAsyncHelper(const DeleteOpenIDConnectProviderRequest& request) const
+void IAMClient::DeleteOpenIDConnectProviderAsyncHelper(const DeleteOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteOpenIDConnectProviderOutcomeReceived(this, request, DeleteOpenIDConnectProvider(request));
+  m_onDeleteOpenIDConnectProviderOutcomeReceived(this, request, DeleteOpenIDConnectProvider(request), context);
 }
 
 DeletePolicyOutcome IAMClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -1081,14 +1081,14 @@ DeletePolicyOutcomeCallable IAMClient::DeletePolicyCallable(const DeletePolicyRe
   return std::async(std::launch::async, &IAMClient::DeletePolicy, this, request);
 }
 
-void IAMClient::DeletePolicyAsync(const DeletePolicyRequest& request) const
+void IAMClient::DeletePolicyAsync(const DeletePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeletePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeletePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request) const
+void IAMClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeletePolicyOutcomeReceived(this, request, DeletePolicy(request));
+  m_onDeletePolicyOutcomeReceived(this, request, DeletePolicy(request), context);
 }
 
 DeletePolicyVersionOutcome IAMClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const
@@ -1112,14 +1112,14 @@ DeletePolicyVersionOutcomeCallable IAMClient::DeletePolicyVersionCallable(const 
   return std::async(std::launch::async, &IAMClient::DeletePolicyVersion, this, request);
 }
 
-void IAMClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request) const
+void IAMClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeletePolicyVersionAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeletePolicyVersionAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest& request) const
+void IAMClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeletePolicyVersionOutcomeReceived(this, request, DeletePolicyVersion(request));
+  m_onDeletePolicyVersionOutcomeReceived(this, request, DeletePolicyVersion(request), context);
 }
 
 DeleteRoleOutcome IAMClient::DeleteRole(const DeleteRoleRequest& request) const
@@ -1143,14 +1143,14 @@ DeleteRoleOutcomeCallable IAMClient::DeleteRoleCallable(const DeleteRoleRequest&
   return std::async(std::launch::async, &IAMClient::DeleteRole, this, request);
 }
 
-void IAMClient::DeleteRoleAsync(const DeleteRoleRequest& request) const
+void IAMClient::DeleteRoleAsync(const DeleteRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteRoleAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteRoleAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteRoleAsyncHelper(const DeleteRoleRequest& request) const
+void IAMClient::DeleteRoleAsyncHelper(const DeleteRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteRoleOutcomeReceived(this, request, DeleteRole(request));
+  m_onDeleteRoleOutcomeReceived(this, request, DeleteRole(request), context);
 }
 
 DeleteRolePolicyOutcome IAMClient::DeleteRolePolicy(const DeleteRolePolicyRequest& request) const
@@ -1174,14 +1174,14 @@ DeleteRolePolicyOutcomeCallable IAMClient::DeleteRolePolicyCallable(const Delete
   return std::async(std::launch::async, &IAMClient::DeleteRolePolicy, this, request);
 }
 
-void IAMClient::DeleteRolePolicyAsync(const DeleteRolePolicyRequest& request) const
+void IAMClient::DeleteRolePolicyAsync(const DeleteRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteRolePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteRolePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteRolePolicyAsyncHelper(const DeleteRolePolicyRequest& request) const
+void IAMClient::DeleteRolePolicyAsyncHelper(const DeleteRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteRolePolicyOutcomeReceived(this, request, DeleteRolePolicy(request));
+  m_onDeleteRolePolicyOutcomeReceived(this, request, DeleteRolePolicy(request), context);
 }
 
 DeleteSAMLProviderOutcome IAMClient::DeleteSAMLProvider(const DeleteSAMLProviderRequest& request) const
@@ -1205,14 +1205,14 @@ DeleteSAMLProviderOutcomeCallable IAMClient::DeleteSAMLProviderCallable(const De
   return std::async(std::launch::async, &IAMClient::DeleteSAMLProvider, this, request);
 }
 
-void IAMClient::DeleteSAMLProviderAsync(const DeleteSAMLProviderRequest& request) const
+void IAMClient::DeleteSAMLProviderAsync(const DeleteSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteSAMLProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteSAMLProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteSAMLProviderAsyncHelper(const DeleteSAMLProviderRequest& request) const
+void IAMClient::DeleteSAMLProviderAsyncHelper(const DeleteSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteSAMLProviderOutcomeReceived(this, request, DeleteSAMLProvider(request));
+  m_onDeleteSAMLProviderOutcomeReceived(this, request, DeleteSAMLProvider(request), context);
 }
 
 DeleteServerCertificateOutcome IAMClient::DeleteServerCertificate(const DeleteServerCertificateRequest& request) const
@@ -1236,14 +1236,14 @@ DeleteServerCertificateOutcomeCallable IAMClient::DeleteServerCertificateCallabl
   return std::async(std::launch::async, &IAMClient::DeleteServerCertificate, this, request);
 }
 
-void IAMClient::DeleteServerCertificateAsync(const DeleteServerCertificateRequest& request) const
+void IAMClient::DeleteServerCertificateAsync(const DeleteServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteServerCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteServerCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteServerCertificateAsyncHelper(const DeleteServerCertificateRequest& request) const
+void IAMClient::DeleteServerCertificateAsyncHelper(const DeleteServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteServerCertificateOutcomeReceived(this, request, DeleteServerCertificate(request));
+  m_onDeleteServerCertificateOutcomeReceived(this, request, DeleteServerCertificate(request), context);
 }
 
 DeleteSigningCertificateOutcome IAMClient::DeleteSigningCertificate(const DeleteSigningCertificateRequest& request) const
@@ -1267,14 +1267,14 @@ DeleteSigningCertificateOutcomeCallable IAMClient::DeleteSigningCertificateCalla
   return std::async(std::launch::async, &IAMClient::DeleteSigningCertificate, this, request);
 }
 
-void IAMClient::DeleteSigningCertificateAsync(const DeleteSigningCertificateRequest& request) const
+void IAMClient::DeleteSigningCertificateAsync(const DeleteSigningCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteSigningCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteSigningCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteSigningCertificateAsyncHelper(const DeleteSigningCertificateRequest& request) const
+void IAMClient::DeleteSigningCertificateAsyncHelper(const DeleteSigningCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteSigningCertificateOutcomeReceived(this, request, DeleteSigningCertificate(request));
+  m_onDeleteSigningCertificateOutcomeReceived(this, request, DeleteSigningCertificate(request), context);
 }
 
 DeleteUserOutcome IAMClient::DeleteUser(const DeleteUserRequest& request) const
@@ -1298,14 +1298,14 @@ DeleteUserOutcomeCallable IAMClient::DeleteUserCallable(const DeleteUserRequest&
   return std::async(std::launch::async, &IAMClient::DeleteUser, this, request);
 }
 
-void IAMClient::DeleteUserAsync(const DeleteUserRequest& request) const
+void IAMClient::DeleteUserAsync(const DeleteUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteUserAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteUserAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteUserAsyncHelper(const DeleteUserRequest& request) const
+void IAMClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteUserOutcomeReceived(this, request, DeleteUser(request));
+  m_onDeleteUserOutcomeReceived(this, request, DeleteUser(request), context);
 }
 
 DeleteUserPolicyOutcome IAMClient::DeleteUserPolicy(const DeleteUserPolicyRequest& request) const
@@ -1329,14 +1329,14 @@ DeleteUserPolicyOutcomeCallable IAMClient::DeleteUserPolicyCallable(const Delete
   return std::async(std::launch::async, &IAMClient::DeleteUserPolicy, this, request);
 }
 
-void IAMClient::DeleteUserPolicyAsync(const DeleteUserPolicyRequest& request) const
+void IAMClient::DeleteUserPolicyAsync(const DeleteUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteUserPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteUserPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteUserPolicyAsyncHelper(const DeleteUserPolicyRequest& request) const
+void IAMClient::DeleteUserPolicyAsyncHelper(const DeleteUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteUserPolicyOutcomeReceived(this, request, DeleteUserPolicy(request));
+  m_onDeleteUserPolicyOutcomeReceived(this, request, DeleteUserPolicy(request), context);
 }
 
 DeleteVirtualMFADeviceOutcome IAMClient::DeleteVirtualMFADevice(const DeleteVirtualMFADeviceRequest& request) const
@@ -1360,14 +1360,14 @@ DeleteVirtualMFADeviceOutcomeCallable IAMClient::DeleteVirtualMFADeviceCallable(
   return std::async(std::launch::async, &IAMClient::DeleteVirtualMFADevice, this, request);
 }
 
-void IAMClient::DeleteVirtualMFADeviceAsync(const DeleteVirtualMFADeviceRequest& request) const
+void IAMClient::DeleteVirtualMFADeviceAsync(const DeleteVirtualMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DeleteVirtualMFADeviceAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DeleteVirtualMFADeviceAsyncHelper, this, request, context);
 }
 
-void IAMClient::DeleteVirtualMFADeviceAsyncHelper(const DeleteVirtualMFADeviceRequest& request) const
+void IAMClient::DeleteVirtualMFADeviceAsyncHelper(const DeleteVirtualMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteVirtualMFADeviceOutcomeReceived(this, request, DeleteVirtualMFADevice(request));
+  m_onDeleteVirtualMFADeviceOutcomeReceived(this, request, DeleteVirtualMFADevice(request), context);
 }
 
 DetachGroupPolicyOutcome IAMClient::DetachGroupPolicy(const DetachGroupPolicyRequest& request) const
@@ -1391,14 +1391,14 @@ DetachGroupPolicyOutcomeCallable IAMClient::DetachGroupPolicyCallable(const Deta
   return std::async(std::launch::async, &IAMClient::DetachGroupPolicy, this, request);
 }
 
-void IAMClient::DetachGroupPolicyAsync(const DetachGroupPolicyRequest& request) const
+void IAMClient::DetachGroupPolicyAsync(const DetachGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DetachGroupPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DetachGroupPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DetachGroupPolicyAsyncHelper(const DetachGroupPolicyRequest& request) const
+void IAMClient::DetachGroupPolicyAsyncHelper(const DetachGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDetachGroupPolicyOutcomeReceived(this, request, DetachGroupPolicy(request));
+  m_onDetachGroupPolicyOutcomeReceived(this, request, DetachGroupPolicy(request), context);
 }
 
 DetachRolePolicyOutcome IAMClient::DetachRolePolicy(const DetachRolePolicyRequest& request) const
@@ -1422,14 +1422,14 @@ DetachRolePolicyOutcomeCallable IAMClient::DetachRolePolicyCallable(const Detach
   return std::async(std::launch::async, &IAMClient::DetachRolePolicy, this, request);
 }
 
-void IAMClient::DetachRolePolicyAsync(const DetachRolePolicyRequest& request) const
+void IAMClient::DetachRolePolicyAsync(const DetachRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DetachRolePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DetachRolePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DetachRolePolicyAsyncHelper(const DetachRolePolicyRequest& request) const
+void IAMClient::DetachRolePolicyAsyncHelper(const DetachRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDetachRolePolicyOutcomeReceived(this, request, DetachRolePolicy(request));
+  m_onDetachRolePolicyOutcomeReceived(this, request, DetachRolePolicy(request), context);
 }
 
 DetachUserPolicyOutcome IAMClient::DetachUserPolicy(const DetachUserPolicyRequest& request) const
@@ -1453,14 +1453,14 @@ DetachUserPolicyOutcomeCallable IAMClient::DetachUserPolicyCallable(const Detach
   return std::async(std::launch::async, &IAMClient::DetachUserPolicy, this, request);
 }
 
-void IAMClient::DetachUserPolicyAsync(const DetachUserPolicyRequest& request) const
+void IAMClient::DetachUserPolicyAsync(const DetachUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::DetachUserPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::DetachUserPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::DetachUserPolicyAsyncHelper(const DetachUserPolicyRequest& request) const
+void IAMClient::DetachUserPolicyAsyncHelper(const DetachUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDetachUserPolicyOutcomeReceived(this, request, DetachUserPolicy(request));
+  m_onDetachUserPolicyOutcomeReceived(this, request, DetachUserPolicy(request), context);
 }
 
 EnableMFADeviceOutcome IAMClient::EnableMFADevice(const EnableMFADeviceRequest& request) const
@@ -1484,14 +1484,14 @@ EnableMFADeviceOutcomeCallable IAMClient::EnableMFADeviceCallable(const EnableMF
   return std::async(std::launch::async, &IAMClient::EnableMFADevice, this, request);
 }
 
-void IAMClient::EnableMFADeviceAsync(const EnableMFADeviceRequest& request) const
+void IAMClient::EnableMFADeviceAsync(const EnableMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::EnableMFADeviceAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::EnableMFADeviceAsyncHelper, this, request, context);
 }
 
-void IAMClient::EnableMFADeviceAsyncHelper(const EnableMFADeviceRequest& request) const
+void IAMClient::EnableMFADeviceAsyncHelper(const EnableMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnableMFADeviceOutcomeReceived(this, request, EnableMFADevice(request));
+  m_onEnableMFADeviceOutcomeReceived(this, request, EnableMFADevice(request), context);
 }
 
 GenerateCredentialReportOutcome IAMClient::GenerateCredentialReport(const GenerateCredentialReportRequest& request) const
@@ -1515,14 +1515,14 @@ GenerateCredentialReportOutcomeCallable IAMClient::GenerateCredentialReportCalla
   return std::async(std::launch::async, &IAMClient::GenerateCredentialReport, this, request);
 }
 
-void IAMClient::GenerateCredentialReportAsync(const GenerateCredentialReportRequest& request) const
+void IAMClient::GenerateCredentialReportAsync(const GenerateCredentialReportRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GenerateCredentialReportAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GenerateCredentialReportAsyncHelper, this, request, context);
 }
 
-void IAMClient::GenerateCredentialReportAsyncHelper(const GenerateCredentialReportRequest& request) const
+void IAMClient::GenerateCredentialReportAsyncHelper(const GenerateCredentialReportRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGenerateCredentialReportOutcomeReceived(this, request, GenerateCredentialReport(request));
+  m_onGenerateCredentialReportOutcomeReceived(this, request, GenerateCredentialReport(request), context);
 }
 
 GetAccessKeyLastUsedOutcome IAMClient::GetAccessKeyLastUsed(const GetAccessKeyLastUsedRequest& request) const
@@ -1546,14 +1546,14 @@ GetAccessKeyLastUsedOutcomeCallable IAMClient::GetAccessKeyLastUsedCallable(cons
   return std::async(std::launch::async, &IAMClient::GetAccessKeyLastUsed, this, request);
 }
 
-void IAMClient::GetAccessKeyLastUsedAsync(const GetAccessKeyLastUsedRequest& request) const
+void IAMClient::GetAccessKeyLastUsedAsync(const GetAccessKeyLastUsedRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetAccessKeyLastUsedAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetAccessKeyLastUsedAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetAccessKeyLastUsedAsyncHelper(const GetAccessKeyLastUsedRequest& request) const
+void IAMClient::GetAccessKeyLastUsedAsyncHelper(const GetAccessKeyLastUsedRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetAccessKeyLastUsedOutcomeReceived(this, request, GetAccessKeyLastUsed(request));
+  m_onGetAccessKeyLastUsedOutcomeReceived(this, request, GetAccessKeyLastUsed(request), context);
 }
 
 GetAccountAuthorizationDetailsOutcome IAMClient::GetAccountAuthorizationDetails(const GetAccountAuthorizationDetailsRequest& request) const
@@ -1577,14 +1577,14 @@ GetAccountAuthorizationDetailsOutcomeCallable IAMClient::GetAccountAuthorization
   return std::async(std::launch::async, &IAMClient::GetAccountAuthorizationDetails, this, request);
 }
 
-void IAMClient::GetAccountAuthorizationDetailsAsync(const GetAccountAuthorizationDetailsRequest& request) const
+void IAMClient::GetAccountAuthorizationDetailsAsync(const GetAccountAuthorizationDetailsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetAccountAuthorizationDetailsAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetAccountAuthorizationDetailsAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetAccountAuthorizationDetailsAsyncHelper(const GetAccountAuthorizationDetailsRequest& request) const
+void IAMClient::GetAccountAuthorizationDetailsAsyncHelper(const GetAccountAuthorizationDetailsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetAccountAuthorizationDetailsOutcomeReceived(this, request, GetAccountAuthorizationDetails(request));
+  m_onGetAccountAuthorizationDetailsOutcomeReceived(this, request, GetAccountAuthorizationDetails(request), context);
 }
 
 GetAccountPasswordPolicyOutcome IAMClient::GetAccountPasswordPolicy(const GetAccountPasswordPolicyRequest& request) const
@@ -1608,14 +1608,14 @@ GetAccountPasswordPolicyOutcomeCallable IAMClient::GetAccountPasswordPolicyCalla
   return std::async(std::launch::async, &IAMClient::GetAccountPasswordPolicy, this, request);
 }
 
-void IAMClient::GetAccountPasswordPolicyAsync(const GetAccountPasswordPolicyRequest& request) const
+void IAMClient::GetAccountPasswordPolicyAsync(const GetAccountPasswordPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetAccountPasswordPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetAccountPasswordPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetAccountPasswordPolicyAsyncHelper(const GetAccountPasswordPolicyRequest& request) const
+void IAMClient::GetAccountPasswordPolicyAsyncHelper(const GetAccountPasswordPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetAccountPasswordPolicyOutcomeReceived(this, request, GetAccountPasswordPolicy(request));
+  m_onGetAccountPasswordPolicyOutcomeReceived(this, request, GetAccountPasswordPolicy(request), context);
 }
 
 GetAccountSummaryOutcome IAMClient::GetAccountSummary(const GetAccountSummaryRequest& request) const
@@ -1639,14 +1639,14 @@ GetAccountSummaryOutcomeCallable IAMClient::GetAccountSummaryCallable(const GetA
   return std::async(std::launch::async, &IAMClient::GetAccountSummary, this, request);
 }
 
-void IAMClient::GetAccountSummaryAsync(const GetAccountSummaryRequest& request) const
+void IAMClient::GetAccountSummaryAsync(const GetAccountSummaryRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetAccountSummaryAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetAccountSummaryAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetAccountSummaryAsyncHelper(const GetAccountSummaryRequest& request) const
+void IAMClient::GetAccountSummaryAsyncHelper(const GetAccountSummaryRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetAccountSummaryOutcomeReceived(this, request, GetAccountSummary(request));
+  m_onGetAccountSummaryOutcomeReceived(this, request, GetAccountSummary(request), context);
 }
 
 GetCredentialReportOutcome IAMClient::GetCredentialReport(const GetCredentialReportRequest& request) const
@@ -1670,14 +1670,14 @@ GetCredentialReportOutcomeCallable IAMClient::GetCredentialReportCallable(const 
   return std::async(std::launch::async, &IAMClient::GetCredentialReport, this, request);
 }
 
-void IAMClient::GetCredentialReportAsync(const GetCredentialReportRequest& request) const
+void IAMClient::GetCredentialReportAsync(const GetCredentialReportRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetCredentialReportAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetCredentialReportAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetCredentialReportAsyncHelper(const GetCredentialReportRequest& request) const
+void IAMClient::GetCredentialReportAsyncHelper(const GetCredentialReportRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetCredentialReportOutcomeReceived(this, request, GetCredentialReport(request));
+  m_onGetCredentialReportOutcomeReceived(this, request, GetCredentialReport(request), context);
 }
 
 GetGroupOutcome IAMClient::GetGroup(const GetGroupRequest& request) const
@@ -1701,14 +1701,14 @@ GetGroupOutcomeCallable IAMClient::GetGroupCallable(const GetGroupRequest& reque
   return std::async(std::launch::async, &IAMClient::GetGroup, this, request);
 }
 
-void IAMClient::GetGroupAsync(const GetGroupRequest& request) const
+void IAMClient::GetGroupAsync(const GetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetGroupAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetGroupAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetGroupAsyncHelper(const GetGroupRequest& request) const
+void IAMClient::GetGroupAsyncHelper(const GetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetGroupOutcomeReceived(this, request, GetGroup(request));
+  m_onGetGroupOutcomeReceived(this, request, GetGroup(request), context);
 }
 
 GetGroupPolicyOutcome IAMClient::GetGroupPolicy(const GetGroupPolicyRequest& request) const
@@ -1732,14 +1732,14 @@ GetGroupPolicyOutcomeCallable IAMClient::GetGroupPolicyCallable(const GetGroupPo
   return std::async(std::launch::async, &IAMClient::GetGroupPolicy, this, request);
 }
 
-void IAMClient::GetGroupPolicyAsync(const GetGroupPolicyRequest& request) const
+void IAMClient::GetGroupPolicyAsync(const GetGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetGroupPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetGroupPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetGroupPolicyAsyncHelper(const GetGroupPolicyRequest& request) const
+void IAMClient::GetGroupPolicyAsyncHelper(const GetGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetGroupPolicyOutcomeReceived(this, request, GetGroupPolicy(request));
+  m_onGetGroupPolicyOutcomeReceived(this, request, GetGroupPolicy(request), context);
 }
 
 GetInstanceProfileOutcome IAMClient::GetInstanceProfile(const GetInstanceProfileRequest& request) const
@@ -1763,14 +1763,14 @@ GetInstanceProfileOutcomeCallable IAMClient::GetInstanceProfileCallable(const Ge
   return std::async(std::launch::async, &IAMClient::GetInstanceProfile, this, request);
 }
 
-void IAMClient::GetInstanceProfileAsync(const GetInstanceProfileRequest& request) const
+void IAMClient::GetInstanceProfileAsync(const GetInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetInstanceProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetInstanceProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetInstanceProfileAsyncHelper(const GetInstanceProfileRequest& request) const
+void IAMClient::GetInstanceProfileAsyncHelper(const GetInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetInstanceProfileOutcomeReceived(this, request, GetInstanceProfile(request));
+  m_onGetInstanceProfileOutcomeReceived(this, request, GetInstanceProfile(request), context);
 }
 
 GetLoginProfileOutcome IAMClient::GetLoginProfile(const GetLoginProfileRequest& request) const
@@ -1794,14 +1794,14 @@ GetLoginProfileOutcomeCallable IAMClient::GetLoginProfileCallable(const GetLogin
   return std::async(std::launch::async, &IAMClient::GetLoginProfile, this, request);
 }
 
-void IAMClient::GetLoginProfileAsync(const GetLoginProfileRequest& request) const
+void IAMClient::GetLoginProfileAsync(const GetLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetLoginProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetLoginProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetLoginProfileAsyncHelper(const GetLoginProfileRequest& request) const
+void IAMClient::GetLoginProfileAsyncHelper(const GetLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetLoginProfileOutcomeReceived(this, request, GetLoginProfile(request));
+  m_onGetLoginProfileOutcomeReceived(this, request, GetLoginProfile(request), context);
 }
 
 GetOpenIDConnectProviderOutcome IAMClient::GetOpenIDConnectProvider(const GetOpenIDConnectProviderRequest& request) const
@@ -1825,14 +1825,14 @@ GetOpenIDConnectProviderOutcomeCallable IAMClient::GetOpenIDConnectProviderCalla
   return std::async(std::launch::async, &IAMClient::GetOpenIDConnectProvider, this, request);
 }
 
-void IAMClient::GetOpenIDConnectProviderAsync(const GetOpenIDConnectProviderRequest& request) const
+void IAMClient::GetOpenIDConnectProviderAsync(const GetOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetOpenIDConnectProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetOpenIDConnectProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetOpenIDConnectProviderAsyncHelper(const GetOpenIDConnectProviderRequest& request) const
+void IAMClient::GetOpenIDConnectProviderAsyncHelper(const GetOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetOpenIDConnectProviderOutcomeReceived(this, request, GetOpenIDConnectProvider(request));
+  m_onGetOpenIDConnectProviderOutcomeReceived(this, request, GetOpenIDConnectProvider(request), context);
 }
 
 GetPolicyOutcome IAMClient::GetPolicy(const GetPolicyRequest& request) const
@@ -1856,14 +1856,14 @@ GetPolicyOutcomeCallable IAMClient::GetPolicyCallable(const GetPolicyRequest& re
   return std::async(std::launch::async, &IAMClient::GetPolicy, this, request);
 }
 
-void IAMClient::GetPolicyAsync(const GetPolicyRequest& request) const
+void IAMClient::GetPolicyAsync(const GetPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetPolicyAsyncHelper(const GetPolicyRequest& request) const
+void IAMClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetPolicyOutcomeReceived(this, request, GetPolicy(request));
+  m_onGetPolicyOutcomeReceived(this, request, GetPolicy(request), context);
 }
 
 GetPolicyVersionOutcome IAMClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const
@@ -1887,14 +1887,14 @@ GetPolicyVersionOutcomeCallable IAMClient::GetPolicyVersionCallable(const GetPol
   return std::async(std::launch::async, &IAMClient::GetPolicyVersion, this, request);
 }
 
-void IAMClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request) const
+void IAMClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetPolicyVersionAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetPolicyVersionAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& request) const
+void IAMClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetPolicyVersionOutcomeReceived(this, request, GetPolicyVersion(request));
+  m_onGetPolicyVersionOutcomeReceived(this, request, GetPolicyVersion(request), context);
 }
 
 GetRoleOutcome IAMClient::GetRole(const GetRoleRequest& request) const
@@ -1918,14 +1918,14 @@ GetRoleOutcomeCallable IAMClient::GetRoleCallable(const GetRoleRequest& request)
   return std::async(std::launch::async, &IAMClient::GetRole, this, request);
 }
 
-void IAMClient::GetRoleAsync(const GetRoleRequest& request) const
+void IAMClient::GetRoleAsync(const GetRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetRoleAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetRoleAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetRoleAsyncHelper(const GetRoleRequest& request) const
+void IAMClient::GetRoleAsyncHelper(const GetRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetRoleOutcomeReceived(this, request, GetRole(request));
+  m_onGetRoleOutcomeReceived(this, request, GetRole(request), context);
 }
 
 GetRolePolicyOutcome IAMClient::GetRolePolicy(const GetRolePolicyRequest& request) const
@@ -1949,14 +1949,14 @@ GetRolePolicyOutcomeCallable IAMClient::GetRolePolicyCallable(const GetRolePolic
   return std::async(std::launch::async, &IAMClient::GetRolePolicy, this, request);
 }
 
-void IAMClient::GetRolePolicyAsync(const GetRolePolicyRequest& request) const
+void IAMClient::GetRolePolicyAsync(const GetRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetRolePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetRolePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetRolePolicyAsyncHelper(const GetRolePolicyRequest& request) const
+void IAMClient::GetRolePolicyAsyncHelper(const GetRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetRolePolicyOutcomeReceived(this, request, GetRolePolicy(request));
+  m_onGetRolePolicyOutcomeReceived(this, request, GetRolePolicy(request), context);
 }
 
 GetSAMLProviderOutcome IAMClient::GetSAMLProvider(const GetSAMLProviderRequest& request) const
@@ -1980,14 +1980,14 @@ GetSAMLProviderOutcomeCallable IAMClient::GetSAMLProviderCallable(const GetSAMLP
   return std::async(std::launch::async, &IAMClient::GetSAMLProvider, this, request);
 }
 
-void IAMClient::GetSAMLProviderAsync(const GetSAMLProviderRequest& request) const
+void IAMClient::GetSAMLProviderAsync(const GetSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetSAMLProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetSAMLProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetSAMLProviderAsyncHelper(const GetSAMLProviderRequest& request) const
+void IAMClient::GetSAMLProviderAsyncHelper(const GetSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetSAMLProviderOutcomeReceived(this, request, GetSAMLProvider(request));
+  m_onGetSAMLProviderOutcomeReceived(this, request, GetSAMLProvider(request), context);
 }
 
 GetServerCertificateOutcome IAMClient::GetServerCertificate(const GetServerCertificateRequest& request) const
@@ -2011,14 +2011,14 @@ GetServerCertificateOutcomeCallable IAMClient::GetServerCertificateCallable(cons
   return std::async(std::launch::async, &IAMClient::GetServerCertificate, this, request);
 }
 
-void IAMClient::GetServerCertificateAsync(const GetServerCertificateRequest& request) const
+void IAMClient::GetServerCertificateAsync(const GetServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetServerCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetServerCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetServerCertificateAsyncHelper(const GetServerCertificateRequest& request) const
+void IAMClient::GetServerCertificateAsyncHelper(const GetServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetServerCertificateOutcomeReceived(this, request, GetServerCertificate(request));
+  m_onGetServerCertificateOutcomeReceived(this, request, GetServerCertificate(request), context);
 }
 
 GetUserOutcome IAMClient::GetUser(const GetUserRequest& request) const
@@ -2042,14 +2042,14 @@ GetUserOutcomeCallable IAMClient::GetUserCallable(const GetUserRequest& request)
   return std::async(std::launch::async, &IAMClient::GetUser, this, request);
 }
 
-void IAMClient::GetUserAsync(const GetUserRequest& request) const
+void IAMClient::GetUserAsync(const GetUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetUserAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetUserAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetUserAsyncHelper(const GetUserRequest& request) const
+void IAMClient::GetUserAsyncHelper(const GetUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetUserOutcomeReceived(this, request, GetUser(request));
+  m_onGetUserOutcomeReceived(this, request, GetUser(request), context);
 }
 
 GetUserPolicyOutcome IAMClient::GetUserPolicy(const GetUserPolicyRequest& request) const
@@ -2073,14 +2073,14 @@ GetUserPolicyOutcomeCallable IAMClient::GetUserPolicyCallable(const GetUserPolic
   return std::async(std::launch::async, &IAMClient::GetUserPolicy, this, request);
 }
 
-void IAMClient::GetUserPolicyAsync(const GetUserPolicyRequest& request) const
+void IAMClient::GetUserPolicyAsync(const GetUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::GetUserPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::GetUserPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::GetUserPolicyAsyncHelper(const GetUserPolicyRequest& request) const
+void IAMClient::GetUserPolicyAsyncHelper(const GetUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetUserPolicyOutcomeReceived(this, request, GetUserPolicy(request));
+  m_onGetUserPolicyOutcomeReceived(this, request, GetUserPolicy(request), context);
 }
 
 ListAccessKeysOutcome IAMClient::ListAccessKeys(const ListAccessKeysRequest& request) const
@@ -2104,14 +2104,14 @@ ListAccessKeysOutcomeCallable IAMClient::ListAccessKeysCallable(const ListAccess
   return std::async(std::launch::async, &IAMClient::ListAccessKeys, this, request);
 }
 
-void IAMClient::ListAccessKeysAsync(const ListAccessKeysRequest& request) const
+void IAMClient::ListAccessKeysAsync(const ListAccessKeysRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListAccessKeysAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListAccessKeysAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListAccessKeysAsyncHelper(const ListAccessKeysRequest& request) const
+void IAMClient::ListAccessKeysAsyncHelper(const ListAccessKeysRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAccessKeysOutcomeReceived(this, request, ListAccessKeys(request));
+  m_onListAccessKeysOutcomeReceived(this, request, ListAccessKeys(request), context);
 }
 
 ListAccountAliasesOutcome IAMClient::ListAccountAliases(const ListAccountAliasesRequest& request) const
@@ -2135,14 +2135,14 @@ ListAccountAliasesOutcomeCallable IAMClient::ListAccountAliasesCallable(const Li
   return std::async(std::launch::async, &IAMClient::ListAccountAliases, this, request);
 }
 
-void IAMClient::ListAccountAliasesAsync(const ListAccountAliasesRequest& request) const
+void IAMClient::ListAccountAliasesAsync(const ListAccountAliasesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListAccountAliasesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListAccountAliasesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListAccountAliasesAsyncHelper(const ListAccountAliasesRequest& request) const
+void IAMClient::ListAccountAliasesAsyncHelper(const ListAccountAliasesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAccountAliasesOutcomeReceived(this, request, ListAccountAliases(request));
+  m_onListAccountAliasesOutcomeReceived(this, request, ListAccountAliases(request), context);
 }
 
 ListAttachedGroupPoliciesOutcome IAMClient::ListAttachedGroupPolicies(const ListAttachedGroupPoliciesRequest& request) const
@@ -2166,14 +2166,14 @@ ListAttachedGroupPoliciesOutcomeCallable IAMClient::ListAttachedGroupPoliciesCal
   return std::async(std::launch::async, &IAMClient::ListAttachedGroupPolicies, this, request);
 }
 
-void IAMClient::ListAttachedGroupPoliciesAsync(const ListAttachedGroupPoliciesRequest& request) const
+void IAMClient::ListAttachedGroupPoliciesAsync(const ListAttachedGroupPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListAttachedGroupPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListAttachedGroupPoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListAttachedGroupPoliciesAsyncHelper(const ListAttachedGroupPoliciesRequest& request) const
+void IAMClient::ListAttachedGroupPoliciesAsyncHelper(const ListAttachedGroupPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAttachedGroupPoliciesOutcomeReceived(this, request, ListAttachedGroupPolicies(request));
+  m_onListAttachedGroupPoliciesOutcomeReceived(this, request, ListAttachedGroupPolicies(request), context);
 }
 
 ListAttachedRolePoliciesOutcome IAMClient::ListAttachedRolePolicies(const ListAttachedRolePoliciesRequest& request) const
@@ -2197,14 +2197,14 @@ ListAttachedRolePoliciesOutcomeCallable IAMClient::ListAttachedRolePoliciesCalla
   return std::async(std::launch::async, &IAMClient::ListAttachedRolePolicies, this, request);
 }
 
-void IAMClient::ListAttachedRolePoliciesAsync(const ListAttachedRolePoliciesRequest& request) const
+void IAMClient::ListAttachedRolePoliciesAsync(const ListAttachedRolePoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListAttachedRolePoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListAttachedRolePoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListAttachedRolePoliciesAsyncHelper(const ListAttachedRolePoliciesRequest& request) const
+void IAMClient::ListAttachedRolePoliciesAsyncHelper(const ListAttachedRolePoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAttachedRolePoliciesOutcomeReceived(this, request, ListAttachedRolePolicies(request));
+  m_onListAttachedRolePoliciesOutcomeReceived(this, request, ListAttachedRolePolicies(request), context);
 }
 
 ListAttachedUserPoliciesOutcome IAMClient::ListAttachedUserPolicies(const ListAttachedUserPoliciesRequest& request) const
@@ -2228,14 +2228,14 @@ ListAttachedUserPoliciesOutcomeCallable IAMClient::ListAttachedUserPoliciesCalla
   return std::async(std::launch::async, &IAMClient::ListAttachedUserPolicies, this, request);
 }
 
-void IAMClient::ListAttachedUserPoliciesAsync(const ListAttachedUserPoliciesRequest& request) const
+void IAMClient::ListAttachedUserPoliciesAsync(const ListAttachedUserPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListAttachedUserPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListAttachedUserPoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListAttachedUserPoliciesAsyncHelper(const ListAttachedUserPoliciesRequest& request) const
+void IAMClient::ListAttachedUserPoliciesAsyncHelper(const ListAttachedUserPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAttachedUserPoliciesOutcomeReceived(this, request, ListAttachedUserPolicies(request));
+  m_onListAttachedUserPoliciesOutcomeReceived(this, request, ListAttachedUserPolicies(request), context);
 }
 
 ListEntitiesForPolicyOutcome IAMClient::ListEntitiesForPolicy(const ListEntitiesForPolicyRequest& request) const
@@ -2259,14 +2259,14 @@ ListEntitiesForPolicyOutcomeCallable IAMClient::ListEntitiesForPolicyCallable(co
   return std::async(std::launch::async, &IAMClient::ListEntitiesForPolicy, this, request);
 }
 
-void IAMClient::ListEntitiesForPolicyAsync(const ListEntitiesForPolicyRequest& request) const
+void IAMClient::ListEntitiesForPolicyAsync(const ListEntitiesForPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListEntitiesForPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListEntitiesForPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListEntitiesForPolicyAsyncHelper(const ListEntitiesForPolicyRequest& request) const
+void IAMClient::ListEntitiesForPolicyAsyncHelper(const ListEntitiesForPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListEntitiesForPolicyOutcomeReceived(this, request, ListEntitiesForPolicy(request));
+  m_onListEntitiesForPolicyOutcomeReceived(this, request, ListEntitiesForPolicy(request), context);
 }
 
 ListGroupPoliciesOutcome IAMClient::ListGroupPolicies(const ListGroupPoliciesRequest& request) const
@@ -2290,14 +2290,14 @@ ListGroupPoliciesOutcomeCallable IAMClient::ListGroupPoliciesCallable(const List
   return std::async(std::launch::async, &IAMClient::ListGroupPolicies, this, request);
 }
 
-void IAMClient::ListGroupPoliciesAsync(const ListGroupPoliciesRequest& request) const
+void IAMClient::ListGroupPoliciesAsync(const ListGroupPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListGroupPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListGroupPoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListGroupPoliciesAsyncHelper(const ListGroupPoliciesRequest& request) const
+void IAMClient::ListGroupPoliciesAsyncHelper(const ListGroupPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListGroupPoliciesOutcomeReceived(this, request, ListGroupPolicies(request));
+  m_onListGroupPoliciesOutcomeReceived(this, request, ListGroupPolicies(request), context);
 }
 
 ListGroupsOutcome IAMClient::ListGroups(const ListGroupsRequest& request) const
@@ -2321,14 +2321,14 @@ ListGroupsOutcomeCallable IAMClient::ListGroupsCallable(const ListGroupsRequest&
   return std::async(std::launch::async, &IAMClient::ListGroups, this, request);
 }
 
-void IAMClient::ListGroupsAsync(const ListGroupsRequest& request) const
+void IAMClient::ListGroupsAsync(const ListGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListGroupsAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListGroupsAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListGroupsAsyncHelper(const ListGroupsRequest& request) const
+void IAMClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListGroupsOutcomeReceived(this, request, ListGroups(request));
+  m_onListGroupsOutcomeReceived(this, request, ListGroups(request), context);
 }
 
 ListGroupsForUserOutcome IAMClient::ListGroupsForUser(const ListGroupsForUserRequest& request) const
@@ -2352,14 +2352,14 @@ ListGroupsForUserOutcomeCallable IAMClient::ListGroupsForUserCallable(const List
   return std::async(std::launch::async, &IAMClient::ListGroupsForUser, this, request);
 }
 
-void IAMClient::ListGroupsForUserAsync(const ListGroupsForUserRequest& request) const
+void IAMClient::ListGroupsForUserAsync(const ListGroupsForUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListGroupsForUserAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListGroupsForUserAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListGroupsForUserAsyncHelper(const ListGroupsForUserRequest& request) const
+void IAMClient::ListGroupsForUserAsyncHelper(const ListGroupsForUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListGroupsForUserOutcomeReceived(this, request, ListGroupsForUser(request));
+  m_onListGroupsForUserOutcomeReceived(this, request, ListGroupsForUser(request), context);
 }
 
 ListInstanceProfilesOutcome IAMClient::ListInstanceProfiles(const ListInstanceProfilesRequest& request) const
@@ -2383,14 +2383,14 @@ ListInstanceProfilesOutcomeCallable IAMClient::ListInstanceProfilesCallable(cons
   return std::async(std::launch::async, &IAMClient::ListInstanceProfiles, this, request);
 }
 
-void IAMClient::ListInstanceProfilesAsync(const ListInstanceProfilesRequest& request) const
+void IAMClient::ListInstanceProfilesAsync(const ListInstanceProfilesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListInstanceProfilesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListInstanceProfilesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListInstanceProfilesAsyncHelper(const ListInstanceProfilesRequest& request) const
+void IAMClient::ListInstanceProfilesAsyncHelper(const ListInstanceProfilesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListInstanceProfilesOutcomeReceived(this, request, ListInstanceProfiles(request));
+  m_onListInstanceProfilesOutcomeReceived(this, request, ListInstanceProfiles(request), context);
 }
 
 ListInstanceProfilesForRoleOutcome IAMClient::ListInstanceProfilesForRole(const ListInstanceProfilesForRoleRequest& request) const
@@ -2414,14 +2414,14 @@ ListInstanceProfilesForRoleOutcomeCallable IAMClient::ListInstanceProfilesForRol
   return std::async(std::launch::async, &IAMClient::ListInstanceProfilesForRole, this, request);
 }
 
-void IAMClient::ListInstanceProfilesForRoleAsync(const ListInstanceProfilesForRoleRequest& request) const
+void IAMClient::ListInstanceProfilesForRoleAsync(const ListInstanceProfilesForRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListInstanceProfilesForRoleAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListInstanceProfilesForRoleAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListInstanceProfilesForRoleAsyncHelper(const ListInstanceProfilesForRoleRequest& request) const
+void IAMClient::ListInstanceProfilesForRoleAsyncHelper(const ListInstanceProfilesForRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListInstanceProfilesForRoleOutcomeReceived(this, request, ListInstanceProfilesForRole(request));
+  m_onListInstanceProfilesForRoleOutcomeReceived(this, request, ListInstanceProfilesForRole(request), context);
 }
 
 ListMFADevicesOutcome IAMClient::ListMFADevices(const ListMFADevicesRequest& request) const
@@ -2445,14 +2445,14 @@ ListMFADevicesOutcomeCallable IAMClient::ListMFADevicesCallable(const ListMFADev
   return std::async(std::launch::async, &IAMClient::ListMFADevices, this, request);
 }
 
-void IAMClient::ListMFADevicesAsync(const ListMFADevicesRequest& request) const
+void IAMClient::ListMFADevicesAsync(const ListMFADevicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListMFADevicesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListMFADevicesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListMFADevicesAsyncHelper(const ListMFADevicesRequest& request) const
+void IAMClient::ListMFADevicesAsyncHelper(const ListMFADevicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListMFADevicesOutcomeReceived(this, request, ListMFADevices(request));
+  m_onListMFADevicesOutcomeReceived(this, request, ListMFADevices(request), context);
 }
 
 ListOpenIDConnectProvidersOutcome IAMClient::ListOpenIDConnectProviders(const ListOpenIDConnectProvidersRequest& request) const
@@ -2476,14 +2476,14 @@ ListOpenIDConnectProvidersOutcomeCallable IAMClient::ListOpenIDConnectProvidersC
   return std::async(std::launch::async, &IAMClient::ListOpenIDConnectProviders, this, request);
 }
 
-void IAMClient::ListOpenIDConnectProvidersAsync(const ListOpenIDConnectProvidersRequest& request) const
+void IAMClient::ListOpenIDConnectProvidersAsync(const ListOpenIDConnectProvidersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListOpenIDConnectProvidersAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListOpenIDConnectProvidersAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListOpenIDConnectProvidersAsyncHelper(const ListOpenIDConnectProvidersRequest& request) const
+void IAMClient::ListOpenIDConnectProvidersAsyncHelper(const ListOpenIDConnectProvidersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListOpenIDConnectProvidersOutcomeReceived(this, request, ListOpenIDConnectProviders(request));
+  m_onListOpenIDConnectProvidersOutcomeReceived(this, request, ListOpenIDConnectProviders(request), context);
 }
 
 ListPoliciesOutcome IAMClient::ListPolicies(const ListPoliciesRequest& request) const
@@ -2507,14 +2507,14 @@ ListPoliciesOutcomeCallable IAMClient::ListPoliciesCallable(const ListPoliciesRe
   return std::async(std::launch::async, &IAMClient::ListPolicies, this, request);
 }
 
-void IAMClient::ListPoliciesAsync(const ListPoliciesRequest& request) const
+void IAMClient::ListPoliciesAsync(const ListPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListPoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request) const
+void IAMClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListPoliciesOutcomeReceived(this, request, ListPolicies(request));
+  m_onListPoliciesOutcomeReceived(this, request, ListPolicies(request), context);
 }
 
 ListPolicyVersionsOutcome IAMClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
@@ -2538,14 +2538,14 @@ ListPolicyVersionsOutcomeCallable IAMClient::ListPolicyVersionsCallable(const Li
   return std::async(std::launch::async, &IAMClient::ListPolicyVersions, this, request);
 }
 
-void IAMClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request) const
+void IAMClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListPolicyVersionsAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListPolicyVersionsAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& request) const
+void IAMClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListPolicyVersionsOutcomeReceived(this, request, ListPolicyVersions(request));
+  m_onListPolicyVersionsOutcomeReceived(this, request, ListPolicyVersions(request), context);
 }
 
 ListRolePoliciesOutcome IAMClient::ListRolePolicies(const ListRolePoliciesRequest& request) const
@@ -2569,14 +2569,14 @@ ListRolePoliciesOutcomeCallable IAMClient::ListRolePoliciesCallable(const ListRo
   return std::async(std::launch::async, &IAMClient::ListRolePolicies, this, request);
 }
 
-void IAMClient::ListRolePoliciesAsync(const ListRolePoliciesRequest& request) const
+void IAMClient::ListRolePoliciesAsync(const ListRolePoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListRolePoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListRolePoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListRolePoliciesAsyncHelper(const ListRolePoliciesRequest& request) const
+void IAMClient::ListRolePoliciesAsyncHelper(const ListRolePoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListRolePoliciesOutcomeReceived(this, request, ListRolePolicies(request));
+  m_onListRolePoliciesOutcomeReceived(this, request, ListRolePolicies(request), context);
 }
 
 ListRolesOutcome IAMClient::ListRoles(const ListRolesRequest& request) const
@@ -2600,14 +2600,14 @@ ListRolesOutcomeCallable IAMClient::ListRolesCallable(const ListRolesRequest& re
   return std::async(std::launch::async, &IAMClient::ListRoles, this, request);
 }
 
-void IAMClient::ListRolesAsync(const ListRolesRequest& request) const
+void IAMClient::ListRolesAsync(const ListRolesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListRolesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListRolesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListRolesAsyncHelper(const ListRolesRequest& request) const
+void IAMClient::ListRolesAsyncHelper(const ListRolesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListRolesOutcomeReceived(this, request, ListRoles(request));
+  m_onListRolesOutcomeReceived(this, request, ListRoles(request), context);
 }
 
 ListSAMLProvidersOutcome IAMClient::ListSAMLProviders(const ListSAMLProvidersRequest& request) const
@@ -2631,14 +2631,14 @@ ListSAMLProvidersOutcomeCallable IAMClient::ListSAMLProvidersCallable(const List
   return std::async(std::launch::async, &IAMClient::ListSAMLProviders, this, request);
 }
 
-void IAMClient::ListSAMLProvidersAsync(const ListSAMLProvidersRequest& request) const
+void IAMClient::ListSAMLProvidersAsync(const ListSAMLProvidersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListSAMLProvidersAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListSAMLProvidersAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListSAMLProvidersAsyncHelper(const ListSAMLProvidersRequest& request) const
+void IAMClient::ListSAMLProvidersAsyncHelper(const ListSAMLProvidersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListSAMLProvidersOutcomeReceived(this, request, ListSAMLProviders(request));
+  m_onListSAMLProvidersOutcomeReceived(this, request, ListSAMLProviders(request), context);
 }
 
 ListServerCertificatesOutcome IAMClient::ListServerCertificates(const ListServerCertificatesRequest& request) const
@@ -2662,14 +2662,14 @@ ListServerCertificatesOutcomeCallable IAMClient::ListServerCertificatesCallable(
   return std::async(std::launch::async, &IAMClient::ListServerCertificates, this, request);
 }
 
-void IAMClient::ListServerCertificatesAsync(const ListServerCertificatesRequest& request) const
+void IAMClient::ListServerCertificatesAsync(const ListServerCertificatesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListServerCertificatesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListServerCertificatesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListServerCertificatesAsyncHelper(const ListServerCertificatesRequest& request) const
+void IAMClient::ListServerCertificatesAsyncHelper(const ListServerCertificatesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListServerCertificatesOutcomeReceived(this, request, ListServerCertificates(request));
+  m_onListServerCertificatesOutcomeReceived(this, request, ListServerCertificates(request), context);
 }
 
 ListSigningCertificatesOutcome IAMClient::ListSigningCertificates(const ListSigningCertificatesRequest& request) const
@@ -2693,14 +2693,14 @@ ListSigningCertificatesOutcomeCallable IAMClient::ListSigningCertificatesCallabl
   return std::async(std::launch::async, &IAMClient::ListSigningCertificates, this, request);
 }
 
-void IAMClient::ListSigningCertificatesAsync(const ListSigningCertificatesRequest& request) const
+void IAMClient::ListSigningCertificatesAsync(const ListSigningCertificatesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListSigningCertificatesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListSigningCertificatesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListSigningCertificatesAsyncHelper(const ListSigningCertificatesRequest& request) const
+void IAMClient::ListSigningCertificatesAsyncHelper(const ListSigningCertificatesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListSigningCertificatesOutcomeReceived(this, request, ListSigningCertificates(request));
+  m_onListSigningCertificatesOutcomeReceived(this, request, ListSigningCertificates(request), context);
 }
 
 ListUserPoliciesOutcome IAMClient::ListUserPolicies(const ListUserPoliciesRequest& request) const
@@ -2724,14 +2724,14 @@ ListUserPoliciesOutcomeCallable IAMClient::ListUserPoliciesCallable(const ListUs
   return std::async(std::launch::async, &IAMClient::ListUserPolicies, this, request);
 }
 
-void IAMClient::ListUserPoliciesAsync(const ListUserPoliciesRequest& request) const
+void IAMClient::ListUserPoliciesAsync(const ListUserPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListUserPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListUserPoliciesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListUserPoliciesAsyncHelper(const ListUserPoliciesRequest& request) const
+void IAMClient::ListUserPoliciesAsyncHelper(const ListUserPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListUserPoliciesOutcomeReceived(this, request, ListUserPolicies(request));
+  m_onListUserPoliciesOutcomeReceived(this, request, ListUserPolicies(request), context);
 }
 
 ListUsersOutcome IAMClient::ListUsers(const ListUsersRequest& request) const
@@ -2755,14 +2755,14 @@ ListUsersOutcomeCallable IAMClient::ListUsersCallable(const ListUsersRequest& re
   return std::async(std::launch::async, &IAMClient::ListUsers, this, request);
 }
 
-void IAMClient::ListUsersAsync(const ListUsersRequest& request) const
+void IAMClient::ListUsersAsync(const ListUsersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListUsersAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListUsersAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListUsersAsyncHelper(const ListUsersRequest& request) const
+void IAMClient::ListUsersAsyncHelper(const ListUsersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListUsersOutcomeReceived(this, request, ListUsers(request));
+  m_onListUsersOutcomeReceived(this, request, ListUsers(request), context);
 }
 
 ListVirtualMFADevicesOutcome IAMClient::ListVirtualMFADevices(const ListVirtualMFADevicesRequest& request) const
@@ -2786,14 +2786,14 @@ ListVirtualMFADevicesOutcomeCallable IAMClient::ListVirtualMFADevicesCallable(co
   return std::async(std::launch::async, &IAMClient::ListVirtualMFADevices, this, request);
 }
 
-void IAMClient::ListVirtualMFADevicesAsync(const ListVirtualMFADevicesRequest& request) const
+void IAMClient::ListVirtualMFADevicesAsync(const ListVirtualMFADevicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ListVirtualMFADevicesAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ListVirtualMFADevicesAsyncHelper, this, request, context);
 }
 
-void IAMClient::ListVirtualMFADevicesAsyncHelper(const ListVirtualMFADevicesRequest& request) const
+void IAMClient::ListVirtualMFADevicesAsyncHelper(const ListVirtualMFADevicesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListVirtualMFADevicesOutcomeReceived(this, request, ListVirtualMFADevices(request));
+  m_onListVirtualMFADevicesOutcomeReceived(this, request, ListVirtualMFADevices(request), context);
 }
 
 PutGroupPolicyOutcome IAMClient::PutGroupPolicy(const PutGroupPolicyRequest& request) const
@@ -2817,14 +2817,14 @@ PutGroupPolicyOutcomeCallable IAMClient::PutGroupPolicyCallable(const PutGroupPo
   return std::async(std::launch::async, &IAMClient::PutGroupPolicy, this, request);
 }
 
-void IAMClient::PutGroupPolicyAsync(const PutGroupPolicyRequest& request) const
+void IAMClient::PutGroupPolicyAsync(const PutGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::PutGroupPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::PutGroupPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::PutGroupPolicyAsyncHelper(const PutGroupPolicyRequest& request) const
+void IAMClient::PutGroupPolicyAsyncHelper(const PutGroupPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutGroupPolicyOutcomeReceived(this, request, PutGroupPolicy(request));
+  m_onPutGroupPolicyOutcomeReceived(this, request, PutGroupPolicy(request), context);
 }
 
 PutRolePolicyOutcome IAMClient::PutRolePolicy(const PutRolePolicyRequest& request) const
@@ -2848,14 +2848,14 @@ PutRolePolicyOutcomeCallable IAMClient::PutRolePolicyCallable(const PutRolePolic
   return std::async(std::launch::async, &IAMClient::PutRolePolicy, this, request);
 }
 
-void IAMClient::PutRolePolicyAsync(const PutRolePolicyRequest& request) const
+void IAMClient::PutRolePolicyAsync(const PutRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::PutRolePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::PutRolePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::PutRolePolicyAsyncHelper(const PutRolePolicyRequest& request) const
+void IAMClient::PutRolePolicyAsyncHelper(const PutRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutRolePolicyOutcomeReceived(this, request, PutRolePolicy(request));
+  m_onPutRolePolicyOutcomeReceived(this, request, PutRolePolicy(request), context);
 }
 
 PutUserPolicyOutcome IAMClient::PutUserPolicy(const PutUserPolicyRequest& request) const
@@ -2879,14 +2879,14 @@ PutUserPolicyOutcomeCallable IAMClient::PutUserPolicyCallable(const PutUserPolic
   return std::async(std::launch::async, &IAMClient::PutUserPolicy, this, request);
 }
 
-void IAMClient::PutUserPolicyAsync(const PutUserPolicyRequest& request) const
+void IAMClient::PutUserPolicyAsync(const PutUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::PutUserPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::PutUserPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::PutUserPolicyAsyncHelper(const PutUserPolicyRequest& request) const
+void IAMClient::PutUserPolicyAsyncHelper(const PutUserPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutUserPolicyOutcomeReceived(this, request, PutUserPolicy(request));
+  m_onPutUserPolicyOutcomeReceived(this, request, PutUserPolicy(request), context);
 }
 
 RemoveClientIDFromOpenIDConnectProviderOutcome IAMClient::RemoveClientIDFromOpenIDConnectProvider(const RemoveClientIDFromOpenIDConnectProviderRequest& request) const
@@ -2910,14 +2910,14 @@ RemoveClientIDFromOpenIDConnectProviderOutcomeCallable IAMClient::RemoveClientID
   return std::async(std::launch::async, &IAMClient::RemoveClientIDFromOpenIDConnectProvider, this, request);
 }
 
-void IAMClient::RemoveClientIDFromOpenIDConnectProviderAsync(const RemoveClientIDFromOpenIDConnectProviderRequest& request) const
+void IAMClient::RemoveClientIDFromOpenIDConnectProviderAsync(const RemoveClientIDFromOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::RemoveClientIDFromOpenIDConnectProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::RemoveClientIDFromOpenIDConnectProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const RemoveClientIDFromOpenIDConnectProviderRequest& request) const
+void IAMClient::RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const RemoveClientIDFromOpenIDConnectProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveClientIDFromOpenIDConnectProviderOutcomeReceived(this, request, RemoveClientIDFromOpenIDConnectProvider(request));
+  m_onRemoveClientIDFromOpenIDConnectProviderOutcomeReceived(this, request, RemoveClientIDFromOpenIDConnectProvider(request), context);
 }
 
 RemoveRoleFromInstanceProfileOutcome IAMClient::RemoveRoleFromInstanceProfile(const RemoveRoleFromInstanceProfileRequest& request) const
@@ -2941,14 +2941,14 @@ RemoveRoleFromInstanceProfileOutcomeCallable IAMClient::RemoveRoleFromInstancePr
   return std::async(std::launch::async, &IAMClient::RemoveRoleFromInstanceProfile, this, request);
 }
 
-void IAMClient::RemoveRoleFromInstanceProfileAsync(const RemoveRoleFromInstanceProfileRequest& request) const
+void IAMClient::RemoveRoleFromInstanceProfileAsync(const RemoveRoleFromInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::RemoveRoleFromInstanceProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::RemoveRoleFromInstanceProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::RemoveRoleFromInstanceProfileAsyncHelper(const RemoveRoleFromInstanceProfileRequest& request) const
+void IAMClient::RemoveRoleFromInstanceProfileAsyncHelper(const RemoveRoleFromInstanceProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveRoleFromInstanceProfileOutcomeReceived(this, request, RemoveRoleFromInstanceProfile(request));
+  m_onRemoveRoleFromInstanceProfileOutcomeReceived(this, request, RemoveRoleFromInstanceProfile(request), context);
 }
 
 RemoveUserFromGroupOutcome IAMClient::RemoveUserFromGroup(const RemoveUserFromGroupRequest& request) const
@@ -2972,14 +2972,14 @@ RemoveUserFromGroupOutcomeCallable IAMClient::RemoveUserFromGroupCallable(const 
   return std::async(std::launch::async, &IAMClient::RemoveUserFromGroup, this, request);
 }
 
-void IAMClient::RemoveUserFromGroupAsync(const RemoveUserFromGroupRequest& request) const
+void IAMClient::RemoveUserFromGroupAsync(const RemoveUserFromGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::RemoveUserFromGroupAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::RemoveUserFromGroupAsyncHelper, this, request, context);
 }
 
-void IAMClient::RemoveUserFromGroupAsyncHelper(const RemoveUserFromGroupRequest& request) const
+void IAMClient::RemoveUserFromGroupAsyncHelper(const RemoveUserFromGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveUserFromGroupOutcomeReceived(this, request, RemoveUserFromGroup(request));
+  m_onRemoveUserFromGroupOutcomeReceived(this, request, RemoveUserFromGroup(request), context);
 }
 
 ResyncMFADeviceOutcome IAMClient::ResyncMFADevice(const ResyncMFADeviceRequest& request) const
@@ -3003,14 +3003,14 @@ ResyncMFADeviceOutcomeCallable IAMClient::ResyncMFADeviceCallable(const ResyncMF
   return std::async(std::launch::async, &IAMClient::ResyncMFADevice, this, request);
 }
 
-void IAMClient::ResyncMFADeviceAsync(const ResyncMFADeviceRequest& request) const
+void IAMClient::ResyncMFADeviceAsync(const ResyncMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::ResyncMFADeviceAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::ResyncMFADeviceAsyncHelper, this, request, context);
 }
 
-void IAMClient::ResyncMFADeviceAsyncHelper(const ResyncMFADeviceRequest& request) const
+void IAMClient::ResyncMFADeviceAsyncHelper(const ResyncMFADeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onResyncMFADeviceOutcomeReceived(this, request, ResyncMFADevice(request));
+  m_onResyncMFADeviceOutcomeReceived(this, request, ResyncMFADevice(request), context);
 }
 
 SetDefaultPolicyVersionOutcome IAMClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
@@ -3034,14 +3034,14 @@ SetDefaultPolicyVersionOutcomeCallable IAMClient::SetDefaultPolicyVersionCallabl
   return std::async(std::launch::async, &IAMClient::SetDefaultPolicyVersion, this, request);
 }
 
-void IAMClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request) const
+void IAMClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::SetDefaultPolicyVersionAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::SetDefaultPolicyVersionAsyncHelper, this, request, context);
 }
 
-void IAMClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersionRequest& request) const
+void IAMClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetDefaultPolicyVersionOutcomeReceived(this, request, SetDefaultPolicyVersion(request));
+  m_onSetDefaultPolicyVersionOutcomeReceived(this, request, SetDefaultPolicyVersion(request), context);
 }
 
 UpdateAccessKeyOutcome IAMClient::UpdateAccessKey(const UpdateAccessKeyRequest& request) const
@@ -3065,14 +3065,14 @@ UpdateAccessKeyOutcomeCallable IAMClient::UpdateAccessKeyCallable(const UpdateAc
   return std::async(std::launch::async, &IAMClient::UpdateAccessKey, this, request);
 }
 
-void IAMClient::UpdateAccessKeyAsync(const UpdateAccessKeyRequest& request) const
+void IAMClient::UpdateAccessKeyAsync(const UpdateAccessKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateAccessKeyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateAccessKeyAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateAccessKeyAsyncHelper(const UpdateAccessKeyRequest& request) const
+void IAMClient::UpdateAccessKeyAsyncHelper(const UpdateAccessKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateAccessKeyOutcomeReceived(this, request, UpdateAccessKey(request));
+  m_onUpdateAccessKeyOutcomeReceived(this, request, UpdateAccessKey(request), context);
 }
 
 UpdateAccountPasswordPolicyOutcome IAMClient::UpdateAccountPasswordPolicy(const UpdateAccountPasswordPolicyRequest& request) const
@@ -3096,14 +3096,14 @@ UpdateAccountPasswordPolicyOutcomeCallable IAMClient::UpdateAccountPasswordPolic
   return std::async(std::launch::async, &IAMClient::UpdateAccountPasswordPolicy, this, request);
 }
 
-void IAMClient::UpdateAccountPasswordPolicyAsync(const UpdateAccountPasswordPolicyRequest& request) const
+void IAMClient::UpdateAccountPasswordPolicyAsync(const UpdateAccountPasswordPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateAccountPasswordPolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateAccountPasswordPolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateAccountPasswordPolicyAsyncHelper(const UpdateAccountPasswordPolicyRequest& request) const
+void IAMClient::UpdateAccountPasswordPolicyAsyncHelper(const UpdateAccountPasswordPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateAccountPasswordPolicyOutcomeReceived(this, request, UpdateAccountPasswordPolicy(request));
+  m_onUpdateAccountPasswordPolicyOutcomeReceived(this, request, UpdateAccountPasswordPolicy(request), context);
 }
 
 UpdateAssumeRolePolicyOutcome IAMClient::UpdateAssumeRolePolicy(const UpdateAssumeRolePolicyRequest& request) const
@@ -3127,14 +3127,14 @@ UpdateAssumeRolePolicyOutcomeCallable IAMClient::UpdateAssumeRolePolicyCallable(
   return std::async(std::launch::async, &IAMClient::UpdateAssumeRolePolicy, this, request);
 }
 
-void IAMClient::UpdateAssumeRolePolicyAsync(const UpdateAssumeRolePolicyRequest& request) const
+void IAMClient::UpdateAssumeRolePolicyAsync(const UpdateAssumeRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateAssumeRolePolicyAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateAssumeRolePolicyAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateAssumeRolePolicyAsyncHelper(const UpdateAssumeRolePolicyRequest& request) const
+void IAMClient::UpdateAssumeRolePolicyAsyncHelper(const UpdateAssumeRolePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateAssumeRolePolicyOutcomeReceived(this, request, UpdateAssumeRolePolicy(request));
+  m_onUpdateAssumeRolePolicyOutcomeReceived(this, request, UpdateAssumeRolePolicy(request), context);
 }
 
 UpdateGroupOutcome IAMClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -3158,14 +3158,14 @@ UpdateGroupOutcomeCallable IAMClient::UpdateGroupCallable(const UpdateGroupReque
   return std::async(std::launch::async, &IAMClient::UpdateGroup, this, request);
 }
 
-void IAMClient::UpdateGroupAsync(const UpdateGroupRequest& request) const
+void IAMClient::UpdateGroupAsync(const UpdateGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateGroupAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateGroupAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request) const
+void IAMClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateGroupOutcomeReceived(this, request, UpdateGroup(request));
+  m_onUpdateGroupOutcomeReceived(this, request, UpdateGroup(request), context);
 }
 
 UpdateLoginProfileOutcome IAMClient::UpdateLoginProfile(const UpdateLoginProfileRequest& request) const
@@ -3189,14 +3189,14 @@ UpdateLoginProfileOutcomeCallable IAMClient::UpdateLoginProfileCallable(const Up
   return std::async(std::launch::async, &IAMClient::UpdateLoginProfile, this, request);
 }
 
-void IAMClient::UpdateLoginProfileAsync(const UpdateLoginProfileRequest& request) const
+void IAMClient::UpdateLoginProfileAsync(const UpdateLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateLoginProfileAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateLoginProfileAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateLoginProfileAsyncHelper(const UpdateLoginProfileRequest& request) const
+void IAMClient::UpdateLoginProfileAsyncHelper(const UpdateLoginProfileRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateLoginProfileOutcomeReceived(this, request, UpdateLoginProfile(request));
+  m_onUpdateLoginProfileOutcomeReceived(this, request, UpdateLoginProfile(request), context);
 }
 
 UpdateOpenIDConnectProviderThumbprintOutcome IAMClient::UpdateOpenIDConnectProviderThumbprint(const UpdateOpenIDConnectProviderThumbprintRequest& request) const
@@ -3220,14 +3220,14 @@ UpdateOpenIDConnectProviderThumbprintOutcomeCallable IAMClient::UpdateOpenIDConn
   return std::async(std::launch::async, &IAMClient::UpdateOpenIDConnectProviderThumbprint, this, request);
 }
 
-void IAMClient::UpdateOpenIDConnectProviderThumbprintAsync(const UpdateOpenIDConnectProviderThumbprintRequest& request) const
+void IAMClient::UpdateOpenIDConnectProviderThumbprintAsync(const UpdateOpenIDConnectProviderThumbprintRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper(const UpdateOpenIDConnectProviderThumbprintRequest& request) const
+void IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper(const UpdateOpenIDConnectProviderThumbprintRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateOpenIDConnectProviderThumbprintOutcomeReceived(this, request, UpdateOpenIDConnectProviderThumbprint(request));
+  m_onUpdateOpenIDConnectProviderThumbprintOutcomeReceived(this, request, UpdateOpenIDConnectProviderThumbprint(request), context);
 }
 
 UpdateSAMLProviderOutcome IAMClient::UpdateSAMLProvider(const UpdateSAMLProviderRequest& request) const
@@ -3251,14 +3251,14 @@ UpdateSAMLProviderOutcomeCallable IAMClient::UpdateSAMLProviderCallable(const Up
   return std::async(std::launch::async, &IAMClient::UpdateSAMLProvider, this, request);
 }
 
-void IAMClient::UpdateSAMLProviderAsync(const UpdateSAMLProviderRequest& request) const
+void IAMClient::UpdateSAMLProviderAsync(const UpdateSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateSAMLProviderAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateSAMLProviderAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateSAMLProviderAsyncHelper(const UpdateSAMLProviderRequest& request) const
+void IAMClient::UpdateSAMLProviderAsyncHelper(const UpdateSAMLProviderRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateSAMLProviderOutcomeReceived(this, request, UpdateSAMLProvider(request));
+  m_onUpdateSAMLProviderOutcomeReceived(this, request, UpdateSAMLProvider(request), context);
 }
 
 UpdateServerCertificateOutcome IAMClient::UpdateServerCertificate(const UpdateServerCertificateRequest& request) const
@@ -3282,14 +3282,14 @@ UpdateServerCertificateOutcomeCallable IAMClient::UpdateServerCertificateCallabl
   return std::async(std::launch::async, &IAMClient::UpdateServerCertificate, this, request);
 }
 
-void IAMClient::UpdateServerCertificateAsync(const UpdateServerCertificateRequest& request) const
+void IAMClient::UpdateServerCertificateAsync(const UpdateServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateServerCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateServerCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateServerCertificateAsyncHelper(const UpdateServerCertificateRequest& request) const
+void IAMClient::UpdateServerCertificateAsyncHelper(const UpdateServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateServerCertificateOutcomeReceived(this, request, UpdateServerCertificate(request));
+  m_onUpdateServerCertificateOutcomeReceived(this, request, UpdateServerCertificate(request), context);
 }
 
 UpdateSigningCertificateOutcome IAMClient::UpdateSigningCertificate(const UpdateSigningCertificateRequest& request) const
@@ -3313,14 +3313,14 @@ UpdateSigningCertificateOutcomeCallable IAMClient::UpdateSigningCertificateCalla
   return std::async(std::launch::async, &IAMClient::UpdateSigningCertificate, this, request);
 }
 
-void IAMClient::UpdateSigningCertificateAsync(const UpdateSigningCertificateRequest& request) const
+void IAMClient::UpdateSigningCertificateAsync(const UpdateSigningCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateSigningCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateSigningCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateSigningCertificateAsyncHelper(const UpdateSigningCertificateRequest& request) const
+void IAMClient::UpdateSigningCertificateAsyncHelper(const UpdateSigningCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateSigningCertificateOutcomeReceived(this, request, UpdateSigningCertificate(request));
+  m_onUpdateSigningCertificateOutcomeReceived(this, request, UpdateSigningCertificate(request), context);
 }
 
 UpdateUserOutcome IAMClient::UpdateUser(const UpdateUserRequest& request) const
@@ -3344,14 +3344,14 @@ UpdateUserOutcomeCallable IAMClient::UpdateUserCallable(const UpdateUserRequest&
   return std::async(std::launch::async, &IAMClient::UpdateUser, this, request);
 }
 
-void IAMClient::UpdateUserAsync(const UpdateUserRequest& request) const
+void IAMClient::UpdateUserAsync(const UpdateUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UpdateUserAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UpdateUserAsyncHelper, this, request, context);
 }
 
-void IAMClient::UpdateUserAsyncHelper(const UpdateUserRequest& request) const
+void IAMClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateUserOutcomeReceived(this, request, UpdateUser(request));
+  m_onUpdateUserOutcomeReceived(this, request, UpdateUser(request), context);
 }
 
 UploadServerCertificateOutcome IAMClient::UploadServerCertificate(const UploadServerCertificateRequest& request) const
@@ -3375,14 +3375,14 @@ UploadServerCertificateOutcomeCallable IAMClient::UploadServerCertificateCallabl
   return std::async(std::launch::async, &IAMClient::UploadServerCertificate, this, request);
 }
 
-void IAMClient::UploadServerCertificateAsync(const UploadServerCertificateRequest& request) const
+void IAMClient::UploadServerCertificateAsync(const UploadServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UploadServerCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UploadServerCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::UploadServerCertificateAsyncHelper(const UploadServerCertificateRequest& request) const
+void IAMClient::UploadServerCertificateAsyncHelper(const UploadServerCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUploadServerCertificateOutcomeReceived(this, request, UploadServerCertificate(request));
+  m_onUploadServerCertificateOutcomeReceived(this, request, UploadServerCertificate(request), context);
 }
 
 UploadSigningCertificateOutcome IAMClient::UploadSigningCertificate(const UploadSigningCertificateRequest& request) const
@@ -3406,13 +3406,13 @@ UploadSigningCertificateOutcomeCallable IAMClient::UploadSigningCertificateCalla
   return std::async(std::launch::async, &IAMClient::UploadSigningCertificate, this, request);
 }
 
-void IAMClient::UploadSigningCertificateAsync(const UploadSigningCertificateRequest& request) const
+void IAMClient::UploadSigningCertificateAsync(const UploadSigningCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&IAMClient::UploadSigningCertificateAsyncHelper, this, request);
+  m_executor->Submit(&IAMClient::UploadSigningCertificateAsyncHelper, this, request, context);
 }
 
-void IAMClient::UploadSigningCertificateAsyncHelper(const UploadSigningCertificateRequest& request) const
+void IAMClient::UploadSigningCertificateAsyncHelper(const UploadSigningCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUploadSigningCertificateOutcomeReceived(this, request, UploadSigningCertificate(request));
+  m_onUploadSigningCertificateOutcomeReceived(this, request, UploadSigningCertificate(request), context);
 }
 

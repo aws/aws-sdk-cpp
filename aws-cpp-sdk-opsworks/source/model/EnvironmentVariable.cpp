@@ -22,12 +22,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 EnvironmentVariable::EnvironmentVariable() : 
+    m_keyHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_secure(false),
     m_secureHasBeenSet(false)
 {
 }
 
 EnvironmentVariable::EnvironmentVariable(const JsonValue& jsonValue) : 
+    m_keyHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_secure(false),
     m_secureHasBeenSet(false)
 {
@@ -36,9 +40,19 @@ EnvironmentVariable::EnvironmentVariable(const JsonValue& jsonValue) :
 
 EnvironmentVariable& EnvironmentVariable::operator =(const JsonValue& jsonValue)
 {
-  m_key = jsonValue.GetString("Key");
+  if(jsonValue.ValueExists("Key"))
+  {
+    m_key = jsonValue.GetString("Key");
 
-  m_value = jsonValue.GetString("Value");
+    m_keyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Value"))
+  {
+    m_value = jsonValue.GetString("Value");
+
+    m_valueHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Secure"))
   {
@@ -54,9 +68,17 @@ JsonValue EnvironmentVariable::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Key", m_key);
+  if(m_keyHasBeenSet)
+  {
+   payload.WithString("Key", m_key);
 
-  payload.WithString("Value", m_value);
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("Value", m_value);
+
+  }
 
   if(m_secureHasBeenSet)
   {

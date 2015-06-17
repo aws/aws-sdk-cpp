@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The name for the queue to be created.</p>
     */
-    inline void SetQueueName(const Aws::String& value) { m_queueName = value; }
+    inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
 
     /*
      <p>The name for the queue to be created.</p>
     */
-    inline void SetQueueName(const char* value) { m_queueName.assign(value); }
+    inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
 
     /*
      <p>The name for the queue to be created.</p>
@@ -85,6 +85,7 @@ namespace Model
 
   private:
     Aws::String m_queueName;
+    bool m_queueNameHasBeenSet;
     Aws::Map<QueueAttributeName, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

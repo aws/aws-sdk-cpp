@@ -104,13 +104,14 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
       m_valueType = ConfigurationOptionValueTypeMapper::GetConfigurationOptionValueTypeForName(StringUtils::Trim(valueTypeNode.GetText().c_str()).c_str());
       m_valueTypeHasBeenSet = true;
     }
-    XmlNode valueOptionsNode = resultNode.FirstChild("ValueOptions");
+    XmlNode valueOptionsNodeParent = resultNode.FirstChild("ValueOptions");
+    XmlNode valueOptionsNode = valueOptionsNodeParent.FirstChild("member");
     if(!valueOptionsNode.IsNull())
     {
       while(!valueOptionsNode.IsNull())
       {
         m_valueOptions.push_back(StringUtils::Trim(valueOptionsNode.GetText().c_str()));
-        valueOptionsNode = valueOptionsNode.NextNode("ValueOptions");
+        valueOptionsNode = valueOptionsNode.NextNode("member");
       }
 
       m_valueOptionsHasBeenSet = true;

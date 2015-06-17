@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>The ID of the activity.</p>
     */
-    inline void SetActivityId(const Aws::String& value) { m_activityId = value; }
+    inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
     /*
      <p>The ID of the activity.</p>
     */
-    inline void SetActivityId(const char* value) { m_activityId.assign(value); }
+    inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
 
     /*
      <p>The ID of the activity.</p>
@@ -75,12 +75,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -123,12 +123,12 @@ namespace Model
     /*
      <p>The reason the activity was begun.</p>
     */
-    inline void SetCause(const Aws::String& value) { m_cause = value; }
+    inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
 
     /*
      <p>The reason the activity was begun.</p>
     */
-    inline void SetCause(const char* value) { m_cause.assign(value); }
+    inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
 
     /*
      <p>The reason the activity was begun.</p>
@@ -147,7 +147,7 @@ namespace Model
     /*
      <p>The start time of this activity.</p>
     */
-    inline void SetStartTime(double value) { m_startTime = value; }
+    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
      <p>The start time of this activity.</p>
@@ -175,7 +175,7 @@ namespace Model
     /*
      <p>The current status of the activity.</p>
     */
-    inline void SetStatusCode(const ScalingActivityStatusCode& value) { m_statusCode = value; }
+    inline void SetStatusCode(const ScalingActivityStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /*
      <p>The current status of the activity.</p>
@@ -246,14 +246,19 @@ namespace Model
 
   private:
     Aws::String m_activityId;
+    bool m_activityIdHasBeenSet;
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::String m_cause;
+    bool m_causeHasBeenSet;
     double m_startTime;
+    bool m_startTimeHasBeenSet;
     double m_endTime;
     bool m_endTimeHasBeenSet;
     ScalingActivityStatusCode m_statusCode;
+    bool m_statusCodeHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
     long m_progress;

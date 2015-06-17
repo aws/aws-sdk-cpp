@@ -20,7 +20,9 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreatePolicyRequest::CreatePolicyRequest() : 
+    m_policyNameHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_policyDocumentHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -29,12 +31,18 @@ Aws::String CreatePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreatePolicy&";
-  ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  if(m_policyNameHasBeenSet)
+  {
+    ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
   if(m_pathHasBeenSet)
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
-  ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  if(m_policyDocumentHasBeenSet)
+  {
+    ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";

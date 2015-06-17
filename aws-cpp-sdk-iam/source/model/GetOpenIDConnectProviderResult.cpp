@@ -45,18 +45,20 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
   {
     XmlNode urlNode = resultNode.FirstChild("Url");
     m_url = StringUtils::Trim(urlNode.GetText().c_str());
-    XmlNode clientIDListNode = resultNode.FirstChild("ClientIDList");
+    XmlNode clientIDListNodeParent = resultNode.FirstChild("ClientIDList");
+    XmlNode clientIDListNode = clientIDListNodeParent.FirstChild("member");
     while(!clientIDListNode.IsNull())
     {
       m_clientIDList.push_back(StringUtils::Trim(clientIDListNode.GetText().c_str()));
-      clientIDListNode = clientIDListNode.NextNode("ClientIDList");
+      clientIDListNode = clientIDListNode.NextNode("member");
     }
 
-    XmlNode thumbprintListNode = resultNode.FirstChild("ThumbprintList");
+    XmlNode thumbprintListNodeParent = resultNode.FirstChild("ThumbprintList");
+    XmlNode thumbprintListNode = thumbprintListNodeParent.FirstChild("member");
     while(!thumbprintListNode.IsNull())
     {
       m_thumbprintList.push_back(StringUtils::Trim(thumbprintListNode.GetText().c_str()));
-      thumbprintListNode = thumbprintListNode.NextNode("ThumbprintList");
+      thumbprintListNode = thumbprintListNode.NextNode("member");
     }
 
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");

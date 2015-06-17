@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The ID of the EC2 instance.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the EC2 instance.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The ID of the EC2 instance.</p>
@@ -64,7 +64,7 @@ namespace Model
     /*
      <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
     */
-    inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacity = value; }
+    inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacityHasBeenSet = true; m_shouldDecrementDesiredCapacity = value; }
 
     /*
      <p>If <code>true</code>, terminating this instance also decrements the size of the Auto Scaling group.</p>
@@ -73,7 +73,9 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     bool m_shouldDecrementDesiredCapacity;
+    bool m_shouldDecrementDesiredCapacityHasBeenSet;
   };
 
 } // namespace Model

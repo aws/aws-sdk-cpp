@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 
 Origins::Origins() : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 Origins::Origins(const XmlNode& xmlNode) : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,14 +45,19 @@ Origins& Origins::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode originNode = resultNode.FirstChild("Origin");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode originNodeParent = resultNode.FirstChild("Origin");
+    XmlNode originNode = originNodeParent.FirstChild("member");
     if(!originNode.IsNull())
     {
       while(!originNode.IsNull())
       {
         m_items.push_back(originNode);
-        originNode = originNode.NextNode("Origin");
+        originNode = originNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -63,10 +70,14 @@ Origins& Origins::operator =(const XmlNode& xmlNode)
 void Origins::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

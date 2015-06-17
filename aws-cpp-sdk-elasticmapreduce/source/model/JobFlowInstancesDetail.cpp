@@ -22,9 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 JobFlowInstancesDetail::JobFlowInstancesDetail() : 
+    m_masterInstanceTypeHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
     m_masterInstanceIdHasBeenSet(false),
+    m_slaveInstanceTypeHasBeenSet(false),
     m_instanceCount(0),
+    m_instanceCountHasBeenSet(false),
     m_instanceGroupsHasBeenSet(false),
     m_normalizedInstanceHours(0),
     m_normalizedInstanceHoursHasBeenSet(false),
@@ -40,9 +43,12 @@ JobFlowInstancesDetail::JobFlowInstancesDetail() :
 }
 
 JobFlowInstancesDetail::JobFlowInstancesDetail(const JsonValue& jsonValue) : 
+    m_masterInstanceTypeHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
     m_masterInstanceIdHasBeenSet(false),
+    m_slaveInstanceTypeHasBeenSet(false),
     m_instanceCount(0),
+    m_instanceCountHasBeenSet(false),
     m_instanceGroupsHasBeenSet(false),
     m_normalizedInstanceHours(0),
     m_normalizedInstanceHoursHasBeenSet(false),
@@ -60,7 +66,12 @@ JobFlowInstancesDetail::JobFlowInstancesDetail(const JsonValue& jsonValue) :
 
 JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(const JsonValue& jsonValue)
 {
-  m_masterInstanceType = jsonValue.GetString("MasterInstanceType");
+  if(jsonValue.ValueExists("MasterInstanceType"))
+  {
+    m_masterInstanceType = jsonValue.GetString("MasterInstanceType");
+
+    m_masterInstanceTypeHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("MasterPublicDnsName"))
   {
@@ -76,9 +87,19 @@ JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(const JsonValue& json
     m_masterInstanceIdHasBeenSet = true;
   }
 
-  m_slaveInstanceType = jsonValue.GetString("SlaveInstanceType");
+  if(jsonValue.ValueExists("SlaveInstanceType"))
+  {
+    m_slaveInstanceType = jsonValue.GetString("SlaveInstanceType");
 
-  m_instanceCount = jsonValue.GetInteger("InstanceCount");
+    m_slaveInstanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceCount"))
+  {
+    m_instanceCount = jsonValue.GetInteger("InstanceCount");
+
+    m_instanceCountHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("InstanceGroups"))
   {
@@ -146,7 +167,11 @@ JsonValue JobFlowInstancesDetail::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("MasterInstanceType", m_masterInstanceType);
+  if(m_masterInstanceTypeHasBeenSet)
+  {
+   payload.WithString("MasterInstanceType", m_masterInstanceType);
+
+  }
 
   if(m_masterPublicDnsNameHasBeenSet)
   {
@@ -160,9 +185,17 @@ JsonValue JobFlowInstancesDetail::Jsonize() const
 
   }
 
-  payload.WithString("SlaveInstanceType", m_slaveInstanceType);
+  if(m_slaveInstanceTypeHasBeenSet)
+  {
+   payload.WithString("SlaveInstanceType", m_slaveInstanceType);
 
-  payload.WithInteger("InstanceCount", m_instanceCount);
+  }
+
+  if(m_instanceCountHasBeenSet)
+  {
+   payload.WithInteger("InstanceCount", m_instanceCount);
+
+  }
 
   if(m_instanceGroupsHasBeenSet)
   {

@@ -19,7 +19,8 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-DomainMetadataRequest::DomainMetadataRequest()
+DomainMetadataRequest::DomainMetadataRequest() : 
+    m_domainNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DomainMetadataRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DomainMetadata&";
-  ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
+  if(m_domainNameHasBeenSet)
+  {
+    ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
+  }
   ss << "Version=2009-04-15";
   return ss.str();
 }

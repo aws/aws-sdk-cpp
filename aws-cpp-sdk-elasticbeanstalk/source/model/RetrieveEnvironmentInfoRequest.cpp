@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 RetrieveEnvironmentInfoRequest::RetrieveEnvironmentInfoRequest() : 
     m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
+    m_environmentNameHasBeenSet(false),
+    m_infoTypeHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,10 @@ Aws::String RetrieveEnvironmentInfoRequest::SerializePayload() const
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
-  ss << "InfoType=" << EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType) << "&";
+  if(m_infoTypeHasBeenSet)
+  {
+    ss << "InfoType=" << EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

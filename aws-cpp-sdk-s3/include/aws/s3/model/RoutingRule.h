@@ -63,7 +63,7 @@ namespace Model
     /*
      Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
     */
-    inline void SetRedirect(const Redirect& value) { m_redirect = value; }
+    inline void SetRedirect(const Redirect& value) { m_redirectHasBeenSet = true; m_redirect = value; }
 
     /*
      Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can can specify a different error code to return.
@@ -74,6 +74,7 @@ namespace Model
     Condition m_condition;
     bool m_conditionHasBeenSet;
     Redirect m_redirect;
+    bool m_redirectHasBeenSet;
   };
 
 } // namespace Model

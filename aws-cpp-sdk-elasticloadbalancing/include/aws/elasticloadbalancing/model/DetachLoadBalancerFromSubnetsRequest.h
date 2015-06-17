@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The IDs of the subnets.</p>
     */
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnets = value; }
+    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /*
      <p>The IDs of the subnets.</p>
@@ -75,16 +75,18 @@ namespace Model
     /*
      <p>The IDs of the subnets.</p>
     */
-    inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(const Aws::String& value) { m_subnets.push_back(value); return *this; }
+    inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /*
      <p>The IDs of the subnets.</p>
     */
-    inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(const char* value) { m_subnets.push_back(value); return *this; }
+    inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::Vector<Aws::String> m_subnets;
+    bool m_subnetsHasBeenSet;
   };
 
 } // namespace Model

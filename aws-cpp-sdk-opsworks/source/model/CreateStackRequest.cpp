@@ -22,8 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateStackRequest::CreateStackRequest() : 
+    m_nameHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_attributesHasBeenSet(false),
+    m_serviceRoleArnHasBeenSet(false),
+    m_defaultInstanceProfileArnHasBeenSet(false),
     m_defaultOsHasBeenSet(false),
     m_hostnameThemeHasBeenSet(false),
     m_defaultAvailabilityZoneHasBeenSet(false),
@@ -37,7 +41,8 @@ CreateStackRequest::CreateStackRequest() :
     m_useOpsworksSecurityGroupsHasBeenSet(false),
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
-    m_defaultRootDeviceTypeHasBeenSet(false)
+    m_defaultRootDeviceTypeHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -45,9 +50,17 @@ Aws::String CreateStackRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
-  payload.WithString("Region", m_region);
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("Region", m_region);
+
+  }
 
   if(m_vpcIdHasBeenSet)
   {
@@ -66,9 +79,17 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   }
 
-  payload.WithString("ServiceRoleArn", m_serviceRoleArn);
+  if(m_serviceRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceRoleArn", m_serviceRoleArn);
 
-  payload.WithString("DefaultInstanceProfileArn", m_defaultInstanceProfileArn);
+  }
+
+  if(m_defaultInstanceProfileArnHasBeenSet)
+  {
+   payload.WithString("DefaultInstanceProfileArn", m_defaultInstanceProfileArn);
+
+  }
 
   if(m_defaultOsHasBeenSet)
   {
@@ -139,6 +160,12 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_defaultRootDeviceTypeHasBeenSet)
   {
    payload.WithString("DefaultRootDeviceType", RootDeviceTypeMapper::GetNameForRootDeviceType(m_defaultRootDeviceType));
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
+
   }
 
   return payload.WriteReadable();

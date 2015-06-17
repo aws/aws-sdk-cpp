@@ -19,7 +19,8 @@
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
-PurgeQueueRequest::PurgeQueueRequest()
+PurgeQueueRequest::PurgeQueueRequest() : 
+    m_queueUrlHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String PurgeQueueRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PurgeQueue&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  if(m_queueUrlHasBeenSet)
+  {
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
   ss << "Version=2012-11-05";
   return ss.str();
 }

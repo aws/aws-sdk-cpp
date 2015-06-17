@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a create application operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API CreateApplicationResult
   {
@@ -42,28 +42,18 @@ namespace Model
     CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-    /*
-     <p>A unique application ID.</p>
-    */
+    
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    
     inline CreateApplicationResult&  WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
-    /*
-     <p>A unique application ID.</p>
-    */
+    
     inline CreateApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:

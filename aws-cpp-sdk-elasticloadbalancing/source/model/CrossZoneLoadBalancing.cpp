@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 CrossZoneLoadBalancing::CrossZoneLoadBalancing() : 
-    m_enabled(false)
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
 CrossZoneLoadBalancing::CrossZoneLoadBalancing(const XmlNode& xmlNode) : 
-    m_enabled(false)
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,7 +43,11 @@ CrossZoneLoadBalancing& CrossZoneLoadBalancing::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,10 +55,16 @@ CrossZoneLoadBalancing& CrossZoneLoadBalancing::operator =(const XmlNode& xmlNod
 
 void CrossZoneLoadBalancing::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+  if(m_enabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+  }
 }
 
 void CrossZoneLoadBalancing::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Enabled=" << m_enabled << "&";
+  if(m_enabledHasBeenSet)
+  {
+      oStream << location << ".Enabled=" << m_enabled << "&";
+  }
 }

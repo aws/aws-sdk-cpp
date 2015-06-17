@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The identity for which the Amazon SNS topic will be set. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     */
-    inline void SetIdentity(const Aws::String& value) { m_identity = value; }
+    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /*
      <p>The identity for which the Amazon SNS topic will be set. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     */
-    inline void SetIdentity(const char* value) { m_identity.assign(value); }
+    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /*
      <p>The identity for which the Amazon SNS topic will be set. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
     */
-    inline void SetNotificationType(const NotificationType& value) { m_notificationType = value; }
+    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /*
      <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
@@ -99,7 +99,9 @@ namespace Model
 
   private:
     Aws::String m_identity;
+    bool m_identityHasBeenSet;
     NotificationType m_notificationType;
+    bool m_notificationTypeHasBeenSet;
     Aws::String m_snsTopic;
     bool m_snsTopicHasBeenSet;
   };

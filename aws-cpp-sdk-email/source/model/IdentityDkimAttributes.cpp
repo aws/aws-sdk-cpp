@@ -25,12 +25,16 @@ using namespace Aws::Utils;
 
 IdentityDkimAttributes::IdentityDkimAttributes() : 
     m_dkimEnabled(false),
+    m_dkimEnabledHasBeenSet(false),
+    m_dkimVerificationStatusHasBeenSet(false),
     m_dkimTokensHasBeenSet(false)
 {
 }
 
 IdentityDkimAttributes::IdentityDkimAttributes(const XmlNode& xmlNode) : 
     m_dkimEnabled(false),
+    m_dkimEnabledHasBeenSet(false),
+    m_dkimVerificationStatusHasBeenSet(false),
     m_dkimTokensHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,16 +47,25 @@ IdentityDkimAttributes& IdentityDkimAttributes::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode dkimEnabledNode = resultNode.FirstChild("DkimEnabled");
-    m_dkimEnabled = StringUtils::ConvertToBool(StringUtils::Trim(dkimEnabledNode.GetText().c_str()).c_str());
+    if(!dkimEnabledNode.IsNull())
+    {
+      m_dkimEnabled = StringUtils::ConvertToBool(StringUtils::Trim(dkimEnabledNode.GetText().c_str()).c_str());
+      m_dkimEnabledHasBeenSet = true;
+    }
     XmlNode dkimVerificationStatusNode = resultNode.FirstChild("DkimVerificationStatus");
-    m_dkimVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(dkimVerificationStatusNode.GetText().c_str()).c_str());
-    XmlNode dkimTokensNode = resultNode.FirstChild("DkimTokens");
+    if(!dkimVerificationStatusNode.IsNull())
+    {
+      m_dkimVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(dkimVerificationStatusNode.GetText().c_str()).c_str());
+      m_dkimVerificationStatusHasBeenSet = true;
+    }
+    XmlNode dkimTokensNodeParent = resultNode.FirstChild("DkimTokens");
+    XmlNode dkimTokensNode = dkimTokensNodeParent.FirstChild("member");
     if(!dkimTokensNode.IsNull())
     {
       while(!dkimTokensNode.IsNull())
       {
         m_dkimTokens.push_back(StringUtils::Trim(dkimTokensNode.GetText().c_str()));
-        dkimTokensNode = dkimTokensNode.NextNode("DkimTokens");
+        dkimTokensNode = dkimTokensNode.NextNode("member");
       }
 
       m_dkimTokensHasBeenSet = true;
@@ -64,8 +77,14 @@ IdentityDkimAttributes& IdentityDkimAttributes::operator =(const XmlNode& xmlNod
 
 void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".DkimEnabled=" << m_dkimEnabled << "&";
-  oStream << location << index << locationValue << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
+  if(m_dkimEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DkimEnabled=" << m_dkimEnabled << "&";
+  }
+  if(m_dkimVerificationStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
+  }
   if(m_dkimTokensHasBeenSet)
   {
       for(auto& item : m_dkimTokens)
@@ -77,8 +96,14 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
 
 void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".DkimEnabled=" << m_dkimEnabled << "&";
-  oStream << location << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
+  if(m_dkimEnabledHasBeenSet)
+  {
+      oStream << location << ".DkimEnabled=" << m_dkimEnabled << "&";
+  }
+  if(m_dkimVerificationStatusHasBeenSet)
+  {
+      oStream << location << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
+  }
   if(m_dkimTokensHasBeenSet)
   {
       for(auto& item : m_dkimTokens)

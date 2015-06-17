@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PollForTaskRequest::PollForTaskRequest() : 
+    m_workerGroupHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_instanceIdentityHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String PollForTaskRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("workerGroup", m_workerGroup);
+  if(m_workerGroupHasBeenSet)
+  {
+   payload.WithString("workerGroup", m_workerGroup);
+
+  }
 
   if(m_hostnameHasBeenSet)
   {

@@ -50,12 +50,12 @@ namespace Model
     /*
      The name of the replaceable attribute.
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the replaceable attribute.
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      The name of the replaceable attribute.
@@ -74,12 +74,12 @@ namespace Model
     /*
      The value of the replaceable attribute.
     */
-    inline void SetValue(const Aws::String& value) { m_value = value; }
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      The value of the replaceable attribute.
     */
-    inline void SetValue(const char* value) { m_value.assign(value); }
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /*
      The value of the replaceable attribute.
@@ -107,7 +107,9 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_value;
+    bool m_valueHasBeenSet;
     bool m_replace;
     bool m_replaceHasBeenSet;
   };

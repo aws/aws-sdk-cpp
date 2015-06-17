@@ -61,25 +61,28 @@ DescribeResizeResult& DescribeResizeResult::operator =(const AmazonWebServiceRes
     m_targetClusterType = StringUtils::Trim(targetClusterTypeNode.GetText().c_str());
     XmlNode statusNode = resultNode.FirstChild("Status");
     m_status = StringUtils::Trim(statusNode.GetText().c_str());
-    XmlNode importTablesCompletedNode = resultNode.FirstChild("ImportTablesCompleted");
+    XmlNode importTablesCompletedNodeParent = resultNode.FirstChild("ImportTablesCompleted");
+    XmlNode importTablesCompletedNode = importTablesCompletedNodeParent.FirstChild("member");
     while(!importTablesCompletedNode.IsNull())
     {
       m_importTablesCompleted.push_back(StringUtils::Trim(importTablesCompletedNode.GetText().c_str()));
-      importTablesCompletedNode = importTablesCompletedNode.NextNode("ImportTablesCompleted");
+      importTablesCompletedNode = importTablesCompletedNode.NextNode("member");
     }
 
-    XmlNode importTablesInProgressNode = resultNode.FirstChild("ImportTablesInProgress");
+    XmlNode importTablesInProgressNodeParent = resultNode.FirstChild("ImportTablesInProgress");
+    XmlNode importTablesInProgressNode = importTablesInProgressNodeParent.FirstChild("member");
     while(!importTablesInProgressNode.IsNull())
     {
       m_importTablesInProgress.push_back(StringUtils::Trim(importTablesInProgressNode.GetText().c_str()));
-      importTablesInProgressNode = importTablesInProgressNode.NextNode("ImportTablesInProgress");
+      importTablesInProgressNode = importTablesInProgressNode.NextNode("member");
     }
 
-    XmlNode importTablesNotStartedNode = resultNode.FirstChild("ImportTablesNotStarted");
+    XmlNode importTablesNotStartedNodeParent = resultNode.FirstChild("ImportTablesNotStarted");
+    XmlNode importTablesNotStartedNode = importTablesNotStartedNodeParent.FirstChild("member");
     while(!importTablesNotStartedNode.IsNull())
     {
       m_importTablesNotStarted.push_back(StringUtils::Trim(importTablesNotStartedNode.GetText().c_str()));
-      importTablesNotStartedNode = importTablesNotStartedNode.NextNode("ImportTablesNotStarted");
+      importTablesNotStartedNode = importTablesNotStartedNode.NextNode("member");
     }
 
     XmlNode avgResizeRateInMegaBytesPerSecondNode = resultNode.FirstChild("AvgResizeRateInMegaBytesPerSecond");

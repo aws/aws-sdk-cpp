@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the role to update.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to update.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name of the role to update.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
     */
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
+    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
     */
-    inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
+    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet;
   };
 
 } // namespace Model

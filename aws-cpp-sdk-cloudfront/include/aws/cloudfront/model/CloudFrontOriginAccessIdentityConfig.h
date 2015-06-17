@@ -48,12 +48,12 @@ namespace Model
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the CloudFrontOriginAccessIdentityConfig object), a new origin access identity is created. If the CallerReference is a value you already sent in a previous request to create an identity, and the content of the CloudFrontOriginAccessIdentityConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create an identity but the content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.
     */
-    inline void SetCallerReference(const Aws::String& value) { m_callerReference = value; }
+    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the CloudFrontOriginAccessIdentityConfig object), a new origin access identity is created. If the CallerReference is a value you already sent in a previous request to create an identity, and the content of the CloudFrontOriginAccessIdentityConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create an identity but the content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.
     */
-    inline void SetCallerReference(const char* value) { m_callerReference.assign(value); }
+    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the CloudFrontOriginAccessIdentityConfig object), a new origin access identity is created. If the CallerReference is a value you already sent in a previous request to create an identity, and the content of the CloudFrontOriginAccessIdentityConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create an identity but the content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.
@@ -72,12 +72,12 @@ namespace Model
     /*
      Any comments you want to include about the origin access identity.
     */
-    inline void SetComment(const Aws::String& value) { m_comment = value; }
+    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /*
      Any comments you want to include about the origin access identity.
     */
-    inline void SetComment(const char* value) { m_comment.assign(value); }
+    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /*
      Any comments you want to include about the origin access identity.
@@ -91,7 +91,9 @@ namespace Model
 
   private:
     Aws::String m_callerReference;
+    bool m_callerReferenceHasBeenSet;
     Aws::String m_comment;
+    bool m_commentHasBeenSet;
   };
 
 } // namespace Model

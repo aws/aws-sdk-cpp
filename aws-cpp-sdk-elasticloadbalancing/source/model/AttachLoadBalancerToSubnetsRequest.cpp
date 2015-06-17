@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-AttachLoadBalancerToSubnetsRequest::AttachLoadBalancerToSubnetsRequest()
+AttachLoadBalancerToSubnetsRequest::AttachLoadBalancerToSubnetsRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_subnetsHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String AttachLoadBalancerToSubnetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AttachLoadBalancerToSubnets&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned subnetsCount = 1;
-  for(auto& item : m_subnets)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    ss << "Subnets." << subnetsCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    subnetsCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_subnetsHasBeenSet)
+  {
+    unsigned subnetsCount = 1;
+    for(auto& item : m_subnets)
+    {
+      ss << "Subnets." << subnetsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      subnetsCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

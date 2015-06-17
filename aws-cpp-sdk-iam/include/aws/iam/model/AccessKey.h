@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>The name of the IAM user that the access key is associated with.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the IAM user that the access key is associated with.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the IAM user that the access key is associated with.</p>
@@ -75,12 +75,12 @@ namespace Model
     /*
      <p>The ID for this access key.</p>
     */
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyId = value; }
+    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The ID for this access key.</p>
     */
-    inline void SetAccessKeyId(const char* value) { m_accessKeyId.assign(value); }
+    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /*
      <p>The ID for this access key.</p>
@@ -99,7 +99,7 @@ namespace Model
     /*
      <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
     */
-    inline void SetStatus(const statusType& value) { m_status = value; }
+    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
@@ -113,12 +113,12 @@ namespace Model
     /*
      <p>The secret key used to sign requests.</p>
     */
-    inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKey = value; }
+    inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
     /*
      <p>The secret key used to sign requests.</p>
     */
-    inline void SetSecretAccessKey(const char* value) { m_secretAccessKey.assign(value); }
+    inline void SetSecretAccessKey(const char* value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey.assign(value); }
 
     /*
      <p>The secret key used to sign requests.</p>
@@ -146,9 +146,13 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet;
     statusType m_status;
+    bool m_statusHasBeenSet;
     Aws::String m_secretAccessKey;
+    bool m_secretAccessKeyHasBeenSet;
     double m_createDate;
     bool m_createDateHasBeenSet;
   };

@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 LookupDeveloperIdentityRequest::LookupDeveloperIdentityRequest() : 
+    m_identityPoolIdHasBeenSet(false),
     m_identityIdHasBeenSet(false),
     m_developerUserIdentifierHasBeenSet(false),
     m_maxResults(0),
@@ -34,7 +35,11 @@ Aws::String LookupDeveloperIdentityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
+  if(m_identityPoolIdHasBeenSet)
+  {
+   payload.WithString("IdentityPoolId", m_identityPoolId);
+
+  }
 
   if(m_identityIdHasBeenSet)
   {

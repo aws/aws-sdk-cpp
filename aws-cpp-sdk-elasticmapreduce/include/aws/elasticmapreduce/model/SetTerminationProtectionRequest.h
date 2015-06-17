@@ -44,7 +44,7 @@ namespace Model
     /*
      <p> A list of strings that uniquely identify the job flows to protect. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
     */
-    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIds = value; }
+    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
     /*
      <p> A list of strings that uniquely identify the job flows to protect. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
@@ -54,12 +54,12 @@ namespace Model
     /*
      <p> A list of strings that uniquely identify the job flows to protect. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
     */
-    inline SetTerminationProtectionRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIds.push_back(value); return *this; }
+    inline SetTerminationProtectionRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
     /*
      <p> A list of strings that uniquely identify the job flows to protect. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
     */
-    inline SetTerminationProtectionRequest& AddJobFlowIds(const char* value) { m_jobFlowIds.push_back(value); return *this; }
+    inline SetTerminationProtectionRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
     /*
      <p> A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error. </p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p> A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error. </p>
     */
-    inline void SetTerminationProtected(bool value) { m_terminationProtected = value; }
+    inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
 
     /*
      <p> A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error. </p>
@@ -77,7 +77,9 @@ namespace Model
 
   private:
     Aws::Vector<Aws::String> m_jobFlowIds;
+    bool m_jobFlowIdsHasBeenSet;
     bool m_terminationProtected;
+    bool m_terminationProtectedHasBeenSet;
   };
 
 } // namespace Model

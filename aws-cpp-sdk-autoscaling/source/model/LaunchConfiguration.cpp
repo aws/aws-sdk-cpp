@@ -24,12 +24,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 LaunchConfiguration::LaunchConfiguration() : 
+    m_launchConfigurationNameHasBeenSet(false),
     m_launchConfigurationARNHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_keyNameHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_classicLinkVPCIdHasBeenSet(false),
     m_classicLinkVPCSecurityGroupsHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
@@ -37,6 +40,7 @@ LaunchConfiguration::LaunchConfiguration() :
     m_spotPriceHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_createdTime(0.0),
+    m_createdTimeHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
@@ -46,12 +50,15 @@ LaunchConfiguration::LaunchConfiguration() :
 }
 
 LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) : 
+    m_launchConfigurationNameHasBeenSet(false),
     m_launchConfigurationARNHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_keyNameHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_classicLinkVPCIdHasBeenSet(false),
     m_classicLinkVPCSecurityGroupsHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
@@ -59,6 +66,7 @@ LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) :
     m_spotPriceHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_createdTime(0.0),
+    m_createdTimeHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
@@ -75,7 +83,11 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
-    m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+    if(!launchConfigurationNameNode.IsNull())
+    {
+      m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+      m_launchConfigurationNameHasBeenSet = true;
+    }
     XmlNode launchConfigurationARNNode = resultNode.FirstChild("LaunchConfigurationARN");
     if(!launchConfigurationARNNode.IsNull())
     {
@@ -83,20 +95,25 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_launchConfigurationARNHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("ImageId");
-    m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+    if(!imageIdNode.IsNull())
+    {
+      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageIdHasBeenSet = true;
+    }
     XmlNode keyNameNode = resultNode.FirstChild("KeyName");
     if(!keyNameNode.IsNull())
     {
       m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
       m_keyNameHasBeenSet = true;
     }
-    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
     if(!securityGroupsNode.IsNull())
     {
       while(!securityGroupsNode.IsNull())
       {
         m_securityGroups.push_back(StringUtils::Trim(securityGroupsNode.GetText().c_str()));
-        securityGroupsNode = securityGroupsNode.NextNode("SecurityGroups");
+        securityGroupsNode = securityGroupsNode.NextNode("member");
       }
 
       m_securityGroupsHasBeenSet = true;
@@ -107,13 +124,14 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_classicLinkVPCId = StringUtils::Trim(classicLinkVPCIdNode.GetText().c_str());
       m_classicLinkVPCIdHasBeenSet = true;
     }
-    XmlNode classicLinkVPCSecurityGroupsNode = resultNode.FirstChild("ClassicLinkVPCSecurityGroups");
+    XmlNode classicLinkVPCSecurityGroupsNodeParent = resultNode.FirstChild("ClassicLinkVPCSecurityGroups");
+    XmlNode classicLinkVPCSecurityGroupsNode = classicLinkVPCSecurityGroupsNodeParent.FirstChild("member");
     if(!classicLinkVPCSecurityGroupsNode.IsNull())
     {
       while(!classicLinkVPCSecurityGroupsNode.IsNull())
       {
         m_classicLinkVPCSecurityGroups.push_back(StringUtils::Trim(classicLinkVPCSecurityGroupsNode.GetText().c_str()));
-        classicLinkVPCSecurityGroupsNode = classicLinkVPCSecurityGroupsNode.NextNode("ClassicLinkVPCSecurityGroups");
+        classicLinkVPCSecurityGroupsNode = classicLinkVPCSecurityGroupsNode.NextNode("member");
       }
 
       m_classicLinkVPCSecurityGroupsHasBeenSet = true;
@@ -125,7 +143,11 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_userDataHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
-    m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+    if(!classicLinkVPCSecurityGroupsNode.IsNull())
+    {
+      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceTypeHasBeenSet = true;
+    }
     XmlNode kernelIdNode = resultNode.FirstChild("KernelId");
     if(!classicLinkVPCSecurityGroupsNode.IsNull())
     {
@@ -138,13 +160,14 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
       m_ramdiskIdHasBeenSet = true;
     }
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
+    XmlNode blockDeviceMappingsNodeParent = resultNode.FirstChild("BlockDeviceMappings");
+    XmlNode blockDeviceMappingsNode = blockDeviceMappingsNodeParent.FirstChild("member");
     if(!blockDeviceMappingsNode.IsNull())
     {
       while(!blockDeviceMappingsNode.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsNode);
-        blockDeviceMappingsNode = blockDeviceMappingsNode.NextNode("BlockDeviceMappings");
+        blockDeviceMappingsNode = blockDeviceMappingsNode.NextNode("member");
       }
 
       m_blockDeviceMappingsHasBeenSet = true;
@@ -168,7 +191,11 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_iamInstanceProfileHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
-    m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+    if(!blockDeviceMappingsNode.IsNull())
+    {
+      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTimeHasBeenSet = true;
+    }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("EbsOptimized");
     if(!blockDeviceMappingsNode.IsNull())
     {
@@ -194,12 +221,18 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  if(m_launchConfigurationNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
   if(m_launchConfigurationARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".LaunchConfigurationARN=" << StringUtils::URLEncode(m_launchConfigurationARN.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
   if(m_keyNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
@@ -226,7 +259,10 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
   if(m_kernelIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
@@ -258,7 +294,10 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".IamInstanceProfile=" << StringUtils::URLEncode(m_iamInstanceProfile.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+  if(m_createdTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+  }
   if(m_ebsOptimizedHasBeenSet)
   {
       oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
@@ -275,12 +314,18 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  if(m_launchConfigurationNameHasBeenSet)
+  {
+      oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
   if(m_launchConfigurationARNHasBeenSet)
   {
       oStream << location << ".LaunchConfigurationARN=" << StringUtils::URLEncode(m_launchConfigurationARN.c_str()) << "&";
   }
-  oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
   if(m_keyNameHasBeenSet)
   {
       oStream << location << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
@@ -307,7 +352,10 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << ".UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
-  oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
   if(m_kernelIdHasBeenSet)
   {
       oStream << location << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
@@ -339,7 +387,10 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << ".IamInstanceProfile=" << StringUtils::URLEncode(m_iamInstanceProfile.c_str()) << "&";
   }
-  oStream << location << ".CreatedTime=" << m_createdTime << "&";
+  if(m_createdTimeHasBeenSet)
+  {
+      oStream << location << ".CreatedTime=" << m_createdTime << "&";
+  }
   if(m_ebsOptimizedHasBeenSet)
   {
       oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";

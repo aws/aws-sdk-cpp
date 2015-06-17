@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
     */
-    inline void SetInputBucket(const Aws::String& value) { m_inputBucket = value; }
+    inline void SetInputBucket(const Aws::String& value) { m_inputBucketHasBeenSet = true; m_inputBucket = value; }
 
     /*
      <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
     */
-    inline void SetInputBucket(const char* value) { m_inputBucket.assign(value); }
+    inline void SetInputBucket(const char* value) { m_inputBucketHasBeenSet = true; m_inputBucket.assign(value); }
 
     /*
      <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
@@ -115,12 +115,12 @@ namespace Model
     /*
      <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
     */
-    inline void SetRole(const Aws::String& value) { m_role = value; }
+    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
     */
-    inline void SetRole(const char* value) { m_role.assign(value); }
+    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /*
      <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
@@ -200,10 +200,13 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_inputBucket;
+    bool m_inputBucketHasBeenSet;
     Aws::String m_outputBucket;
     bool m_outputBucketHasBeenSet;
     Aws::String m_role;
+    bool m_roleHasBeenSet;
     Aws::String m_awsKmsKeyArn;
     bool m_awsKmsKeyArnHasBeenSet;
     Notifications m_notifications;

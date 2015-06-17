@@ -44,7 +44,8 @@ Stack::Stack() :
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_defaultRootDeviceTypeHasBeenSet(false)
+    m_defaultRootDeviceTypeHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -71,7 +72,8 @@ Stack::Stack(const JsonValue& jsonValue) :
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_defaultRootDeviceTypeHasBeenSet(false)
+    m_defaultRootDeviceTypeHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -228,6 +230,13 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
     m_defaultRootDeviceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AgentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("AgentVersion");
+
+    m_agentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -363,6 +372,12 @@ JsonValue Stack::Jsonize() const
   if(m_defaultRootDeviceTypeHasBeenSet)
   {
    payload.WithString("DefaultRootDeviceType", RootDeviceTypeMapper::GetNameForRootDeviceType(m_defaultRootDeviceType));
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
+
   }
 
   return std::move(payload);

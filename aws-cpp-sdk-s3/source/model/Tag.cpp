@@ -23,11 +23,15 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Tag::Tag()
+Tag::Tag() : 
+    m_keyHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
 }
 
-Tag::Tag(const XmlNode& xmlNode)
+Tag::Tag(const XmlNode& xmlNode) : 
+    m_keyHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_keyHasBeenSet = true;
+    }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    m_value = StringUtils::Trim(valueNode.GetText().c_str());
+    if(!valueNode.IsNull())
+    {
+      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_valueHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,8 +62,16 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
 void Tag::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode keyNode = parentNode.CreateChildElement("Key");
-  keyNode.SetText(m_key);
-  XmlNode valueNode = parentNode.CreateChildElement("Value");
-  valueNode.SetText(m_value);
+  if(m_keyHasBeenSet)
+  {
+   XmlNode keyNode = parentNode.CreateChildElement("Key");
+   keyNode.SetText(m_key);
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   XmlNode valueNode = parentNode.CreateChildElement("Value");
+   valueNode.SetText(m_value);
+  }
+
 }

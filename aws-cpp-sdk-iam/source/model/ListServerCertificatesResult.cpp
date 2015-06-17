@@ -43,11 +43,12 @@ ListServerCertificatesResult& ListServerCertificatesResult::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode serverCertificateMetadataListNode = resultNode.FirstChild("ServerCertificateMetadataList");
+    XmlNode serverCertificateMetadataListNodeParent = resultNode.FirstChild("ServerCertificateMetadataList");
+    XmlNode serverCertificateMetadataListNode = serverCertificateMetadataListNodeParent.FirstChild("member");
     while(!serverCertificateMetadataListNode.IsNull())
     {
       m_serverCertificateMetadataList.push_back(serverCertificateMetadataListNode);
-      serverCertificateMetadataListNode = serverCertificateMetadataListNode.NextNode("ServerCertificateMetadataList");
+      serverCertificateMetadataListNode = serverCertificateMetadataListNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

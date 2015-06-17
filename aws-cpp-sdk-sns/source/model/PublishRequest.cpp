@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 PublishRequest::PublishRequest() : 
     m_topicArnHasBeenSet(false),
     m_targetArnHasBeenSet(false),
+    m_messageHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_messageStructureHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -41,7 +42,10 @@ Aws::String PublishRequest::SerializePayload() const
   {
     ss << "TargetArn=" << StringUtils::URLEncode(m_targetArn.c_str()) << "&";
   }
-  ss << "Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+  if(m_messageHasBeenSet)
+  {
+    ss << "Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+  }
   if(m_subjectHasBeenSet)
   {
     ss << "Subject=" << StringUtils::URLEncode(m_subject.c_str()) << "&";

@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a get application operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API GetApplicationResult
   {
@@ -42,18 +42,12 @@ namespace Model
     GetApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the application.</p>
-    */
+    
     inline const ApplicationInfo& GetApplication() const{ return m_application; }
-    /*
-     <p>Information about the application.</p>
-    */
+    
     inline void SetApplication(const ApplicationInfo& value) { m_application = value; }
 
-    /*
-     <p>Information about the application.</p>
-    */
+    
     inline GetApplicationResult&  WithApplication(const ApplicationInfo& value) { SetApplication(value); return *this;}
 
   private:

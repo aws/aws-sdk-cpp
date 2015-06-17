@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -383,8 +383,23 @@ namespace Model
     */
     inline UpdateStackRequest&  WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
 
+    
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    
+    inline UpdateStackRequest&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    
+    inline UpdateStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::Map<StackAttributesKeys, Aws::String> m_attributes;
@@ -417,6 +432,8 @@ namespace Model
     bool m_defaultRootDeviceTypeHasBeenSet;
     bool m_useOpsworksSecurityGroups;
     bool m_useOpsworksSecurityGroupsHasBeenSet;
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

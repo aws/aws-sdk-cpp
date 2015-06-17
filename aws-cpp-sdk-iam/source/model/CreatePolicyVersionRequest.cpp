@@ -20,6 +20,8 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreatePolicyVersionRequest::CreatePolicyVersionRequest() : 
+    m_policyArnHasBeenSet(false),
+    m_policyDocumentHasBeenSet(false),
     m_setAsDefault(false),
     m_setAsDefaultHasBeenSet(false)
 {
@@ -29,8 +31,14 @@ Aws::String CreatePolicyVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreatePolicyVersion&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
-  ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
+  if(m_policyDocumentHasBeenSet)
+  {
+    ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  }
   if(m_setAsDefaultHasBeenSet)
   {
     ss << "SetAsDefault=" << m_setAsDefault << "&";

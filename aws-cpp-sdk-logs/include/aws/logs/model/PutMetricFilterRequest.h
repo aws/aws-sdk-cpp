@@ -37,64 +37,106 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
     inline PutMetricFilterRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log group to associate the metric filter with.</p>
+    */
     inline PutMetricFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>A name for the metric filter.</p>
+    */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
-    
-    inline void SetFilterName(const Aws::String& value) { m_filterName = value; }
+    /*
+     <p>A name for the metric filter.</p>
+    */
+    inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
-    
-    inline void SetFilterName(const char* value) { m_filterName.assign(value); }
+    /*
+     <p>A name for the metric filter.</p>
+    */
+    inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
-    
+    /*
+     <p>A name for the metric filter.</p>
+    */
     inline PutMetricFilterRequest&  WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
-    
+    /*
+     <p>A name for the metric filter.</p>
+    */
     inline PutMetricFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
-    
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
-    
-    inline void SetFilterPattern(const Aws::String& value) { m_filterPattern = value; }
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
+    inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
-    
-    inline void SetFilterPattern(const char* value) { m_filterPattern.assign(value); }
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
+    inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
 
-    
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
     inline PutMetricFilterRequest&  WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
 
-    
+    /*
+     <p>A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</p>
+    */
     inline PutMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
-    
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
     inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const{ return m_metricTransformations; }
-    
-    inline void SetMetricTransformations(const Aws::Vector<MetricTransformation>& value) { m_metricTransformations = value; }
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
+    inline void SetMetricTransformations(const Aws::Vector<MetricTransformation>& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
 
-    
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
     inline PutMetricFilterRequest&  WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
 
-    
-    inline PutMetricFilterRequest& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformations.push_back(value); return *this; }
+    /*
+     <p>A collection of information needed to define how metric data gets emitted.</p>
+    */
+    inline PutMetricFilterRequest& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::String m_filterName;
+    bool m_filterNameHasBeenSet;
     Aws::String m_filterPattern;
+    bool m_filterPatternHasBeenSet;
     Aws::Vector<MetricTransformation> m_metricTransformations;
+    bool m_metricTransformationsHasBeenSet;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RegisterInstanceRequest::RegisterInstanceRequest() : 
+    m_stackIdHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_privateIpHasBeenSet(false),
@@ -35,7 +36,11 @@ Aws::String RegisterInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
+
+  }
 
   if(m_hostnameHasBeenSet)
   {

@@ -36,7 +36,19 @@ template <typename SenderType__, typename... Args__>
 class Event
 {
 public:
-    typedef typename std::function<void(const SenderType__*, Args__ ...)> EventHandler;  
+    typedef typename std::function<void(const SenderType__*, Args__ ...)> EventHandler; 
+
+    Event()
+    {
+    }
+    
+    Event(const Event& other) : m_callbacks(other.m_callbacks)
+    {        
+    }
+
+    Event(Event&& other) : m_callbacks(std::move(other.m_callbacks)), m_callbackMutex(std::move(other.m_callbackMutex))
+    {
+    }
 
     Event& operator+=(const EventHandler& toSubscribe)
     {

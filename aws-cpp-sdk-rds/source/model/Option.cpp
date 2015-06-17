@@ -90,35 +90,38 @@ Option& Option::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
-    XmlNode optionSettingNode = resultNode.FirstChild("OptionSetting");
+    XmlNode optionSettingNodeParent = resultNode.FirstChild("OptionSetting");
+    XmlNode optionSettingNode = optionSettingNodeParent.FirstChild("member");
     if(!optionSettingNode.IsNull())
     {
       while(!optionSettingNode.IsNull())
       {
         m_optionSettings.push_back(optionSettingNode);
-        optionSettingNode = optionSettingNode.NextNode("OptionSetting");
+        optionSettingNode = optionSettingNode.NextNode("member");
       }
 
       m_optionSettingsHasBeenSet = true;
     }
-    XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
+    XmlNode dBSecurityGroupNodeParent = resultNode.FirstChild("DBSecurityGroup");
+    XmlNode dBSecurityGroupNode = dBSecurityGroupNodeParent.FirstChild("member");
     if(!dBSecurityGroupNode.IsNull())
     {
       while(!dBSecurityGroupNode.IsNull())
       {
         m_dBSecurityGroupMemberships.push_back(dBSecurityGroupNode);
-        dBSecurityGroupNode = dBSecurityGroupNode.NextNode("DBSecurityGroup");
+        dBSecurityGroupNode = dBSecurityGroupNode.NextNode("member");
       }
 
       m_dBSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupMembershipNode = resultNode.FirstChild("VpcSecurityGroupMembership");
+    XmlNode vpcSecurityGroupMembershipNodeParent = resultNode.FirstChild("VpcSecurityGroupMembership");
+    XmlNode vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNodeParent.FirstChild("member");
     if(!vpcSecurityGroupMembershipNode.IsNull())
     {
       while(!vpcSecurityGroupMembershipNode.IsNull())
       {
         m_vpcSecurityGroupMemberships.push_back(vpcSecurityGroupMembershipNode);
-        vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNode.NextNode("VpcSecurityGroupMembership");
+        vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNode.NextNode("member");
       }
 
       m_vpcSecurityGroupMembershipsHasBeenSet = true;

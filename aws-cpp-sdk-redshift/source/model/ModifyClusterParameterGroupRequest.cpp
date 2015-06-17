@@ -19,7 +19,9 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterParameterGroupRequest::ModifyClusterParameterGroupRequest()
+ModifyClusterParameterGroupRequest::ModifyClusterParameterGroupRequest() : 
+    m_parameterGroupNameHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterParameterGroup&";
-  ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
-  unsigned parametersCount = 1;
-  for(auto& item : m_parameters)
+  if(m_parameterGroupNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Parameter.", parametersCount, "");
-    parametersCount++;
+    ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  }
+  if(m_parametersHasBeenSet)
+  {
+    unsigned parametersCount = 1;
+    for(auto& item : m_parameters)
+    {
+      item.OutputToStream(ss, "Parameter.", parametersCount, "");
+      parametersCount++;
+    }
   }
   ss << "Version=2012-12-01";
   return ss.str();

@@ -21,7 +21,8 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataRetrievalPolicyRequest::GetDataRetrievalPolicyRequest()
+GetDataRetrievalPolicyRequest::GetDataRetrievalPolicyRequest() : 
+    m_accountIdHasBeenSet(false)
 {
 }
 

@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateIdentityPoolRequest::CreateIdentityPoolRequest() : 
+    m_identityPoolNameHasBeenSet(false),
     m_allowUnauthenticatedIdentities(false),
+    m_allowUnauthenticatedIdentitiesHasBeenSet(false),
     m_supportedLoginProvidersHasBeenSet(false),
     m_developerProviderNameHasBeenSet(false),
     m_openIdConnectProviderARNsHasBeenSet(false)
@@ -33,9 +35,17 @@ Aws::String CreateIdentityPoolRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityPoolName", m_identityPoolName);
+  if(m_identityPoolNameHasBeenSet)
+  {
+   payload.WithString("IdentityPoolName", m_identityPoolName);
 
-  payload.WithBool("AllowUnauthenticatedIdentities", m_allowUnauthenticatedIdentities);
+  }
+
+  if(m_allowUnauthenticatedIdentitiesHasBeenSet)
+  {
+   payload.WithBool("AllowUnauthenticatedIdentities", m_allowUnauthenticatedIdentities);
+
+  }
 
   if(m_supportedLoginProvidersHasBeenSet)
   {

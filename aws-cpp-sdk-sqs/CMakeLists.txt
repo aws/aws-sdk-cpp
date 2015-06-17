@@ -55,7 +55,11 @@ project(aws-cpp-sdk-sqs)
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 
-  install (TARGETS aws-cpp-sdk-sqs DESTINATION lib)
+  install (TARGETS aws-cpp-sdk-sqs
+           ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
   install (FILES ${AWS_SQS_HEADERS} DESTINATION include/aws/sqs)
   install (FILES ${AWS_SQS_MODEL_HEADERS} DESTINATION include/aws/sqs/model)
 

@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The id of an entry in a batch request.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The id of an entry in a batch request.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>The id of an entry in a batch request.</p>
@@ -74,7 +74,7 @@ namespace Model
     /*
      <p>Whether the error happened due to the sender's fault.</p>
     */
-    inline void SetSenderFault(bool value) { m_senderFault = value; }
+    inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
 
     /*
      <p>Whether the error happened due to the sender's fault.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>An error code representing why the action failed on this entry.</p>
     */
-    inline void SetCode(const Aws::String& value) { m_code = value; }
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /*
      <p>An error code representing why the action failed on this entry.</p>
     */
-    inline void SetCode(const char* value) { m_code.assign(value); }
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /*
      <p>An error code representing why the action failed on this entry.</p>
@@ -131,8 +131,11 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     bool m_senderFault;
+    bool m_senderFaultHasBeenSet;
     Aws::String m_code;
+    bool m_codeHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the DB security group to revoke ingress from. </p>
     */
-    inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupName = value; }
+    inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /*
      <p> The name of the DB security group to revoke ingress from. </p>
     */
-    inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupName.assign(value); }
+    inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
     /*
      <p> The name of the DB security group to revoke ingress from. </p>
@@ -156,6 +156,7 @@ namespace Model
 
   private:
     Aws::String m_dBSecurityGroupName;
+    bool m_dBSecurityGroupNameHasBeenSet;
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
     Aws::String m_eC2SecurityGroupName;

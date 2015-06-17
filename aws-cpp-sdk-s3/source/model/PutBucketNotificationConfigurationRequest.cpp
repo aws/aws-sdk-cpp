@@ -21,7 +21,9 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutBucketNotificationConfigurationRequest::PutBucketNotificationConfigurationRequest()
+PutBucketNotificationConfigurationRequest::PutBucketNotificationConfigurationRequest() : 
+    m_bucketHasBeenSet(false),
+    m_notificationConfigurationHasBeenSet(false)
 {
 }
 

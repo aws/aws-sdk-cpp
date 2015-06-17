@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 PurchaseReservedNodeOfferingRequest::PurchaseReservedNodeOfferingRequest() : 
+    m_reservedNodeOfferingIdHasBeenSet(false),
     m_nodeCount(0),
     m_nodeCountHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String PurchaseReservedNodeOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedNodeOffering&";
-  ss << "ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
+  if(m_reservedNodeOfferingIdHasBeenSet)
+  {
+    ss << "ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
+  }
   if(m_nodeCountHasBeenSet)
   {
     ss << "NodeCount=" << m_nodeCount << "&";

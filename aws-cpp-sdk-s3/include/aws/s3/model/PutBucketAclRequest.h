@@ -62,10 +62,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutBucketAclRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -213,6 +213,7 @@ namespace Model
     AccessControlPolicy m_accessControlPolicy;
     bool m_accessControlPolicyHasBeenSet;
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
     Aws::String m_grantFullControl;

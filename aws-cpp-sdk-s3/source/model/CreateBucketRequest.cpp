@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateBucketRequest::CreateBucketRequest() : 
     m_aCLHasBeenSet(false),
+    m_bucketHasBeenSet(false),
     m_createBucketConfigurationHasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),

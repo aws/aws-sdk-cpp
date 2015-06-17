@@ -41,11 +41,12 @@ ListTopicsResult& ListTopicsResult::operator =(const AmazonWebServiceResult<XmlD
 
   if(!resultNode.IsNull())
   {
-    XmlNode topicsNode = resultNode.FirstChild("Topics");
+    XmlNode topicsNodeParent = resultNode.FirstChild("Topics");
+    XmlNode topicsNode = topicsNodeParent.FirstChild("member");
     while(!topicsNode.IsNull())
     {
       m_topics.push_back(topicsNode);
-      topicsNode = topicsNode.NextNode("Topics");
+      topicsNode = topicsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

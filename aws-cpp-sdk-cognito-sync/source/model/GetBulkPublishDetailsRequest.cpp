@@ -21,7 +21,8 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBulkPublishDetailsRequest::GetBulkPublishDetailsRequest()
+GetBulkPublishDetailsRequest::GetBulkPublishDetailsRequest() : 
+    m_identityPoolIdHasBeenSet(false)
 {
 }
 

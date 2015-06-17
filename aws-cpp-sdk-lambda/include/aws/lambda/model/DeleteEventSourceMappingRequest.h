@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The event source mapping ID.</p>
     */
-    inline void SetUUID(const Aws::String& value) { m_uUID = value; }
+    inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /*
      <p>The event source mapping ID.</p>
     */
-    inline void SetUUID(const char* value) { m_uUID.assign(value); }
+    inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
 
     /*
      <p>The event source mapping ID.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_uUID;
+    bool m_uUIDHasBeenSet;
   };
 
 } // namespace Model

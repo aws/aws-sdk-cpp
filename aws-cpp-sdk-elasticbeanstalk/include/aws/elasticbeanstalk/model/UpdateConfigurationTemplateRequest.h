@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -68,12 +68,12 @@ namespace Model
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /*
      <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -149,7 +149,9 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_templateName;
+    bool m_templateNameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;

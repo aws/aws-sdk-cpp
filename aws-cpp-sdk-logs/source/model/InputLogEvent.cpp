@@ -22,21 +22,35 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InputLogEvent::InputLogEvent() : 
-    m_timestamp(0)
+    m_timestamp(0),
+    m_timestampHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
 InputLogEvent::InputLogEvent(const JsonValue& jsonValue) : 
-    m_timestamp(0)
+    m_timestamp(0),
+    m_timestampHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 InputLogEvent& InputLogEvent::operator =(const JsonValue& jsonValue)
 {
-  m_timestamp = jsonValue.GetInt64("timestamp");
+  if(jsonValue.ValueExists("timestamp"))
+  {
+    m_timestamp = jsonValue.GetInt64("timestamp");
 
-  m_message = jsonValue.GetString("message");
+    m_timestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -45,9 +59,17 @@ JsonValue InputLogEvent::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithInt64("timestamp", m_timestamp);
+  if(m_timestampHasBeenSet)
+  {
+   payload.WithInt64("timestamp", m_timestamp);
 
-  payload.WithString("message", m_message);
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
+
+  }
 
   return std::move(payload);
 }

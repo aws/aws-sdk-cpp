@@ -20,7 +20,8 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UploadSigningCertificateRequest::UploadSigningCertificateRequest() : 
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_certificateBodyHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,10 @@ Aws::String UploadSigningCertificateRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
-  ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  if(m_certificateBodyHasBeenSet)
+  {
+    ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

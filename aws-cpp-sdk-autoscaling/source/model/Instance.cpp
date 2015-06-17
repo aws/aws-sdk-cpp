@@ -23,11 +23,21 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Instance::Instance()
+Instance::Instance() : 
+    m_instanceIdHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_lifecycleStateHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
+    m_launchConfigurationNameHasBeenSet(false)
 {
 }
 
-Instance::Instance(const XmlNode& xmlNode)
+Instance::Instance(const XmlNode& xmlNode) : 
+    m_instanceIdHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_lifecycleStateHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
+    m_launchConfigurationNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,15 +49,35 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
-    m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
+    }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
-    m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZoneHasBeenSet = true;
+    }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
-    m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(lifecycleStateNode.GetText().c_str()).c_str());
+    if(!lifecycleStateNode.IsNull())
+    {
+      m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(lifecycleStateNode.GetText().c_str()).c_str());
+      m_lifecycleStateHasBeenSet = true;
+    }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
-    m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
+    if(!healthStatusNode.IsNull())
+    {
+      m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
+      m_healthStatusHasBeenSet = true;
+    }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
-    m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+    if(!launchConfigurationNameNode.IsNull())
+    {
+      m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+      m_launchConfigurationNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,18 +85,48 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  oStream << location << index << locationValue << ".LifecycleState=" << LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState) << "&";
-  oStream << location << index << locationValue << ".HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
-  oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_lifecycleStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LifecycleState=" << LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState) << "&";
+  }
+  if(m_healthStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
+  }
+  if(m_launchConfigurationNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  oStream << location << ".LifecycleState=" << LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState) << "&";
-  oStream << location << ".HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
-  oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_lifecycleStateHasBeenSet)
+  {
+      oStream << location << ".LifecycleState=" << LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState) << "&";
+  }
+  if(m_healthStatusHasBeenSet)
+  {
+      oStream << location << ".HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
+  }
+  if(m_launchConfigurationNameHasBeenSet)
+  {
+      oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
 }

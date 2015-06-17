@@ -22,7 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePipelineRequest::CreatePipelineRequest() : 
+    m_nameHasBeenSet(false),
+    m_inputBucketHasBeenSet(false),
     m_outputBucketHasBeenSet(false),
+    m_roleHasBeenSet(false),
     m_awsKmsKeyArnHasBeenSet(false),
     m_notificationsHasBeenSet(false),
     m_contentConfigHasBeenSet(false),
@@ -34,9 +37,17 @@ Aws::String CreatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
-  payload.WithString("InputBucket", m_inputBucket);
+  }
+
+  if(m_inputBucketHasBeenSet)
+  {
+   payload.WithString("InputBucket", m_inputBucket);
+
+  }
 
   if(m_outputBucketHasBeenSet)
   {
@@ -44,7 +55,11 @@ Aws::String CreatePipelineRequest::SerializePayload() const
 
   }
 
-  payload.WithString("Role", m_role);
+  if(m_roleHasBeenSet)
+  {
+   payload.WithString("Role", m_role);
+
+  }
 
   if(m_awsKmsKeyArnHasBeenSet)
   {

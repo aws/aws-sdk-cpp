@@ -43,11 +43,12 @@ ListAccountAliasesResult& ListAccountAliasesResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode accountAliasesNode = resultNode.FirstChild("AccountAliases");
+    XmlNode accountAliasesNodeParent = resultNode.FirstChild("AccountAliases");
+    XmlNode accountAliasesNode = accountAliasesNodeParent.FirstChild("member");
     while(!accountAliasesNode.IsNull())
     {
       m_accountAliases.push_back(StringUtils::Trim(accountAliasesNode.GetText().c_str()));
-      accountAliasesNode = accountAliasesNode.NextNode("AccountAliases");
+      accountAliasesNode = accountAliasesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

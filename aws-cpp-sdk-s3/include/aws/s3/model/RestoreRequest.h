@@ -47,7 +47,7 @@ namespace Model
     /*
      Lifetime of the active copy in days
     */
-    inline void SetDays(long value) { m_days = value; }
+    inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
 
     /*
      Lifetime of the active copy in days
@@ -56,6 +56,7 @@ namespace Model
 
   private:
     long m_days;
+    bool m_daysHasBeenSet;
   };
 
 } // namespace Model

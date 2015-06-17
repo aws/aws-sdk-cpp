@@ -162,6 +162,7 @@ static bool StreamPayloadToRequest(const HttpRequest& request, HINTERNET hHttpRe
             payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
             std::streamsize bytesRead = payloadStream->gcount();
             success = !payloadStream->bad();
+            request.OnDataSent(&request, (long long)bytesRead);
 
             DWORD bytesWritten = 0;
             if(bytesRead > 0 && !InternetWriteFile(hHttpRequest, streamBuffer, (DWORD) bytesRead, &bytesWritten))
@@ -272,8 +273,10 @@ std::shared_ptr<HttpResponse> BuildSuccessResponse(const Aws::Http::HttpRequest&
         read = 0;
 
         while (InternetReadFile(hHttpRequest, body, dwSize, &read) && read > 0)
-        {
+        {            
             response->GetResponseBody().write(body, read);
+            request.OnDataReceived(&request, response.get(), (long long)read);
+
             if(readLimiter != nullptr && read > 0)
             {
                 readLimiter->ApplyAndPayForCost(read);

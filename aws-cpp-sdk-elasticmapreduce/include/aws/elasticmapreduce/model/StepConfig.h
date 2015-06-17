@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The name of the job flow step.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the job flow step.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the job flow step.</p>
@@ -87,7 +87,7 @@ namespace Model
     /*
      <p>The JAR file used for the job flow step.</p>
     */
-    inline void SetHadoopJarStep(const HadoopJarStepConfig& value) { m_hadoopJarStep = value; }
+    inline void SetHadoopJarStep(const HadoopJarStepConfig& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = value; }
 
     /*
      <p>The JAR file used for the job flow step.</p>
@@ -96,9 +96,11 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     ActionOnFailure m_actionOnFailure;
     bool m_actionOnFailureHasBeenSet;
     HadoopJarStepConfig m_hadoopJarStep;
+    bool m_hadoopJarStepHasBeenSet;
   };
 
 } // namespace Model

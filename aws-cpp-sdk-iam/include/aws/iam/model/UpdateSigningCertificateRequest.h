@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The ID of the signing certificate you want to update.</p>
     */
-    inline void SetCertificateId(const Aws::String& value) { m_certificateId = value; }
+    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /*
      <p>The ID of the signing certificate you want to update.</p>
     */
-    inline void SetCertificateId(const char* value) { m_certificateId.assign(value); }
+    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /*
      <p>The ID of the signing certificate you want to update.</p>
@@ -89,7 +89,7 @@ namespace Model
     /*
      <p> The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used. </p>
     */
-    inline void SetStatus(const statusType& value) { m_status = value; }
+    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used. </p>
@@ -100,7 +100,9 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_certificateId;
+    bool m_certificateIdHasBeenSet;
     statusType m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

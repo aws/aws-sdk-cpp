@@ -30,7 +30,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Information about a tag.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API Tag
   {
@@ -40,52 +40,32 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The tag's key.</p>
-    */
+    
     inline const Aws::String& GetKey() const{ return m_key; }
-    /*
-     <p>The tag's key.</p>
-    */
+    
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    /*
-     <p>The tag's key.</p>
-    */
+    
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    /*
-     <p>The tag's key.</p>
-    */
+    
     inline Tag&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    /*
-     <p>The tag's key.</p>
-    */
+    
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
-    /*
-     <p>The tag's value.</p>
-    */
+    
     inline const Aws::String& GetValue() const{ return m_value; }
-    /*
-     <p>The tag's value.</p>
-    */
+    
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    /*
-     <p>The tag's value.</p>
-    */
+    
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    /*
-     <p>The tag's value.</p>
-    */
+    
     inline Tag&  WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    /*
-     <p>The tag's value.</p>
-    */
+    
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

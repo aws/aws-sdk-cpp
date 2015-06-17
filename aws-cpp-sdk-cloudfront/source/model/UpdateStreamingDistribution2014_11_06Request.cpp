@@ -23,6 +23,8 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 UpdateStreamingDistribution2014_11_06Request::UpdateStreamingDistribution2014_11_06Request() : 
+    m_streamingDistributionConfigHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_ifMatchHasBeenSet(false)
 {
 }

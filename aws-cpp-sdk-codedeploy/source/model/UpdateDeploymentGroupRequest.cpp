@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateDeploymentGroupRequest::UpdateDeploymentGroupRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_currentDeploymentGroupNameHasBeenSet(false),
     m_newDeploymentGroupNameHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_ec2TagFiltersHasBeenSet(false),
@@ -35,9 +37,17 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
 
-  payload.WithString("currentDeploymentGroupName", m_currentDeploymentGroupName);
+  }
+
+  if(m_currentDeploymentGroupNameHasBeenSet)
+  {
+   payload.WithString("currentDeploymentGroupName", m_currentDeploymentGroupName);
+
+  }
 
   if(m_newDeploymentGroupNameHasBeenSet)
   {

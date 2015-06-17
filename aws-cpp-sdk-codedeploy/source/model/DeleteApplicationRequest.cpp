@@ -21,7 +21,8 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationRequest::DeleteApplicationRequest()
+DeleteApplicationRequest::DeleteApplicationRequest() : 
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
+
+  }
 
   return payload.WriteReadable();
 }

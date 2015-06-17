@@ -21,7 +21,9 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetIdentityPoolRolesRequest::SetIdentityPoolRolesRequest()
+SetIdentityPoolRolesRequest::SetIdentityPoolRolesRequest() : 
+    m_identityPoolIdHasBeenSet(false),
+    m_rolesHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String SetIdentityPoolRolesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
-
-  JsonValue rolesJsonMap;
-  for(auto& rolesItem : m_roles)
+  if(m_identityPoolIdHasBeenSet)
   {
-    rolesJsonMap.WithString(rolesItem.first, rolesItem.second);
+   payload.WithString("IdentityPoolId", m_identityPoolId);
+
   }
-  payload.WithObject("Roles", std::move(rolesJsonMap));
+
+  if(m_rolesHasBeenSet)
+  {
+   JsonValue rolesJsonMap;
+   for(auto& rolesItem : m_roles)
+   {
+     rolesJsonMap.WithString(rolesItem.first, rolesItem.second);
+   }
+   payload.WithObject("Roles", std::move(rolesJsonMap));
+
+  }
 
   return payload.WriteReadable();
 }

@@ -19,7 +19,9 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-BatchDeleteAttributesRequest::BatchDeleteAttributesRequest()
+BatchDeleteAttributesRequest::BatchDeleteAttributesRequest() : 
+    m_domainNameHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String BatchDeleteAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=BatchDeleteAttributes&";
-  ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
-  unsigned itemsCount = 1;
-  for(auto& item : m_items)
+  if(m_domainNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Item.", itemsCount, "");
-    itemsCount++;
+    ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
+  }
+  if(m_itemsHasBeenSet)
+  {
+    unsigned itemsCount = 1;
+    for(auto& item : m_items)
+    {
+      item.OutputToStream(ss, "Item.", itemsCount, "");
+      itemsCount++;
+    }
   }
   ss << "Version=2009-04-15";
   return ss.str();

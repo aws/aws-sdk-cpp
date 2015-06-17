@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
-    inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArn = value; }
+    inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
-    inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArn.assign(value); }
+    inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
@@ -90,12 +90,12 @@ namespace Model
     /*
      <p>The database's master user name.</p>
     */
-    inline void SetDbUser(const Aws::String& value) { m_dbUser = value; }
+    inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /*
      <p>The database's master user name.</p>
     */
-    inline void SetDbUser(const char* value) { m_dbUser.assign(value); }
+    inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
 
     /*
      <p>The database's master user name.</p>
@@ -114,12 +114,12 @@ namespace Model
     /*
      <p>The database password.</p>
     */
-    inline void SetDbPassword(const Aws::String& value) { m_dbPassword = value; }
+    inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
     /*
      <p>The database password.</p>
     */
-    inline void SetDbPassword(const char* value) { m_dbPassword.assign(value); }
+    inline void SetDbPassword(const char* value) { m_dbPasswordHasBeenSet = true; m_dbPassword.assign(value); }
 
     /*
      <p>The database password.</p>
@@ -133,9 +133,13 @@ namespace Model
 
   private:
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
     Aws::String m_rdsDbInstanceArn;
+    bool m_rdsDbInstanceArnHasBeenSet;
     Aws::String m_dbUser;
+    bool m_dbUserHasBeenSet;
     Aws::String m_dbPassword;
+    bool m_dbPasswordHasBeenSet;
   };
 
 } // namespace Model

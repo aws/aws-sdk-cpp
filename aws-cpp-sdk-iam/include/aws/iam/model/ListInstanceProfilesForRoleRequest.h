@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the role to list instance profiles for.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to list instance profiles for.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name of the role to list instance profiles for.</p>
@@ -97,6 +97,7 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
     long m_maxItems;

@@ -138,13 +138,14 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
       m_state = StringUtils::Trim(stateNode.GetText().c_str());
       m_stateHasBeenSet = true;
     }
-    XmlNode recurringChargeNode = resultNode.FirstChild("RecurringCharge");
+    XmlNode recurringChargeNodeParent = resultNode.FirstChild("RecurringCharge");
+    XmlNode recurringChargeNode = recurringChargeNodeParent.FirstChild("member");
     if(!recurringChargeNode.IsNull())
     {
       while(!recurringChargeNode.IsNull())
       {
         m_recurringCharges.push_back(recurringChargeNode);
-        recurringChargeNode = recurringChargeNode.NextNode("RecurringCharge");
+        recurringChargeNode = recurringChargeNode.NextNode("member");
       }
 
       m_recurringChargesHasBeenSet = true;

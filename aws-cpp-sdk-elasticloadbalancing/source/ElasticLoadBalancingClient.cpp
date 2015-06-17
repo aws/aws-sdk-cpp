@@ -137,14 +137,14 @@ AddTagsOutcomeCallable ElasticLoadBalancingClient::AddTagsCallable(const AddTags
   return std::async(std::launch::async, &ElasticLoadBalancingClient::AddTags, this, request);
 }
 
-void ElasticLoadBalancingClient::AddTagsAsync(const AddTagsRequest& request) const
+void ElasticLoadBalancingClient::AddTagsAsync(const AddTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::AddTagsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::AddTagsAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::AddTagsAsyncHelper(const AddTagsRequest& request) const
+void ElasticLoadBalancingClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddTagsOutcomeReceived(this, request, AddTags(request));
+  m_onAddTagsOutcomeReceived(this, request, AddTags(request), context);
 }
 
 ApplySecurityGroupsToLoadBalancerOutcome ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancer(const ApplySecurityGroupsToLoadBalancerRequest& request) const
@@ -168,14 +168,14 @@ ApplySecurityGroupsToLoadBalancerOutcomeCallable ElasticLoadBalancingClient::App
   return std::async(std::launch::async, &ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsync(const ApplySecurityGroupsToLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsync(const ApplySecurityGroupsToLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper(const ApplySecurityGroupsToLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper(const ApplySecurityGroupsToLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onApplySecurityGroupsToLoadBalancerOutcomeReceived(this, request, ApplySecurityGroupsToLoadBalancer(request));
+  m_onApplySecurityGroupsToLoadBalancerOutcomeReceived(this, request, ApplySecurityGroupsToLoadBalancer(request), context);
 }
 
 AttachLoadBalancerToSubnetsOutcome ElasticLoadBalancingClient::AttachLoadBalancerToSubnets(const AttachLoadBalancerToSubnetsRequest& request) const
@@ -199,14 +199,14 @@ AttachLoadBalancerToSubnetsOutcomeCallable ElasticLoadBalancingClient::AttachLoa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::AttachLoadBalancerToSubnets, this, request);
 }
 
-void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsync(const AttachLoadBalancerToSubnetsRequest& request) const
+void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsync(const AttachLoadBalancerToSubnetsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper(const AttachLoadBalancerToSubnetsRequest& request) const
+void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper(const AttachLoadBalancerToSubnetsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAttachLoadBalancerToSubnetsOutcomeReceived(this, request, AttachLoadBalancerToSubnets(request));
+  m_onAttachLoadBalancerToSubnetsOutcomeReceived(this, request, AttachLoadBalancerToSubnets(request), context);
 }
 
 ConfigureHealthCheckOutcome ElasticLoadBalancingClient::ConfigureHealthCheck(const ConfigureHealthCheckRequest& request) const
@@ -230,14 +230,14 @@ ConfigureHealthCheckOutcomeCallable ElasticLoadBalancingClient::ConfigureHealthC
   return std::async(std::launch::async, &ElasticLoadBalancingClient::ConfigureHealthCheck, this, request);
 }
 
-void ElasticLoadBalancingClient::ConfigureHealthCheckAsync(const ConfigureHealthCheckRequest& request) const
+void ElasticLoadBalancingClient::ConfigureHealthCheckAsync(const ConfigureHealthCheckRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper(const ConfigureHealthCheckRequest& request) const
+void ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper(const ConfigureHealthCheckRequest& request, const AsyncCallerContext* context) const
 {
-  m_onConfigureHealthCheckOutcomeReceived(this, request, ConfigureHealthCheck(request));
+  m_onConfigureHealthCheckOutcomeReceived(this, request, ConfigureHealthCheck(request), context);
 }
 
 CreateAppCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateAppCookieStickinessPolicy(const CreateAppCookieStickinessPolicyRequest& request) const
@@ -261,14 +261,14 @@ CreateAppCookieStickinessPolicyOutcomeCallable ElasticLoadBalancingClient::Creat
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateAppCookieStickinessPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsync(const CreateAppCookieStickinessPolicyRequest& request) const
+void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsync(const CreateAppCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper(const CreateAppCookieStickinessPolicyRequest& request) const
+void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper(const CreateAppCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateAppCookieStickinessPolicyOutcomeReceived(this, request, CreateAppCookieStickinessPolicy(request));
+  m_onCreateAppCookieStickinessPolicyOutcomeReceived(this, request, CreateAppCookieStickinessPolicy(request), context);
 }
 
 CreateLBCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateLBCookieStickinessPolicy(const CreateLBCookieStickinessPolicyRequest& request) const
@@ -292,14 +292,14 @@ CreateLBCookieStickinessPolicyOutcomeCallable ElasticLoadBalancingClient::Create
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLBCookieStickinessPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsync(const CreateLBCookieStickinessPolicyRequest& request) const
+void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsync(const CreateLBCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper(const CreateLBCookieStickinessPolicyRequest& request) const
+void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper(const CreateLBCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLBCookieStickinessPolicyOutcomeReceived(this, request, CreateLBCookieStickinessPolicy(request));
+  m_onCreateLBCookieStickinessPolicyOutcomeReceived(this, request, CreateLBCookieStickinessPolicy(request), context);
 }
 
 CreateLoadBalancerOutcome ElasticLoadBalancingClient::CreateLoadBalancer(const CreateLoadBalancerRequest& request) const
@@ -323,14 +323,14 @@ CreateLoadBalancerOutcomeCallable ElasticLoadBalancingClient::CreateLoadBalancer
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper(const CreateLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper(const CreateLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLoadBalancerOutcomeReceived(this, request, CreateLoadBalancer(request));
+  m_onCreateLoadBalancerOutcomeReceived(this, request, CreateLoadBalancer(request), context);
 }
 
 CreateLoadBalancerListenersOutcome ElasticLoadBalancingClient::CreateLoadBalancerListeners(const CreateLoadBalancerListenersRequest& request) const
@@ -354,14 +354,14 @@ CreateLoadBalancerListenersOutcomeCallable ElasticLoadBalancingClient::CreateLoa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLoadBalancerListeners, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsync(const CreateLoadBalancerListenersRequest& request) const
+void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsync(const CreateLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper(const CreateLoadBalancerListenersRequest& request) const
+void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper(const CreateLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLoadBalancerListenersOutcomeReceived(this, request, CreateLoadBalancerListeners(request));
+  m_onCreateLoadBalancerListenersOutcomeReceived(this, request, CreateLoadBalancerListeners(request), context);
 }
 
 CreateLoadBalancerPolicyOutcome ElasticLoadBalancingClient::CreateLoadBalancerPolicy(const CreateLoadBalancerPolicyRequest& request) const
@@ -385,14 +385,14 @@ CreateLoadBalancerPolicyOutcomeCallable ElasticLoadBalancingClient::CreateLoadBa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLoadBalancerPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsync(const CreateLoadBalancerPolicyRequest& request) const
+void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsync(const CreateLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper(const CreateLoadBalancerPolicyRequest& request) const
+void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper(const CreateLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLoadBalancerPolicyOutcomeReceived(this, request, CreateLoadBalancerPolicy(request));
+  m_onCreateLoadBalancerPolicyOutcomeReceived(this, request, CreateLoadBalancerPolicy(request), context);
 }
 
 DeleteLoadBalancerOutcome ElasticLoadBalancingClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const
@@ -416,14 +416,14 @@ DeleteLoadBalancerOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBalancer
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeleteLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper(const DeleteLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper(const DeleteLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLoadBalancerOutcomeReceived(this, request, DeleteLoadBalancer(request));
+  m_onDeleteLoadBalancerOutcomeReceived(this, request, DeleteLoadBalancer(request), context);
 }
 
 DeleteLoadBalancerListenersOutcome ElasticLoadBalancingClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest& request) const
@@ -447,14 +447,14 @@ DeleteLoadBalancerListenersOutcomeCallable ElasticLoadBalancingClient::DeleteLoa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeleteLoadBalancerListeners, this, request);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper(const DeleteLoadBalancerListenersRequest& request) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper(const DeleteLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLoadBalancerListenersOutcomeReceived(this, request, DeleteLoadBalancerListeners(request));
+  m_onDeleteLoadBalancerListenersOutcomeReceived(this, request, DeleteLoadBalancerListeners(request), context);
 }
 
 DeleteLoadBalancerPolicyOutcome ElasticLoadBalancingClient::DeleteLoadBalancerPolicy(const DeleteLoadBalancerPolicyRequest& request) const
@@ -478,14 +478,14 @@ DeleteLoadBalancerPolicyOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeleteLoadBalancerPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsync(const DeleteLoadBalancerPolicyRequest& request) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsync(const DeleteLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper(const DeleteLoadBalancerPolicyRequest& request) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper(const DeleteLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLoadBalancerPolicyOutcomeReceived(this, request, DeleteLoadBalancerPolicy(request));
+  m_onDeleteLoadBalancerPolicyOutcomeReceived(this, request, DeleteLoadBalancerPolicy(request), context);
 }
 
 DeregisterInstancesFromLoadBalancerOutcome ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancer(const DeregisterInstancesFromLoadBalancerRequest& request) const
@@ -509,14 +509,14 @@ DeregisterInstancesFromLoadBalancerOutcomeCallable ElasticLoadBalancingClient::D
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsync(const DeregisterInstancesFromLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsync(const DeregisterInstancesFromLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper(const DeregisterInstancesFromLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper(const DeregisterInstancesFromLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeregisterInstancesFromLoadBalancerOutcomeReceived(this, request, DeregisterInstancesFromLoadBalancer(request));
+  m_onDeregisterInstancesFromLoadBalancerOutcomeReceived(this, request, DeregisterInstancesFromLoadBalancer(request), context);
 }
 
 DescribeInstanceHealthOutcome ElasticLoadBalancingClient::DescribeInstanceHealth(const DescribeInstanceHealthRequest& request) const
@@ -540,14 +540,14 @@ DescribeInstanceHealthOutcomeCallable ElasticLoadBalancingClient::DescribeInstan
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeInstanceHealth, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeInstanceHealthAsync(const DescribeInstanceHealthRequest& request) const
+void ElasticLoadBalancingClient::DescribeInstanceHealthAsync(const DescribeInstanceHealthRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper(const DescribeInstanceHealthRequest& request) const
+void ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper(const DescribeInstanceHealthRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeInstanceHealthOutcomeReceived(this, request, DescribeInstanceHealth(request));
+  m_onDescribeInstanceHealthOutcomeReceived(this, request, DescribeInstanceHealth(request), context);
 }
 
 DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerAttributes(const DescribeLoadBalancerAttributesRequest& request) const
@@ -571,14 +571,14 @@ DescribeLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingClient::Descri
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancerAttributes, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper(const DescribeLoadBalancerAttributesRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper(const DescribeLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLoadBalancerAttributesOutcomeReceived(this, request, DescribeLoadBalancerAttributes(request));
+  m_onDescribeLoadBalancerAttributesOutcomeReceived(this, request, DescribeLoadBalancerAttributes(request), context);
 }
 
 DescribeLoadBalancerPoliciesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerPolicies(const DescribeLoadBalancerPoliciesRequest& request) const
@@ -602,14 +602,14 @@ DescribeLoadBalancerPoliciesOutcomeCallable ElasticLoadBalancingClient::Describe
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancerPolicies, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsync(const DescribeLoadBalancerPoliciesRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsync(const DescribeLoadBalancerPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper(const DescribeLoadBalancerPoliciesRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper(const DescribeLoadBalancerPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLoadBalancerPoliciesOutcomeReceived(this, request, DescribeLoadBalancerPolicies(request));
+  m_onDescribeLoadBalancerPoliciesOutcomeReceived(this, request, DescribeLoadBalancerPolicies(request), context);
 }
 
 DescribeLoadBalancerPolicyTypesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypes(const DescribeLoadBalancerPolicyTypesRequest& request) const
@@ -633,14 +633,14 @@ DescribeLoadBalancerPolicyTypesOutcomeCallable ElasticLoadBalancingClient::Descr
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypes, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsync(const DescribeLoadBalancerPolicyTypesRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsync(const DescribeLoadBalancerPolicyTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper(const DescribeLoadBalancerPolicyTypesRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper(const DescribeLoadBalancerPolicyTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLoadBalancerPolicyTypesOutcomeReceived(this, request, DescribeLoadBalancerPolicyTypes(request));
+  m_onDescribeLoadBalancerPolicyTypesOutcomeReceived(this, request, DescribeLoadBalancerPolicyTypes(request), context);
 }
 
 DescribeLoadBalancersOutcome ElasticLoadBalancingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
@@ -664,14 +664,14 @@ DescribeLoadBalancersOutcomeCallable ElasticLoadBalancingClient::DescribeLoadBal
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancers, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request) const
+void ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLoadBalancersOutcomeReceived(this, request, DescribeLoadBalancers(request));
+  m_onDescribeLoadBalancersOutcomeReceived(this, request, DescribeLoadBalancers(request), context);
 }
 
 DescribeTagsOutcome ElasticLoadBalancingClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -695,14 +695,14 @@ DescribeTagsOutcomeCallable ElasticLoadBalancingClient::DescribeTagsCallable(con
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeTags, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeTagsAsync(const DescribeTagsRequest& request) const
+void ElasticLoadBalancingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeTagsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeTagsAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request) const
+void ElasticLoadBalancingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeTagsOutcomeReceived(this, request, DescribeTags(request));
+  m_onDescribeTagsOutcomeReceived(this, request, DescribeTags(request), context);
 }
 
 DetachLoadBalancerFromSubnetsOutcome ElasticLoadBalancingClient::DetachLoadBalancerFromSubnets(const DetachLoadBalancerFromSubnetsRequest& request) const
@@ -726,14 +726,14 @@ DetachLoadBalancerFromSubnetsOutcomeCallable ElasticLoadBalancingClient::DetachL
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DetachLoadBalancerFromSubnets, this, request);
 }
 
-void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsync(const DetachLoadBalancerFromSubnetsRequest& request) const
+void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsync(const DetachLoadBalancerFromSubnetsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper(const DetachLoadBalancerFromSubnetsRequest& request) const
+void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper(const DetachLoadBalancerFromSubnetsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDetachLoadBalancerFromSubnetsOutcomeReceived(this, request, DetachLoadBalancerFromSubnets(request));
+  m_onDetachLoadBalancerFromSubnetsOutcomeReceived(this, request, DetachLoadBalancerFromSubnets(request), context);
 }
 
 DisableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancer(const DisableAvailabilityZonesForLoadBalancerRequest& request) const
@@ -757,14 +757,14 @@ DisableAvailabilityZonesForLoadBalancerOutcomeCallable ElasticLoadBalancingClien
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsync(const DisableAvailabilityZonesForLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsync(const DisableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper(const DisableAvailabilityZonesForLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper(const DisableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDisableAvailabilityZonesForLoadBalancerOutcomeReceived(this, request, DisableAvailabilityZonesForLoadBalancer(request));
+  m_onDisableAvailabilityZonesForLoadBalancerOutcomeReceived(this, request, DisableAvailabilityZonesForLoadBalancer(request), context);
 }
 
 EnableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancer(const EnableAvailabilityZonesForLoadBalancerRequest& request) const
@@ -788,14 +788,14 @@ EnableAvailabilityZonesForLoadBalancerOutcomeCallable ElasticLoadBalancingClient
   return std::async(std::launch::async, &ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsync(const EnableAvailabilityZonesForLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsync(const EnableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper(const EnableAvailabilityZonesForLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper(const EnableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnableAvailabilityZonesForLoadBalancerOutcomeReceived(this, request, EnableAvailabilityZonesForLoadBalancer(request));
+  m_onEnableAvailabilityZonesForLoadBalancerOutcomeReceived(this, request, EnableAvailabilityZonesForLoadBalancer(request), context);
 }
 
 ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingClient::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest& request) const
@@ -819,14 +819,14 @@ ModifyLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingClient::ModifyLo
   return std::async(std::launch::async, &ElasticLoadBalancingClient::ModifyLoadBalancerAttributes, this, request);
 }
 
-void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request) const
+void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper(const ModifyLoadBalancerAttributesRequest& request) const
+void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper(const ModifyLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onModifyLoadBalancerAttributesOutcomeReceived(this, request, ModifyLoadBalancerAttributes(request));
+  m_onModifyLoadBalancerAttributesOutcomeReceived(this, request, ModifyLoadBalancerAttributes(request), context);
 }
 
 RegisterInstancesWithLoadBalancerOutcome ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancer(const RegisterInstancesWithLoadBalancerRequest& request) const
@@ -850,14 +850,14 @@ RegisterInstancesWithLoadBalancerOutcomeCallable ElasticLoadBalancingClient::Reg
   return std::async(std::launch::async, &ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsync(const RegisterInstancesWithLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsync(const RegisterInstancesWithLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper(const RegisterInstancesWithLoadBalancerRequest& request) const
+void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper(const RegisterInstancesWithLoadBalancerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRegisterInstancesWithLoadBalancerOutcomeReceived(this, request, RegisterInstancesWithLoadBalancer(request));
+  m_onRegisterInstancesWithLoadBalancerOutcomeReceived(this, request, RegisterInstancesWithLoadBalancer(request), context);
 }
 
 RemoveTagsOutcome ElasticLoadBalancingClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -881,14 +881,14 @@ RemoveTagsOutcomeCallable ElasticLoadBalancingClient::RemoveTagsCallable(const R
   return std::async(std::launch::async, &ElasticLoadBalancingClient::RemoveTags, this, request);
 }
 
-void ElasticLoadBalancingClient::RemoveTagsAsync(const RemoveTagsRequest& request) const
+void ElasticLoadBalancingClient::RemoveTagsAsync(const RemoveTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::RemoveTagsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::RemoveTagsAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request) const
+void ElasticLoadBalancingClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveTagsOutcomeReceived(this, request, RemoveTags(request));
+  m_onRemoveTagsOutcomeReceived(this, request, RemoveTags(request), context);
 }
 
 SetLoadBalancerListenerSSLCertificateOutcome ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificate(const SetLoadBalancerListenerSSLCertificateRequest& request) const
@@ -912,14 +912,14 @@ SetLoadBalancerListenerSSLCertificateOutcomeCallable ElasticLoadBalancingClient:
   return std::async(std::launch::async, &ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificate, this, request);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsync(const SetLoadBalancerListenerSSLCertificateRequest& request) const
+void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsync(const SetLoadBalancerListenerSSLCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper(const SetLoadBalancerListenerSSLCertificateRequest& request) const
+void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper(const SetLoadBalancerListenerSSLCertificateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetLoadBalancerListenerSSLCertificateOutcomeReceived(this, request, SetLoadBalancerListenerSSLCertificate(request));
+  m_onSetLoadBalancerListenerSSLCertificateOutcomeReceived(this, request, SetLoadBalancerListenerSSLCertificate(request), context);
 }
 
 SetLoadBalancerPoliciesForBackendServerOutcome ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServer(const SetLoadBalancerPoliciesForBackendServerRequest& request) const
@@ -943,14 +943,14 @@ SetLoadBalancerPoliciesForBackendServerOutcomeCallable ElasticLoadBalancingClien
   return std::async(std::launch::async, &ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServer, this, request);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsync(const SetLoadBalancerPoliciesForBackendServerRequest& request) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsync(const SetLoadBalancerPoliciesForBackendServerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper(const SetLoadBalancerPoliciesForBackendServerRequest& request) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper(const SetLoadBalancerPoliciesForBackendServerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetLoadBalancerPoliciesForBackendServerOutcomeReceived(this, request, SetLoadBalancerPoliciesForBackendServer(request));
+  m_onSetLoadBalancerPoliciesForBackendServerOutcomeReceived(this, request, SetLoadBalancerPoliciesForBackendServer(request), context);
 }
 
 SetLoadBalancerPoliciesOfListenerOutcome ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListener(const SetLoadBalancerPoliciesOfListenerRequest& request) const
@@ -974,13 +974,13 @@ SetLoadBalancerPoliciesOfListenerOutcomeCallable ElasticLoadBalancingClient::Set
   return std::async(std::launch::async, &ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListener, this, request);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsync(const SetLoadBalancerPoliciesOfListenerRequest& request) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsync(const SetLoadBalancerPoliciesOfListenerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper, this, request, context);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper(const SetLoadBalancerPoliciesOfListenerRequest& request) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper(const SetLoadBalancerPoliciesOfListenerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetLoadBalancerPoliciesOfListenerOutcomeReceived(this, request, SetLoadBalancerPoliciesOfListener(request));
+  m_onSetLoadBalancerPoliciesOfListenerOutcomeReceived(this, request, SetLoadBalancerPoliciesOfListener(request), context);
 }
 

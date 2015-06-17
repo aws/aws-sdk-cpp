@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The layer ID.</p>
     */
-    inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
+    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /*
      <p>The layer ID.</p>
     */
-    inline void SetLayerId(const char* value) { m_layerId.assign(value); }
+    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
 
     /*
      <p>The layer ID.</p>
@@ -104,6 +104,7 @@ namespace Model
 
   private:
     Aws::String m_layerId;
+    bool m_layerIdHasBeenSet;
     bool m_enable;
     bool m_enableHasBeenSet;
     AutoScalingThresholds m_upScaling;

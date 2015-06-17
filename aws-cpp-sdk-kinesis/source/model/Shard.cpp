@@ -22,21 +22,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Shard::Shard() : 
+    m_shardIdHasBeenSet(false),
     m_parentShardIdHasBeenSet(false),
-    m_adjacentParentShardIdHasBeenSet(false)
+    m_adjacentParentShardIdHasBeenSet(false),
+    m_hashKeyRangeHasBeenSet(false),
+    m_sequenceNumberRangeHasBeenSet(false)
 {
 }
 
 Shard::Shard(const JsonValue& jsonValue) : 
+    m_shardIdHasBeenSet(false),
     m_parentShardIdHasBeenSet(false),
-    m_adjacentParentShardIdHasBeenSet(false)
+    m_adjacentParentShardIdHasBeenSet(false),
+    m_hashKeyRangeHasBeenSet(false),
+    m_sequenceNumberRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Shard& Shard::operator =(const JsonValue& jsonValue)
 {
-  m_shardId = jsonValue.GetString("ShardId");
+  if(jsonValue.ValueExists("ShardId"))
+  {
+    m_shardId = jsonValue.GetString("ShardId");
+
+    m_shardIdHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("ParentShardId"))
   {
@@ -52,9 +63,19 @@ Shard& Shard::operator =(const JsonValue& jsonValue)
     m_adjacentParentShardIdHasBeenSet = true;
   }
 
-  m_hashKeyRange = jsonValue.GetObject("HashKeyRange");
+  if(jsonValue.ValueExists("HashKeyRange"))
+  {
+    m_hashKeyRange = jsonValue.GetObject("HashKeyRange");
 
-  m_sequenceNumberRange = jsonValue.GetObject("SequenceNumberRange");
+    m_hashKeyRangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SequenceNumberRange"))
+  {
+    m_sequenceNumberRange = jsonValue.GetObject("SequenceNumberRange");
+
+    m_sequenceNumberRangeHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -63,7 +84,11 @@ JsonValue Shard::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("ShardId", m_shardId);
+  if(m_shardIdHasBeenSet)
+  {
+   payload.WithString("ShardId", m_shardId);
+
+  }
 
   if(m_parentShardIdHasBeenSet)
   {
@@ -77,9 +102,17 @@ JsonValue Shard::Jsonize() const
 
   }
 
-  payload.WithObject("HashKeyRange", m_hashKeyRange.Jsonize());
+  if(m_hashKeyRangeHasBeenSet)
+  {
+   payload.WithObject("HashKeyRange", m_hashKeyRange.Jsonize());
 
-  payload.WithObject("SequenceNumberRange", m_sequenceNumberRange.Jsonize());
+  }
+
+  if(m_sequenceNumberRangeHasBeenSet)
+  {
+   payload.WithObject("SequenceNumberRange", m_sequenceNumberRange.Jsonize());
+
+  }
 
   return std::move(payload);
 }

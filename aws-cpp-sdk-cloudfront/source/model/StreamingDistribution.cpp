@@ -24,14 +24,24 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 StreamingDistribution::StreamingDistribution() : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_activeTrustedSignersHasBeenSet(false),
+    m_streamingDistributionConfigHasBeenSet(false)
 {
 }
 
 StreamingDistribution::StreamingDistribution(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_activeTrustedSignersHasBeenSet(false),
+    m_streamingDistributionConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,9 +53,17 @@ StreamingDistribution& StreamingDistribution::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = StringUtils::Trim(statusNode.GetText().c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
@@ -53,11 +71,23 @@ StreamingDistribution& StreamingDistribution::operator =(const XmlNode& xmlNode)
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    if(!domainNameNode.IsNull())
+    {
+      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainNameHasBeenSet = true;
+    }
     XmlNode activeTrustedSignersNode = resultNode.FirstChild("ActiveTrustedSigners");
-    m_activeTrustedSigners = activeTrustedSignersNode;
+    if(!activeTrustedSignersNode.IsNull())
+    {
+      m_activeTrustedSigners = activeTrustedSignersNode;
+      m_activeTrustedSignersHasBeenSet = true;
+    }
     XmlNode streamingDistributionConfigNode = resultNode.FirstChild("StreamingDistributionConfig");
-    m_streamingDistributionConfig = streamingDistributionConfigNode;
+    if(!streamingDistributionConfigNode.IsNull())
+    {
+      m_streamingDistributionConfig = streamingDistributionConfigNode;
+      m_streamingDistributionConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -66,10 +96,18 @@ StreamingDistribution& StreamingDistribution::operator =(const XmlNode& xmlNode)
 void StreamingDistribution::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(m_status);
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(m_status);
+  }
+
   if(m_lastModifiedTimeHasBeenSet)
   {
    XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
@@ -78,10 +116,22 @@ void StreamingDistribution::AddToNode(XmlNode& parentNode) const
   ss.str("");
   }
 
-  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-  domainNameNode.SetText(m_domainName);
-  XmlNode activeTrustedSignersNode = parentNode.CreateChildElement("ActiveTrustedSigners");
-  m_activeTrustedSigners.AddToNode(activeTrustedSignersNode);
-  XmlNode streamingDistributionConfigNode = parentNode.CreateChildElement("StreamingDistributionConfig");
-  m_streamingDistributionConfig.AddToNode(streamingDistributionConfigNode);
+  if(m_domainNameHasBeenSet)
+  {
+   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+   domainNameNode.SetText(m_domainName);
+  }
+
+  if(m_activeTrustedSignersHasBeenSet)
+  {
+   XmlNode activeTrustedSignersNode = parentNode.CreateChildElement("ActiveTrustedSigners");
+   m_activeTrustedSigners.AddToNode(activeTrustedSignersNode);
+  }
+
+  if(m_streamingDistributionConfigHasBeenSet)
+  {
+   XmlNode streamingDistributionConfigNode = parentNode.CreateChildElement("StreamingDistributionConfig");
+   m_streamingDistributionConfig.AddToNode(streamingDistributionConfigNode);
+  }
+
 }

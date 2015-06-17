@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListPolicyVersionsRequest::ListPolicyVersionsRequest() : 
+    m_policyArnHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String ListPolicyVersionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListPolicyVersions&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";

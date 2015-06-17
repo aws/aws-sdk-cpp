@@ -43,11 +43,12 @@ DescribeClusterSubnetGroupsResult& DescribeClusterSubnetGroupsResult::operator =
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode clusterSubnetGroupNode = resultNode.FirstChild("ClusterSubnetGroup");
+    XmlNode clusterSubnetGroupNodeParent = resultNode.FirstChild("ClusterSubnetGroup");
+    XmlNode clusterSubnetGroupNode = clusterSubnetGroupNodeParent.FirstChild("member");
     while(!clusterSubnetGroupNode.IsNull())
     {
       m_clusterSubnetGroups.push_back(clusterSubnetGroupNode);
-      clusterSubnetGroupNode = clusterSubnetGroupNode.NextNode("ClusterSubnetGroup");
+      clusterSubnetGroupNode = clusterSubnetGroupNode.NextNode("member");
     }
 
   }

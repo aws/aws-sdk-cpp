@@ -38,11 +38,15 @@ DescribeObjectsResult::DescribeObjectsResult(const AmazonWebServiceResult<JsonVa
 DescribeObjectsResult& DescribeObjectsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  Array<JsonValue> pipelineObjectsJsonList = jsonValue.GetArray("pipelineObjects");
-  for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
+  if(jsonValue.ValueExists("pipelineObjects"))
   {
-    m_pipelineObjects.push_back(pipelineObjectsJsonList[pipelineObjectsIndex].AsObject());
+    Array<JsonValue> pipelineObjectsJsonList = jsonValue.GetArray("pipelineObjects");
+    for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
+    {
+      m_pipelineObjects.push_back(pipelineObjectsJsonList[pipelineObjectsIndex].AsObject());
+    }
   }
+
   if(jsonValue.ValueExists("marker"))
   {
     m_marker = jsonValue.GetString("marker");

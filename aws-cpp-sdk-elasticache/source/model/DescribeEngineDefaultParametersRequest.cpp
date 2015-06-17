@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 DescribeEngineDefaultParametersRequest::DescribeEngineDefaultParametersRequest() : 
+    m_cacheParameterGroupFamilyHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String DescribeEngineDefaultParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeEngineDefaultParameters&";
-  ss << "CacheParameterGroupFamily=" << StringUtils::URLEncode(m_cacheParameterGroupFamily.c_str()) << "&";
+  if(m_cacheParameterGroupFamilyHasBeenSet)
+  {
+    ss << "CacheParameterGroupFamily=" << StringUtils::URLEncode(m_cacheParameterGroupFamily.c_str()) << "&";
+  }
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";

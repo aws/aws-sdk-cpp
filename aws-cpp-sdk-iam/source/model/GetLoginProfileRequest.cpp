@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetLoginProfileRequest::GetLoginProfileRequest()
+GetLoginProfileRequest::GetLoginProfileRequest() : 
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetLoginProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetLoginProfile&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

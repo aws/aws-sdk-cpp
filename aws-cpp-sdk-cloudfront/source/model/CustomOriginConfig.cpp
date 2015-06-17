@@ -25,13 +25,19 @@ using namespace Aws::Utils;
 
 CustomOriginConfig::CustomOriginConfig() : 
     m_hTTPPort(0),
-    m_hTTPSPort(0)
+    m_hTTPPortHasBeenSet(false),
+    m_hTTPSPort(0),
+    m_hTTPSPortHasBeenSet(false),
+    m_originProtocolPolicyHasBeenSet(false)
 {
 }
 
 CustomOriginConfig::CustomOriginConfig(const XmlNode& xmlNode) : 
     m_hTTPPort(0),
-    m_hTTPSPort(0)
+    m_hTTPPortHasBeenSet(false),
+    m_hTTPSPort(0),
+    m_hTTPSPortHasBeenSet(false),
+    m_originProtocolPolicyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,11 +49,23 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hTTPPortNode = resultNode.FirstChild("HTTPPort");
-    m_hTTPPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPPortNode.GetText().c_str()).c_str());
+    if(!hTTPPortNode.IsNull())
+    {
+      m_hTTPPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPPortNode.GetText().c_str()).c_str());
+      m_hTTPPortHasBeenSet = true;
+    }
     XmlNode hTTPSPortNode = resultNode.FirstChild("HTTPSPort");
-    m_hTTPSPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPSPortNode.GetText().c_str()).c_str());
+    if(!hTTPSPortNode.IsNull())
+    {
+      m_hTTPSPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPSPortNode.GetText().c_str()).c_str());
+      m_hTTPSPortHasBeenSet = true;
+    }
     XmlNode originProtocolPolicyNode = resultNode.FirstChild("OriginProtocolPolicy");
-    m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(originProtocolPolicyNode.GetText().c_str()).c_str());
+    if(!originProtocolPolicyNode.IsNull())
+    {
+      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(originProtocolPolicyNode.GetText().c_str()).c_str());
+      m_originProtocolPolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -56,14 +74,26 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
 void CustomOriginConfig::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode hTTPPortNode = parentNode.CreateChildElement("HTTPPort");
+  if(m_hTTPPortHasBeenSet)
+  {
+   XmlNode hTTPPortNode = parentNode.CreateChildElement("HTTPPort");
   ss << m_hTTPPort;
-  hTTPPortNode.SetText(ss.str());
+   hTTPPortNode.SetText(ss.str());
   ss.str("");
-  XmlNode hTTPSPortNode = parentNode.CreateChildElement("HTTPSPort");
+  }
+
+  if(m_hTTPSPortHasBeenSet)
+  {
+   XmlNode hTTPSPortNode = parentNode.CreateChildElement("HTTPSPort");
   ss << m_hTTPSPort;
-  hTTPSPortNode.SetText(ss.str());
+   hTTPSPortNode.SetText(ss.str());
   ss.str("");
-  XmlNode originProtocolPolicyNode = parentNode.CreateChildElement("OriginProtocolPolicy");
-  originProtocolPolicyNode.SetText(OriginProtocolPolicyMapper::GetNameForOriginProtocolPolicy(m_originProtocolPolicy));
+  }
+
+  if(m_originProtocolPolicyHasBeenSet)
+  {
+   XmlNode originProtocolPolicyNode = parentNode.CreateChildElement("OriginProtocolPolicy");
+   originProtocolPolicyNode.SetText(OriginProtocolPolicyMapper::GetNameForOriginProtocolPolicy(m_originProtocolPolicy));
+  }
+
 }

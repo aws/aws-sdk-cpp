@@ -38,12 +38,20 @@ ListTagsForStreamResult::ListTagsForStreamResult(const AmazonWebServiceResult<Js
 ListTagsForStreamResult& ListTagsForStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
-  for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+  if(jsonValue.ValueExists("Tags"))
   {
-    m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
   }
-  m_hasMoreTags = jsonValue.GetBool("HasMoreTags");
+
+  if(jsonValue.ValueExists("HasMoreTags"))
+  {
+    m_hasMoreTags = jsonValue.GetBool("HasMoreTags");
+
+  }
 
 
 

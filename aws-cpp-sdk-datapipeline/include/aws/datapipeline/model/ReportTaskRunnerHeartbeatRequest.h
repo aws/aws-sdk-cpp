@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     */
-    inline void SetTaskrunnerId(const Aws::String& value) { m_taskrunnerId = value; }
+    inline void SetTaskrunnerId(const Aws::String& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = value; }
 
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     */
-    inline void SetTaskrunnerId(const char* value) { m_taskrunnerId.assign(value); }
+    inline void SetTaskrunnerId(const char* value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId.assign(value); }
 
     /*
      <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
@@ -110,6 +110,7 @@ namespace Model
 
   private:
     Aws::String m_taskrunnerId;
+    bool m_taskrunnerIdHasBeenSet;
     Aws::String m_workerGroup;
     bool m_workerGroupHasBeenSet;
     Aws::String m_hostname;

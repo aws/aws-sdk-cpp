@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-AttachGroupPolicyRequest::AttachGroupPolicyRequest()
+AttachGroupPolicyRequest::AttachGroupPolicyRequest() : 
+    m_groupNameHasBeenSet(false),
+    m_policyArnHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String AttachGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AttachGroupPolicy&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

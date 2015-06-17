@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a list deployment configurations operation.</p>
   */
   class AWS_CODEDEPLOY_API ListDeploymentConfigsRequest : public codedeployRequest
   {
@@ -36,28 +35,18 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>An identifier that was returned from the previous list deployment configurations call, which can be used to return the next set of deployment configurations in the list.</p>
-    */
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    /*
-     <p>An identifier that was returned from the previous list deployment configurations call, which can be used to return the next set of deployment configurations in the list.</p>
-    */
+    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>An identifier that was returned from the previous list deployment configurations call, which can be used to return the next set of deployment configurations in the list.</p>
-    */
+    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>An identifier that was returned from the previous list deployment configurations call, which can be used to return the next set of deployment configurations in the list.</p>
-    */
+    
     inline ListDeploymentConfigsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>An identifier that was returned from the previous list deployment configurations call, which can be used to return the next set of deployment configurations in the list.</p>
-    */
+    
     inline ListDeploymentConfigsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

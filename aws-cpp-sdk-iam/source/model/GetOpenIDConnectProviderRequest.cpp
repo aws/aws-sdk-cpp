@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetOpenIDConnectProviderRequest::GetOpenIDConnectProviderRequest()
+GetOpenIDConnectProviderRequest::GetOpenIDConnectProviderRequest() : 
+    m_openIDConnectProviderArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetOpenIDConnectProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetOpenIDConnectProvider&";
-  ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
+  if(m_openIDConnectProviderArnHasBeenSet)
+  {
+    ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -48,7 +48,7 @@ namespace Model
     /*
      The HTTP port the custom origin listens on.
     */
-    inline void SetHTTPPort(long value) { m_hTTPPort = value; }
+    inline void SetHTTPPort(long value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
 
     /*
      The HTTP port the custom origin listens on.
@@ -62,7 +62,7 @@ namespace Model
     /*
      The HTTPS port the custom origin listens on.
     */
-    inline void SetHTTPSPort(long value) { m_hTTPSPort = value; }
+    inline void SetHTTPSPort(long value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
 
     /*
      The HTTPS port the custom origin listens on.
@@ -76,7 +76,7 @@ namespace Model
     /*
      The origin protocol policy to apply to your origin.
     */
-    inline void SetOriginProtocolPolicy(const OriginProtocolPolicy& value) { m_originProtocolPolicy = value; }
+    inline void SetOriginProtocolPolicy(const OriginProtocolPolicy& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
 
     /*
      The origin protocol policy to apply to your origin.
@@ -85,8 +85,11 @@ namespace Model
 
   private:
     long m_hTTPPort;
+    bool m_hTTPPortHasBeenSet;
     long m_hTTPSPort;
+    bool m_hTTPSPortHasBeenSet;
     OriginProtocolPolicy m_originProtocolPolicy;
+    bool m_originProtocolPolicyHasBeenSet;
   };
 
 } // namespace Model

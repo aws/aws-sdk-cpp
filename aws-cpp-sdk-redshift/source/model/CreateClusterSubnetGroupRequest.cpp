@@ -20,6 +20,9 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 CreateClusterSubnetGroupRequest::CreateClusterSubnetGroupRequest() : 
+    m_clusterSubnetGroupNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,14 +31,23 @@ Aws::String CreateClusterSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateClusterSubnetGroup&";
-  ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
-  ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  unsigned subnetIdsCount = 1;
-  for(auto& item : m_subnetIds)
+  if(m_clusterSubnetGroupNameHasBeenSet)
   {
-    ss << "SubnetIdentifier." << subnetIdsCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    subnetIdsCount++;
+    ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_subnetIdsHasBeenSet)
+  {
+    unsigned subnetIdsCount = 1;
+    for(auto& item : m_subnetIds)
+    {
+      ss << "SubnetIdentifier." << subnetIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      subnetIdsCount++;
+    }
   }
   if(m_tagsHasBeenSet)
   {

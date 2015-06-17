@@ -20,7 +20,10 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 PutScalingPolicyRequest::PutScalingPolicyRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
     m_policyTypeHasBeenSet(false),
+    m_adjustmentTypeHasBeenSet(false),
     m_minAdjustmentStep(0),
     m_minAdjustmentStepHasBeenSet(false),
     m_minAdjustmentMagnitude(0),
@@ -40,13 +43,22 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutScalingPolicy&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
-  ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_policyNameHasBeenSet)
+  {
+    ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
   if(m_policyTypeHasBeenSet)
   {
     ss << "PolicyType=" << StringUtils::URLEncode(m_policyType.c_str()) << "&";
   }
-  ss << "AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
+  if(m_adjustmentTypeHasBeenSet)
+  {
+    ss << "AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
+  }
   if(m_minAdjustmentStepHasBeenSet)
   {
     ss << "MinAdjustmentStep=" << m_minAdjustmentStep << "&";

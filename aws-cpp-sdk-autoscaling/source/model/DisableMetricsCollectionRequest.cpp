@@ -20,6 +20,7 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 DisableMetricsCollectionRequest::DisableMetricsCollectionRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_metricsHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String DisableMetricsCollectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DisableMetricsCollection&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_metricsHasBeenSet)
   {
     unsigned metricsCount = 1;

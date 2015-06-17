@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>A name for the cache security group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p> <p>Example: <code>mysecuritygroup</code></p>
     */
-    inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupName = value; }
+    inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /*
      <p>A name for the cache security group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p> <p>Example: <code>mysecuritygroup</code></p>
     */
-    inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupName.assign(value); }
+    inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
     /*
      <p>A name for the cache security group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p> <p>Example: <code>mysecuritygroup</code></p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>A description for the cache security group.</p>
     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description for the cache security group.</p>
     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
      <p>A description for the cache security group.</p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_cacheSecurityGroupName;
+    bool m_cacheSecurityGroupNameHasBeenSet;
     Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

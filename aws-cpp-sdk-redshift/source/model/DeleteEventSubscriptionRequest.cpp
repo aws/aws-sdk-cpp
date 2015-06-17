@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteEventSubscriptionRequest::DeleteEventSubscriptionRequest()
+DeleteEventSubscriptionRequest::DeleteEventSubscriptionRequest() : 
+    m_subscriptionNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteEventSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteEventSubscription&";
-  ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
+  if(m_subscriptionNameHasBeenSet)
+  {
+    ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

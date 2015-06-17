@@ -43,11 +43,12 @@ DescribeDBInstancesResult& DescribeDBInstancesResult::operator =(const AmazonWeb
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
+    XmlNode dBInstanceNodeParent = resultNode.FirstChild("DBInstance");
+    XmlNode dBInstanceNode = dBInstanceNodeParent.FirstChild("member");
     while(!dBInstanceNode.IsNull())
     {
       m_dBInstances.push_back(dBInstanceNode);
-      dBInstanceNode = dBInstanceNode.NextNode("DBInstance");
+      dBInstanceNode = dBInstanceNode.NextNode("member");
     }
 
   }

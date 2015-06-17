@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the lifecycle hook.</p>
     */
-    inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookName = value; }
+    inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /*
      <p>The name of the lifecycle hook.</p>
     */
-    inline void SetLifecycleHookName(const char* value) { m_lifecycleHookName.assign(value); }
+    inline void SetLifecycleHookName(const char* value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName.assign(value); }
 
     /*
      <p>The name of the lifecycle hook.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the Auto Scaling group for the hook.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
     */
-    inline void SetLifecycleActionToken(const Aws::String& value) { m_lifecycleActionToken = value; }
+    inline void SetLifecycleActionToken(const Aws::String& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = value; }
 
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
     */
-    inline void SetLifecycleActionToken(const char* value) { m_lifecycleActionToken.assign(value); }
+    inline void SetLifecycleActionToken(const char* value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken.assign(value); }
 
     /*
      <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
@@ -107,8 +107,11 @@ namespace Model
 
   private:
     Aws::String m_lifecycleHookName;
+    bool m_lifecycleHookNameHasBeenSet;
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_lifecycleActionToken;
+    bool m_lifecycleActionTokenHasBeenSet;
   };
 
 } // namespace Model

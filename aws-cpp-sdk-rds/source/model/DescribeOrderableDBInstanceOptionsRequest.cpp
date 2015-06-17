@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DescribeOrderableDBInstanceOptionsRequest::DescribeOrderableDBInstanceOptionsRequest() : 
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
@@ -36,7 +37,10 @@ Aws::String DescribeOrderableDBInstanceOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeOrderableDBInstanceOptions&";
-  ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";

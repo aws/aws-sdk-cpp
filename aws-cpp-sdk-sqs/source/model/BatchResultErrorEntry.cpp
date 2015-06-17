@@ -24,13 +24,19 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 BatchResultErrorEntry::BatchResultErrorEntry() : 
+    m_idHasBeenSet(false),
     m_senderFault(false),
+    m_senderFaultHasBeenSet(false),
+    m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 BatchResultErrorEntry::BatchResultErrorEntry(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
     m_senderFault(false),
+    m_senderFaultHasBeenSet(false),
+    m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,11 +49,23 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode senderFaultNode = resultNode.FirstChild("SenderFault");
-    m_senderFault = StringUtils::ConvertToBool(StringUtils::Trim(senderFaultNode.GetText().c_str()).c_str());
+    if(!senderFaultNode.IsNull())
+    {
+      m_senderFault = StringUtils::ConvertToBool(StringUtils::Trim(senderFaultNode.GetText().c_str()).c_str());
+      m_senderFaultHasBeenSet = true;
+    }
     XmlNode codeNode = resultNode.FirstChild("Code");
-    m_code = StringUtils::Trim(codeNode.GetText().c_str());
+    if(!codeNode.IsNull())
+    {
+      m_code = StringUtils::Trim(codeNode.GetText().c_str());
+      m_codeHasBeenSet = true;
+    }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
@@ -61,9 +79,18 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
 
 void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << index << locationValue << ".SenderFault=" << m_senderFault << "&";
-  oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_senderFaultHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SenderFault=" << m_senderFault << "&";
+  }
+  if(m_codeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+  }
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
@@ -72,9 +99,18 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
 
 void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << ".SenderFault=" << m_senderFault << "&";
-  oStream << location << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_senderFaultHasBeenSet)
+  {
+      oStream << location << ".SenderFault=" << m_senderFault << "&";
+  }
+  if(m_codeHasBeenSet)
+  {
+      oStream << location << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+  }
   if(m_messageHasBeenSet)
   {
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";

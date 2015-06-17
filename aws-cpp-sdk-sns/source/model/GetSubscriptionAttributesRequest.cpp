@@ -19,7 +19,8 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetSubscriptionAttributesRequest::GetSubscriptionAttributesRequest()
+GetSubscriptionAttributesRequest::GetSubscriptionAttributesRequest() : 
+    m_subscriptionArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetSubscriptionAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetSubscriptionAttributes&";
-  ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
+  if(m_subscriptionArnHasBeenSet)
+  {
+    ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

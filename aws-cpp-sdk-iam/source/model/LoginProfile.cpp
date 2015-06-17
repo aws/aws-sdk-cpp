@@ -24,14 +24,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 LoginProfile::LoginProfile() : 
+    m_userNameHasBeenSet(false),
     m_createDate(0.0),
+    m_createDateHasBeenSet(false),
     m_passwordResetRequired(false),
     m_passwordResetRequiredHasBeenSet(false)
 {
 }
 
 LoginProfile::LoginProfile(const XmlNode& xmlNode) : 
+    m_userNameHasBeenSet(false),
     m_createDate(0.0),
+    m_createDateHasBeenSet(false),
     m_passwordResetRequired(false),
     m_passwordResetRequiredHasBeenSet(false)
 {
@@ -45,9 +49,17 @@ LoginProfile& LoginProfile::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+    if(!userNameNode.IsNull())
+    {
+      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userNameHasBeenSet = true;
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    if(!createDateNode.IsNull())
+    {
+      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDateHasBeenSet = true;
+    }
     XmlNode passwordResetRequiredNode = resultNode.FirstChild("PasswordResetRequired");
     if(!passwordResetRequiredNode.IsNull())
     {
@@ -61,8 +73,14 @@ LoginProfile& LoginProfile::operator =(const XmlNode& xmlNode)
 
 void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  }
   if(m_passwordResetRequiredHasBeenSet)
   {
       oStream << location << index << locationValue << ".PasswordResetRequired=" << m_passwordResetRequired << "&";
@@ -71,8 +89,14 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location, u
 
 void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << ".CreateDate=" << m_createDate << "&";
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << ".CreateDate=" << m_createDate << "&";
+  }
   if(m_passwordResetRequiredHasBeenSet)
   {
       oStream << location << ".PasswordResetRequired=" << m_passwordResetRequired << "&";

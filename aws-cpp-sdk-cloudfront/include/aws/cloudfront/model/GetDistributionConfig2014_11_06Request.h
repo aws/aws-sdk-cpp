@@ -41,12 +41,12 @@ namespace Model
     /*
      The distribution's id.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The distribution's id.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The distribution's id.
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
   };
 
 } // namespace Model

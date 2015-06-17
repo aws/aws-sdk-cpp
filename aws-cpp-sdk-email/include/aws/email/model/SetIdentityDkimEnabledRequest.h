@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
     */
-    inline void SetIdentity(const Aws::String& value) { m_identity = value; }
+    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
     */
-    inline void SetIdentity(const char* value) { m_identity.assign(value); }
+    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /*
      <p>The identity for which DKIM signing should be enabled or disabled.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     */
-    inline void SetDkimEnabled(bool value) { m_dkimEnabled = value; }
+    inline void SetDkimEnabled(bool value) { m_dkimEnabledHasBeenSet = true; m_dkimEnabled = value; }
 
     /*
      <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
@@ -74,7 +74,9 @@ namespace Model
 
   private:
     Aws::String m_identity;
+    bool m_identityHasBeenSet;
     bool m_dkimEnabled;
+    bool m_dkimEnabledHasBeenSet;
   };
 
 } // namespace Model

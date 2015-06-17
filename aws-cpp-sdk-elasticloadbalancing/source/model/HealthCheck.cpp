@@ -24,18 +24,28 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 HealthCheck::HealthCheck() : 
+    m_targetHasBeenSet(false),
     m_interval(0),
+    m_intervalHasBeenSet(false),
     m_timeout(0),
+    m_timeoutHasBeenSet(false),
     m_unhealthyThreshold(0),
-    m_healthyThreshold(0)
+    m_unhealthyThresholdHasBeenSet(false),
+    m_healthyThreshold(0),
+    m_healthyThresholdHasBeenSet(false)
 {
 }
 
 HealthCheck::HealthCheck(const XmlNode& xmlNode) : 
+    m_targetHasBeenSet(false),
     m_interval(0),
+    m_intervalHasBeenSet(false),
     m_timeout(0),
+    m_timeoutHasBeenSet(false),
     m_unhealthyThreshold(0),
-    m_healthyThreshold(0)
+    m_unhealthyThresholdHasBeenSet(false),
+    m_healthyThreshold(0),
+    m_healthyThresholdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -47,15 +57,35 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode targetNode = resultNode.FirstChild("Target");
-    m_target = StringUtils::Trim(targetNode.GetText().c_str());
+    if(!targetNode.IsNull())
+    {
+      m_target = StringUtils::Trim(targetNode.GetText().c_str());
+      m_targetHasBeenSet = true;
+    }
     XmlNode intervalNode = resultNode.FirstChild("Interval");
-    m_interval = StringUtils::ConvertToInt32(StringUtils::Trim(intervalNode.GetText().c_str()).c_str());
+    if(!intervalNode.IsNull())
+    {
+      m_interval = StringUtils::ConvertToInt32(StringUtils::Trim(intervalNode.GetText().c_str()).c_str());
+      m_intervalHasBeenSet = true;
+    }
     XmlNode timeoutNode = resultNode.FirstChild("Timeout");
-    m_timeout = StringUtils::ConvertToInt32(StringUtils::Trim(timeoutNode.GetText().c_str()).c_str());
+    if(!timeoutNode.IsNull())
+    {
+      m_timeout = StringUtils::ConvertToInt32(StringUtils::Trim(timeoutNode.GetText().c_str()).c_str());
+      m_timeoutHasBeenSet = true;
+    }
     XmlNode unhealthyThresholdNode = resultNode.FirstChild("UnhealthyThreshold");
-    m_unhealthyThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(unhealthyThresholdNode.GetText().c_str()).c_str());
+    if(!unhealthyThresholdNode.IsNull())
+    {
+      m_unhealthyThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(unhealthyThresholdNode.GetText().c_str()).c_str());
+      m_unhealthyThresholdHasBeenSet = true;
+    }
     XmlNode healthyThresholdNode = resultNode.FirstChild("HealthyThreshold");
-    m_healthyThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(healthyThresholdNode.GetText().c_str()).c_str());
+    if(!healthyThresholdNode.IsNull())
+    {
+      m_healthyThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(healthyThresholdNode.GetText().c_str()).c_str());
+      m_healthyThresholdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -63,18 +93,48 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
 
 void HealthCheck::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Target=" << StringUtils::URLEncode(m_target.c_str()) << "&";
-  oStream << location << index << locationValue << ".Interval=" << m_interval << "&";
-  oStream << location << index << locationValue << ".Timeout=" << m_timeout << "&";
-  oStream << location << index << locationValue << ".UnhealthyThreshold=" << m_unhealthyThreshold << "&";
-  oStream << location << index << locationValue << ".HealthyThreshold=" << m_healthyThreshold << "&";
+  if(m_targetHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Target=" << StringUtils::URLEncode(m_target.c_str()) << "&";
+  }
+  if(m_intervalHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Interval=" << m_interval << "&";
+  }
+  if(m_timeoutHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Timeout=" << m_timeout << "&";
+  }
+  if(m_unhealthyThresholdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UnhealthyThreshold=" << m_unhealthyThreshold << "&";
+  }
+  if(m_healthyThresholdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HealthyThreshold=" << m_healthyThreshold << "&";
+  }
 }
 
 void HealthCheck::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Target=" << StringUtils::URLEncode(m_target.c_str()) << "&";
-  oStream << location << ".Interval=" << m_interval << "&";
-  oStream << location << ".Timeout=" << m_timeout << "&";
-  oStream << location << ".UnhealthyThreshold=" << m_unhealthyThreshold << "&";
-  oStream << location << ".HealthyThreshold=" << m_healthyThreshold << "&";
+  if(m_targetHasBeenSet)
+  {
+      oStream << location << ".Target=" << StringUtils::URLEncode(m_target.c_str()) << "&";
+  }
+  if(m_intervalHasBeenSet)
+  {
+      oStream << location << ".Interval=" << m_interval << "&";
+  }
+  if(m_timeoutHasBeenSet)
+  {
+      oStream << location << ".Timeout=" << m_timeout << "&";
+  }
+  if(m_unhealthyThresholdHasBeenSet)
+  {
+      oStream << location << ".UnhealthyThreshold=" << m_unhealthyThreshold << "&";
+  }
+  if(m_healthyThresholdHasBeenSet)
+  {
+      oStream << location << ".HealthyThreshold=" << m_healthyThreshold << "&";
+  }
 }

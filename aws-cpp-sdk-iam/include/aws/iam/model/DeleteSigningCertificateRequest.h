@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The ID of the signing certificate to delete.</p>
     */
-    inline void SetCertificateId(const Aws::String& value) { m_certificateId = value; }
+    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /*
      <p>The ID of the signing certificate to delete.</p>
     */
-    inline void SetCertificateId(const char* value) { m_certificateId.assign(value); }
+    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /*
      <p>The ID of the signing certificate to delete.</p>
@@ -85,6 +85,7 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_certificateId;
+    bool m_certificateIdHasBeenSet;
   };
 
 } // namespace Model

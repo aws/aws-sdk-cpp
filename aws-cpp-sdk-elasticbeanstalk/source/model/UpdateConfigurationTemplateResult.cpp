@@ -61,11 +61,12 @@ UpdateConfigurationTemplateResult& UpdateConfigurationTemplateResult::operator =
     m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
-    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
+    XmlNode optionSettingsNodeParent = resultNode.FirstChild("OptionSettings");
+    XmlNode optionSettingsNode = optionSettingsNodeParent.FirstChild("member");
     while(!optionSettingsNode.IsNull())
     {
       m_optionSettings.push_back(optionSettingsNode);
-      optionSettingsNode = optionSettingsNode.NextNode("OptionSettings");
+      optionSettingsNode = optionSettingsNode.NextNode("member");
     }
 
   }

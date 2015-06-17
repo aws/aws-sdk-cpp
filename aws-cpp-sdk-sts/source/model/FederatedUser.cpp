@@ -23,11 +23,15 @@ using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-FederatedUser::FederatedUser()
+FederatedUser::FederatedUser() : 
+    m_federatedUserIdHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
-FederatedUser::FederatedUser(const XmlNode& xmlNode)
+FederatedUser::FederatedUser(const XmlNode& xmlNode) : 
+    m_federatedUserIdHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ FederatedUser& FederatedUser::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode federatedUserIdNode = resultNode.FirstChild("FederatedUserId");
-    m_federatedUserId = StringUtils::Trim(federatedUserIdNode.GetText().c_str());
+    if(!federatedUserIdNode.IsNull())
+    {
+      m_federatedUserId = StringUtils::Trim(federatedUserIdNode.GetText().c_str());
+      m_federatedUserIdHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+    if(!arnNode.IsNull())
+    {
+      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,12 +61,24 @@ FederatedUser& FederatedUser::operator =(const XmlNode& xmlNode)
 
 void FederatedUser::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".FederatedUserId=" << StringUtils::URLEncode(m_federatedUserId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  if(m_federatedUserIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FederatedUserId=" << StringUtils::URLEncode(m_federatedUserId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
 }
 
 void FederatedUser::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".FederatedUserId=" << StringUtils::URLEncode(m_federatedUserId.c_str()) << "&";
-  oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  if(m_federatedUserIdHasBeenSet)
+  {
+      oStream << location << ".FederatedUserId=" << StringUtils::URLEncode(m_federatedUserId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
 }

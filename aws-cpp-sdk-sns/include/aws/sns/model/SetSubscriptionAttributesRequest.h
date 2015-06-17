@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the subscription to modify.</p>
     */
-    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
+    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /*
      <p>The ARN of the subscription to modify.</p>
     */
-    inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
+    inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
 
     /*
      <p>The ARN of the subscription to modify.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
     */
-    inline void SetAttributeName(const Aws::String& value) { m_attributeName = value; }
+    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
     */
-    inline void SetAttributeName(const char* value) { m_attributeName.assign(value); }
+    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p> <p>Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></p>
@@ -108,7 +108,9 @@ namespace Model
 
   private:
     Aws::String m_subscriptionArn;
+    bool m_subscriptionArnHasBeenSet;
     Aws::String m_attributeName;
+    bool m_attributeNameHasBeenSet;
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

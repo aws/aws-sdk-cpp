@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetServerCertificateRequest::GetServerCertificateRequest()
+GetServerCertificateRequest::GetServerCertificateRequest() : 
+    m_serverCertificateNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetServerCertificate&";
-  ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  if(m_serverCertificateNameHasBeenSet)
+  {
+    ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -32,14 +32,17 @@
 #include <aws/logs/model/DeleteLogStreamRequest.h>
 #include <aws/logs/model/DeleteMetricFilterRequest.h>
 #include <aws/logs/model/DeleteRetentionPolicyRequest.h>
+#include <aws/logs/model/DeleteSubscriptionFilterRequest.h>
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
 #include <aws/logs/model/DescribeLogStreamsRequest.h>
 #include <aws/logs/model/DescribeMetricFiltersRequest.h>
+#include <aws/logs/model/DescribeSubscriptionFiltersRequest.h>
 #include <aws/logs/model/FilterLogEventsRequest.h>
 #include <aws/logs/model/GetLogEventsRequest.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
 #include <aws/logs/model/PutMetricFilterRequest.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
+#include <aws/logs/model/PutSubscriptionFilterRequest.h>
 #include <aws/logs/model/TestMetricFilterRequest.h>
 
 using namespace Aws;
@@ -123,14 +126,14 @@ CreateLogGroupOutcomeCallable CloudWatchLogsClient::CreateLogGroupCallable(const
   return std::async(std::launch::async, &CloudWatchLogsClient::CreateLogGroup, this, request);
 }
 
-void CloudWatchLogsClient::CreateLogGroupAsync(const CreateLogGroupRequest& request) const
+void CloudWatchLogsClient::CreateLogGroupAsync(const CreateLogGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::CreateLogGroupAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::CreateLogGroupAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::CreateLogGroupAsyncHelper(const CreateLogGroupRequest& request) const
+void CloudWatchLogsClient::CreateLogGroupAsyncHelper(const CreateLogGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLogGroupOutcomeReceived(this, request, CreateLogGroup(request));
+  m_onCreateLogGroupOutcomeReceived(this, request, CreateLogGroup(request), context);
 }
 
 CreateLogStreamOutcome CloudWatchLogsClient::CreateLogStream(const CreateLogStreamRequest& request) const
@@ -154,14 +157,14 @@ CreateLogStreamOutcomeCallable CloudWatchLogsClient::CreateLogStreamCallable(con
   return std::async(std::launch::async, &CloudWatchLogsClient::CreateLogStream, this, request);
 }
 
-void CloudWatchLogsClient::CreateLogStreamAsync(const CreateLogStreamRequest& request) const
+void CloudWatchLogsClient::CreateLogStreamAsync(const CreateLogStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::CreateLogStreamAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::CreateLogStreamAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::CreateLogStreamAsyncHelper(const CreateLogStreamRequest& request) const
+void CloudWatchLogsClient::CreateLogStreamAsyncHelper(const CreateLogStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLogStreamOutcomeReceived(this, request, CreateLogStream(request));
+  m_onCreateLogStreamOutcomeReceived(this, request, CreateLogStream(request), context);
 }
 
 DeleteLogGroupOutcome CloudWatchLogsClient::DeleteLogGroup(const DeleteLogGroupRequest& request) const
@@ -185,14 +188,14 @@ DeleteLogGroupOutcomeCallable CloudWatchLogsClient::DeleteLogGroupCallable(const
   return std::async(std::launch::async, &CloudWatchLogsClient::DeleteLogGroup, this, request);
 }
 
-void CloudWatchLogsClient::DeleteLogGroupAsync(const DeleteLogGroupRequest& request) const
+void CloudWatchLogsClient::DeleteLogGroupAsync(const DeleteLogGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DeleteLogGroupAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DeleteLogGroupAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DeleteLogGroupAsyncHelper(const DeleteLogGroupRequest& request) const
+void CloudWatchLogsClient::DeleteLogGroupAsyncHelper(const DeleteLogGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLogGroupOutcomeReceived(this, request, DeleteLogGroup(request));
+  m_onDeleteLogGroupOutcomeReceived(this, request, DeleteLogGroup(request), context);
 }
 
 DeleteLogStreamOutcome CloudWatchLogsClient::DeleteLogStream(const DeleteLogStreamRequest& request) const
@@ -216,14 +219,14 @@ DeleteLogStreamOutcomeCallable CloudWatchLogsClient::DeleteLogStreamCallable(con
   return std::async(std::launch::async, &CloudWatchLogsClient::DeleteLogStream, this, request);
 }
 
-void CloudWatchLogsClient::DeleteLogStreamAsync(const DeleteLogStreamRequest& request) const
+void CloudWatchLogsClient::DeleteLogStreamAsync(const DeleteLogStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DeleteLogStreamAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DeleteLogStreamAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DeleteLogStreamAsyncHelper(const DeleteLogStreamRequest& request) const
+void CloudWatchLogsClient::DeleteLogStreamAsyncHelper(const DeleteLogStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLogStreamOutcomeReceived(this, request, DeleteLogStream(request));
+  m_onDeleteLogStreamOutcomeReceived(this, request, DeleteLogStream(request), context);
 }
 
 DeleteMetricFilterOutcome CloudWatchLogsClient::DeleteMetricFilter(const DeleteMetricFilterRequest& request) const
@@ -247,14 +250,14 @@ DeleteMetricFilterOutcomeCallable CloudWatchLogsClient::DeleteMetricFilterCallab
   return std::async(std::launch::async, &CloudWatchLogsClient::DeleteMetricFilter, this, request);
 }
 
-void CloudWatchLogsClient::DeleteMetricFilterAsync(const DeleteMetricFilterRequest& request) const
+void CloudWatchLogsClient::DeleteMetricFilterAsync(const DeleteMetricFilterRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DeleteMetricFilterAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DeleteMetricFilterAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DeleteMetricFilterAsyncHelper(const DeleteMetricFilterRequest& request) const
+void CloudWatchLogsClient::DeleteMetricFilterAsyncHelper(const DeleteMetricFilterRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteMetricFilterOutcomeReceived(this, request, DeleteMetricFilter(request));
+  m_onDeleteMetricFilterOutcomeReceived(this, request, DeleteMetricFilter(request), context);
 }
 
 DeleteRetentionPolicyOutcome CloudWatchLogsClient::DeleteRetentionPolicy(const DeleteRetentionPolicyRequest& request) const
@@ -278,14 +281,45 @@ DeleteRetentionPolicyOutcomeCallable CloudWatchLogsClient::DeleteRetentionPolicy
   return std::async(std::launch::async, &CloudWatchLogsClient::DeleteRetentionPolicy, this, request);
 }
 
-void CloudWatchLogsClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request) const
+void CloudWatchLogsClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DeleteRetentionPolicyAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DeleteRetentionPolicyAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DeleteRetentionPolicyAsyncHelper(const DeleteRetentionPolicyRequest& request) const
+void CloudWatchLogsClient::DeleteRetentionPolicyAsyncHelper(const DeleteRetentionPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteRetentionPolicyOutcomeReceived(this, request, DeleteRetentionPolicy(request));
+  m_onDeleteRetentionPolicyOutcomeReceived(this, request, DeleteRetentionPolicy(request), context);
+}
+
+DeleteSubscriptionFilterOutcome CloudWatchLogsClient::DeleteSubscriptionFilter(const DeleteSubscriptionFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSubscriptionFilterOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteSubscriptionFilterOutcome(outcome.GetError());
+  }
+}
+
+DeleteSubscriptionFilterOutcomeCallable CloudWatchLogsClient::DeleteSubscriptionFilterCallable(const DeleteSubscriptionFilterRequest& request) const
+{
+  return std::async(std::launch::async, &CloudWatchLogsClient::DeleteSubscriptionFilter, this, request);
+}
+
+void CloudWatchLogsClient::DeleteSubscriptionFilterAsync(const DeleteSubscriptionFilterRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&CloudWatchLogsClient::DeleteSubscriptionFilterAsyncHelper, this, request, context);
+}
+
+void CloudWatchLogsClient::DeleteSubscriptionFilterAsyncHelper(const DeleteSubscriptionFilterRequest& request, const AsyncCallerContext* context) const
+{
+  m_onDeleteSubscriptionFilterOutcomeReceived(this, request, DeleteSubscriptionFilter(request), context);
 }
 
 DescribeLogGroupsOutcome CloudWatchLogsClient::DescribeLogGroups(const DescribeLogGroupsRequest& request) const
@@ -309,14 +343,14 @@ DescribeLogGroupsOutcomeCallable CloudWatchLogsClient::DescribeLogGroupsCallable
   return std::async(std::launch::async, &CloudWatchLogsClient::DescribeLogGroups, this, request);
 }
 
-void CloudWatchLogsClient::DescribeLogGroupsAsync(const DescribeLogGroupsRequest& request) const
+void CloudWatchLogsClient::DescribeLogGroupsAsync(const DescribeLogGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DescribeLogGroupsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DescribeLogGroupsAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DescribeLogGroupsAsyncHelper(const DescribeLogGroupsRequest& request) const
+void CloudWatchLogsClient::DescribeLogGroupsAsyncHelper(const DescribeLogGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLogGroupsOutcomeReceived(this, request, DescribeLogGroups(request));
+  m_onDescribeLogGroupsOutcomeReceived(this, request, DescribeLogGroups(request), context);
 }
 
 DescribeLogStreamsOutcome CloudWatchLogsClient::DescribeLogStreams(const DescribeLogStreamsRequest& request) const
@@ -340,14 +374,14 @@ DescribeLogStreamsOutcomeCallable CloudWatchLogsClient::DescribeLogStreamsCallab
   return std::async(std::launch::async, &CloudWatchLogsClient::DescribeLogStreams, this, request);
 }
 
-void CloudWatchLogsClient::DescribeLogStreamsAsync(const DescribeLogStreamsRequest& request) const
+void CloudWatchLogsClient::DescribeLogStreamsAsync(const DescribeLogStreamsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DescribeLogStreamsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DescribeLogStreamsAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DescribeLogStreamsAsyncHelper(const DescribeLogStreamsRequest& request) const
+void CloudWatchLogsClient::DescribeLogStreamsAsyncHelper(const DescribeLogStreamsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLogStreamsOutcomeReceived(this, request, DescribeLogStreams(request));
+  m_onDescribeLogStreamsOutcomeReceived(this, request, DescribeLogStreams(request), context);
 }
 
 DescribeMetricFiltersOutcome CloudWatchLogsClient::DescribeMetricFilters(const DescribeMetricFiltersRequest& request) const
@@ -371,14 +405,45 @@ DescribeMetricFiltersOutcomeCallable CloudWatchLogsClient::DescribeMetricFilters
   return std::async(std::launch::async, &CloudWatchLogsClient::DescribeMetricFilters, this, request);
 }
 
-void CloudWatchLogsClient::DescribeMetricFiltersAsync(const DescribeMetricFiltersRequest& request) const
+void CloudWatchLogsClient::DescribeMetricFiltersAsync(const DescribeMetricFiltersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::DescribeMetricFiltersAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::DescribeMetricFiltersAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::DescribeMetricFiltersAsyncHelper(const DescribeMetricFiltersRequest& request) const
+void CloudWatchLogsClient::DescribeMetricFiltersAsyncHelper(const DescribeMetricFiltersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeMetricFiltersOutcomeReceived(this, request, DescribeMetricFilters(request));
+  m_onDescribeMetricFiltersOutcomeReceived(this, request, DescribeMetricFilters(request), context);
+}
+
+DescribeSubscriptionFiltersOutcome CloudWatchLogsClient::DescribeSubscriptionFilters(const DescribeSubscriptionFiltersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSubscriptionFiltersOutcome(DescribeSubscriptionFiltersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSubscriptionFiltersOutcome(outcome.GetError());
+  }
+}
+
+DescribeSubscriptionFiltersOutcomeCallable CloudWatchLogsClient::DescribeSubscriptionFiltersCallable(const DescribeSubscriptionFiltersRequest& request) const
+{
+  return std::async(std::launch::async, &CloudWatchLogsClient::DescribeSubscriptionFilters, this, request);
+}
+
+void CloudWatchLogsClient::DescribeSubscriptionFiltersAsync(const DescribeSubscriptionFiltersRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&CloudWatchLogsClient::DescribeSubscriptionFiltersAsyncHelper, this, request, context);
+}
+
+void CloudWatchLogsClient::DescribeSubscriptionFiltersAsyncHelper(const DescribeSubscriptionFiltersRequest& request, const AsyncCallerContext* context) const
+{
+  m_onDescribeSubscriptionFiltersOutcomeReceived(this, request, DescribeSubscriptionFilters(request), context);
 }
 
 FilterLogEventsOutcome CloudWatchLogsClient::FilterLogEvents(const FilterLogEventsRequest& request) const
@@ -402,14 +467,14 @@ FilterLogEventsOutcomeCallable CloudWatchLogsClient::FilterLogEventsCallable(con
   return std::async(std::launch::async, &CloudWatchLogsClient::FilterLogEvents, this, request);
 }
 
-void CloudWatchLogsClient::FilterLogEventsAsync(const FilterLogEventsRequest& request) const
+void CloudWatchLogsClient::FilterLogEventsAsync(const FilterLogEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::FilterLogEventsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::FilterLogEventsAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::FilterLogEventsAsyncHelper(const FilterLogEventsRequest& request) const
+void CloudWatchLogsClient::FilterLogEventsAsyncHelper(const FilterLogEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onFilterLogEventsOutcomeReceived(this, request, FilterLogEvents(request));
+  m_onFilterLogEventsOutcomeReceived(this, request, FilterLogEvents(request), context);
 }
 
 GetLogEventsOutcome CloudWatchLogsClient::GetLogEvents(const GetLogEventsRequest& request) const
@@ -433,14 +498,14 @@ GetLogEventsOutcomeCallable CloudWatchLogsClient::GetLogEventsCallable(const Get
   return std::async(std::launch::async, &CloudWatchLogsClient::GetLogEvents, this, request);
 }
 
-void CloudWatchLogsClient::GetLogEventsAsync(const GetLogEventsRequest& request) const
+void CloudWatchLogsClient::GetLogEventsAsync(const GetLogEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::GetLogEventsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::GetLogEventsAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::GetLogEventsAsyncHelper(const GetLogEventsRequest& request) const
+void CloudWatchLogsClient::GetLogEventsAsyncHelper(const GetLogEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetLogEventsOutcomeReceived(this, request, GetLogEvents(request));
+  m_onGetLogEventsOutcomeReceived(this, request, GetLogEvents(request), context);
 }
 
 PutLogEventsOutcome CloudWatchLogsClient::PutLogEvents(const PutLogEventsRequest& request) const
@@ -464,14 +529,14 @@ PutLogEventsOutcomeCallable CloudWatchLogsClient::PutLogEventsCallable(const Put
   return std::async(std::launch::async, &CloudWatchLogsClient::PutLogEvents, this, request);
 }
 
-void CloudWatchLogsClient::PutLogEventsAsync(const PutLogEventsRequest& request) const
+void CloudWatchLogsClient::PutLogEventsAsync(const PutLogEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::PutLogEventsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::PutLogEventsAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::PutLogEventsAsyncHelper(const PutLogEventsRequest& request) const
+void CloudWatchLogsClient::PutLogEventsAsyncHelper(const PutLogEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutLogEventsOutcomeReceived(this, request, PutLogEvents(request));
+  m_onPutLogEventsOutcomeReceived(this, request, PutLogEvents(request), context);
 }
 
 PutMetricFilterOutcome CloudWatchLogsClient::PutMetricFilter(const PutMetricFilterRequest& request) const
@@ -495,14 +560,14 @@ PutMetricFilterOutcomeCallable CloudWatchLogsClient::PutMetricFilterCallable(con
   return std::async(std::launch::async, &CloudWatchLogsClient::PutMetricFilter, this, request);
 }
 
-void CloudWatchLogsClient::PutMetricFilterAsync(const PutMetricFilterRequest& request) const
+void CloudWatchLogsClient::PutMetricFilterAsync(const PutMetricFilterRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::PutMetricFilterAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::PutMetricFilterAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::PutMetricFilterAsyncHelper(const PutMetricFilterRequest& request) const
+void CloudWatchLogsClient::PutMetricFilterAsyncHelper(const PutMetricFilterRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutMetricFilterOutcomeReceived(this, request, PutMetricFilter(request));
+  m_onPutMetricFilterOutcomeReceived(this, request, PutMetricFilter(request), context);
 }
 
 PutRetentionPolicyOutcome CloudWatchLogsClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const
@@ -526,14 +591,45 @@ PutRetentionPolicyOutcomeCallable CloudWatchLogsClient::PutRetentionPolicyCallab
   return std::async(std::launch::async, &CloudWatchLogsClient::PutRetentionPolicy, this, request);
 }
 
-void CloudWatchLogsClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request) const
+void CloudWatchLogsClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::PutRetentionPolicyAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::PutRetentionPolicyAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyRequest& request) const
+void CloudWatchLogsClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutRetentionPolicyOutcomeReceived(this, request, PutRetentionPolicy(request));
+  m_onPutRetentionPolicyOutcomeReceived(this, request, PutRetentionPolicy(request), context);
+}
+
+PutSubscriptionFilterOutcome CloudWatchLogsClient::PutSubscriptionFilter(const PutSubscriptionFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutSubscriptionFilterOutcome(NoResult());
+  }
+  else
+  {
+    return PutSubscriptionFilterOutcome(outcome.GetError());
+  }
+}
+
+PutSubscriptionFilterOutcomeCallable CloudWatchLogsClient::PutSubscriptionFilterCallable(const PutSubscriptionFilterRequest& request) const
+{
+  return std::async(std::launch::async, &CloudWatchLogsClient::PutSubscriptionFilter, this, request);
+}
+
+void CloudWatchLogsClient::PutSubscriptionFilterAsync(const PutSubscriptionFilterRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&CloudWatchLogsClient::PutSubscriptionFilterAsyncHelper, this, request, context);
+}
+
+void CloudWatchLogsClient::PutSubscriptionFilterAsyncHelper(const PutSubscriptionFilterRequest& request, const AsyncCallerContext* context) const
+{
+  m_onPutSubscriptionFilterOutcomeReceived(this, request, PutSubscriptionFilter(request), context);
 }
 
 TestMetricFilterOutcome CloudWatchLogsClient::TestMetricFilter(const TestMetricFilterRequest& request) const
@@ -557,13 +653,13 @@ TestMetricFilterOutcomeCallable CloudWatchLogsClient::TestMetricFilterCallable(c
   return std::async(std::launch::async, &CloudWatchLogsClient::TestMetricFilter, this, request);
 }
 
-void CloudWatchLogsClient::TestMetricFilterAsync(const TestMetricFilterRequest& request) const
+void CloudWatchLogsClient::TestMetricFilterAsync(const TestMetricFilterRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchLogsClient::TestMetricFilterAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchLogsClient::TestMetricFilterAsyncHelper, this, request, context);
 }
 
-void CloudWatchLogsClient::TestMetricFilterAsyncHelper(const TestMetricFilterRequest& request) const
+void CloudWatchLogsClient::TestMetricFilterAsyncHelper(const TestMetricFilterRequest& request, const AsyncCallerContext* context) const
 {
-  m_onTestMetricFilterOutcomeReceived(this, request, TestMetricFilter(request));
+  m_onTestMetricFilterOutcomeReceived(this, request, TestMetricFilter(request), context);
 }
 

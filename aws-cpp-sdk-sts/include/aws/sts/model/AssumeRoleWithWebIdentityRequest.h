@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     */
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element. </p>
     */
-    inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionName = value; }
+    inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
     /*
      <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element. </p>
     */
-    inline void SetRoleSessionName(const char* value) { m_roleSessionName.assign(value); }
+    inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
 
     /*
      <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element. </p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
     */
-    inline void SetWebIdentityToken(const Aws::String& value) { m_webIdentityToken = value; }
+    inline void SetWebIdentityToken(const Aws::String& value) { m_webIdentityTokenHasBeenSet = true; m_webIdentityToken = value; }
 
     /*
      <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
     */
-    inline void SetWebIdentityToken(const char* value) { m_webIdentityToken.assign(value); }
+    inline void SetWebIdentityToken(const char* value) { m_webIdentityTokenHasBeenSet = true; m_webIdentityToken.assign(value); }
 
     /*
      <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
@@ -169,8 +169,11 @@ namespace Model
 
   private:
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet;
     Aws::String m_roleSessionName;
+    bool m_roleSessionNameHasBeenSet;
     Aws::String m_webIdentityToken;
+    bool m_webIdentityTokenHasBeenSet;
     Aws::String m_providerId;
     bool m_providerIdHasBeenSet;
     Aws::String m_policy;

@@ -90,7 +90,7 @@ namespace Model
     /*
      <p> The type of information to request. </p>
     */
-    inline void SetInfoType(const EnvironmentInfoType& value) { m_infoType = value; }
+    inline void SetInfoType(const EnvironmentInfoType& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
 
     /*
      <p> The type of information to request. </p>
@@ -103,6 +103,7 @@ namespace Model
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
     EnvironmentInfoType m_infoType;
+    bool m_infoTypeHasBeenSet;
   };
 
 } // namespace Model

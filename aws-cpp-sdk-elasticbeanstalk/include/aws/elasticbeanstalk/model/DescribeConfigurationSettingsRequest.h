@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The application for the environment or configuration template. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The application for the environment or configuration template. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p> The application for the environment or configuration template. </p>
@@ -108,6 +108,7 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
     Aws::String m_environmentName;

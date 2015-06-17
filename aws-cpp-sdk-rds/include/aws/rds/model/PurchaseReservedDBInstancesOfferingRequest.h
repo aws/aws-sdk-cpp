@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The ID of the Reserved DB instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
     */
-    inline void SetReservedDBInstancesOfferingId(const Aws::String& value) { m_reservedDBInstancesOfferingId = value; }
+    inline void SetReservedDBInstancesOfferingId(const Aws::String& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
 
     /*
      <p> The ID of the Reserved DB instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
     */
-    inline void SetReservedDBInstancesOfferingId(const char* value) { m_reservedDBInstancesOfferingId.assign(value); }
+    inline void SetReservedDBInstancesOfferingId(const char* value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId.assign(value); }
 
     /*
      <p> The ID of the Reserved DB instance offering to purchase. </p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
@@ -111,6 +111,7 @@ namespace Model
 
   private:
     Aws::String m_reservedDBInstancesOfferingId;
+    bool m_reservedDBInstancesOfferingIdHasBeenSet;
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet;
     long m_dBInstanceCount;

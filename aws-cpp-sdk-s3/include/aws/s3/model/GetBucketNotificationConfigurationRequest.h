@@ -40,12 +40,12 @@ namespace Model
     /*
      Name of the buket to get the notification configuration for.
     */
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /*
      Name of the buket to get the notification configuration for.
     */
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /*
      Name of the buket to get the notification configuration for.
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
   };
 
 } // namespace Model

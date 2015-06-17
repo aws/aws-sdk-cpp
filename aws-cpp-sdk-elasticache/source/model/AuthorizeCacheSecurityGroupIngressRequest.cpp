@@ -19,7 +19,10 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-AuthorizeCacheSecurityGroupIngressRequest::AuthorizeCacheSecurityGroupIngressRequest()
+AuthorizeCacheSecurityGroupIngressRequest::AuthorizeCacheSecurityGroupIngressRequest() : 
+    m_cacheSecurityGroupNameHasBeenSet(false),
+    m_eC2SecurityGroupNameHasBeenSet(false),
+    m_eC2SecurityGroupOwnerIdHasBeenSet(false)
 {
 }
 
@@ -27,9 +30,18 @@ Aws::String AuthorizeCacheSecurityGroupIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AuthorizeCacheSecurityGroupIngress&";
-  ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
-  ss << "EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
-  ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
+  if(m_cacheSecurityGroupNameHasBeenSet)
+  {
+    ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
+  }
+  if(m_eC2SecurityGroupNameHasBeenSet)
+  {
+    ss << "EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
+  }
+  if(m_eC2SecurityGroupOwnerIdHasBeenSet)
+  {
+    ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

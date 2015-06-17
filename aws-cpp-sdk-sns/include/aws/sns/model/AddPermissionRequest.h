@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>A unique identifier for the new policy statement.</p>
     */
-    inline void SetLabel(const Aws::String& value) { m_label = value; }
+    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /*
      <p>A unique identifier for the new policy statement.</p>
     */
-    inline void SetLabel(const char* value) { m_label.assign(value); }
+    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
     /*
      <p>A unique identifier for the new policy statement.</p>
@@ -89,7 +89,7 @@ namespace Model
     /*
      <p>The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. </p>
     */
-    inline void SetAWSAccountId(const Aws::Vector<Aws::String>& value) { m_aWSAccountId = value; }
+    inline void SetAWSAccountId(const Aws::Vector<Aws::String>& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /*
      <p>The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. </p>
@@ -99,12 +99,12 @@ namespace Model
     /*
      <p>The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. </p>
     */
-    inline AddPermissionRequest& AddAWSAccountId(const Aws::String& value) { m_aWSAccountId.push_back(value); return *this; }
+    inline AddPermissionRequest& AddAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(value); return *this; }
 
     /*
      <p>The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. </p>
     */
-    inline AddPermissionRequest& AddAWSAccountId(const char* value) { m_aWSAccountId.push_back(value); return *this; }
+    inline AddPermissionRequest& AddAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(value); return *this; }
 
     /*
      <p>The action you want to allow for the specified principal(s).</p> <p>Valid values: any Amazon SNS action name.</p>
@@ -113,7 +113,7 @@ namespace Model
     /*
      <p>The action you want to allow for the specified principal(s).</p> <p>Valid values: any Amazon SNS action name.</p>
     */
-    inline void SetActionName(const Aws::Vector<Aws::String>& value) { m_actionName = value; }
+    inline void SetActionName(const Aws::Vector<Aws::String>& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /*
      <p>The action you want to allow for the specified principal(s).</p> <p>Valid values: any Amazon SNS action name.</p>
@@ -123,18 +123,22 @@ namespace Model
     /*
      <p>The action you want to allow for the specified principal(s).</p> <p>Valid values: any Amazon SNS action name.</p>
     */
-    inline AddPermissionRequest& AddActionName(const Aws::String& value) { m_actionName.push_back(value); return *this; }
+    inline AddPermissionRequest& AddActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName.push_back(value); return *this; }
 
     /*
      <p>The action you want to allow for the specified principal(s).</p> <p>Valid values: any Amazon SNS action name.</p>
     */
-    inline AddPermissionRequest& AddActionName(const char* value) { m_actionName.push_back(value); return *this; }
+    inline AddPermissionRequest& AddActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.push_back(value); return *this; }
 
   private:
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
     Aws::String m_label;
+    bool m_labelHasBeenSet;
     Aws::Vector<Aws::String> m_aWSAccountId;
+    bool m_aWSAccountIdHasBeenSet;
     Aws::Vector<Aws::String> m_actionName;
+    bool m_actionNameHasBeenSet;
   };
 
 } // namespace Model

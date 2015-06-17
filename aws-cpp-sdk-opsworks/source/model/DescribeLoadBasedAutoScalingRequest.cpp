@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLoadBasedAutoScalingRequest::DescribeLoadBasedAutoScalingRequest()
+DescribeLoadBasedAutoScalingRequest::DescribeLoadBasedAutoScalingRequest() : 
+    m_layerIdsHasBeenSet(false)
 {
 }
 
@@ -29,12 +30,16 @@ Aws::String DescribeLoadBasedAutoScalingRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> layerIdsJsonList(m_layerIds.size());
-  for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+  if(m_layerIdsHasBeenSet)
   {
-    layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
+   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+   {
+     layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
+   }
+   payload.WithArray("LayerIds", std::move(layerIdsJsonList));
+
   }
-  payload.WithArray("LayerIds", std::move(layerIdsJsonList));
 
   return payload.WriteReadable();
 }

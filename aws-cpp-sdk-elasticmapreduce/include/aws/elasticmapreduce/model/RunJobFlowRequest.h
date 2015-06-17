@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The name of the job flow.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the job flow.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the job flow.</p>
@@ -145,7 +145,7 @@ namespace Model
     /*
      <p> A specification of the number and type of Amazon EC2 instances on which to run the job flow. </p>
     */
-    inline void SetInstances(const JobFlowInstancesConfig& value) { m_instances = value; }
+    inline void SetInstances(const JobFlowInstancesConfig& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /*
      <p> A specification of the number and type of Amazon EC2 instances on which to run the job flow. </p>
@@ -316,6 +316,7 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
     Aws::String m_additionalInfo;
@@ -323,6 +324,7 @@ namespace Model
     Aws::String m_amiVersion;
     bool m_amiVersionHasBeenSet;
     JobFlowInstancesConfig m_instances;
+    bool m_instancesHasBeenSet;
     Aws::Vector<StepConfig> m_steps;
     bool m_stepsHasBeenSet;
     Aws::Vector<BootstrapActionConfig> m_bootstrapActions;

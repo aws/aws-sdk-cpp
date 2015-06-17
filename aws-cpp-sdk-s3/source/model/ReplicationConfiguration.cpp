@@ -23,11 +23,15 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ReplicationConfiguration::ReplicationConfiguration()
+ReplicationConfiguration::ReplicationConfiguration() : 
+    m_roleHasBeenSet(false),
+    m_rulesHasBeenSet(false)
 {
 }
 
-ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode)
+ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode) : 
+    m_roleHasBeenSet(false),
+    m_rulesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,14 +43,22 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
   if(!resultNode.IsNull())
   {
     XmlNode roleNode = resultNode.FirstChild("Role");
-    m_role = StringUtils::Trim(roleNode.GetText().c_str());
-    XmlNode rulesNode = resultNode.FirstChild("Rules");
-    while(!rulesNode.IsNull())
+    if(!roleNode.IsNull())
     {
-      m_rules.push_back(rulesNode);
-      rulesNode = rulesNode.NextNode("Rules");
+      m_role = StringUtils::Trim(roleNode.GetText().c_str());
+      m_roleHasBeenSet = true;
     }
+    XmlNode rulesNode = resultNode.FirstChild("Rules");
+    if(!rulesNode.IsNull())
+    {
+      while(!rulesNode.IsNull())
+      {
+        m_rules.push_back(rulesNode);
+        rulesNode = rulesNode.NextNode("Rules");
+      }
 
+      m_rulesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,11 +67,19 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
 void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode roleNode = parentNode.CreateChildElement("Rule");
-  roleNode.SetText(m_role);
-  for(const auto& item : m_rules)
+  if(m_roleHasBeenSet)
   {
-    XmlNode rulesNode = parentNode.CreateChildElement("Rule");
-    item.AddToNode(rulesNode);
+   XmlNode roleNode = parentNode.CreateChildElement("Rule");
+   roleNode.SetText(m_role);
   }
+
+  if(m_rulesHasBeenSet)
+  {
+   for(const auto& item : m_rules)
+   {
+     XmlNode rulesNode = parentNode.CreateChildElement("Rule");
+     item.AddToNode(rulesNode);
+   }
+  }
+
 }

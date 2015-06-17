@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() : 
+    m_replicationGroupIdHasBeenSet(false),
     m_replicationGroupDescriptionHasBeenSet(false),
     m_primaryClusterIdHasBeenSet(false),
     m_snapshottingClusterIdHasBeenSet(false),
@@ -46,7 +47,10 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyReplicationGroup&";
-  ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  if(m_replicationGroupIdHasBeenSet)
+  {
+    ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
   if(m_replicationGroupDescriptionHasBeenSet)
   {
     ss << "ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";

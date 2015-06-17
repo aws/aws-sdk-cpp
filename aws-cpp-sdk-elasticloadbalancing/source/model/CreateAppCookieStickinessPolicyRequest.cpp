@@ -19,7 +19,10 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-CreateAppCookieStickinessPolicyRequest::CreateAppCookieStickinessPolicyRequest()
+CreateAppCookieStickinessPolicyRequest::CreateAppCookieStickinessPolicyRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
+    m_cookieNameHasBeenSet(false)
 {
 }
 
@@ -27,9 +30,18 @@ Aws::String CreateAppCookieStickinessPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateAppCookieStickinessPolicy&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
-  ss << "CookieName=" << StringUtils::URLEncode(m_cookieName.c_str()) << "&";
+  if(m_loadBalancerNameHasBeenSet)
+  {
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_policyNameHasBeenSet)
+  {
+    ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
+  if(m_cookieNameHasBeenSet)
+  {
+    ss << "CookieName=" << StringUtils::URLEncode(m_cookieName.c_str()) << "&";
+  }
   ss << "Version=2012-06-01";
   return ss.str();
 }

@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateDeploymentConfigRequest::CreateDeploymentConfigRequest() : 
+    m_deploymentConfigNameHasBeenSet(false),
     m_minimumHealthyHostsHasBeenSet(false)
 {
 }
@@ -30,7 +31,11 @@ Aws::String CreateDeploymentConfigRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("deploymentConfigName", m_deploymentConfigName);
+  if(m_deploymentConfigNameHasBeenSet)
+  {
+   payload.WithString("deploymentConfigName", m_deploymentConfigName);
+
+  }
 
   if(m_minimumHealthyHostsHasBeenSet)
   {

@@ -21,7 +21,8 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeploymentRequest::GetDeploymentRequest()
+GetDeploymentRequest::GetDeploymentRequest() : 
+    m_deploymentIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String GetDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("deploymentId", m_deploymentId);
+  if(m_deploymentIdHasBeenSet)
+  {
+   payload.WithString("deploymentId", m_deploymentId);
+
+  }
 
   return payload.WriteReadable();
 }

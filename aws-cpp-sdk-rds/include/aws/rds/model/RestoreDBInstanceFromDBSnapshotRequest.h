@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifier.assign(value); }
+    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /*
      <p> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The identifier for the DB snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifier = value; }
+    inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /*
      <p> The identifier for the DB snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifier.assign(value); }
+    inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
     /*
      <p> The identifier for the DB snapshot to restore from. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -407,7 +407,9 @@ namespace Model
 
   private:
     Aws::String m_dBInstanceIdentifier;
+    bool m_dBInstanceIdentifierHasBeenSet;
     Aws::String m_dBSnapshotIdentifier;
+    bool m_dBSnapshotIdentifierHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
     long m_port;

@@ -94,35 +94,38 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
       m_assumeRolePolicyDocument = StringUtils::Trim(assumeRolePolicyDocumentNode.GetText().c_str());
       m_assumeRolePolicyDocumentHasBeenSet = true;
     }
-    XmlNode instanceProfileListNode = resultNode.FirstChild("InstanceProfileList");
+    XmlNode instanceProfileListNodeParent = resultNode.FirstChild("InstanceProfileList");
+    XmlNode instanceProfileListNode = instanceProfileListNodeParent.FirstChild("member");
     if(!instanceProfileListNode.IsNull())
     {
       while(!instanceProfileListNode.IsNull())
       {
         m_instanceProfileList.push_back(instanceProfileListNode);
-        instanceProfileListNode = instanceProfileListNode.NextNode("InstanceProfileList");
+        instanceProfileListNode = instanceProfileListNode.NextNode("member");
       }
 
       m_instanceProfileListHasBeenSet = true;
     }
-    XmlNode rolePolicyListNode = resultNode.FirstChild("RolePolicyList");
+    XmlNode rolePolicyListNodeParent = resultNode.FirstChild("RolePolicyList");
+    XmlNode rolePolicyListNode = rolePolicyListNodeParent.FirstChild("member");
     if(!rolePolicyListNode.IsNull())
     {
       while(!rolePolicyListNode.IsNull())
       {
         m_rolePolicyList.push_back(rolePolicyListNode);
-        rolePolicyListNode = rolePolicyListNode.NextNode("RolePolicyList");
+        rolePolicyListNode = rolePolicyListNode.NextNode("member");
       }
 
       m_rolePolicyListHasBeenSet = true;
     }
-    XmlNode attachedManagedPoliciesNode = resultNode.FirstChild("AttachedManagedPolicies");
+    XmlNode attachedManagedPoliciesNodeParent = resultNode.FirstChild("AttachedManagedPolicies");
+    XmlNode attachedManagedPoliciesNode = attachedManagedPoliciesNodeParent.FirstChild("member");
     if(!attachedManagedPoliciesNode.IsNull())
     {
       while(!attachedManagedPoliciesNode.IsNull())
       {
         m_attachedManagedPolicies.push_back(attachedManagedPoliciesNode);
-        attachedManagedPoliciesNode = attachedManagedPoliciesNode.NextNode("AttachedManagedPolicies");
+        attachedManagedPoliciesNode = attachedManagedPoliciesNode.NextNode("member");
       }
 
       m_attachedManagedPoliciesHasBeenSet = true;

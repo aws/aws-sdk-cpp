@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
     */
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionName = value; }
+    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /*
      <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
     */
-    inline void SetSubscriptionName(const char* value) { m_subscriptionName.assign(value); }
+    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /*
      <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
     */
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /*
      <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
     */
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifier.assign(value); }
+    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /*
      <p> The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens. </p> <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li> </ul>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_subscriptionName;
+    bool m_subscriptionNameHasBeenSet;
     Aws::String m_sourceIdentifier;
+    bool m_sourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

@@ -43,11 +43,12 @@ ListInstanceProfilesResult& ListInstanceProfilesResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceProfilesNode = resultNode.FirstChild("InstanceProfiles");
+    XmlNode instanceProfilesNodeParent = resultNode.FirstChild("InstanceProfiles");
+    XmlNode instanceProfilesNode = instanceProfilesNodeParent.FirstChild("member");
     while(!instanceProfilesNode.IsNull())
     {
       m_instanceProfiles.push_back(instanceProfilesNode);
-      instanceProfilesNode = instanceProfilesNode.NextNode("InstanceProfiles");
+      instanceProfilesNode = instanceProfilesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

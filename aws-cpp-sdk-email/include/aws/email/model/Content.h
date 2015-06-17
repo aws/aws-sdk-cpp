@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The textual data of the content.</p>
     */
-    inline void SetData(const Aws::String& value) { m_data = value; }
+    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /*
      <p>The textual data of the content.</p>
     */
-    inline void SetData(const char* value) { m_data.assign(value); }
+    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /*
      <p>The textual data of the content.</p>
@@ -93,6 +93,7 @@ namespace Model
 
   private:
     Aws::String m_data;
+    bool m_dataHasBeenSet;
     Aws::String m_charset;
     bool m_charsetHasBeenSet;
   };

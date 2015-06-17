@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-RotateEncryptionKeyRequest::RotateEncryptionKeyRequest()
+RotateEncryptionKeyRequest::RotateEncryptionKeyRequest() : 
+    m_clusterIdentifierHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String RotateEncryptionKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RotateEncryptionKey&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -21,7 +21,8 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventSourceMappingRequest::DeleteEventSourceMappingRequest()
+DeleteEventSourceMappingRequest::DeleteEventSourceMappingRequest() : 
+    m_uUIDHasBeenSet(false)
 {
 }
 

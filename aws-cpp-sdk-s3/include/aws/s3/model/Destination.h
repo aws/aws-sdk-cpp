@@ -48,12 +48,12 @@ namespace Model
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
     */
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
     */
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /*
      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
@@ -67,6 +67,7 @@ namespace Model
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
   };
 
 } // namespace Model

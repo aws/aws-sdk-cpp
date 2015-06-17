@@ -19,7 +19,9 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBParameterGroupRequest::ModifyDBParameterGroupRequest()
+ModifyDBParameterGroupRequest::ModifyDBParameterGroupRequest() : 
+    m_dBParameterGroupNameHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String ModifyDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyDBParameterGroup&";
-  ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
-  unsigned parametersCount = 1;
-  for(auto& item : m_parameters)
+  if(m_dBParameterGroupNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Parameter.", parametersCount, "");
-    parametersCount++;
+    ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  }
+  if(m_parametersHasBeenSet)
+  {
+    unsigned parametersCount = 1;
+    for(auto& item : m_parameters)
+    {
+      item.OutputToStream(ss, "Parameter.", parametersCount, "");
+      parametersCount++;
+    }
   }
   ss << "Version=2014-10-31";
   return ss.str();

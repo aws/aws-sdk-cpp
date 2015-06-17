@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 PurchaseReservedDBInstancesOfferingRequest::PurchaseReservedDBInstancesOfferingRequest() : 
+    m_reservedDBInstancesOfferingIdHasBeenSet(false),
     m_reservedDBInstanceIdHasBeenSet(false),
     m_dBInstanceCount(0),
     m_dBInstanceCountHasBeenSet(false),
@@ -31,7 +32,10 @@ Aws::String PurchaseReservedDBInstancesOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedDBInstancesOffering&";
-  ss << "ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
+  if(m_reservedDBInstancesOfferingIdHasBeenSet)
+  {
+    ss << "ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
+  }
   if(m_reservedDBInstanceIdHasBeenSet)
   {
     ss << "ReservedDBInstanceId=" << StringUtils::URLEncode(m_reservedDBInstanceId.c_str()) << "&";

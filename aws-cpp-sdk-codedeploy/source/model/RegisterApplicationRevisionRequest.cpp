@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RegisterApplicationRevisionRequest::RegisterApplicationRevisionRequest() : 
-    m_descriptionHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_revisionHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,11 @@ Aws::String RegisterApplicationRevisionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -38,7 +44,11 @@ Aws::String RegisterApplicationRevisionRequest::SerializePayload() const
 
   }
 
-  payload.WithObject("revision", m_revision.Jsonize());
+  if(m_revisionHasBeenSet)
+  {
+   payload.WithObject("revision", m_revision.Jsonize());
+
+  }
 
   return payload.WriteReadable();
 }

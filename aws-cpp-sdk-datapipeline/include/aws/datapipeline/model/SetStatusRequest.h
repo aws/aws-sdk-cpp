@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The ID of the pipeline that contains the objects.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline that contains the objects.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline that contains the objects.</p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
     */
-    inline void SetObjectIds(const Aws::Vector<Aws::String>& value) { m_objectIds = value; }
+    inline void SetObjectIds(const Aws::Vector<Aws::String>& value) { m_objectIdsHasBeenSet = true; m_objectIds = value; }
 
     /*
      <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
@@ -78,12 +78,12 @@ namespace Model
     /*
      <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
     */
-    inline SetStatusRequest& AddObjectIds(const Aws::String& value) { m_objectIds.push_back(value); return *this; }
+    inline SetStatusRequest& AddObjectIds(const Aws::String& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
 
     /*
      <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
     */
-    inline SetStatusRequest& AddObjectIds(const char* value) { m_objectIds.push_back(value); return *this; }
+    inline SetStatusRequest& AddObjectIds(const char* value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
 
     /*
      <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
@@ -92,12 +92,12 @@ namespace Model
     /*
      <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
@@ -111,8 +111,11 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::Vector<Aws::String> m_objectIds;
+    bool m_objectIdsHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

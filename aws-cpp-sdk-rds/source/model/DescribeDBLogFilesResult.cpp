@@ -41,11 +41,12 @@ DescribeDBLogFilesResult& DescribeDBLogFilesResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode describeDBLogFilesDetailsNode = resultNode.FirstChild("DescribeDBLogFilesDetails");
+    XmlNode describeDBLogFilesDetailsNodeParent = resultNode.FirstChild("DescribeDBLogFilesDetails");
+    XmlNode describeDBLogFilesDetailsNode = describeDBLogFilesDetailsNodeParent.FirstChild("member");
     while(!describeDBLogFilesDetailsNode.IsNull())
     {
       m_describeDBLogFiles.push_back(describeDBLogFilesDetailsNode);
-      describeDBLogFilesDetailsNode = describeDBLogFilesDetailsNode.NextNode("DescribeDBLogFilesDetails");
+      describeDBLogFilesDetailsNode = describeDBLogFilesDetailsNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

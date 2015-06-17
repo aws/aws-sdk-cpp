@@ -55,12 +55,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the group.</p>
@@ -103,12 +103,12 @@ namespace Model
     /*
      <p>The name of the associated launch configuration.</p>
     */
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The name of the associated launch configuration.</p>
     */
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /*
      <p>The name of the associated launch configuration.</p>
@@ -127,7 +127,7 @@ namespace Model
     /*
      <p>The minimum size of the group.</p>
     */
-    inline void SetMinSize(long value) { m_minSize = value; }
+    inline void SetMinSize(long value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /*
      <p>The minimum size of the group.</p>
@@ -141,7 +141,7 @@ namespace Model
     /*
      <p>The maximum size of the group.</p>
     */
-    inline void SetMaxSize(long value) { m_maxSize = value; }
+    inline void SetMaxSize(long value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /*
      <p>The maximum size of the group.</p>
@@ -155,7 +155,7 @@ namespace Model
     /*
      <p>The size of the group.</p>
     */
-    inline void SetDesiredCapacity(long value) { m_desiredCapacity = value; }
+    inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /*
      <p>The size of the group.</p>
@@ -169,7 +169,7 @@ namespace Model
     /*
      <p>The number of seconds after a scaling activity completes before any further scaling activities can start.</p>
     */
-    inline void SetDefaultCooldown(long value) { m_defaultCooldown = value; }
+    inline void SetDefaultCooldown(long value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /*
      <p>The number of seconds after a scaling activity completes before any further scaling activities can start.</p>
@@ -183,7 +183,7 @@ namespace Model
     /*
      <p>One or more Availability Zones for the group.</p>
     */
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZones = value; }
+    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /*
      <p>One or more Availability Zones for the group.</p>
@@ -193,12 +193,12 @@ namespace Model
     /*
      <p>One or more Availability Zones for the group.</p>
     */
-    inline AutoScalingGroup& AddAvailabilityZones(const Aws::String& value) { m_availabilityZones.push_back(value); return *this; }
+    inline AutoScalingGroup& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>One or more Availability Zones for the group.</p>
     */
-    inline AutoScalingGroup& AddAvailabilityZones(const char* value) { m_availabilityZones.push_back(value); return *this; }
+    inline AutoScalingGroup& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /*
      <p>One or more load balancers associated with the group.</p>
@@ -231,12 +231,12 @@ namespace Model
     /*
      <p>The service of interest for the health status check, which can be either <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load Balancing.</p>
     */
-    inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckType = value; }
+    inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /*
      <p>The service of interest for the health status check, which can be either <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load Balancing.</p>
     */
-    inline void SetHealthCheckType(const char* value) { m_healthCheckType.assign(value); }
+    inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /*
      <p>The service of interest for the health status check, which can be either <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load Balancing.</p>
@@ -288,7 +288,7 @@ namespace Model
     /*
      <p>The date and time the group was created.</p>
     */
-    inline void SetCreatedTime(double value) { m_createdTime = value; }
+    inline void SetCreatedTime(double value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /*
      <p>The date and time the group was created.</p>
@@ -450,22 +450,31 @@ namespace Model
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_autoScalingGroupARN;
     bool m_autoScalingGroupARNHasBeenSet;
     Aws::String m_launchConfigurationName;
+    bool m_launchConfigurationNameHasBeenSet;
     long m_minSize;
+    bool m_minSizeHasBeenSet;
     long m_maxSize;
+    bool m_maxSizeHasBeenSet;
     long m_desiredCapacity;
+    bool m_desiredCapacityHasBeenSet;
     long m_defaultCooldown;
+    bool m_defaultCooldownHasBeenSet;
     Aws::Vector<Aws::String> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet;
     Aws::Vector<Aws::String> m_loadBalancerNames;
     bool m_loadBalancerNamesHasBeenSet;
     Aws::String m_healthCheckType;
+    bool m_healthCheckTypeHasBeenSet;
     long m_healthCheckGracePeriod;
     bool m_healthCheckGracePeriodHasBeenSet;
     Aws::Vector<Instance> m_instances;
     bool m_instancesHasBeenSet;
     double m_createdTime;
+    bool m_createdTimeHasBeenSet;
     Aws::Vector<SuspendedProcess> m_suspendedProcesses;
     bool m_suspendedProcessesHasBeenSet;
     Aws::String m_placementGroup;

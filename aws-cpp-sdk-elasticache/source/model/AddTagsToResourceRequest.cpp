@@ -19,7 +19,9 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-AddTagsToResourceRequest::AddTagsToResourceRequest()
+AddTagsToResourceRequest::AddTagsToResourceRequest() : 
+    m_resourceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String AddTagsToResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AddTagsToResource&";
-  ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
-  unsigned tagsCount = 1;
-  for(auto& item : m_tags)
+  if(m_resourceNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Tag.", tagsCount, "");
-    tagsCount++;
+    ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      tagsCount++;
+    }
   }
   ss << "Version=2015-02-02";
   return ss.str();

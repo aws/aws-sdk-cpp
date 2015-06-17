@@ -41,11 +41,12 @@ ListOpenIDConnectProvidersResult& ListOpenIDConnectProvidersResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode openIDConnectProviderListNode = resultNode.FirstChild("OpenIDConnectProviderList");
+    XmlNode openIDConnectProviderListNodeParent = resultNode.FirstChild("OpenIDConnectProviderList");
+    XmlNode openIDConnectProviderListNode = openIDConnectProviderListNodeParent.FirstChild("member");
     while(!openIDConnectProviderListNode.IsNull())
     {
       m_openIDConnectProviderList.push_back(openIDConnectProviderListNode);
-      openIDConnectProviderListNode = openIDConnectProviderListNode.NextNode("OpenIDConnectProviderList");
+      openIDConnectProviderListNode = openIDConnectProviderListNode.NextNode("member");
     }
 
   }

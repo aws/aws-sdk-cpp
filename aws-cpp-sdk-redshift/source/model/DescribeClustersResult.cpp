@@ -43,11 +43,12 @@ DescribeClustersResult& DescribeClustersResult::operator =(const AmazonWebServic
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode clusterNode = resultNode.FirstChild("Cluster");
+    XmlNode clusterNodeParent = resultNode.FirstChild("Cluster");
+    XmlNode clusterNode = clusterNodeParent.FirstChild("member");
     while(!clusterNode.IsNull())
     {
       m_clusters.push_back(clusterNode);
-      clusterNode = clusterNode.NextNode("Cluster");
+      clusterNode = clusterNode.NextNode("member");
     }
 
   }

@@ -48,12 +48,12 @@ namespace Model
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
     */
-    inline void SetSuffix(const Aws::String& value) { m_suffix = value; }
+    inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
 
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
     */
-    inline void SetSuffix(const char* value) { m_suffix.assign(value); }
+    inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
 
     /*
      A suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.
@@ -67,6 +67,7 @@ namespace Model
 
   private:
     Aws::String m_suffix;
+    bool m_suffixHasBeenSet;
   };
 
 } // namespace Model

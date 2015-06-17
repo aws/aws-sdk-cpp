@@ -30,7 +30,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Information about an Auto Scaling group.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API AutoScalingGroup
   {
@@ -40,52 +40,32 @@ namespace Model
     AutoScalingGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The Auto Scaling group name.</p>
-    */
+    
     inline const Aws::String& GetName() const{ return m_name; }
-    /*
-     <p>The Auto Scaling group name.</p>
-    */
+    
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    /*
-     <p>The Auto Scaling group name.</p>
-    */
+    
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    /*
-     <p>The Auto Scaling group name.</p>
-    */
+    
     inline AutoScalingGroup&  WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    /*
-     <p>The Auto Scaling group name.</p>
-    */
+    
     inline AutoScalingGroup& WithName(const char* value) { SetName(value); return *this;}
 
-    /*
-     <p>An Auto Scaling lifecycle event hook name.</p>
-    */
+    
     inline const Aws::String& GetHook() const{ return m_hook; }
-    /*
-     <p>An Auto Scaling lifecycle event hook name.</p>
-    */
+    
     inline void SetHook(const Aws::String& value) { m_hookHasBeenSet = true; m_hook = value; }
 
-    /*
-     <p>An Auto Scaling lifecycle event hook name.</p>
-    */
+    
     inline void SetHook(const char* value) { m_hookHasBeenSet = true; m_hook.assign(value); }
 
-    /*
-     <p>An Auto Scaling lifecycle event hook name.</p>
-    */
+    
     inline AutoScalingGroup&  WithHook(const Aws::String& value) { SetHook(value); return *this;}
 
-    /*
-     <p>An Auto Scaling lifecycle event hook name.</p>
-    */
+    
     inline AutoScalingGroup& WithHook(const char* value) { SetHook(value); return *this;}
 
   private:

@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ConnectionSettings::ConnectionSettings() : 
-    m_idleTimeout(0)
+    m_idleTimeout(0),
+    m_idleTimeoutHasBeenSet(false)
 {
 }
 
 ConnectionSettings::ConnectionSettings(const XmlNode& xmlNode) : 
-    m_idleTimeout(0)
+    m_idleTimeout(0),
+    m_idleTimeoutHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,7 +43,11 @@ ConnectionSettings& ConnectionSettings::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idleTimeoutNode = resultNode.FirstChild("IdleTimeout");
-    m_idleTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(idleTimeoutNode.GetText().c_str()).c_str());
+    if(!idleTimeoutNode.IsNull())
+    {
+      m_idleTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(idleTimeoutNode.GetText().c_str()).c_str());
+      m_idleTimeoutHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,10 +55,16 @@ ConnectionSettings& ConnectionSettings::operator =(const XmlNode& xmlNode)
 
 void ConnectionSettings::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".IdleTimeout=" << m_idleTimeout << "&";
+  if(m_idleTimeoutHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IdleTimeout=" << m_idleTimeout << "&";
+  }
 }
 
 void ConnectionSettings::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".IdleTimeout=" << m_idleTimeout << "&";
+  if(m_idleTimeoutHasBeenSet)
+  {
+      oStream << location << ".IdleTimeout=" << m_idleTimeout << "&";
+  }
 }

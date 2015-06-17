@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 CreateHsmClientCertificateRequest::CreateHsmClientCertificateRequest() : 
+    m_hsmClientCertificateIdentifierHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String CreateHsmClientCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateHsmClientCertificate&";
-  ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
+  if(m_hsmClientCertificateIdentifierHasBeenSet)
+  {
+    ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

@@ -43,11 +43,12 @@ ListSigningCertificatesResult& ListSigningCertificatesResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode certificatesNode = resultNode.FirstChild("Certificates");
+    XmlNode certificatesNodeParent = resultNode.FirstChild("Certificates");
+    XmlNode certificatesNode = certificatesNodeParent.FirstChild("member");
     while(!certificatesNode.IsNull())
     {
       m_certificates.push_back(certificatesNode);
-      certificatesNode = certificatesNode.NextNode("Certificates");
+      certificatesNode = certificatesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

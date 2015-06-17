@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateAssumeRolePolicyRequest::UpdateAssumeRolePolicyRequest()
+UpdateAssumeRolePolicyRequest::UpdateAssumeRolePolicyRequest() : 
+    m_roleNameHasBeenSet(false),
+    m_policyDocumentHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String UpdateAssumeRolePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateAssumeRolePolicy&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_policyDocumentHasBeenSet)
+  {
+    ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -19,7 +19,9 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-RemovePermissionRequest::RemovePermissionRequest()
+RemovePermissionRequest::RemovePermissionRequest() : 
+    m_topicArnHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String RemovePermissionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RemovePermission&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+  if(m_topicArnHasBeenSet)
+  {
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
+  if(m_labelHasBeenSet)
+  {
+    ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

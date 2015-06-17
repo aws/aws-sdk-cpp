@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -71,7 +71,7 @@ namespace Model
     /*
      <p>An array that contains the instance layer IDs.</p>
     */
-    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIds = value; }
+    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
     /*
      <p>An array that contains the instance layer IDs.</p>
@@ -81,12 +81,12 @@ namespace Model
     /*
      <p>An array that contains the instance layer IDs.</p>
     */
-    inline CreateInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIds.push_back(value); return *this; }
+    inline CreateInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>An array that contains the instance layer IDs.</p>
     */
-    inline CreateInstanceRequest& AddLayerIds(const char* value) { m_layerIds.push_back(value); return *this; }
+    inline CreateInstanceRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the API Name column of the Available Instance Types table.</p>
@@ -95,12 +95,12 @@ namespace Model
     /*
      <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the API Name column of the Available Instance Types table.</p>
     */
-    inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the API Name column of the Available Instance Types table.</p>
     */
-    inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /*
      <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the API Name column of the Available Instance Types table.</p>
@@ -369,10 +369,27 @@ namespace Model
     */
     inline CreateInstanceRequest&  WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+    
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    
+    inline CreateInstanceRequest&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    
+    inline CreateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
     Aws::Vector<Aws::String> m_layerIds;
+    bool m_layerIdsHasBeenSet;
     Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     AutoScalingType m_autoScalingType;
     bool m_autoScalingTypeHasBeenSet;
     Aws::String m_hostname;
@@ -399,6 +416,8 @@ namespace Model
     bool m_installUpdatesOnBootHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

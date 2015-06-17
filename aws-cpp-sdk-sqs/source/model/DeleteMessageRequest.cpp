@@ -19,7 +19,9 @@
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
-DeleteMessageRequest::DeleteMessageRequest()
+DeleteMessageRequest::DeleteMessageRequest() : 
+    m_queueUrlHasBeenSet(false),
+    m_receiptHandleHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeleteMessageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteMessage&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
-  ss << "ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  if(m_queueUrlHasBeenSet)
+  {
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
+  if(m_receiptHandleHasBeenSet)
+  {
+    ss << "ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  }
   ss << "Version=2012-11-05";
   return ss.str();
 }

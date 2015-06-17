@@ -24,12 +24,20 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 SigningCertificate::SigningCertificate() : 
+    m_userNameHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
+    m_certificateBodyHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false)
 {
 }
 
 SigningCertificate::SigningCertificate(const XmlNode& xmlNode) : 
+    m_userNameHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
+    m_certificateBodyHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false)
 {
@@ -43,13 +51,29 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+    if(!userNameNode.IsNull())
+    {
+      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userNameHasBeenSet = true;
+    }
     XmlNode certificateIdNode = resultNode.FirstChild("CertificateId");
-    m_certificateId = StringUtils::Trim(certificateIdNode.GetText().c_str());
+    if(!certificateIdNode.IsNull())
+    {
+      m_certificateId = StringUtils::Trim(certificateIdNode.GetText().c_str());
+      m_certificateIdHasBeenSet = true;
+    }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
-    m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
+    if(!certificateBodyNode.IsNull())
+    {
+      m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
+      m_certificateBodyHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = statusTypeMapper::GetstatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = statusTypeMapper::GetstatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
@@ -63,10 +87,22 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
 
 void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << index << locationValue << ".CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
-  oStream << location << index << locationValue << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
-  oStream << location << index << locationValue << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_certificateIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
+  }
+  if(m_certificateBodyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  }
   if(m_uploadDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadDate=" << m_uploadDate << "&";
@@ -75,10 +111,22 @@ void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* locat
 
 void SigningCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << ".CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
-  oStream << location << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
-  oStream << location << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_certificateIdHasBeenSet)
+  {
+      oStream << location << ".CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
+  }
+  if(m_certificateBodyHasBeenSet)
+  {
+      oStream << location << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  }
   if(m_uploadDateHasBeenSet)
   {
       oStream << location << ".UploadDate=" << m_uploadDate << "&";

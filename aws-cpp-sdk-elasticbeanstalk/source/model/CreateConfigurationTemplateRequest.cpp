@@ -20,6 +20,8 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 CreateConfigurationTemplateRequest::CreateConfigurationTemplateRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_templateNameHasBeenSet(false),
     m_solutionStackNameHasBeenSet(false),
     m_sourceConfigurationHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
@@ -32,8 +34,14 @@ Aws::String CreateConfigurationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateConfigurationTemplate&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_templateNameHasBeenSet)
+  {
+    ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  }
   if(m_solutionStackNameHasBeenSet)
   {
     ss << "SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";

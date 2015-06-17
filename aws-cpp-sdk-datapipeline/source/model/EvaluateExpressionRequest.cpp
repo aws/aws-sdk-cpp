@@ -21,7 +21,10 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EvaluateExpressionRequest::EvaluateExpressionRequest()
+EvaluateExpressionRequest::EvaluateExpressionRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_objectIdHasBeenSet(false),
+    m_expressionHasBeenSet(false)
 {
 }
 
@@ -29,11 +32,23 @@ Aws::String EvaluateExpressionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
+  if(m_pipelineIdHasBeenSet)
+  {
+   payload.WithString("pipelineId", m_pipelineId);
 
-  payload.WithString("objectId", m_objectId);
+  }
 
-  payload.WithString("expression", m_expression);
+  if(m_objectIdHasBeenSet)
+  {
+   payload.WithString("objectId", m_objectId);
+
+  }
+
+  if(m_expressionHasBeenSet)
+  {
+   payload.WithString("expression", m_expression);
+
+  }
 
   return payload.WriteReadable();
 }

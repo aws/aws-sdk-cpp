@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
     */
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionName = value; }
+    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /*
      <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
     */
-    inline void SetSubscriptionName(const char* value) { m_subscriptionName.assign(value); }
+    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /*
      <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_subscriptionName;
+    bool m_subscriptionNameHasBeenSet;
   };
 
 } // namespace Model

@@ -40,12 +40,12 @@ namespace Model
     /*
      The queue URL of a dead letter queue.
     */
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      The queue URL of a dead letter queue.
     */
-    inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
+    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /*
      The queue URL of a dead letter queue.
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_queueUrl;
+    bool m_queueUrlHasBeenSet;
   };
 
 } // namespace Model

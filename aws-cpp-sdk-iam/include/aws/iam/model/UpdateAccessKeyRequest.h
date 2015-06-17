@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The access key ID of the secret access key you want to update.</p>
     */
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyId = value; }
+    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The access key ID of the secret access key you want to update.</p>
     */
-    inline void SetAccessKeyId(const char* value) { m_accessKeyId.assign(value); }
+    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /*
      <p>The access key ID of the secret access key you want to update.</p>
@@ -89,7 +89,7 @@ namespace Model
     /*
      <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
     */
-    inline void SetStatus(const statusType& value) { m_status = value; }
+    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </p>
@@ -100,7 +100,9 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet;
     statusType m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

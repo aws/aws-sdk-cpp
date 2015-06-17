@@ -309,6 +309,10 @@ public:
         return m_errorMessage;
     }
 
+    void AppendValue(const JsonValue& value);
+
+    ::Json::Value& ModifyRawValue() { return m_value; }
+
 private:
     JsonValue(const ::Json::Value& value);
 

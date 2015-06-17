@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>The listeners.</p>
     */
-    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listeners = value; }
+    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /*
      <p>The listeners.</p>
@@ -76,11 +76,13 @@ namespace Model
     /*
      <p>The listeners.</p>
     */
-    inline CreateLoadBalancerListenersRequest& AddListeners(const Listener& value) { m_listeners.push_back(value); return *this; }
+    inline CreateLoadBalancerListenersRequest& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::Vector<Listener> m_listeners;
+    bool m_listenersHasBeenSet;
   };
 
 } // namespace Model

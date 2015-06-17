@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteGroupPolicyRequest::DeleteGroupPolicyRequest()
+DeleteGroupPolicyRequest::DeleteGroupPolicyRequest() : 
+    m_groupNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeleteGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteGroupPolicy&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_policyNameHasBeenSet)
+  {
+    ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -41,11 +41,12 @@ DeregisterInstancesFromLoadBalancerResult& DeregisterInstancesFromLoadBalancerRe
 
   if(!resultNode.IsNull())
   {
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNodeParent = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = instancesNodeParent.FirstChild("member");
     while(!instancesNode.IsNull())
     {
       m_instances.push_back(instancesNode);
-      instancesNode = instancesNode.NextNode("Instances");
+      instancesNode = instancesNode.NextNode("member");
     }
 
   }

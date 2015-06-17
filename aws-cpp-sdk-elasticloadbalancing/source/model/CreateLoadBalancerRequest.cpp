@@ -20,6 +20,8 @@ using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
 CreateLoadBalancerRequest::CreateLoadBalancerRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_listenersHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
@@ -32,12 +34,18 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateLoadBalancer&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned listenersCount = 1;
-  for(auto& item : m_listeners)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Listeners.", listenersCount, "");
-    listenersCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_listenersHasBeenSet)
+  {
+    unsigned listenersCount = 1;
+    for(auto& item : m_listeners)
+    {
+      item.OutputToStream(ss, "Listeners.", listenersCount, "");
+      listenersCount++;
+    }
   }
   if(m_availabilityZonesHasBeenSet)
   {

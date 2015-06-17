@@ -41,11 +41,12 @@ DisableAvailabilityZonesForLoadBalancerResult& DisableAvailabilityZonesForLoadBa
 
   if(!resultNode.IsNull())
   {
-    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
+    XmlNode availabilityZonesNodeParent = resultNode.FirstChild("AvailabilityZones");
+    XmlNode availabilityZonesNode = availabilityZonesNodeParent.FirstChild("member");
     while(!availabilityZonesNode.IsNull())
     {
       m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesNode.GetText().c_str()));
-      availabilityZonesNode = availabilityZonesNode.NextNode("AvailabilityZones");
+      availabilityZonesNode = availabilityZonesNode.NextNode("member");
     }
 
   }

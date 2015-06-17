@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The cluster identifier. </p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The cluster identifier. </p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The cluster identifier. </p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
   };
 
 } // namespace Model

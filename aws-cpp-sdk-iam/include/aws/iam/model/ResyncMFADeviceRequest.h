@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user whose MFA device you want to resynchronize.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
     */
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumber = value; }
+    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
     */
-    inline void SetSerialNumber(const char* value) { m_serialNumber.assign(value); }
+    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /*
      <p>Serial number that uniquely identifies the MFA device.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>An authentication code emitted by the device.</p>
     */
-    inline void SetAuthenticationCode1(const Aws::String& value) { m_authenticationCode1 = value; }
+    inline void SetAuthenticationCode1(const Aws::String& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = value; }
 
     /*
      <p>An authentication code emitted by the device.</p>
     */
-    inline void SetAuthenticationCode1(const char* value) { m_authenticationCode1.assign(value); }
+    inline void SetAuthenticationCode1(const char* value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1.assign(value); }
 
     /*
      <p>An authentication code emitted by the device.</p>
@@ -112,12 +112,12 @@ namespace Model
     /*
      <p>A subsequent authentication code emitted by the device.</p>
     */
-    inline void SetAuthenticationCode2(const Aws::String& value) { m_authenticationCode2 = value; }
+    inline void SetAuthenticationCode2(const Aws::String& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = value; }
 
     /*
      <p>A subsequent authentication code emitted by the device.</p>
     */
-    inline void SetAuthenticationCode2(const char* value) { m_authenticationCode2.assign(value); }
+    inline void SetAuthenticationCode2(const char* value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2.assign(value); }
 
     /*
      <p>A subsequent authentication code emitted by the device.</p>
@@ -131,9 +131,13 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_serialNumber;
+    bool m_serialNumberHasBeenSet;
     Aws::String m_authenticationCode1;
+    bool m_authenticationCode1HasBeenSet;
     Aws::String m_authenticationCode2;
+    bool m_authenticationCode2HasBeenSet;
   };
 
 } // namespace Model

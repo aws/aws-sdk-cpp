@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ReportTaskProgressRequest::ReportTaskProgressRequest() : 
+    m_taskIdHasBeenSet(false),
     m_fieldsHasBeenSet(false)
 {
 }
@@ -30,7 +31,11 @@ Aws::String ReportTaskProgressRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("taskId", m_taskId);
+  if(m_taskIdHasBeenSet)
+  {
+   payload.WithString("taskId", m_taskId);
+
+  }
 
   if(m_fieldsHasBeenSet)
   {

@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>The name of the user the signing certificate is associated with.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user the signing certificate is associated with.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user the signing certificate is associated with.</p>
@@ -75,12 +75,12 @@ namespace Model
     /*
      <p>The ID for the signing certificate.</p>
     */
-    inline void SetCertificateId(const Aws::String& value) { m_certificateId = value; }
+    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /*
      <p>The ID for the signing certificate.</p>
     */
-    inline void SetCertificateId(const char* value) { m_certificateId.assign(value); }
+    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /*
      <p>The ID for the signing certificate.</p>
@@ -99,12 +99,12 @@ namespace Model
     /*
      <p>The contents of the signing certificate.</p>
     */
-    inline void SetCertificateBody(const Aws::String& value) { m_certificateBody = value; }
+    inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /*
      <p>The contents of the signing certificate.</p>
     */
-    inline void SetCertificateBody(const char* value) { m_certificateBody.assign(value); }
+    inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
     /*
      <p>The contents of the signing certificate.</p>
@@ -123,7 +123,7 @@ namespace Model
     /*
      <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
     */
-    inline void SetStatus(const statusType& value) { m_status = value; }
+    inline void SetStatus(const statusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
@@ -146,9 +146,13 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_certificateId;
+    bool m_certificateIdHasBeenSet;
     Aws::String m_certificateBody;
+    bool m_certificateBodyHasBeenSet;
     statusType m_status;
+    bool m_statusHasBeenSet;
     double m_uploadDate;
     bool m_uploadDateHasBeenSet;
   };

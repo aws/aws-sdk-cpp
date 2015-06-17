@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListStepsRequest::ListStepsRequest() : 
+    m_clusterIdHasBeenSet(false),
     m_stepStatesHasBeenSet(false),
     m_stepIdsHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -32,7 +33,11 @@ Aws::String ListStepsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ClusterId", m_clusterId);
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
+
+  }
 
   if(m_stepStatesHasBeenSet)
   {

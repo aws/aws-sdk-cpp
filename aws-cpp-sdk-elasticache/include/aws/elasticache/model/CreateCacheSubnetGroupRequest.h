@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
     */
-    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupName = value; }
+    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /*
      <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
     */
-    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupName.assign(value); }
+    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
     /*
      <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>A description for the cache subnet group.</p>
     */
-    inline void SetCacheSubnetGroupDescription(const Aws::String& value) { m_cacheSubnetGroupDescription = value; }
+    inline void SetCacheSubnetGroupDescription(const Aws::String& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
     /*
      <p>A description for the cache subnet group.</p>
     */
-    inline void SetCacheSubnetGroupDescription(const char* value) { m_cacheSubnetGroupDescription.assign(value); }
+    inline void SetCacheSubnetGroupDescription(const char* value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription.assign(value); }
 
     /*
      <p>A description for the cache subnet group.</p>
@@ -90,7 +90,7 @@ namespace Model
     /*
      <p>A list of VPC subnet IDs for the cache subnet group.</p>
     */
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
+    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /*
      <p>A list of VPC subnet IDs for the cache subnet group.</p>
@@ -100,17 +100,20 @@ namespace Model
     /*
      <p>A list of VPC subnet IDs for the cache subnet group.</p>
     */
-    inline CreateCacheSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
+    inline CreateCacheSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /*
      <p>A list of VPC subnet IDs for the cache subnet group.</p>
     */
-    inline CreateCacheSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
+    inline CreateCacheSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
     Aws::String m_cacheSubnetGroupName;
+    bool m_cacheSubnetGroupNameHasBeenSet;
     Aws::String m_cacheSubnetGroupDescription;
+    bool m_cacheSubnetGroupDescriptionHasBeenSet;
     Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet;
   };
 
 } // namespace Model

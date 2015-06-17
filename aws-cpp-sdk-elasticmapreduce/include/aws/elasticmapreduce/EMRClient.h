@@ -34,6 +34,7 @@
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -130,22 +131,22 @@ namespace Model
 
     class EMRClient;
 
-  typedef Aws::Utils::Event<EMRClient, const Model::AddInstanceGroupsRequest&, const Model::AddInstanceGroupsOutcome&> AddInstanceGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::AddJobFlowStepsRequest&, const Model::AddJobFlowStepsOutcome&> AddJobFlowStepsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::AddTagsRequest&, const Model::AddTagsOutcome&> AddTagsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&> DescribeClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::DescribeStepRequest&, const Model::DescribeStepOutcome&> DescribeStepOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&> ListBootstrapActionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::ListClustersRequest&, const Model::ListClustersOutcome&> ListClustersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::ListInstanceGroupsRequest&, const Model::ListInstanceGroupsOutcome&> ListInstanceGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&> ListInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::ListStepsRequest&, const Model::ListStepsOutcome&> ListStepsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&> ModifyInstanceGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&> RemoveTagsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&> RunJobFlowOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::SetTerminationProtectionRequest&, const Model::SetTerminationProtectionOutcome&> SetTerminationProtectionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::SetVisibleToAllUsersRequest&, const Model::SetVisibleToAllUsersOutcome&> SetVisibleToAllUsersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<EMRClient, const Model::TerminateJobFlowsRequest&, const Model::TerminateJobFlowsOutcome&> TerminateJobFlowsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::AddInstanceGroupsRequest&, const Model::AddInstanceGroupsOutcome&, const Aws::Client::AsyncCallerContext*> AddInstanceGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::AddJobFlowStepsRequest&, const Model::AddJobFlowStepsOutcome&, const Aws::Client::AsyncCallerContext*> AddJobFlowStepsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const Aws::Client::AsyncCallerContext*> AddTagsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const Aws::Client::AsyncCallerContext*> DescribeClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::DescribeStepRequest&, const Model::DescribeStepOutcome&, const Aws::Client::AsyncCallerContext*> DescribeStepOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&, const Aws::Client::AsyncCallerContext*> ListBootstrapActionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const Aws::Client::AsyncCallerContext*> ListClustersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::ListInstanceGroupsRequest&, const Model::ListInstanceGroupsOutcome&, const Aws::Client::AsyncCallerContext*> ListInstanceGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const Aws::Client::AsyncCallerContext*> ListInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::ListStepsRequest&, const Model::ListStepsOutcome&, const Aws::Client::AsyncCallerContext*> ListStepsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const Aws::Client::AsyncCallerContext*> ModifyInstanceGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const Aws::Client::AsyncCallerContext*> RemoveTagsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&, const Aws::Client::AsyncCallerContext*> RunJobFlowOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::SetTerminationProtectionRequest&, const Model::SetTerminationProtectionOutcome&, const Aws::Client::AsyncCallerContext*> SetTerminationProtectionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::SetVisibleToAllUsersRequest&, const Model::SetVisibleToAllUsersOutcome&, const Aws::Client::AsyncCallerContext*> SetVisibleToAllUsersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<EMRClient, const Model::TerminateJobFlowsRequest&, const Model::TerminateJobFlowsOutcome&, const Aws::Client::AsyncCallerContext*> TerminateJobFlowsOutcomeReceivedEvent;
 
   /*
     <p>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data warehousing.</p>
@@ -194,7 +195,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddInstanceGroupsAsync(const Model::AddInstanceGroupsRequest& request) const;
+     void AddInstanceGroupsAsync(const Model::AddInstanceGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </p> <p>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.</p> <p> A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </p> <p> Elastic MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully. </p> <p> You can only add steps to a job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p>
@@ -213,7 +214,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddJobFlowStepsAsync(const Model::AddJobFlowStepsRequest& request) const;
+     void AddJobFlowStepsAsync(const Model::AddJobFlowStepsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
@@ -232,7 +233,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddTagsAsync(const Model::AddTagsRequest& request) const;
+     void AddTagsAsync(const Model::AddTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.</p>
@@ -251,7 +252,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeClusterAsync(const Model::DescribeClusterRequest& request) const;
+     void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides more detail about the cluster step.</p>
@@ -270,7 +271,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeStepAsync(const Model::DescribeStepRequest& request) const;
+     void DescribeStepAsync(const Model::DescribeStepRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides information about the bootstrap actions associated with a cluster.</p>
@@ -289,7 +290,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListBootstrapActionsAsync(const Model::ListBootstrapActionsRequest& request) const;
+     void ListBootstrapActionsAsync(const Model::ListBootstrapActionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls. </p>
@@ -308,7 +309,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListClustersAsync(const Model::ListClustersRequest& request) const;
+     void ListClustersAsync(const Model::ListClustersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides all available details about the instance groups in a cluster.</p>
@@ -327,7 +328,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListInstanceGroupsAsync(const Model::ListInstanceGroupsRequest& request) const;
+     void ListInstanceGroupsAsync(const Model::ListInstanceGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for jobs, and the IP addresses for cluster instances, etc. </p>
@@ -346,7 +347,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListInstancesAsync(const Model::ListInstancesRequest& request) const;
+     void ListInstancesAsync(const Model::ListInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Provides a list of steps for the cluster. </p>
@@ -365,7 +366,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListStepsAsync(const Model::ListStepsRequest& request) const;
+     void ListStepsAsync(const Model::ListStepsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>
@@ -384,7 +385,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyInstanceGroupsAsync(const Model::ModifyInstanceGroupsRequest& request) const;
+     void ModifyInstanceGroupsAsync(const Model::ModifyInstanceGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p> <p>The following example removes the stack tag with value Prod from a cluster:</p>
@@ -403,7 +404,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveTagsAsync(const Model::RemoveTagsRequest& request) const;
+     void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING state rather than shutting down once the steps have completed. </p> <p>For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p> <p>A maximum of 256 steps are allowed in each job flow.</p> <p>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.</p> <p>For long running job flows, we recommend that you periodically store your results.</p>
@@ -422,7 +423,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RunJobFlowAsync(const Model::RunJobFlowRequest& request) const;
+     void RunJobFlowAsync(const Model::RunJobFlowRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a cluster.</p> <p> SetTerminationProtection is used to prevent accidental termination of a job flow and to ensure that in the event of an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</p> <p> To terminate a job flow that has been locked by setting SetTerminationProtection to <code>true</code>, you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <code>false</code>. </p> <p> For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i></p>
@@ -441,7 +442,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetTerminationProtectionAsync(const Model::SetTerminationProtectionRequest& request) const;
+     void SetTerminationProtectionAsync(const Model::SetTerminationProtectionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action works on running job flows. You can also set the visibility of a job flow when you launch it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job flow.</p>
@@ -460,7 +461,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetVisibleToAllUsersAsync(const Model::SetVisibleToAllUsersRequest& request) const;
+     void SetVisibleToAllUsersAsync(const Model::SetVisibleToAllUsersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the job flow was created. </p> <p> The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow, it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances. </p>
@@ -479,7 +480,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void TerminateJobFlowsAsync(const Model::TerminateJobFlowsRequest& request) const;
+     void TerminateJobFlowsAsync(const Model::TerminateJobFlowsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddInstanceGroupsAsync to call upon completion to the handler chain. You need to call this to
@@ -757,22 +758,22 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddInstanceGroupsAsyncHelper(const Model::AddInstanceGroupsRequest& request) const;
-    void AddJobFlowStepsAsyncHelper(const Model::AddJobFlowStepsRequest& request) const;
-    void AddTagsAsyncHelper(const Model::AddTagsRequest& request) const;
-    void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request) const;
-    void DescribeStepAsyncHelper(const Model::DescribeStepRequest& request) const;
-    void ListBootstrapActionsAsyncHelper(const Model::ListBootstrapActionsRequest& request) const;
-    void ListClustersAsyncHelper(const Model::ListClustersRequest& request) const;
-    void ListInstanceGroupsAsyncHelper(const Model::ListInstanceGroupsRequest& request) const;
-    void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request) const;
-    void ListStepsAsyncHelper(const Model::ListStepsRequest& request) const;
-    void ModifyInstanceGroupsAsyncHelper(const Model::ModifyInstanceGroupsRequest& request) const;
-    void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request) const;
-    void RunJobFlowAsyncHelper(const Model::RunJobFlowRequest& request) const;
-    void SetTerminationProtectionAsyncHelper(const Model::SetTerminationProtectionRequest& request) const;
-    void SetVisibleToAllUsersAsyncHelper(const Model::SetVisibleToAllUsersRequest& request) const;
-    void TerminateJobFlowsAsyncHelper(const Model::TerminateJobFlowsRequest& request) const;
+    void AddInstanceGroupsAsyncHelper(const Model::AddInstanceGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddJobFlowStepsAsyncHelper(const Model::AddJobFlowStepsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeStepAsyncHelper(const Model::DescribeStepRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListBootstrapActionsAsyncHelper(const Model::ListBootstrapActionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListInstanceGroupsAsyncHelper(const Model::ListInstanceGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListStepsAsyncHelper(const Model::ListStepsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyInstanceGroupsAsyncHelper(const Model::ModifyInstanceGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RunJobFlowAsyncHelper(const Model::RunJobFlowRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetTerminationProtectionAsyncHelper(const Model::SetTerminationProtectionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetVisibleToAllUsersAsyncHelper(const Model::SetVisibleToAllUsersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void TerminateJobFlowsAsyncHelper(const Model::TerminateJobFlowsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

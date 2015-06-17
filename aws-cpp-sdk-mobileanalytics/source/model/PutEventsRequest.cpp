@@ -23,6 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutEventsRequest::PutEventsRequest() : 
+    m_eventsHasBeenSet(false),
+    m_clientContextHasBeenSet(false),
     m_clientContextEncodingHasBeenSet(false)
 {
 }
@@ -31,12 +33,16 @@ Aws::String PutEventsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> eventsJsonList(m_events.size());
-  for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
+  if(m_eventsHasBeenSet)
   {
-    eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
+   Array<JsonValue> eventsJsonList(m_events.size());
+   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
+   {
+     eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
+   }
+   payload.WithArray("events", std::move(eventsJsonList));
+
   }
-  payload.WithArray("events", std::move(eventsJsonList));
 
   return payload.WriteReadable();
 }
@@ -45,9 +51,13 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  ss << m_clientContext;
-  headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
-  ss.str("");
+  if(m_clientContextHasBeenSet)
+  {
+   ss << m_clientContext;
+   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+   ss.str("");
+  }
+
   if(m_clientContextEncodingHasBeenSet)
   {
    ss << m_clientContextEncoding;

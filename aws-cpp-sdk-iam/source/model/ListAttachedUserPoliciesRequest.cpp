@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListAttachedUserPoliciesRequest::ListAttachedUserPoliciesRequest() : 
+    m_userNameHasBeenSet(false),
     m_pathPrefixHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
@@ -31,7 +32,10 @@ Aws::String ListAttachedUserPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListAttachedUserPolicies&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
   if(m_pathPrefixHasBeenSet)
   {
     ss << "PathPrefix=" << StringUtils::URLEncode(m_pathPrefix.c_str()) << "&";

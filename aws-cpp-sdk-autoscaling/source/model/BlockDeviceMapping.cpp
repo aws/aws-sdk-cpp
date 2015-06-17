@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 
 BlockDeviceMapping::BlockDeviceMapping() : 
     m_virtualNameHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
     m_ebsHasBeenSet(false),
     m_noDevice(false),
     m_noDeviceHasBeenSet(false)
@@ -33,6 +34,7 @@ BlockDeviceMapping::BlockDeviceMapping() :
 
 BlockDeviceMapping::BlockDeviceMapping(const XmlNode& xmlNode) : 
     m_virtualNameHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
     m_ebsHasBeenSet(false),
     m_noDevice(false),
     m_noDeviceHasBeenSet(false)
@@ -53,7 +55,11 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
       m_virtualNameHasBeenSet = true;
     }
     XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
-    m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
+    if(!deviceNameNode.IsNull())
+    {
+      m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
+      m_deviceNameHasBeenSet = true;
+    }
     XmlNode ebsNode = resultNode.FirstChild("Ebs");
     if(!ebsNode.IsNull())
     {
@@ -77,7 +83,10 @@ void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  if(m_deviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  }
   if(m_ebsHasBeenSet)
   {
       Aws::StringStream ebsLocationAndMemberSs;
@@ -96,7 +105,10 @@ void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
-  oStream << location << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  if(m_deviceNameHasBeenSet)
+  {
+      oStream << location << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  }
   if(m_ebsHasBeenSet)
   {
       Aws::String ebsLocationAndMember(location);

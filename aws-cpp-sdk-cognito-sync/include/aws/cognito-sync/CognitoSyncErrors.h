@@ -49,6 +49,7 @@ enum class AWS_COGNITOSYNC_API CognitoSyncErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_STREAMED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION,
   DUPLICATE_REQUEST,
   INTERNAL_ERROR,
   INVALID_CONFIGURATION,

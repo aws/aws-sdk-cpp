@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateUserProfileRequest::CreateUserProfileRequest() : 
+    m_iamUserArnHasBeenSet(false),
     m_sshUsernameHasBeenSet(false),
     m_sshPublicKeyHasBeenSet(false),
     m_allowSelfManagement(false),
@@ -33,7 +34,11 @@ Aws::String CreateUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IamUserArn", m_iamUserArn);
+  if(m_iamUserArnHasBeenSet)
+  {
+   payload.WithString("IamUserArn", m_iamUserArn);
+
+  }
 
   if(m_sshUsernameHasBeenSet)
   {

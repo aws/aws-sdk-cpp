@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 ModifyOptionGroupRequest::ModifyOptionGroupRequest() : 
+    m_optionGroupNameHasBeenSet(false),
     m_optionsToIncludeHasBeenSet(false),
     m_optionsToRemoveHasBeenSet(false),
     m_applyImmediately(false),
@@ -31,7 +32,10 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyOptionGroup&";
-  ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
+  if(m_optionGroupNameHasBeenSet)
+  {
+    ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
+  }
   if(m_optionsToIncludeHasBeenSet)
   {
     unsigned optionsToIncludeCount = 1;

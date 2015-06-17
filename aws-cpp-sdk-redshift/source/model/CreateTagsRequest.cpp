@@ -19,7 +19,9 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateTagsRequest::CreateTagsRequest()
+CreateTagsRequest::CreateTagsRequest() : 
+    m_resourceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String CreateTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateTags&";
-  ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
-  unsigned tagsCount = 1;
-  for(auto& item : m_tags)
+  if(m_resourceNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Tag.", tagsCount, "");
-    tagsCount++;
+    ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      tagsCount++;
+    }
   }
   ss << "Version=2012-12-01";
   return ss.str();

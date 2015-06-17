@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The ID of the EC2 instance.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the EC2 instance.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The ID of the EC2 instance.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p> The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace the unhealthy instance. </p>
     */
-    inline void SetHealthStatus(const Aws::String& value) { m_healthStatus = value; }
+    inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /*
      <p> The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace the unhealthy instance. </p>
     */
-    inline void SetHealthStatus(const char* value) { m_healthStatus.assign(value); }
+    inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /*
      <p> The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace the unhealthy instance. </p>
@@ -97,7 +97,9 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     Aws::String m_healthStatus;
+    bool m_healthStatusHasBeenSet;
     bool m_shouldRespectGracePeriod;
     bool m_shouldRespectGracePeriodHasBeenSet;
   };

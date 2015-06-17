@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the role associated with the policy.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role associated with the policy.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name of the role associated with the policy.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the policy document to get.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document to get.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name of the policy document to get.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
   };
 
 } // namespace Model

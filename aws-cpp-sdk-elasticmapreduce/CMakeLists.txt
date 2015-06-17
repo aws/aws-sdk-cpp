@@ -55,7 +55,11 @@ project(aws-cpp-sdk-elasticmapreduce)
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 
-  install (TARGETS aws-cpp-sdk-elasticmapreduce DESTINATION lib)
+  install (TARGETS aws-cpp-sdk-elasticmapreduce
+           ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
   install (FILES ${AWS_ELASTICMAPREDUCE_HEADERS} DESTINATION include/aws/elasticmapreduce)
   install (FILES ${AWS_ELASTICMAPREDUCE_MODEL_HEADERS} DESTINATION include/aws/elasticmapreduce/model)
 

@@ -20,6 +20,8 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 SetTopicAttributesRequest::SetTopicAttributesRequest() : 
+    m_topicArnHasBeenSet(false),
+    m_attributeNameHasBeenSet(false),
     m_attributeValueHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String SetTopicAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SetTopicAttributes&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+  if(m_topicArnHasBeenSet)
+  {
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
+  if(m_attributeNameHasBeenSet)
+  {
+    ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+  }
   if(m_attributeValueHasBeenSet)
   {
     ss << "AttributeValue=" << StringUtils::URLEncode(m_attributeValue.c_str()) << "&";

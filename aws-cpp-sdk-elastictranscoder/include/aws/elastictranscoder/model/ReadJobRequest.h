@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>The identifier of the job for which you want to get detailed information.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
   };
 
 } // namespace Model

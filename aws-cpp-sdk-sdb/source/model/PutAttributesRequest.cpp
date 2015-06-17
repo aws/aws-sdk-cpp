@@ -20,6 +20,9 @@ using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
 PutAttributesRequest::PutAttributesRequest() : 
+    m_domainNameHasBeenSet(false),
+    m_itemNameHasBeenSet(false),
+    m_attributesHasBeenSet(false),
     m_expectedHasBeenSet(false)
 {
 }
@@ -28,13 +31,22 @@ Aws::String PutAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutAttributes&";
-  ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
-  ss << "ItemName=" << StringUtils::URLEncode(m_itemName.c_str()) << "&";
-  unsigned attributesCount = 1;
-  for(auto& item : m_attributes)
+  if(m_domainNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Attribute.", attributesCount, "");
-    attributesCount++;
+    ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
+  }
+  if(m_itemNameHasBeenSet)
+  {
+    ss << "ItemName=" << StringUtils::URLEncode(m_itemName.c_str()) << "&";
+  }
+  if(m_attributesHasBeenSet)
+  {
+    unsigned attributesCount = 1;
+    for(auto& item : m_attributes)
+    {
+      item.OutputToStream(ss, "Attribute.", attributesCount, "");
+      attributesCount++;
+    }
   }
   if(m_expectedHasBeenSet)
   {

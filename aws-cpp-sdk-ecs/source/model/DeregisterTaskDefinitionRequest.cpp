@@ -21,7 +21,8 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterTaskDefinitionRequest::DeregisterTaskDefinitionRequest()
+DeregisterTaskDefinitionRequest::DeregisterTaskDefinitionRequest() : 
+    m_taskDefinitionHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeregisterTaskDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("taskDefinition", m_taskDefinition);
+  if(m_taskDefinitionHasBeenSet)
+  {
+   payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
 
   return payload.WriteReadable();
 }

@@ -45,12 +45,12 @@ namespace Model
     /*
      A unique identifier in the format REGION:GUID.
     */
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      A unique identifier in the format REGION:GUID.
     */
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
+    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /*
      A unique identifier in the format REGION:GUID.
@@ -69,7 +69,7 @@ namespace Model
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
     */
-    inline void SetLogins(const Aws::Map<Aws::String, Aws::String>& value) { m_logins = value; }
+    inline void SetLogins(const Aws::Map<Aws::String, Aws::String>& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
@@ -79,12 +79,12 @@ namespace Model
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
     */
-    inline UnlinkIdentityRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_logins[key] = value; return *this; }
+    inline UnlinkIdentityRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /*
      A set of optional name-value pairs that map provider names to provider tokens.
     */
-    inline UnlinkIdentityRequest& AddLogins(const char* key, const char* value) { m_logins[key] = value; return *this; }
+    inline UnlinkIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /*
      Provider names to unlink from this identity.
@@ -93,7 +93,7 @@ namespace Model
     /*
      Provider names to unlink from this identity.
     */
-    inline void SetLoginsToRemove(const Aws::Vector<Aws::String>& value) { m_loginsToRemove = value; }
+    inline void SetLoginsToRemove(const Aws::Vector<Aws::String>& value) { m_loginsToRemoveHasBeenSet = true; m_loginsToRemove = value; }
 
     /*
      Provider names to unlink from this identity.
@@ -103,17 +103,20 @@ namespace Model
     /*
      Provider names to unlink from this identity.
     */
-    inline UnlinkIdentityRequest& AddLoginsToRemove(const Aws::String& value) { m_loginsToRemove.push_back(value); return *this; }
+    inline UnlinkIdentityRequest& AddLoginsToRemove(const Aws::String& value) { m_loginsToRemoveHasBeenSet = true; m_loginsToRemove.push_back(value); return *this; }
 
     /*
      Provider names to unlink from this identity.
     */
-    inline UnlinkIdentityRequest& AddLoginsToRemove(const char* value) { m_loginsToRemove.push_back(value); return *this; }
+    inline UnlinkIdentityRequest& AddLoginsToRemove(const char* value) { m_loginsToRemoveHasBeenSet = true; m_loginsToRemove.push_back(value); return *this; }
 
   private:
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_logins;
+    bool m_loginsHasBeenSet;
     Aws::Vector<Aws::String> m_loginsToRemove;
+    bool m_loginsToRemoveHasBeenSet;
   };
 
 } // namespace Model

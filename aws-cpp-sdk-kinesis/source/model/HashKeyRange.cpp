@@ -21,20 +21,34 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HashKeyRange::HashKeyRange()
+HashKeyRange::HashKeyRange() : 
+    m_startingHashKeyHasBeenSet(false),
+    m_endingHashKeyHasBeenSet(false)
 {
 }
 
-HashKeyRange::HashKeyRange(const JsonValue& jsonValue)
+HashKeyRange::HashKeyRange(const JsonValue& jsonValue) : 
+    m_startingHashKeyHasBeenSet(false),
+    m_endingHashKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 HashKeyRange& HashKeyRange::operator =(const JsonValue& jsonValue)
 {
-  m_startingHashKey = jsonValue.GetString("StartingHashKey");
+  if(jsonValue.ValueExists("StartingHashKey"))
+  {
+    m_startingHashKey = jsonValue.GetString("StartingHashKey");
 
-  m_endingHashKey = jsonValue.GetString("EndingHashKey");
+    m_startingHashKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndingHashKey"))
+  {
+    m_endingHashKey = jsonValue.GetString("EndingHashKey");
+
+    m_endingHashKeyHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,9 +57,17 @@ JsonValue HashKeyRange::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("StartingHashKey", m_startingHashKey);
+  if(m_startingHashKeyHasBeenSet)
+  {
+   payload.WithString("StartingHashKey", m_startingHashKey);
 
-  payload.WithString("EndingHashKey", m_endingHashKey);
+  }
+
+  if(m_endingHashKeyHasBeenSet)
+  {
+   payload.WithString("EndingHashKey", m_endingHashKey);
+
+  }
 
   return std::move(payload);
 }

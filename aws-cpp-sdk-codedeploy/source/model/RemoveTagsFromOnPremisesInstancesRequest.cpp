@@ -21,7 +21,9 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromOnPremisesInstancesRequest::RemoveTagsFromOnPremisesInstancesRequest()
+RemoveTagsFromOnPremisesInstancesRequest::RemoveTagsFromOnPremisesInstancesRequest() : 
+    m_tagsHasBeenSet(false),
+    m_instanceNamesHasBeenSet(false)
 {
 }
 
@@ -29,19 +31,27 @@ Aws::String RemoveTagsFromOnPremisesInstancesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> tagsJsonList(m_tags.size());
-  for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+  if(m_tagsHasBeenSet)
   {
-    tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-  }
-  payload.WithArray("tags", std::move(tagsJsonList));
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
-  Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
-  for(unsigned instanceNamesIndex = 0; instanceNamesIndex < instanceNamesJsonList.GetLength(); ++instanceNamesIndex)
-  {
-    instanceNamesJsonList[instanceNamesIndex].AsString(m_instanceNames[instanceNamesIndex]);
   }
-  payload.WithArray("instanceNames", std::move(instanceNamesJsonList));
+
+  if(m_instanceNamesHasBeenSet)
+  {
+   Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
+   for(unsigned instanceNamesIndex = 0; instanceNamesIndex < instanceNamesJsonList.GetLength(); ++instanceNamesIndex)
+   {
+     instanceNamesJsonList[instanceNamesIndex].AsString(m_instanceNames[instanceNamesIndex]);
+   }
+   payload.WithArray("instanceNames", std::move(instanceNamesJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

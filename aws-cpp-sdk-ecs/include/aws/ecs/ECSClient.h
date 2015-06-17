@@ -48,6 +48,7 @@
 #include <aws/ecs/model/SubmitTaskStateChangeResult.h>
 #include <aws/ecs/model/UpdateContainerAgentResult.h>
 #include <aws/ecs/model/UpdateServiceResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -177,33 +178,33 @@ namespace Model
 
     class ECSClient;
 
-  typedef Aws::Utils::Event<ECSClient, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&> CreateClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&> CreateServiceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&> DeleteClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&> DeleteServiceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DeregisterContainerInstanceRequest&, const Model::DeregisterContainerInstanceOutcome&> DeregisterContainerInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DeregisterTaskDefinitionRequest&, const Model::DeregisterTaskDefinitionOutcome&> DeregisterTaskDefinitionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&> DescribeClustersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DescribeContainerInstancesRequest&, const Model::DescribeContainerInstancesOutcome&> DescribeContainerInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&> DescribeServicesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DescribeTaskDefinitionRequest&, const Model::DescribeTaskDefinitionOutcome&> DescribeTaskDefinitionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&> DescribeTasksOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&> DiscoverPollEndpointOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::ListClustersRequest&, const Model::ListClustersOutcome&> ListClustersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::ListContainerInstancesRequest&, const Model::ListContainerInstancesOutcome&> ListContainerInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::ListServicesRequest&, const Model::ListServicesOutcome&> ListServicesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::ListTaskDefinitionFamiliesRequest&, const Model::ListTaskDefinitionFamiliesOutcome&> ListTaskDefinitionFamiliesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::ListTaskDefinitionsRequest&, const Model::ListTaskDefinitionsOutcome&> ListTaskDefinitionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::ListTasksRequest&, const Model::ListTasksOutcome&> ListTasksOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::RegisterContainerInstanceRequest&, const Model::RegisterContainerInstanceOutcome&> RegisterContainerInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::RegisterTaskDefinitionRequest&, const Model::RegisterTaskDefinitionOutcome&> RegisterTaskDefinitionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::RunTaskRequest&, const Model::RunTaskOutcome&> RunTaskOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::StartTaskRequest&, const Model::StartTaskOutcome&> StartTaskOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::StopTaskRequest&, const Model::StopTaskOutcome&> StopTaskOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::SubmitContainerStateChangeRequest&, const Model::SubmitContainerStateChangeOutcome&> SubmitContainerStateChangeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::SubmitTaskStateChangeRequest&, const Model::SubmitTaskStateChangeOutcome&> SubmitTaskStateChangeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::UpdateContainerAgentRequest&, const Model::UpdateContainerAgentOutcome&> UpdateContainerAgentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ECSClient, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&> UpdateServiceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const Aws::Client::AsyncCallerContext*> CreateClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const Aws::Client::AsyncCallerContext*> CreateServiceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const Aws::Client::AsyncCallerContext*> DeleteClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const Aws::Client::AsyncCallerContext*> DeleteServiceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DeregisterContainerInstanceRequest&, const Model::DeregisterContainerInstanceOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterContainerInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DeregisterTaskDefinitionRequest&, const Model::DeregisterTaskDefinitionOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterTaskDefinitionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeClustersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DescribeContainerInstancesRequest&, const Model::DescribeContainerInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeContainerInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeServicesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DescribeTaskDefinitionRequest&, const Model::DescribeTaskDefinitionOutcome&, const Aws::Client::AsyncCallerContext*> DescribeTaskDefinitionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&, const Aws::Client::AsyncCallerContext*> DescribeTasksOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&, const Aws::Client::AsyncCallerContext*> DiscoverPollEndpointOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const Aws::Client::AsyncCallerContext*> ListClustersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::ListContainerInstancesRequest&, const Model::ListContainerInstancesOutcome&, const Aws::Client::AsyncCallerContext*> ListContainerInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const Aws::Client::AsyncCallerContext*> ListServicesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::ListTaskDefinitionFamiliesRequest&, const Model::ListTaskDefinitionFamiliesOutcome&, const Aws::Client::AsyncCallerContext*> ListTaskDefinitionFamiliesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::ListTaskDefinitionsRequest&, const Model::ListTaskDefinitionsOutcome&, const Aws::Client::AsyncCallerContext*> ListTaskDefinitionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::ListTasksRequest&, const Model::ListTasksOutcome&, const Aws::Client::AsyncCallerContext*> ListTasksOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::RegisterContainerInstanceRequest&, const Model::RegisterContainerInstanceOutcome&, const Aws::Client::AsyncCallerContext*> RegisterContainerInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::RegisterTaskDefinitionRequest&, const Model::RegisterTaskDefinitionOutcome&, const Aws::Client::AsyncCallerContext*> RegisterTaskDefinitionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::RunTaskRequest&, const Model::RunTaskOutcome&, const Aws::Client::AsyncCallerContext*> RunTaskOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::StartTaskRequest&, const Model::StartTaskOutcome&, const Aws::Client::AsyncCallerContext*> StartTaskOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::StopTaskRequest&, const Model::StopTaskOutcome&, const Aws::Client::AsyncCallerContext*> StopTaskOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::SubmitContainerStateChangeRequest&, const Model::SubmitContainerStateChangeOutcome&, const Aws::Client::AsyncCallerContext*> SubmitContainerStateChangeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::SubmitTaskStateChangeRequest&, const Model::SubmitTaskStateChangeOutcome&, const Aws::Client::AsyncCallerContext*> SubmitTaskStateChangeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::UpdateContainerAgentRequest&, const Model::UpdateContainerAgentOutcome&, const Aws::Client::AsyncCallerContext*> UpdateContainerAgentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ECSClient, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const Aws::Client::AsyncCallerContext*> UpdateServiceOutcomeReceivedEvent;
 
   /*
     <p></p> <p>Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster of Amazon EC2 instances. Amazon ECS lets you launch and stop container-enabled applications with simple API calls, allows you to get the state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features like security groups, Amazon EBS volumes, and IAM roles.</p> <p>You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs, isolation policies, and availability requirements. Amazon EC2 Container Service eliminates the need for you to operate your own cluster management and configuration management systems or worry about scaling your management infrastructure.</p>
@@ -252,7 +253,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateClusterAsync(const Model::CreateClusterRequest& request) const;
+     void CreateClusterAsync(const Model::CreateClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below <code>desiredCount</code>, Amazon ECS will spawn another instantiation of the task in the specified cluster.</p>
@@ -271,7 +272,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateServiceAsync(const Model::CreateServiceRequest& request) const;
+     void CreateServiceAsync(const Model::CreateServiceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified cluster. You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with <a>ListContainerInstances</a> and deregister them with <a>DeregisterContainerInstance</a>.</p>
@@ -290,7 +291,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteClusterAsync(const Model::DeleteClusterRequest& request) const;
+     void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a specified service within a cluster.</p>
@@ -309,7 +310,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteServiceAsync(const Model::DeleteServiceRequest& request) const;
+     void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deregisters an Amazon ECS container instance from the specified cluster. This instance will no longer be available to run tasks.</p>
@@ -328,7 +329,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterContainerInstanceAsync(const Model::DeregisterContainerInstanceRequest& request) const;
+     void DeregisterContainerInstanceAsync(const Model::DeregisterContainerInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>NOT YET IMPLEMENTED.</p> <p>Deregisters the specified task definition. You will no longer be able to run tasks from this definition after deregistration.</p>
@@ -347,7 +348,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterTaskDefinitionAsync(const Model::DeregisterTaskDefinitionRequest& request) const;
+     void DeregisterTaskDefinitionAsync(const Model::DeregisterTaskDefinitionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes one or more of your clusters.</p>
@@ -366,7 +367,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeClustersAsync(const Model::DescribeClustersRequest& request) const;
+     void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes Amazon EC2 Container Service container instances. Returns metadata about registered and remaining resources on each container instance requested.</p>
@@ -385,7 +386,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeContainerInstancesAsync(const Model::DescribeContainerInstancesRequest& request) const;
+     void DescribeContainerInstancesAsync(const Model::DescribeContainerInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the specified services running in your cluster.</p>
@@ -404,7 +405,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeServicesAsync(const Model::DescribeServicesRequest& request) const;
+     void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest revision in that family.</p>
@@ -423,7 +424,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeTaskDefinitionAsync(const Model::DescribeTaskDefinitionRequest& request) const;
+     void DescribeTaskDefinitionAsync(const Model::DescribeTaskDefinitionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes a specified task or tasks.</p>
@@ -442,7 +443,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeTasksAsync(const Model::DescribeTasksRequest& request) const;
+     void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Returns an endpoint for the Amazon EC2 Container Service agent to poll for updates.</p>
@@ -461,7 +462,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request) const;
+     void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of existing clusters.</p>
@@ -480,7 +481,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListClustersAsync(const Model::ListClustersRequest& request) const;
+     void ListClustersAsync(const Model::ListClustersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of container instances in a specified cluster.</p>
@@ -499,7 +500,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListContainerInstancesAsync(const Model::ListContainerInstancesRequest& request) const;
+     void ListContainerInstancesAsync(const Model::ListContainerInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the services that are running in a specified cluster.</p>
@@ -518,7 +519,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListServicesAsync(const Model::ListServicesRequest& request) const;
+     void ListServicesAsync(const Model::ListServicesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of task definition families that are registered to your account. You can filter the results with the <code>familyPrefix</code> parameter.</p>
@@ -537,7 +538,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTaskDefinitionFamiliesAsync(const Model::ListTaskDefinitionFamiliesRequest& request) const;
+     void ListTaskDefinitionFamiliesAsync(const Model::ListTaskDefinitionFamiliesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter.</p>
@@ -556,7 +557,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTaskDefinitionsAsync(const Model::ListTaskDefinitionsRequest& request) const;
+     void ListTaskDefinitionsAsync(const Model::ListTaskDefinitionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of tasks for a specified cluster. You can filter the results by family name, by a particular container instance, or by the desired status of the task with the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code> parameters.</p>
@@ -575,7 +576,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTasksAsync(const Model::ListTasksRequest& request) const;
+     void ListTasksAsync(const Model::ListTasksRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Registers an Amazon EC2 instance into the specified cluster. This instance will become available to place containers on.</p>
@@ -594,7 +595,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterContainerInstanceAsync(const Model::RegisterContainerInstanceRequest& request) const;
+     void RegisterContainerInstanceAsync(const Model::RegisterContainerInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>. Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more information on task definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
@@ -613,7 +614,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterTaskDefinitionAsync(const Model::RegisterTaskDefinitionRequest& request) const;
+     void RegisterTaskDefinitionAsync(const Model::RegisterTaskDefinitionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Start a task using random placement and the default Amazon ECS scheduler. If you want to use your own scheduler or place a task on a specific container instance, use <code>StartTask</code> instead.</p> <important> <p>The <code>count</code> parameter is limited to 10 tasks per call.</p> </important>
@@ -632,7 +633,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RunTaskAsync(const Model::RunTaskRequest& request) const;
+     void RunTaskAsync(const Model::RunTaskRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Starts a new task from the specified task definition on the specified container instance or instances. If you want to use the default Amazon ECS scheduler to place your task, use <code>RunTask</code> instead.</p> <important> <p>The list of container instances to start tasks on is limited to 10.</p> </important>
@@ -651,7 +652,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StartTaskAsync(const Model::StartTaskRequest& request) const;
+     void StartTaskAsync(const Model::StartTaskRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Stops a running task.</p>
@@ -670,7 +671,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StopTaskAsync(const Model::StopTaskRequest& request) const;
+     void StopTaskAsync(const Model::StopTaskRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Sent to acknowledge that a container changed states.</p>
@@ -689,7 +690,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SubmitContainerStateChangeAsync(const Model::SubmitContainerStateChangeRequest& request) const;
+     void SubmitContainerStateChangeAsync(const Model::SubmitContainerStateChangeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Sent to acknowledge that a task changed states.</p>
@@ -708,7 +709,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SubmitTaskStateChangeAsync(const Model::SubmitTaskStateChangeRequest& request) const;
+     void SubmitTaskStateChangeAsync(const Model::SubmitTaskStateChangeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the Amazon ECS container agent on a specified container instance.</p>
@@ -727,7 +728,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateContainerAgentAsync(const Model::UpdateContainerAgentRequest& request) const;
+     void UpdateContainerAgentAsync(const Model::UpdateContainerAgentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Modify the desired count or task definition used in a service.</p> <p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code> parameter.</p> <p>You can use <code>UpdateService</code> to modify your task definition and deploy a new version of your service, one task at a time. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running. Because <code>UpdateService</code> starts a new version of the task before stopping an old version, your cluster must have capacity to support one more instantiation of the task when <code>UpdateService</code> is run. If your cluster cannot support another instantiation of the task used in your service, you can reduce the desired count of your service by one before modifying the task definition.</p>
@@ -746,7 +747,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateServiceAsync(const Model::UpdateServiceRequest& request) const;
+     void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for CreateClusterAsync to call upon completion to the handler chain. You need to call this to
@@ -1211,33 +1212,33 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request) const;
-    void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request) const;
-    void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request) const;
-    void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request) const;
-    void DeregisterContainerInstanceAsyncHelper(const Model::DeregisterContainerInstanceRequest& request) const;
-    void DeregisterTaskDefinitionAsyncHelper(const Model::DeregisterTaskDefinitionRequest& request) const;
-    void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request) const;
-    void DescribeContainerInstancesAsyncHelper(const Model::DescribeContainerInstancesRequest& request) const;
-    void DescribeServicesAsyncHelper(const Model::DescribeServicesRequest& request) const;
-    void DescribeTaskDefinitionAsyncHelper(const Model::DescribeTaskDefinitionRequest& request) const;
-    void DescribeTasksAsyncHelper(const Model::DescribeTasksRequest& request) const;
-    void DiscoverPollEndpointAsyncHelper(const Model::DiscoverPollEndpointRequest& request) const;
-    void ListClustersAsyncHelper(const Model::ListClustersRequest& request) const;
-    void ListContainerInstancesAsyncHelper(const Model::ListContainerInstancesRequest& request) const;
-    void ListServicesAsyncHelper(const Model::ListServicesRequest& request) const;
-    void ListTaskDefinitionFamiliesAsyncHelper(const Model::ListTaskDefinitionFamiliesRequest& request) const;
-    void ListTaskDefinitionsAsyncHelper(const Model::ListTaskDefinitionsRequest& request) const;
-    void ListTasksAsyncHelper(const Model::ListTasksRequest& request) const;
-    void RegisterContainerInstanceAsyncHelper(const Model::RegisterContainerInstanceRequest& request) const;
-    void RegisterTaskDefinitionAsyncHelper(const Model::RegisterTaskDefinitionRequest& request) const;
-    void RunTaskAsyncHelper(const Model::RunTaskRequest& request) const;
-    void StartTaskAsyncHelper(const Model::StartTaskRequest& request) const;
-    void StopTaskAsyncHelper(const Model::StopTaskRequest& request) const;
-    void SubmitContainerStateChangeAsyncHelper(const Model::SubmitContainerStateChangeRequest& request) const;
-    void SubmitTaskStateChangeAsyncHelper(const Model::SubmitTaskStateChangeRequest& request) const;
-    void UpdateContainerAgentAsyncHelper(const Model::UpdateContainerAgentRequest& request) const;
-    void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request) const;
+    void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterContainerInstanceAsyncHelper(const Model::DeregisterContainerInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterTaskDefinitionAsyncHelper(const Model::DeregisterTaskDefinitionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeContainerInstancesAsyncHelper(const Model::DescribeContainerInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeServicesAsyncHelper(const Model::DescribeServicesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeTaskDefinitionAsyncHelper(const Model::DescribeTaskDefinitionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeTasksAsyncHelper(const Model::DescribeTasksRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DiscoverPollEndpointAsyncHelper(const Model::DiscoverPollEndpointRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListContainerInstancesAsyncHelper(const Model::ListContainerInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListServicesAsyncHelper(const Model::ListServicesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTaskDefinitionFamiliesAsyncHelper(const Model::ListTaskDefinitionFamiliesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTaskDefinitionsAsyncHelper(const Model::ListTaskDefinitionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTasksAsyncHelper(const Model::ListTasksRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterContainerInstanceAsyncHelper(const Model::RegisterContainerInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterTaskDefinitionAsyncHelper(const Model::RegisterTaskDefinitionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RunTaskAsyncHelper(const Model::RunTaskRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StartTaskAsyncHelper(const Model::StartTaskRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StopTaskAsyncHelper(const Model::StopTaskRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SubmitContainerStateChangeAsyncHelper(const Model::SubmitContainerStateChangeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SubmitTaskStateChangeAsyncHelper(const Model::SubmitTaskStateChangeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateContainerAgentAsyncHelper(const Model::UpdateContainerAgentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

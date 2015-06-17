@@ -21,7 +21,9 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterElasticIpRequest::RegisterElasticIpRequest()
+RegisterElasticIpRequest::RegisterElasticIpRequest() : 
+    m_elasticIpHasBeenSet(false),
+    m_stackIdHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String RegisterElasticIpRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ElasticIp", m_elasticIp);
+  if(m_elasticIpHasBeenSet)
+  {
+   payload.WithString("ElasticIp", m_elasticIp);
 
-  payload.WithString("StackId", m_stackId);
+  }
+
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
+
+  }
 
   return payload.WriteReadable();
 }

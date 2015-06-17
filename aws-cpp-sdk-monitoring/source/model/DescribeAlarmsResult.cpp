@@ -41,11 +41,12 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode metricAlarmsNode = resultNode.FirstChild("MetricAlarms");
+    XmlNode metricAlarmsNodeParent = resultNode.FirstChild("MetricAlarms");
+    XmlNode metricAlarmsNode = metricAlarmsNodeParent.FirstChild("member");
     while(!metricAlarmsNode.IsNull())
     {
       m_metricAlarms.push_back(metricAlarmsNode);
-      metricAlarmsNode = metricAlarmsNode.NextNode("MetricAlarms");
+      metricAlarmsNode = metricAlarmsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

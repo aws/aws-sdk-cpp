@@ -54,10 +54,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline CreateBucketRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -197,6 +197,7 @@ namespace Model
     BucketCannedACL m_aCL;
     bool m_aCLHasBeenSet;
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     CreateBucketConfiguration m_createBucketConfiguration;
     bool m_createBucketConfigurationHasBeenSet;
     Aws::String m_grantFullControl;

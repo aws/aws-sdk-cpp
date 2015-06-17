@@ -64,12 +64,12 @@ namespace Model
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      Amazon SNS topic ARN to which Amazon S3 will publish a message when it detects events of specified type.
@@ -84,19 +84,21 @@ namespace Model
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
     
-    inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
+    inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
     inline TopicConfiguration&  WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     
-    inline TopicConfiguration& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
+    inline TopicConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
     Aws::Vector<Event> m_events;
+    bool m_eventsHasBeenSet;
   };
 
 } // namespace Model

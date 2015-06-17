@@ -52,12 +52,12 @@ namespace Model
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetPath(const Aws::String& value) { m_path = value; }
+    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetPath(const char* value) { m_path.assign(value); }
+    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /*
      <p> The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -76,12 +76,12 @@ namespace Model
     /*
      <p>The name identifying the instance profile.</p>
     */
-    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileName = value; }
+    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name identifying the instance profile.</p>
     */
-    inline void SetInstanceProfileName(const char* value) { m_instanceProfileName.assign(value); }
+    inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
     /*
      <p>The name identifying the instance profile.</p>
@@ -100,12 +100,12 @@ namespace Model
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetInstanceProfileId(const Aws::String& value) { m_instanceProfileId = value; }
+    inline void SetInstanceProfileId(const Aws::String& value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId = value; }
 
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetInstanceProfileId(const char* value) { m_instanceProfileId.assign(value); }
+    inline void SetInstanceProfileId(const char* value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId.assign(value); }
 
     /*
      <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -124,12 +124,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -148,7 +148,7 @@ namespace Model
     /*
      <p>The date when the instance profile was created.</p>
     */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /*
      <p>The date when the instance profile was created.</p>
@@ -162,7 +162,7 @@ namespace Model
     /*
      <p>The role associated with the instance profile.</p>
     */
-    inline void SetRoles(const Aws::Vector<Role>& value) { m_roles = value; }
+    inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
 
     /*
      <p>The role associated with the instance profile.</p>
@@ -172,15 +172,21 @@ namespace Model
     /*
      <p>The role associated with the instance profile.</p>
     */
-    inline InstanceProfile& AddRoles(const Role& value) { m_roles.push_back(value); return *this; }
+    inline InstanceProfile& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
 
   private:
     Aws::String m_path;
+    bool m_pathHasBeenSet;
     Aws::String m_instanceProfileName;
+    bool m_instanceProfileNameHasBeenSet;
     Aws::String m_instanceProfileId;
+    bool m_instanceProfileIdHasBeenSet;
     Aws::String m_arn;
+    bool m_arnHasBeenSet;
     double m_createDate;
+    bool m_createDateHasBeenSet;
     Aws::Vector<Role> m_roles;
+    bool m_rolesHasBeenSet;
   };
 
 } // namespace Model

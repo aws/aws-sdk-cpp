@@ -41,18 +41,20 @@ DescribeMetricCollectionTypesResult& DescribeMetricCollectionTypesResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode metricsNode = resultNode.FirstChild("Metrics");
+    XmlNode metricsNodeParent = resultNode.FirstChild("Metrics");
+    XmlNode metricsNode = metricsNodeParent.FirstChild("member");
     while(!metricsNode.IsNull())
     {
       m_metrics.push_back(metricsNode);
-      metricsNode = metricsNode.NextNode("Metrics");
+      metricsNode = metricsNode.NextNode("member");
     }
 
-    XmlNode granularitiesNode = resultNode.FirstChild("Granularities");
+    XmlNode granularitiesNodeParent = resultNode.FirstChild("Granularities");
+    XmlNode granularitiesNode = granularitiesNodeParent.FirstChild("member");
     while(!granularitiesNode.IsNull())
     {
       m_granularities.push_back(granularitiesNode);
-      granularitiesNode = granularitiesNode.NextNode("Granularities");
+      granularitiesNode = granularitiesNode.NextNode("member");
     }
 
   }

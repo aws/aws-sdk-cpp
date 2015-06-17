@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeMetricFiltersRequest::DescribeMetricFiltersRequest() : 
+    m_logGroupNameHasBeenSet(false),
     m_filterNamePrefixHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
@@ -33,7 +34,11 @@ Aws::String DescribeMetricFiltersRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
+
+  }
 
   if(m_filterNamePrefixHasBeenSet)
   {

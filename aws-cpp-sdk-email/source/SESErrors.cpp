@@ -21,6 +21,7 @@ using namespace Aws::SES;
 using namespace Aws::Utils;
 
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
+static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
 
 namespace Aws
 {
@@ -36,6 +37,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == MESSAGE_REJECTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), false);
+  }
+  else if (hashCode == INVALID_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_POLICY), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

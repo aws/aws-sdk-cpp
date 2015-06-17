@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateStackRequest::UpdateStackRequest() : 
+    m_stackIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
@@ -39,7 +40,8 @@ UpdateStackRequest::UpdateStackRequest() :
     m_defaultSshKeyNameHasBeenSet(false),
     m_defaultRootDeviceTypeHasBeenSet(false),
     m_useOpsworksSecurityGroups(false),
-    m_useOpsworksSecurityGroupsHasBeenSet(false)
+    m_useOpsworksSecurityGroupsHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -47,7 +49,11 @@ Aws::String UpdateStackRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
+
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -146,6 +152,12 @@ Aws::String UpdateStackRequest::SerializePayload() const
   if(m_useOpsworksSecurityGroupsHasBeenSet)
   {
    payload.WithBool("UseOpsworksSecurityGroups", m_useOpsworksSecurityGroups);
+
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
 
   }
 

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the application the environment is associated with. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application the environment is associated with. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p> The name of the application the environment is associated with. </p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The name of the environment to delete the draft configuration from. </p>
     */
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentName = value; }
+    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /*
      <p> The name of the environment to delete the draft configuration from. </p>
     */
-    inline void SetEnvironmentName(const char* value) { m_environmentName.assign(value); }
+    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
     /*
      <p> The name of the environment to delete the draft configuration from. </p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_environmentName;
+    bool m_environmentNameHasBeenSet;
   };
 
 } // namespace Model

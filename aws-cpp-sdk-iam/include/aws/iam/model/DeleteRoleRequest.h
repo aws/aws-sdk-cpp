@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the role to delete.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to delete.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name of the role to delete.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
   };
 
 } // namespace Model

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
     */
-    inline void SetDomain(const Aws::String& value) { m_domain = value; }
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
     */
-    inline void SetDomain(const char* value) { m_domain.assign(value); }
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /*
      <p>The name of the domain to be verified for Easy DKIM signing.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

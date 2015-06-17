@@ -41,11 +41,12 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 
   if(!resultNode.IsNull())
   {
-    XmlNode taggedResourceNode = resultNode.FirstChild("TaggedResource");
+    XmlNode taggedResourceNodeParent = resultNode.FirstChild("TaggedResource");
+    XmlNode taggedResourceNode = taggedResourceNodeParent.FirstChild("member");
     while(!taggedResourceNode.IsNull())
     {
       m_taggedResources.push_back(taggedResourceNode);
-      taggedResourceNode = taggedResourceNode.NextNode("TaggedResource");
+      taggedResourceNode = taggedResourceNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

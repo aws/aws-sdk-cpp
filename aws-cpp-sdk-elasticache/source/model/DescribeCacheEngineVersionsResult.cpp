@@ -43,11 +43,12 @@ DescribeCacheEngineVersionsResult& DescribeCacheEngineVersionsResult::operator =
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheEngineVersionNode = resultNode.FirstChild("CacheEngineVersion");
+    XmlNode cacheEngineVersionNodeParent = resultNode.FirstChild("CacheEngineVersion");
+    XmlNode cacheEngineVersionNode = cacheEngineVersionNodeParent.FirstChild("member");
     while(!cacheEngineVersionNode.IsNull())
     {
       m_cacheEngineVersions.push_back(cacheEngineVersionNode);
-      cacheEngineVersionNode = cacheEngineVersionNode.NextNode("CacheEngineVersion");
+      cacheEngineVersionNode = cacheEngineVersionNode.NextNode("member");
     }
 
   }

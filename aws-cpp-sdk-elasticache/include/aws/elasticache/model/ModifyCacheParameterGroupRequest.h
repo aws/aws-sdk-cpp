@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group to modify.</p>
     */
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>The name of the cache parameter group to modify.</p>
     */
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /*
      <p>The name of the cache parameter group to modify.</p>
@@ -67,7 +67,7 @@ namespace Model
     /*
      <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
     */
-    inline void SetParameterNameValues(const Aws::Vector<ParameterNameValue>& value) { m_parameterNameValues = value; }
+    inline void SetParameterNameValues(const Aws::Vector<ParameterNameValue>& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues = value; }
 
     /*
      <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
@@ -77,11 +77,13 @@ namespace Model
     /*
      <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
     */
-    inline ModifyCacheParameterGroupRequest& AddParameterNameValues(const ParameterNameValue& value) { m_parameterNameValues.push_back(value); return *this; }
+    inline ModifyCacheParameterGroupRequest& AddParameterNameValues(const ParameterNameValue& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(value); return *this; }
 
   private:
     Aws::String m_cacheParameterGroupName;
+    bool m_cacheParameterGroupNameHasBeenSet;
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
+    bool m_parameterNameValuesHasBeenSet;
   };
 
 } // namespace Model

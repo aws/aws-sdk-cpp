@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the application associated with this version. </p> <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application associated with this version. </p> <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p> The name of the application associated with this version. </p> <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the version to update.</p> <p> If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /*
      <p>The name of the version to update.</p> <p> If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
+    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /*
      <p>The name of the version to update.</p> <p> If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -108,7 +108,9 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_versionLabel;
+    bool m_versionLabelHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

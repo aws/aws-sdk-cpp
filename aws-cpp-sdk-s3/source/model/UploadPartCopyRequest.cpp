@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 UploadPartCopyRequest::UploadPartCopyRequest() : 
+    m_bucketHasBeenSet(false),
+    m_copySourceHasBeenSet(false),
     m_copySourceIfMatchHasBeenSet(false),
     m_copySourceIfModifiedSince(0.0),
     m_copySourceIfModifiedSinceHasBeenSet(false),
@@ -32,7 +34,10 @@ UploadPartCopyRequest::UploadPartCopyRequest() :
     m_copySourceIfUnmodifiedSince(0.0),
     m_copySourceIfUnmodifiedSinceHasBeenSet(false),
     m_copySourceRangeHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_partNumber(0),
+    m_partNumberHasBeenSet(false),
+    m_uploadIdHasBeenSet(false),
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
     m_sSECustomerKeyMD5HasBeenSet(false),
@@ -51,21 +56,33 @@ Aws::String UploadPartCopyRequest::SerializePayload() const
 void UploadPartCopyRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    ss << m_partNumber;
-    uri.AddQueryStringParameter("partNumber", ss.str());
-    ss.str("");
-    ss << m_uploadId;
-    uri.AddQueryStringParameter("uploadId", ss.str());
-    ss.str("");
+    if(m_partNumberHasBeenSet)
+    {
+     ss << m_partNumber;
+     uri.AddQueryStringParameter("partNumber", ss.str());
+     ss.str("");
+    }
+
+    if(m_uploadIdHasBeenSet)
+    {
+     ss << m_uploadId;
+     uri.AddQueryStringParameter("uploadId", ss.str());
+     ss.str("");
+    }
+
 }
 
 Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  ss << m_copySource;
-  headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source", ss.str()));
-  ss.str("");
+  if(m_copySourceHasBeenSet)
+  {
+   ss << m_copySource;
+   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source", ss.str()));
+   ss.str("");
+  }
+
   if(m_copySourceIfMatchHasBeenSet)
   {
    ss << m_copySourceIfMatch;

@@ -19,7 +19,8 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteCacheSecurityGroupRequest::DeleteCacheSecurityGroupRequest()
+DeleteCacheSecurityGroupRequest::DeleteCacheSecurityGroupRequest() : 
+    m_cacheSecurityGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheSecurityGroup&";
-  ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
+  if(m_cacheSecurityGroupNameHasBeenSet)
+  {
+    ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

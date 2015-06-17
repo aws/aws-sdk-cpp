@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The app ID.</p>
     */
-    inline void SetAppId(const Aws::String& value) { m_appId = value; }
+    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /*
      <p>The app ID.</p>
     */
-    inline void SetAppId(const char* value) { m_appId.assign(value); }
+    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /*
      <p>The app ID.</p>
@@ -259,6 +259,7 @@ namespace Model
 
   private:
     Aws::String m_appId;
+    bool m_appIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_description;

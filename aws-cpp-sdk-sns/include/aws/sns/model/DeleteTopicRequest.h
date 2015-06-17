@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The ARN of the topic you want to delete.</p>
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic you want to delete.</p>
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      <p>The ARN of the topic you want to delete.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
   };
 
 } // namespace Model

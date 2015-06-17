@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>A receipt handle.</p>
     */
-    inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandle = value; }
+    inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
     /*
      <p>A receipt handle.</p>
     */
-    inline void SetReceiptHandle(const char* value) { m_receiptHandle.assign(value); }
+    inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
 
     /*
      <p>A receipt handle.</p>
@@ -93,7 +93,9 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_receiptHandle;
+    bool m_receiptHandleHasBeenSet;
   };
 
 } // namespace Model

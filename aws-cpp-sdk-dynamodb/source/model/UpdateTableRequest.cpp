@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 UpdateTableRequest::UpdateTableRequest() : 
     m_attributeDefinitionsHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
     m_globalSecondaryIndexUpdatesHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false)
@@ -44,7 +45,11 @@ Aws::String UpdateTableRequest::SerializePayload() const
 
   }
 
-  payload.WithString("TableName", m_tableName);
+  if(m_tableNameHasBeenSet)
+  {
+   payload.WithString("TableName", m_tableName);
+
+  }
 
   if(m_provisionedThroughputHasBeenSet)
   {

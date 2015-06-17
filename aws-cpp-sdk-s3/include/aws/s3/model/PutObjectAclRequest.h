@@ -63,10 +63,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutObjectAclRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -211,10 +211,10 @@ namespace Model
     
     inline const Aws::String& GetKey() const{ return m_key; }
     
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
     inline PutObjectAclRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
@@ -236,6 +236,7 @@ namespace Model
     AccessControlPolicy m_accessControlPolicy;
     bool m_accessControlPolicyHasBeenSet;
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
     Aws::String m_grantFullControl;
@@ -249,6 +250,7 @@ namespace Model
     Aws::String m_grantWriteACP;
     bool m_grantWriteACPHasBeenSet;
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

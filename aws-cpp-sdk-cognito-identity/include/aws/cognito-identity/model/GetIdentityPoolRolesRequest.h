@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
@@ -62,6 +62,7 @@ namespace Model
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
   };
 
 } // namespace Model

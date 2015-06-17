@@ -22,10 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() : 
+    m_eventSourceArnHasBeenSet(false),
+    m_functionNameHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_batchSize(0),
-    m_batchSizeHasBeenSet(false)
+    m_batchSizeHasBeenSet(false),
+    m_startingPositionHasBeenSet(false)
 {
 }
 
@@ -33,9 +36,17 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("EventSourceArn", m_eventSourceArn);
+  if(m_eventSourceArnHasBeenSet)
+  {
+   payload.WithString("EventSourceArn", m_eventSourceArn);
 
-  payload.WithString("FunctionName", m_functionName);
+  }
+
+  if(m_functionNameHasBeenSet)
+  {
+   payload.WithString("FunctionName", m_functionName);
+
+  }
 
   if(m_enabledHasBeenSet)
   {
@@ -49,7 +60,11 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
 
   }
 
-  payload.WithString("StartingPosition", EventSourcePositionMapper::GetNameForEventSourcePosition(m_startingPosition));
+  if(m_startingPositionHasBeenSet)
+  {
+   payload.WithString("StartingPosition", EventSourcePositionMapper::GetNameForEventSourcePosition(m_startingPosition));
+  }
+
   return payload.WriteReadable();
 }
 

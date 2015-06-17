@@ -43,11 +43,12 @@ DescribeReservedDBInstancesOfferingsResult& DescribeReservedDBInstancesOfferings
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedDBInstancesOfferingNode = resultNode.FirstChild("ReservedDBInstancesOffering");
+    XmlNode reservedDBInstancesOfferingNodeParent = resultNode.FirstChild("ReservedDBInstancesOffering");
+    XmlNode reservedDBInstancesOfferingNode = reservedDBInstancesOfferingNodeParent.FirstChild("member");
     while(!reservedDBInstancesOfferingNode.IsNull())
     {
       m_reservedDBInstancesOfferings.push_back(reservedDBInstancesOfferingNode);
-      reservedDBInstancesOfferingNode = reservedDBInstancesOfferingNode.NextNode("ReservedDBInstancesOffering");
+      reservedDBInstancesOfferingNode = reservedDBInstancesOfferingNode.NextNode("member");
     }
 
   }

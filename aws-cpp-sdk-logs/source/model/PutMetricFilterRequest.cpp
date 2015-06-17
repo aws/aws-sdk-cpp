@@ -21,7 +21,11 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMetricFilterRequest::PutMetricFilterRequest()
+PutMetricFilterRequest::PutMetricFilterRequest() : 
+    m_logGroupNameHasBeenSet(false),
+    m_filterNameHasBeenSet(false),
+    m_filterPatternHasBeenSet(false),
+    m_metricTransformationsHasBeenSet(false)
 {
 }
 
@@ -29,18 +33,34 @@ Aws::String PutMetricFilterRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
-
-  payload.WithString("filterName", m_filterName);
-
-  payload.WithString("filterPattern", m_filterPattern);
-
-  Array<JsonValue> metricTransformationsJsonList(m_metricTransformations.size());
-  for(unsigned metricTransformationsIndex = 0; metricTransformationsIndex < metricTransformationsJsonList.GetLength(); ++metricTransformationsIndex)
+  if(m_logGroupNameHasBeenSet)
   {
-    metricTransformationsJsonList[metricTransformationsIndex].AsObject(m_metricTransformations[metricTransformationsIndex].Jsonize());
+   payload.WithString("logGroupName", m_logGroupName);
+
   }
-  payload.WithArray("metricTransformations", std::move(metricTransformationsJsonList));
+
+  if(m_filterNameHasBeenSet)
+  {
+   payload.WithString("filterName", m_filterName);
+
+  }
+
+  if(m_filterPatternHasBeenSet)
+  {
+   payload.WithString("filterPattern", m_filterPattern);
+
+  }
+
+  if(m_metricTransformationsHasBeenSet)
+  {
+   Array<JsonValue> metricTransformationsJsonList(m_metricTransformations.size());
+   for(unsigned metricTransformationsIndex = 0; metricTransformationsIndex < metricTransformationsJsonList.GetLength(); ++metricTransformationsIndex)
+   {
+     metricTransformationsJsonList[metricTransformationsIndex].AsObject(m_metricTransformations[metricTransformationsIndex].Jsonize());
+   }
+   payload.WithArray("metricTransformations", std::move(metricTransformationsJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

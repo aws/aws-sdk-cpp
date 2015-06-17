@@ -218,13 +218,14 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_encryptedWithHSM = StringUtils::ConvertToBool(StringUtils::Trim(encryptedWithHSMNode.GetText().c_str()).c_str());
       m_encryptedWithHSMHasBeenSet = true;
     }
-    XmlNode accountWithRestoreAccessNode = resultNode.FirstChild("AccountWithRestoreAccess");
+    XmlNode accountWithRestoreAccessNodeParent = resultNode.FirstChild("AccountWithRestoreAccess");
+    XmlNode accountWithRestoreAccessNode = accountWithRestoreAccessNodeParent.FirstChild("member");
     if(!accountWithRestoreAccessNode.IsNull())
     {
       while(!accountWithRestoreAccessNode.IsNull())
       {
         m_accountsWithRestoreAccess.push_back(accountWithRestoreAccessNode);
-        accountWithRestoreAccessNode = accountWithRestoreAccessNode.NextNode("AccountWithRestoreAccess");
+        accountWithRestoreAccessNode = accountWithRestoreAccessNode.NextNode("member");
       }
 
       m_accountsWithRestoreAccessHasBeenSet = true;
@@ -277,13 +278,14 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_sourceRegion = StringUtils::Trim(sourceRegionNode.GetText().c_str());
       m_sourceRegionHasBeenSet = true;
     }
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     if(!tagNode.IsNull())
     {
       while(!tagNode.IsNull())
       {
         m_tags.push_back(tagNode);
-        tagNode = tagNode.NextNode("Tag");
+        tagNode = tagNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

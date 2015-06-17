@@ -110,13 +110,14 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       m_defaultPort = StringUtils::ConvertToInt32(StringUtils::Trim(defaultPortNode.GetText().c_str()).c_str());
       m_defaultPortHasBeenSet = true;
     }
-    XmlNode optionNameNode = resultNode.FirstChild("OptionName");
+    XmlNode optionNameNodeParent = resultNode.FirstChild("OptionName");
+    XmlNode optionNameNode = optionNameNodeParent.FirstChild("member");
     if(!optionNameNode.IsNull())
     {
       while(!optionNameNode.IsNull())
       {
         m_optionsDependedOn.push_back(StringUtils::Trim(optionNameNode.GetText().c_str()));
-        optionNameNode = optionNameNode.NextNode("OptionName");
+        optionNameNode = optionNameNode.NextNode("member");
       }
 
       m_optionsDependedOnHasBeenSet = true;
@@ -133,13 +134,14 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());
       m_permanentHasBeenSet = true;
     }
-    XmlNode optionGroupOptionSettingNode = resultNode.FirstChild("OptionGroupOptionSetting");
+    XmlNode optionGroupOptionSettingNodeParent = resultNode.FirstChild("OptionGroupOptionSetting");
+    XmlNode optionGroupOptionSettingNode = optionGroupOptionSettingNodeParent.FirstChild("member");
     if(!optionGroupOptionSettingNode.IsNull())
     {
       while(!optionGroupOptionSettingNode.IsNull())
       {
         m_optionGroupOptionSettings.push_back(optionGroupOptionSettingNode);
-        optionGroupOptionSettingNode = optionGroupOptionSettingNode.NextNode("OptionGroupOptionSetting");
+        optionGroupOptionSettingNode = optionGroupOptionSettingNode.NextNode("member");
       }
 
       m_optionGroupOptionSettingsHasBeenSet = true;

@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) of the container instance you want to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
     */
-    inline void SetContainerInstance(const Aws::String& value) { m_containerInstance = value; }
+    inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) of the container instance you want to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
     */
-    inline void SetContainerInstance(const char* value) { m_containerInstance.assign(value); }
+    inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) of the container instance you want to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
@@ -101,6 +101,7 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::String m_containerInstance;
+    bool m_containerInstanceHasBeenSet;
     bool m_force;
     bool m_forceHasBeenSet;
   };

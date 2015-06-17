@@ -20,6 +20,8 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 PutScheduledUpdateGroupActionRequest::PutScheduledUpdateGroupActionRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_scheduledActionNameHasBeenSet(false),
     m_time(0.0),
     m_timeHasBeenSet(false),
     m_startTime(0.0),
@@ -40,8 +42,14 @@ Aws::String PutScheduledUpdateGroupActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutScheduledUpdateGroupAction&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
-  ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_scheduledActionNameHasBeenSet)
+  {
+    ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
+  }
   if(m_timeHasBeenSet)
   {
     ss << "Time=" << m_time << "&";

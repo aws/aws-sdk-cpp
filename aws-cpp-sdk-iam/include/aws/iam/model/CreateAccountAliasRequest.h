@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The account alias to create.</p>
     */
-    inline void SetAccountAlias(const Aws::String& value) { m_accountAlias = value; }
+    inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
 
     /*
      <p>The account alias to create.</p>
     */
-    inline void SetAccountAlias(const char* value) { m_accountAlias.assign(value); }
+    inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
 
     /*
      <p>The account alias to create.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_accountAlias;
+    bool m_accountAliasHasBeenSet;
   };
 
 } // namespace Model

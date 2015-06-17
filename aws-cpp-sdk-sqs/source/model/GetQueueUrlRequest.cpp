@@ -20,6 +20,7 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
 GetQueueUrlRequest::GetQueueUrlRequest() : 
+    m_queueNameHasBeenSet(false),
     m_queueOwnerAWSAccountIdHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String GetQueueUrlRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetQueueUrl&";
-  ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
+  if(m_queueNameHasBeenSet)
+  {
+    ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
+  }
   if(m_queueOwnerAWSAccountIdHasBeenSet)
   {
     ss << "QueueOwnerAWSAccountId=" << StringUtils::URLEncode(m_queueOwnerAWSAccountId.c_str()) << "&";

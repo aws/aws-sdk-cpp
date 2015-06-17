@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeContainerInstancesRequest::DescribeContainerInstancesRequest() : 
-    m_clusterHasBeenSet(false)
+    m_clusterHasBeenSet(false),
+    m_containerInstancesHasBeenSet(false)
 {
 }
 
@@ -36,12 +37,16 @@ Aws::String DescribeContainerInstancesRequest::SerializePayload() const
 
   }
 
-  Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
-  for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
+  if(m_containerInstancesHasBeenSet)
   {
-    containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
+   Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
+   for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
+   {
+     containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
+   }
+   payload.WithArray("containerInstances", std::move(containerInstancesJsonList));
+
   }
-  payload.WithArray("containerInstances", std::move(containerInstancesJsonList));
 
   return payload.WriteReadable();
 }

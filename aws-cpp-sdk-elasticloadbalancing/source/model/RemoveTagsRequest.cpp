@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-RemoveTagsRequest::RemoveTagsRequest()
+RemoveTagsRequest::RemoveTagsRequest() : 
+    m_loadBalancerNamesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,18 +29,24 @@ Aws::String RemoveTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RemoveTags&";
-  unsigned loadBalancerNamesCount = 1;
-  for(auto& item : m_loadBalancerNames)
+  if(m_loadBalancerNamesHasBeenSet)
   {
-    ss << "LoadBalancerNames." << loadBalancerNamesCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    loadBalancerNamesCount++;
+    unsigned loadBalancerNamesCount = 1;
+    for(auto& item : m_loadBalancerNames)
+    {
+      ss << "LoadBalancerNames." << loadBalancerNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      loadBalancerNamesCount++;
+    }
   }
-  unsigned tagsCount = 1;
-  for(auto& item : m_tags)
+  if(m_tagsHasBeenSet)
   {
-    item.OutputToStream(ss, "Tags.", tagsCount, "");
-    tagsCount++;
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.", tagsCount, "");
+      tagsCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

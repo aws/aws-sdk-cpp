@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     */
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     */
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name identifying the policy document to delete.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name identifying the policy document to delete.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name identifying the policy document to delete.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
   };
 
 } // namespace Model

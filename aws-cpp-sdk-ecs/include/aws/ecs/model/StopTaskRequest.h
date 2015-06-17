@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The task UUIDs or full Amazon Resource Name (ARN) entry of the task you would like to stop.</p>
     */
-    inline void SetTask(const Aws::String& value) { m_task = value; }
+    inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /*
      <p>The task UUIDs or full Amazon Resource Name (ARN) entry of the task you would like to stop.</p>
     */
-    inline void SetTask(const char* value) { m_task.assign(value); }
+    inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
 
     /*
      <p>The task UUIDs or full Amazon Resource Name (ARN) entry of the task you would like to stop.</p>
@@ -87,6 +87,7 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::String m_task;
+    bool m_taskHasBeenSet;
   };
 
 } // namespace Model

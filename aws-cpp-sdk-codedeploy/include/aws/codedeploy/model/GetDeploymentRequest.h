@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a get deployment operation.</p>
   */
   class AWS_CODEDEPLOY_API GetDeploymentRequest : public codedeployRequest
   {
@@ -36,32 +35,23 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
+    
+    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
-    inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
+    
+    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline GetDeploymentRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
     Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet;
   };
 
 } // namespace Model

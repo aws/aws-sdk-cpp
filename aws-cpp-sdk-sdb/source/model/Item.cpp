@@ -24,12 +24,16 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Item::Item() : 
-    m_alternateNameEncodingHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_alternateNameEncodingHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
 Item::Item(const XmlNode& xmlNode) : 
-    m_alternateNameEncodingHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_alternateNameEncodingHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,7 +45,11 @@ Item& Item::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
+    if(!nameNode.IsNull())
+    {
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
+    }
     XmlNode alternateNameEncodingNode = resultNode.FirstChild("AlternateNameEncoding");
     if(!alternateNameEncodingNode.IsNull())
     {
@@ -49,12 +57,16 @@ Item& Item::operator =(const XmlNode& xmlNode)
       m_alternateNameEncodingHasBeenSet = true;
     }
     XmlNode attributeNode = resultNode.FirstChild("Attribute");
-    while(!attributeNode.IsNull())
+    if(!attributeNode.IsNull())
     {
-      m_attributes.push_back(attributeNode);
-      attributeNode = attributeNode.NextNode("Attribute");
-    }
+      while(!attributeNode.IsNull())
+      {
+        m_attributes.push_back(attributeNode);
+        attributeNode = attributeNode.NextNode("Attribute");
+      }
 
+      m_attributesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -62,30 +74,42 @@ Item& Item::operator =(const XmlNode& xmlNode)
 
 void Item::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   if(m_alternateNameEncodingHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlternateNameEncoding=" << StringUtils::URLEncode(m_alternateNameEncoding.c_str()) << "&";
   }
-  for(auto& item : m_attributes)
+  if(m_attributesHasBeenSet)
   {
-    Aws::StringStream attributesSs;
-    attributesSs << location << index << locationValue << ".Attribute";
-    item.OutputToStream(oStream, attributesSs.str().c_str());
+      for(auto& item : m_attributes)
+      {
+        Aws::StringStream attributesSs;
+        attributesSs << location << index << locationValue << ".Attribute";
+        item.OutputToStream(oStream, attributesSs.str().c_str());
+      }
   }
 }
 
 void Item::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   if(m_alternateNameEncodingHasBeenSet)
   {
       oStream << location << ".AlternateNameEncoding=" << StringUtils::URLEncode(m_alternateNameEncoding.c_str()) << "&";
   }
-  for(auto& item : m_attributes)
+  if(m_attributesHasBeenSet)
   {
-    Aws::String locationAndListMember(location);
-    locationAndListMember += ".Attribute";
-    item.OutputToStream(oStream, locationAndListMember.c_str());
+      for(auto& item : m_attributes)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".Attribute";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
   }
 }

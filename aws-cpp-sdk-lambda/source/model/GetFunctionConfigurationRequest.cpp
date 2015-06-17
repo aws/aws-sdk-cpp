@@ -21,7 +21,8 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFunctionConfigurationRequest::GetFunctionConfigurationRequest()
+GetFunctionConfigurationRequest::GetFunctionConfigurationRequest() : 
+    m_functionNameHasBeenSet(false)
 {
 }
 

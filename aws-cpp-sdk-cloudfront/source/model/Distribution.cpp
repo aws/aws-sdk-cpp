@@ -24,14 +24,28 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Distribution::Distribution() : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_inProgressInvalidationBatches(0)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_inProgressInvalidationBatches(0),
+    m_inProgressInvalidationBatchesHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_activeTrustedSignersHasBeenSet(false),
+    m_distributionConfigHasBeenSet(false)
 {
 }
 
 Distribution::Distribution(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_inProgressInvalidationBatches(0)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_inProgressInvalidationBatches(0),
+    m_inProgressInvalidationBatchesHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_activeTrustedSignersHasBeenSet(false),
+    m_distributionConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,19 +57,47 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = StringUtils::Trim(statusNode.GetText().c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+    if(!lastModifiedTimeNode.IsNull())
+    {
+      m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+      m_lastModifiedTimeHasBeenSet = true;
+    }
     XmlNode inProgressInvalidationBatchesNode = resultNode.FirstChild("InProgressInvalidationBatches");
-    m_inProgressInvalidationBatches = StringUtils::ConvertToInt32(StringUtils::Trim(inProgressInvalidationBatchesNode.GetText().c_str()).c_str());
+    if(!inProgressInvalidationBatchesNode.IsNull())
+    {
+      m_inProgressInvalidationBatches = StringUtils::ConvertToInt32(StringUtils::Trim(inProgressInvalidationBatchesNode.GetText().c_str()).c_str());
+      m_inProgressInvalidationBatchesHasBeenSet = true;
+    }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    if(!domainNameNode.IsNull())
+    {
+      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainNameHasBeenSet = true;
+    }
     XmlNode activeTrustedSignersNode = resultNode.FirstChild("ActiveTrustedSigners");
-    m_activeTrustedSigners = activeTrustedSignersNode;
+    if(!activeTrustedSignersNode.IsNull())
+    {
+      m_activeTrustedSigners = activeTrustedSignersNode;
+      m_activeTrustedSignersHasBeenSet = true;
+    }
     XmlNode distributionConfigNode = resultNode.FirstChild("DistributionConfig");
-    m_distributionConfig = distributionConfigNode;
+    if(!distributionConfigNode.IsNull())
+    {
+      m_distributionConfig = distributionConfigNode;
+      m_distributionConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -64,22 +106,50 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
 void Distribution::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(m_status);
-  XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(m_status);
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
   ss << m_lastModifiedTime;
-  lastModifiedTimeNode.SetText(ss.str());
+   lastModifiedTimeNode.SetText(ss.str());
   ss.str("");
-  XmlNode inProgressInvalidationBatchesNode = parentNode.CreateChildElement("InProgressInvalidationBatches");
+  }
+
+  if(m_inProgressInvalidationBatchesHasBeenSet)
+  {
+   XmlNode inProgressInvalidationBatchesNode = parentNode.CreateChildElement("InProgressInvalidationBatches");
   ss << m_inProgressInvalidationBatches;
-  inProgressInvalidationBatchesNode.SetText(ss.str());
+   inProgressInvalidationBatchesNode.SetText(ss.str());
   ss.str("");
-  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-  domainNameNode.SetText(m_domainName);
-  XmlNode activeTrustedSignersNode = parentNode.CreateChildElement("ActiveTrustedSigners");
-  m_activeTrustedSigners.AddToNode(activeTrustedSignersNode);
-  XmlNode distributionConfigNode = parentNode.CreateChildElement("DistributionConfig");
-  m_distributionConfig.AddToNode(distributionConfigNode);
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+   domainNameNode.SetText(m_domainName);
+  }
+
+  if(m_activeTrustedSignersHasBeenSet)
+  {
+   XmlNode activeTrustedSignersNode = parentNode.CreateChildElement("ActiveTrustedSigners");
+   m_activeTrustedSigners.AddToNode(activeTrustedSignersNode);
+  }
+
+  if(m_distributionConfigHasBeenSet)
+  {
+   XmlNode distributionConfigNode = parentNode.CreateChildElement("DistributionConfig");
+   m_distributionConfig.AddToNode(distributionConfigNode);
+  }
+
 }

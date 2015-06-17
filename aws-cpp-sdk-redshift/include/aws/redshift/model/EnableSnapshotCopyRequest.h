@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The unique identifier of the source cluster to copy snapshots from. </p> <p> Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled. </p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The unique identifier of the source cluster to copy snapshots from. </p> <p> Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled. </p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The unique identifier of the source cluster to copy snapshots from. </p> <p> Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled. </p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The destination region that you want to copy snapshots to. </p> <p> Constraints: Must be the name of a valid region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
     */
-    inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegion = value; }
+    inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
     /*
      <p> The destination region that you want to copy snapshots to. </p> <p> Constraints: Must be the name of a valid region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
     */
-    inline void SetDestinationRegion(const char* value) { m_destinationRegion.assign(value); }
+    inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
     /*
      <p> The destination region that you want to copy snapshots to. </p> <p> Constraints: Must be the name of a valid region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
@@ -98,7 +98,9 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     Aws::String m_destinationRegion;
+    bool m_destinationRegionHasBeenSet;
     long m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
   };

@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
-    inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArn = value; }
+    inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
     */
-    inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArn.assign(value); }
+    inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
 
     /*
      <p>The Amazon RDS instance's ARN.</p>
@@ -61,6 +61,7 @@ namespace Model
 
   private:
     Aws::String m_rdsDbInstanceArn;
+    bool m_rdsDbInstanceArnHasBeenSet;
   };
 
 } // namespace Model

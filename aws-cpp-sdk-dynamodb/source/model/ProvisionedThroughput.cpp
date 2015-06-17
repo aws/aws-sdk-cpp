@@ -23,22 +23,36 @@ using namespace Aws::Utils;
 
 ProvisionedThroughput::ProvisionedThroughput() : 
     m_readCapacityUnits(0),
-    m_writeCapacityUnits(0)
+    m_readCapacityUnitsHasBeenSet(false),
+    m_writeCapacityUnits(0),
+    m_writeCapacityUnitsHasBeenSet(false)
 {
 }
 
 ProvisionedThroughput::ProvisionedThroughput(const JsonValue& jsonValue) : 
     m_readCapacityUnits(0),
-    m_writeCapacityUnits(0)
+    m_readCapacityUnitsHasBeenSet(false),
+    m_writeCapacityUnits(0),
+    m_writeCapacityUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ProvisionedThroughput& ProvisionedThroughput::operator =(const JsonValue& jsonValue)
 {
-  m_readCapacityUnits = jsonValue.GetInt64("ReadCapacityUnits");
+  if(jsonValue.ValueExists("ReadCapacityUnits"))
+  {
+    m_readCapacityUnits = jsonValue.GetInt64("ReadCapacityUnits");
 
-  m_writeCapacityUnits = jsonValue.GetInt64("WriteCapacityUnits");
+    m_readCapacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WriteCapacityUnits"))
+  {
+    m_writeCapacityUnits = jsonValue.GetInt64("WriteCapacityUnits");
+
+    m_writeCapacityUnitsHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -47,9 +61,17 @@ JsonValue ProvisionedThroughput::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithInt64("ReadCapacityUnits", m_readCapacityUnits);
+  if(m_readCapacityUnitsHasBeenSet)
+  {
+   payload.WithInt64("ReadCapacityUnits", m_readCapacityUnits);
 
-  payload.WithInt64("WriteCapacityUnits", m_writeCapacityUnits);
+  }
+
+  if(m_writeCapacityUnitsHasBeenSet)
+  {
+   payload.WithInt64("WriteCapacityUnits", m_writeCapacityUnits);
+
+  }
 
   return std::move(payload);
 }

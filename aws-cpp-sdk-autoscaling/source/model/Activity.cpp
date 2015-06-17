@@ -24,10 +24,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Activity::Activity() : 
+    m_activityIdHasBeenSet(false),
+    m_autoScalingGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_causeHasBeenSet(false),
     m_startTime(0.0),
+    m_startTimeHasBeenSet(false),
     m_endTime(0.0),
     m_endTimeHasBeenSet(false),
+    m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
@@ -36,10 +41,15 @@ Activity::Activity() :
 }
 
 Activity::Activity(const XmlNode& xmlNode) : 
+    m_activityIdHasBeenSet(false),
+    m_autoScalingGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_causeHasBeenSet(false),
     m_startTime(0.0),
+    m_startTimeHasBeenSet(false),
     m_endTime(0.0),
     m_endTimeHasBeenSet(false),
+    m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
@@ -55,9 +65,17 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode activityIdNode = resultNode.FirstChild("ActivityId");
-    m_activityId = StringUtils::Trim(activityIdNode.GetText().c_str());
+    if(!activityIdNode.IsNull())
+    {
+      m_activityId = StringUtils::Trim(activityIdNode.GetText().c_str());
+      m_activityIdHasBeenSet = true;
+    }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
-    m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+    if(!autoScalingGroupNameNode.IsNull())
+    {
+      m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+      m_autoScalingGroupNameHasBeenSet = true;
+    }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
@@ -65,9 +83,17 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
       m_descriptionHasBeenSet = true;
     }
     XmlNode causeNode = resultNode.FirstChild("Cause");
-    m_cause = StringUtils::Trim(causeNode.GetText().c_str());
+    if(!causeNode.IsNull())
+    {
+      m_cause = StringUtils::Trim(causeNode.GetText().c_str());
+      m_causeHasBeenSet = true;
+    }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
-    m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+    if(!startTimeNode.IsNull())
+    {
+      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTimeHasBeenSet = true;
+    }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
@@ -75,7 +101,11 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
       m_endTimeHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
-    m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(statusCodeNode.GetText().c_str()).c_str());
+    if(!statusCodeNode.IsNull())
+    {
+      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(statusCodeNode.GetText().c_str()).c_str());
+      m_statusCodeHasBeenSet = true;
+    }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
@@ -101,19 +131,34 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
 
 void Activity::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".ActivityId=" << StringUtils::URLEncode(m_activityId.c_str()) << "&";
-  oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_activityIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityId=" << StringUtils::URLEncode(m_activityId.c_str()) << "&";
+  }
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".Cause=" << StringUtils::URLEncode(m_cause.c_str()) << "&";
-  oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+  if(m_causeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Cause=" << StringUtils::URLEncode(m_cause.c_str()) << "&";
+  }
+  if(m_startTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+  }
   if(m_endTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".EndTime=" << m_endTime << "&";
   }
-  oStream << location << index << locationValue << ".StatusCode=" << ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode) << "&";
+  if(m_statusCodeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusCode=" << ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode) << "&";
+  }
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
@@ -130,19 +175,34 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
 void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".ActivityId=" << StringUtils::URLEncode(m_activityId.c_str()) << "&";
-  oStream << location << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_activityIdHasBeenSet)
+  {
+      oStream << location << ".ActivityId=" << StringUtils::URLEncode(m_activityId.c_str()) << "&";
+  }
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+      oStream << location << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  oStream << location << ".Cause=" << StringUtils::URLEncode(m_cause.c_str()) << "&";
-  oStream << location << ".StartTime=" << m_startTime << "&";
+  if(m_causeHasBeenSet)
+  {
+      oStream << location << ".Cause=" << StringUtils::URLEncode(m_cause.c_str()) << "&";
+  }
+  if(m_startTimeHasBeenSet)
+  {
+      oStream << location << ".StartTime=" << m_startTime << "&";
+  }
   if(m_endTimeHasBeenSet)
   {
       oStream << location << ".EndTime=" << m_endTime << "&";
   }
-  oStream << location << ".StatusCode=" << ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode) << "&";
+  if(m_statusCodeHasBeenSet)
+  {
+      oStream << location << ".StatusCode=" << ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode) << "&";
+  }
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";

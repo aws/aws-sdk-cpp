@@ -20,6 +20,7 @@ using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
 DescribeInstanceHealthRequest::DescribeInstanceHealthRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
     m_instancesHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String DescribeInstanceHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeInstanceHealth&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  if(m_loadBalancerNameHasBeenSet)
+  {
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
   if(m_instancesHasBeenSet)
   {
     unsigned instancesCount = 1;

@@ -21,7 +21,9 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssignInstanceRequest::AssignInstanceRequest()
+AssignInstanceRequest::AssignInstanceRequest() : 
+    m_instanceIdHasBeenSet(false),
+    m_layerIdsHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String AssignInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("InstanceId", m_instanceId);
-
-  Array<JsonValue> layerIdsJsonList(m_layerIds.size());
-  for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+  if(m_instanceIdHasBeenSet)
   {
-    layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
+   payload.WithString("InstanceId", m_instanceId);
+
   }
-  payload.WithArray("LayerIds", std::move(layerIdsJsonList));
+
+  if(m_layerIdsHasBeenSet)
+  {
+   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+   {
+     layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
+   }
+   payload.WithArray("LayerIds", std::move(layerIdsJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

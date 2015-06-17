@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The identifier or ARN for the source DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must specify a valid DB parameter group.</li> <li>If the source DB parameter group is in the same region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source DB parameter group is in a different region than the copy, specify a valid DB parameter group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li> </ul>
     */
-    inline void SetSourceDBParameterGroupIdentifier(const Aws::String& value) { m_sourceDBParameterGroupIdentifier = value; }
+    inline void SetSourceDBParameterGroupIdentifier(const Aws::String& value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier = value; }
 
     /*
      <p> The identifier or ARN for the source DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must specify a valid DB parameter group.</li> <li>If the source DB parameter group is in the same region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source DB parameter group is in a different region than the copy, specify a valid DB parameter group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li> </ul>
     */
-    inline void SetSourceDBParameterGroupIdentifier(const char* value) { m_sourceDBParameterGroupIdentifier.assign(value); }
+    inline void SetSourceDBParameterGroupIdentifier(const char* value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier.assign(value); }
 
     /*
      <p> The identifier or ARN for the source DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must specify a valid DB parameter group.</li> <li>If the source DB parameter group is in the same region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source DB parameter group is in a different region than the copy, specify a valid DB parameter group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li> </ul>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-db-parameter-group</code></p>
     */
-    inline void SetTargetDBParameterGroupIdentifier(const Aws::String& value) { m_targetDBParameterGroupIdentifier = value; }
+    inline void SetTargetDBParameterGroupIdentifier(const Aws::String& value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier = value; }
 
     /*
      <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-db-parameter-group</code></p>
     */
-    inline void SetTargetDBParameterGroupIdentifier(const char* value) { m_targetDBParameterGroupIdentifier.assign(value); }
+    inline void SetTargetDBParameterGroupIdentifier(const char* value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier.assign(value); }
 
     /*
      <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-db-parameter-group</code></p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p>A description for the copied DB parameter group.</p>
     */
-    inline void SetTargetDBParameterGroupDescription(const Aws::String& value) { m_targetDBParameterGroupDescription = value; }
+    inline void SetTargetDBParameterGroupDescription(const Aws::String& value) { m_targetDBParameterGroupDescriptionHasBeenSet = true; m_targetDBParameterGroupDescription = value; }
 
     /*
      <p>A description for the copied DB parameter group.</p>
     */
-    inline void SetTargetDBParameterGroupDescription(const char* value) { m_targetDBParameterGroupDescription.assign(value); }
+    inline void SetTargetDBParameterGroupDescription(const char* value) { m_targetDBParameterGroupDescriptionHasBeenSet = true; m_targetDBParameterGroupDescription.assign(value); }
 
     /*
      <p>A description for the copied DB parameter group.</p>
@@ -121,8 +121,11 @@ namespace Model
 
   private:
     Aws::String m_sourceDBParameterGroupIdentifier;
+    bool m_sourceDBParameterGroupIdentifierHasBeenSet;
     Aws::String m_targetDBParameterGroupIdentifier;
+    bool m_targetDBParameterGroupIdentifierHasBeenSet;
     Aws::String m_targetDBParameterGroupDescription;
+    bool m_targetDBParameterGroupDescriptionHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

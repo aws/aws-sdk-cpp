@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 RestoreRequest::RestoreRequest() : 
-    m_days(0)
+    m_days(0),
+    m_daysHasBeenSet(false)
 {
 }
 
 RestoreRequest::RestoreRequest(const XmlNode& xmlNode) : 
-    m_days(0)
+    m_days(0),
+    m_daysHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,7 +43,11 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode daysNode = resultNode.FirstChild("Days");
-    m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
+    if(!daysNode.IsNull())
+    {
+      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
+      m_daysHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,8 +56,12 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
 void RestoreRequest::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode daysNode = parentNode.CreateChildElement("Days");
+  if(m_daysHasBeenSet)
+  {
+   XmlNode daysNode = parentNode.CreateChildElement("Days");
   ss << m_days;
-  daysNode.SetText(ss.str());
+   daysNode.SetText(ss.str());
   ss.str("");
+  }
+
 }

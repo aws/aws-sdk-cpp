@@ -50,12 +50,12 @@ namespace Model
     /*
      The value you provided for the Marker request parameter.
     */
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
+    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /*
      The value you provided for the Marker request parameter.
     */
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
+    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /*
      The value you provided for the Marker request parameter.
@@ -98,7 +98,7 @@ namespace Model
     /*
      The value you provided for the MaxItems request parameter.
     */
-    inline void SetMaxItems(long value) { m_maxItems = value; }
+    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /*
      The value you provided for the MaxItems request parameter.
@@ -112,7 +112,7 @@ namespace Model
     /*
      A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in the list.
     */
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
 
     /*
      A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in the list.
@@ -126,7 +126,7 @@ namespace Model
     /*
      The number of streaming distributions that were created by the current AWS account.
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      The number of streaming distributions that were created by the current AWS account.
@@ -154,11 +154,15 @@ namespace Model
 
   private:
     Aws::String m_marker;
+    bool m_markerHasBeenSet;
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
     long m_maxItems;
+    bool m_maxItemsHasBeenSet;
     bool m_isTruncated;
+    bool m_isTruncatedHasBeenSet;
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<StreamingDistributionSummary> m_items;
     bool m_itemsHasBeenSet;
   };

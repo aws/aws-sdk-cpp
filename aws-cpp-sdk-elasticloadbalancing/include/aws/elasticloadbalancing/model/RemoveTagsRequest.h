@@ -42,7 +42,7 @@ namespace Model
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
-    inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNames = value; }
+    inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
@@ -52,12 +52,12 @@ namespace Model
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
-    inline RemoveTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNames.push_back(value); return *this; }
+    inline RemoveTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /*
      <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     */
-    inline RemoveTagsRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNames.push_back(value); return *this; }
+    inline RemoveTagsRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /*
      <p>The list of tag keys to remove.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>The list of tag keys to remove.</p>
     */
-    inline void SetTags(const Aws::Vector<TagKeyOnly>& value) { m_tags = value; }
+    inline void SetTags(const Aws::Vector<TagKeyOnly>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
      <p>The list of tag keys to remove.</p>
@@ -76,11 +76,13 @@ namespace Model
     /*
      <p>The list of tag keys to remove.</p>
     */
-    inline RemoveTagsRequest& AddTags(const TagKeyOnly& value) { m_tags.push_back(value); return *this; }
+    inline RemoveTagsRequest& AddTags(const TagKeyOnly& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_loadBalancerNames;
+    bool m_loadBalancerNamesHasBeenSet;
     Aws::Vector<TagKeyOnly> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

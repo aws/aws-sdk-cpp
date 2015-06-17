@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The Elastic IP address.</p>
     */
-    inline void SetElasticIp(const Aws::String& value) { m_elasticIp = value; }
+    inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /*
      <p>The Elastic IP address.</p>
     */
-    inline void SetElasticIp(const char* value) { m_elasticIp.assign(value); }
+    inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /*
      <p>The Elastic IP address.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -85,7 +85,9 @@ namespace Model
 
   private:
     Aws::String m_elasticIp;
+    bool m_elasticIpHasBeenSet;
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
   };
 
 } // namespace Model

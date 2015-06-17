@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutRetentionPolicyRequest::PutRetentionPolicyRequest() : 
-    m_retentionInDays(0)
+    m_logGroupNameHasBeenSet(false),
+    m_retentionInDays(0),
+    m_retentionInDaysHasBeenSet(false)
 {
 }
 
@@ -30,9 +32,17 @@ Aws::String PutRetentionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
 
-  payload.WithInteger("retentionInDays", m_retentionInDays);
+  }
+
+  if(m_retentionInDaysHasBeenSet)
+  {
+   payload.WithInteger("retentionInDays", m_retentionInDays);
+
+  }
 
   return payload.WriteReadable();
 }

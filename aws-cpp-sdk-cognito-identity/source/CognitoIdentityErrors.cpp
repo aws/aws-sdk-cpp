@@ -27,6 +27,7 @@ static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyReque
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int INVALID_IDENTITY_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidIdentityPoolConfigurationException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int EXTERNAL_SERVICE_HASH = HashingUtils::HashString("ExternalServiceException");
 
@@ -68,6 +69,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_IDENTITY_POOL_CONFIGURATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_IDENTITY_POOL_CONFIGURATION), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {

@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListGroupPoliciesRequest::ListGroupPoliciesRequest() : 
+    m_groupNameHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String ListGroupPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListGroupPolicies&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";

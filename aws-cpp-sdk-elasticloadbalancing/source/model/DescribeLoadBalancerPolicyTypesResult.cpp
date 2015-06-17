@@ -41,11 +41,12 @@ DescribeLoadBalancerPolicyTypesResult& DescribeLoadBalancerPolicyTypesResult::op
 
   if(!resultNode.IsNull())
   {
-    XmlNode policyTypeDescriptionsNode = resultNode.FirstChild("PolicyTypeDescriptions");
+    XmlNode policyTypeDescriptionsNodeParent = resultNode.FirstChild("PolicyTypeDescriptions");
+    XmlNode policyTypeDescriptionsNode = policyTypeDescriptionsNodeParent.FirstChild("member");
     while(!policyTypeDescriptionsNode.IsNull())
     {
       m_policyTypeDescriptions.push_back(policyTypeDescriptionsNode);
-      policyTypeDescriptionsNode = policyTypeDescriptionsNode.NextNode("PolicyTypeDescriptions");
+      policyTypeDescriptionsNode = policyTypeDescriptionsNode.NextNode("member");
     }
 
   }

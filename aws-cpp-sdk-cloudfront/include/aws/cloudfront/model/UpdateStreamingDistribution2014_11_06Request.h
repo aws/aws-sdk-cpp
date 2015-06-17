@@ -44,7 +44,7 @@ namespace Model
     /*
      The streaming distribution's configuration information.
     */
-    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfig = value; }
+    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /*
      The streaming distribution's configuration information.
@@ -58,12 +58,12 @@ namespace Model
     /*
      The streaming distribution's id.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The streaming distribution's id.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The streaming distribution's id.
@@ -101,7 +101,9 @@ namespace Model
 
   private:
     StreamingDistributionConfig m_streamingDistributionConfig;
+    bool m_streamingDistributionConfigHasBeenSet;
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

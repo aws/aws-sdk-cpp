@@ -94,13 +94,14 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
       m_licenseModelHasBeenSet = true;
     }
-    XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
+    XmlNode availabilityZoneNodeParent = resultNode.FirstChild("AvailabilityZone");
+    XmlNode availabilityZoneNode = availabilityZoneNodeParent.FirstChild("member");
     if(!availabilityZoneNode.IsNull())
     {
       while(!availabilityZoneNode.IsNull())
       {
         m_availabilityZones.push_back(availabilityZoneNode);
-        availabilityZoneNode = availabilityZoneNode.NextNode("AvailabilityZone");
+        availabilityZoneNode = availabilityZoneNode.NextNode("member");
       }
 
       m_availabilityZonesHasBeenSet = true;

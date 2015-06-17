@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStackProvisioningParametersRequest::DescribeStackProvisioningParametersRequest()
+DescribeStackProvisioningParametersRequest::DescribeStackProvisioningParametersRequest() : 
+    m_stackIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DescribeStackProvisioningParametersRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
+
+  }
 
   return payload.WriteReadable();
 }

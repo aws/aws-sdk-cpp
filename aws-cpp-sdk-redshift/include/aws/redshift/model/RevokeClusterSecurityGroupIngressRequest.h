@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the security Group from which to revoke the ingress rule. </p>
     */
-    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /*
      <p> The name of the security Group from which to revoke the ingress rule. </p>
     */
-    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupName.assign(value); }
+    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
 
     /*
      <p> The name of the security Group from which to revoke the ingress rule. </p>
@@ -132,6 +132,7 @@ namespace Model
 
   private:
     Aws::String m_clusterSecurityGroupName;
+    bool m_clusterSecurityGroupNameHasBeenSet;
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
     Aws::String m_eC2SecurityGroupName;

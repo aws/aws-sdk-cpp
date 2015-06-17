@@ -43,7 +43,7 @@ namespace Model
     /*
      <p>An array of layer IDs.</p>
     */
-    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIds = value; }
+    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
     /*
      <p>An array of layer IDs.</p>
@@ -53,15 +53,16 @@ namespace Model
     /*
      <p>An array of layer IDs.</p>
     */
-    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const Aws::String& value) { m_layerIds.push_back(value); return *this; }
+    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>An array of layer IDs.</p>
     */
-    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const char* value) { m_layerIds.push_back(value); return *this; }
+    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_layerIds;
+    bool m_layerIdsHasBeenSet;
   };
 
 } // namespace Model

@@ -24,6 +24,10 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ServerCertificateMetadata::ServerCertificateMetadata() : 
+    m_pathHasBeenSet(false),
+    m_serverCertificateNameHasBeenSet(false),
+    m_serverCertificateIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false),
     m_expiration(0.0),
@@ -32,6 +36,10 @@ ServerCertificateMetadata::ServerCertificateMetadata() :
 }
 
 ServerCertificateMetadata::ServerCertificateMetadata(const XmlNode& xmlNode) : 
+    m_pathHasBeenSet(false),
+    m_serverCertificateNameHasBeenSet(false),
+    m_serverCertificateIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false),
     m_expiration(0.0),
@@ -47,13 +55,29 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
-    m_path = StringUtils::Trim(pathNode.GetText().c_str());
+    if(!pathNode.IsNull())
+    {
+      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_pathHasBeenSet = true;
+    }
     XmlNode serverCertificateNameNode = resultNode.FirstChild("ServerCertificateName");
-    m_serverCertificateName = StringUtils::Trim(serverCertificateNameNode.GetText().c_str());
+    if(!serverCertificateNameNode.IsNull())
+    {
+      m_serverCertificateName = StringUtils::Trim(serverCertificateNameNode.GetText().c_str());
+      m_serverCertificateNameHasBeenSet = true;
+    }
     XmlNode serverCertificateIdNode = resultNode.FirstChild("ServerCertificateId");
-    m_serverCertificateId = StringUtils::Trim(serverCertificateIdNode.GetText().c_str());
+    if(!serverCertificateIdNode.IsNull())
+    {
+      m_serverCertificateId = StringUtils::Trim(serverCertificateIdNode.GetText().c_str());
+      m_serverCertificateIdHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+    if(!arnNode.IsNull())
+    {
+      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arnHasBeenSet = true;
+    }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
@@ -73,10 +97,22 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
 
 void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << index << locationValue << ".ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
-  oStream << location << index << locationValue << ".ServerCertificateId=" << StringUtils::URLEncode(m_serverCertificateId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_serverCertificateNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  }
+  if(m_serverCertificateIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServerCertificateId=" << StringUtils::URLEncode(m_serverCertificateId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
   if(m_uploadDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadDate=" << m_uploadDate << "&";
@@ -89,10 +125,22 @@ void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char
 
 void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << ".ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
-  oStream << location << ".ServerCertificateId=" << StringUtils::URLEncode(m_serverCertificateId.c_str()) << "&";
-  oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_serverCertificateNameHasBeenSet)
+  {
+      oStream << location << ".ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  }
+  if(m_serverCertificateIdHasBeenSet)
+  {
+      oStream << location << ".ServerCertificateId=" << StringUtils::URLEncode(m_serverCertificateId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
   if(m_uploadDateHasBeenSet)
   {
       oStream << location << ".UploadDate=" << m_uploadDate << "&";

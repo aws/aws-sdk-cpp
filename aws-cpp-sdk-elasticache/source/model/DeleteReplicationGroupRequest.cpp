@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 DeleteReplicationGroupRequest::DeleteReplicationGroupRequest() : 
+    m_replicationGroupIdHasBeenSet(false),
     m_retainPrimaryCluster(false),
     m_retainPrimaryClusterHasBeenSet(false),
     m_finalSnapshotIdentifierHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String DeleteReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteReplicationGroup&";
-  ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  if(m_replicationGroupIdHasBeenSet)
+  {
+    ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
   if(m_retainPrimaryClusterHasBeenSet)
   {
     ss << "RetainPrimaryCluster=" << m_retainPrimaryCluster << "&";

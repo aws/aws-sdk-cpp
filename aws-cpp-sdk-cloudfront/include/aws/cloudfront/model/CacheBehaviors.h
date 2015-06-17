@@ -49,7 +49,7 @@ namespace Model
     /*
      The number of cache behaviors for this distribution.
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      The number of cache behaviors for this distribution.
@@ -77,6 +77,7 @@ namespace Model
 
   private:
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<CacheBehavior> m_items;
     bool m_itemsHasBeenSet;
   };

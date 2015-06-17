@@ -43,11 +43,12 @@ DescribeHsmConfigurationsResult& DescribeHsmConfigurationsResult::operator =(con
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode hsmConfigurationNode = resultNode.FirstChild("HsmConfiguration");
+    XmlNode hsmConfigurationNodeParent = resultNode.FirstChild("HsmConfiguration");
+    XmlNode hsmConfigurationNode = hsmConfigurationNodeParent.FirstChild("member");
     while(!hsmConfigurationNode.IsNull())
     {
       m_hsmConfigurations.push_back(hsmConfigurationNode);
-      hsmConfigurationNode = hsmConfigurationNode.NextNode("HsmConfiguration");
+      hsmConfigurationNode = hsmConfigurationNode.NextNode("member");
     }
 
   }

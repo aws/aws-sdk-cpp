@@ -45,12 +45,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -97,6 +97,7 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::Vector<ParameterValue> m_parameterValues;
     bool m_parameterValuesHasBeenSet;
     double m_startTimestamp;

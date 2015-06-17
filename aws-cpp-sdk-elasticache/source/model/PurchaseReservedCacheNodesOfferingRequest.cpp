@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 PurchaseReservedCacheNodesOfferingRequest::PurchaseReservedCacheNodesOfferingRequest() : 
+    m_reservedCacheNodesOfferingIdHasBeenSet(false),
     m_reservedCacheNodeIdHasBeenSet(false),
     m_cacheNodeCount(0),
     m_cacheNodeCountHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedCacheNodesOffering&";
-  ss << "ReservedCacheNodesOfferingId=" << StringUtils::URLEncode(m_reservedCacheNodesOfferingId.c_str()) << "&";
+  if(m_reservedCacheNodesOfferingIdHasBeenSet)
+  {
+    ss << "ReservedCacheNodesOfferingId=" << StringUtils::URLEncode(m_reservedCacheNodesOfferingId.c_str()) << "&";
+  }
   if(m_reservedCacheNodeIdHasBeenSet)
   {
     ss << "ReservedCacheNodeId=" << StringUtils::URLEncode(m_reservedCacheNodeId.c_str()) << "&";

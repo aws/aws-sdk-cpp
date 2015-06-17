@@ -24,6 +24,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 MetricDatum::MetricDatum() : 
+    m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_timestamp(0.0),
     m_timestampHasBeenSet(false),
@@ -35,6 +36,7 @@ MetricDatum::MetricDatum() :
 }
 
 MetricDatum::MetricDatum(const XmlNode& xmlNode) : 
+    m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_timestamp(0.0),
     m_timestampHasBeenSet(false),
@@ -53,14 +55,19 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
-    XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
+    if(!metricNameNode.IsNull())
+    {
+      m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
+      m_metricNameHasBeenSet = true;
+    }
+    XmlNode dimensionsNodeParent = resultNode.FirstChild("Dimensions");
+    XmlNode dimensionsNode = dimensionsNodeParent.FirstChild("member");
     if(!dimensionsNode.IsNull())
     {
       while(!dimensionsNode.IsNull())
       {
         m_dimensions.push_back(dimensionsNode);
-        dimensionsNode = dimensionsNode.NextNode("Dimensions");
+        dimensionsNode = dimensionsNode.NextNode("member");
       }
 
       m_dimensionsHasBeenSet = true;
@@ -96,7 +103,10 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
 
 void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  if(m_metricNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  }
   if(m_dimensionsHasBeenSet)
   {
       for(auto& item : m_dimensions)
@@ -128,7 +138,10 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
 
 void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  if(m_metricNameHasBeenSet)
+  {
+      oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  }
   if(m_dimensionsHasBeenSet)
   {
       for(auto& item : m_dimensions)

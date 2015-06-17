@@ -94,24 +94,26 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
       m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
       m_sourceTypeHasBeenSet = true;
     }
-    XmlNode sourceIdNode = resultNode.FirstChild("SourceId");
+    XmlNode sourceIdNodeParent = resultNode.FirstChild("SourceId");
+    XmlNode sourceIdNode = sourceIdNodeParent.FirstChild("member");
     if(!sourceIdNode.IsNull())
     {
       while(!sourceIdNode.IsNull())
       {
         m_sourceIdsList.push_back(StringUtils::Trim(sourceIdNode.GetText().c_str()));
-        sourceIdNode = sourceIdNode.NextNode("SourceId");
+        sourceIdNode = sourceIdNode.NextNode("member");
       }
 
       m_sourceIdsListHasBeenSet = true;
     }
-    XmlNode eventCategoryNode = resultNode.FirstChild("EventCategory");
+    XmlNode eventCategoryNodeParent = resultNode.FirstChild("EventCategory");
+    XmlNode eventCategoryNode = eventCategoryNodeParent.FirstChild("member");
     if(!eventCategoryNode.IsNull())
     {
       while(!eventCategoryNode.IsNull())
       {
         m_eventCategoriesList.push_back(StringUtils::Trim(eventCategoryNode.GetText().c_str()));
-        eventCategoryNode = eventCategoryNode.NextNode("EventCategory");
+        eventCategoryNode = eventCategoryNode.NextNode("member");
       }
 
       m_eventCategoriesListHasBeenSet = true;

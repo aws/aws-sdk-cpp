@@ -41,11 +41,12 @@ DescribeConfigurationSettingsResult& DescribeConfigurationSettingsResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode configurationSettingsNode = resultNode.FirstChild("ConfigurationSettings");
+    XmlNode configurationSettingsNodeParent = resultNode.FirstChild("ConfigurationSettings");
+    XmlNode configurationSettingsNode = configurationSettingsNodeParent.FirstChild("member");
     while(!configurationSettingsNode.IsNull())
     {
       m_configurationSettings.push_back(configurationSettingsNode);
-      configurationSettingsNode = configurationSettingsNode.NextNode("ConfigurationSettings");
+      configurationSettingsNode = configurationSettingsNode.NextNode("member");
     }
 
   }

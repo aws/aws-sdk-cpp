@@ -64,13 +64,14 @@ WebsiteConfiguration& WebsiteConfiguration::operator =(const XmlNode& xmlNode)
       m_redirectAllRequestsTo = redirectAllRequestsToNode;
       m_redirectAllRequestsToHasBeenSet = true;
     }
-    XmlNode routingRuleNode = resultNode.FirstChild("RoutingRule");
+    XmlNode routingRuleNodeParent = resultNode.FirstChild("RoutingRule");
+    XmlNode routingRuleNode = routingRuleNodeParent.FirstChild("member");
     if(!routingRuleNode.IsNull())
     {
       while(!routingRuleNode.IsNull())
       {
         m_routingRules.push_back(routingRuleNode);
-        routingRuleNode = routingRuleNode.NextNode("RoutingRule");
+        routingRuleNode = routingRuleNode.NextNode("member");
       }
 
       m_routingRulesHasBeenSet = true;

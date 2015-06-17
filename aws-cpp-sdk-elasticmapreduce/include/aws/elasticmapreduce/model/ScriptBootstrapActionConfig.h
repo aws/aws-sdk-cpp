@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.</p>
     */
-    inline void SetPath(const Aws::String& value) { m_path = value; }
+    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p>Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.</p>
     */
-    inline void SetPath(const char* value) { m_path.assign(value); }
+    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /*
      <p>Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.</p>
@@ -91,6 +91,7 @@ namespace Model
 
   private:
     Aws::String m_path;
+    bool m_pathHasBeenSet;
     Aws::Vector<Aws::String> m_args;
     bool m_argsHasBeenSet;
   };

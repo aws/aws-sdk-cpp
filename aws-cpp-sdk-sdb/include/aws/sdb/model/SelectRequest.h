@@ -40,12 +40,12 @@ namespace Model
     /*
      The expression used to query the domain.
     */
-    inline void SetSelectExpression(const Aws::String& value) { m_selectExpression = value; }
+    inline void SetSelectExpression(const Aws::String& value) { m_selectExpressionHasBeenSet = true; m_selectExpression = value; }
 
     /*
      The expression used to query the domain.
     */
-    inline void SetSelectExpression(const char* value) { m_selectExpression.assign(value); }
+    inline void SetSelectExpression(const char* value) { m_selectExpressionHasBeenSet = true; m_selectExpression.assign(value); }
 
     /*
      The expression used to query the domain.
@@ -97,6 +97,7 @@ namespace Model
 
   private:
     Aws::String m_selectExpression;
+    bool m_selectExpressionHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
     bool m_consistentRead;

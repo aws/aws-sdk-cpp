@@ -19,7 +19,8 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteTagsRequest::DeleteTagsRequest()
+DeleteTagsRequest::DeleteTagsRequest() : 
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,11 +28,14 @@ Aws::String DeleteTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteTags&";
-  unsigned tagsCount = 1;
-  for(auto& item : m_tags)
+  if(m_tagsHasBeenSet)
   {
-    item.OutputToStream(ss, "Tags.", tagsCount, "");
-    tagsCount++;
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.", tagsCount, "");
+      tagsCount++;
+    }
   }
   ss << "Version=2011-01-01";
   return ss.str();

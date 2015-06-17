@@ -75,12 +75,12 @@ namespace Model
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
     */
-    inline void SetDeviceName(const Aws::String& value) { m_deviceName = value; }
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
     */
-    inline void SetDeviceName(const char* value) { m_deviceName.assign(value); }
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /*
      <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
@@ -124,6 +124,7 @@ namespace Model
     Aws::String m_virtualName;
     bool m_virtualNameHasBeenSet;
     Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet;
     Ebs m_ebs;
     bool m_ebsHasBeenSet;
     bool m_noDevice;

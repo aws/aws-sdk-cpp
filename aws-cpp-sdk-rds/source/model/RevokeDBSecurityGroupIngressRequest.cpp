@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 RevokeDBSecurityGroupIngressRequest::RevokeDBSecurityGroupIngressRequest() : 
+    m_dBSecurityGroupNameHasBeenSet(false),
     m_cIDRIPHasBeenSet(false),
     m_eC2SecurityGroupNameHasBeenSet(false),
     m_eC2SecurityGroupIdHasBeenSet(false),
@@ -31,7 +32,10 @@ Aws::String RevokeDBSecurityGroupIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RevokeDBSecurityGroupIngress&";
-  ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
+  if(m_dBSecurityGroupNameHasBeenSet)
+  {
+    ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
+  }
   if(m_cIDRIPHasBeenSet)
   {
     ss << "CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";

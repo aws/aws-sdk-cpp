@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetOpenIdTokenForDeveloperIdentityRequest::GetOpenIdTokenForDeveloperIdentityRequest() : 
+    m_identityPoolIdHasBeenSet(false),
     m_identityIdHasBeenSet(false),
+    m_loginsHasBeenSet(false),
     m_tokenDuration(0),
     m_tokenDurationHasBeenSet(false)
 {
@@ -32,7 +34,11 @@ Aws::String GetOpenIdTokenForDeveloperIdentityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
+  if(m_identityPoolIdHasBeenSet)
+  {
+   payload.WithString("IdentityPoolId", m_identityPoolId);
+
+  }
 
   if(m_identityIdHasBeenSet)
   {
@@ -40,12 +46,16 @@ Aws::String GetOpenIdTokenForDeveloperIdentityRequest::SerializePayload() const
 
   }
 
-  JsonValue loginsJsonMap;
-  for(auto& loginsItem : m_logins)
+  if(m_loginsHasBeenSet)
   {
-    loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+   JsonValue loginsJsonMap;
+   for(auto& loginsItem : m_logins)
+   {
+     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+   }
+   payload.WithObject("Logins", std::move(loginsJsonMap));
+
   }
-  payload.WithObject("Logins", std::move(loginsJsonMap));
 
   if(m_tokenDurationHasBeenSet)
   {

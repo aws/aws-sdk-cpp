@@ -27,7 +27,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a remove tags from on-premises instances operation.</p>
   */
   class AWS_CODEDEPLOY_API RemoveTagsFromOnPremisesInstancesRequest : public codedeployRequest
   {
@@ -38,52 +37,36 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    */
+    
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    /*
-     <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    */
+    
     inline RemoveTagsFromOnPremisesInstancesRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    */
-    inline RemoveTagsFromOnPremisesInstancesRequest& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    
+    inline RemoveTagsFromOnPremisesInstancesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to remove tags from.</p>
-    */
+    
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
-    /*
-     <p>The names of the on-premises instances to remove tags from.</p>
-    */
-    inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNames = value; }
+    
+    inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
-    /*
-     <p>The names of the on-premises instances to remove tags from.</p>
-    */
+    
     inline RemoveTagsFromOnPremisesInstancesRequest&  WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
 
-    /*
-     <p>The names of the on-premises instances to remove tags from.</p>
-    */
-    inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNames.push_back(value); return *this; }
+    
+    inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to remove tags from.</p>
-    */
-    inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNames.push_back(value); return *this; }
+    
+    inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
   private:
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
     Aws::Vector<Aws::String> m_instanceNames;
+    bool m_instanceNamesHasBeenSet;
   };
 
 } // namespace Model

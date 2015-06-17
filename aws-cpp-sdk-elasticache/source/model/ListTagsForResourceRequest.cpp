@@ -19,7 +19,8 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest()
+ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListTagsForResource&";
-  ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  if(m_resourceNameHasBeenSet)
+  {
+    ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

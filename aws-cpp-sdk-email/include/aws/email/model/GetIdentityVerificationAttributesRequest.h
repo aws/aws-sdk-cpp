@@ -42,7 +42,7 @@ namespace Model
     /*
      <p>A list of identities.</p>
     */
-    inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identities = value; }
+    inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
     /*
      <p>A list of identities.</p>
@@ -52,15 +52,16 @@ namespace Model
     /*
      <p>A list of identities.</p>
     */
-    inline GetIdentityVerificationAttributesRequest& AddIdentities(const Aws::String& value) { m_identities.push_back(value); return *this; }
+    inline GetIdentityVerificationAttributesRequest& AddIdentities(const Aws::String& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
     /*
      <p>A list of identities.</p>
     */
-    inline GetIdentityVerificationAttributesRequest& AddIdentities(const char* value) { m_identities.push_back(value); return *this; }
+    inline GetIdentityVerificationAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_identities;
+    bool m_identitiesHasBeenSet;
   };
 
 } // namespace Model

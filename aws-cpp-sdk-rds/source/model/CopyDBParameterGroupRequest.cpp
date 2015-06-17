@@ -20,6 +20,9 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CopyDBParameterGroupRequest::CopyDBParameterGroupRequest() : 
+    m_sourceDBParameterGroupIdentifierHasBeenSet(false),
+    m_targetDBParameterGroupIdentifierHasBeenSet(false),
+    m_targetDBParameterGroupDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,9 +31,18 @@ Aws::String CopyDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopyDBParameterGroup&";
-  ss << "SourceDBParameterGroupIdentifier=" << StringUtils::URLEncode(m_sourceDBParameterGroupIdentifier.c_str()) << "&";
-  ss << "TargetDBParameterGroupIdentifier=" << StringUtils::URLEncode(m_targetDBParameterGroupIdentifier.c_str()) << "&";
-  ss << "TargetDBParameterGroupDescription=" << StringUtils::URLEncode(m_targetDBParameterGroupDescription.c_str()) << "&";
+  if(m_sourceDBParameterGroupIdentifierHasBeenSet)
+  {
+    ss << "SourceDBParameterGroupIdentifier=" << StringUtils::URLEncode(m_sourceDBParameterGroupIdentifier.c_str()) << "&";
+  }
+  if(m_targetDBParameterGroupIdentifierHasBeenSet)
+  {
+    ss << "TargetDBParameterGroupIdentifier=" << StringUtils::URLEncode(m_targetDBParameterGroupIdentifier.c_str()) << "&";
+  }
+  if(m_targetDBParameterGroupDescriptionHasBeenSet)
+  {
+    ss << "TargetDBParameterGroupDescription=" << StringUtils::URLEncode(m_targetDBParameterGroupDescription.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

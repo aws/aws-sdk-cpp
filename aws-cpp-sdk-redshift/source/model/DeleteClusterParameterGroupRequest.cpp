@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteClusterParameterGroupRequest::DeleteClusterParameterGroupRequest()
+DeleteClusterParameterGroupRequest::DeleteClusterParameterGroupRequest() : 
+    m_parameterGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteClusterParameterGroup&";
-  ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  if(m_parameterGroupNameHasBeenSet)
+  {
+    ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

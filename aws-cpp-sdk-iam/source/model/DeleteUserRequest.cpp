@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteUserRequest::DeleteUserRequest()
+DeleteUserRequest::DeleteUserRequest() : 
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteUser&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -20,6 +20,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 CreateClusterSecurityGroupRequest::CreateClusterSecurityGroupRequest() : 
+    m_clusterSecurityGroupNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateClusterSecurityGroup&";
-  ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
-  ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if(m_clusterSecurityGroupNameHasBeenSet)
+  {
+    ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

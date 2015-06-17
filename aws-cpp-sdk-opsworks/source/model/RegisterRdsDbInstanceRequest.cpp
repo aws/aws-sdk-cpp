@@ -21,7 +21,11 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterRdsDbInstanceRequest::RegisterRdsDbInstanceRequest()
+RegisterRdsDbInstanceRequest::RegisterRdsDbInstanceRequest() : 
+    m_stackIdHasBeenSet(false),
+    m_rdsDbInstanceArnHasBeenSet(false),
+    m_dbUserHasBeenSet(false),
+    m_dbPasswordHasBeenSet(false)
 {
 }
 
@@ -29,13 +33,29 @@ Aws::String RegisterRdsDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
 
-  payload.WithString("RdsDbInstanceArn", m_rdsDbInstanceArn);
+  }
 
-  payload.WithString("DbUser", m_dbUser);
+  if(m_rdsDbInstanceArnHasBeenSet)
+  {
+   payload.WithString("RdsDbInstanceArn", m_rdsDbInstanceArn);
 
-  payload.WithString("DbPassword", m_dbPassword);
+  }
+
+  if(m_dbUserHasBeenSet)
+  {
+   payload.WithString("DbUser", m_dbUser);
+
+  }
+
+  if(m_dbPasswordHasBeenSet)
+  {
+   payload.WithString("DbPassword", m_dbPassword);
+
+  }
 
   return payload.WriteReadable();
 }

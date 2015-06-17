@@ -20,6 +20,8 @@ using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
 DeleteAttributesRequest::DeleteAttributesRequest() : 
+    m_domainNameHasBeenSet(false),
+    m_itemNameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_expectedHasBeenSet(false)
 {
@@ -29,8 +31,14 @@ Aws::String DeleteAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteAttributes&";
-  ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
-  ss << "ItemName=" << StringUtils::URLEncode(m_itemName.c_str()) << "&";
+  if(m_domainNameHasBeenSet)
+  {
+    ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
+  }
+  if(m_itemNameHasBeenSet)
+  {
+    ss << "ItemName=" << StringUtils::URLEncode(m_itemName.c_str()) << "&";
+  }
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;

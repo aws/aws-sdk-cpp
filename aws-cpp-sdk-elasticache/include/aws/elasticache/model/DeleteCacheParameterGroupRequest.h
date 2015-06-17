@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
     */
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
     */
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /*
      <p>The name of the cache parameter group to delete.</p> <note>The specified cache security group must not be associated with any cache clusters.</note>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_cacheParameterGroupName;
+    bool m_cacheParameterGroupNameHasBeenSet;
   };
 
 } // namespace Model

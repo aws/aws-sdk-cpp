@@ -21,7 +21,10 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AbortMultipartUploadRequest::AbortMultipartUploadRequest()
+AbortMultipartUploadRequest::AbortMultipartUploadRequest() : 
+    m_accountIdHasBeenSet(false),
+    m_vaultNameHasBeenSet(false),
+    m_uploadIdHasBeenSet(false)
 {
 }
 

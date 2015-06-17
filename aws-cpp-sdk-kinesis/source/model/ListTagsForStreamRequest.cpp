@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListTagsForStreamRequest::ListTagsForStreamRequest() : 
+    m_streamNameHasBeenSet(false),
     m_exclusiveStartTagKeyHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false)
@@ -32,7 +33,11 @@ Aws::String ListTagsForStreamRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
+
+  }
 
   if(m_exclusiveStartTagKeyHasBeenSet)
   {

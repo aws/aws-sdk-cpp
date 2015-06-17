@@ -68,12 +68,12 @@ namespace Model
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
-    inline void SetServiceName(const Aws::String& value) { m_serviceName = value; }
+    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
-    inline void SetServiceName(const char* value) { m_serviceName.assign(value); }
+    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /*
      <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
@@ -92,12 +92,12 @@ namespace Model
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service.</p>
     */
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinition = value; }
+    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service.</p>
     */
-    inline void SetTaskDefinition(const char* value) { m_taskDefinition.assign(value); }
+    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run in your service.</p>
@@ -135,7 +135,7 @@ namespace Model
     /*
      <p>The number of instantiations of the specified task definition that you would like to place and keep running on your cluster.</p>
     */
-    inline void SetDesiredCount(long value) { m_desiredCount = value; }
+    inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /*
      <p>The number of instantiations of the specified task definition that you would like to place and keep running on your cluster.</p>
@@ -194,10 +194,13 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet;
     Aws::String m_taskDefinition;
+    bool m_taskDefinitionHasBeenSet;
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
     long m_desiredCount;
+    bool m_desiredCountHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
     Aws::String m_role;

@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() : 
+    m_familyHasBeenSet(false),
+    m_containerDefinitionsHasBeenSet(false),
     m_volumesHasBeenSet(false)
 {
 }
@@ -30,14 +32,22 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("family", m_family);
-
-  Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
-  for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
+  if(m_familyHasBeenSet)
   {
-    containerDefinitionsJsonList[containerDefinitionsIndex].AsObject(m_containerDefinitions[containerDefinitionsIndex].Jsonize());
+   payload.WithString("family", m_family);
+
   }
-  payload.WithArray("containerDefinitions", std::move(containerDefinitionsJsonList));
+
+  if(m_containerDefinitionsHasBeenSet)
+  {
+   Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
+   for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
+   {
+     containerDefinitionsJsonList[containerDefinitionsIndex].AsObject(m_containerDefinitions[containerDefinitionsIndex].Jsonize());
+   }
+   payload.WithArray("containerDefinitions", std::move(containerDefinitionsJsonList));
+
+  }
 
   if(m_volumesHasBeenSet)
   {

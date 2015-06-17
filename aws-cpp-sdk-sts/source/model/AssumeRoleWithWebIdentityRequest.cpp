@@ -20,6 +20,9 @@ using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
 AssumeRoleWithWebIdentityRequest::AssumeRoleWithWebIdentityRequest() : 
+    m_roleArnHasBeenSet(false),
+    m_roleSessionNameHasBeenSet(false),
+    m_webIdentityTokenHasBeenSet(false),
     m_providerIdHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
@@ -31,9 +34,18 @@ Aws::String AssumeRoleWithWebIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssumeRoleWithWebIdentity&";
-  ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
-  ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
-  ss << "WebIdentityToken=" << StringUtils::URLEncode(m_webIdentityToken.c_str()) << "&";
+  if(m_roleArnHasBeenSet)
+  {
+    ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+  }
+  if(m_roleSessionNameHasBeenSet)
+  {
+    ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
+  }
+  if(m_webIdentityTokenHasBeenSet)
+  {
+    ss << "WebIdentityToken=" << StringUtils::URLEncode(m_webIdentityToken.c_str()) << "&";
+  }
   if(m_providerIdHasBeenSet)
   {
     ss << "ProviderId=" << StringUtils::URLEncode(m_providerId.c_str()) << "&";

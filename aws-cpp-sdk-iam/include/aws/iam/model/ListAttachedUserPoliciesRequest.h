@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
@@ -121,6 +121,7 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
     Aws::String m_marker;

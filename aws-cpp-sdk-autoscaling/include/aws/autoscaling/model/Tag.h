@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>The tag key.</p>
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The tag key.</p>
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      <p>The tag key.</p>
@@ -159,6 +159,7 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_value;
     bool m_valueHasBeenSet;
     bool m_propagateAtLaunch;

@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 
 CustomErrorResponse::CustomErrorResponse() : 
     m_errorCode(0),
+    m_errorCodeHasBeenSet(false),
     m_responsePagePathHasBeenSet(false),
     m_responseCodeHasBeenSet(false),
     m_errorCachingMinTTL(0),
@@ -34,6 +35,7 @@ CustomErrorResponse::CustomErrorResponse() :
 
 CustomErrorResponse::CustomErrorResponse(const XmlNode& xmlNode) : 
     m_errorCode(0),
+    m_errorCodeHasBeenSet(false),
     m_responsePagePathHasBeenSet(false),
     m_responseCodeHasBeenSet(false),
     m_errorCachingMinTTL(0),
@@ -49,7 +51,11 @@ CustomErrorResponse& CustomErrorResponse::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
-    m_errorCode = StringUtils::ConvertToInt32(StringUtils::Trim(errorCodeNode.GetText().c_str()).c_str());
+    if(!errorCodeNode.IsNull())
+    {
+      m_errorCode = StringUtils::ConvertToInt32(StringUtils::Trim(errorCodeNode.GetText().c_str()).c_str());
+      m_errorCodeHasBeenSet = true;
+    }
     XmlNode responsePagePathNode = resultNode.FirstChild("ResponsePagePath");
     if(!responsePagePathNode.IsNull())
     {
@@ -76,10 +82,14 @@ CustomErrorResponse& CustomErrorResponse::operator =(const XmlNode& xmlNode)
 void CustomErrorResponse::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode errorCodeNode = parentNode.CreateChildElement("ErrorCode");
+  if(m_errorCodeHasBeenSet)
+  {
+   XmlNode errorCodeNode = parentNode.CreateChildElement("ErrorCode");
   ss << m_errorCode;
-  errorCodeNode.SetText(ss.str());
+   errorCodeNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_responsePagePathHasBeenSet)
   {
    XmlNode responsePagePathNode = parentNode.CreateChildElement("ResponsePagePath");

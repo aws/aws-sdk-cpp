@@ -19,7 +19,8 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetPlatformApplicationAttributesRequest::GetPlatformApplicationAttributesRequest()
+GetPlatformApplicationAttributesRequest::GetPlatformApplicationAttributesRequest() : 
+    m_platformApplicationArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetPlatformApplicationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetPlatformApplicationAttributes&";
-  ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
+  if(m_platformApplicationArnHasBeenSet)
+  {
+    ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

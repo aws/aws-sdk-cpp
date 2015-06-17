@@ -167,14 +167,14 @@ AddSourceIdentifierToSubscriptionOutcomeCallable RDSClient::AddSourceIdentifierT
   return std::async(std::launch::async, &RDSClient::AddSourceIdentifierToSubscription, this, request);
 }
 
-void RDSClient::AddSourceIdentifierToSubscriptionAsync(const AddSourceIdentifierToSubscriptionRequest& request) const
+void RDSClient::AddSourceIdentifierToSubscriptionAsync(const AddSourceIdentifierToSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::AddSourceIdentifierToSubscriptionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::AddSourceIdentifierToSubscriptionAsyncHelper, this, request, context);
 }
 
-void RDSClient::AddSourceIdentifierToSubscriptionAsyncHelper(const AddSourceIdentifierToSubscriptionRequest& request) const
+void RDSClient::AddSourceIdentifierToSubscriptionAsyncHelper(const AddSourceIdentifierToSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddSourceIdentifierToSubscriptionOutcomeReceived(this, request, AddSourceIdentifierToSubscription(request));
+  m_onAddSourceIdentifierToSubscriptionOutcomeReceived(this, request, AddSourceIdentifierToSubscription(request), context);
 }
 
 AddTagsToResourceOutcome RDSClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
@@ -198,14 +198,14 @@ AddTagsToResourceOutcomeCallable RDSClient::AddTagsToResourceCallable(const AddT
   return std::async(std::launch::async, &RDSClient::AddTagsToResource, this, request);
 }
 
-void RDSClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request) const
+void RDSClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::AddTagsToResourceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::AddTagsToResourceAsyncHelper, this, request, context);
 }
 
-void RDSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request) const
+void RDSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddTagsToResourceOutcomeReceived(this, request, AddTagsToResource(request));
+  m_onAddTagsToResourceOutcomeReceived(this, request, AddTagsToResource(request), context);
 }
 
 ApplyPendingMaintenanceActionOutcome RDSClient::ApplyPendingMaintenanceAction(const ApplyPendingMaintenanceActionRequest& request) const
@@ -229,14 +229,14 @@ ApplyPendingMaintenanceActionOutcomeCallable RDSClient::ApplyPendingMaintenanceA
   return std::async(std::launch::async, &RDSClient::ApplyPendingMaintenanceAction, this, request);
 }
 
-void RDSClient::ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequest& request) const
+void RDSClient::ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ApplyPendingMaintenanceActionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ApplyPendingMaintenanceActionAsyncHelper, this, request, context);
 }
 
-void RDSClient::ApplyPendingMaintenanceActionAsyncHelper(const ApplyPendingMaintenanceActionRequest& request) const
+void RDSClient::ApplyPendingMaintenanceActionAsyncHelper(const ApplyPendingMaintenanceActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onApplyPendingMaintenanceActionOutcomeReceived(this, request, ApplyPendingMaintenanceAction(request));
+  m_onApplyPendingMaintenanceActionOutcomeReceived(this, request, ApplyPendingMaintenanceAction(request), context);
 }
 
 AuthorizeDBSecurityGroupIngressOutcome RDSClient::AuthorizeDBSecurityGroupIngress(const AuthorizeDBSecurityGroupIngressRequest& request) const
@@ -260,14 +260,14 @@ AuthorizeDBSecurityGroupIngressOutcomeCallable RDSClient::AuthorizeDBSecurityGro
   return std::async(std::launch::async, &RDSClient::AuthorizeDBSecurityGroupIngress, this, request);
 }
 
-void RDSClient::AuthorizeDBSecurityGroupIngressAsync(const AuthorizeDBSecurityGroupIngressRequest& request) const
+void RDSClient::AuthorizeDBSecurityGroupIngressAsync(const AuthorizeDBSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper, this, request, context);
 }
 
-void RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper(const AuthorizeDBSecurityGroupIngressRequest& request) const
+void RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper(const AuthorizeDBSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAuthorizeDBSecurityGroupIngressOutcomeReceived(this, request, AuthorizeDBSecurityGroupIngress(request));
+  m_onAuthorizeDBSecurityGroupIngressOutcomeReceived(this, request, AuthorizeDBSecurityGroupIngress(request), context);
 }
 
 CopyDBParameterGroupOutcome RDSClient::CopyDBParameterGroup(const CopyDBParameterGroupRequest& request) const
@@ -291,14 +291,14 @@ CopyDBParameterGroupOutcomeCallable RDSClient::CopyDBParameterGroupCallable(cons
   return std::async(std::launch::async, &RDSClient::CopyDBParameterGroup, this, request);
 }
 
-void RDSClient::CopyDBParameterGroupAsync(const CopyDBParameterGroupRequest& request) const
+void RDSClient::CopyDBParameterGroupAsync(const CopyDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CopyDBParameterGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CopyDBParameterGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::CopyDBParameterGroupAsyncHelper(const CopyDBParameterGroupRequest& request) const
+void RDSClient::CopyDBParameterGroupAsyncHelper(const CopyDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCopyDBParameterGroupOutcomeReceived(this, request, CopyDBParameterGroup(request));
+  m_onCopyDBParameterGroupOutcomeReceived(this, request, CopyDBParameterGroup(request), context);
 }
 
 CopyDBSnapshotOutcome RDSClient::CopyDBSnapshot(const CopyDBSnapshotRequest& request) const
@@ -322,14 +322,14 @@ CopyDBSnapshotOutcomeCallable RDSClient::CopyDBSnapshotCallable(const CopyDBSnap
   return std::async(std::launch::async, &RDSClient::CopyDBSnapshot, this, request);
 }
 
-void RDSClient::CopyDBSnapshotAsync(const CopyDBSnapshotRequest& request) const
+void RDSClient::CopyDBSnapshotAsync(const CopyDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CopyDBSnapshotAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CopyDBSnapshotAsyncHelper, this, request, context);
 }
 
-void RDSClient::CopyDBSnapshotAsyncHelper(const CopyDBSnapshotRequest& request) const
+void RDSClient::CopyDBSnapshotAsyncHelper(const CopyDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCopyDBSnapshotOutcomeReceived(this, request, CopyDBSnapshot(request));
+  m_onCopyDBSnapshotOutcomeReceived(this, request, CopyDBSnapshot(request), context);
 }
 
 CopyOptionGroupOutcome RDSClient::CopyOptionGroup(const CopyOptionGroupRequest& request) const
@@ -353,14 +353,14 @@ CopyOptionGroupOutcomeCallable RDSClient::CopyOptionGroupCallable(const CopyOpti
   return std::async(std::launch::async, &RDSClient::CopyOptionGroup, this, request);
 }
 
-void RDSClient::CopyOptionGroupAsync(const CopyOptionGroupRequest& request) const
+void RDSClient::CopyOptionGroupAsync(const CopyOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CopyOptionGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CopyOptionGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::CopyOptionGroupAsyncHelper(const CopyOptionGroupRequest& request) const
+void RDSClient::CopyOptionGroupAsyncHelper(const CopyOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCopyOptionGroupOutcomeReceived(this, request, CopyOptionGroup(request));
+  m_onCopyOptionGroupOutcomeReceived(this, request, CopyOptionGroup(request), context);
 }
 
 CreateDBInstanceOutcome RDSClient::CreateDBInstance(const CreateDBInstanceRequest& request) const
@@ -384,14 +384,14 @@ CreateDBInstanceOutcomeCallable RDSClient::CreateDBInstanceCallable(const Create
   return std::async(std::launch::async, &RDSClient::CreateDBInstance, this, request);
 }
 
-void RDSClient::CreateDBInstanceAsync(const CreateDBInstanceRequest& request) const
+void RDSClient::CreateDBInstanceAsync(const CreateDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBInstanceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateDBInstanceAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateDBInstanceAsyncHelper(const CreateDBInstanceRequest& request) const
+void RDSClient::CreateDBInstanceAsyncHelper(const CreateDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDBInstanceOutcomeReceived(this, request, CreateDBInstance(request));
+  m_onCreateDBInstanceOutcomeReceived(this, request, CreateDBInstance(request), context);
 }
 
 CreateDBInstanceReadReplicaOutcome RDSClient::CreateDBInstanceReadReplica(const CreateDBInstanceReadReplicaRequest& request) const
@@ -415,14 +415,14 @@ CreateDBInstanceReadReplicaOutcomeCallable RDSClient::CreateDBInstanceReadReplic
   return std::async(std::launch::async, &RDSClient::CreateDBInstanceReadReplica, this, request);
 }
 
-void RDSClient::CreateDBInstanceReadReplicaAsync(const CreateDBInstanceReadReplicaRequest& request) const
+void RDSClient::CreateDBInstanceReadReplicaAsync(const CreateDBInstanceReadReplicaRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBInstanceReadReplicaAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateDBInstanceReadReplicaAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateDBInstanceReadReplicaAsyncHelper(const CreateDBInstanceReadReplicaRequest& request) const
+void RDSClient::CreateDBInstanceReadReplicaAsyncHelper(const CreateDBInstanceReadReplicaRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDBInstanceReadReplicaOutcomeReceived(this, request, CreateDBInstanceReadReplica(request));
+  m_onCreateDBInstanceReadReplicaOutcomeReceived(this, request, CreateDBInstanceReadReplica(request), context);
 }
 
 CreateDBParameterGroupOutcome RDSClient::CreateDBParameterGroup(const CreateDBParameterGroupRequest& request) const
@@ -446,14 +446,14 @@ CreateDBParameterGroupOutcomeCallable RDSClient::CreateDBParameterGroupCallable(
   return std::async(std::launch::async, &RDSClient::CreateDBParameterGroup, this, request);
 }
 
-void RDSClient::CreateDBParameterGroupAsync(const CreateDBParameterGroupRequest& request) const
+void RDSClient::CreateDBParameterGroupAsync(const CreateDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBParameterGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateDBParameterGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateDBParameterGroupAsyncHelper(const CreateDBParameterGroupRequest& request) const
+void RDSClient::CreateDBParameterGroupAsyncHelper(const CreateDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDBParameterGroupOutcomeReceived(this, request, CreateDBParameterGroup(request));
+  m_onCreateDBParameterGroupOutcomeReceived(this, request, CreateDBParameterGroup(request), context);
 }
 
 CreateDBSecurityGroupOutcome RDSClient::CreateDBSecurityGroup(const CreateDBSecurityGroupRequest& request) const
@@ -477,14 +477,14 @@ CreateDBSecurityGroupOutcomeCallable RDSClient::CreateDBSecurityGroupCallable(co
   return std::async(std::launch::async, &RDSClient::CreateDBSecurityGroup, this, request);
 }
 
-void RDSClient::CreateDBSecurityGroupAsync(const CreateDBSecurityGroupRequest& request) const
+void RDSClient::CreateDBSecurityGroupAsync(const CreateDBSecurityGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBSecurityGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateDBSecurityGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateDBSecurityGroupAsyncHelper(const CreateDBSecurityGroupRequest& request) const
+void RDSClient::CreateDBSecurityGroupAsyncHelper(const CreateDBSecurityGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDBSecurityGroupOutcomeReceived(this, request, CreateDBSecurityGroup(request));
+  m_onCreateDBSecurityGroupOutcomeReceived(this, request, CreateDBSecurityGroup(request), context);
 }
 
 CreateDBSnapshotOutcome RDSClient::CreateDBSnapshot(const CreateDBSnapshotRequest& request) const
@@ -508,14 +508,14 @@ CreateDBSnapshotOutcomeCallable RDSClient::CreateDBSnapshotCallable(const Create
   return std::async(std::launch::async, &RDSClient::CreateDBSnapshot, this, request);
 }
 
-void RDSClient::CreateDBSnapshotAsync(const CreateDBSnapshotRequest& request) const
+void RDSClient::CreateDBSnapshotAsync(const CreateDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBSnapshotAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateDBSnapshotAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateDBSnapshotAsyncHelper(const CreateDBSnapshotRequest& request) const
+void RDSClient::CreateDBSnapshotAsyncHelper(const CreateDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDBSnapshotOutcomeReceived(this, request, CreateDBSnapshot(request));
+  m_onCreateDBSnapshotOutcomeReceived(this, request, CreateDBSnapshot(request), context);
 }
 
 CreateDBSubnetGroupOutcome RDSClient::CreateDBSubnetGroup(const CreateDBSubnetGroupRequest& request) const
@@ -539,14 +539,14 @@ CreateDBSubnetGroupOutcomeCallable RDSClient::CreateDBSubnetGroupCallable(const 
   return std::async(std::launch::async, &RDSClient::CreateDBSubnetGroup, this, request);
 }
 
-void RDSClient::CreateDBSubnetGroupAsync(const CreateDBSubnetGroupRequest& request) const
+void RDSClient::CreateDBSubnetGroupAsync(const CreateDBSubnetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBSubnetGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateDBSubnetGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateDBSubnetGroupAsyncHelper(const CreateDBSubnetGroupRequest& request) const
+void RDSClient::CreateDBSubnetGroupAsyncHelper(const CreateDBSubnetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDBSubnetGroupOutcomeReceived(this, request, CreateDBSubnetGroup(request));
+  m_onCreateDBSubnetGroupOutcomeReceived(this, request, CreateDBSubnetGroup(request), context);
 }
 
 CreateEventSubscriptionOutcome RDSClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const
@@ -570,14 +570,14 @@ CreateEventSubscriptionOutcomeCallable RDSClient::CreateEventSubscriptionCallabl
   return std::async(std::launch::async, &RDSClient::CreateEventSubscription, this, request);
 }
 
-void RDSClient::CreateEventSubscriptionAsync(const CreateEventSubscriptionRequest& request) const
+void RDSClient::CreateEventSubscriptionAsync(const CreateEventSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateEventSubscriptionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateEventSubscriptionAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscriptionRequest& request) const
+void RDSClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateEventSubscriptionOutcomeReceived(this, request, CreateEventSubscription(request));
+  m_onCreateEventSubscriptionOutcomeReceived(this, request, CreateEventSubscription(request), context);
 }
 
 CreateOptionGroupOutcome RDSClient::CreateOptionGroup(const CreateOptionGroupRequest& request) const
@@ -601,14 +601,14 @@ CreateOptionGroupOutcomeCallable RDSClient::CreateOptionGroupCallable(const Crea
   return std::async(std::launch::async, &RDSClient::CreateOptionGroup, this, request);
 }
 
-void RDSClient::CreateOptionGroupAsync(const CreateOptionGroupRequest& request) const
+void RDSClient::CreateOptionGroupAsync(const CreateOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::CreateOptionGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::CreateOptionGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::CreateOptionGroupAsyncHelper(const CreateOptionGroupRequest& request) const
+void RDSClient::CreateOptionGroupAsyncHelper(const CreateOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateOptionGroupOutcomeReceived(this, request, CreateOptionGroup(request));
+  m_onCreateOptionGroupOutcomeReceived(this, request, CreateOptionGroup(request), context);
 }
 
 DeleteDBInstanceOutcome RDSClient::DeleteDBInstance(const DeleteDBInstanceRequest& request) const
@@ -632,14 +632,14 @@ DeleteDBInstanceOutcomeCallable RDSClient::DeleteDBInstanceCallable(const Delete
   return std::async(std::launch::async, &RDSClient::DeleteDBInstance, this, request);
 }
 
-void RDSClient::DeleteDBInstanceAsync(const DeleteDBInstanceRequest& request) const
+void RDSClient::DeleteDBInstanceAsync(const DeleteDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBInstanceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteDBInstanceAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteDBInstanceAsyncHelper(const DeleteDBInstanceRequest& request) const
+void RDSClient::DeleteDBInstanceAsyncHelper(const DeleteDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDBInstanceOutcomeReceived(this, request, DeleteDBInstance(request));
+  m_onDeleteDBInstanceOutcomeReceived(this, request, DeleteDBInstance(request), context);
 }
 
 DeleteDBParameterGroupOutcome RDSClient::DeleteDBParameterGroup(const DeleteDBParameterGroupRequest& request) const
@@ -663,14 +663,14 @@ DeleteDBParameterGroupOutcomeCallable RDSClient::DeleteDBParameterGroupCallable(
   return std::async(std::launch::async, &RDSClient::DeleteDBParameterGroup, this, request);
 }
 
-void RDSClient::DeleteDBParameterGroupAsync(const DeleteDBParameterGroupRequest& request) const
+void RDSClient::DeleteDBParameterGroupAsync(const DeleteDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBParameterGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteDBParameterGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteDBParameterGroupAsyncHelper(const DeleteDBParameterGroupRequest& request) const
+void RDSClient::DeleteDBParameterGroupAsyncHelper(const DeleteDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDBParameterGroupOutcomeReceived(this, request, DeleteDBParameterGroup(request));
+  m_onDeleteDBParameterGroupOutcomeReceived(this, request, DeleteDBParameterGroup(request), context);
 }
 
 DeleteDBSecurityGroupOutcome RDSClient::DeleteDBSecurityGroup(const DeleteDBSecurityGroupRequest& request) const
@@ -694,14 +694,14 @@ DeleteDBSecurityGroupOutcomeCallable RDSClient::DeleteDBSecurityGroupCallable(co
   return std::async(std::launch::async, &RDSClient::DeleteDBSecurityGroup, this, request);
 }
 
-void RDSClient::DeleteDBSecurityGroupAsync(const DeleteDBSecurityGroupRequest& request) const
+void RDSClient::DeleteDBSecurityGroupAsync(const DeleteDBSecurityGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBSecurityGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteDBSecurityGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteDBSecurityGroupAsyncHelper(const DeleteDBSecurityGroupRequest& request) const
+void RDSClient::DeleteDBSecurityGroupAsyncHelper(const DeleteDBSecurityGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDBSecurityGroupOutcomeReceived(this, request, DeleteDBSecurityGroup(request));
+  m_onDeleteDBSecurityGroupOutcomeReceived(this, request, DeleteDBSecurityGroup(request), context);
 }
 
 DeleteDBSnapshotOutcome RDSClient::DeleteDBSnapshot(const DeleteDBSnapshotRequest& request) const
@@ -725,14 +725,14 @@ DeleteDBSnapshotOutcomeCallable RDSClient::DeleteDBSnapshotCallable(const Delete
   return std::async(std::launch::async, &RDSClient::DeleteDBSnapshot, this, request);
 }
 
-void RDSClient::DeleteDBSnapshotAsync(const DeleteDBSnapshotRequest& request) const
+void RDSClient::DeleteDBSnapshotAsync(const DeleteDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBSnapshotAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteDBSnapshotAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteDBSnapshotAsyncHelper(const DeleteDBSnapshotRequest& request) const
+void RDSClient::DeleteDBSnapshotAsyncHelper(const DeleteDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDBSnapshotOutcomeReceived(this, request, DeleteDBSnapshot(request));
+  m_onDeleteDBSnapshotOutcomeReceived(this, request, DeleteDBSnapshot(request), context);
 }
 
 DeleteDBSubnetGroupOutcome RDSClient::DeleteDBSubnetGroup(const DeleteDBSubnetGroupRequest& request) const
@@ -756,14 +756,14 @@ DeleteDBSubnetGroupOutcomeCallable RDSClient::DeleteDBSubnetGroupCallable(const 
   return std::async(std::launch::async, &RDSClient::DeleteDBSubnetGroup, this, request);
 }
 
-void RDSClient::DeleteDBSubnetGroupAsync(const DeleteDBSubnetGroupRequest& request) const
+void RDSClient::DeleteDBSubnetGroupAsync(const DeleteDBSubnetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBSubnetGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteDBSubnetGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteDBSubnetGroupAsyncHelper(const DeleteDBSubnetGroupRequest& request) const
+void RDSClient::DeleteDBSubnetGroupAsyncHelper(const DeleteDBSubnetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDBSubnetGroupOutcomeReceived(this, request, DeleteDBSubnetGroup(request));
+  m_onDeleteDBSubnetGroupOutcomeReceived(this, request, DeleteDBSubnetGroup(request), context);
 }
 
 DeleteEventSubscriptionOutcome RDSClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const
@@ -787,14 +787,14 @@ DeleteEventSubscriptionOutcomeCallable RDSClient::DeleteEventSubscriptionCallabl
   return std::async(std::launch::async, &RDSClient::DeleteEventSubscription, this, request);
 }
 
-void RDSClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequest& request) const
+void RDSClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteEventSubscriptionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteEventSubscriptionAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request) const
+void RDSClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteEventSubscriptionOutcomeReceived(this, request, DeleteEventSubscription(request));
+  m_onDeleteEventSubscriptionOutcomeReceived(this, request, DeleteEventSubscription(request), context);
 }
 
 DeleteOptionGroupOutcome RDSClient::DeleteOptionGroup(const DeleteOptionGroupRequest& request) const
@@ -818,14 +818,14 @@ DeleteOptionGroupOutcomeCallable RDSClient::DeleteOptionGroupCallable(const Dele
   return std::async(std::launch::async, &RDSClient::DeleteOptionGroup, this, request);
 }
 
-void RDSClient::DeleteOptionGroupAsync(const DeleteOptionGroupRequest& request) const
+void RDSClient::DeleteOptionGroupAsync(const DeleteOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DeleteOptionGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DeleteOptionGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::DeleteOptionGroupAsyncHelper(const DeleteOptionGroupRequest& request) const
+void RDSClient::DeleteOptionGroupAsyncHelper(const DeleteOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteOptionGroupOutcomeReceived(this, request, DeleteOptionGroup(request));
+  m_onDeleteOptionGroupOutcomeReceived(this, request, DeleteOptionGroup(request), context);
 }
 
 DescribeAccountAttributesOutcome RDSClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
@@ -849,14 +849,14 @@ DescribeAccountAttributesOutcomeCallable RDSClient::DescribeAccountAttributesCal
   return std::async(std::launch::async, &RDSClient::DescribeAccountAttributes, this, request);
 }
 
-void RDSClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request) const
+void RDSClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeAccountAttributesAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeAccountAttributesAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request) const
+void RDSClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAccountAttributesOutcomeReceived(this, request, DescribeAccountAttributes(request));
+  m_onDescribeAccountAttributesOutcomeReceived(this, request, DescribeAccountAttributes(request), context);
 }
 
 DescribeCertificatesOutcome RDSClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
@@ -880,14 +880,14 @@ DescribeCertificatesOutcomeCallable RDSClient::DescribeCertificatesCallable(cons
   return std::async(std::launch::async, &RDSClient::DescribeCertificates, this, request);
 }
 
-void RDSClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request) const
+void RDSClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeCertificatesAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeCertificatesAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request) const
+void RDSClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeCertificatesOutcomeReceived(this, request, DescribeCertificates(request));
+  m_onDescribeCertificatesOutcomeReceived(this, request, DescribeCertificates(request), context);
 }
 
 DescribeDBEngineVersionsOutcome RDSClient::DescribeDBEngineVersions(const DescribeDBEngineVersionsRequest& request) const
@@ -911,14 +911,14 @@ DescribeDBEngineVersionsOutcomeCallable RDSClient::DescribeDBEngineVersionsCalla
   return std::async(std::launch::async, &RDSClient::DescribeDBEngineVersions, this, request);
 }
 
-void RDSClient::DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsRequest& request) const
+void RDSClient::DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBEngineVersionsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBEngineVersionsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBEngineVersionsAsyncHelper(const DescribeDBEngineVersionsRequest& request) const
+void RDSClient::DescribeDBEngineVersionsAsyncHelper(const DescribeDBEngineVersionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBEngineVersionsOutcomeReceived(this, request, DescribeDBEngineVersions(request));
+  m_onDescribeDBEngineVersionsOutcomeReceived(this, request, DescribeDBEngineVersions(request), context);
 }
 
 DescribeDBInstancesOutcome RDSClient::DescribeDBInstances(const DescribeDBInstancesRequest& request) const
@@ -942,14 +942,14 @@ DescribeDBInstancesOutcomeCallable RDSClient::DescribeDBInstancesCallable(const 
   return std::async(std::launch::async, &RDSClient::DescribeDBInstances, this, request);
 }
 
-void RDSClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request) const
+void RDSClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBInstancesAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBInstancesAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBInstancesAsyncHelper(const DescribeDBInstancesRequest& request) const
+void RDSClient::DescribeDBInstancesAsyncHelper(const DescribeDBInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBInstancesOutcomeReceived(this, request, DescribeDBInstances(request));
+  m_onDescribeDBInstancesOutcomeReceived(this, request, DescribeDBInstances(request), context);
 }
 
 DescribeDBLogFilesOutcome RDSClient::DescribeDBLogFiles(const DescribeDBLogFilesRequest& request) const
@@ -973,14 +973,14 @@ DescribeDBLogFilesOutcomeCallable RDSClient::DescribeDBLogFilesCallable(const De
   return std::async(std::launch::async, &RDSClient::DescribeDBLogFiles, this, request);
 }
 
-void RDSClient::DescribeDBLogFilesAsync(const DescribeDBLogFilesRequest& request) const
+void RDSClient::DescribeDBLogFilesAsync(const DescribeDBLogFilesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBLogFilesAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBLogFilesAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBLogFilesAsyncHelper(const DescribeDBLogFilesRequest& request) const
+void RDSClient::DescribeDBLogFilesAsyncHelper(const DescribeDBLogFilesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBLogFilesOutcomeReceived(this, request, DescribeDBLogFiles(request));
+  m_onDescribeDBLogFilesOutcomeReceived(this, request, DescribeDBLogFiles(request), context);
 }
 
 DescribeDBParameterGroupsOutcome RDSClient::DescribeDBParameterGroups(const DescribeDBParameterGroupsRequest& request) const
@@ -1004,14 +1004,14 @@ DescribeDBParameterGroupsOutcomeCallable RDSClient::DescribeDBParameterGroupsCal
   return std::async(std::launch::async, &RDSClient::DescribeDBParameterGroups, this, request);
 }
 
-void RDSClient::DescribeDBParameterGroupsAsync(const DescribeDBParameterGroupsRequest& request) const
+void RDSClient::DescribeDBParameterGroupsAsync(const DescribeDBParameterGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBParameterGroupsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBParameterGroupsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBParameterGroupsAsyncHelper(const DescribeDBParameterGroupsRequest& request) const
+void RDSClient::DescribeDBParameterGroupsAsyncHelper(const DescribeDBParameterGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBParameterGroupsOutcomeReceived(this, request, DescribeDBParameterGroups(request));
+  m_onDescribeDBParameterGroupsOutcomeReceived(this, request, DescribeDBParameterGroups(request), context);
 }
 
 DescribeDBParametersOutcome RDSClient::DescribeDBParameters(const DescribeDBParametersRequest& request) const
@@ -1035,14 +1035,14 @@ DescribeDBParametersOutcomeCallable RDSClient::DescribeDBParametersCallable(cons
   return std::async(std::launch::async, &RDSClient::DescribeDBParameters, this, request);
 }
 
-void RDSClient::DescribeDBParametersAsync(const DescribeDBParametersRequest& request) const
+void RDSClient::DescribeDBParametersAsync(const DescribeDBParametersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBParametersAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBParametersAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBParametersAsyncHelper(const DescribeDBParametersRequest& request) const
+void RDSClient::DescribeDBParametersAsyncHelper(const DescribeDBParametersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBParametersOutcomeReceived(this, request, DescribeDBParameters(request));
+  m_onDescribeDBParametersOutcomeReceived(this, request, DescribeDBParameters(request), context);
 }
 
 DescribeDBSecurityGroupsOutcome RDSClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest& request) const
@@ -1066,14 +1066,14 @@ DescribeDBSecurityGroupsOutcomeCallable RDSClient::DescribeDBSecurityGroupsCalla
   return std::async(std::launch::async, &RDSClient::DescribeDBSecurityGroups, this, request);
 }
 
-void RDSClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request) const
+void RDSClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSecurityGroupsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBSecurityGroupsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBSecurityGroupsAsyncHelper(const DescribeDBSecurityGroupsRequest& request) const
+void RDSClient::DescribeDBSecurityGroupsAsyncHelper(const DescribeDBSecurityGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBSecurityGroupsOutcomeReceived(this, request, DescribeDBSecurityGroups(request));
+  m_onDescribeDBSecurityGroupsOutcomeReceived(this, request, DescribeDBSecurityGroups(request), context);
 }
 
 DescribeDBSnapshotsOutcome RDSClient::DescribeDBSnapshots(const DescribeDBSnapshotsRequest& request) const
@@ -1097,14 +1097,14 @@ DescribeDBSnapshotsOutcomeCallable RDSClient::DescribeDBSnapshotsCallable(const 
   return std::async(std::launch::async, &RDSClient::DescribeDBSnapshots, this, request);
 }
 
-void RDSClient::DescribeDBSnapshotsAsync(const DescribeDBSnapshotsRequest& request) const
+void RDSClient::DescribeDBSnapshotsAsync(const DescribeDBSnapshotsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSnapshotsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBSnapshotsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBSnapshotsAsyncHelper(const DescribeDBSnapshotsRequest& request) const
+void RDSClient::DescribeDBSnapshotsAsyncHelper(const DescribeDBSnapshotsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBSnapshotsOutcomeReceived(this, request, DescribeDBSnapshots(request));
+  m_onDescribeDBSnapshotsOutcomeReceived(this, request, DescribeDBSnapshots(request), context);
 }
 
 DescribeDBSubnetGroupsOutcome RDSClient::DescribeDBSubnetGroups(const DescribeDBSubnetGroupsRequest& request) const
@@ -1128,14 +1128,14 @@ DescribeDBSubnetGroupsOutcomeCallable RDSClient::DescribeDBSubnetGroupsCallable(
   return std::async(std::launch::async, &RDSClient::DescribeDBSubnetGroups, this, request);
 }
 
-void RDSClient::DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequest& request) const
+void RDSClient::DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSubnetGroupsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeDBSubnetGroupsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeDBSubnetGroupsAsyncHelper(const DescribeDBSubnetGroupsRequest& request) const
+void RDSClient::DescribeDBSubnetGroupsAsyncHelper(const DescribeDBSubnetGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDBSubnetGroupsOutcomeReceived(this, request, DescribeDBSubnetGroups(request));
+  m_onDescribeDBSubnetGroupsOutcomeReceived(this, request, DescribeDBSubnetGroups(request), context);
 }
 
 DescribeEngineDefaultParametersOutcome RDSClient::DescribeEngineDefaultParameters(const DescribeEngineDefaultParametersRequest& request) const
@@ -1159,14 +1159,14 @@ DescribeEngineDefaultParametersOutcomeCallable RDSClient::DescribeEngineDefaultP
   return std::async(std::launch::async, &RDSClient::DescribeEngineDefaultParameters, this, request);
 }
 
-void RDSClient::DescribeEngineDefaultParametersAsync(const DescribeEngineDefaultParametersRequest& request) const
+void RDSClient::DescribeEngineDefaultParametersAsync(const DescribeEngineDefaultParametersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEngineDefaultParametersAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeEngineDefaultParametersAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeEngineDefaultParametersAsyncHelper(const DescribeEngineDefaultParametersRequest& request) const
+void RDSClient::DescribeEngineDefaultParametersAsyncHelper(const DescribeEngineDefaultParametersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEngineDefaultParametersOutcomeReceived(this, request, DescribeEngineDefaultParameters(request));
+  m_onDescribeEngineDefaultParametersOutcomeReceived(this, request, DescribeEngineDefaultParameters(request), context);
 }
 
 DescribeEventCategoriesOutcome RDSClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const
@@ -1190,14 +1190,14 @@ DescribeEventCategoriesOutcomeCallable RDSClient::DescribeEventCategoriesCallabl
   return std::async(std::launch::async, &RDSClient::DescribeEventCategories, this, request);
 }
 
-void RDSClient::DescribeEventCategoriesAsync(const DescribeEventCategoriesRequest& request) const
+void RDSClient::DescribeEventCategoriesAsync(const DescribeEventCategoriesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEventCategoriesAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeEventCategoriesAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCategoriesRequest& request) const
+void RDSClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCategoriesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEventCategoriesOutcomeReceived(this, request, DescribeEventCategories(request));
+  m_onDescribeEventCategoriesOutcomeReceived(this, request, DescribeEventCategories(request), context);
 }
 
 DescribeEventSubscriptionsOutcome RDSClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const
@@ -1221,14 +1221,14 @@ DescribeEventSubscriptionsOutcomeCallable RDSClient::DescribeEventSubscriptionsC
   return std::async(std::launch::async, &RDSClient::DescribeEventSubscriptions, this, request);
 }
 
-void RDSClient::DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequest& request) const
+void RDSClient::DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEventSubscriptionsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeEventSubscriptionsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSubscriptionsRequest& request) const
+void RDSClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSubscriptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEventSubscriptionsOutcomeReceived(this, request, DescribeEventSubscriptions(request));
+  m_onDescribeEventSubscriptionsOutcomeReceived(this, request, DescribeEventSubscriptions(request), context);
 }
 
 DescribeEventsOutcome RDSClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -1252,14 +1252,14 @@ DescribeEventsOutcomeCallable RDSClient::DescribeEventsCallable(const DescribeEv
   return std::async(std::launch::async, &RDSClient::DescribeEvents, this, request);
 }
 
-void RDSClient::DescribeEventsAsync(const DescribeEventsRequest& request) const
+void RDSClient::DescribeEventsAsync(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEventsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeEventsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request) const
+void RDSClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEventsOutcomeReceived(this, request, DescribeEvents(request));
+  m_onDescribeEventsOutcomeReceived(this, request, DescribeEvents(request), context);
 }
 
 DescribeOptionGroupOptionsOutcome RDSClient::DescribeOptionGroupOptions(const DescribeOptionGroupOptionsRequest& request) const
@@ -1283,14 +1283,14 @@ DescribeOptionGroupOptionsOutcomeCallable RDSClient::DescribeOptionGroupOptionsC
   return std::async(std::launch::async, &RDSClient::DescribeOptionGroupOptions, this, request);
 }
 
-void RDSClient::DescribeOptionGroupOptionsAsync(const DescribeOptionGroupOptionsRequest& request) const
+void RDSClient::DescribeOptionGroupOptionsAsync(const DescribeOptionGroupOptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeOptionGroupOptionsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeOptionGroupOptionsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeOptionGroupOptionsAsyncHelper(const DescribeOptionGroupOptionsRequest& request) const
+void RDSClient::DescribeOptionGroupOptionsAsyncHelper(const DescribeOptionGroupOptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeOptionGroupOptionsOutcomeReceived(this, request, DescribeOptionGroupOptions(request));
+  m_onDescribeOptionGroupOptionsOutcomeReceived(this, request, DescribeOptionGroupOptions(request), context);
 }
 
 DescribeOptionGroupsOutcome RDSClient::DescribeOptionGroups(const DescribeOptionGroupsRequest& request) const
@@ -1314,14 +1314,14 @@ DescribeOptionGroupsOutcomeCallable RDSClient::DescribeOptionGroupsCallable(cons
   return std::async(std::launch::async, &RDSClient::DescribeOptionGroups, this, request);
 }
 
-void RDSClient::DescribeOptionGroupsAsync(const DescribeOptionGroupsRequest& request) const
+void RDSClient::DescribeOptionGroupsAsync(const DescribeOptionGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeOptionGroupsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeOptionGroupsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeOptionGroupsAsyncHelper(const DescribeOptionGroupsRequest& request) const
+void RDSClient::DescribeOptionGroupsAsyncHelper(const DescribeOptionGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeOptionGroupsOutcomeReceived(this, request, DescribeOptionGroups(request));
+  m_onDescribeOptionGroupsOutcomeReceived(this, request, DescribeOptionGroups(request), context);
 }
 
 DescribeOrderableDBInstanceOptionsOutcome RDSClient::DescribeOrderableDBInstanceOptions(const DescribeOrderableDBInstanceOptionsRequest& request) const
@@ -1345,14 +1345,14 @@ DescribeOrderableDBInstanceOptionsOutcomeCallable RDSClient::DescribeOrderableDB
   return std::async(std::launch::async, &RDSClient::DescribeOrderableDBInstanceOptions, this, request);
 }
 
-void RDSClient::DescribeOrderableDBInstanceOptionsAsync(const DescribeOrderableDBInstanceOptionsRequest& request) const
+void RDSClient::DescribeOrderableDBInstanceOptionsAsync(const DescribeOrderableDBInstanceOptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper(const DescribeOrderableDBInstanceOptionsRequest& request) const
+void RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper(const DescribeOrderableDBInstanceOptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeOrderableDBInstanceOptionsOutcomeReceived(this, request, DescribeOrderableDBInstanceOptions(request));
+  m_onDescribeOrderableDBInstanceOptionsOutcomeReceived(this, request, DescribeOrderableDBInstanceOptions(request), context);
 }
 
 DescribePendingMaintenanceActionsOutcome RDSClient::DescribePendingMaintenanceActions(const DescribePendingMaintenanceActionsRequest& request) const
@@ -1376,14 +1376,14 @@ DescribePendingMaintenanceActionsOutcomeCallable RDSClient::DescribePendingMaint
   return std::async(std::launch::async, &RDSClient::DescribePendingMaintenanceActions, this, request);
 }
 
-void RDSClient::DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequest& request) const
+void RDSClient::DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribePendingMaintenanceActionsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribePendingMaintenanceActionsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribePendingMaintenanceActionsAsyncHelper(const DescribePendingMaintenanceActionsRequest& request) const
+void RDSClient::DescribePendingMaintenanceActionsAsyncHelper(const DescribePendingMaintenanceActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribePendingMaintenanceActionsOutcomeReceived(this, request, DescribePendingMaintenanceActions(request));
+  m_onDescribePendingMaintenanceActionsOutcomeReceived(this, request, DescribePendingMaintenanceActions(request), context);
 }
 
 DescribeReservedDBInstancesOutcome RDSClient::DescribeReservedDBInstances(const DescribeReservedDBInstancesRequest& request) const
@@ -1407,14 +1407,14 @@ DescribeReservedDBInstancesOutcomeCallable RDSClient::DescribeReservedDBInstance
   return std::async(std::launch::async, &RDSClient::DescribeReservedDBInstances, this, request);
 }
 
-void RDSClient::DescribeReservedDBInstancesAsync(const DescribeReservedDBInstancesRequest& request) const
+void RDSClient::DescribeReservedDBInstancesAsync(const DescribeReservedDBInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeReservedDBInstancesAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeReservedDBInstancesAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeReservedDBInstancesAsyncHelper(const DescribeReservedDBInstancesRequest& request) const
+void RDSClient::DescribeReservedDBInstancesAsyncHelper(const DescribeReservedDBInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeReservedDBInstancesOutcomeReceived(this, request, DescribeReservedDBInstances(request));
+  m_onDescribeReservedDBInstancesOutcomeReceived(this, request, DescribeReservedDBInstances(request), context);
 }
 
 DescribeReservedDBInstancesOfferingsOutcome RDSClient::DescribeReservedDBInstancesOfferings(const DescribeReservedDBInstancesOfferingsRequest& request) const
@@ -1438,14 +1438,14 @@ DescribeReservedDBInstancesOfferingsOutcomeCallable RDSClient::DescribeReservedD
   return std::async(std::launch::async, &RDSClient::DescribeReservedDBInstancesOfferings, this, request);
 }
 
-void RDSClient::DescribeReservedDBInstancesOfferingsAsync(const DescribeReservedDBInstancesOfferingsRequest& request) const
+void RDSClient::DescribeReservedDBInstancesOfferingsAsync(const DescribeReservedDBInstancesOfferingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper, this, request, context);
 }
 
-void RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper(const DescribeReservedDBInstancesOfferingsRequest& request) const
+void RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper(const DescribeReservedDBInstancesOfferingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeReservedDBInstancesOfferingsOutcomeReceived(this, request, DescribeReservedDBInstancesOfferings(request));
+  m_onDescribeReservedDBInstancesOfferingsOutcomeReceived(this, request, DescribeReservedDBInstancesOfferings(request), context);
 }
 
 DownloadDBLogFilePortionOutcome RDSClient::DownloadDBLogFilePortion(const DownloadDBLogFilePortionRequest& request) const
@@ -1469,14 +1469,14 @@ DownloadDBLogFilePortionOutcomeCallable RDSClient::DownloadDBLogFilePortionCalla
   return std::async(std::launch::async, &RDSClient::DownloadDBLogFilePortion, this, request);
 }
 
-void RDSClient::DownloadDBLogFilePortionAsync(const DownloadDBLogFilePortionRequest& request) const
+void RDSClient::DownloadDBLogFilePortionAsync(const DownloadDBLogFilePortionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::DownloadDBLogFilePortionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::DownloadDBLogFilePortionAsyncHelper, this, request, context);
 }
 
-void RDSClient::DownloadDBLogFilePortionAsyncHelper(const DownloadDBLogFilePortionRequest& request) const
+void RDSClient::DownloadDBLogFilePortionAsyncHelper(const DownloadDBLogFilePortionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDownloadDBLogFilePortionOutcomeReceived(this, request, DownloadDBLogFilePortion(request));
+  m_onDownloadDBLogFilePortionOutcomeReceived(this, request, DownloadDBLogFilePortion(request), context);
 }
 
 ListTagsForResourceOutcome RDSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1500,14 +1500,14 @@ ListTagsForResourceOutcomeCallable RDSClient::ListTagsForResourceCallable(const 
   return std::async(std::launch::async, &RDSClient::ListTagsForResource, this, request);
 }
 
-void RDSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request) const
+void RDSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ListTagsForResourceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ListTagsForResourceAsyncHelper, this, request, context);
 }
 
-void RDSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request) const
+void RDSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListTagsForResourceOutcomeReceived(this, request, ListTagsForResource(request));
+  m_onListTagsForResourceOutcomeReceived(this, request, ListTagsForResource(request), context);
 }
 
 ModifyDBInstanceOutcome RDSClient::ModifyDBInstance(const ModifyDBInstanceRequest& request) const
@@ -1531,14 +1531,14 @@ ModifyDBInstanceOutcomeCallable RDSClient::ModifyDBInstanceCallable(const Modify
   return std::async(std::launch::async, &RDSClient::ModifyDBInstance, this, request);
 }
 
-void RDSClient::ModifyDBInstanceAsync(const ModifyDBInstanceRequest& request) const
+void RDSClient::ModifyDBInstanceAsync(const ModifyDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBInstanceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ModifyDBInstanceAsyncHelper, this, request, context);
 }
 
-void RDSClient::ModifyDBInstanceAsyncHelper(const ModifyDBInstanceRequest& request) const
+void RDSClient::ModifyDBInstanceAsyncHelper(const ModifyDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onModifyDBInstanceOutcomeReceived(this, request, ModifyDBInstance(request));
+  m_onModifyDBInstanceOutcomeReceived(this, request, ModifyDBInstance(request), context);
 }
 
 ModifyDBParameterGroupOutcome RDSClient::ModifyDBParameterGroup(const ModifyDBParameterGroupRequest& request) const
@@ -1562,14 +1562,14 @@ ModifyDBParameterGroupOutcomeCallable RDSClient::ModifyDBParameterGroupCallable(
   return std::async(std::launch::async, &RDSClient::ModifyDBParameterGroup, this, request);
 }
 
-void RDSClient::ModifyDBParameterGroupAsync(const ModifyDBParameterGroupRequest& request) const
+void RDSClient::ModifyDBParameterGroupAsync(const ModifyDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBParameterGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ModifyDBParameterGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::ModifyDBParameterGroupAsyncHelper(const ModifyDBParameterGroupRequest& request) const
+void RDSClient::ModifyDBParameterGroupAsyncHelper(const ModifyDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onModifyDBParameterGroupOutcomeReceived(this, request, ModifyDBParameterGroup(request));
+  m_onModifyDBParameterGroupOutcomeReceived(this, request, ModifyDBParameterGroup(request), context);
 }
 
 ModifyDBSubnetGroupOutcome RDSClient::ModifyDBSubnetGroup(const ModifyDBSubnetGroupRequest& request) const
@@ -1593,14 +1593,14 @@ ModifyDBSubnetGroupOutcomeCallable RDSClient::ModifyDBSubnetGroupCallable(const 
   return std::async(std::launch::async, &RDSClient::ModifyDBSubnetGroup, this, request);
 }
 
-void RDSClient::ModifyDBSubnetGroupAsync(const ModifyDBSubnetGroupRequest& request) const
+void RDSClient::ModifyDBSubnetGroupAsync(const ModifyDBSubnetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBSubnetGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ModifyDBSubnetGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::ModifyDBSubnetGroupAsyncHelper(const ModifyDBSubnetGroupRequest& request) const
+void RDSClient::ModifyDBSubnetGroupAsyncHelper(const ModifyDBSubnetGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onModifyDBSubnetGroupOutcomeReceived(this, request, ModifyDBSubnetGroup(request));
+  m_onModifyDBSubnetGroupOutcomeReceived(this, request, ModifyDBSubnetGroup(request), context);
 }
 
 ModifyEventSubscriptionOutcome RDSClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const
@@ -1624,14 +1624,14 @@ ModifyEventSubscriptionOutcomeCallable RDSClient::ModifyEventSubscriptionCallabl
   return std::async(std::launch::async, &RDSClient::ModifyEventSubscription, this, request);
 }
 
-void RDSClient::ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequest& request) const
+void RDSClient::ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ModifyEventSubscriptionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ModifyEventSubscriptionAsyncHelper, this, request, context);
 }
 
-void RDSClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscriptionRequest& request) const
+void RDSClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onModifyEventSubscriptionOutcomeReceived(this, request, ModifyEventSubscription(request));
+  m_onModifyEventSubscriptionOutcomeReceived(this, request, ModifyEventSubscription(request), context);
 }
 
 ModifyOptionGroupOutcome RDSClient::ModifyOptionGroup(const ModifyOptionGroupRequest& request) const
@@ -1655,14 +1655,14 @@ ModifyOptionGroupOutcomeCallable RDSClient::ModifyOptionGroupCallable(const Modi
   return std::async(std::launch::async, &RDSClient::ModifyOptionGroup, this, request);
 }
 
-void RDSClient::ModifyOptionGroupAsync(const ModifyOptionGroupRequest& request) const
+void RDSClient::ModifyOptionGroupAsync(const ModifyOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ModifyOptionGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ModifyOptionGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::ModifyOptionGroupAsyncHelper(const ModifyOptionGroupRequest& request) const
+void RDSClient::ModifyOptionGroupAsyncHelper(const ModifyOptionGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onModifyOptionGroupOutcomeReceived(this, request, ModifyOptionGroup(request));
+  m_onModifyOptionGroupOutcomeReceived(this, request, ModifyOptionGroup(request), context);
 }
 
 PromoteReadReplicaOutcome RDSClient::PromoteReadReplica(const PromoteReadReplicaRequest& request) const
@@ -1686,14 +1686,14 @@ PromoteReadReplicaOutcomeCallable RDSClient::PromoteReadReplicaCallable(const Pr
   return std::async(std::launch::async, &RDSClient::PromoteReadReplica, this, request);
 }
 
-void RDSClient::PromoteReadReplicaAsync(const PromoteReadReplicaRequest& request) const
+void RDSClient::PromoteReadReplicaAsync(const PromoteReadReplicaRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::PromoteReadReplicaAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::PromoteReadReplicaAsyncHelper, this, request, context);
 }
 
-void RDSClient::PromoteReadReplicaAsyncHelper(const PromoteReadReplicaRequest& request) const
+void RDSClient::PromoteReadReplicaAsyncHelper(const PromoteReadReplicaRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPromoteReadReplicaOutcomeReceived(this, request, PromoteReadReplica(request));
+  m_onPromoteReadReplicaOutcomeReceived(this, request, PromoteReadReplica(request), context);
 }
 
 PurchaseReservedDBInstancesOfferingOutcome RDSClient::PurchaseReservedDBInstancesOffering(const PurchaseReservedDBInstancesOfferingRequest& request) const
@@ -1717,14 +1717,14 @@ PurchaseReservedDBInstancesOfferingOutcomeCallable RDSClient::PurchaseReservedDB
   return std::async(std::launch::async, &RDSClient::PurchaseReservedDBInstancesOffering, this, request);
 }
 
-void RDSClient::PurchaseReservedDBInstancesOfferingAsync(const PurchaseReservedDBInstancesOfferingRequest& request) const
+void RDSClient::PurchaseReservedDBInstancesOfferingAsync(const PurchaseReservedDBInstancesOfferingRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::PurchaseReservedDBInstancesOfferingAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::PurchaseReservedDBInstancesOfferingAsyncHelper, this, request, context);
 }
 
-void RDSClient::PurchaseReservedDBInstancesOfferingAsyncHelper(const PurchaseReservedDBInstancesOfferingRequest& request) const
+void RDSClient::PurchaseReservedDBInstancesOfferingAsyncHelper(const PurchaseReservedDBInstancesOfferingRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPurchaseReservedDBInstancesOfferingOutcomeReceived(this, request, PurchaseReservedDBInstancesOffering(request));
+  m_onPurchaseReservedDBInstancesOfferingOutcomeReceived(this, request, PurchaseReservedDBInstancesOffering(request), context);
 }
 
 RebootDBInstanceOutcome RDSClient::RebootDBInstance(const RebootDBInstanceRequest& request) const
@@ -1748,14 +1748,14 @@ RebootDBInstanceOutcomeCallable RDSClient::RebootDBInstanceCallable(const Reboot
   return std::async(std::launch::async, &RDSClient::RebootDBInstance, this, request);
 }
 
-void RDSClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request) const
+void RDSClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::RebootDBInstanceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::RebootDBInstanceAsyncHelper, this, request, context);
 }
 
-void RDSClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request) const
+void RDSClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRebootDBInstanceOutcomeReceived(this, request, RebootDBInstance(request));
+  m_onRebootDBInstanceOutcomeReceived(this, request, RebootDBInstance(request), context);
 }
 
 RemoveSourceIdentifierFromSubscriptionOutcome RDSClient::RemoveSourceIdentifierFromSubscription(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
@@ -1779,14 +1779,14 @@ RemoveSourceIdentifierFromSubscriptionOutcomeCallable RDSClient::RemoveSourceIde
   return std::async(std::launch::async, &RDSClient::RemoveSourceIdentifierFromSubscription, this, request);
 }
 
-void RDSClient::RemoveSourceIdentifierFromSubscriptionAsync(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
+void RDSClient::RemoveSourceIdentifierFromSubscriptionAsync(const RemoveSourceIdentifierFromSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper, this, request, context);
 }
 
-void RDSClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
+void RDSClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper(const RemoveSourceIdentifierFromSubscriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveSourceIdentifierFromSubscriptionOutcomeReceived(this, request, RemoveSourceIdentifierFromSubscription(request));
+  m_onRemoveSourceIdentifierFromSubscriptionOutcomeReceived(this, request, RemoveSourceIdentifierFromSubscription(request), context);
 }
 
 RemoveTagsFromResourceOutcome RDSClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
@@ -1810,14 +1810,14 @@ RemoveTagsFromResourceOutcomeCallable RDSClient::RemoveTagsFromResourceCallable(
   return std::async(std::launch::async, &RDSClient::RemoveTagsFromResource, this, request);
 }
 
-void RDSClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request) const
+void RDSClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::RemoveTagsFromResourceAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::RemoveTagsFromResourceAsyncHelper, this, request, context);
 }
 
-void RDSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request) const
+void RDSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveTagsFromResourceOutcomeReceived(this, request, RemoveTagsFromResource(request));
+  m_onRemoveTagsFromResourceOutcomeReceived(this, request, RemoveTagsFromResource(request), context);
 }
 
 ResetDBParameterGroupOutcome RDSClient::ResetDBParameterGroup(const ResetDBParameterGroupRequest& request) const
@@ -1841,14 +1841,14 @@ ResetDBParameterGroupOutcomeCallable RDSClient::ResetDBParameterGroupCallable(co
   return std::async(std::launch::async, &RDSClient::ResetDBParameterGroup, this, request);
 }
 
-void RDSClient::ResetDBParameterGroupAsync(const ResetDBParameterGroupRequest& request) const
+void RDSClient::ResetDBParameterGroupAsync(const ResetDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::ResetDBParameterGroupAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::ResetDBParameterGroupAsyncHelper, this, request, context);
 }
 
-void RDSClient::ResetDBParameterGroupAsyncHelper(const ResetDBParameterGroupRequest& request) const
+void RDSClient::ResetDBParameterGroupAsyncHelper(const ResetDBParameterGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onResetDBParameterGroupOutcomeReceived(this, request, ResetDBParameterGroup(request));
+  m_onResetDBParameterGroupOutcomeReceived(this, request, ResetDBParameterGroup(request), context);
 }
 
 RestoreDBInstanceFromDBSnapshotOutcome RDSClient::RestoreDBInstanceFromDBSnapshot(const RestoreDBInstanceFromDBSnapshotRequest& request) const
@@ -1872,14 +1872,14 @@ RestoreDBInstanceFromDBSnapshotOutcomeCallable RDSClient::RestoreDBInstanceFromD
   return std::async(std::launch::async, &RDSClient::RestoreDBInstanceFromDBSnapshot, this, request);
 }
 
-void RDSClient::RestoreDBInstanceFromDBSnapshotAsync(const RestoreDBInstanceFromDBSnapshotRequest& request) const
+void RDSClient::RestoreDBInstanceFromDBSnapshotAsync(const RestoreDBInstanceFromDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper, this, request, context);
 }
 
-void RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper(const RestoreDBInstanceFromDBSnapshotRequest& request) const
+void RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper(const RestoreDBInstanceFromDBSnapshotRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRestoreDBInstanceFromDBSnapshotOutcomeReceived(this, request, RestoreDBInstanceFromDBSnapshot(request));
+  m_onRestoreDBInstanceFromDBSnapshotOutcomeReceived(this, request, RestoreDBInstanceFromDBSnapshot(request), context);
 }
 
 RestoreDBInstanceToPointInTimeOutcome RDSClient::RestoreDBInstanceToPointInTime(const RestoreDBInstanceToPointInTimeRequest& request) const
@@ -1903,14 +1903,14 @@ RestoreDBInstanceToPointInTimeOutcomeCallable RDSClient::RestoreDBInstanceToPoin
   return std::async(std::launch::async, &RDSClient::RestoreDBInstanceToPointInTime, this, request);
 }
 
-void RDSClient::RestoreDBInstanceToPointInTimeAsync(const RestoreDBInstanceToPointInTimeRequest& request) const
+void RDSClient::RestoreDBInstanceToPointInTimeAsync(const RestoreDBInstanceToPointInTimeRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::RestoreDBInstanceToPointInTimeAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::RestoreDBInstanceToPointInTimeAsyncHelper, this, request, context);
 }
 
-void RDSClient::RestoreDBInstanceToPointInTimeAsyncHelper(const RestoreDBInstanceToPointInTimeRequest& request) const
+void RDSClient::RestoreDBInstanceToPointInTimeAsyncHelper(const RestoreDBInstanceToPointInTimeRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRestoreDBInstanceToPointInTimeOutcomeReceived(this, request, RestoreDBInstanceToPointInTime(request));
+  m_onRestoreDBInstanceToPointInTimeOutcomeReceived(this, request, RestoreDBInstanceToPointInTime(request), context);
 }
 
 RevokeDBSecurityGroupIngressOutcome RDSClient::RevokeDBSecurityGroupIngress(const RevokeDBSecurityGroupIngressRequest& request) const
@@ -1934,13 +1934,13 @@ RevokeDBSecurityGroupIngressOutcomeCallable RDSClient::RevokeDBSecurityGroupIngr
   return std::async(std::launch::async, &RDSClient::RevokeDBSecurityGroupIngress, this, request);
 }
 
-void RDSClient::RevokeDBSecurityGroupIngressAsync(const RevokeDBSecurityGroupIngressRequest& request) const
+void RDSClient::RevokeDBSecurityGroupIngressAsync(const RevokeDBSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&RDSClient::RevokeDBSecurityGroupIngressAsyncHelper, this, request);
+  m_executor->Submit(&RDSClient::RevokeDBSecurityGroupIngressAsyncHelper, this, request, context);
 }
 
-void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGroupIngressRequest& request) const
+void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRevokeDBSecurityGroupIngressOutcomeReceived(this, request, RevokeDBSecurityGroupIngress(request));
+  m_onRevokeDBSecurityGroupIngressOutcomeReceived(this, request, RevokeDBSecurityGroupIngress(request), context);
 }
 

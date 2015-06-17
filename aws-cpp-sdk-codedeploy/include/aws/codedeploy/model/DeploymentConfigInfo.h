@@ -31,7 +31,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Information about a deployment configuration.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API DeploymentConfigInfo
   {
@@ -41,80 +41,48 @@ namespace Model
     DeploymentConfigInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The deployment configuration ID.</p>
-    */
+    
     inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
-    /*
-     <p>The deployment configuration ID.</p>
-    */
+    
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigIdHasBeenSet = true; m_deploymentConfigId = value; }
 
-    /*
-     <p>The deployment configuration ID.</p>
-    */
+    
     inline void SetDeploymentConfigId(const char* value) { m_deploymentConfigIdHasBeenSet = true; m_deploymentConfigId.assign(value); }
 
-    /*
-     <p>The deployment configuration ID.</p>
-    */
+    
     inline DeploymentConfigInfo&  WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
 
-    /*
-     <p>The deployment configuration ID.</p>
-    */
+    
     inline DeploymentConfigInfo& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
 
-    /*
-     <p>The deployment configuration name.</p>
-    */
+    
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
-    /*
-     <p>The deployment configuration name.</p>
-    */
+    
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
-    /*
-     <p>The deployment configuration name.</p>
-    */
+    
     inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
-    /*
-     <p>The deployment configuration name.</p>
-    */
+    
     inline DeploymentConfigInfo&  WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
-    /*
-     <p>The deployment configuration name.</p>
-    */
+    
     inline DeploymentConfigInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
-    /*
-     <p>Information about the number or percentage of minimum healthy instances.</p>
-    */
+    
     inline const MinimumHealthyHosts& GetMinimumHealthyHosts() const{ return m_minimumHealthyHosts; }
-    /*
-     <p>Information about the number or percentage of minimum healthy instances.</p>
-    */
+    
     inline void SetMinimumHealthyHosts(const MinimumHealthyHosts& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
 
-    /*
-     <p>Information about the number or percentage of minimum healthy instances.</p>
-    */
+    
     inline DeploymentConfigInfo&  WithMinimumHealthyHosts(const MinimumHealthyHosts& value) { SetMinimumHealthyHosts(value); return *this;}
 
-    /*
-     <p>The time that the deployment configuration was created.</p>
-    */
+    
     inline double GetCreateTime() const{ return m_createTime; }
-    /*
-     <p>The time that the deployment configuration was created.</p>
-    */
+    
     inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
-    /*
-     <p>The time that the deployment configuration was created.</p>
-    */
+    
     inline DeploymentConfigInfo&  WithCreateTime(double value) { SetCreateTime(value); return *this;}
 
   private:

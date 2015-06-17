@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the launch configuration. This name must be unique within the scope of your AWS account.</p>
     */
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The name of the launch configuration. This name must be unique within the scope of your AWS account.</p>
     */
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /*
      <p>The name of the launch configuration. This name must be unique within the scope of your AWS account.</p>
@@ -435,6 +435,7 @@ namespace Model
 
   private:
     Aws::String m_launchConfigurationName;
+    bool m_launchConfigurationNameHasBeenSet;
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
     Aws::String m_keyName;

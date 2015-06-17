@@ -23,6 +23,8 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 UpdateCloudFrontOriginAccessIdentity2014_11_06Request::UpdateCloudFrontOriginAccessIdentity2014_11_06Request() : 
+    m_cloudFrontOriginAccessIdentityConfigHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_ifMatchHasBeenSet(false)
 {
 }

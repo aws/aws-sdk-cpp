@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The field identifier.</p>
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The field identifier.</p>
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      <p>The field identifier.</p>
@@ -71,12 +71,12 @@ namespace Model
     /*
      <p>The field value, expressed as a String.</p>
     */
-    inline void SetStringValue(const Aws::String& value) { m_stringValue = value; }
+    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /*
      <p>The field value, expressed as a String.</p>
     */
-    inline void SetStringValue(const char* value) { m_stringValue.assign(value); }
+    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
 
     /*
      <p>The field value, expressed as a String.</p>
@@ -90,7 +90,9 @@ namespace Model
 
   private:
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet;
   };
 
 } // namespace Model

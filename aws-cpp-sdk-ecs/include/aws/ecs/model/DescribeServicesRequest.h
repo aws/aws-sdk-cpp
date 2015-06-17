@@ -67,7 +67,7 @@ namespace Model
     /*
      <p>A list of services you want to describe.</p>
     */
-    inline void SetServices(const Aws::Vector<Aws::String>& value) { m_services = value; }
+    inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /*
      <p>A list of services you want to describe.</p>
@@ -77,17 +77,18 @@ namespace Model
     /*
      <p>A list of services you want to describe.</p>
     */
-    inline DescribeServicesRequest& AddServices(const Aws::String& value) { m_services.push_back(value); return *this; }
+    inline DescribeServicesRequest& AddServices(const Aws::String& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
     /*
      <p>A list of services you want to describe.</p>
     */
-    inline DescribeServicesRequest& AddServices(const char* value) { m_services.push_back(value); return *this; }
+    inline DescribeServicesRequest& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::Vector<Aws::String> m_services;
+    bool m_servicesHasBeenSet;
   };
 
 } // namespace Model

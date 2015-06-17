@@ -121,7 +121,7 @@ namespace Model
     /*
      Type of grantee
     */
-    inline void SetType(const Type& value) { m_type = value; }
+    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      Type of grantee
@@ -160,6 +160,7 @@ namespace Model
     Aws::String m_iD;
     bool m_iDHasBeenSet;
     Type m_type;
+    bool m_typeHasBeenSet;
     Aws::String m_uRI;
     bool m_uRIHasBeenSet;
   };

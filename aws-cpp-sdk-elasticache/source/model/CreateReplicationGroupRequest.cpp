@@ -20,6 +20,8 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 CreateReplicationGroupRequest::CreateReplicationGroupRequest() : 
+    m_replicationGroupIdHasBeenSet(false),
+    m_replicationGroupDescriptionHasBeenSet(false),
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false),
@@ -52,8 +54,14 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateReplicationGroup&";
-  ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
-  ss << "ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";
+  if(m_replicationGroupIdHasBeenSet)
+  {
+    ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+  if(m_replicationGroupDescriptionHasBeenSet)
+  {
+    ss << "ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";
+  }
   if(m_primaryClusterIdHasBeenSet)
   {
     ss << "PrimaryClusterId=" << StringUtils::URLEncode(m_primaryClusterId.c_str()) << "&";

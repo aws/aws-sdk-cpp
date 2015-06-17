@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 ModifyDBInstanceRequest::ModifyDBInstanceRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
@@ -55,7 +56,10 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyDBInstance&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_allocatedStorageHasBeenSet)
   {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";

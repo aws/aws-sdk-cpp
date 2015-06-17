@@ -25,13 +25,21 @@ using namespace Aws::Utils;
 
 LoggingConfig::LoggingConfig() : 
     m_enabled(false),
-    m_includeCookies(false)
+    m_enabledHasBeenSet(false),
+    m_includeCookies(false),
+    m_includeCookiesHasBeenSet(false),
+    m_bucketHasBeenSet(false),
+    m_prefixHasBeenSet(false)
 {
 }
 
 LoggingConfig::LoggingConfig(const XmlNode& xmlNode) : 
     m_enabled(false),
-    m_includeCookies(false)
+    m_enabledHasBeenSet(false),
+    m_includeCookies(false),
+    m_includeCookiesHasBeenSet(false),
+    m_bucketHasBeenSet(false),
+    m_prefixHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,13 +51,29 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
     XmlNode includeCookiesNode = resultNode.FirstChild("IncludeCookies");
-    m_includeCookies = StringUtils::ConvertToBool(StringUtils::Trim(includeCookiesNode.GetText().c_str()).c_str());
+    if(!includeCookiesNode.IsNull())
+    {
+      m_includeCookies = StringUtils::ConvertToBool(StringUtils::Trim(includeCookiesNode.GetText().c_str()).c_str());
+      m_includeCookiesHasBeenSet = true;
+    }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+    if(!bucketNode.IsNull())
+    {
+      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucketHasBeenSet = true;
+    }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+    if(!prefixNode.IsNull())
+    {
+      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefixHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -58,16 +82,32 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
 void LoggingConfig::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  if(m_enabledHasBeenSet)
+  {
+   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
   ss << m_enabled;
-  enabledNode.SetText(ss.str());
+   enabledNode.SetText(ss.str());
   ss.str("");
-  XmlNode includeCookiesNode = parentNode.CreateChildElement("IncludeCookies");
+  }
+
+  if(m_includeCookiesHasBeenSet)
+  {
+   XmlNode includeCookiesNode = parentNode.CreateChildElement("IncludeCookies");
   ss << m_includeCookies;
-  includeCookiesNode.SetText(ss.str());
+   includeCookiesNode.SetText(ss.str());
   ss.str("");
-  XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-  bucketNode.SetText(m_bucket);
-  XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-  prefixNode.SetText(m_prefix);
+  }
+
+  if(m_bucketHasBeenSet)
+  {
+   XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
+   bucketNode.SetText(m_bucket);
+  }
+
+  if(m_prefixHasBeenSet)
+  {
+   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
+   prefixNode.SetText(m_prefix);
+  }
+
 }

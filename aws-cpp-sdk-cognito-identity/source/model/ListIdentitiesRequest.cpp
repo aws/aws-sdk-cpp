@@ -22,8 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListIdentitiesRequest::ListIdentitiesRequest() : 
+    m_identityPoolIdHasBeenSet(false),
     m_maxResults(0),
-    m_nextTokenHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_hideDisabled(false),
+    m_hideDisabledHasBeenSet(false)
 {
 }
 
@@ -31,13 +35,27 @@ Aws::String ListIdentitiesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
+  if(m_identityPoolIdHasBeenSet)
+  {
+   payload.WithString("IdentityPoolId", m_identityPoolId);
 
-  payload.WithInteger("MaxResults", m_maxResults);
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_hideDisabledHasBeenSet)
+  {
+   payload.WithBool("HideDisabled", m_hideDisabled);
 
   }
 

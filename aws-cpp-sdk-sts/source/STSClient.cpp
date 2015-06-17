@@ -115,14 +115,14 @@ AssumeRoleOutcomeCallable STSClient::AssumeRoleCallable(const AssumeRoleRequest&
   return std::async(std::launch::async, &STSClient::AssumeRole, this, request);
 }
 
-void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request) const
+void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&STSClient::AssumeRoleAsyncHelper, this, request);
+  m_executor->Submit(&STSClient::AssumeRoleAsyncHelper, this, request, context);
 }
 
-void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request) const
+void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAssumeRoleOutcomeReceived(this, request, AssumeRole(request));
+  m_onAssumeRoleOutcomeReceived(this, request, AssumeRole(request), context);
 }
 
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const
@@ -146,14 +146,14 @@ AssumeRoleWithSAMLOutcomeCallable STSClient::AssumeRoleWithSAMLCallable(const As
   return std::async(std::launch::async, &STSClient::AssumeRoleWithSAML, this, request);
 }
 
-void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request) const
+void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&STSClient::AssumeRoleWithSAMLAsyncHelper, this, request);
+  m_executor->Submit(&STSClient::AssumeRoleWithSAMLAsyncHelper, this, request, context);
 }
 
-void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& request) const
+void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAssumeRoleWithSAMLOutcomeReceived(this, request, AssumeRoleWithSAML(request));
+  m_onAssumeRoleWithSAMLOutcomeReceived(this, request, AssumeRoleWithSAML(request), context);
 }
 
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const
@@ -177,14 +177,14 @@ AssumeRoleWithWebIdentityOutcomeCallable STSClient::AssumeRoleWithWebIdentityCal
   return std::async(std::launch::async, &STSClient::AssumeRoleWithWebIdentity, this, request);
 }
 
-void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request) const
+void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&STSClient::AssumeRoleWithWebIdentityAsyncHelper, this, request);
+  m_executor->Submit(&STSClient::AssumeRoleWithWebIdentityAsyncHelper, this, request, context);
 }
 
-void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIdentityRequest& request) const
+void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAssumeRoleWithWebIdentityOutcomeReceived(this, request, AssumeRoleWithWebIdentity(request));
+  m_onAssumeRoleWithWebIdentityOutcomeReceived(this, request, AssumeRoleWithWebIdentity(request), context);
 }
 
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const
@@ -208,14 +208,14 @@ DecodeAuthorizationMessageOutcomeCallable STSClient::DecodeAuthorizationMessageC
   return std::async(std::launch::async, &STSClient::DecodeAuthorizationMessage, this, request);
 }
 
-void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request) const
+void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&STSClient::DecodeAuthorizationMessageAsyncHelper, this, request);
+  m_executor->Submit(&STSClient::DecodeAuthorizationMessageAsyncHelper, this, request, context);
 }
 
-void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request) const
+void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDecodeAuthorizationMessageOutcomeReceived(this, request, DecodeAuthorizationMessage(request));
+  m_onDecodeAuthorizationMessageOutcomeReceived(this, request, DecodeAuthorizationMessage(request), context);
 }
 
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const
@@ -239,14 +239,14 @@ GetFederationTokenOutcomeCallable STSClient::GetFederationTokenCallable(const Ge
   return std::async(std::launch::async, &STSClient::GetFederationToken, this, request);
 }
 
-void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request) const
+void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&STSClient::GetFederationTokenAsyncHelper, this, request);
+  m_executor->Submit(&STSClient::GetFederationTokenAsyncHelper, this, request, context);
 }
 
-void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request) const
+void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetFederationTokenOutcomeReceived(this, request, GetFederationToken(request));
+  m_onGetFederationTokenOutcomeReceived(this, request, GetFederationToken(request), context);
 }
 
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const
@@ -270,13 +270,13 @@ GetSessionTokenOutcomeCallable STSClient::GetSessionTokenCallable(const GetSessi
   return std::async(std::launch::async, &STSClient::GetSessionToken, this, request);
 }
 
-void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request) const
+void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&STSClient::GetSessionTokenAsyncHelper, this, request);
+  m_executor->Submit(&STSClient::GetSessionTokenAsyncHelper, this, request, context);
 }
 
-void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request) const
+void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetSessionTokenOutcomeReceived(this, request, GetSessionToken(request));
+  m_onGetSessionTokenOutcomeReceived(this, request, GetSessionToken(request), context);
 }
 

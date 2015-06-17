@@ -23,11 +23,15 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CloudFrontOriginAccessIdentityConfig::CloudFrontOriginAccessIdentityConfig()
+CloudFrontOriginAccessIdentityConfig::CloudFrontOriginAccessIdentityConfig() : 
+    m_callerReferenceHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
-CloudFrontOriginAccessIdentityConfig::CloudFrontOriginAccessIdentityConfig(const XmlNode& xmlNode)
+CloudFrontOriginAccessIdentityConfig::CloudFrontOriginAccessIdentityConfig(const XmlNode& xmlNode) : 
+    m_callerReferenceHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ CloudFrontOriginAccessIdentityConfig& CloudFrontOriginAccessIdentityConfig::oper
   if(!resultNode.IsNull())
   {
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+    if(!callerReferenceNode.IsNull())
+    {
+      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReferenceHasBeenSet = true;
+    }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    if(!commentNode.IsNull())
+    {
+      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_commentHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,8 +62,16 @@ CloudFrontOriginAccessIdentityConfig& CloudFrontOriginAccessIdentityConfig::oper
 void CloudFrontOriginAccessIdentityConfig::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
-  callerReferenceNode.SetText(m_callerReference);
-  XmlNode commentNode = parentNode.CreateChildElement("Comment");
-  commentNode.SetText(m_comment);
+  if(m_callerReferenceHasBeenSet)
+  {
+   XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+   callerReferenceNode.SetText(m_callerReference);
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   XmlNode commentNode = parentNode.CreateChildElement("Comment");
+   commentNode.SetText(m_comment);
+  }
+
 }

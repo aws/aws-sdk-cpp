@@ -121,14 +121,14 @@ AddTagsToStreamOutcomeCallable KinesisClient::AddTagsToStreamCallable(const AddT
   return std::async(std::launch::async, &KinesisClient::AddTagsToStream, this, request);
 }
 
-void KinesisClient::AddTagsToStreamAsync(const AddTagsToStreamRequest& request) const
+void KinesisClient::AddTagsToStreamAsync(const AddTagsToStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::AddTagsToStreamAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::AddTagsToStreamAsyncHelper, this, request, context);
 }
 
-void KinesisClient::AddTagsToStreamAsyncHelper(const AddTagsToStreamRequest& request) const
+void KinesisClient::AddTagsToStreamAsyncHelper(const AddTagsToStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddTagsToStreamOutcomeReceived(this, request, AddTagsToStream(request));
+  m_onAddTagsToStreamOutcomeReceived(this, request, AddTagsToStream(request), context);
 }
 
 CreateStreamOutcome KinesisClient::CreateStream(const CreateStreamRequest& request) const
@@ -152,14 +152,14 @@ CreateStreamOutcomeCallable KinesisClient::CreateStreamCallable(const CreateStre
   return std::async(std::launch::async, &KinesisClient::CreateStream, this, request);
 }
 
-void KinesisClient::CreateStreamAsync(const CreateStreamRequest& request) const
+void KinesisClient::CreateStreamAsync(const CreateStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::CreateStreamAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::CreateStreamAsyncHelper, this, request, context);
 }
 
-void KinesisClient::CreateStreamAsyncHelper(const CreateStreamRequest& request) const
+void KinesisClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateStreamOutcomeReceived(this, request, CreateStream(request));
+  m_onCreateStreamOutcomeReceived(this, request, CreateStream(request), context);
 }
 
 DeleteStreamOutcome KinesisClient::DeleteStream(const DeleteStreamRequest& request) const
@@ -183,14 +183,14 @@ DeleteStreamOutcomeCallable KinesisClient::DeleteStreamCallable(const DeleteStre
   return std::async(std::launch::async, &KinesisClient::DeleteStream, this, request);
 }
 
-void KinesisClient::DeleteStreamAsync(const DeleteStreamRequest& request) const
+void KinesisClient::DeleteStreamAsync(const DeleteStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::DeleteStreamAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::DeleteStreamAsyncHelper, this, request, context);
 }
 
-void KinesisClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request) const
+void KinesisClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteStreamOutcomeReceived(this, request, DeleteStream(request));
+  m_onDeleteStreamOutcomeReceived(this, request, DeleteStream(request), context);
 }
 
 DescribeStreamOutcome KinesisClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -214,14 +214,14 @@ DescribeStreamOutcomeCallable KinesisClient::DescribeStreamCallable(const Descri
   return std::async(std::launch::async, &KinesisClient::DescribeStream, this, request);
 }
 
-void KinesisClient::DescribeStreamAsync(const DescribeStreamRequest& request) const
+void KinesisClient::DescribeStreamAsync(const DescribeStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::DescribeStreamAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::DescribeStreamAsyncHelper, this, request, context);
 }
 
-void KinesisClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request) const
+void KinesisClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeStreamOutcomeReceived(this, request, DescribeStream(request));
+  m_onDescribeStreamOutcomeReceived(this, request, DescribeStream(request), context);
 }
 
 GetRecordsOutcome KinesisClient::GetRecords(const GetRecordsRequest& request) const
@@ -245,14 +245,14 @@ GetRecordsOutcomeCallable KinesisClient::GetRecordsCallable(const GetRecordsRequ
   return std::async(std::launch::async, &KinesisClient::GetRecords, this, request);
 }
 
-void KinesisClient::GetRecordsAsync(const GetRecordsRequest& request) const
+void KinesisClient::GetRecordsAsync(const GetRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::GetRecordsAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::GetRecordsAsyncHelper, this, request, context);
 }
 
-void KinesisClient::GetRecordsAsyncHelper(const GetRecordsRequest& request) const
+void KinesisClient::GetRecordsAsyncHelper(const GetRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetRecordsOutcomeReceived(this, request, GetRecords(request));
+  m_onGetRecordsOutcomeReceived(this, request, GetRecords(request), context);
 }
 
 GetShardIteratorOutcome KinesisClient::GetShardIterator(const GetShardIteratorRequest& request) const
@@ -276,14 +276,14 @@ GetShardIteratorOutcomeCallable KinesisClient::GetShardIteratorCallable(const Ge
   return std::async(std::launch::async, &KinesisClient::GetShardIterator, this, request);
 }
 
-void KinesisClient::GetShardIteratorAsync(const GetShardIteratorRequest& request) const
+void KinesisClient::GetShardIteratorAsync(const GetShardIteratorRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::GetShardIteratorAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::GetShardIteratorAsyncHelper, this, request, context);
 }
 
-void KinesisClient::GetShardIteratorAsyncHelper(const GetShardIteratorRequest& request) const
+void KinesisClient::GetShardIteratorAsyncHelper(const GetShardIteratorRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetShardIteratorOutcomeReceived(this, request, GetShardIterator(request));
+  m_onGetShardIteratorOutcomeReceived(this, request, GetShardIterator(request), context);
 }
 
 ListStreamsOutcome KinesisClient::ListStreams(const ListStreamsRequest& request) const
@@ -307,14 +307,14 @@ ListStreamsOutcomeCallable KinesisClient::ListStreamsCallable(const ListStreamsR
   return std::async(std::launch::async, &KinesisClient::ListStreams, this, request);
 }
 
-void KinesisClient::ListStreamsAsync(const ListStreamsRequest& request) const
+void KinesisClient::ListStreamsAsync(const ListStreamsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::ListStreamsAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::ListStreamsAsyncHelper, this, request, context);
 }
 
-void KinesisClient::ListStreamsAsyncHelper(const ListStreamsRequest& request) const
+void KinesisClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListStreamsOutcomeReceived(this, request, ListStreams(request));
+  m_onListStreamsOutcomeReceived(this, request, ListStreams(request), context);
 }
 
 ListTagsForStreamOutcome KinesisClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
@@ -338,14 +338,14 @@ ListTagsForStreamOutcomeCallable KinesisClient::ListTagsForStreamCallable(const 
   return std::async(std::launch::async, &KinesisClient::ListTagsForStream, this, request);
 }
 
-void KinesisClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& request) const
+void KinesisClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::ListTagsForStreamAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::ListTagsForStreamAsyncHelper, this, request, context);
 }
 
-void KinesisClient::ListTagsForStreamAsyncHelper(const ListTagsForStreamRequest& request) const
+void KinesisClient::ListTagsForStreamAsyncHelper(const ListTagsForStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListTagsForStreamOutcomeReceived(this, request, ListTagsForStream(request));
+  m_onListTagsForStreamOutcomeReceived(this, request, ListTagsForStream(request), context);
 }
 
 MergeShardsOutcome KinesisClient::MergeShards(const MergeShardsRequest& request) const
@@ -369,14 +369,14 @@ MergeShardsOutcomeCallable KinesisClient::MergeShardsCallable(const MergeShardsR
   return std::async(std::launch::async, &KinesisClient::MergeShards, this, request);
 }
 
-void KinesisClient::MergeShardsAsync(const MergeShardsRequest& request) const
+void KinesisClient::MergeShardsAsync(const MergeShardsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::MergeShardsAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::MergeShardsAsyncHelper, this, request, context);
 }
 
-void KinesisClient::MergeShardsAsyncHelper(const MergeShardsRequest& request) const
+void KinesisClient::MergeShardsAsyncHelper(const MergeShardsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onMergeShardsOutcomeReceived(this, request, MergeShards(request));
+  m_onMergeShardsOutcomeReceived(this, request, MergeShards(request), context);
 }
 
 PutRecordOutcome KinesisClient::PutRecord(const PutRecordRequest& request) const
@@ -400,14 +400,14 @@ PutRecordOutcomeCallable KinesisClient::PutRecordCallable(const PutRecordRequest
   return std::async(std::launch::async, &KinesisClient::PutRecord, this, request);
 }
 
-void KinesisClient::PutRecordAsync(const PutRecordRequest& request) const
+void KinesisClient::PutRecordAsync(const PutRecordRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::PutRecordAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::PutRecordAsyncHelper, this, request, context);
 }
 
-void KinesisClient::PutRecordAsyncHelper(const PutRecordRequest& request) const
+void KinesisClient::PutRecordAsyncHelper(const PutRecordRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutRecordOutcomeReceived(this, request, PutRecord(request));
+  m_onPutRecordOutcomeReceived(this, request, PutRecord(request), context);
 }
 
 PutRecordsOutcome KinesisClient::PutRecords(const PutRecordsRequest& request) const
@@ -431,14 +431,14 @@ PutRecordsOutcomeCallable KinesisClient::PutRecordsCallable(const PutRecordsRequ
   return std::async(std::launch::async, &KinesisClient::PutRecords, this, request);
 }
 
-void KinesisClient::PutRecordsAsync(const PutRecordsRequest& request) const
+void KinesisClient::PutRecordsAsync(const PutRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::PutRecordsAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::PutRecordsAsyncHelper, this, request, context);
 }
 
-void KinesisClient::PutRecordsAsyncHelper(const PutRecordsRequest& request) const
+void KinesisClient::PutRecordsAsyncHelper(const PutRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutRecordsOutcomeReceived(this, request, PutRecords(request));
+  m_onPutRecordsOutcomeReceived(this, request, PutRecords(request), context);
 }
 
 RemoveTagsFromStreamOutcome KinesisClient::RemoveTagsFromStream(const RemoveTagsFromStreamRequest& request) const
@@ -462,14 +462,14 @@ RemoveTagsFromStreamOutcomeCallable KinesisClient::RemoveTagsFromStreamCallable(
   return std::async(std::launch::async, &KinesisClient::RemoveTagsFromStream, this, request);
 }
 
-void KinesisClient::RemoveTagsFromStreamAsync(const RemoveTagsFromStreamRequest& request) const
+void KinesisClient::RemoveTagsFromStreamAsync(const RemoveTagsFromStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::RemoveTagsFromStreamAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::RemoveTagsFromStreamAsyncHelper, this, request, context);
 }
 
-void KinesisClient::RemoveTagsFromStreamAsyncHelper(const RemoveTagsFromStreamRequest& request) const
+void KinesisClient::RemoveTagsFromStreamAsyncHelper(const RemoveTagsFromStreamRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemoveTagsFromStreamOutcomeReceived(this, request, RemoveTagsFromStream(request));
+  m_onRemoveTagsFromStreamOutcomeReceived(this, request, RemoveTagsFromStream(request), context);
 }
 
 SplitShardOutcome KinesisClient::SplitShard(const SplitShardRequest& request) const
@@ -493,13 +493,13 @@ SplitShardOutcomeCallable KinesisClient::SplitShardCallable(const SplitShardRequ
   return std::async(std::launch::async, &KinesisClient::SplitShard, this, request);
 }
 
-void KinesisClient::SplitShardAsync(const SplitShardRequest& request) const
+void KinesisClient::SplitShardAsync(const SplitShardRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KinesisClient::SplitShardAsyncHelper, this, request);
+  m_executor->Submit(&KinesisClient::SplitShardAsyncHelper, this, request, context);
 }
 
-void KinesisClient::SplitShardAsyncHelper(const SplitShardRequest& request) const
+void KinesisClient::SplitShardAsyncHelper(const SplitShardRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSplitShardOutcomeReceived(this, request, SplitShard(request));
+  m_onSplitShardOutcomeReceived(this, request, SplitShard(request), context);
 }
 

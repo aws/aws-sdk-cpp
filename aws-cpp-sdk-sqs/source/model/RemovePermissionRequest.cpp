@@ -19,7 +19,9 @@
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
-RemovePermissionRequest::RemovePermissionRequest()
+RemovePermissionRequest::RemovePermissionRequest() : 
+    m_queueUrlHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String RemovePermissionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RemovePermission&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
-  ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+  if(m_queueUrlHasBeenSet)
+  {
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
+  if(m_labelHasBeenSet)
+  {
+    ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+  }
   ss << "Version=2012-11-05";
   return ss.str();
 }

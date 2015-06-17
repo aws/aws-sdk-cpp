@@ -43,11 +43,12 @@ ListGroupsResult& ListGroupsResult::operator =(const AmazonWebServiceResult<XmlD
 
   if(!resultNode.IsNull())
   {
-    XmlNode groupsNode = resultNode.FirstChild("Groups");
+    XmlNode groupsNodeParent = resultNode.FirstChild("Groups");
+    XmlNode groupsNode = groupsNodeParent.FirstChild("member");
     while(!groupsNode.IsNull())
     {
       m_groups.push_back(groupsNode);
-      groupsNode = groupsNode.NextNode("Groups");
+      groupsNode = groupsNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

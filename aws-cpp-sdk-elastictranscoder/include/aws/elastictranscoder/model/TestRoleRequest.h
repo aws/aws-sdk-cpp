@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
     */
-    inline void SetRole(const Aws::String& value) { m_role = value; }
+    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /*
      <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
     */
-    inline void SetRole(const char* value) { m_role.assign(value); }
+    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /*
      <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
     */
-    inline void SetInputBucket(const Aws::String& value) { m_inputBucket = value; }
+    inline void SetInputBucket(const Aws::String& value) { m_inputBucketHasBeenSet = true; m_inputBucket = value; }
 
     /*
      <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
     */
-    inline void SetInputBucket(const char* value) { m_inputBucket.assign(value); }
+    inline void SetInputBucket(const char* value) { m_inputBucketHasBeenSet = true; m_inputBucket.assign(value); }
 
     /*
      <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
@@ -90,12 +90,12 @@ namespace Model
     /*
      <p>The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read from this bucket.</p>
     */
-    inline void SetOutputBucket(const Aws::String& value) { m_outputBucket = value; }
+    inline void SetOutputBucket(const Aws::String& value) { m_outputBucketHasBeenSet = true; m_outputBucket = value; }
 
     /*
      <p>The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read from this bucket.</p>
     */
-    inline void SetOutputBucket(const char* value) { m_outputBucket.assign(value); }
+    inline void SetOutputBucket(const char* value) { m_outputBucketHasBeenSet = true; m_outputBucket.assign(value); }
 
     /*
      <p>The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read from this bucket.</p>
@@ -114,7 +114,7 @@ namespace Model
     /*
      <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
     */
-    inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topics = value; }
+    inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topicsHasBeenSet = true; m_topics = value; }
 
     /*
      <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
@@ -124,18 +124,22 @@ namespace Model
     /*
      <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
     */
-    inline TestRoleRequest& AddTopics(const Aws::String& value) { m_topics.push_back(value); return *this; }
+    inline TestRoleRequest& AddTopics(const Aws::String& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
 
     /*
      <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
     */
-    inline TestRoleRequest& AddTopics(const char* value) { m_topics.push_back(value); return *this; }
+    inline TestRoleRequest& AddTopics(const char* value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
 
   private:
     Aws::String m_role;
+    bool m_roleHasBeenSet;
     Aws::String m_inputBucket;
+    bool m_inputBucketHasBeenSet;
     Aws::String m_outputBucket;
+    bool m_outputBucketHasBeenSet;
     Aws::Vector<Aws::String> m_topics;
+    bool m_topicsHasBeenSet;
   };
 
 } // namespace Model

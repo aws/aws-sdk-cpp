@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
+    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     */
-    inline void SetEntries(const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& value) { m_entries = value; }
+    inline void SetEntries(const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /*
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
@@ -76,11 +76,13 @@ namespace Model
     /*
      <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     */
-    inline ChangeMessageVisibilityBatchRequest& AddEntries(const ChangeMessageVisibilityBatchRequestEntry& value) { m_entries.push_back(value); return *this; }
+    inline ChangeMessageVisibilityBatchRequest& AddEntries(const ChangeMessageVisibilityBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
   private:
     Aws::String m_queueUrl;
+    bool m_queueUrlHasBeenSet;
     Aws::Vector<ChangeMessageVisibilityBatchRequestEntry> m_entries;
+    bool m_entriesHasBeenSet;
   };
 
 } // namespace Model

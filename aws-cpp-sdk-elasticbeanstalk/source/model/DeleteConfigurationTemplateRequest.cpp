@@ -19,7 +19,9 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DeleteConfigurationTemplateRequest::DeleteConfigurationTemplateRequest()
+DeleteConfigurationTemplateRequest::DeleteConfigurationTemplateRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeleteConfigurationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteConfigurationTemplate&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_templateNameHasBeenSet)
+  {
+    ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

@@ -27,7 +27,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of an adds tags to on-premises instance operation.</p>
   */
   class AWS_CODEDEPLOY_API AddTagsToOnPremisesInstancesRequest : public codedeployRequest
   {
@@ -38,52 +37,36 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
+    
     inline AddTagsToOnPremisesInstancesRequest&  WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be nulls or empty strings. Value-only tags are not allowed.</p>
-    */
-    inline AddTagsToOnPremisesInstancesRequest& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    
+    inline AddTagsToOnPremisesInstancesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
-    inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNames = value; }
+    
+    inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
+    
     inline AddTagsToOnPremisesInstancesRequest&  WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
-    inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNames.push_back(value); return *this; }
+    
+    inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
-    /*
-     <p>The names of the on-premises instances to add tags to.</p>
-    */
-    inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNames.push_back(value); return *this; }
+    
+    inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
   private:
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
     Aws::Vector<Aws::String> m_instanceNames;
+    bool m_instanceNamesHasBeenSet;
   };
 
 } // namespace Model

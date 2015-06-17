@@ -41,11 +41,12 @@ DescribeNotificationConfigurationsResult& DescribeNotificationConfigurationsResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode notificationConfigurationsNode = resultNode.FirstChild("NotificationConfigurations");
+    XmlNode notificationConfigurationsNodeParent = resultNode.FirstChild("NotificationConfigurations");
+    XmlNode notificationConfigurationsNode = notificationConfigurationsNodeParent.FirstChild("member");
     while(!notificationConfigurationsNode.IsNull())
     {
       m_notificationConfigurations.push_back(notificationConfigurationsNode);
-      notificationConfigurationsNode = notificationConfigurationsNode.NextNode("NotificationConfigurations");
+      notificationConfigurationsNode = notificationConfigurationsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

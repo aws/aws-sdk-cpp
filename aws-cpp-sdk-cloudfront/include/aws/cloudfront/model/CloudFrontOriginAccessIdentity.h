@@ -49,12 +49,12 @@ namespace Model
     /*
      The ID for the origin access identity. For example: E74FTE3AJFJ256A.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The ID for the origin access identity. For example: E74FTE3AJFJ256A.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -73,12 +73,12 @@ namespace Model
     /*
      The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.
     */
-    inline void SetS3CanonicalUserId(const Aws::String& value) { m_s3CanonicalUserId = value; }
+    inline void SetS3CanonicalUserId(const Aws::String& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = value; }
 
     /*
      The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.
     */
-    inline void SetS3CanonicalUserId(const char* value) { m_s3CanonicalUserId.assign(value); }
+    inline void SetS3CanonicalUserId(const char* value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId.assign(value); }
 
     /*
      The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.
@@ -106,7 +106,9 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_s3CanonicalUserId;
+    bool m_s3CanonicalUserIdHasBeenSet;
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
     bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
   };

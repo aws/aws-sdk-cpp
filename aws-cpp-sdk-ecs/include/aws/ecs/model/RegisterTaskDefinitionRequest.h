@@ -45,12 +45,12 @@ namespace Model
     /*
      <p>You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the same task definition. You can think of the <code>family</code> as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
-    inline void SetFamily(const Aws::String& value) { m_family = value; }
+    inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /*
      <p>You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the same task definition. You can think of the <code>family</code> as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
     */
-    inline void SetFamily(const char* value) { m_family.assign(value); }
+    inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
 
     /*
      <p>You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the same task definition. You can think of the <code>family</code> as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
@@ -69,7 +69,7 @@ namespace Model
     /*
      <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
     */
-    inline void SetContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { m_containerDefinitions = value; }
+    inline void SetContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = value; }
 
     /*
      <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
@@ -79,7 +79,7 @@ namespace Model
     /*
      <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
     */
-    inline RegisterTaskDefinitionRequest& AddContainerDefinitions(const ContainerDefinition& value) { m_containerDefinitions.push_back(value); return *this; }
+    inline RegisterTaskDefinitionRequest& AddContainerDefinitions(const ContainerDefinition& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(value); return *this; }
 
     /*
      <p>A list of volume definitions in JSON format that containers in your task may use.</p>
@@ -102,7 +102,9 @@ namespace Model
 
   private:
     Aws::String m_family;
+    bool m_familyHasBeenSet;
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
+    bool m_containerDefinitionsHasBeenSet;
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
   };

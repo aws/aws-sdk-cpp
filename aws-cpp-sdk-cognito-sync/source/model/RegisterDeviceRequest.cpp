@@ -21,7 +21,11 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterDeviceRequest::RegisterDeviceRequest()
+RegisterDeviceRequest::RegisterDeviceRequest() : 
+    m_identityPoolIdHasBeenSet(false),
+    m_identityIdHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_tokenHasBeenSet(false)
 {
 }
 
@@ -29,8 +33,16 @@ Aws::String RegisterDeviceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Platform", PlatformMapper::GetNameForPlatform(m_platform));
-  payload.WithString("Token", m_token);
+  if(m_platformHasBeenSet)
+  {
+   payload.WithString("Platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_tokenHasBeenSet)
+  {
+   payload.WithString("Token", m_token);
+
+  }
 
   return payload.WriteReadable();
 }

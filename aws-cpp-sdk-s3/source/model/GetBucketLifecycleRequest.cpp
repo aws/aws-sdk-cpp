@@ -21,7 +21,8 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetBucketLifecycleRequest::GetBucketLifecycleRequest()
+GetBucketLifecycleRequest::GetBucketLifecycleRequest() : 
+    m_bucketHasBeenSet(false)
 {
 }
 

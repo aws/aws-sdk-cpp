@@ -41,11 +41,12 @@ ListMetricsResult& ListMetricsResult::operator =(const AmazonWebServiceResult<Xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode metricsNode = resultNode.FirstChild("Metrics");
+    XmlNode metricsNodeParent = resultNode.FirstChild("Metrics");
+    XmlNode metricsNode = metricsNodeParent.FirstChild("member");
     while(!metricsNode.IsNull())
     {
       m_metrics.push_back(metricsNode);
-      metricsNode = metricsNode.NextNode("Metrics");
+      metricsNode = metricsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the stream to delete.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream to delete.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The name of the stream to delete.</p>
@@ -62,6 +62,7 @@ namespace Model
 
   private:
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
   };
 
 } // namespace Model

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the cluster parameter group family. </p>
     */
-    inline void SetParameterGroupFamily(const Aws::String& value) { m_parameterGroupFamily = value; }
+    inline void SetParameterGroupFamily(const Aws::String& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
 
     /*
      <p> The name of the cluster parameter group family. </p>
     */
-    inline void SetParameterGroupFamily(const char* value) { m_parameterGroupFamily.assign(value); }
+    inline void SetParameterGroupFamily(const char* value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily.assign(value); }
 
     /*
      <p> The name of the cluster parameter group family. </p>
@@ -98,6 +98,7 @@ namespace Model
 
   private:
     Aws::String m_parameterGroupFamily;
+    bool m_parameterGroupFamilyHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;

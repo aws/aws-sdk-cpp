@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a get on-premises instance operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API GetOnPremisesInstanceResult
   {
@@ -42,18 +42,12 @@ namespace Model
     GetOnPremisesInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetOnPremisesInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    
     inline const InstanceInfo& GetInstanceInfo() const{ return m_instanceInfo; }
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    
     inline void SetInstanceInfo(const InstanceInfo& value) { m_instanceInfo = value; }
 
-    /*
-     <p>Information about the on-premises instance.</p>
-    */
+    
     inline GetOnPremisesInstanceResult&  WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
 
   private:

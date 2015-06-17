@@ -20,6 +20,8 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 DeleteApplicationVersionRequest::DeleteApplicationVersionRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_versionLabelHasBeenSet(false),
     m_deleteSourceBundle(false),
     m_deleteSourceBundleHasBeenSet(false)
 {
@@ -29,8 +31,14 @@ Aws::String DeleteApplicationVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteApplicationVersion&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_versionLabelHasBeenSet)
+  {
+    ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  }
   if(m_deleteSourceBundleHasBeenSet)
   {
     ss << "DeleteSourceBundle=" << m_deleteSourceBundle << "&";

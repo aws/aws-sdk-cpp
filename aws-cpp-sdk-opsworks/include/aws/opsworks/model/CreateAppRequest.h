@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>The app name.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The app name.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The app name.</p>
@@ -165,7 +165,7 @@ namespace Model
     /*
      <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     */
-    inline void SetType(const AppType& value) { m_type = value; }
+    inline void SetType(const AppType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
@@ -283,14 +283,17 @@ namespace Model
 
   private:
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
     Aws::String m_shortname;
     bool m_shortnameHasBeenSet;
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<DataSource> m_dataSources;
     bool m_dataSourcesHasBeenSet;
     AppType m_type;
+    bool m_typeHasBeenSet;
     Source m_appSource;
     bool m_appSourceHasBeenSet;
     Aws::Vector<Aws::String> m_domains;

@@ -24,12 +24,16 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 QueueConfiguration::QueueConfiguration() : 
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_queueArnHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
 }
 
 QueueConfiguration::QueueConfiguration(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_queueArnHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -47,14 +51,22 @@ QueueConfiguration& QueueConfiguration::operator =(const XmlNode& xmlNode)
       m_idHasBeenSet = true;
     }
     XmlNode queueArnNode = resultNode.FirstChild("QueueArn");
-    m_queueArn = StringUtils::Trim(queueArnNode.GetText().c_str());
-    XmlNode eventsNode = resultNode.FirstChild("Events");
-    while(!eventsNode.IsNull())
+    if(!queueArnNode.IsNull())
     {
-      m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
-      eventsNode = eventsNode.NextNode("Events");
+      m_queueArn = StringUtils::Trim(queueArnNode.GetText().c_str());
+      m_queueArnHasBeenSet = true;
     }
+    XmlNode eventsNode = resultNode.FirstChild("Events");
+    if(!eventsNode.IsNull())
+    {
+      while(!eventsNode.IsNull())
+      {
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
+        eventsNode = eventsNode.NextNode("Events");
+      }
 
+      m_eventsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -69,11 +81,19 @@ void QueueConfiguration::AddToNode(XmlNode& parentNode) const
    idNode.SetText(m_id);
   }
 
-  XmlNode queueArnNode = parentNode.CreateChildElement("QueueArn");
-  queueArnNode.SetText(m_queueArn);
-  for(const auto& item : m_events)
+  if(m_queueArnHasBeenSet)
   {
-    XmlNode eventsNode = parentNode.CreateChildElement("Event");
-    eventsNode.SetText(EventMapper::GetNameForEvent(item));
+   XmlNode queueArnNode = parentNode.CreateChildElement("QueueArn");
+   queueArnNode.SetText(m_queueArn);
   }
+
+  if(m_eventsHasBeenSet)
+  {
+   for(const auto& item : m_events)
+   {
+     XmlNode eventsNode = parentNode.CreateChildElement("Event");
+     eventsNode.SetText(EventMapper::GetNameForEvent(item));
+   }
+  }
+
 }

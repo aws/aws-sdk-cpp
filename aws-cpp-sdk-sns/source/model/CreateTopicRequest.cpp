@@ -19,7 +19,8 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CreateTopicRequest::CreateTopicRequest()
+CreateTopicRequest::CreateTopicRequest() : 
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String CreateTopicRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateTopic&";
-  ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

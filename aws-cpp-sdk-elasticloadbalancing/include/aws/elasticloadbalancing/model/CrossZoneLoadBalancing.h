@@ -49,7 +49,7 @@ namespace Model
     /*
      <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     */
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /*
      <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
@@ -58,6 +58,7 @@ namespace Model
 
   private:
     bool m_enabled;
+    bool m_enabledHasBeenSet;
   };
 
 } // namespace Model

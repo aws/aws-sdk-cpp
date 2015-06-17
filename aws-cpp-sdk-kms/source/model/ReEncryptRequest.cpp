@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ReEncryptRequest::ReEncryptRequest() : 
+    m_ciphertextBlobHasBeenSet(false),
     m_sourceEncryptionContextHasBeenSet(false),
+    m_destinationKeyIdHasBeenSet(false),
     m_destinationEncryptionContextHasBeenSet(false),
     m_grantTokensHasBeenSet(false)
 {
@@ -33,7 +35,11 @@ Aws::String ReEncryptRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("CiphertextBlob", HashingUtils::Base64Encode(m_ciphertextBlob));
+  if(m_ciphertextBlobHasBeenSet)
+  {
+   payload.WithString("CiphertextBlob", HashingUtils::Base64Encode(m_ciphertextBlob));
+  }
+
   if(m_sourceEncryptionContextHasBeenSet)
   {
    JsonValue sourceEncryptionContextJsonMap;
@@ -45,7 +51,11 @@ Aws::String ReEncryptRequest::SerializePayload() const
 
   }
 
-  payload.WithString("DestinationKeyId", m_destinationKeyId);
+  if(m_destinationKeyIdHasBeenSet)
+  {
+   payload.WithString("DestinationKeyId", m_destinationKeyId);
+
+  }
 
   if(m_destinationEncryptionContextHasBeenSet)
   {

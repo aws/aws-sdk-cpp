@@ -58,24 +58,26 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());
       m_markerHasBeenSet = true;
     }
-    XmlNode parameterNode = resultNode.FirstChild("Parameter");
+    XmlNode parameterNodeParent = resultNode.FirstChild("Parameter");
+    XmlNode parameterNode = parameterNodeParent.FirstChild("member");
     if(!parameterNode.IsNull())
     {
       while(!parameterNode.IsNull())
       {
         m_parameters.push_back(parameterNode);
-        parameterNode = parameterNode.NextNode("Parameter");
+        parameterNode = parameterNode.NextNode("member");
       }
 
       m_parametersHasBeenSet = true;
     }
-    XmlNode cacheNodeTypeSpecificParameterNode = resultNode.FirstChild("CacheNodeTypeSpecificParameter");
+    XmlNode cacheNodeTypeSpecificParameterNodeParent = resultNode.FirstChild("CacheNodeTypeSpecificParameter");
+    XmlNode cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNodeParent.FirstChild("member");
     if(!cacheNodeTypeSpecificParameterNode.IsNull())
     {
       while(!cacheNodeTypeSpecificParameterNode.IsNull())
       {
         m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParameterNode);
-        cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNode.NextNode("CacheNodeTypeSpecificParameter");
+        cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNode.NextNode("member");
       }
 
       m_cacheNodeTypeSpecificParametersHasBeenSet = true;

@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>A name for the attribute.</p>
     */
-    inline void SetAttributeName(const Aws::String& value) { m_attributeName = value; }
+    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>A name for the attribute.</p>
     */
-    inline void SetAttributeName(const char* value) { m_attributeName.assign(value); }
+    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /*
      <p>A name for the attribute.</p>
@@ -72,7 +72,7 @@ namespace Model
     /*
      <p>The data type for the attribute.</p>
     */
-    inline void SetAttributeType(const ScalarAttributeType& value) { m_attributeType = value; }
+    inline void SetAttributeType(const ScalarAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /*
      <p>The data type for the attribute.</p>
@@ -81,7 +81,9 @@ namespace Model
 
   private:
     Aws::String m_attributeName;
+    bool m_attributeNameHasBeenSet;
     ScalarAttributeType m_attributeType;
+    bool m_attributeTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DescribeOptionGroupOptionsRequest::DescribeOptionGroupOptionsRequest() : 
+    m_engineNameHasBeenSet(false),
     m_majorEngineVersionHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxRecords(0),
@@ -32,7 +33,10 @@ Aws::String DescribeOptionGroupOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeOptionGroupOptions&";
-  ss << "EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
+  if(m_engineNameHasBeenSet)
+  {
+    ss << "EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
+  }
   if(m_majorEngineVersionHasBeenSet)
   {
     ss << "MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";

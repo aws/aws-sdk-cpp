@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the launch configuration.</p>
     */
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The name of the launch configuration.</p>
     */
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /*
      <p>The name of the launch configuration.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_launchConfigurationName;
+    bool m_launchConfigurationNameHasBeenSet;
   };
 
 } // namespace Model

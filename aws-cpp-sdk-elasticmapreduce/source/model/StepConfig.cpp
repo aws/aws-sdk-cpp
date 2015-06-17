@@ -22,19 +22,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StepConfig::StepConfig() : 
-    m_actionOnFailureHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_actionOnFailureHasBeenSet(false),
+    m_hadoopJarStepHasBeenSet(false)
 {
 }
 
 StepConfig::StepConfig(const JsonValue& jsonValue) : 
-    m_actionOnFailureHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_actionOnFailureHasBeenSet(false),
+    m_hadoopJarStepHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StepConfig& StepConfig::operator =(const JsonValue& jsonValue)
 {
-  m_name = jsonValue.GetString("Name");
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("ActionOnFailure"))
   {
@@ -43,7 +52,12 @@ StepConfig& StepConfig::operator =(const JsonValue& jsonValue)
     m_actionOnFailureHasBeenSet = true;
   }
 
-  m_hadoopJarStep = jsonValue.GetObject("HadoopJarStep");
+  if(jsonValue.ValueExists("HadoopJarStep"))
+  {
+    m_hadoopJarStep = jsonValue.GetObject("HadoopJarStep");
+
+    m_hadoopJarStepHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -52,14 +66,22 @@ JsonValue StepConfig::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
 
   if(m_actionOnFailureHasBeenSet)
   {
    payload.WithString("ActionOnFailure", ActionOnFailureMapper::GetNameForActionOnFailure(m_actionOnFailure));
   }
 
-  payload.WithObject("HadoopJarStep", m_hadoopJarStep.Jsonize());
+  if(m_hadoopJarStepHasBeenSet)
+  {
+   payload.WithObject("HadoopJarStep", m_hadoopJarStep.Jsonize());
+
+  }
 
   return std::move(payload);
 }

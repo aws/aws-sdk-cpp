@@ -23,8 +23,11 @@ using namespace Aws::Utils;
 
 CreateServiceRequest::CreateServiceRequest() : 
     m_clusterHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_taskDefinitionHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
     m_desiredCount(0),
+    m_desiredCountHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_roleHasBeenSet(false)
 {
@@ -40,9 +43,17 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   }
 
-  payload.WithString("serviceName", m_serviceName);
+  if(m_serviceNameHasBeenSet)
+  {
+   payload.WithString("serviceName", m_serviceName);
 
-  payload.WithString("taskDefinition", m_taskDefinition);
+  }
+
+  if(m_taskDefinitionHasBeenSet)
+  {
+   payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
 
   if(m_loadBalancersHasBeenSet)
   {
@@ -55,7 +66,11 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   }
 
-  payload.WithInteger("desiredCount", m_desiredCount);
+  if(m_desiredCountHasBeenSet)
+  {
+   payload.WithInteger("desiredCount", m_desiredCount);
+
+  }
 
   if(m_clientTokenHasBeenSet)
   {

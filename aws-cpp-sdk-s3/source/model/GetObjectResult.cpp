@@ -27,6 +27,7 @@ using namespace Aws;
 
 GetObjectResult::GetObjectResult() : 
     m_deleteMarker(false),
+    m_expiration(0.0),
     m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
@@ -38,7 +39,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_body(std::move(toMove.m_body)),
     m_deleteMarker(toMove.m_deleteMarker),
     m_acceptRanges(std::move(toMove.m_acceptRanges)),
-    m_expiration(std::move(toMove.m_expiration)),
+    m_expiration(toMove.m_expiration),
     m_restore(std::move(toMove.m_restore)),
     m_lastModified(toMove.m_lastModified),
     m_contentLength(toMove.m_contentLength),
@@ -73,7 +74,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_body = std::move(toMove.m_body);
    m_deleteMarker = toMove.m_deleteMarker;
    m_acceptRanges = std::move(toMove.m_acceptRanges);
-   m_expiration = std::move(toMove.m_expiration);
+   m_expiration = toMove.m_expiration;
    m_restore = std::move(toMove.m_restore);
    m_lastModified = toMove.m_lastModified;
    m_contentLength = toMove.m_contentLength;
@@ -101,6 +102,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
 
 GetObjectResult::GetObjectResult(AmazonWebServiceResult<ResponseStream>&& result) : 
     m_deleteMarker(false),
+    m_expiration(0.0),
     m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
@@ -129,7 +131,7 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& expirationIter = headers.find("x-amz-expiration");
   if(expirationIter != headers.end())
   {
-    m_expiration = expirationIter->second;
+     m_expiration = StringUtils::ConvertToDouble(expirationIter->second.c_str());
   }
 
   const auto& restoreIter = headers.find("x-amz-restore");

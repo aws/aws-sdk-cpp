@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetPermissionRequest::SetPermissionRequest() : 
+    m_stackIdHasBeenSet(false),
+    m_iamUserArnHasBeenSet(false),
     m_allowSsh(false),
     m_allowSshHasBeenSet(false),
     m_allowSudo(false),
@@ -34,9 +36,17 @@ Aws::String SetPermissionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
 
-  payload.WithString("IamUserArn", m_iamUserArn);
+  }
+
+  if(m_iamUserArnHasBeenSet)
+  {
+   payload.WithString("IamUserArn", m_iamUserArn);
+
+  }
 
   if(m_allowSshHasBeenSet)
   {

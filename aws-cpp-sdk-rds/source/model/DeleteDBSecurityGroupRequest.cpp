@@ -19,7 +19,8 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBSecurityGroupRequest::DeleteDBSecurityGroupRequest()
+DeleteDBSecurityGroupRequest::DeleteDBSecurityGroupRequest() : 
+    m_dBSecurityGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteDBSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteDBSecurityGroup&";
-  ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
+  if(m_dBSecurityGroupNameHasBeenSet)
+  {
+    ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
+  }
   ss << "Version=2014-10-31";
   return ss.str();
 }

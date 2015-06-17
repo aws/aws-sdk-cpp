@@ -48,7 +48,7 @@ namespace Model
     /*
      Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a distribution or if you want to disable logging for an existing distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
     */
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /*
      Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a distribution or if you want to disable logging for an existing distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
@@ -62,7 +62,7 @@ namespace Model
     /*
      Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you want to disable include cookies for an existing distribution, specify false for IncludeCookies.
     */
-    inline void SetIncludeCookies(bool value) { m_includeCookies = value; }
+    inline void SetIncludeCookies(bool value) { m_includeCookiesHasBeenSet = true; m_includeCookies = value; }
 
     /*
      Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you want to disable include cookies for an existing distribution, specify false for IncludeCookies.
@@ -76,12 +76,12 @@ namespace Model
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
     */
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
     */
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /*
      The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
@@ -100,12 +100,12 @@ namespace Model
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
     */
-    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
+    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
     */
-    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
+    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /*
      An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
@@ -119,9 +119,13 @@ namespace Model
 
   private:
     bool m_enabled;
+    bool m_enabledHasBeenSet;
     bool m_includeCookies;
+    bool m_includeCookiesHasBeenSet;
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_prefix;
+    bool m_prefixHasBeenSet;
   };
 
 } // namespace Model

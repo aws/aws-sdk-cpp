@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DetachGroupPolicyRequest::DetachGroupPolicyRequest()
+DetachGroupPolicyRequest::DetachGroupPolicyRequest() : 
+    m_groupNameHasBeenSet(false),
+    m_policyArnHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DetachGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DetachGroupPolicy&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

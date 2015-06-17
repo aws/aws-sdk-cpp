@@ -45,10 +45,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline GetObjectRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -135,10 +135,10 @@ namespace Model
     
     inline const Aws::String& GetKey() const{ return m_key; }
     
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
     inline GetObjectRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
@@ -329,26 +329,26 @@ namespace Model
     inline GetObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline GetObjectRequest&  WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline GetObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
@@ -410,6 +410,7 @@ namespace Model
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
     double m_ifModifiedSince;
@@ -419,6 +420,7 @@ namespace Model
     double m_ifUnmodifiedSince;
     bool m_ifUnmodifiedSinceHasBeenSet;
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_range;
     bool m_rangeHasBeenSet;
     Aws::String m_responseCacheControl;

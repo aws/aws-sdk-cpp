@@ -19,7 +19,9 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateSnapshotRequest::CreateSnapshotRequest()
+CreateSnapshotRequest::CreateSnapshotRequest() : 
+    m_cacheClusterIdHasBeenSet(false),
+    m_snapshotNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateSnapshot&";
-  ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
-  ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  if(m_cacheClusterIdHasBeenSet)
+  {
+    ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  }
+  if(m_snapshotNameHasBeenSet)
+  {
+    ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

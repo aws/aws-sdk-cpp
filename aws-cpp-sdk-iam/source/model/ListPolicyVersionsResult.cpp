@@ -43,11 +43,12 @@ ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode versionsNode = resultNode.FirstChild("Versions");
+    XmlNode versionsNodeParent = resultNode.FirstChild("Versions");
+    XmlNode versionsNode = versionsNodeParent.FirstChild("member");
     while(!versionsNode.IsNull())
     {
       m_versions.push_back(versionsNode);
-      versionsNode = versionsNode.NextNode("Versions");
+      versionsNode = versionsNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

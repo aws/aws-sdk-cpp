@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
+    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
     */
-    inline void SetLabel(const Aws::String& value) { m_label = value; }
+    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
     */
-    inline void SetLabel(const char* value) { m_label.assign(value); }
+    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
     /*
      <p>The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_queueUrl;
+    bool m_queueUrlHasBeenSet;
     Aws::String m_label;
+    bool m_labelHasBeenSet;
   };
 
 } // namespace Model

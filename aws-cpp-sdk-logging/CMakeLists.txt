@@ -38,3 +38,10 @@ endif()
 
 add_library(aws-cpp-sdk-logging ${LIBTYPE} ${LOGGING_SRC})
 target_link_libraries(aws-cpp-sdk-logging aws-cpp-sdk-s3)
+
+install (TARGETS aws-cpp-sdk-logging
+         ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+         LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+         RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
+install (FILES ${LOGGING_HEADERS} DESTINATION include/aws/logging)

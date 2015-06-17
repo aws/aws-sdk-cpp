@@ -21,7 +21,9 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsRequest::RemoveTagsRequest()
+RemoveTagsRequest::RemoveTagsRequest() : 
+    m_resourceIdHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String RemoveTagsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ResourceId", m_resourceId);
-
-  Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-  for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
+  if(m_resourceIdHasBeenSet)
   {
-    tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+   payload.WithString("ResourceId", m_resourceId);
+
   }
-  payload.WithArray("TagKeys", std::move(tagKeysJsonList));
+
+  if(m_tagKeysHasBeenSet)
+  {
+   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
+   {
+     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+   }
+   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

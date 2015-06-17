@@ -20,7 +20,9 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreateOpenIDConnectProviderRequest::CreateOpenIDConnectProviderRequest() : 
-    m_clientIDListHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_clientIDListHasBeenSet(false),
+    m_thumbprintListHasBeenSet(false)
 {
 }
 
@@ -28,7 +30,10 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateOpenIDConnectProvider&";
-  ss << "Url=" << StringUtils::URLEncode(m_url.c_str()) << "&";
+  if(m_urlHasBeenSet)
+  {
+    ss << "Url=" << StringUtils::URLEncode(m_url.c_str()) << "&";
+  }
   if(m_clientIDListHasBeenSet)
   {
     unsigned clientIDListCount = 1;
@@ -39,12 +44,15 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
       clientIDListCount++;
     }
   }
-  unsigned thumbprintListCount = 1;
-  for(auto& item : m_thumbprintList)
+  if(m_thumbprintListHasBeenSet)
   {
-    ss << "ThumbprintList." << thumbprintListCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    thumbprintListCount++;
+    unsigned thumbprintListCount = 1;
+    for(auto& item : m_thumbprintList)
+    {
+      ss << "ThumbprintList." << thumbprintListCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      thumbprintListCount++;
+    }
   }
   ss << "Version=2010-05-08";
   return ss.str();

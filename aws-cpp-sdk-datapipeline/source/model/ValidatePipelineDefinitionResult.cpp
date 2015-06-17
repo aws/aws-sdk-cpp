@@ -56,7 +56,11 @@ ValidatePipelineDefinitionResult& ValidatePipelineDefinitionResult::operator =(c
     }
   }
 
-  m_errored = jsonValue.GetBool("errored");
+  if(jsonValue.ValueExists("errored"))
+  {
+    m_errored = jsonValue.GetBool("errored");
+
+  }
 
 
 

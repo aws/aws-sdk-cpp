@@ -20,7 +20,9 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 TerminateInstanceInAutoScalingGroupRequest::TerminateInstanceInAutoScalingGroupRequest() : 
-    m_shouldDecrementDesiredCapacity(false)
+    m_instanceIdHasBeenSet(false),
+    m_shouldDecrementDesiredCapacity(false),
+    m_shouldDecrementDesiredCapacityHasBeenSet(false)
 {
 }
 
@@ -28,8 +30,14 @@ Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=TerminateInstanceInAutoScalingGroup&";
-  ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  ss << "ShouldDecrementDesiredCapacity=" << m_shouldDecrementDesiredCapacity << "&";
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_shouldDecrementDesiredCapacityHasBeenSet)
+  {
+    ss << "ShouldDecrementDesiredCapacity=" << m_shouldDecrementDesiredCapacity << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

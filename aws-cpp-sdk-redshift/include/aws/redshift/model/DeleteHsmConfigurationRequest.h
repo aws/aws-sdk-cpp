@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     */
-    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /*
      <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     */
-    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifier.assign(value); }
+    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
 
     /*
      <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_hsmConfigurationIdentifier;
+    bool m_hsmConfigurationIdentifierHasBeenSet;
   };
 
 } // namespace Model

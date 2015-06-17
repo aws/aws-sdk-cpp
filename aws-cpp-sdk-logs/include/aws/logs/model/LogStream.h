@@ -30,7 +30,7 @@ namespace CloudWatchLogs
 namespace Model
 {
   /*
-    A log stream is sequence of log events that share the same emitter.
+    <p>A log stream is sequence of log events from a single emitter of logs.</p>
   */
   class AWS_CLOUDWATCHLOGS_API LogStream
   {

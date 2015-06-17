@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The identifier of the snapshot that the account can no longer access. </p>
     */
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p> The identifier of the snapshot that the account can no longer access. </p>
     */
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifier.assign(value); }
+    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /*
      <p> The identifier of the snapshot that the account can no longer access. </p>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p> The identifier of the AWS customer account that can no longer restore the specified snapshot. </p>
     */
-    inline void SetAccountWithRestoreAccess(const Aws::String& value) { m_accountWithRestoreAccess = value; }
+    inline void SetAccountWithRestoreAccess(const Aws::String& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
 
     /*
      <p> The identifier of the AWS customer account that can no longer restore the specified snapshot. </p>
     */
-    inline void SetAccountWithRestoreAccess(const char* value) { m_accountWithRestoreAccess.assign(value); }
+    inline void SetAccountWithRestoreAccess(const char* value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess.assign(value); }
 
     /*
      <p> The identifier of the AWS customer account that can no longer restore the specified snapshot. </p>
@@ -108,9 +108,11 @@ namespace Model
 
   private:
     Aws::String m_snapshotIdentifier;
+    bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
     Aws::String m_accountWithRestoreAccess;
+    bool m_accountWithRestoreAccessHasBeenSet;
   };
 
 } // namespace Model

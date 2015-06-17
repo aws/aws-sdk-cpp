@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
+    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -87,6 +87,7 @@ namespace Model
 
   private:
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
   };

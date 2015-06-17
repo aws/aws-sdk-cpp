@@ -24,11 +24,13 @@ using namespace Aws::Utils;
 
 CopyObjectRequest::CopyObjectRequest() : 
     m_aCLHasBeenSet(false),
+    m_bucketHasBeenSet(false),
     m_cacheControlHasBeenSet(false),
     m_contentDispositionHasBeenSet(false),
     m_contentEncodingHasBeenSet(false),
     m_contentLanguageHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
+    m_copySourceHasBeenSet(false),
     m_copySourceIfMatchHasBeenSet(false),
     m_copySourceIfModifiedSince(0.0),
     m_copySourceIfModifiedSinceHasBeenSet(false),
@@ -41,6 +43,7 @@ CopyObjectRequest::CopyObjectRequest() :
     m_grantReadHasBeenSet(false),
     m_grantReadACPHasBeenSet(false),
     m_grantWriteACPHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_metadataDirectiveHasBeenSet(false),
     m_serverSideEncryptionHasBeenSet(false),
@@ -107,9 +110,13 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
    ss.str("");
   }
 
-  ss << m_copySource;
-  headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source", ss.str()));
-  ss.str("");
+  if(m_copySourceHasBeenSet)
+  {
+   ss << m_copySource;
+   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source", ss.str()));
+   ss.str("");
+  }
+
   if(m_copySourceIfMatchHasBeenSet)
   {
    ss << m_copySourceIfMatch;

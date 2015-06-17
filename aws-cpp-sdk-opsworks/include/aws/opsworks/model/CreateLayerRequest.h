@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The layer stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The layer stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The layer stack ID.</p>
@@ -73,7 +73,7 @@ namespace Model
     /*
      <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers.</p>
     */
-    inline void SetType(const LayerType& value) { m_type = value; }
+    inline void SetType(const LayerType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /*
      <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers.</p>
@@ -87,12 +87,12 @@ namespace Model
     /*
      <p>The layer name, which is used by the console.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The layer name, which is used by the console.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The layer name, which is used by the console.</p>
@@ -111,12 +111,12 @@ namespace Model
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
     */
-    inline void SetShortname(const Aws::String& value) { m_shortname = value; }
+    inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
     */
-    inline void SetShortname(const char* value) { m_shortname.assign(value); }
+    inline void SetShortname(const char* value) { m_shortnameHasBeenSet = true; m_shortname.assign(value); }
 
     /*
      <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
@@ -343,9 +343,13 @@ namespace Model
 
   private:
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
     LayerType m_type;
+    bool m_typeHasBeenSet;
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_shortname;
+    bool m_shortnameHasBeenSet;
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
     Aws::String m_customInstanceProfileArn;

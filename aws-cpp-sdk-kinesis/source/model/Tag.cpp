@@ -22,11 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Tag::Tag() : 
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 Tag::Tag(const JsonValue& jsonValue) : 
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -34,7 +36,12 @@ Tag::Tag(const JsonValue& jsonValue) :
 
 Tag& Tag::operator =(const JsonValue& jsonValue)
 {
-  m_key = jsonValue.GetString("Key");
+  if(jsonValue.ValueExists("Key"))
+  {
+    m_key = jsonValue.GetString("Key");
+
+    m_keyHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Value"))
   {
@@ -50,7 +57,11 @@ JsonValue Tag::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Key", m_key);
+  if(m_keyHasBeenSet)
+  {
+   payload.WithString("Key", m_key);
+
+  }
 
   if(m_valueHasBeenSet)
   {

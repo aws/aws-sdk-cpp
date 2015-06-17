@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListAttachedGroupPoliciesRequest::ListAttachedGroupPoliciesRequest() : 
+    m_groupNameHasBeenSet(false),
     m_pathPrefixHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
@@ -31,7 +32,10 @@ Aws::String ListAttachedGroupPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListAttachedGroupPolicies&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
   if(m_pathPrefixHasBeenSet)
   {
     ss << "PathPrefix=" << StringUtils::URLEncode(m_pathPrefix.c_str()) << "&";

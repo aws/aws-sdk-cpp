@@ -22,12 +22,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Condition::Condition() : 
-    m_attributeValueListHasBeenSet(false)
+    m_attributeValueListHasBeenSet(false),
+    m_comparisonOperatorHasBeenSet(false)
 {
 }
 
 Condition::Condition(const JsonValue& jsonValue) : 
-    m_attributeValueListHasBeenSet(false)
+    m_attributeValueListHasBeenSet(false),
+    m_comparisonOperatorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,7 +46,12 @@ Condition& Condition::operator =(const JsonValue& jsonValue)
     m_attributeValueListHasBeenSet = true;
   }
 
-  m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
+  if(jsonValue.ValueExists("ComparisonOperator"))
+  {
+    m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
+
+    m_comparisonOperatorHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -64,6 +71,10 @@ JsonValue Condition::Jsonize() const
 
   }
 
-  payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
+  if(m_comparisonOperatorHasBeenSet)
+  {
+   payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
+  }
+
   return std::move(payload);
 }

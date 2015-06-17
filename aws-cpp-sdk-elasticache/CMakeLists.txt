@@ -55,7 +55,11 @@ project(aws-cpp-sdk-elasticache)
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 
-  install (TARGETS aws-cpp-sdk-elasticache DESTINATION lib)
+  install (TARGETS aws-cpp-sdk-elasticache
+           ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
   install (FILES ${AWS_ELASTICACHE_HEADERS} DESTINATION include/aws/elasticache)
   install (FILES ${AWS_ELASTICACHE_MODEL_HEADERS} DESTINATION include/aws/elasticache/model)
 

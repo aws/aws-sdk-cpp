@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the role to create.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to create.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name of the role to create.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
     */
-    inline void SetAssumeRolePolicyDocument(const Aws::String& value) { m_assumeRolePolicyDocument = value; }
+    inline void SetAssumeRolePolicyDocument(const Aws::String& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
 
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
     */
-    inline void SetAssumeRolePolicyDocument(const char* value) { m_assumeRolePolicyDocument.assign(value); }
+    inline void SetAssumeRolePolicyDocument(const char* value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument.assign(value); }
 
     /*
      <p>The policy that grants an entity permission to assume the role.</p>
@@ -109,7 +109,9 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet;
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_assumeRolePolicyDocument;
+    bool m_assumeRolePolicyDocumentHasBeenSet;
   };
 
 } // namespace Model

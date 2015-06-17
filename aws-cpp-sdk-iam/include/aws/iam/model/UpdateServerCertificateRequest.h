@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the server certificate that you want to update.</p>
     */
-    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateName = value; }
+    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
      <p>The name of the server certificate that you want to update.</p>
     */
-    inline void SetServerCertificateName(const char* value) { m_serverCertificateName.assign(value); }
+    inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /*
      <p>The name of the server certificate that you want to update.</p>
@@ -107,6 +107,7 @@ namespace Model
 
   private:
     Aws::String m_serverCertificateName;
+    bool m_serverCertificateNameHasBeenSet;
     Aws::String m_newPath;
     bool m_newPathHasBeenSet;
     Aws::String m_newServerCertificateName;

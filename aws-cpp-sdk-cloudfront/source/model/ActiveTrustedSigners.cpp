@@ -25,14 +25,18 @@ using namespace Aws::Utils;
 
 ActiveTrustedSigners::ActiveTrustedSigners() : 
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 ActiveTrustedSigners::ActiveTrustedSigners(const XmlNode& xmlNode) : 
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -45,16 +49,25 @@ ActiveTrustedSigners& ActiveTrustedSigners::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode signerNode = resultNode.FirstChild("Signer");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode signerNodeParent = resultNode.FirstChild("Signer");
+    XmlNode signerNode = signerNodeParent.FirstChild("member");
     if(!signerNode.IsNull())
     {
       while(!signerNode.IsNull())
       {
         m_items.push_back(signerNode);
-        signerNode = signerNode.NextNode("Signer");
+        signerNode = signerNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -67,14 +80,22 @@ ActiveTrustedSigners& ActiveTrustedSigners::operator =(const XmlNode& xmlNode)
 void ActiveTrustedSigners::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  if(m_enabledHasBeenSet)
+  {
+   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
   ss << m_enabled;
-  enabledNode.SetText(ss.str());
+   enabledNode.SetText(ss.str());
   ss.str("");
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  }
+
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

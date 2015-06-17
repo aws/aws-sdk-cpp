@@ -64,12 +64,12 @@ namespace Model
     /*
      <p> The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device. </p>
     */
-    inline void SetVirtualMFADeviceName(const Aws::String& value) { m_virtualMFADeviceName = value; }
+    inline void SetVirtualMFADeviceName(const Aws::String& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = value; }
 
     /*
      <p> The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device. </p>
     */
-    inline void SetVirtualMFADeviceName(const char* value) { m_virtualMFADeviceName.assign(value); }
+    inline void SetVirtualMFADeviceName(const char* value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName.assign(value); }
 
     /*
      <p> The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device. </p>
@@ -85,6 +85,7 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet;
     Aws::String m_virtualMFADeviceName;
+    bool m_virtualMFADeviceNameHasBeenSet;
   };
 
 } // namespace Model

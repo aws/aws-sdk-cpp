@@ -34,11 +34,13 @@ using namespace Aws::Utils::Logging;
 
 struct CurlWriteCallbackContext
 {
-    CurlWriteCallbackContext(HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
+    CurlWriteCallbackContext(HttpRequest* request, HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
+        m_request(request),
         m_response(response),
         m_rateLimiter(rateLimiter)
     {}
 
+    HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
 };
@@ -95,7 +97,8 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
 std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
     Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
-    AWS_LOG_TRACE(CurlTag, "Making request to %s.", request.GetURIString(true).c_str());
+    Aws::String url = request.GetURIString();
+    AWS_LOGSTREAM_TRACE(CurlTag, "Making request to " << url);
     struct curl_slist* headers = NULL;
 
     if(writeLimiter != nullptr)
@@ -140,10 +143,9 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
 
         response = Aws::MakeShared<StandardHttpResponse>(CurlTag, request);
-        CurlWriteCallbackContext writeContext(response.get(), readLimiter);
+        CurlWriteCallbackContext writeContext(&request, response.get(), readLimiter);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
-        Aws::String url = request.GetURIString();
         curl_easy_setopt(connectionHandle, CURLOPT_URL, url.c_str());
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEFUNCTION, &CurlHttpClient::WriteData);
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEDATA, &writeContext);
@@ -220,13 +222,14 @@ size_t CurlHttpClient::WriteData(char *ptr, size_t size, size_t nmemb, void* use
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
         HttpResponse* response = context->m_response;
 
-        int sizeToWrite = size * nmemb;
+        size_t sizeToWrite = size * nmemb;
         if(context->m_rateLimiter)
         {
-            context->m_rateLimiter->ApplyAndPayForCost(sizeToWrite);
+            context->m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(sizeToWrite));
         }
 
-        response->GetResponseBody().write(ptr, sizeToWrite);
+        response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        context->m_request->OnDataReceived.Invoke(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
 
         AWS_LOG_TRACE(CurlTag, "%d bytes written to response.", sizeToWrite);
         return sizeToWrite;
@@ -276,6 +279,7 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
         size_t amountToRead = static_cast< size_t >(std::min<decltype(length)>(length - currentPos, size * nmemb));
 
         ioStream->read(ptr, amountToRead);
+        request->OnDataSent.Invoke(request, amountToRead);
 
         return amountToRead;
     }

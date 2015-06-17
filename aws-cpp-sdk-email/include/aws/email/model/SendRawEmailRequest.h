@@ -91,12 +91,84 @@ namespace Model
     /*
      <p>The raw text of the message. The client is responsible for ensuring the following:</p> <p> <ul> <li>Message must contain a header and a body, separated by a blank line.</li> <li>All required header fields must be present.</li> <li>Each part of a multipart MIME message must be formatted properly.</li> <li>MIME content types must be among those supported by Amazon SES. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li>Content must be base64-encoded, if MIME requires it.</li> </ul> </p>
     */
-    inline void SetRawMessage(const RawMessage& value) { m_rawMessage = value; }
+    inline void SetRawMessage(const RawMessage& value) { m_rawMessageHasBeenSet = true; m_rawMessage = value; }
 
     /*
      <p>The raw text of the message. The client is responsible for ensuring the following:</p> <p> <ul> <li>Message must contain a header and a body, separated by a blank line.</li> <li>All required header fields must be present.</li> <li>Each part of a multipart MIME message must be formatted properly.</li> <li>MIME content types must be among those supported by Amazon SES. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li>Content must be base64-encoded, if MIME requires it.</li> </ul> </p>
     */
     inline SendRawEmailRequest&  WithRawMessage(const RawMessage& value) { SetRawMessage(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the from address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the From header. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline const Aws::String& GetFromArn() const{ return m_fromArn; }
+    /*
+     <p>The ARN of the identity from which the from address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the From header. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetFromArn(const Aws::String& value) { m_fromArnHasBeenSet = true; m_fromArn = value; }
+
+    /*
+     <p>The ARN of the identity from which the from address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the From header. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetFromArn(const char* value) { m_fromArnHasBeenSet = true; m_fromArn.assign(value); }
+
+    /*
+     <p>The ARN of the identity from which the from address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the From header. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendRawEmailRequest&  WithFromArn(const Aws::String& value) { SetFromArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the from address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the From header. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendRawEmailRequest& WithFromArn(const char* value) { SetFromArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendRawEmailRequest&  WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendRawEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the Return-Path header </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the Return-Path header </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the Return-Path header </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the Return-Path header </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendRawEmailRequest&  WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the <code>rawMessage</code> uses an identity that is only available through sending authorization in the Return-Path header </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendRawEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
 
   private:
     Aws::String m_source;
@@ -104,6 +176,13 @@ namespace Model
     Aws::Vector<Aws::String> m_destinations;
     bool m_destinationsHasBeenSet;
     RawMessage m_rawMessage;
+    bool m_rawMessageHasBeenSet;
+    Aws::String m_fromArn;
+    bool m_fromArnHasBeenSet;
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet;
+    Aws::String m_returnPathArn;
+    bool m_returnPathArnHasBeenSet;
   };
 
 } // namespace Model

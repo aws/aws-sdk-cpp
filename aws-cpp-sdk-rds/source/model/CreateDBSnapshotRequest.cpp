@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CreateDBSnapshotRequest::CreateDBSnapshotRequest() : 
+    m_dBSnapshotIdentifierHasBeenSet(false),
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String CreateDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateDBSnapshot&";
-  ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  if(m_dBSnapshotIdentifierHasBeenSet)
+  {
+    ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
+  }
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

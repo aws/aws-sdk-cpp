@@ -22,11 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ScriptBootstrapActionConfig::ScriptBootstrapActionConfig() : 
+    m_pathHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
 }
 
 ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(const JsonValue& jsonValue) : 
+    m_pathHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -34,7 +36,12 @@ ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(const JsonValue& jsonVa
 
 ScriptBootstrapActionConfig& ScriptBootstrapActionConfig::operator =(const JsonValue& jsonValue)
 {
-  m_path = jsonValue.GetString("Path");
+  if(jsonValue.ValueExists("Path"))
+  {
+    m_path = jsonValue.GetString("Path");
+
+    m_pathHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Args"))
   {
@@ -53,7 +60,11 @@ JsonValue ScriptBootstrapActionConfig::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Path", m_path);
+  if(m_pathHasBeenSet)
+  {
+   payload.WithString("Path", m_path);
+
+  }
 
   if(m_argsHasBeenSet)
   {

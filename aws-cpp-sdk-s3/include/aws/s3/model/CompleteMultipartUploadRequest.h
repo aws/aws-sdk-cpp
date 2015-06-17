@@ -46,10 +46,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline CompleteMultipartUploadRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -60,10 +60,10 @@ namespace Model
     
     inline const Aws::String& GetKey() const{ return m_key; }
     
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
     inline CompleteMultipartUploadRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
@@ -82,10 +82,10 @@ namespace Model
     
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
     
-    inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
+    inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     
-    inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
+    inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
     
     inline CompleteMultipartUploadRequest&  WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
@@ -103,10 +103,13 @@ namespace Model
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     CompletedMultipartUpload m_multipartUpload;
     bool m_multipartUploadHasBeenSet;
     Aws::String m_uploadId;
+    bool m_uploadIdHasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

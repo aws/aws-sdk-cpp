@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UpdateLoginProfileRequest::UpdateLoginProfileRequest() : 
+    m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_passwordResetRequired(false),
     m_passwordResetRequiredHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String UpdateLoginProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateLoginProfile&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
   if(m_passwordHasBeenSet)
   {
     ss << "Password=" << StringUtils::URLEncode(m_password.c_str()) << "&";

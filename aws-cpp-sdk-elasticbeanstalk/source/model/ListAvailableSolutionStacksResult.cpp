@@ -41,18 +41,20 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode solutionStacksNode = resultNode.FirstChild("SolutionStacks");
+    XmlNode solutionStacksNodeParent = resultNode.FirstChild("SolutionStacks");
+    XmlNode solutionStacksNode = solutionStacksNodeParent.FirstChild("member");
     while(!solutionStacksNode.IsNull())
     {
       m_solutionStacks.push_back(StringUtils::Trim(solutionStacksNode.GetText().c_str()));
-      solutionStacksNode = solutionStacksNode.NextNode("SolutionStacks");
+      solutionStacksNode = solutionStacksNode.NextNode("member");
     }
 
-    XmlNode solutionStackDetailsNode = resultNode.FirstChild("SolutionStackDetails");
+    XmlNode solutionStackDetailsNodeParent = resultNode.FirstChild("SolutionStackDetails");
+    XmlNode solutionStackDetailsNode = solutionStackDetailsNodeParent.FirstChild("member");
     while(!solutionStackDetailsNode.IsNull())
     {
       m_solutionStackDetails.push_back(solutionStackDetailsNode);
-      solutionStackDetailsNode = solutionStackDetailsNode.NextNode("SolutionStackDetails");
+      solutionStackDetailsNode = solutionStackDetailsNode.NextNode("member");
     }
 
   }

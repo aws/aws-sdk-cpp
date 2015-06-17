@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to delete. You can get a list of OpenID Connect provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
     */
-    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArn = value; }
+    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to delete. You can get a list of OpenID Connect provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
     */
-    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArn.assign(value); }
+    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to delete. You can get a list of OpenID Connect provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_openIDConnectProviderArn;
+    bool m_openIDConnectProviderArnHasBeenSet;
   };
 
 } // namespace Model

@@ -21,20 +21,34 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StepDetail::StepDetail()
+StepDetail::StepDetail() : 
+    m_stepConfigHasBeenSet(false),
+    m_executionStatusDetailHasBeenSet(false)
 {
 }
 
-StepDetail::StepDetail(const JsonValue& jsonValue)
+StepDetail::StepDetail(const JsonValue& jsonValue) : 
+    m_stepConfigHasBeenSet(false),
+    m_executionStatusDetailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StepDetail& StepDetail::operator =(const JsonValue& jsonValue)
 {
-  m_stepConfig = jsonValue.GetObject("StepConfig");
+  if(jsonValue.ValueExists("StepConfig"))
+  {
+    m_stepConfig = jsonValue.GetObject("StepConfig");
 
-  m_executionStatusDetail = jsonValue.GetObject("ExecutionStatusDetail");
+    m_stepConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionStatusDetail"))
+  {
+    m_executionStatusDetail = jsonValue.GetObject("ExecutionStatusDetail");
+
+    m_executionStatusDetailHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,9 +57,17 @@ JsonValue StepDetail::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithObject("StepConfig", m_stepConfig.Jsonize());
+  if(m_stepConfigHasBeenSet)
+  {
+   payload.WithObject("StepConfig", m_stepConfig.Jsonize());
 
-  payload.WithObject("ExecutionStatusDetail", m_executionStatusDetail.Jsonize());
+  }
+
+  if(m_executionStatusDetailHasBeenSet)
+  {
+   payload.WithObject("ExecutionStatusDetail", m_executionStatusDetail.Jsonize());
+
+  }
 
   return std::move(payload);
 }

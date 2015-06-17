@@ -43,32 +43,36 @@ GetAccountAuthorizationDetailsResult& GetAccountAuthorizationDetailsResult::oper
 
   if(!resultNode.IsNull())
   {
-    XmlNode userDetailListNode = resultNode.FirstChild("UserDetailList");
+    XmlNode userDetailListNodeParent = resultNode.FirstChild("UserDetailList");
+    XmlNode userDetailListNode = userDetailListNodeParent.FirstChild("member");
     while(!userDetailListNode.IsNull())
     {
       m_userDetailList.push_back(userDetailListNode);
-      userDetailListNode = userDetailListNode.NextNode("UserDetailList");
+      userDetailListNode = userDetailListNode.NextNode("member");
     }
 
-    XmlNode groupDetailListNode = resultNode.FirstChild("GroupDetailList");
+    XmlNode groupDetailListNodeParent = resultNode.FirstChild("GroupDetailList");
+    XmlNode groupDetailListNode = groupDetailListNodeParent.FirstChild("member");
     while(!groupDetailListNode.IsNull())
     {
       m_groupDetailList.push_back(groupDetailListNode);
-      groupDetailListNode = groupDetailListNode.NextNode("GroupDetailList");
+      groupDetailListNode = groupDetailListNode.NextNode("member");
     }
 
-    XmlNode roleDetailListNode = resultNode.FirstChild("RoleDetailList");
+    XmlNode roleDetailListNodeParent = resultNode.FirstChild("RoleDetailList");
+    XmlNode roleDetailListNode = roleDetailListNodeParent.FirstChild("member");
     while(!roleDetailListNode.IsNull())
     {
       m_roleDetailList.push_back(roleDetailListNode);
-      roleDetailListNode = roleDetailListNode.NextNode("RoleDetailList");
+      roleDetailListNode = roleDetailListNode.NextNode("member");
     }
 
-    XmlNode policiesNode = resultNode.FirstChild("Policies");
+    XmlNode policiesNodeParent = resultNode.FirstChild("Policies");
+    XmlNode policiesNode = policiesNodeParent.FirstChild("member");
     while(!policiesNode.IsNull())
     {
       m_policies.push_back(policiesNode);
-      policiesNode = policiesNode.NextNode("Policies");
+      policiesNode = policiesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

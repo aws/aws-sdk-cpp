@@ -19,7 +19,8 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteIdentityRequest::DeleteIdentityRequest()
+DeleteIdentityRequest::DeleteIdentityRequest() : 
+    m_identityHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteIdentity&";
-  ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
+  if(m_identityHasBeenSet)
+  {
+    ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

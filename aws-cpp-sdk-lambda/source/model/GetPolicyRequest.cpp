@@ -21,7 +21,8 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPolicyRequest::GetPolicyRequest()
+GetPolicyRequest::GetPolicyRequest() : 
+    m_functionNameHasBeenSet(false)
 {
 }
 

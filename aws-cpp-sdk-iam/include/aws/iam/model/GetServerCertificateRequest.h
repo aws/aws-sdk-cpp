@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the server certificate you want to retrieve information about.</p>
     */
-    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateName = value; }
+    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
      <p>The name of the server certificate you want to retrieve information about.</p>
     */
-    inline void SetServerCertificateName(const char* value) { m_serverCertificateName.assign(value); }
+    inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /*
      <p>The name of the server certificate you want to retrieve information about.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_serverCertificateName;
+    bool m_serverCertificateNameHasBeenSet;
   };
 
 } // namespace Model

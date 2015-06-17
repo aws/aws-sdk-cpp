@@ -48,7 +48,7 @@ namespace Model
     /*
      <p>The state of the job flow step.</p>
     */
-    inline void SetState(const StepExecutionState& value) { m_state = value; }
+    inline void SetState(const StepExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /*
      <p>The state of the job flow step.</p>
@@ -62,7 +62,7 @@ namespace Model
     /*
      <p>The creation date and time of the step.</p>
     */
-    inline void SetCreationDateTime(double value) { m_creationDateTime = value; }
+    inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /*
      <p>The creation date and time of the step.</p>
@@ -123,7 +123,9 @@ namespace Model
 
   private:
     StepExecutionState m_state;
+    bool m_stateHasBeenSet;
     double m_creationDateTime;
+    bool m_creationDateTimeHasBeenSet;
     double m_startDateTime;
     bool m_startDateTimeHasBeenSet;
     double m_endDateTime;

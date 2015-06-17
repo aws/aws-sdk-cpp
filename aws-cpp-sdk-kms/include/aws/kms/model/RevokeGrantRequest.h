@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
+    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /*
      <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
+    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /*
      <p>A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>Identifier of the grant to be revoked.</p>
     */
-    inline void SetGrantId(const Aws::String& value) { m_grantId = value; }
+    inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /*
      <p>Identifier of the grant to be revoked.</p>
     */
-    inline void SetGrantId(const char* value) { m_grantId.assign(value); }
+    inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
 
     /*
      <p>Identifier of the grant to be revoked.</p>
@@ -85,7 +85,9 @@ namespace Model
 
   private:
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet;
     Aws::String m_grantId;
+    bool m_grantIdHasBeenSet;
   };
 
 } // namespace Model

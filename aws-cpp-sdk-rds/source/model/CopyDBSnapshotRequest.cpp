@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CopyDBSnapshotRequest::CopyDBSnapshotRequest() : 
+    m_sourceDBSnapshotIdentifierHasBeenSet(false),
+    m_targetDBSnapshotIdentifierHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopyDBSnapshot&";
-  ss << "SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
-  ss << "TargetDBSnapshotIdentifier=" << StringUtils::URLEncode(m_targetDBSnapshotIdentifier.c_str()) << "&";
+  if(m_sourceDBSnapshotIdentifierHasBeenSet)
+  {
+    ss << "SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
+  }
+  if(m_targetDBSnapshotIdentifierHasBeenSet)
+  {
+    ss << "TargetDBSnapshotIdentifier=" << StringUtils::URLEncode(m_targetDBSnapshotIdentifier.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

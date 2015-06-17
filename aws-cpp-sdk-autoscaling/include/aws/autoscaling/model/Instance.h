@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>The ID of the instance.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the instance.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The ID of the instance.</p>
@@ -75,12 +75,12 @@ namespace Model
     /*
      <p>The Availability Zone associated with this instance.</p>
     */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The Availability Zone associated with this instance.</p>
     */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /*
      <p>The Availability Zone associated with this instance.</p>
@@ -99,7 +99,7 @@ namespace Model
     /*
      <p>A description of the current lifecycle state.</p> <note> <p>The <code>Quarantined</code> lifecycle state is not used.</p> </note>
     */
-    inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleState = value; }
+    inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /*
      <p>A description of the current lifecycle state.</p> <note> <p>The <code>Quarantined</code> lifecycle state is not used.</p> </note>
@@ -113,12 +113,12 @@ namespace Model
     /*
      <p>The health status of the instance.</p>
     */
-    inline void SetHealthStatus(const Aws::String& value) { m_healthStatus = value; }
+    inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /*
      <p>The health status of the instance.</p>
     */
-    inline void SetHealthStatus(const char* value) { m_healthStatus.assign(value); }
+    inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /*
      <p>The health status of the instance.</p>
@@ -137,12 +137,12 @@ namespace Model
     /*
      <p>The launch configuration associated with the instance.</p>
     */
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The launch configuration associated with the instance.</p>
     */
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /*
      <p>The launch configuration associated with the instance.</p>
@@ -156,10 +156,15 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
     LifecycleState m_lifecycleState;
+    bool m_lifecycleStateHasBeenSet;
     Aws::String m_healthStatus;
+    bool m_healthStatusHasBeenSet;
     Aws::String m_launchConfigurationName;
+    bool m_launchConfigurationNameHasBeenSet;
   };
 
 } // namespace Model

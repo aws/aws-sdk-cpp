@@ -39,10 +39,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutBucketVersioningRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -91,18 +91,20 @@ namespace Model
     
     inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
     
-    inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfiguration = value; }
+    inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
 
     
     inline PutBucketVersioningRequest&  WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
     Aws::String m_mFA;
     bool m_mFAHasBeenSet;
     VersioningConfiguration m_versioningConfiguration;
+    bool m_versioningConfigurationHasBeenSet;
   };
 
 } // namespace Model

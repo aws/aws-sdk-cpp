@@ -22,11 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeploymentCommand::DeploymentCommand() : 
+    m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
 }
 
 DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) : 
+    m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -34,7 +36,12 @@ DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) :
 
 DeploymentCommand& DeploymentCommand::operator =(const JsonValue& jsonValue)
 {
-  m_name = DeploymentCommandNameMapper::GetDeploymentCommandNameForName(jsonValue.GetString("Name"));
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = DeploymentCommandNameMapper::GetDeploymentCommandNameForName(jsonValue.GetString("Name"));
+
+    m_nameHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Args"))
   {
@@ -59,7 +66,11 @@ JsonValue DeploymentCommand::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", DeploymentCommandNameMapper::GetNameForDeploymentCommandName(m_name));
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", DeploymentCommandNameMapper::GetNameForDeploymentCommandName(m_name));
+  }
+
   if(m_argsHasBeenSet)
   {
    JsonValue argsJsonMap;
@@ -72,7 +83,7 @@ JsonValue DeploymentCommand::Jsonize() const
      }
      argsJsonMap.WithArray(argsItem.first, std::move(stringsJsonList));
    }
-   payload.WithObject("Strings", std::move(argsJsonMap));
+   payload.WithObject("Args", std::move(argsJsonMap));
 
   }
 

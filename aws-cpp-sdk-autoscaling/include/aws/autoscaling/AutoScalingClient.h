@@ -50,6 +50,7 @@
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatResult.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -242,54 +243,54 @@ namespace Model
 
   class AutoScalingClient;
 
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::AttachInstancesRequest&, const Model::AttachInstancesOutcome&> AttachInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::AttachLoadBalancersRequest&, const Model::AttachLoadBalancersOutcome&> AttachLoadBalancersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::CompleteLifecycleActionRequest&, const Model::CompleteLifecycleActionOutcome&> CompleteLifecycleActionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::CreateAutoScalingGroupRequest&, const Model::CreateAutoScalingGroupOutcome&> CreateAutoScalingGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::CreateLaunchConfigurationRequest&, const Model::CreateLaunchConfigurationOutcome&> CreateLaunchConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::CreateOrUpdateTagsRequest&, const Model::CreateOrUpdateTagsOutcome&> CreateOrUpdateTagsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteAutoScalingGroupRequest&, const Model::DeleteAutoScalingGroupOutcome&> DeleteAutoScalingGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteLaunchConfigurationRequest&, const Model::DeleteLaunchConfigurationOutcome&> DeleteLaunchConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteLifecycleHookRequest&, const Model::DeleteLifecycleHookOutcome&> DeleteLifecycleHookOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteNotificationConfigurationRequest&, const Model::DeleteNotificationConfigurationOutcome&> DeleteNotificationConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&> DeletePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteScheduledActionRequest&, const Model::DeleteScheduledActionOutcome&> DeleteScheduledActionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&> DeleteTagsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&> DescribeAccountLimitsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAdjustmentTypesRequest&, const Model::DescribeAdjustmentTypesOutcome&> DescribeAdjustmentTypesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAutoScalingGroupsRequest&, const Model::DescribeAutoScalingGroupsOutcome&> DescribeAutoScalingGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAutoScalingInstancesRequest&, const Model::DescribeAutoScalingInstancesOutcome&> DescribeAutoScalingInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAutoScalingNotificationTypesRequest&, const Model::DescribeAutoScalingNotificationTypesOutcome&> DescribeAutoScalingNotificationTypesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLaunchConfigurationsRequest&, const Model::DescribeLaunchConfigurationsOutcome&> DescribeLaunchConfigurationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLifecycleHookTypesRequest&, const Model::DescribeLifecycleHookTypesOutcome&> DescribeLifecycleHookTypesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLifecycleHooksRequest&, const Model::DescribeLifecycleHooksOutcome&> DescribeLifecycleHooksOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&> DescribeLoadBalancersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeMetricCollectionTypesRequest&, const Model::DescribeMetricCollectionTypesOutcome&> DescribeMetricCollectionTypesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeNotificationConfigurationsRequest&, const Model::DescribeNotificationConfigurationsOutcome&> DescribeNotificationConfigurationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribePoliciesRequest&, const Model::DescribePoliciesOutcome&> DescribePoliciesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeScalingActivitiesRequest&, const Model::DescribeScalingActivitiesOutcome&> DescribeScalingActivitiesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeScalingProcessTypesRequest&, const Model::DescribeScalingProcessTypesOutcome&> DescribeScalingProcessTypesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&> DescribeScheduledActionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&> DescribeTagsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeTerminationPolicyTypesRequest&, const Model::DescribeTerminationPolicyTypesOutcome&> DescribeTerminationPolicyTypesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DetachInstancesRequest&, const Model::DetachInstancesOutcome&> DetachInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DetachLoadBalancersRequest&, const Model::DetachLoadBalancersOutcome&> DetachLoadBalancersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::DisableMetricsCollectionRequest&, const Model::DisableMetricsCollectionOutcome&> DisableMetricsCollectionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::EnableMetricsCollectionRequest&, const Model::EnableMetricsCollectionOutcome&> EnableMetricsCollectionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::EnterStandbyRequest&, const Model::EnterStandbyOutcome&> EnterStandbyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::ExecutePolicyRequest&, const Model::ExecutePolicyOutcome&> ExecutePolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::ExitStandbyRequest&, const Model::ExitStandbyOutcome&> ExitStandbyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutLifecycleHookRequest&, const Model::PutLifecycleHookOutcome&> PutLifecycleHookOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutNotificationConfigurationRequest&, const Model::PutNotificationConfigurationOutcome&> PutNotificationConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&> PutScalingPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutScheduledUpdateGroupActionRequest&, const Model::PutScheduledUpdateGroupActionOutcome&> PutScheduledUpdateGroupActionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::RecordLifecycleActionHeartbeatRequest&, const Model::RecordLifecycleActionHeartbeatOutcome&> RecordLifecycleActionHeartbeatOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::ResumeProcessesRequest&, const Model::ResumeProcessesOutcome&> ResumeProcessesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&> SetDesiredCapacityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::SetInstanceHealthRequest&, const Model::SetInstanceHealthOutcome&> SetInstanceHealthOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::SuspendProcessesRequest&, const Model::SuspendProcessesOutcome&> SuspendProcessesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::TerminateInstanceInAutoScalingGroupRequest&, const Model::TerminateInstanceInAutoScalingGroupOutcome&> TerminateInstanceInAutoScalingGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<AutoScalingClient, const Model::UpdateAutoScalingGroupRequest&, const Model::UpdateAutoScalingGroupOutcome&> UpdateAutoScalingGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::AttachInstancesRequest&, const Model::AttachInstancesOutcome&, const Aws::Client::AsyncCallerContext*> AttachInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::AttachLoadBalancersRequest&, const Model::AttachLoadBalancersOutcome&, const Aws::Client::AsyncCallerContext*> AttachLoadBalancersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::CompleteLifecycleActionRequest&, const Model::CompleteLifecycleActionOutcome&, const Aws::Client::AsyncCallerContext*> CompleteLifecycleActionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::CreateAutoScalingGroupRequest&, const Model::CreateAutoScalingGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateAutoScalingGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::CreateLaunchConfigurationRequest&, const Model::CreateLaunchConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> CreateLaunchConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::CreateOrUpdateTagsRequest&, const Model::CreateOrUpdateTagsOutcome&, const Aws::Client::AsyncCallerContext*> CreateOrUpdateTagsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteAutoScalingGroupRequest&, const Model::DeleteAutoScalingGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteAutoScalingGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteLaunchConfigurationRequest&, const Model::DeleteLaunchConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> DeleteLaunchConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteLifecycleHookRequest&, const Model::DeleteLifecycleHookOutcome&, const Aws::Client::AsyncCallerContext*> DeleteLifecycleHookOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteNotificationConfigurationRequest&, const Model::DeleteNotificationConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> DeleteNotificationConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeletePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteScheduledActionRequest&, const Model::DeleteScheduledActionOutcome&, const Aws::Client::AsyncCallerContext*> DeleteScheduledActionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const Aws::Client::AsyncCallerContext*> DeleteTagsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAccountLimitsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAdjustmentTypesRequest&, const Model::DescribeAdjustmentTypesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAdjustmentTypesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAutoScalingGroupsRequest&, const Model::DescribeAutoScalingGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAutoScalingGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAutoScalingInstancesRequest&, const Model::DescribeAutoScalingInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAutoScalingInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeAutoScalingNotificationTypesRequest&, const Model::DescribeAutoScalingNotificationTypesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAutoScalingNotificationTypesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLaunchConfigurationsRequest&, const Model::DescribeLaunchConfigurationsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLaunchConfigurationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLifecycleHookTypesRequest&, const Model::DescribeLifecycleHookTypesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLifecycleHookTypesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLifecycleHooksRequest&, const Model::DescribeLifecycleHooksOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLifecycleHooksOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLoadBalancersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeMetricCollectionTypesRequest&, const Model::DescribeMetricCollectionTypesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeMetricCollectionTypesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeNotificationConfigurationsRequest&, const Model::DescribeNotificationConfigurationsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeNotificationConfigurationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribePoliciesRequest&, const Model::DescribePoliciesOutcome&, const Aws::Client::AsyncCallerContext*> DescribePoliciesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeScalingActivitiesRequest&, const Model::DescribeScalingActivitiesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeScalingActivitiesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeScalingProcessTypesRequest&, const Model::DescribeScalingProcessTypesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeScalingProcessTypesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeScheduledActionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeTagsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DescribeTerminationPolicyTypesRequest&, const Model::DescribeTerminationPolicyTypesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeTerminationPolicyTypesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DetachInstancesRequest&, const Model::DetachInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DetachInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DetachLoadBalancersRequest&, const Model::DetachLoadBalancersOutcome&, const Aws::Client::AsyncCallerContext*> DetachLoadBalancersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::DisableMetricsCollectionRequest&, const Model::DisableMetricsCollectionOutcome&, const Aws::Client::AsyncCallerContext*> DisableMetricsCollectionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::EnableMetricsCollectionRequest&, const Model::EnableMetricsCollectionOutcome&, const Aws::Client::AsyncCallerContext*> EnableMetricsCollectionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::EnterStandbyRequest&, const Model::EnterStandbyOutcome&, const Aws::Client::AsyncCallerContext*> EnterStandbyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::ExecutePolicyRequest&, const Model::ExecutePolicyOutcome&, const Aws::Client::AsyncCallerContext*> ExecutePolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::ExitStandbyRequest&, const Model::ExitStandbyOutcome&, const Aws::Client::AsyncCallerContext*> ExitStandbyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutLifecycleHookRequest&, const Model::PutLifecycleHookOutcome&, const Aws::Client::AsyncCallerContext*> PutLifecycleHookOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutNotificationConfigurationRequest&, const Model::PutNotificationConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> PutNotificationConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutScalingPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::PutScheduledUpdateGroupActionRequest&, const Model::PutScheduledUpdateGroupActionOutcome&, const Aws::Client::AsyncCallerContext*> PutScheduledUpdateGroupActionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::RecordLifecycleActionHeartbeatRequest&, const Model::RecordLifecycleActionHeartbeatOutcome&, const Aws::Client::AsyncCallerContext*> RecordLifecycleActionHeartbeatOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::ResumeProcessesRequest&, const Model::ResumeProcessesOutcome&, const Aws::Client::AsyncCallerContext*> ResumeProcessesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&, const Aws::Client::AsyncCallerContext*> SetDesiredCapacityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::SetInstanceHealthRequest&, const Model::SetInstanceHealthOutcome&, const Aws::Client::AsyncCallerContext*> SetInstanceHealthOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::SuspendProcessesRequest&, const Model::SuspendProcessesOutcome&, const Aws::Client::AsyncCallerContext*> SuspendProcessesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::TerminateInstanceInAutoScalingGroupRequest&, const Model::TerminateInstanceInAutoScalingGroupOutcome&, const Aws::Client::AsyncCallerContext*> TerminateInstanceInAutoScalingGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<AutoScalingClient, const Model::UpdateAutoScalingGroupRequest&, const Model::UpdateAutoScalingGroupOutcome&, const Aws::Client::AsyncCallerContext*> UpdateAutoScalingGroupOutcomeReceivedEvent;
 
   /*
     <fullname>Auto Scaling</fullname> <p>Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined policies, schedules, and health checks. Use this service in conjunction with the Amazon CloudWatch and Elastic Load Balancing services.</p>
@@ -338,7 +339,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AttachInstancesAsync(const Model::AttachInstancesRequest& request) const;
+     void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -357,7 +358,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AttachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request) const;
+     void AttachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Completes the lifecycle action for the associated token initiated under the given lifecycle hook with the specified result. </p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li> <b>Complete the lifecycle action</b>.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -376,7 +377,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CompleteLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request) const;
+     void CompleteLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
@@ -395,7 +396,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateAutoScalingGroupAsync(const Model::CreateAutoScalingGroupRequest& request) const;
+     void CreateAutoScalingGroupAsync(const Model::CreateAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
@@ -414,7 +415,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateLaunchConfigurationAsync(const Model::CreateLaunchConfigurationRequest& request) const;
+     void CreateLaunchConfigurationAsync(const Model::CreateLaunchConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates or updates tags for the specified Auto Scaling group.</p> <note> A tag's definition is composed of a resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request Parameters for more information. </note> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add, Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -433,7 +434,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateOrUpdateTagsAsync(const Model::CreateOrUpdateTagsRequest& request) const;
+     void CreateOrUpdateTagsAsync(const Model::CreateOrUpdateTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <a>DeleteAutoScalingGroup</a>, you can call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the AutoScalingGroup to zero.</p>
@@ -452,7 +453,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteAutoScalingGroupAsync(const Model::DeleteAutoScalingGroupRequest& request) const;
+     void DeleteAutoScalingGroupAsync(const Model::DeleteAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified launch configuration.</p> <p>The launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer available for use.</p>
@@ -471,7 +472,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteLaunchConfigurationAsync(const Model::DeleteLaunchConfigurationRequest& request) const;
+     void DeleteLaunchConfigurationAsync(const Model::DeleteLaunchConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified lifecycle hook.</p> <p>If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating instances).</p>
@@ -490,7 +491,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteLifecycleHookAsync(const Model::DeleteLifecycleHookRequest& request) const;
+     void DeleteLifecycleHookAsync(const Model::DeleteLifecycleHookRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified notification.</p>
@@ -509,7 +510,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request) const;
+     void DeleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified Auto Scaling policy.</p>
@@ -528,7 +529,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeletePolicyAsync(const Model::DeletePolicyRequest& request) const;
+     void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified scheduled action.</p>
@@ -547,7 +548,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteScheduledActionAsync(const Model::DeleteScheduledActionRequest& request) const;
+     void DeleteScheduledActionAsync(const Model::DeleteScheduledActionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified tags.</p>
@@ -566,7 +567,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteTagsAsync(const Model::DeleteTagsRequest& request) const;
+     void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a>.</p>
@@ -585,7 +586,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request) const;
+     void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
@@ -604,7 +605,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAdjustmentTypesAsync(const Model::DescribeAdjustmentTypesRequest& request) const;
+     void DescribeAdjustmentTypesAsync(const Model::DescribeAdjustmentTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
@@ -623,7 +624,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAutoScalingGroupsAsync(const Model::DescribeAutoScalingGroupsRequest& request) const;
+     void DescribeAutoScalingGroupsAsync(const Model::DescribeAutoScalingGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p> <p>You can describe up to a maximum of 50 instances with a single call. By default, a call returns up to 20 instances. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
@@ -642,7 +643,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAutoScalingInstancesAsync(const Model::DescribeAutoScalingInstancesRequest& request) const;
+     void DescribeAutoScalingInstancesAsync(const Model::DescribeAutoScalingInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the notification types that are supported by Auto Scaling.</p>
@@ -661,7 +662,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAutoScalingNotificationTypesAsync(const Model::DescribeAutoScalingNotificationTypesRequest& request) const;
+     void DescribeAutoScalingNotificationTypesAsync(const Model::DescribeAutoScalingNotificationTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
@@ -680,7 +681,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLaunchConfigurationsAsync(const Model::DescribeLaunchConfigurationsRequest& request) const;
+     void DescribeLaunchConfigurationsAsync(const Model::DescribeLaunchConfigurationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the available types of lifecycle hooks.</p>
@@ -699,7 +700,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLifecycleHookTypesAsync(const Model::DescribeLifecycleHookTypesRequest& request) const;
+     void DescribeLifecycleHookTypesAsync(const Model::DescribeLifecycleHookTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the lifecycle hooks for the specified Auto Scaling group.</p>
@@ -718,7 +719,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request) const;
+     void DescribeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -737,7 +738,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request) const;
+     void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of metrics and a corresponding list of granularities for each metric. </p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
@@ -756,7 +757,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeMetricCollectionTypesAsync(const Model::DescribeMetricCollectionTypesRequest& request) const;
+     void DescribeMetricCollectionTypesAsync(const Model::DescribeMetricCollectionTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the notification actions associated with the specified Auto Scaling group.</p>
@@ -775,7 +776,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request) const;
+     void DescribeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the policies for the specified Auto Scaling group.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
@@ -794,7 +795,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribePoliciesAsync(const Model::DescribePoliciesRequest& request) const;
+     void DescribePoliciesAsync(const Model::DescribePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
@@ -813,7 +814,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeScalingActivitiesAsync(const Model::DescribeScalingActivitiesRequest& request) const;
+     void DescribeScalingActivitiesAsync(const Model::DescribeScalingActivitiesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a> actions.</p>
@@ -832,7 +833,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeScalingProcessTypesAsync(const Model::DescribeScalingProcessTypesRequest& request) const;
+     void DescribeScalingProcessTypesAsync(const Model::DescribeScalingProcessTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the actions scheduled for your Auto Scaling group that haven't been executed. To list the actions that were already executed, use <a>DescribeScalingActivities</a>.</p>
@@ -851,7 +852,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request) const;
+     void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the specified tags.</p> <p>You can use filters to limit the results. For example, you can query for the tags for a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results.</p> <p>You can also specify multiple filters. The result includes information for a particular tag only if it matches all the filters. If there's no match, no special message is returned.</p>
@@ -870,7 +871,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeTagsAsync(const Model::DescribeTagsRequest& request) const;
+     void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the termination policies supported by Auto Scaling.</p>
@@ -889,7 +890,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeTerminationPolicyTypesAsync(const Model::DescribeTerminationPolicyTypesRequest& request) const;
+     void DescribeTerminationPolicyTypesAsync(const Model::DescribeTerminationPolicyTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes one or more instances from the specified Auto Scaling group. After the instances are detached, you can manage them independently from the rest of the Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -908,7 +909,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DetachInstancesAsync(const Model::DetachInstancesRequest& request) const;
+     void DetachInstancesAsync(const Model::DetachInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -927,7 +928,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request) const;
+     void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Disables monitoring of the specified metrics for the specified Auto Scaling group.</p>
@@ -946,7 +947,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DisableMetricsCollectionAsync(const Model::DisableMetricsCollectionRequest& request) const;
+     void DisableMetricsCollectionAsync(const Model::DisableMetricsCollectionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Enables monitoring of the specified metrics for the specified Auto Scaling group.</p> <p>You can only enable metrics collection if <code>InstanceMonitoring</code> in the launch configuration for the group is set to <code>True</code>.</p>
@@ -965,7 +966,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void EnableMetricsCollectionAsync(const Model::EnableMetricsCollectionRequest& request) const;
+     void EnableMetricsCollectionAsync(const Model::EnableMetricsCollectionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto Scaling InService State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -984,7 +985,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void EnterStandbyAsync(const Model::EnterStandbyRequest& request) const;
+     void EnterStandbyAsync(const Model::EnterStandbyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Executes the specified policy.</p>
@@ -1003,7 +1004,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ExecutePolicyAsync(const Model::ExecutePolicyRequest& request) const;
+     void ExecutePolicyAsync(const Model::ExecutePolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto Scaling InService State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -1022,7 +1023,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ExitStandbyAsync(const Model::ExitStandbyRequest& request) const;
+     void ExitStandbyAsync(const Model::ExitStandbyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -1041,7 +1042,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutLifecycleHookAsync(const Model::PutLifecycleHookRequest& request) const;
+     void PutLifecycleHookAsync(const Model::PutLifecycleHookRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages for events delivered to an endpoint such as a web server or email address. </p> <p>For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting Notifications When Your Auto Scaling Group Changes</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>This configuration overwrites an existing configuration.</p>
@@ -1060,7 +1061,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutNotificationConfigurationAsync(const Model::PutNotificationConfigurationRequest& request) const;
+     void PutNotificationConfigurationAsync(const Model::PutNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p>
@@ -1079,7 +1080,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request) const;
+     void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p> <note> <p>Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.</p> </note>
@@ -1098,7 +1099,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutScheduledUpdateGroupActionAsync(const Model::PutScheduledUpdateGroupActionRequest& request) const;
+     void PutScheduledUpdateGroupActionAsync(const Model::PutScheduledUpdateGroupActionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Records a heartbeat for the lifecycle action associated with a specific token. This extends the timeout by the length of time defined by the <code>HeartbeatTimeout</code> parameter of <a>PutLifecycleHook</a>.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</li> <li><b>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</b></li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -1117,7 +1118,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RecordLifecycleActionHeartbeatAsync(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
+     void RecordLifecycleActionHeartbeatAsync(const Model::RecordLifecycleActionHeartbeatRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Resumes the specified suspended Auto Scaling processes for the specified Auto Scaling group. To resume specific processes, use the <code>ScalingProcesses</code> parameter. To resume all processes, omit the <code>ScalingProcesses</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend and Resume Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -1136,7 +1137,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ResumeProcessesAsync(const Model::ResumeProcessesRequest& request) const;
+     void ResumeProcessesAsync(const Model::ResumeProcessesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets the size of the specified <a>AutoScalingGroup</a>.</p>
@@ -1155,7 +1156,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetDesiredCapacityAsync(const Model::SetDesiredCapacityRequest& request) const;
+     void SetDesiredCapacityAsync(const Model::SetDesiredCapacityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets the health status of the specified instance.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -1174,7 +1175,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetInstanceHealthAsync(const Model::SetInstanceHealthRequest& request) const;
+     void SetInstanceHealthAsync(const Model::SetInstanceHealthRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Suspends the specified Auto Scaling processes for the specified Auto Scaling group. To suspend specific processes, use the <code>ScalingProcesses</code> parameter. To suspend all processes, omit the <code>ScalingProcesses</code> parameter.</p> <p>Note that if you suspend either the <code>Launch</code> or <code>Terminate</code> process types, it can prevent other process types from functioning properly.</p> <p>To resume processes that have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend and Resume Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -1193,7 +1194,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SuspendProcessesAsync(const Model::SuspendProcessesRequest& request) const;
+     void SuspendProcessesAsync(const Model::SuspendProcessesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <note>This call simply makes a termination request. The instances is not terminated immediately.</note>
@@ -1212,7 +1213,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void TerminateInstanceInAutoScalingGroupAsync(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
+     void TerminateInstanceInAutoScalingGroupAsync(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Updates the configuration for the specified <a>AutoScalingGroup</a>. </p> <note> <p> To update an Auto Scaling group with a launch configuration that has the <code>InstanceMonitoring</code> flag set to <code>False</code>, you must first ensure that collection of group metrics is disabled. Otherwise, calls to <a>UpdateAutoScalingGroup</a> will fail. If you have previously enabled group metrics collection, you can disable collection of all group metrics by calling <a>DisableMetricsCollection</a>. </p> </note> <p> The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected. </p> <note> <ul> <li> <p>If a new value is specified for <i>MinSize</i> without specifying the value for <i>DesiredCapacity</i>, and if the new <i>MinSize</i> is larger than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MinSize</i>. </p> </li> <li> <p>If a new value is specified for <i>MaxSize</i> without specifying the value for <i>DesiredCapacity</i>, and the new <i>MaxSize</i> is smaller than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MaxSize</i>. </p> </li> <li> <p>All other optional parameters are left unchanged if not passed in the request.</p> </li> </ul> </note>
@@ -1231,7 +1232,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateAutoScalingGroupAsync(const Model::UpdateAutoScalingGroupRequest& request) const;
+     void UpdateAutoScalingGroupAsync(const Model::UpdateAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AttachInstancesAsync to call upon completion to the handler chain. You need to call this to
@@ -2053,54 +2054,54 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AttachInstancesAsyncHelper(const Model::AttachInstancesRequest& request) const;
-    void AttachLoadBalancersAsyncHelper(const Model::AttachLoadBalancersRequest& request) const;
-    void CompleteLifecycleActionAsyncHelper(const Model::CompleteLifecycleActionRequest& request) const;
-    void CreateAutoScalingGroupAsyncHelper(const Model::CreateAutoScalingGroupRequest& request) const;
-    void CreateLaunchConfigurationAsyncHelper(const Model::CreateLaunchConfigurationRequest& request) const;
-    void CreateOrUpdateTagsAsyncHelper(const Model::CreateOrUpdateTagsRequest& request) const;
-    void DeleteAutoScalingGroupAsyncHelper(const Model::DeleteAutoScalingGroupRequest& request) const;
-    void DeleteLaunchConfigurationAsyncHelper(const Model::DeleteLaunchConfigurationRequest& request) const;
-    void DeleteLifecycleHookAsyncHelper(const Model::DeleteLifecycleHookRequest& request) const;
-    void DeleteNotificationConfigurationAsyncHelper(const Model::DeleteNotificationConfigurationRequest& request) const;
-    void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request) const;
-    void DeleteScheduledActionAsyncHelper(const Model::DeleteScheduledActionRequest& request) const;
-    void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request) const;
-    void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request) const;
-    void DescribeAdjustmentTypesAsyncHelper(const Model::DescribeAdjustmentTypesRequest& request) const;
-    void DescribeAutoScalingGroupsAsyncHelper(const Model::DescribeAutoScalingGroupsRequest& request) const;
-    void DescribeAutoScalingInstancesAsyncHelper(const Model::DescribeAutoScalingInstancesRequest& request) const;
-    void DescribeAutoScalingNotificationTypesAsyncHelper(const Model::DescribeAutoScalingNotificationTypesRequest& request) const;
-    void DescribeLaunchConfigurationsAsyncHelper(const Model::DescribeLaunchConfigurationsRequest& request) const;
-    void DescribeLifecycleHookTypesAsyncHelper(const Model::DescribeLifecycleHookTypesRequest& request) const;
-    void DescribeLifecycleHooksAsyncHelper(const Model::DescribeLifecycleHooksRequest& request) const;
-    void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request) const;
-    void DescribeMetricCollectionTypesAsyncHelper(const Model::DescribeMetricCollectionTypesRequest& request) const;
-    void DescribeNotificationConfigurationsAsyncHelper(const Model::DescribeNotificationConfigurationsRequest& request) const;
-    void DescribePoliciesAsyncHelper(const Model::DescribePoliciesRequest& request) const;
-    void DescribeScalingActivitiesAsyncHelper(const Model::DescribeScalingActivitiesRequest& request) const;
-    void DescribeScalingProcessTypesAsyncHelper(const Model::DescribeScalingProcessTypesRequest& request) const;
-    void DescribeScheduledActionsAsyncHelper(const Model::DescribeScheduledActionsRequest& request) const;
-    void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request) const;
-    void DescribeTerminationPolicyTypesAsyncHelper(const Model::DescribeTerminationPolicyTypesRequest& request) const;
-    void DetachInstancesAsyncHelper(const Model::DetachInstancesRequest& request) const;
-    void DetachLoadBalancersAsyncHelper(const Model::DetachLoadBalancersRequest& request) const;
-    void DisableMetricsCollectionAsyncHelper(const Model::DisableMetricsCollectionRequest& request) const;
-    void EnableMetricsCollectionAsyncHelper(const Model::EnableMetricsCollectionRequest& request) const;
-    void EnterStandbyAsyncHelper(const Model::EnterStandbyRequest& request) const;
-    void ExecutePolicyAsyncHelper(const Model::ExecutePolicyRequest& request) const;
-    void ExitStandbyAsyncHelper(const Model::ExitStandbyRequest& request) const;
-    void PutLifecycleHookAsyncHelper(const Model::PutLifecycleHookRequest& request) const;
-    void PutNotificationConfigurationAsyncHelper(const Model::PutNotificationConfigurationRequest& request) const;
-    void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request) const;
-    void PutScheduledUpdateGroupActionAsyncHelper(const Model::PutScheduledUpdateGroupActionRequest& request) const;
-    void RecordLifecycleActionHeartbeatAsyncHelper(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
-    void ResumeProcessesAsyncHelper(const Model::ResumeProcessesRequest& request) const;
-    void SetDesiredCapacityAsyncHelper(const Model::SetDesiredCapacityRequest& request) const;
-    void SetInstanceHealthAsyncHelper(const Model::SetInstanceHealthRequest& request) const;
-    void SuspendProcessesAsyncHelper(const Model::SuspendProcessesRequest& request) const;
-    void TerminateInstanceInAutoScalingGroupAsyncHelper(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
-    void UpdateAutoScalingGroupAsyncHelper(const Model::UpdateAutoScalingGroupRequest& request) const;
+    void AttachInstancesAsyncHelper(const Model::AttachInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AttachLoadBalancersAsyncHelper(const Model::AttachLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CompleteLifecycleActionAsyncHelper(const Model::CompleteLifecycleActionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateAutoScalingGroupAsyncHelper(const Model::CreateAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateLaunchConfigurationAsyncHelper(const Model::CreateLaunchConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateOrUpdateTagsAsyncHelper(const Model::CreateOrUpdateTagsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteAutoScalingGroupAsyncHelper(const Model::DeleteAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteLaunchConfigurationAsyncHelper(const Model::DeleteLaunchConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteLifecycleHookAsyncHelper(const Model::DeleteLifecycleHookRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteNotificationConfigurationAsyncHelper(const Model::DeleteNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteScheduledActionAsyncHelper(const Model::DeleteScheduledActionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAdjustmentTypesAsyncHelper(const Model::DescribeAdjustmentTypesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAutoScalingGroupsAsyncHelper(const Model::DescribeAutoScalingGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAutoScalingInstancesAsyncHelper(const Model::DescribeAutoScalingInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAutoScalingNotificationTypesAsyncHelper(const Model::DescribeAutoScalingNotificationTypesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLaunchConfigurationsAsyncHelper(const Model::DescribeLaunchConfigurationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLifecycleHookTypesAsyncHelper(const Model::DescribeLifecycleHookTypesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLifecycleHooksAsyncHelper(const Model::DescribeLifecycleHooksRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeMetricCollectionTypesAsyncHelper(const Model::DescribeMetricCollectionTypesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeNotificationConfigurationsAsyncHelper(const Model::DescribeNotificationConfigurationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribePoliciesAsyncHelper(const Model::DescribePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeScalingActivitiesAsyncHelper(const Model::DescribeScalingActivitiesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeScalingProcessTypesAsyncHelper(const Model::DescribeScalingProcessTypesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeScheduledActionsAsyncHelper(const Model::DescribeScheduledActionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeTerminationPolicyTypesAsyncHelper(const Model::DescribeTerminationPolicyTypesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DetachInstancesAsyncHelper(const Model::DetachInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DetachLoadBalancersAsyncHelper(const Model::DetachLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DisableMetricsCollectionAsyncHelper(const Model::DisableMetricsCollectionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void EnableMetricsCollectionAsyncHelper(const Model::EnableMetricsCollectionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void EnterStandbyAsyncHelper(const Model::EnterStandbyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ExecutePolicyAsyncHelper(const Model::ExecutePolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ExitStandbyAsyncHelper(const Model::ExitStandbyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutLifecycleHookAsyncHelper(const Model::PutLifecycleHookRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutNotificationConfigurationAsyncHelper(const Model::PutNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutScheduledUpdateGroupActionAsyncHelper(const Model::PutScheduledUpdateGroupActionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RecordLifecycleActionHeartbeatAsyncHelper(const Model::RecordLifecycleActionHeartbeatRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ResumeProcessesAsyncHelper(const Model::ResumeProcessesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetDesiredCapacityAsyncHelper(const Model::SetDesiredCapacityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetInstanceHealthAsyncHelper(const Model::SetInstanceHealthRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SuspendProcessesAsyncHelper(const Model::SuspendProcessesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void TerminateInstanceInAutoScalingGroupAsyncHelper(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateAutoScalingGroupAsyncHelper(const Model::UpdateAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

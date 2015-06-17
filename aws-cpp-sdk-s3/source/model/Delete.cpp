@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Delete::Delete() : 
+    m_objectsHasBeenSet(false),
     m_quiet(false),
     m_quietHasBeenSet(false)
 {
 }
 
 Delete::Delete(const XmlNode& xmlNode) : 
+    m_objectsHasBeenSet(false),
     m_quiet(false),
     m_quietHasBeenSet(false)
 {
@@ -43,12 +45,16 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode objectsNode = resultNode.FirstChild("Objects");
-    while(!objectsNode.IsNull())
+    if(!objectsNode.IsNull())
     {
-      m_objects.push_back(objectsNode);
-      objectsNode = objectsNode.NextNode("Objects");
-    }
+      while(!objectsNode.IsNull())
+      {
+        m_objects.push_back(objectsNode);
+        objectsNode = objectsNode.NextNode("Objects");
+      }
 
+      m_objectsHasBeenSet = true;
+    }
     XmlNode quietNode = resultNode.FirstChild("Quiet");
     if(!objectsNode.IsNull())
     {
@@ -63,11 +69,15 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
 void Delete::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  for(const auto& item : m_objects)
+  if(m_objectsHasBeenSet)
   {
-    XmlNode objectsNode = parentNode.CreateChildElement("Object");
-    item.AddToNode(objectsNode);
+   for(const auto& item : m_objects)
+   {
+     XmlNode objectsNode = parentNode.CreateChildElement("Object");
+     item.AddToNode(objectsNode);
+   }
   }
+
   if(m_quietHasBeenSet)
   {
    XmlNode quietNode = parentNode.CreateChildElement("Object");

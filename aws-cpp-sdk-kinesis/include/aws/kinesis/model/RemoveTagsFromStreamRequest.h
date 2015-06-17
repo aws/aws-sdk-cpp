@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The name of the stream.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The name of the stream.</p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     */
-    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeys = value; }
+    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /*
      <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
@@ -78,16 +78,18 @@ namespace Model
     /*
      <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     */
-    inline RemoveTagsFromStreamRequest& AddTagKeys(const Aws::String& value) { m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromStreamRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /*
      <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     */
-    inline RemoveTagsFromStreamRequest& AddTagKeys(const char* value) { m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromStreamRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
     Aws::Vector<Aws::String> m_tagKeys;
+    bool m_tagKeysHasBeenSet;
   };
 
 } // namespace Model

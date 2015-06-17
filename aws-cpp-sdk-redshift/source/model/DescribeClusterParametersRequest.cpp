@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 DescribeClusterParametersRequest::DescribeClusterParametersRequest() : 
+    m_parameterGroupNameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -31,7 +32,10 @@ Aws::String DescribeClusterParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeClusterParameters&";
-  ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  if(m_parameterGroupNameHasBeenSet)
+  {
+    ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  }
   if(m_sourceHasBeenSet)
   {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";

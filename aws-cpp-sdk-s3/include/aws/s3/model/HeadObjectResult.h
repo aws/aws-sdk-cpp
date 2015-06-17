@@ -77,26 +77,16 @@ namespace Model
     /*
      If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key value pairs providing object expiration information. The value of the rule-id is URL encoded.
     */
-    inline const Aws::String& GetExpiration() const{ return m_expiration; }
+    inline double GetExpiration() const{ return m_expiration; }
     /*
      If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key value pairs providing object expiration information. The value of the rule-id is URL encoded.
     */
-    inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
+    inline void SetExpiration(double value) { m_expiration = value; }
 
     /*
      If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key value pairs providing object expiration information. The value of the rule-id is URL encoded.
     */
-    inline void SetExpiration(const char* value) { m_expiration.assign(value); }
-
-    /*
-     If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key value pairs providing object expiration information. The value of the rule-id is URL encoded.
-    */
-    inline HeadObjectResult&  WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
-
-    /*
-     If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key value pairs providing object expiration information. The value of the rule-id is URL encoded.
-    */
-    inline HeadObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
+    inline HeadObjectResult&  WithExpiration(double value) { SetExpiration(value); return *this;}
 
     /*
      Provides information about object restoration operation and expiration time of the restored object copy.
@@ -499,7 +489,7 @@ namespace Model
   private:
     bool m_deleteMarker;
     Aws::String m_acceptRanges;
-    Aws::String m_expiration;
+    double m_expiration;
     Aws::String m_restore;
     double m_lastModified;
     long m_contentLength;

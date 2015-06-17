@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DownloadDBLogFilePortionRequest::DownloadDBLogFilePortionRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_logFileNameHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_numberOfLines(0),
     m_numberOfLinesHasBeenSet(false)
@@ -30,8 +32,14 @@ Aws::String DownloadDBLogFilePortionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DownloadDBLogFilePortion&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
-  ss << "LogFileName=" << StringUtils::URLEncode(m_logFileName.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
+  if(m_logFileNameHasBeenSet)
+  {
+    ss << "LogFileName=" << StringUtils::URLEncode(m_logFileName.c_str()) << "&";
+  }
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";

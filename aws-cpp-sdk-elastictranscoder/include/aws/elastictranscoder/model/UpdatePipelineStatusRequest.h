@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identifier of the pipeline to update.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The identifier of the pipeline to update.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>The identifier of the pipeline to update.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li> </ul>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

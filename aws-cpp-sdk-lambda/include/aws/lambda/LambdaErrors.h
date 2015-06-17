@@ -48,11 +48,14 @@ enum class AWS_LAMBDA_API LambdaErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_REQUEST_CONTENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_STORAGE_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_REQUEST_CONTENT,
   POLICY_LENGTH_EXCEEDED,
+  REQUEST_TOO_LARGE,
   RESOURCE_CONFLICT,
   SERVICE,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  UNSUPPORTED_MEDIA_TYPE
 };
 namespace LambdaErrorMapper
 {

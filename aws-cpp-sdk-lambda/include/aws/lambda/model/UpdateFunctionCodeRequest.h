@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The existing Lambda function name whose code you want to replace.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline void SetFunctionName(const Aws::String& value) { m_functionName = value; }
+    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>The existing Lambda function name whose code you want to replace.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline void SetFunctionName(const char* value) { m_functionName.assign(value); }
+    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /*
      <p>The existing Lambda function name whose code you want to replace.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -146,6 +146,7 @@ namespace Model
 
   private:
     Aws::String m_functionName;
+    bool m_functionNameHasBeenSet;
     Aws::Utils::ByteBuffer m_zipFile;
     bool m_zipFileHasBeenSet;
     Aws::String m_s3Bucket;

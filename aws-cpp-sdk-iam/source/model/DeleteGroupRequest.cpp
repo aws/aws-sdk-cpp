@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteGroupRequest::DeleteGroupRequest()
+DeleteGroupRequest::DeleteGroupRequest() : 
+    m_groupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteGroup&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
     */
-    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArn = value; }
+    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
     */
-    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArn.assign(value); }
+    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
     /*
      <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
@@ -84,6 +84,7 @@ namespace Model
 
   private:
     Aws::String m_platformApplicationArn;
+    bool m_platformApplicationArnHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

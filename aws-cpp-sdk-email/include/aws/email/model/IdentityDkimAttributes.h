@@ -52,7 +52,7 @@ namespace Model
     /*
      <p>True if DKIM signing is enabled for email sent from the identity; false otherwise.</p>
     */
-    inline void SetDkimEnabled(bool value) { m_dkimEnabled = value; }
+    inline void SetDkimEnabled(bool value) { m_dkimEnabledHasBeenSet = true; m_dkimEnabled = value; }
 
     /*
      <p>True if DKIM signing is enabled for email sent from the identity; false otherwise.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>Describes whether Amazon SES has successfully verified the DKIM DNS records (tokens) published in the domain name's DNS. (This only applies to domain identities, not email address identities.)</p>
     */
-    inline void SetDkimVerificationStatus(const VerificationStatus& value) { m_dkimVerificationStatus = value; }
+    inline void SetDkimVerificationStatus(const VerificationStatus& value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = value; }
 
     /*
      <p>Describes whether Amazon SES has successfully verified the DKIM DNS records (tokens) published in the domain name's DNS. (This only applies to domain identities, not email address identities.)</p>
@@ -99,7 +99,9 @@ namespace Model
 
   private:
     bool m_dkimEnabled;
+    bool m_dkimEnabledHasBeenSet;
     VerificationStatus m_dkimVerificationStatus;
+    bool m_dkimVerificationStatusHasBeenSet;
     Aws::Vector<Aws::String> m_dkimTokens;
     bool m_dkimTokensHasBeenSet;
   };

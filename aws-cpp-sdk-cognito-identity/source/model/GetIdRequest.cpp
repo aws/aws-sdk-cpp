@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 GetIdRequest::GetIdRequest() : 
     m_accountIdHasBeenSet(false),
+    m_identityPoolIdHasBeenSet(false),
     m_loginsHasBeenSet(false)
 {
 }
@@ -37,7 +38,11 @@ Aws::String GetIdRequest::SerializePayload() const
 
   }
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
+  if(m_identityPoolIdHasBeenSet)
+  {
+   payload.WithString("IdentityPoolId", m_identityPoolId);
+
+  }
 
   if(m_loginsHasBeenSet)
   {

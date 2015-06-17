@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetInstanceProfileRequest::GetInstanceProfileRequest()
+GetInstanceProfileRequest::GetInstanceProfileRequest() : 
+    m_instanceProfileNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetInstanceProfile&";
-  ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  if(m_instanceProfileNameHasBeenSet)
+  {
+    ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

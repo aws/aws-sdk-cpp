@@ -21,24 +21,38 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ParameterObject::ParameterObject()
+ParameterObject::ParameterObject() : 
+    m_idHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
-ParameterObject::ParameterObject(const JsonValue& jsonValue)
+ParameterObject::ParameterObject(const JsonValue& jsonValue) : 
+    m_idHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ParameterObject& ParameterObject::operator =(const JsonValue& jsonValue)
 {
-  m_id = jsonValue.GetString("id");
-
-  Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
-  for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
+  if(jsonValue.ValueExists("id"))
   {
-    m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
   }
+
+  if(jsonValue.ValueExists("attributes"))
+  {
+    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
+    {
+      m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
+    }
+    m_attributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -46,14 +60,22 @@ JsonValue ParameterObject::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("id", m_id);
-
-  Array<JsonValue> attributesJsonList(m_attributes.size());
-  for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
+  if(m_idHasBeenSet)
   {
-    attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+   payload.WithString("id", m_id);
+
   }
-  payload.WithArray("attributes", std::move(attributesJsonList));
+
+  if(m_attributesHasBeenSet)
+  {
+   Array<JsonValue> attributesJsonList(m_attributes.size());
+   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
+   {
+     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+   }
+   payload.WithArray("attributes", std::move(attributesJsonList));
+
+  }
 
   return std::move(payload);
 }

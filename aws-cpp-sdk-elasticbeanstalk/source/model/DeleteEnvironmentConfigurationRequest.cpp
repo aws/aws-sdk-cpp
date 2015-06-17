@@ -19,7 +19,9 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DeleteEnvironmentConfigurationRequest::DeleteEnvironmentConfigurationRequest()
+DeleteEnvironmentConfigurationRequest::DeleteEnvironmentConfigurationRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_environmentNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeleteEnvironmentConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteEnvironmentConfiguration&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_environmentNameHasBeenSet)
+  {
+    ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

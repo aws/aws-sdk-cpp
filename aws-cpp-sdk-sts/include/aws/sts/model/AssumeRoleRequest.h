@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     */
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>An identifier for the assumed role session. The session name is included as part of the <code>AssumedRoleUser</code>. </p>
     */
-    inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionName = value; }
+    inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
     /*
      <p>An identifier for the assumed role session. The session name is included as part of the <code>AssumedRoleUser</code>. </p>
     */
-    inline void SetRoleSessionName(const char* value) { m_roleSessionName.assign(value); }
+    inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
 
     /*
      <p>An identifier for the assumed role session. The session name is included as part of the <code>AssumedRoleUser</code>. </p>
@@ -193,7 +193,9 @@ namespace Model
 
   private:
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet;
     Aws::String m_roleSessionName;
+    bool m_roleSessionNameHasBeenSet;
     Aws::String m_policy;
     bool m_policyHasBeenSet;
     long m_durationSeconds;

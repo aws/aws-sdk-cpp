@@ -56,13 +56,14 @@ IPRange& IPRange::operator =(const XmlNode& xmlNode)
       m_cIDRIP = StringUtils::Trim(cIDRIPNode.GetText().c_str());
       m_cIDRIPHasBeenSet = true;
     }
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     if(!tagNode.IsNull())
     {
       while(!tagNode.IsNull())
       {
         m_tags.push_back(tagNode);
-        tagNode = tagNode.NextNode("Tag");
+        tagNode = tagNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

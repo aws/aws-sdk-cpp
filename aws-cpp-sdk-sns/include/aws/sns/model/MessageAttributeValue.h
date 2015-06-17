@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
-    inline void SetDataType(const Aws::String& value) { m_dataType = value; }
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
-    inline void SetDataType(const char* value) { m_dataType.assign(value); }
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
     /*
      <p>Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
@@ -108,6 +108,7 @@ namespace Model
 
   private:
     Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
     Aws::Utils::ByteBuffer m_binaryValue;

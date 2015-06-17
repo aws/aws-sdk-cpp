@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 DeleteCacheClusterRequest::DeleteCacheClusterRequest() : 
+    m_cacheClusterIdHasBeenSet(false),
     m_finalSnapshotIdentifierHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String DeleteCacheClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheCluster&";
-  ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  if(m_cacheClusterIdHasBeenSet)
+  {
+    ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  }
   if(m_finalSnapshotIdentifierHasBeenSet)
   {
     ss << "FinalSnapshotIdentifier=" << StringUtils::URLEncode(m_finalSnapshotIdentifier.c_str()) << "&";

@@ -41,11 +41,12 @@ DescribeApplicationsResult& DescribeApplicationsResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode applicationsNode = resultNode.FirstChild("Applications");
+    XmlNode applicationsNodeParent = resultNode.FirstChild("Applications");
+    XmlNode applicationsNode = applicationsNodeParent.FirstChild("member");
     while(!applicationsNode.IsNull())
     {
       m_applications.push_back(applicationsNode);
-      applicationsNode = applicationsNode.NextNode("Applications");
+      applicationsNode = applicationsNode.NextNode("member");
     }
 
   }

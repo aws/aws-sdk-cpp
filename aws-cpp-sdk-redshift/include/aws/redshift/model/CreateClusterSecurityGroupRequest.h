@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name for the security group. Amazon Redshift stores the value as a lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all security groups that are created by your AWS account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
     */
-    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /*
      <p> The name for the security group. Amazon Redshift stores the value as a lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all security groups that are created by your AWS account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
     */
-    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupName.assign(value); }
+    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
 
     /*
      <p> The name for the security group. Amazon Redshift stores the value as a lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all security groups that are created by your AWS account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> A description for the security group. </p>
     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p> A description for the security group. </p>
     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
      <p> A description for the security group. </p>
@@ -105,7 +105,9 @@ namespace Model
 
   private:
     Aws::String m_clusterSecurityGroupName;
+    bool m_clusterSecurityGroupNameHasBeenSet;
     Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

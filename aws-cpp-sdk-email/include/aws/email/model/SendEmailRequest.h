@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The identity's email address.</p> <p> By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. </p>
     */
-    inline void SetSource(const Aws::String& value) { m_source = value; }
+    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /*
      <p>The identity's email address.</p> <p> By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. </p>
     */
-    inline void SetSource(const char* value) { m_source.assign(value); }
+    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /*
      <p>The identity's email address.</p> <p> By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. </p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
     */
-    inline void SetDestination(const Destination& value) { m_destination = value; }
+    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /*
      <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
@@ -82,7 +82,7 @@ namespace Model
     /*
      <p>The message to be sent.</p>
     */
-    inline void SetMessage(const Message& value) { m_message = value; }
+    inline void SetMessage(const Message& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /*
      <p>The message to be sent.</p>
@@ -137,14 +137,69 @@ namespace Model
     */
     inline SendEmailRequest& WithReturnPath(const char* value) { SetReturnPath(value); return *this;}
 
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendEmailRequest&  WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the source address is derived. This field is only needed if the request uses a source identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the request uses a return-path identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the request uses a return-path identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the request uses a return-path identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the request uses a return-path identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendEmailRequest&  WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
+
+    /*
+     <p>The ARN of the identity from which the return-path address is derived. This field is only needed if the request uses a return-path identity that utilizes sending authorization. </p> <p>For more information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. </p>
+    */
+    inline SendEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
+
   private:
     Aws::String m_source;
+    bool m_sourceHasBeenSet;
     Destination m_destination;
+    bool m_destinationHasBeenSet;
     Message m_message;
+    bool m_messageHasBeenSet;
     Aws::Vector<Aws::String> m_replyToAddresses;
     bool m_replyToAddressesHasBeenSet;
     Aws::String m_returnPath;
     bool m_returnPathHasBeenSet;
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet;
+    Aws::String m_returnPathArn;
+    bool m_returnPathArnHasBeenSet;
   };
 
 } // namespace Model

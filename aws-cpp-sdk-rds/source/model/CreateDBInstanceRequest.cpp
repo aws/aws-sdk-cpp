@@ -21,7 +21,13 @@ using namespace Aws::Utils;
 
 CreateDBInstanceRequest::CreateDBInstanceRequest() : 
     m_dBNameHasBeenSet(false),
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false),
+    m_dBInstanceClassHasBeenSet(false),
+    m_engineHasBeenSet(false),
+    m_masterUsernameHasBeenSet(false),
+    m_masterUserPasswordHasBeenSet(false),
     m_dBSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -63,12 +69,30 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   {
     ss << "DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
-  ss << "AllocatedStorage=" << m_allocatedStorage << "&";
-  ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
-  ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
-  ss << "MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
-  ss << "MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
+  if(m_allocatedStorageHasBeenSet)
+  {
+    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+  if(m_dBInstanceClassHasBeenSet)
+  {
+    ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
+  }
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+  if(m_masterUsernameHasBeenSet)
+  {
+    ss << "MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
+  }
+  if(m_masterUserPasswordHasBeenSet)
+  {
+    ss << "MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
+  }
   if(m_dBSecurityGroupsHasBeenSet)
   {
     unsigned dBSecurityGroupsCount = 1;

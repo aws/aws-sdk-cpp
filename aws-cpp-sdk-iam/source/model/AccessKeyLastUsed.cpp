@@ -24,12 +24,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 AccessKeyLastUsed::AccessKeyLastUsed() : 
-    m_lastUsedDate(0.0)
+    m_lastUsedDate(0.0),
+    m_lastUsedDateHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
 AccessKeyLastUsed::AccessKeyLastUsed(const XmlNode& xmlNode) : 
-    m_lastUsedDate(0.0)
+    m_lastUsedDate(0.0),
+    m_lastUsedDateHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,11 +47,23 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode lastUsedDateNode = resultNode.FirstChild("LastUsedDate");
-    m_lastUsedDate = StringUtils::ConvertToDouble(StringUtils::Trim(lastUsedDateNode.GetText().c_str()).c_str());
+    if(!lastUsedDateNode.IsNull())
+    {
+      m_lastUsedDate = StringUtils::ConvertToDouble(StringUtils::Trim(lastUsedDateNode.GetText().c_str()).c_str());
+      m_lastUsedDateHasBeenSet = true;
+    }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
-    m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+    if(!serviceNameNode.IsNull())
+    {
+      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceNameHasBeenSet = true;
+    }
     XmlNode regionNode = resultNode.FirstChild("Region");
-    m_region = StringUtils::Trim(regionNode.GetText().c_str());
+    if(!regionNode.IsNull())
+    {
+      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_regionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -53,14 +71,32 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
 
 void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".LastUsedDate=" << m_lastUsedDate << "&";
-  oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
-  oStream << location << index << locationValue << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
+  if(m_lastUsedDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LastUsedDate=" << m_lastUsedDate << "&";
+  }
+  if(m_serviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+  if(m_regionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
+  }
 }
 
 void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".LastUsedDate=" << m_lastUsedDate << "&";
-  oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
-  oStream << location << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
+  if(m_lastUsedDateHasBeenSet)
+  {
+      oStream << location << ".LastUsedDate=" << m_lastUsedDate << "&";
+  }
+  if(m_serviceNameHasBeenSet)
+  {
+      oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+  if(m_regionHasBeenSet)
+  {
+      oStream << location << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
+  }
 }

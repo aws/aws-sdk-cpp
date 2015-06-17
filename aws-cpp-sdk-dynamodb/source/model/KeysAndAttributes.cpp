@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 KeysAndAttributes::KeysAndAttributes() : 
+    m_keysHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
     m_consistentReadHasBeenSet(false),
@@ -31,6 +32,7 @@ KeysAndAttributes::KeysAndAttributes() :
 }
 
 KeysAndAttributes::KeysAndAttributes(const JsonValue& jsonValue) : 
+    m_keysHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
     m_consistentReadHasBeenSet(false),
@@ -42,17 +44,22 @@ KeysAndAttributes::KeysAndAttributes(const JsonValue& jsonValue) :
 
 KeysAndAttributes& KeysAndAttributes::operator =(const JsonValue& jsonValue)
 {
-  Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
-  for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
+  if(jsonValue.ValueExists("Keys"))
   {
-    Aws::Map<Aws::String, JsonValue> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
-    Aws::Map<Aws::String, AttributeValue> keyMap;
-    for(auto& keyItem : keyJsonMap)
+    Array<JsonValue> keysJsonList = jsonValue.GetArray("Keys");
+    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
-      keyMap[keyItem.first] = keyItem.second.AsObject();
+      Aws::Map<Aws::String, JsonValue> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
+      Aws::Map<Aws::String, AttributeValue> keyMap;
+      for(auto& keyItem : keyJsonMap)
+      {
+        keyMap[keyItem.first] = keyItem.second.AsObject();
+      }
+      m_keys.push_back(std::move(keyMap));
     }
-    m_keys.push_back(std::move(keyMap));
+    m_keysHasBeenSet = true;
   }
+
   if(jsonValue.ValueExists("AttributesToGet"))
   {
     Array<JsonValue> attributesToGetJsonList = jsonValue.GetArray("AttributesToGet");
@@ -94,17 +101,21 @@ JsonValue KeysAndAttributes::Jsonize() const
 {
   JsonValue payload;
 
-  Array<JsonValue> keysJsonList(m_keys.size());
-  for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
+  if(m_keysHasBeenSet)
   {
-    JsonValue keyJsonMap;
-    for(auto& keyItem : m_keys[keysIndex])
-    {
-      keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
-    }
-    keysJsonList[keysIndex].AsObject(std::move(keyJsonMap));
+   Array<JsonValue> keysJsonList(m_keys.size());
+   for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
+   {
+     JsonValue keyJsonMap;
+     for(auto& keyItem : m_keys[keysIndex])
+     {
+       keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
+     }
+     keysJsonList[keysIndex].AsObject(std::move(keyJsonMap));
+   }
+   payload.WithArray("Keys", std::move(keysJsonList));
+
   }
-  payload.WithArray("Key", std::move(keysJsonList));
 
   if(m_attributesToGetHasBeenSet)
   {

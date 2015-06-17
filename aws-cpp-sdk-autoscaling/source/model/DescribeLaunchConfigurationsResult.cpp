@@ -41,11 +41,12 @@ DescribeLaunchConfigurationsResult& DescribeLaunchConfigurationsResult::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode launchConfigurationsNode = resultNode.FirstChild("LaunchConfigurations");
+    XmlNode launchConfigurationsNodeParent = resultNode.FirstChild("LaunchConfigurations");
+    XmlNode launchConfigurationsNode = launchConfigurationsNodeParent.FirstChild("member");
     while(!launchConfigurationsNode.IsNull())
     {
       m_launchConfigurations.push_back(launchConfigurationsNode);
-      launchConfigurationsNode = launchConfigurationsNode.NextNode("LaunchConfigurations");
+      launchConfigurationsNode = launchConfigurationsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

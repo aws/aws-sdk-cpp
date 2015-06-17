@@ -26,6 +26,8 @@ using namespace Aws::Utils;
 Rule::Rule() : 
     m_expirationHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_transitionHasBeenSet(false),
     m_noncurrentVersionTransitionHasBeenSet(false),
     m_noncurrentVersionExpirationHasBeenSet(false)
@@ -35,6 +37,8 @@ Rule::Rule() :
 Rule::Rule(const XmlNode& xmlNode) : 
     m_expirationHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_transitionHasBeenSet(false),
     m_noncurrentVersionTransitionHasBeenSet(false),
     m_noncurrentVersionExpirationHasBeenSet(false)
@@ -61,9 +65,17 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
       m_iDHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+    if(!prefixNode.IsNull())
+    {
+      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefixHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode transitionNode = resultNode.FirstChild("Transition");
     if(!transitionNode.IsNull())
     {
@@ -102,10 +114,18 @@ void Rule::AddToNode(XmlNode& parentNode) const
    iDNode.SetText(m_iD);
   }
 
-  XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-  prefixNode.SetText(m_prefix);
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(ExpirationStatusMapper::GetNameForExpirationStatus(m_status));
+  if(m_prefixHasBeenSet)
+  {
+   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
+   prefixNode.SetText(m_prefix);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(ExpirationStatusMapper::GetNameForExpirationStatus(m_status));
+  }
+
   if(m_transitionHasBeenSet)
   {
    XmlNode transitionNode = parentNode.CreateChildElement("Transition");

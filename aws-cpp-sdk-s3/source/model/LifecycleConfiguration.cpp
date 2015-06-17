@@ -23,11 +23,13 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-LifecycleConfiguration::LifecycleConfiguration()
+LifecycleConfiguration::LifecycleConfiguration() : 
+    m_rulesHasBeenSet(false)
 {
 }
 
-LifecycleConfiguration::LifecycleConfiguration(const XmlNode& xmlNode)
+LifecycleConfiguration::LifecycleConfiguration(const XmlNode& xmlNode) : 
+    m_rulesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,12 +41,16 @@ LifecycleConfiguration& LifecycleConfiguration::operator =(const XmlNode& xmlNod
   if(!resultNode.IsNull())
   {
     XmlNode rulesNode = resultNode.FirstChild("Rules");
-    while(!rulesNode.IsNull())
+    if(!rulesNode.IsNull())
     {
-      m_rules.push_back(rulesNode);
-      rulesNode = rulesNode.NextNode("Rules");
-    }
+      while(!rulesNode.IsNull())
+      {
+        m_rules.push_back(rulesNode);
+        rulesNode = rulesNode.NextNode("Rules");
+      }
 
+      m_rulesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -53,9 +59,13 @@ LifecycleConfiguration& LifecycleConfiguration::operator =(const XmlNode& xmlNod
 void LifecycleConfiguration::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  for(const auto& item : m_rules)
+  if(m_rulesHasBeenSet)
   {
-    XmlNode rulesNode = parentNode.CreateChildElement("Rule");
-    item.AddToNode(rulesNode);
+   for(const auto& item : m_rules)
+   {
+     XmlNode rulesNode = parentNode.CreateChildElement("Rule");
+     item.AddToNode(rulesNode);
+   }
   }
+
 }

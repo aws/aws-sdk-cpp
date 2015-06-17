@@ -365,7 +365,7 @@ namespace Model
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
 
     
     inline EnvironmentDescription&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
@@ -404,6 +404,7 @@ namespace Model
     EnvironmentTier m_tier;
     bool m_tierHasBeenSet;
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet;
   };
 
 } // namespace Model

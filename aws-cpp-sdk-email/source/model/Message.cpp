@@ -23,11 +23,15 @@ using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Message::Message()
+Message::Message() : 
+    m_subjectHasBeenSet(false),
+    m_bodyHasBeenSet(false)
 {
 }
 
-Message::Message(const XmlNode& xmlNode)
+Message::Message(const XmlNode& xmlNode) : 
+    m_subjectHasBeenSet(false),
+    m_bodyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ Message& Message::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode subjectNode = resultNode.FirstChild("Subject");
-    m_subject = subjectNode;
+    if(!subjectNode.IsNull())
+    {
+      m_subject = subjectNode;
+      m_subjectHasBeenSet = true;
+    }
     XmlNode bodyNode = resultNode.FirstChild("Body");
-    m_body = bodyNode;
+    if(!bodyNode.IsNull())
+    {
+      m_body = bodyNode;
+      m_bodyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,20 +61,32 @@ Message& Message::operator =(const XmlNode& xmlNode)
 
 void Message::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  Aws::StringStream subjectLocationAndMemberSs;
-  subjectLocationAndMemberSs << location << index << locationValue << ".Subject";
-  m_subject.OutputToStream(oStream, subjectLocationAndMemberSs.str().c_str());
-  Aws::StringStream bodyLocationAndMemberSs;
-  bodyLocationAndMemberSs << location << index << locationValue << ".Body";
-  m_body.OutputToStream(oStream, bodyLocationAndMemberSs.str().c_str());
+  if(m_subjectHasBeenSet)
+  {
+      Aws::StringStream subjectLocationAndMemberSs;
+      subjectLocationAndMemberSs << location << index << locationValue << ".Subject";
+      m_subject.OutputToStream(oStream, subjectLocationAndMemberSs.str().c_str());
+  }
+  if(m_bodyHasBeenSet)
+  {
+      Aws::StringStream bodyLocationAndMemberSs;
+      bodyLocationAndMemberSs << location << index << locationValue << ".Body";
+      m_body.OutputToStream(oStream, bodyLocationAndMemberSs.str().c_str());
+  }
 }
 
 void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  Aws::String subjectLocationAndMember(location);
-  subjectLocationAndMember += ".Subject";
-  m_subject.OutputToStream(oStream, subjectLocationAndMember.c_str());
-  Aws::String bodyLocationAndMember(location);
-  bodyLocationAndMember += ".Body";
-  m_body.OutputToStream(oStream, bodyLocationAndMember.c_str());
+  if(m_subjectHasBeenSet)
+  {
+      Aws::String subjectLocationAndMember(location);
+      subjectLocationAndMember += ".Subject";
+      m_subject.OutputToStream(oStream, subjectLocationAndMember.c_str());
+  }
+  if(m_bodyHasBeenSet)
+  {
+      Aws::String bodyLocationAndMember(location);
+      bodyLocationAndMember += ".Body";
+      m_body.OutputToStream(oStream, bodyLocationAndMember.c_str());
+  }
 }

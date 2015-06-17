@@ -24,11 +24,18 @@ using namespace Aws::Utils;
 InstanceGroupDetail::InstanceGroupDetail() : 
     m_instanceGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_marketHasBeenSet(false),
+    m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_instanceRequestCount(0),
+    m_instanceRequestCountHasBeenSet(false),
     m_instanceRunningCount(0),
+    m_instanceRunningCountHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false),
     m_creationDateTime(0.0),
+    m_creationDateTimeHasBeenSet(false),
     m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
     m_readyDateTime(0.0),
@@ -41,11 +48,18 @@ InstanceGroupDetail::InstanceGroupDetail() :
 InstanceGroupDetail::InstanceGroupDetail(const JsonValue& jsonValue) : 
     m_instanceGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_marketHasBeenSet(false),
+    m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_instanceRequestCount(0),
+    m_instanceRequestCountHasBeenSet(false),
     m_instanceRunningCount(0),
+    m_instanceRunningCountHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false),
     m_creationDateTime(0.0),
+    m_creationDateTimeHasBeenSet(false),
     m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
     m_readyDateTime(0.0),
@@ -72,9 +86,19 @@ InstanceGroupDetail& InstanceGroupDetail::operator =(const JsonValue& jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  m_market = MarketTypeMapper::GetMarketTypeForName(jsonValue.GetString("Market"));
+  if(jsonValue.ValueExists("Market"))
+  {
+    m_market = MarketTypeMapper::GetMarketTypeForName(jsonValue.GetString("Market"));
 
-  m_instanceRole = InstanceRoleTypeMapper::GetInstanceRoleTypeForName(jsonValue.GetString("InstanceRole"));
+    m_marketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceRole"))
+  {
+    m_instanceRole = InstanceRoleTypeMapper::GetInstanceRoleTypeForName(jsonValue.GetString("InstanceRole"));
+
+    m_instanceRoleHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("BidPrice"))
   {
@@ -83,13 +107,33 @@ InstanceGroupDetail& InstanceGroupDetail::operator =(const JsonValue& jsonValue)
     m_bidPriceHasBeenSet = true;
   }
 
-  m_instanceType = jsonValue.GetString("InstanceType");
+  if(jsonValue.ValueExists("InstanceType"))
+  {
+    m_instanceType = jsonValue.GetString("InstanceType");
 
-  m_instanceRequestCount = jsonValue.GetInteger("InstanceRequestCount");
+    m_instanceTypeHasBeenSet = true;
+  }
 
-  m_instanceRunningCount = jsonValue.GetInteger("InstanceRunningCount");
+  if(jsonValue.ValueExists("InstanceRequestCount"))
+  {
+    m_instanceRequestCount = jsonValue.GetInteger("InstanceRequestCount");
 
-  m_state = InstanceGroupStateMapper::GetInstanceGroupStateForName(jsonValue.GetString("State"));
+    m_instanceRequestCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceRunningCount"))
+  {
+    m_instanceRunningCount = jsonValue.GetInteger("InstanceRunningCount");
+
+    m_instanceRunningCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = InstanceGroupStateMapper::GetInstanceGroupStateForName(jsonValue.GetString("State"));
+
+    m_stateHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("LastStateChangeReason"))
   {
@@ -98,7 +142,12 @@ InstanceGroupDetail& InstanceGroupDetail::operator =(const JsonValue& jsonValue)
     m_lastStateChangeReasonHasBeenSet = true;
   }
 
-  m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+  if(jsonValue.ValueExists("CreationDateTime"))
+  {
+    m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+
+    m_creationDateTimeHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("StartDateTime"))
   {
@@ -140,28 +189,56 @@ JsonValue InstanceGroupDetail::Jsonize() const
 
   }
 
-  payload.WithString("Market", MarketTypeMapper::GetNameForMarketType(m_market));
-  payload.WithString("InstanceRole", InstanceRoleTypeMapper::GetNameForInstanceRoleType(m_instanceRole));
+  if(m_marketHasBeenSet)
+  {
+   payload.WithString("Market", MarketTypeMapper::GetNameForMarketType(m_market));
+  }
+
+  if(m_instanceRoleHasBeenSet)
+  {
+   payload.WithString("InstanceRole", InstanceRoleTypeMapper::GetNameForInstanceRoleType(m_instanceRole));
+  }
+
   if(m_bidPriceHasBeenSet)
   {
    payload.WithString("BidPrice", m_bidPrice);
 
   }
 
-  payload.WithString("InstanceType", m_instanceType);
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", m_instanceType);
 
-  payload.WithInteger("InstanceRequestCount", m_instanceRequestCount);
+  }
 
-  payload.WithInteger("InstanceRunningCount", m_instanceRunningCount);
+  if(m_instanceRequestCountHasBeenSet)
+  {
+   payload.WithInteger("InstanceRequestCount", m_instanceRequestCount);
 
-  payload.WithString("State", InstanceGroupStateMapper::GetNameForInstanceGroupState(m_state));
+  }
+
+  if(m_instanceRunningCountHasBeenSet)
+  {
+   payload.WithInteger("InstanceRunningCount", m_instanceRunningCount);
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", InstanceGroupStateMapper::GetNameForInstanceGroupState(m_state));
+  }
+
   if(m_lastStateChangeReasonHasBeenSet)
   {
    payload.WithString("LastStateChangeReason", m_lastStateChangeReason);
 
   }
 
-  payload.WithDouble("CreationDateTime", m_creationDateTime);
+  if(m_creationDateTimeHasBeenSet)
+  {
+   payload.WithDouble("CreationDateTime", m_creationDateTime);
+
+  }
 
   if(m_startDateTimeHasBeenSet)
   {

@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a get deployment configuration operation.</p>
   */
   class AWS_CODEDEPLOY_API GetDeploymentConfigRequest : public codedeployRequest
   {
@@ -36,32 +35,23 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
-    /*
-     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
-    */
-    inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigName = value; }
+    
+    inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
-    /*
-     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
-    */
-    inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigName.assign(value); }
+    
+    inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
-    /*
-     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline GetDeploymentConfigRequest&  WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
-    /*
-     <p>The name of an existing deployment configuration associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline GetDeploymentConfigRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
   private:
     Aws::String m_deploymentConfigName;
+    bool m_deploymentConfigNameHasBeenSet;
   };
 
 } // namespace Model

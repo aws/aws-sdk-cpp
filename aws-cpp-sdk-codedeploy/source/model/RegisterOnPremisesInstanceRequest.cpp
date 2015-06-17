@@ -21,7 +21,9 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterOnPremisesInstanceRequest::RegisterOnPremisesInstanceRequest()
+RegisterOnPremisesInstanceRequest::RegisterOnPremisesInstanceRequest() : 
+    m_instanceNameHasBeenSet(false),
+    m_iamUserArnHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String RegisterOnPremisesInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("instanceName", m_instanceName);
+  if(m_instanceNameHasBeenSet)
+  {
+   payload.WithString("instanceName", m_instanceName);
 
-  payload.WithString("iamUserArn", m_iamUserArn);
+  }
+
+  if(m_iamUserArnHasBeenSet)
+  {
+   payload.WithString("iamUserArn", m_iamUserArn);
+
+  }
 
   return payload.WriteReadable();
 }

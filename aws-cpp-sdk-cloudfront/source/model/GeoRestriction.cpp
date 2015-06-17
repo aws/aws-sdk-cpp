@@ -24,13 +24,17 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 GeoRestriction::GeoRestriction() : 
+    m_restrictionTypeHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 GeoRestriction::GeoRestriction(const XmlNode& xmlNode) : 
+    m_restrictionTypeHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,16 +47,25 @@ GeoRestriction& GeoRestriction::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode restrictionTypeNode = resultNode.FirstChild("RestrictionType");
-    m_restrictionType = GeoRestrictionTypeMapper::GetGeoRestrictionTypeForName(StringUtils::Trim(restrictionTypeNode.GetText().c_str()).c_str());
+    if(!restrictionTypeNode.IsNull())
+    {
+      m_restrictionType = GeoRestrictionTypeMapper::GetGeoRestrictionTypeForName(StringUtils::Trim(restrictionTypeNode.GetText().c_str()).c_str());
+      m_restrictionTypeHasBeenSet = true;
+    }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode locationNode = resultNode.FirstChild("Location");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode locationNodeParent = resultNode.FirstChild("Location");
+    XmlNode locationNode = locationNodeParent.FirstChild("member");
     if(!locationNode.IsNull())
     {
       while(!locationNode.IsNull())
       {
         m_items.push_back(StringUtils::Trim(locationNode.GetText().c_str()));
-        locationNode = locationNode.NextNode("Location");
+        locationNode = locationNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -65,12 +78,20 @@ GeoRestriction& GeoRestriction::operator =(const XmlNode& xmlNode)
 void GeoRestriction::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode restrictionTypeNode = parentNode.CreateChildElement("RestrictionType");
-  restrictionTypeNode.SetText(GeoRestrictionTypeMapper::GetNameForGeoRestrictionType(m_restrictionType));
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  if(m_restrictionTypeHasBeenSet)
+  {
+   XmlNode restrictionTypeNode = parentNode.CreateChildElement("RestrictionType");
+   restrictionTypeNode.SetText(GeoRestrictionTypeMapper::GetNameForGeoRestrictionType(m_restrictionType));
+  }
+
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

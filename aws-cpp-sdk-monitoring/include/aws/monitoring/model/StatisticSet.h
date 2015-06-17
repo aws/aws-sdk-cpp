@@ -49,7 +49,7 @@ namespace Model
     /*
      <p> The number of samples used for the statistic set. </p>
     */
-    inline void SetSampleCount(double value) { m_sampleCount = value; }
+    inline void SetSampleCount(double value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
     /*
      <p> The number of samples used for the statistic set. </p>
@@ -63,7 +63,7 @@ namespace Model
     /*
      <p> The sum of values for the sample set. </p>
     */
-    inline void SetSum(double value) { m_sum = value; }
+    inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /*
      <p> The sum of values for the sample set. </p>
@@ -77,7 +77,7 @@ namespace Model
     /*
      <p> The minimum value of the sample set. </p>
     */
-    inline void SetMinimum(double value) { m_minimum = value; }
+    inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /*
      <p> The minimum value of the sample set. </p>
@@ -91,7 +91,7 @@ namespace Model
     /*
      <p> The maximum value of the sample set. </p>
     */
-    inline void SetMaximum(double value) { m_maximum = value; }
+    inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /*
      <p> The maximum value of the sample set. </p>
@@ -100,9 +100,13 @@ namespace Model
 
   private:
     double m_sampleCount;
+    bool m_sampleCountHasBeenSet;
     double m_sum;
+    bool m_sumHasBeenSet;
     double m_minimum;
+    bool m_minimumHasBeenSet;
     double m_maximum;
+    bool m_maximumHasBeenSet;
   };
 
 } // namespace Model

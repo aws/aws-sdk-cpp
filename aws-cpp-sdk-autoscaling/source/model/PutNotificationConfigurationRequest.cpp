@@ -19,7 +19,10 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-PutNotificationConfigurationRequest::PutNotificationConfigurationRequest()
+PutNotificationConfigurationRequest::PutNotificationConfigurationRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_topicARNHasBeenSet(false),
+    m_notificationTypesHasBeenSet(false)
 {
 }
 
@@ -27,14 +30,23 @@ Aws::String PutNotificationConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutNotificationConfiguration&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
-  ss << "TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
-  unsigned notificationTypesCount = 1;
-  for(auto& item : m_notificationTypes)
+  if(m_autoScalingGroupNameHasBeenSet)
   {
-    ss << "NotificationTypes." << notificationTypesCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    notificationTypesCount++;
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_topicARNHasBeenSet)
+  {
+    ss << "TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
+  }
+  if(m_notificationTypesHasBeenSet)
+  {
+    unsigned notificationTypesCount = 1;
+    for(auto& item : m_notificationTypes)
+    {
+      ss << "NotificationTypes." << notificationTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      notificationTypesCount++;
+    }
   }
   ss << "Version=2011-01-01";
   return ss.str();

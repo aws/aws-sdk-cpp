@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteHsmClientCertificateRequest::DeleteHsmClientCertificateRequest()
+DeleteHsmClientCertificateRequest::DeleteHsmClientCertificateRequest() : 
+    m_hsmClientCertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteHsmClientCertificate&";
-  ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
+  if(m_hsmClientCertificateIdentifierHasBeenSet)
+  {
+    ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -32,7 +32,7 @@ namespace CloudWatchLogs
 namespace Model
 {
   /*
-    Metric filters can be used to express how Amazon CloudWatch Logs would extract metric observations from ingested log events and transform them to metric data in a CloudWatch metric.
+    <p>Metric filters can be used to express how Amazon CloudWatch Logs would extract metric observations from ingested log events and transform them to metric data in a CloudWatch metric.</p>
   */
   class AWS_CLOUDWATCHLOGS_API MetricFilter
   {

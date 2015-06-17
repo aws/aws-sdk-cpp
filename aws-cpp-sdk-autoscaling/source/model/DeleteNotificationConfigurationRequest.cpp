@@ -19,7 +19,9 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest()
+DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_topicARNHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteNotificationConfiguration&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
-  ss << "TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_topicARNHasBeenSet)
+  {
+    ss << "TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

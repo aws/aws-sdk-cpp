@@ -22,6 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AddPermissionRequest::AddPermissionRequest() : 
+    m_functionNameHasBeenSet(false),
+    m_statementIdHasBeenSet(false),
+    m_actionHasBeenSet(false),
+    m_principalHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_sourceAccountHasBeenSet(false)
 {
@@ -31,11 +35,23 @@ Aws::String AddPermissionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StatementId", m_statementId);
+  if(m_statementIdHasBeenSet)
+  {
+   payload.WithString("StatementId", m_statementId);
 
-  payload.WithString("Action", m_action);
+  }
 
-  payload.WithString("Principal", m_principal);
+  if(m_actionHasBeenSet)
+  {
+   payload.WithString("Action", m_action);
+
+  }
+
+  if(m_principalHasBeenSet)
+  {
+   payload.WithString("Principal", m_principal);
+
+  }
 
   if(m_sourceArnHasBeenSet)
   {

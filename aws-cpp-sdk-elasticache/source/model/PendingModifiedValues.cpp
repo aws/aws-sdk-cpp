@@ -52,13 +52,14 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_numCacheNodes = StringUtils::ConvertToInt32(StringUtils::Trim(numCacheNodesNode.GetText().c_str()).c_str());
       m_numCacheNodesHasBeenSet = true;
     }
-    XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
+    XmlNode cacheNodeIdNodeParent = resultNode.FirstChild("CacheNodeId");
+    XmlNode cacheNodeIdNode = cacheNodeIdNodeParent.FirstChild("member");
     if(!cacheNodeIdNode.IsNull())
     {
       while(!cacheNodeIdNode.IsNull())
       {
         m_cacheNodeIdsToRemove.push_back(StringUtils::Trim(cacheNodeIdNode.GetText().c_str()));
-        cacheNodeIdNode = cacheNodeIdNode.NextNode("CacheNodeId");
+        cacheNodeIdNode = cacheNodeIdNode.NextNode("member");
       }
 
       m_cacheNodeIdsToRemoveHasBeenSet = true;

@@ -46,6 +46,7 @@
 #include <aws/codedeploy/model/StopDeploymentResult.h>
 #include <aws/codedeploy/model/UpdateDeploymentGroupResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -190,41 +191,41 @@ namespace Model
 
     class codedeployClient;
 
-  typedef Aws::Utils::Event<codedeployClient, const Model::AddTagsToOnPremisesInstancesRequest&, const Model::AddTagsToOnPremisesInstancesOutcome&> AddTagsToOnPremisesInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::BatchGetApplicationsRequest&, const Model::BatchGetApplicationsOutcome&> BatchGetApplicationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::BatchGetDeploymentsRequest&, const Model::BatchGetDeploymentsOutcome&> BatchGetDeploymentsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::BatchGetOnPremisesInstancesRequest&, const Model::BatchGetOnPremisesInstancesOutcome&> BatchGetOnPremisesInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&> CreateApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&> CreateDeploymentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::CreateDeploymentConfigRequest&, const Model::CreateDeploymentConfigOutcome&> CreateDeploymentConfigOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::CreateDeploymentGroupRequest&, const Model::CreateDeploymentGroupOutcome&> CreateDeploymentGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&> DeleteApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::DeleteDeploymentConfigRequest&, const Model::DeleteDeploymentConfigOutcome&> DeleteDeploymentConfigOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::DeleteDeploymentGroupRequest&, const Model::DeleteDeploymentGroupOutcome&> DeleteDeploymentGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::DeregisterOnPremisesInstanceRequest&, const Model::DeregisterOnPremisesInstanceOutcome&> DeregisterOnPremisesInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&> GetApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetApplicationRevisionRequest&, const Model::GetApplicationRevisionOutcome&> GetApplicationRevisionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&> GetDeploymentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentConfigRequest&, const Model::GetDeploymentConfigOutcome&> GetDeploymentConfigOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentGroupRequest&, const Model::GetDeploymentGroupOutcome&> GetDeploymentGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentInstanceRequest&, const Model::GetDeploymentInstanceOutcome&> GetDeploymentInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::GetOnPremisesInstanceRequest&, const Model::GetOnPremisesInstanceOutcome&> GetOnPremisesInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListApplicationRevisionsRequest&, const Model::ListApplicationRevisionsOutcome&> ListApplicationRevisionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&> ListApplicationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentConfigsRequest&, const Model::ListDeploymentConfigsOutcome&> ListDeploymentConfigsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentGroupsRequest&, const Model::ListDeploymentGroupsOutcome&> ListDeploymentGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentInstancesRequest&, const Model::ListDeploymentInstancesOutcome&> ListDeploymentInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&> ListDeploymentsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::ListOnPremisesInstancesRequest&, const Model::ListOnPremisesInstancesOutcome&> ListOnPremisesInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::RegisterApplicationRevisionRequest&, const Model::RegisterApplicationRevisionOutcome&> RegisterApplicationRevisionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::RegisterOnPremisesInstanceRequest&, const Model::RegisterOnPremisesInstanceOutcome&> RegisterOnPremisesInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::RemoveTagsFromOnPremisesInstancesRequest&, const Model::RemoveTagsFromOnPremisesInstancesOutcome&> RemoveTagsFromOnPremisesInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&> StopDeploymentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&> UpdateApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<codedeployClient, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&> UpdateDeploymentGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::AddTagsToOnPremisesInstancesRequest&, const Model::AddTagsToOnPremisesInstancesOutcome&, const Aws::Client::AsyncCallerContext*> AddTagsToOnPremisesInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::BatchGetApplicationsRequest&, const Model::BatchGetApplicationsOutcome&, const Aws::Client::AsyncCallerContext*> BatchGetApplicationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::BatchGetDeploymentsRequest&, const Model::BatchGetDeploymentsOutcome&, const Aws::Client::AsyncCallerContext*> BatchGetDeploymentsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::BatchGetOnPremisesInstancesRequest&, const Model::BatchGetOnPremisesInstancesOutcome&, const Aws::Client::AsyncCallerContext*> BatchGetOnPremisesInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const Aws::Client::AsyncCallerContext*> CreateApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const Aws::Client::AsyncCallerContext*> CreateDeploymentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::CreateDeploymentConfigRequest&, const Model::CreateDeploymentConfigOutcome&, const Aws::Client::AsyncCallerContext*> CreateDeploymentConfigOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::CreateDeploymentGroupRequest&, const Model::CreateDeploymentGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateDeploymentGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const Aws::Client::AsyncCallerContext*> DeleteApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::DeleteDeploymentConfigRequest&, const Model::DeleteDeploymentConfigOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDeploymentConfigOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::DeleteDeploymentGroupRequest&, const Model::DeleteDeploymentGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDeploymentGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::DeregisterOnPremisesInstanceRequest&, const Model::DeregisterOnPremisesInstanceOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterOnPremisesInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const Aws::Client::AsyncCallerContext*> GetApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetApplicationRevisionRequest&, const Model::GetApplicationRevisionOutcome&, const Aws::Client::AsyncCallerContext*> GetApplicationRevisionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const Aws::Client::AsyncCallerContext*> GetDeploymentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentConfigRequest&, const Model::GetDeploymentConfigOutcome&, const Aws::Client::AsyncCallerContext*> GetDeploymentConfigOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentGroupRequest&, const Model::GetDeploymentGroupOutcome&, const Aws::Client::AsyncCallerContext*> GetDeploymentGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetDeploymentInstanceRequest&, const Model::GetDeploymentInstanceOutcome&, const Aws::Client::AsyncCallerContext*> GetDeploymentInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::GetOnPremisesInstanceRequest&, const Model::GetOnPremisesInstanceOutcome&, const Aws::Client::AsyncCallerContext*> GetOnPremisesInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListApplicationRevisionsRequest&, const Model::ListApplicationRevisionsOutcome&, const Aws::Client::AsyncCallerContext*> ListApplicationRevisionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const Aws::Client::AsyncCallerContext*> ListApplicationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentConfigsRequest&, const Model::ListDeploymentConfigsOutcome&, const Aws::Client::AsyncCallerContext*> ListDeploymentConfigsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentGroupsRequest&, const Model::ListDeploymentGroupsOutcome&, const Aws::Client::AsyncCallerContext*> ListDeploymentGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentInstancesRequest&, const Model::ListDeploymentInstancesOutcome&, const Aws::Client::AsyncCallerContext*> ListDeploymentInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const Aws::Client::AsyncCallerContext*> ListDeploymentsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::ListOnPremisesInstancesRequest&, const Model::ListOnPremisesInstancesOutcome&, const Aws::Client::AsyncCallerContext*> ListOnPremisesInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::RegisterApplicationRevisionRequest&, const Model::RegisterApplicationRevisionOutcome&, const Aws::Client::AsyncCallerContext*> RegisterApplicationRevisionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::RegisterOnPremisesInstanceRequest&, const Model::RegisterOnPremisesInstanceOutcome&, const Aws::Client::AsyncCallerContext*> RegisterOnPremisesInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::RemoveTagsFromOnPremisesInstancesRequest&, const Model::RemoveTagsFromOnPremisesInstancesOutcome&, const Aws::Client::AsyncCallerContext*> RemoveTagsFromOnPremisesInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&, const Aws::Client::AsyncCallerContext*> StopDeploymentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const Aws::Client::AsyncCallerContext*> UpdateApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<codedeployClient, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&, const Aws::Client::AsyncCallerContext*> UpdateDeploymentGroupOutcomeReceivedEvent;
 
   /*
-    <fullname>AWS CodeDeploy</fullname> <b>Overview</b> <p>This is the AWS CodeDeploy API Reference. This guide provides descriptions of the AWS CodeDeploy APIs. For additional information, see the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p> <b>Using the APIs</b> <p>You can use the AWS CodeDeploy APIs to work with the following items:</p> <ul> <li> <p>Applications are unique identifiers that AWS CodeDeploy uses to ensure that the correct combinations of revisions, deployment configurations, and deployment groups are being referenced during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, list, and update applications.</p> </li> <li> <p>Deployment configurations are sets of deployment rules and deployment success and failure conditions that AWS CodeDeploy uses during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, and list deployment configurations.</p> </li> <li> <p>Deployment groups are groups of instances to which application revisions can be deployed.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, list, and update deployment groups.</p> </li> <li> <p>Instances represent Amazon EC2 instances to which application revisions are deployed. Instances are identified by their Amazon EC2 tags or Auto Scaling group names. Instances belong to deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get and list instances.</p> </li> <li> <p>Deployments represent the process of deploying revisions to instances.</p> <p>You can use the AWS CodeDeploy APIs to create, get, list, and stop deployments.</p> </li> <li> <p>Application revisions are archive files that are stored in Amazon S3 buckets or GitHub repositories. These revisions contain source content (such as source code, web pages, executable files, any deployment scripts, and similar) along with an Application Specification file (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment actions that you want AWS CodeDeploy to execute.) An application revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both (for application revisions that are stored in Amazon S3 buckets) or by its repository name and commit ID (for applications revisions that are stored in GitHub repositories). Application revisions are deployed through deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get, list, and register application revisions.</p> </li> </ul>
+    ${serviceModel.documentation}
   */
   class AWS_CODEDEPLOY_API codedeployClient : public Aws::Client::AWSJsonClient
   {
@@ -254,612 +255,612 @@ namespace Model
       ~codedeployClient();
 
      /*
-       <p>Adds tags to on-premises instances.</p>
+       ${operation.documentation}
      */
      Model::AddTagsToOnPremisesInstancesOutcome AddTagsToOnPremisesInstances(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Adds tags to on-premises instances.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::AddTagsToOnPremisesInstancesOutcomeCallable AddTagsToOnPremisesInstancesCallable(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Adds tags to on-premises instances.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddTagsToOnPremisesInstancesAsync(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
+     void AddTagsToOnPremisesInstancesAsync(const Model::AddTagsToOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about one or more applications.</p>
+       ${operation.documentation}
      */
      Model::BatchGetApplicationsOutcome BatchGetApplications(const Model::BatchGetApplicationsRequest& request) const;
 
      /*
-       <p>Gets information about one or more applications.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::BatchGetApplicationsOutcomeCallable BatchGetApplicationsCallable(const Model::BatchGetApplicationsRequest& request) const;
 
      /*
-       <p>Gets information about one or more applications.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request) const;
+     void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about one or more deployments.</p>
+       ${operation.documentation}
      */
      Model::BatchGetDeploymentsOutcome BatchGetDeployments(const Model::BatchGetDeploymentsRequest& request) const;
 
      /*
-       <p>Gets information about one or more deployments.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::BatchGetDeploymentsOutcomeCallable BatchGetDeploymentsCallable(const Model::BatchGetDeploymentsRequest& request) const;
 
      /*
-       <p>Gets information about one or more deployments.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void BatchGetDeploymentsAsync(const Model::BatchGetDeploymentsRequest& request) const;
+     void BatchGetDeploymentsAsync(const Model::BatchGetDeploymentsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about one or more on-premises instances.</p>
+       ${operation.documentation}
      */
      Model::BatchGetOnPremisesInstancesOutcome BatchGetOnPremisesInstances(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Gets information about one or more on-premises instances.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::BatchGetOnPremisesInstancesOutcomeCallable BatchGetOnPremisesInstancesCallable(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Gets information about one or more on-premises instances.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void BatchGetOnPremisesInstancesAsync(const Model::BatchGetOnPremisesInstancesRequest& request) const;
+     void BatchGetOnPremisesInstancesAsync(const Model::BatchGetOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates a new application.</p>
+       ${operation.documentation}
      */
      Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
      /*
-       <p>Creates a new application.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
      /*
-       <p>Creates a new application.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateApplicationAsync(const Model::CreateApplicationRequest& request) const;
+     void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Deploys an application revision through the specified deployment group.</p>
+       ${operation.documentation}
      */
      Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
      /*
-       <p>Deploys an application revision through the specified deployment group.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
 
      /*
-       <p>Deploys an application revision through the specified deployment group.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request) const;
+     void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates a new deployment configuration.</p>
+       ${operation.documentation}
      */
      Model::CreateDeploymentConfigOutcome CreateDeploymentConfig(const Model::CreateDeploymentConfigRequest& request) const;
 
      /*
-       <p>Creates a new deployment configuration.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateDeploymentConfigOutcomeCallable CreateDeploymentConfigCallable(const Model::CreateDeploymentConfigRequest& request) const;
 
      /*
-       <p>Creates a new deployment configuration.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDeploymentConfigAsync(const Model::CreateDeploymentConfigRequest& request) const;
+     void CreateDeploymentConfigAsync(const Model::CreateDeploymentConfigRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates a new deployment group for application revisions to be deployed to.</p>
+       ${operation.documentation}
      */
      Model::CreateDeploymentGroupOutcome CreateDeploymentGroup(const Model::CreateDeploymentGroupRequest& request) const;
 
      /*
-       <p>Creates a new deployment group for application revisions to be deployed to.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateDeploymentGroupOutcomeCallable CreateDeploymentGroupCallable(const Model::CreateDeploymentGroupRequest& request) const;
 
      /*
-       <p>Creates a new deployment group for application revisions to be deployed to.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDeploymentGroupAsync(const Model::CreateDeploymentGroupRequest& request) const;
+     void CreateDeploymentGroupAsync(const Model::CreateDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Deletes an application.</p>
+       ${operation.documentation}
      */
      Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
      /*
-       <p>Deletes an application.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
      /*
-       <p>Deletes an application.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request) const;
+     void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Deletes a deployment configuration.</p> <note>A deployment configuration cannot be deleted if it is currently in use. Also, predefined configurations cannot be deleted.</note>
+       ${operation.documentation}
      */
      Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
      /*
-       <p>Deletes a deployment configuration.</p> <note>A deployment configuration cannot be deleted if it is currently in use. Also, predefined configurations cannot be deleted.</note>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeleteDeploymentConfigOutcomeCallable DeleteDeploymentConfigCallable(const Model::DeleteDeploymentConfigRequest& request) const;
 
      /*
-       <p>Deletes a deployment configuration.</p> <note>A deployment configuration cannot be deleted if it is currently in use. Also, predefined configurations cannot be deleted.</note>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDeploymentConfigAsync(const Model::DeleteDeploymentConfigRequest& request) const;
+     void DeleteDeploymentConfigAsync(const Model::DeleteDeploymentConfigRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Deletes a deployment group.</p>
+       ${operation.documentation}
      */
      Model::DeleteDeploymentGroupOutcome DeleteDeploymentGroup(const Model::DeleteDeploymentGroupRequest& request) const;
 
      /*
-       <p>Deletes a deployment group.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeleteDeploymentGroupOutcomeCallable DeleteDeploymentGroupCallable(const Model::DeleteDeploymentGroupRequest& request) const;
 
      /*
-       <p>Deletes a deployment group.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDeploymentGroupAsync(const Model::DeleteDeploymentGroupRequest& request) const;
+     void DeleteDeploymentGroupAsync(const Model::DeleteDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Deregisters an on-premises instance.</p>
+       ${operation.documentation}
      */
      Model::DeregisterOnPremisesInstanceOutcome DeregisterOnPremisesInstance(const Model::DeregisterOnPremisesInstanceRequest& request) const;
 
      /*
-       <p>Deregisters an on-premises instance.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeregisterOnPremisesInstanceOutcomeCallable DeregisterOnPremisesInstanceCallable(const Model::DeregisterOnPremisesInstanceRequest& request) const;
 
      /*
-       <p>Deregisters an on-premises instance.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterOnPremisesInstanceAsync(const Model::DeregisterOnPremisesInstanceRequest& request) const;
+     void DeregisterOnPremisesInstanceAsync(const Model::DeregisterOnPremisesInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about an application.</p>
+       ${operation.documentation}
      */
      Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
      /*
-       <p>Gets information about an application.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
 
      /*
-       <p>Gets information about an application.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetApplicationAsync(const Model::GetApplicationRequest& request) const;
+     void GetApplicationAsync(const Model::GetApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about an application revision.</p>
+       ${operation.documentation}
      */
      Model::GetApplicationRevisionOutcome GetApplicationRevision(const Model::GetApplicationRevisionRequest& request) const;
 
      /*
-       <p>Gets information about an application revision.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetApplicationRevisionOutcomeCallable GetApplicationRevisionCallable(const Model::GetApplicationRevisionRequest& request) const;
 
      /*
-       <p>Gets information about an application revision.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request) const;
+     void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about a deployment.</p>
+       ${operation.documentation}
      */
      Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
      /*
-       <p>Gets information about a deployment.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
      /*
-       <p>Gets information about a deployment.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetDeploymentAsync(const Model::GetDeploymentRequest& request) const;
+     void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about a deployment configuration.</p>
+       ${operation.documentation}
      */
      Model::GetDeploymentConfigOutcome GetDeploymentConfig(const Model::GetDeploymentConfigRequest& request) const;
 
      /*
-       <p>Gets information about a deployment configuration.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetDeploymentConfigOutcomeCallable GetDeploymentConfigCallable(const Model::GetDeploymentConfigRequest& request) const;
 
      /*
-       <p>Gets information about a deployment configuration.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetDeploymentConfigAsync(const Model::GetDeploymentConfigRequest& request) const;
+     void GetDeploymentConfigAsync(const Model::GetDeploymentConfigRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about a deployment group.</p>
+       ${operation.documentation}
      */
      Model::GetDeploymentGroupOutcome GetDeploymentGroup(const Model::GetDeploymentGroupRequest& request) const;
 
      /*
-       <p>Gets information about a deployment group.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetDeploymentGroupOutcomeCallable GetDeploymentGroupCallable(const Model::GetDeploymentGroupRequest& request) const;
 
      /*
-       <p>Gets information about a deployment group.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetDeploymentGroupAsync(const Model::GetDeploymentGroupRequest& request) const;
+     void GetDeploymentGroupAsync(const Model::GetDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about an instance as part of a deployment.</p>
+       ${operation.documentation}
      */
      Model::GetDeploymentInstanceOutcome GetDeploymentInstance(const Model::GetDeploymentInstanceRequest& request) const;
 
      /*
-       <p>Gets information about an instance as part of a deployment.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetDeploymentInstanceOutcomeCallable GetDeploymentInstanceCallable(const Model::GetDeploymentInstanceRequest& request) const;
 
      /*
-       <p>Gets information about an instance as part of a deployment.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetDeploymentInstanceAsync(const Model::GetDeploymentInstanceRequest& request) const;
+     void GetDeploymentInstanceAsync(const Model::GetDeploymentInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets information about an on-premises instance.</p>
+       ${operation.documentation}
      */
      Model::GetOnPremisesInstanceOutcome GetOnPremisesInstance(const Model::GetOnPremisesInstanceRequest& request) const;
 
      /*
-       <p>Gets information about an on-premises instance.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetOnPremisesInstanceOutcomeCallable GetOnPremisesInstanceCallable(const Model::GetOnPremisesInstanceRequest& request) const;
 
      /*
-       <p>Gets information about an on-premises instance.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetOnPremisesInstanceAsync(const Model::GetOnPremisesInstanceRequest& request) const;
+     void GetOnPremisesInstanceAsync(const Model::GetOnPremisesInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists information about revisions for an application.</p>
+       ${operation.documentation}
      */
      Model::ListApplicationRevisionsOutcome ListApplicationRevisions(const Model::ListApplicationRevisionsRequest& request) const;
 
      /*
-       <p>Lists information about revisions for an application.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListApplicationRevisionsOutcomeCallable ListApplicationRevisionsCallable(const Model::ListApplicationRevisionsRequest& request) const;
 
      /*
-       <p>Lists information about revisions for an application.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListApplicationRevisionsAsync(const Model::ListApplicationRevisionsRequest& request) const;
+     void ListApplicationRevisionsAsync(const Model::ListApplicationRevisionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the applications registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
      */
      Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
      /*
-       <p>Lists the applications registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
      /*
-       <p>Lists the applications registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListApplicationsAsync(const Model::ListApplicationsRequest& request) const;
+     void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the deployment configurations with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
      */
      Model::ListDeploymentConfigsOutcome ListDeploymentConfigs(const Model::ListDeploymentConfigsRequest& request) const;
 
      /*
-       <p>Lists the deployment configurations with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListDeploymentConfigsOutcomeCallable ListDeploymentConfigsCallable(const Model::ListDeploymentConfigsRequest& request) const;
 
      /*
-       <p>Lists the deployment configurations with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListDeploymentConfigsAsync(const Model::ListDeploymentConfigsRequest& request) const;
+     void ListDeploymentConfigsAsync(const Model::ListDeploymentConfigsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the deployment groups for an application registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
      */
      Model::ListDeploymentGroupsOutcome ListDeploymentGroups(const Model::ListDeploymentGroupsRequest& request) const;
 
      /*
-       <p>Lists the deployment groups for an application registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListDeploymentGroupsOutcomeCallable ListDeploymentGroupsCallable(const Model::ListDeploymentGroupsRequest& request) const;
 
      /*
-       <p>Lists the deployment groups for an application registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListDeploymentGroupsAsync(const Model::ListDeploymentGroupsRequest& request) const;
+     void ListDeploymentGroupsAsync(const Model::ListDeploymentGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the instances for a deployment associated with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
      */
      Model::ListDeploymentInstancesOutcome ListDeploymentInstances(const Model::ListDeploymentInstancesRequest& request) const;
 
      /*
-       <p>Lists the instances for a deployment associated with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListDeploymentInstancesOutcomeCallable ListDeploymentInstancesCallable(const Model::ListDeploymentInstancesRequest& request) const;
 
      /*
-       <p>Lists the instances for a deployment associated with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListDeploymentInstancesAsync(const Model::ListDeploymentInstancesRequest& request) const;
+     void ListDeploymentInstancesAsync(const Model::ListDeploymentInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the deployments within a deployment group for an application registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
      */
      Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
      /*
-       <p>Lists the deployments within a deployment group for an application registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
 
      /*
-       <p>Lists the deployments within a deployment group for an application registered with the applicable IAM user or AWS account.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request) const;
+     void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Gets a list of one or more on-premises instance names.</p> <p>Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
+       ${operation.documentation}
      */
      Model::ListOnPremisesInstancesOutcome ListOnPremisesInstances(const Model::ListOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Gets a list of one or more on-premises instance names.</p> <p>Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListOnPremisesInstancesOutcomeCallable ListOnPremisesInstancesCallable(const Model::ListOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Gets a list of one or more on-premises instance names.</p> <p>Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request) const;
+     void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
+       ${operation.documentation}
      */
      Model::RegisterApplicationRevisionOutcome RegisterApplicationRevision(const Model::RegisterApplicationRevisionRequest& request) const;
 
      /*
-       <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::RegisterApplicationRevisionOutcomeCallable RegisterApplicationRevisionCallable(const Model::RegisterApplicationRevisionRequest& request) const;
 
      /*
-       <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request) const;
+     void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Registers an on-premises instance.</p>
+       ${operation.documentation}
      */
      Model::RegisterOnPremisesInstanceOutcome RegisterOnPremisesInstance(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
      /*
-       <p>Registers an on-premises instance.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::RegisterOnPremisesInstanceOutcomeCallable RegisterOnPremisesInstanceCallable(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
      /*
-       <p>Registers an on-premises instance.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterOnPremisesInstanceAsync(const Model::RegisterOnPremisesInstanceRequest& request) const;
+     void RegisterOnPremisesInstanceAsync(const Model::RegisterOnPremisesInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Removes one or more tags from one or more on-premises instances.</p>
+       ${operation.documentation}
      */
      Model::RemoveTagsFromOnPremisesInstancesOutcome RemoveTagsFromOnPremisesInstances(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Removes one or more tags from one or more on-premises instances.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::RemoveTagsFromOnPremisesInstancesOutcomeCallable RemoveTagsFromOnPremisesInstancesCallable(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
 
      /*
-       <p>Removes one or more tags from one or more on-premises instances.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveTagsFromOnPremisesInstancesAsync(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
+     void RemoveTagsFromOnPremisesInstancesAsync(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Attempts to stop an ongoing deployment.</p>
+       ${operation.documentation}
      */
      Model::StopDeploymentOutcome StopDeployment(const Model::StopDeploymentRequest& request) const;
 
      /*
-       <p>Attempts to stop an ongoing deployment.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::StopDeploymentOutcomeCallable StopDeploymentCallable(const Model::StopDeploymentRequest& request) const;
 
      /*
-       <p>Attempts to stop an ongoing deployment.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StopDeploymentAsync(const Model::StopDeploymentRequest& request) const;
+     void StopDeploymentAsync(const Model::StopDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Changes an existing application's name.</p>
+       ${operation.documentation}
      */
      Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
      /*
-       <p>Changes an existing application's name.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
      /*
-       <p>Changes an existing application's name.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request) const;
+     void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Changes information about an existing deployment group.</p>
+       ${operation.documentation}
      */
      Model::UpdateDeploymentGroupOutcome UpdateDeploymentGroup(const Model::UpdateDeploymentGroupRequest& request) const;
 
      /*
-       <p>Changes information about an existing deployment group.</p>
+       ${operation.documentation}
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::UpdateDeploymentGroupOutcomeCallable UpdateDeploymentGroupCallable(const Model::UpdateDeploymentGroupRequest& request) const;
 
      /*
-       <p>Changes information about an existing deployment group.</p>
+       ${operation.documentation}
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateDeploymentGroupAsync(const Model::UpdateDeploymentGroupRequest& request) const;
+     void UpdateDeploymentGroupAsync(const Model::UpdateDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddTagsToOnPremisesInstancesAsync to call upon completion to the handler chain. You need to call this to
@@ -1409,38 +1410,38 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddTagsToOnPremisesInstancesAsyncHelper(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
-    void BatchGetApplicationsAsyncHelper(const Model::BatchGetApplicationsRequest& request) const;
-    void BatchGetDeploymentsAsyncHelper(const Model::BatchGetDeploymentsRequest& request) const;
-    void BatchGetOnPremisesInstancesAsyncHelper(const Model::BatchGetOnPremisesInstancesRequest& request) const;
-    void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request) const;
-    void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request) const;
-    void CreateDeploymentConfigAsyncHelper(const Model::CreateDeploymentConfigRequest& request) const;
-    void CreateDeploymentGroupAsyncHelper(const Model::CreateDeploymentGroupRequest& request) const;
-    void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request) const;
-    void DeleteDeploymentConfigAsyncHelper(const Model::DeleteDeploymentConfigRequest& request) const;
-    void DeleteDeploymentGroupAsyncHelper(const Model::DeleteDeploymentGroupRequest& request) const;
-    void DeregisterOnPremisesInstanceAsyncHelper(const Model::DeregisterOnPremisesInstanceRequest& request) const;
-    void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request) const;
-    void GetApplicationRevisionAsyncHelper(const Model::GetApplicationRevisionRequest& request) const;
-    void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request) const;
-    void GetDeploymentConfigAsyncHelper(const Model::GetDeploymentConfigRequest& request) const;
-    void GetDeploymentGroupAsyncHelper(const Model::GetDeploymentGroupRequest& request) const;
-    void GetDeploymentInstanceAsyncHelper(const Model::GetDeploymentInstanceRequest& request) const;
-    void GetOnPremisesInstanceAsyncHelper(const Model::GetOnPremisesInstanceRequest& request) const;
-    void ListApplicationRevisionsAsyncHelper(const Model::ListApplicationRevisionsRequest& request) const;
-    void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request) const;
-    void ListDeploymentConfigsAsyncHelper(const Model::ListDeploymentConfigsRequest& request) const;
-    void ListDeploymentGroupsAsyncHelper(const Model::ListDeploymentGroupsRequest& request) const;
-    void ListDeploymentInstancesAsyncHelper(const Model::ListDeploymentInstancesRequest& request) const;
-    void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request) const;
-    void ListOnPremisesInstancesAsyncHelper(const Model::ListOnPremisesInstancesRequest& request) const;
-    void RegisterApplicationRevisionAsyncHelper(const Model::RegisterApplicationRevisionRequest& request) const;
-    void RegisterOnPremisesInstanceAsyncHelper(const Model::RegisterOnPremisesInstanceRequest& request) const;
-    void RemoveTagsFromOnPremisesInstancesAsyncHelper(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
-    void StopDeploymentAsyncHelper(const Model::StopDeploymentRequest& request) const;
-    void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request) const;
-    void UpdateDeploymentGroupAsyncHelper(const Model::UpdateDeploymentGroupRequest& request) const;
+    void AddTagsToOnPremisesInstancesAsyncHelper(const Model::AddTagsToOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void BatchGetApplicationsAsyncHelper(const Model::BatchGetApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void BatchGetDeploymentsAsyncHelper(const Model::BatchGetDeploymentsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void BatchGetOnPremisesInstancesAsyncHelper(const Model::BatchGetOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDeploymentConfigAsyncHelper(const Model::CreateDeploymentConfigRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDeploymentGroupAsyncHelper(const Model::CreateDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDeploymentConfigAsyncHelper(const Model::DeleteDeploymentConfigRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDeploymentGroupAsyncHelper(const Model::DeleteDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterOnPremisesInstanceAsyncHelper(const Model::DeregisterOnPremisesInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetApplicationRevisionAsyncHelper(const Model::GetApplicationRevisionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetDeploymentConfigAsyncHelper(const Model::GetDeploymentConfigRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetDeploymentGroupAsyncHelper(const Model::GetDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetDeploymentInstanceAsyncHelper(const Model::GetDeploymentInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetOnPremisesInstanceAsyncHelper(const Model::GetOnPremisesInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListApplicationRevisionsAsyncHelper(const Model::ListApplicationRevisionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListDeploymentConfigsAsyncHelper(const Model::ListDeploymentConfigsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListDeploymentGroupsAsyncHelper(const Model::ListDeploymentGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListDeploymentInstancesAsyncHelper(const Model::ListDeploymentInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListOnPremisesInstancesAsyncHelper(const Model::ListOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterApplicationRevisionAsyncHelper(const Model::RegisterApplicationRevisionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterOnPremisesInstanceAsyncHelper(const Model::RegisterOnPremisesInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveTagsFromOnPremisesInstancesAsyncHelper(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StopDeploymentAsyncHelper(const Model::StopDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateDeploymentGroupAsyncHelper(const Model::UpdateDeploymentGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

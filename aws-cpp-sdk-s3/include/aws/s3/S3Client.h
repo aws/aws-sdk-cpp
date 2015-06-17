@@ -55,6 +55,7 @@
 #include <aws/s3/model/UploadPartResult.h>
 #include <aws/s3/model/UploadPartCopyResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -258,58 +259,58 @@ namespace Model
 
   class S3Client;
 
-  typedef Aws::Utils::Event<S3Client, const Model::AbortMultipartUploadRequest&, const Model::AbortMultipartUploadOutcome&> AbortMultipartUploadOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::CompleteMultipartUploadRequest&, const Model::CompleteMultipartUploadOutcome&> CompleteMultipartUploadOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::CopyObjectRequest&, const Model::CopyObjectOutcome&> CopyObjectOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&> CreateBucketOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::CreateMultipartUploadRequest&, const Model::CreateMultipartUploadOutcome&> CreateMultipartUploadOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketRequest&, const Model::DeleteBucketOutcome&> DeleteBucketOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketCorsRequest&, const Model::DeleteBucketCorsOutcome&> DeleteBucketCorsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketLifecycleRequest&, const Model::DeleteBucketLifecycleOutcome&> DeleteBucketLifecycleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&> DeleteBucketPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketReplicationRequest&, const Model::DeleteBucketReplicationOutcome&> DeleteBucketReplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketTaggingRequest&, const Model::DeleteBucketTaggingOutcome&> DeleteBucketTaggingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketWebsiteRequest&, const Model::DeleteBucketWebsiteOutcome&> DeleteBucketWebsiteOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&> DeleteObjectOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::DeleteObjectsRequest&, const Model::DeleteObjectsOutcome&> DeleteObjectsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketAclRequest&, const Model::GetBucketAclOutcome&> GetBucketAclOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketCorsRequest&, const Model::GetBucketCorsOutcome&> GetBucketCorsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketLifecycleRequest&, const Model::GetBucketLifecycleOutcome&> GetBucketLifecycleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketLocationRequest&, const Model::GetBucketLocationOutcome&> GetBucketLocationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketLoggingRequest&, const Model::GetBucketLoggingOutcome&> GetBucketLoggingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketNotificationConfigurationRequest&, const Model::GetBucketNotificationConfigurationOutcome&> GetBucketNotificationConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&> GetBucketPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketReplicationRequest&, const Model::GetBucketReplicationOutcome&> GetBucketReplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketRequestPaymentRequest&, const Model::GetBucketRequestPaymentOutcome&> GetBucketRequestPaymentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketTaggingRequest&, const Model::GetBucketTaggingOutcome&> GetBucketTaggingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketVersioningRequest&, const Model::GetBucketVersioningOutcome&> GetBucketVersioningOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetBucketWebsiteRequest&, const Model::GetBucketWebsiteOutcome&> GetBucketWebsiteOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetObjectRequest&, const Model::GetObjectOutcome&> GetObjectOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetObjectAclRequest&, const Model::GetObjectAclOutcome&> GetObjectAclOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::GetObjectTorrentRequest&, const Model::GetObjectTorrentOutcome&> GetObjectTorrentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::HeadBucketRequest&, const Model::HeadBucketOutcome&> HeadBucketOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::HeadObjectRequest&, const Model::HeadObjectOutcome&> HeadObjectOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::ListBucketsOutcome&> ListBucketsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&> ListMultipartUploadsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&> ListObjectVersionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::ListObjectsRequest&, const Model::ListObjectsOutcome&> ListObjectsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::ListPartsRequest&, const Model::ListPartsOutcome&> ListPartsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketAclRequest&, const Model::PutBucketAclOutcome&> PutBucketAclOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketCorsRequest&, const Model::PutBucketCorsOutcome&> PutBucketCorsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketLifecycleRequest&, const Model::PutBucketLifecycleOutcome&> PutBucketLifecycleOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketLoggingRequest&, const Model::PutBucketLoggingOutcome&> PutBucketLoggingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketNotificationConfigurationRequest&, const Model::PutBucketNotificationConfigurationOutcome&> PutBucketNotificationConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&> PutBucketPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketReplicationRequest&, const Model::PutBucketReplicationOutcome&> PutBucketReplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketRequestPaymentRequest&, const Model::PutBucketRequestPaymentOutcome&> PutBucketRequestPaymentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketTaggingRequest&, const Model::PutBucketTaggingOutcome&> PutBucketTaggingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketVersioningRequest&, const Model::PutBucketVersioningOutcome&> PutBucketVersioningOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutBucketWebsiteRequest&, const Model::PutBucketWebsiteOutcome&> PutBucketWebsiteOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutObjectRequest&, const Model::PutObjectOutcome&> PutObjectOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::PutObjectAclRequest&, const Model::PutObjectAclOutcome&> PutObjectAclOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::RestoreObjectRequest&, const Model::RestoreObjectOutcome&> RestoreObjectOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::UploadPartRequest&, const Model::UploadPartOutcome&> UploadPartOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<S3Client, const Model::UploadPartCopyRequest&, const Model::UploadPartCopyOutcome&> UploadPartCopyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::AbortMultipartUploadRequest&, const Model::AbortMultipartUploadOutcome&, const Aws::Client::AsyncCallerContext*> AbortMultipartUploadOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::CompleteMultipartUploadRequest&, const Model::CompleteMultipartUploadOutcome&, const Aws::Client::AsyncCallerContext*> CompleteMultipartUploadOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::CopyObjectRequest&, const Model::CopyObjectOutcome&, const Aws::Client::AsyncCallerContext*> CopyObjectOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&, const Aws::Client::AsyncCallerContext*> CreateBucketOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::CreateMultipartUploadRequest&, const Model::CreateMultipartUploadOutcome&, const Aws::Client::AsyncCallerContext*> CreateMultipartUploadOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketRequest&, const Model::DeleteBucketOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketCorsRequest&, const Model::DeleteBucketCorsOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketCorsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketLifecycleRequest&, const Model::DeleteBucketLifecycleOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketLifecycleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketReplicationRequest&, const Model::DeleteBucketReplicationOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketReplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketTaggingRequest&, const Model::DeleteBucketTaggingOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketTaggingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteBucketWebsiteRequest&, const Model::DeleteBucketWebsiteOutcome&, const Aws::Client::AsyncCallerContext*> DeleteBucketWebsiteOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const Aws::Client::AsyncCallerContext*> DeleteObjectOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::DeleteObjectsRequest&, const Model::DeleteObjectsOutcome&, const Aws::Client::AsyncCallerContext*> DeleteObjectsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketAclRequest&, const Model::GetBucketAclOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketAclOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketCorsRequest&, const Model::GetBucketCorsOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketCorsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketLifecycleRequest&, const Model::GetBucketLifecycleOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketLifecycleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketLocationRequest&, const Model::GetBucketLocationOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketLocationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketLoggingRequest&, const Model::GetBucketLoggingOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketLoggingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketNotificationConfigurationRequest&, const Model::GetBucketNotificationConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketNotificationConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketReplicationRequest&, const Model::GetBucketReplicationOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketReplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketRequestPaymentRequest&, const Model::GetBucketRequestPaymentOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketRequestPaymentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketTaggingRequest&, const Model::GetBucketTaggingOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketTaggingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketVersioningRequest&, const Model::GetBucketVersioningOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketVersioningOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetBucketWebsiteRequest&, const Model::GetBucketWebsiteOutcome&, const Aws::Client::AsyncCallerContext*> GetBucketWebsiteOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetObjectRequest&, const Model::GetObjectOutcome&, const Aws::Client::AsyncCallerContext*> GetObjectOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetObjectAclRequest&, const Model::GetObjectAclOutcome&, const Aws::Client::AsyncCallerContext*> GetObjectAclOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::GetObjectTorrentRequest&, const Model::GetObjectTorrentOutcome&, const Aws::Client::AsyncCallerContext*> GetObjectTorrentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::HeadBucketRequest&, const Model::HeadBucketOutcome&, const Aws::Client::AsyncCallerContext*> HeadBucketOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::HeadObjectRequest&, const Model::HeadObjectOutcome&, const Aws::Client::AsyncCallerContext*> HeadObjectOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::ListBucketsOutcome&, const Aws::Client::AsyncCallerContext*> ListBucketsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const Aws::Client::AsyncCallerContext*> ListMultipartUploadsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&, const Aws::Client::AsyncCallerContext*> ListObjectVersionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::ListObjectsRequest&, const Model::ListObjectsOutcome&, const Aws::Client::AsyncCallerContext*> ListObjectsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::ListPartsRequest&, const Model::ListPartsOutcome&, const Aws::Client::AsyncCallerContext*> ListPartsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketAclRequest&, const Model::PutBucketAclOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketAclOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketCorsRequest&, const Model::PutBucketCorsOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketCorsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketLifecycleRequest&, const Model::PutBucketLifecycleOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketLifecycleOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketLoggingRequest&, const Model::PutBucketLoggingOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketLoggingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketNotificationConfigurationRequest&, const Model::PutBucketNotificationConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketNotificationConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketReplicationRequest&, const Model::PutBucketReplicationOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketReplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketRequestPaymentRequest&, const Model::PutBucketRequestPaymentOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketRequestPaymentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketTaggingRequest&, const Model::PutBucketTaggingOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketTaggingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketVersioningRequest&, const Model::PutBucketVersioningOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketVersioningOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutBucketWebsiteRequest&, const Model::PutBucketWebsiteOutcome&, const Aws::Client::AsyncCallerContext*> PutBucketWebsiteOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const Aws::Client::AsyncCallerContext*> PutObjectOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::PutObjectAclRequest&, const Model::PutObjectAclOutcome&, const Aws::Client::AsyncCallerContext*> PutObjectAclOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::RestoreObjectRequest&, const Model::RestoreObjectOutcome&, const Aws::Client::AsyncCallerContext*> RestoreObjectOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::UploadPartRequest&, const Model::UploadPartOutcome&, const Aws::Client::AsyncCallerContext*> UploadPartOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<S3Client, const Model::UploadPartCopyRequest&, const Model::UploadPartCopyOutcome&, const Aws::Client::AsyncCallerContext*> UploadPartCopyOutcomeReceivedEvent;
 
   /*
     ${serviceModel.documentation}
@@ -358,7 +359,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request) const;
+     void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Completes a multipart upload by assembling previously uploaded parts.
@@ -377,7 +378,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CompleteMultipartUploadAsync(const Model::CompleteMultipartUploadRequest& request) const;
+     void CompleteMultipartUploadAsync(const Model::CompleteMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Creates a copy of an object that is already stored in Amazon S3.
@@ -396,7 +397,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CopyObjectAsync(const Model::CopyObjectRequest& request) const;
+     void CopyObjectAsync(const Model::CopyObjectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Creates a new bucket.
@@ -415,7 +416,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateBucketAsync(const Model::CreateBucketRequest& request) const;
+     void CreateBucketAsync(const Model::CreateBucketRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
@@ -434,7 +435,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateMultipartUploadAsync(const Model::CreateMultipartUploadRequest& request) const;
+     void CreateMultipartUploadAsync(const Model::CreateMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
@@ -453,7 +454,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketAsync(const Model::DeleteBucketRequest& request) const;
+     void DeleteBucketAsync(const Model::DeleteBucketRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Deletes the cors configuration information set for the bucket.
@@ -472,7 +473,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketCorsAsync(const Model::DeleteBucketCorsRequest& request) const;
+     void DeleteBucketCorsAsync(const Model::DeleteBucketCorsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Deletes the lifecycle configuration from the bucket.
@@ -491,7 +492,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketLifecycleAsync(const Model::DeleteBucketLifecycleRequest& request) const;
+     void DeleteBucketLifecycleAsync(const Model::DeleteBucketLifecycleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Deletes the policy from the bucket.
@@ -510,7 +511,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request) const;
+     void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -529,7 +530,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketReplicationAsync(const Model::DeleteBucketReplicationRequest& request) const;
+     void DeleteBucketReplicationAsync(const Model::DeleteBucketReplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Deletes the tags from the bucket.
@@ -548,7 +549,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketTaggingAsync(const Model::DeleteBucketTaggingRequest& request) const;
+     void DeleteBucketTaggingAsync(const Model::DeleteBucketTaggingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        This operation removes the website configuration from the bucket.
@@ -567,7 +568,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteBucketWebsiteAsync(const Model::DeleteBucketWebsiteRequest& request) const;
+     void DeleteBucketWebsiteAsync(const Model::DeleteBucketWebsiteRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects.
@@ -586,7 +587,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteObjectAsync(const Model::DeleteObjectRequest& request) const;
+     void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000 keys.
@@ -605,7 +606,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request) const;
+     void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Gets the access control policy for the bucket.
@@ -624,7 +625,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketAclAsync(const Model::GetBucketAclRequest& request) const;
+     void GetBucketAclAsync(const Model::GetBucketAclRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the cors configuration for the bucket.
@@ -643,7 +644,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketCorsAsync(const Model::GetBucketCorsRequest& request) const;
+     void GetBucketCorsAsync(const Model::GetBucketCorsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the lifecycle configuration information set on the bucket.
@@ -662,7 +663,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketLifecycleAsync(const Model::GetBucketLifecycleRequest& request) const;
+     void GetBucketLifecycleAsync(const Model::GetBucketLifecycleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the region the bucket resides in.
@@ -681,7 +682,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketLocationAsync(const Model::GetBucketLocationRequest& request) const;
+     void GetBucketLocationAsync(const Model::GetBucketLocationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the bucket owner.
@@ -700,7 +701,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketLoggingAsync(const Model::GetBucketLoggingRequest& request) const;
+     void GetBucketLoggingAsync(const Model::GetBucketLoggingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the notification configuration of a bucket.
@@ -719,7 +720,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketNotificationConfigurationAsync(const Model::GetBucketNotificationConfigurationRequest& request) const;
+     void GetBucketNotificationConfigurationAsync(const Model::GetBucketNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the policy of a specified bucket.
@@ -738,7 +739,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request) const;
+     void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        ${operation.documentation}
@@ -757,7 +758,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketReplicationAsync(const Model::GetBucketReplicationRequest& request) const;
+     void GetBucketReplicationAsync(const Model::GetBucketReplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the request payment configuration of a bucket.
@@ -776,7 +777,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketRequestPaymentAsync(const Model::GetBucketRequestPaymentRequest& request) const;
+     void GetBucketRequestPaymentAsync(const Model::GetBucketRequestPaymentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the tag set associated with the bucket.
@@ -795,7 +796,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketTaggingAsync(const Model::GetBucketTaggingRequest& request) const;
+     void GetBucketTaggingAsync(const Model::GetBucketTaggingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the versioning state of a bucket.
@@ -814,7 +815,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketVersioningAsync(const Model::GetBucketVersioningRequest& request) const;
+     void GetBucketVersioningAsync(const Model::GetBucketVersioningRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the website configuration for a bucket.
@@ -833,7 +834,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetBucketWebsiteAsync(const Model::GetBucketWebsiteRequest& request) const;
+     void GetBucketWebsiteAsync(const Model::GetBucketWebsiteRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Retrieves objects from Amazon S3.
@@ -852,7 +853,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetObjectAsync(const Model::GetObjectRequest& request) const;
+     void GetObjectAsync(const Model::GetObjectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns the access control list (ACL) of an object.
@@ -871,7 +872,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetObjectAclAsync(const Model::GetObjectAclRequest& request) const;
+     void GetObjectAclAsync(const Model::GetObjectAclRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Return torrent files from a bucket.
@@ -890,7 +891,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request) const;
+     void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        This operation is useful to determine if a bucket exists and you have permission to access it.
@@ -909,7 +910,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void HeadBucketAsync(const Model::HeadBucketRequest& request) const;
+     void HeadBucketAsync(const Model::HeadBucketRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        The HEAD operation retrieves metadata from an object without returning the object itself. This operation is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.
@@ -928,7 +929,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void HeadObjectAsync(const Model::HeadObjectRequest& request) const;
+     void HeadObjectAsync(const Model::HeadObjectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
       /*
        Returns a list of all buckets owned by the authenticated sender of the request.
@@ -947,7 +948,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListBucketsAsync() const;
+     void ListBucketsAsync(const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        This operation lists in-progress multipart uploads.
@@ -966,7 +967,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request) const;
+     void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns metadata about all of the versions of objects in a bucket.
@@ -985,7 +986,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListObjectVersionsAsync(const Model::ListObjectVersionsRequest& request) const;
+     void ListObjectVersionsAsync(const Model::ListObjectVersionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
@@ -1004,7 +1005,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListObjectsAsync(const Model::ListObjectsRequest& request) const;
+     void ListObjectsAsync(const Model::ListObjectsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Lists the parts that have been uploaded for a specific multipart upload.
@@ -1023,7 +1024,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListPartsAsync(const Model::ListPartsRequest& request) const;
+     void ListPartsAsync(const Model::ListPartsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Sets the permissions on a bucket using access control lists (ACL).
@@ -1042,7 +1043,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketAclAsync(const Model::PutBucketAclRequest& request) const;
+     void PutBucketAclAsync(const Model::PutBucketAclRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Sets the cors configuration for a bucket.
@@ -1061,7 +1062,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketCorsAsync(const Model::PutBucketCorsRequest& request) const;
+     void PutBucketCorsAsync(const Model::PutBucketCorsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
@@ -1080,7 +1081,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketLifecycleAsync(const Model::PutBucketLifecycleRequest& request) const;
+     void PutBucketLifecycleAsync(const Model::PutBucketLifecycleRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
@@ -1099,7 +1100,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketLoggingAsync(const Model::PutBucketLoggingRequest& request) const;
+     void PutBucketLoggingAsync(const Model::PutBucketLoggingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Enables notifications of specified events for a bucket.
@@ -1118,7 +1119,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request) const;
+     void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
@@ -1137,7 +1138,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request) const;
+     void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Creates a new replication configuration (or replaces an existing one, if present).
@@ -1156,7 +1157,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketReplicationAsync(const Model::PutBucketReplicationRequest& request) const;
+     void PutBucketReplicationAsync(const Model::PutBucketReplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
@@ -1175,7 +1176,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketRequestPaymentAsync(const Model::PutBucketRequestPaymentRequest& request) const;
+     void PutBucketRequestPaymentAsync(const Model::PutBucketRequestPaymentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Sets the tags for a bucket.
@@ -1194,7 +1195,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketTaggingAsync(const Model::PutBucketTaggingRequest& request) const;
+     void PutBucketTaggingAsync(const Model::PutBucketTaggingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
@@ -1213,7 +1214,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketVersioningAsync(const Model::PutBucketVersioningRequest& request) const;
+     void PutBucketVersioningAsync(const Model::PutBucketVersioningRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Set the website configuration for a bucket.
@@ -1232,7 +1233,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutBucketWebsiteAsync(const Model::PutBucketWebsiteRequest& request) const;
+     void PutBucketWebsiteAsync(const Model::PutBucketWebsiteRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Adds an object to a bucket.
@@ -1251,7 +1252,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutObjectAsync(const Model::PutObjectRequest& request) const;
+     void PutObjectAsync(const Model::PutObjectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
@@ -1270,7 +1271,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutObjectAclAsync(const Model::PutObjectAclRequest& request) const;
+     void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Restores an archived copy of an object back into Amazon S3
@@ -1289,7 +1290,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RestoreObjectAsync(const Model::RestoreObjectRequest& request) const;
+     void RestoreObjectAsync(const Model::RestoreObjectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
@@ -1308,7 +1309,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UploadPartAsync(const Model::UploadPartRequest& request) const;
+     void UploadPartAsync(const Model::UploadPartRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Uploads a part by copying data from an existing object as data source.
@@ -1327,7 +1328,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UploadPartCopyAsync(const Model::UploadPartCopyRequest& request) const;
+     void UploadPartCopyAsync(const Model::UploadPartCopyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AbortMultipartUploadAsync to call upon completion to the handler chain. You need to call this to
@@ -2217,58 +2218,58 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request) const;
-    void CompleteMultipartUploadAsyncHelper(const Model::CompleteMultipartUploadRequest& request) const;
-    void CopyObjectAsyncHelper(const Model::CopyObjectRequest& request) const;
-    void CreateBucketAsyncHelper(const Model::CreateBucketRequest& request) const;
-    void CreateMultipartUploadAsyncHelper(const Model::CreateMultipartUploadRequest& request) const;
-    void DeleteBucketAsyncHelper(const Model::DeleteBucketRequest& request) const;
-    void DeleteBucketCorsAsyncHelper(const Model::DeleteBucketCorsRequest& request) const;
-    void DeleteBucketLifecycleAsyncHelper(const Model::DeleteBucketLifecycleRequest& request) const;
-    void DeleteBucketPolicyAsyncHelper(const Model::DeleteBucketPolicyRequest& request) const;
-    void DeleteBucketReplicationAsyncHelper(const Model::DeleteBucketReplicationRequest& request) const;
-    void DeleteBucketTaggingAsyncHelper(const Model::DeleteBucketTaggingRequest& request) const;
-    void DeleteBucketWebsiteAsyncHelper(const Model::DeleteBucketWebsiteRequest& request) const;
-    void DeleteObjectAsyncHelper(const Model::DeleteObjectRequest& request) const;
-    void DeleteObjectsAsyncHelper(const Model::DeleteObjectsRequest& request) const;
-    void GetBucketAclAsyncHelper(const Model::GetBucketAclRequest& request) const;
-    void GetBucketCorsAsyncHelper(const Model::GetBucketCorsRequest& request) const;
-    void GetBucketLifecycleAsyncHelper(const Model::GetBucketLifecycleRequest& request) const;
-    void GetBucketLocationAsyncHelper(const Model::GetBucketLocationRequest& request) const;
-    void GetBucketLoggingAsyncHelper(const Model::GetBucketLoggingRequest& request) const;
-    void GetBucketNotificationConfigurationAsyncHelper(const Model::GetBucketNotificationConfigurationRequest& request) const;
-    void GetBucketPolicyAsyncHelper(const Model::GetBucketPolicyRequest& request) const;
-    void GetBucketReplicationAsyncHelper(const Model::GetBucketReplicationRequest& request) const;
-    void GetBucketRequestPaymentAsyncHelper(const Model::GetBucketRequestPaymentRequest& request) const;
-    void GetBucketTaggingAsyncHelper(const Model::GetBucketTaggingRequest& request) const;
-    void GetBucketVersioningAsyncHelper(const Model::GetBucketVersioningRequest& request) const;
-    void GetBucketWebsiteAsyncHelper(const Model::GetBucketWebsiteRequest& request) const;
-    void GetObjectAsyncHelper(const Model::GetObjectRequest& request) const;
-    void GetObjectAclAsyncHelper(const Model::GetObjectAclRequest& request) const;
-    void GetObjectTorrentAsyncHelper(const Model::GetObjectTorrentRequest& request) const;
-    void HeadBucketAsyncHelper(const Model::HeadBucketRequest& request) const;
-    void HeadObjectAsyncHelper(const Model::HeadObjectRequest& request) const;
-    void ListBucketsAsyncHelper() const;
-    void ListMultipartUploadsAsyncHelper(const Model::ListMultipartUploadsRequest& request) const;
-    void ListObjectVersionsAsyncHelper(const Model::ListObjectVersionsRequest& request) const;
-    void ListObjectsAsyncHelper(const Model::ListObjectsRequest& request) const;
-    void ListPartsAsyncHelper(const Model::ListPartsRequest& request) const;
-    void PutBucketAclAsyncHelper(const Model::PutBucketAclRequest& request) const;
-    void PutBucketCorsAsyncHelper(const Model::PutBucketCorsRequest& request) const;
-    void PutBucketLifecycleAsyncHelper(const Model::PutBucketLifecycleRequest& request) const;
-    void PutBucketLoggingAsyncHelper(const Model::PutBucketLoggingRequest& request) const;
-    void PutBucketNotificationConfigurationAsyncHelper(const Model::PutBucketNotificationConfigurationRequest& request) const;
-    void PutBucketPolicyAsyncHelper(const Model::PutBucketPolicyRequest& request) const;
-    void PutBucketReplicationAsyncHelper(const Model::PutBucketReplicationRequest& request) const;
-    void PutBucketRequestPaymentAsyncHelper(const Model::PutBucketRequestPaymentRequest& request) const;
-    void PutBucketTaggingAsyncHelper(const Model::PutBucketTaggingRequest& request) const;
-    void PutBucketVersioningAsyncHelper(const Model::PutBucketVersioningRequest& request) const;
-    void PutBucketWebsiteAsyncHelper(const Model::PutBucketWebsiteRequest& request) const;
-    void PutObjectAsyncHelper(const Model::PutObjectRequest& request) const;
-    void PutObjectAclAsyncHelper(const Model::PutObjectAclRequest& request) const;
-    void RestoreObjectAsyncHelper(const Model::RestoreObjectRequest& request) const;
-    void UploadPartAsyncHelper(const Model::UploadPartRequest& request) const;
-    void UploadPartCopyAsyncHelper(const Model::UploadPartCopyRequest& request) const;
+    void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CompleteMultipartUploadAsyncHelper(const Model::CompleteMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CopyObjectAsyncHelper(const Model::CopyObjectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateBucketAsyncHelper(const Model::CreateBucketRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateMultipartUploadAsyncHelper(const Model::CreateMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketAsyncHelper(const Model::DeleteBucketRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketCorsAsyncHelper(const Model::DeleteBucketCorsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketLifecycleAsyncHelper(const Model::DeleteBucketLifecycleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketPolicyAsyncHelper(const Model::DeleteBucketPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketReplicationAsyncHelper(const Model::DeleteBucketReplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketTaggingAsyncHelper(const Model::DeleteBucketTaggingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteBucketWebsiteAsyncHelper(const Model::DeleteBucketWebsiteRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteObjectAsyncHelper(const Model::DeleteObjectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteObjectsAsyncHelper(const Model::DeleteObjectsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketAclAsyncHelper(const Model::GetBucketAclRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketCorsAsyncHelper(const Model::GetBucketCorsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketLifecycleAsyncHelper(const Model::GetBucketLifecycleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketLocationAsyncHelper(const Model::GetBucketLocationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketLoggingAsyncHelper(const Model::GetBucketLoggingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketNotificationConfigurationAsyncHelper(const Model::GetBucketNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketPolicyAsyncHelper(const Model::GetBucketPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketReplicationAsyncHelper(const Model::GetBucketReplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketRequestPaymentAsyncHelper(const Model::GetBucketRequestPaymentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketTaggingAsyncHelper(const Model::GetBucketTaggingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketVersioningAsyncHelper(const Model::GetBucketVersioningRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetBucketWebsiteAsyncHelper(const Model::GetBucketWebsiteRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetObjectAsyncHelper(const Model::GetObjectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetObjectAclAsyncHelper(const Model::GetObjectAclRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetObjectTorrentAsyncHelper(const Model::GetObjectTorrentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void HeadBucketAsyncHelper(const Model::HeadBucketRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void HeadObjectAsyncHelper(const Model::HeadObjectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListBucketsAsyncHelper(const Aws::Client::AsyncCallerContext* context) const;
+    void ListMultipartUploadsAsyncHelper(const Model::ListMultipartUploadsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListObjectVersionsAsyncHelper(const Model::ListObjectVersionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListObjectsAsyncHelper(const Model::ListObjectsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListPartsAsyncHelper(const Model::ListPartsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketAclAsyncHelper(const Model::PutBucketAclRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketCorsAsyncHelper(const Model::PutBucketCorsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketLifecycleAsyncHelper(const Model::PutBucketLifecycleRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketLoggingAsyncHelper(const Model::PutBucketLoggingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketNotificationConfigurationAsyncHelper(const Model::PutBucketNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketPolicyAsyncHelper(const Model::PutBucketPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketReplicationAsyncHelper(const Model::PutBucketReplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketRequestPaymentAsyncHelper(const Model::PutBucketRequestPaymentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketTaggingAsyncHelper(const Model::PutBucketTaggingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketVersioningAsyncHelper(const Model::PutBucketVersioningRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutBucketWebsiteAsyncHelper(const Model::PutBucketWebsiteRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutObjectAsyncHelper(const Model::PutObjectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutObjectAclAsyncHelper(const Model::PutObjectAclRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RestoreObjectAsyncHelper(const Model::RestoreObjectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UploadPartAsyncHelper(const Model::UploadPartRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UploadPartCopyAsyncHelper(const Model::UploadPartCopyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

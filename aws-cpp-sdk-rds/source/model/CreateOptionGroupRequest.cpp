@@ -20,6 +20,10 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CreateOptionGroupRequest::CreateOptionGroupRequest() : 
+    m_optionGroupNameHasBeenSet(false),
+    m_engineNameHasBeenSet(false),
+    m_majorEngineVersionHasBeenSet(false),
+    m_optionGroupDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,10 +32,22 @@ Aws::String CreateOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateOptionGroup&";
-  ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
-  ss << "EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
-  ss << "MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
-  ss << "OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
+  if(m_optionGroupNameHasBeenSet)
+  {
+    ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
+  }
+  if(m_engineNameHasBeenSet)
+  {
+    ss << "EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
+  }
+  if(m_majorEngineVersionHasBeenSet)
+  {
+    ss << "MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
+  }
+  if(m_optionGroupDescriptionHasBeenSet)
+  {
+    ss << "OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

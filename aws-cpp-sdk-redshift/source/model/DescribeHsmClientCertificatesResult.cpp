@@ -43,11 +43,12 @@ DescribeHsmClientCertificatesResult& DescribeHsmClientCertificatesResult::operat
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode hsmClientCertificateNode = resultNode.FirstChild("HsmClientCertificate");
+    XmlNode hsmClientCertificateNodeParent = resultNode.FirstChild("HsmClientCertificate");
+    XmlNode hsmClientCertificateNode = hsmClientCertificateNodeParent.FirstChild("member");
     while(!hsmClientCertificateNode.IsNull())
     {
       m_hsmClientCertificates.push_back(hsmClientCertificateNode);
-      hsmClientCertificateNode = hsmClientCertificateNode.NextNode("HsmClientCertificate");
+      hsmClientCertificateNode = hsmClientCertificateNode.NextNode("member");
     }
 
   }

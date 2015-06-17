@@ -43,11 +43,12 @@ DescribeDBSnapshotsResult& DescribeDBSnapshotsResult::operator =(const AmazonWeb
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBSnapshotNode = resultNode.FirstChild("DBSnapshot");
+    XmlNode dBSnapshotNodeParent = resultNode.FirstChild("DBSnapshot");
+    XmlNode dBSnapshotNode = dBSnapshotNodeParent.FirstChild("member");
     while(!dBSnapshotNode.IsNull())
     {
       m_dBSnapshots.push_back(dBSnapshotNode);
-      dBSnapshotNode = dBSnapshotNode.NextNode("DBSnapshot");
+      dBSnapshotNode = dBSnapshotNode.NextNode("member");
     }
 
   }

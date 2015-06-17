@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-RemoveClientIDFromOpenIDConnectProviderRequest::RemoveClientIDFromOpenIDConnectProviderRequest()
+RemoveClientIDFromOpenIDConnectProviderRequest::RemoveClientIDFromOpenIDConnectProviderRequest() : 
+    m_openIDConnectProviderArnHasBeenSet(false),
+    m_clientIDHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String RemoveClientIDFromOpenIDConnectProviderRequest::SerializePayload() c
 {
   Aws::StringStream ss;
   ss << "Action=RemoveClientIDFromOpenIDConnectProvider&";
-  ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
-  ss << "ClientID=" << StringUtils::URLEncode(m_clientID.c_str()) << "&";
+  if(m_openIDConnectProviderArnHasBeenSet)
+  {
+    ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
+  }
+  if(m_clientIDHasBeenSet)
+  {
+    ss << "ClientID=" << StringUtils::URLEncode(m_clientID.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

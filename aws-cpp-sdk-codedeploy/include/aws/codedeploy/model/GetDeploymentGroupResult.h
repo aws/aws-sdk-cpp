@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a get deployment group operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API GetDeploymentGroupResult
   {
@@ -42,18 +42,12 @@ namespace Model
     GetDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    
     inline const DeploymentGroupInfo& GetDeploymentGroupInfo() const{ return m_deploymentGroupInfo; }
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    
     inline void SetDeploymentGroupInfo(const DeploymentGroupInfo& value) { m_deploymentGroupInfo = value; }
 
-    /*
-     <p>Information about the deployment group.</p>
-    */
+    
     inline GetDeploymentGroupResult&  WithDeploymentGroupInfo(const DeploymentGroupInfo& value) { SetDeploymentGroupInfo(value); return *this;}
 
   private:

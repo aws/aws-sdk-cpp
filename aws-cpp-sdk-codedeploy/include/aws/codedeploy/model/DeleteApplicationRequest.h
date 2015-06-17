@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a delete application operation.</p>
   */
   class AWS_CODEDEPLOY_API DeleteApplicationRequest : public codedeployRequest
   {
@@ -36,32 +35,23 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline DeleteApplicationRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    
     inline DeleteApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
   };
 
 } // namespace Model

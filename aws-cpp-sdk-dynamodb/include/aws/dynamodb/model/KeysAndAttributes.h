@@ -50,7 +50,7 @@ namespace Model
     /*
      <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
     */
-    inline void SetKeys(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_keys = value; }
+    inline void SetKeys(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_keysHasBeenSet = true; m_keys = value; }
 
     /*
      <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
@@ -60,7 +60,7 @@ namespace Model
     /*
      <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
     */
-    inline KeysAndAttributes& AddKeys(const Aws::Map<Aws::String, AttributeValue>& value) { m_keys.push_back(value); return *this; }
+    inline KeysAndAttributes& AddKeys(const Aws::Map<Aws::String, AttributeValue>& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
 
     /*
      <p>One or more attributes to retrieve from the table or index. If no attribute names are specified then all attributes will be returned. If any of the specified attributes are not found, they will not appear in the result.</p>
@@ -150,6 +150,7 @@ namespace Model
 
   private:
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_keys;
+    bool m_keysHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
     bool m_consistentRead;

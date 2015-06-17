@@ -23,11 +23,15 @@ using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Dimension::Dimension()
+Dimension::Dimension() : 
+    m_nameHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
 }
 
-Dimension::Dimension(const XmlNode& xmlNode)
+Dimension::Dimension(const XmlNode& xmlNode) : 
+    m_nameHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ Dimension& Dimension::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
+    if(!nameNode.IsNull())
+    {
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
+    }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    m_value = StringUtils::Trim(valueNode.GetText().c_str());
+    if(!valueNode.IsNull())
+    {
+      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_valueHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,12 +61,24 @@ Dimension& Dimension::operator =(const XmlNode& xmlNode)
 
 void Dimension::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_valueHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  }
 }
 
 void Dimension::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_valueHasBeenSet)
+  {
+      oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  }
 }

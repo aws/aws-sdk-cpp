@@ -24,12 +24,16 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry() : 
+    m_idHasBeenSet(false),
+    m_receiptHandleHasBeenSet(false),
     m_visibilityTimeout(0),
     m_visibilityTimeoutHasBeenSet(false)
 {
 }
 
 ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_receiptHandleHasBeenSet(false),
     m_visibilityTimeout(0),
     m_visibilityTimeoutHasBeenSet(false)
 {
@@ -43,9 +47,17 @@ ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEnt
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
-    m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
+    if(!receiptHandleNode.IsNull())
+    {
+      m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
+      m_receiptHandleHasBeenSet = true;
+    }
     XmlNode visibilityTimeoutNode = resultNode.FirstChild("VisibilityTimeout");
     if(!visibilityTimeoutNode.IsNull())
     {
@@ -59,8 +71,14 @@ ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEnt
 
 void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_receiptHandleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  }
   if(m_visibilityTimeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
@@ -69,8 +87,14 @@ void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStr
 
 void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_receiptHandleHasBeenSet)
+  {
+      oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  }
   if(m_visibilityTimeoutHasBeenSet)
   {
       oStream << location << ".VisibilityTimeout=" << m_visibilityTimeout << "&";

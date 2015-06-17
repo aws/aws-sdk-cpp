@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupId.assign(value); }
+    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
 
     /*
      <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -98,6 +98,7 @@ namespace Model
 
   private:
     Aws::String m_replicationGroupId;
+    bool m_replicationGroupIdHasBeenSet;
     bool m_retainPrimaryCluster;
     bool m_retainPrimaryClusterHasBeenSet;
     Aws::String m_finalSnapshotIdentifier;

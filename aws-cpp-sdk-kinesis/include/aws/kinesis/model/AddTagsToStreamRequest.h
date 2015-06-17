@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The name of the stream.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The name of the stream.</p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>The set of key-value pairs to use to create the tags.</p>
     */
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
      <p>The set of key-value pairs to use to create the tags.</p>
@@ -78,16 +78,18 @@ namespace Model
     /*
      <p>The set of key-value pairs to use to create the tags.</p>
     */
-    inline AddTagsToStreamRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tags[key] = value; return *this; }
+    inline AddTagsToStreamRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
 
     /*
      <p>The set of key-value pairs to use to create the tags.</p>
     */
-    inline AddTagsToStreamRequest& AddTags(const char* key, const char* value) { m_tags[key] = value; return *this; }
+    inline AddTagsToStreamRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
 
   private:
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

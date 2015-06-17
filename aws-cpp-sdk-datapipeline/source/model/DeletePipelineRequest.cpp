@@ -21,7 +21,8 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePipelineRequest::DeletePipelineRequest()
+DeletePipelineRequest::DeletePipelineRequest() : 
+    m_pipelineIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeletePipelineRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
+  if(m_pipelineIdHasBeenSet)
+  {
+   payload.WithString("pipelineId", m_pipelineId);
+
+  }
 
   return payload.WriteReadable();
 }

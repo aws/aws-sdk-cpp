@@ -23,11 +23,13 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry()
+DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry() : 
+    m_idHasBeenSet(false)
 {
 }
 
-DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(const XmlNode& xmlNode)
+DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator =(const X
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -47,10 +53,16 @@ DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator =(const X
 
 void DeleteMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
 }
 
 void DeleteMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
 }

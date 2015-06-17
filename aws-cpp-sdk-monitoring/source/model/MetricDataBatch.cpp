@@ -24,12 +24,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 MetricDataBatch::MetricDataBatch() : 
+    m_accountIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_metricDataHasBeenSet(false),
     m_autoDecompose(false),
     m_autoDecomposeHasBeenSet(false)
 {
 }
 
 MetricDataBatch::MetricDataBatch(const XmlNode& xmlNode) : 
+    m_accountIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_metricDataHasBeenSet(false),
     m_autoDecompose(false),
     m_autoDecomposeHasBeenSet(false)
 {
@@ -43,16 +49,29 @@ MetricDataBatch& MetricDataBatch::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
-    m_accountId = StringUtils::Trim(accountIdNode.GetText().c_str());
-    XmlNode namespaceNode = resultNode.FirstChild("Namespace");
-    m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
-    XmlNode metricDataNode = resultNode.FirstChild("MetricData");
-    while(!metricDataNode.IsNull())
+    if(!accountIdNode.IsNull())
     {
-      m_metricData.push_back(metricDataNode);
-      metricDataNode = metricDataNode.NextNode("MetricData");
+      m_accountId = StringUtils::Trim(accountIdNode.GetText().c_str());
+      m_accountIdHasBeenSet = true;
     }
+    XmlNode namespaceNode = resultNode.FirstChild("Namespace");
+    if(!namespaceNode.IsNull())
+    {
+      m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
+      m_namespaceHasBeenSet = true;
+    }
+    XmlNode metricDataNodeParent = resultNode.FirstChild("MetricData");
+    XmlNode metricDataNode = metricDataNodeParent.FirstChild("member");
+    if(!metricDataNode.IsNull())
+    {
+      while(!metricDataNode.IsNull())
+      {
+        m_metricData.push_back(metricDataNode);
+        metricDataNode = metricDataNode.NextNode("member");
+      }
 
+      m_metricDataHasBeenSet = true;
+    }
     XmlNode autoDecomposeNode = resultNode.FirstChild("AutoDecompose");
     if(!metricDataNode.IsNull())
     {
@@ -66,13 +85,22 @@ MetricDataBatch& MetricDataBatch::operator =(const XmlNode& xmlNode)
 
 void MetricDataBatch::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
-  for(auto& item : m_metricData)
+  if(m_accountIdHasBeenSet)
   {
-    Aws::StringStream metricDataSs;
-    metricDataSs << location << index << locationValue << ".MetricData";
-    item.OutputToStream(oStream, metricDataSs.str().c_str());
+      oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+  if(m_namespaceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  }
+  if(m_metricDataHasBeenSet)
+  {
+      for(auto& item : m_metricData)
+      {
+        Aws::StringStream metricDataSs;
+        metricDataSs << location << index << locationValue << ".MetricData";
+        item.OutputToStream(oStream, metricDataSs.str().c_str());
+      }
   }
   if(m_autoDecomposeHasBeenSet)
   {
@@ -82,13 +110,22 @@ void MetricDataBatch::OutputToStream(Aws::OStream& oStream, const char* location
 
 void MetricDataBatch::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
-  oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
-  for(auto& item : m_metricData)
+  if(m_accountIdHasBeenSet)
   {
-    Aws::String locationAndListMember(location);
-    locationAndListMember += ".MetricData";
-    item.OutputToStream(oStream, locationAndListMember.c_str());
+      oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+  if(m_namespaceHasBeenSet)
+  {
+      oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  }
+  if(m_metricDataHasBeenSet)
+  {
+      for(auto& item : m_metricData)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".MetricData";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
   }
   if(m_autoDecomposeHasBeenSet)
   {

@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ReportTaskRunnerHeartbeatRequest::ReportTaskRunnerHeartbeatRequest() : 
+    m_taskrunnerIdHasBeenSet(false),
     m_workerGroupHasBeenSet(false),
     m_hostnameHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String ReportTaskRunnerHeartbeatRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("taskrunnerId", m_taskrunnerId);
+  if(m_taskrunnerIdHasBeenSet)
+  {
+   payload.WithString("taskrunnerId", m_taskrunnerId);
+
+  }
 
   if(m_workerGroupHasBeenSet)
   {

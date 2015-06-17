@@ -21,7 +21,8 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterOnPremisesInstanceRequest::DeregisterOnPremisesInstanceRequest()
+DeregisterOnPremisesInstanceRequest::DeregisterOnPremisesInstanceRequest() : 
+    m_instanceNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeregisterOnPremisesInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("instanceName", m_instanceName);
+  if(m_instanceNameHasBeenSet)
+  {
+   payload.WithString("instanceName", m_instanceName);
+
+  }
 
   return payload.WriteReadable();
 }

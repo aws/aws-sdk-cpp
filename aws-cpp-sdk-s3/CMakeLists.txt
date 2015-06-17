@@ -55,7 +55,11 @@ project(aws-cpp-sdk-s3)
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 
-  install (TARGETS aws-cpp-sdk-s3 DESTINATION lib)
+  install (TARGETS aws-cpp-sdk-s3
+           ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
   install (FILES ${AWS_S3_HEADERS} DESTINATION include/aws/s3)
   install (FILES ${AWS_S3_MODEL_HEADERS} DESTINATION include/aws/s3/model)
 

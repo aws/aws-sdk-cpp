@@ -66,16 +66,16 @@ namespace Model
     inline CompletedPart& WithETag(const char* value) { SetETag(value); return *this;}
 
     /*
-     Part number that identifies the part.
+     Part number that identifies the part. This is a positive integer between 1 and 10,000.
     */
     inline long GetPartNumber() const{ return m_partNumber; }
     /*
-     Part number that identifies the part.
+     Part number that identifies the part. This is a positive integer between 1 and 10,000.
     */
     inline void SetPartNumber(long value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /*
-     Part number that identifies the part.
+     Part number that identifies the part. This is a positive integer between 1 and 10,000.
     */
     inline CompletedPart&  WithPartNumber(long value) { SetPartNumber(value); return *this;}
 

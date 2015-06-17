@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a create deployment configuration operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API CreateDeploymentConfigResult
   {
@@ -42,28 +42,18 @@ namespace Model
     CreateDeploymentConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    
     inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigId = value; }
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    
     inline void SetDeploymentConfigId(const char* value) { m_deploymentConfigId.assign(value); }
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    
     inline CreateDeploymentConfigResult&  WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
 
-    /*
-     <p>A unique deployment configuration ID.</p>
-    */
+    
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
 
   private:

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The port number associated with the back-end server.</p>
     */
-    inline void SetInstancePort(long value) { m_instancePort = value; }
+    inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /*
      <p>The port number associated with the back-end server.</p>
@@ -79,7 +79,7 @@ namespace Model
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
-    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
+    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
@@ -89,17 +89,20 @@ namespace Model
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
-    inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
+    inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /*
      <p>The names of the policies. If the list is empty, then all current polices are removed from the back-end server.</p>
     */
-    inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
+    inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     long m_instancePort;
+    bool m_instancePortHasBeenSet;
     Aws::Vector<Aws::String> m_policyNames;
+    bool m_policyNamesHasBeenSet;
   };
 
 } // namespace Model

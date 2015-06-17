@@ -20,6 +20,8 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 SubscribeRequest::SubscribeRequest() : 
+    m_topicArnHasBeenSet(false),
+    m_protocolHasBeenSet(false),
     m_endpointHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String SubscribeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=Subscribe&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  ss << "Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
+  if(m_topicArnHasBeenSet)
+  {
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
+  if(m_protocolHasBeenSet)
+  {
+    ss << "Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
+  }
   if(m_endpointHasBeenSet)
   {
     ss << "Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";

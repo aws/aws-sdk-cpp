@@ -27,6 +27,7 @@ static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottl
 static const int INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = HashingUtils::HashString("InvalidLambdaFunctionOutput");
 static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamed");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
@@ -70,6 +71,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {

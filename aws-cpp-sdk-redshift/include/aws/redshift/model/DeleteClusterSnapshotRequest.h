@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The unique identifier of the manual snapshot to be deleted. </p> <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.</p>
     */
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p> The unique identifier of the manual snapshot to be deleted. </p> <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.</p>
     */
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifier.assign(value); }
+    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /*
      <p> The unique identifier of the manual snapshot to be deleted. </p> <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.</p>
@@ -84,6 +84,7 @@ namespace Model
 
   private:
     Aws::String m_snapshotIdentifier;
+    bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
   };

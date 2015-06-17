@@ -24,12 +24,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 InvalidationSummary::InvalidationSummary() : 
-    m_createTime(0.0)
+    m_idHasBeenSet(false),
+    m_createTime(0.0),
+    m_createTimeHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
 InvalidationSummary::InvalidationSummary(const XmlNode& xmlNode) : 
-    m_createTime(0.0)
+    m_idHasBeenSet(false),
+    m_createTime(0.0),
+    m_createTimeHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,11 +47,23 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
-    m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTimeHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = StringUtils::Trim(statusNode.GetText().c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -54,12 +72,24 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
 void InvalidationSummary::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+   XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
   ss << m_createTime;
-  createTimeNode.SetText(ss.str());
+   createTimeNode.SetText(ss.str());
   ss.str("");
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(m_status);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(m_status);
+  }
+
 }

@@ -38,11 +38,15 @@ ListPipelinesResult::ListPipelinesResult(const AmazonWebServiceResult<JsonValue>
 ListPipelinesResult& ListPipelinesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  Array<JsonValue> pipelineIdListJsonList = jsonValue.GetArray("pipelineIdList");
-  for(unsigned pipelineIdListIndex = 0; pipelineIdListIndex < pipelineIdListJsonList.GetLength(); ++pipelineIdListIndex)
+  if(jsonValue.ValueExists("pipelineIdList"))
   {
-    m_pipelineIdList.push_back(pipelineIdListJsonList[pipelineIdListIndex].AsObject());
+    Array<JsonValue> pipelineIdListJsonList = jsonValue.GetArray("pipelineIdList");
+    for(unsigned pipelineIdListIndex = 0; pipelineIdListIndex < pipelineIdListJsonList.GetLength(); ++pipelineIdListIndex)
+    {
+      m_pipelineIdList.push_back(pipelineIdListJsonList[pipelineIdListIndex].AsObject());
+    }
   }
+
   if(jsonValue.ValueExists("marker"))
   {
     m_marker = jsonValue.GetString("marker");

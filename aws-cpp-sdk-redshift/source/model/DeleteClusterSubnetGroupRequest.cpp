@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteClusterSubnetGroupRequest::DeleteClusterSubnetGroupRequest()
+DeleteClusterSubnetGroupRequest::DeleteClusterSubnetGroupRequest() : 
+    m_clusterSubnetGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteClusterSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteClusterSubnetGroup&";
-  ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
+  if(m_clusterSubnetGroupNameHasBeenSet)
+  {
+    ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

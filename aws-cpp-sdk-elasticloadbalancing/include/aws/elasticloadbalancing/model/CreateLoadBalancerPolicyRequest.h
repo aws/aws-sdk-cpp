@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
@@ -90,12 +90,12 @@ namespace Model
     /*
      <p>The name of the base policy type. To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
     */
-    inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeName = value; }
+    inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
     /*
      <p>The name of the base policy type. To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
     */
-    inline void SetPolicyTypeName(const char* value) { m_policyTypeName.assign(value); }
+    inline void SetPolicyTypeName(const char* value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName.assign(value); }
 
     /*
      <p>The name of the base policy type. To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
@@ -128,8 +128,11 @@ namespace Model
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
     Aws::String m_policyTypeName;
+    bool m_policyTypeNameHasBeenSet;
     Aws::Vector<PolicyAttribute> m_policyAttributes;
     bool m_policyAttributesHasBeenSet;
   };

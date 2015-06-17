@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ChangePasswordRequest::ChangePasswordRequest()
+ChangePasswordRequest::ChangePasswordRequest() : 
+    m_oldPasswordHasBeenSet(false),
+    m_newPasswordHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String ChangePasswordRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ChangePassword&";
-  ss << "OldPassword=" << StringUtils::URLEncode(m_oldPassword.c_str()) << "&";
-  ss << "NewPassword=" << StringUtils::URLEncode(m_newPassword.c_str()) << "&";
+  if(m_oldPasswordHasBeenSet)
+  {
+    ss << "OldPassword=" << StringUtils::URLEncode(m_oldPassword.c_str()) << "&";
+  }
+  if(m_newPasswordHasBeenSet)
+  {
+    ss << "NewPassword=" << StringUtils::URLEncode(m_newPassword.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

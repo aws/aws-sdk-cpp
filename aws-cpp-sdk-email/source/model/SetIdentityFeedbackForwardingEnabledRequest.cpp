@@ -20,7 +20,9 @@ using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
 SetIdentityFeedbackForwardingEnabledRequest::SetIdentityFeedbackForwardingEnabledRequest() : 
-    m_forwardingEnabled(false)
+    m_identityHasBeenSet(false),
+    m_forwardingEnabled(false),
+    m_forwardingEnabledHasBeenSet(false)
 {
 }
 
@@ -28,8 +30,14 @@ Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() cons
 {
   Aws::StringStream ss;
   ss << "Action=SetIdentityFeedbackForwardingEnabled&";
-  ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
-  ss << "ForwardingEnabled=" << m_forwardingEnabled << "&";
+  if(m_identityHasBeenSet)
+  {
+    ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
+  }
+  if(m_forwardingEnabledHasBeenSet)
+  {
+    ss << "ForwardingEnabled=" << m_forwardingEnabled << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

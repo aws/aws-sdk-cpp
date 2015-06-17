@@ -39,10 +39,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutBucketLoggingRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     
     inline const BucketLoggingStatus& GetBucketLoggingStatus() const{ return m_bucketLoggingStatus; }
     
-    inline void SetBucketLoggingStatus(const BucketLoggingStatus& value) { m_bucketLoggingStatus = value; }
+    inline void SetBucketLoggingStatus(const BucketLoggingStatus& value) { m_bucketLoggingStatusHasBeenSet = true; m_bucketLoggingStatus = value; }
 
     
     inline PutBucketLoggingRequest&  WithBucketLoggingStatus(const BucketLoggingStatus& value) { SetBucketLoggingStatus(value); return *this;}
@@ -74,7 +74,9 @@ namespace Model
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     BucketLoggingStatus m_bucketLoggingStatus;
+    bool m_bucketLoggingStatusHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
   };

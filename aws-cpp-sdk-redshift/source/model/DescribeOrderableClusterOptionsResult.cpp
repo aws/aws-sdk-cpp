@@ -41,11 +41,12 @@ DescribeOrderableClusterOptionsResult& DescribeOrderableClusterOptionsResult::op
 
   if(!resultNode.IsNull())
   {
-    XmlNode orderableClusterOptionNode = resultNode.FirstChild("OrderableClusterOption");
+    XmlNode orderableClusterOptionNodeParent = resultNode.FirstChild("OrderableClusterOption");
+    XmlNode orderableClusterOptionNode = orderableClusterOptionNodeParent.FirstChild("member");
     while(!orderableClusterOptionNode.IsNull())
     {
       m_orderableClusterOptions.push_back(orderableClusterOptionNode);
-      orderableClusterOptionNode = orderableClusterOptionNode.NextNode("OrderableClusterOption");
+      orderableClusterOptionNode = orderableClusterOptionNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

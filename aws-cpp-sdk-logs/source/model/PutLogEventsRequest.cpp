@@ -22,6 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutLogEventsRequest::PutLogEventsRequest() : 
+    m_logGroupNameHasBeenSet(false),
+    m_logStreamNameHasBeenSet(false),
+    m_logEventsHasBeenSet(false),
     m_sequenceTokenHasBeenSet(false)
 {
 }
@@ -30,16 +33,28 @@ Aws::String PutLogEventsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
-
-  payload.WithString("logStreamName", m_logStreamName);
-
-  Array<JsonValue> logEventsJsonList(m_logEvents.size());
-  for(unsigned logEventsIndex = 0; logEventsIndex < logEventsJsonList.GetLength(); ++logEventsIndex)
+  if(m_logGroupNameHasBeenSet)
   {
-    logEventsJsonList[logEventsIndex].AsObject(m_logEvents[logEventsIndex].Jsonize());
+   payload.WithString("logGroupName", m_logGroupName);
+
   }
-  payload.WithArray("logEvents", std::move(logEventsJsonList));
+
+  if(m_logStreamNameHasBeenSet)
+  {
+   payload.WithString("logStreamName", m_logStreamName);
+
+  }
+
+  if(m_logEventsHasBeenSet)
+  {
+   Array<JsonValue> logEventsJsonList(m_logEvents.size());
+   for(unsigned logEventsIndex = 0; logEventsIndex < logEventsJsonList.GetLength(); ++logEventsIndex)
+   {
+     logEventsJsonList[logEventsIndex].AsObject(m_logEvents[logEventsIndex].Jsonize());
+   }
+   payload.WithArray("logEvents", std::move(logEventsJsonList));
+
+  }
 
   if(m_sequenceTokenHasBeenSet)
   {

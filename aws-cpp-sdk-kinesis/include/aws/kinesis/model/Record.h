@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
     */
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumber = value; }
+    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
     */
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumber.assign(value); }
+    inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
 
     /*
      <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
@@ -72,7 +72,7 @@ namespace Model
     /*
      <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
     */
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_data = value; }
+    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /*
      <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
@@ -86,12 +86,12 @@ namespace Model
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
     */
-    inline void SetPartitionKey(const Aws::String& value) { m_partitionKey = value; }
+    inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
 
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
     */
-    inline void SetPartitionKey(const char* value) { m_partitionKey.assign(value); }
+    inline void SetPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.assign(value); }
 
     /*
      <p>Identifies which shard in the stream the data record is assigned to.</p>
@@ -105,8 +105,11 @@ namespace Model
 
   private:
     Aws::String m_sequenceNumber;
+    bool m_sequenceNumberHasBeenSet;
     Aws::Utils::ByteBuffer m_data;
+    bool m_dataHasBeenSet;
     Aws::String m_partitionKey;
+    bool m_partitionKeyHasBeenSet;
   };
 
 } // namespace Model

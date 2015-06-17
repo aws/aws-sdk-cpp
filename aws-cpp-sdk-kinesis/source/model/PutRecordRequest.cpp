@@ -23,6 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutRecordRequest::PutRecordRequest() : 
+    m_streamNameHasBeenSet(false),
+    m_dataHasBeenSet(false),
+    m_partitionKeyHasBeenSet(false),
     m_explicitHashKeyHasBeenSet(false),
     m_sequenceNumberForOrderingHasBeenSet(false)
 {
@@ -32,10 +35,22 @@ Aws::String PutRecordRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
 
-  payload.WithString("Data", HashingUtils::Base64Encode(m_data));
-  payload.WithString("PartitionKey", m_partitionKey);
+  }
+
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("Data", HashingUtils::Base64Encode(m_data));
+  }
+
+  if(m_partitionKeyHasBeenSet)
+  {
+   payload.WithString("PartitionKey", m_partitionKey);
+
+  }
 
   if(m_explicitHashKeyHasBeenSet)
   {

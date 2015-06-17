@@ -25,17 +25,25 @@ using namespace Aws::Utils;
 
 StatisticSet::StatisticSet() : 
     m_sampleCount(0.0),
+    m_sampleCountHasBeenSet(false),
     m_sum(0.0),
+    m_sumHasBeenSet(false),
     m_minimum(0.0),
-    m_maximum(0.0)
+    m_minimumHasBeenSet(false),
+    m_maximum(0.0),
+    m_maximumHasBeenSet(false)
 {
 }
 
 StatisticSet::StatisticSet(const XmlNode& xmlNode) : 
     m_sampleCount(0.0),
+    m_sampleCountHasBeenSet(false),
     m_sum(0.0),
+    m_sumHasBeenSet(false),
     m_minimum(0.0),
-    m_maximum(0.0)
+    m_minimumHasBeenSet(false),
+    m_maximum(0.0),
+    m_maximumHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -47,13 +55,29 @@ StatisticSet& StatisticSet::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
-    m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(sampleCountNode.GetText().c_str()).c_str());
+    if(!sampleCountNode.IsNull())
+    {
+      m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(sampleCountNode.GetText().c_str()).c_str());
+      m_sampleCountHasBeenSet = true;
+    }
     XmlNode sumNode = resultNode.FirstChild("Sum");
-    m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(sumNode.GetText().c_str()).c_str());
+    if(!sumNode.IsNull())
+    {
+      m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(sumNode.GetText().c_str()).c_str());
+      m_sumHasBeenSet = true;
+    }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
-    m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(minimumNode.GetText().c_str()).c_str());
+    if(!minimumNode.IsNull())
+    {
+      m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(minimumNode.GetText().c_str()).c_str());
+      m_minimumHasBeenSet = true;
+    }
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
-    m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(maximumNode.GetText().c_str()).c_str());
+    if(!maximumNode.IsNull())
+    {
+      m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(maximumNode.GetText().c_str()).c_str());
+      m_maximumHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -61,16 +85,40 @@ StatisticSet& StatisticSet::operator =(const XmlNode& xmlNode)
 
 void StatisticSet::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".SampleCount=" << m_sampleCount << "&";
-  oStream << location << index << locationValue << ".Sum=" << m_sum << "&";
-  oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
-  oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
+  if(m_sampleCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SampleCount=" << m_sampleCount << "&";
+  }
+  if(m_sumHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Sum=" << m_sum << "&";
+  }
+  if(m_minimumHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
+  }
+  if(m_maximumHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
+  }
 }
 
 void StatisticSet::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".SampleCount=" << m_sampleCount << "&";
-  oStream << location << ".Sum=" << m_sum << "&";
-  oStream << location << ".Minimum=" << m_minimum << "&";
-  oStream << location << ".Maximum=" << m_maximum << "&";
+  if(m_sampleCountHasBeenSet)
+  {
+      oStream << location << ".SampleCount=" << m_sampleCount << "&";
+  }
+  if(m_sumHasBeenSet)
+  {
+      oStream << location << ".Sum=" << m_sum << "&";
+  }
+  if(m_minimumHasBeenSet)
+  {
+      oStream << location << ".Minimum=" << m_minimum << "&";
+  }
+  if(m_maximumHasBeenSet)
+  {
+      oStream << location << ".Maximum=" << m_maximum << "&";
+  }
 }

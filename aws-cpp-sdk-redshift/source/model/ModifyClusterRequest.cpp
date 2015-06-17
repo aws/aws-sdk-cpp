@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 ModifyClusterRequest::ModifyClusterRequest() : 
+    m_clusterIdentifierHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_numberOfNodes(0),
@@ -44,7 +45,10 @@ Aws::String ModifyClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyCluster&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
   if(m_clusterTypeHasBeenSet)
   {
     ss << "ClusterType=" << StringUtils::URLEncode(m_clusterType.c_str()) << "&";

@@ -87,7 +87,7 @@ namespace Model
     /*
      <p>The role of the instance group in the cluster.</p>
     */
-    inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRole = value; }
+    inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
 
     /*
      <p>The role of the instance group in the cluster.</p>
@@ -125,12 +125,12 @@ namespace Model
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
     */
-    inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
     */
-    inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /*
      <p>The Amazon EC2 instance type for all instances in the instance group. </p>
@@ -149,7 +149,7 @@ namespace Model
     /*
      <p>Target number of instances for the instance group. </p>
     */
-    inline void SetInstanceCount(long value) { m_instanceCount = value; }
+    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /*
      <p>Target number of instances for the instance group. </p>
@@ -162,10 +162,13 @@ namespace Model
     MarketType m_market;
     bool m_marketHasBeenSet;
     InstanceRoleType m_instanceRole;
+    bool m_instanceRoleHasBeenSet;
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
     Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     long m_instanceCount;
+    bool m_instanceCountHasBeenSet;
   };
 
 } // namespace Model

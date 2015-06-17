@@ -20,7 +20,8 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreateVirtualMFADeviceRequest::CreateVirtualMFADeviceRequest() : 
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_virtualMFADeviceNameHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,10 @@ Aws::String CreateVirtualMFADeviceRequest::SerializePayload() const
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
-  ss << "VirtualMFADeviceName=" << StringUtils::URLEncode(m_virtualMFADeviceName.c_str()) << "&";
+  if(m_virtualMFADeviceNameHasBeenSet)
+  {
+    ss << "VirtualMFADeviceName=" << StringUtils::URLEncode(m_virtualMFADeviceName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

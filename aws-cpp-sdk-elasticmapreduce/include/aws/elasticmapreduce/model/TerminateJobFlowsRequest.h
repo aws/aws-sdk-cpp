@@ -44,7 +44,7 @@ namespace Model
     /*
      <p>A list of job flows to be shutdown.</p>
     */
-    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIds = value; }
+    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
     /*
      <p>A list of job flows to be shutdown.</p>
@@ -54,15 +54,16 @@ namespace Model
     /*
      <p>A list of job flows to be shutdown.</p>
     */
-    inline TerminateJobFlowsRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIds.push_back(value); return *this; }
+    inline TerminateJobFlowsRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
     /*
      <p>A list of job flows to be shutdown.</p>
     */
-    inline TerminateJobFlowsRequest& AddJobFlowIds(const char* value) { m_jobFlowIds.push_back(value); return *this; }
+    inline TerminateJobFlowsRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_jobFlowIds;
+    bool m_jobFlowIdsHasBeenSet;
   };
 
 } // namespace Model

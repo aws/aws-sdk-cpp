@@ -22,10 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 VolumeConfiguration::VolumeConfiguration() : 
+    m_mountPointHasBeenSet(false),
     m_raidLevel(0),
     m_raidLevelHasBeenSet(false),
     m_numberOfDisks(0),
+    m_numberOfDisksHasBeenSet(false),
     m_size(0),
+    m_sizeHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false)
@@ -33,10 +36,13 @@ VolumeConfiguration::VolumeConfiguration() :
 }
 
 VolumeConfiguration::VolumeConfiguration(const JsonValue& jsonValue) : 
+    m_mountPointHasBeenSet(false),
     m_raidLevel(0),
     m_raidLevelHasBeenSet(false),
     m_numberOfDisks(0),
+    m_numberOfDisksHasBeenSet(false),
     m_size(0),
+    m_sizeHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false)
@@ -46,7 +52,12 @@ VolumeConfiguration::VolumeConfiguration(const JsonValue& jsonValue) :
 
 VolumeConfiguration& VolumeConfiguration::operator =(const JsonValue& jsonValue)
 {
-  m_mountPoint = jsonValue.GetString("MountPoint");
+  if(jsonValue.ValueExists("MountPoint"))
+  {
+    m_mountPoint = jsonValue.GetString("MountPoint");
+
+    m_mountPointHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("RaidLevel"))
   {
@@ -55,9 +66,19 @@ VolumeConfiguration& VolumeConfiguration::operator =(const JsonValue& jsonValue)
     m_raidLevelHasBeenSet = true;
   }
 
-  m_numberOfDisks = jsonValue.GetInteger("NumberOfDisks");
+  if(jsonValue.ValueExists("NumberOfDisks"))
+  {
+    m_numberOfDisks = jsonValue.GetInteger("NumberOfDisks");
 
-  m_size = jsonValue.GetInteger("Size");
+    m_numberOfDisksHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Size"))
+  {
+    m_size = jsonValue.GetInteger("Size");
+
+    m_sizeHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("VolumeType"))
   {
@@ -80,7 +101,11 @@ JsonValue VolumeConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("MountPoint", m_mountPoint);
+  if(m_mountPointHasBeenSet)
+  {
+   payload.WithString("MountPoint", m_mountPoint);
+
+  }
 
   if(m_raidLevelHasBeenSet)
   {
@@ -88,9 +113,17 @@ JsonValue VolumeConfiguration::Jsonize() const
 
   }
 
-  payload.WithInteger("NumberOfDisks", m_numberOfDisks);
+  if(m_numberOfDisksHasBeenSet)
+  {
+   payload.WithInteger("NumberOfDisks", m_numberOfDisks);
 
-  payload.WithInteger("Size", m_size);
+  }
+
+  if(m_sizeHasBeenSet)
+  {
+   payload.WithInteger("Size", m_size);
+
+  }
 
   if(m_volumeTypeHasBeenSet)
   {

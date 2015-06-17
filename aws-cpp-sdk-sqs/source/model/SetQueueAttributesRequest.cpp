@@ -19,7 +19,9 @@
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
-SetQueueAttributesRequest::SetQueueAttributesRequest()
+SetQueueAttributesRequest::SetQueueAttributesRequest() : 
+    m_queueUrlHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
@@ -27,15 +29,21 @@ Aws::String SetQueueAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SetQueueAttributes&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
-  unsigned attributesCount = 1;
-  for(auto& item : m_attributes)
+  if(m_queueUrlHasBeenSet)
   {
-    ss << "Attribute." << attributesCount << ".Name="
-        << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
-    ss << "Attribute." << attributesCount << ".Value="
-        << StringUtils::URLEncode(item.second.c_str()) << "&";
-    attributesCount++;
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
+  if(m_attributesHasBeenSet)
+  {
+    unsigned attributesCount = 1;
+    for(auto& item : m_attributes)
+    {
+      ss << "Attribute." << attributesCount << ".Name="
+          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
+      ss << "Attribute." << attributesCount << ".Value="
+          << StringUtils::URLEncode(item.second.c_str()) << "&";
+      attributesCount++;
+    }
   }
   ss << "Version=2012-11-05";
   return ss.str();

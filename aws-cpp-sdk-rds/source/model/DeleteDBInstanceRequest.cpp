@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DeleteDBInstanceRequest::DeleteDBInstanceRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_skipFinalSnapshot(false),
     m_skipFinalSnapshotHasBeenSet(false),
     m_finalDBSnapshotIdentifierHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String DeleteDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteDBInstance&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_skipFinalSnapshotHasBeenSet)
   {
     ss << "SkipFinalSnapshot=" << m_skipFinalSnapshot << "&";

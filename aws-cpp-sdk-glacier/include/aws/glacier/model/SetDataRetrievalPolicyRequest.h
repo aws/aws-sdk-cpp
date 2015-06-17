@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include any hyphens (apos-apos) in the ID.</p>
     */
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /*
      <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include any hyphens (apos-apos) in the ID.</p>
@@ -75,6 +75,7 @@ namespace Model
 
   private:
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
     DataRetrievalPolicy m_policy;
     bool m_policyHasBeenSet;
   };

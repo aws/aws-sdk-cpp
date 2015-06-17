@@ -24,11 +24,13 @@
 #include <aws/logs/model/DescribeLogGroupsResult.h>
 #include <aws/logs/model/DescribeLogStreamsResult.h>
 #include <aws/logs/model/DescribeMetricFiltersResult.h>
+#include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
 #include <aws/logs/model/FilterLogEventsResult.h>
 #include <aws/logs/model/GetLogEventsResult.h>
 #include <aws/logs/model/PutLogEventsResult.h>
 #include <aws/logs/model/TestMetricFilterResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -77,14 +79,17 @@ namespace Model
     class DeleteLogStreamRequest;
     class DeleteMetricFilterRequest;
     class DeleteRetentionPolicyRequest;
+    class DeleteSubscriptionFilterRequest;
     class DescribeLogGroupsRequest;
     class DescribeLogStreamsRequest;
     class DescribeMetricFiltersRequest;
+    class DescribeSubscriptionFiltersRequest;
     class FilterLogEventsRequest;
     class GetLogEventsRequest;
     class PutLogEventsRequest;
     class PutMetricFilterRequest;
     class PutRetentionPolicyRequest;
+    class PutSubscriptionFilterRequest;
     class TestMetricFilterRequest;
 
   typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> CreateLogGroupOutcome;
@@ -93,14 +98,17 @@ namespace Model
   typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> DeleteLogStreamOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> DeleteMetricFilterOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> DeleteRetentionPolicyOutcome;
+  typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> DeleteSubscriptionFilterOutcome;
   typedef Utils::Outcome<DescribeLogGroupsResult, Client::AWSError<CloudWatchLogsErrors>> DescribeLogGroupsOutcome;
   typedef Utils::Outcome<DescribeLogStreamsResult, Client::AWSError<CloudWatchLogsErrors>> DescribeLogStreamsOutcome;
   typedef Utils::Outcome<DescribeMetricFiltersResult, Client::AWSError<CloudWatchLogsErrors>> DescribeMetricFiltersOutcome;
+  typedef Utils::Outcome<DescribeSubscriptionFiltersResult, Client::AWSError<CloudWatchLogsErrors>> DescribeSubscriptionFiltersOutcome;
   typedef Utils::Outcome<FilterLogEventsResult, Client::AWSError<CloudWatchLogsErrors>> FilterLogEventsOutcome;
   typedef Utils::Outcome<GetLogEventsResult, Client::AWSError<CloudWatchLogsErrors>> GetLogEventsOutcome;
   typedef Utils::Outcome<PutLogEventsResult, Client::AWSError<CloudWatchLogsErrors>> PutLogEventsOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> PutMetricFilterOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> PutRetentionPolicyOutcome;
+  typedef Utils::Outcome<NoResult, Client::AWSError<CloudWatchLogsErrors>> PutSubscriptionFilterOutcome;
   typedef Utils::Outcome<TestMetricFilterResult, Client::AWSError<CloudWatchLogsErrors>> TestMetricFilterOutcome;
 
   typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
@@ -109,34 +117,40 @@ namespace Model
   typedef std::future<DeleteLogStreamOutcome> DeleteLogStreamOutcomeCallable;
   typedef std::future<DeleteMetricFilterOutcome> DeleteMetricFilterOutcomeCallable;
   typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
+  typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
   typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
   typedef std::future<DescribeLogStreamsOutcome> DescribeLogStreamsOutcomeCallable;
   typedef std::future<DescribeMetricFiltersOutcome> DescribeMetricFiltersOutcomeCallable;
+  typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
   typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
   typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
   typedef std::future<PutLogEventsOutcome> PutLogEventsOutcomeCallable;
   typedef std::future<PutMetricFilterOutcome> PutMetricFilterOutcomeCallable;
   typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
+  typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
   typedef std::future<TestMetricFilterOutcome> TestMetricFilterOutcomeCallable;
 } // namespace Model
 
     class CloudWatchLogsClient;
 
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::CreateLogGroupRequest&, const Model::CreateLogGroupOutcome&> CreateLogGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::CreateLogStreamRequest&, const Model::CreateLogStreamOutcome&> CreateLogStreamOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteLogGroupRequest&, const Model::DeleteLogGroupOutcome&> DeleteLogGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteLogStreamRequest&, const Model::DeleteLogStreamOutcome&> DeleteLogStreamOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteMetricFilterRequest&, const Model::DeleteMetricFilterOutcome&> DeleteMetricFilterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&> DeleteRetentionPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&> DescribeLogGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeLogStreamsRequest&, const Model::DescribeLogStreamsOutcome&> DescribeLogStreamsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&> DescribeMetricFiltersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&> FilterLogEventsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&> GetLogEventsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&> PutLogEventsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutMetricFilterRequest&, const Model::PutMetricFilterOutcome&> PutMetricFilterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&> PutRetentionPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&> TestMetricFilterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::CreateLogGroupRequest&, const Model::CreateLogGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateLogGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::CreateLogStreamRequest&, const Model::CreateLogStreamOutcome&, const Aws::Client::AsyncCallerContext*> CreateLogStreamOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteLogGroupRequest&, const Model::DeleteLogGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteLogGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteLogStreamRequest&, const Model::DeleteLogStreamOutcome&, const Aws::Client::AsyncCallerContext*> DeleteLogStreamOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteMetricFilterRequest&, const Model::DeleteMetricFilterOutcome&, const Aws::Client::AsyncCallerContext*> DeleteMetricFilterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const Aws::Client::AsyncCallerContext*> DeleteRetentionPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DeleteSubscriptionFilterRequest&, const Model::DeleteSubscriptionFilterOutcome&, const Aws::Client::AsyncCallerContext*> DeleteSubscriptionFilterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLogGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeLogStreamsRequest&, const Model::DescribeLogStreamsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLogStreamsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeMetricFiltersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::DescribeSubscriptionFiltersRequest&, const Model::DescribeSubscriptionFiltersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeSubscriptionFiltersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&, const Aws::Client::AsyncCallerContext*> FilterLogEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const Aws::Client::AsyncCallerContext*> GetLogEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&, const Aws::Client::AsyncCallerContext*> PutLogEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutMetricFilterRequest&, const Model::PutMetricFilterOutcome&, const Aws::Client::AsyncCallerContext*> PutMetricFilterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const Aws::Client::AsyncCallerContext*> PutRetentionPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const Aws::Client::AsyncCallerContext*> PutSubscriptionFilterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudWatchLogsClient, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const Aws::Client::AsyncCallerContext*> TestMetricFilterOutcomeReceivedEvent;
 
   /*
     <fullname>Amazon CloudWatch Logs API Reference</fullname> <p>This is the <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch Logs enables you to monitor, store, and access your system, application, and custom log files. This guide provides detailed information about Amazon CloudWatch Logs actions, data types, parameters, and errors. For detailed information about Amazon CloudWatch Logs features and their associated API calls, go to the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon CloudWatch Developer Guide</a>. </p> <p>Use the following links to get started using the <i>Amazon CloudWatch Logs API Reference</i>:</p> <ul> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html">Actions</a>: An alphabetical list of all Amazon CloudWatch Logs actions.</li> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html">Data Types</a>: An alphabetical list of all Amazon CloudWatch Logs data types.</li> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common Parameters</a>: Parameters that all Query actions can use.</li> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html">Common Errors</a>: Client and server errors that all actions can return.</li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions and Endpoints</a>: Itemized regions and endpoints for all AWS products.</li> </ul> <p>In addition to using the Amazon CloudWatch Logs API, you can also use the following SDKs and third-party libraries to access Amazon CloudWatch Logs programmatically.</p> <ul> <li><a href="http://aws.amazon.com/documentation/sdkforjava/">AWS SDK for Java Documentation</a></li> <li><a href="http://aws.amazon.com/documentation/sdkfornet/">AWS SDK for .NET Documentation</a></li> <li><a href="http://aws.amazon.com/documentation/sdkforphp/">AWS SDK for PHP Documentation</a></li> <li><a href="http://aws.amazon.com/documentation/sdkforruby/">AWS SDK for Ruby Documentation</a></li> </ul> <p>Developers in the AWS developer community also provide their own libraries, which you can find at the following AWS developer centers:</p> <ul> <li><a href="http://aws.amazon.com/java/">AWS Java Developer Center</a></li> <li><a href="http://aws.amazon.com/php/">AWS PHP Developer Center</a></li> <li><a href="http://aws.amazon.com/python/">AWS Python Developer Center</a></li> <li><a href="http://aws.amazon.com/ruby/">AWS Ruby Developer Center</a></li> <li><a href="http://aws.amazon.com/net/">AWS Windows and .NET Developer Center</a></li> </ul>
@@ -185,7 +199,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateLogGroupAsync(const Model::CreateLogGroupRequest& request) const;
+     void CreateLogGroupAsync(const Model::CreateLogGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates a new log stream in the specified log group. The name of the log stream must be unique within the log group. There is no limit on the number of log streams that can exist in a log group. </p> <p> You must use the following guidelines when naming a log stream: <ul> <li>Log stream names can be between 1 and 512 characters long.</li> <li>The ':' colon character is not allowed.</li> </ul> </p>
@@ -204,7 +218,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateLogStreamAsync(const Model::CreateLogStreamRequest& request) const;
+     void CreateLogStreamAsync(const Model::CreateLogStreamRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the log group with the specified name and permanently deletes all the archived log events associated with it. </p>
@@ -223,7 +237,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteLogGroupAsync(const Model::DeleteLogGroupRequest& request) const;
+     void DeleteLogGroupAsync(const Model::DeleteLogGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes a log stream and permanently deletes all the archived log events associated with it. </p>
@@ -242,7 +256,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteLogStreamAsync(const Model::DeleteLogStreamRequest& request) const;
+     void DeleteLogStreamAsync(const Model::DeleteLogStreamRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes a metric filter associated with the specified log group. </p>
@@ -261,7 +275,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteMetricFilterAsync(const Model::DeleteMetricFilterRequest& request) const;
+     void DeleteMetricFilterAsync(const Model::DeleteMetricFilterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the retention policy of the specified log group. Log events would not expire if they belong to log groups without a retention policy. </p>
@@ -280,7 +294,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteRetentionPolicyAsync(const Model::DeleteRetentionPolicyRequest& request) const;
+     void DeleteRetentionPolicyAsync(const Model::DeleteRetentionPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p> Deletes a subscription filter associated with the specified log group. </p>
+     */
+     Model::DeleteSubscriptionFilterOutcome DeleteSubscriptionFilter(const Model::DeleteSubscriptionFilterRequest& request) const;
+
+     /*
+       <p> Deletes a subscription filter associated with the specified log group. </p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::DeleteSubscriptionFilterOutcomeCallable DeleteSubscriptionFilterCallable(const Model::DeleteSubscriptionFilterRequest& request) const;
+
+     /*
+       <p> Deletes a subscription filter associated with the specified log group. </p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void DeleteSubscriptionFilterAsync(const Model::DeleteSubscriptionFilterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns all the log groups that are associated with the AWS account making the request. The list returned in the response is ASCII-sorted by log group name. </p> <p> By default, this operation returns up to 50 log groups. If there are more log groups to list, the response would contain a <code class="code">nextToken</code> value in the response body. You can also limit the number of log groups returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p>
@@ -299,7 +332,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLogGroupsAsync(const Model::DescribeLogGroupsRequest& request) const;
+     void DescribeLogGroupsAsync(const Model::DescribeLogGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns all the log streams that are associated with the specified log group. The list returned in the response is ASCII-sorted by log stream name. </p> <p> By default, this operation returns up to 50 log streams. If there are more log streams to list, the response would contain a <code class="code">nextToken</code> value in the response body. You can also limit the number of log streams returned in the response by specifying the <code class="code">limit</code> parameter in the request. This operation has a limit of five transactions per second, after which transactions are throttled. </p>
@@ -318,7 +351,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLogStreamsAsync(const Model::DescribeLogStreamsRequest& request) const;
+     void DescribeLogStreamsAsync(const Model::DescribeLogStreamsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns all the metrics filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 metric filters. If there are more metric filters to list, the response would contain a <code class="code">nextToken</code> value in the response body. You can also limit the number of metric filters returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p>
@@ -337,7 +370,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeMetricFiltersAsync(const Model::DescribeMetricFiltersRequest& request) const;
+     void DescribeMetricFiltersAsync(const Model::DescribeMetricFiltersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class="code">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p>
+     */
+     Model::DescribeSubscriptionFiltersOutcome DescribeSubscriptionFilters(const Model::DescribeSubscriptionFiltersRequest& request) const;
+
+     /*
+       <p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class="code">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::DescribeSubscriptionFiltersOutcomeCallable DescribeSubscriptionFiltersCallable(const Model::DescribeSubscriptionFiltersRequest& request) const;
+
+     /*
+       <p> Returns all the subscription filters associated with the specified log group. The list returned in the response is ASCII-sorted by filter name. </p> <p> By default, this operation returns up to 50 subscription filters. If there are more subscription filters to list, the response would contain a <code class="code">nextToken</code> value in the response body. You can also limit the number of subscription filters returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void DescribeSubscriptionFiltersAsync(const Model::DescribeSubscriptionFiltersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Retrieves log events, optionally filtered by a filter pattern from the specified log group. You can provide an optional time range to filter the results on the event <code class="code">timestamp</code>. You can limit the streams searched to an explicit list of <code class="code">logStreamNames</code>. </p> <p> By default, this operation returns as much matching log events as can fit in a response size of 1MB, up to 10,000 log events, or all the events found within a time-bounded scan window. If the response includes a <code class="code">nextToken</code>, then there is more data to search, and the search can be resumed with a new request providing the nextToken. The response will contain a list of <code class="code">searchedLogStreams</code> that contains information about which streams were searched in the request and whether they have been searched completely or require further pagination. The <code class="code">limit</code> parameter in the request. can be used to specify the maximum number of events to return in a page. </p>
@@ -356,7 +408,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void FilterLogEventsAsync(const Model::FilterLogEventsRequest& request) const;
+     void FilterLogEventsAsync(const Model::FilterLogEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Retrieves log events from the specified log stream. You can provide an optional time range to filter the results on the event <code class="code">timestamp</code>. </p> <p> By default, this operation returns as much log events as can fit in a response size of 1MB, up to 10,000 log events. The response will always include a <code class="code">nextForwardToken</code> and a <code class="code">nextBackwardToken</code> in the response body. You can use any of these tokens in subsequent <code class="code">GetLogEvents</code> requests to paginate through events in either forward or backward direction. You can also limit the number of log events returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p>
@@ -375,7 +427,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetLogEventsAsync(const Model::GetLogEventsRequest& request) const;
+     void GetLogEventsAsync(const Model::GetLogEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Uploads a batch of log events to the specified log stream. </p> <p> Every PutLogEvents request must include the <code class="code">sequenceToken</code> obtained from the response of the previous request. An upload in a newly created log stream does not require a <code class="code">sequenceToken</code>. </p> <p> The batch of events must satisfy the following constraints: <ul> <li>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the batch can be more than 2 hours in the future.</li> <li>None of the log events in the batch can be older than 14 days or the retention period of the log group.</li> <li>The log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li> <li>The maximum number of log events in a batch is 10,000.</li> </ul> </p>
@@ -394,26 +446,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutLogEventsAsync(const Model::PutLogEventsRequest& request) const;
+     void PutLogEventsAsync(const Model::PutLogEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class="code">PutLogEvents</code> requests. </p>
+       <p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class="code">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>
      */
      Model::PutMetricFilterOutcome PutMetricFilter(const Model::PutMetricFilterRequest& request) const;
 
      /*
-       <p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class="code">PutLogEvents</code> requests. </p>
+       <p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class="code">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::PutMetricFilterOutcomeCallable PutMetricFilterCallable(const Model::PutMetricFilterRequest& request) const;
 
      /*
-       <p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class="code">PutLogEvents</code> requests. </p>
+       <p> Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <code class="code">PutLogEvents</code> requests. </p> <p> The maximum number of metric filters that can be associated with a log group is 100. </p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutMetricFilterAsync(const Model::PutMetricFilterRequest& request) const;
+     void PutMetricFilterAsync(const Model::PutMetricFilterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Sets the retention of the specified log group. A retention policy allows you to configure the number of days you want to retain log events in the specified log group. </p>
@@ -432,7 +484,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutRetentionPolicyAsync(const Model::PutRetentionPolicyRequest& request) const;
+     void PutRetentionPolicyAsync(const Model::PutRetentionPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class="code">PutLogEvents</code> requests and have them delivered to a specific destination. Currently the only supported destination is an Amazon Kinesis stream belonging to the same account as the subscription filter. </p> <p> Currently there can only be one subscription filter associated with a log group. </p>
+     */
+     Model::PutSubscriptionFilterOutcome PutSubscriptionFilter(const Model::PutSubscriptionFilterRequest& request) const;
+
+     /*
+       <p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class="code">PutLogEvents</code> requests and have them delivered to a specific destination. Currently the only supported destination is an Amazon Kinesis stream belonging to the same account as the subscription filter. </p> <p> Currently there can only be one subscription filter associated with a log group. </p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::PutSubscriptionFilterOutcomeCallable PutSubscriptionFilterCallable(const Model::PutSubscriptionFilterRequest& request) const;
+
+     /*
+       <p> Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <code class="code">PutLogEvents</code> requests and have them delivered to a specific destination. Currently the only supported destination is an Amazon Kinesis stream belonging to the same account as the subscription filter. </p> <p> Currently there can only be one subscription filter associated with a log group. </p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void PutSubscriptionFilterAsync(const Model::PutSubscriptionFilterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern. </p>
@@ -451,7 +522,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void TestMetricFilterAsync(const Model::TestMetricFilterRequest& request) const;
+     void TestMetricFilterAsync(const Model::TestMetricFilterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for CreateLogGroupAsync to call upon completion to the handler chain. You need to call this to
@@ -556,6 +627,23 @@ namespace Model
     }
 
    /**
+    * Adds an event handler for DeleteSubscriptionFilterAsync to call upon completion to the handler chain. You need to call this to
+    * use DeleteSubscriptionFilterAsync.
+    */
+    inline void RegisterDeleteSubscriptionFilterOutcomeReceivedHandler(const DeleteSubscriptionFilterOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onDeleteSubscriptionFilterOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for DeleteSubscriptionFilter.
+    */
+    inline void ClearAllDeleteSubscriptionFilterOutcomeReceivedHandlers()
+    {
+      m_onDeleteSubscriptionFilterOutcomeReceived.Clear();
+    }
+
+   /**
     * Adds an event handler for DescribeLogGroupsAsync to call upon completion to the handler chain. You need to call this to
     * use DescribeLogGroupsAsync.
     */
@@ -604,6 +692,23 @@ namespace Model
     inline void ClearAllDescribeMetricFiltersOutcomeReceivedHandlers()
     {
       m_onDescribeMetricFiltersOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for DescribeSubscriptionFiltersAsync to call upon completion to the handler chain. You need to call this to
+    * use DescribeSubscriptionFiltersAsync.
+    */
+    inline void RegisterDescribeSubscriptionFiltersOutcomeReceivedHandler(const DescribeSubscriptionFiltersOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onDescribeSubscriptionFiltersOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for DescribeSubscriptionFilters.
+    */
+    inline void ClearAllDescribeSubscriptionFiltersOutcomeReceivedHandlers()
+    {
+      m_onDescribeSubscriptionFiltersOutcomeReceived.Clear();
     }
 
    /**
@@ -692,6 +797,23 @@ namespace Model
     }
 
    /**
+    * Adds an event handler for PutSubscriptionFilterAsync to call upon completion to the handler chain. You need to call this to
+    * use PutSubscriptionFilterAsync.
+    */
+    inline void RegisterPutSubscriptionFilterOutcomeReceivedHandler(const PutSubscriptionFilterOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onPutSubscriptionFilterOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for PutSubscriptionFilter.
+    */
+    inline void ClearAllPutSubscriptionFilterOutcomeReceivedHandlers()
+    {
+      m_onPutSubscriptionFilterOutcomeReceived.Clear();
+    }
+
+   /**
     * Adds an event handler for TestMetricFilterAsync to call upon completion to the handler chain. You need to call this to
     * use TestMetricFilterAsync.
     */
@@ -712,21 +834,24 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void CreateLogGroupAsyncHelper(const Model::CreateLogGroupRequest& request) const;
-    void CreateLogStreamAsyncHelper(const Model::CreateLogStreamRequest& request) const;
-    void DeleteLogGroupAsyncHelper(const Model::DeleteLogGroupRequest& request) const;
-    void DeleteLogStreamAsyncHelper(const Model::DeleteLogStreamRequest& request) const;
-    void DeleteMetricFilterAsyncHelper(const Model::DeleteMetricFilterRequest& request) const;
-    void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request) const;
-    void DescribeLogGroupsAsyncHelper(const Model::DescribeLogGroupsRequest& request) const;
-    void DescribeLogStreamsAsyncHelper(const Model::DescribeLogStreamsRequest& request) const;
-    void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request) const;
-    void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request) const;
-    void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request) const;
-    void PutLogEventsAsyncHelper(const Model::PutLogEventsRequest& request) const;
-    void PutMetricFilterAsyncHelper(const Model::PutMetricFilterRequest& request) const;
-    void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request) const;
-    void TestMetricFilterAsyncHelper(const Model::TestMetricFilterRequest& request) const;
+    void CreateLogGroupAsyncHelper(const Model::CreateLogGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateLogStreamAsyncHelper(const Model::CreateLogStreamRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteLogGroupAsyncHelper(const Model::DeleteLogGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteLogStreamAsyncHelper(const Model::DeleteLogStreamRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteMetricFilterAsyncHelper(const Model::DeleteMetricFilterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteSubscriptionFilterAsyncHelper(const Model::DeleteSubscriptionFilterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLogGroupsAsyncHelper(const Model::DescribeLogGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLogStreamsAsyncHelper(const Model::DescribeLogStreamsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeSubscriptionFiltersAsyncHelper(const Model::DescribeSubscriptionFiltersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutLogEventsAsyncHelper(const Model::PutLogEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutMetricFilterAsyncHelper(const Model::PutMetricFilterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PutSubscriptionFilterAsyncHelper(const Model::PutSubscriptionFilterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void TestMetricFilterAsyncHelper(const Model::TestMetricFilterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
@@ -738,14 +863,17 @@ namespace Model
     DeleteLogStreamOutcomeReceivedEvent m_onDeleteLogStreamOutcomeReceived;
     DeleteMetricFilterOutcomeReceivedEvent m_onDeleteMetricFilterOutcomeReceived;
     DeleteRetentionPolicyOutcomeReceivedEvent m_onDeleteRetentionPolicyOutcomeReceived;
+    DeleteSubscriptionFilterOutcomeReceivedEvent m_onDeleteSubscriptionFilterOutcomeReceived;
     DescribeLogGroupsOutcomeReceivedEvent m_onDescribeLogGroupsOutcomeReceived;
     DescribeLogStreamsOutcomeReceivedEvent m_onDescribeLogStreamsOutcomeReceived;
     DescribeMetricFiltersOutcomeReceivedEvent m_onDescribeMetricFiltersOutcomeReceived;
+    DescribeSubscriptionFiltersOutcomeReceivedEvent m_onDescribeSubscriptionFiltersOutcomeReceived;
     FilterLogEventsOutcomeReceivedEvent m_onFilterLogEventsOutcomeReceived;
     GetLogEventsOutcomeReceivedEvent m_onGetLogEventsOutcomeReceived;
     PutLogEventsOutcomeReceivedEvent m_onPutLogEventsOutcomeReceived;
     PutMetricFilterOutcomeReceivedEvent m_onPutMetricFilterOutcomeReceived;
     PutRetentionPolicyOutcomeReceivedEvent m_onPutRetentionPolicyOutcomeReceived;
+    PutSubscriptionFilterOutcomeReceivedEvent m_onPutSubscriptionFilterOutcomeReceived;
     TestMetricFilterOutcomeReceivedEvent m_onTestMetricFilterOutcomeReceived;
   };
 

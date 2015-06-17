@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListInvalidations2014_11_06Request::ListInvalidations2014_11_06Request() : 
+    m_distributionIdHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItemsHasBeenSet(false)
 {

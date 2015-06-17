@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> Specifies the name of the option group to be created. </p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
     */
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupName = value; }
+    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p> Specifies the name of the option group to be created. </p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
     */
-    inline void SetOptionGroupName(const char* value) { m_optionGroupName.assign(value); }
+    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /*
      <p> Specifies the name of the option group to be created. </p> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> Specifies the name of the engine that this option group should be associated with. </p>
     */
-    inline void SetEngineName(const Aws::String& value) { m_engineName = value; }
+    inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /*
      <p> Specifies the name of the engine that this option group should be associated with. </p>
     */
-    inline void SetEngineName(const char* value) { m_engineName.assign(value); }
+    inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /*
      <p> Specifies the name of the engine that this option group should be associated with. </p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p> Specifies the major version of the engine that this option group should be associated with. </p>
     */
-    inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersion = value; }
+    inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /*
      <p> Specifies the major version of the engine that this option group should be associated with. </p>
     */
-    inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersion.assign(value); }
+    inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
 
     /*
      <p> Specifies the major version of the engine that this option group should be associated with. </p>
@@ -115,12 +115,12 @@ namespace Model
     /*
      <p> The description of the option group. </p>
     */
-    inline void SetOptionGroupDescription(const Aws::String& value) { m_optionGroupDescription = value; }
+    inline void SetOptionGroupDescription(const Aws::String& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
 
     /*
      <p> The description of the option group. </p>
     */
-    inline void SetOptionGroupDescription(const char* value) { m_optionGroupDescription.assign(value); }
+    inline void SetOptionGroupDescription(const char* value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription.assign(value); }
 
     /*
      <p> The description of the option group. </p>
@@ -145,9 +145,13 @@ namespace Model
 
   private:
     Aws::String m_optionGroupName;
+    bool m_optionGroupNameHasBeenSet;
     Aws::String m_engineName;
+    bool m_engineNameHasBeenSet;
     Aws::String m_majorEngineVersion;
+    bool m_majorEngineVersionHasBeenSet;
     Aws::String m_optionGroupDescription;
+    bool m_optionGroupDescriptionHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

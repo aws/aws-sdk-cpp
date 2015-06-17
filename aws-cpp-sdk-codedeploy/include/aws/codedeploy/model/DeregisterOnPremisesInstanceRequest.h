@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a deregister on-premises instance operation.</p>
   */
   class AWS_CODEDEPLOY_API DeregisterOnPremisesInstanceRequest : public codedeployRequest
   {
@@ -36,32 +35,23 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The name of the on-premises instance to deregister.</p>
-    */
+    
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
-    /*
-     <p>The name of the on-premises instance to deregister.</p>
-    */
-    inline void SetInstanceName(const Aws::String& value) { m_instanceName = value; }
+    
+    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
-    /*
-     <p>The name of the on-premises instance to deregister.</p>
-    */
-    inline void SetInstanceName(const char* value) { m_instanceName.assign(value); }
+    
+    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
 
-    /*
-     <p>The name of the on-premises instance to deregister.</p>
-    */
+    
     inline DeregisterOnPremisesInstanceRequest&  WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
 
-    /*
-     <p>The name of the on-premises instance to deregister.</p>
-    */
+    
     inline DeregisterOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
     Aws::String m_instanceName;
+    bool m_instanceNameHasBeenSet;
   };
 
 } // namespace Model

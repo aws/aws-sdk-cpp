@@ -36,7 +36,11 @@ EvaluateExpressionResult::EvaluateExpressionResult(const AmazonWebServiceResult<
 EvaluateExpressionResult& EvaluateExpressionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  m_evaluatedExpression = jsonValue.GetString("evaluatedExpression");
+  if(jsonValue.ValueExists("evaluatedExpression"))
+  {
+    m_evaluatedExpression = jsonValue.GetString("evaluatedExpression");
+
+  }
 
 
 

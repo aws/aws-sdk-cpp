@@ -43,11 +43,12 @@ DescribeDBEngineVersionsResult& DescribeDBEngineVersionsResult::operator =(const
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBEngineVersionNode = resultNode.FirstChild("DBEngineVersion");
+    XmlNode dBEngineVersionNodeParent = resultNode.FirstChild("DBEngineVersion");
+    XmlNode dBEngineVersionNode = dBEngineVersionNodeParent.FirstChild("member");
     while(!dBEngineVersionNode.IsNull())
     {
       m_dBEngineVersions.push_back(dBEngineVersionNode);
-      dBEngineVersionNode = dBEngineVersionNode.NextNode("DBEngineVersion");
+      dBEngineVersionNode = dBEngineVersionNode.NextNode("member");
     }
 
   }

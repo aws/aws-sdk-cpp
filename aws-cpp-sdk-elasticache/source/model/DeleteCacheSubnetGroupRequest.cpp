@@ -19,7 +19,8 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteCacheSubnetGroupRequest::DeleteCacheSubnetGroupRequest()
+DeleteCacheSubnetGroupRequest::DeleteCacheSubnetGroupRequest() : 
+    m_cacheSubnetGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteCacheSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheSubnetGroup&";
-  ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
+  if(m_cacheSubnetGroupNameHasBeenSet)
+  {
+    ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

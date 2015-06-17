@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
     */
-    inline void SetIdentity(const Aws::String& value) { m_identity = value; }
+    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
     */
-    inline void SetIdentity(const char* value) { m_identity.assign(value); }
+    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /*
      <p>The identity to be removed from the list of identities for the AWS Account.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_identity;
+    bool m_identityHasBeenSet;
   };
 
 } // namespace Model

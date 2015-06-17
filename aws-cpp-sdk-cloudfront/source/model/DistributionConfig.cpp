@@ -24,26 +24,36 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 DistributionConfig::DistributionConfig() : 
+    m_callerReferenceHasBeenSet(false),
     m_aliasesHasBeenSet(false),
     m_defaultRootObjectHasBeenSet(false),
+    m_originsHasBeenSet(false),
+    m_defaultCacheBehaviorHasBeenSet(false),
     m_cacheBehaviorsHasBeenSet(false),
     m_customErrorResponsesHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_viewerCertificateHasBeenSet(false),
     m_restrictionsHasBeenSet(false)
 {
 }
 
 DistributionConfig::DistributionConfig(const XmlNode& xmlNode) : 
+    m_callerReferenceHasBeenSet(false),
     m_aliasesHasBeenSet(false),
     m_defaultRootObjectHasBeenSet(false),
+    m_originsHasBeenSet(false),
+    m_defaultCacheBehaviorHasBeenSet(false),
     m_cacheBehaviorsHasBeenSet(false),
     m_customErrorResponsesHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_viewerCertificateHasBeenSet(false),
     m_restrictionsHasBeenSet(false)
 {
@@ -57,7 +67,11 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+    if(!callerReferenceNode.IsNull())
+    {
+      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReferenceHasBeenSet = true;
+    }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
     if(!aliasesNode.IsNull())
     {
@@ -71,9 +85,17 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
       m_defaultRootObjectHasBeenSet = true;
     }
     XmlNode originsNode = resultNode.FirstChild("Origins");
-    m_origins = originsNode;
+    if(!originsNode.IsNull())
+    {
+      m_origins = originsNode;
+      m_originsHasBeenSet = true;
+    }
     XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
-    m_defaultCacheBehavior = defaultCacheBehaviorNode;
+    if(!defaultCacheBehaviorNode.IsNull())
+    {
+      m_defaultCacheBehavior = defaultCacheBehaviorNode;
+      m_defaultCacheBehaviorHasBeenSet = true;
+    }
     XmlNode cacheBehaviorsNode = resultNode.FirstChild("CacheBehaviors");
     if(!cacheBehaviorsNode.IsNull())
     {
@@ -87,7 +109,11 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
       m_customErrorResponsesHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    if(!commentNode.IsNull())
+    {
+      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_commentHasBeenSet = true;
+    }
     XmlNode loggingNode = resultNode.FirstChild("Logging");
     if(!loggingNode.IsNull())
     {
@@ -101,7 +127,11 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
     XmlNode viewerCertificateNode = resultNode.FirstChild("ViewerCertificate");
     if(!viewerCertificateNode.IsNull())
     {
@@ -122,8 +152,12 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
 void DistributionConfig::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
-  callerReferenceNode.SetText(m_callerReference);
+  if(m_callerReferenceHasBeenSet)
+  {
+   XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+   callerReferenceNode.SetText(m_callerReference);
+  }
+
   if(m_aliasesHasBeenSet)
   {
    XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
@@ -136,10 +170,18 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
    defaultRootObjectNode.SetText(m_defaultRootObject);
   }
 
-  XmlNode originsNode = parentNode.CreateChildElement("Origins");
-  m_origins.AddToNode(originsNode);
-  XmlNode defaultCacheBehaviorNode = parentNode.CreateChildElement("DefaultCacheBehavior");
-  m_defaultCacheBehavior.AddToNode(defaultCacheBehaviorNode);
+  if(m_originsHasBeenSet)
+  {
+   XmlNode originsNode = parentNode.CreateChildElement("Origins");
+   m_origins.AddToNode(originsNode);
+  }
+
+  if(m_defaultCacheBehaviorHasBeenSet)
+  {
+   XmlNode defaultCacheBehaviorNode = parentNode.CreateChildElement("DefaultCacheBehavior");
+   m_defaultCacheBehavior.AddToNode(defaultCacheBehaviorNode);
+  }
+
   if(m_cacheBehaviorsHasBeenSet)
   {
    XmlNode cacheBehaviorsNode = parentNode.CreateChildElement("CacheBehaviors");
@@ -152,8 +194,12 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
    m_customErrorResponses.AddToNode(customErrorResponsesNode);
   }
 
-  XmlNode commentNode = parentNode.CreateChildElement("Comment");
-  commentNode.SetText(m_comment);
+  if(m_commentHasBeenSet)
+  {
+   XmlNode commentNode = parentNode.CreateChildElement("Comment");
+   commentNode.SetText(m_comment);
+  }
+
   if(m_loggingHasBeenSet)
   {
    XmlNode loggingNode = parentNode.CreateChildElement("Logging");
@@ -166,10 +212,14 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
    priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
   }
 
-  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  if(m_enabledHasBeenSet)
+  {
+   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
   ss << m_enabled;
-  enabledNode.SetText(ss.str());
+   enabledNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_viewerCertificateHasBeenSet)
   {
    XmlNode viewerCertificateNode = parentNode.CreateChildElement("ViewerCertificate");

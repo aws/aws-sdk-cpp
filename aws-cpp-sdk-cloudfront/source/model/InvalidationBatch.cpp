@@ -23,11 +23,15 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-InvalidationBatch::InvalidationBatch()
+InvalidationBatch::InvalidationBatch() : 
+    m_pathsHasBeenSet(false),
+    m_callerReferenceHasBeenSet(false)
 {
 }
 
-InvalidationBatch::InvalidationBatch(const XmlNode& xmlNode)
+InvalidationBatch::InvalidationBatch(const XmlNode& xmlNode) : 
+    m_pathsHasBeenSet(false),
+    m_callerReferenceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathsNode = resultNode.FirstChild("Paths");
-    m_paths = pathsNode;
+    if(!pathsNode.IsNull())
+    {
+      m_paths = pathsNode;
+      m_pathsHasBeenSet = true;
+    }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+    if(!callerReferenceNode.IsNull())
+    {
+      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReferenceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,8 +62,16 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
 void InvalidationBatch::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode pathsNode = parentNode.CreateChildElement("Paths");
-  m_paths.AddToNode(pathsNode);
-  XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
-  callerReferenceNode.SetText(m_callerReference);
+  if(m_pathsHasBeenSet)
+  {
+   XmlNode pathsNode = parentNode.CreateChildElement("Paths");
+   m_paths.AddToNode(pathsNode);
+  }
+
+  if(m_callerReferenceHasBeenSet)
+  {
+   XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+   callerReferenceNode.SetText(m_callerReference);
+  }
+
 }

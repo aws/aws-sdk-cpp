@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_outputKeyPrefixHasBeenSet(false),
@@ -34,9 +36,17 @@ Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("PipelineId", m_pipelineId);
+  if(m_pipelineIdHasBeenSet)
+  {
+   payload.WithString("PipelineId", m_pipelineId);
 
-  payload.WithObject("Input", m_input.Jsonize());
+  }
+
+  if(m_inputHasBeenSet)
+  {
+   payload.WithObject("Input", m_input.Jsonize());
+
+  }
 
   if(m_outputHasBeenSet)
   {

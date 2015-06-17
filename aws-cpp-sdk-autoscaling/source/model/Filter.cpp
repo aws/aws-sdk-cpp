@@ -48,13 +48,14 @@ Filter& Filter::operator =(const XmlNode& xmlNode)
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
-    XmlNode valuesNode = resultNode.FirstChild("Values");
+    XmlNode valuesNodeParent = resultNode.FirstChild("Values");
+    XmlNode valuesNode = valuesNodeParent.FirstChild("member");
     if(!valuesNode.IsNull())
     {
       while(!valuesNode.IsNull())
       {
         m_values.push_back(StringUtils::Trim(valuesNode.GetText().c_str()));
-        valuesNode = valuesNode.NextNode("Values");
+        valuesNode = valuesNode.NextNode("member");
       }
 
       m_valuesHasBeenSet = true;

@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The user with whom the MFA device is associated.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The user with whom the MFA device is associated.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The user with whom the MFA device is associated.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
     */
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumber = value; }
+    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
     */
-    inline void SetSerialNumber(const char* value) { m_serialNumber.assign(value); }
+    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
@@ -98,7 +98,7 @@ namespace Model
     /*
      <p>The date when the MFA device was enabled for the user.</p>
     */
-    inline void SetEnableDate(double value) { m_enableDate = value; }
+    inline void SetEnableDate(double value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
 
     /*
      <p>The date when the MFA device was enabled for the user.</p>
@@ -107,8 +107,11 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_serialNumber;
+    bool m_serialNumberHasBeenSet;
     double m_enableDate;
+    bool m_enableDateHasBeenSet;
   };
 
 } // namespace Model

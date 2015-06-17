@@ -22,6 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetShardIteratorRequest::GetShardIteratorRequest() : 
+    m_streamNameHasBeenSet(false),
+    m_shardIdHasBeenSet(false),
+    m_shardIteratorTypeHasBeenSet(false),
     m_startingSequenceNumberHasBeenSet(false)
 {
 }
@@ -30,11 +33,23 @@ Aws::String GetShardIteratorRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
 
-  payload.WithString("ShardId", m_shardId);
+  }
 
-  payload.WithString("ShardIteratorType", ShardIteratorTypeMapper::GetNameForShardIteratorType(m_shardIteratorType));
+  if(m_shardIdHasBeenSet)
+  {
+   payload.WithString("ShardId", m_shardId);
+
+  }
+
+  if(m_shardIteratorTypeHasBeenSet)
+  {
+   payload.WithString("ShardIteratorType", ShardIteratorTypeMapper::GetNameForShardIteratorType(m_shardIteratorType));
+  }
+
   if(m_startingSequenceNumberHasBeenSet)
   {
    payload.WithString("StartingSequenceNumber", m_startingSequenceNumber);

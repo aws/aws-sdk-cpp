@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The identifier for the source DB snapshot. </p> <p>Constraints:</p> <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.</li> <li>If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot</a>.</li> </ul> <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p> <p>Example: <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
     */
-    inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifier = value; }
+    inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
 
     /*
      <p> The identifier for the source DB snapshot. </p> <p>Constraints:</p> <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.</li> <li>If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot</a>.</li> </ul> <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p> <p>Example: <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
     */
-    inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifier.assign(value); }
+    inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier.assign(value); }
 
     /*
      <p> The identifier for the source DB snapshot. </p> <p>Constraints:</p> <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.</li> <li>If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot</a>.</li> </ul> <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p> <p>Example: <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The identifier for the copied snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-db-snapshot</code></p>
     */
-    inline void SetTargetDBSnapshotIdentifier(const Aws::String& value) { m_targetDBSnapshotIdentifier = value; }
+    inline void SetTargetDBSnapshotIdentifier(const Aws::String& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = value; }
 
     /*
      <p> The identifier for the copied snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-db-snapshot</code></p>
     */
-    inline void SetTargetDBSnapshotIdentifier(const char* value) { m_targetDBSnapshotIdentifier.assign(value); }
+    inline void SetTargetDBSnapshotIdentifier(const char* value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier.assign(value); }
 
     /*
      <p> The identifier for the copied snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-db-snapshot</code></p>
@@ -97,7 +97,9 @@ namespace Model
 
   private:
     Aws::String m_sourceDBSnapshotIdentifier;
+    bool m_sourceDBSnapshotIdentifierHasBeenSet;
     Aws::String m_targetDBSnapshotIdentifier;
+    bool m_targetDBSnapshotIdentifierHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user whose login profile you want to retrieve.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
   };
 
 } // namespace Model

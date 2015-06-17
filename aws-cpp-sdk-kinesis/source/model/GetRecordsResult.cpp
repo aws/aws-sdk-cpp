@@ -38,11 +38,15 @@ GetRecordsResult::GetRecordsResult(const AmazonWebServiceResult<JsonValue>& resu
 GetRecordsResult& GetRecordsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  Array<JsonValue> recordsJsonList = jsonValue.GetArray("Records");
-  for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+  if(jsonValue.ValueExists("Records"))
   {
-    m_records.push_back(recordsJsonList[recordsIndex].AsObject());
+    Array<JsonValue> recordsJsonList = jsonValue.GetArray("Records");
+    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+    {
+      m_records.push_back(recordsJsonList[recordsIndex].AsObject());
+    }
   }
+
   if(jsonValue.ValueExists("NextShardIterator"))
   {
     m_nextShardIterator = jsonValue.GetString("NextShardIterator");

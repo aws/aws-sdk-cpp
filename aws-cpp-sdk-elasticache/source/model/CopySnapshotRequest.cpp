@@ -19,7 +19,9 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CopySnapshotRequest::CopySnapshotRequest()
+CopySnapshotRequest::CopySnapshotRequest() : 
+    m_sourceSnapshotNameHasBeenSet(false),
+    m_targetSnapshotNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String CopySnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopySnapshot&";
-  ss << "SourceSnapshotName=" << StringUtils::URLEncode(m_sourceSnapshotName.c_str()) << "&";
-  ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
+  if(m_sourceSnapshotNameHasBeenSet)
+  {
+    ss << "SourceSnapshotName=" << StringUtils::URLEncode(m_sourceSnapshotName.c_str()) << "&";
+  }
+  if(m_targetSnapshotNameHasBeenSet)
+  {
+    ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

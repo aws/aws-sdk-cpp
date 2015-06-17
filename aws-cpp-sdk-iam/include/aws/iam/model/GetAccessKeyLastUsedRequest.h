@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The identifier of an access key.</p>
     */
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyId = value; }
+    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The identifier of an access key.</p>
     */
-    inline void SetAccessKeyId(const char* value) { m_accessKeyId.assign(value); }
+    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /*
      <p>The identifier of an access key.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet;
   };
 
 } // namespace Model

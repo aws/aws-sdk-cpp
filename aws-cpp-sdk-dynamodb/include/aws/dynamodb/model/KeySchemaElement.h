@@ -48,12 +48,12 @@ namespace Model
     /*
      <p>The name of a key attribute.</p>
     */
-    inline void SetAttributeName(const Aws::String& value) { m_attributeName = value; }
+    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of a key attribute.</p>
     */
-    inline void SetAttributeName(const char* value) { m_attributeName.assign(value); }
+    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /*
      <p>The name of a key attribute.</p>
@@ -72,7 +72,7 @@ namespace Model
     /*
      <p>The attribute data, consisting of the data type and the attribute value itself.</p>
     */
-    inline void SetKeyType(const KeyType& value) { m_keyType = value; }
+    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
 
     /*
      <p>The attribute data, consisting of the data type and the attribute value itself.</p>
@@ -81,7 +81,9 @@ namespace Model
 
   private:
     Aws::String m_attributeName;
+    bool m_attributeNameHasBeenSet;
     KeyType m_keyType;
+    bool m_keyTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 IdentityVerificationAttributes::IdentityVerificationAttributes() : 
+    m_verificationStatusHasBeenSet(false),
     m_verificationTokenHasBeenSet(false)
 {
 }
 
 IdentityVerificationAttributes::IdentityVerificationAttributes(const XmlNode& xmlNode) : 
+    m_verificationStatusHasBeenSet(false),
     m_verificationTokenHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ IdentityVerificationAttributes& IdentityVerificationAttributes::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode verificationStatusNode = resultNode.FirstChild("VerificationStatus");
-    m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(verificationStatusNode.GetText().c_str()).c_str());
+    if(!verificationStatusNode.IsNull())
+    {
+      m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(verificationStatusNode.GetText().c_str()).c_str());
+      m_verificationStatusHasBeenSet = true;
+    }
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
     if(!verificationTokenNode.IsNull())
     {
@@ -55,7 +61,10 @@ IdentityVerificationAttributes& IdentityVerificationAttributes::operator =(const
 
 void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
+  if(m_verificationStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
+  }
   if(m_verificationTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".VerificationToken=" << StringUtils::URLEncode(m_verificationToken.c_str()) << "&";
@@ -64,7 +73,10 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
 
 void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
+  if(m_verificationStatusHasBeenSet)
+  {
+      oStream << location << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
+  }
   if(m_verificationTokenHasBeenSet)
   {
       oStream << location << ".VerificationToken=" << StringUtils::URLEncode(m_verificationToken.c_str()) << "&";

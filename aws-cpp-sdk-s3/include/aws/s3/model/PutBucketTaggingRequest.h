@@ -39,10 +39,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutBucketTaggingRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -67,16 +67,18 @@ namespace Model
     
     inline const Tagging& GetTagging() const{ return m_tagging; }
     
-    inline void SetTagging(const Tagging& value) { m_tagging = value; }
+    inline void SetTagging(const Tagging& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     
     inline PutBucketTaggingRequest&  WithTagging(const Tagging& value) { SetTagging(value); return *this;}
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
     Tagging m_tagging;
+    bool m_taggingHasBeenSet;
   };
 
 } // namespace Model

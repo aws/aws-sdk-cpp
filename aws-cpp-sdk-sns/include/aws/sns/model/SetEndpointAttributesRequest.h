@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>EndpointArn used for SetEndpointAttributes action.</p>
     */
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
+    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /*
      <p>EndpointArn used for SetEndpointAttributes action.</p>
     */
-    inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
+    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
     /*
      <p>EndpointArn used for SetEndpointAttributes action.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>A map of the endpoint attributes. Attributes in this map include the following:</p> <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li> <code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>
     */
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
+    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /*
      <p>A map of the endpoint attributes. Attributes in this map include the following:</p> <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li> <code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>
@@ -76,16 +76,18 @@ namespace Model
     /*
      <p>A map of the endpoint attributes. Attributes in this map include the following:</p> <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li> <code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>
     */
-    inline SetEndpointAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /*
      <p>A map of the endpoint attributes. Attributes in this map include the following:</p> <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li> <code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>
     */
-    inline SetEndpointAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
   private:
     Aws::String m_endpointArn;
+    bool m_endpointArnHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_attributes;
+    bool m_attributesHasBeenSet;
   };
 
 } // namespace Model

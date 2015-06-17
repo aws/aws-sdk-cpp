@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Tag::Tag() : 
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 Tag::Tag(const XmlNode& xmlNode) : 
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_keyHasBeenSet = true;
+    }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
@@ -55,7 +61,10 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
 
 void Tag::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
+  if(m_keyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
+  }
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
@@ -64,7 +73,10 @@ void Tag::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
 void Tag::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
+  if(m_keyHasBeenSet)
+  {
+      oStream << location << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
+  }
   if(m_valueHasBeenSet)
   {
       oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";

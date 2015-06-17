@@ -34,7 +34,8 @@ ConfigurationSettingsDescription::ConfigurationSettingsDescription() :
     m_dateCreatedHasBeenSet(false),
     m_dateUpdated(0.0),
     m_dateUpdatedHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+    m_optionSettingsHasBeenSet(false),
+    m_responseMetadataHasBeenSet(false)
 {
 }
 
@@ -49,7 +50,8 @@ ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode
     m_dateCreatedHasBeenSet(false),
     m_dateUpdated(0.0),
     m_dateUpdatedHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+    m_optionSettingsHasBeenSet(false),
+    m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -108,13 +110,14 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
       m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
       m_dateUpdatedHasBeenSet = true;
     }
-    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
+    XmlNode optionSettingsNodeParent = resultNode.FirstChild("OptionSettings");
+    XmlNode optionSettingsNode = optionSettingsNodeParent.FirstChild("member");
     if(!optionSettingsNode.IsNull())
     {
       while(!optionSettingsNode.IsNull())
       {
         m_optionSettings.push_back(optionSettingsNode);
-        optionSettingsNode = optionSettingsNode.NextNode("OptionSettings");
+        optionSettingsNode = optionSettingsNode.NextNode("member");
       }
 
       m_optionSettingsHasBeenSet = true;
@@ -167,9 +170,12 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
-  Aws::StringStream responseMetadataLocationAndMemberSs;
-  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
+  if(m_responseMetadataHasBeenSet)
+  {
+      Aws::StringStream responseMetadataLocationAndMemberSs;
+      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
+  }
 }
 
 void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -215,7 +221,10 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
         item.OutputToStream(oStream, locationAndListMember.c_str());
       }
   }
-  Aws::String responseMetadataLocationAndMember(location);
-  responseMetadataLocationAndMember += ".ResponseMetadata";
-  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
+  if(m_responseMetadataHasBeenSet)
+  {
+      Aws::String responseMetadataLocationAndMember(location);
+      responseMetadataLocationAndMember += ".ResponseMetadata";
+      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
+  }
 }

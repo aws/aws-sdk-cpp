@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() : 
+    m_functionNameHasBeenSet(false),
     m_zipFileHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
     m_s3KeyHasBeenSet(false),

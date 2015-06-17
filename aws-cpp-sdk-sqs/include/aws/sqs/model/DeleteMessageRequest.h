@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
     */
-    inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
+    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /*
      <p>The URL of the Amazon SQS queue to take action on.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The receipt handle associated with the message to delete.</p>
     */
-    inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandle = value; }
+    inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
     /*
      <p>The receipt handle associated with the message to delete.</p>
     */
-    inline void SetReceiptHandle(const char* value) { m_receiptHandle.assign(value); }
+    inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
 
     /*
      <p>The receipt handle associated with the message to delete.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_queueUrl;
+    bool m_queueUrlHasBeenSet;
     Aws::String m_receiptHandle;
+    bool m_receiptHandleHasBeenSet;
   };
 
 } // namespace Model

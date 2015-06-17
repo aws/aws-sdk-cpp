@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 
 ConnectionDraining::ConnectionDraining() : 
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false)
 {
@@ -32,6 +33,7 @@ ConnectionDraining::ConnectionDraining() :
 
 ConnectionDraining::ConnectionDraining(const XmlNode& xmlNode) : 
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false)
 {
@@ -45,7 +47,11 @@ ConnectionDraining& ConnectionDraining::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
     XmlNode timeoutNode = resultNode.FirstChild("Timeout");
     if(!timeoutNode.IsNull())
     {
@@ -59,7 +65,10 @@ ConnectionDraining& ConnectionDraining::operator =(const XmlNode& xmlNode)
 
 void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+  if(m_enabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+  }
   if(m_timeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".Timeout=" << m_timeout << "&";
@@ -68,7 +77,10 @@ void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* locat
 
 void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Enabled=" << m_enabled << "&";
+  if(m_enabledHasBeenSet)
+  {
+      oStream << location << ".Enabled=" << m_enabled << "&";
+  }
   if(m_timeoutHasBeenSet)
   {
       oStream << location << ".Timeout=" << m_timeout << "&";

@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeactivatePipelineRequest::DeactivatePipelineRequest() : 
+    m_pipelineIdHasBeenSet(false),
     m_cancelActive(false),
     m_cancelActiveHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String DeactivatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
+  if(m_pipelineIdHasBeenSet)
+  {
+   payload.WithString("pipelineId", m_pipelineId);
+
+  }
 
   if(m_cancelActiveHasBeenSet)
   {

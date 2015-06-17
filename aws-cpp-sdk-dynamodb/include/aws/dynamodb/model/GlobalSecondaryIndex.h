@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     */
-    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
+    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /*
      <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     */
-    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
+    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /*
      <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
@@ -75,7 +75,7 @@ namespace Model
     /*
      <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
-    inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchema = value; }
+    inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
     /*
      <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
@@ -85,12 +85,12 @@ namespace Model
     /*
      <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).</p>
     */
-    inline GlobalSecondaryIndex& AddKeySchema(const KeySchemaElement& value) { m_keySchema.push_back(value); return *this; }
+    inline GlobalSecondaryIndex& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
     
     inline const Projection& GetProjection() const{ return m_projection; }
     
-    inline void SetProjection(const Projection& value) { m_projection = value; }
+    inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
     
     inline GlobalSecondaryIndex&  WithProjection(const Projection& value) { SetProjection(value); return *this;}
@@ -98,16 +98,20 @@ namespace Model
     
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
     
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughput = value; }
+    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
     
     inline GlobalSecondaryIndex&  WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
   private:
     Aws::String m_indexName;
+    bool m_indexNameHasBeenSet;
     Aws::Vector<KeySchemaElement> m_keySchema;
+    bool m_keySchemaHasBeenSet;
     Projection m_projection;
+    bool m_projectionHasBeenSet;
     ProvisionedThroughput m_provisionedThroughput;
+    bool m_provisionedThroughputHasBeenSet;
   };
 
 } // namespace Model

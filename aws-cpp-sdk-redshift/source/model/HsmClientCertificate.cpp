@@ -56,13 +56,14 @@ HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
       m_hsmClientCertificatePublicKey = StringUtils::Trim(hsmClientCertificatePublicKeyNode.GetText().c_str());
       m_hsmClientCertificatePublicKeyHasBeenSet = true;
     }
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     if(!tagNode.IsNull())
     {
       while(!tagNode.IsNull())
       {
         m_tags.push_back(tagNode);
-        tagNode = tagNode.NextNode("Tag");
+        tagNode = tagNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

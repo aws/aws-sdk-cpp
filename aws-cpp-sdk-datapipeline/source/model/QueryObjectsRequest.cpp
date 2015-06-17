@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 QueryObjectsRequest::QueryObjectsRequest() : 
+    m_pipelineIdHasBeenSet(false),
     m_queryHasBeenSet(false),
+    m_sphereHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false)
@@ -33,7 +35,11 @@ Aws::String QueryObjectsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
+  if(m_pipelineIdHasBeenSet)
+  {
+   payload.WithString("pipelineId", m_pipelineId);
+
+  }
 
   if(m_queryHasBeenSet)
   {
@@ -41,7 +47,11 @@ Aws::String QueryObjectsRequest::SerializePayload() const
 
   }
 
-  payload.WithString("sphere", m_sphere);
+  if(m_sphereHasBeenSet)
+  {
+   payload.WithString("sphere", m_sphere);
+
+  }
 
   if(m_markerHasBeenSet)
   {

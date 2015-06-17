@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name or Amazon Resource Name (ARN) of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name or Amazon Resource Name (ARN) of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name or Amazon Resource Name (ARN) of the group.</p>
@@ -84,6 +84,7 @@ namespace Model
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_metrics;
     bool m_metricsHasBeenSet;
   };

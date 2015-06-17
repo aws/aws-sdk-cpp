@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
     */
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterId = value; }
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
     */
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterId.assign(value); }
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /*
      <p>The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>A name for the snapshot being created.</p>
     */
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotName = value; }
+    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /*
      <p>A name for the snapshot being created.</p>
     */
-    inline void SetSnapshotName(const char* value) { m_snapshotName.assign(value); }
+    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
 
     /*
      <p>A name for the snapshot being created.</p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
     Aws::String m_snapshotName;
+    bool m_snapshotNameHasBeenSet;
   };
 
 } // namespace Model

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>A user-specified name for the cache parameter group.</p>
     */
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>A user-specified name for the cache parameter group.</p>
     */
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /*
      <p>A user-specified name for the cache parameter group.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
-    inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamily = value; }
+    inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
-    inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamily.assign(value); }
+    inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
     /*
      <p>The name of the cache parameter group family the cache parameter group can be used with.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p>A user-specified description for the cache parameter group.</p>
     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A user-specified description for the cache parameter group.</p>
     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
      <p>A user-specified description for the cache parameter group.</p>
@@ -108,8 +108,11 @@ namespace Model
 
   private:
     Aws::String m_cacheParameterGroupName;
+    bool m_cacheParameterGroupNameHasBeenSet;
     Aws::String m_cacheParameterGroupFamily;
+    bool m_cacheParameterGroupFamilyHasBeenSet;
     Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

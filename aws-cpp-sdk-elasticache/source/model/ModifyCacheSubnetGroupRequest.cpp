@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 ModifyCacheSubnetGroupRequest::ModifyCacheSubnetGroupRequest() : 
+    m_cacheSubnetGroupNameHasBeenSet(false),
     m_cacheSubnetGroupDescriptionHasBeenSet(false),
     m_subnetIdsHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String ModifyCacheSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyCacheSubnetGroup&";
-  ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
+  if(m_cacheSubnetGroupNameHasBeenSet)
+  {
+    ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
+  }
   if(m_cacheSubnetGroupDescriptionHasBeenSet)
   {
     ss << "CacheSubnetGroupDescription=" << StringUtils::URLEncode(m_cacheSubnetGroupDescription.c_str()) << "&";

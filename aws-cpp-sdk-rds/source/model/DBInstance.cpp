@@ -196,35 +196,38 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_backupRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(backupRetentionPeriodNode.GetText().c_str()).c_str());
       m_backupRetentionPeriodHasBeenSet = true;
     }
-    XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
+    XmlNode dBSecurityGroupNodeParent = resultNode.FirstChild("DBSecurityGroup");
+    XmlNode dBSecurityGroupNode = dBSecurityGroupNodeParent.FirstChild("member");
     if(!dBSecurityGroupNode.IsNull())
     {
       while(!dBSecurityGroupNode.IsNull())
       {
         m_dBSecurityGroups.push_back(dBSecurityGroupNode);
-        dBSecurityGroupNode = dBSecurityGroupNode.NextNode("DBSecurityGroup");
+        dBSecurityGroupNode = dBSecurityGroupNode.NextNode("member");
       }
 
       m_dBSecurityGroupsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupMembershipNode = resultNode.FirstChild("VpcSecurityGroupMembership");
+    XmlNode vpcSecurityGroupMembershipNodeParent = resultNode.FirstChild("VpcSecurityGroupMembership");
+    XmlNode vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNodeParent.FirstChild("member");
     if(!vpcSecurityGroupMembershipNode.IsNull())
     {
       while(!vpcSecurityGroupMembershipNode.IsNull())
       {
         m_vpcSecurityGroups.push_back(vpcSecurityGroupMembershipNode);
-        vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNode.NextNode("VpcSecurityGroupMembership");
+        vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNode.NextNode("member");
       }
 
       m_vpcSecurityGroupsHasBeenSet = true;
     }
-    XmlNode dBParameterGroupNode = resultNode.FirstChild("DBParameterGroup");
+    XmlNode dBParameterGroupNodeParent = resultNode.FirstChild("DBParameterGroup");
+    XmlNode dBParameterGroupNode = dBParameterGroupNodeParent.FirstChild("member");
     if(!dBParameterGroupNode.IsNull())
     {
       while(!dBParameterGroupNode.IsNull())
       {
         m_dBParameterGroups.push_back(dBParameterGroupNode);
-        dBParameterGroupNode = dBParameterGroupNode.NextNode("DBParameterGroup");
+        dBParameterGroupNode = dBParameterGroupNode.NextNode("member");
       }
 
       m_dBParameterGroupsHasBeenSet = true;
@@ -283,13 +286,14 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_readReplicaSourceDBInstanceIdentifier = StringUtils::Trim(readReplicaSourceDBInstanceIdentifierNode.GetText().c_str());
       m_readReplicaSourceDBInstanceIdentifierHasBeenSet = true;
     }
-    XmlNode readReplicaDBInstanceIdentifierNode = resultNode.FirstChild("ReadReplicaDBInstanceIdentifier");
+    XmlNode readReplicaDBInstanceIdentifierNodeParent = resultNode.FirstChild("ReadReplicaDBInstanceIdentifier");
+    XmlNode readReplicaDBInstanceIdentifierNode = readReplicaDBInstanceIdentifierNodeParent.FirstChild("member");
     if(!readReplicaDBInstanceIdentifierNode.IsNull())
     {
       while(!readReplicaDBInstanceIdentifierNode.IsNull())
       {
         m_readReplicaDBInstanceIdentifiers.push_back(StringUtils::Trim(readReplicaDBInstanceIdentifierNode.GetText().c_str()));
-        readReplicaDBInstanceIdentifierNode = readReplicaDBInstanceIdentifierNode.NextNode("ReadReplicaDBInstanceIdentifier");
+        readReplicaDBInstanceIdentifierNode = readReplicaDBInstanceIdentifierNode.NextNode("member");
       }
 
       m_readReplicaDBInstanceIdentifiersHasBeenSet = true;
@@ -306,13 +310,14 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
-    XmlNode optionGroupMembershipNode = resultNode.FirstChild("OptionGroupMembership");
+    XmlNode optionGroupMembershipNodeParent = resultNode.FirstChild("OptionGroupMembership");
+    XmlNode optionGroupMembershipNode = optionGroupMembershipNodeParent.FirstChild("member");
     if(!optionGroupMembershipNode.IsNull())
     {
       while(!optionGroupMembershipNode.IsNull())
       {
         m_optionGroupMemberships.push_back(optionGroupMembershipNode);
-        optionGroupMembershipNode = optionGroupMembershipNode.NextNode("OptionGroupMembership");
+        optionGroupMembershipNode = optionGroupMembershipNode.NextNode("member");
       }
 
       m_optionGroupMembershipsHasBeenSet = true;
@@ -335,13 +340,14 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
       m_publiclyAccessibleHasBeenSet = true;
     }
-    XmlNode dBInstanceStatusInfoNode = resultNode.FirstChild("DBInstanceStatusInfo");
+    XmlNode dBInstanceStatusInfoNodeParent = resultNode.FirstChild("DBInstanceStatusInfo");
+    XmlNode dBInstanceStatusInfoNode = dBInstanceStatusInfoNodeParent.FirstChild("member");
     if(!dBInstanceStatusInfoNode.IsNull())
     {
       while(!dBInstanceStatusInfoNode.IsNull())
       {
         m_statusInfos.push_back(dBInstanceStatusInfoNode);
-        dBInstanceStatusInfoNode = dBInstanceStatusInfoNode.NextNode("DBInstanceStatusInfo");
+        dBInstanceStatusInfoNode = dBInstanceStatusInfoNode.NextNode("member");
       }
 
       m_statusInfosHasBeenSet = true;

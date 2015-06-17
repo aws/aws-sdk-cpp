@@ -168,13 +168,14 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_notificationConfiguration = notificationConfigurationNode;
       m_notificationConfigurationHasBeenSet = true;
     }
-    XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
+    XmlNode cacheSecurityGroupNodeParent = resultNode.FirstChild("CacheSecurityGroup");
+    XmlNode cacheSecurityGroupNode = cacheSecurityGroupNodeParent.FirstChild("member");
     if(!cacheSecurityGroupNode.IsNull())
     {
       while(!cacheSecurityGroupNode.IsNull())
       {
         m_cacheSecurityGroups.push_back(cacheSecurityGroupNode);
-        cacheSecurityGroupNode = cacheSecurityGroupNode.NextNode("CacheSecurityGroup");
+        cacheSecurityGroupNode = cacheSecurityGroupNode.NextNode("member");
       }
 
       m_cacheSecurityGroupsHasBeenSet = true;
@@ -191,13 +192,14 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_cacheSubnetGroupName = StringUtils::Trim(cacheSubnetGroupNameNode.GetText().c_str());
       m_cacheSubnetGroupNameHasBeenSet = true;
     }
-    XmlNode cacheNodeNode = resultNode.FirstChild("CacheNode");
+    XmlNode cacheNodeNodeParent = resultNode.FirstChild("CacheNode");
+    XmlNode cacheNodeNode = cacheNodeNodeParent.FirstChild("member");
     if(!cacheNodeNode.IsNull())
     {
       while(!cacheNodeNode.IsNull())
       {
         m_cacheNodes.push_back(cacheNodeNode);
-        cacheNodeNode = cacheNodeNode.NextNode("CacheNode");
+        cacheNodeNode = cacheNodeNode.NextNode("member");
       }
 
       m_cacheNodesHasBeenSet = true;
@@ -208,13 +210,14 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(autoMinorVersionUpgradeNode.GetText().c_str()).c_str());
       m_autoMinorVersionUpgradeHasBeenSet = true;
     }
-    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
     if(!securityGroupsNode.IsNull())
     {
       while(!securityGroupsNode.IsNull())
       {
         m_securityGroups.push_back(securityGroupsNode);
-        securityGroupsNode = securityGroupsNode.NextNode("SecurityGroups");
+        securityGroupsNode = securityGroupsNode.NextNode("member");
       }
 
       m_securityGroupsHasBeenSet = true;

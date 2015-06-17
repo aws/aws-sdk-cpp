@@ -24,11 +24,17 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 SendMessageBatchResultEntry::SendMessageBatchResultEntry() : 
+    m_idHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
+    m_mD5OfMessageBodyHasBeenSet(false),
     m_mD5OfMessageAttributesHasBeenSet(false)
 {
 }
 
 SendMessageBatchResultEntry::SendMessageBatchResultEntry(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
+    m_mD5OfMessageBodyHasBeenSet(false),
     m_mD5OfMessageAttributesHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,11 +47,23 @@ SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+    if(!messageIdNode.IsNull())
+    {
+      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+      m_messageIdHasBeenSet = true;
+    }
     XmlNode mD5OfMessageBodyNode = resultNode.FirstChild("MD5OfMessageBody");
-    m_mD5OfMessageBody = StringUtils::Trim(mD5OfMessageBodyNode.GetText().c_str());
+    if(!mD5OfMessageBodyNode.IsNull())
+    {
+      m_mD5OfMessageBody = StringUtils::Trim(mD5OfMessageBodyNode.GetText().c_str());
+      m_mD5OfMessageBodyHasBeenSet = true;
+    }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
     if(!mD5OfMessageAttributesNode.IsNull())
     {
@@ -59,9 +77,18 @@ SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator =(const XmlNo
 
 void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
-  oStream << location << index << locationValue << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_messageIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
+  }
+  if(m_mD5OfMessageBodyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
+  }
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
       oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
@@ -70,9 +97,18 @@ void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const ch
 
 void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  oStream << location << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
-  oStream << location << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_messageIdHasBeenSet)
+  {
+      oStream << location << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
+  }
+  if(m_mD5OfMessageBodyHasBeenSet)
+  {
+      oStream << location << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
+  }
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
       oStream << location << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";

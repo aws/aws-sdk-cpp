@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The unique ID for this identity.</p>
     */
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>The unique ID for this identity.</p>
     */
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
+    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /*
      <p>The unique ID for this identity.</p>
@@ -90,7 +90,7 @@ namespace Model
     /*
      <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     */
-    inline void SetPlatform(const Platform& value) { m_platform = value; }
+    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /*
      <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
@@ -104,12 +104,12 @@ namespace Model
     /*
      <p>The push token.</p>
     */
-    inline void SetToken(const Aws::String& value) { m_token = value; }
+    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /*
      <p>The push token.</p>
     */
-    inline void SetToken(const char* value) { m_token.assign(value); }
+    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /*
      <p>The push token.</p>
@@ -123,9 +123,13 @@ namespace Model
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet;
     Platform m_platform;
+    bool m_platformHasBeenSet;
     Aws::String m_token;
+    bool m_tokenHasBeenSet;
   };
 
 } // namespace Model

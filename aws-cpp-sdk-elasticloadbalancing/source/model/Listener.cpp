@@ -24,17 +24,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Listener::Listener() : 
+    m_protocolHasBeenSet(false),
     m_loadBalancerPort(0),
+    m_loadBalancerPortHasBeenSet(false),
     m_instanceProtocolHasBeenSet(false),
     m_instancePort(0),
+    m_instancePortHasBeenSet(false),
     m_sSLCertificateIdHasBeenSet(false)
 {
 }
 
 Listener::Listener(const XmlNode& xmlNode) : 
+    m_protocolHasBeenSet(false),
     m_loadBalancerPort(0),
+    m_loadBalancerPortHasBeenSet(false),
     m_instanceProtocolHasBeenSet(false),
     m_instancePort(0),
+    m_instancePortHasBeenSet(false),
     m_sSLCertificateIdHasBeenSet(false)
 {
   *this = xmlNode;
@@ -47,9 +53,17 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
-    m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
+    if(!protocolNode.IsNull())
+    {
+      m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
+      m_protocolHasBeenSet = true;
+    }
     XmlNode loadBalancerPortNode = resultNode.FirstChild("LoadBalancerPort");
-    m_loadBalancerPort = StringUtils::ConvertToInt32(StringUtils::Trim(loadBalancerPortNode.GetText().c_str()).c_str());
+    if(!loadBalancerPortNode.IsNull())
+    {
+      m_loadBalancerPort = StringUtils::ConvertToInt32(StringUtils::Trim(loadBalancerPortNode.GetText().c_str()).c_str());
+      m_loadBalancerPortHasBeenSet = true;
+    }
     XmlNode instanceProtocolNode = resultNode.FirstChild("InstanceProtocol");
     if(!instanceProtocolNode.IsNull())
     {
@@ -57,7 +71,11 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
       m_instanceProtocolHasBeenSet = true;
     }
     XmlNode instancePortNode = resultNode.FirstChild("InstancePort");
-    m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(instancePortNode.GetText().c_str()).c_str());
+    if(!instancePortNode.IsNull())
+    {
+      m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(instancePortNode.GetText().c_str()).c_str());
+      m_instancePortHasBeenSet = true;
+    }
     XmlNode sSLCertificateIdNode = resultNode.FirstChild("SSLCertificateId");
     if(!sSLCertificateIdNode.IsNull())
     {
@@ -71,13 +89,22 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
 
 void Listener::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
-  oStream << location << index << locationValue << ".LoadBalancerPort=" << m_loadBalancerPort << "&";
+  if(m_protocolHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
+  }
+  if(m_loadBalancerPortHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LoadBalancerPort=" << m_loadBalancerPort << "&";
+  }
   if(m_instanceProtocolHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceProtocol=" << StringUtils::URLEncode(m_instanceProtocol.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
+  if(m_instancePortHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
+  }
   if(m_sSLCertificateIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
@@ -86,13 +113,22 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
 void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
-  oStream << location << ".LoadBalancerPort=" << m_loadBalancerPort << "&";
+  if(m_protocolHasBeenSet)
+  {
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
+  }
+  if(m_loadBalancerPortHasBeenSet)
+  {
+      oStream << location << ".LoadBalancerPort=" << m_loadBalancerPort << "&";
+  }
   if(m_instanceProtocolHasBeenSet)
   {
       oStream << location << ".InstanceProtocol=" << StringUtils::URLEncode(m_instanceProtocol.c_str()) << "&";
   }
-  oStream << location << ".InstancePort=" << m_instancePort << "&";
+  if(m_instancePortHasBeenSet)
+  {
+      oStream << location << ".InstancePort=" << m_instancePort << "&";
+  }
   if(m_sSLCertificateIdHasBeenSet)
   {
       oStream << location << ".SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";

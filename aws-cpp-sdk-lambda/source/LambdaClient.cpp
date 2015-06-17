@@ -126,14 +126,14 @@ AddPermissionOutcomeCallable LambdaClient::AddPermissionCallable(const AddPermis
   return std::async(std::launch::async, &LambdaClient::AddPermission, this, request);
 }
 
-void LambdaClient::AddPermissionAsync(const AddPermissionRequest& request) const
+void LambdaClient::AddPermissionAsync(const AddPermissionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::AddPermissionAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::AddPermissionAsyncHelper, this, request, context);
 }
 
-void LambdaClient::AddPermissionAsyncHelper(const AddPermissionRequest& request) const
+void LambdaClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAddPermissionOutcomeReceived(this, request, AddPermission(request));
+  m_onAddPermissionOutcomeReceived(this, request, AddPermission(request), context);
 }
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
@@ -157,14 +157,14 @@ CreateEventSourceMappingOutcomeCallable LambdaClient::CreateEventSourceMappingCa
   return std::async(std::launch::async, &LambdaClient::CreateEventSourceMapping, this, request);
 }
 
-void LambdaClient::CreateEventSourceMappingAsync(const CreateEventSourceMappingRequest& request) const
+void LambdaClient::CreateEventSourceMappingAsync(const CreateEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::CreateEventSourceMappingAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::CreateEventSourceMappingAsyncHelper, this, request, context);
 }
 
-void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMappingRequest& request) const
+void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateEventSourceMappingOutcomeReceived(this, request, CreateEventSourceMapping(request));
+  m_onCreateEventSourceMappingOutcomeReceived(this, request, CreateEventSourceMapping(request), context);
 }
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
@@ -188,14 +188,14 @@ CreateFunctionOutcomeCallable LambdaClient::CreateFunctionCallable(const CreateF
   return std::async(std::launch::async, &LambdaClient::CreateFunction, this, request);
 }
 
-void LambdaClient::CreateFunctionAsync(const CreateFunctionRequest& request) const
+void LambdaClient::CreateFunctionAsync(const CreateFunctionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::CreateFunctionAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::CreateFunctionAsyncHelper, this, request, context);
 }
 
-void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& request) const
+void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateFunctionOutcomeReceived(this, request, CreateFunction(request));
+  m_onCreateFunctionOutcomeReceived(this, request, CreateFunction(request), context);
 }
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
@@ -220,14 +220,14 @@ DeleteEventSourceMappingOutcomeCallable LambdaClient::DeleteEventSourceMappingCa
   return std::async(std::launch::async, &LambdaClient::DeleteEventSourceMapping, this, request);
 }
 
-void LambdaClient::DeleteEventSourceMappingAsync(const DeleteEventSourceMappingRequest& request) const
+void LambdaClient::DeleteEventSourceMappingAsync(const DeleteEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::DeleteEventSourceMappingAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::DeleteEventSourceMappingAsyncHelper, this, request, context);
 }
 
-void LambdaClient::DeleteEventSourceMappingAsyncHelper(const DeleteEventSourceMappingRequest& request) const
+void LambdaClient::DeleteEventSourceMappingAsyncHelper(const DeleteEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteEventSourceMappingOutcomeReceived(this, request, DeleteEventSourceMapping(request));
+  m_onDeleteEventSourceMappingOutcomeReceived(this, request, DeleteEventSourceMapping(request), context);
 }
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
@@ -252,14 +252,14 @@ DeleteFunctionOutcomeCallable LambdaClient::DeleteFunctionCallable(const DeleteF
   return std::async(std::launch::async, &LambdaClient::DeleteFunction, this, request);
 }
 
-void LambdaClient::DeleteFunctionAsync(const DeleteFunctionRequest& request) const
+void LambdaClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::DeleteFunctionAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::DeleteFunctionAsyncHelper, this, request, context);
 }
 
-void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& request) const
+void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteFunctionOutcomeReceived(this, request, DeleteFunction(request));
+  m_onDeleteFunctionOutcomeReceived(this, request, DeleteFunction(request), context);
 }
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
@@ -284,14 +284,14 @@ GetEventSourceMappingOutcomeCallable LambdaClient::GetEventSourceMappingCallable
   return std::async(std::launch::async, &LambdaClient::GetEventSourceMapping, this, request);
 }
 
-void LambdaClient::GetEventSourceMappingAsync(const GetEventSourceMappingRequest& request) const
+void LambdaClient::GetEventSourceMappingAsync(const GetEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::GetEventSourceMappingAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::GetEventSourceMappingAsyncHelper, this, request, context);
 }
 
-void LambdaClient::GetEventSourceMappingAsyncHelper(const GetEventSourceMappingRequest& request) const
+void LambdaClient::GetEventSourceMappingAsyncHelper(const GetEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetEventSourceMappingOutcomeReceived(this, request, GetEventSourceMapping(request));
+  m_onGetEventSourceMappingOutcomeReceived(this, request, GetEventSourceMapping(request), context);
 }
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
@@ -317,14 +317,14 @@ GetFunctionOutcomeCallable LambdaClient::GetFunctionCallable(const GetFunctionRe
   return std::async(std::launch::async, &LambdaClient::GetFunction, this, request);
 }
 
-void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request) const
+void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::GetFunctionAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::GetFunctionAsyncHelper, this, request, context);
 }
 
-void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request) const
+void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetFunctionOutcomeReceived(this, request, GetFunction(request));
+  m_onGetFunctionOutcomeReceived(this, request, GetFunction(request), context);
 }
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
@@ -350,14 +350,14 @@ GetFunctionConfigurationOutcomeCallable LambdaClient::GetFunctionConfigurationCa
   return std::async(std::launch::async, &LambdaClient::GetFunctionConfiguration, this, request);
 }
 
-void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationRequest& request) const
+void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::GetFunctionConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::GetFunctionConfigurationAsyncHelper, this, request, context);
 }
 
-void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigurationRequest& request) const
+void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetFunctionConfigurationOutcomeReceived(this, request, GetFunctionConfiguration(request));
+  m_onGetFunctionConfigurationOutcomeReceived(this, request, GetFunctionConfiguration(request), context);
 }
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
@@ -383,14 +383,14 @@ GetPolicyOutcomeCallable LambdaClient::GetPolicyCallable(const GetPolicyRequest&
   return std::async(std::launch::async, &LambdaClient::GetPolicy, this, request);
 }
 
-void LambdaClient::GetPolicyAsync(const GetPolicyRequest& request) const
+void LambdaClient::GetPolicyAsync(const GetPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::GetPolicyAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::GetPolicyAsyncHelper, this, request, context);
 }
 
-void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request) const
+void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetPolicyOutcomeReceived(this, request, GetPolicy(request));
+  m_onGetPolicyOutcomeReceived(this, request, GetPolicy(request), context);
 }
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
@@ -416,14 +416,14 @@ InvokeOutcomeCallable LambdaClient::InvokeCallable(const InvokeRequest& request)
   return std::async(std::launch::async, &LambdaClient::Invoke, this, request);
 }
 
-void LambdaClient::InvokeAsync(const InvokeRequest& request) const
+void LambdaClient::InvokeAsync(const InvokeRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::InvokeAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::InvokeAsyncHelper, this, request, context);
 }
 
-void LambdaClient::InvokeAsyncHelper(const InvokeRequest& request) const
+void LambdaClient::InvokeAsyncHelper(const InvokeRequest& request, const AsyncCallerContext* context) const
 {
-  m_onInvokeOutcomeReceived(this, request, Invoke(request));
+  m_onInvokeOutcomeReceived(this, request, Invoke(request), context);
 }
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
@@ -447,14 +447,14 @@ ListEventSourceMappingsOutcomeCallable LambdaClient::ListEventSourceMappingsCall
   return std::async(std::launch::async, &LambdaClient::ListEventSourceMappings, this, request);
 }
 
-void LambdaClient::ListEventSourceMappingsAsync(const ListEventSourceMappingsRequest& request) const
+void LambdaClient::ListEventSourceMappingsAsync(const ListEventSourceMappingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::ListEventSourceMappingsAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::ListEventSourceMappingsAsyncHelper, this, request, context);
 }
 
-void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappingsRequest& request) const
+void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListEventSourceMappingsOutcomeReceived(this, request, ListEventSourceMappings(request));
+  m_onListEventSourceMappingsOutcomeReceived(this, request, ListEventSourceMappings(request), context);
 }
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
@@ -478,14 +478,14 @@ ListFunctionsOutcomeCallable LambdaClient::ListFunctionsCallable(const ListFunct
   return std::async(std::launch::async, &LambdaClient::ListFunctions, this, request);
 }
 
-void LambdaClient::ListFunctionsAsync(const ListFunctionsRequest& request) const
+void LambdaClient::ListFunctionsAsync(const ListFunctionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::ListFunctionsAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::ListFunctionsAsyncHelper, this, request, context);
 }
 
-void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request) const
+void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListFunctionsOutcomeReceived(this, request, ListFunctions(request));
+  m_onListFunctionsOutcomeReceived(this, request, ListFunctions(request), context);
 }
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
@@ -512,14 +512,14 @@ RemovePermissionOutcomeCallable LambdaClient::RemovePermissionCallable(const Rem
   return std::async(std::launch::async, &LambdaClient::RemovePermission, this, request);
 }
 
-void LambdaClient::RemovePermissionAsync(const RemovePermissionRequest& request) const
+void LambdaClient::RemovePermissionAsync(const RemovePermissionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::RemovePermissionAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::RemovePermissionAsyncHelper, this, request, context);
 }
 
-void LambdaClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request) const
+void LambdaClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRemovePermissionOutcomeReceived(this, request, RemovePermission(request));
+  m_onRemovePermissionOutcomeReceived(this, request, RemovePermission(request), context);
 }
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
@@ -544,14 +544,14 @@ UpdateEventSourceMappingOutcomeCallable LambdaClient::UpdateEventSourceMappingCa
   return std::async(std::launch::async, &LambdaClient::UpdateEventSourceMapping, this, request);
 }
 
-void LambdaClient::UpdateEventSourceMappingAsync(const UpdateEventSourceMappingRequest& request) const
+void LambdaClient::UpdateEventSourceMappingAsync(const UpdateEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateEventSourceMappingAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::UpdateEventSourceMappingAsyncHelper, this, request, context);
 }
 
-void LambdaClient::UpdateEventSourceMappingAsyncHelper(const UpdateEventSourceMappingRequest& request) const
+void LambdaClient::UpdateEventSourceMappingAsyncHelper(const UpdateEventSourceMappingRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateEventSourceMappingOutcomeReceived(this, request, UpdateEventSourceMapping(request));
+  m_onUpdateEventSourceMappingOutcomeReceived(this, request, UpdateEventSourceMapping(request), context);
 }
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
@@ -577,14 +577,14 @@ UpdateFunctionCodeOutcomeCallable LambdaClient::UpdateFunctionCodeCallable(const
   return std::async(std::launch::async, &LambdaClient::UpdateFunctionCode, this, request);
 }
 
-void LambdaClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& request) const
+void LambdaClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateFunctionCodeAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::UpdateFunctionCodeAsyncHelper, this, request, context);
 }
 
-void LambdaClient::UpdateFunctionCodeAsyncHelper(const UpdateFunctionCodeRequest& request) const
+void LambdaClient::UpdateFunctionCodeAsyncHelper(const UpdateFunctionCodeRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateFunctionCodeOutcomeReceived(this, request, UpdateFunctionCode(request));
+  m_onUpdateFunctionCodeOutcomeReceived(this, request, UpdateFunctionCode(request), context);
 }
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
@@ -610,13 +610,13 @@ UpdateFunctionConfigurationOutcomeCallable LambdaClient::UpdateFunctionConfigura
   return std::async(std::launch::async, &LambdaClient::UpdateFunctionConfiguration, this, request);
 }
 
-void LambdaClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigurationRequest& request) const
+void LambdaClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateFunctionConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&LambdaClient::UpdateFunctionConfigurationAsyncHelper, this, request, context);
 }
 
-void LambdaClient::UpdateFunctionConfigurationAsyncHelper(const UpdateFunctionConfigurationRequest& request) const
+void LambdaClient::UpdateFunctionConfigurationAsyncHelper(const UpdateFunctionConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateFunctionConfigurationOutcomeReceived(this, request, UpdateFunctionConfiguration(request));
+  m_onUpdateFunctionConfigurationOutcomeReceived(this, request, UpdateFunctionConfiguration(request), context);
 }
 

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The unique label of the statement you want to remove.</p>
     */
-    inline void SetLabel(const Aws::String& value) { m_label = value; }
+    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /*
      <p>The unique label of the statement you want to remove.</p>
     */
-    inline void SetLabel(const char* value) { m_label.assign(value); }
+    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
     /*
      <p>The unique label of the statement you want to remove.</p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
     Aws::String m_label;
+    bool m_labelHasBeenSet;
   };
 
 } // namespace Model

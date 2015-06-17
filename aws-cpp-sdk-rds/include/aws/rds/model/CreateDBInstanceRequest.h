@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The DB instance identifier. This parameter is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul> <p>Example: <code>mydbinstance</code></p>
     */
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> The DB instance identifier. This parameter is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul> <p>Example: <code>mydbinstance</code></p>
     */
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifier.assign(value); }
+    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /*
      <p> The DB instance identifier. This parameter is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul> <p>Example: <code>mydbinstance</code></p>
@@ -91,7 +91,7 @@ namespace Model
     /*
      <p> The amount of storage (in gigabytes) to be initially allocated for the database instance. </p> <p> Type: Integer</p> <p> <b>MySQL</b> </p> <p> Constraints: Must be an integer from 5 to 3072.</p> <p> <b>PostgreSQL</b> </p> <p> Constraints: Must be an integer from 5 to 3072.</p> <p> <b>Oracle</b> </p> <p> Constraints: Must be an integer from 10 to 3072.</p> <p> <b>SQL Server</b> </p> <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition and Enterprise Edition) or from 20 to 1024 (Express Edition and Web Edition)</p>
     */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /*
      <p> The amount of storage (in gigabytes) to be initially allocated for the database instance. </p> <p> Type: Integer</p> <p> <b>MySQL</b> </p> <p> Constraints: Must be an integer from 5 to 3072.</p> <p> <b>PostgreSQL</b> </p> <p> Constraints: Must be an integer from 5 to 3072.</p> <p> <b>Oracle</b> </p> <p> Constraints: Must be an integer from 10 to 3072.</p> <p> <b>SQL Server</b> </p> <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition and Enterprise Edition) or from 20 to 1024 (Express Edition and Web Edition)</p>
@@ -105,12 +105,12 @@ namespace Model
     /*
      <p> The compute and memory capacity of the DB instance. </p> <p> Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p>
     */
-    inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClass = value; }
+    inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
      <p> The compute and memory capacity of the DB instance. </p> <p> Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p>
     */
-    inline void SetDBInstanceClass(const char* value) { m_dBInstanceClass.assign(value); }
+    inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /*
      <p> The compute and memory capacity of the DB instance. </p> <p> Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code></p>
@@ -129,12 +129,12 @@ namespace Model
     /*
      <p> The name of the database engine to be used for this instance. </p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p> <p> Not every database engine is available for every AWS region. </p>
     */
-    inline void SetEngine(const Aws::String& value) { m_engine = value; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p> The name of the database engine to be used for this instance. </p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p> <p> Not every database engine is available for every AWS region. </p>
     */
-    inline void SetEngine(const char* value) { m_engine.assign(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /*
      <p> The name of the database engine to be used for this instance. </p> <p> Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code></p> <p> Not every database engine is available for every AWS region. </p>
@@ -153,12 +153,12 @@ namespace Model
     /*
      <p> The name of master user for the client DB instance. </p> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 63 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>
     */
-    inline void SetMasterUsername(const Aws::String& value) { m_masterUsername = value; }
+    inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /*
      <p> The name of master user for the client DB instance. </p> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 63 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>
     */
-    inline void SetMasterUsername(const char* value) { m_masterUsername.assign(value); }
+    inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /*
      <p> The name of master user for the client DB instance. </p> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>Must be 1 to 63 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>
@@ -177,12 +177,12 @@ namespace Model
     /*
      <p> The password for the master database user. Can be any printable ASCII character except "/", """, or "@". </p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p> Constraints: Must contain from 8 to 41 characters. </p> <p> <b>Oracle</b> </p> <p> Constraints: Must contain from 8 to 30 characters. </p> <p> <b>SQL Server</b> </p> <p> Constraints: Must contain from 8 to 128 characters. </p> <p> <b>PostgreSQL</b> </p> <p> Constraints: Must contain from 8 to 128 characters. </p>
     */
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /*
      <p> The password for the master database user. Can be any printable ASCII character except "/", """, or "@". </p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p> Constraints: Must contain from 8 to 41 characters. </p> <p> <b>Oracle</b> </p> <p> Constraints: Must contain from 8 to 30 characters. </p> <p> <b>SQL Server</b> </p> <p> Constraints: Must contain from 8 to 128 characters. </p> <p> <b>PostgreSQL</b> </p> <p> Constraints: Must contain from 8 to 128 characters. </p>
     */
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPassword.assign(value); }
+    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /*
      <p> The password for the master database user. Can be any printable ASCII character except "/", """, or "@". </p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p> Constraints: Must contain from 8 to 41 characters. </p> <p> <b>Oracle</b> </p> <p> Constraints: Must contain from 8 to 30 characters. </p> <p> <b>SQL Server</b> </p> <p> Constraints: Must contain from 8 to 128 characters. </p> <p> <b>PostgreSQL</b> </p> <p> Constraints: Must contain from 8 to 128 characters. </p>
@@ -667,11 +667,17 @@ namespace Model
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
     Aws::String m_dBInstanceIdentifier;
+    bool m_dBInstanceIdentifierHasBeenSet;
     long m_allocatedStorage;
+    bool m_allocatedStorageHasBeenSet;
     Aws::String m_dBInstanceClass;
+    bool m_dBInstanceClassHasBeenSet;
     Aws::String m_engine;
+    bool m_engineHasBeenSet;
     Aws::String m_masterUsername;
+    bool m_masterUsernameHasBeenSet;
     Aws::String m_masterUserPassword;
+    bool m_masterUserPasswordHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;

@@ -49,12 +49,12 @@ namespace Model
     /*
      Name of the host where requests will be redirected.
     */
-    inline void SetHostName(const Aws::String& value) { m_hostName = value; }
+    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /*
      Name of the host where requests will be redirected.
     */
-    inline void SetHostName(const char* value) { m_hostName.assign(value); }
+    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
 
     /*
      Name of the host where requests will be redirected.
@@ -82,6 +82,7 @@ namespace Model
 
   private:
     Aws::String m_hostName;
+    bool m_hostNameHasBeenSet;
     Protocol m_protocol;
     bool m_protocolHasBeenSet;
   };

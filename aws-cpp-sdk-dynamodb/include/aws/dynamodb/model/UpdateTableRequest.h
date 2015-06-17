@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>The name of the table to be updated.</p>
     */
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
+    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /*
      <p>The name of the table to be updated.</p>
     */
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
+    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /*
      <p>The name of the table to be updated.</p>
@@ -123,6 +123,7 @@ namespace Model
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
     bool m_attributeDefinitionsHasBeenSet;
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet;
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;
     Aws::Vector<GlobalSecondaryIndexUpdate> m_globalSecondaryIndexUpdates;

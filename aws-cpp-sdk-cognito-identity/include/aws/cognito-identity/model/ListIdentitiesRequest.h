@@ -43,12 +43,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -67,7 +67,7 @@ namespace Model
     /*
      The maximum number of identities to return.
     */
-    inline void SetMaxResults(long value) { m_maxResults = value; }
+    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /*
      The maximum number of identities to return.
@@ -98,11 +98,29 @@ namespace Model
     */
     inline ListIdentitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /*
+     <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+    */
+    inline bool GetHideDisabled() const{ return m_hideDisabled; }
+    /*
+     <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+    */
+    inline void SetHideDisabled(bool value) { m_hideDisabledHasBeenSet = true; m_hideDisabled = value; }
+
+    /*
+     <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+    */
+    inline ListIdentitiesRequest&  WithHideDisabled(bool value) { SetHideDisabled(value); return *this;}
+
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     long m_maxResults;
+    bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+    bool m_hideDisabled;
+    bool m_hideDisabledHasBeenSet;
   };
 
 } // namespace Model

@@ -51,7 +51,7 @@ namespace Model
     /*
      <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
     */
-    inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatus = value; }
+    inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
 
     /*
      <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
@@ -84,6 +84,7 @@ namespace Model
 
   private:
     VerificationStatus m_verificationStatus;
+    bool m_verificationStatusHasBeenSet;
     Aws::String m_verificationToken;
     bool m_verificationTokenHasBeenSet;
   };

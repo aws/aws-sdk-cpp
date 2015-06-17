@@ -21,7 +21,9 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeploymentGroupRequest::DeleteDeploymentGroupRequest()
+DeleteDeploymentGroupRequest::DeleteDeploymentGroupRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_deploymentGroupNameHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String DeleteDeploymentGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
 
-  payload.WithString("deploymentGroupName", m_deploymentGroupName);
+  }
+
+  if(m_deploymentGroupNameHasBeenSet)
+  {
+   payload.WithString("deploymentGroupName", m_deploymentGroupName);
+
+  }
 
   return payload.WriteReadable();
 }

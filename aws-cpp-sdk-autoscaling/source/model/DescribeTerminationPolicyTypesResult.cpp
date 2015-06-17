@@ -41,11 +41,12 @@ DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::oper
 
   if(!resultNode.IsNull())
   {
-    XmlNode terminationPolicyTypesNode = resultNode.FirstChild("TerminationPolicyTypes");
+    XmlNode terminationPolicyTypesNodeParent = resultNode.FirstChild("TerminationPolicyTypes");
+    XmlNode terminationPolicyTypesNode = terminationPolicyTypesNodeParent.FirstChild("member");
     while(!terminationPolicyTypesNode.IsNull())
     {
       m_terminationPolicyTypes.push_back(StringUtils::Trim(terminationPolicyTypesNode.GetText().c_str()));
-      terminationPolicyTypesNode = terminationPolicyTypesNode.NextNode("TerminationPolicyTypes");
+      terminationPolicyTypesNode = terminationPolicyTypesNode.NextNode("member");
     }
 
   }

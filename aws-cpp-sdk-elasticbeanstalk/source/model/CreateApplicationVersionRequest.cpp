@@ -20,6 +20,8 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 CreateApplicationVersionRequest::CreateApplicationVersionRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_versionLabelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_autoCreateApplication(false),
@@ -31,8 +33,14 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateApplicationVersion&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_versionLabelHasBeenSet)
+  {
+    ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";

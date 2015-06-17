@@ -43,11 +43,12 @@ ListGroupPoliciesResult& ListGroupPoliciesResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
+    XmlNode policyNamesNodeParent = resultNode.FirstChild("PolicyNames");
+    XmlNode policyNamesNode = policyNamesNodeParent.FirstChild("member");
     while(!policyNamesNode.IsNull())
     {
       m_policyNames.push_back(StringUtils::Trim(policyNamesNode.GetText().c_str()));
-      policyNamesNode = policyNamesNode.NextNode("PolicyNames");
+      policyNamesNode = policyNamesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

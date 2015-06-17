@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 RoutingRule::RoutingRule() : 
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_redirectHasBeenSet(false)
 {
 }
 
 RoutingRule::RoutingRule(const XmlNode& xmlNode) : 
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_redirectHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -47,7 +49,11 @@ RoutingRule& RoutingRule::operator =(const XmlNode& xmlNode)
       m_conditionHasBeenSet = true;
     }
     XmlNode redirectNode = resultNode.FirstChild("Redirect");
-    m_redirect = redirectNode;
+    if(!redirectNode.IsNull())
+    {
+      m_redirect = redirectNode;
+      m_redirectHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -62,6 +68,10 @@ void RoutingRule::AddToNode(XmlNode& parentNode) const
    m_condition.AddToNode(conditionNode);
   }
 
-  XmlNode redirectNode = parentNode.CreateChildElement("Redirect");
-  m_redirect.AddToNode(redirectNode);
+  if(m_redirectHasBeenSet)
+  {
+   XmlNode redirectNode = parentNode.CreateChildElement("Redirect");
+   m_redirect.AddToNode(redirectNode);
+  }
+
 }

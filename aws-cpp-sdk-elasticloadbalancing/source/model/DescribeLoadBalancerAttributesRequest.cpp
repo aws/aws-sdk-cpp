@@ -19,7 +19,8 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DescribeLoadBalancerAttributesRequest::DescribeLoadBalancerAttributesRequest()
+DescribeLoadBalancerAttributesRequest::DescribeLoadBalancerAttributesRequest() : 
+    m_loadBalancerNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DescribeLoadBalancerAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeLoadBalancerAttributes&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  if(m_loadBalancerNameHasBeenSet)
+  {
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
   ss << "Version=2012-06-01";
   return ss.str();
 }

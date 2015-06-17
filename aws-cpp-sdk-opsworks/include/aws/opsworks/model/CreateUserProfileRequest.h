@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArn = value; }
+    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /*
      <p>The user's IAM ARN.</p>
     */
-    inline void SetIamUserArn(const char* value) { m_iamUserArn.assign(value); }
+    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /*
      <p>The user's IAM ARN.</p>
@@ -123,6 +123,7 @@ namespace Model
 
   private:
     Aws::String m_iamUserArn;
+    bool m_iamUserArnHasBeenSet;
     Aws::String m_sshUsername;
     bool m_sshUsernameHasBeenSet;
     Aws::String m_sshPublicKey;

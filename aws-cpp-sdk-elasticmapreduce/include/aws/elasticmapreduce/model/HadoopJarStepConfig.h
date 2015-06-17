@@ -68,12 +68,12 @@ namespace Model
     /*
      <p>A path to a JAR file run during the step.</p>
     */
-    inline void SetJar(const Aws::String& value) { m_jar = value; }
+    inline void SetJar(const Aws::String& value) { m_jarHasBeenSet = true; m_jar = value; }
 
     /*
      <p>A path to a JAR file run during the step.</p>
     */
-    inline void SetJar(const char* value) { m_jar.assign(value); }
+    inline void SetJar(const char* value) { m_jarHasBeenSet = true; m_jar.assign(value); }
 
     /*
      <p>A path to a JAR file run during the step.</p>
@@ -137,6 +137,7 @@ namespace Model
     Aws::Vector<KeyValue> m_properties;
     bool m_propertiesHasBeenSet;
     Aws::String m_jar;
+    bool m_jarHasBeenSet;
     Aws::String m_mainClass;
     bool m_mainClassHasBeenSet;
     Aws::Vector<Aws::String> m_args;

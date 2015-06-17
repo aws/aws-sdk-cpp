@@ -30,7 +30,7 @@ namespace CloudWatchLogs
 namespace Model
 {
   /*
-    Represents a matched event from a <code class="code">FilterLogEvents</code> request.
+    <p>Represents a matched event from a <code class="code">FilterLogEvents</code> request.</p>
   */
   class AWS_CLOUDWATCHLOGS_API FilteredLogEvent
   {
@@ -41,26 +41,26 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /*
-     The name of the log stream this event belongs to.
+     <p>The name of the log stream this event belongs to.</p>
     */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
     /*
-     The name of the log stream this event belongs to.
+     <p>The name of the log stream this event belongs to.</p>
     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /*
-     The name of the log stream this event belongs to.
+     <p>The name of the log stream this event belongs to.</p>
     */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /*
-     The name of the log stream this event belongs to.
+     <p>The name of the log stream this event belongs to.</p>
     */
     inline FilteredLogEvent&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /*
-     The name of the log stream this event belongs to.
+     <p>The name of the log stream this event belongs to.</p>
     */
     inline FilteredLogEvent& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
@@ -72,18 +72,28 @@ namespace Model
     
     inline FilteredLogEvent&  WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
-    
+    /*
+     <p>The data contained in the log event.</p>
+    */
     inline const Aws::String& GetMessage() const{ return m_message; }
-    
+    /*
+     <p>The data contained in the log event.</p>
+    */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /*
+     <p>The data contained in the log event.</p>
+    */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /*
+     <p>The data contained in the log event.</p>
+    */
     inline FilteredLogEvent&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /*
+     <p>The data contained in the log event.</p>
+    */
     inline FilteredLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     
@@ -95,26 +105,26 @@ namespace Model
     inline FilteredLogEvent&  WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
 
     /*
-     A unique identifier for this event.
+     <p>A unique identifier for this event.</p>
     */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
     /*
-     A unique identifier for this event.
+     <p>A unique identifier for this event.</p>
     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /*
-     A unique identifier for this event.
+     <p>A unique identifier for this event.</p>
     */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /*
-     A unique identifier for this event.
+     <p>A unique identifier for this event.</p>
     */
     inline FilteredLogEvent&  WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /*
-     A unique identifier for this event.
+     <p>A unique identifier for this event.</p>
     */
     inline FilteredLogEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 

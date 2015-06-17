@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a create deployment group operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API CreateDeploymentGroupResult
   {
@@ -42,28 +42,18 @@ namespace Model
     CreateDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    
     inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupId = value; }
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    
     inline void SetDeploymentGroupId(const char* value) { m_deploymentGroupId.assign(value); }
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    
     inline CreateDeploymentGroupResult&  WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
 
-    /*
-     <p>A unique deployment group ID.</p>
-    */
+    
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const char* value) { SetDeploymentGroupId(value); return *this;}
 
   private:

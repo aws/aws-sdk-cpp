@@ -21,18 +21,25 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PlacementType::PlacementType()
+PlacementType::PlacementType() : 
+    m_availabilityZoneHasBeenSet(false)
 {
 }
 
-PlacementType::PlacementType(const JsonValue& jsonValue)
+PlacementType::PlacementType(const JsonValue& jsonValue) : 
+    m_availabilityZoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PlacementType& PlacementType::operator =(const JsonValue& jsonValue)
 {
-  m_availabilityZone = jsonValue.GetString("AvailabilityZone");
+  if(jsonValue.ValueExists("AvailabilityZone"))
+  {
+    m_availabilityZone = jsonValue.GetString("AvailabilityZone");
+
+    m_availabilityZoneHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -41,7 +48,11 @@ JsonValue PlacementType::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("AvailabilityZone", m_availabilityZone);
+  if(m_availabilityZoneHasBeenSet)
+  {
+   payload.WithString("AvailabilityZone", m_availabilityZone);
+
+  }
 
   return std::move(payload);
 }

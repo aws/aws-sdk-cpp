@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListApplicationRevisionsRequest::ListApplicationRevisionsRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_sortByHasBeenSet(false),
     m_sortOrderHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
@@ -35,7 +36,11 @@ Aws::String ListApplicationRevisionsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
+
+  }
 
   if(m_sortByHasBeenSet)
   {

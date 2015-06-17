@@ -52,12 +52,12 @@ namespace Model
     /*
      <p>The job flow identifier.</p>
     */
-    inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
+    inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
 
     /*
      <p>The job flow identifier.</p>
     */
-    inline void SetJobFlowId(const char* value) { m_jobFlowId.assign(value); }
+    inline void SetJobFlowId(const char* value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId.assign(value); }
 
     /*
      <p>The job flow identifier.</p>
@@ -76,12 +76,12 @@ namespace Model
     /*
      <p>The name of the job flow.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the job flow.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the job flow.</p>
@@ -148,7 +148,7 @@ namespace Model
     /*
      <p>Describes the execution status of the job flow.</p>
     */
-    inline void SetExecutionStatusDetail(const JobFlowExecutionStatusDetail& value) { m_executionStatusDetail = value; }
+    inline void SetExecutionStatusDetail(const JobFlowExecutionStatusDetail& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
 
     /*
      <p>Describes the execution status of the job flow.</p>
@@ -162,7 +162,7 @@ namespace Model
     /*
      <p>Describes the Amazon EC2 instances of the job flow.</p>
     */
-    inline void SetInstances(const JobFlowInstancesDetail& value) { m_instances = value; }
+    inline void SetInstances(const JobFlowInstancesDetail& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /*
      <p>Describes the Amazon EC2 instances of the job flow.</p>
@@ -295,13 +295,17 @@ namespace Model
 
   private:
     Aws::String m_jobFlowId;
+    bool m_jobFlowIdHasBeenSet;
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
     Aws::String m_amiVersion;
     bool m_amiVersionHasBeenSet;
     JobFlowExecutionStatusDetail m_executionStatusDetail;
+    bool m_executionStatusDetailHasBeenSet;
     JobFlowInstancesDetail m_instances;
+    bool m_instancesHasBeenSet;
     Aws::Vector<StepDetail> m_steps;
     bool m_stepsHasBeenSet;
     Aws::Vector<BootstrapActionDetail> m_bootstrapActions;

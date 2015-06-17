@@ -22,6 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateLayerRequest::CreateLayerRequest() : 
+    m_stackIdHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
@@ -46,12 +50,28 @@ Aws::String CreateLayerRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
 
-  payload.WithString("Type", LayerTypeMapper::GetNameForLayerType(m_type));
-  payload.WithString("Name", m_name);
+  }
 
-  payload.WithString("Shortname", m_shortname);
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", LayerTypeMapper::GetNameForLayerType(m_type));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_shortnameHasBeenSet)
+  {
+   payload.WithString("Shortname", m_shortname);
+
+  }
 
   if(m_attributesHasBeenSet)
   {

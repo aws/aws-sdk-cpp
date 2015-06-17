@@ -48,13 +48,14 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
       m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
       m_loadBalancerNameHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNodeParent = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = tagsNodeParent.FirstChild("member");
     if(!tagsNode.IsNull())
     {
       while(!tagsNode.IsNull())
       {
         m_tags.push_back(tagsNode);
-        tagsNode = tagsNode.NextNode("Tags");
+        tagsNode = tagsNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

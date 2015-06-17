@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() : 
+    m_uUIDHasBeenSet(false),
     m_functionNameHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),

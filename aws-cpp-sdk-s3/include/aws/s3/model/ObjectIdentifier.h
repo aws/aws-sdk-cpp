@@ -48,12 +48,12 @@ namespace Model
     /*
      Key name of the object to delete.
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      Key name of the object to delete.
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      Key name of the object to delete.
@@ -91,6 +91,7 @@ namespace Model
 
   private:
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

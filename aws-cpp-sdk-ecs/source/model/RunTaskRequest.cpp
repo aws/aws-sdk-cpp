@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 RunTaskRequest::RunTaskRequest() : 
     m_clusterHasBeenSet(false),
+    m_taskDefinitionHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
@@ -40,7 +41,11 @@ Aws::String RunTaskRequest::SerializePayload() const
 
   }
 
-  payload.WithString("taskDefinition", m_taskDefinition);
+  if(m_taskDefinitionHasBeenSet)
+  {
+   payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
 
   if(m_overridesHasBeenSet)
   {

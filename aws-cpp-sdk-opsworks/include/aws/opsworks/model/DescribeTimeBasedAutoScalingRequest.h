@@ -43,7 +43,7 @@ namespace Model
     /*
      <p>An array of instance IDs.</p>
     */
-    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIds = value; }
+    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /*
      <p>An array of instance IDs.</p>
@@ -53,15 +53,16 @@ namespace Model
     /*
      <p>An array of instance IDs.</p>
     */
-    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const Aws::String& value) { m_instanceIds.push_back(value); return *this; }
+    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /*
      <p>An array of instance IDs.</p>
     */
-    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const char* value) { m_instanceIds.push_back(value); return *this; }
+    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_instanceIds;
+    bool m_instanceIdsHasBeenSet;
   };
 
 } // namespace Model

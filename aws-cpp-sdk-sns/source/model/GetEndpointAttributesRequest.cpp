@@ -19,7 +19,8 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetEndpointAttributesRequest::GetEndpointAttributesRequest()
+GetEndpointAttributesRequest::GetEndpointAttributesRequest() : 
+    m_endpointArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetEndpointAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetEndpointAttributes&";
-  ss << "EndpointArn=" << StringUtils::URLEncode(m_endpointArn.c_str()) << "&";
+  if(m_endpointArnHasBeenSet)
+  {
+    ss << "EndpointArn=" << StringUtils::URLEncode(m_endpointArn.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

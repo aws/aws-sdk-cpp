@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>EndpointArn of endpoint to delete.</p>
     */
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
+    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /*
      <p>EndpointArn of endpoint to delete.</p>
     */
-    inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
+    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
     /*
      <p>EndpointArn of endpoint to delete.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_endpointArn;
+    bool m_endpointArnHasBeenSet;
   };
 
 } // namespace Model

@@ -43,11 +43,12 @@ DescribeReservedNodeOfferingsResult& DescribeReservedNodeOfferingsResult::operat
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedNodeOfferingNode = resultNode.FirstChild("ReservedNodeOffering");
+    XmlNode reservedNodeOfferingNodeParent = resultNode.FirstChild("ReservedNodeOffering");
+    XmlNode reservedNodeOfferingNode = reservedNodeOfferingNodeParent.FirstChild("member");
     while(!reservedNodeOfferingNode.IsNull())
     {
       m_reservedNodeOfferings.push_back(reservedNodeOfferingNode);
-      reservedNodeOfferingNode = reservedNodeOfferingNode.NextNode("ReservedNodeOffering");
+      reservedNodeOfferingNode = reservedNodeOfferingNode.NextNode("member");
     }
 
   }

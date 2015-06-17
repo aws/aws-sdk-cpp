@@ -20,8 +20,10 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 ValidateConfigurationSettingsRequest::ValidateConfigurationSettingsRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_templateNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
+    m_environmentNameHasBeenSet(false),
+    m_optionSettingsHasBeenSet(false)
 {
 }
 
@@ -29,7 +31,10 @@ Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ValidateConfigurationSettings&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
@@ -38,11 +43,14 @@ Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
-  unsigned optionSettingsCount = 1;
-  for(auto& item : m_optionSettings)
+  if(m_optionSettingsHasBeenSet)
   {
-    item.OutputToStream(ss, "OptionSettings.", optionSettingsCount, "");
-    optionSettingsCount++;
+    unsigned optionSettingsCount = 1;
+    for(auto& item : m_optionSettings)
+    {
+      item.OutputToStream(ss, "OptionSettings.", optionSettingsCount, "");
+      optionSettingsCount++;
+    }
   }
   ss << "Version=2010-12-01";
   return ss.str();

@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The encoded message that was returned with the response.</p>
     */
-    inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessage = value; }
+    inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessageHasBeenSet = true; m_encodedMessage = value; }
 
     /*
      <p>The encoded message that was returned with the response.</p>
     */
-    inline void SetEncodedMessage(const char* value) { m_encodedMessage.assign(value); }
+    inline void SetEncodedMessage(const char* value) { m_encodedMessageHasBeenSet = true; m_encodedMessage.assign(value); }
 
     /*
      <p>The encoded message that was returned with the response.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_encodedMessage;
+    bool m_encodedMessageHasBeenSet;
   };
 
 } // namespace Model

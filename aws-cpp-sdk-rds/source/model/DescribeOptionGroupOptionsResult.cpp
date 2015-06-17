@@ -41,11 +41,12 @@ DescribeOptionGroupOptionsResult& DescribeOptionGroupOptionsResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode optionGroupOptionNode = resultNode.FirstChild("OptionGroupOption");
+    XmlNode optionGroupOptionNodeParent = resultNode.FirstChild("OptionGroupOption");
+    XmlNode optionGroupOptionNode = optionGroupOptionNodeParent.FirstChild("member");
     while(!optionGroupOptionNode.IsNull())
     {
       m_optionGroupOptions.push_back(optionGroupOptionNode);
-      optionGroupOptionNode = optionGroupOptionNode.NextNode("OptionGroupOption");
+      optionGroupOptionNode = optionGroupOptionNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

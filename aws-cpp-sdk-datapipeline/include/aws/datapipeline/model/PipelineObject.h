@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The ID of the object.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the object.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>The ID of the object.</p>
@@ -73,12 +73,12 @@ namespace Model
     /*
      <p>The name of the object.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the object.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the object.</p>
@@ -97,7 +97,7 @@ namespace Model
     /*
      <p>Key-value pairs that define the properties of the object.</p>
     */
-    inline void SetFields(const Aws::Vector<Field>& value) { m_fields = value; }
+    inline void SetFields(const Aws::Vector<Field>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
 
     /*
      <p>Key-value pairs that define the properties of the object.</p>
@@ -107,12 +107,15 @@ namespace Model
     /*
      <p>Key-value pairs that define the properties of the object.</p>
     */
-    inline PipelineObject& AddFields(const Field& value) { m_fields.push_back(value); return *this; }
+    inline PipelineObject& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::Vector<Field> m_fields;
+    bool m_fieldsHasBeenSet;
   };
 
 } // namespace Model

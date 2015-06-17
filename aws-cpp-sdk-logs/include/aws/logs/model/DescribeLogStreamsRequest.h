@@ -36,18 +36,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
     inline DescribeLogStreamsRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The log group name for which log streams are to be listed.</p>
+    */
     inline DescribeLogStreamsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /*
@@ -142,6 +152,7 @@ namespace Model
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::String m_logStreamNamePrefix;
     bool m_logStreamNamePrefixHasBeenSet;
     OrderBy m_orderBy;

@@ -21,7 +21,8 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIdentityRequest::DescribeIdentityRequest()
+DescribeIdentityRequest::DescribeIdentityRequest() : 
+    m_identityIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DescribeIdentityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityId", m_identityId);
+  if(m_identityIdHasBeenSet)
+  {
+   payload.WithString("IdentityId", m_identityId);
+
+  }
 
   return payload.WriteReadable();
 }

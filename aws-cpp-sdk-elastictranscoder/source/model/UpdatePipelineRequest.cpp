@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdatePipelineRequest::UpdatePipelineRequest() : 
+    m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_inputBucketHasBeenSet(false),
     m_roleHasBeenSet(false),

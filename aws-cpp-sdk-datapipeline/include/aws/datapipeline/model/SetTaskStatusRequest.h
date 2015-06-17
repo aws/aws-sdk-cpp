@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
+    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
+    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     */
-    inline void SetTaskStatus(const TaskStatus& value) { m_taskStatus = value; }
+    inline void SetTaskStatus(const TaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
 
     /*
      <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
@@ -149,7 +149,9 @@ namespace Model
 
   private:
     Aws::String m_taskId;
+    bool m_taskIdHasBeenSet;
     TaskStatus m_taskStatus;
+    bool m_taskStatusHasBeenSet;
     Aws::String m_errorId;
     bool m_errorIdHasBeenSet;
     Aws::String m_errorMessage;

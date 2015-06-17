@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The ID of the parameter object. </p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the parameter object. </p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>The ID of the parameter object. </p>
@@ -73,7 +73,7 @@ namespace Model
     /*
      <p>The attributes of the parameter object.</p>
     */
-    inline void SetAttributes(const Aws::Vector<ParameterAttribute>& value) { m_attributes = value; }
+    inline void SetAttributes(const Aws::Vector<ParameterAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /*
      <p>The attributes of the parameter object.</p>
@@ -83,11 +83,13 @@ namespace Model
     /*
      <p>The attributes of the parameter object.</p>
     */
-    inline ParameterObject& AddAttributes(const ParameterAttribute& value) { m_attributes.push_back(value); return *this; }
+    inline ParameterObject& AddAttributes(const ParameterAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::Vector<ParameterAttribute> m_attributes;
+    bool m_attributesHasBeenSet;
   };
 
 } // namespace Model

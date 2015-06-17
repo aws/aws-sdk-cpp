@@ -21,7 +21,8 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeploymentConfigRequest::DeleteDeploymentConfigRequest()
+DeleteDeploymentConfigRequest::DeleteDeploymentConfigRequest() : 
+    m_deploymentConfigNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteDeploymentConfigRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("deploymentConfigName", m_deploymentConfigName);
+  if(m_deploymentConfigNameHasBeenSet)
+  {
+   payload.WithString("deploymentConfigName", m_deploymentConfigName);
+
+  }
 
   return payload.WriteReadable();
 }

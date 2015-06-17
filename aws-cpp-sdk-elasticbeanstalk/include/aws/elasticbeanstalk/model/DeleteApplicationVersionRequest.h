@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the application to delete releases from.</p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p>The name of the application to delete releases from.</p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p>The name of the application to delete releases from.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The label of the version to delete. </p>
     */
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /*
      <p> The label of the version to delete. </p>
     */
-    inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
+    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /*
      <p> The label of the version to delete. </p>
@@ -98,7 +98,9 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_versionLabel;
+    bool m_versionLabelHasBeenSet;
     bool m_deleteSourceBundle;
     bool m_deleteSourceBundleHasBeenSet;
   };

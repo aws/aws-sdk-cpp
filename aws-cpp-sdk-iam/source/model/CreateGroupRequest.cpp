@@ -20,7 +20,8 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreateGroupRequest::CreateGroupRequest() : 
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_groupNameHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,10 @@ Aws::String CreateGroupRequest::SerializePayload() const
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

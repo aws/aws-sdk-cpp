@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The client port numbers of the listeners.</p>
     */
-    inline void SetLoadBalancerPorts(const Aws::Vector<long>& value) { m_loadBalancerPorts = value; }
+    inline void SetLoadBalancerPorts(const Aws::Vector<long>& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
 
     /*
      <p>The client port numbers of the listeners.</p>
@@ -75,11 +75,13 @@ namespace Model
     /*
      <p>The client port numbers of the listeners.</p>
     */
-    inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(long value) { m_loadBalancerPorts.push_back(value); return *this; }
+    inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(long value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::Vector<long> m_loadBalancerPorts;
+    bool m_loadBalancerPortsHasBeenSet;
   };
 
 } // namespace Model

@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     */
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
     */
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArn = value; }
+    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
     */
-    inline void SetPrincipalArn(const char* value) { m_principalArn.assign(value); }
+    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetSAMLAssertion(const Aws::String& value) { m_sAMLAssertion = value; }
+    inline void SetSAMLAssertion(const Aws::String& value) { m_sAMLAssertionHasBeenSet = true; m_sAMLAssertion = value; }
 
     /*
      <p>The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetSAMLAssertion(const char* value) { m_sAMLAssertion.assign(value); }
+    inline void SetSAMLAssertion(const char* value) { m_sAMLAssertionHasBeenSet = true; m_sAMLAssertion.assign(value); }
 
     /*
      <p>The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. </p>
@@ -145,8 +145,11 @@ namespace Model
 
   private:
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet;
     Aws::String m_principalArn;
+    bool m_principalArnHasBeenSet;
     Aws::String m_sAMLAssertion;
+    bool m_sAMLAssertionHasBeenSet;
     Aws::String m_policy;
     bool m_policyHasBeenSet;
     long m_durationSeconds;

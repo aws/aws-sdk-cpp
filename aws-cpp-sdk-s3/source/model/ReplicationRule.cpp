@@ -24,12 +24,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ReplicationRule::ReplicationRule() : 
-    m_iDHasBeenSet(false)
+    m_iDHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_destinationHasBeenSet(false)
 {
 }
 
 ReplicationRule::ReplicationRule(const XmlNode& xmlNode) : 
-    m_iDHasBeenSet(false)
+    m_iDHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_destinationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -47,11 +53,23 @@ ReplicationRule& ReplicationRule::operator =(const XmlNode& xmlNode)
       m_iDHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+    if(!prefixNode.IsNull())
+    {
+      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefixHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = ReplicationRuleStatusMapper::GetReplicationRuleStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = ReplicationRuleStatusMapper::GetReplicationRuleStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
-    m_destination = destinationNode;
+    if(!destinationNode.IsNull())
+    {
+      m_destination = destinationNode;
+      m_destinationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -66,10 +84,22 @@ void ReplicationRule::AddToNode(XmlNode& parentNode) const
    iDNode.SetText(m_iD);
   }
 
-  XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-  prefixNode.SetText(m_prefix);
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(ReplicationRuleStatusMapper::GetNameForReplicationRuleStatus(m_status));
-  XmlNode destinationNode = parentNode.CreateChildElement("Destination");
-  m_destination.AddToNode(destinationNode);
+  if(m_prefixHasBeenSet)
+  {
+   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
+   prefixNode.SetText(m_prefix);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(ReplicationRuleStatusMapper::GetNameForReplicationRuleStatus(m_status));
+  }
+
+  if(m_destinationHasBeenSet)
+  {
+   XmlNode destinationNode = parentNode.CreateChildElement("Destination");
+   m_destination.AddToNode(destinationNode);
+  }
+
 }

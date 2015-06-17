@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetRecordsRequest::GetRecordsRequest() : 
+    m_shardIteratorHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String GetRecordsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ShardIterator", m_shardIterator);
+  if(m_shardIteratorHasBeenSet)
+  {
+   payload.WithString("ShardIterator", m_shardIterator);
+
+  }
 
   if(m_limitHasBeenSet)
   {

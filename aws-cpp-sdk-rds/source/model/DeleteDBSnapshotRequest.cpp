@@ -19,7 +19,8 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBSnapshotRequest::DeleteDBSnapshotRequest()
+DeleteDBSnapshotRequest::DeleteDBSnapshotRequest() : 
+    m_dBSnapshotIdentifierHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteDBSnapshot&";
-  ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
+  if(m_dBSnapshotIdentifierHasBeenSet)
+  {
+    ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
+  }
   ss << "Version=2014-10-31";
   return ss.str();
 }

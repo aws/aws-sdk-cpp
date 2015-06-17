@@ -20,6 +20,9 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CopyOptionGroupRequest::CopyOptionGroupRequest() : 
+    m_sourceOptionGroupIdentifierHasBeenSet(false),
+    m_targetOptionGroupIdentifierHasBeenSet(false),
+    m_targetOptionGroupDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,9 +31,18 @@ Aws::String CopyOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopyOptionGroup&";
-  ss << "SourceOptionGroupIdentifier=" << StringUtils::URLEncode(m_sourceOptionGroupIdentifier.c_str()) << "&";
-  ss << "TargetOptionGroupIdentifier=" << StringUtils::URLEncode(m_targetOptionGroupIdentifier.c_str()) << "&";
-  ss << "TargetOptionGroupDescription=" << StringUtils::URLEncode(m_targetOptionGroupDescription.c_str()) << "&";
+  if(m_sourceOptionGroupIdentifierHasBeenSet)
+  {
+    ss << "SourceOptionGroupIdentifier=" << StringUtils::URLEncode(m_sourceOptionGroupIdentifier.c_str()) << "&";
+  }
+  if(m_targetOptionGroupIdentifierHasBeenSet)
+  {
+    ss << "TargetOptionGroupIdentifier=" << StringUtils::URLEncode(m_targetOptionGroupIdentifier.c_str()) << "&";
+  }
+  if(m_targetOptionGroupDescriptionHasBeenSet)
+  {
+    ss << "TargetOptionGroupDescription=" << StringUtils::URLEncode(m_targetOptionGroupDescription.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

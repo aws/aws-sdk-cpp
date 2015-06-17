@@ -316,6 +316,11 @@ JsonValue& JsonValue::WithArray(const Aws::String& key, Array<JsonValue>&& array
     return *this;
 }
 
+void JsonValue::AppendValue(const JsonValue& value)
+{
+    m_value.append(value.m_value);
+}
+
 JsonValue& JsonValue::AsArray(const Array<JsonValue>& array)
 {
     ::Json::Value arrayValue;

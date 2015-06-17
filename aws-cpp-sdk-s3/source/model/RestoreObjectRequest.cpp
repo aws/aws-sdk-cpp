@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 RestoreObjectRequest::RestoreObjectRequest() : 
+    m_bucketHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_restoreRequestHasBeenSet(false),
     m_requestPayerHasBeenSet(false)

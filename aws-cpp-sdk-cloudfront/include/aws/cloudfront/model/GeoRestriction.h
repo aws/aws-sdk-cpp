@@ -50,7 +50,7 @@ namespace Model
     /*
      The method that you want to use to restrict distribution of your content by country: - none: No geo restriction is enabled, meaning access to content is not restricted by client geo location. - blacklist: The Location elements specify the countries in which you do not want CloudFront to distribute your content. - whitelist: The Location elements specify the countries in which you want CloudFront to distribute your content.
     */
-    inline void SetRestrictionType(const GeoRestrictionType& value) { m_restrictionType = value; }
+    inline void SetRestrictionType(const GeoRestrictionType& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = value; }
 
     /*
      The method that you want to use to restrict distribution of your content by country: - none: No geo restriction is enabled, meaning access to content is not restricted by client geo location. - blacklist: The Location elements specify the countries in which you do not want CloudFront to distribute your content. - whitelist: The Location elements specify the countries in which you want CloudFront to distribute your content.
@@ -64,7 +64,7 @@ namespace Model
     /*
      When geo restriction is enabled, this is the number of countries in your whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and you can omit Items.
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      When geo restriction is enabled, this is the number of countries in your whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and you can omit Items.
@@ -97,7 +97,9 @@ namespace Model
 
   private:
     GeoRestrictionType m_restrictionType;
+    bool m_restrictionTypeHasBeenSet;
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

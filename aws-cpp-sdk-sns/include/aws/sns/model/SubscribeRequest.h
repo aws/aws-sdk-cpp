@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the topic you want to subscribe to.</p>
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic you want to subscribe to.</p>
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      <p>The ARN of the topic you want to subscribe to.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li> <code>email</code> -- delivery of message via SMTP</li> <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li> <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue</li> <li> <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.</li> </ul>
     */
-    inline void SetProtocol(const Aws::String& value) { m_protocol = value; }
+    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /*
      <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li> <code>email</code> -- delivery of message via SMTP</li> <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li> <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue</li> <li> <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.</li> </ul>
     */
-    inline void SetProtocol(const char* value) { m_protocol.assign(value); }
+    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /*
      <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li> <code>email</code> -- delivery of message via SMTP</li> <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li> <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue</li> <li> <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.</li> </ul>
@@ -108,7 +108,9 @@ namespace Model
 
   private:
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
     Aws::String m_protocol;
+    bool m_protocolHasBeenSet;
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
   };

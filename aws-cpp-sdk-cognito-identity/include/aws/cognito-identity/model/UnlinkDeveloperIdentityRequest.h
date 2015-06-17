@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
     */
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
+    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /*
      <p>A unique identifier in the format REGION:GUID.</p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
     */
-    inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderName = value; }
+    inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = value; }
 
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
     */
-    inline void SetDeveloperProviderName(const char* value) { m_developerProviderName.assign(value); }
+    inline void SetDeveloperProviderName(const char* value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName.assign(value); }
 
     /*
      <p>The "domain" by which Cognito will refer to your users.</p>
@@ -115,12 +115,12 @@ namespace Model
     /*
      A unique ID used by your backend authentication process to identify a user.
     */
-    inline void SetDeveloperUserIdentifier(const Aws::String& value) { m_developerUserIdentifier = value; }
+    inline void SetDeveloperUserIdentifier(const Aws::String& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
     /*
      A unique ID used by your backend authentication process to identify a user.
     */
-    inline void SetDeveloperUserIdentifier(const char* value) { m_developerUserIdentifier.assign(value); }
+    inline void SetDeveloperUserIdentifier(const char* value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier.assign(value); }
 
     /*
      A unique ID used by your backend authentication process to identify a user.
@@ -134,9 +134,13 @@ namespace Model
 
   private:
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet;
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     Aws::String m_developerProviderName;
+    bool m_developerProviderNameHasBeenSet;
     Aws::String m_developerUserIdentifier;
+    bool m_developerUserIdentifierHasBeenSet;
   };
 
 } // namespace Model

@@ -41,7 +41,7 @@ namespace Model
     /*
      The distribution's configuration information.
     */
-    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfig = value; }
+    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
     /*
      The distribution's configuration information.
@@ -50,6 +50,7 @@ namespace Model
 
   private:
     DistributionConfig m_distributionConfig;
+    bool m_distributionConfigHasBeenSet;
   };
 
 } // namespace Model

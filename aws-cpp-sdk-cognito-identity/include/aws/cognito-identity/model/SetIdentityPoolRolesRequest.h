@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>An identity pool ID in the format REGION:GUID.</p>
@@ -62,32 +62,34 @@ namespace Model
     inline SetIdentityPoolRolesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
     /*
-     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+     <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     */
     inline const Aws::Map<Aws::String, Aws::String>& GetRoles() const{ return m_roles; }
     /*
-     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+     <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     */
-    inline void SetRoles(const Aws::Map<Aws::String, Aws::String>& value) { m_roles = value; }
+    inline void SetRoles(const Aws::Map<Aws::String, Aws::String>& value) { m_rolesHasBeenSet = true; m_roles = value; }
 
     /*
-     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+     <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     */
     inline SetIdentityPoolRolesRequest&  WithRoles(const Aws::Map<Aws::String, Aws::String>& value) { SetRoles(value); return *this;}
 
     /*
-     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+     <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     */
-    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, const Aws::String& value) { m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
 
     /*
-     <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
+     <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     */
-    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, const char* value) { m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, const char* value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_roles;
+    bool m_rolesHasBeenSet;
   };
 
 } // namespace Model

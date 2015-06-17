@@ -41,7 +41,7 @@ namespace Model
     /*
      The streaming distribution's configuration information.
     */
-    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfig = value; }
+    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /*
      The streaming distribution's configuration information.
@@ -50,6 +50,7 @@ namespace Model
 
   private:
     StreamingDistributionConfig m_streamingDistributionConfig;
+    bool m_streamingDistributionConfigHasBeenSet;
   };
 
 } // namespace Model

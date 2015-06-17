@@ -20,6 +20,8 @@ using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
 DescribeAlarmsForMetricRequest::DescribeAlarmsForMetricRequest() : 
+    m_metricNameHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_statisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
@@ -32,8 +34,14 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeAlarmsForMetric&";
-  ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
-  ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  if(m_metricNameHasBeenSet)
+  {
+    ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  }
+  if(m_namespaceHasBeenSet)
+  {
+    ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  }
   if(m_statisticHasBeenSet)
   {
     ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";

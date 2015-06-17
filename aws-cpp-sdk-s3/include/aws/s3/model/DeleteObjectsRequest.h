@@ -40,10 +40,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline DeleteObjectsRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     
     inline const Delete& GetDelete() const{ return m_delete; }
     
-    inline void SetDelete(const Delete& value) { m_delete = value; }
+    inline void SetDelete(const Delete& value) { m_deleteHasBeenSet = true; m_delete = value; }
 
     
     inline DeleteObjectsRequest&  WithDelete(const Delete& value) { SetDelete(value); return *this;}
@@ -93,7 +93,9 @@ namespace Model
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Delete m_delete;
+    bool m_deleteHasBeenSet;
     Aws::String m_mFA;
     bool m_mFAHasBeenSet;
     RequestPayer m_requestPayer;

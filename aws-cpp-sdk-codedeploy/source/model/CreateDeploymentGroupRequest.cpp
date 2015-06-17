@@ -22,10 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_deploymentGroupNameHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_ec2TagFiltersHasBeenSet(false),
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false)
+    m_autoScalingGroupsHasBeenSet(false),
+    m_serviceRoleArnHasBeenSet(false)
 {
 }
 
@@ -33,9 +36,17 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
 
-  payload.WithString("deploymentGroupName", m_deploymentGroupName);
+  }
+
+  if(m_deploymentGroupNameHasBeenSet)
+  {
+   payload.WithString("deploymentGroupName", m_deploymentGroupName);
+
+  }
 
   if(m_deploymentConfigNameHasBeenSet)
   {
@@ -76,7 +87,11 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
 
   }
 
-  payload.WithString("serviceRoleArn", m_serviceRoleArn);
+  if(m_serviceRoleArnHasBeenSet)
+  {
+   payload.WithString("serviceRoleArn", m_serviceRoleArn);
+
+  }
 
   return payload.WriteReadable();
 }

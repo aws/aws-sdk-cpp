@@ -48,12 +48,12 @@ namespace Model
     /*
      The object key name to use when a 4XX class error occurs.
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      The object key name to use when a 4XX class error occurs.
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      The object key name to use when a 4XX class error occurs.
@@ -67,6 +67,7 @@ namespace Model
 
   private:
     Aws::String m_key;
+    bool m_keyHasBeenSet;
   };
 
 } // namespace Model

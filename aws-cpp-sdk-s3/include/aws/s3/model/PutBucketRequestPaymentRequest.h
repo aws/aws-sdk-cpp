@@ -39,10 +39,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline PutBucketRequestPaymentRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -67,16 +67,18 @@ namespace Model
     
     inline const RequestPaymentConfiguration& GetRequestPaymentConfiguration() const{ return m_requestPaymentConfiguration; }
     
-    inline void SetRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { m_requestPaymentConfiguration = value; }
+    inline void SetRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { m_requestPaymentConfigurationHasBeenSet = true; m_requestPaymentConfiguration = value; }
 
     
     inline PutBucketRequestPaymentRequest&  WithRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { SetRequestPaymentConfiguration(value); return *this;}
 
   private:
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
     RequestPaymentConfiguration m_requestPaymentConfiguration;
+    bool m_requestPaymentConfigurationHasBeenSet;
   };
 
 } // namespace Model

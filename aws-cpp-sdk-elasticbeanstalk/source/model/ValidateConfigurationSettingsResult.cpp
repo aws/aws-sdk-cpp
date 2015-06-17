@@ -41,11 +41,12 @@ ValidateConfigurationSettingsResult& ValidateConfigurationSettingsResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode messagesNode = resultNode.FirstChild("Messages");
+    XmlNode messagesNodeParent = resultNode.FirstChild("Messages");
+    XmlNode messagesNode = messagesNodeParent.FirstChild("member");
     while(!messagesNode.IsNull())
     {
       m_messages.push_back(messagesNode);
-      messagesNode = messagesNode.NextNode("Messages");
+      messagesNode = messagesNode.NextNode("member");
     }
 
   }

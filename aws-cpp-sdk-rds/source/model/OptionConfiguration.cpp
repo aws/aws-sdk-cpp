@@ -24,6 +24,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 OptionConfiguration::OptionConfiguration() : 
+    m_optionNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
@@ -33,6 +34,7 @@ OptionConfiguration::OptionConfiguration() :
 }
 
 OptionConfiguration::OptionConfiguration(const XmlNode& xmlNode) : 
+    m_optionNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
@@ -49,42 +51,49 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
-    m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());
+    if(!optionNameNode.IsNull())
+    {
+      m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());
+      m_optionNameHasBeenSet = true;
+    }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
-    XmlNode dBSecurityGroupNameNode = resultNode.FirstChild("DBSecurityGroupName");
+    XmlNode dBSecurityGroupNameNodeParent = resultNode.FirstChild("DBSecurityGroupName");
+    XmlNode dBSecurityGroupNameNode = dBSecurityGroupNameNodeParent.FirstChild("member");
     if(!dBSecurityGroupNameNode.IsNull())
     {
       while(!dBSecurityGroupNameNode.IsNull())
       {
         m_dBSecurityGroupMemberships.push_back(StringUtils::Trim(dBSecurityGroupNameNode.GetText().c_str()));
-        dBSecurityGroupNameNode = dBSecurityGroupNameNode.NextNode("DBSecurityGroupName");
+        dBSecurityGroupNameNode = dBSecurityGroupNameNode.NextNode("member");
       }
 
       m_dBSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupIdNode = resultNode.FirstChild("VpcSecurityGroupId");
+    XmlNode vpcSecurityGroupIdNodeParent = resultNode.FirstChild("VpcSecurityGroupId");
+    XmlNode vpcSecurityGroupIdNode = vpcSecurityGroupIdNodeParent.FirstChild("member");
     if(!vpcSecurityGroupIdNode.IsNull())
     {
       while(!vpcSecurityGroupIdNode.IsNull())
       {
         m_vpcSecurityGroupMemberships.push_back(StringUtils::Trim(vpcSecurityGroupIdNode.GetText().c_str()));
-        vpcSecurityGroupIdNode = vpcSecurityGroupIdNode.NextNode("VpcSecurityGroupId");
+        vpcSecurityGroupIdNode = vpcSecurityGroupIdNode.NextNode("member");
       }
 
       m_vpcSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode optionSettingNode = resultNode.FirstChild("OptionSetting");
+    XmlNode optionSettingNodeParent = resultNode.FirstChild("OptionSetting");
+    XmlNode optionSettingNode = optionSettingNodeParent.FirstChild("member");
     if(!optionSettingNode.IsNull())
     {
       while(!optionSettingNode.IsNull())
       {
         m_optionSettings.push_back(optionSettingNode);
-        optionSettingNode = optionSettingNode.NextNode("OptionSetting");
+        optionSettingNode = optionSettingNode.NextNode("member");
       }
 
       m_optionSettingsHasBeenSet = true;
@@ -96,7 +105,10 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
 
 void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
+  if(m_optionNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
+  }
   if(m_portHasBeenSet)
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
@@ -128,7 +140,10 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
 
 void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
+  if(m_optionNameHasBeenSet)
+  {
+      oStream << location << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
+  }
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";

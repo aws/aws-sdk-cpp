@@ -21,7 +21,8 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetCloudFrontOriginAccessIdentityConfig2014_11_06Request::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request()
+GetCloudFrontOriginAccessIdentityConfig2014_11_06Request::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request() : 
+    m_idHasBeenSet(false)
 {
 }
 

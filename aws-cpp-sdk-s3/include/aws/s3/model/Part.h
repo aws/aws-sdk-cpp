@@ -42,16 +42,16 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /*
-     Part number identifying the part.
+     Part number identifying the part. This is a positive integer between 1 and 10,000.
     */
     inline long GetPartNumber() const{ return m_partNumber; }
     /*
-     Part number identifying the part.
+     Part number identifying the part. This is a positive integer between 1 and 10,000.
     */
     inline void SetPartNumber(long value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /*
-     Part number identifying the part.
+     Part number identifying the part. This is a positive integer between 1 and 10,000.
     */
     inline Part&  WithPartNumber(long value) { SetPartNumber(value); return *this;}
 

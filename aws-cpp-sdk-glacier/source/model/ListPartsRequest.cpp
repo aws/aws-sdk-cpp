@@ -25,6 +25,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListPartsRequest::ListPartsRequest() : 
+    m_accountIdHasBeenSet(false),
+    m_vaultNameHasBeenSet(false),
+    m_uploadIdHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_limitHasBeenSet(false)
 {

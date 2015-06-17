@@ -21,7 +21,8 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteBucketWebsiteRequest::DeleteBucketWebsiteRequest()
+DeleteBucketWebsiteRequest::DeleteBucketWebsiteRequest() : 
+    m_bucketHasBeenSet(false)
 {
 }
 

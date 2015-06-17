@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 InvokeRequest::InvokeRequest() : 
+    m_functionNameHasBeenSet(false),
     m_invocationTypeHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_clientContextHasBeenSet(false)

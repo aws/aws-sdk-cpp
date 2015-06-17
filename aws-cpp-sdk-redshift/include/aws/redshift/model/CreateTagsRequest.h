@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
     */
-    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
     */
-    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /*
      <p> The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
@@ -67,7 +67,7 @@ namespace Model
     /*
      <p> One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter <code>tag-key</code> and the corresponding value is passed in with the parameter <code>tag-value</code>. The <code>tag-key</code> and <code>tag-value</code> parameters are separated by a colon (:). Separate multiple tags with a space. For example, <code>--tags "tag-key"="owner":"tag-value"="admin" "tag-key"="environment":"tag-value"="test" "tag-key"="version":"tag-value"="1.0"</code>. </p>
     */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
      <p> One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter <code>tag-key</code> and the corresponding value is passed in with the parameter <code>tag-value</code>. The <code>tag-key</code> and <code>tag-value</code> parameters are separated by a colon (:). Separate multiple tags with a space. For example, <code>--tags "tag-key"="owner":"tag-value"="admin" "tag-key"="environment":"tag-value"="test" "tag-key"="version":"tag-value"="1.0"</code>. </p>
@@ -77,11 +77,13 @@ namespace Model
     /*
      <p> One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter <code>tag-key</code> and the corresponding value is passed in with the parameter <code>tag-value</code>. The <code>tag-key</code> and <code>tag-value</code> parameters are separated by a colon (:). Separate multiple tags with a space. For example, <code>--tags "tag-key"="owner":"tag-value"="admin" "tag-key"="environment":"tag-value"="test" "tag-key"="version":"tag-value"="1.0"</code>. </p>
     */
-    inline CreateTagsRequest& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    inline CreateTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet;
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

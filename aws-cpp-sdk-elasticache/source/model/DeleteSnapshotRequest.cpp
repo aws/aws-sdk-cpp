@@ -19,7 +19,8 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteSnapshotRequest::DeleteSnapshotRequest()
+DeleteSnapshotRequest::DeleteSnapshotRequest() : 
+    m_snapshotNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteSnapshot&";
-  ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  if(m_snapshotNameHasBeenSet)
+  {
+    ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  }
   ss << "Version=2015-02-02";
   return ss.str();
 }

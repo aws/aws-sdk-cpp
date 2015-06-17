@@ -41,11 +41,12 @@ RetrieveEnvironmentInfoResult& RetrieveEnvironmentInfoResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode environmentInfoNode = resultNode.FirstChild("EnvironmentInfo");
+    XmlNode environmentInfoNodeParent = resultNode.FirstChild("EnvironmentInfo");
+    XmlNode environmentInfoNode = environmentInfoNodeParent.FirstChild("member");
     while(!environmentInfoNode.IsNull())
     {
       m_environmentInfo.push_back(environmentInfoNode);
-      environmentInfoNode = environmentInfoNode.NextNode("EnvironmentInfo");
+      environmentInfoNode = environmentInfoNode.NextNode("member");
     }
 
   }

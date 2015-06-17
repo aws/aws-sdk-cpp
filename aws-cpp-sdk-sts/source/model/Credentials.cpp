@@ -24,12 +24,20 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Credentials::Credentials() : 
-    m_expiration(0.0)
+    m_accessKeyIdHasBeenSet(false),
+    m_secretAccessKeyHasBeenSet(false),
+    m_sessionTokenHasBeenSet(false),
+    m_expiration(0.0),
+    m_expirationHasBeenSet(false)
 {
 }
 
 Credentials::Credentials(const XmlNode& xmlNode) : 
-    m_expiration(0.0)
+    m_accessKeyIdHasBeenSet(false),
+    m_secretAccessKeyHasBeenSet(false),
+    m_sessionTokenHasBeenSet(false),
+    m_expiration(0.0),
+    m_expirationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,13 +49,29 @@ Credentials& Credentials::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode accessKeyIdNode = resultNode.FirstChild("AccessKeyId");
-    m_accessKeyId = StringUtils::Trim(accessKeyIdNode.GetText().c_str());
+    if(!accessKeyIdNode.IsNull())
+    {
+      m_accessKeyId = StringUtils::Trim(accessKeyIdNode.GetText().c_str());
+      m_accessKeyIdHasBeenSet = true;
+    }
     XmlNode secretAccessKeyNode = resultNode.FirstChild("SecretAccessKey");
-    m_secretAccessKey = StringUtils::Trim(secretAccessKeyNode.GetText().c_str());
+    if(!secretAccessKeyNode.IsNull())
+    {
+      m_secretAccessKey = StringUtils::Trim(secretAccessKeyNode.GetText().c_str());
+      m_secretAccessKeyHasBeenSet = true;
+    }
     XmlNode sessionTokenNode = resultNode.FirstChild("SessionToken");
-    m_sessionToken = StringUtils::Trim(sessionTokenNode.GetText().c_str());
+    if(!sessionTokenNode.IsNull())
+    {
+      m_sessionToken = StringUtils::Trim(sessionTokenNode.GetText().c_str());
+      m_sessionTokenHasBeenSet = true;
+    }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
-    m_expiration = StringUtils::ConvertToDouble(StringUtils::Trim(expirationNode.GetText().c_str()).c_str());
+    if(!expirationNode.IsNull())
+    {
+      m_expiration = StringUtils::ConvertToDouble(StringUtils::Trim(expirationNode.GetText().c_str()).c_str());
+      m_expirationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,16 +79,40 @@ Credentials& Credentials::operator =(const XmlNode& xmlNode)
 
 void Credentials::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
-  oStream << location << index << locationValue << ".SecretAccessKey=" << StringUtils::URLEncode(m_secretAccessKey.c_str()) << "&";
-  oStream << location << index << locationValue << ".SessionToken=" << StringUtils::URLEncode(m_sessionToken.c_str()) << "&";
-  oStream << location << index << locationValue << ".Expiration=" << m_expiration << "&";
+  if(m_accessKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
+  }
+  if(m_secretAccessKeyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecretAccessKey=" << StringUtils::URLEncode(m_secretAccessKey.c_str()) << "&";
+  }
+  if(m_sessionTokenHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SessionToken=" << StringUtils::URLEncode(m_sessionToken.c_str()) << "&";
+  }
+  if(m_expirationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Expiration=" << m_expiration << "&";
+  }
 }
 
 void Credentials::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
-  oStream << location << ".SecretAccessKey=" << StringUtils::URLEncode(m_secretAccessKey.c_str()) << "&";
-  oStream << location << ".SessionToken=" << StringUtils::URLEncode(m_sessionToken.c_str()) << "&";
-  oStream << location << ".Expiration=" << m_expiration << "&";
+  if(m_accessKeyIdHasBeenSet)
+  {
+      oStream << location << ".AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
+  }
+  if(m_secretAccessKeyHasBeenSet)
+  {
+      oStream << location << ".SecretAccessKey=" << StringUtils::URLEncode(m_secretAccessKey.c_str()) << "&";
+  }
+  if(m_sessionTokenHasBeenSet)
+  {
+      oStream << location << ".SessionToken=" << StringUtils::URLEncode(m_sessionToken.c_str()) << "&";
+  }
+  if(m_expirationHasBeenSet)
+  {
+      oStream << location << ".Expiration=" << m_expiration << "&";
+  }
 }

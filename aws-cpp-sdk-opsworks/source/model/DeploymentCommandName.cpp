@@ -21,6 +21,8 @@ static const int install_dependencies_HASH = HashingUtils::HashString("install_d
 static const int update_dependencies_HASH = HashingUtils::HashString("update_dependencies");
 static const int update_custom_cookbooks_HASH = HashingUtils::HashString("update_custom_cookbooks");
 static const int execute_recipes_HASH = HashingUtils::HashString("execute_recipes");
+static const int configure_HASH = HashingUtils::HashString("configure");
+static const int setup_HASH = HashingUtils::HashString("setup");
 static const int deploy_HASH = HashingUtils::HashString("deploy");
 static const int rollback_HASH = HashingUtils::HashString("rollback");
 static const int start_HASH = HashingUtils::HashString("start");
@@ -55,6 +57,14 @@ DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
   else if (hashCode == execute_recipes_HASH)
   {
     return DeploymentCommandName::execute_recipes;
+  }
+  else if (hashCode == configure_HASH)
+  {
+    return DeploymentCommandName::configure;
+  }
+  else if (hashCode == setup_HASH)
+  {
+    return DeploymentCommandName::setup;
   }
   else if (hashCode == deploy_HASH)
   {
@@ -96,6 +106,10 @@ Aws::String GetNameForDeploymentCommandName(DeploymentCommandName value)
     return "update_custom_cookbooks";
   case DeploymentCommandName::execute_recipes:
     return "execute_recipes";
+  case DeploymentCommandName::configure:
+    return "configure";
+  case DeploymentCommandName::setup:
+    return "setup";
   case DeploymentCommandName::deploy:
     return "deploy";
   case DeploymentCommandName::rollback:

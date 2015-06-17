@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
     */
-    inline void SetShardId(const Aws::String& value) { m_shardId = value; }
+    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
     /*
      <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
     */
-    inline void SetShardId(const char* value) { m_shardId.assign(value); }
+    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
 
     /*
      <p>The unique identifier of the shard within the Amazon Kinesis stream.</p>
@@ -121,7 +121,7 @@ namespace Model
     /*
      <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
     */
-    inline void SetHashKeyRange(const HashKeyRange& value) { m_hashKeyRange = value; }
+    inline void SetHashKeyRange(const HashKeyRange& value) { m_hashKeyRangeHasBeenSet = true; m_hashKeyRange = value; }
 
     /*
      <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
@@ -135,7 +135,7 @@ namespace Model
     /*
      <p>The range of possible sequence numbers for the shard.</p>
     */
-    inline void SetSequenceNumberRange(const SequenceNumberRange& value) { m_sequenceNumberRange = value; }
+    inline void SetSequenceNumberRange(const SequenceNumberRange& value) { m_sequenceNumberRangeHasBeenSet = true; m_sequenceNumberRange = value; }
 
     /*
      <p>The range of possible sequence numbers for the shard.</p>
@@ -144,12 +144,15 @@ namespace Model
 
   private:
     Aws::String m_shardId;
+    bool m_shardIdHasBeenSet;
     Aws::String m_parentShardId;
     bool m_parentShardIdHasBeenSet;
     Aws::String m_adjacentParentShardId;
     bool m_adjacentParentShardIdHasBeenSet;
     HashKeyRange m_hashKeyRange;
+    bool m_hashKeyRangeHasBeenSet;
     SequenceNumberRange m_sequenceNumberRange;
+    bool m_sequenceNumberRangeHasBeenSet;
   };
 
 } // namespace Model

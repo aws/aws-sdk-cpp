@@ -78,13 +78,14 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
       m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
       m_majorEngineVersionHasBeenSet = true;
     }
-    XmlNode optionNode = resultNode.FirstChild("Option");
+    XmlNode optionNodeParent = resultNode.FirstChild("Option");
+    XmlNode optionNode = optionNodeParent.FirstChild("member");
     if(!optionNode.IsNull())
     {
       while(!optionNode.IsNull())
       {
         m_options.push_back(optionNode);
-        optionNode = optionNode.NextNode("Option");
+        optionNode = optionNode.NextNode("member");
       }
 
       m_optionsHasBeenSet = true;

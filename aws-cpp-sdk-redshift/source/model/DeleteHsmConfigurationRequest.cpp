@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteHsmConfigurationRequest::DeleteHsmConfigurationRequest()
+DeleteHsmConfigurationRequest::DeleteHsmConfigurationRequest() : 
+    m_hsmConfigurationIdentifierHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteHsmConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteHsmConfiguration&";
-  ss << "HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
+  if(m_hsmConfigurationIdentifierHasBeenSet)
+  {
+    ss << "HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

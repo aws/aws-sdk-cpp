@@ -19,7 +19,8 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-DecodeAuthorizationMessageRequest::DecodeAuthorizationMessageRequest()
+DecodeAuthorizationMessageRequest::DecodeAuthorizationMessageRequest() : 
+    m_encodedMessageHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DecodeAuthorizationMessageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DecodeAuthorizationMessage&";
-  ss << "EncodedMessage=" << StringUtils::URLEncode(m_encodedMessage.c_str()) << "&";
+  if(m_encodedMessageHasBeenSet)
+  {
+    ss << "EncodedMessage=" << StringUtils::URLEncode(m_encodedMessage.c_str()) << "&";
+  }
   ss << "Version=2011-06-15";
   return ss.str();
 }

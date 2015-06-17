@@ -20,6 +20,8 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_environmentNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cNAMEPrefixHasBeenSet(false),
     m_tierHasBeenSet(false),
@@ -36,8 +38,14 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateEnvironment&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_environmentNameHasBeenSet)
+  {
+    ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";

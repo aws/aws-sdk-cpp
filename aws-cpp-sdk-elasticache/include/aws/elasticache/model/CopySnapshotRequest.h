@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of an existing snapshot from which to copy.</p>
     */
-    inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotName = value; }
+    inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
 
     /*
      <p>The name of an existing snapshot from which to copy.</p>
     */
-    inline void SetSourceSnapshotName(const char* value) { m_sourceSnapshotName.assign(value); }
+    inline void SetSourceSnapshotName(const char* value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName.assign(value); }
 
     /*
      <p>The name of an existing snapshot from which to copy.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>A name for the copied snapshot.</p>
     */
-    inline void SetTargetSnapshotName(const Aws::String& value) { m_targetSnapshotName = value; }
+    inline void SetTargetSnapshotName(const Aws::String& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
 
     /*
      <p>A name for the copied snapshot.</p>
     */
-    inline void SetTargetSnapshotName(const char* value) { m_targetSnapshotName.assign(value); }
+    inline void SetTargetSnapshotName(const char* value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName.assign(value); }
 
     /*
      <p>A name for the copied snapshot.</p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_sourceSnapshotName;
+    bool m_sourceSnapshotNameHasBeenSet;
     Aws::String m_targetSnapshotName;
+    bool m_targetSnapshotNameHasBeenSet;
   };
 
 } // namespace Model

@@ -43,11 +43,12 @@ ListMFADevicesResult& ListMFADevicesResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode mFADevicesNode = resultNode.FirstChild("MFADevices");
+    XmlNode mFADevicesNodeParent = resultNode.FirstChild("MFADevices");
+    XmlNode mFADevicesNode = mFADevicesNodeParent.FirstChild("member");
     while(!mFADevicesNode.IsNull())
     {
       m_mFADevices.push_back(mFADevicesNode);
-      mFADevicesNode = mFADevicesNode.NextNode("MFADevices");
+      mFADevicesNode = mFADevicesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

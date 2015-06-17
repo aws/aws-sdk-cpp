@@ -43,25 +43,28 @@ ListEntitiesForPolicyResult& ListEntitiesForPolicyResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode policyGroupsNode = resultNode.FirstChild("PolicyGroups");
+    XmlNode policyGroupsNodeParent = resultNode.FirstChild("PolicyGroups");
+    XmlNode policyGroupsNode = policyGroupsNodeParent.FirstChild("member");
     while(!policyGroupsNode.IsNull())
     {
       m_policyGroups.push_back(policyGroupsNode);
-      policyGroupsNode = policyGroupsNode.NextNode("PolicyGroups");
+      policyGroupsNode = policyGroupsNode.NextNode("member");
     }
 
-    XmlNode policyUsersNode = resultNode.FirstChild("PolicyUsers");
+    XmlNode policyUsersNodeParent = resultNode.FirstChild("PolicyUsers");
+    XmlNode policyUsersNode = policyUsersNodeParent.FirstChild("member");
     while(!policyUsersNode.IsNull())
     {
       m_policyUsers.push_back(policyUsersNode);
-      policyUsersNode = policyUsersNode.NextNode("PolicyUsers");
+      policyUsersNode = policyUsersNode.NextNode("member");
     }
 
-    XmlNode policyRolesNode = resultNode.FirstChild("PolicyRoles");
+    XmlNode policyRolesNodeParent = resultNode.FirstChild("PolicyRoles");
+    XmlNode policyRolesNode = policyRolesNodeParent.FirstChild("member");
     while(!policyRolesNode.IsNull())
     {
       m_policyRoles.push_back(policyRolesNode);
-      policyRolesNode = policyRolesNode.NextNode("PolicyRoles");
+      policyRolesNode = policyRolesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

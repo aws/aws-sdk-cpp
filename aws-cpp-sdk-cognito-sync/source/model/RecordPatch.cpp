@@ -22,16 +22,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RecordPatch::RecordPatch() : 
+    m_opHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_syncCount(0),
+    m_syncCountHasBeenSet(false),
     m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
 }
 
 RecordPatch::RecordPatch(const JsonValue& jsonValue) : 
+    m_opHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_syncCount(0),
+    m_syncCountHasBeenSet(false),
     m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
@@ -40,9 +46,19 @@ RecordPatch::RecordPatch(const JsonValue& jsonValue) :
 
 RecordPatch& RecordPatch::operator =(const JsonValue& jsonValue)
 {
-  m_op = OperationMapper::GetOperationForName(jsonValue.GetString("Op"));
+  if(jsonValue.ValueExists("Op"))
+  {
+    m_op = OperationMapper::GetOperationForName(jsonValue.GetString("Op"));
 
-  m_key = jsonValue.GetString("Key");
+    m_opHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Key"))
+  {
+    m_key = jsonValue.GetString("Key");
+
+    m_keyHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Value"))
   {
@@ -51,7 +67,12 @@ RecordPatch& RecordPatch::operator =(const JsonValue& jsonValue)
     m_valueHasBeenSet = true;
   }
 
-  m_syncCount = jsonValue.GetInt64("SyncCount");
+  if(jsonValue.ValueExists("SyncCount"))
+  {
+    m_syncCount = jsonValue.GetInt64("SyncCount");
+
+    m_syncCountHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("DeviceLastModifiedDate"))
   {
@@ -67,8 +88,16 @@ JsonValue RecordPatch::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Op", OperationMapper::GetNameForOperation(m_op));
-  payload.WithString("Key", m_key);
+  if(m_opHasBeenSet)
+  {
+   payload.WithString("Op", OperationMapper::GetNameForOperation(m_op));
+  }
+
+  if(m_keyHasBeenSet)
+  {
+   payload.WithString("Key", m_key);
+
+  }
 
   if(m_valueHasBeenSet)
   {
@@ -76,7 +105,11 @@ JsonValue RecordPatch::Jsonize() const
 
   }
 
-  payload.WithInt64("SyncCount", m_syncCount);
+  if(m_syncCountHasBeenSet)
+  {
+   payload.WithInt64("SyncCount", m_syncCount);
+
+  }
 
   if(m_deviceLastModifiedDateHasBeenSet)
   {

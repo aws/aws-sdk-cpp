@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StopTaskRequest::StopTaskRequest() : 
-    m_clusterHasBeenSet(false)
+    m_clusterHasBeenSet(false),
+    m_taskHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,11 @@ Aws::String StopTaskRequest::SerializePayload() const
 
   }
 
-  payload.WithString("task", m_task);
+  if(m_taskHasBeenSet)
+  {
+   payload.WithString("task", m_task);
+
+  }
 
   return payload.WriteReadable();
 }

@@ -43,11 +43,12 @@ DescribeReplicationGroupsResult& DescribeReplicationGroupsResult::operator =(con
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode replicationGroupNode = resultNode.FirstChild("ReplicationGroup");
+    XmlNode replicationGroupNodeParent = resultNode.FirstChild("ReplicationGroup");
+    XmlNode replicationGroupNode = replicationGroupNodeParent.FirstChild("member");
     while(!replicationGroupNode.IsNull())
     {
       m_replicationGroups.push_back(replicationGroupNode);
-      replicationGroupNode = replicationGroupNode.NextNode("ReplicationGroup");
+      replicationGroupNode = replicationGroupNode.NextNode("member");
     }
 
   }

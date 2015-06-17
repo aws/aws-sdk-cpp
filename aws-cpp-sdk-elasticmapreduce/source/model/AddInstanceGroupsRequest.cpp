@@ -21,7 +21,9 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddInstanceGroupsRequest::AddInstanceGroupsRequest()
+AddInstanceGroupsRequest::AddInstanceGroupsRequest() : 
+    m_instanceGroupsHasBeenSet(false),
+    m_jobFlowIdHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String AddInstanceGroupsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
-  for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
+  if(m_instanceGroupsHasBeenSet)
   {
-    instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
-  }
-  payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
+   Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+   for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
+   {
+     instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
 
-  payload.WithString("JobFlowId", m_jobFlowId);
+  }
+
+  if(m_jobFlowIdHasBeenSet)
+  {
+   payload.WithString("JobFlowId", m_jobFlowId);
+
+  }
 
   return payload.WriteReadable();
 }

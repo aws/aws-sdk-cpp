@@ -20,6 +20,8 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 SetInstanceHealthRequest::SetInstanceHealthRequest() : 
+    m_instanceIdHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
     m_shouldRespectGracePeriod(false),
     m_shouldRespectGracePeriodHasBeenSet(false)
 {
@@ -29,8 +31,14 @@ Aws::String SetInstanceHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SetInstanceHealth&";
-  ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  ss << "HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_healthStatusHasBeenSet)
+  {
+    ss << "HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
+  }
   if(m_shouldRespectGracePeriodHasBeenSet)
   {
     ss << "ShouldRespectGracePeriod=" << m_shouldRespectGracePeriod << "&";

@@ -36,7 +36,11 @@ DescribeStreamResult::DescribeStreamResult(const AmazonWebServiceResult<JsonValu
 DescribeStreamResult& DescribeStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  m_streamDescription = jsonValue.GetObject("StreamDescription");
+  if(jsonValue.ValueExists("StreamDescription"))
+  {
+    m_streamDescription = jsonValue.GetObject("StreamDescription");
+
+  }
 
 
 

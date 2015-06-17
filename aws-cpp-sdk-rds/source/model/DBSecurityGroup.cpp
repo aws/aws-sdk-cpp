@@ -74,24 +74,26 @@ DBSecurityGroup& DBSecurityGroup::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
-    XmlNode eC2SecurityGroupNode = resultNode.FirstChild("EC2SecurityGroup");
+    XmlNode eC2SecurityGroupNodeParent = resultNode.FirstChild("EC2SecurityGroup");
+    XmlNode eC2SecurityGroupNode = eC2SecurityGroupNodeParent.FirstChild("member");
     if(!eC2SecurityGroupNode.IsNull())
     {
       while(!eC2SecurityGroupNode.IsNull())
       {
         m_eC2SecurityGroups.push_back(eC2SecurityGroupNode);
-        eC2SecurityGroupNode = eC2SecurityGroupNode.NextNode("EC2SecurityGroup");
+        eC2SecurityGroupNode = eC2SecurityGroupNode.NextNode("member");
       }
 
       m_eC2SecurityGroupsHasBeenSet = true;
     }
-    XmlNode iPRangeNode = resultNode.FirstChild("IPRange");
+    XmlNode iPRangeNodeParent = resultNode.FirstChild("IPRange");
+    XmlNode iPRangeNode = iPRangeNodeParent.FirstChild("member");
     if(!iPRangeNode.IsNull())
     {
       while(!iPRangeNode.IsNull())
       {
         m_iPRanges.push_back(iPRangeNode);
-        iPRangeNode = iPRangeNode.NextNode("IPRange");
+        iPRangeNode = iPRangeNode.NextNode("member");
       }
 
       m_iPRangesHasBeenSet = true;

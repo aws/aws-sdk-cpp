@@ -43,11 +43,12 @@ DescribeCacheSubnetGroupsResult& DescribeCacheSubnetGroupsResult::operator =(con
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheSubnetGroupNode = resultNode.FirstChild("CacheSubnetGroup");
+    XmlNode cacheSubnetGroupNodeParent = resultNode.FirstChild("CacheSubnetGroup");
+    XmlNode cacheSubnetGroupNode = cacheSubnetGroupNodeParent.FirstChild("member");
     while(!cacheSubnetGroupNode.IsNull())
     {
       m_cacheSubnetGroups.push_back(cacheSubnetGroupNode);
-      cacheSubnetGroupNode = cacheSubnetGroupNode.NextNode("CacheSubnetGroup");
+      cacheSubnetGroupNode = cacheSubnetGroupNode.NextNode("member");
     }
 
   }

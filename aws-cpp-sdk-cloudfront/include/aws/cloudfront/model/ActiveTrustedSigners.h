@@ -49,7 +49,7 @@ namespace Model
     /*
      Each active trusted signer.
     */
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /*
      Each active trusted signer.
@@ -63,7 +63,7 @@ namespace Model
     /*
      The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
@@ -91,7 +91,9 @@ namespace Model
 
   private:
     bool m_enabled;
+    bool m_enabledHasBeenSet;
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<Signer> m_items;
     bool m_itemsHasBeenSet;
   };

@@ -44,12 +44,12 @@ namespace Model
     /*
      <p> The namespace of the metric, with or without spaces. </p>
     */
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> The namespace of the metric, with or without spaces. </p>
     */
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /*
      <p> The namespace of the metric, with or without spaces. </p>
@@ -68,12 +68,12 @@ namespace Model
     /*
      <p> The name of the metric, with or without spaces. </p>
     */
-    inline void SetMetricName(const Aws::String& value) { m_metricName = value; }
+    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /*
      <p> The name of the metric, with or without spaces. </p>
     */
-    inline void SetMetricName(const char* value) { m_metricName.assign(value); }
+    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /*
      <p> The name of the metric, with or without spaces. </p>
@@ -111,7 +111,7 @@ namespace Model
     /*
      <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
     */
-    inline void SetStartTime(double value) { m_startTime = value; }
+    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
      <p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p> <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks. <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p> </note>
@@ -125,7 +125,7 @@ namespace Model
     /*
      <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
     */
-    inline void SetEndTime(double value) { m_endTime = value; }
+    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /*
      <p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>
@@ -139,7 +139,7 @@ namespace Model
     /*
      <p> The granularity, in seconds, of the returned datapoints. <code>Period</code> must be at least 60 seconds and must be a multiple of 60. The default value is 60. </p>
     */
-    inline void SetPeriod(long value) { m_period = value; }
+    inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
 
     /*
      <p> The granularity, in seconds, of the returned datapoints. <code>Period</code> must be at least 60 seconds and must be a multiple of 60. The default value is 60. </p>
@@ -153,7 +153,7 @@ namespace Model
     /*
      <p> The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values: <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
     */
-    inline void SetStatistics(const Aws::Vector<Statistic>& value) { m_statistics = value; }
+    inline void SetStatistics(const Aws::Vector<Statistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /*
      <p> The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values: <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
@@ -163,7 +163,7 @@ namespace Model
     /*
      <p> The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values: <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
     */
-    inline GetMetricStatisticsRequest& AddStatistics(const Statistic& value) { m_statistics.push_back(value); return *this; }
+    inline GetMetricStatisticsRequest& AddStatistics(const Statistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /*
      <p> The unit for the metric. </p>
@@ -181,13 +181,19 @@ namespace Model
 
   private:
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
     Aws::String m_metricName;
+    bool m_metricNameHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
     double m_startTime;
+    bool m_startTimeHasBeenSet;
     double m_endTime;
+    bool m_endTimeHasBeenSet;
     long m_period;
+    bool m_periodHasBeenSet;
     Aws::Vector<Statistic> m_statistics;
+    bool m_statisticsHasBeenSet;
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
   };

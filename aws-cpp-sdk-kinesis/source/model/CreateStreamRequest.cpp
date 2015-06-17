@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateStreamRequest::CreateStreamRequest() : 
-    m_shardCount(0)
+    m_streamNameHasBeenSet(false),
+    m_shardCount(0),
+    m_shardCountHasBeenSet(false)
 {
 }
 
@@ -30,9 +32,17 @@ Aws::String CreateStreamRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
 
-  payload.WithInteger("ShardCount", m_shardCount);
+  }
+
+  if(m_shardCountHasBeenSet)
+  {
+   payload.WithInteger("ShardCount", m_shardCount);
+
+  }
 
   return payload.WriteReadable();
 }

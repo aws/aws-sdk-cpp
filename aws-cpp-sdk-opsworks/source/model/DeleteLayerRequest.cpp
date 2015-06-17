@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLayerRequest::DeleteLayerRequest()
+DeleteLayerRequest::DeleteLayerRequest() : 
+    m_layerIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteLayerRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("LayerId", m_layerId);
+  if(m_layerIdHasBeenSet)
+  {
+   payload.WithString("LayerId", m_layerId);
+
+  }
 
   return payload.WriteReadable();
 }

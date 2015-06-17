@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StepExecutionStatusDetail::StepExecutionStatusDetail() : 
+    m_stateHasBeenSet(false),
     m_creationDateTime(0.0),
+    m_creationDateTimeHasBeenSet(false),
     m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
     m_endDateTime(0.0),
@@ -32,7 +34,9 @@ StepExecutionStatusDetail::StepExecutionStatusDetail() :
 }
 
 StepExecutionStatusDetail::StepExecutionStatusDetail(const JsonValue& jsonValue) : 
+    m_stateHasBeenSet(false),
     m_creationDateTime(0.0),
+    m_creationDateTimeHasBeenSet(false),
     m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
     m_endDateTime(0.0),
@@ -44,9 +48,19 @@ StepExecutionStatusDetail::StepExecutionStatusDetail(const JsonValue& jsonValue)
 
 StepExecutionStatusDetail& StepExecutionStatusDetail::operator =(const JsonValue& jsonValue)
 {
-  m_state = StepExecutionStateMapper::GetStepExecutionStateForName(jsonValue.GetString("State"));
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = StepExecutionStateMapper::GetStepExecutionStateForName(jsonValue.GetString("State"));
 
-  m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreationDateTime"))
+  {
+    m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+
+    m_creationDateTimeHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("StartDateTime"))
   {
@@ -76,8 +90,16 @@ JsonValue StepExecutionStatusDetail::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("State", StepExecutionStateMapper::GetNameForStepExecutionState(m_state));
-  payload.WithDouble("CreationDateTime", m_creationDateTime);
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", StepExecutionStateMapper::GetNameForStepExecutionState(m_state));
+  }
+
+  if(m_creationDateTimeHasBeenSet)
+  {
+   payload.WithDouble("CreationDateTime", m_creationDateTime);
+
+  }
 
   if(m_startDateTimeHasBeenSet)
   {

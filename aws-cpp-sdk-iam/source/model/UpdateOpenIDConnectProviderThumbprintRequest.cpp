@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateOpenIDConnectProviderThumbprintRequest::UpdateOpenIDConnectProviderThumbprintRequest()
+UpdateOpenIDConnectProviderThumbprintRequest::UpdateOpenIDConnectProviderThumbprintRequest() : 
+    m_openIDConnectProviderArnHasBeenSet(false),
+    m_thumbprintListHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() con
 {
   Aws::StringStream ss;
   ss << "Action=UpdateOpenIDConnectProviderThumbprint&";
-  ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
-  unsigned thumbprintListCount = 1;
-  for(auto& item : m_thumbprintList)
+  if(m_openIDConnectProviderArnHasBeenSet)
   {
-    ss << "ThumbprintList." << thumbprintListCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    thumbprintListCount++;
+    ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
+  }
+  if(m_thumbprintListHasBeenSet)
+  {
+    unsigned thumbprintListCount = 1;
+    for(auto& item : m_thumbprintList)
+    {
+      ss << "ThumbprintList." << thumbprintListCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      thumbprintListCount++;
+    }
   }
   ss << "Version=2010-05-08";
   return ss.str();

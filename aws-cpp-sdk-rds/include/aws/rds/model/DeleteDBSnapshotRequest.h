@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
     */
-    inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifier = value; }
+    inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /*
      <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
     */
-    inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifier.assign(value); }
+    inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
     /*
      <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_dBSnapshotIdentifier;
+    bool m_dBSnapshotIdentifierHasBeenSet;
   };
 
 } // namespace Model

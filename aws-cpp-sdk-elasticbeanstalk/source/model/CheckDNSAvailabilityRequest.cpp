@@ -19,7 +19,8 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-CheckDNSAvailabilityRequest::CheckDNSAvailabilityRequest()
+CheckDNSAvailabilityRequest::CheckDNSAvailabilityRequest() : 
+    m_cNAMEPrefixHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String CheckDNSAvailabilityRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CheckDNSAvailability&";
-  ss << "CNAMEPrefix=" << StringUtils::URLEncode(m_cNAMEPrefix.c_str()) << "&";
+  if(m_cNAMEPrefixHasBeenSet)
+  {
+    ss << "CNAMEPrefix=" << StringUtils::URLEncode(m_cNAMEPrefix.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

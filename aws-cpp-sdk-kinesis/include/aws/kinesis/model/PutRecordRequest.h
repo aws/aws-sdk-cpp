@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The name of the stream to put the data record into.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream to put the data record into.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The name of the stream to put the data record into.</p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
     */
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_data = value; }
+    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /*
      <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
@@ -82,12 +82,12 @@ namespace Model
     /*
      <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key will map to the same shard within the stream.</p>
     */
-    inline void SetPartitionKey(const Aws::String& value) { m_partitionKey = value; }
+    inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
 
     /*
      <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key will map to the same shard within the stream.</p>
     */
-    inline void SetPartitionKey(const char* value) { m_partitionKey.assign(value); }
+    inline void SetPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.assign(value); }
 
     /*
      <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key will map to the same shard within the stream.</p>
@@ -149,8 +149,11 @@ namespace Model
 
   private:
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
     Aws::Utils::ByteBuffer m_data;
+    bool m_dataHasBeenSet;
     Aws::String m_partitionKey;
+    bool m_partitionKeyHasBeenSet;
     Aws::String m_explicitHashKey;
     bool m_explicitHashKeyHasBeenSet;
     Aws::String m_sequenceNumberForOrdering;

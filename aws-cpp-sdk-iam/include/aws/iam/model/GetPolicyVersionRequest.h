@@ -36,10 +36,10 @@ namespace Model
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
     
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
+    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
     inline GetPolicyVersionRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
@@ -54,12 +54,12 @@ namespace Model
     /*
      <p>Identifies the policy version to retrieve.</p>
     */
-    inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
+    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /*
      <p>Identifies the policy version to retrieve.</p>
     */
-    inline void SetVersionId(const char* value) { m_versionId.assign(value); }
+    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /*
      <p>Identifies the policy version to retrieve.</p>
@@ -73,7 +73,9 @@ namespace Model
 
   private:
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet;
     Aws::String m_versionId;
+    bool m_versionIdHasBeenSet;
   };
 
 } // namespace Model

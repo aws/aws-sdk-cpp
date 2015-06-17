@@ -127,14 +127,14 @@ BulkPublishOutcomeCallable CognitoSyncClient::BulkPublishCallable(const BulkPubl
   return std::async(std::launch::async, &CognitoSyncClient::BulkPublish, this, request);
 }
 
-void CognitoSyncClient::BulkPublishAsync(const BulkPublishRequest& request) const
+void CognitoSyncClient::BulkPublishAsync(const BulkPublishRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::BulkPublishAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::BulkPublishAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::BulkPublishAsyncHelper(const BulkPublishRequest& request) const
+void CognitoSyncClient::BulkPublishAsyncHelper(const BulkPublishRequest& request, const AsyncCallerContext* context) const
 {
-  m_onBulkPublishOutcomeReceived(this, request, BulkPublish(request));
+  m_onBulkPublishOutcomeReceived(this, request, BulkPublish(request), context);
 }
 
 DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -163,14 +163,14 @@ DeleteDatasetOutcomeCallable CognitoSyncClient::DeleteDatasetCallable(const Dele
   return std::async(std::launch::async, &CognitoSyncClient::DeleteDataset, this, request);
 }
 
-void CognitoSyncClient::DeleteDatasetAsync(const DeleteDatasetRequest& request) const
+void CognitoSyncClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::DeleteDatasetAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::DeleteDatasetAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request) const
+void CognitoSyncClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDatasetOutcomeReceived(this, request, DeleteDataset(request));
+  m_onDeleteDatasetOutcomeReceived(this, request, DeleteDataset(request), context);
 }
 
 DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -199,14 +199,14 @@ DescribeDatasetOutcomeCallable CognitoSyncClient::DescribeDatasetCallable(const 
   return std::async(std::launch::async, &CognitoSyncClient::DescribeDataset, this, request);
 }
 
-void CognitoSyncClient::DescribeDatasetAsync(const DescribeDatasetRequest& request) const
+void CognitoSyncClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::DescribeDatasetAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::DescribeDatasetAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request) const
+void CognitoSyncClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeDatasetOutcomeReceived(this, request, DescribeDataset(request));
+  m_onDescribeDatasetOutcomeReceived(this, request, DescribeDataset(request), context);
 }
 
 DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(const DescribeIdentityPoolUsageRequest& request) const
@@ -231,14 +231,14 @@ DescribeIdentityPoolUsageOutcomeCallable CognitoSyncClient::DescribeIdentityPool
   return std::async(std::launch::async, &CognitoSyncClient::DescribeIdentityPoolUsage, this, request);
 }
 
-void CognitoSyncClient::DescribeIdentityPoolUsageAsync(const DescribeIdentityPoolUsageRequest& request) const
+void CognitoSyncClient::DescribeIdentityPoolUsageAsync(const DescribeIdentityPoolUsageRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::DescribeIdentityPoolUsageAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::DescribeIdentityPoolUsageAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::DescribeIdentityPoolUsageAsyncHelper(const DescribeIdentityPoolUsageRequest& request) const
+void CognitoSyncClient::DescribeIdentityPoolUsageAsyncHelper(const DescribeIdentityPoolUsageRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeIdentityPoolUsageOutcomeReceived(this, request, DescribeIdentityPoolUsage(request));
+  m_onDescribeIdentityPoolUsageOutcomeReceived(this, request, DescribeIdentityPoolUsage(request), context);
 }
 
 DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const DescribeIdentityUsageRequest& request) const
@@ -265,14 +265,14 @@ DescribeIdentityUsageOutcomeCallable CognitoSyncClient::DescribeIdentityUsageCal
   return std::async(std::launch::async, &CognitoSyncClient::DescribeIdentityUsage, this, request);
 }
 
-void CognitoSyncClient::DescribeIdentityUsageAsync(const DescribeIdentityUsageRequest& request) const
+void CognitoSyncClient::DescribeIdentityUsageAsync(const DescribeIdentityUsageRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::DescribeIdentityUsageAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::DescribeIdentityUsageAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::DescribeIdentityUsageAsyncHelper(const DescribeIdentityUsageRequest& request) const
+void CognitoSyncClient::DescribeIdentityUsageAsyncHelper(const DescribeIdentityUsageRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeIdentityUsageOutcomeReceived(this, request, DescribeIdentityUsage(request));
+  m_onDescribeIdentityUsageOutcomeReceived(this, request, DescribeIdentityUsage(request), context);
 }
 
 GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetBulkPublishDetailsRequest& request) const
@@ -298,14 +298,14 @@ GetBulkPublishDetailsOutcomeCallable CognitoSyncClient::GetBulkPublishDetailsCal
   return std::async(std::launch::async, &CognitoSyncClient::GetBulkPublishDetails, this, request);
 }
 
-void CognitoSyncClient::GetBulkPublishDetailsAsync(const GetBulkPublishDetailsRequest& request) const
+void CognitoSyncClient::GetBulkPublishDetailsAsync(const GetBulkPublishDetailsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::GetBulkPublishDetailsAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::GetBulkPublishDetailsAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::GetBulkPublishDetailsAsyncHelper(const GetBulkPublishDetailsRequest& request) const
+void CognitoSyncClient::GetBulkPublishDetailsAsyncHelper(const GetBulkPublishDetailsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetBulkPublishDetailsOutcomeReceived(this, request, GetBulkPublishDetails(request));
+  m_onGetBulkPublishDetailsOutcomeReceived(this, request, GetBulkPublishDetails(request), context);
 }
 
 GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEventsRequest& request) const
@@ -331,14 +331,14 @@ GetCognitoEventsOutcomeCallable CognitoSyncClient::GetCognitoEventsCallable(cons
   return std::async(std::launch::async, &CognitoSyncClient::GetCognitoEvents, this, request);
 }
 
-void CognitoSyncClient::GetCognitoEventsAsync(const GetCognitoEventsRequest& request) const
+void CognitoSyncClient::GetCognitoEventsAsync(const GetCognitoEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::GetCognitoEventsAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::GetCognitoEventsAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::GetCognitoEventsAsyncHelper(const GetCognitoEventsRequest& request) const
+void CognitoSyncClient::GetCognitoEventsAsyncHelper(const GetCognitoEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetCognitoEventsOutcomeReceived(this, request, GetCognitoEvents(request));
+  m_onGetCognitoEventsOutcomeReceived(this, request, GetCognitoEvents(request), context);
 }
 
 GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfiguration(const GetIdentityPoolConfigurationRequest& request) const
@@ -364,14 +364,14 @@ GetIdentityPoolConfigurationOutcomeCallable CognitoSyncClient::GetIdentityPoolCo
   return std::async(std::launch::async, &CognitoSyncClient::GetIdentityPoolConfiguration, this, request);
 }
 
-void CognitoSyncClient::GetIdentityPoolConfigurationAsync(const GetIdentityPoolConfigurationRequest& request) const
+void CognitoSyncClient::GetIdentityPoolConfigurationAsync(const GetIdentityPoolConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::GetIdentityPoolConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::GetIdentityPoolConfigurationAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::GetIdentityPoolConfigurationAsyncHelper(const GetIdentityPoolConfigurationRequest& request) const
+void CognitoSyncClient::GetIdentityPoolConfigurationAsyncHelper(const GetIdentityPoolConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetIdentityPoolConfigurationOutcomeReceived(this, request, GetIdentityPoolConfiguration(request));
+  m_onGetIdentityPoolConfigurationOutcomeReceived(this, request, GetIdentityPoolConfiguration(request), context);
 }
 
 ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -399,14 +399,14 @@ ListDatasetsOutcomeCallable CognitoSyncClient::ListDatasetsCallable(const ListDa
   return std::async(std::launch::async, &CognitoSyncClient::ListDatasets, this, request);
 }
 
-void CognitoSyncClient::ListDatasetsAsync(const ListDatasetsRequest& request) const
+void CognitoSyncClient::ListDatasetsAsync(const ListDatasetsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::ListDatasetsAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::ListDatasetsAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request) const
+void CognitoSyncClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListDatasetsOutcomeReceived(this, request, ListDatasets(request));
+  m_onListDatasetsOutcomeReceived(this, request, ListDatasets(request), context);
 }
 
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const
@@ -430,14 +430,14 @@ ListIdentityPoolUsageOutcomeCallable CognitoSyncClient::ListIdentityPoolUsageCal
   return std::async(std::launch::async, &CognitoSyncClient::ListIdentityPoolUsage, this, request);
 }
 
-void CognitoSyncClient::ListIdentityPoolUsageAsync(const ListIdentityPoolUsageRequest& request) const
+void CognitoSyncClient::ListIdentityPoolUsageAsync(const ListIdentityPoolUsageRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::ListIdentityPoolUsageAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::ListIdentityPoolUsageAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::ListIdentityPoolUsageAsyncHelper(const ListIdentityPoolUsageRequest& request) const
+void CognitoSyncClient::ListIdentityPoolUsageAsyncHelper(const ListIdentityPoolUsageRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListIdentityPoolUsageOutcomeReceived(this, request, ListIdentityPoolUsage(request));
+  m_onListIdentityPoolUsageOutcomeReceived(this, request, ListIdentityPoolUsage(request), context);
 }
 
 ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& request) const
@@ -467,14 +467,14 @@ ListRecordsOutcomeCallable CognitoSyncClient::ListRecordsCallable(const ListReco
   return std::async(std::launch::async, &CognitoSyncClient::ListRecords, this, request);
 }
 
-void CognitoSyncClient::ListRecordsAsync(const ListRecordsRequest& request) const
+void CognitoSyncClient::ListRecordsAsync(const ListRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::ListRecordsAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::ListRecordsAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::ListRecordsAsyncHelper(const ListRecordsRequest& request) const
+void CognitoSyncClient::ListRecordsAsyncHelper(const ListRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListRecordsOutcomeReceived(this, request, ListRecords(request));
+  m_onListRecordsOutcomeReceived(this, request, ListRecords(request), context);
 }
 
 RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequest& request) const
@@ -502,14 +502,14 @@ RegisterDeviceOutcomeCallable CognitoSyncClient::RegisterDeviceCallable(const Re
   return std::async(std::launch::async, &CognitoSyncClient::RegisterDevice, this, request);
 }
 
-void CognitoSyncClient::RegisterDeviceAsync(const RegisterDeviceRequest& request) const
+void CognitoSyncClient::RegisterDeviceAsync(const RegisterDeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::RegisterDeviceAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::RegisterDeviceAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::RegisterDeviceAsyncHelper(const RegisterDeviceRequest& request) const
+void CognitoSyncClient::RegisterDeviceAsyncHelper(const RegisterDeviceRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRegisterDeviceOutcomeReceived(this, request, RegisterDevice(request));
+  m_onRegisterDeviceOutcomeReceived(this, request, RegisterDevice(request), context);
 }
 
 SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEventsRequest& request) const
@@ -535,14 +535,14 @@ SetCognitoEventsOutcomeCallable CognitoSyncClient::SetCognitoEventsCallable(cons
   return std::async(std::launch::async, &CognitoSyncClient::SetCognitoEvents, this, request);
 }
 
-void CognitoSyncClient::SetCognitoEventsAsync(const SetCognitoEventsRequest& request) const
+void CognitoSyncClient::SetCognitoEventsAsync(const SetCognitoEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::SetCognitoEventsAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::SetCognitoEventsAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::SetCognitoEventsAsyncHelper(const SetCognitoEventsRequest& request) const
+void CognitoSyncClient::SetCognitoEventsAsyncHelper(const SetCognitoEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetCognitoEventsOutcomeReceived(this, request, SetCognitoEvents(request));
+  m_onSetCognitoEventsOutcomeReceived(this, request, SetCognitoEvents(request), context);
 }
 
 SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfiguration(const SetIdentityPoolConfigurationRequest& request) const
@@ -568,14 +568,14 @@ SetIdentityPoolConfigurationOutcomeCallable CognitoSyncClient::SetIdentityPoolCo
   return std::async(std::launch::async, &CognitoSyncClient::SetIdentityPoolConfiguration, this, request);
 }
 
-void CognitoSyncClient::SetIdentityPoolConfigurationAsync(const SetIdentityPoolConfigurationRequest& request) const
+void CognitoSyncClient::SetIdentityPoolConfigurationAsync(const SetIdentityPoolConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::SetIdentityPoolConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::SetIdentityPoolConfigurationAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::SetIdentityPoolConfigurationAsyncHelper(const SetIdentityPoolConfigurationRequest& request) const
+void CognitoSyncClient::SetIdentityPoolConfigurationAsyncHelper(const SetIdentityPoolConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetIdentityPoolConfigurationOutcomeReceived(this, request, SetIdentityPoolConfiguration(request));
+  m_onSetIdentityPoolConfigurationOutcomeReceived(this, request, SetIdentityPoolConfiguration(request), context);
 }
 
 SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeToDatasetRequest& request) const
@@ -606,14 +606,14 @@ SubscribeToDatasetOutcomeCallable CognitoSyncClient::SubscribeToDatasetCallable(
   return std::async(std::launch::async, &CognitoSyncClient::SubscribeToDataset, this, request);
 }
 
-void CognitoSyncClient::SubscribeToDatasetAsync(const SubscribeToDatasetRequest& request) const
+void CognitoSyncClient::SubscribeToDatasetAsync(const SubscribeToDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::SubscribeToDatasetAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::SubscribeToDatasetAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::SubscribeToDatasetAsyncHelper(const SubscribeToDatasetRequest& request) const
+void CognitoSyncClient::SubscribeToDatasetAsyncHelper(const SubscribeToDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSubscribeToDatasetOutcomeReceived(this, request, SubscribeToDataset(request));
+  m_onSubscribeToDatasetOutcomeReceived(this, request, SubscribeToDataset(request), context);
 }
 
 UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const UnsubscribeFromDatasetRequest& request) const
@@ -644,14 +644,14 @@ UnsubscribeFromDatasetOutcomeCallable CognitoSyncClient::UnsubscribeFromDatasetC
   return std::async(std::launch::async, &CognitoSyncClient::UnsubscribeFromDataset, this, request);
 }
 
-void CognitoSyncClient::UnsubscribeFromDatasetAsync(const UnsubscribeFromDatasetRequest& request) const
+void CognitoSyncClient::UnsubscribeFromDatasetAsync(const UnsubscribeFromDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::UnsubscribeFromDatasetAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::UnsubscribeFromDatasetAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::UnsubscribeFromDatasetAsyncHelper(const UnsubscribeFromDatasetRequest& request) const
+void CognitoSyncClient::UnsubscribeFromDatasetAsyncHelper(const UnsubscribeFromDatasetRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUnsubscribeFromDatasetOutcomeReceived(this, request, UnsubscribeFromDataset(request));
+  m_onUnsubscribeFromDatasetOutcomeReceived(this, request, UnsubscribeFromDataset(request), context);
 }
 
 UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest& request) const
@@ -680,13 +680,13 @@ UpdateRecordsOutcomeCallable CognitoSyncClient::UpdateRecordsCallable(const Upda
   return std::async(std::launch::async, &CognitoSyncClient::UpdateRecords, this, request);
 }
 
-void CognitoSyncClient::UpdateRecordsAsync(const UpdateRecordsRequest& request) const
+void CognitoSyncClient::UpdateRecordsAsync(const UpdateRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CognitoSyncClient::UpdateRecordsAsyncHelper, this, request);
+  m_executor->Submit(&CognitoSyncClient::UpdateRecordsAsyncHelper, this, request, context);
 }
 
-void CognitoSyncClient::UpdateRecordsAsyncHelper(const UpdateRecordsRequest& request) const
+void CognitoSyncClient::UpdateRecordsAsyncHelper(const UpdateRecordsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateRecordsOutcomeReceived(this, request, UpdateRecords(request));
+  m_onUpdateRecordsOutcomeReceived(this, request, UpdateRecords(request), context);
 }
 

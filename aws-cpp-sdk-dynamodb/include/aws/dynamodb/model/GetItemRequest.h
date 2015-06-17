@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The name of the table containing the requested item.</p>
     */
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
+    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /*
      <p>The name of the table containing the requested item.</p>
     */
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
+    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /*
      <p>The name of the table containing the requested item.</p>
@@ -71,7 +71,7 @@ namespace Model
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.</p> <p>For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</p>
     */
-    inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_key = value; }
+    inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.</p> <p>For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</p>
@@ -81,12 +81,12 @@ namespace Model
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.</p> <p>For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</p>
     */
-    inline GetItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_key[key] = value; return *this; }
+    inline GetItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /*
      <p>A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.</p> <p>For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</p>
     */
-    inline GetItemRequest& AddKey(const char* key, const AttributeValue& value) { m_key[key] = value; return *this; }
+    inline GetItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /*
      <important><p>This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map.</p></important> <p>The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application.</p>
@@ -184,7 +184,9 @@ namespace Model
 
   private:
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet;
     Aws::Map<Aws::String, AttributeValue> m_key;
+    bool m_keyHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
     bool m_consistentRead;

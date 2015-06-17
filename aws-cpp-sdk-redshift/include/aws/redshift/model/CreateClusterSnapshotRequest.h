@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifier.assign(value); }
+    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /*
      <p> A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The cluster identifier for which you want a snapshot. </p>
@@ -105,7 +105,9 @@ namespace Model
 
   private:
     Aws::String m_snapshotIdentifier;
+    bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -21,7 +21,8 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterRequest::DeleteClusterRequest()
+DeleteClusterRequest::DeleteClusterRequest() : 
+    m_clusterHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteClusterRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("cluster", m_cluster);
+  if(m_clusterHasBeenSet)
+  {
+   payload.WithString("cluster", m_cluster);
+
+  }
 
   return payload.WriteReadable();
 }

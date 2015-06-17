@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     */
-    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
      <p>The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     */
-    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /*
      <p>The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>The tag key (name) of the tag to be removed.</p>
     */
-    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeys = value; }
+    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /*
      <p>The tag key (name) of the tag to be removed.</p>
@@ -76,16 +76,18 @@ namespace Model
     /*
      <p>The tag key (name) of the tag to be removed.</p>
     */
-    inline RemoveTagsFromResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /*
      <p>The tag key (name) of the tag to be removed.</p>
     */
-    inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet;
     Aws::Vector<Aws::String> m_tagKeys;
+    bool m_tagKeysHasBeenSet;
   };
 
 } // namespace Model

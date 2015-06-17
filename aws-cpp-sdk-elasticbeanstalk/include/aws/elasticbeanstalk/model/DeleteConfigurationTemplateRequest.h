@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the application to delete the configuration template from. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application to delete the configuration template from. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p> The name of the application to delete the configuration template from. </p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the configuration template to delete.</p>
     */
-    inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p>The name of the configuration template to delete.</p>
     */
-    inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /*
      <p>The name of the configuration template to delete.</p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_templateName;
+    bool m_templateNameHasBeenSet;
   };
 
 } // namespace Model

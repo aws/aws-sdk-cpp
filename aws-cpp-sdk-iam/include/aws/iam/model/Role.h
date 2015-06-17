@@ -50,12 +50,12 @@ namespace Model
     /*
      <p> The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetPath(const Aws::String& value) { m_path = value; }
+    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p> The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetPath(const char* value) { m_path.assign(value); }
+    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /*
      <p> The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The friendly name that identifies the role.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The friendly name that identifies the role.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The friendly name that identifies the role.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p> The stable and unique string identifying the role. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetRoleId(const Aws::String& value) { m_roleId = value; }
+    inline void SetRoleId(const Aws::String& value) { m_roleIdHasBeenSet = true; m_roleId = value; }
 
     /*
      <p> The stable and unique string identifying the role. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetRoleId(const char* value) { m_roleId.assign(value); }
+    inline void SetRoleId(const char* value) { m_roleIdHasBeenSet = true; m_roleId.assign(value); }
 
     /*
      <p> The stable and unique string identifying the role. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -122,12 +122,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /*
      <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -146,7 +146,7 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
     */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
@@ -179,10 +179,15 @@ namespace Model
 
   private:
     Aws::String m_path;
+    bool m_pathHasBeenSet;
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_roleId;
+    bool m_roleIdHasBeenSet;
     Aws::String m_arn;
+    bool m_arnHasBeenSet;
     double m_createDate;
+    bool m_createDateHasBeenSet;
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
   };

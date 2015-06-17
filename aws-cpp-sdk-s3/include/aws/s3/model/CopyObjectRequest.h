@@ -58,10 +58,10 @@ namespace Model
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
+    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
+    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     
     inline CopyObjectRequest&  WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
@@ -196,12 +196,12 @@ namespace Model
     /*
      The name of the source bucket and key name of the source object, separated by a slash (/). Must be URL-encoded.
     */
-    inline void SetCopySource(const Aws::String& value) { m_copySource = value; }
+    inline void SetCopySource(const Aws::String& value) { m_copySourceHasBeenSet = true; m_copySource = value; }
 
     /*
      The name of the source bucket and key name of the source object, separated by a slash (/). Must be URL-encoded.
     */
-    inline void SetCopySource(const char* value) { m_copySource.assign(value); }
+    inline void SetCopySource(const char* value) { m_copySourceHasBeenSet = true; m_copySource.assign(value); }
 
     /*
      The name of the source bucket and key name of the source object, separated by a slash (/). Must be URL-encoded.
@@ -402,10 +402,10 @@ namespace Model
     
     inline const Aws::String& GetKey() const{ return m_key; }
     
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
     inline CopyObjectRequest&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
@@ -504,26 +504,26 @@ namespace Model
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline CopyObjectRequest&  WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /*
-     Specifies the algorithm to use to when encrypting the object (e.g., AES256, aws:kms).
+     Specifies the algorithm to use to when encrypting the object (e.g., AES256).
     */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
@@ -683,6 +683,7 @@ namespace Model
     ObjectCannedACL m_aCL;
     bool m_aCLHasBeenSet;
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
     Aws::String m_cacheControl;
     bool m_cacheControlHasBeenSet;
     Aws::String m_contentDisposition;
@@ -694,6 +695,7 @@ namespace Model
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
     Aws::String m_copySource;
+    bool m_copySourceHasBeenSet;
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet;
     double m_copySourceIfModifiedSince;
@@ -713,6 +715,7 @@ namespace Model
     Aws::String m_grantWriteACP;
     bool m_grantWriteACPHasBeenSet;
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet;
     MetadataDirective m_metadataDirective;

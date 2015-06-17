@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
+    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
     */
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
+    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /*
      <p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>Name of the policy to be attached. Currently, the only supported name is "default".</p>
@@ -90,12 +90,12 @@ namespace Model
     /*
      <p>The policy, in JSON format, to be attached to the key.</p>
     */
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
+    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /*
      <p>The policy, in JSON format, to be attached to the key.</p>
     */
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
+    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /*
      <p>The policy, in JSON format, to be attached to the key.</p>
@@ -109,8 +109,11 @@ namespace Model
 
   private:
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
     Aws::String m_policy;
+    bool m_policyHasBeenSet;
   };
 
 } // namespace Model

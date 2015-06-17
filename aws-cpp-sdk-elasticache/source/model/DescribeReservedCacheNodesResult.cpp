@@ -43,11 +43,12 @@ DescribeReservedCacheNodesResult& DescribeReservedCacheNodesResult::operator =(c
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedCacheNodeNode = resultNode.FirstChild("ReservedCacheNode");
+    XmlNode reservedCacheNodeNodeParent = resultNode.FirstChild("ReservedCacheNode");
+    XmlNode reservedCacheNodeNode = reservedCacheNodeNodeParent.FirstChild("member");
     while(!reservedCacheNodeNode.IsNull())
     {
       m_reservedCacheNodes.push_back(reservedCacheNodeNode);
-      reservedCacheNodeNode = reservedCacheNodeNode.NextNode("ReservedCacheNode");
+      reservedCacheNodeNode = reservedCacheNodeNode.NextNode("member");
     }
 
   }

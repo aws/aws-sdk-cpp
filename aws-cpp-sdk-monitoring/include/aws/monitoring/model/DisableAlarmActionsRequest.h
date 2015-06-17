@@ -42,7 +42,7 @@ namespace Model
     /*
      <p> The names of the alarms to disable actions for. </p>
     */
-    inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNames = value; }
+    inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /*
      <p> The names of the alarms to disable actions for. </p>
@@ -52,15 +52,16 @@ namespace Model
     /*
      <p> The names of the alarms to disable actions for. </p>
     */
-    inline DisableAlarmActionsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNames.push_back(value); return *this; }
+    inline DisableAlarmActionsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /*
      <p> The names of the alarms to disable actions for. </p>
     */
-    inline DisableAlarmActionsRequest& AddAlarmNames(const char* value) { m_alarmNames.push_back(value); return *this; }
+    inline DisableAlarmActionsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_alarmNames;
+    bool m_alarmNamesHasBeenSet;
   };
 
 } // namespace Model

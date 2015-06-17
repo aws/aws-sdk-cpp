@@ -34,7 +34,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a batch get on-premises instances operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesResult
   {
@@ -43,23 +43,15 @@ namespace Model
     BatchGetOnPremisesInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     BatchGetOnPremisesInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the on-premises instances.</p>
-    */
+    
     inline const Aws::Vector<InstanceInfo>& GetInstanceInfos() const{ return m_instanceInfos; }
-    /*
-     <p>Information about the on-premises instances.</p>
-    */
+    
     inline void SetInstanceInfos(const Aws::Vector<InstanceInfo>& value) { m_instanceInfos = value; }
 
-    /*
-     <p>Information about the on-premises instances.</p>
-    */
+    
     inline BatchGetOnPremisesInstancesResult&  WithInstanceInfos(const Aws::Vector<InstanceInfo>& value) { SetInstanceInfos(value); return *this;}
 
-    /*
-     <p>Information about the on-premises instances.</p>
-    */
+    
     inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(const InstanceInfo& value) { m_instanceInfos.push_back(value); return *this; }
 
   private:

@@ -74,24 +74,26 @@ ClusterSubnetGroup& ClusterSubnetGroup::operator =(const XmlNode& xmlNode)
       m_subnetGroupStatus = StringUtils::Trim(subnetGroupStatusNode.GetText().c_str());
       m_subnetGroupStatusHasBeenSet = true;
     }
-    XmlNode subnetNode = resultNode.FirstChild("Subnet");
+    XmlNode subnetNodeParent = resultNode.FirstChild("Subnet");
+    XmlNode subnetNode = subnetNodeParent.FirstChild("member");
     if(!subnetNode.IsNull())
     {
       while(!subnetNode.IsNull())
       {
         m_subnets.push_back(subnetNode);
-        subnetNode = subnetNode.NextNode("Subnet");
+        subnetNode = subnetNode.NextNode("member");
       }
 
       m_subnetsHasBeenSet = true;
     }
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     if(!tagNode.IsNull())
     {
       while(!tagNode.IsNull())
       {
         m_tags.push_back(tagNode);
-        tagNode = tagNode.NextNode("Tag");
+        tagNode = tagNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

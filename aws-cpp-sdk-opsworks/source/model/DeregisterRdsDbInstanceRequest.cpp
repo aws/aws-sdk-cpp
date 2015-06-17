@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterRdsDbInstanceRequest::DeregisterRdsDbInstanceRequest()
+DeregisterRdsDbInstanceRequest::DeregisterRdsDbInstanceRequest() : 
+    m_rdsDbInstanceArnHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeregisterRdsDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("RdsDbInstanceArn", m_rdsDbInstanceArn);
+  if(m_rdsDbInstanceArnHasBeenSet)
+  {
+   payload.WithString("RdsDbInstanceArn", m_rdsDbInstanceArn);
+
+  }
 
   return payload.WriteReadable();
 }

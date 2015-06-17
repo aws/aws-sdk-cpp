@@ -19,7 +19,8 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutMetricDataBatchRequest::PutMetricDataBatchRequest()
+PutMetricDataBatchRequest::PutMetricDataBatchRequest() : 
+    m_metricDataBatchesHasBeenSet(false)
 {
 }
 
@@ -27,11 +28,14 @@ Aws::String PutMetricDataBatchRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutMetricDataBatch&";
-  unsigned metricDataBatchesCount = 1;
-  for(auto& item : m_metricDataBatches)
+  if(m_metricDataBatchesHasBeenSet)
   {
-    item.OutputToStream(ss, "MetricDataBatches.", metricDataBatchesCount, "");
-    metricDataBatchesCount++;
+    unsigned metricDataBatchesCount = 1;
+    for(auto& item : m_metricDataBatches)
+    {
+      item.OutputToStream(ss, "MetricDataBatches.", metricDataBatchesCount, "");
+      metricDataBatchesCount++;
+    }
   }
   ss << "Version=2010-08-01";
   return ss.str();

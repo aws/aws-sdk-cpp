@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the cluster security group to be deleted. </p>
     */
-    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /*
      <p> The name of the cluster security group to be deleted. </p>
     */
-    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupName.assign(value); }
+    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
 
     /*
      <p> The name of the cluster security group to be deleted. </p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_clusterSecurityGroupName;
+    bool m_clusterSecurityGroupNameHasBeenSet;
   };
 
 } // namespace Model

@@ -44,7 +44,7 @@ namespace Model
     /*
      The distribution's configuration information.
     */
-    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfig = value; }
+    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
     /*
      The distribution's configuration information.
@@ -58,12 +58,12 @@ namespace Model
     /*
      The distribution's id.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The distribution's id.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The distribution's id.
@@ -101,7 +101,9 @@ namespace Model
 
   private:
     DistributionConfig m_distributionConfig;
+    bool m_distributionConfigHasBeenSet;
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

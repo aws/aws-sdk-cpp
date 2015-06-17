@@ -19,7 +19,9 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteTagsRequest::DeleteTagsRequest()
+DeleteTagsRequest::DeleteTagsRequest() : 
+    m_resourceNameHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String DeleteTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteTags&";
-  ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
-  unsigned tagKeysCount = 1;
-  for(auto& item : m_tagKeys)
+  if(m_resourceNameHasBeenSet)
   {
-    ss << "TagKey." << tagKeysCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    tagKeysCount++;
+    ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  }
+  if(m_tagKeysHasBeenSet)
+  {
+    unsigned tagKeysCount = 1;
+    for(auto& item : m_tagKeys)
+    {
+      ss << "TagKey." << tagKeysCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      tagKeysCount++;
+    }
   }
   ss << "Version=2012-12-01";
   return ss.str();

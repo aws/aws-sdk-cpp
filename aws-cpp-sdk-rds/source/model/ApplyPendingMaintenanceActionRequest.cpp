@@ -19,7 +19,10 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ApplyPendingMaintenanceActionRequest::ApplyPendingMaintenanceActionRequest()
+ApplyPendingMaintenanceActionRequest::ApplyPendingMaintenanceActionRequest() : 
+    m_resourceIdentifierHasBeenSet(false),
+    m_applyActionHasBeenSet(false),
+    m_optInTypeHasBeenSet(false)
 {
 }
 
@@ -27,9 +30,18 @@ Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ApplyPendingMaintenanceAction&";
-  ss << "ResourceIdentifier=" << StringUtils::URLEncode(m_resourceIdentifier.c_str()) << "&";
-  ss << "ApplyAction=" << StringUtils::URLEncode(m_applyAction.c_str()) << "&";
-  ss << "OptInType=" << StringUtils::URLEncode(m_optInType.c_str()) << "&";
+  if(m_resourceIdentifierHasBeenSet)
+  {
+    ss << "ResourceIdentifier=" << StringUtils::URLEncode(m_resourceIdentifier.c_str()) << "&";
+  }
+  if(m_applyActionHasBeenSet)
+  {
+    ss << "ApplyAction=" << StringUtils::URLEncode(m_applyAction.c_str()) << "&";
+  }
+  if(m_optInTypeHasBeenSet)
+  {
+    ss << "OptInType=" << StringUtils::URLEncode(m_optInType.c_str()) << "&";
+  }
   ss << "Version=2014-10-31";
   return ss.str();
 }

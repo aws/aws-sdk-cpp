@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 PutBucketAclRequest::PutBucketAclRequest() : 
     m_aCLHasBeenSet(false),
     m_accessControlPolicyHasBeenSet(false),
+    m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),

@@ -20,6 +20,8 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 UpdateConfigurationTemplateRequest::UpdateConfigurationTemplateRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_optionSettingsHasBeenSet(false),
     m_optionsToRemoveHasBeenSet(false)
@@ -30,8 +32,14 @@ Aws::String UpdateConfigurationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateConfigurationTemplate&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
-  ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
+  if(m_templateNameHasBeenSet)
+  {
+    ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";

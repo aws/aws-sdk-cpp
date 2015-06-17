@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-RegisterInstancesWithLoadBalancerRequest::RegisterInstancesWithLoadBalancerRequest()
+RegisterInstancesWithLoadBalancerRequest::RegisterInstancesWithLoadBalancerRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String RegisterInstancesWithLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RegisterInstancesWithLoadBalancer&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned instancesCount = 1;
-  for(auto& item : m_instances)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Instances.", instancesCount, "");
-    instancesCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_instancesHasBeenSet)
+  {
+    unsigned instancesCount = 1;
+    for(auto& item : m_instances)
+    {
+      item.OutputToStream(ss, "Instances.", instancesCount, "");
+      instancesCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

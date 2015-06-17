@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListJobsByPipelineRequest::ListJobsByPipelineRequest() : 
+    m_pipelineIdHasBeenSet(false),
     m_ascendingHasBeenSet(false),
     m_pageTokenHasBeenSet(false)
 {

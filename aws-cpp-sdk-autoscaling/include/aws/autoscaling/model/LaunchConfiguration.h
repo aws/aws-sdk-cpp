@@ -53,12 +53,12 @@ namespace Model
     /*
      <p>The name of the launch configuration.</p>
     */
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The name of the launch configuration.</p>
     */
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /*
      <p>The name of the launch configuration.</p>
@@ -101,12 +101,12 @@ namespace Model
     /*
      <p>The ID of the Amazon Machine Image (AMI).</p>
     */
-    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /*
      <p>The ID of the Amazon Machine Image (AMI).</p>
     */
-    inline void SetImageId(const char* value) { m_imageId.assign(value); }
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /*
      <p>The ID of the Amazon Machine Image (AMI).</p>
@@ -245,12 +245,12 @@ namespace Model
     /*
      <p>The instance type for the EC2 instances.</p>
     */
-    inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>The instance type for the EC2 instances.</p>
     */
-    inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /*
      <p>The instance type for the EC2 instances.</p>
@@ -398,7 +398,7 @@ namespace Model
     /*
      <p>The creation date and time for the launch configuration.</p>
     */
-    inline void SetCreatedTime(double value) { m_createdTime = value; }
+    inline void SetCreatedTime(double value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /*
      <p>The creation date and time for the launch configuration.</p>
@@ -459,9 +459,11 @@ namespace Model
 
   private:
     Aws::String m_launchConfigurationName;
+    bool m_launchConfigurationNameHasBeenSet;
     Aws::String m_launchConfigurationARN;
     bool m_launchConfigurationARNHasBeenSet;
     Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroups;
@@ -473,6 +475,7 @@ namespace Model
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
     Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
     Aws::String m_ramdiskId;
@@ -486,6 +489,7 @@ namespace Model
     Aws::String m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
     double m_createdTime;
+    bool m_createdTimeHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
     bool m_associatePublicIpAddress;

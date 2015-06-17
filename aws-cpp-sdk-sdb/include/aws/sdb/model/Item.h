@@ -52,12 +52,12 @@ namespace Model
     /*
      The name of the item.
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the item.
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      The name of the item.
@@ -100,7 +100,7 @@ namespace Model
     /*
      A list of attributes.
     */
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributes = value; }
+    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /*
      A list of attributes.
@@ -110,13 +110,15 @@ namespace Model
     /*
      A list of attributes.
     */
-    inline Item& AddAttributes(const Attribute& value) { m_attributes.push_back(value); return *this; }
+    inline Item& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_alternateNameEncoding;
     bool m_alternateNameEncodingHasBeenSet;
     Aws::Vector<Attribute> m_attributes;
+    bool m_attributesHasBeenSet;
   };
 
 } // namespace Model

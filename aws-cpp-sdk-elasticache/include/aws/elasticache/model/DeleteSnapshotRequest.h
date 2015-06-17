@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the snapshot to be deleted.</p>
     */
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotName = value; }
+    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /*
      <p>The name of the snapshot to be deleted.</p>
     */
-    inline void SetSnapshotName(const char* value) { m_snapshotName.assign(value); }
+    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
 
     /*
      <p>The name of the snapshot to be deleted.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_snapshotName;
+    bool m_snapshotNameHasBeenSet;
   };
 
 } // namespace Model

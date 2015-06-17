@@ -68,12 +68,12 @@ namespace Model
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to start.</p>
     */
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinition = value; }
+    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to start.</p>
     */
-    inline void SetTaskDefinition(const char* value) { m_taskDefinition.assign(value); }
+    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /*
      <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to start.</p>
@@ -106,7 +106,7 @@ namespace Model
     /*
      <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for the container instances on which you would like to place your task.</p> <important> <p>The list of container instances to start tasks on is limited to 10.</p> </important>
     */
-    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstances = value; }
+    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /*
      <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for the container instances on which you would like to place your task.</p> <important> <p>The list of container instances to start tasks on is limited to 10.</p> </important>
@@ -116,12 +116,12 @@ namespace Model
     /*
      <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for the container instances on which you would like to place your task.</p> <important> <p>The list of container instances to start tasks on is limited to 10.</p> </important>
     */
-    inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstances.push_back(value); return *this; }
+    inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /*
      <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for the container instances on which you would like to place your task.</p> <important> <p>The list of container instances to start tasks on is limited to 10.</p> </important>
     */
-    inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstances.push_back(value); return *this; }
+    inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /*
      <p>An optional tag specified when a task is started. For example if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a> call with the <code>startedBy</code> value.</p> <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
@@ -151,9 +151,11 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::String m_taskDefinition;
+    bool m_taskDefinitionHasBeenSet;
     TaskOverride m_overrides;
     bool m_overridesHasBeenSet;
     Aws::Vector<Aws::String> m_containerInstances;
+    bool m_containerInstancesHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
   };

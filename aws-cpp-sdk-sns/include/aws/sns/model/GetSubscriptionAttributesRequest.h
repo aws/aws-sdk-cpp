@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the subscription whose properties you want to get.</p>
     */
-    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
+    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /*
      <p>The ARN of the subscription whose properties you want to get.</p>
     */
-    inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
+    inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
 
     /*
      <p>The ARN of the subscription whose properties you want to get.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_subscriptionArn;
+    bool m_subscriptionArnHasBeenSet;
   };
 
 } // namespace Model

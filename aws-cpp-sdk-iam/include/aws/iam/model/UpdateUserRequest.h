@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>Name of the user to update. If you're changing the name of the user, this is the original user name. </p>
@@ -107,6 +107,7 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_newPath;
     bool m_newPathHasBeenSet;
     Aws::String m_newUserName;

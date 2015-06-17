@@ -21,7 +21,9 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStepRequest::DescribeStepRequest()
+DescribeStepRequest::DescribeStepRequest() : 
+    m_clusterIdHasBeenSet(false),
+    m_stepIdHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String DescribeStepRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ClusterId", m_clusterId);
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
 
-  payload.WithString("StepId", m_stepId);
+  }
+
+  if(m_stepIdHasBeenSet)
+  {
+   payload.WithString("StepId", m_stepId);
+
+  }
 
   return payload.WriteReadable();
 }

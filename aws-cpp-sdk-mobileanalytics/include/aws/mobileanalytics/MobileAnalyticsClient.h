@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -73,7 +74,7 @@ namespace Model
 
   class MobileAnalyticsClient;
 
-  typedef Aws::Utils::Event<MobileAnalyticsClient, const Model::PutEventsRequest&, const Model::PutEventsOutcome&> PutEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<MobileAnalyticsClient, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const Aws::Client::AsyncCallerContext*> PutEventsOutcomeReceivedEvent;
 
   /*
     <p>Amazon Mobile Analytics is a service for collecting, visualizing, and understanding app usage data at scale.</p>
@@ -122,7 +123,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PutEventsAsync(const Model::PutEventsRequest& request) const;
+     void PutEventsAsync(const Model::PutEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for PutEventsAsync to call upon completion to the handler chain. You need to call this to
@@ -145,7 +146,7 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void PutEventsAsyncHelper(const Model::PutEventsRequest& request) const;
+    void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

@@ -21,7 +21,8 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePipelinesRequest::DescribePipelinesRequest()
+DescribePipelinesRequest::DescribePipelinesRequest() : 
+    m_pipelineIdsHasBeenSet(false)
 {
 }
 
@@ -29,12 +30,16 @@ Aws::String DescribePipelinesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> pipelineIdsJsonList(m_pipelineIds.size());
-  for(unsigned pipelineIdsIndex = 0; pipelineIdsIndex < pipelineIdsJsonList.GetLength(); ++pipelineIdsIndex)
+  if(m_pipelineIdsHasBeenSet)
   {
-    pipelineIdsJsonList[pipelineIdsIndex].AsString(m_pipelineIds[pipelineIdsIndex]);
+   Array<JsonValue> pipelineIdsJsonList(m_pipelineIds.size());
+   for(unsigned pipelineIdsIndex = 0; pipelineIdsIndex < pipelineIdsJsonList.GetLength(); ++pipelineIdsIndex)
+   {
+     pipelineIdsJsonList[pipelineIdsIndex].AsString(m_pipelineIds[pipelineIdsIndex]);
+   }
+   payload.WithArray("pipelineIds", std::move(pipelineIdsJsonList));
+
   }
-  payload.WithArray("pipelineIds", std::move(pipelineIdsJsonList));
 
   return payload.WriteReadable();
 }

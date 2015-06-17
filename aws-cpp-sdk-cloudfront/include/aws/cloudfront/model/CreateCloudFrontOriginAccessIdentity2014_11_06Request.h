@@ -41,7 +41,7 @@ namespace Model
     /*
      The origin access identity's configuration information.
     */
-    inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfig = value; }
+    inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /*
      The origin access identity's configuration information.
@@ -50,6 +50,7 @@ namespace Model
 
   private:
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
+    bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
   };
 
 } // namespace Model

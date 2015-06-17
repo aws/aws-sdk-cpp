@@ -45,12 +45,12 @@ namespace Model
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      An identity pool ID in the format REGION:GUID.
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      An identity pool ID in the format REGION:GUID.
@@ -69,12 +69,12 @@ namespace Model
     /*
      <p>A string that you provide.</p>
     */
-    inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolName = value; }
+    inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
 
     /*
      <p>A string that you provide.</p>
     */
-    inline void SetIdentityPoolName(const char* value) { m_identityPoolName.assign(value); }
+    inline void SetIdentityPoolName(const char* value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName.assign(value); }
 
     /*
      <p>A string that you provide.</p>
@@ -93,7 +93,7 @@ namespace Model
     /*
      TRUE if the identity pool supports unauthenticated logins.
     */
-    inline void SetAllowUnauthenticatedIdentities(bool value) { m_allowUnauthenticatedIdentities = value; }
+    inline void SetAllowUnauthenticatedIdentities(bool value) { m_allowUnauthenticatedIdentitiesHasBeenSet = true; m_allowUnauthenticatedIdentities = value; }
 
     /*
      TRUE if the identity pool supports unauthenticated logins.
@@ -174,8 +174,11 @@ namespace Model
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     Aws::String m_identityPoolName;
+    bool m_identityPoolNameHasBeenSet;
     bool m_allowUnauthenticatedIdentities;
+    bool m_allowUnauthenticatedIdentitiesHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
     bool m_supportedLoginProvidersHasBeenSet;
     Aws::String m_developerProviderName;

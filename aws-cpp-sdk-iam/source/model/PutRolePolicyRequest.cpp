@@ -19,7 +19,10 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-PutRolePolicyRequest::PutRolePolicyRequest()
+PutRolePolicyRequest::PutRolePolicyRequest() : 
+    m_roleNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
+    m_policyDocumentHasBeenSet(false)
 {
 }
 
@@ -27,9 +30,18 @@ Aws::String PutRolePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutRolePolicy&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
-  ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_policyNameHasBeenSet)
+  {
+    ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
+  }
+  if(m_policyDocumentHasBeenSet)
+  {
+    ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

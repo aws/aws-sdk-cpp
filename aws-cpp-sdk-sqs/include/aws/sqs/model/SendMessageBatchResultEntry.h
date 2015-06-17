@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>An identifier for the message in this batch.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>An identifier for the message in this batch.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>An identifier for the message in this batch.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>An identifier for the message.</p>
     */
-    inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
+    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /*
      <p>An identifier for the message.</p>
     */
-    inline void SetMessageId(const char* value) { m_messageId.assign(value); }
+    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /*
      <p>An identifier for the message.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.</p>
     */
-    inline void SetMD5OfMessageBody(const Aws::String& value) { m_mD5OfMessageBody = value; }
+    inline void SetMD5OfMessageBody(const Aws::String& value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody = value; }
 
     /*
      <p>An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.</p>
     */
-    inline void SetMD5OfMessageBody(const char* value) { m_mD5OfMessageBody.assign(value); }
+    inline void SetMD5OfMessageBody(const char* value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody.assign(value); }
 
     /*
      <p>An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.</p>
@@ -141,8 +141,11 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_messageId;
+    bool m_messageIdHasBeenSet;
     Aws::String m_mD5OfMessageBody;
+    bool m_mD5OfMessageBodyHasBeenSet;
     Aws::String m_mD5OfMessageAttributes;
     bool m_mD5OfMessageAttributesHasBeenSet;
   };

@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The identifier of the cluster to describe.</p>
     */
-    inline void SetClusterId(const Aws::String& value) { m_clusterId = value; }
+    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /*
      <p>The identifier of the cluster to describe.</p>
     */
-    inline void SetClusterId(const char* value) { m_clusterId.assign(value); }
+    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
 
     /*
      <p>The identifier of the cluster to describe.</p>
@@ -62,6 +62,7 @@ namespace Model
 
   private:
     Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet;
   };
 
 } // namespace Model

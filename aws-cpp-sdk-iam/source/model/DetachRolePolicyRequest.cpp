@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DetachRolePolicyRequest::DetachRolePolicyRequest()
+DetachRolePolicyRequest::DetachRolePolicyRequest() : 
+    m_roleNameHasBeenSet(false),
+    m_policyArnHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DetachRolePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DetachRolePolicy&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

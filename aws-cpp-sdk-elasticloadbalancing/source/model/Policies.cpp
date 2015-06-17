@@ -44,35 +44,38 @@ Policies& Policies::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode appCookieStickinessPoliciesNode = resultNode.FirstChild("AppCookieStickinessPolicies");
+    XmlNode appCookieStickinessPoliciesNodeParent = resultNode.FirstChild("AppCookieStickinessPolicies");
+    XmlNode appCookieStickinessPoliciesNode = appCookieStickinessPoliciesNodeParent.FirstChild("member");
     if(!appCookieStickinessPoliciesNode.IsNull())
     {
       while(!appCookieStickinessPoliciesNode.IsNull())
       {
         m_appCookieStickinessPolicies.push_back(appCookieStickinessPoliciesNode);
-        appCookieStickinessPoliciesNode = appCookieStickinessPoliciesNode.NextNode("AppCookieStickinessPolicies");
+        appCookieStickinessPoliciesNode = appCookieStickinessPoliciesNode.NextNode("member");
       }
 
       m_appCookieStickinessPoliciesHasBeenSet = true;
     }
-    XmlNode lBCookieStickinessPoliciesNode = resultNode.FirstChild("LBCookieStickinessPolicies");
+    XmlNode lBCookieStickinessPoliciesNodeParent = resultNode.FirstChild("LBCookieStickinessPolicies");
+    XmlNode lBCookieStickinessPoliciesNode = lBCookieStickinessPoliciesNodeParent.FirstChild("member");
     if(!lBCookieStickinessPoliciesNode.IsNull())
     {
       while(!lBCookieStickinessPoliciesNode.IsNull())
       {
         m_lBCookieStickinessPolicies.push_back(lBCookieStickinessPoliciesNode);
-        lBCookieStickinessPoliciesNode = lBCookieStickinessPoliciesNode.NextNode("LBCookieStickinessPolicies");
+        lBCookieStickinessPoliciesNode = lBCookieStickinessPoliciesNode.NextNode("member");
       }
 
       m_lBCookieStickinessPoliciesHasBeenSet = true;
     }
-    XmlNode otherPoliciesNode = resultNode.FirstChild("OtherPolicies");
+    XmlNode otherPoliciesNodeParent = resultNode.FirstChild("OtherPolicies");
+    XmlNode otherPoliciesNode = otherPoliciesNodeParent.FirstChild("member");
     if(!otherPoliciesNode.IsNull())
     {
       while(!otherPoliciesNode.IsNull())
       {
         m_otherPolicies.push_back(StringUtils::Trim(otherPoliciesNode.GetText().c_str()));
-        otherPoliciesNode = otherPoliciesNode.NextNode("OtherPolicies");
+        otherPoliciesNode = otherPoliciesNode.NextNode("member");
       }
 
       m_otherPoliciesHasBeenSet = true;

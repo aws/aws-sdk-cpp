@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() : 
+    m_sourceDBInstanceIdentifierHasBeenSet(false),
+    m_targetDBInstanceIdentifierHasBeenSet(false),
     m_restoreTime(0.0),
     m_restoreTimeHasBeenSet(false),
     m_useLatestRestorableTime(false),
@@ -52,8 +54,14 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RestoreDBInstanceToPointInTime&";
-  ss << "SourceDBInstanceIdentifier=" << StringUtils::URLEncode(m_sourceDBInstanceIdentifier.c_str()) << "&";
-  ss << "TargetDBInstanceIdentifier=" << StringUtils::URLEncode(m_targetDBInstanceIdentifier.c_str()) << "&";
+  if(m_sourceDBInstanceIdentifierHasBeenSet)
+  {
+    ss << "SourceDBInstanceIdentifier=" << StringUtils::URLEncode(m_sourceDBInstanceIdentifier.c_str()) << "&";
+  }
+  if(m_targetDBInstanceIdentifierHasBeenSet)
+  {
+    ss << "TargetDBInstanceIdentifier=" << StringUtils::URLEncode(m_targetDBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_restoreTimeHasBeenSet)
   {
     ss << "RestoreTime=" << m_restoreTime << "&";

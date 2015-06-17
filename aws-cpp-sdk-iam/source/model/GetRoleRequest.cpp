@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetRoleRequest::GetRoleRequest()
+GetRoleRequest::GetRoleRequest() : 
+    m_roleNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetRole&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

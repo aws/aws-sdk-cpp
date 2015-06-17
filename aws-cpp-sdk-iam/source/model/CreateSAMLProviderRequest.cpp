@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateSAMLProviderRequest::CreateSAMLProviderRequest()
+CreateSAMLProviderRequest::CreateSAMLProviderRequest() : 
+    m_sAMLMetadataDocumentHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String CreateSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateSAMLProvider&";
-  ss << "SAMLMetadataDocument=" << StringUtils::URLEncode(m_sAMLMetadataDocument.c_str()) << "&";
-  ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_sAMLMetadataDocumentHasBeenSet)
+  {
+    ss << "SAMLMetadataDocument=" << StringUtils::URLEncode(m_sAMLMetadataDocument.c_str()) << "&";
+  }
+  if(m_nameHasBeenSet)
+  {
+    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

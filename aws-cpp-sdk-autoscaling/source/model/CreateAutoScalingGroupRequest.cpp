@@ -20,10 +20,13 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_minSize(0),
+    m_minSizeHasBeenSet(false),
     m_maxSize(0),
+    m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
     m_desiredCapacityHasBeenSet(false),
     m_defaultCooldown(0),
@@ -44,7 +47,10 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateAutoScalingGroup&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
@@ -53,8 +59,14 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
-  ss << "MinSize=" << m_minSize << "&";
-  ss << "MaxSize=" << m_maxSize << "&";
+  if(m_minSizeHasBeenSet)
+  {
+    ss << "MinSize=" << m_minSize << "&";
+  }
+  if(m_maxSizeHasBeenSet)
+  {
+    ss << "MaxSize=" << m_maxSize << "&";
+  }
   if(m_desiredCapacityHasBeenSet)
   {
     ss << "DesiredCapacity=" << m_desiredCapacity << "&";

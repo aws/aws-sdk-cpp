@@ -21,7 +21,9 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddJobFlowStepsRequest::AddJobFlowStepsRequest()
+AddJobFlowStepsRequest::AddJobFlowStepsRequest() : 
+    m_jobFlowIdHasBeenSet(false),
+    m_stepsHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String AddJobFlowStepsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("JobFlowId", m_jobFlowId);
-
-  Array<JsonValue> stepsJsonList(m_steps.size());
-  for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
+  if(m_jobFlowIdHasBeenSet)
   {
-    stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
+   payload.WithString("JobFlowId", m_jobFlowId);
+
   }
-  payload.WithArray("Steps", std::move(stepsJsonList));
+
+  if(m_stepsHasBeenSet)
+  {
+   Array<JsonValue> stepsJsonList(m_steps.size());
+   for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
+   {
+     stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
+   }
+   payload.WithArray("Steps", std::move(stepsJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

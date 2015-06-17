@@ -22,8 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 JobFlowDetail::JobFlowDetail() : 
+    m_jobFlowIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
+    m_executionStatusDetailHasBeenSet(false),
+    m_instancesHasBeenSet(false),
     m_stepsHasBeenSet(false),
     m_bootstrapActionsHasBeenSet(false),
     m_supportedProductsHasBeenSet(false),
@@ -35,8 +39,12 @@ JobFlowDetail::JobFlowDetail() :
 }
 
 JobFlowDetail::JobFlowDetail(const JsonValue& jsonValue) : 
+    m_jobFlowIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
+    m_executionStatusDetailHasBeenSet(false),
+    m_instancesHasBeenSet(false),
     m_stepsHasBeenSet(false),
     m_bootstrapActionsHasBeenSet(false),
     m_supportedProductsHasBeenSet(false),
@@ -50,9 +58,19 @@ JobFlowDetail::JobFlowDetail(const JsonValue& jsonValue) :
 
 JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
 {
-  m_jobFlowId = jsonValue.GetString("JobFlowId");
+  if(jsonValue.ValueExists("JobFlowId"))
+  {
+    m_jobFlowId = jsonValue.GetString("JobFlowId");
 
-  m_name = jsonValue.GetString("Name");
+    m_jobFlowIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("LogUri"))
   {
@@ -68,9 +86,19 @@ JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
     m_amiVersionHasBeenSet = true;
   }
 
-  m_executionStatusDetail = jsonValue.GetObject("ExecutionStatusDetail");
+  if(jsonValue.ValueExists("ExecutionStatusDetail"))
+  {
+    m_executionStatusDetail = jsonValue.GetObject("ExecutionStatusDetail");
 
-  m_instances = jsonValue.GetObject("Instances");
+    m_executionStatusDetailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Instances"))
+  {
+    m_instances = jsonValue.GetObject("Instances");
+
+    m_instancesHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Steps"))
   {
@@ -130,9 +158,17 @@ JsonValue JobFlowDetail::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("JobFlowId", m_jobFlowId);
+  if(m_jobFlowIdHasBeenSet)
+  {
+   payload.WithString("JobFlowId", m_jobFlowId);
 
-  payload.WithString("Name", m_name);
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
 
   if(m_logUriHasBeenSet)
   {
@@ -146,9 +182,17 @@ JsonValue JobFlowDetail::Jsonize() const
 
   }
 
-  payload.WithObject("ExecutionStatusDetail", m_executionStatusDetail.Jsonize());
+  if(m_executionStatusDetailHasBeenSet)
+  {
+   payload.WithObject("ExecutionStatusDetail", m_executionStatusDetail.Jsonize());
 
-  payload.WithObject("Instances", m_instances.Jsonize());
+  }
+
+  if(m_instancesHasBeenSet)
+  {
+   payload.WithObject("Instances", m_instances.Jsonize());
+
+  }
 
   if(m_stepsHasBeenSet)
   {

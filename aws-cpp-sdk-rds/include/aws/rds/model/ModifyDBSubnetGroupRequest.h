@@ -42,12 +42,12 @@ namespace Model
     /*
      <p> The name for the DB subnet group. This value is stored as a lowercase string. </p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default".</p> <p>Example: <code>mySubnetgroup</code></p>
     */
-    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupName = value; }
+    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /*
      <p> The name for the DB subnet group. This value is stored as a lowercase string. </p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default".</p> <p>Example: <code>mySubnetgroup</code></p>
     */
-    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupName.assign(value); }
+    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /*
      <p> The name for the DB subnet group. This value is stored as a lowercase string. </p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default".</p> <p>Example: <code>mySubnetgroup</code></p>
@@ -90,7 +90,7 @@ namespace Model
     /*
      <p> The EC2 subnet IDs for the DB subnet group. </p>
     */
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
+    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /*
      <p> The EC2 subnet IDs for the DB subnet group. </p>
@@ -100,18 +100,20 @@ namespace Model
     /*
      <p> The EC2 subnet IDs for the DB subnet group. </p>
     */
-    inline ModifyDBSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
+    inline ModifyDBSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /*
      <p> The EC2 subnet IDs for the DB subnet group. </p>
     */
-    inline ModifyDBSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
+    inline ModifyDBSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
     Aws::String m_dBSubnetGroupName;
+    bool m_dBSubnetGroupNameHasBeenSet;
     Aws::String m_dBSubnetGroupDescription;
     bool m_dBSubnetGroupDescriptionHasBeenSet;
     Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet;
   };
 
 } // namespace Model

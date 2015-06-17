@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 
 CacheBehaviors::CacheBehaviors() : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 CacheBehaviors::CacheBehaviors(const XmlNode& xmlNode) : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,14 +45,19 @@ CacheBehaviors& CacheBehaviors::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode cacheBehaviorNode = resultNode.FirstChild("CacheBehavior");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode cacheBehaviorNodeParent = resultNode.FirstChild("CacheBehavior");
+    XmlNode cacheBehaviorNode = cacheBehaviorNodeParent.FirstChild("member");
     if(!cacheBehaviorNode.IsNull())
     {
       while(!cacheBehaviorNode.IsNull())
       {
         m_items.push_back(cacheBehaviorNode);
-        cacheBehaviorNode = cacheBehaviorNode.NextNode("CacheBehavior");
+        cacheBehaviorNode = cacheBehaviorNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -63,10 +70,14 @@ CacheBehaviors& CacheBehaviors::operator =(const XmlNode& xmlNode)
 void CacheBehaviors::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

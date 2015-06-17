@@ -34,7 +34,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a batch get applications operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API BatchGetApplicationsResult
   {
@@ -43,23 +43,15 @@ namespace Model
     BatchGetApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     BatchGetApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    
     inline const Aws::Vector<ApplicationInfo>& GetApplicationsInfo() const{ return m_applicationsInfo; }
-    /*
-     <p>Information about the applications.</p>
-    */
+    
     inline void SetApplicationsInfo(const Aws::Vector<ApplicationInfo>& value) { m_applicationsInfo = value; }
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    
     inline BatchGetApplicationsResult&  WithApplicationsInfo(const Aws::Vector<ApplicationInfo>& value) { SetApplicationsInfo(value); return *this;}
 
-    /*
-     <p>Information about the applications.</p>
-    */
+    
     inline BatchGetApplicationsResult& AddApplicationsInfo(const ApplicationInfo& value) { m_applicationsInfo.push_back(value); return *this; }
 
   private:

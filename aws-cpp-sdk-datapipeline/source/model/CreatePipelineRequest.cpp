@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePipelineRequest::CreatePipelineRequest() : 
+    m_nameHasBeenSet(false),
+    m_uniqueIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -31,9 +33,17 @@ Aws::String CreatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
-  payload.WithString("uniqueId", m_uniqueId);
+  }
+
+  if(m_uniqueIdHasBeenSet)
+  {
+   payload.WithString("uniqueId", m_uniqueId);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

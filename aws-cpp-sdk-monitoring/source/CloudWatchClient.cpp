@@ -122,14 +122,14 @@ DeleteAlarmsOutcomeCallable CloudWatchClient::DeleteAlarmsCallable(const DeleteA
   return std::async(std::launch::async, &CloudWatchClient::DeleteAlarms, this, request);
 }
 
-void CloudWatchClient::DeleteAlarmsAsync(const DeleteAlarmsRequest& request) const
+void CloudWatchClient::DeleteAlarmsAsync(const DeleteAlarmsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::DeleteAlarmsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::DeleteAlarmsAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::DeleteAlarmsAsyncHelper(const DeleteAlarmsRequest& request) const
+void CloudWatchClient::DeleteAlarmsAsyncHelper(const DeleteAlarmsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAlarmsOutcomeReceived(this, request, DeleteAlarms(request));
+  m_onDeleteAlarmsOutcomeReceived(this, request, DeleteAlarms(request), context);
 }
 
 DescribeAlarmHistoryOutcome CloudWatchClient::DescribeAlarmHistory(const DescribeAlarmHistoryRequest& request) const
@@ -153,14 +153,14 @@ DescribeAlarmHistoryOutcomeCallable CloudWatchClient::DescribeAlarmHistoryCallab
   return std::async(std::launch::async, &CloudWatchClient::DescribeAlarmHistory, this, request);
 }
 
-void CloudWatchClient::DescribeAlarmHistoryAsync(const DescribeAlarmHistoryRequest& request) const
+void CloudWatchClient::DescribeAlarmHistoryAsync(const DescribeAlarmHistoryRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::DescribeAlarmHistoryAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::DescribeAlarmHistoryAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::DescribeAlarmHistoryAsyncHelper(const DescribeAlarmHistoryRequest& request) const
+void CloudWatchClient::DescribeAlarmHistoryAsyncHelper(const DescribeAlarmHistoryRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAlarmHistoryOutcomeReceived(this, request, DescribeAlarmHistory(request));
+  m_onDescribeAlarmHistoryOutcomeReceived(this, request, DescribeAlarmHistory(request), context);
 }
 
 DescribeAlarmsOutcome CloudWatchClient::DescribeAlarms(const DescribeAlarmsRequest& request) const
@@ -184,14 +184,14 @@ DescribeAlarmsOutcomeCallable CloudWatchClient::DescribeAlarmsCallable(const Des
   return std::async(std::launch::async, &CloudWatchClient::DescribeAlarms, this, request);
 }
 
-void CloudWatchClient::DescribeAlarmsAsync(const DescribeAlarmsRequest& request) const
+void CloudWatchClient::DescribeAlarmsAsync(const DescribeAlarmsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::DescribeAlarmsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::DescribeAlarmsAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::DescribeAlarmsAsyncHelper(const DescribeAlarmsRequest& request) const
+void CloudWatchClient::DescribeAlarmsAsyncHelper(const DescribeAlarmsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAlarmsOutcomeReceived(this, request, DescribeAlarms(request));
+  m_onDescribeAlarmsOutcomeReceived(this, request, DescribeAlarms(request), context);
 }
 
 DescribeAlarmsForMetricOutcome CloudWatchClient::DescribeAlarmsForMetric(const DescribeAlarmsForMetricRequest& request) const
@@ -215,14 +215,14 @@ DescribeAlarmsForMetricOutcomeCallable CloudWatchClient::DescribeAlarmsForMetric
   return std::async(std::launch::async, &CloudWatchClient::DescribeAlarmsForMetric, this, request);
 }
 
-void CloudWatchClient::DescribeAlarmsForMetricAsync(const DescribeAlarmsForMetricRequest& request) const
+void CloudWatchClient::DescribeAlarmsForMetricAsync(const DescribeAlarmsForMetricRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::DescribeAlarmsForMetricAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::DescribeAlarmsForMetricAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::DescribeAlarmsForMetricAsyncHelper(const DescribeAlarmsForMetricRequest& request) const
+void CloudWatchClient::DescribeAlarmsForMetricAsyncHelper(const DescribeAlarmsForMetricRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAlarmsForMetricOutcomeReceived(this, request, DescribeAlarmsForMetric(request));
+  m_onDescribeAlarmsForMetricOutcomeReceived(this, request, DescribeAlarmsForMetric(request), context);
 }
 
 DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAlarmActionsRequest& request) const
@@ -246,14 +246,14 @@ DisableAlarmActionsOutcomeCallable CloudWatchClient::DisableAlarmActionsCallable
   return std::async(std::launch::async, &CloudWatchClient::DisableAlarmActions, this, request);
 }
 
-void CloudWatchClient::DisableAlarmActionsAsync(const DisableAlarmActionsRequest& request) const
+void CloudWatchClient::DisableAlarmActionsAsync(const DisableAlarmActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::DisableAlarmActionsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::DisableAlarmActionsAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::DisableAlarmActionsAsyncHelper(const DisableAlarmActionsRequest& request) const
+void CloudWatchClient::DisableAlarmActionsAsyncHelper(const DisableAlarmActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDisableAlarmActionsOutcomeReceived(this, request, DisableAlarmActions(request));
+  m_onDisableAlarmActionsOutcomeReceived(this, request, DisableAlarmActions(request), context);
 }
 
 EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarmActionsRequest& request) const
@@ -277,14 +277,14 @@ EnableAlarmActionsOutcomeCallable CloudWatchClient::EnableAlarmActionsCallable(c
   return std::async(std::launch::async, &CloudWatchClient::EnableAlarmActions, this, request);
 }
 
-void CloudWatchClient::EnableAlarmActionsAsync(const EnableAlarmActionsRequest& request) const
+void CloudWatchClient::EnableAlarmActionsAsync(const EnableAlarmActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::EnableAlarmActionsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::EnableAlarmActionsAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::EnableAlarmActionsAsyncHelper(const EnableAlarmActionsRequest& request) const
+void CloudWatchClient::EnableAlarmActionsAsyncHelper(const EnableAlarmActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnableAlarmActionsOutcomeReceived(this, request, EnableAlarmActions(request));
+  m_onEnableAlarmActionsOutcomeReceived(this, request, EnableAlarmActions(request), context);
 }
 
 GetMetricStatisticsOutcome CloudWatchClient::GetMetricStatistics(const GetMetricStatisticsRequest& request) const
@@ -308,14 +308,14 @@ GetMetricStatisticsOutcomeCallable CloudWatchClient::GetMetricStatisticsCallable
   return std::async(std::launch::async, &CloudWatchClient::GetMetricStatistics, this, request);
 }
 
-void CloudWatchClient::GetMetricStatisticsAsync(const GetMetricStatisticsRequest& request) const
+void CloudWatchClient::GetMetricStatisticsAsync(const GetMetricStatisticsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::GetMetricStatisticsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::GetMetricStatisticsAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsRequest& request) const
+void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetMetricStatisticsOutcomeReceived(this, request, GetMetricStatistics(request));
+  m_onGetMetricStatisticsOutcomeReceived(this, request, GetMetricStatistics(request), context);
 }
 
 ListHostInfoOutcome CloudWatchClient::ListHostInfo(const ListHostInfoRequest& request) const
@@ -339,14 +339,14 @@ ListHostInfoOutcomeCallable CloudWatchClient::ListHostInfoCallable(const ListHos
   return std::async(std::launch::async, &CloudWatchClient::ListHostInfo, this, request);
 }
 
-void CloudWatchClient::ListHostInfoAsync(const ListHostInfoRequest& request) const
+void CloudWatchClient::ListHostInfoAsync(const ListHostInfoRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::ListHostInfoAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::ListHostInfoAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::ListHostInfoAsyncHelper(const ListHostInfoRequest& request) const
+void CloudWatchClient::ListHostInfoAsyncHelper(const ListHostInfoRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListHostInfoOutcomeReceived(this, request, ListHostInfo(request));
+  m_onListHostInfoOutcomeReceived(this, request, ListHostInfo(request), context);
 }
 
 ListMetricsOutcome CloudWatchClient::ListMetrics(const ListMetricsRequest& request) const
@@ -370,14 +370,14 @@ ListMetricsOutcomeCallable CloudWatchClient::ListMetricsCallable(const ListMetri
   return std::async(std::launch::async, &CloudWatchClient::ListMetrics, this, request);
 }
 
-void CloudWatchClient::ListMetricsAsync(const ListMetricsRequest& request) const
+void CloudWatchClient::ListMetricsAsync(const ListMetricsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::ListMetricsAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::ListMetricsAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::ListMetricsAsyncHelper(const ListMetricsRequest& request) const
+void CloudWatchClient::ListMetricsAsyncHelper(const ListMetricsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListMetricsOutcomeReceived(this, request, ListMetrics(request));
+  m_onListMetricsOutcomeReceived(this, request, ListMetrics(request), context);
 }
 
 PutMetricAlarmOutcome CloudWatchClient::PutMetricAlarm(const PutMetricAlarmRequest& request) const
@@ -401,14 +401,14 @@ PutMetricAlarmOutcomeCallable CloudWatchClient::PutMetricAlarmCallable(const Put
   return std::async(std::launch::async, &CloudWatchClient::PutMetricAlarm, this, request);
 }
 
-void CloudWatchClient::PutMetricAlarmAsync(const PutMetricAlarmRequest& request) const
+void CloudWatchClient::PutMetricAlarmAsync(const PutMetricAlarmRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::PutMetricAlarmAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::PutMetricAlarmAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::PutMetricAlarmAsyncHelper(const PutMetricAlarmRequest& request) const
+void CloudWatchClient::PutMetricAlarmAsyncHelper(const PutMetricAlarmRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutMetricAlarmOutcomeReceived(this, request, PutMetricAlarm(request));
+  m_onPutMetricAlarmOutcomeReceived(this, request, PutMetricAlarm(request), context);
 }
 
 PutMetricDataOutcome CloudWatchClient::PutMetricData(const PutMetricDataRequest& request) const
@@ -432,14 +432,14 @@ PutMetricDataOutcomeCallable CloudWatchClient::PutMetricDataCallable(const PutMe
   return std::async(std::launch::async, &CloudWatchClient::PutMetricData, this, request);
 }
 
-void CloudWatchClient::PutMetricDataAsync(const PutMetricDataRequest& request) const
+void CloudWatchClient::PutMetricDataAsync(const PutMetricDataRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::PutMetricDataAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::PutMetricDataAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::PutMetricDataAsyncHelper(const PutMetricDataRequest& request) const
+void CloudWatchClient::PutMetricDataAsyncHelper(const PutMetricDataRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutMetricDataOutcomeReceived(this, request, PutMetricData(request));
+  m_onPutMetricDataOutcomeReceived(this, request, PutMetricData(request), context);
 }
 
 PutMetricDataBatchOutcome CloudWatchClient::PutMetricDataBatch(const PutMetricDataBatchRequest& request) const
@@ -463,14 +463,14 @@ PutMetricDataBatchOutcomeCallable CloudWatchClient::PutMetricDataBatchCallable(c
   return std::async(std::launch::async, &CloudWatchClient::PutMetricDataBatch, this, request);
 }
 
-void CloudWatchClient::PutMetricDataBatchAsync(const PutMetricDataBatchRequest& request) const
+void CloudWatchClient::PutMetricDataBatchAsync(const PutMetricDataBatchRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::PutMetricDataBatchAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::PutMetricDataBatchAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::PutMetricDataBatchAsyncHelper(const PutMetricDataBatchRequest& request) const
+void CloudWatchClient::PutMetricDataBatchAsyncHelper(const PutMetricDataBatchRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutMetricDataBatchOutcomeReceived(this, request, PutMetricDataBatch(request));
+  m_onPutMetricDataBatchOutcomeReceived(this, request, PutMetricDataBatch(request), context);
 }
 
 SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest& request) const
@@ -494,13 +494,13 @@ SetAlarmStateOutcomeCallable CloudWatchClient::SetAlarmStateCallable(const SetAl
   return std::async(std::launch::async, &CloudWatchClient::SetAlarmState, this, request);
 }
 
-void CloudWatchClient::SetAlarmStateAsync(const SetAlarmStateRequest& request) const
+void CloudWatchClient::SetAlarmStateAsync(const SetAlarmStateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudWatchClient::SetAlarmStateAsyncHelper, this, request);
+  m_executor->Submit(&CloudWatchClient::SetAlarmStateAsyncHelper, this, request, context);
 }
 
-void CloudWatchClient::SetAlarmStateAsyncHelper(const SetAlarmStateRequest& request) const
+void CloudWatchClient::SetAlarmStateAsyncHelper(const SetAlarmStateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetAlarmStateOutcomeReceived(this, request, SetAlarmState(request));
+  m_onSetAlarmStateOutcomeReceived(this, request, SetAlarmState(request), context);
 }
 

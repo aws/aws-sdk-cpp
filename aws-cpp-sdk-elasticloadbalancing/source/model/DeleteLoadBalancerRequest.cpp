@@ -19,7 +19,8 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DeleteLoadBalancerRequest::DeleteLoadBalancerRequest()
+DeleteLoadBalancerRequest::DeleteLoadBalancerRequest() : 
+    m_loadBalancerNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteLoadBalancer&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  if(m_loadBalancerNameHasBeenSet)
+  {
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
   ss << "Version=2012-06-01";
   return ss.str();
 }

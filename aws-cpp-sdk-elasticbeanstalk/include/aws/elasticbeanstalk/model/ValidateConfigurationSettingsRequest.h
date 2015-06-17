@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p> The name of the application that the configuration template or environment belongs to. </p>
@@ -115,7 +115,7 @@ namespace Model
     /*
      <p> A list of the options and desired values to evaluate. </p>
     */
-    inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettings = value; }
+    inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /*
      <p> A list of the options and desired values to evaluate. </p>
@@ -125,15 +125,17 @@ namespace Model
     /*
      <p> A list of the options and desired values to evaluate. </p>
     */
-    inline ValidateConfigurationSettingsRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettings.push_back(value); return *this; }
+    inline ValidateConfigurationSettingsRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
+    bool m_optionSettingsHasBeenSet;
   };
 
 } // namespace Model

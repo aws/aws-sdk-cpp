@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeactivateMFADeviceRequest::DeactivateMFADeviceRequest()
+DeactivateMFADeviceRequest::DeactivateMFADeviceRequest() : 
+    m_userNameHasBeenSet(false),
+    m_serialNumberHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DeactivateMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeactivateMFADevice&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_serialNumberHasBeenSet)
+  {
+    ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

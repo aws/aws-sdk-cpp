@@ -19,7 +19,9 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest()
+RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RemoveTagsFromResource&";
-  ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
-  unsigned tagsCount = 1;
-  for(auto& item : m_tags)
+  if(m_resourceArnHasBeenSet)
   {
-    ss << "Tags." << tagsCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    tagsCount++;
+    ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      ss << "Tags." << tagsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      tagsCount++;
+    }
   }
   ss << "Version=2010-03-31";
   return ss.str();

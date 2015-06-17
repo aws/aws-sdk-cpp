@@ -20,10 +20,16 @@ using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
 GetMetricStatisticsRequest::GetMetricStatisticsRequest() : 
+    m_namespaceHasBeenSet(false),
+    m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_startTime(0.0),
+    m_startTimeHasBeenSet(false),
     m_endTime(0.0),
+    m_endTimeHasBeenSet(false),
     m_period(0),
+    m_periodHasBeenSet(false),
+    m_statisticsHasBeenSet(false),
     m_unitHasBeenSet(false)
 {
 }
@@ -32,8 +38,14 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetMetricStatistics&";
-  ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
-  ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  if(m_namespaceHasBeenSet)
+  {
+    ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  }
+  if(m_metricNameHasBeenSet)
+  {
+    ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  }
   if(m_dimensionsHasBeenSet)
   {
     unsigned dimensionsCount = 1;
@@ -43,15 +55,27 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
       dimensionsCount++;
     }
   }
-  ss << "StartTime=" << m_startTime << "&";
-  ss << "EndTime=" << m_endTime << "&";
-  ss << "Period=" << m_period << "&";
-  unsigned statisticsCount = 1;
-  for(auto& item : m_statistics)
+  if(m_startTimeHasBeenSet)
   {
-    ss << "Statistics." << statisticsCount << "="
-        << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item).c_str()) << "&";
-    statisticsCount++;
+    ss << "StartTime=" << m_startTime << "&";
+  }
+  if(m_endTimeHasBeenSet)
+  {
+    ss << "EndTime=" << m_endTime << "&";
+  }
+  if(m_periodHasBeenSet)
+  {
+    ss << "Period=" << m_period << "&";
+  }
+  if(m_statisticsHasBeenSet)
+  {
+    unsigned statisticsCount = 1;
+    for(auto& item : m_statistics)
+    {
+      ss << "Statistics." << statisticsCount << "="
+          << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item).c_str()) << "&";
+      statisticsCount++;
+    }
   }
   if(m_unitHasBeenSet)
   {

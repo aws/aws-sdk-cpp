@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The name or ARN of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name or ARN of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name or ARN of the group.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The name of the policy.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name of the policy.</p>
@@ -104,12 +104,12 @@ namespace Model
     /*
      <p>Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
-    inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentType = value; }
+    inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /*
      <p>Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
-    inline void SetAdjustmentType(const char* value) { m_adjustmentType.assign(value); }
+    inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
     /*
      <p>Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -206,10 +206,13 @@ namespace Model
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
     Aws::String m_policyType;
     bool m_policyTypeHasBeenSet;
     Aws::String m_adjustmentType;
+    bool m_adjustmentTypeHasBeenSet;
     long m_minAdjustmentStep;
     bool m_minAdjustmentStepHasBeenSet;
     long m_minAdjustmentMagnitude;

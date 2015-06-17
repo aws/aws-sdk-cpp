@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateDeploymentRequest::CreateDeploymentRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_deploymentGroupNameHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
@@ -35,7 +36,11 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
+
+  }
 
   if(m_deploymentGroupNameHasBeenSet)
   {

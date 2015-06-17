@@ -44,35 +44,38 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode toAddressesNode = resultNode.FirstChild("ToAddresses");
+    XmlNode toAddressesNodeParent = resultNode.FirstChild("ToAddresses");
+    XmlNode toAddressesNode = toAddressesNodeParent.FirstChild("member");
     if(!toAddressesNode.IsNull())
     {
       while(!toAddressesNode.IsNull())
       {
         m_toAddresses.push_back(StringUtils::Trim(toAddressesNode.GetText().c_str()));
-        toAddressesNode = toAddressesNode.NextNode("ToAddresses");
+        toAddressesNode = toAddressesNode.NextNode("member");
       }
 
       m_toAddressesHasBeenSet = true;
     }
-    XmlNode ccAddressesNode = resultNode.FirstChild("CcAddresses");
+    XmlNode ccAddressesNodeParent = resultNode.FirstChild("CcAddresses");
+    XmlNode ccAddressesNode = ccAddressesNodeParent.FirstChild("member");
     if(!ccAddressesNode.IsNull())
     {
       while(!ccAddressesNode.IsNull())
       {
         m_ccAddresses.push_back(StringUtils::Trim(ccAddressesNode.GetText().c_str()));
-        ccAddressesNode = ccAddressesNode.NextNode("CcAddresses");
+        ccAddressesNode = ccAddressesNode.NextNode("member");
       }
 
       m_ccAddressesHasBeenSet = true;
     }
-    XmlNode bccAddressesNode = resultNode.FirstChild("BccAddresses");
+    XmlNode bccAddressesNodeParent = resultNode.FirstChild("BccAddresses");
+    XmlNode bccAddressesNode = bccAddressesNodeParent.FirstChild("member");
     if(!bccAddressesNode.IsNull())
     {
       while(!bccAddressesNode.IsNull())
       {
         m_bccAddresses.push_back(StringUtils::Trim(bccAddressesNode.GetText().c_str()));
-        bccAddressesNode = bccAddressesNode.NextNode("BccAddresses");
+        bccAddressesNode = bccAddressesNode.NextNode("member");
       }
 
       m_bccAddressesHasBeenSet = true;

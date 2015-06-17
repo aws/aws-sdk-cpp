@@ -36,9 +36,17 @@ PutRecordResult::PutRecordResult(const AmazonWebServiceResult<JsonValue>& result
 PutRecordResult& PutRecordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  m_shardId = jsonValue.GetString("ShardId");
+  if(jsonValue.ValueExists("ShardId"))
+  {
+    m_shardId = jsonValue.GetString("ShardId");
 
-  m_sequenceNumber = jsonValue.GetString("SequenceNumber");
+  }
+
+  if(jsonValue.ValueExists("SequenceNumber"))
+  {
+    m_sequenceNumber = jsonValue.GetString("SequenceNumber");
+
+  }
 
 
 

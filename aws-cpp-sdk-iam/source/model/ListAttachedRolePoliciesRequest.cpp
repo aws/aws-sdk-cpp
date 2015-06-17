@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListAttachedRolePoliciesRequest::ListAttachedRolePoliciesRequest() : 
+    m_roleNameHasBeenSet(false),
     m_pathPrefixHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
@@ -31,7 +32,10 @@ Aws::String ListAttachedRolePoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListAttachedRolePolicies&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
   if(m_pathPrefixHasBeenSet)
   {
     ss << "PathPrefix=" << StringUtils::URLEncode(m_pathPrefix.c_str()) << "&";

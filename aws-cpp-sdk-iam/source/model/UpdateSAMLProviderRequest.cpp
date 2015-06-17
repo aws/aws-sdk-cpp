@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateSAMLProviderRequest::UpdateSAMLProviderRequest()
+UpdateSAMLProviderRequest::UpdateSAMLProviderRequest() : 
+    m_sAMLMetadataDocumentHasBeenSet(false),
+    m_sAMLProviderArnHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String UpdateSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateSAMLProvider&";
-  ss << "SAMLMetadataDocument=" << StringUtils::URLEncode(m_sAMLMetadataDocument.c_str()) << "&";
-  ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  if(m_sAMLMetadataDocumentHasBeenSet)
+  {
+    ss << "SAMLMetadataDocument=" << StringUtils::URLEncode(m_sAMLMetadataDocument.c_str()) << "&";
+  }
+  if(m_sAMLProviderArnHasBeenSet)
+  {
+    ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

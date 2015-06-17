@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
     */
-    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /*
      <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
     */
-    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifier.assign(value); }
+    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
 
     /*
      <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>A text description of the HSM configuration to be created.</p>
     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A text description of the HSM configuration to be created.</p>
     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
      <p>A text description of the HSM configuration to be created.</p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     */
-    inline void SetHsmIpAddress(const Aws::String& value) { m_hsmIpAddress = value; }
+    inline void SetHsmIpAddress(const Aws::String& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = value; }
 
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     */
-    inline void SetHsmIpAddress(const char* value) { m_hsmIpAddress.assign(value); }
+    inline void SetHsmIpAddress(const char* value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress.assign(value); }
 
     /*
      <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
@@ -115,12 +115,12 @@ namespace Model
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     */
-    inline void SetHsmPartitionName(const Aws::String& value) { m_hsmPartitionName = value; }
+    inline void SetHsmPartitionName(const Aws::String& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
 
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     */
-    inline void SetHsmPartitionName(const char* value) { m_hsmPartitionName.assign(value); }
+    inline void SetHsmPartitionName(const char* value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName.assign(value); }
 
     /*
      <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
@@ -139,12 +139,12 @@ namespace Model
     /*
      <p>The password required to access the HSM partition.</p>
     */
-    inline void SetHsmPartitionPassword(const Aws::String& value) { m_hsmPartitionPassword = value; }
+    inline void SetHsmPartitionPassword(const Aws::String& value) { m_hsmPartitionPasswordHasBeenSet = true; m_hsmPartitionPassword = value; }
 
     /*
      <p>The password required to access the HSM partition.</p>
     */
-    inline void SetHsmPartitionPassword(const char* value) { m_hsmPartitionPassword.assign(value); }
+    inline void SetHsmPartitionPassword(const char* value) { m_hsmPartitionPasswordHasBeenSet = true; m_hsmPartitionPassword.assign(value); }
 
     /*
      <p>The password required to access the HSM partition.</p>
@@ -163,12 +163,12 @@ namespace Model
     /*
      <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
     */
-    inline void SetHsmServerPublicCertificate(const Aws::String& value) { m_hsmServerPublicCertificate = value; }
+    inline void SetHsmServerPublicCertificate(const Aws::String& value) { m_hsmServerPublicCertificateHasBeenSet = true; m_hsmServerPublicCertificate = value; }
 
     /*
      <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
     */
-    inline void SetHsmServerPublicCertificate(const char* value) { m_hsmServerPublicCertificate.assign(value); }
+    inline void SetHsmServerPublicCertificate(const char* value) { m_hsmServerPublicCertificateHasBeenSet = true; m_hsmServerPublicCertificate.assign(value); }
 
     /*
      <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
@@ -201,11 +201,17 @@ namespace Model
 
   private:
     Aws::String m_hsmConfigurationIdentifier;
+    bool m_hsmConfigurationIdentifierHasBeenSet;
     Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_hsmIpAddress;
+    bool m_hsmIpAddressHasBeenSet;
     Aws::String m_hsmPartitionName;
+    bool m_hsmPartitionNameHasBeenSet;
     Aws::String m_hsmPartitionPassword;
+    bool m_hsmPartitionPasswordHasBeenSet;
     Aws::String m_hsmServerPublicCertificate;
+    bool m_hsmServerPublicCertificateHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

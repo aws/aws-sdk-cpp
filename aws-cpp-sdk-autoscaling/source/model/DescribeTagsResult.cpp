@@ -41,11 +41,12 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNodeParent = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = tagsNodeParent.FirstChild("member");
     while(!tagsNode.IsNull())
     {
       m_tags.push_back(tagsNode);
-      tagsNode = tagsNode.NextNode("Tags");
+      tagsNode = tagsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

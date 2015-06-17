@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the topic for which you wish to confirm a subscription.</p>
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic for which you wish to confirm a subscription.</p>
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      <p>The ARN of the topic for which you wish to confirm a subscription.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
     */
-    inline void SetToken(const Aws::String& value) { m_token = value; }
+    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /*
      <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
     */
-    inline void SetToken(const char* value) { m_token.assign(value); }
+    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /*
      <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
@@ -108,7 +108,9 @@ namespace Model
 
   private:
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
     Aws::String m_token;
+    bool m_tokenHasBeenSet;
     Aws::String m_authenticateOnUnsubscribe;
     bool m_authenticateOnUnsubscribeHasBeenSet;
   };

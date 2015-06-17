@@ -86,35 +86,38 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
       m_createDateHasBeenSet = true;
     }
-    XmlNode userPolicyListNode = resultNode.FirstChild("UserPolicyList");
+    XmlNode userPolicyListNodeParent = resultNode.FirstChild("UserPolicyList");
+    XmlNode userPolicyListNode = userPolicyListNodeParent.FirstChild("member");
     if(!userPolicyListNode.IsNull())
     {
       while(!userPolicyListNode.IsNull())
       {
         m_userPolicyList.push_back(userPolicyListNode);
-        userPolicyListNode = userPolicyListNode.NextNode("UserPolicyList");
+        userPolicyListNode = userPolicyListNode.NextNode("member");
       }
 
       m_userPolicyListHasBeenSet = true;
     }
-    XmlNode groupListNode = resultNode.FirstChild("GroupList");
+    XmlNode groupListNodeParent = resultNode.FirstChild("GroupList");
+    XmlNode groupListNode = groupListNodeParent.FirstChild("member");
     if(!groupListNode.IsNull())
     {
       while(!groupListNode.IsNull())
       {
         m_groupList.push_back(StringUtils::Trim(groupListNode.GetText().c_str()));
-        groupListNode = groupListNode.NextNode("GroupList");
+        groupListNode = groupListNode.NextNode("member");
       }
 
       m_groupListHasBeenSet = true;
     }
-    XmlNode attachedManagedPoliciesNode = resultNode.FirstChild("AttachedManagedPolicies");
+    XmlNode attachedManagedPoliciesNodeParent = resultNode.FirstChild("AttachedManagedPolicies");
+    XmlNode attachedManagedPoliciesNode = attachedManagedPoliciesNodeParent.FirstChild("member");
     if(!attachedManagedPoliciesNode.IsNull())
     {
       while(!attachedManagedPoliciesNode.IsNull())
       {
         m_attachedManagedPolicies.push_back(attachedManagedPoliciesNode);
-        attachedManagedPoliciesNode = attachedManagedPoliciesNode.NextNode("AttachedManagedPolicies");
+        attachedManagedPoliciesNode = attachedManagedPoliciesNode.NextNode("member");
       }
 
       m_attachedManagedPoliciesHasBeenSet = true;

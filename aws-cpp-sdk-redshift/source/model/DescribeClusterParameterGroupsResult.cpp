@@ -43,11 +43,12 @@ DescribeClusterParameterGroupsResult& DescribeClusterParameterGroupsResult::oper
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode clusterParameterGroupNode = resultNode.FirstChild("ClusterParameterGroup");
+    XmlNode clusterParameterGroupNodeParent = resultNode.FirstChild("ClusterParameterGroup");
+    XmlNode clusterParameterGroupNode = clusterParameterGroupNodeParent.FirstChild("member");
     while(!clusterParameterGroupNode.IsNull())
     {
       m_parameterGroups.push_back(clusterParameterGroupNode);
-      clusterParameterGroupNode = clusterParameterGroupNode.NextNode("ClusterParameterGroup");
+      clusterParameterGroupNode = clusterParameterGroupNode.NextNode("member");
     }
 
   }

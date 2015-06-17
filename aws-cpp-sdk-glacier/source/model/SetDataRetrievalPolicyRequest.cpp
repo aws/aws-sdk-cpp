@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetDataRetrievalPolicyRequest::SetDataRetrievalPolicyRequest() : 
+    m_accountIdHasBeenSet(false),
     m_policyHasBeenSet(false)
 {
 }

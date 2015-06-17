@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
     */
-    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /*
      <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
     */
-    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifier.assign(value); }
+    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
 
     /*
      <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
@@ -81,6 +81,7 @@ namespace Model
 
   private:
     Aws::String m_hsmClientCertificateIdentifier;
+    bool m_hsmClientCertificateIdentifierHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

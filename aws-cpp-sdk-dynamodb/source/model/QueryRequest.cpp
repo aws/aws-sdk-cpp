@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 QueryRequest::QueryRequest() : 
+    m_tableNameHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_selectHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
@@ -48,7 +49,11 @@ Aws::String QueryRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("TableName", m_tableName);
+  if(m_tableNameHasBeenSet)
+  {
+   payload.WithString("TableName", m_tableName);
+
+  }
 
   if(m_indexNameHasBeenSet)
   {

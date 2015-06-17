@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> <p>Example: <code>myexamplecluster</code></p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> <p>Example: <code>myexamplecluster</code></p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> <p>Example: <code>myexamplecluster</code></p>
@@ -115,12 +115,12 @@ namespace Model
     /*
      <p> The node type to be provisioned for the cluster. For information about node types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p> Valid Values: <code>dw1.xlarge</code> | <code>dw1.8xlarge</code> | <code>dw2.large</code> | <code>dw2.8xlarge</code>. </p>
     */
-    inline void SetNodeType(const Aws::String& value) { m_nodeType = value; }
+    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /*
      <p> The node type to be provisioned for the cluster. For information about node types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p> Valid Values: <code>dw1.xlarge</code> | <code>dw1.8xlarge</code> | <code>dw2.large</code> | <code>dw2.8xlarge</code>. </p>
     */
-    inline void SetNodeType(const char* value) { m_nodeType.assign(value); }
+    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
     /*
      <p> The node type to be provisioned for the cluster. For information about node types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p> Valid Values: <code>dw1.xlarge</code> | <code>dw1.8xlarge</code> | <code>dw2.large</code> | <code>dw2.8xlarge</code>. </p>
@@ -139,12 +139,12 @@ namespace Model
     /*
      <p> The user name associated with the master user account for the cluster that is being created. </p> <p>Constraints:</p> <ul> <li>Must be 1 - 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
     */
-    inline void SetMasterUsername(const Aws::String& value) { m_masterUsername = value; }
+    inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /*
      <p> The user name associated with the master user account for the cluster that is being created. </p> <p>Constraints:</p> <ul> <li>Must be 1 - 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
     */
-    inline void SetMasterUsername(const char* value) { m_masterUsername.assign(value); }
+    inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /*
      <p> The user name associated with the master user account for the cluster that is being created. </p> <p>Constraints:</p> <ul> <li>Must be 1 - 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
@@ -163,12 +163,12 @@ namespace Model
     /*
      <p> The password associated with the master user account for the cluster that is being created. </p> <p> Constraints: </p> <ul> <li>Must be between 8 and 64 characters in length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li> <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</li> </ul>
     */
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /*
      <p> The password associated with the master user account for the cluster that is being created. </p> <p> Constraints: </p> <ul> <li>Must be between 8 and 64 characters in length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li> <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</li> </ul>
     */
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPassword.assign(value); }
+    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /*
      <p> The password associated with the master user account for the cluster that is being created. </p> <p> Constraints: </p> <ul> <li>Must be between 8 and 64 characters in length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li> <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</li> </ul>
@@ -551,11 +551,15 @@ namespace Model
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
     Aws::String m_nodeType;
+    bool m_nodeTypeHasBeenSet;
     Aws::String m_masterUsername;
+    bool m_masterUsernameHasBeenSet;
     Aws::String m_masterUserPassword;
+    bool m_masterUserPasswordHasBeenSet;
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;

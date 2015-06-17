@@ -21,20 +21,34 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BootstrapActionConfig::BootstrapActionConfig()
+BootstrapActionConfig::BootstrapActionConfig() : 
+    m_nameHasBeenSet(false),
+    m_scriptBootstrapActionHasBeenSet(false)
 {
 }
 
-BootstrapActionConfig::BootstrapActionConfig(const JsonValue& jsonValue)
+BootstrapActionConfig::BootstrapActionConfig(const JsonValue& jsonValue) : 
+    m_nameHasBeenSet(false),
+    m_scriptBootstrapActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 BootstrapActionConfig& BootstrapActionConfig::operator =(const JsonValue& jsonValue)
 {
-  m_name = jsonValue.GetString("Name");
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
 
-  m_scriptBootstrapAction = jsonValue.GetObject("ScriptBootstrapAction");
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScriptBootstrapAction"))
+  {
+    m_scriptBootstrapAction = jsonValue.GetObject("ScriptBootstrapAction");
+
+    m_scriptBootstrapActionHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,9 +57,17 @@ JsonValue BootstrapActionConfig::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
-  payload.WithObject("ScriptBootstrapAction", m_scriptBootstrapAction.Jsonize());
+  }
+
+  if(m_scriptBootstrapActionHasBeenSet)
+  {
+   payload.WithObject("ScriptBootstrapAction", m_scriptBootstrapAction.Jsonize());
+
+  }
 
   return std::move(payload);
 }

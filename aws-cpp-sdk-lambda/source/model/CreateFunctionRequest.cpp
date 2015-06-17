@@ -22,11 +22,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateFunctionRequest::CreateFunctionRequest() : 
+    m_functionNameHasBeenSet(false),
+    m_runtimeHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_handlerHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
-    m_memorySizeHasBeenSet(false)
+    m_memorySizeHasBeenSet(false),
+    m_codeHasBeenSet(false)
 {
 }
 
@@ -34,12 +39,28 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("FunctionName", m_functionName);
+  if(m_functionNameHasBeenSet)
+  {
+   payload.WithString("FunctionName", m_functionName);
 
-  payload.WithString("Runtime", RuntimeMapper::GetNameForRuntime(m_runtime));
-  payload.WithString("Role", m_role);
+  }
 
-  payload.WithString("Handler", m_handler);
+  if(m_runtimeHasBeenSet)
+  {
+   payload.WithString("Runtime", RuntimeMapper::GetNameForRuntime(m_runtime));
+  }
+
+  if(m_roleHasBeenSet)
+  {
+   payload.WithString("Role", m_role);
+
+  }
+
+  if(m_handlerHasBeenSet)
+  {
+   payload.WithString("Handler", m_handler);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -59,7 +80,11 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
-  payload.WithObject("Code", m_code.Jsonize());
+  if(m_codeHasBeenSet)
+  {
+   payload.WithObject("Code", m_code.Jsonize());
+
+  }
 
   return payload.WriteReadable();
 }

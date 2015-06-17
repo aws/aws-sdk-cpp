@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the group.</p>
@@ -89,7 +89,7 @@ namespace Model
     /*
      <p>If <code>True</code>, the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
     */
-    inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacity = value; }
+    inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacityHasBeenSet = true; m_shouldDecrementDesiredCapacity = value; }
 
     /*
      <p>If <code>True</code>, the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
@@ -100,7 +100,9 @@ namespace Model
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     bool m_shouldDecrementDesiredCapacity;
+    bool m_shouldDecrementDesiredCapacityHasBeenSet;
   };
 
 } // namespace Model

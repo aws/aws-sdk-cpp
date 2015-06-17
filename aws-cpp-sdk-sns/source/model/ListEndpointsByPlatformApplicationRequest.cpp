@@ -20,6 +20,7 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 ListEndpointsByPlatformApplicationRequest::ListEndpointsByPlatformApplicationRequest() : 
+    m_platformApplicationArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String ListEndpointsByPlatformApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListEndpointsByPlatformApplication&";
-  ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
+  if(m_platformApplicationArnHasBeenSet)
+  {
+    ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
+  }
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";

@@ -51,7 +51,7 @@ namespace Model
     /*
      <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
     */
-    inline void SetSubject(const Content& value) { m_subject = value; }
+    inline void SetSubject(const Content& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /*
      <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The message body.</p>
     */
-    inline void SetBody(const Body& value) { m_body = value; }
+    inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /*
      <p>The message body.</p>
@@ -74,7 +74,9 @@ namespace Model
 
   private:
     Content m_subject;
+    bool m_subjectHasBeenSet;
     Body m_body;
+    bool m_bodyHasBeenSet;
   };
 
 } // namespace Model

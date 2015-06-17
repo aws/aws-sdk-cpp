@@ -88,13 +88,14 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_defaultCharacterSet = defaultCharacterSetNode;
       m_defaultCharacterSetHasBeenSet = true;
     }
-    XmlNode characterSetNode = resultNode.FirstChild("CharacterSet");
+    XmlNode characterSetNodeParent = resultNode.FirstChild("CharacterSet");
+    XmlNode characterSetNode = characterSetNodeParent.FirstChild("member");
     if(!characterSetNode.IsNull())
     {
       while(!characterSetNode.IsNull())
       {
         m_supportedCharacterSets.push_back(characterSetNode);
-        characterSetNode = characterSetNode.NextNode("CharacterSet");
+        characterSetNode = characterSetNode.NextNode("member");
       }
 
       m_supportedCharacterSetsHasBeenSet = true;

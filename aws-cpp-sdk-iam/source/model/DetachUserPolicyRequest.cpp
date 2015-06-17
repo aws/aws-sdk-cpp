@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DetachUserPolicyRequest::DetachUserPolicyRequest()
+DetachUserPolicyRequest::DetachUserPolicyRequest() : 
+    m_userNameHasBeenSet(false),
+    m_policyArnHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String DetachUserPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DetachUserPolicy&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

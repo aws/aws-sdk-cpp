@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
     */
-    inline void SetCluster(const Aws::String& value) { m_cluster = value; }
+    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
     */
-    inline void SetCluster(const char* value) { m_cluster.assign(value); }
+    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /*
      <p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>
@@ -61,6 +61,7 @@ namespace Model
 
   private:
     Aws::String m_cluster;
+    bool m_clusterHasBeenSet;
   };
 
 } // namespace Model

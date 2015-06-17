@@ -41,12 +41,12 @@ namespace Model
     /*
      The name of the domain in which to perform the operation.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain in which to perform the operation.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The name of the domain in which to perform the operation.
@@ -65,12 +65,12 @@ namespace Model
     /*
      The name of the item.
     */
-    inline void SetItemName(const Aws::String& value) { m_itemName = value; }
+    inline void SetItemName(const Aws::String& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
 
     /*
      The name of the item.
     */
-    inline void SetItemName(const char* value) { m_itemName.assign(value); }
+    inline void SetItemName(const char* value) { m_itemNameHasBeenSet = true; m_itemName.assign(value); }
 
     /*
      The name of the item.
@@ -122,7 +122,9 @@ namespace Model
 
   private:
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     Aws::String m_itemName;
+    bool m_itemNameHasBeenSet;
     Aws::Vector<Aws::String> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
     bool m_consistentRead;

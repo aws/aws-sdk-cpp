@@ -41,11 +41,12 @@ ListVerifiedEmailAddressesResult& ListVerifiedEmailAddressesResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode verifiedEmailAddressesNode = resultNode.FirstChild("VerifiedEmailAddresses");
+    XmlNode verifiedEmailAddressesNodeParent = resultNode.FirstChild("VerifiedEmailAddresses");
+    XmlNode verifiedEmailAddressesNode = verifiedEmailAddressesNodeParent.FirstChild("member");
     while(!verifiedEmailAddressesNode.IsNull())
     {
       m_verifiedEmailAddresses.push_back(StringUtils::Trim(verifiedEmailAddressesNode.GetText().c_str()));
-      verifiedEmailAddressesNode = verifiedEmailAddressesNode.NextNode("VerifiedEmailAddresses");
+      verifiedEmailAddressesNode = verifiedEmailAddressesNode.NextNode("member");
     }
 
   }

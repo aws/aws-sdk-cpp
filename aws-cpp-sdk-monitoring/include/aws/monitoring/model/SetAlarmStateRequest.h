@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters. </p>
     */
-    inline void SetAlarmName(const Aws::String& value) { m_alarmName = value; }
+    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /*
      <p> The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters. </p>
     */
-    inline void SetAlarmName(const char* value) { m_alarmName.assign(value); }
+    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /*
      <p> The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters. </p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p> The value of the state. </p>
     */
-    inline void SetStateValue(const StateValue& value) { m_stateValue = value; }
+    inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
 
     /*
      <p> The value of the state. </p>
@@ -79,12 +79,12 @@ namespace Model
     /*
      <p> The reason that this alarm is set to this specific state (in human-readable text format) </p>
     */
-    inline void SetStateReason(const Aws::String& value) { m_stateReason = value; }
+    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /*
      <p> The reason that this alarm is set to this specific state (in human-readable text format) </p>
     */
-    inline void SetStateReason(const char* value) { m_stateReason.assign(value); }
+    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
 
     /*
      <p> The reason that this alarm is set to this specific state (in human-readable text format) </p>
@@ -122,8 +122,11 @@ namespace Model
 
   private:
     Aws::String m_alarmName;
+    bool m_alarmNameHasBeenSet;
     StateValue m_stateValue;
+    bool m_stateValueHasBeenSet;
     Aws::String m_stateReason;
+    bool m_stateReasonHasBeenSet;
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet;
   };

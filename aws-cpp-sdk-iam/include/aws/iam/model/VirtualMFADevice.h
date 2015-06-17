@@ -52,12 +52,12 @@ namespace Model
     /*
      <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     */
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumber = value; }
+    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /*
      <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     */
-    inline void SetSerialNumber(const char* value) { m_serialNumber.assign(value); }
+    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /*
      <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
@@ -121,6 +121,7 @@ namespace Model
 
   private:
     Aws::String m_serialNumber;
+    bool m_serialNumberHasBeenSet;
     Aws::Utils::ByteBuffer m_base32StringSeed;
     bool m_base32StringSeedHasBeenSet;
     Aws::Utils::ByteBuffer m_qRCodePNG;

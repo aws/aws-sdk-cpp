@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the policy document.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name of the policy document.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
+    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
     */
-    inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
+    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /*
      <p>The policy document.</p>
@@ -131,9 +131,11 @@ namespace Model
 
   private:
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
     Aws::String m_path;
     bool m_pathHasBeenSet;
     Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterId = value; }
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     */
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterId.assign(value); }
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /*
      <p>The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -84,6 +84,7 @@ namespace Model
 
   private:
     Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
     Aws::String m_finalSnapshotIdentifier;
     bool m_finalSnapshotIdentifierHasBeenSet;
   };

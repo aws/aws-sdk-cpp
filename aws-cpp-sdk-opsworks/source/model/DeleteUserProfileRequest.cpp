@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserProfileRequest::DeleteUserProfileRequest()
+DeleteUserProfileRequest::DeleteUserProfileRequest() : 
+    m_iamUserArnHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IamUserArn", m_iamUserArn);
+  if(m_iamUserArnHasBeenSet)
+  {
+   payload.WithString("IamUserArn", m_iamUserArn);
+
+  }
 
   return payload.WriteReadable();
 }

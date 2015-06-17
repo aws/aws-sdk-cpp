@@ -42,12 +42,12 @@ namespace Model
     /*
      The name of the domain in which the attributes are being stored.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain in which the attributes are being stored.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The name of the domain in which the attributes are being stored.
@@ -66,7 +66,7 @@ namespace Model
     /*
      A list of items on which to perform the operation.
     */
-    inline void SetItems(const Aws::Vector<ReplaceableItem>& value) { m_items = value; }
+    inline void SetItems(const Aws::Vector<ReplaceableItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /*
      A list of items on which to perform the operation.
@@ -76,11 +76,13 @@ namespace Model
     /*
      A list of items on which to perform the operation.
     */
-    inline BatchPutAttributesRequest& AddItems(const ReplaceableItem& value) { m_items.push_back(value); return *this; }
+    inline BatchPutAttributesRequest& AddItems(const ReplaceableItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     Aws::Vector<ReplaceableItem> m_items;
+    bool m_itemsHasBeenSet;
   };
 
 } // namespace Model

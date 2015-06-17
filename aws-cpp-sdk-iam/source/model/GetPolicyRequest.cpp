@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetPolicyRequest::GetPolicyRequest()
+GetPolicyRequest::GetPolicyRequest() : 
+    m_policyArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetPolicy&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

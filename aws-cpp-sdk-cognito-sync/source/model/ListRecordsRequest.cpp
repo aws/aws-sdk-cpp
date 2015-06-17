@@ -25,6 +25,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListRecordsRequest::ListRecordsRequest() : 
+    m_identityPoolIdHasBeenSet(false),
+    m_identityIdHasBeenSet(false),
+    m_datasetNameHasBeenSet(false),
     m_lastSyncCount(0),
     m_lastSyncCountHasBeenSet(false),
     m_nextTokenHasBeenSet(false),

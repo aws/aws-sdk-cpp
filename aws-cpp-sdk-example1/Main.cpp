@@ -182,9 +182,10 @@ bool HandleLoginCommand(std::unique_ptr<PlayerData>& playerData, std::unique_ptr
     }
 
     ClientConfiguration config;
-    config.scheme = Scheme::HTTP;
+    config.scheme = Scheme::HTTPS;
     config.connectTimeoutMs = 30000;
     config.requestTimeoutMs = 30000;
+    config.region = Aws::Region::US_EAST_1;
 
     auto credentialsProvider = std::make_shared<ProfileConfigFileAWSCredentialsProvider>(DeveloperCredentialsProfileName);
 

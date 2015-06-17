@@ -20,6 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CreateDBSecurityGroupRequest::CreateDBSecurityGroupRequest() : 
+    m_dBSecurityGroupNameHasBeenSet(false),
+    m_dBSecurityGroupDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String CreateDBSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateDBSecurityGroup&";
-  ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
-  ss << "DBSecurityGroupDescription=" << StringUtils::URLEncode(m_dBSecurityGroupDescription.c_str()) << "&";
+  if(m_dBSecurityGroupNameHasBeenSet)
+  {
+    ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
+  }
+  if(m_dBSecurityGroupDescriptionHasBeenSet)
+  {
+    ss << "DBSecurityGroupDescription=" << StringUtils::URLEncode(m_dBSecurityGroupDescription.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

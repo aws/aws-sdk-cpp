@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppRequest::DeleteAppRequest()
+DeleteAppRequest::DeleteAppRequest() : 
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteAppRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("AppId", m_appId);
+  if(m_appIdHasBeenSet)
+  {
+   payload.WithString("AppId", m_appId);
+
+  }
 
   return payload.WriteReadable();
 }

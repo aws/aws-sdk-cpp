@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -64,7 +64,7 @@ namespace Model
     /*
      <p>The port that uses the specified SSL certificate.</p>
     */
-    inline void SetLoadBalancerPort(long value) { m_loadBalancerPort = value; }
+    inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /*
      <p>The port that uses the specified SSL certificate.</p>
@@ -78,12 +78,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     */
-    inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateId = value; }
+    inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     */
-    inline void SetSSLCertificateId(const char* value) { m_sSLCertificateId.assign(value); }
+    inline void SetSSLCertificateId(const char* value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -97,8 +97,11 @@ namespace Model
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     long m_loadBalancerPort;
+    bool m_loadBalancerPortHasBeenSet;
     Aws::String m_sSLCertificateId;
+    bool m_sSLCertificateIdHasBeenSet;
   };
 
 } // namespace Model

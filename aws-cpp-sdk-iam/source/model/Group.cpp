@@ -24,12 +24,22 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Group::Group() : 
-    m_createDate(0.0)
+    m_pathHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_createDate(0.0),
+    m_createDateHasBeenSet(false)
 {
 }
 
 Group::Group(const XmlNode& xmlNode) : 
-    m_createDate(0.0)
+    m_pathHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_createDate(0.0),
+    m_createDateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,15 +51,35 @@ Group& Group::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
-    m_path = StringUtils::Trim(pathNode.GetText().c_str());
+    if(!pathNode.IsNull())
+    {
+      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_pathHasBeenSet = true;
+    }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
-    m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+    if(!groupNameNode.IsNull())
+    {
+      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupNameHasBeenSet = true;
+    }
     XmlNode groupIdNode = resultNode.FirstChild("GroupId");
-    m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
+    if(!groupIdNode.IsNull())
+    {
+      m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
+      m_groupIdHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+    if(!arnNode.IsNull())
+    {
+      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arnHasBeenSet = true;
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    if(!createDateNode.IsNull())
+    {
+      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,18 +87,48 @@ Group& Group::operator =(const XmlNode& xmlNode)
 
 void Group::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_groupNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  }
 }
 
 void Group::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
-  oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  oStream << location << ".CreateDate=" << m_createDate << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_groupNameHasBeenSet)
+  {
+      oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << ".CreateDate=" << m_createDate << "&";
+  }
 }

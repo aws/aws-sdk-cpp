@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RegisterVolumeRequest::RegisterVolumeRequest() : 
-    m_ec2VolumeIdHasBeenSet(false)
+    m_ec2VolumeIdHasBeenSet(false),
+    m_stackIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,11 @@ Aws::String RegisterVolumeRequest::SerializePayload() const
 
   }
 
-  payload.WithString("StackId", m_stackId);
+  if(m_stackIdHasBeenSet)
+  {
+   payload.WithString("StackId", m_stackId);
+
+  }
 
   return payload.WriteReadable();
 }

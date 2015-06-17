@@ -21,7 +21,9 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAliasRequest::UpdateAliasRequest()
+UpdateAliasRequest::UpdateAliasRequest() : 
+    m_aliasNameHasBeenSet(false),
+    m_targetKeyIdHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String UpdateAliasRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("AliasName", m_aliasName);
+  if(m_aliasNameHasBeenSet)
+  {
+   payload.WithString("AliasName", m_aliasName);
 
-  payload.WithString("TargetKeyId", m_targetKeyId);
+  }
+
+  if(m_targetKeyIdHasBeenSet)
+  {
+   payload.WithString("TargetKeyId", m_targetKeyId);
+
+  }
 
   return payload.WriteReadable();
 }

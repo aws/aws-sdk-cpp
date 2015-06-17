@@ -23,19 +23,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutRecordsRequestEntry::PutRecordsRequestEntry() : 
-    m_explicitHashKeyHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_explicitHashKeyHasBeenSet(false),
+    m_partitionKeyHasBeenSet(false)
 {
 }
 
 PutRecordsRequestEntry::PutRecordsRequestEntry(const JsonValue& jsonValue) : 
-    m_explicitHashKeyHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_explicitHashKeyHasBeenSet(false),
+    m_partitionKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PutRecordsRequestEntry& PutRecordsRequestEntry::operator =(const JsonValue& jsonValue)
 {
-  m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
+  if(jsonValue.ValueExists("Data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
+
+    m_dataHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("ExplicitHashKey"))
   {
@@ -44,7 +53,12 @@ PutRecordsRequestEntry& PutRecordsRequestEntry::operator =(const JsonValue& json
     m_explicitHashKeyHasBeenSet = true;
   }
 
-  m_partitionKey = jsonValue.GetString("PartitionKey");
+  if(jsonValue.ValueExists("PartitionKey"))
+  {
+    m_partitionKey = jsonValue.GetString("PartitionKey");
+
+    m_partitionKeyHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -53,14 +67,22 @@ JsonValue PutRecordsRequestEntry::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Data", HashingUtils::Base64Encode(m_data));
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("Data", HashingUtils::Base64Encode(m_data));
+  }
+
   if(m_explicitHashKeyHasBeenSet)
   {
    payload.WithString("ExplicitHashKey", m_explicitHashKey);
 
   }
 
-  payload.WithString("PartitionKey", m_partitionKey);
+  if(m_partitionKeyHasBeenSet)
+  {
+   payload.WithString("PartitionKey", m_partitionKey);
+
+  }
 
   return std::move(payload);
 }

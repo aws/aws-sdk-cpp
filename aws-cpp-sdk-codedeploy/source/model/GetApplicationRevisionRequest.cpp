@@ -21,7 +21,9 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRevisionRequest::GetApplicationRevisionRequest()
+GetApplicationRevisionRequest::GetApplicationRevisionRequest() : 
+    m_applicationNameHasBeenSet(false),
+    m_revisionHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String GetApplicationRevisionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
 
-  payload.WithObject("revision", m_revision.Jsonize());
+  }
+
+  if(m_revisionHasBeenSet)
+  {
+   payload.WithObject("revision", m_revision.Jsonize());
+
+  }
 
   return payload.WriteReadable();
 }

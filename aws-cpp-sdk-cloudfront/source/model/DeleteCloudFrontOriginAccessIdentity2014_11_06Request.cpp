@@ -23,6 +23,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 DeleteCloudFrontOriginAccessIdentity2014_11_06Request::DeleteCloudFrontOriginAccessIdentity2014_11_06Request() : 
+    m_idHasBeenSet(false),
     m_ifMatchHasBeenSet(false)
 {
 }

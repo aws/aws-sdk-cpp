@@ -21,7 +21,11 @@ using namespace Aws::Utils;
 
 SendRawEmailRequest::SendRawEmailRequest() : 
     m_sourceHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_rawMessageHasBeenSet(false),
+    m_fromArnHasBeenSet(false),
+    m_sourceArnHasBeenSet(false),
+    m_returnPathArnHasBeenSet(false)
 {
 }
 
@@ -43,7 +47,22 @@ Aws::String SendRawEmailRequest::SerializePayload() const
       destinationsCount++;
     }
   }
-  m_rawMessage.OutputToStream(ss, "RawMessage.");
+  if(m_rawMessageHasBeenSet)
+  {
+    m_rawMessage.OutputToStream(ss, "RawMessage.");
+  }
+  if(m_fromArnHasBeenSet)
+  {
+    ss << "FromArn=" << StringUtils::URLEncode(m_fromArn.c_str()) << "&";
+  }
+  if(m_sourceArnHasBeenSet)
+  {
+    ss << "SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+  }
+  if(m_returnPathArnHasBeenSet)
+  {
+    ss << "ReturnPathArn=" << StringUtils::URLEncode(m_returnPathArn.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

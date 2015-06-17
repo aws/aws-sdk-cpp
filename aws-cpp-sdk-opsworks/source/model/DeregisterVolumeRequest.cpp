@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterVolumeRequest::DeregisterVolumeRequest()
+DeregisterVolumeRequest::DeregisterVolumeRequest() : 
+    m_volumeIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeregisterVolumeRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("VolumeId", m_volumeId);
+  if(m_volumeIdHasBeenSet)
+  {
+   payload.WithString("VolumeId", m_volumeId);
+
+  }
 
   return payload.WriteReadable();
 }

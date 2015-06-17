@@ -43,11 +43,12 @@ DescribeCacheParameterGroupsResult& DescribeCacheParameterGroupsResult::operator
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheParameterGroupNode = resultNode.FirstChild("CacheParameterGroup");
+    XmlNode cacheParameterGroupNodeParent = resultNode.FirstChild("CacheParameterGroup");
+    XmlNode cacheParameterGroupNode = cacheParameterGroupNodeParent.FirstChild("member");
     while(!cacheParameterGroupNode.IsNull())
     {
       m_cacheParameterGroups.push_back(cacheParameterGroupNode);
-      cacheParameterGroupNode = cacheParameterGroupNode.NextNode("CacheParameterGroup");
+      cacheParameterGroupNode = cacheParameterGroupNode.NextNode("member");
     }
 
   }

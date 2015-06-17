@@ -41,11 +41,12 @@ DescribeInstanceHealthResult& DescribeInstanceHealthResult::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceStatesNode = resultNode.FirstChild("InstanceStates");
+    XmlNode instanceStatesNodeParent = resultNode.FirstChild("InstanceStates");
+    XmlNode instanceStatesNode = instanceStatesNodeParent.FirstChild("member");
     while(!instanceStatesNode.IsNull())
     {
       m_instanceStates.push_back(instanceStatesNode);
-      instanceStatesNode = instanceStatesNode.NextNode("InstanceStates");
+      instanceStatesNode = instanceStatesNode.NextNode("member");
     }
 
   }

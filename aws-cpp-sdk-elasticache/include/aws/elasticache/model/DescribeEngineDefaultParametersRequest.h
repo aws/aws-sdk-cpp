@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
-    inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamily = value; }
+    inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /*
      <p>The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
     */
-    inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamily.assign(value); }
+    inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
     /*
      <p>The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></p>
@@ -98,6 +98,7 @@ namespace Model
 
   private:
     Aws::String m_cacheParameterGroupFamily;
+    bool m_cacheParameterGroupFamilyHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;

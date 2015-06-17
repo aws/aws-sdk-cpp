@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     */
-    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupName = value; }
+    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /*
      <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     */
-    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupName.assign(value); }
+    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
     /*
      <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_cacheSubnetGroupName;
+    bool m_cacheSubnetGroupNameHasBeenSet;
   };
 
 } // namespace Model

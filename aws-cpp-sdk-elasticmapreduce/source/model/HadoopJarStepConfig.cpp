@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 HadoopJarStepConfig::HadoopJarStepConfig() : 
     m_propertiesHasBeenSet(false),
+    m_jarHasBeenSet(false),
     m_mainClassHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
@@ -30,6 +31,7 @@ HadoopJarStepConfig::HadoopJarStepConfig() :
 
 HadoopJarStepConfig::HadoopJarStepConfig(const JsonValue& jsonValue) : 
     m_propertiesHasBeenSet(false),
+    m_jarHasBeenSet(false),
     m_mainClassHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
@@ -48,7 +50,12 @@ HadoopJarStepConfig& HadoopJarStepConfig::operator =(const JsonValue& jsonValue)
     m_propertiesHasBeenSet = true;
   }
 
-  m_jar = jsonValue.GetString("Jar");
+  if(jsonValue.ValueExists("Jar"))
+  {
+    m_jar = jsonValue.GetString("Jar");
+
+    m_jarHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("MainClass"))
   {
@@ -85,7 +92,11 @@ JsonValue HadoopJarStepConfig::Jsonize() const
 
   }
 
-  payload.WithString("Jar", m_jar);
+  if(m_jarHasBeenSet)
+  {
+   payload.WithString("Jar", m_jar);
+
+  }
 
   if(m_mainClassHasBeenSet)
   {

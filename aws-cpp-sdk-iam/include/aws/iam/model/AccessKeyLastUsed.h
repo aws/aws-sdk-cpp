@@ -50,7 +50,7 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used.</p>
     */
-    inline void SetLastUsedDate(double value) { m_lastUsedDate = value; }
+    inline void SetLastUsedDate(double value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
 
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the AWS service with which this access key was most recently used.</p>
     */
-    inline void SetServiceName(const Aws::String& value) { m_serviceName = value; }
+    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /*
      <p>The name of the AWS service with which this access key was most recently used.</p>
     */
-    inline void SetServiceName(const char* value) { m_serviceName.assign(value); }
+    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /*
      <p>The name of the AWS service with which this access key was most recently used.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The AWS region where this access key was most recently used.</p> <p>For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     */
-    inline void SetRegion(const Aws::String& value) { m_region = value; }
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /*
      <p>The AWS region where this access key was most recently used.</p> <p>For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     */
-    inline void SetRegion(const char* value) { m_region.assign(value); }
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /*
      <p>The AWS region where this access key was most recently used.</p> <p>For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
@@ -107,8 +107,11 @@ namespace Model
 
   private:
     double m_lastUsedDate;
+    bool m_lastUsedDateHasBeenSet;
     Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet;
     Aws::String m_region;
+    bool m_regionHasBeenSet;
   };
 
 } // namespace Model

@@ -20,7 +20,9 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 ModifySnapshotCopyRetentionPeriodRequest::ModifySnapshotCopyRetentionPeriodRequest() : 
-    m_retentionPeriod(0)
+    m_clusterIdentifierHasBeenSet(false),
+    m_retentionPeriod(0),
+    m_retentionPeriodHasBeenSet(false)
 {
 }
 
@@ -28,8 +30,14 @@ Aws::String ModifySnapshotCopyRetentionPeriodRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifySnapshotCopyRetentionPeriod&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
-  ss << "RetentionPeriod=" << m_retentionPeriod << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+  if(m_retentionPeriodHasBeenSet)
+  {
+    ss << "RetentionPeriod=" << m_retentionPeriod << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

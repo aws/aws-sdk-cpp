@@ -21,7 +21,11 @@ using namespace Aws::Utils;
 
 CreateClusterRequest::CreateClusterRequest() : 
     m_dBNameHasBeenSet(false),
+    m_clusterIdentifierHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_masterUsernameHasBeenSet(false),
+    m_masterUserPasswordHasBeenSet(false),
     m_clusterSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_clusterSubnetGroupNameHasBeenSet(false),
@@ -57,14 +61,26 @@ Aws::String CreateClusterRequest::SerializePayload() const
   {
     ss << "DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
   if(m_clusterTypeHasBeenSet)
   {
     ss << "ClusterType=" << StringUtils::URLEncode(m_clusterType.c_str()) << "&";
   }
-  ss << "NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
-  ss << "MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
-  ss << "MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
+  if(m_nodeTypeHasBeenSet)
+  {
+    ss << "NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
+  }
+  if(m_masterUsernameHasBeenSet)
+  {
+    ss << "MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
+  }
+  if(m_masterUserPasswordHasBeenSet)
+  {
+    ss << "MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
+  }
   if(m_clusterSecurityGroupsHasBeenSet)
   {
     unsigned clusterSecurityGroupsCount = 1;

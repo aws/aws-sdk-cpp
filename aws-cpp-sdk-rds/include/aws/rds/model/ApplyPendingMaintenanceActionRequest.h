@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the resource that the pending maintenance action applies to.</p>
     */
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifier = value; }
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /*
      <p>The ARN of the resource that the pending maintenance action applies to.</p>
     */
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifier.assign(value); }
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
     /*
      <p>The ARN of the resource that the pending maintenance action applies to.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The pending maintenance action to apply to this resource.</p>
     */
-    inline void SetApplyAction(const Aws::String& value) { m_applyAction = value; }
+    inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /*
      <p>The pending maintenance action to apply to this resource.</p>
     */
-    inline void SetApplyAction(const char* value) { m_applyAction.assign(value); }
+    inline void SetApplyAction(const char* value) { m_applyActionHasBeenSet = true; m_applyAction.assign(value); }
 
     /*
      <p>The pending maintenance action to apply to this resource.</p>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
     */
-    inline void SetOptInType(const Aws::String& value) { m_optInType = value; }
+    inline void SetOptInType(const Aws::String& value) { m_optInTypeHasBeenSet = true; m_optInType = value; }
 
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
     */
-    inline void SetOptInType(const char* value) { m_optInType.assign(value); }
+    inline void SetOptInType(const char* value) { m_optInTypeHasBeenSet = true; m_optInType.assign(value); }
 
     /*
      <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> cannot be undone.</p> <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li> <li> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</li> </ul>
@@ -108,8 +108,11 @@ namespace Model
 
   private:
     Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet;
     Aws::String m_applyAction;
+    bool m_applyActionHasBeenSet;
     Aws::String m_optInType;
+    bool m_optInTypeHasBeenSet;
   };
 
 } // namespace Model

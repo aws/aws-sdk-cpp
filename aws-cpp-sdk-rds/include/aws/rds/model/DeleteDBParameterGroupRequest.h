@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB parameter group</li> <li>You cannot delete a default DB parameter group</li> <li>Cannot be associated with any DB instances</li> </ul>
     */
-    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /*
      <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB parameter group</li> <li>You cannot delete a default DB parameter group</li> <li>Cannot be associated with any DB instances</li> </ul>
     */
-    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /*
      <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB parameter group</li> <li>You cannot delete a default DB parameter group</li> <li>Cannot be associated with any DB instances</li> </ul>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
   };
 
 } // namespace Model

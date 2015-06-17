@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
     */
-    inline void SetContainerInstance(const Aws::String& value) { m_containerInstance = value; }
+    inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
     */
-    inline void SetContainerInstance(const char* value) { m_containerInstance.assign(value); }
+    inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
     /*
      <p>The container instance UUID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</p>
@@ -87,6 +87,7 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::String m_containerInstance;
+    bool m_containerInstanceHasBeenSet;
   };
 
 } // namespace Model

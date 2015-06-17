@@ -21,7 +21,8 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdentityPoolConfigurationRequest::GetIdentityPoolConfigurationRequest()
+GetIdentityPoolConfigurationRequest::GetIdentityPoolConfigurationRequest() : 
+    m_identityPoolIdHasBeenSet(false)
 {
 }
 

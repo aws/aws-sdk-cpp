@@ -20,6 +20,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 CreateEventSubscriptionRequest::CreateEventSubscriptionRequest() : 
+    m_subscriptionNameHasBeenSet(false),
+    m_snsTopicArnHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_sourceIdsHasBeenSet(false),
     m_eventCategoriesHasBeenSet(false),
@@ -34,8 +36,14 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateEventSubscription&";
-  ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
-  ss << "SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
+  if(m_subscriptionNameHasBeenSet)
+  {
+    ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
+  }
+  if(m_snsTopicArnHasBeenSet)
+  {
+    ss << "SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
+  }
   if(m_sourceTypeHasBeenSet)
   {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";

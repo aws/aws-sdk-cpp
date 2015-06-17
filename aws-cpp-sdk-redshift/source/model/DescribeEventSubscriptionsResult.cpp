@@ -43,11 +43,12 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode eventSubscriptionNode = resultNode.FirstChild("EventSubscription");
+    XmlNode eventSubscriptionNodeParent = resultNode.FirstChild("EventSubscription");
+    XmlNode eventSubscriptionNode = eventSubscriptionNodeParent.FirstChild("member");
     while(!eventSubscriptionNode.IsNull())
     {
       m_eventSubscriptionsList.push_back(eventSubscriptionNode);
-      eventSubscriptionNode = eventSubscriptionNode.NextNode("EventSubscription");
+      eventSubscriptionNode = eventSubscriptionNode.NextNode("member");
     }
 
   }

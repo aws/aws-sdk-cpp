@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /*
      <p>The stack ID.</p>
     */
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /*
      <p>The stack ID.</p>
@@ -87,6 +87,7 @@ namespace Model
     Aws::String m_ec2VolumeId;
     bool m_ec2VolumeIdHasBeenSet;
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
   };
 
 } // namespace Model

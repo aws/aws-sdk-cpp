@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 HeadObjectRequest::HeadObjectRequest() : 
+    m_bucketHasBeenSet(false),
     m_ifMatchHasBeenSet(false),
     m_ifModifiedSince(0.0),
     m_ifModifiedSinceHasBeenSet(false),
     m_ifNoneMatchHasBeenSet(false),
     m_ifUnmodifiedSince(0.0),
     m_ifUnmodifiedSinceHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_rangeHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_sSECustomerAlgorithmHasBeenSet(false),

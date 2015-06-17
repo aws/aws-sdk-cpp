@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     */
-    inline void SetShardIterator(const Aws::String& value) { m_shardIterator = value; }
+    inline void SetShardIterator(const Aws::String& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = value; }
 
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
     */
-    inline void SetShardIterator(const char* value) { m_shardIterator.assign(value); }
+    inline void SetShardIterator(const char* value) { m_shardIteratorHasBeenSet = true; m_shardIterator.assign(value); }
 
     /*
      <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
@@ -76,6 +76,7 @@ namespace Model
 
   private:
     Aws::String m_shardIterator;
+    bool m_shardIteratorHasBeenSet;
     long m_limit;
     bool m_limitHasBeenSet;
   };

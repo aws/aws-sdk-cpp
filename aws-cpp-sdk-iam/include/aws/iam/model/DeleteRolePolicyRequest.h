@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name identifying the policy document to delete.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name identifying the policy document to delete.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name identifying the policy document to delete.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
   };
 
 } // namespace Model

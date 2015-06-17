@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the user to create a password for.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user to create a password for.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user to create a password for.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The new password for the user.</p>
     */
-    inline void SetPassword(const Aws::String& value) { m_password = value; }
+    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /*
      <p>The new password for the user.</p>
     */
-    inline void SetPassword(const char* value) { m_password.assign(value); }
+    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /*
      <p>The new password for the user.</p>
@@ -97,7 +97,9 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_password;
+    bool m_passwordHasBeenSet;
     bool m_passwordResetRequired;
     bool m_passwordResetRequiredHasBeenSet;
   };

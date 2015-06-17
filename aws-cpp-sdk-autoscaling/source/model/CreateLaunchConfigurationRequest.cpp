@@ -20,6 +20,7 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() : 
+    m_launchConfigurationNameHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_keyNameHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
@@ -46,7 +47,10 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateLaunchConfiguration&";
-  ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  if(m_launchConfigurationNameHasBeenSet)
+  {
+    ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
   if(m_imageIdHasBeenSet)
   {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";

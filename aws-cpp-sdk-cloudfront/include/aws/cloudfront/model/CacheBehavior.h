@@ -52,12 +52,12 @@ namespace Model
     /*
      The pattern (for example, images/*.jpg) that specifies which requests you want this cache behavior to apply to. When CloudFront receives an end-user request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution. The path pattern for the default cache behavior is * and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.
     */
-    inline void SetPathPattern(const Aws::String& value) { m_pathPattern = value; }
+    inline void SetPathPattern(const Aws::String& value) { m_pathPatternHasBeenSet = true; m_pathPattern = value; }
 
     /*
      The pattern (for example, images/*.jpg) that specifies which requests you want this cache behavior to apply to. When CloudFront receives an end-user request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution. The path pattern for the default cache behavior is * and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.
     */
-    inline void SetPathPattern(const char* value) { m_pathPattern.assign(value); }
+    inline void SetPathPattern(const char* value) { m_pathPatternHasBeenSet = true; m_pathPattern.assign(value); }
 
     /*
      The pattern (for example, images/*.jpg) that specifies which requests you want this cache behavior to apply to. When CloudFront receives an end-user request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution. The path pattern for the default cache behavior is * and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.
@@ -76,12 +76,12 @@ namespace Model
     /*
      The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache behavior or for the default cache behavior.
     */
-    inline void SetTargetOriginId(const Aws::String& value) { m_targetOriginId = value; }
+    inline void SetTargetOriginId(const Aws::String& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = value; }
 
     /*
      The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache behavior or for the default cache behavior.
     */
-    inline void SetTargetOriginId(const char* value) { m_targetOriginId.assign(value); }
+    inline void SetTargetOriginId(const char* value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId.assign(value); }
 
     /*
      The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache behavior or for the default cache behavior.
@@ -100,7 +100,7 @@ namespace Model
     /*
      A complex type that specifies how CloudFront handles query strings, cookies and headers.
     */
-    inline void SetForwardedValues(const ForwardedValues& value) { m_forwardedValues = value; }
+    inline void SetForwardedValues(const ForwardedValues& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = value; }
 
     /*
      A complex type that specifies how CloudFront handles query strings, cookies and headers.
@@ -114,7 +114,7 @@ namespace Model
     /*
      A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
     */
-    inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSigners = value; }
+    inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
     /*
      A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
@@ -128,7 +128,7 @@ namespace Model
     /*
      Use this element to specify the protocol that users can use to access the files in the origin specified by TargetOriginId when a request matches the path pattern in PathPattern. If you want CloudFront to allow end users to use any available protocol, specify allow-all. If you want CloudFront to require HTTPS, specify https. If you want CloudFront to respond to an HTTP request with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https. The viewer then resubmits the request using the HTTPS URL.
     */
-    inline void SetViewerProtocolPolicy(const ViewerProtocolPolicy& value) { m_viewerProtocolPolicy = value; }
+    inline void SetViewerProtocolPolicy(const ViewerProtocolPolicy& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
 
     /*
      Use this element to specify the protocol that users can use to access the files in the origin specified by TargetOriginId when a request matches the path pattern in PathPattern. If you want CloudFront to allow end users to use any available protocol, specify allow-all. If you want CloudFront to require HTTPS, specify https. If you want CloudFront to respond to an HTTP request with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https. The viewer then resubmits the request using the HTTPS URL.
@@ -142,7 +142,7 @@ namespace Model
     /*
      The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront queries your origin to see whether the object has been updated.You can specify a value from 0 to 3,153,600,000 seconds (100 years).
     */
-    inline void SetMinTTL(long long value) { m_minTTL = value; }
+    inline void SetMinTTL(long long value) { m_minTTLHasBeenSet = true; m_minTTL = value; }
 
     /*
      The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront queries your origin to see whether the object has been updated.You can specify a value from 0 to 3,153,600,000 seconds (100 years).
@@ -173,11 +173,17 @@ namespace Model
 
   private:
     Aws::String m_pathPattern;
+    bool m_pathPatternHasBeenSet;
     Aws::String m_targetOriginId;
+    bool m_targetOriginIdHasBeenSet;
     ForwardedValues m_forwardedValues;
+    bool m_forwardedValuesHasBeenSet;
     TrustedSigners m_trustedSigners;
+    bool m_trustedSignersHasBeenSet;
     ViewerProtocolPolicy m_viewerProtocolPolicy;
+    bool m_viewerProtocolPolicyHasBeenSet;
     long long m_minTTL;
+    bool m_minTTLHasBeenSet;
     AllowedMethods m_allowedMethods;
     bool m_allowedMethodsHasBeenSet;
     bool m_smoothStreaming;

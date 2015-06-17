@@ -52,12 +52,12 @@ namespace Model
     /*
      <p>An identifier for the message in this batch. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>An identifier for the message in this batch. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>An identifier for the message in this batch. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</p>
@@ -76,12 +76,12 @@ namespace Model
     /*
      <p>Body of the message.</p>
     */
-    inline void SetMessageBody(const Aws::String& value) { m_messageBody = value; }
+    inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /*
      <p>Body of the message.</p>
     */
-    inline void SetMessageBody(const char* value) { m_messageBody.assign(value); }
+    inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
 
     /*
      <p>Body of the message.</p>
@@ -133,7 +133,9 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_messageBody;
+    bool m_messageBodyHasBeenSet;
     long m_delaySeconds;
     bool m_delaySecondsHasBeenSet;
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;

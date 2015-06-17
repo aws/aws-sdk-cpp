@@ -22,10 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CloneStackRequest::CloneStackRequest() : 
+    m_sourceStackIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_attributesHasBeenSet(false),
+    m_serviceRoleArnHasBeenSet(false),
     m_defaultInstanceProfileArnHasBeenSet(false),
     m_defaultOsHasBeenSet(false),
     m_hostnameThemeHasBeenSet(false),
@@ -43,7 +45,8 @@ CloneStackRequest::CloneStackRequest() :
     m_clonePermissions(false),
     m_clonePermissionsHasBeenSet(false),
     m_cloneAppIdsHasBeenSet(false),
-    m_defaultRootDeviceTypeHasBeenSet(false)
+    m_defaultRootDeviceTypeHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -51,7 +54,11 @@ Aws::String CloneStackRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("SourceStackId", m_sourceStackId);
+  if(m_sourceStackIdHasBeenSet)
+  {
+   payload.WithString("SourceStackId", m_sourceStackId);
+
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -82,7 +89,11 @@ Aws::String CloneStackRequest::SerializePayload() const
 
   }
 
-  payload.WithString("ServiceRoleArn", m_serviceRoleArn);
+  if(m_serviceRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceRoleArn", m_serviceRoleArn);
+
+  }
 
   if(m_defaultInstanceProfileArnHasBeenSet)
   {
@@ -176,6 +187,12 @@ Aws::String CloneStackRequest::SerializePayload() const
   if(m_defaultRootDeviceTypeHasBeenSet)
   {
    payload.WithString("DefaultRootDeviceType", RootDeviceTypeMapper::GetNameForRootDeviceType(m_defaultRootDeviceType));
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
+
   }
 
   return payload.WriteReadable();

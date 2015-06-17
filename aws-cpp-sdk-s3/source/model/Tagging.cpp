@@ -23,11 +23,13 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Tagging::Tagging()
+Tagging::Tagging() : 
+    m_tagSetHasBeenSet(false)
 {
 }
 
-Tagging::Tagging(const XmlNode& xmlNode)
+Tagging::Tagging(const XmlNode& xmlNode) : 
+    m_tagSetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -38,13 +40,18 @@ Tagging& Tagging::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagNode = resultNode.FirstChild("Tag");
-    while(!tagNode.IsNull())
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
+    if(!tagNode.IsNull())
     {
-      m_tagSet.push_back(tagNode);
-      tagNode = tagNode.NextNode("Tag");
-    }
+      while(!tagNode.IsNull())
+      {
+        m_tagSet.push_back(tagNode);
+        tagNode = tagNode.NextNode("member");
+      }
 
+      m_tagSetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -53,9 +60,13 @@ Tagging& Tagging::operator =(const XmlNode& xmlNode)
 void Tagging::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  for(const auto& item : m_tagSet)
+  if(m_tagSetHasBeenSet)
   {
-    XmlNode tagSetNode = parentNode.CreateChildElement("Tag");
-    item.AddToNode(tagSetNode);
+   for(const auto& item : m_tagSet)
+   {
+     XmlNode tagSetNode = parentNode.CreateChildElement("Tag");
+     item.AddToNode(tagSetNode);
+   }
   }
+
 }

@@ -48,7 +48,7 @@ namespace Model
     /*
      Specifies who pays for the download and request fees.
     */
-    inline void SetPayer(const Payer& value) { m_payer = value; }
+    inline void SetPayer(const Payer& value) { m_payerHasBeenSet = true; m_payer = value; }
 
     /*
      Specifies who pays for the download and request fees.
@@ -57,6 +57,7 @@ namespace Model
 
   private:
     Payer m_payer;
+    bool m_payerHasBeenSet;
   };
 
 } // namespace Model

@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The Elastic Load Balancing instance's name.</p>
     */
-    inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerName = value; }
+    inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
 
     /*
      <p>The Elastic Load Balancing instance's name.</p>
     */
-    inline void SetElasticLoadBalancerName(const char* value) { m_elasticLoadBalancerName.assign(value); }
+    inline void SetElasticLoadBalancerName(const char* value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName.assign(value); }
 
     /*
      <p>The Elastic Load Balancing instance's name.</p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is to be attached to.</p>
     */
-    inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
+    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is to be attached to.</p>
     */
-    inline void SetLayerId(const char* value) { m_layerId.assign(value); }
+    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
 
     /*
      <p>The ID of the layer that the Elastic Load Balancing instance is to be attached to.</p>
@@ -85,7 +85,9 @@ namespace Model
 
   private:
     Aws::String m_elasticLoadBalancerName;
+    bool m_elasticLoadBalancerNameHasBeenSet;
     Aws::String m_layerId;
+    bool m_layerIdHasBeenSet;
   };
 
 } // namespace Model

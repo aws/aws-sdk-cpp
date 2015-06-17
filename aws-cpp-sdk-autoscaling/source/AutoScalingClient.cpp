@@ -157,14 +157,14 @@ AttachInstancesOutcomeCallable AutoScalingClient::AttachInstancesCallable(const 
   return std::async(std::launch::async, &AutoScalingClient::AttachInstances, this, request);
 }
 
-void AutoScalingClient::AttachInstancesAsync(const AttachInstancesRequest& request) const
+void AutoScalingClient::AttachInstancesAsync(const AttachInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::AttachInstancesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::AttachInstancesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::AttachInstancesAsyncHelper(const AttachInstancesRequest& request) const
+void AutoScalingClient::AttachInstancesAsyncHelper(const AttachInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAttachInstancesOutcomeReceived(this, request, AttachInstances(request));
+  m_onAttachInstancesOutcomeReceived(this, request, AttachInstances(request), context);
 }
 
 AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLoadBalancersRequest& request) const
@@ -188,14 +188,14 @@ AttachLoadBalancersOutcomeCallable AutoScalingClient::AttachLoadBalancersCallabl
   return std::async(std::launch::async, &AutoScalingClient::AttachLoadBalancers, this, request);
 }
 
-void AutoScalingClient::AttachLoadBalancersAsync(const AttachLoadBalancersRequest& request) const
+void AutoScalingClient::AttachLoadBalancersAsync(const AttachLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::AttachLoadBalancersAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::AttachLoadBalancersAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::AttachLoadBalancersAsyncHelper(const AttachLoadBalancersRequest& request) const
+void AutoScalingClient::AttachLoadBalancersAsyncHelper(const AttachLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAttachLoadBalancersOutcomeReceived(this, request, AttachLoadBalancers(request));
+  m_onAttachLoadBalancersOutcomeReceived(this, request, AttachLoadBalancers(request), context);
 }
 
 CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const CompleteLifecycleActionRequest& request) const
@@ -219,14 +219,14 @@ CompleteLifecycleActionOutcomeCallable AutoScalingClient::CompleteLifecycleActio
   return std::async(std::launch::async, &AutoScalingClient::CompleteLifecycleAction, this, request);
 }
 
-void AutoScalingClient::CompleteLifecycleActionAsync(const CompleteLifecycleActionRequest& request) const
+void AutoScalingClient::CompleteLifecycleActionAsync(const CompleteLifecycleActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::CompleteLifecycleActionAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::CompleteLifecycleActionAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::CompleteLifecycleActionAsyncHelper(const CompleteLifecycleActionRequest& request) const
+void AutoScalingClient::CompleteLifecycleActionAsyncHelper(const CompleteLifecycleActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCompleteLifecycleActionOutcomeReceived(this, request, CompleteLifecycleAction(request));
+  m_onCompleteLifecycleActionOutcomeReceived(this, request, CompleteLifecycleAction(request), context);
 }
 
 CreateAutoScalingGroupOutcome AutoScalingClient::CreateAutoScalingGroup(const CreateAutoScalingGroupRequest& request) const
@@ -250,14 +250,14 @@ CreateAutoScalingGroupOutcomeCallable AutoScalingClient::CreateAutoScalingGroupC
   return std::async(std::launch::async, &AutoScalingClient::CreateAutoScalingGroup, this, request);
 }
 
-void AutoScalingClient::CreateAutoScalingGroupAsync(const CreateAutoScalingGroupRequest& request) const
+void AutoScalingClient::CreateAutoScalingGroupAsync(const CreateAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::CreateAutoScalingGroupAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::CreateAutoScalingGroupAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::CreateAutoScalingGroupAsyncHelper(const CreateAutoScalingGroupRequest& request) const
+void AutoScalingClient::CreateAutoScalingGroupAsyncHelper(const CreateAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateAutoScalingGroupOutcomeReceived(this, request, CreateAutoScalingGroup(request));
+  m_onCreateAutoScalingGroupOutcomeReceived(this, request, CreateAutoScalingGroup(request), context);
 }
 
 CreateLaunchConfigurationOutcome AutoScalingClient::CreateLaunchConfiguration(const CreateLaunchConfigurationRequest& request) const
@@ -281,14 +281,14 @@ CreateLaunchConfigurationOutcomeCallable AutoScalingClient::CreateLaunchConfigur
   return std::async(std::launch::async, &AutoScalingClient::CreateLaunchConfiguration, this, request);
 }
 
-void AutoScalingClient::CreateLaunchConfigurationAsync(const CreateLaunchConfigurationRequest& request) const
+void AutoScalingClient::CreateLaunchConfigurationAsync(const CreateLaunchConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::CreateLaunchConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::CreateLaunchConfigurationAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::CreateLaunchConfigurationAsyncHelper(const CreateLaunchConfigurationRequest& request) const
+void AutoScalingClient::CreateLaunchConfigurationAsyncHelper(const CreateLaunchConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateLaunchConfigurationOutcomeReceived(this, request, CreateLaunchConfiguration(request));
+  m_onCreateLaunchConfigurationOutcomeReceived(this, request, CreateLaunchConfiguration(request), context);
 }
 
 CreateOrUpdateTagsOutcome AutoScalingClient::CreateOrUpdateTags(const CreateOrUpdateTagsRequest& request) const
@@ -312,14 +312,14 @@ CreateOrUpdateTagsOutcomeCallable AutoScalingClient::CreateOrUpdateTagsCallable(
   return std::async(std::launch::async, &AutoScalingClient::CreateOrUpdateTags, this, request);
 }
 
-void AutoScalingClient::CreateOrUpdateTagsAsync(const CreateOrUpdateTagsRequest& request) const
+void AutoScalingClient::CreateOrUpdateTagsAsync(const CreateOrUpdateTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::CreateOrUpdateTagsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::CreateOrUpdateTagsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::CreateOrUpdateTagsAsyncHelper(const CreateOrUpdateTagsRequest& request) const
+void AutoScalingClient::CreateOrUpdateTagsAsyncHelper(const CreateOrUpdateTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateOrUpdateTagsOutcomeReceived(this, request, CreateOrUpdateTags(request));
+  m_onCreateOrUpdateTagsOutcomeReceived(this, request, CreateOrUpdateTags(request), context);
 }
 
 DeleteAutoScalingGroupOutcome AutoScalingClient::DeleteAutoScalingGroup(const DeleteAutoScalingGroupRequest& request) const
@@ -343,14 +343,14 @@ DeleteAutoScalingGroupOutcomeCallable AutoScalingClient::DeleteAutoScalingGroupC
   return std::async(std::launch::async, &AutoScalingClient::DeleteAutoScalingGroup, this, request);
 }
 
-void AutoScalingClient::DeleteAutoScalingGroupAsync(const DeleteAutoScalingGroupRequest& request) const
+void AutoScalingClient::DeleteAutoScalingGroupAsync(const DeleteAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteAutoScalingGroupAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeleteAutoScalingGroupAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeleteAutoScalingGroupAsyncHelper(const DeleteAutoScalingGroupRequest& request) const
+void AutoScalingClient::DeleteAutoScalingGroupAsyncHelper(const DeleteAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAutoScalingGroupOutcomeReceived(this, request, DeleteAutoScalingGroup(request));
+  m_onDeleteAutoScalingGroupOutcomeReceived(this, request, DeleteAutoScalingGroup(request), context);
 }
 
 DeleteLaunchConfigurationOutcome AutoScalingClient::DeleteLaunchConfiguration(const DeleteLaunchConfigurationRequest& request) const
@@ -374,14 +374,14 @@ DeleteLaunchConfigurationOutcomeCallable AutoScalingClient::DeleteLaunchConfigur
   return std::async(std::launch::async, &AutoScalingClient::DeleteLaunchConfiguration, this, request);
 }
 
-void AutoScalingClient::DeleteLaunchConfigurationAsync(const DeleteLaunchConfigurationRequest& request) const
+void AutoScalingClient::DeleteLaunchConfigurationAsync(const DeleteLaunchConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteLaunchConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeleteLaunchConfigurationAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeleteLaunchConfigurationAsyncHelper(const DeleteLaunchConfigurationRequest& request) const
+void AutoScalingClient::DeleteLaunchConfigurationAsyncHelper(const DeleteLaunchConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLaunchConfigurationOutcomeReceived(this, request, DeleteLaunchConfiguration(request));
+  m_onDeleteLaunchConfigurationOutcomeReceived(this, request, DeleteLaunchConfiguration(request), context);
 }
 
 DeleteLifecycleHookOutcome AutoScalingClient::DeleteLifecycleHook(const DeleteLifecycleHookRequest& request) const
@@ -405,14 +405,14 @@ DeleteLifecycleHookOutcomeCallable AutoScalingClient::DeleteLifecycleHookCallabl
   return std::async(std::launch::async, &AutoScalingClient::DeleteLifecycleHook, this, request);
 }
 
-void AutoScalingClient::DeleteLifecycleHookAsync(const DeleteLifecycleHookRequest& request) const
+void AutoScalingClient::DeleteLifecycleHookAsync(const DeleteLifecycleHookRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteLifecycleHookAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeleteLifecycleHookAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeleteLifecycleHookAsyncHelper(const DeleteLifecycleHookRequest& request) const
+void AutoScalingClient::DeleteLifecycleHookAsyncHelper(const DeleteLifecycleHookRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteLifecycleHookOutcomeReceived(this, request, DeleteLifecycleHook(request));
+  m_onDeleteLifecycleHookOutcomeReceived(this, request, DeleteLifecycleHook(request), context);
 }
 
 DeleteNotificationConfigurationOutcome AutoScalingClient::DeleteNotificationConfiguration(const DeleteNotificationConfigurationRequest& request) const
@@ -436,14 +436,14 @@ DeleteNotificationConfigurationOutcomeCallable AutoScalingClient::DeleteNotifica
   return std::async(std::launch::async, &AutoScalingClient::DeleteNotificationConfiguration, this, request);
 }
 
-void AutoScalingClient::DeleteNotificationConfigurationAsync(const DeleteNotificationConfigurationRequest& request) const
+void AutoScalingClient::DeleteNotificationConfigurationAsync(const DeleteNotificationConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteNotificationConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeleteNotificationConfigurationAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeleteNotificationConfigurationAsyncHelper(const DeleteNotificationConfigurationRequest& request) const
+void AutoScalingClient::DeleteNotificationConfigurationAsyncHelper(const DeleteNotificationConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteNotificationConfigurationOutcomeReceived(this, request, DeleteNotificationConfiguration(request));
+  m_onDeleteNotificationConfigurationOutcomeReceived(this, request, DeleteNotificationConfiguration(request), context);
 }
 
 DeletePolicyOutcome AutoScalingClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -467,14 +467,14 @@ DeletePolicyOutcomeCallable AutoScalingClient::DeletePolicyCallable(const Delete
   return std::async(std::launch::async, &AutoScalingClient::DeletePolicy, this, request);
 }
 
-void AutoScalingClient::DeletePolicyAsync(const DeletePolicyRequest& request) const
+void AutoScalingClient::DeletePolicyAsync(const DeletePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeletePolicyAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeletePolicyAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request) const
+void AutoScalingClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeletePolicyOutcomeReceived(this, request, DeletePolicy(request));
+  m_onDeletePolicyOutcomeReceived(this, request, DeletePolicy(request), context);
 }
 
 DeleteScheduledActionOutcome AutoScalingClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
@@ -498,14 +498,14 @@ DeleteScheduledActionOutcomeCallable AutoScalingClient::DeleteScheduledActionCal
   return std::async(std::launch::async, &AutoScalingClient::DeleteScheduledAction, this, request);
 }
 
-void AutoScalingClient::DeleteScheduledActionAsync(const DeleteScheduledActionRequest& request) const
+void AutoScalingClient::DeleteScheduledActionAsync(const DeleteScheduledActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteScheduledActionAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeleteScheduledActionAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeleteScheduledActionAsyncHelper(const DeleteScheduledActionRequest& request) const
+void AutoScalingClient::DeleteScheduledActionAsyncHelper(const DeleteScheduledActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteScheduledActionOutcomeReceived(this, request, DeleteScheduledAction(request));
+  m_onDeleteScheduledActionOutcomeReceived(this, request, DeleteScheduledAction(request), context);
 }
 
 DeleteTagsOutcome AutoScalingClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -529,14 +529,14 @@ DeleteTagsOutcomeCallable AutoScalingClient::DeleteTagsCallable(const DeleteTags
   return std::async(std::launch::async, &AutoScalingClient::DeleteTags, this, request);
 }
 
-void AutoScalingClient::DeleteTagsAsync(const DeleteTagsRequest& request) const
+void AutoScalingClient::DeleteTagsAsync(const DeleteTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteTagsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DeleteTagsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request) const
+void AutoScalingClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteTagsOutcomeReceived(this, request, DeleteTags(request));
+  m_onDeleteTagsOutcomeReceived(this, request, DeleteTags(request), context);
 }
 
 DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
@@ -560,14 +560,14 @@ DescribeAccountLimitsOutcomeCallable AutoScalingClient::DescribeAccountLimitsCal
   return std::async(std::launch::async, &AutoScalingClient::DescribeAccountLimits, this, request);
 }
 
-void AutoScalingClient::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request) const
+void AutoScalingClient::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAccountLimitsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeAccountLimitsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request) const
+void AutoScalingClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAccountLimitsOutcomeReceived(this, request, DescribeAccountLimits(request));
+  m_onDescribeAccountLimitsOutcomeReceived(this, request, DescribeAccountLimits(request), context);
 }
 
 DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const DescribeAdjustmentTypesRequest& request) const
@@ -591,14 +591,14 @@ DescribeAdjustmentTypesOutcomeCallable AutoScalingClient::DescribeAdjustmentType
   return std::async(std::launch::async, &AutoScalingClient::DescribeAdjustmentTypes, this, request);
 }
 
-void AutoScalingClient::DescribeAdjustmentTypesAsync(const DescribeAdjustmentTypesRequest& request) const
+void AutoScalingClient::DescribeAdjustmentTypesAsync(const DescribeAdjustmentTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAdjustmentTypesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeAdjustmentTypesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeAdjustmentTypesAsyncHelper(const DescribeAdjustmentTypesRequest& request) const
+void AutoScalingClient::DescribeAdjustmentTypesAsyncHelper(const DescribeAdjustmentTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAdjustmentTypesOutcomeReceived(this, request, DescribeAdjustmentTypes(request));
+  m_onDescribeAdjustmentTypesOutcomeReceived(this, request, DescribeAdjustmentTypes(request), context);
 }
 
 DescribeAutoScalingGroupsOutcome AutoScalingClient::DescribeAutoScalingGroups(const DescribeAutoScalingGroupsRequest& request) const
@@ -622,14 +622,14 @@ DescribeAutoScalingGroupsOutcomeCallable AutoScalingClient::DescribeAutoScalingG
   return std::async(std::launch::async, &AutoScalingClient::DescribeAutoScalingGroups, this, request);
 }
 
-void AutoScalingClient::DescribeAutoScalingGroupsAsync(const DescribeAutoScalingGroupsRequest& request) const
+void AutoScalingClient::DescribeAutoScalingGroupsAsync(const DescribeAutoScalingGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper(const DescribeAutoScalingGroupsRequest& request) const
+void AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper(const DescribeAutoScalingGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAutoScalingGroupsOutcomeReceived(this, request, DescribeAutoScalingGroups(request));
+  m_onDescribeAutoScalingGroupsOutcomeReceived(this, request, DescribeAutoScalingGroups(request), context);
 }
 
 DescribeAutoScalingInstancesOutcome AutoScalingClient::DescribeAutoScalingInstances(const DescribeAutoScalingInstancesRequest& request) const
@@ -653,14 +653,14 @@ DescribeAutoScalingInstancesOutcomeCallable AutoScalingClient::DescribeAutoScali
   return std::async(std::launch::async, &AutoScalingClient::DescribeAutoScalingInstances, this, request);
 }
 
-void AutoScalingClient::DescribeAutoScalingInstancesAsync(const DescribeAutoScalingInstancesRequest& request) const
+void AutoScalingClient::DescribeAutoScalingInstancesAsync(const DescribeAutoScalingInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper(const DescribeAutoScalingInstancesRequest& request) const
+void AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper(const DescribeAutoScalingInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAutoScalingInstancesOutcomeReceived(this, request, DescribeAutoScalingInstances(request));
+  m_onDescribeAutoScalingInstancesOutcomeReceived(this, request, DescribeAutoScalingInstances(request), context);
 }
 
 DescribeAutoScalingNotificationTypesOutcome AutoScalingClient::DescribeAutoScalingNotificationTypes(const DescribeAutoScalingNotificationTypesRequest& request) const
@@ -684,14 +684,14 @@ DescribeAutoScalingNotificationTypesOutcomeCallable AutoScalingClient::DescribeA
   return std::async(std::launch::async, &AutoScalingClient::DescribeAutoScalingNotificationTypes, this, request);
 }
 
-void AutoScalingClient::DescribeAutoScalingNotificationTypesAsync(const DescribeAutoScalingNotificationTypesRequest& request) const
+void AutoScalingClient::DescribeAutoScalingNotificationTypesAsync(const DescribeAutoScalingNotificationTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper(const DescribeAutoScalingNotificationTypesRequest& request) const
+void AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper(const DescribeAutoScalingNotificationTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeAutoScalingNotificationTypesOutcomeReceived(this, request, DescribeAutoScalingNotificationTypes(request));
+  m_onDescribeAutoScalingNotificationTypesOutcomeReceived(this, request, DescribeAutoScalingNotificationTypes(request), context);
 }
 
 DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurations(const DescribeLaunchConfigurationsRequest& request) const
@@ -715,14 +715,14 @@ DescribeLaunchConfigurationsOutcomeCallable AutoScalingClient::DescribeLaunchCon
   return std::async(std::launch::async, &AutoScalingClient::DescribeLaunchConfigurations, this, request);
 }
 
-void AutoScalingClient::DescribeLaunchConfigurationsAsync(const DescribeLaunchConfigurationsRequest& request) const
+void AutoScalingClient::DescribeLaunchConfigurationsAsync(const DescribeLaunchConfigurationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper(const DescribeLaunchConfigurationsRequest& request) const
+void AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper(const DescribeLaunchConfigurationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLaunchConfigurationsOutcomeReceived(this, request, DescribeLaunchConfigurations(request));
+  m_onDescribeLaunchConfigurationsOutcomeReceived(this, request, DescribeLaunchConfigurations(request), context);
 }
 
 DescribeLifecycleHookTypesOutcome AutoScalingClient::DescribeLifecycleHookTypes(const DescribeLifecycleHookTypesRequest& request) const
@@ -746,14 +746,14 @@ DescribeLifecycleHookTypesOutcomeCallable AutoScalingClient::DescribeLifecycleHo
   return std::async(std::launch::async, &AutoScalingClient::DescribeLifecycleHookTypes, this, request);
 }
 
-void AutoScalingClient::DescribeLifecycleHookTypesAsync(const DescribeLifecycleHookTypesRequest& request) const
+void AutoScalingClient::DescribeLifecycleHookTypesAsync(const DescribeLifecycleHookTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper(const DescribeLifecycleHookTypesRequest& request) const
+void AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper(const DescribeLifecycleHookTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLifecycleHookTypesOutcomeReceived(this, request, DescribeLifecycleHookTypes(request));
+  m_onDescribeLifecycleHookTypesOutcomeReceived(this, request, DescribeLifecycleHookTypes(request), context);
 }
 
 DescribeLifecycleHooksOutcome AutoScalingClient::DescribeLifecycleHooks(const DescribeLifecycleHooksRequest& request) const
@@ -777,14 +777,14 @@ DescribeLifecycleHooksOutcomeCallable AutoScalingClient::DescribeLifecycleHooksC
   return std::async(std::launch::async, &AutoScalingClient::DescribeLifecycleHooks, this, request);
 }
 
-void AutoScalingClient::DescribeLifecycleHooksAsync(const DescribeLifecycleHooksRequest& request) const
+void AutoScalingClient::DescribeLifecycleHooksAsync(const DescribeLifecycleHooksRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLifecycleHooksAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeLifecycleHooksAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeLifecycleHooksAsyncHelper(const DescribeLifecycleHooksRequest& request) const
+void AutoScalingClient::DescribeLifecycleHooksAsyncHelper(const DescribeLifecycleHooksRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLifecycleHooksOutcomeReceived(this, request, DescribeLifecycleHooks(request));
+  m_onDescribeLifecycleHooksOutcomeReceived(this, request, DescribeLifecycleHooks(request), context);
 }
 
 DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
@@ -808,14 +808,14 @@ DescribeLoadBalancersOutcomeCallable AutoScalingClient::DescribeLoadBalancersCal
   return std::async(std::launch::async, &AutoScalingClient::DescribeLoadBalancers, this, request);
 }
 
-void AutoScalingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request) const
+void AutoScalingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLoadBalancersAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeLoadBalancersAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request) const
+void AutoScalingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeLoadBalancersOutcomeReceived(this, request, DescribeLoadBalancers(request));
+  m_onDescribeLoadBalancersOutcomeReceived(this, request, DescribeLoadBalancers(request), context);
 }
 
 DescribeMetricCollectionTypesOutcome AutoScalingClient::DescribeMetricCollectionTypes(const DescribeMetricCollectionTypesRequest& request) const
@@ -839,14 +839,14 @@ DescribeMetricCollectionTypesOutcomeCallable AutoScalingClient::DescribeMetricCo
   return std::async(std::launch::async, &AutoScalingClient::DescribeMetricCollectionTypes, this, request);
 }
 
-void AutoScalingClient::DescribeMetricCollectionTypesAsync(const DescribeMetricCollectionTypesRequest& request) const
+void AutoScalingClient::DescribeMetricCollectionTypesAsync(const DescribeMetricCollectionTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper(const DescribeMetricCollectionTypesRequest& request) const
+void AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper(const DescribeMetricCollectionTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeMetricCollectionTypesOutcomeReceived(this, request, DescribeMetricCollectionTypes(request));
+  m_onDescribeMetricCollectionTypesOutcomeReceived(this, request, DescribeMetricCollectionTypes(request), context);
 }
 
 DescribeNotificationConfigurationsOutcome AutoScalingClient::DescribeNotificationConfigurations(const DescribeNotificationConfigurationsRequest& request) const
@@ -870,14 +870,14 @@ DescribeNotificationConfigurationsOutcomeCallable AutoScalingClient::DescribeNot
   return std::async(std::launch::async, &AutoScalingClient::DescribeNotificationConfigurations, this, request);
 }
 
-void AutoScalingClient::DescribeNotificationConfigurationsAsync(const DescribeNotificationConfigurationsRequest& request) const
+void AutoScalingClient::DescribeNotificationConfigurationsAsync(const DescribeNotificationConfigurationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper(const DescribeNotificationConfigurationsRequest& request) const
+void AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper(const DescribeNotificationConfigurationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeNotificationConfigurationsOutcomeReceived(this, request, DescribeNotificationConfigurations(request));
+  m_onDescribeNotificationConfigurationsOutcomeReceived(this, request, DescribeNotificationConfigurations(request), context);
 }
 
 DescribePoliciesOutcome AutoScalingClient::DescribePolicies(const DescribePoliciesRequest& request) const
@@ -901,14 +901,14 @@ DescribePoliciesOutcomeCallable AutoScalingClient::DescribePoliciesCallable(cons
   return std::async(std::launch::async, &AutoScalingClient::DescribePolicies, this, request);
 }
 
-void AutoScalingClient::DescribePoliciesAsync(const DescribePoliciesRequest& request) const
+void AutoScalingClient::DescribePoliciesAsync(const DescribePoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribePoliciesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribePoliciesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribePoliciesAsyncHelper(const DescribePoliciesRequest& request) const
+void AutoScalingClient::DescribePoliciesAsyncHelper(const DescribePoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribePoliciesOutcomeReceived(this, request, DescribePolicies(request));
+  m_onDescribePoliciesOutcomeReceived(this, request, DescribePolicies(request), context);
 }
 
 DescribeScalingActivitiesOutcome AutoScalingClient::DescribeScalingActivities(const DescribeScalingActivitiesRequest& request) const
@@ -932,14 +932,14 @@ DescribeScalingActivitiesOutcomeCallable AutoScalingClient::DescribeScalingActiv
   return std::async(std::launch::async, &AutoScalingClient::DescribeScalingActivities, this, request);
 }
 
-void AutoScalingClient::DescribeScalingActivitiesAsync(const DescribeScalingActivitiesRequest& request) const
+void AutoScalingClient::DescribeScalingActivitiesAsync(const DescribeScalingActivitiesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeScalingActivitiesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeScalingActivitiesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeScalingActivitiesAsyncHelper(const DescribeScalingActivitiesRequest& request) const
+void AutoScalingClient::DescribeScalingActivitiesAsyncHelper(const DescribeScalingActivitiesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeScalingActivitiesOutcomeReceived(this, request, DescribeScalingActivities(request));
+  m_onDescribeScalingActivitiesOutcomeReceived(this, request, DescribeScalingActivities(request), context);
 }
 
 DescribeScalingProcessTypesOutcome AutoScalingClient::DescribeScalingProcessTypes(const DescribeScalingProcessTypesRequest& request) const
@@ -963,14 +963,14 @@ DescribeScalingProcessTypesOutcomeCallable AutoScalingClient::DescribeScalingPro
   return std::async(std::launch::async, &AutoScalingClient::DescribeScalingProcessTypes, this, request);
 }
 
-void AutoScalingClient::DescribeScalingProcessTypesAsync(const DescribeScalingProcessTypesRequest& request) const
+void AutoScalingClient::DescribeScalingProcessTypesAsync(const DescribeScalingProcessTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeScalingProcessTypesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeScalingProcessTypesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeScalingProcessTypesAsyncHelper(const DescribeScalingProcessTypesRequest& request) const
+void AutoScalingClient::DescribeScalingProcessTypesAsyncHelper(const DescribeScalingProcessTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeScalingProcessTypesOutcomeReceived(this, request, DescribeScalingProcessTypes(request));
+  m_onDescribeScalingProcessTypesOutcomeReceived(this, request, DescribeScalingProcessTypes(request), context);
 }
 
 DescribeScheduledActionsOutcome AutoScalingClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const
@@ -994,14 +994,14 @@ DescribeScheduledActionsOutcomeCallable AutoScalingClient::DescribeScheduledActi
   return std::async(std::launch::async, &AutoScalingClient::DescribeScheduledActions, this, request);
 }
 
-void AutoScalingClient::DescribeScheduledActionsAsync(const DescribeScheduledActionsRequest& request) const
+void AutoScalingClient::DescribeScheduledActionsAsync(const DescribeScheduledActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeScheduledActionsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeScheduledActionsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeScheduledActionsAsyncHelper(const DescribeScheduledActionsRequest& request) const
+void AutoScalingClient::DescribeScheduledActionsAsyncHelper(const DescribeScheduledActionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeScheduledActionsOutcomeReceived(this, request, DescribeScheduledActions(request));
+  m_onDescribeScheduledActionsOutcomeReceived(this, request, DescribeScheduledActions(request), context);
 }
 
 DescribeTagsOutcome AutoScalingClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -1025,14 +1025,14 @@ DescribeTagsOutcomeCallable AutoScalingClient::DescribeTagsCallable(const Descri
   return std::async(std::launch::async, &AutoScalingClient::DescribeTags, this, request);
 }
 
-void AutoScalingClient::DescribeTagsAsync(const DescribeTagsRequest& request) const
+void AutoScalingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeTagsAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeTagsAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request) const
+void AutoScalingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeTagsOutcomeReceived(this, request, DescribeTags(request));
+  m_onDescribeTagsOutcomeReceived(this, request, DescribeTags(request), context);
 }
 
 DescribeTerminationPolicyTypesOutcome AutoScalingClient::DescribeTerminationPolicyTypes(const DescribeTerminationPolicyTypesRequest& request) const
@@ -1056,14 +1056,14 @@ DescribeTerminationPolicyTypesOutcomeCallable AutoScalingClient::DescribeTermina
   return std::async(std::launch::async, &AutoScalingClient::DescribeTerminationPolicyTypes, this, request);
 }
 
-void AutoScalingClient::DescribeTerminationPolicyTypesAsync(const DescribeTerminationPolicyTypesRequest& request) const
+void AutoScalingClient::DescribeTerminationPolicyTypesAsync(const DescribeTerminationPolicyTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper(const DescribeTerminationPolicyTypesRequest& request) const
+void AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper(const DescribeTerminationPolicyTypesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeTerminationPolicyTypesOutcomeReceived(this, request, DescribeTerminationPolicyTypes(request));
+  m_onDescribeTerminationPolicyTypesOutcomeReceived(this, request, DescribeTerminationPolicyTypes(request), context);
 }
 
 DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesRequest& request) const
@@ -1087,14 +1087,14 @@ DetachInstancesOutcomeCallable AutoScalingClient::DetachInstancesCallable(const 
   return std::async(std::launch::async, &AutoScalingClient::DetachInstances, this, request);
 }
 
-void AutoScalingClient::DetachInstancesAsync(const DetachInstancesRequest& request) const
+void AutoScalingClient::DetachInstancesAsync(const DetachInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DetachInstancesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DetachInstancesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DetachInstancesAsyncHelper(const DetachInstancesRequest& request) const
+void AutoScalingClient::DetachInstancesAsyncHelper(const DetachInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDetachInstancesOutcomeReceived(this, request, DetachInstances(request));
+  m_onDetachInstancesOutcomeReceived(this, request, DetachInstances(request), context);
 }
 
 DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLoadBalancersRequest& request) const
@@ -1118,14 +1118,14 @@ DetachLoadBalancersOutcomeCallable AutoScalingClient::DetachLoadBalancersCallabl
   return std::async(std::launch::async, &AutoScalingClient::DetachLoadBalancers, this, request);
 }
 
-void AutoScalingClient::DetachLoadBalancersAsync(const DetachLoadBalancersRequest& request) const
+void AutoScalingClient::DetachLoadBalancersAsync(const DetachLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DetachLoadBalancersAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DetachLoadBalancersAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DetachLoadBalancersAsyncHelper(const DetachLoadBalancersRequest& request) const
+void AutoScalingClient::DetachLoadBalancersAsyncHelper(const DetachLoadBalancersRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDetachLoadBalancersOutcomeReceived(this, request, DetachLoadBalancers(request));
+  m_onDetachLoadBalancersOutcomeReceived(this, request, DetachLoadBalancers(request), context);
 }
 
 DisableMetricsCollectionOutcome AutoScalingClient::DisableMetricsCollection(const DisableMetricsCollectionRequest& request) const
@@ -1149,14 +1149,14 @@ DisableMetricsCollectionOutcomeCallable AutoScalingClient::DisableMetricsCollect
   return std::async(std::launch::async, &AutoScalingClient::DisableMetricsCollection, this, request);
 }
 
-void AutoScalingClient::DisableMetricsCollectionAsync(const DisableMetricsCollectionRequest& request) const
+void AutoScalingClient::DisableMetricsCollectionAsync(const DisableMetricsCollectionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::DisableMetricsCollectionAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::DisableMetricsCollectionAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::DisableMetricsCollectionAsyncHelper(const DisableMetricsCollectionRequest& request) const
+void AutoScalingClient::DisableMetricsCollectionAsyncHelper(const DisableMetricsCollectionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDisableMetricsCollectionOutcomeReceived(this, request, DisableMetricsCollection(request));
+  m_onDisableMetricsCollectionOutcomeReceived(this, request, DisableMetricsCollection(request), context);
 }
 
 EnableMetricsCollectionOutcome AutoScalingClient::EnableMetricsCollection(const EnableMetricsCollectionRequest& request) const
@@ -1180,14 +1180,14 @@ EnableMetricsCollectionOutcomeCallable AutoScalingClient::EnableMetricsCollectio
   return std::async(std::launch::async, &AutoScalingClient::EnableMetricsCollection, this, request);
 }
 
-void AutoScalingClient::EnableMetricsCollectionAsync(const EnableMetricsCollectionRequest& request) const
+void AutoScalingClient::EnableMetricsCollectionAsync(const EnableMetricsCollectionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::EnableMetricsCollectionAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::EnableMetricsCollectionAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::EnableMetricsCollectionAsyncHelper(const EnableMetricsCollectionRequest& request) const
+void AutoScalingClient::EnableMetricsCollectionAsyncHelper(const EnableMetricsCollectionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnableMetricsCollectionOutcomeReceived(this, request, EnableMetricsCollection(request));
+  m_onEnableMetricsCollectionOutcomeReceived(this, request, EnableMetricsCollection(request), context);
 }
 
 EnterStandbyOutcome AutoScalingClient::EnterStandby(const EnterStandbyRequest& request) const
@@ -1211,14 +1211,14 @@ EnterStandbyOutcomeCallable AutoScalingClient::EnterStandbyCallable(const EnterS
   return std::async(std::launch::async, &AutoScalingClient::EnterStandby, this, request);
 }
 
-void AutoScalingClient::EnterStandbyAsync(const EnterStandbyRequest& request) const
+void AutoScalingClient::EnterStandbyAsync(const EnterStandbyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::EnterStandbyAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::EnterStandbyAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::EnterStandbyAsyncHelper(const EnterStandbyRequest& request) const
+void AutoScalingClient::EnterStandbyAsyncHelper(const EnterStandbyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnterStandbyOutcomeReceived(this, request, EnterStandby(request));
+  m_onEnterStandbyOutcomeReceived(this, request, EnterStandby(request), context);
 }
 
 ExecutePolicyOutcome AutoScalingClient::ExecutePolicy(const ExecutePolicyRequest& request) const
@@ -1242,14 +1242,14 @@ ExecutePolicyOutcomeCallable AutoScalingClient::ExecutePolicyCallable(const Exec
   return std::async(std::launch::async, &AutoScalingClient::ExecutePolicy, this, request);
 }
 
-void AutoScalingClient::ExecutePolicyAsync(const ExecutePolicyRequest& request) const
+void AutoScalingClient::ExecutePolicyAsync(const ExecutePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::ExecutePolicyAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::ExecutePolicyAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::ExecutePolicyAsyncHelper(const ExecutePolicyRequest& request) const
+void AutoScalingClient::ExecutePolicyAsyncHelper(const ExecutePolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onExecutePolicyOutcomeReceived(this, request, ExecutePolicy(request));
+  m_onExecutePolicyOutcomeReceived(this, request, ExecutePolicy(request), context);
 }
 
 ExitStandbyOutcome AutoScalingClient::ExitStandby(const ExitStandbyRequest& request) const
@@ -1273,14 +1273,14 @@ ExitStandbyOutcomeCallable AutoScalingClient::ExitStandbyCallable(const ExitStan
   return std::async(std::launch::async, &AutoScalingClient::ExitStandby, this, request);
 }
 
-void AutoScalingClient::ExitStandbyAsync(const ExitStandbyRequest& request) const
+void AutoScalingClient::ExitStandbyAsync(const ExitStandbyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::ExitStandbyAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::ExitStandbyAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::ExitStandbyAsyncHelper(const ExitStandbyRequest& request) const
+void AutoScalingClient::ExitStandbyAsyncHelper(const ExitStandbyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onExitStandbyOutcomeReceived(this, request, ExitStandby(request));
+  m_onExitStandbyOutcomeReceived(this, request, ExitStandby(request), context);
 }
 
 PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHookRequest& request) const
@@ -1304,14 +1304,14 @@ PutLifecycleHookOutcomeCallable AutoScalingClient::PutLifecycleHookCallable(cons
   return std::async(std::launch::async, &AutoScalingClient::PutLifecycleHook, this, request);
 }
 
-void AutoScalingClient::PutLifecycleHookAsync(const PutLifecycleHookRequest& request) const
+void AutoScalingClient::PutLifecycleHookAsync(const PutLifecycleHookRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutLifecycleHookAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::PutLifecycleHookAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::PutLifecycleHookAsyncHelper(const PutLifecycleHookRequest& request) const
+void AutoScalingClient::PutLifecycleHookAsyncHelper(const PutLifecycleHookRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutLifecycleHookOutcomeReceived(this, request, PutLifecycleHook(request));
+  m_onPutLifecycleHookOutcomeReceived(this, request, PutLifecycleHook(request), context);
 }
 
 PutNotificationConfigurationOutcome AutoScalingClient::PutNotificationConfiguration(const PutNotificationConfigurationRequest& request) const
@@ -1335,14 +1335,14 @@ PutNotificationConfigurationOutcomeCallable AutoScalingClient::PutNotificationCo
   return std::async(std::launch::async, &AutoScalingClient::PutNotificationConfiguration, this, request);
 }
 
-void AutoScalingClient::PutNotificationConfigurationAsync(const PutNotificationConfigurationRequest& request) const
+void AutoScalingClient::PutNotificationConfigurationAsync(const PutNotificationConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutNotificationConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::PutNotificationConfigurationAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::PutNotificationConfigurationAsyncHelper(const PutNotificationConfigurationRequest& request) const
+void AutoScalingClient::PutNotificationConfigurationAsyncHelper(const PutNotificationConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutNotificationConfigurationOutcomeReceived(this, request, PutNotificationConfiguration(request));
+  m_onPutNotificationConfigurationOutcomeReceived(this, request, PutNotificationConfiguration(request), context);
 }
 
 PutScalingPolicyOutcome AutoScalingClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
@@ -1366,14 +1366,14 @@ PutScalingPolicyOutcomeCallable AutoScalingClient::PutScalingPolicyCallable(cons
   return std::async(std::launch::async, &AutoScalingClient::PutScalingPolicy, this, request);
 }
 
-void AutoScalingClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request) const
+void AutoScalingClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutScalingPolicyAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::PutScalingPolicyAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& request) const
+void AutoScalingClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutScalingPolicyOutcomeReceived(this, request, PutScalingPolicy(request));
+  m_onPutScalingPolicyOutcomeReceived(this, request, PutScalingPolicy(request), context);
 }
 
 PutScheduledUpdateGroupActionOutcome AutoScalingClient::PutScheduledUpdateGroupAction(const PutScheduledUpdateGroupActionRequest& request) const
@@ -1397,14 +1397,14 @@ PutScheduledUpdateGroupActionOutcomeCallable AutoScalingClient::PutScheduledUpda
   return std::async(std::launch::async, &AutoScalingClient::PutScheduledUpdateGroupAction, this, request);
 }
 
-void AutoScalingClient::PutScheduledUpdateGroupActionAsync(const PutScheduledUpdateGroupActionRequest& request) const
+void AutoScalingClient::PutScheduledUpdateGroupActionAsync(const PutScheduledUpdateGroupActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper(const PutScheduledUpdateGroupActionRequest& request) const
+void AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper(const PutScheduledUpdateGroupActionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutScheduledUpdateGroupActionOutcomeReceived(this, request, PutScheduledUpdateGroupAction(request));
+  m_onPutScheduledUpdateGroupActionOutcomeReceived(this, request, PutScheduledUpdateGroupAction(request), context);
 }
 
 RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHeartbeat(const RecordLifecycleActionHeartbeatRequest& request) const
@@ -1428,14 +1428,14 @@ RecordLifecycleActionHeartbeatOutcomeCallable AutoScalingClient::RecordLifecycle
   return std::async(std::launch::async, &AutoScalingClient::RecordLifecycleActionHeartbeat, this, request);
 }
 
-void AutoScalingClient::RecordLifecycleActionHeartbeatAsync(const RecordLifecycleActionHeartbeatRequest& request) const
+void AutoScalingClient::RecordLifecycleActionHeartbeatAsync(const RecordLifecycleActionHeartbeatRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper(const RecordLifecycleActionHeartbeatRequest& request) const
+void AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper(const RecordLifecycleActionHeartbeatRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRecordLifecycleActionHeartbeatOutcomeReceived(this, request, RecordLifecycleActionHeartbeat(request));
+  m_onRecordLifecycleActionHeartbeatOutcomeReceived(this, request, RecordLifecycleActionHeartbeat(request), context);
 }
 
 ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesRequest& request) const
@@ -1459,14 +1459,14 @@ ResumeProcessesOutcomeCallable AutoScalingClient::ResumeProcessesCallable(const 
   return std::async(std::launch::async, &AutoScalingClient::ResumeProcesses, this, request);
 }
 
-void AutoScalingClient::ResumeProcessesAsync(const ResumeProcessesRequest& request) const
+void AutoScalingClient::ResumeProcessesAsync(const ResumeProcessesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::ResumeProcessesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::ResumeProcessesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::ResumeProcessesAsyncHelper(const ResumeProcessesRequest& request) const
+void AutoScalingClient::ResumeProcessesAsyncHelper(const ResumeProcessesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onResumeProcessesOutcomeReceived(this, request, ResumeProcesses(request));
+  m_onResumeProcessesOutcomeReceived(this, request, ResumeProcesses(request), context);
 }
 
 SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesiredCapacityRequest& request) const
@@ -1490,14 +1490,14 @@ SetDesiredCapacityOutcomeCallable AutoScalingClient::SetDesiredCapacityCallable(
   return std::async(std::launch::async, &AutoScalingClient::SetDesiredCapacity, this, request);
 }
 
-void AutoScalingClient::SetDesiredCapacityAsync(const SetDesiredCapacityRequest& request) const
+void AutoScalingClient::SetDesiredCapacityAsync(const SetDesiredCapacityRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::SetDesiredCapacityAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::SetDesiredCapacityAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::SetDesiredCapacityAsyncHelper(const SetDesiredCapacityRequest& request) const
+void AutoScalingClient::SetDesiredCapacityAsyncHelper(const SetDesiredCapacityRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetDesiredCapacityOutcomeReceived(this, request, SetDesiredCapacity(request));
+  m_onSetDesiredCapacityOutcomeReceived(this, request, SetDesiredCapacity(request), context);
 }
 
 SetInstanceHealthOutcome AutoScalingClient::SetInstanceHealth(const SetInstanceHealthRequest& request) const
@@ -1521,14 +1521,14 @@ SetInstanceHealthOutcomeCallable AutoScalingClient::SetInstanceHealthCallable(co
   return std::async(std::launch::async, &AutoScalingClient::SetInstanceHealth, this, request);
 }
 
-void AutoScalingClient::SetInstanceHealthAsync(const SetInstanceHealthRequest& request) const
+void AutoScalingClient::SetInstanceHealthAsync(const SetInstanceHealthRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::SetInstanceHealthAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::SetInstanceHealthAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::SetInstanceHealthAsyncHelper(const SetInstanceHealthRequest& request) const
+void AutoScalingClient::SetInstanceHealthAsyncHelper(const SetInstanceHealthRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetInstanceHealthOutcomeReceived(this, request, SetInstanceHealth(request));
+  m_onSetInstanceHealthOutcomeReceived(this, request, SetInstanceHealth(request), context);
 }
 
 SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcessesRequest& request) const
@@ -1552,14 +1552,14 @@ SuspendProcessesOutcomeCallable AutoScalingClient::SuspendProcessesCallable(cons
   return std::async(std::launch::async, &AutoScalingClient::SuspendProcesses, this, request);
 }
 
-void AutoScalingClient::SuspendProcessesAsync(const SuspendProcessesRequest& request) const
+void AutoScalingClient::SuspendProcessesAsync(const SuspendProcessesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::SuspendProcessesAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::SuspendProcessesAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::SuspendProcessesAsyncHelper(const SuspendProcessesRequest& request) const
+void AutoScalingClient::SuspendProcessesAsyncHelper(const SuspendProcessesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSuspendProcessesOutcomeReceived(this, request, SuspendProcesses(request));
+  m_onSuspendProcessesOutcomeReceived(this, request, SuspendProcesses(request), context);
 }
 
 TerminateInstanceInAutoScalingGroupOutcome AutoScalingClient::TerminateInstanceInAutoScalingGroup(const TerminateInstanceInAutoScalingGroupRequest& request) const
@@ -1583,14 +1583,14 @@ TerminateInstanceInAutoScalingGroupOutcomeCallable AutoScalingClient::TerminateI
   return std::async(std::launch::async, &AutoScalingClient::TerminateInstanceInAutoScalingGroup, this, request);
 }
 
-void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsync(const TerminateInstanceInAutoScalingGroupRequest& request) const
+void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsync(const TerminateInstanceInAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper(const TerminateInstanceInAutoScalingGroupRequest& request) const
+void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper(const TerminateInstanceInAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onTerminateInstanceInAutoScalingGroupOutcomeReceived(this, request, TerminateInstanceInAutoScalingGroup(request));
+  m_onTerminateInstanceInAutoScalingGroupOutcomeReceived(this, request, TerminateInstanceInAutoScalingGroup(request), context);
 }
 
 UpdateAutoScalingGroupOutcome AutoScalingClient::UpdateAutoScalingGroup(const UpdateAutoScalingGroupRequest& request) const
@@ -1614,13 +1614,13 @@ UpdateAutoScalingGroupOutcomeCallable AutoScalingClient::UpdateAutoScalingGroupC
   return std::async(std::launch::async, &AutoScalingClient::UpdateAutoScalingGroup, this, request);
 }
 
-void AutoScalingClient::UpdateAutoScalingGroupAsync(const UpdateAutoScalingGroupRequest& request) const
+void AutoScalingClient::UpdateAutoScalingGroupAsync(const UpdateAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&AutoScalingClient::UpdateAutoScalingGroupAsyncHelper, this, request);
+  m_executor->Submit(&AutoScalingClient::UpdateAutoScalingGroupAsyncHelper, this, request, context);
 }
 
-void AutoScalingClient::UpdateAutoScalingGroupAsyncHelper(const UpdateAutoScalingGroupRequest& request) const
+void AutoScalingClient::UpdateAutoScalingGroupAsyncHelper(const UpdateAutoScalingGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateAutoScalingGroupOutcomeReceived(this, request, UpdateAutoScalingGroup(request));
+  m_onUpdateAutoScalingGroupOutcomeReceived(this, request, UpdateAutoScalingGroup(request), context);
 }
 

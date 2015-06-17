@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListInstanceProfilesForRoleRequest::ListInstanceProfilesForRoleRequest() : 
+    m_roleNameHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String ListInstanceProfilesForRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListInstanceProfilesForRole&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";

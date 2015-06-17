@@ -49,12 +49,12 @@ namespace Model
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
@@ -73,12 +73,12 @@ namespace Model
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
@@ -97,7 +97,7 @@ namespace Model
     /*
      The date and time the invalidation request was first made.
     */
-    inline void SetCreateTime(double value) { m_createTime = value; }
+    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /*
      The date and time the invalidation request was first made.
@@ -111,7 +111,7 @@ namespace Model
     /*
      The current invalidation information for the batch request.
     */
-    inline void SetInvalidationBatch(const InvalidationBatch& value) { m_invalidationBatch = value; }
+    inline void SetInvalidationBatch(const InvalidationBatch& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
 
     /*
      The current invalidation information for the batch request.
@@ -120,9 +120,13 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
     double m_createTime;
+    bool m_createTimeHasBeenSet;
     InvalidationBatch m_invalidationBatch;
+    bool m_invalidationBatchHasBeenSet;
   };
 
 } // namespace Model

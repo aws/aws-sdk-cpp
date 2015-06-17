@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
-    inline void SetTopicARN(const Aws::String& value) { m_topicARN = value; }
+    inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
     */
-    inline void SetTopicARN(const char* value) { m_topicARN.assign(value); }
+    inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_topicARN;
+    bool m_topicARNHasBeenSet;
   };
 
 } // namespace Model

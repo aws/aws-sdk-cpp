@@ -28,6 +28,7 @@
 #include <aws/opsworks/model/CreateLayerResult.h>
 #include <aws/opsworks/model/CreateStackResult.h>
 #include <aws/opsworks/model/CreateUserProfileResult.h>
+#include <aws/opsworks/model/DescribeAgentVersionsResult.h>
 #include <aws/opsworks/model/DescribeAppsResult.h>
 #include <aws/opsworks/model/DescribeCommandsResult.h>
 #include <aws/opsworks/model/DescribeDeploymentsResult.h>
@@ -53,6 +54,7 @@
 #include <aws/opsworks/model/RegisterInstanceResult.h>
 #include <aws/opsworks/model/RegisterVolumeResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -115,6 +117,7 @@ namespace Model
     class DeregisterInstanceRequest;
     class DeregisterRdsDbInstanceRequest;
     class DeregisterVolumeRequest;
+    class DescribeAgentVersionsRequest;
     class DescribeAppsRequest;
     class DescribeCommandsRequest;
     class DescribeDeploymentsRequest;
@@ -181,6 +184,7 @@ namespace Model
   typedef Utils::Outcome<NoResult, Client::AWSError<OpsWorksErrors>> DeregisterInstanceOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<OpsWorksErrors>> DeregisterRdsDbInstanceOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<OpsWorksErrors>> DeregisterVolumeOutcome;
+  typedef Utils::Outcome<DescribeAgentVersionsResult, Client::AWSError<OpsWorksErrors>> DescribeAgentVersionsOutcome;
   typedef Utils::Outcome<DescribeAppsResult, Client::AWSError<OpsWorksErrors>> DescribeAppsOutcome;
   typedef Utils::Outcome<DescribeCommandsResult, Client::AWSError<OpsWorksErrors>> DescribeCommandsOutcome;
   typedef Utils::Outcome<DescribeDeploymentsResult, Client::AWSError<OpsWorksErrors>> DescribeDeploymentsOutcome;
@@ -248,6 +252,7 @@ namespace Model
   typedef std::future<DeregisterInstanceOutcome> DeregisterInstanceOutcomeCallable;
   typedef std::future<DeregisterRdsDbInstanceOutcome> DeregisterRdsDbInstanceOutcomeCallable;
   typedef std::future<DeregisterVolumeOutcome> DeregisterVolumeOutcomeCallable;
+  typedef std::future<DescribeAgentVersionsOutcome> DescribeAgentVersionsOutcomeCallable;
   typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
   typedef std::future<DescribeCommandsOutcome> DescribeCommandsOutcomeCallable;
   typedef std::future<DescribeDeploymentsOutcome> DescribeDeploymentsOutcomeCallable;
@@ -298,72 +303,73 @@ namespace Model
 
     class OpsWorksClient;
 
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::AssignInstanceRequest&, const Model::AssignInstanceOutcome&> AssignInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::AssignVolumeRequest&, const Model::AssignVolumeOutcome&> AssignVolumeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::AssociateElasticIpRequest&, const Model::AssociateElasticIpOutcome&> AssociateElasticIpOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::AttachElasticLoadBalancerRequest&, const Model::AttachElasticLoadBalancerOutcome&> AttachElasticLoadBalancerOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CloneStackRequest&, const Model::CloneStackOutcome&> CloneStackOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateAppRequest&, const Model::CreateAppOutcome&> CreateAppOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&> CreateDeploymentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&> CreateInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateLayerRequest&, const Model::CreateLayerOutcome&> CreateLayerOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateStackRequest&, const Model::CreateStackOutcome&> CreateStackOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateUserProfileRequest&, const Model::CreateUserProfileOutcome&> CreateUserProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&> DeleteAppOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&> DeleteInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteLayerRequest&, const Model::DeleteLayerOutcome&> DeleteLayerOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&> DeleteStackOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&> DeleteUserProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterElasticIpRequest&, const Model::DeregisterElasticIpOutcome&> DeregisterElasticIpOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterInstanceRequest&, const Model::DeregisterInstanceOutcome&> DeregisterInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterRdsDbInstanceRequest&, const Model::DeregisterRdsDbInstanceOutcome&> DeregisterRdsDbInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterVolumeRequest&, const Model::DeregisterVolumeOutcome&> DeregisterVolumeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeAppsRequest&, const Model::DescribeAppsOutcome&> DescribeAppsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeCommandsRequest&, const Model::DescribeCommandsOutcome&> DescribeCommandsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeDeploymentsRequest&, const Model::DescribeDeploymentsOutcome&> DescribeDeploymentsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeElasticIpsRequest&, const Model::DescribeElasticIpsOutcome&> DescribeElasticIpsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeElasticLoadBalancersRequest&, const Model::DescribeElasticLoadBalancersOutcome&> DescribeElasticLoadBalancersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&> DescribeInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeLayersRequest&, const Model::DescribeLayersOutcome&> DescribeLayersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeLoadBasedAutoScalingRequest&, const Model::DescribeLoadBasedAutoScalingOutcome&> DescribeLoadBasedAutoScalingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeMyUserProfileOutcome&> DescribeMyUserProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribePermissionsRequest&, const Model::DescribePermissionsOutcome&> DescribePermissionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeRaidArraysRequest&, const Model::DescribeRaidArraysOutcome&> DescribeRaidArraysOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeRdsDbInstancesRequest&, const Model::DescribeRdsDbInstancesOutcome&> DescribeRdsDbInstancesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeServiceErrorsRequest&, const Model::DescribeServiceErrorsOutcome&> DescribeServiceErrorsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeStackProvisioningParametersRequest&, const Model::DescribeStackProvisioningParametersOutcome&> DescribeStackProvisioningParametersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeStackSummaryRequest&, const Model::DescribeStackSummaryOutcome&> DescribeStackSummaryOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&> DescribeStacksOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeTimeBasedAutoScalingRequest&, const Model::DescribeTimeBasedAutoScalingOutcome&> DescribeTimeBasedAutoScalingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeUserProfilesRequest&, const Model::DescribeUserProfilesOutcome&> DescribeUserProfilesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeVolumesRequest&, const Model::DescribeVolumesOutcome&> DescribeVolumesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DetachElasticLoadBalancerRequest&, const Model::DetachElasticLoadBalancerOutcome&> DetachElasticLoadBalancerOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::DisassociateElasticIpRequest&, const Model::DisassociateElasticIpOutcome&> DisassociateElasticIpOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::GetHostnameSuggestionRequest&, const Model::GetHostnameSuggestionOutcome&> GetHostnameSuggestionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::GrantAccessRequest&, const Model::GrantAccessOutcome&> GrantAccessOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::RebootInstanceRequest&, const Model::RebootInstanceOutcome&> RebootInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterElasticIpRequest&, const Model::RegisterElasticIpOutcome&> RegisterElasticIpOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterInstanceRequest&, const Model::RegisterInstanceOutcome&> RegisterInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterRdsDbInstanceRequest&, const Model::RegisterRdsDbInstanceOutcome&> RegisterRdsDbInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterVolumeRequest&, const Model::RegisterVolumeOutcome&> RegisterVolumeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::SetLoadBasedAutoScalingRequest&, const Model::SetLoadBasedAutoScalingOutcome&> SetLoadBasedAutoScalingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::SetPermissionRequest&, const Model::SetPermissionOutcome&> SetPermissionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::SetTimeBasedAutoScalingRequest&, const Model::SetTimeBasedAutoScalingOutcome&> SetTimeBasedAutoScalingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&> StartInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::StartStackRequest&, const Model::StartStackOutcome&> StartStackOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&> StopInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::StopStackRequest&, const Model::StopStackOutcome&> StopStackOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UnassignInstanceRequest&, const Model::UnassignInstanceOutcome&> UnassignInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UnassignVolumeRequest&, const Model::UnassignVolumeOutcome&> UnassignVolumeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateAppRequest&, const Model::UpdateAppOutcome&> UpdateAppOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateElasticIpRequest&, const Model::UpdateElasticIpOutcome&> UpdateElasticIpOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateInstanceRequest&, const Model::UpdateInstanceOutcome&> UpdateInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateLayerRequest&, const Model::UpdateLayerOutcome&> UpdateLayerOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateMyUserProfileRequest&, const Model::UpdateMyUserProfileOutcome&> UpdateMyUserProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateRdsDbInstanceRequest&, const Model::UpdateRdsDbInstanceOutcome&> UpdateRdsDbInstanceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&> UpdateStackOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&> UpdateUserProfileOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateVolumeRequest&, const Model::UpdateVolumeOutcome&> UpdateVolumeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::AssignInstanceRequest&, const Model::AssignInstanceOutcome&, const Aws::Client::AsyncCallerContext*> AssignInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::AssignVolumeRequest&, const Model::AssignVolumeOutcome&, const Aws::Client::AsyncCallerContext*> AssignVolumeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::AssociateElasticIpRequest&, const Model::AssociateElasticIpOutcome&, const Aws::Client::AsyncCallerContext*> AssociateElasticIpOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::AttachElasticLoadBalancerRequest&, const Model::AttachElasticLoadBalancerOutcome&, const Aws::Client::AsyncCallerContext*> AttachElasticLoadBalancerOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CloneStackRequest&, const Model::CloneStackOutcome&, const Aws::Client::AsyncCallerContext*> CloneStackOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const Aws::Client::AsyncCallerContext*> CreateAppOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const Aws::Client::AsyncCallerContext*> CreateDeploymentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const Aws::Client::AsyncCallerContext*> CreateInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateLayerRequest&, const Model::CreateLayerOutcome&, const Aws::Client::AsyncCallerContext*> CreateLayerOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const Aws::Client::AsyncCallerContext*> CreateStackOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::CreateUserProfileRequest&, const Model::CreateUserProfileOutcome&, const Aws::Client::AsyncCallerContext*> CreateUserProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const Aws::Client::AsyncCallerContext*> DeleteAppOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const Aws::Client::AsyncCallerContext*> DeleteInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteLayerRequest&, const Model::DeleteLayerOutcome&, const Aws::Client::AsyncCallerContext*> DeleteLayerOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const Aws::Client::AsyncCallerContext*> DeleteStackOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&, const Aws::Client::AsyncCallerContext*> DeleteUserProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterElasticIpRequest&, const Model::DeregisterElasticIpOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterElasticIpOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterInstanceRequest&, const Model::DeregisterInstanceOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterRdsDbInstanceRequest&, const Model::DeregisterRdsDbInstanceOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterRdsDbInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DeregisterVolumeRequest&, const Model::DeregisterVolumeOutcome&, const Aws::Client::AsyncCallerContext*> DeregisterVolumeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeAgentVersionsRequest&, const Model::DescribeAgentVersionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAgentVersionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeAppsRequest&, const Model::DescribeAppsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeAppsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeCommandsRequest&, const Model::DescribeCommandsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCommandsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeDeploymentsRequest&, const Model::DescribeDeploymentsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeDeploymentsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeElasticIpsRequest&, const Model::DescribeElasticIpsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeElasticIpsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeElasticLoadBalancersRequest&, const Model::DescribeElasticLoadBalancersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeElasticLoadBalancersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeLayersRequest&, const Model::DescribeLayersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLayersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeLoadBasedAutoScalingRequest&, const Model::DescribeLoadBasedAutoScalingOutcome&, const Aws::Client::AsyncCallerContext*> DescribeLoadBasedAutoScalingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeMyUserProfileOutcome&, const Aws::Client::AsyncCallerContext*> DescribeMyUserProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribePermissionsRequest&, const Model::DescribePermissionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribePermissionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeRaidArraysRequest&, const Model::DescribeRaidArraysOutcome&, const Aws::Client::AsyncCallerContext*> DescribeRaidArraysOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeRdsDbInstancesRequest&, const Model::DescribeRdsDbInstancesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeRdsDbInstancesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeServiceErrorsRequest&, const Model::DescribeServiceErrorsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeServiceErrorsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeStackProvisioningParametersRequest&, const Model::DescribeStackProvisioningParametersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeStackProvisioningParametersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeStackSummaryRequest&, const Model::DescribeStackSummaryOutcome&, const Aws::Client::AsyncCallerContext*> DescribeStackSummaryOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const Aws::Client::AsyncCallerContext*> DescribeStacksOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeTimeBasedAutoScalingRequest&, const Model::DescribeTimeBasedAutoScalingOutcome&, const Aws::Client::AsyncCallerContext*> DescribeTimeBasedAutoScalingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeUserProfilesRequest&, const Model::DescribeUserProfilesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeUserProfilesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DescribeVolumesRequest&, const Model::DescribeVolumesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeVolumesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DetachElasticLoadBalancerRequest&, const Model::DetachElasticLoadBalancerOutcome&, const Aws::Client::AsyncCallerContext*> DetachElasticLoadBalancerOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::DisassociateElasticIpRequest&, const Model::DisassociateElasticIpOutcome&, const Aws::Client::AsyncCallerContext*> DisassociateElasticIpOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::GetHostnameSuggestionRequest&, const Model::GetHostnameSuggestionOutcome&, const Aws::Client::AsyncCallerContext*> GetHostnameSuggestionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::GrantAccessRequest&, const Model::GrantAccessOutcome&, const Aws::Client::AsyncCallerContext*> GrantAccessOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::RebootInstanceRequest&, const Model::RebootInstanceOutcome&, const Aws::Client::AsyncCallerContext*> RebootInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterElasticIpRequest&, const Model::RegisterElasticIpOutcome&, const Aws::Client::AsyncCallerContext*> RegisterElasticIpOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterInstanceRequest&, const Model::RegisterInstanceOutcome&, const Aws::Client::AsyncCallerContext*> RegisterInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterRdsDbInstanceRequest&, const Model::RegisterRdsDbInstanceOutcome&, const Aws::Client::AsyncCallerContext*> RegisterRdsDbInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::RegisterVolumeRequest&, const Model::RegisterVolumeOutcome&, const Aws::Client::AsyncCallerContext*> RegisterVolumeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::SetLoadBasedAutoScalingRequest&, const Model::SetLoadBasedAutoScalingOutcome&, const Aws::Client::AsyncCallerContext*> SetLoadBasedAutoScalingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::SetPermissionRequest&, const Model::SetPermissionOutcome&, const Aws::Client::AsyncCallerContext*> SetPermissionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::SetTimeBasedAutoScalingRequest&, const Model::SetTimeBasedAutoScalingOutcome&, const Aws::Client::AsyncCallerContext*> SetTimeBasedAutoScalingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const Aws::Client::AsyncCallerContext*> StartInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::StartStackRequest&, const Model::StartStackOutcome&, const Aws::Client::AsyncCallerContext*> StartStackOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const Aws::Client::AsyncCallerContext*> StopInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::StopStackRequest&, const Model::StopStackOutcome&, const Aws::Client::AsyncCallerContext*> StopStackOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UnassignInstanceRequest&, const Model::UnassignInstanceOutcome&, const Aws::Client::AsyncCallerContext*> UnassignInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UnassignVolumeRequest&, const Model::UnassignVolumeOutcome&, const Aws::Client::AsyncCallerContext*> UnassignVolumeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateAppRequest&, const Model::UpdateAppOutcome&, const Aws::Client::AsyncCallerContext*> UpdateAppOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateElasticIpRequest&, const Model::UpdateElasticIpOutcome&, const Aws::Client::AsyncCallerContext*> UpdateElasticIpOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateInstanceRequest&, const Model::UpdateInstanceOutcome&, const Aws::Client::AsyncCallerContext*> UpdateInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateLayerRequest&, const Model::UpdateLayerOutcome&, const Aws::Client::AsyncCallerContext*> UpdateLayerOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateMyUserProfileRequest&, const Model::UpdateMyUserProfileOutcome&, const Aws::Client::AsyncCallerContext*> UpdateMyUserProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateRdsDbInstanceRequest&, const Model::UpdateRdsDbInstanceOutcome&, const Aws::Client::AsyncCallerContext*> UpdateRdsDbInstanceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const Aws::Client::AsyncCallerContext*> UpdateStackOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const Aws::Client::AsyncCallerContext*> UpdateUserProfileOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<OpsWorksClient, const Model::UpdateVolumeRequest&, const Model::UpdateVolumeOutcome&, const Aws::Client::AsyncCallerContext*> UpdateVolumeOutcomeReceivedEvent;
 
   /*
     <fullname>AWS OpsWorks</fullname> <p>Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions, syntax, and usage examples about AWS OpsWorks actions and data types, including common parameters and error codes. </p> <p>AWS OpsWorks is an application management service that provides an integrated experience for overseeing the complete application lifecycle. For information about this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page. </p> <p> <b>SDKs and CLI</b> </p> <p>The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface (CLI) or by using one of the AWS SDKs to implement applications in your preferred language. For more information, see:</p> <ul> <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS CLI</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS SDK for Java</a> </li> <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS SDK for .NET</a> </li> <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS SDK for PHP 2</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS SDK for Ruby</a> </li> <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for Node.js</a> </li> <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a> </li> </ul> <p> <b>Endpoints</b> </p> <p>AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks to create stacks in any AWS Region.</p> <p> <b>Chef Versions</b> </p> <p>When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend you use the <code>ConfigurationManager</code> parameter to specify the Chef version, 0.9, 11.4, or 11.10. The default value is currently 11.10. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef Versions</a>.</p> <note>You can still specify Chef 0.9 for your stack, but new features are not available for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks to Chef 11.10 as soon as possible.</note>
@@ -412,7 +418,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AssignInstanceAsync(const Model::AssignInstanceRequest& request) const;
+     void AssignInstanceAsync(const Model::AssignInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling <a>RegisterVolume</a>. After you register the volume, you must call <a>UpdateVolume</a> to specify a mount point before calling <code>AssignVolume</code>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -431,7 +437,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AssignVolumeAsync(const Model::AssignVolumeRequest& request) const;
+     void AssignVolumeAsync(const Model::AssignVolumeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling <a>RegisterElasticIp</a>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -450,7 +456,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AssociateElasticIpAsync(const Model::AssociateElasticIpRequest& request) const;
+     void AssociateElasticIpAsync(const Model::AssociateElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Attaches an Elastic Load Balancing load balancer to a specified layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer Guide</a>.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -469,7 +475,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AttachElasticLoadBalancerAsync(const Model::AttachElasticLoadBalancerRequest& request) const;
+     void AttachElasticLoadBalancerAsync(const Model::AttachElasticLoadBalancerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -488,7 +494,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CloneStackAsync(const Model::CloneStackRequest& request) const;
+     void CloneStackAsync(const Model::CloneStackRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an app for a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -507,7 +513,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateAppAsync(const Model::CreateAppRequest& request) const;
+     void CreateAppAsync(const Model::CreateAppRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Runs deployment or stack commands. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run Stack Commands</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -526,7 +532,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request) const;
+     void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an instance in a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -545,7 +551,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateInstanceAsync(const Model::CreateInstanceRequest& request) const;
+     void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -564,7 +570,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateLayerAsync(const Model::CreateLayerRequest& request) const;
+     void CreateLayerAsync(const Model::CreateLayerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create a New Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -583,7 +589,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateStackAsync(const Model::CreateStackRequest& request) const;
+     void CreateStackAsync(const Model::CreateStackRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new user profile.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -602,7 +608,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request) const;
+     void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a specified app.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -621,7 +627,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteAppAsync(const Model::DeleteAppRequest& request) const;
+     void DeleteAppAsync(const Model::DeleteAppRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -640,7 +646,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request) const;
+     void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -659,7 +665,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteLayerAsync(const Model::DeleteLayerRequest& request) const;
+     void DeleteLayerAsync(const Model::DeleteLayerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -678,7 +684,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteStackAsync(const Model::DeleteStackRequest& request) const;
+     void DeleteStackAsync(const Model::DeleteStackRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a user profile.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -697,7 +703,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request) const;
+     void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -716,7 +722,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterElasticIpAsync(const Model::DeregisterElasticIpRequest& request) const;
+     void DeregisterElasticIpAsync(const Model::DeregisterElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action can not be used with instances that were created with AWS OpsWorks.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -735,7 +741,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterInstanceAsync(const Model::DeregisterInstanceRequest& request) const;
+     void DeregisterInstanceAsync(const Model::DeregisterInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deregisters an Amazon RDS instance.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -754,7 +760,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterRdsDbInstanceAsync(const Model::DeregisterRdsDbInstanceRequest& request) const;
+     void DeregisterRdsDbInstanceAsync(const Model::DeregisterRdsDbInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -773,7 +779,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeregisterVolumeAsync(const Model::DeregisterVolumeRequest& request) const;
+     void DeregisterVolumeAsync(const Model::DeregisterVolumeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       ${operation.documentation}
+     */
+     Model::DescribeAgentVersionsOutcome DescribeAgentVersions(const Model::DescribeAgentVersionsRequest& request) const;
+
+     /*
+       ${operation.documentation}
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::DescribeAgentVersionsOutcomeCallable DescribeAgentVersionsCallable(const Model::DescribeAgentVersionsRequest& request) const;
+
+     /*
+       ${operation.documentation}
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void DescribeAgentVersionsAsync(const Model::DescribeAgentVersionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Requests a description of a specified set of apps.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -792,7 +817,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeAppsAsync(const Model::DescribeAppsRequest& request) const;
+     void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the results of specified commands.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -811,7 +836,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCommandsAsync(const Model::DescribeCommandsRequest& request) const;
+     void DescribeCommandsAsync(const Model::DescribeCommandsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Requests a description of a specified set of deployments.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -830,7 +855,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeDeploymentsAsync(const Model::DescribeDeploymentsRequest& request) const;
+     void DescribeDeploymentsAsync(const Model::DescribeDeploymentsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -849,7 +874,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeElasticIpsAsync(const Model::DescribeElasticIpsRequest& request) const;
+     void DescribeElasticIpsAsync(const Model::DescribeElasticIpsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -868,7 +893,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeElasticLoadBalancersAsync(const Model::DescribeElasticLoadBalancersRequest& request) const;
+     void DescribeElasticLoadBalancersAsync(const Model::DescribeElasticLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Requests a description of a set of instances.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -887,7 +912,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request) const;
+     void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Requests a description of one or more layers in a specified stack.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -906,7 +931,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLayersAsync(const Model::DescribeLayersRequest& request) const;
+     void DescribeLayersAsync(const Model::DescribeLayersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes load-based auto scaling configurations for specified layers.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -925,7 +950,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeLoadBasedAutoScalingAsync(const Model::DescribeLoadBasedAutoScalingRequest& request) const;
+     void DescribeLoadBasedAutoScalingAsync(const Model::DescribeLoadBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
       /*
        <p>Describes a user's SSH information.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -944,7 +969,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeMyUserProfileAsync() const;
+     void DescribeMyUserProfileAsync(const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the permissions for a specified stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -963,7 +988,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribePermissionsAsync(const Model::DescribePermissionsRequest& request) const;
+     void DescribePermissionsAsync(const Model::DescribePermissionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describe an instance's RAID arrays.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -982,7 +1007,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeRaidArraysAsync(const Model::DescribeRaidArraysRequest& request) const;
+     void DescribeRaidArraysAsync(const Model::DescribeRaidArraysRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes Amazon RDS instances.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1001,7 +1026,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeRdsDbInstancesAsync(const Model::DescribeRdsDbInstancesRequest& request) const;
+     void DescribeRdsDbInstancesAsync(const Model::DescribeRdsDbInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes AWS OpsWorks service errors.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1020,7 +1045,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeServiceErrorsAsync(const Model::DescribeServiceErrorsRequest& request) const;
+     void DescribeServiceErrorsAsync(const Model::DescribeServiceErrorsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Requests a description of a stack's provisioning parameters.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1039,7 +1064,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeStackProvisioningParametersAsync(const Model::DescribeStackProvisioningParametersRequest& request) const;
+     void DescribeStackProvisioningParametersAsync(const Model::DescribeStackProvisioningParametersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <code>running_setup</code> or <code>online</code>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1058,7 +1083,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeStackSummaryAsync(const Model::DescribeStackSummaryRequest& request) const;
+     void DescribeStackSummaryAsync(const Model::DescribeStackSummaryRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Requests a description of one or more stacks.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1077,7 +1102,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeStacksAsync(const Model::DescribeStacksRequest& request) const;
+     void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes time-based auto scaling configurations for specified instances.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1096,7 +1121,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeTimeBasedAutoScalingAsync(const Model::DescribeTimeBasedAutoScalingRequest& request) const;
+     void DescribeTimeBasedAutoScalingAsync(const Model::DescribeTimeBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describe specified users.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1115,7 +1140,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeUserProfilesAsync(const Model::DescribeUserProfilesRequest& request) const;
+     void DescribeUserProfilesAsync(const Model::DescribeUserProfilesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1134,7 +1159,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request) const;
+     void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Detaches a specified Elastic Load Balancing instance from its layer.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1153,7 +1178,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DetachElasticLoadBalancerAsync(const Model::DetachElasticLoadBalancerRequest& request) const;
+     void DetachElasticLoadBalancerAsync(const Model::DetachElasticLoadBalancerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1172,7 +1197,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DisassociateElasticIpAsync(const Model::DisassociateElasticIpRequest& request) const;
+     void DisassociateElasticIpAsync(const Model::DisassociateElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Gets a generated host name for the specified layer, based on the current host name theme.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1191,7 +1216,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetHostnameSuggestionAsync(const Model::GetHostnameSuggestionRequest& request) const;
+     void GetHostnameSuggestionAsync(const Model::GetHostnameSuggestionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <note>This API can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
@@ -1210,7 +1235,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GrantAccessAsync(const Model::GrantAccessRequest& request) const;
+     void GrantAccessAsync(const Model::GrantAccessRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1229,7 +1254,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RebootInstanceAsync(const Model::RebootInstanceRequest& request) const;
+     void RebootInstanceAsync(const Model::RebootInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is already registered, you must first deregister it by calling <a>DeregisterElasticIp</a>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1248,7 +1273,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterElasticIpAsync(const Model::RegisterElasticIpRequest& request) const;
+     void RegisterElasticIpAsync(const Model::RegisterElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1267,7 +1292,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterInstanceAsync(const Model::RegisterInstanceRequest& request) const;
+     void RegisterInstanceAsync(const Model::RegisterInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Registers an Amazon RDS instance with a stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1286,7 +1311,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterRdsDbInstanceAsync(const Model::RegisterRdsDbInstanceRequest& request) const;
+     void RegisterRdsDbInstanceAsync(const Model::RegisterRdsDbInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is already registered, you must first deregister it by calling <a>DeregisterVolume</a>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1305,7 +1330,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RegisterVolumeAsync(const Model::RegisterVolumeRequest& request) const;
+     void RegisterVolumeAsync(const Model::RegisterVolumeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1324,7 +1349,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetLoadBasedAutoScalingAsync(const Model::SetLoadBasedAutoScalingRequest& request) const;
+     void SetLoadBasedAutoScalingAsync(const Model::SetLoadBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1343,7 +1368,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetPermissionAsync(const Model::SetPermissionRequest& request) const;
+     void SetPermissionAsync(const Model::SetPermissionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1362,7 +1387,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetTimeBasedAutoScalingAsync(const Model::SetTimeBasedAutoScalingRequest& request) const;
+     void SetTimeBasedAutoScalingAsync(const Model::SetTimeBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1381,7 +1406,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StartInstanceAsync(const Model::StartInstanceRequest& request) const;
+     void StartInstanceAsync(const Model::StartInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Starts a stack's instances. </p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1400,7 +1425,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StartStackAsync(const Model::StartStackRequest& request) const;
+     void StartStackAsync(const Model::StartStackRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1419,7 +1444,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StopInstanceAsync(const Model::StopInstanceRequest& request) const;
+     void StopInstanceAsync(const Model::StopInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Stops a specified stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1438,7 +1463,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void StopStackAsync(const Model::StopStackRequest& request) const;
+     void StopStackAsync(const Model::StopStackRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned instance and can be assigned to another layer, as needed. You cannot use this action with instances that were created with AWS OpsWorks.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1457,7 +1482,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UnassignInstanceAsync(const Model::UnassignInstanceRequest& request) const;
+     void UnassignInstanceAsync(const Model::UnassignInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1476,7 +1501,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UnassignVolumeAsync(const Model::UnassignVolumeRequest& request) const;
+     void UnassignVolumeAsync(const Model::UnassignVolumeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a specified app.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1495,7 +1520,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateAppAsync(const Model::UpdateAppRequest& request) const;
+     void UpdateAppAsync(const Model::UpdateAppRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1514,7 +1539,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateElasticIpAsync(const Model::UpdateElasticIpRequest& request) const;
+     void UpdateElasticIpAsync(const Model::UpdateElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a specified instance.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1533,7 +1558,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request) const;
+     void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a specified layer.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1552,7 +1577,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateLayerAsync(const Model::UpdateLayerRequest& request) const;
+     void UpdateLayerAsync(const Model::UpdateLayerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a user's SSH public key.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1571,7 +1596,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateMyUserProfileAsync(const Model::UpdateMyUserProfileRequest& request) const;
+     void UpdateMyUserProfileAsync(const Model::UpdateMyUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates an Amazon RDS instance.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1590,7 +1615,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateRdsDbInstanceAsync(const Model::UpdateRdsDbInstanceRequest& request) const;
+     void UpdateRdsDbInstanceAsync(const Model::UpdateRdsDbInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a specified stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1609,7 +1634,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateStackAsync(const Model::UpdateStackRequest& request) const;
+     void UpdateStackAsync(const Model::UpdateStackRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a specified user profile.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1628,7 +1653,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request) const;
+     void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -1647,7 +1672,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateVolumeAsync(const Model::UpdateVolumeRequest& request) const;
+     void UpdateVolumeAsync(const Model::UpdateVolumeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AssignInstanceAsync to call upon completion to the handler chain. You need to call this to
@@ -1987,6 +2012,23 @@ namespace Model
     inline void ClearAllDeregisterVolumeOutcomeReceivedHandlers()
     {
       m_onDeregisterVolumeOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for DescribeAgentVersionsAsync to call upon completion to the handler chain. You need to call this to
+    * use DescribeAgentVersionsAsync.
+    */
+    inline void RegisterDescribeAgentVersionsOutcomeReceivedHandler(const DescribeAgentVersionsOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onDescribeAgentVersionsOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for DescribeAgentVersions.
+    */
+    inline void ClearAllDescribeAgentVersionsOutcomeReceivedHandlers()
+    {
+      m_onDescribeAgentVersionsOutcomeReceived.Clear();
     }
 
    /**
@@ -2775,72 +2817,73 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AssignInstanceAsyncHelper(const Model::AssignInstanceRequest& request) const;
-    void AssignVolumeAsyncHelper(const Model::AssignVolumeRequest& request) const;
-    void AssociateElasticIpAsyncHelper(const Model::AssociateElasticIpRequest& request) const;
-    void AttachElasticLoadBalancerAsyncHelper(const Model::AttachElasticLoadBalancerRequest& request) const;
-    void CloneStackAsyncHelper(const Model::CloneStackRequest& request) const;
-    void CreateAppAsyncHelper(const Model::CreateAppRequest& request) const;
-    void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request) const;
-    void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request) const;
-    void CreateLayerAsyncHelper(const Model::CreateLayerRequest& request) const;
-    void CreateStackAsyncHelper(const Model::CreateStackRequest& request) const;
-    void CreateUserProfileAsyncHelper(const Model::CreateUserProfileRequest& request) const;
-    void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request) const;
-    void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request) const;
-    void DeleteLayerAsyncHelper(const Model::DeleteLayerRequest& request) const;
-    void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request) const;
-    void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request) const;
-    void DeregisterElasticIpAsyncHelper(const Model::DeregisterElasticIpRequest& request) const;
-    void DeregisterInstanceAsyncHelper(const Model::DeregisterInstanceRequest& request) const;
-    void DeregisterRdsDbInstanceAsyncHelper(const Model::DeregisterRdsDbInstanceRequest& request) const;
-    void DeregisterVolumeAsyncHelper(const Model::DeregisterVolumeRequest& request) const;
-    void DescribeAppsAsyncHelper(const Model::DescribeAppsRequest& request) const;
-    void DescribeCommandsAsyncHelper(const Model::DescribeCommandsRequest& request) const;
-    void DescribeDeploymentsAsyncHelper(const Model::DescribeDeploymentsRequest& request) const;
-    void DescribeElasticIpsAsyncHelper(const Model::DescribeElasticIpsRequest& request) const;
-    void DescribeElasticLoadBalancersAsyncHelper(const Model::DescribeElasticLoadBalancersRequest& request) const;
-    void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request) const;
-    void DescribeLayersAsyncHelper(const Model::DescribeLayersRequest& request) const;
-    void DescribeLoadBasedAutoScalingAsyncHelper(const Model::DescribeLoadBasedAutoScalingRequest& request) const;
-    void DescribeMyUserProfileAsyncHelper() const;
-    void DescribePermissionsAsyncHelper(const Model::DescribePermissionsRequest& request) const;
-    void DescribeRaidArraysAsyncHelper(const Model::DescribeRaidArraysRequest& request) const;
-    void DescribeRdsDbInstancesAsyncHelper(const Model::DescribeRdsDbInstancesRequest& request) const;
-    void DescribeServiceErrorsAsyncHelper(const Model::DescribeServiceErrorsRequest& request) const;
-    void DescribeStackProvisioningParametersAsyncHelper(const Model::DescribeStackProvisioningParametersRequest& request) const;
-    void DescribeStackSummaryAsyncHelper(const Model::DescribeStackSummaryRequest& request) const;
-    void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request) const;
-    void DescribeTimeBasedAutoScalingAsyncHelper(const Model::DescribeTimeBasedAutoScalingRequest& request) const;
-    void DescribeUserProfilesAsyncHelper(const Model::DescribeUserProfilesRequest& request) const;
-    void DescribeVolumesAsyncHelper(const Model::DescribeVolumesRequest& request) const;
-    void DetachElasticLoadBalancerAsyncHelper(const Model::DetachElasticLoadBalancerRequest& request) const;
-    void DisassociateElasticIpAsyncHelper(const Model::DisassociateElasticIpRequest& request) const;
-    void GetHostnameSuggestionAsyncHelper(const Model::GetHostnameSuggestionRequest& request) const;
-    void GrantAccessAsyncHelper(const Model::GrantAccessRequest& request) const;
-    void RebootInstanceAsyncHelper(const Model::RebootInstanceRequest& request) const;
-    void RegisterElasticIpAsyncHelper(const Model::RegisterElasticIpRequest& request) const;
-    void RegisterInstanceAsyncHelper(const Model::RegisterInstanceRequest& request) const;
-    void RegisterRdsDbInstanceAsyncHelper(const Model::RegisterRdsDbInstanceRequest& request) const;
-    void RegisterVolumeAsyncHelper(const Model::RegisterVolumeRequest& request) const;
-    void SetLoadBasedAutoScalingAsyncHelper(const Model::SetLoadBasedAutoScalingRequest& request) const;
-    void SetPermissionAsyncHelper(const Model::SetPermissionRequest& request) const;
-    void SetTimeBasedAutoScalingAsyncHelper(const Model::SetTimeBasedAutoScalingRequest& request) const;
-    void StartInstanceAsyncHelper(const Model::StartInstanceRequest& request) const;
-    void StartStackAsyncHelper(const Model::StartStackRequest& request) const;
-    void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request) const;
-    void StopStackAsyncHelper(const Model::StopStackRequest& request) const;
-    void UnassignInstanceAsyncHelper(const Model::UnassignInstanceRequest& request) const;
-    void UnassignVolumeAsyncHelper(const Model::UnassignVolumeRequest& request) const;
-    void UpdateAppAsyncHelper(const Model::UpdateAppRequest& request) const;
-    void UpdateElasticIpAsyncHelper(const Model::UpdateElasticIpRequest& request) const;
-    void UpdateInstanceAsyncHelper(const Model::UpdateInstanceRequest& request) const;
-    void UpdateLayerAsyncHelper(const Model::UpdateLayerRequest& request) const;
-    void UpdateMyUserProfileAsyncHelper(const Model::UpdateMyUserProfileRequest& request) const;
-    void UpdateRdsDbInstanceAsyncHelper(const Model::UpdateRdsDbInstanceRequest& request) const;
-    void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request) const;
-    void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request) const;
-    void UpdateVolumeAsyncHelper(const Model::UpdateVolumeRequest& request) const;
+    void AssignInstanceAsyncHelper(const Model::AssignInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AssignVolumeAsyncHelper(const Model::AssignVolumeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AssociateElasticIpAsyncHelper(const Model::AssociateElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AttachElasticLoadBalancerAsyncHelper(const Model::AttachElasticLoadBalancerRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CloneStackAsyncHelper(const Model::CloneStackRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateAppAsyncHelper(const Model::CreateAppRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateLayerAsyncHelper(const Model::CreateLayerRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateUserProfileAsyncHelper(const Model::CreateUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteLayerAsyncHelper(const Model::DeleteLayerRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterElasticIpAsyncHelper(const Model::DeregisterElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterInstanceAsyncHelper(const Model::DeregisterInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterRdsDbInstanceAsyncHelper(const Model::DeregisterRdsDbInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeregisterVolumeAsyncHelper(const Model::DeregisterVolumeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAgentVersionsAsyncHelper(const Model::DescribeAgentVersionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeAppsAsyncHelper(const Model::DescribeAppsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCommandsAsyncHelper(const Model::DescribeCommandsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeDeploymentsAsyncHelper(const Model::DescribeDeploymentsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeElasticIpsAsyncHelper(const Model::DescribeElasticIpsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeElasticLoadBalancersAsyncHelper(const Model::DescribeElasticLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLayersAsyncHelper(const Model::DescribeLayersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeLoadBasedAutoScalingAsyncHelper(const Model::DescribeLoadBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeMyUserProfileAsyncHelper(const Aws::Client::AsyncCallerContext* context) const;
+    void DescribePermissionsAsyncHelper(const Model::DescribePermissionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeRaidArraysAsyncHelper(const Model::DescribeRaidArraysRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeRdsDbInstancesAsyncHelper(const Model::DescribeRdsDbInstancesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeServiceErrorsAsyncHelper(const Model::DescribeServiceErrorsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeStackProvisioningParametersAsyncHelper(const Model::DescribeStackProvisioningParametersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeStackSummaryAsyncHelper(const Model::DescribeStackSummaryRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeTimeBasedAutoScalingAsyncHelper(const Model::DescribeTimeBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeUserProfilesAsyncHelper(const Model::DescribeUserProfilesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeVolumesAsyncHelper(const Model::DescribeVolumesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DetachElasticLoadBalancerAsyncHelper(const Model::DetachElasticLoadBalancerRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DisassociateElasticIpAsyncHelper(const Model::DisassociateElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetHostnameSuggestionAsyncHelper(const Model::GetHostnameSuggestionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GrantAccessAsyncHelper(const Model::GrantAccessRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RebootInstanceAsyncHelper(const Model::RebootInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterElasticIpAsyncHelper(const Model::RegisterElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterInstanceAsyncHelper(const Model::RegisterInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterRdsDbInstanceAsyncHelper(const Model::RegisterRdsDbInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RegisterVolumeAsyncHelper(const Model::RegisterVolumeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetLoadBasedAutoScalingAsyncHelper(const Model::SetLoadBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetPermissionAsyncHelper(const Model::SetPermissionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetTimeBasedAutoScalingAsyncHelper(const Model::SetTimeBasedAutoScalingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StartInstanceAsyncHelper(const Model::StartInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StartStackAsyncHelper(const Model::StartStackRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void StopStackAsyncHelper(const Model::StopStackRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UnassignInstanceAsyncHelper(const Model::UnassignInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UnassignVolumeAsyncHelper(const Model::UnassignVolumeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateAppAsyncHelper(const Model::UpdateAppRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateElasticIpAsyncHelper(const Model::UpdateElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateInstanceAsyncHelper(const Model::UpdateInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateLayerAsyncHelper(const Model::UpdateLayerRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateMyUserProfileAsyncHelper(const Model::UpdateMyUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateRdsDbInstanceAsyncHelper(const Model::UpdateRdsDbInstanceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateVolumeAsyncHelper(const Model::UpdateVolumeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
@@ -2866,6 +2909,7 @@ namespace Model
     DeregisterInstanceOutcomeReceivedEvent m_onDeregisterInstanceOutcomeReceived;
     DeregisterRdsDbInstanceOutcomeReceivedEvent m_onDeregisterRdsDbInstanceOutcomeReceived;
     DeregisterVolumeOutcomeReceivedEvent m_onDeregisterVolumeOutcomeReceived;
+    DescribeAgentVersionsOutcomeReceivedEvent m_onDescribeAgentVersionsOutcomeReceived;
     DescribeAppsOutcomeReceivedEvent m_onDescribeAppsOutcomeReceived;
     DescribeCommandsOutcomeReceivedEvent m_onDescribeCommandsOutcomeReceived;
     DescribeDeploymentsOutcomeReceivedEvent m_onDescribeDeploymentsOutcomeReceived;

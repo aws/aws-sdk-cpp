@@ -23,6 +23,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 PutBucketLifecycleRequest::PutBucketLifecycleRequest() : 
+    m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
     m_lifecycleConfigurationHasBeenSet(false)
 {

@@ -64,13 +64,14 @@ OrderableClusterOption& OrderableClusterOption::operator =(const XmlNode& xmlNod
       m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
       m_nodeTypeHasBeenSet = true;
     }
-    XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
+    XmlNode availabilityZoneNodeParent = resultNode.FirstChild("AvailabilityZone");
+    XmlNode availabilityZoneNode = availabilityZoneNodeParent.FirstChild("member");
     if(!availabilityZoneNode.IsNull())
     {
       while(!availabilityZoneNode.IsNull())
       {
         m_availabilityZones.push_back(availabilityZoneNode);
-        availabilityZoneNode = availabilityZoneNode.NextNode("AvailabilityZone");
+        availabilityZoneNode = availabilityZoneNode.NextNode("member");
       }
 
       m_availabilityZonesHasBeenSet = true;

@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
     */
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterId = value; }
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
     */
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterId.assign(value); }
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /*
      <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
@@ -372,6 +372,7 @@ namespace Model
 
   private:
     Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
     long m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
     Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;

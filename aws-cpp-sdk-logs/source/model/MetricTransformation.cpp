@@ -21,22 +21,43 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MetricTransformation::MetricTransformation()
+MetricTransformation::MetricTransformation() : 
+    m_metricNameHasBeenSet(false),
+    m_metricNamespaceHasBeenSet(false),
+    m_metricValueHasBeenSet(false)
 {
 }
 
-MetricTransformation::MetricTransformation(const JsonValue& jsonValue)
+MetricTransformation::MetricTransformation(const JsonValue& jsonValue) : 
+    m_metricNameHasBeenSet(false),
+    m_metricNamespaceHasBeenSet(false),
+    m_metricValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 MetricTransformation& MetricTransformation::operator =(const JsonValue& jsonValue)
 {
-  m_metricName = jsonValue.GetString("metricName");
+  if(jsonValue.ValueExists("metricName"))
+  {
+    m_metricName = jsonValue.GetString("metricName");
 
-  m_metricNamespace = jsonValue.GetString("metricNamespace");
+    m_metricNameHasBeenSet = true;
+  }
 
-  m_metricValue = jsonValue.GetString("metricValue");
+  if(jsonValue.ValueExists("metricNamespace"))
+  {
+    m_metricNamespace = jsonValue.GetString("metricNamespace");
+
+    m_metricNamespaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metricValue"))
+  {
+    m_metricValue = jsonValue.GetString("metricValue");
+
+    m_metricValueHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -45,11 +66,23 @@ JsonValue MetricTransformation::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("metricName", m_metricName);
+  if(m_metricNameHasBeenSet)
+  {
+   payload.WithString("metricName", m_metricName);
 
-  payload.WithString("metricNamespace", m_metricNamespace);
+  }
 
-  payload.WithString("metricValue", m_metricValue);
+  if(m_metricNamespaceHasBeenSet)
+  {
+   payload.WithString("metricNamespace", m_metricNamespace);
+
+  }
+
+  if(m_metricValueHasBeenSet)
+  {
+   payload.WithString("metricValue", m_metricValue);
+
+  }
 
   return std::move(payload);
 }

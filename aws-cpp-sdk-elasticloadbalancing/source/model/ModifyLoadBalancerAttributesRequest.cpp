@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest()
+ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_loadBalancerAttributesHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyLoadBalancerAttributes&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  m_loadBalancerAttributes.OutputToStream(ss, "LoadBalancerAttributes.");
+  if(m_loadBalancerNameHasBeenSet)
+  {
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_loadBalancerAttributesHasBeenSet)
+  {
+    m_loadBalancerAttributes.OutputToStream(ss, "LoadBalancerAttributes.");
+  }
   ss << "Version=2012-06-01";
   return ss.str();
 }

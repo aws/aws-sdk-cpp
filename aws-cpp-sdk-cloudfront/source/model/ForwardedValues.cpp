@@ -25,12 +25,16 @@ using namespace Aws::Utils;
 
 ForwardedValues::ForwardedValues() : 
     m_queryString(false),
+    m_queryStringHasBeenSet(false),
+    m_cookiesHasBeenSet(false),
     m_headersHasBeenSet(false)
 {
 }
 
 ForwardedValues::ForwardedValues(const XmlNode& xmlNode) : 
     m_queryString(false),
+    m_queryStringHasBeenSet(false),
+    m_cookiesHasBeenSet(false),
     m_headersHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,9 +47,17 @@ ForwardedValues& ForwardedValues::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode queryStringNode = resultNode.FirstChild("QueryString");
-    m_queryString = StringUtils::ConvertToBool(StringUtils::Trim(queryStringNode.GetText().c_str()).c_str());
+    if(!queryStringNode.IsNull())
+    {
+      m_queryString = StringUtils::ConvertToBool(StringUtils::Trim(queryStringNode.GetText().c_str()).c_str());
+      m_queryStringHasBeenSet = true;
+    }
     XmlNode cookiesNode = resultNode.FirstChild("Cookies");
-    m_cookies = cookiesNode;
+    if(!cookiesNode.IsNull())
+    {
+      m_cookies = cookiesNode;
+      m_cookiesHasBeenSet = true;
+    }
     XmlNode headersNode = resultNode.FirstChild("Headers");
     if(!headersNode.IsNull())
     {
@@ -60,12 +72,20 @@ ForwardedValues& ForwardedValues::operator =(const XmlNode& xmlNode)
 void ForwardedValues::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode queryStringNode = parentNode.CreateChildElement("QueryString");
+  if(m_queryStringHasBeenSet)
+  {
+   XmlNode queryStringNode = parentNode.CreateChildElement("QueryString");
   ss << m_queryString;
-  queryStringNode.SetText(ss.str());
+   queryStringNode.SetText(ss.str());
   ss.str("");
-  XmlNode cookiesNode = parentNode.CreateChildElement("Cookies");
-  m_cookies.AddToNode(cookiesNode);
+  }
+
+  if(m_cookiesHasBeenSet)
+  {
+   XmlNode cookiesNode = parentNode.CreateChildElement("Cookies");
+   m_cookies.AddToNode(cookiesNode);
+  }
+
   if(m_headersHasBeenSet)
   {
    XmlNode headersNode = parentNode.CreateChildElement("Headers");

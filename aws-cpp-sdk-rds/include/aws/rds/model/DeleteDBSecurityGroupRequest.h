@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The name of the DB security group to delete. </p> <note>You cannot delete the default DB security group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul>
     */
-    inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupName = value; }
+    inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /*
      <p> The name of the DB security group to delete. </p> <note>You cannot delete the default DB security group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul>
     */
-    inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupName.assign(value); }
+    inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
     /*
      <p> The name of the DB security group to delete. </p> <note>You cannot delete the default DB security group.</note> <p> Constraints: </p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_dBSecurityGroupName;
+    bool m_dBSecurityGroupNameHasBeenSet;
   };
 
 } // namespace Model

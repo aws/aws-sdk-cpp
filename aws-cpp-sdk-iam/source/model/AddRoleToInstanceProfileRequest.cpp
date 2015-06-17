@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-AddRoleToInstanceProfileRequest::AddRoleToInstanceProfileRequest()
+AddRoleToInstanceProfileRequest::AddRoleToInstanceProfileRequest() : 
+    m_instanceProfileNameHasBeenSet(false),
+    m_roleNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String AddRoleToInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AddRoleToInstanceProfile&";
-  ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  if(m_instanceProfileNameHasBeenSet)
+  {
+    ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  }
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

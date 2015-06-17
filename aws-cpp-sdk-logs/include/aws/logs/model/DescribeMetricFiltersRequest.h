@@ -35,32 +35,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
     inline DescribeMetricFiltersRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The log group name for which metric filters are to be listed.</p>
+    */
     inline DescribeMetricFiltersRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
-    
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
-    
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline void SetFilterNamePrefix(const char* value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix.assign(value); }
 
-    
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline DescribeMetricFiltersRequest&  WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
 
-    
+    /*
+     <p>Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const char* value) { SetFilterNamePrefix(value); return *this;}
 
     /*
@@ -103,6 +123,7 @@ namespace Model
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::String m_filterNamePrefix;
     bool m_filterNamePrefixHasBeenSet;
     Aws::String m_nextToken;

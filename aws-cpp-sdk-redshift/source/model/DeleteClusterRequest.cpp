@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 DeleteClusterRequest::DeleteClusterRequest() : 
+    m_clusterIdentifierHasBeenSet(false),
     m_skipFinalClusterSnapshot(false),
     m_skipFinalClusterSnapshotHasBeenSet(false),
     m_finalClusterSnapshotIdentifierHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String DeleteClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteCluster&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
   if(m_skipFinalClusterSnapshotHasBeenSet)
   {
     ss << "SkipFinalClusterSnapshot=" << m_skipFinalClusterSnapshot << "&";

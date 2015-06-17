@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListEntitiesForPolicyRequest::ListEntitiesForPolicyRequest() : 
+    m_policyArnHasBeenSet(false),
     m_entityFilterHasBeenSet(false),
     m_pathPrefixHasBeenSet(false),
     m_markerHasBeenSet(false),
@@ -32,7 +33,10 @@ Aws::String ListEntitiesForPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListEntitiesForPolicy&";
-  ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  if(m_policyArnHasBeenSet)
+  {
+    ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
+  }
   if(m_entityFilterHasBeenSet)
   {
     ss << "EntityFilter=" << EntityTypeMapper::GetNameForEntityType(m_entityFilter) << "&";

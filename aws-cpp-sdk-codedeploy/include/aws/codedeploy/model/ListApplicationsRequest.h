@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a list applications operation.</p>
   */
   class AWS_CODEDEPLOY_API ListApplicationsRequest : public codedeployRequest
   {
@@ -36,28 +35,18 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>An identifier that was returned from the previous list applications call, which can be used to return the next set of applications in the list.</p>
-    */
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    /*
-     <p>An identifier that was returned from the previous list applications call, which can be used to return the next set of applications in the list.</p>
-    */
+    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>An identifier that was returned from the previous list applications call, which can be used to return the next set of applications in the list.</p>
-    */
+    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>An identifier that was returned from the previous list applications call, which can be used to return the next set of applications in the list.</p>
-    */
+    
     inline ListApplicationsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>An identifier that was returned from the previous list applications call, which can be used to return the next set of applications in the list.</p>
-    */
+    
     inline ListApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

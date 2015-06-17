@@ -23,11 +23,13 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-RequestPaymentConfiguration::RequestPaymentConfiguration()
+RequestPaymentConfiguration::RequestPaymentConfiguration() : 
+    m_payerHasBeenSet(false)
 {
 }
 
-RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode)
+RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode) : 
+    m_payerHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ RequestPaymentConfiguration& RequestPaymentConfiguration::operator =(const XmlNo
   if(!resultNode.IsNull())
   {
     XmlNode payerNode = resultNode.FirstChild("Payer");
-    m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(payerNode.GetText().c_str()).c_str());
+    if(!payerNode.IsNull())
+    {
+      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(payerNode.GetText().c_str()).c_str());
+      m_payerHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +54,10 @@ RequestPaymentConfiguration& RequestPaymentConfiguration::operator =(const XmlNo
 void RequestPaymentConfiguration::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode payerNode = parentNode.CreateChildElement("Payer");
-  payerNode.SetText(PayerMapper::GetNameForPayer(m_payer));
+  if(m_payerHasBeenSet)
+  {
+   XmlNode payerNode = parentNode.CreateChildElement("Payer");
+   payerNode.SetText(PayerMapper::GetNameForPayer(m_payer));
+  }
+
 }

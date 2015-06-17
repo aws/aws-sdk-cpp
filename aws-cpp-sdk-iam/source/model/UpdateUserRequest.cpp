@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UpdateUserRequest::UpdateUserRequest() : 
+    m_userNameHasBeenSet(false),
     m_newPathHasBeenSet(false),
     m_newUserNameHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String UpdateUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateUser&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
   if(m_newPathHasBeenSet)
   {
     ss << "NewPath=" << StringUtils::URLEncode(m_newPath.c_str()) << "&";

@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>
     */
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>
     */
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /*
      <p>The name of the group to create. Do not include the path in this value.</p>
@@ -85,6 +85,7 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet;
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
   };
 
 } // namespace Model

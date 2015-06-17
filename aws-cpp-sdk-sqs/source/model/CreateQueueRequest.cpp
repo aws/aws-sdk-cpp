@@ -20,6 +20,7 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
 CreateQueueRequest::CreateQueueRequest() : 
+    m_queueNameHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String CreateQueueRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateQueue&";
-  ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
+  if(m_queueNameHasBeenSet)
+  {
+    ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
+  }
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;

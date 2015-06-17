@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The identifier of the cluster on which logging is to be started. </p> <p>Example: <code>examplecluster</code></p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The identifier of the cluster on which logging is to be started. </p> <p>Example: <code>examplecluster</code></p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The identifier of the cluster on which logging is to be started. </p> <p>Example: <code>examplecluster</code></p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The name of an existing S3 bucket where the log files are to be stored. </p> <p>Constraints:</p> <ul> <li>Must be in the same region as the cluster</li> <li>The cluster must have read bucket and put object permissions</li> </ul>
     */
-    inline void SetBucketName(const Aws::String& value) { m_bucketName = value; }
+    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /*
      <p> The name of an existing S3 bucket where the log files are to be stored. </p> <p>Constraints:</p> <ul> <li>Must be in the same region as the cluster</li> <li>The cluster must have read bucket and put object permissions</li> </ul>
     */
-    inline void SetBucketName(const char* value) { m_bucketName.assign(value); }
+    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /*
      <p> The name of an existing S3 bucket where the log files are to be stored. </p> <p>Constraints:</p> <ul> <li>Must be in the same region as the cluster</li> <li>The cluster must have read bucket and put object permissions</li> </ul>
@@ -108,7 +108,9 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     Aws::String m_bucketName;
+    bool m_bucketNameHasBeenSet;
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
   };

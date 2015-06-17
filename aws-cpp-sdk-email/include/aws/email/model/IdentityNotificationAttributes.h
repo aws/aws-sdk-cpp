@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
     */
-    inline void SetBounceTopic(const Aws::String& value) { m_bounceTopic = value; }
+    inline void SetBounceTopic(const Aws::String& value) { m_bounceTopicHasBeenSet = true; m_bounceTopic = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
     */
-    inline void SetBounceTopic(const char* value) { m_bounceTopic.assign(value); }
+    inline void SetBounceTopic(const char* value) { m_bounceTopicHasBeenSet = true; m_bounceTopic.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
     */
-    inline void SetComplaintTopic(const Aws::String& value) { m_complaintTopic = value; }
+    inline void SetComplaintTopic(const Aws::String& value) { m_complaintTopicHasBeenSet = true; m_complaintTopic = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
     */
-    inline void SetComplaintTopic(const char* value) { m_complaintTopic.assign(value); }
+    inline void SetComplaintTopic(const char* value) { m_complaintTopicHasBeenSet = true; m_complaintTopic.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
     */
-    inline void SetDeliveryTopic(const Aws::String& value) { m_deliveryTopic = value; }
+    inline void SetDeliveryTopic(const Aws::String& value) { m_deliveryTopicHasBeenSet = true; m_deliveryTopic = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
     */
-    inline void SetDeliveryTopic(const char* value) { m_deliveryTopic.assign(value); }
+    inline void SetDeliveryTopic(const char* value) { m_deliveryTopicHasBeenSet = true; m_deliveryTopic.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
@@ -122,7 +122,7 @@ namespace Model
     /*
      <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
     */
-    inline void SetForwardingEnabled(bool value) { m_forwardingEnabled = value; }
+    inline void SetForwardingEnabled(bool value) { m_forwardingEnabledHasBeenSet = true; m_forwardingEnabled = value; }
 
     /*
      <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
@@ -131,9 +131,13 @@ namespace Model
 
   private:
     Aws::String m_bounceTopic;
+    bool m_bounceTopicHasBeenSet;
     Aws::String m_complaintTopic;
+    bool m_complaintTopicHasBeenSet;
     Aws::String m_deliveryTopic;
+    bool m_deliveryTopicHasBeenSet;
     bool m_forwardingEnabled;
+    bool m_forwardingEnabledHasBeenSet;
   };
 
 } // namespace Model

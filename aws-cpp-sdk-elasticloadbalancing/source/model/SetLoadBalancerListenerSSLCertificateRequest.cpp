@@ -20,7 +20,10 @@ using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
 SetLoadBalancerListenerSSLCertificateRequest::SetLoadBalancerListenerSSLCertificateRequest() : 
-    m_loadBalancerPort(0)
+    m_loadBalancerNameHasBeenSet(false),
+    m_loadBalancerPort(0),
+    m_loadBalancerPortHasBeenSet(false),
+    m_sSLCertificateIdHasBeenSet(false)
 {
 }
 
@@ -28,9 +31,18 @@ Aws::String SetLoadBalancerListenerSSLCertificateRequest::SerializePayload() con
 {
   Aws::StringStream ss;
   ss << "Action=SetLoadBalancerListenerSSLCertificate&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  ss << "LoadBalancerPort=" << m_loadBalancerPort << "&";
-  ss << "SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
+  if(m_loadBalancerNameHasBeenSet)
+  {
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_loadBalancerPortHasBeenSet)
+  {
+    ss << "LoadBalancerPort=" << m_loadBalancerPort << "&";
+  }
+  if(m_sSLCertificateIdHasBeenSet)
+  {
+    ss << "SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
+  }
   ss << "Version=2012-06-01";
   return ss.str();
 }

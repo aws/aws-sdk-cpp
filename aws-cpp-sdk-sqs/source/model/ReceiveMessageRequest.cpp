@@ -20,6 +20,7 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
 ReceiveMessageRequest::ReceiveMessageRequest() : 
+    m_queueUrlHasBeenSet(false),
     m_attributeNamesHasBeenSet(false),
     m_messageAttributeNamesHasBeenSet(false),
     m_maxNumberOfMessages(0),
@@ -35,7 +36,10 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ReceiveMessage&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  if(m_queueUrlHasBeenSet)
+  {
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
   if(m_attributeNamesHasBeenSet)
   {
     unsigned attributeNamesCount = 1;

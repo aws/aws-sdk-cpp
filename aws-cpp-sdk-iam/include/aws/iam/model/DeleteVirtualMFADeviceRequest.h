@@ -40,12 +40,12 @@ namespace Model
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN. </p>
     */
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumber = value; }
+    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN. </p>
     */
-    inline void SetSerialNumber(const char* value) { m_serialNumber.assign(value); }
+    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /*
      <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN. </p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_serialNumber;
+    bool m_serialNumberHasBeenSet;
   };
 
 } // namespace Model

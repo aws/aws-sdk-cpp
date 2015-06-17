@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the cache parameter group to reset.</p>
     */
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>The name of the cache parameter group to reset.</p>
     */
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /*
      <p>The name of the cache parameter group to reset.</p>
@@ -81,7 +81,7 @@ namespace Model
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
     */
-    inline void SetParameterNameValues(const Aws::Vector<ParameterNameValue>& value) { m_parameterNameValues = value; }
+    inline void SetParameterNameValues(const Aws::Vector<ParameterNameValue>& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues = value; }
 
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
@@ -91,13 +91,15 @@ namespace Model
     /*
      <p>An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</p>
     */
-    inline ResetCacheParameterGroupRequest& AddParameterNameValues(const ParameterNameValue& value) { m_parameterNameValues.push_back(value); return *this; }
+    inline ResetCacheParameterGroupRequest& AddParameterNameValues(const ParameterNameValue& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(value); return *this; }
 
   private:
     Aws::String m_cacheParameterGroupName;
+    bool m_cacheParameterGroupNameHasBeenSet;
     bool m_resetAllParameters;
     bool m_resetAllParametersHasBeenSet;
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
+    bool m_parameterNameValuesHasBeenSet;
   };
 
 } // namespace Model

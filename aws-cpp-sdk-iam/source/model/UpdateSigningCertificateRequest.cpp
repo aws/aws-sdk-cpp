@@ -20,7 +20,9 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UpdateSigningCertificateRequest::UpdateSigningCertificateRequest() : 
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -32,8 +34,14 @@ Aws::String UpdateSigningCertificateRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
-  ss << "CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
-  ss << "Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  if(m_certificateIdHasBeenSet)
+  {
+    ss << "CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+    ss << "Status=" << statusTypeMapper::GetNameForstatusType(m_status) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

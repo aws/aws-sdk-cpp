@@ -139,14 +139,14 @@ AbortEnvironmentUpdateOutcomeCallable ElasticBeanstalkClient::AbortEnvironmentUp
   return std::async(std::launch::async, &ElasticBeanstalkClient::AbortEnvironmentUpdate, this, request);
 }
 
-void ElasticBeanstalkClient::AbortEnvironmentUpdateAsync(const AbortEnvironmentUpdateRequest& request) const
+void ElasticBeanstalkClient::AbortEnvironmentUpdateAsync(const AbortEnvironmentUpdateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper(const AbortEnvironmentUpdateRequest& request) const
+void ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper(const AbortEnvironmentUpdateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onAbortEnvironmentUpdateOutcomeReceived(this, request, AbortEnvironmentUpdate(request));
+  m_onAbortEnvironmentUpdateOutcomeReceived(this, request, AbortEnvironmentUpdate(request), context);
 }
 
 CheckDNSAvailabilityOutcome ElasticBeanstalkClient::CheckDNSAvailability(const CheckDNSAvailabilityRequest& request) const
@@ -170,14 +170,14 @@ CheckDNSAvailabilityOutcomeCallable ElasticBeanstalkClient::CheckDNSAvailability
   return std::async(std::launch::async, &ElasticBeanstalkClient::CheckDNSAvailability, this, request);
 }
 
-void ElasticBeanstalkClient::CheckDNSAvailabilityAsync(const CheckDNSAvailabilityRequest& request) const
+void ElasticBeanstalkClient::CheckDNSAvailabilityAsync(const CheckDNSAvailabilityRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper(const CheckDNSAvailabilityRequest& request) const
+void ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper(const CheckDNSAvailabilityRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCheckDNSAvailabilityOutcomeReceived(this, request, CheckDNSAvailability(request));
+  m_onCheckDNSAvailabilityOutcomeReceived(this, request, CheckDNSAvailability(request), context);
 }
 
 CreateApplicationOutcome ElasticBeanstalkClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -201,14 +201,14 @@ CreateApplicationOutcomeCallable ElasticBeanstalkClient::CreateApplicationCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateApplication, this, request);
 }
 
-void ElasticBeanstalkClient::CreateApplicationAsync(const CreateApplicationRequest& request) const
+void ElasticBeanstalkClient::CreateApplicationAsync(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request) const
+void ElasticBeanstalkClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateApplicationOutcomeReceived(this, request, CreateApplication(request));
+  m_onCreateApplicationOutcomeReceived(this, request, CreateApplication(request), context);
 }
 
 CreateApplicationVersionOutcome ElasticBeanstalkClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const
@@ -232,14 +232,14 @@ CreateApplicationVersionOutcomeCallable ElasticBeanstalkClient::CreateApplicatio
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateApplicationVersion, this, request);
 }
 
-void ElasticBeanstalkClient::CreateApplicationVersionAsync(const CreateApplicationVersionRequest& request) const
+void ElasticBeanstalkClient::CreateApplicationVersionAsync(const CreateApplicationVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper(const CreateApplicationVersionRequest& request) const
+void ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper(const CreateApplicationVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateApplicationVersionOutcomeReceived(this, request, CreateApplicationVersion(request));
+  m_onCreateApplicationVersionOutcomeReceived(this, request, CreateApplicationVersion(request), context);
 }
 
 CreateConfigurationTemplateOutcome ElasticBeanstalkClient::CreateConfigurationTemplate(const CreateConfigurationTemplateRequest& request) const
@@ -263,14 +263,14 @@ CreateConfigurationTemplateOutcomeCallable ElasticBeanstalkClient::CreateConfigu
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateConfigurationTemplate, this, request);
 }
 
-void ElasticBeanstalkClient::CreateConfigurationTemplateAsync(const CreateConfigurationTemplateRequest& request) const
+void ElasticBeanstalkClient::CreateConfigurationTemplateAsync(const CreateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper(const CreateConfigurationTemplateRequest& request) const
+void ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper(const CreateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateConfigurationTemplateOutcomeReceived(this, request, CreateConfigurationTemplate(request));
+  m_onCreateConfigurationTemplateOutcomeReceived(this, request, CreateConfigurationTemplate(request), context);
 }
 
 CreateEnvironmentOutcome ElasticBeanstalkClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -294,14 +294,14 @@ CreateEnvironmentOutcomeCallable ElasticBeanstalkClient::CreateEnvironmentCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request) const
+void ElasticBeanstalkClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateEnvironmentAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateEnvironmentAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request) const
+void ElasticBeanstalkClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateEnvironmentOutcomeReceived(this, request, CreateEnvironment(request));
+  m_onCreateEnvironmentOutcomeReceived(this, request, CreateEnvironment(request), context);
 }
 
 CreateStorageLocationOutcome ElasticBeanstalkClient::CreateStorageLocation(const CreateStorageLocationRequest& request) const
@@ -325,14 +325,14 @@ CreateStorageLocationOutcomeCallable ElasticBeanstalkClient::CreateStorageLocati
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateStorageLocation, this, request);
 }
 
-void ElasticBeanstalkClient::CreateStorageLocationAsync(const CreateStorageLocationRequest& request) const
+void ElasticBeanstalkClient::CreateStorageLocationAsync(const CreateStorageLocationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateStorageLocationAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateStorageLocationAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::CreateStorageLocationAsyncHelper(const CreateStorageLocationRequest& request) const
+void ElasticBeanstalkClient::CreateStorageLocationAsyncHelper(const CreateStorageLocationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateStorageLocationOutcomeReceived(this, request, CreateStorageLocation(request));
+  m_onCreateStorageLocationOutcomeReceived(this, request, CreateStorageLocation(request), context);
 }
 
 DeleteApplicationOutcome ElasticBeanstalkClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -356,14 +356,14 @@ DeleteApplicationOutcomeCallable ElasticBeanstalkClient::DeleteApplicationCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteApplication, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationAsync(const DeleteApplicationRequest& request) const
+void ElasticBeanstalkClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request) const
+void ElasticBeanstalkClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteApplicationOutcomeReceived(this, request, DeleteApplication(request));
+  m_onDeleteApplicationOutcomeReceived(this, request, DeleteApplication(request), context);
 }
 
 DeleteApplicationVersionOutcome ElasticBeanstalkClient::DeleteApplicationVersion(const DeleteApplicationVersionRequest& request) const
@@ -387,14 +387,14 @@ DeleteApplicationVersionOutcomeCallable ElasticBeanstalkClient::DeleteApplicatio
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteApplicationVersion, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationVersionAsync(const DeleteApplicationVersionRequest& request) const
+void ElasticBeanstalkClient::DeleteApplicationVersionAsync(const DeleteApplicationVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper(const DeleteApplicationVersionRequest& request) const
+void ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper(const DeleteApplicationVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteApplicationVersionOutcomeReceived(this, request, DeleteApplicationVersion(request));
+  m_onDeleteApplicationVersionOutcomeReceived(this, request, DeleteApplicationVersion(request), context);
 }
 
 DeleteConfigurationTemplateOutcome ElasticBeanstalkClient::DeleteConfigurationTemplate(const DeleteConfigurationTemplateRequest& request) const
@@ -418,14 +418,14 @@ DeleteConfigurationTemplateOutcomeCallable ElasticBeanstalkClient::DeleteConfigu
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteConfigurationTemplate, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteConfigurationTemplateAsync(const DeleteConfigurationTemplateRequest& request) const
+void ElasticBeanstalkClient::DeleteConfigurationTemplateAsync(const DeleteConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper(const DeleteConfigurationTemplateRequest& request) const
+void ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper(const DeleteConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteConfigurationTemplateOutcomeReceived(this, request, DeleteConfigurationTemplate(request));
+  m_onDeleteConfigurationTemplateOutcomeReceived(this, request, DeleteConfigurationTemplate(request), context);
 }
 
 DeleteEnvironmentConfigurationOutcome ElasticBeanstalkClient::DeleteEnvironmentConfiguration(const DeleteEnvironmentConfigurationRequest& request) const
@@ -449,14 +449,14 @@ DeleteEnvironmentConfigurationOutcomeCallable ElasticBeanstalkClient::DeleteEnvi
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteEnvironmentConfiguration, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsync(const DeleteEnvironmentConfigurationRequest& request) const
+void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsync(const DeleteEnvironmentConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper(const DeleteEnvironmentConfigurationRequest& request) const
+void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper(const DeleteEnvironmentConfigurationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteEnvironmentConfigurationOutcomeReceived(this, request, DeleteEnvironmentConfiguration(request));
+  m_onDeleteEnvironmentConfigurationOutcomeReceived(this, request, DeleteEnvironmentConfiguration(request), context);
 }
 
 DescribeApplicationVersionsOutcome ElasticBeanstalkClient::DescribeApplicationVersions(const DescribeApplicationVersionsRequest& request) const
@@ -480,14 +480,14 @@ DescribeApplicationVersionsOutcomeCallable ElasticBeanstalkClient::DescribeAppli
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeApplicationVersions, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationVersionsAsync(const DescribeApplicationVersionsRequest& request) const
+void ElasticBeanstalkClient::DescribeApplicationVersionsAsync(const DescribeApplicationVersionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper(const DescribeApplicationVersionsRequest& request) const
+void ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper(const DescribeApplicationVersionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeApplicationVersionsOutcomeReceived(this, request, DescribeApplicationVersions(request));
+  m_onDescribeApplicationVersionsOutcomeReceived(this, request, DescribeApplicationVersions(request), context);
 }
 
 DescribeApplicationsOutcome ElasticBeanstalkClient::DescribeApplications(const DescribeApplicationsRequest& request) const
@@ -511,14 +511,14 @@ DescribeApplicationsOutcomeCallable ElasticBeanstalkClient::DescribeApplications
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeApplications, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request) const
+void ElasticBeanstalkClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationsAsyncHelper(const DescribeApplicationsRequest& request) const
+void ElasticBeanstalkClient::DescribeApplicationsAsyncHelper(const DescribeApplicationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeApplicationsOutcomeReceived(this, request, DescribeApplications(request));
+  m_onDescribeApplicationsOutcomeReceived(this, request, DescribeApplications(request), context);
 }
 
 DescribeConfigurationOptionsOutcome ElasticBeanstalkClient::DescribeConfigurationOptions(const DescribeConfigurationOptionsRequest& request) const
@@ -542,14 +542,14 @@ DescribeConfigurationOptionsOutcomeCallable ElasticBeanstalkClient::DescribeConf
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeConfigurationOptions, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationOptionsAsync(const DescribeConfigurationOptionsRequest& request) const
+void ElasticBeanstalkClient::DescribeConfigurationOptionsAsync(const DescribeConfigurationOptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper(const DescribeConfigurationOptionsRequest& request) const
+void ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper(const DescribeConfigurationOptionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeConfigurationOptionsOutcomeReceived(this, request, DescribeConfigurationOptions(request));
+  m_onDescribeConfigurationOptionsOutcomeReceived(this, request, DescribeConfigurationOptions(request), context);
 }
 
 DescribeConfigurationSettingsOutcome ElasticBeanstalkClient::DescribeConfigurationSettings(const DescribeConfigurationSettingsRequest& request) const
@@ -573,14 +573,14 @@ DescribeConfigurationSettingsOutcomeCallable ElasticBeanstalkClient::DescribeCon
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeConfigurationSettings, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationSettingsAsync(const DescribeConfigurationSettingsRequest& request) const
+void ElasticBeanstalkClient::DescribeConfigurationSettingsAsync(const DescribeConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper(const DescribeConfigurationSettingsRequest& request) const
+void ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper(const DescribeConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeConfigurationSettingsOutcomeReceived(this, request, DescribeConfigurationSettings(request));
+  m_onDescribeConfigurationSettingsOutcomeReceived(this, request, DescribeConfigurationSettings(request), context);
 }
 
 DescribeEnvironmentResourcesOutcome ElasticBeanstalkClient::DescribeEnvironmentResources(const DescribeEnvironmentResourcesRequest& request) const
@@ -604,14 +604,14 @@ DescribeEnvironmentResourcesOutcomeCallable ElasticBeanstalkClient::DescribeEnvi
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironmentResources, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsync(const DescribeEnvironmentResourcesRequest& request) const
+void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsync(const DescribeEnvironmentResourcesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper(const DescribeEnvironmentResourcesRequest& request) const
+void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper(const DescribeEnvironmentResourcesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEnvironmentResourcesOutcomeReceived(this, request, DescribeEnvironmentResources(request));
+  m_onDescribeEnvironmentResourcesOutcomeReceived(this, request, DescribeEnvironmentResources(request), context);
 }
 
 DescribeEnvironmentsOutcome ElasticBeanstalkClient::DescribeEnvironments(const DescribeEnvironmentsRequest& request) const
@@ -635,14 +635,14 @@ DescribeEnvironmentsOutcomeCallable ElasticBeanstalkClient::DescribeEnvironments
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironments, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request) const
+void ElasticBeanstalkClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper(const DescribeEnvironmentsRequest& request) const
+void ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper(const DescribeEnvironmentsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEnvironmentsOutcomeReceived(this, request, DescribeEnvironments(request));
+  m_onDescribeEnvironmentsOutcomeReceived(this, request, DescribeEnvironments(request), context);
 }
 
 DescribeEventsOutcome ElasticBeanstalkClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -666,14 +666,14 @@ DescribeEventsOutcomeCallable ElasticBeanstalkClient::DescribeEventsCallable(con
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEvents, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeEventsAsync(const DescribeEventsRequest& request) const
+void ElasticBeanstalkClient::DescribeEventsAsync(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeEventsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEventsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request) const
+void ElasticBeanstalkClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeEventsOutcomeReceived(this, request, DescribeEvents(request));
+  m_onDescribeEventsOutcomeReceived(this, request, DescribeEvents(request), context);
 }
 
 ListAvailableSolutionStacksOutcome ElasticBeanstalkClient::ListAvailableSolutionStacks(const ListAvailableSolutionStacksRequest& request) const
@@ -697,14 +697,14 @@ ListAvailableSolutionStacksOutcomeCallable ElasticBeanstalkClient::ListAvailable
   return std::async(std::launch::async, &ElasticBeanstalkClient::ListAvailableSolutionStacks, this, request);
 }
 
-void ElasticBeanstalkClient::ListAvailableSolutionStacksAsync(const ListAvailableSolutionStacksRequest& request) const
+void ElasticBeanstalkClient::ListAvailableSolutionStacksAsync(const ListAvailableSolutionStacksRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAvailableSolutionStacksRequest& request) const
+void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAvailableSolutionStacksRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAvailableSolutionStacksOutcomeReceived(this, request, ListAvailableSolutionStacks(request));
+  m_onListAvailableSolutionStacksOutcomeReceived(this, request, ListAvailableSolutionStacks(request), context);
 }
 
 RebuildEnvironmentOutcome ElasticBeanstalkClient::RebuildEnvironment(const RebuildEnvironmentRequest& request) const
@@ -728,14 +728,14 @@ RebuildEnvironmentOutcomeCallable ElasticBeanstalkClient::RebuildEnvironmentCall
   return std::async(std::launch::async, &ElasticBeanstalkClient::RebuildEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::RebuildEnvironmentAsync(const RebuildEnvironmentRequest& request) const
+void ElasticBeanstalkClient::RebuildEnvironmentAsync(const RebuildEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper(const RebuildEnvironmentRequest& request) const
+void ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper(const RebuildEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRebuildEnvironmentOutcomeReceived(this, request, RebuildEnvironment(request));
+  m_onRebuildEnvironmentOutcomeReceived(this, request, RebuildEnvironment(request), context);
 }
 
 RequestEnvironmentInfoOutcome ElasticBeanstalkClient::RequestEnvironmentInfo(const RequestEnvironmentInfoRequest& request) const
@@ -759,14 +759,14 @@ RequestEnvironmentInfoOutcomeCallable ElasticBeanstalkClient::RequestEnvironment
   return std::async(std::launch::async, &ElasticBeanstalkClient::RequestEnvironmentInfo, this, request);
 }
 
-void ElasticBeanstalkClient::RequestEnvironmentInfoAsync(const RequestEnvironmentInfoRequest& request) const
+void ElasticBeanstalkClient::RequestEnvironmentInfoAsync(const RequestEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper(const RequestEnvironmentInfoRequest& request) const
+void ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper(const RequestEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRequestEnvironmentInfoOutcomeReceived(this, request, RequestEnvironmentInfo(request));
+  m_onRequestEnvironmentInfoOutcomeReceived(this, request, RequestEnvironmentInfo(request), context);
 }
 
 RestartAppServerOutcome ElasticBeanstalkClient::RestartAppServer(const RestartAppServerRequest& request) const
@@ -790,14 +790,14 @@ RestartAppServerOutcomeCallable ElasticBeanstalkClient::RestartAppServerCallable
   return std::async(std::launch::async, &ElasticBeanstalkClient::RestartAppServer, this, request);
 }
 
-void ElasticBeanstalkClient::RestartAppServerAsync(const RestartAppServerRequest& request) const
+void ElasticBeanstalkClient::RestartAppServerAsync(const RestartAppServerRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RestartAppServerAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::RestartAppServerAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::RestartAppServerAsyncHelper(const RestartAppServerRequest& request) const
+void ElasticBeanstalkClient::RestartAppServerAsyncHelper(const RestartAppServerRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRestartAppServerOutcomeReceived(this, request, RestartAppServer(request));
+  m_onRestartAppServerOutcomeReceived(this, request, RestartAppServer(request), context);
 }
 
 RetrieveEnvironmentInfoOutcome ElasticBeanstalkClient::RetrieveEnvironmentInfo(const RetrieveEnvironmentInfoRequest& request) const
@@ -821,14 +821,14 @@ RetrieveEnvironmentInfoOutcomeCallable ElasticBeanstalkClient::RetrieveEnvironme
   return std::async(std::launch::async, &ElasticBeanstalkClient::RetrieveEnvironmentInfo, this, request);
 }
 
-void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsync(const RetrieveEnvironmentInfoRequest& request) const
+void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsync(const RetrieveEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper(const RetrieveEnvironmentInfoRequest& request) const
+void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper(const RetrieveEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRetrieveEnvironmentInfoOutcomeReceived(this, request, RetrieveEnvironmentInfo(request));
+  m_onRetrieveEnvironmentInfoOutcomeReceived(this, request, RetrieveEnvironmentInfo(request), context);
 }
 
 SwapEnvironmentCNAMEsOutcome ElasticBeanstalkClient::SwapEnvironmentCNAMEs(const SwapEnvironmentCNAMEsRequest& request) const
@@ -852,14 +852,14 @@ SwapEnvironmentCNAMEsOutcomeCallable ElasticBeanstalkClient::SwapEnvironmentCNAM
   return std::async(std::launch::async, &ElasticBeanstalkClient::SwapEnvironmentCNAMEs, this, request);
 }
 
-void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsync(const SwapEnvironmentCNAMEsRequest& request) const
+void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsync(const SwapEnvironmentCNAMEsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper(const SwapEnvironmentCNAMEsRequest& request) const
+void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper(const SwapEnvironmentCNAMEsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSwapEnvironmentCNAMEsOutcomeReceived(this, request, SwapEnvironmentCNAMEs(request));
+  m_onSwapEnvironmentCNAMEsOutcomeReceived(this, request, SwapEnvironmentCNAMEs(request), context);
 }
 
 TerminateEnvironmentOutcome ElasticBeanstalkClient::TerminateEnvironment(const TerminateEnvironmentRequest& request) const
@@ -883,14 +883,14 @@ TerminateEnvironmentOutcomeCallable ElasticBeanstalkClient::TerminateEnvironment
   return std::async(std::launch::async, &ElasticBeanstalkClient::TerminateEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::TerminateEnvironmentAsync(const TerminateEnvironmentRequest& request) const
+void ElasticBeanstalkClient::TerminateEnvironmentAsync(const TerminateEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper(const TerminateEnvironmentRequest& request) const
+void ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper(const TerminateEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_onTerminateEnvironmentOutcomeReceived(this, request, TerminateEnvironment(request));
+  m_onTerminateEnvironmentOutcomeReceived(this, request, TerminateEnvironment(request), context);
 }
 
 UpdateApplicationOutcome ElasticBeanstalkClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -914,14 +914,14 @@ UpdateApplicationOutcomeCallable ElasticBeanstalkClient::UpdateApplicationCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateApplication, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationAsync(const UpdateApplicationRequest& request) const
+void ElasticBeanstalkClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request) const
+void ElasticBeanstalkClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateApplicationOutcomeReceived(this, request, UpdateApplication(request));
+  m_onUpdateApplicationOutcomeReceived(this, request, UpdateApplication(request), context);
 }
 
 UpdateApplicationVersionOutcome ElasticBeanstalkClient::UpdateApplicationVersion(const UpdateApplicationVersionRequest& request) const
@@ -945,14 +945,14 @@ UpdateApplicationVersionOutcomeCallable ElasticBeanstalkClient::UpdateApplicatio
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateApplicationVersion, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationVersionAsync(const UpdateApplicationVersionRequest& request) const
+void ElasticBeanstalkClient::UpdateApplicationVersionAsync(const UpdateApplicationVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper(const UpdateApplicationVersionRequest& request) const
+void ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper(const UpdateApplicationVersionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateApplicationVersionOutcomeReceived(this, request, UpdateApplicationVersion(request));
+  m_onUpdateApplicationVersionOutcomeReceived(this, request, UpdateApplicationVersion(request), context);
 }
 
 UpdateConfigurationTemplateOutcome ElasticBeanstalkClient::UpdateConfigurationTemplate(const UpdateConfigurationTemplateRequest& request) const
@@ -976,14 +976,14 @@ UpdateConfigurationTemplateOutcomeCallable ElasticBeanstalkClient::UpdateConfigu
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateConfigurationTemplate, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateConfigurationTemplateAsync(const UpdateConfigurationTemplateRequest& request) const
+void ElasticBeanstalkClient::UpdateConfigurationTemplateAsync(const UpdateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper(const UpdateConfigurationTemplateRequest& request) const
+void ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper(const UpdateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateConfigurationTemplateOutcomeReceived(this, request, UpdateConfigurationTemplate(request));
+  m_onUpdateConfigurationTemplateOutcomeReceived(this, request, UpdateConfigurationTemplate(request), context);
 }
 
 UpdateEnvironmentOutcome ElasticBeanstalkClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1007,14 +1007,14 @@ UpdateEnvironmentOutcomeCallable ElasticBeanstalkClient::UpdateEnvironmentCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request) const
+void ElasticBeanstalkClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request) const
+void ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateEnvironmentOutcomeReceived(this, request, UpdateEnvironment(request));
+  m_onUpdateEnvironmentOutcomeReceived(this, request, UpdateEnvironment(request), context);
 }
 
 ValidateConfigurationSettingsOutcome ElasticBeanstalkClient::ValidateConfigurationSettings(const ValidateConfigurationSettingsRequest& request) const
@@ -1038,13 +1038,13 @@ ValidateConfigurationSettingsOutcomeCallable ElasticBeanstalkClient::ValidateCon
   return std::async(std::launch::async, &ElasticBeanstalkClient::ValidateConfigurationSettings, this, request);
 }
 
-void ElasticBeanstalkClient::ValidateConfigurationSettingsAsync(const ValidateConfigurationSettingsRequest& request) const
+void ElasticBeanstalkClient::ValidateConfigurationSettingsAsync(const ValidateConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper, this, request);
+  m_executor->Submit(&ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper, this, request, context);
 }
 
-void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const ValidateConfigurationSettingsRequest& request) const
+void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const ValidateConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onValidateConfigurationSettingsOutcomeReceived(this, request, ValidateConfigurationSettings(request));
+  m_onValidateConfigurationSettingsOutcomeReceived(this, request, ValidateConfigurationSettings(request), context);
 }
 

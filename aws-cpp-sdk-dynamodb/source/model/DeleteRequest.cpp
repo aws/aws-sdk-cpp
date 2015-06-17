@@ -21,22 +21,29 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRequest::DeleteRequest()
+DeleteRequest::DeleteRequest() : 
+    m_keyHasBeenSet(false)
 {
 }
 
-DeleteRequest::DeleteRequest(const JsonValue& jsonValue)
+DeleteRequest::DeleteRequest(const JsonValue& jsonValue) : 
+    m_keyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DeleteRequest& DeleteRequest::operator =(const JsonValue& jsonValue)
 {
-  Aws::Map<Aws::String, JsonValue> keyJsonMap = jsonValue.GetObject("Key").GetAllObjects();
-  for(auto& keyItem : keyJsonMap)
+  if(jsonValue.ValueExists("Key"))
   {
-    m_key[keyItem.first] = keyItem.second.AsObject();
+    Aws::Map<Aws::String, JsonValue> keyJsonMap = jsonValue.GetObject("Key").GetAllObjects();
+    for(auto& keyItem : keyJsonMap)
+    {
+      m_key[keyItem.first] = keyItem.second.AsObject();
+    }
+    m_keyHasBeenSet = true;
   }
+
   return *this;
 }
 
@@ -44,12 +51,16 @@ JsonValue DeleteRequest::Jsonize() const
 {
   JsonValue payload;
 
-  JsonValue keyJsonMap;
-  for(auto& keyItem : m_key)
+  if(m_keyHasBeenSet)
   {
-    keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
+   JsonValue keyJsonMap;
+   for(auto& keyItem : m_key)
+   {
+     keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
+   }
+   payload.WithObject("Key", std::move(keyJsonMap));
+
   }
-  payload.WithObject("Key", std::move(keyJsonMap));
 
   return std::move(payload);
 }

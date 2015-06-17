@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateMultipartUploadRequest::CreateMultipartUploadRequest() : 
     m_aCLHasBeenSet(false),
+    m_bucketHasBeenSet(false),
     m_cacheControlHasBeenSet(false),
     m_contentDispositionHasBeenSet(false),
     m_contentEncodingHasBeenSet(false),
@@ -35,6 +36,7 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_grantReadHasBeenSet(false),
     m_grantReadACPHasBeenSet(false),
     m_grantWriteACPHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_serverSideEncryptionHasBeenSet(false),
     m_storageClassHasBeenSet(false),

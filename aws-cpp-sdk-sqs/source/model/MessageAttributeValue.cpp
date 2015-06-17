@@ -28,7 +28,8 @@ MessageAttributeValue::MessageAttributeValue() :
     m_stringValueHasBeenSet(false),
     m_binaryValueHasBeenSet(false),
     m_stringListValuesHasBeenSet(false),
-    m_binaryListValuesHasBeenSet(false)
+    m_binaryListValuesHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ MessageAttributeValue::MessageAttributeValue(const XmlNode& xmlNode) :
     m_stringValueHasBeenSet(false),
     m_binaryValueHasBeenSet(false),
     m_stringListValuesHasBeenSet(false),
-    m_binaryListValuesHasBeenSet(false)
+    m_binaryListValuesHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,7 +83,11 @@ MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
       m_binaryListValuesHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
-    m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
+    if(!binaryListValueNode.IsNull())
+    {
+      m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
+      m_dataTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,7 +117,10 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
         oStream << location << index << locationValue << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
       }
   }
-  oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  if(m_dataTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  }
 }
 
 void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -138,5 +147,8 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
         oStream << location << ".BinaryListValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
       }
   }
-  oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  if(m_dataTypeHasBeenSet)
+  {
+      oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  }
 }

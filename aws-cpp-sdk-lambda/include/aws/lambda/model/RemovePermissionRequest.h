@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>Lambda function whose access policy you want to remove a permission from.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline void SetFunctionName(const Aws::String& value) { m_functionName = value; }
+    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>Lambda function whose access policy you want to remove a permission from.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline void SetFunctionName(const char* value) { m_functionName.assign(value); }
+    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /*
      <p>Lambda function whose access policy you want to remove a permission from.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>Statement ID of the permission to remove.</p>
     */
-    inline void SetStatementId(const Aws::String& value) { m_statementId = value; }
+    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /*
      <p>Statement ID of the permission to remove.</p>
     */
-    inline void SetStatementId(const char* value) { m_statementId.assign(value); }
+    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
 
     /*
      <p>Statement ID of the permission to remove.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_functionName;
+    bool m_functionNameHasBeenSet;
     Aws::String m_statementId;
+    bool m_statementIdHasBeenSet;
   };
 
 } // namespace Model

@@ -24,11 +24,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity() : 
+    m_idHasBeenSet(false),
+    m_s3CanonicalUserIdHasBeenSet(false),
     m_cloudFrontOriginAccessIdentityConfigHasBeenSet(false)
 {
 }
 
 CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_s3CanonicalUserIdHasBeenSet(false),
     m_cloudFrontOriginAccessIdentityConfigHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,9 +45,17 @@ CloudFrontOriginAccessIdentity& CloudFrontOriginAccessIdentity::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode s3CanonicalUserIdNode = resultNode.FirstChild("S3CanonicalUserId");
-    m_s3CanonicalUserId = StringUtils::Trim(s3CanonicalUserIdNode.GetText().c_str());
+    if(!s3CanonicalUserIdNode.IsNull())
+    {
+      m_s3CanonicalUserId = StringUtils::Trim(s3CanonicalUserIdNode.GetText().c_str());
+      m_s3CanonicalUserIdHasBeenSet = true;
+    }
     XmlNode cloudFrontOriginAccessIdentityConfigNode = resultNode.FirstChild("CloudFrontOriginAccessIdentityConfig");
     if(!cloudFrontOriginAccessIdentityConfigNode.IsNull())
     {
@@ -58,10 +70,18 @@ CloudFrontOriginAccessIdentity& CloudFrontOriginAccessIdentity::operator =(const
 void CloudFrontOriginAccessIdentity::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode s3CanonicalUserIdNode = parentNode.CreateChildElement("S3CanonicalUserId");
-  s3CanonicalUserIdNode.SetText(m_s3CanonicalUserId);
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_s3CanonicalUserIdHasBeenSet)
+  {
+   XmlNode s3CanonicalUserIdNode = parentNode.CreateChildElement("S3CanonicalUserId");
+   s3CanonicalUserIdNode.SetText(m_s3CanonicalUserId);
+  }
+
   if(m_cloudFrontOriginAccessIdentityConfigHasBeenSet)
   {
    XmlNode cloudFrontOriginAccessIdentityConfigNode = parentNode.CreateChildElement("CloudFrontOriginAccessIdentityConfig");

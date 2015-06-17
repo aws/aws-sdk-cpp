@@ -43,11 +43,12 @@ ListPoliciesResult& ListPoliciesResult::operator =(const AmazonWebServiceResult<
 
   if(!resultNode.IsNull())
   {
-    XmlNode policiesNode = resultNode.FirstChild("Policies");
+    XmlNode policiesNodeParent = resultNode.FirstChild("Policies");
+    XmlNode policiesNode = policiesNodeParent.FirstChild("member");
     while(!policiesNode.IsNull())
     {
       m_policies.push_back(policiesNode);
-      policiesNode = policiesNode.NextNode("Policies");
+      policiesNode = policiesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

@@ -45,12 +45,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The instance ID.</p>
@@ -262,8 +262,23 @@ namespace Model
     */
     inline UpdateInstanceRequest&  WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+    
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    
+    inline UpdateInstanceRequest&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    
+    inline UpdateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
     Aws::String m_instanceType;
@@ -284,6 +299,8 @@ namespace Model
     bool m_installUpdatesOnBootHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

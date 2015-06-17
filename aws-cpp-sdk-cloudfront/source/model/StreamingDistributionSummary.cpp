@@ -24,14 +24,34 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 StreamingDistributionSummary::StreamingDistributionSummary() : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_enabled(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_s3OriginHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_trustedSignersHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
 StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_enabled(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_s3OriginHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_trustedSignersHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,25 +63,65 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = StringUtils::Trim(statusNode.GetText().c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+    if(!lastModifiedTimeNode.IsNull())
+    {
+      m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+      m_lastModifiedTimeHasBeenSet = true;
+    }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    if(!domainNameNode.IsNull())
+    {
+      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainNameHasBeenSet = true;
+    }
     XmlNode s3OriginNode = resultNode.FirstChild("S3Origin");
-    m_s3Origin = s3OriginNode;
+    if(!s3OriginNode.IsNull())
+    {
+      m_s3Origin = s3OriginNode;
+      m_s3OriginHasBeenSet = true;
+    }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
-    m_aliases = aliasesNode;
+    if(!aliasesNode.IsNull())
+    {
+      m_aliases = aliasesNode;
+      m_aliasesHasBeenSet = true;
+    }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
-    m_trustedSigners = trustedSignersNode;
+    if(!trustedSignersNode.IsNull())
+    {
+      m_trustedSigners = trustedSignersNode;
+      m_trustedSignersHasBeenSet = true;
+    }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    if(!commentNode.IsNull())
+    {
+      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_commentHasBeenSet = true;
+    }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
-    m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
+    if(!priceClassNode.IsNull())
+    {
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
+      m_priceClassHasBeenSet = true;
+    }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -70,28 +130,68 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
 void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(m_status);
-  XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(m_status);
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
   ss << m_lastModifiedTime;
-  lastModifiedTimeNode.SetText(ss.str());
+   lastModifiedTimeNode.SetText(ss.str());
   ss.str("");
-  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-  domainNameNode.SetText(m_domainName);
-  XmlNode s3OriginNode = parentNode.CreateChildElement("S3Origin");
-  m_s3Origin.AddToNode(s3OriginNode);
-  XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
-  m_aliases.AddToNode(aliasesNode);
-  XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
-  m_trustedSigners.AddToNode(trustedSignersNode);
-  XmlNode commentNode = parentNode.CreateChildElement("Comment");
-  commentNode.SetText(m_comment);
-  XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
-  priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
-  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+   domainNameNode.SetText(m_domainName);
+  }
+
+  if(m_s3OriginHasBeenSet)
+  {
+   XmlNode s3OriginNode = parentNode.CreateChildElement("S3Origin");
+   m_s3Origin.AddToNode(s3OriginNode);
+  }
+
+  if(m_aliasesHasBeenSet)
+  {
+   XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
+   m_aliases.AddToNode(aliasesNode);
+  }
+
+  if(m_trustedSignersHasBeenSet)
+  {
+   XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
+   m_trustedSigners.AddToNode(trustedSignersNode);
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   XmlNode commentNode = parentNode.CreateChildElement("Comment");
+   commentNode.SetText(m_comment);
+  }
+
+  if(m_priceClassHasBeenSet)
+  {
+   XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
+   priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
   ss << m_enabled;
-  enabledNode.SetText(ss.str());
+   enabledNode.SetText(ss.str());
   ss.str("");
+  }
+
 }

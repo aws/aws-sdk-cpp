@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeLogStreamsRequest::DescribeLogStreamsRequest() : 
+    m_logGroupNameHasBeenSet(false),
     m_logStreamNamePrefixHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_descending(false),
@@ -36,7 +37,11 @@ Aws::String DescribeLogStreamsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
+
+  }
 
   if(m_logStreamNamePrefixHasBeenSet)
   {

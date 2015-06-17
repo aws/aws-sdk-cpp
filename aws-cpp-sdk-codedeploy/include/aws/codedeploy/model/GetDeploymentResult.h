@@ -33,7 +33,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a get deployment operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API GetDeploymentResult
   {
@@ -42,18 +42,12 @@ namespace Model
     GetDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    
     inline const DeploymentInfo& GetDeploymentInfo() const{ return m_deploymentInfo; }
-    /*
-     <p>Information about the deployment.</p>
-    */
+    
     inline void SetDeploymentInfo(const DeploymentInfo& value) { m_deploymentInfo = value; }
 
-    /*
-     <p>Information about the deployment.</p>
-    */
+    
     inline GetDeploymentResult&  WithDeploymentInfo(const DeploymentInfo& value) { SetDeploymentInfo(value); return *this;}
 
   private:

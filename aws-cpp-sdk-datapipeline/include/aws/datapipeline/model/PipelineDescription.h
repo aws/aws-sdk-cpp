@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The name of the pipeline.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the pipeline.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the pipeline.</p>
@@ -98,7 +98,7 @@ namespace Model
     /*
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     */
-    inline void SetFields(const Aws::Vector<Field>& value) { m_fields = value; }
+    inline void SetFields(const Aws::Vector<Field>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
 
     /*
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
@@ -108,7 +108,7 @@ namespace Model
     /*
      <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     */
-    inline PipelineDescription& AddFields(const Field& value) { m_fields.push_back(value); return *this; }
+    inline PipelineDescription& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
 
     /*
      <p>Description of the pipeline.</p>
@@ -155,8 +155,11 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::Vector<Field> m_fields;
+    bool m_fieldsHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<Tag> m_tags;

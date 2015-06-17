@@ -21,20 +21,34 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-KeySchemaElement::KeySchemaElement()
+KeySchemaElement::KeySchemaElement() : 
+    m_attributeNameHasBeenSet(false),
+    m_keyTypeHasBeenSet(false)
 {
 }
 
-KeySchemaElement::KeySchemaElement(const JsonValue& jsonValue)
+KeySchemaElement::KeySchemaElement(const JsonValue& jsonValue) : 
+    m_attributeNameHasBeenSet(false),
+    m_keyTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 KeySchemaElement& KeySchemaElement::operator =(const JsonValue& jsonValue)
 {
-  m_attributeName = jsonValue.GetString("AttributeName");
+  if(jsonValue.ValueExists("AttributeName"))
+  {
+    m_attributeName = jsonValue.GetString("AttributeName");
 
-  m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
+    m_attributeNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyType"))
+  {
+    m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
+
+    m_keyTypeHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,8 +57,16 @@ JsonValue KeySchemaElement::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("AttributeName", m_attributeName);
+  if(m_attributeNameHasBeenSet)
+  {
+   payload.WithString("AttributeName", m_attributeName);
 
-  payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
+  }
+
+  if(m_keyTypeHasBeenSet)
+  {
+   payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
+  }
+
   return std::move(payload);
 }

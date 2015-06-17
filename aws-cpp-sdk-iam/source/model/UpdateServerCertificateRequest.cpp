@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UpdateServerCertificateRequest::UpdateServerCertificateRequest() : 
+    m_serverCertificateNameHasBeenSet(false),
     m_newPathHasBeenSet(false),
     m_newServerCertificateNameHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String UpdateServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateServerCertificate&";
-  ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  if(m_serverCertificateNameHasBeenSet)
+  {
+    ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
+  }
   if(m_newPathHasBeenSet)
   {
     ss << "NewPath=" << StringUtils::URLEncode(m_newPath.c_str()) << "&";

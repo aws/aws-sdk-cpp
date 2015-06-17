@@ -43,11 +43,12 @@ DescribeClusterSecurityGroupsResult& DescribeClusterSecurityGroupsResult::operat
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
+    XmlNode clusterSecurityGroupNodeParent = resultNode.FirstChild("ClusterSecurityGroup");
+    XmlNode clusterSecurityGroupNode = clusterSecurityGroupNodeParent.FirstChild("member");
     while(!clusterSecurityGroupNode.IsNull())
     {
       m_clusterSecurityGroups.push_back(clusterSecurityGroupNode);
-      clusterSecurityGroupNode = clusterSecurityGroupNode.NextNode("ClusterSecurityGroup");
+      clusterSecurityGroupNode = clusterSecurityGroupNode.NextNode("member");
     }
 
   }

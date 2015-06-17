@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Event::Event() : 
+    m_eventTypeHasBeenSet(false),
+    m_timestampHasBeenSet(false),
     m_sessionHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -30,6 +32,8 @@ Event::Event() :
 }
 
 Event::Event(const JsonValue& jsonValue) : 
+    m_eventTypeHasBeenSet(false),
+    m_timestampHasBeenSet(false),
     m_sessionHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -40,9 +44,19 @@ Event::Event(const JsonValue& jsonValue) :
 
 Event& Event::operator =(const JsonValue& jsonValue)
 {
-  m_eventType = jsonValue.GetString("eventType");
+  if(jsonValue.ValueExists("eventType"))
+  {
+    m_eventType = jsonValue.GetString("eventType");
 
-  m_timestamp = jsonValue.GetString("timestamp");
+    m_eventTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timestamp"))
+  {
+    m_timestamp = jsonValue.GetString("timestamp");
+
+    m_timestampHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("session"))
   {
@@ -85,9 +99,17 @@ JsonValue Event::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("eventType", m_eventType);
+  if(m_eventTypeHasBeenSet)
+  {
+   payload.WithString("eventType", m_eventType);
 
-  payload.WithString("timestamp", m_timestamp);
+  }
+
+  if(m_timestampHasBeenSet)
+  {
+   payload.WithString("timestamp", m_timestamp);
+
+  }
 
   if(m_sessionHasBeenSet)
   {

@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p>The events to configure</p>
     */
-    inline void SetEvents(const Aws::Map<Aws::String, Aws::String>& value) { m_events = value; }
+    inline void SetEvents(const Aws::Map<Aws::String, Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /*
      <p>The events to configure</p>
@@ -76,16 +76,18 @@ namespace Model
     /*
      <p>The events to configure</p>
     */
-    inline SetCognitoEventsRequest& AddEvents(const Aws::String& key, const Aws::String& value) { m_events[key] = value; return *this; }
+    inline SetCognitoEventsRequest& AddEvents(const Aws::String& key, const Aws::String& value) { m_eventsHasBeenSet = true; m_events[key] = value; return *this; }
 
     /*
      <p>The events to configure</p>
     */
-    inline SetCognitoEventsRequest& AddEvents(const char* key, const char* value) { m_events[key] = value; return *this; }
+    inline SetCognitoEventsRequest& AddEvents(const char* key, const char* value) { m_eventsHasBeenSet = true; m_events[key] = value; return *this; }
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_events;
+    bool m_eventsHasBeenSet;
   };
 
 } // namespace Model

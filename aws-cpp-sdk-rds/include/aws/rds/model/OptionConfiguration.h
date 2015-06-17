@@ -52,12 +52,12 @@ namespace Model
     /*
      <p> The configuration of options to include in a group. </p>
     */
-    inline void SetOptionName(const Aws::String& value) { m_optionName = value; }
+    inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /*
      <p> The configuration of options to include in a group. </p>
     */
-    inline void SetOptionName(const char* value) { m_optionName.assign(value); }
+    inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
 
     /*
      <p> The configuration of options to include in a group. </p>
@@ -152,6 +152,7 @@ namespace Model
 
   private:
     Aws::String m_optionName;
+    bool m_optionNameHasBeenSet;
     long m_port;
     bool m_portHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroupMemberships;

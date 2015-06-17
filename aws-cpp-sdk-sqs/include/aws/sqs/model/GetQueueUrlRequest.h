@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</p>
     */
-    inline void SetQueueName(const Aws::String& value) { m_queueName = value; }
+    inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
 
     /*
      <p>The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</p>
     */
-    inline void SetQueueName(const char* value) { m_queueName.assign(value); }
+    inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
 
     /*
      <p>The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</p>
@@ -83,6 +83,7 @@ namespace Model
 
   private:
     Aws::String m_queueName;
+    bool m_queueNameHasBeenSet;
     Aws::String m_queueOwnerAWSAccountId;
     bool m_queueOwnerAWSAccountIdHasBeenSet;
   };

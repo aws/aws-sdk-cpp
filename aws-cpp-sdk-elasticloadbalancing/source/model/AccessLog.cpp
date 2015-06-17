@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 
 AccessLog::AccessLog() : 
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_emitInterval(0),
     m_emitIntervalHasBeenSet(false),
@@ -34,6 +35,7 @@ AccessLog::AccessLog() :
 
 AccessLog::AccessLog(const XmlNode& xmlNode) : 
     m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_emitInterval(0),
     m_emitIntervalHasBeenSet(false),
@@ -49,7 +51,11 @@ AccessLog& AccessLog::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
     XmlNode s3BucketNameNode = resultNode.FirstChild("S3BucketName");
     if(!s3BucketNameNode.IsNull())
     {
@@ -75,7 +81,10 @@ AccessLog& AccessLog::operator =(const XmlNode& xmlNode)
 
 void AccessLog::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+  if(m_enabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+  }
   if(m_s3BucketNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".S3BucketName=" << StringUtils::URLEncode(m_s3BucketName.c_str()) << "&";
@@ -92,7 +101,10 @@ void AccessLog::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
 void AccessLog::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Enabled=" << m_enabled << "&";
+  if(m_enabledHasBeenSet)
+  {
+      oStream << location << ".Enabled=" << m_enabled << "&";
+  }
   if(m_s3BucketNameHasBeenSet)
   {
       oStream << location << ".S3BucketName=" << StringUtils::URLEncode(m_s3BucketName.c_str()) << "&";

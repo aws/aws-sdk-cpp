@@ -41,21 +41,21 @@ using namespace Aws::Auth;
 using namespace Aws::Internal;
 
 
-static const char *ACCESS_KEY_ENV_VARIABLE = "AWS_ACCESS_KEY_ID";
-static const char *SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY_ID";
-static const char *DEFAULT_PROFILE = "default";
-static const char *AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
-static const char *AWS_ACCESS_KEY_ID = "aws_access_key_id";
-static const char *AWS_SECRET_ACCESS_KEY = "aws_secret_access_key";
-static const char *AWS_SESSION_TOKEN = "aws_session_token";
+static const char* ACCESS_KEY_ENV_VARIABLE = "AWS_ACCESS_KEY_ID";
+static const char* SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY_ID";
+static const char* DEFAULT_PROFILE = "default";
+static const char* AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
+static const char* AWS_ACCESS_KEY_ID = "aws_access_key_id";
+static const char* AWS_SECRET_ACCESS_KEY = "aws_secret_access_key";
+static const char* AWS_SESSION_TOKEN = "aws_session_token";
 
-static const char *AWS_CREDENTIAL_PROFILES_FILE = "AWS_CREDENTIAL_PROFILES_FILE";
+static const char* AWS_CREDENTIAL_PROFILES_FILE = "AWS_CREDENTIAL_PROFILES_FILE";
 
-static const char *PROFILE_DEFAULT_FILENAME = "credentials";
+static const char* PROFILE_DEFAULT_FILENAME = "credentials";
 
 #ifndef _WIN32
-static const char *PROFILE_DIRECTORY = "/.aws";
-static const char *DIRECTORY_JOIN = "/";
+static const char* PROFILE_DIRECTORY = "/.aws";
+static const char* DIRECTORY_JOIN = "/";
 
 #else
     static const char* PROFILE_DIRECTORY = "\\.aws";
@@ -78,7 +78,7 @@ bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
 }
 
 
-static const char *environmentLogTag = "EnvironmentAWSCredentialsProvider";
+static const char* environmentLogTag = "EnvironmentAWSCredentialsProvider";
 
 
 EnvironmentAWSCredentialsProvider::EnvironmentAWSCredentialsProvider()
@@ -88,13 +88,13 @@ EnvironmentAWSCredentialsProvider::EnvironmentAWSCredentialsProvider()
 
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
-    char *accessKey = std::getenv(ACCESS_KEY_ENV_VARIABLE);
+    char* accessKey = std::getenv(ACCESS_KEY_ENV_VARIABLE);
 
 
     if (accessKey != nullptr)
     {
         AWS_LOG_INFO(environmentLogTag, "Found credential in environment with access key id %s.", accessKey);
-        char *secretKey = std::getenv(SECRET_KEY_ENV_VAR);
+        char* secretKey = std::getenv(SECRET_KEY_ENV_VAR);
 
 
         if (secretKey)
@@ -119,7 +119,7 @@ static Aws::String GetBaseDirectory()
 
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetProfileFilename()
 {
-    char *profileFileNameFromVar = std::getenv(AWS_CREDENTIAL_PROFILES_FILE);
+    char* profileFileNameFromVar = std::getenv(AWS_CREDENTIAL_PROFILES_FILE);
 
     if (profileFileNameFromVar)
     {
@@ -159,7 +159,7 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory()
     }
 }
 
-static const char *profileLogTag = "ProfileConfigFileAWSCredentialsProvider";
+static const char* profileLogTag = "ProfileConfigFileAWSCredentialsProvider";
 
 
 ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider(long refreshRateMs) :
@@ -167,7 +167,7 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
         m_credentials(nullptr),
         m_loadFrequencyMs(refreshRateMs)
 {
-    char *profileFromVar = std::getenv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+    char* profileFromVar = std::getenv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
     if (profileFromVar)
     {
         m_profileToUse = profileFromVar;
@@ -181,7 +181,7 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
     AWS_LOG_INFO(profileLogTag, "Setting provider to read credentials from %s, for use with profile %s.", m_fileName.c_str(), m_profileToUse.c_str());
 }
 
-ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider(const char *profile, long refreshRateMs) :
+ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs) :
         m_fileName(GetProfileFilename()),
         m_profileToUse(profile),
         m_credentials(nullptr),
@@ -231,10 +231,10 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 }
 
 
-static const char *AWS_ACCOUNT_ID = "aws_account_id";
+static const char* AWS_ACCOUNT_ID = "aws_account_id";
 
 
-Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::ParseProfileConfigFile(const Aws::String &filename)
+Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::ParseProfileConfigFile(const Aws::String& filename)
 {
     std::ifstream profileFile(filename.c_str());
     Aws::Map<Aws::String, Aws::String> propertyValueMap;
@@ -252,7 +252,7 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
 
             if (trimmedLine.front() == '[' && trimmedLine.back() == ']')
             {
-                profile = trimmedLine.substr(1, trimmedLine.length() - 2);
+                profile = StringUtils::Trim(trimmedLine.substr(1, trimmedLine.length() - 2).c_str());
                 AWS_LOG_DEBUG(profileLogTag, "Found profile %s.", profile.c_str());
             }
 
@@ -262,7 +262,7 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
                 AWS_LOG_TRACE(profileLogTag, "Found property %s for profile %s", propertyPair[0].c_str(), profile.c_str());
                 if (propertyPair[0] == AWS_ACCESS_KEY_ID || propertyPair[0] == AWS_SECRET_ACCESS_KEY || propertyPair[0] == AWS_SESSION_TOKEN ||
                     propertyPair[0] == AWS_ACCOUNT_ID)
-                    propertyValueMap[profile + ":" + propertyPair[0]] = propertyPair[1];
+                    propertyValueMap[profile + ":" + StringUtils::Trim(propertyPair[0].c_str())] = StringUtils::Trim(propertyPair[1].c_str());
             }
         }
     }
@@ -274,7 +274,7 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
 }
 
 
-Aws::String ProfileConfigFileAWSCredentialsProvider::GetAccountIdForProfile(const Aws::String &profileName)
+Aws::String ProfileConfigFileAWSCredentialsProvider::GetAccountIdForProfile(const Aws::String& profileName)
 {
     auto profileMap = ProfileConfigFileAWSCredentialsProvider::ParseProfileConfigFile(ProfileConfigFileAWSCredentialsProvider::GetProfileFilename());
 
@@ -289,7 +289,7 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetAccountIdForProfile(cons
 }
 
 
-static const char *instanceLogTag = "InstanceProfileCredentialsProvider";
+static const char* instanceLogTag = "InstanceProfileCredentialsProvider";
 
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs) :
@@ -336,8 +336,8 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
             return;
         }
 
-        const char *accessKeyId = "AccessKeyId";
-        const char *secretAccessKey = "SecretAccessKey";
+        const char* accessKeyId = "AccessKeyId";
+        const char* secretAccessKey = "SecretAccessKey";
         Aws::String accessKey, secretKey, token;
 
         using namespace Aws::Utils::Json;

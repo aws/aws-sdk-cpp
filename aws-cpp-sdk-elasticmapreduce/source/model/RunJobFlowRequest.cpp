@@ -22,9 +22,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RunJobFlowRequest::RunJobFlowRequest() : 
+    m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
+    m_instancesHasBeenSet(false),
     m_stepsHasBeenSet(false),
     m_bootstrapActionsHasBeenSet(false),
     m_supportedProductsHasBeenSet(false),
@@ -41,7 +43,11 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
 
   if(m_logUriHasBeenSet)
   {
@@ -61,7 +67,11 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   }
 
-  payload.WithObject("Instances", m_instances.Jsonize());
+  if(m_instancesHasBeenSet)
+  {
+   payload.WithObject("Instances", m_instances.Jsonize());
+
+  }
 
   if(m_stepsHasBeenSet)
   {

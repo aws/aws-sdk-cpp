@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ARN of the topic to modify.</p>
     */
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
+    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /*
      <p>The ARN of the topic to modify.</p>
     */
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
+    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /*
      <p>The ARN of the topic to modify.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
     */
-    inline void SetAttributeName(const Aws::String& value) { m_attributeName = value; }
+    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
     */
-    inline void SetAttributeName(const char* value) { m_attributeName.assign(value); }
+    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /*
      <p>The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p> <p>Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></p>
@@ -108,7 +108,9 @@ namespace Model
 
   private:
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet;
     Aws::String m_attributeName;
+    bool m_attributeNameHasBeenSet;
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

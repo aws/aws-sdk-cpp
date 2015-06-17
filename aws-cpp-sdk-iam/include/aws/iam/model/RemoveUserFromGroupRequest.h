@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the group to update.</p>
     */
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name of the group to update.</p>
     */
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /*
      <p>The name of the group to update.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the user to remove.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user to remove.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user to remove.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
   };
 
 } // namespace Model

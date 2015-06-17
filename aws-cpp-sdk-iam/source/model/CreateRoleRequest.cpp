@@ -20,7 +20,9 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 CreateRoleRequest::CreateRoleRequest() : 
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_roleNameHasBeenSet(false),
+    m_assumeRolePolicyDocumentHasBeenSet(false)
 {
 }
 
@@ -32,8 +34,14 @@ Aws::String CreateRoleRequest::SerializePayload() const
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  ss << "AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_assumeRolePolicyDocumentHasBeenSet)
+  {
+    ss << "AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

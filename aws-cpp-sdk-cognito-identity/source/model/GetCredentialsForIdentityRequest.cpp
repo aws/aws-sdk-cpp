@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetCredentialsForIdentityRequest::GetCredentialsForIdentityRequest() : 
+    m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false)
 {
 }
@@ -30,7 +31,11 @@ Aws::String GetCredentialsForIdentityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityId", m_identityId);
+  if(m_identityIdHasBeenSet)
+  {
+   payload.WithString("IdentityId", m_identityId);
+
+  }
 
   if(m_loginsHasBeenSet)
   {

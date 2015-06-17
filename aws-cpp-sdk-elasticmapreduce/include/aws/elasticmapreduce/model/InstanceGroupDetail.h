@@ -98,7 +98,7 @@ namespace Model
     /*
      <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
     */
-    inline void SetMarket(const MarketType& value) { m_market = value; }
+    inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /*
      <p>Market type of the Amazon EC2 instances used to create a cluster node. </p>
@@ -112,7 +112,7 @@ namespace Model
     /*
      <p>Instance group role in the cluster </p>
     */
-    inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRole = value; }
+    inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
 
     /*
      <p>Instance group role in the cluster </p>
@@ -150,12 +150,12 @@ namespace Model
     /*
      <p>Amazon EC2 Instance type.</p>
     */
-    inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
      <p>Amazon EC2 Instance type.</p>
     */
-    inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /*
      <p>Amazon EC2 Instance type.</p>
@@ -174,7 +174,7 @@ namespace Model
     /*
      <p>Target number of instances to run in the instance group. </p>
     */
-    inline void SetInstanceRequestCount(long value) { m_instanceRequestCount = value; }
+    inline void SetInstanceRequestCount(long value) { m_instanceRequestCountHasBeenSet = true; m_instanceRequestCount = value; }
 
     /*
      <p>Target number of instances to run in the instance group. </p>
@@ -188,7 +188,7 @@ namespace Model
     /*
      <p>Actual count of running instances. </p>
     */
-    inline void SetInstanceRunningCount(long value) { m_instanceRunningCount = value; }
+    inline void SetInstanceRunningCount(long value) { m_instanceRunningCountHasBeenSet = true; m_instanceRunningCount = value; }
 
     /*
      <p>Actual count of running instances. </p>
@@ -202,7 +202,7 @@ namespace Model
     /*
      <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
     */
-    inline void SetState(const InstanceGroupState& value) { m_state = value; }
+    inline void SetState(const InstanceGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /*
      <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
@@ -240,7 +240,7 @@ namespace Model
     /*
      <p>The date/time the instance group was created. </p>
     */
-    inline void SetCreationDateTime(double value) { m_creationDateTime = value; }
+    inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /*
      <p>The date/time the instance group was created. </p>
@@ -295,16 +295,23 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
     MarketType m_market;
+    bool m_marketHasBeenSet;
     InstanceRoleType m_instanceRole;
+    bool m_instanceRoleHasBeenSet;
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
     Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     long m_instanceRequestCount;
+    bool m_instanceRequestCountHasBeenSet;
     long m_instanceRunningCount;
+    bool m_instanceRunningCountHasBeenSet;
     InstanceGroupState m_state;
+    bool m_stateHasBeenSet;
     Aws::String m_lastStateChangeReason;
     bool m_lastStateChangeReasonHasBeenSet;
     double m_creationDateTime;
+    bool m_creationDateTimeHasBeenSet;
     double m_startDateTime;
     bool m_startDateTimeHasBeenSet;
     double m_readyDateTime;

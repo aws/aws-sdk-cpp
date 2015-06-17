@@ -43,6 +43,7 @@
 #include <aws/elasticbeanstalk/model/UpdateEnvironmentResult.h>
 #include <aws/elasticbeanstalk/model/ValidateConfigurationSettingsResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -181,36 +182,36 @@ namespace Model
 
   class ElasticBeanstalkClient;
 
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::AbortEnvironmentUpdateRequest&, const Model::AbortEnvironmentUpdateOutcome&> AbortEnvironmentUpdateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CheckDNSAvailabilityRequest&, const Model::CheckDNSAvailabilityOutcome&> CheckDNSAvailabilityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&> CreateApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateApplicationVersionRequest&, const Model::CreateApplicationVersionOutcome&> CreateApplicationVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateConfigurationTemplateRequest&, const Model::CreateConfigurationTemplateOutcome&> CreateConfigurationTemplateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&> CreateEnvironmentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateStorageLocationRequest&, const Model::CreateStorageLocationOutcome&> CreateStorageLocationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&> DeleteApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteApplicationVersionRequest&, const Model::DeleteApplicationVersionOutcome&> DeleteApplicationVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteConfigurationTemplateRequest&, const Model::DeleteConfigurationTemplateOutcome&> DeleteConfigurationTemplateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteEnvironmentConfigurationRequest&, const Model::DeleteEnvironmentConfigurationOutcome&> DeleteEnvironmentConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeApplicationVersionsRequest&, const Model::DescribeApplicationVersionsOutcome&> DescribeApplicationVersionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeApplicationsRequest&, const Model::DescribeApplicationsOutcome&> DescribeApplicationsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeConfigurationOptionsRequest&, const Model::DescribeConfigurationOptionsOutcome&> DescribeConfigurationOptionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeConfigurationSettingsRequest&, const Model::DescribeConfigurationSettingsOutcome&> DescribeConfigurationSettingsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeEnvironmentResourcesRequest&, const Model::DescribeEnvironmentResourcesOutcome&> DescribeEnvironmentResourcesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeEnvironmentsRequest&, const Model::DescribeEnvironmentsOutcome&> DescribeEnvironmentsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&> DescribeEventsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::ListAvailableSolutionStacksRequest&, const Model::ListAvailableSolutionStacksOutcome&> ListAvailableSolutionStacksOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RebuildEnvironmentRequest&, const Model::RebuildEnvironmentOutcome&> RebuildEnvironmentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RequestEnvironmentInfoRequest&, const Model::RequestEnvironmentInfoOutcome&> RequestEnvironmentInfoOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RestartAppServerRequest&, const Model::RestartAppServerOutcome&> RestartAppServerOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RetrieveEnvironmentInfoRequest&, const Model::RetrieveEnvironmentInfoOutcome&> RetrieveEnvironmentInfoOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::SwapEnvironmentCNAMEsRequest&, const Model::SwapEnvironmentCNAMEsOutcome&> SwapEnvironmentCNAMEsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::TerminateEnvironmentRequest&, const Model::TerminateEnvironmentOutcome&> TerminateEnvironmentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&> UpdateApplicationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateApplicationVersionRequest&, const Model::UpdateApplicationVersionOutcome&> UpdateApplicationVersionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateConfigurationTemplateRequest&, const Model::UpdateConfigurationTemplateOutcome&> UpdateConfigurationTemplateOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&> UpdateEnvironmentOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::ValidateConfigurationSettingsRequest&, const Model::ValidateConfigurationSettingsOutcome&> ValidateConfigurationSettingsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::AbortEnvironmentUpdateRequest&, const Model::AbortEnvironmentUpdateOutcome&, const Aws::Client::AsyncCallerContext*> AbortEnvironmentUpdateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CheckDNSAvailabilityRequest&, const Model::CheckDNSAvailabilityOutcome&, const Aws::Client::AsyncCallerContext*> CheckDNSAvailabilityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const Aws::Client::AsyncCallerContext*> CreateApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateApplicationVersionRequest&, const Model::CreateApplicationVersionOutcome&, const Aws::Client::AsyncCallerContext*> CreateApplicationVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateConfigurationTemplateRequest&, const Model::CreateConfigurationTemplateOutcome&, const Aws::Client::AsyncCallerContext*> CreateConfigurationTemplateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const Aws::Client::AsyncCallerContext*> CreateEnvironmentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::CreateStorageLocationRequest&, const Model::CreateStorageLocationOutcome&, const Aws::Client::AsyncCallerContext*> CreateStorageLocationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const Aws::Client::AsyncCallerContext*> DeleteApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteApplicationVersionRequest&, const Model::DeleteApplicationVersionOutcome&, const Aws::Client::AsyncCallerContext*> DeleteApplicationVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteConfigurationTemplateRequest&, const Model::DeleteConfigurationTemplateOutcome&, const Aws::Client::AsyncCallerContext*> DeleteConfigurationTemplateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DeleteEnvironmentConfigurationRequest&, const Model::DeleteEnvironmentConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> DeleteEnvironmentConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeApplicationVersionsRequest&, const Model::DescribeApplicationVersionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeApplicationVersionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeApplicationsRequest&, const Model::DescribeApplicationsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeApplicationsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeConfigurationOptionsRequest&, const Model::DescribeConfigurationOptionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeConfigurationOptionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeConfigurationSettingsRequest&, const Model::DescribeConfigurationSettingsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeConfigurationSettingsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeEnvironmentResourcesRequest&, const Model::DescribeEnvironmentResourcesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEnvironmentResourcesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeEnvironmentsRequest&, const Model::DescribeEnvironmentsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEnvironmentsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::ListAvailableSolutionStacksRequest&, const Model::ListAvailableSolutionStacksOutcome&, const Aws::Client::AsyncCallerContext*> ListAvailableSolutionStacksOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RebuildEnvironmentRequest&, const Model::RebuildEnvironmentOutcome&, const Aws::Client::AsyncCallerContext*> RebuildEnvironmentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RequestEnvironmentInfoRequest&, const Model::RequestEnvironmentInfoOutcome&, const Aws::Client::AsyncCallerContext*> RequestEnvironmentInfoOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RestartAppServerRequest&, const Model::RestartAppServerOutcome&, const Aws::Client::AsyncCallerContext*> RestartAppServerOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::RetrieveEnvironmentInfoRequest&, const Model::RetrieveEnvironmentInfoOutcome&, const Aws::Client::AsyncCallerContext*> RetrieveEnvironmentInfoOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::SwapEnvironmentCNAMEsRequest&, const Model::SwapEnvironmentCNAMEsOutcome&, const Aws::Client::AsyncCallerContext*> SwapEnvironmentCNAMEsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::TerminateEnvironmentRequest&, const Model::TerminateEnvironmentOutcome&, const Aws::Client::AsyncCallerContext*> TerminateEnvironmentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const Aws::Client::AsyncCallerContext*> UpdateApplicationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateApplicationVersionRequest&, const Model::UpdateApplicationVersionOutcome&, const Aws::Client::AsyncCallerContext*> UpdateApplicationVersionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateConfigurationTemplateRequest&, const Model::UpdateConfigurationTemplateOutcome&, const Aws::Client::AsyncCallerContext*> UpdateConfigurationTemplateOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const Aws::Client::AsyncCallerContext*> UpdateEnvironmentOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElasticBeanstalkClient, const Model::ValidateConfigurationSettingsRequest&, const Model::ValidateConfigurationSettingsOutcome&, const Aws::Client::AsyncCallerContext*> ValidateConfigurationSettingsOutcomeReceivedEvent;
 
   /*
     <fullname>AWS Elastic Beanstalk</fullname> <p> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic Beanstalk actions, data types, parameters, and errors. </p> <p>AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </p> <p> For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. </p> <p><b>Endpoints</b></p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
@@ -259,7 +260,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AbortEnvironmentUpdateAsync(const Model::AbortEnvironmentUpdateRequest& request) const;
+     void AbortEnvironmentUpdateAsync(const Model::AbortEnvironmentUpdateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Checks if the specified CNAME is available. </p>
@@ -278,7 +279,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CheckDNSAvailabilityAsync(const Model::CheckDNSAvailabilityRequest& request) const;
+     void CheckDNSAvailabilityAsync(const Model::CheckDNSAvailabilityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>
@@ -297,7 +298,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateApplicationAsync(const Model::CreateApplicationRequest& request) const;
+     void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>
@@ -316,7 +317,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request) const;
+     void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
@@ -335,7 +336,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request) const;
+     void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Launches an environment for the specified application using the specified configuration. </p>
@@ -354,7 +355,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request) const;
+     void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>
@@ -373,7 +374,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateStorageLocationAsync(const Model::CreateStorageLocationRequest& request) const;
+     void CreateStorageLocationAsync(const Model::CreateStorageLocationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>
@@ -392,7 +393,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request) const;
+     void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>
@@ -411,7 +412,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request) const;
+     void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>
@@ -430,7 +431,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteConfigurationTemplateAsync(const Model::DeleteConfigurationTemplateRequest& request) const;
+     void DeleteConfigurationTemplateAsync(const Model::DeleteConfigurationTemplateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>
@@ -449,7 +450,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request) const;
+     void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns descriptions for existing application versions.</p>
@@ -468,7 +469,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeApplicationVersionsAsync(const Model::DescribeApplicationVersionsRequest& request) const;
+     void DescribeApplicationVersionsAsync(const Model::DescribeApplicationVersionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the descriptions of existing applications.</p>
@@ -487,7 +488,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request) const;
+     void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>
@@ -506,7 +507,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeConfigurationOptionsAsync(const Model::DescribeConfigurationOptionsRequest& request) const;
+     void DescribeConfigurationOptionsAsync(const Model::DescribeConfigurationOptionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
@@ -525,7 +526,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeConfigurationSettingsAsync(const Model::DescribeConfigurationSettingsRequest& request) const;
+     void DescribeConfigurationSettingsAsync(const Model::DescribeConfigurationSettingsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns AWS resources for this environment.</p>
@@ -544,7 +545,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEnvironmentResourcesAsync(const Model::DescribeEnvironmentResourcesRequest& request) const;
+     void DescribeEnvironmentResourcesAsync(const Model::DescribeEnvironmentResourcesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns descriptions for existing environments.</p>
@@ -563,7 +564,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request) const;
+     void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>
@@ -582,7 +583,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEventsAsync(const Model::DescribeEventsRequest& request) const;
+     void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Returns a list of the available solution stack names. </p>
@@ -601,7 +602,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request) const;
+     void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>
@@ -620,7 +621,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RebuildEnvironmentAsync(const Model::RebuildEnvironmentRequest& request) const;
+     void RebuildEnvironmentAsync(const Model::RebuildEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
@@ -639,7 +640,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RequestEnvironmentInfoAsync(const Model::RequestEnvironmentInfoRequest& request) const;
+     void RequestEnvironmentInfoAsync(const Model::RequestEnvironmentInfoRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>
@@ -658,7 +659,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RestartAppServerAsync(const Model::RestartAppServerRequest& request) const;
+     void RestartAppServerAsync(const Model::RestartAppServerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
@@ -677,7 +678,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request) const;
+     void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Swaps the CNAMEs of two environments. </p>
@@ -696,7 +697,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request) const;
+     void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Terminates the specified environment. </p>
@@ -715,7 +716,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void TerminateEnvironmentAsync(const Model::TerminateEnvironmentRequest& request) const;
+     void TerminateEnvironmentAsync(const Model::TerminateEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>
@@ -734,7 +735,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request) const;
+     void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>
@@ -753,7 +754,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateApplicationVersionAsync(const Model::UpdateApplicationVersionRequest& request) const;
+     void UpdateApplicationVersionAsync(const Model::UpdateApplicationVersionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
@@ -772,7 +773,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateConfigurationTemplateAsync(const Model::UpdateConfigurationTemplateRequest& request) const;
+     void UpdateConfigurationTemplateAsync(const Model::UpdateConfigurationTemplateRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>
@@ -791,7 +792,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request) const;
+     void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>
@@ -810,7 +811,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ValidateConfigurationSettingsAsync(const Model::ValidateConfigurationSettingsRequest& request) const;
+     void ValidateConfigurationSettingsAsync(const Model::ValidateConfigurationSettingsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AbortEnvironmentUpdateAsync to call upon completion to the handler chain. You need to call this to
@@ -1326,36 +1327,36 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request) const;
-    void CheckDNSAvailabilityAsyncHelper(const Model::CheckDNSAvailabilityRequest& request) const;
-    void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request) const;
-    void CreateApplicationVersionAsyncHelper(const Model::CreateApplicationVersionRequest& request) const;
-    void CreateConfigurationTemplateAsyncHelper(const Model::CreateConfigurationTemplateRequest& request) const;
-    void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request) const;
-    void CreateStorageLocationAsyncHelper(const Model::CreateStorageLocationRequest& request) const;
-    void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request) const;
-    void DeleteApplicationVersionAsyncHelper(const Model::DeleteApplicationVersionRequest& request) const;
-    void DeleteConfigurationTemplateAsyncHelper(const Model::DeleteConfigurationTemplateRequest& request) const;
-    void DeleteEnvironmentConfigurationAsyncHelper(const Model::DeleteEnvironmentConfigurationRequest& request) const;
-    void DescribeApplicationVersionsAsyncHelper(const Model::DescribeApplicationVersionsRequest& request) const;
-    void DescribeApplicationsAsyncHelper(const Model::DescribeApplicationsRequest& request) const;
-    void DescribeConfigurationOptionsAsyncHelper(const Model::DescribeConfigurationOptionsRequest& request) const;
-    void DescribeConfigurationSettingsAsyncHelper(const Model::DescribeConfigurationSettingsRequest& request) const;
-    void DescribeEnvironmentResourcesAsyncHelper(const Model::DescribeEnvironmentResourcesRequest& request) const;
-    void DescribeEnvironmentsAsyncHelper(const Model::DescribeEnvironmentsRequest& request) const;
-    void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request) const;
-    void ListAvailableSolutionStacksAsyncHelper(const Model::ListAvailableSolutionStacksRequest& request) const;
-    void RebuildEnvironmentAsyncHelper(const Model::RebuildEnvironmentRequest& request) const;
-    void RequestEnvironmentInfoAsyncHelper(const Model::RequestEnvironmentInfoRequest& request) const;
-    void RestartAppServerAsyncHelper(const Model::RestartAppServerRequest& request) const;
-    void RetrieveEnvironmentInfoAsyncHelper(const Model::RetrieveEnvironmentInfoRequest& request) const;
-    void SwapEnvironmentCNAMEsAsyncHelper(const Model::SwapEnvironmentCNAMEsRequest& request) const;
-    void TerminateEnvironmentAsyncHelper(const Model::TerminateEnvironmentRequest& request) const;
-    void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request) const;
-    void UpdateApplicationVersionAsyncHelper(const Model::UpdateApplicationVersionRequest& request) const;
-    void UpdateConfigurationTemplateAsyncHelper(const Model::UpdateConfigurationTemplateRequest& request) const;
-    void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request) const;
-    void ValidateConfigurationSettingsAsyncHelper(const Model::ValidateConfigurationSettingsRequest& request) const;
+    void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CheckDNSAvailabilityAsyncHelper(const Model::CheckDNSAvailabilityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateApplicationVersionAsyncHelper(const Model::CreateApplicationVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateConfigurationTemplateAsyncHelper(const Model::CreateConfigurationTemplateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateStorageLocationAsyncHelper(const Model::CreateStorageLocationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteApplicationVersionAsyncHelper(const Model::DeleteApplicationVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteConfigurationTemplateAsyncHelper(const Model::DeleteConfigurationTemplateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteEnvironmentConfigurationAsyncHelper(const Model::DeleteEnvironmentConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeApplicationVersionsAsyncHelper(const Model::DescribeApplicationVersionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeApplicationsAsyncHelper(const Model::DescribeApplicationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeConfigurationOptionsAsyncHelper(const Model::DescribeConfigurationOptionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeConfigurationSettingsAsyncHelper(const Model::DescribeConfigurationSettingsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEnvironmentResourcesAsyncHelper(const Model::DescribeEnvironmentResourcesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEnvironmentsAsyncHelper(const Model::DescribeEnvironmentsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListAvailableSolutionStacksAsyncHelper(const Model::ListAvailableSolutionStacksRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RebuildEnvironmentAsyncHelper(const Model::RebuildEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RequestEnvironmentInfoAsyncHelper(const Model::RequestEnvironmentInfoRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RestartAppServerAsyncHelper(const Model::RestartAppServerRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RetrieveEnvironmentInfoAsyncHelper(const Model::RetrieveEnvironmentInfoRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SwapEnvironmentCNAMEsAsyncHelper(const Model::SwapEnvironmentCNAMEsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void TerminateEnvironmentAsyncHelper(const Model::TerminateEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateApplicationVersionAsyncHelper(const Model::UpdateApplicationVersionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateConfigurationTemplateAsyncHelper(const Model::UpdateConfigurationTemplateRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ValidateConfigurationSettingsAsyncHelper(const Model::ValidateConfigurationSettingsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

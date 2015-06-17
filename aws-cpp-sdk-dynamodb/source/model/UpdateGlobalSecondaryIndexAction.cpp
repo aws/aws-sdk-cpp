@@ -21,20 +21,34 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction()
+UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction() : 
+    m_indexNameHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false)
 {
 }
 
-UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(const JsonValue& jsonValue)
+UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(const JsonValue& jsonValue) : 
+    m_indexNameHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 UpdateGlobalSecondaryIndexAction& UpdateGlobalSecondaryIndexAction::operator =(const JsonValue& jsonValue)
 {
-  m_indexName = jsonValue.GetString("IndexName");
+  if(jsonValue.ValueExists("IndexName"))
+  {
+    m_indexName = jsonValue.GetString("IndexName");
 
-  m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
+    m_indexNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisionedThroughput"))
+  {
+    m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
+
+    m_provisionedThroughputHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,9 +57,17 @@ JsonValue UpdateGlobalSecondaryIndexAction::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("IndexName", m_indexName);
+  if(m_indexNameHasBeenSet)
+  {
+   payload.WithString("IndexName", m_indexName);
 
-  payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+  }
+
+  if(m_provisionedThroughputHasBeenSet)
+  {
+   payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  }
 
   return std::move(payload);
 }

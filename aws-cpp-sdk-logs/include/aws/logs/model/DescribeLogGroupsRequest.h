@@ -35,18 +35,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline const Aws::String& GetLogGroupNamePrefix() const{ return m_logGroupNamePrefix; }
-    
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline void SetLogGroupNamePrefix(const Aws::String& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
 
-    
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline void SetLogGroupNamePrefix(const char* value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix.assign(value); }
 
-    
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline DescribeLogGroupsRequest&  WithLogGroupNamePrefix(const Aws::String& value) { SetLogGroupNamePrefix(value); return *this;}
 
-    
+    /*
+     <p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>
+    */
     inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const char* value) { SetLogGroupNamePrefix(value); return *this;}
 
     /*

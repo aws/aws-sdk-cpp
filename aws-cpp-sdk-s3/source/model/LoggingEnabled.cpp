@@ -50,13 +50,14 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
       m_targetBucket = StringUtils::Trim(targetBucketNode.GetText().c_str());
       m_targetBucketHasBeenSet = true;
     }
-    XmlNode grantNode = resultNode.FirstChild("Grant");
+    XmlNode grantNodeParent = resultNode.FirstChild("Grant");
+    XmlNode grantNode = grantNodeParent.FirstChild("member");
     if(!grantNode.IsNull())
     {
       while(!grantNode.IsNull())
       {
         m_targetGrants.push_back(grantNode);
-        grantNode = grantNode.NextNode("Grant");
+        grantNode = grantNode.NextNode("member");
       }
 
       m_targetGrantsHasBeenSet = true;

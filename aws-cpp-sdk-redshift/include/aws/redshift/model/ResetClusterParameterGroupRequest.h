@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the cluster parameter group to be reset. </p>
     */
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
+    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of the cluster parameter group to be reset. </p>
     */
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupName.assign(value); }
+    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
 
     /*
      <p> The name of the cluster parameter group to be reset. </p>
@@ -95,6 +95,7 @@ namespace Model
 
   private:
     Aws::String m_parameterGroupName;
+    bool m_parameterGroupNameHasBeenSet;
     bool m_resetAllParameters;
     bool m_resetAllParametersHasBeenSet;
     Aws::Vector<Parameter> m_parameters;

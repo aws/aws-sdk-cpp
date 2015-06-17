@@ -23,7 +23,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 PutBucketTaggingRequest::PutBucketTaggingRequest() : 
-    m_contentMD5HasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_contentMD5HasBeenSet(false),
+    m_taggingHasBeenSet(false)
 {
 }
 

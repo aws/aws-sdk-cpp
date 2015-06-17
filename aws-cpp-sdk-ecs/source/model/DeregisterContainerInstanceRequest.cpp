@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 DeregisterContainerInstanceRequest::DeregisterContainerInstanceRequest() : 
     m_clusterHasBeenSet(false),
+    m_containerInstanceHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false)
 {
@@ -38,7 +39,11 @@ Aws::String DeregisterContainerInstanceRequest::SerializePayload() const
 
   }
 
-  payload.WithString("containerInstance", m_containerInstance);
+  if(m_containerInstanceHasBeenSet)
+  {
+   payload.WithString("containerInstance", m_containerInstance);
+
+  }
 
   if(m_forceHasBeenSet)
   {

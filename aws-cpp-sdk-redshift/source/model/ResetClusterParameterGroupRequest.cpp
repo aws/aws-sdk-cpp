@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 ResetClusterParameterGroupRequest::ResetClusterParameterGroupRequest() : 
+    m_parameterGroupNameHasBeenSet(false),
     m_resetAllParameters(false),
     m_resetAllParametersHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String ResetClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ResetClusterParameterGroup&";
-  ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  if(m_parameterGroupNameHasBeenSet)
+  {
+    ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
+  }
   if(m_resetAllParametersHasBeenSet)
   {
     ss << "ResetAllParameters=" << m_resetAllParameters << "&";

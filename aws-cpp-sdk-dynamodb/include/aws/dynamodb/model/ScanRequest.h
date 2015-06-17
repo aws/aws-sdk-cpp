@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     */
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
+    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /*
      <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     */
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
+    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /*
      <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
@@ -347,6 +347,7 @@ namespace Model
 
   private:
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet;
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;

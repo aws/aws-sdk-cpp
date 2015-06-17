@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>The ID of the object.</p>
     */
-    inline void SetObjectId(const Aws::String& value) { m_objectId = value; }
+    inline void SetObjectId(const Aws::String& value) { m_objectIdHasBeenSet = true; m_objectId = value; }
 
     /*
      <p>The ID of the object.</p>
     */
-    inline void SetObjectId(const char* value) { m_objectId.assign(value); }
+    inline void SetObjectId(const char* value) { m_objectIdHasBeenSet = true; m_objectId.assign(value); }
 
     /*
      <p>The ID of the object.</p>
@@ -91,12 +91,12 @@ namespace Model
     /*
      <p>The expression to evaluate.</p>
     */
-    inline void SetExpression(const Aws::String& value) { m_expression = value; }
+    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /*
      <p>The expression to evaluate.</p>
     */
-    inline void SetExpression(const char* value) { m_expression.assign(value); }
+    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /*
      <p>The expression to evaluate.</p>
@@ -110,8 +110,11 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::String m_objectId;
+    bool m_objectIdHasBeenSet;
     Aws::String m_expression;
+    bool m_expressionHasBeenSet;
   };
 
 } // namespace Model

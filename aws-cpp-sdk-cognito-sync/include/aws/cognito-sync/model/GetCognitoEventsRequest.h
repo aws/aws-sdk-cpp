@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The Cognito Identity Pool ID for the request</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>The Cognito Identity Pool ID for the request</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>The Cognito Identity Pool ID for the request</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
   };
 
 } // namespace Model

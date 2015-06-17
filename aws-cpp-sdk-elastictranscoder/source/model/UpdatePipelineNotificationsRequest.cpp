@@ -21,7 +21,9 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePipelineNotificationsRequest::UpdatePipelineNotificationsRequest()
+UpdatePipelineNotificationsRequest::UpdatePipelineNotificationsRequest() : 
+    m_idHasBeenSet(false),
+    m_notificationsHasBeenSet(false)
 {
 }
 
@@ -29,7 +31,11 @@ Aws::String UpdatePipelineNotificationsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithObject("Notifications", m_notifications.Jsonize());
+  if(m_notificationsHasBeenSet)
+  {
+   payload.WithObject("Notifications", m_notifications.Jsonize());
+
+  }
 
   return payload.WriteReadable();
 }

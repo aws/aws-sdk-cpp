@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the user to associate the policy with.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The name of the user to associate the policy with.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The name of the user to associate the policy with.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the policy document.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name of the policy document.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name of the policy document.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The policy document.</p>
     */
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
+    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /*
      <p>The policy document.</p>
     */
-    inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
+    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /*
      <p>The policy document.</p>
@@ -107,8 +107,11 @@ namespace Model
 
   private:
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
     Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet;
   };
 
 } // namespace Model

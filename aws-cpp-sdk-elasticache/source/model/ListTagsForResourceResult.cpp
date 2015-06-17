@@ -41,11 +41,12 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const AmazonWeb
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     while(!tagNode.IsNull())
     {
       m_tagList.push_back(tagNode);
-      tagNode = tagNode.NextNode("Tag");
+      tagNode = tagNode.NextNode("member");
     }
 
   }

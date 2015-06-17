@@ -43,11 +43,12 @@ ListAttachedRolePoliciesResult& ListAttachedRolePoliciesResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode attachedPoliciesNode = resultNode.FirstChild("AttachedPolicies");
+    XmlNode attachedPoliciesNodeParent = resultNode.FirstChild("AttachedPolicies");
+    XmlNode attachedPoliciesNode = attachedPoliciesNodeParent.FirstChild("member");
     while(!attachedPoliciesNode.IsNull())
     {
       m_attachedPolicies.push_back(attachedPoliciesNode);
-      attachedPoliciesNode = attachedPoliciesNode.NextNode("AttachedPolicies");
+      attachedPoliciesNode = attachedPoliciesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

@@ -21,7 +21,8 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateStreamingDistribution2014_11_06Request::CreateStreamingDistribution2014_11_06Request()
+CreateStreamingDistribution2014_11_06Request::CreateStreamingDistribution2014_11_06Request() : 
+    m_streamingDistributionConfigHasBeenSet(false)
 {
 }
 

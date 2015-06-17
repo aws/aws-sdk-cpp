@@ -49,7 +49,7 @@ namespace Model
     /*
      The number of custom error responses for this distribution.
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      The number of custom error responses for this distribution.
@@ -77,6 +77,7 @@ namespace Model
 
   private:
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<CustomErrorResponse> m_items;
     bool m_itemsHasBeenSet;
   };

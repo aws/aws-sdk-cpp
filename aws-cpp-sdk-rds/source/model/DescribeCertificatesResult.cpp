@@ -41,11 +41,12 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode certificateNode = resultNode.FirstChild("Certificate");
+    XmlNode certificateNodeParent = resultNode.FirstChild("Certificate");
+    XmlNode certificateNode = certificateNodeParent.FirstChild("member");
     while(!certificateNode.IsNull())
     {
       m_certificates.push_back(certificateNode);
-      certificateNode = certificateNode.NextNode("Certificate");
+      certificateNode = certificateNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

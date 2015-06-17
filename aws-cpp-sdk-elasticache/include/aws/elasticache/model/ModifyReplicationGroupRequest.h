@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The identifier of the replication group to modify.</p>
     */
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /*
      <p>The identifier of the replication group to modify.</p>
     */
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupId.assign(value); }
+    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
 
     /*
      <p>The identifier of the replication group to modify.</p>
@@ -381,6 +381,7 @@ namespace Model
 
   private:
     Aws::String m_replicationGroupId;
+    bool m_replicationGroupIdHasBeenSet;
     Aws::String m_replicationGroupDescription;
     bool m_replicationGroupDescriptionHasBeenSet;
     Aws::String m_primaryClusterId;

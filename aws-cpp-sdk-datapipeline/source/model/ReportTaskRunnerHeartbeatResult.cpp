@@ -38,7 +38,11 @@ ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const AmazonWeb
 ReportTaskRunnerHeartbeatResult& ReportTaskRunnerHeartbeatResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  m_terminate = jsonValue.GetBool("terminate");
+  if(jsonValue.ValueExists("terminate"))
+  {
+    m_terminate = jsonValue.GetBool("terminate");
+
+  }
 
 
 

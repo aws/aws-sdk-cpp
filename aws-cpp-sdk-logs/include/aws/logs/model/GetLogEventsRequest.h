@@ -35,32 +35,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of the log group to query.</p>
+    */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    /*
+     <p>The name of the log group to query.</p>
+    */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    /*
+     <p>The name of the log group to query.</p>
+    */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of the log group to query.</p>
+    */
     inline GetLogEventsRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log group to query.</p>
+    */
     inline GetLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log stream to query.</p>
+    */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
-    
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamName = value; }
+    /*
+     <p>The name of the log stream to query.</p>
+    */
+    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    
-    inline void SetLogStreamName(const char* value) { m_logStreamName.assign(value); }
+    /*
+     <p>The name of the log stream to query.</p>
+    */
+    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
-    
+    /*
+     <p>The name of the log stream to query.</p>
+    */
     inline GetLogEventsRequest&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log stream to query.</p>
+    */
     inline GetLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
     
@@ -118,22 +138,24 @@ namespace Model
     inline GetLogEventsRequest&  WithLimit(long value) { SetLimit(value); return *this;}
 
     /*
-     If set to true, the earliest log events would be returned first. The default is false (the latest log events are returned first).
+     <p>If set to true, the earliest log events would be returned first. The default is false (the latest log events are returned first).</p>
     */
     inline bool GetStartFromHead() const{ return m_startFromHead; }
     /*
-     If set to true, the earliest log events would be returned first. The default is false (the latest log events are returned first).
+     <p>If set to true, the earliest log events would be returned first. The default is false (the latest log events are returned first).</p>
     */
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
 
     /*
-     If set to true, the earliest log events would be returned first. The default is false (the latest log events are returned first).
+     <p>If set to true, the earliest log events would be returned first. The default is false (the latest log events are returned first).</p>
     */
     inline GetLogEventsRequest&  WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::String m_logStreamName;
+    bool m_logStreamNameHasBeenSet;
     long long m_startTime;
     bool m_startTimeHasBeenSet;
     long long m_endTime;

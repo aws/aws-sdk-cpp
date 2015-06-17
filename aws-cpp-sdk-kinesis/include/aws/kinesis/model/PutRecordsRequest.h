@@ -45,7 +45,7 @@ namespace Model
     /*
      <p>The records associated with the request.</p>
     */
-    inline void SetRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { m_records = value; }
+    inline void SetRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { m_recordsHasBeenSet = true; m_records = value; }
 
     /*
      <p>The records associated with the request.</p>
@@ -55,7 +55,7 @@ namespace Model
     /*
      <p>The records associated with the request.</p>
     */
-    inline PutRecordsRequest& AddRecords(const PutRecordsRequestEntry& value) { m_records.push_back(value); return *this; }
+    inline PutRecordsRequest& AddRecords(const PutRecordsRequestEntry& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
 
     /*
      <p>The stream name associated with the request.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The stream name associated with the request.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The stream name associated with the request.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The stream name associated with the request.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::Vector<PutRecordsRequestEntry> m_records;
+    bool m_recordsHasBeenSet;
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
   };
 
 } // namespace Model

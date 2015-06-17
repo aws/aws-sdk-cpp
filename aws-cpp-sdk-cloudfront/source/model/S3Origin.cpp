@@ -23,11 +23,15 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-S3Origin::S3Origin()
+S3Origin::S3Origin() : 
+    m_domainNameHasBeenSet(false),
+    m_originAccessIdentityHasBeenSet(false)
 {
 }
 
-S3Origin::S3Origin(const XmlNode& xmlNode)
+S3Origin::S3Origin(const XmlNode& xmlNode) : 
+    m_domainNameHasBeenSet(false),
+    m_originAccessIdentityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ S3Origin& S3Origin::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    if(!domainNameNode.IsNull())
+    {
+      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainNameHasBeenSet = true;
+    }
     XmlNode originAccessIdentityNode = resultNode.FirstChild("OriginAccessIdentity");
-    m_originAccessIdentity = StringUtils::Trim(originAccessIdentityNode.GetText().c_str());
+    if(!originAccessIdentityNode.IsNull())
+    {
+      m_originAccessIdentity = StringUtils::Trim(originAccessIdentityNode.GetText().c_str());
+      m_originAccessIdentityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,8 +62,16 @@ S3Origin& S3Origin::operator =(const XmlNode& xmlNode)
 void S3Origin::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-  domainNameNode.SetText(m_domainName);
-  XmlNode originAccessIdentityNode = parentNode.CreateChildElement("OriginAccessIdentity");
-  originAccessIdentityNode.SetText(m_originAccessIdentity);
+  if(m_domainNameHasBeenSet)
+  {
+   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+   domainNameNode.SetText(m_domainName);
+  }
+
+  if(m_originAccessIdentityHasBeenSet)
+  {
+   XmlNode originAccessIdentityNode = parentNode.CreateChildElement("OriginAccessIdentity");
+   originAccessIdentityNode.SetText(m_originAccessIdentity);
+  }
+
 }

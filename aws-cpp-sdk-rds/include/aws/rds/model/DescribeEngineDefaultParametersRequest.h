@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the DB parameter group family. </p>
     */
-    inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamily = value; }
+    inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /*
      <p> The name of the DB parameter group family. </p>
     */
-    inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamily.assign(value); }
+    inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /*
      <p> The name of the DB parameter group family. </p>
@@ -119,6 +119,7 @@ namespace Model
 
   private:
     Aws::String m_dBParameterGroupFamily;
+    bool m_dBParameterGroupFamilyHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
     long m_maxRecords;

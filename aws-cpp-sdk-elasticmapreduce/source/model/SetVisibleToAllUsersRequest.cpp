@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetVisibleToAllUsersRequest::SetVisibleToAllUsersRequest() : 
-    m_visibleToAllUsers(false)
+    m_jobFlowIdsHasBeenSet(false),
+    m_visibleToAllUsers(false),
+    m_visibleToAllUsersHasBeenSet(false)
 {
 }
 
@@ -30,14 +32,22 @@ Aws::String SetVisibleToAllUsersRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
-  for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
+  if(m_jobFlowIdsHasBeenSet)
   {
-    jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);
-  }
-  payload.WithArray("JobFlowIds", std::move(jobFlowIdsJsonList));
+   Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
+   for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
+   {
+     jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);
+   }
+   payload.WithArray("JobFlowIds", std::move(jobFlowIdsJsonList));
 
-  payload.WithBool("VisibleToAllUsers", m_visibleToAllUsers);
+  }
+
+  if(m_visibleToAllUsersHasBeenSet)
+  {
+   payload.WithBool("VisibleToAllUsers", m_visibleToAllUsers);
+
+  }
 
   return payload.WriteReadable();
 }

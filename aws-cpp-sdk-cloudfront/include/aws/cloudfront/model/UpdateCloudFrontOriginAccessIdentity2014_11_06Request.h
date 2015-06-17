@@ -44,7 +44,7 @@ namespace Model
     /*
      The identity's configuration information.
     */
-    inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfig = value; }
+    inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /*
      The identity's configuration information.
@@ -58,12 +58,12 @@ namespace Model
     /*
      The identity's id.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identity's id.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The identity's id.
@@ -101,7 +101,9 @@ namespace Model
 
   private:
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
+    bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

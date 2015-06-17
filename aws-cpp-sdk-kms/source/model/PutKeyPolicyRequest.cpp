@@ -21,7 +21,10 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutKeyPolicyRequest::PutKeyPolicyRequest()
+PutKeyPolicyRequest::PutKeyPolicyRequest() : 
+    m_keyIdHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -29,11 +32,23 @@ Aws::String PutKeyPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("KeyId", m_keyId);
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
 
-  payload.WithString("PolicyName", m_policyName);
+  }
 
-  payload.WithString("Policy", m_policy);
+  if(m_policyNameHasBeenSet)
+  {
+   payload.WithString("PolicyName", m_policyName);
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("Policy", m_policy);
+
+  }
 
   return payload.WriteReadable();
 }

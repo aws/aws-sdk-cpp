@@ -20,6 +20,7 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 DeleteApplicationRequest::DeleteApplicationRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_terminateEnvByForce(false),
     m_terminateEnvByForceHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String DeleteApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteApplication&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
   if(m_terminateEnvByForceHasBeenSet)
   {
     ss << "TerminateEnvByForce=" << m_terminateEnvByForce << "&";

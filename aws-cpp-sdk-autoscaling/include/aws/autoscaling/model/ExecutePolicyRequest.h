@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name or ARN of the policy.</p>
     */
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /*
      <p>The name or ARN of the policy.</p>
     */
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /*
      <p>The name or ARN of the policy.</p>
@@ -115,6 +115,7 @@ namespace Model
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet;
     bool m_honorCooldown;
     bool m_honorCooldownHasBeenSet;
     double m_metricValue;

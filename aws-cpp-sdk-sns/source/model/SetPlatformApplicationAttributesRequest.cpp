@@ -19,7 +19,9 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-SetPlatformApplicationAttributesRequest::SetPlatformApplicationAttributesRequest()
+SetPlatformApplicationAttributesRequest::SetPlatformApplicationAttributesRequest() : 
+    m_platformApplicationArnHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
@@ -27,15 +29,21 @@ Aws::String SetPlatformApplicationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SetPlatformApplicationAttributes&";
-  ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
-  unsigned attributesCount = 1;
-  for(auto& item : m_attributes)
+  if(m_platformApplicationArnHasBeenSet)
   {
-    ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapKey.locationName}="
-        << StringUtils::URLEncode(item.first.c_str()) << "&";
-    ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapValue.locationName}="
-        << StringUtils::URLEncode(item.second.c_str()) << "&";
-    attributesCount++;
+    ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
+  }
+  if(m_attributesHasBeenSet)
+  {
+    unsigned attributesCount = 1;
+    for(auto& item : m_attributes)
+    {
+      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapKey.locationName}="
+          << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapValue.locationName}="
+          << StringUtils::URLEncode(item.second.c_str()) << "&";
+      attributesCount++;
+    }
   }
   ss << "Version=2010-03-31";
   return ss.str();

@@ -20,7 +20,8 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 DeleteScheduledActionRequest::DeleteScheduledActionRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false)
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_scheduledActionNameHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,10 @@ Aws::String DeleteScheduledActionRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
-  ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
+  if(m_scheduledActionNameHasBeenSet)
+  {
+    ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateContainerAgentRequest::UpdateContainerAgentRequest() : 
-    m_clusterHasBeenSet(false)
+    m_clusterHasBeenSet(false),
+    m_containerInstanceHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,11 @@ Aws::String UpdateContainerAgentRequest::SerializePayload() const
 
   }
 
-  payload.WithString("containerInstance", m_containerInstance);
+  if(m_containerInstanceHasBeenSet)
+  {
+   payload.WithString("containerInstance", m_containerInstance);
+
+  }
 
   return payload.WriteReadable();
 }

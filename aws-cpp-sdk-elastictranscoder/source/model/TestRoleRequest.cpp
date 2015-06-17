@@ -21,7 +21,11 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestRoleRequest::TestRoleRequest()
+TestRoleRequest::TestRoleRequest() : 
+    m_roleHasBeenSet(false),
+    m_inputBucketHasBeenSet(false),
+    m_outputBucketHasBeenSet(false),
+    m_topicsHasBeenSet(false)
 {
 }
 
@@ -29,18 +33,34 @@ Aws::String TestRoleRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Role", m_role);
-
-  payload.WithString("InputBucket", m_inputBucket);
-
-  payload.WithString("OutputBucket", m_outputBucket);
-
-  Array<JsonValue> topicsJsonList(m_topics.size());
-  for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+  if(m_roleHasBeenSet)
   {
-    topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
+   payload.WithString("Role", m_role);
+
   }
-  payload.WithArray("Topics", std::move(topicsJsonList));
+
+  if(m_inputBucketHasBeenSet)
+  {
+   payload.WithString("InputBucket", m_inputBucket);
+
+  }
+
+  if(m_outputBucketHasBeenSet)
+  {
+   payload.WithString("OutputBucket", m_outputBucket);
+
+  }
+
+  if(m_topicsHasBeenSet)
+  {
+   Array<JsonValue> topicsJsonList(m_topics.size());
+   for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+   {
+     topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
+   }
+   payload.WithArray("Topics", std::move(topicsJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

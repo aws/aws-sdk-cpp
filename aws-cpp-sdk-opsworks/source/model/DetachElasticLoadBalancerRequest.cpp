@@ -21,7 +21,9 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachElasticLoadBalancerRequest::DetachElasticLoadBalancerRequest()
+DetachElasticLoadBalancerRequest::DetachElasticLoadBalancerRequest() : 
+    m_elasticLoadBalancerNameHasBeenSet(false),
+    m_layerIdHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String DetachElasticLoadBalancerRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ElasticLoadBalancerName", m_elasticLoadBalancerName);
+  if(m_elasticLoadBalancerNameHasBeenSet)
+  {
+   payload.WithString("ElasticLoadBalancerName", m_elasticLoadBalancerName);
 
-  payload.WithString("LayerId", m_layerId);
+  }
+
+  if(m_layerIdHasBeenSet)
+  {
+   payload.WithString("LayerId", m_layerId);
+
+  }
 
   return payload.WriteReadable();
 }

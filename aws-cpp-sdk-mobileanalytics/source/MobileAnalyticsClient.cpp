@@ -109,13 +109,13 @@ PutEventsOutcomeCallable MobileAnalyticsClient::PutEventsCallable(const PutEvent
   return std::async(std::launch::async, &MobileAnalyticsClient::PutEvents, this, request);
 }
 
-void MobileAnalyticsClient::PutEventsAsync(const PutEventsRequest& request) const
+void MobileAnalyticsClient::PutEventsAsync(const PutEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&MobileAnalyticsClient::PutEventsAsyncHelper, this, request);
+  m_executor->Submit(&MobileAnalyticsClient::PutEventsAsyncHelper, this, request, context);
 }
 
-void MobileAnalyticsClient::PutEventsAsyncHelper(const PutEventsRequest& request) const
+void MobileAnalyticsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutEventsOutcomeReceived(this, request, PutEvents(request));
+  m_onPutEventsOutcomeReceived(this, request, PutEvents(request), context);
 }
 

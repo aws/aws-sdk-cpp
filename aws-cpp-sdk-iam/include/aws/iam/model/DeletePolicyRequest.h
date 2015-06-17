@@ -36,10 +36,10 @@ namespace Model
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
     
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
+    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
     inline DeletePolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
@@ -49,6 +49,7 @@ namespace Model
 
   private:
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet;
   };
 
 } // namespace Model

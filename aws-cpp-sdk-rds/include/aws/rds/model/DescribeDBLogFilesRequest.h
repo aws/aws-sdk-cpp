@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifier.assign(value); }
+    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /*
      <p> The customer-assigned name of the DB instance that contains the log files you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -171,6 +171,7 @@ namespace Model
 
   private:
     Aws::String m_dBInstanceIdentifier;
+    bool m_dBInstanceIdentifierHasBeenSet;
     Aws::String m_filenameContains;
     bool m_filenameContainsHasBeenSet;
     long long m_fileLastWritten;

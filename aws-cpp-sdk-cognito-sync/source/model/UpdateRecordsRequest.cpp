@@ -23,8 +23,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateRecordsRequest::UpdateRecordsRequest() : 
+    m_identityPoolIdHasBeenSet(false),
+    m_identityIdHasBeenSet(false),
+    m_datasetNameHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_recordPatchesHasBeenSet(false),
+    m_syncSessionTokenHasBeenSet(false),
     m_clientContextHasBeenSet(false)
 {
 }
@@ -50,7 +54,11 @@ Aws::String UpdateRecordsRequest::SerializePayload() const
 
   }
 
-  payload.WithString("SyncSessionToken", m_syncSessionToken);
+  if(m_syncSessionTokenHasBeenSet)
+  {
+   payload.WithString("SyncSessionToken", m_syncSessionToken);
+
+  }
 
   return payload.WriteReadable();
 }

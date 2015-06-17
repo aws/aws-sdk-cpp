@@ -20,6 +20,8 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 SetSubscriptionAttributesRequest::SetSubscriptionAttributesRequest() : 
+    m_subscriptionArnHasBeenSet(false),
+    m_attributeNameHasBeenSet(false),
     m_attributeValueHasBeenSet(false)
 {
 }
@@ -28,8 +30,14 @@ Aws::String SetSubscriptionAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SetSubscriptionAttributes&";
-  ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
-  ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+  if(m_subscriptionArnHasBeenSet)
+  {
+    ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
+  }
+  if(m_attributeNameHasBeenSet)
+  {
+    ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+  }
   if(m_attributeValueHasBeenSet)
   {
     ss << "AttributeValue=" << StringUtils::URLEncode(m_attributeValue.c_str()) << "&";

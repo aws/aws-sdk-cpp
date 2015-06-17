@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
     */
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
     */
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
@@ -121,6 +121,7 @@ namespace Model
 
   private:
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
     Aws::String m_marker;

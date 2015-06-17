@@ -20,6 +20,7 @@ using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
 DescribeConfigurationSettingsRequest::DescribeConfigurationSettingsRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String DescribeConfigurationSettingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeConfigurationSettings&";
-  ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  if(m_applicationNameHasBeenSet)
+  {
+    ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  }
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";

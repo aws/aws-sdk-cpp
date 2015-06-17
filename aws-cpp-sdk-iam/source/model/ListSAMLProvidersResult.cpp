@@ -41,11 +41,12 @@ ListSAMLProvidersResult& ListSAMLProvidersResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode sAMLProviderListNode = resultNode.FirstChild("SAMLProviderList");
+    XmlNode sAMLProviderListNodeParent = resultNode.FirstChild("SAMLProviderList");
+    XmlNode sAMLProviderListNode = sAMLProviderListNodeParent.FirstChild("member");
     while(!sAMLProviderListNode.IsNull())
     {
       m_sAMLProviderList.push_back(sAMLProviderListNode);
-      sAMLProviderListNode = sAMLProviderListNode.NextNode("SAMLProviderList");
+      sAMLProviderListNode = sAMLProviderListNode.NextNode("member");
     }
 
   }

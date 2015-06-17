@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
-    inline void SetPath(const Aws::String& value) { m_path = value; }
+    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
-    inline void SetPath(const char* value) { m_path.assign(value); }
+    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /*
      <p>The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The friendly name identifying the user.</p>
     */
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
+    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /*
      <p>The friendly name identifying the user.</p>
     */
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
+    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /*
      <p>The friendly name identifying the user.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
-    inline void SetUserId(const Aws::String& value) { m_userId = value; }
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
     */
-    inline void SetUserId(const char* value) { m_userId.assign(value); }
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /*
      <p>The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -122,12 +122,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
@@ -146,7 +146,7 @@ namespace Model
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
     */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /*
      <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
@@ -169,10 +169,15 @@ namespace Model
 
   private:
     Aws::String m_path;
+    bool m_pathHasBeenSet;
     Aws::String m_userName;
+    bool m_userNameHasBeenSet;
     Aws::String m_userId;
+    bool m_userIdHasBeenSet;
     Aws::String m_arn;
+    bool m_arnHasBeenSet;
     double m_createDate;
+    bool m_createDateHasBeenSet;
     double m_passwordLastUsed;
     bool m_passwordLastUsedHasBeenSet;
   };

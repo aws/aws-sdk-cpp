@@ -42,12 +42,12 @@ namespace Model
     /*
      <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
      <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifier.assign(value); }
+    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /*
      <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p> The identifier of the DB instance that will act as the source for the Read Replica. Each DB instance can have up to five Read Replicas. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the Read Replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the Read Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
     */
-    inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifier = value; }
+    inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
     /*
      <p> The identifier of the DB instance that will act as the source for the Read Replica. Each DB instance can have up to five Read Replicas. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the Read Replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the Read Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
     */
-    inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifier.assign(value); }
+    inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
 
     /*
      <p> The identifier of the DB instance that will act as the source for the Read Replica. Each DB instance can have up to five Read Replicas. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the Read Replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the Read Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
@@ -272,7 +272,9 @@ namespace Model
 
   private:
     Aws::String m_dBInstanceIdentifier;
+    bool m_dBInstanceIdentifierHasBeenSet;
     Aws::String m_sourceDBInstanceIdentifier;
+    bool m_sourceDBInstanceIdentifierHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
     Aws::String m_availabilityZone;

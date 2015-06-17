@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 ModifyCacheClusterRequest::ModifyCacheClusterRequest() : 
+    m_cacheClusterIdHasBeenSet(false),
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_cacheNodeIdsToRemoveHasBeenSet(false),
@@ -46,7 +47,10 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyCacheCluster&";
-  ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  if(m_cacheClusterIdHasBeenSet)
+  {
+    ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  }
   if(m_numCacheNodesHasBeenSet)
   {
     ss << "NumCacheNodes=" << m_numCacheNodes << "&";

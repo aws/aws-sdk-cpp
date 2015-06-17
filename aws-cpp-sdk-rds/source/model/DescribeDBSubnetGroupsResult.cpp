@@ -43,11 +43,12 @@ DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const Ama
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBSubnetGroupNode = resultNode.FirstChild("DBSubnetGroup");
+    XmlNode dBSubnetGroupNodeParent = resultNode.FirstChild("DBSubnetGroup");
+    XmlNode dBSubnetGroupNode = dBSubnetGroupNodeParent.FirstChild("member");
     while(!dBSubnetGroupNode.IsNull())
     {
       m_dBSubnetGroups.push_back(dBSubnetGroupNode);
-      dBSubnetGroupNode = dBSubnetGroupNode.NextNode("DBSubnetGroup");
+      dBSubnetGroupNode = dBSubnetGroupNode.NextNode("member");
     }
 
   }

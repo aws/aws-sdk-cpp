@@ -38,12 +38,20 @@ ListStreamsResult::ListStreamsResult(const AmazonWebServiceResult<JsonValue>& re
 ListStreamsResult& ListStreamsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  Array<JsonValue> streamNamesJsonList = jsonValue.GetArray("StreamNames");
-  for(unsigned streamNamesIndex = 0; streamNamesIndex < streamNamesJsonList.GetLength(); ++streamNamesIndex)
+  if(jsonValue.ValueExists("StreamNames"))
   {
-    m_streamNames.push_back(streamNamesJsonList[streamNamesIndex].AsString());
+    Array<JsonValue> streamNamesJsonList = jsonValue.GetArray("StreamNames");
+    for(unsigned streamNamesIndex = 0; streamNamesIndex < streamNamesJsonList.GetLength(); ++streamNamesIndex)
+    {
+      m_streamNames.push_back(streamNamesJsonList[streamNamesIndex].AsString());
+    }
   }
-  m_hasMoreStreams = jsonValue.GetBool("HasMoreStreams");
+
+  if(jsonValue.ValueExists("HasMoreStreams"))
+  {
+    m_hasMoreStreams = jsonValue.GetBool("HasMoreStreams");
+
+  }
 
 
 

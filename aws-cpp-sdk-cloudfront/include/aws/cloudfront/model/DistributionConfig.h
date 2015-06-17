@@ -57,12 +57,12 @@ namespace Model
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of the DistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
     */
-    inline void SetCallerReference(const Aws::String& value) { m_callerReference = value; }
+    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of the DistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
     */
-    inline void SetCallerReference(const char* value) { m_callerReference.assign(value); }
+    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /*
      A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of the DistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.
@@ -119,7 +119,7 @@ namespace Model
     /*
      A complex type that contains information about origins for this distribution.
     */
-    inline void SetOrigins(const Origins& value) { m_origins = value; }
+    inline void SetOrigins(const Origins& value) { m_originsHasBeenSet = true; m_origins = value; }
 
     /*
      A complex type that contains information about origins for this distribution.
@@ -133,7 +133,7 @@ namespace Model
     /*
      A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
     */
-    inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehavior = value; }
+    inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
 
     /*
      A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
@@ -175,12 +175,12 @@ namespace Model
     /*
      Any comments you want to include about the distribution.
     */
-    inline void SetComment(const Aws::String& value) { m_comment = value; }
+    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /*
      Any comments you want to include about the distribution.
     */
-    inline void SetComment(const char* value) { m_comment.assign(value); }
+    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /*
      Any comments you want to include about the distribution.
@@ -227,7 +227,7 @@ namespace Model
     /*
      Whether the distribution is enabled to accept end user requests for content.
     */
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /*
      Whether the distribution is enabled to accept end user requests for content.
@@ -252,22 +252,27 @@ namespace Model
 
   private:
     Aws::String m_callerReference;
+    bool m_callerReferenceHasBeenSet;
     Aliases m_aliases;
     bool m_aliasesHasBeenSet;
     Aws::String m_defaultRootObject;
     bool m_defaultRootObjectHasBeenSet;
     Origins m_origins;
+    bool m_originsHasBeenSet;
     DefaultCacheBehavior m_defaultCacheBehavior;
+    bool m_defaultCacheBehaviorHasBeenSet;
     CacheBehaviors m_cacheBehaviors;
     bool m_cacheBehaviorsHasBeenSet;
     CustomErrorResponses m_customErrorResponses;
     bool m_customErrorResponsesHasBeenSet;
     Aws::String m_comment;
+    bool m_commentHasBeenSet;
     LoggingConfig m_logging;
     bool m_loggingHasBeenSet;
     PriceClass m_priceClass;
     bool m_priceClassHasBeenSet;
     bool m_enabled;
+    bool m_enabledHasBeenSet;
     ViewerCertificate m_viewerCertificate;
     bool m_viewerCertificateHasBeenSet;
     Restrictions m_restrictions;

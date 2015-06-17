@@ -41,11 +41,12 @@ ApplySecurityGroupsToLoadBalancerResult& ApplySecurityGroupsToLoadBalancerResult
 
   if(!resultNode.IsNull())
   {
-    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
     while(!securityGroupsNode.IsNull())
     {
       m_securityGroups.push_back(StringUtils::Trim(securityGroupsNode.GetText().c_str()));
-      securityGroupsNode = securityGroupsNode.NextNode("SecurityGroups");
+      securityGroupsNode = securityGroupsNode.NextNode("member");
     }
 
   }

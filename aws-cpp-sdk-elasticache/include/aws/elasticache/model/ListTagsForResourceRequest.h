@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
-    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
     */
-    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /*
      <p>The name of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 UpdateGroupRequest::UpdateGroupRequest() : 
+    m_groupNameHasBeenSet(false),
     m_newPathHasBeenSet(false),
     m_newGroupNameHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String UpdateGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateGroup&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
   if(m_newPathHasBeenSet)
   {
     ss << "NewPath=" << StringUtils::URLEncode(m_newPath.c_str()) << "&";

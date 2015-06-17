@@ -45,7 +45,7 @@ namespace Model
     /*
      <p>Ciphertext of the data to re-encrypt.</p>
     */
-    inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
+    inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
 
     /*
      <p>Ciphertext of the data to re-encrypt.</p>
@@ -83,12 +83,12 @@ namespace Model
     /*
      <p>A unique identifier for the customer master key used to re-encrypt the data. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul> </p>
     */
-    inline void SetDestinationKeyId(const Aws::String& value) { m_destinationKeyId = value; }
+    inline void SetDestinationKeyId(const Aws::String& value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId = value; }
 
     /*
      <p>A unique identifier for the customer master key used to re-encrypt the data. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul> </p>
     */
-    inline void SetDestinationKeyId(const char* value) { m_destinationKeyId.assign(value); }
+    inline void SetDestinationKeyId(const char* value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId.assign(value); }
 
     /*
      <p>A unique identifier for the customer master key used to re-encrypt the data. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul> </p>
@@ -150,9 +150,11 @@ namespace Model
 
   private:
     Aws::Utils::ByteBuffer m_ciphertextBlob;
+    bool m_ciphertextBlobHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_sourceEncryptionContext;
     bool m_sourceEncryptionContextHasBeenSet;
     Aws::String m_destinationKeyId;
+    bool m_destinationKeyIdHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_destinationEncryptionContext;
     bool m_destinationEncryptionContextHasBeenSet;
     Aws::Vector<Aws::String> m_grantTokens;

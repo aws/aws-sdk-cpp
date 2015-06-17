@@ -97,7 +97,7 @@ protected:
         //to test proxy functionality, uncomment the next two lines.
         m_client = Aws::MakeShared<LambdaClient>(ALLOCATION_TAG, config);
         m_kinesis_client = Aws::MakeShared<KinesisClient>(ALLOCATION_TAG, config);
-	DeleteKinesisStream();
+	    DeleteKinesisStream();
         CreateKinesisStream();
 
         // delete all functions, just in case
@@ -204,6 +204,7 @@ protected:
 
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
+        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
 	ASSERT_TRUE(createFunctionOutcome.IsSuccess());
@@ -354,6 +355,7 @@ TEST_F(FunctionTest, TestInvokeSync)
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(SIMPLE_FUNCTION);
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
+    invokeRequest.SetContentType("application/javascript");
     invokeRequest.SetLogType(LogType::Tail);
     std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
     Aws::Utils::Json::JsonValue jsonPayload;
@@ -393,6 +395,7 @@ TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(HANDLED_ERROR_FUNCTION);
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
+    invokeRequest.SetContentType("application/javascript");
     invokeRequest.SetLogType(LogType::Tail);
     std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
     Aws::Utils::Json::JsonValue jsonPayload;
@@ -416,6 +419,7 @@ TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(UNHANDLED_ERROR_FUNCTION);
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
+    invokeRequest.SetContentType("application/javascript");
     invokeRequest.SetLogType(LogType::Tail);
     std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
     Aws::Utils::Json::JsonValue jsonPayload;

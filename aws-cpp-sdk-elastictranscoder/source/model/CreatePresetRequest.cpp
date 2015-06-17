@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePresetRequest::CreatePresetRequest() : 
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_containerHasBeenSet(false),
     m_videoHasBeenSet(false),
     m_audioHasBeenSet(false),
     m_thumbnailsHasBeenSet(false)
@@ -33,7 +35,11 @@ Aws::String CreatePresetRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("Name", m_name);
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -41,7 +47,11 @@ Aws::String CreatePresetRequest::SerializePayload() const
 
   }
 
-  payload.WithString("Container", m_container);
+  if(m_containerHasBeenSet)
+  {
+   payload.WithString("Container", m_container);
+
+  }
 
   if(m_videoHasBeenSet)
   {

@@ -19,7 +19,8 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-VerifyDomainDkimRequest::VerifyDomainDkimRequest()
+VerifyDomainDkimRequest::VerifyDomainDkimRequest() : 
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String VerifyDomainDkimRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=VerifyDomainDkim&";
-  ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

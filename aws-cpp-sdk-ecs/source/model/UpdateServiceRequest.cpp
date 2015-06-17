@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 UpdateServiceRequest::UpdateServiceRequest() : 
     m_clusterHasBeenSet(false),
+    m_serviceHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false)
@@ -39,7 +40,11 @@ Aws::String UpdateServiceRequest::SerializePayload() const
 
   }
 
-  payload.WithString("service", m_service);
+  if(m_serviceHasBeenSet)
+  {
+   payload.WithString("service", m_service);
+
+  }
 
   if(m_desiredCountHasBeenSet)
   {

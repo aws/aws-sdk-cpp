@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The node group identifier. This parameter is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
     */
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterId = value; }
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /*
      <p>The node group identifier. This parameter is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
     */
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterId.assign(value); }
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /*
      <p>The node group identifier. This parameter is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
@@ -512,6 +512,7 @@ namespace Model
 
   private:
     Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
     AZMode m_aZMode;

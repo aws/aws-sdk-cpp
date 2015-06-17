@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The ID of the instance.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The ID of the instance.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The ID of the instance.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the Auto Scaling group associated with the instance.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>The Availability Zone for the instance.</p>
     */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The Availability Zone for the instance.</p>
     */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /*
      <p>The Availability Zone for the instance.</p>
@@ -122,12 +122,12 @@ namespace Model
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
-    inline void SetLifecycleState(const Aws::String& value) { m_lifecycleState = value; }
+    inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
-    inline void SetLifecycleState(const char* value) { m_lifecycleState.assign(value); }
+    inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
 
     /*
      <p>The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.</p>
@@ -146,12 +146,12 @@ namespace Model
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
     */
-    inline void SetHealthStatus(const Aws::String& value) { m_healthStatus = value; }
+    inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
     */
-    inline void SetHealthStatus(const char* value) { m_healthStatus.assign(value); }
+    inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /*
      <p>The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.</p>
@@ -170,12 +170,12 @@ namespace Model
     /*
      <p>The launch configuration associated with the instance.</p>
     */
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /*
      <p>The launch configuration associated with the instance.</p>
     */
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationName.assign(value); }
+    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /*
      <p>The launch configuration associated with the instance.</p>
@@ -189,11 +189,17 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
     Aws::String m_lifecycleState;
+    bool m_lifecycleStateHasBeenSet;
     Aws::String m_healthStatus;
+    bool m_healthStatusHasBeenSet;
     Aws::String m_launchConfigurationName;
+    bool m_launchConfigurationNameHasBeenSet;
   };
 
 } // namespace Model

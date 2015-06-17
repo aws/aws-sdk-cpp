@@ -20,7 +20,9 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 ModifyClusterSubnetGroupRequest::ModifyClusterSubnetGroupRequest() : 
-    m_descriptionHasBeenSet(false)
+    m_clusterSubnetGroupNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false)
 {
 }
 
@@ -28,17 +30,23 @@ Aws::String ModifyClusterSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterSubnetGroup&";
-  ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
+  if(m_clusterSubnetGroupNameHasBeenSet)
+  {
+    ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
+  }
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  unsigned subnetIdsCount = 1;
-  for(auto& item : m_subnetIds)
+  if(m_subnetIdsHasBeenSet)
   {
-    ss << "SubnetIdentifier." << subnetIdsCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    subnetIdsCount++;
+    unsigned subnetIdsCount = 1;
+    for(auto& item : m_subnetIds)
+    {
+      ss << "SubnetIdentifier." << subnetIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      subnetIdsCount++;
+    }
   }
   ss << "Version=2012-12-01";
   return ss.str();

@@ -119,14 +119,14 @@ BatchDeleteAttributesOutcomeCallable SimpleDBClient::BatchDeleteAttributesCallab
   return std::async(std::launch::async, &SimpleDBClient::BatchDeleteAttributes, this, request);
 }
 
-void SimpleDBClient::BatchDeleteAttributesAsync(const BatchDeleteAttributesRequest& request) const
+void SimpleDBClient::BatchDeleteAttributesAsync(const BatchDeleteAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::BatchDeleteAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::BatchDeleteAttributesAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::BatchDeleteAttributesAsyncHelper(const BatchDeleteAttributesRequest& request) const
+void SimpleDBClient::BatchDeleteAttributesAsyncHelper(const BatchDeleteAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onBatchDeleteAttributesOutcomeReceived(this, request, BatchDeleteAttributes(request));
+  m_onBatchDeleteAttributesOutcomeReceived(this, request, BatchDeleteAttributes(request), context);
 }
 
 BatchPutAttributesOutcome SimpleDBClient::BatchPutAttributes(const BatchPutAttributesRequest& request) const
@@ -150,14 +150,14 @@ BatchPutAttributesOutcomeCallable SimpleDBClient::BatchPutAttributesCallable(con
   return std::async(std::launch::async, &SimpleDBClient::BatchPutAttributes, this, request);
 }
 
-void SimpleDBClient::BatchPutAttributesAsync(const BatchPutAttributesRequest& request) const
+void SimpleDBClient::BatchPutAttributesAsync(const BatchPutAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::BatchPutAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::BatchPutAttributesAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::BatchPutAttributesAsyncHelper(const BatchPutAttributesRequest& request) const
+void SimpleDBClient::BatchPutAttributesAsyncHelper(const BatchPutAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onBatchPutAttributesOutcomeReceived(this, request, BatchPutAttributes(request));
+  m_onBatchPutAttributesOutcomeReceived(this, request, BatchPutAttributes(request), context);
 }
 
 CreateDomainOutcome SimpleDBClient::CreateDomain(const CreateDomainRequest& request) const
@@ -181,14 +181,14 @@ CreateDomainOutcomeCallable SimpleDBClient::CreateDomainCallable(const CreateDom
   return std::async(std::launch::async, &SimpleDBClient::CreateDomain, this, request);
 }
 
-void SimpleDBClient::CreateDomainAsync(const CreateDomainRequest& request) const
+void SimpleDBClient::CreateDomainAsync(const CreateDomainRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::CreateDomainAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::CreateDomainAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::CreateDomainAsyncHelper(const CreateDomainRequest& request) const
+void SimpleDBClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDomainOutcomeReceived(this, request, CreateDomain(request));
+  m_onCreateDomainOutcomeReceived(this, request, CreateDomain(request), context);
 }
 
 DeleteAttributesOutcome SimpleDBClient::DeleteAttributes(const DeleteAttributesRequest& request) const
@@ -212,14 +212,14 @@ DeleteAttributesOutcomeCallable SimpleDBClient::DeleteAttributesCallable(const D
   return std::async(std::launch::async, &SimpleDBClient::DeleteAttributes, this, request);
 }
 
-void SimpleDBClient::DeleteAttributesAsync(const DeleteAttributesRequest& request) const
+void SimpleDBClient::DeleteAttributesAsync(const DeleteAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::DeleteAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::DeleteAttributesAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request) const
+void SimpleDBClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAttributesOutcomeReceived(this, request, DeleteAttributes(request));
+  m_onDeleteAttributesOutcomeReceived(this, request, DeleteAttributes(request), context);
 }
 
 DeleteDomainOutcome SimpleDBClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -243,14 +243,14 @@ DeleteDomainOutcomeCallable SimpleDBClient::DeleteDomainCallable(const DeleteDom
   return std::async(std::launch::async, &SimpleDBClient::DeleteDomain, this, request);
 }
 
-void SimpleDBClient::DeleteDomainAsync(const DeleteDomainRequest& request) const
+void SimpleDBClient::DeleteDomainAsync(const DeleteDomainRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::DeleteDomainAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::DeleteDomainAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request) const
+void SimpleDBClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDomainOutcomeReceived(this, request, DeleteDomain(request));
+  m_onDeleteDomainOutcomeReceived(this, request, DeleteDomain(request), context);
 }
 
 DomainMetadataOutcome SimpleDBClient::DomainMetadata(const DomainMetadataRequest& request) const
@@ -274,14 +274,14 @@ DomainMetadataOutcomeCallable SimpleDBClient::DomainMetadataCallable(const Domai
   return std::async(std::launch::async, &SimpleDBClient::DomainMetadata, this, request);
 }
 
-void SimpleDBClient::DomainMetadataAsync(const DomainMetadataRequest& request) const
+void SimpleDBClient::DomainMetadataAsync(const DomainMetadataRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::DomainMetadataAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::DomainMetadataAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::DomainMetadataAsyncHelper(const DomainMetadataRequest& request) const
+void SimpleDBClient::DomainMetadataAsyncHelper(const DomainMetadataRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDomainMetadataOutcomeReceived(this, request, DomainMetadata(request));
+  m_onDomainMetadataOutcomeReceived(this, request, DomainMetadata(request), context);
 }
 
 GetAttributesOutcome SimpleDBClient::GetAttributes(const GetAttributesRequest& request) const
@@ -305,14 +305,14 @@ GetAttributesOutcomeCallable SimpleDBClient::GetAttributesCallable(const GetAttr
   return std::async(std::launch::async, &SimpleDBClient::GetAttributes, this, request);
 }
 
-void SimpleDBClient::GetAttributesAsync(const GetAttributesRequest& request) const
+void SimpleDBClient::GetAttributesAsync(const GetAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::GetAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::GetAttributesAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::GetAttributesAsyncHelper(const GetAttributesRequest& request) const
+void SimpleDBClient::GetAttributesAsyncHelper(const GetAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetAttributesOutcomeReceived(this, request, GetAttributes(request));
+  m_onGetAttributesOutcomeReceived(this, request, GetAttributes(request), context);
 }
 
 ListDomainsOutcome SimpleDBClient::ListDomains(const ListDomainsRequest& request) const
@@ -336,14 +336,14 @@ ListDomainsOutcomeCallable SimpleDBClient::ListDomainsCallable(const ListDomains
   return std::async(std::launch::async, &SimpleDBClient::ListDomains, this, request);
 }
 
-void SimpleDBClient::ListDomainsAsync(const ListDomainsRequest& request) const
+void SimpleDBClient::ListDomainsAsync(const ListDomainsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::ListDomainsAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::ListDomainsAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::ListDomainsAsyncHelper(const ListDomainsRequest& request) const
+void SimpleDBClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListDomainsOutcomeReceived(this, request, ListDomains(request));
+  m_onListDomainsOutcomeReceived(this, request, ListDomains(request), context);
 }
 
 PutAttributesOutcome SimpleDBClient::PutAttributes(const PutAttributesRequest& request) const
@@ -367,14 +367,14 @@ PutAttributesOutcomeCallable SimpleDBClient::PutAttributesCallable(const PutAttr
   return std::async(std::launch::async, &SimpleDBClient::PutAttributes, this, request);
 }
 
-void SimpleDBClient::PutAttributesAsync(const PutAttributesRequest& request) const
+void SimpleDBClient::PutAttributesAsync(const PutAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::PutAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::PutAttributesAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::PutAttributesAsyncHelper(const PutAttributesRequest& request) const
+void SimpleDBClient::PutAttributesAsyncHelper(const PutAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutAttributesOutcomeReceived(this, request, PutAttributes(request));
+  m_onPutAttributesOutcomeReceived(this, request, PutAttributes(request), context);
 }
 
 SelectOutcome SimpleDBClient::Select(const SelectRequest& request) const
@@ -398,13 +398,13 @@ SelectOutcomeCallable SimpleDBClient::SelectCallable(const SelectRequest& reques
   return std::async(std::launch::async, &SimpleDBClient::Select, this, request);
 }
 
-void SimpleDBClient::SelectAsync(const SelectRequest& request) const
+void SimpleDBClient::SelectAsync(const SelectRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SimpleDBClient::SelectAsyncHelper, this, request);
+  m_executor->Submit(&SimpleDBClient::SelectAsyncHelper, this, request, context);
 }
 
-void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request) const
+void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSelectOutcomeReceived(this, request, Select(request));
+  m_onSelectOutcomeReceived(this, request, Select(request), context);
 }
 

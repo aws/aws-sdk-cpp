@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the instance profile to update.</p>
     */
-    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileName = value; }
+    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name of the instance profile to update.</p>
     */
-    inline void SetInstanceProfileName(const char* value) { m_instanceProfileName.assign(value); }
+    inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
     /*
      <p>The name of the instance profile to update.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the role to add.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name of the role to add.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name of the role to add.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_instanceProfileName;
+    bool m_instanceProfileNameHasBeenSet;
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
   };
 
 } // namespace Model

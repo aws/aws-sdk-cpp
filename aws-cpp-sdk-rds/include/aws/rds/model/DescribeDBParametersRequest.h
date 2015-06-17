@@ -42,12 +42,12 @@ namespace Model
     /*
      <p> The name of a specific DB parameter group to return details for. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /*
      <p> The name of a specific DB parameter group to return details for. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /*
      <p> The name of a specific DB parameter group to return details for. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -142,6 +142,7 @@ namespace Model
 
   private:
     Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
     Aws::String m_source;
     bool m_sourceHasBeenSet;
     Aws::Vector<Filter> m_filters;

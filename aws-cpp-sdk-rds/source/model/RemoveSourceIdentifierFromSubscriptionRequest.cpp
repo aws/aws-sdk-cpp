@@ -19,7 +19,9 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RemoveSourceIdentifierFromSubscriptionRequest::RemoveSourceIdentifierFromSubscriptionRequest()
+RemoveSourceIdentifierFromSubscriptionRequest::RemoveSourceIdentifierFromSubscriptionRequest() : 
+    m_subscriptionNameHasBeenSet(false),
+    m_sourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() co
 {
   Aws::StringStream ss;
   ss << "Action=RemoveSourceIdentifierFromSubscription&";
-  ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
-  ss << "SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
+  if(m_subscriptionNameHasBeenSet)
+  {
+    ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
+  }
+  if(m_sourceIdentifierHasBeenSet)
+  {
+    ss << "SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
+  }
   ss << "Version=2014-10-31";
   return ss.str();
 }

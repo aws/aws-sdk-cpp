@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
     */
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyId = value; }
+    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
     */
-    inline void SetAccessKeyId(const char* value) { m_accessKeyId.assign(value); }
+    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /*
      <p>The access key ID that identifies the temporary security credentials.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The secret access key that can be used to sign requests.</p>
     */
-    inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKey = value; }
+    inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
     /*
      <p>The secret access key that can be used to sign requests.</p>
     */
-    inline void SetSecretAccessKey(const char* value) { m_secretAccessKey.assign(value); }
+    inline void SetSecretAccessKey(const char* value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey.assign(value); }
 
     /*
      <p>The secret access key that can be used to sign requests.</p>
@@ -98,12 +98,12 @@ namespace Model
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
     */
-    inline void SetSessionToken(const Aws::String& value) { m_sessionToken = value; }
+    inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
     */
-    inline void SetSessionToken(const char* value) { m_sessionToken.assign(value); }
+    inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
 
     /*
      <p>The token that users must pass to the service API to use the temporary credentials.</p>
@@ -122,7 +122,7 @@ namespace Model
     /*
      <p>The date on which the current credentials expire.</p>
     */
-    inline void SetExpiration(double value) { m_expiration = value; }
+    inline void SetExpiration(double value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /*
      <p>The date on which the current credentials expire.</p>
@@ -131,9 +131,13 @@ namespace Model
 
   private:
     Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet;
     Aws::String m_secretAccessKey;
+    bool m_secretAccessKeyHasBeenSet;
     Aws::String m_sessionToken;
+    bool m_sessionTokenHasBeenSet;
     double m_expiration;
+    bool m_expirationHasBeenSet;
   };
 
 } // namespace Model

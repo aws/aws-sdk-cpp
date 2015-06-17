@@ -22,12 +22,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 Field::Field() : 
+    m_keyHasBeenSet(false),
     m_stringValueHasBeenSet(false),
     m_refValueHasBeenSet(false)
 {
 }
 
 Field::Field(const JsonValue& jsonValue) : 
+    m_keyHasBeenSet(false),
     m_stringValueHasBeenSet(false),
     m_refValueHasBeenSet(false)
 {
@@ -36,7 +38,12 @@ Field::Field(const JsonValue& jsonValue) :
 
 Field& Field::operator =(const JsonValue& jsonValue)
 {
-  m_key = jsonValue.GetString("key");
+  if(jsonValue.ValueExists("key"))
+  {
+    m_key = jsonValue.GetString("key");
+
+    m_keyHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("stringValue"))
   {
@@ -59,7 +66,11 @@ JsonValue Field::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("key", m_key);
+  if(m_keyHasBeenSet)
+  {
+   payload.WithString("key", m_key);
+
+  }
 
   if(m_stringValueHasBeenSet)
   {

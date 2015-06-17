@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the parameter group to be modified. </p>
     */
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
+    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /*
      <p> The name of the parameter group to be modified. </p>
     */
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupName.assign(value); }
+    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
 
     /*
      <p> The name of the parameter group to be modified. </p>
@@ -67,7 +67,7 @@ namespace Model
     /*
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
     */
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
+    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /*
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
@@ -77,11 +77,13 @@ namespace Model
     /*
      <p> An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request. </p> <p> For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional. </p> <p> For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter. </p>
     */
-    inline ModifyClusterParameterGroupRequest& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
+    inline ModifyClusterParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
   private:
     Aws::String m_parameterGroupName;
+    bool m_parameterGroupNameHasBeenSet;
     Aws::Vector<Parameter> m_parameters;
+    bool m_parametersHasBeenSet;
   };
 
 } // namespace Model

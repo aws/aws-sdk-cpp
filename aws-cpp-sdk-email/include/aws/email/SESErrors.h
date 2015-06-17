@@ -48,7 +48,8 @@ enum class AWS_SES_API SESErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  MESSAGE_REJECTED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INVALID_POLICY= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  MESSAGE_REJECTED
 };
 namespace SESErrorMapper
 {

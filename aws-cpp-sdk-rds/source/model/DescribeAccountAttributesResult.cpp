@@ -41,11 +41,12 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode accountQuotaNode = resultNode.FirstChild("AccountQuota");
+    XmlNode accountQuotaNodeParent = resultNode.FirstChild("AccountQuota");
+    XmlNode accountQuotaNode = accountQuotaNodeParent.FirstChild("member");
     while(!accountQuotaNode.IsNull())
     {
       m_accountQuotas.push_back(accountQuotaNode);
-      accountQuotaNode = accountQuotaNode.NextNode("AccountQuota");
+      accountQuotaNode = accountQuotaNode.NextNode("member");
     }
 
   }

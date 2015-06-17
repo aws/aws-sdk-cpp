@@ -21,7 +21,8 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAliasRequest::DeleteAliasRequest()
+DeleteAliasRequest::DeleteAliasRequest() : 
+    m_aliasNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteAliasRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("AliasName", m_aliasName);
+  if(m_aliasNameHasBeenSet)
+  {
+   payload.WithString("AliasName", m_aliasName);
+
+  }
 
   return payload.WriteReadable();
 }

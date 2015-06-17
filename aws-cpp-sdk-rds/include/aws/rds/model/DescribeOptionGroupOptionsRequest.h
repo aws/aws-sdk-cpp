@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> A required parameter. Options available for the given Engine name will be described. </p>
     */
-    inline void SetEngineName(const Aws::String& value) { m_engineName = value; }
+    inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /*
      <p> A required parameter. Options available for the given Engine name will be described. </p>
     */
-    inline void SetEngineName(const char* value) { m_engineName.assign(value); }
+    inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /*
      <p> A required parameter. Options available for the given Engine name will be described. </p>
@@ -143,6 +143,7 @@ namespace Model
 
   private:
     Aws::String m_engineName;
+    bool m_engineNameHasBeenSet;
     Aws::String m_majorEngineVersion;
     bool m_majorEngineVersionHasBeenSet;
     Aws::Vector<Filter> m_filters;

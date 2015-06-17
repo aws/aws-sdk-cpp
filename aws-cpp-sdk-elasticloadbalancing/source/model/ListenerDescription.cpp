@@ -48,13 +48,14 @@ ListenerDescription& ListenerDescription::operator =(const XmlNode& xmlNode)
       m_listener = listenerNode;
       m_listenerHasBeenSet = true;
     }
-    XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
+    XmlNode policyNamesNodeParent = resultNode.FirstChild("PolicyNames");
+    XmlNode policyNamesNode = policyNamesNodeParent.FirstChild("member");
     if(!policyNamesNode.IsNull())
     {
       while(!policyNamesNode.IsNull())
       {
         m_policyNames.push_back(StringUtils::Trim(policyNamesNode.GetText().c_str()));
-        policyNamesNode = policyNamesNode.NextNode("PolicyNames");
+        policyNamesNode = policyNamesNode.NextNode("member");
       }
 
       m_policyNamesHasBeenSet = true;

@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the option group to be modified. </p> <p> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
     */
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupName = value; }
+    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /*
      <p> The name of the option group to be modified. </p> <p> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
     */
-    inline void SetOptionGroupName(const char* value) { m_optionGroupName.assign(value); }
+    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /*
      <p> The name of the option group to be modified. </p> <p> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance </p>
@@ -119,6 +119,7 @@ namespace Model
 
   private:
     Aws::String m_optionGroupName;
+    bool m_optionGroupNameHasBeenSet;
     Aws::Vector<OptionConfiguration> m_optionsToInclude;
     bool m_optionsToIncludeHasBeenSet;
     Aws::Vector<Aws::String> m_optionsToRemove;

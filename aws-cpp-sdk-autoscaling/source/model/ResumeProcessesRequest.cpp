@@ -20,6 +20,7 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 ResumeProcessesRequest::ResumeProcessesRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_scalingProcessesHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ResumeProcesses&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_scalingProcessesHasBeenSet)
   {
     unsigned scalingProcessesCount = 1;

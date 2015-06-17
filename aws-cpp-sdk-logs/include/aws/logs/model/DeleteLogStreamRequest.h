@@ -35,37 +35,59 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of the log group under which the log stream to delete belongs.</p>
+    */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    /*
+     <p>The name of the log group under which the log stream to delete belongs.</p>
+    */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    /*
+     <p>The name of the log group under which the log stream to delete belongs.</p>
+    */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of the log group under which the log stream to delete belongs.</p>
+    */
     inline DeleteLogStreamRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log group under which the log stream to delete belongs.</p>
+    */
     inline DeleteLogStreamRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log stream to delete.</p>
+    */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
-    
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamName = value; }
+    /*
+     <p>The name of the log stream to delete.</p>
+    */
+    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    
-    inline void SetLogStreamName(const char* value) { m_logStreamName.assign(value); }
+    /*
+     <p>The name of the log stream to delete.</p>
+    */
+    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
-    
+    /*
+     <p>The name of the log stream to delete.</p>
+    */
     inline DeleteLogStreamRequest&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log stream to delete.</p>
+    */
     inline DeleteLogStreamRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::String m_logStreamName;
+    bool m_logStreamNameHasBeenSet;
   };
 
 } // namespace Model

@@ -22,12 +22,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PipelineDescription::PipelineDescription() : 
+    m_pipelineIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_fieldsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 PipelineDescription::PipelineDescription(const JsonValue& jsonValue) : 
+    m_pipelineIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_fieldsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -36,15 +42,30 @@ PipelineDescription::PipelineDescription(const JsonValue& jsonValue) :
 
 PipelineDescription& PipelineDescription::operator =(const JsonValue& jsonValue)
 {
-  m_pipelineId = jsonValue.GetString("pipelineId");
-
-  m_name = jsonValue.GetString("name");
-
-  Array<JsonValue> fieldsJsonList = jsonValue.GetArray("fields");
-  for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+  if(jsonValue.ValueExists("pipelineId"))
   {
-    m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    m_pipelineId = jsonValue.GetString("pipelineId");
+
+    m_pipelineIdHasBeenSet = true;
   }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fields"))
+  {
+    Array<JsonValue> fieldsJsonList = jsonValue.GetArray("fields");
+    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+    {
+      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    }
+    m_fieldsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -69,16 +90,28 @@ JsonValue PipelineDescription::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
-
-  payload.WithString("name", m_name);
-
-  Array<JsonValue> fieldsJsonList(m_fields.size());
-  for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+  if(m_pipelineIdHasBeenSet)
   {
-    fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+   payload.WithString("pipelineId", m_pipelineId);
+
   }
-  payload.WithArray("fields", std::move(fieldsJsonList));
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_fieldsHasBeenSet)
+  {
+   Array<JsonValue> fieldsJsonList(m_fields.size());
+   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+   {
+     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+   }
+   payload.WithArray("fields", std::move(fieldsJsonList));
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

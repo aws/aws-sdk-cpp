@@ -134,14 +134,14 @@ CreateAliasOutcomeCallable KMSClient::CreateAliasCallable(const CreateAliasReque
   return std::async(std::launch::async, &KMSClient::CreateAlias, this, request);
 }
 
-void KMSClient::CreateAliasAsync(const CreateAliasRequest& request) const
+void KMSClient::CreateAliasAsync(const CreateAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::CreateAliasAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::CreateAliasAsyncHelper, this, request, context);
 }
 
-void KMSClient::CreateAliasAsyncHelper(const CreateAliasRequest& request) const
+void KMSClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateAliasOutcomeReceived(this, request, CreateAlias(request));
+  m_onCreateAliasOutcomeReceived(this, request, CreateAlias(request), context);
 }
 
 CreateGrantOutcome KMSClient::CreateGrant(const CreateGrantRequest& request) const
@@ -165,14 +165,14 @@ CreateGrantOutcomeCallable KMSClient::CreateGrantCallable(const CreateGrantReque
   return std::async(std::launch::async, &KMSClient::CreateGrant, this, request);
 }
 
-void KMSClient::CreateGrantAsync(const CreateGrantRequest& request) const
+void KMSClient::CreateGrantAsync(const CreateGrantRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::CreateGrantAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::CreateGrantAsyncHelper, this, request, context);
 }
 
-void KMSClient::CreateGrantAsyncHelper(const CreateGrantRequest& request) const
+void KMSClient::CreateGrantAsyncHelper(const CreateGrantRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateGrantOutcomeReceived(this, request, CreateGrant(request));
+  m_onCreateGrantOutcomeReceived(this, request, CreateGrant(request), context);
 }
 
 CreateKeyOutcome KMSClient::CreateKey(const CreateKeyRequest& request) const
@@ -196,14 +196,14 @@ CreateKeyOutcomeCallable KMSClient::CreateKeyCallable(const CreateKeyRequest& re
   return std::async(std::launch::async, &KMSClient::CreateKey, this, request);
 }
 
-void KMSClient::CreateKeyAsync(const CreateKeyRequest& request) const
+void KMSClient::CreateKeyAsync(const CreateKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::CreateKeyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::CreateKeyAsyncHelper, this, request, context);
 }
 
-void KMSClient::CreateKeyAsyncHelper(const CreateKeyRequest& request) const
+void KMSClient::CreateKeyAsyncHelper(const CreateKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onCreateKeyOutcomeReceived(this, request, CreateKey(request));
+  m_onCreateKeyOutcomeReceived(this, request, CreateKey(request), context);
 }
 
 DecryptOutcome KMSClient::Decrypt(const DecryptRequest& request) const
@@ -227,14 +227,14 @@ DecryptOutcomeCallable KMSClient::DecryptCallable(const DecryptRequest& request)
   return std::async(std::launch::async, &KMSClient::Decrypt, this, request);
 }
 
-void KMSClient::DecryptAsync(const DecryptRequest& request) const
+void KMSClient::DecryptAsync(const DecryptRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::DecryptAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::DecryptAsyncHelper, this, request, context);
 }
 
-void KMSClient::DecryptAsyncHelper(const DecryptRequest& request) const
+void KMSClient::DecryptAsyncHelper(const DecryptRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDecryptOutcomeReceived(this, request, Decrypt(request));
+  m_onDecryptOutcomeReceived(this, request, Decrypt(request), context);
 }
 
 DeleteAliasOutcome KMSClient::DeleteAlias(const DeleteAliasRequest& request) const
@@ -258,14 +258,14 @@ DeleteAliasOutcomeCallable KMSClient::DeleteAliasCallable(const DeleteAliasReque
   return std::async(std::launch::async, &KMSClient::DeleteAlias, this, request);
 }
 
-void KMSClient::DeleteAliasAsync(const DeleteAliasRequest& request) const
+void KMSClient::DeleteAliasAsync(const DeleteAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::DeleteAliasAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::DeleteAliasAsyncHelper, this, request, context);
 }
 
-void KMSClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request) const
+void KMSClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteAliasOutcomeReceived(this, request, DeleteAlias(request));
+  m_onDeleteAliasOutcomeReceived(this, request, DeleteAlias(request), context);
 }
 
 DescribeKeyOutcome KMSClient::DescribeKey(const DescribeKeyRequest& request) const
@@ -289,14 +289,14 @@ DescribeKeyOutcomeCallable KMSClient::DescribeKeyCallable(const DescribeKeyReque
   return std::async(std::launch::async, &KMSClient::DescribeKey, this, request);
 }
 
-void KMSClient::DescribeKeyAsync(const DescribeKeyRequest& request) const
+void KMSClient::DescribeKeyAsync(const DescribeKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::DescribeKeyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::DescribeKeyAsyncHelper, this, request, context);
 }
 
-void KMSClient::DescribeKeyAsyncHelper(const DescribeKeyRequest& request) const
+void KMSClient::DescribeKeyAsyncHelper(const DescribeKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDescribeKeyOutcomeReceived(this, request, DescribeKey(request));
+  m_onDescribeKeyOutcomeReceived(this, request, DescribeKey(request), context);
 }
 
 DisableKeyOutcome KMSClient::DisableKey(const DisableKeyRequest& request) const
@@ -320,14 +320,14 @@ DisableKeyOutcomeCallable KMSClient::DisableKeyCallable(const DisableKeyRequest&
   return std::async(std::launch::async, &KMSClient::DisableKey, this, request);
 }
 
-void KMSClient::DisableKeyAsync(const DisableKeyRequest& request) const
+void KMSClient::DisableKeyAsync(const DisableKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::DisableKeyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::DisableKeyAsyncHelper, this, request, context);
 }
 
-void KMSClient::DisableKeyAsyncHelper(const DisableKeyRequest& request) const
+void KMSClient::DisableKeyAsyncHelper(const DisableKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDisableKeyOutcomeReceived(this, request, DisableKey(request));
+  m_onDisableKeyOutcomeReceived(this, request, DisableKey(request), context);
 }
 
 DisableKeyRotationOutcome KMSClient::DisableKeyRotation(const DisableKeyRotationRequest& request) const
@@ -351,14 +351,14 @@ DisableKeyRotationOutcomeCallable KMSClient::DisableKeyRotationCallable(const Di
   return std::async(std::launch::async, &KMSClient::DisableKeyRotation, this, request);
 }
 
-void KMSClient::DisableKeyRotationAsync(const DisableKeyRotationRequest& request) const
+void KMSClient::DisableKeyRotationAsync(const DisableKeyRotationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::DisableKeyRotationAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::DisableKeyRotationAsyncHelper, this, request, context);
 }
 
-void KMSClient::DisableKeyRotationAsyncHelper(const DisableKeyRotationRequest& request) const
+void KMSClient::DisableKeyRotationAsyncHelper(const DisableKeyRotationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDisableKeyRotationOutcomeReceived(this, request, DisableKeyRotation(request));
+  m_onDisableKeyRotationOutcomeReceived(this, request, DisableKeyRotation(request), context);
 }
 
 EnableKeyOutcome KMSClient::EnableKey(const EnableKeyRequest& request) const
@@ -382,14 +382,14 @@ EnableKeyOutcomeCallable KMSClient::EnableKeyCallable(const EnableKeyRequest& re
   return std::async(std::launch::async, &KMSClient::EnableKey, this, request);
 }
 
-void KMSClient::EnableKeyAsync(const EnableKeyRequest& request) const
+void KMSClient::EnableKeyAsync(const EnableKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::EnableKeyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::EnableKeyAsyncHelper, this, request, context);
 }
 
-void KMSClient::EnableKeyAsyncHelper(const EnableKeyRequest& request) const
+void KMSClient::EnableKeyAsyncHelper(const EnableKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnableKeyOutcomeReceived(this, request, EnableKey(request));
+  m_onEnableKeyOutcomeReceived(this, request, EnableKey(request), context);
 }
 
 EnableKeyRotationOutcome KMSClient::EnableKeyRotation(const EnableKeyRotationRequest& request) const
@@ -413,14 +413,14 @@ EnableKeyRotationOutcomeCallable KMSClient::EnableKeyRotationCallable(const Enab
   return std::async(std::launch::async, &KMSClient::EnableKeyRotation, this, request);
 }
 
-void KMSClient::EnableKeyRotationAsync(const EnableKeyRotationRequest& request) const
+void KMSClient::EnableKeyRotationAsync(const EnableKeyRotationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::EnableKeyRotationAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::EnableKeyRotationAsyncHelper, this, request, context);
 }
 
-void KMSClient::EnableKeyRotationAsyncHelper(const EnableKeyRotationRequest& request) const
+void KMSClient::EnableKeyRotationAsyncHelper(const EnableKeyRotationRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEnableKeyRotationOutcomeReceived(this, request, EnableKeyRotation(request));
+  m_onEnableKeyRotationOutcomeReceived(this, request, EnableKeyRotation(request), context);
 }
 
 EncryptOutcome KMSClient::Encrypt(const EncryptRequest& request) const
@@ -444,14 +444,14 @@ EncryptOutcomeCallable KMSClient::EncryptCallable(const EncryptRequest& request)
   return std::async(std::launch::async, &KMSClient::Encrypt, this, request);
 }
 
-void KMSClient::EncryptAsync(const EncryptRequest& request) const
+void KMSClient::EncryptAsync(const EncryptRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::EncryptAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::EncryptAsyncHelper, this, request, context);
 }
 
-void KMSClient::EncryptAsyncHelper(const EncryptRequest& request) const
+void KMSClient::EncryptAsyncHelper(const EncryptRequest& request, const AsyncCallerContext* context) const
 {
-  m_onEncryptOutcomeReceived(this, request, Encrypt(request));
+  m_onEncryptOutcomeReceived(this, request, Encrypt(request), context);
 }
 
 GenerateDataKeyOutcome KMSClient::GenerateDataKey(const GenerateDataKeyRequest& request) const
@@ -475,14 +475,14 @@ GenerateDataKeyOutcomeCallable KMSClient::GenerateDataKeyCallable(const Generate
   return std::async(std::launch::async, &KMSClient::GenerateDataKey, this, request);
 }
 
-void KMSClient::GenerateDataKeyAsync(const GenerateDataKeyRequest& request) const
+void KMSClient::GenerateDataKeyAsync(const GenerateDataKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::GenerateDataKeyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::GenerateDataKeyAsyncHelper, this, request, context);
 }
 
-void KMSClient::GenerateDataKeyAsyncHelper(const GenerateDataKeyRequest& request) const
+void KMSClient::GenerateDataKeyAsyncHelper(const GenerateDataKeyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGenerateDataKeyOutcomeReceived(this, request, GenerateDataKey(request));
+  m_onGenerateDataKeyOutcomeReceived(this, request, GenerateDataKey(request), context);
 }
 
 GenerateDataKeyWithoutPlaintextOutcome KMSClient::GenerateDataKeyWithoutPlaintext(const GenerateDataKeyWithoutPlaintextRequest& request) const
@@ -506,14 +506,14 @@ GenerateDataKeyWithoutPlaintextOutcomeCallable KMSClient::GenerateDataKeyWithout
   return std::async(std::launch::async, &KMSClient::GenerateDataKeyWithoutPlaintext, this, request);
 }
 
-void KMSClient::GenerateDataKeyWithoutPlaintextAsync(const GenerateDataKeyWithoutPlaintextRequest& request) const
+void KMSClient::GenerateDataKeyWithoutPlaintextAsync(const GenerateDataKeyWithoutPlaintextRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::GenerateDataKeyWithoutPlaintextAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::GenerateDataKeyWithoutPlaintextAsyncHelper, this, request, context);
 }
 
-void KMSClient::GenerateDataKeyWithoutPlaintextAsyncHelper(const GenerateDataKeyWithoutPlaintextRequest& request) const
+void KMSClient::GenerateDataKeyWithoutPlaintextAsyncHelper(const GenerateDataKeyWithoutPlaintextRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGenerateDataKeyWithoutPlaintextOutcomeReceived(this, request, GenerateDataKeyWithoutPlaintext(request));
+  m_onGenerateDataKeyWithoutPlaintextOutcomeReceived(this, request, GenerateDataKeyWithoutPlaintext(request), context);
 }
 
 GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& request) const
@@ -537,14 +537,14 @@ GenerateRandomOutcomeCallable KMSClient::GenerateRandomCallable(const GenerateRa
   return std::async(std::launch::async, &KMSClient::GenerateRandom, this, request);
 }
 
-void KMSClient::GenerateRandomAsync(const GenerateRandomRequest& request) const
+void KMSClient::GenerateRandomAsync(const GenerateRandomRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::GenerateRandomAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::GenerateRandomAsyncHelper, this, request, context);
 }
 
-void KMSClient::GenerateRandomAsyncHelper(const GenerateRandomRequest& request) const
+void KMSClient::GenerateRandomAsyncHelper(const GenerateRandomRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGenerateRandomOutcomeReceived(this, request, GenerateRandom(request));
+  m_onGenerateRandomOutcomeReceived(this, request, GenerateRandom(request), context);
 }
 
 GetKeyPolicyOutcome KMSClient::GetKeyPolicy(const GetKeyPolicyRequest& request) const
@@ -568,14 +568,14 @@ GetKeyPolicyOutcomeCallable KMSClient::GetKeyPolicyCallable(const GetKeyPolicyRe
   return std::async(std::launch::async, &KMSClient::GetKeyPolicy, this, request);
 }
 
-void KMSClient::GetKeyPolicyAsync(const GetKeyPolicyRequest& request) const
+void KMSClient::GetKeyPolicyAsync(const GetKeyPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::GetKeyPolicyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::GetKeyPolicyAsyncHelper, this, request, context);
 }
 
-void KMSClient::GetKeyPolicyAsyncHelper(const GetKeyPolicyRequest& request) const
+void KMSClient::GetKeyPolicyAsyncHelper(const GetKeyPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetKeyPolicyOutcomeReceived(this, request, GetKeyPolicy(request));
+  m_onGetKeyPolicyOutcomeReceived(this, request, GetKeyPolicy(request), context);
 }
 
 GetKeyRotationStatusOutcome KMSClient::GetKeyRotationStatus(const GetKeyRotationStatusRequest& request) const
@@ -599,14 +599,14 @@ GetKeyRotationStatusOutcomeCallable KMSClient::GetKeyRotationStatusCallable(cons
   return std::async(std::launch::async, &KMSClient::GetKeyRotationStatus, this, request);
 }
 
-void KMSClient::GetKeyRotationStatusAsync(const GetKeyRotationStatusRequest& request) const
+void KMSClient::GetKeyRotationStatusAsync(const GetKeyRotationStatusRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::GetKeyRotationStatusAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::GetKeyRotationStatusAsyncHelper, this, request, context);
 }
 
-void KMSClient::GetKeyRotationStatusAsyncHelper(const GetKeyRotationStatusRequest& request) const
+void KMSClient::GetKeyRotationStatusAsyncHelper(const GetKeyRotationStatusRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetKeyRotationStatusOutcomeReceived(this, request, GetKeyRotationStatus(request));
+  m_onGetKeyRotationStatusOutcomeReceived(this, request, GetKeyRotationStatus(request), context);
 }
 
 ListAliasesOutcome KMSClient::ListAliases(const ListAliasesRequest& request) const
@@ -630,14 +630,14 @@ ListAliasesOutcomeCallable KMSClient::ListAliasesCallable(const ListAliasesReque
   return std::async(std::launch::async, &KMSClient::ListAliases, this, request);
 }
 
-void KMSClient::ListAliasesAsync(const ListAliasesRequest& request) const
+void KMSClient::ListAliasesAsync(const ListAliasesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::ListAliasesAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::ListAliasesAsyncHelper, this, request, context);
 }
 
-void KMSClient::ListAliasesAsyncHelper(const ListAliasesRequest& request) const
+void KMSClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListAliasesOutcomeReceived(this, request, ListAliases(request));
+  m_onListAliasesOutcomeReceived(this, request, ListAliases(request), context);
 }
 
 ListGrantsOutcome KMSClient::ListGrants(const ListGrantsRequest& request) const
@@ -661,14 +661,14 @@ ListGrantsOutcomeCallable KMSClient::ListGrantsCallable(const ListGrantsRequest&
   return std::async(std::launch::async, &KMSClient::ListGrants, this, request);
 }
 
-void KMSClient::ListGrantsAsync(const ListGrantsRequest& request) const
+void KMSClient::ListGrantsAsync(const ListGrantsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::ListGrantsAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::ListGrantsAsyncHelper, this, request, context);
 }
 
-void KMSClient::ListGrantsAsyncHelper(const ListGrantsRequest& request) const
+void KMSClient::ListGrantsAsyncHelper(const ListGrantsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListGrantsOutcomeReceived(this, request, ListGrants(request));
+  m_onListGrantsOutcomeReceived(this, request, ListGrants(request), context);
 }
 
 ListKeyPoliciesOutcome KMSClient::ListKeyPolicies(const ListKeyPoliciesRequest& request) const
@@ -692,14 +692,14 @@ ListKeyPoliciesOutcomeCallable KMSClient::ListKeyPoliciesCallable(const ListKeyP
   return std::async(std::launch::async, &KMSClient::ListKeyPolicies, this, request);
 }
 
-void KMSClient::ListKeyPoliciesAsync(const ListKeyPoliciesRequest& request) const
+void KMSClient::ListKeyPoliciesAsync(const ListKeyPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::ListKeyPoliciesAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::ListKeyPoliciesAsyncHelper, this, request, context);
 }
 
-void KMSClient::ListKeyPoliciesAsyncHelper(const ListKeyPoliciesRequest& request) const
+void KMSClient::ListKeyPoliciesAsyncHelper(const ListKeyPoliciesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListKeyPoliciesOutcomeReceived(this, request, ListKeyPolicies(request));
+  m_onListKeyPoliciesOutcomeReceived(this, request, ListKeyPolicies(request), context);
 }
 
 ListKeysOutcome KMSClient::ListKeys(const ListKeysRequest& request) const
@@ -723,14 +723,14 @@ ListKeysOutcomeCallable KMSClient::ListKeysCallable(const ListKeysRequest& reque
   return std::async(std::launch::async, &KMSClient::ListKeys, this, request);
 }
 
-void KMSClient::ListKeysAsync(const ListKeysRequest& request) const
+void KMSClient::ListKeysAsync(const ListKeysRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::ListKeysAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::ListKeysAsyncHelper, this, request, context);
 }
 
-void KMSClient::ListKeysAsyncHelper(const ListKeysRequest& request) const
+void KMSClient::ListKeysAsyncHelper(const ListKeysRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListKeysOutcomeReceived(this, request, ListKeys(request));
+  m_onListKeysOutcomeReceived(this, request, ListKeys(request), context);
 }
 
 PutKeyPolicyOutcome KMSClient::PutKeyPolicy(const PutKeyPolicyRequest& request) const
@@ -754,14 +754,14 @@ PutKeyPolicyOutcomeCallable KMSClient::PutKeyPolicyCallable(const PutKeyPolicyRe
   return std::async(std::launch::async, &KMSClient::PutKeyPolicy, this, request);
 }
 
-void KMSClient::PutKeyPolicyAsync(const PutKeyPolicyRequest& request) const
+void KMSClient::PutKeyPolicyAsync(const PutKeyPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::PutKeyPolicyAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::PutKeyPolicyAsyncHelper, this, request, context);
 }
 
-void KMSClient::PutKeyPolicyAsyncHelper(const PutKeyPolicyRequest& request) const
+void KMSClient::PutKeyPolicyAsyncHelper(const PutKeyPolicyRequest& request, const AsyncCallerContext* context) const
 {
-  m_onPutKeyPolicyOutcomeReceived(this, request, PutKeyPolicy(request));
+  m_onPutKeyPolicyOutcomeReceived(this, request, PutKeyPolicy(request), context);
 }
 
 ReEncryptOutcome KMSClient::ReEncrypt(const ReEncryptRequest& request) const
@@ -785,14 +785,14 @@ ReEncryptOutcomeCallable KMSClient::ReEncryptCallable(const ReEncryptRequest& re
   return std::async(std::launch::async, &KMSClient::ReEncrypt, this, request);
 }
 
-void KMSClient::ReEncryptAsync(const ReEncryptRequest& request) const
+void KMSClient::ReEncryptAsync(const ReEncryptRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::ReEncryptAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::ReEncryptAsyncHelper, this, request, context);
 }
 
-void KMSClient::ReEncryptAsyncHelper(const ReEncryptRequest& request) const
+void KMSClient::ReEncryptAsyncHelper(const ReEncryptRequest& request, const AsyncCallerContext* context) const
 {
-  m_onReEncryptOutcomeReceived(this, request, ReEncrypt(request));
+  m_onReEncryptOutcomeReceived(this, request, ReEncrypt(request), context);
 }
 
 RetireGrantOutcome KMSClient::RetireGrant(const RetireGrantRequest& request) const
@@ -816,14 +816,14 @@ RetireGrantOutcomeCallable KMSClient::RetireGrantCallable(const RetireGrantReque
   return std::async(std::launch::async, &KMSClient::RetireGrant, this, request);
 }
 
-void KMSClient::RetireGrantAsync(const RetireGrantRequest& request) const
+void KMSClient::RetireGrantAsync(const RetireGrantRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::RetireGrantAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::RetireGrantAsyncHelper, this, request, context);
 }
 
-void KMSClient::RetireGrantAsyncHelper(const RetireGrantRequest& request) const
+void KMSClient::RetireGrantAsyncHelper(const RetireGrantRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRetireGrantOutcomeReceived(this, request, RetireGrant(request));
+  m_onRetireGrantOutcomeReceived(this, request, RetireGrant(request), context);
 }
 
 RevokeGrantOutcome KMSClient::RevokeGrant(const RevokeGrantRequest& request) const
@@ -847,14 +847,14 @@ RevokeGrantOutcomeCallable KMSClient::RevokeGrantCallable(const RevokeGrantReque
   return std::async(std::launch::async, &KMSClient::RevokeGrant, this, request);
 }
 
-void KMSClient::RevokeGrantAsync(const RevokeGrantRequest& request) const
+void KMSClient::RevokeGrantAsync(const RevokeGrantRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::RevokeGrantAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::RevokeGrantAsyncHelper, this, request, context);
 }
 
-void KMSClient::RevokeGrantAsyncHelper(const RevokeGrantRequest& request) const
+void KMSClient::RevokeGrantAsyncHelper(const RevokeGrantRequest& request, const AsyncCallerContext* context) const
 {
-  m_onRevokeGrantOutcomeReceived(this, request, RevokeGrant(request));
+  m_onRevokeGrantOutcomeReceived(this, request, RevokeGrant(request), context);
 }
 
 UpdateAliasOutcome KMSClient::UpdateAlias(const UpdateAliasRequest& request) const
@@ -878,14 +878,14 @@ UpdateAliasOutcomeCallable KMSClient::UpdateAliasCallable(const UpdateAliasReque
   return std::async(std::launch::async, &KMSClient::UpdateAlias, this, request);
 }
 
-void KMSClient::UpdateAliasAsync(const UpdateAliasRequest& request) const
+void KMSClient::UpdateAliasAsync(const UpdateAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::UpdateAliasAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::UpdateAliasAsyncHelper, this, request, context);
 }
 
-void KMSClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request) const
+void KMSClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateAliasOutcomeReceived(this, request, UpdateAlias(request));
+  m_onUpdateAliasOutcomeReceived(this, request, UpdateAlias(request), context);
 }
 
 UpdateKeyDescriptionOutcome KMSClient::UpdateKeyDescription(const UpdateKeyDescriptionRequest& request) const
@@ -909,13 +909,13 @@ UpdateKeyDescriptionOutcomeCallable KMSClient::UpdateKeyDescriptionCallable(cons
   return std::async(std::launch::async, &KMSClient::UpdateKeyDescription, this, request);
 }
 
-void KMSClient::UpdateKeyDescriptionAsync(const UpdateKeyDescriptionRequest& request) const
+void KMSClient::UpdateKeyDescriptionAsync(const UpdateKeyDescriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&KMSClient::UpdateKeyDescriptionAsyncHelper, this, request);
+  m_executor->Submit(&KMSClient::UpdateKeyDescriptionAsyncHelper, this, request, context);
 }
 
-void KMSClient::UpdateKeyDescriptionAsyncHelper(const UpdateKeyDescriptionRequest& request) const
+void KMSClient::UpdateKeyDescriptionAsyncHelper(const UpdateKeyDescriptionRequest& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateKeyDescriptionOutcomeReceived(this, request, UpdateKeyDescription(request));
+  m_onUpdateKeyDescriptionOutcomeReceived(this, request, UpdateKeyDescription(request), context);
 }
 

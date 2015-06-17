@@ -21,7 +21,9 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVaultNotificationsRequest::GetVaultNotificationsRequest()
+GetVaultNotificationsRequest::GetVaultNotificationsRequest() : 
+    m_accountIdHasBeenSet(false),
+    m_vaultNameHasBeenSet(false)
 {
 }
 

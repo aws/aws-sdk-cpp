@@ -21,7 +21,8 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLogGroupRequest::DeleteLogGroupRequest()
+DeleteLogGroupRequest::DeleteLogGroupRequest() : 
+    m_logGroupNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteLogGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
+
+  }
 
   return payload.WriteReadable();
 }

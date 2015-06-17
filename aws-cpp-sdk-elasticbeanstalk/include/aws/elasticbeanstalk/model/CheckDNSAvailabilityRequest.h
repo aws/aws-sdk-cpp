@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The prefix used when this CNAME is reserved. </p>
     */
-    inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefix = value; }
+    inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
 
     /*
      <p> The prefix used when this CNAME is reserved. </p>
     */
-    inline void SetCNAMEPrefix(const char* value) { m_cNAMEPrefix.assign(value); }
+    inline void SetCNAMEPrefix(const char* value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix.assign(value); }
 
     /*
      <p> The prefix used when this CNAME is reserved. </p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_cNAMEPrefix;
+    bool m_cNAMEPrefixHasBeenSet;
   };
 
 } // namespace Model

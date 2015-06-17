@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The starting hash key of the hash key range.</p>
     */
-    inline void SetStartingHashKey(const Aws::String& value) { m_startingHashKey = value; }
+    inline void SetStartingHashKey(const Aws::String& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
 
     /*
      <p>The starting hash key of the hash key range.</p>
     */
-    inline void SetStartingHashKey(const char* value) { m_startingHashKey.assign(value); }
+    inline void SetStartingHashKey(const char* value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey.assign(value); }
 
     /*
      <p>The starting hash key of the hash key range.</p>
@@ -71,12 +71,12 @@ namespace Model
     /*
      <p>The ending hash key of the hash key range.</p>
     */
-    inline void SetEndingHashKey(const Aws::String& value) { m_endingHashKey = value; }
+    inline void SetEndingHashKey(const Aws::String& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = value; }
 
     /*
      <p>The ending hash key of the hash key range.</p>
     */
-    inline void SetEndingHashKey(const char* value) { m_endingHashKey.assign(value); }
+    inline void SetEndingHashKey(const char* value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey.assign(value); }
 
     /*
      <p>The ending hash key of the hash key range.</p>
@@ -90,7 +90,9 @@ namespace Model
 
   private:
     Aws::String m_startingHashKey;
+    bool m_startingHashKeyHasBeenSet;
     Aws::String m_endingHashKey;
+    bool m_endingHashKeyHasBeenSet;
   };
 
 } // namespace Model

@@ -24,11 +24,13 @@ using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-RawMessage::RawMessage()
+RawMessage::RawMessage() : 
+    m_dataHasBeenSet(false)
 {
 }
 
-RawMessage::RawMessage(const XmlNode& xmlNode)
+RawMessage::RawMessage(const XmlNode& xmlNode) : 
+    m_dataHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -40,7 +42,11 @@ RawMessage& RawMessage::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dataNode = resultNode.FirstChild("Data");
-    m_data = HashingUtils::Base64Decode(StringUtils::Trim(dataNode.GetText().c_str()));
+    if(!dataNode.IsNull())
+    {
+      m_data = HashingUtils::Base64Decode(StringUtils::Trim(dataNode.GetText().c_str()));
+      m_dataHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,10 +54,16 @@ RawMessage& RawMessage::operator =(const XmlNode& xmlNode)
 
 void RawMessage::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_data).c_str()) << "&";
+  if(m_dataHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_data).c_str()) << "&";
+  }
 }
 
 void RawMessage::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Data=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_data).c_str()) << "&";
+  if(m_dataHasBeenSet)
+  {
+      oStream << location << ".Data=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_data).c_str()) << "&";
+  }
 }

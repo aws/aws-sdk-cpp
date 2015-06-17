@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
     */
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
+    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
     */
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
+    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
@@ -121,6 +121,7 @@ namespace Model
 
   private:
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet;
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
     Aws::String m_marker;

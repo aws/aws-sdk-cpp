@@ -19,7 +19,9 @@
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
-ChangeMessageVisibilityBatchRequest::ChangeMessageVisibilityBatchRequest()
+ChangeMessageVisibilityBatchRequest::ChangeMessageVisibilityBatchRequest() : 
+    m_queueUrlHasBeenSet(false),
+    m_entriesHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String ChangeMessageVisibilityBatchRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ChangeMessageVisibilityBatch&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
-  unsigned entriesCount = 1;
-  for(auto& item : m_entries)
+  if(m_queueUrlHasBeenSet)
   {
-    item.OutputToStream(ss, "ChangeMessageVisibilityBatchRequestEntry.", entriesCount, "");
-    entriesCount++;
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
+  if(m_entriesHasBeenSet)
+  {
+    unsigned entriesCount = 1;
+    for(auto& item : m_entries)
+    {
+      item.OutputToStream(ss, "ChangeMessageVisibilityBatchRequestEntry.", entriesCount, "");
+      entriesCount++;
+    }
   }
   ss << "Version=2012-11-05";
   return ss.str();

@@ -21,20 +21,34 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Tag::Tag()
+Tag::Tag() : 
+    m_keyHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
 }
 
-Tag::Tag(const JsonValue& jsonValue)
+Tag::Tag(const JsonValue& jsonValue) : 
+    m_keyHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Tag& Tag::operator =(const JsonValue& jsonValue)
 {
-  m_key = jsonValue.GetString("key");
+  if(jsonValue.ValueExists("key"))
+  {
+    m_key = jsonValue.GetString("key");
 
-  m_value = jsonValue.GetString("value");
+    m_keyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetString("value");
+
+    m_valueHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,9 +57,17 @@ JsonValue Tag::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("key", m_key);
+  if(m_keyHasBeenSet)
+  {
+   payload.WithString("key", m_key);
 
-  payload.WithString("value", m_value);
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("value", m_value);
+
+  }
 
   return std::move(payload);
 }

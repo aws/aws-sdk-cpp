@@ -48,12 +48,12 @@ namespace Model
     /*
      The unique ID for an invalidation request.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The unique ID for an invalidation request.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The unique ID for an invalidation request.
@@ -68,7 +68,7 @@ namespace Model
     
     inline double GetCreateTime() const{ return m_createTime; }
     
-    inline void SetCreateTime(double value) { m_createTime = value; }
+    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     
     inline InvalidationSummary&  WithCreateTime(double value) { SetCreateTime(value); return *this;}
@@ -80,12 +80,12 @@ namespace Model
     /*
      The status of an invalidation request.
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The status of an invalidation request.
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      The status of an invalidation request.
@@ -99,8 +99,11 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     double m_createTime;
+    bool m_createTimeHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

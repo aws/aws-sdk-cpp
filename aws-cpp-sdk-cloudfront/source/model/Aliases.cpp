@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 
 Aliases::Aliases() : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 Aliases::Aliases(const XmlNode& xmlNode) : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,14 +45,19 @@ Aliases& Aliases::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode cNAMENode = resultNode.FirstChild("CNAME");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode cNAMENodeParent = resultNode.FirstChild("CNAME");
+    XmlNode cNAMENode = cNAMENodeParent.FirstChild("member");
     if(!cNAMENode.IsNull())
     {
       while(!cNAMENode.IsNull())
       {
         m_items.push_back(StringUtils::Trim(cNAMENode.GetText().c_str()));
-        cNAMENode = cNAMENode.NextNode("CNAME");
+        cNAMENode = cNAMENode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -63,10 +70,14 @@ Aliases& Aliases::operator =(const XmlNode& xmlNode)
 void Aliases::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

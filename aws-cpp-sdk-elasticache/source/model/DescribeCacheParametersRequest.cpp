@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 DescribeCacheParametersRequest::DescribeCacheParametersRequest() : 
+    m_cacheParameterGroupNameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -31,7 +32,10 @@ Aws::String DescribeCacheParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeCacheParameters&";
-  ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
+  if(m_cacheParameterGroupNameHasBeenSet)
+  {
+    ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
+  }
   if(m_sourceHasBeenSet)
   {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";

@@ -20,6 +20,8 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
 SendMessageRequest::SendMessageRequest() : 
+    m_queueUrlHasBeenSet(false),
+    m_messageBodyHasBeenSet(false),
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
     m_messageAttributesHasBeenSet(false)
@@ -30,8 +32,14 @@ Aws::String SendMessageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SendMessage&";
-  ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
-  ss << "MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+  if(m_queueUrlHasBeenSet)
+  {
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+  }
+  if(m_messageBodyHasBeenSet)
+  {
+    ss << "MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+  }
   if(m_delaySecondsHasBeenSet)
   {
     ss << "DelaySeconds=" << m_delaySeconds << "&";

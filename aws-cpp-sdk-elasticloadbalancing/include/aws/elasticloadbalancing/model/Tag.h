@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The key of the tag.</p>
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>The key of the tag.</p>
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      <p>The key of the tag.</p>
@@ -93,6 +93,7 @@ namespace Model
 
   private:
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

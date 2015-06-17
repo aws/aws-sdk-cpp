@@ -48,7 +48,7 @@ namespace Model
     /*
      The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can customize, see CloudFront documentation.
     */
-    inline void SetErrorCode(long value) { m_errorCode = value; }
+    inline void SetErrorCode(long value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /*
      The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can customize, see CloudFront documentation.
@@ -119,6 +119,7 @@ namespace Model
 
   private:
     long m_errorCode;
+    bool m_errorCodeHasBeenSet;
     Aws::String m_responsePagePath;
     bool m_responsePagePathHasBeenSet;
     Aws::String m_responseCode;

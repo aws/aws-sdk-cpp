@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifier = value; }
+    inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifier.assign(value); }
+    inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
 
     /*
      <p> The identifier of the source DB instance from which to restore. </p> <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifier = value; }
+    inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifier.assign(value); }
+    inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /*
      <p> The name of the new database instance to be created. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -435,7 +435,9 @@ namespace Model
 
   private:
     Aws::String m_sourceDBInstanceIdentifier;
+    bool m_sourceDBInstanceIdentifierHasBeenSet;
     Aws::String m_targetDBInstanceIdentifier;
+    bool m_targetDBInstanceIdentifierHasBeenSet;
     double m_restoreTime;
     bool m_restoreTimeHasBeenSet;
     bool m_useLatestRestorableTime;

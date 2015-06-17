@@ -43,7 +43,7 @@ namespace Model
     /*
      The maximum number of identities to return.
     */
-    inline void SetMaxResults(long value) { m_maxResults = value; }
+    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /*
      The maximum number of identities to return.
@@ -76,6 +76,7 @@ namespace Model
 
   private:
     long m_maxResults;
+    bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

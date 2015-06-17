@@ -166,35 +166,38 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_automatedSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(automatedSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
       m_automatedSnapshotRetentionPeriodHasBeenSet = true;
     }
-    XmlNode clusterSecurityGroupNode = resultNode.FirstChild("ClusterSecurityGroup");
+    XmlNode clusterSecurityGroupNodeParent = resultNode.FirstChild("ClusterSecurityGroup");
+    XmlNode clusterSecurityGroupNode = clusterSecurityGroupNodeParent.FirstChild("member");
     if(!clusterSecurityGroupNode.IsNull())
     {
       while(!clusterSecurityGroupNode.IsNull())
       {
         m_clusterSecurityGroups.push_back(clusterSecurityGroupNode);
-        clusterSecurityGroupNode = clusterSecurityGroupNode.NextNode("ClusterSecurityGroup");
+        clusterSecurityGroupNode = clusterSecurityGroupNode.NextNode("member");
       }
 
       m_clusterSecurityGroupsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupNode = resultNode.FirstChild("VpcSecurityGroup");
+    XmlNode vpcSecurityGroupNodeParent = resultNode.FirstChild("VpcSecurityGroup");
+    XmlNode vpcSecurityGroupNode = vpcSecurityGroupNodeParent.FirstChild("member");
     if(!vpcSecurityGroupNode.IsNull())
     {
       while(!vpcSecurityGroupNode.IsNull())
       {
         m_vpcSecurityGroups.push_back(vpcSecurityGroupNode);
-        vpcSecurityGroupNode = vpcSecurityGroupNode.NextNode("VpcSecurityGroup");
+        vpcSecurityGroupNode = vpcSecurityGroupNode.NextNode("member");
       }
 
       m_vpcSecurityGroupsHasBeenSet = true;
     }
-    XmlNode clusterParameterGroupNode = resultNode.FirstChild("ClusterParameterGroup");
+    XmlNode clusterParameterGroupNodeParent = resultNode.FirstChild("ClusterParameterGroup");
+    XmlNode clusterParameterGroupNode = clusterParameterGroupNodeParent.FirstChild("member");
     if(!clusterParameterGroupNode.IsNull())
     {
       while(!clusterParameterGroupNode.IsNull())
       {
         m_clusterParameterGroups.push_back(clusterParameterGroupNode);
-        clusterParameterGroupNode = clusterParameterGroupNode.NextNode("ClusterParameterGroup");
+        clusterParameterGroupNode = clusterParameterGroupNode.NextNode("member");
       }
 
       m_clusterParameterGroupsHasBeenSet = true;
@@ -283,13 +286,14 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_clusterPublicKey = StringUtils::Trim(clusterPublicKeyNode.GetText().c_str());
       m_clusterPublicKeyHasBeenSet = true;
     }
-    XmlNode clusterNodesNode = resultNode.FirstChild("ClusterNodes");
+    XmlNode clusterNodesNodeParent = resultNode.FirstChild("ClusterNodes");
+    XmlNode clusterNodesNode = clusterNodesNodeParent.FirstChild("member");
     if(!clusterNodesNode.IsNull())
     {
       while(!clusterNodesNode.IsNull())
       {
         m_clusterNodes.push_back(clusterNodesNode);
-        clusterNodesNode = clusterNodesNode.NextNode("ClusterNodes");
+        clusterNodesNode = clusterNodesNode.NextNode("member");
       }
 
       m_clusterNodesHasBeenSet = true;
@@ -306,13 +310,14 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_clusterRevisionNumber = StringUtils::Trim(clusterRevisionNumberNode.GetText().c_str());
       m_clusterRevisionNumberHasBeenSet = true;
     }
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     if(!tagNode.IsNull())
     {
       while(!tagNode.IsNull())
       {
         m_tags.push_back(tagNode);
-        tagNode = tagNode.NextNode("Tag");
+        tagNode = tagNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

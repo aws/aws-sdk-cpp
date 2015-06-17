@@ -41,11 +41,12 @@ ExitStandbyResult& ExitStandbyResult::operator =(const AmazonWebServiceResult<Xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode activitiesNode = resultNode.FirstChild("Activities");
+    XmlNode activitiesNodeParent = resultNode.FirstChild("Activities");
+    XmlNode activitiesNode = activitiesNodeParent.FirstChild("member");
     while(!activitiesNode.IsNull())
     {
       m_activities.push_back(activitiesNode);
-      activitiesNode = activitiesNode.NextNode("Activities");
+      activitiesNode = activitiesNode.NextNode("member");
     }
 
   }

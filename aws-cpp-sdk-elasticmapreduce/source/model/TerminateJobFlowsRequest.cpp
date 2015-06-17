@@ -21,7 +21,8 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateJobFlowsRequest::TerminateJobFlowsRequest()
+TerminateJobFlowsRequest::TerminateJobFlowsRequest() : 
+    m_jobFlowIdsHasBeenSet(false)
 {
 }
 
@@ -29,12 +30,16 @@ Aws::String TerminateJobFlowsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
-  for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
+  if(m_jobFlowIdsHasBeenSet)
   {
-    jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);
+   Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
+   for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
+   {
+     jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);
+   }
+   payload.WithArray("JobFlowIds", std::move(jobFlowIdsJsonList));
+
   }
-  payload.WithArray("JobFlowIds", std::move(jobFlowIdsJsonList));
 
   return payload.WriteReadable();
 }

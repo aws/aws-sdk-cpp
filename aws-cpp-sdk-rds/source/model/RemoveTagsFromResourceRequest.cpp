@@ -19,7 +19,9 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest()
+RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() : 
+    m_resourceNameHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RemoveTagsFromResource&";
-  ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
-  unsigned tagKeysCount = 1;
-  for(auto& item : m_tagKeys)
+  if(m_resourceNameHasBeenSet)
   {
-    ss << "TagKeys." << tagKeysCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    tagKeysCount++;
+    ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  }
+  if(m_tagKeysHasBeenSet)
+  {
+    unsigned tagKeysCount = 1;
+    for(auto& item : m_tagKeys)
+    {
+      ss << "TagKeys." << tagKeysCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      tagKeysCount++;
+    }
   }
   ss << "Version=2014-10-31";
   return ss.str();

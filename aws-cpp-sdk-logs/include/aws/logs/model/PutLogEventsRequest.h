@@ -37,44 +37,64 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of the log group to put log events to.</p>
+    */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
+    /*
+     <p>The name of the log group to put log events to.</p>
+    */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
+    /*
+     <p>The name of the log group to put log events to.</p>
+    */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of the log group to put log events to.</p>
+    */
     inline PutLogEventsRequest&  WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log group to put log events to.</p>
+    */
     inline PutLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log stream to put log events to.</p>
+    */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
-    
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamName = value; }
+    /*
+     <p>The name of the log stream to put log events to.</p>
+    */
+    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    
-    inline void SetLogStreamName(const char* value) { m_logStreamName.assign(value); }
+    /*
+     <p>The name of the log stream to put log events to.</p>
+    */
+    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
-    
+    /*
+     <p>The name of the log stream to put log events to.</p>
+    */
     inline PutLogEventsRequest&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
-    
+    /*
+     <p>The name of the log stream to put log events to.</p>
+    */
     inline PutLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
     
     inline const Aws::Vector<InputLogEvent>& GetLogEvents() const{ return m_logEvents; }
     
-    inline void SetLogEvents(const Aws::Vector<InputLogEvent>& value) { m_logEvents = value; }
+    inline void SetLogEvents(const Aws::Vector<InputLogEvent>& value) { m_logEventsHasBeenSet = true; m_logEvents = value; }
 
     
     inline PutLogEventsRequest&  WithLogEvents(const Aws::Vector<InputLogEvent>& value) { SetLogEvents(value); return *this;}
 
     
-    inline PutLogEventsRequest& AddLogEvents(const InputLogEvent& value) { m_logEvents.push_back(value); return *this; }
+    inline PutLogEventsRequest& AddLogEvents(const InputLogEvent& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(value); return *this; }
 
     /*
      <p> A string token that must be obtained from the response of the previous <code class="code">PutLogEvents</code> request. </p>
@@ -102,8 +122,11 @@ namespace Model
 
   private:
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::String m_logStreamName;
+    bool m_logStreamNameHasBeenSet;
     Aws::Vector<InputLogEvent> m_logEvents;
+    bool m_logEventsHasBeenSet;
     Aws::String m_sequenceToken;
     bool m_sequenceTokenHasBeenSet;
   };

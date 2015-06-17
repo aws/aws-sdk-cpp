@@ -67,7 +67,7 @@ namespace Model
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline void SetTasks(const Aws::Vector<Aws::String>& value) { m_tasks = value; }
+    inline void SetTasks(const Aws::Vector<Aws::String>& value) { m_tasksHasBeenSet = true; m_tasks = value; }
 
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
@@ -77,17 +77,18 @@ namespace Model
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline DescribeTasksRequest& AddTasks(const Aws::String& value) { m_tasks.push_back(value); return *this; }
+    inline DescribeTasksRequest& AddTasks(const Aws::String& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
 
     /*
      <p>A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline DescribeTasksRequest& AddTasks(const char* value) { m_tasks.push_back(value); return *this; }
+    inline DescribeTasksRequest& AddTasks(const char* value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
 
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::Vector<Aws::String> m_tasks;
+    bool m_tasksHasBeenSet;
   };
 
 } // namespace Model

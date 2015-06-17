@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 PromoteReadReplicaRequest::PromoteReadReplicaRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_backupRetentionPeriod(0),
     m_backupRetentionPeriodHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String PromoteReadReplicaRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PromoteReadReplica&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_backupRetentionPeriodHasBeenSet)
   {
     ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";

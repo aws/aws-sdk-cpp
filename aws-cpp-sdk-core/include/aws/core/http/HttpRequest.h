@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/utils/Event.h>
 
 #include <memory>
 
@@ -45,6 +46,12 @@ extern AWS_CORE_API const char* USER_AGENT_HEADER;
 extern AWS_CORE_API const char* VIA_HEADER;
 extern AWS_CORE_API const char* HOST_HEADER;
 extern AWS_CORE_API const char* AMZ_TARGET_HEADER;
+
+class HttpRequest;
+class HttpResponse;
+
+typedef Utils::Event<HttpRequest, HttpResponse*, long long> DataReceivedEventHandler;
+typedef Utils::Event<HttpRequest, long long> DataSentEventHandler;
 
 /**
   * Abstract class for representing an HttpRequest.
@@ -199,9 +206,13 @@ public:
         SetHeaderValue(VIA_HEADER, value);
     }
 
+    DataReceivedEventHandler OnDataReceived;
+    DataSentEventHandler OnDataSent;
+
 private:
     URI m_uri;
     HttpMethod m_method;
+
 };
 
 } // namespace Http

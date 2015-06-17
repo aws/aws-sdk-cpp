@@ -43,11 +43,12 @@ DescribeReservedDBInstancesResult& DescribeReservedDBInstancesResult::operator =
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedDBInstanceNode = resultNode.FirstChild("ReservedDBInstance");
+    XmlNode reservedDBInstanceNodeParent = resultNode.FirstChild("ReservedDBInstance");
+    XmlNode reservedDBInstanceNode = reservedDBInstanceNodeParent.FirstChild("member");
     while(!reservedDBInstanceNode.IsNull())
     {
       m_reservedDBInstances.push_back(reservedDBInstanceNode);
-      reservedDBInstanceNode = reservedDBInstanceNode.NextNode("ReservedDBInstance");
+      reservedDBInstanceNode = reservedDBInstanceNode.NextNode("member");
     }
 
   }

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
     */
-    inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingId = value; }
+    inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
     */
-    inline void SetReservedNodeOfferingId(const char* value) { m_reservedNodeOfferingId.assign(value); }
+    inline void SetReservedNodeOfferingId(const char* value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId.assign(value); }
 
     /*
      <p>The unique identifier of the reserved node offering you want to purchase.</p>
@@ -74,6 +74,7 @@ namespace Model
 
   private:
     Aws::String m_reservedNodeOfferingId;
+    bool m_reservedNodeOfferingIdHasBeenSet;
     long m_nodeCount;
     bool m_nodeCountHasBeenSet;
   };

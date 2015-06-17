@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 ResetDBParameterGroupRequest::ResetDBParameterGroupRequest() : 
+    m_dBParameterGroupNameHasBeenSet(false),
     m_resetAllParameters(false),
     m_resetAllParametersHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String ResetDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ResetDBParameterGroup&";
-  ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  if(m_dBParameterGroupNameHasBeenSet)
+  {
+    ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  }
   if(m_resetAllParametersHasBeenSet)
   {
     ss << "ResetAllParameters=" << m_resetAllParameters << "&";

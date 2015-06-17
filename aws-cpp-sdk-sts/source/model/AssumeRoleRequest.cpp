@@ -20,6 +20,8 @@ using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
 AssumeRoleRequest::AssumeRoleRequest() : 
+    m_roleArnHasBeenSet(false),
+    m_roleSessionNameHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false),
@@ -33,8 +35,14 @@ Aws::String AssumeRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssumeRole&";
-  ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
-  ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
+  if(m_roleArnHasBeenSet)
+  {
+    ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+  }
+  if(m_roleSessionNameHasBeenSet)
+  {
+    ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
+  }
   if(m_policyHasBeenSet)
   {
     ss << "Policy=" << StringUtils::URLEncode(m_policy.c_str()) << "&";

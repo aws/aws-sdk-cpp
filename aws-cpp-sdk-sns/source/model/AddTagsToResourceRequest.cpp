@@ -19,7 +19,9 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-AddTagsToResourceRequest::AddTagsToResourceRequest()
+AddTagsToResourceRequest::AddTagsToResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String AddTagsToResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AddTagsToResource&";
-  ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
-  unsigned tagsCount = 1;
-  for(auto& item : m_tags)
+  if(m_resourceArnHasBeenSet)
   {
-    item.OutputToStream(ss, "Tags.", tagsCount, "");
-    tagsCount++;
+    ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.", tagsCount, "");
+      tagsCount++;
+    }
   }
   ss << "Version=2010-03-31";
   return ss.str();

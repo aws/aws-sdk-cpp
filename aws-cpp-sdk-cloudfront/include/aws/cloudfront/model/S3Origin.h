@@ -48,12 +48,12 @@ namespace Model
     /*
      The DNS name of the S3 origin.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The DNS name of the S3 origin.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The DNS name of the S3 origin.
@@ -72,12 +72,12 @@ namespace Model
     /*
      Your S3 origin's origin access identity.
     */
-    inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentity = value; }
+    inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
 
     /*
      Your S3 origin's origin access identity.
     */
-    inline void SetOriginAccessIdentity(const char* value) { m_originAccessIdentity.assign(value); }
+    inline void SetOriginAccessIdentity(const char* value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity.assign(value); }
 
     /*
      Your S3 origin's origin access identity.
@@ -91,7 +91,9 @@ namespace Model
 
   private:
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     Aws::String m_originAccessIdentity;
+    bool m_originAccessIdentityHasBeenSet;
   };
 
 } // namespace Model

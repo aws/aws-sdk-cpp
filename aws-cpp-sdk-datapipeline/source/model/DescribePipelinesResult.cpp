@@ -36,11 +36,15 @@ DescribePipelinesResult::DescribePipelinesResult(const AmazonWebServiceResult<Js
 DescribePipelinesResult& DescribePipelinesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  Array<JsonValue> pipelineDescriptionListJsonList = jsonValue.GetArray("pipelineDescriptionList");
-  for(unsigned pipelineDescriptionListIndex = 0; pipelineDescriptionListIndex < pipelineDescriptionListJsonList.GetLength(); ++pipelineDescriptionListIndex)
+  if(jsonValue.ValueExists("pipelineDescriptionList"))
   {
-    m_pipelineDescriptionList.push_back(pipelineDescriptionListJsonList[pipelineDescriptionListIndex].AsObject());
+    Array<JsonValue> pipelineDescriptionListJsonList = jsonValue.GetArray("pipelineDescriptionList");
+    for(unsigned pipelineDescriptionListIndex = 0; pipelineDescriptionListIndex < pipelineDescriptionListJsonList.GetLength(); ++pipelineDescriptionListIndex)
+    {
+      m_pipelineDescriptionList.push_back(pipelineDescriptionListJsonList[pipelineDescriptionListIndex].AsObject());
+    }
   }
+
 
 
   return *this;

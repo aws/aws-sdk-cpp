@@ -22,8 +22,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateTableRequest::CreateTableRequest() : 
+    m_attributeDefinitionsHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_keySchemaHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false)
 {
 }
@@ -32,21 +36,33 @@ Aws::String CreateTableRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
-  for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
+  if(m_attributeDefinitionsHasBeenSet)
   {
-    attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
+   Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
+   for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
+   {
+     attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
+   }
+   payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
+
   }
-  payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
 
-  payload.WithString("TableName", m_tableName);
-
-  Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-  for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+  if(m_tableNameHasBeenSet)
   {
-    keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
+   payload.WithString("TableName", m_tableName);
+
   }
-  payload.WithArray("KeySchema", std::move(keySchemaJsonList));
+
+  if(m_keySchemaHasBeenSet)
+  {
+   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+   {
+     keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
+   }
+   payload.WithArray("KeySchema", std::move(keySchemaJsonList));
+
+  }
 
   if(m_localSecondaryIndexesHasBeenSet)
   {
@@ -70,7 +86,11 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   }
 
-  payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+  if(m_provisionedThroughputHasBeenSet)
+  {
+   payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  }
 
   if(m_streamSpecificationHasBeenSet)
   {

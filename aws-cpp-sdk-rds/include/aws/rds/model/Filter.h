@@ -51,12 +51,12 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -75,7 +75,7 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_values = value; }
+    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /*
      <p>This parameter is not currently supported.</p>
@@ -85,16 +85,18 @@ namespace Model
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline Filter& AddValues(const Aws::String& value) { m_values.push_back(value); return *this; }
+    inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /*
      <p>This parameter is not currently supported.</p>
     */
-    inline Filter& AddValues(const char* value) { m_values.push_back(value); return *this; }
+    inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::Vector<Aws::String> m_values;
+    bool m_valuesHasBeenSet;
   };
 
 } // namespace Model

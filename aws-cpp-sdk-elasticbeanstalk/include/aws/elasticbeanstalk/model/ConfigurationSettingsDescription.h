@@ -231,7 +231,7 @@ namespace Model
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
 
     
     inline ConfigurationSettingsDescription&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
@@ -256,6 +256,7 @@ namespace Model
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet;
   };
 
 } // namespace Model

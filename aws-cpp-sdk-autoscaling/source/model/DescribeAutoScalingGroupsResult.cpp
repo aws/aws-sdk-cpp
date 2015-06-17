@@ -41,11 +41,12 @@ DescribeAutoScalingGroupsResult& DescribeAutoScalingGroupsResult::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode autoScalingGroupsNode = resultNode.FirstChild("AutoScalingGroups");
+    XmlNode autoScalingGroupsNodeParent = resultNode.FirstChild("AutoScalingGroups");
+    XmlNode autoScalingGroupsNode = autoScalingGroupsNodeParent.FirstChild("member");
     while(!autoScalingGroupsNode.IsNull())
     {
       m_autoScalingGroups.push_back(autoScalingGroupsNode);
-      autoScalingGroupsNode = autoScalingGroupsNode.NextNode("AutoScalingGroups");
+      autoScalingGroupsNode = autoScalingGroupsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

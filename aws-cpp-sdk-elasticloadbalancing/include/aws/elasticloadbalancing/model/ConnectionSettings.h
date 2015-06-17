@@ -49,7 +49,7 @@ namespace Model
     /*
      <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     */
-    inline void SetIdleTimeout(long value) { m_idleTimeout = value; }
+    inline void SetIdleTimeout(long value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
 
     /*
      <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
@@ -58,6 +58,7 @@ namespace Model
 
   private:
     long m_idleTimeout;
+    bool m_idleTimeoutHasBeenSet;
   };
 
 } // namespace Model

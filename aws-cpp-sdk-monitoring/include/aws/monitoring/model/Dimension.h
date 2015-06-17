@@ -50,12 +50,12 @@ namespace Model
     /*
      <p> The name of the dimension. </p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p> The name of the dimension. </p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p> The name of the dimension. </p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p> The value representing the dimension measurement </p>
     */
-    inline void SetValue(const Aws::String& value) { m_value = value; }
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p> The value representing the dimension measurement </p>
     */
-    inline void SetValue(const char* value) { m_value.assign(value); }
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /*
      <p> The value representing the dimension measurement </p>
@@ -93,7 +93,9 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_value;
+    bool m_valueHasBeenSet;
   };
 
 } // namespace Model

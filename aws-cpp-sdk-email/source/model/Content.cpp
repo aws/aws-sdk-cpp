@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 Content::Content() : 
+    m_dataHasBeenSet(false),
     m_charsetHasBeenSet(false)
 {
 }
 
 Content::Content(const XmlNode& xmlNode) : 
+    m_dataHasBeenSet(false),
     m_charsetHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ Content& Content::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dataNode = resultNode.FirstChild("Data");
-    m_data = StringUtils::Trim(dataNode.GetText().c_str());
+    if(!dataNode.IsNull())
+    {
+      m_data = StringUtils::Trim(dataNode.GetText().c_str());
+      m_dataHasBeenSet = true;
+    }
     XmlNode charsetNode = resultNode.FirstChild("Charset");
     if(!charsetNode.IsNull())
     {
@@ -55,7 +61,10 @@ Content& Content::operator =(const XmlNode& xmlNode)
 
 void Content::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(m_data.c_str()) << "&";
+  if(m_dataHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(m_data.c_str()) << "&";
+  }
   if(m_charsetHasBeenSet)
   {
       oStream << location << index << locationValue << ".Charset=" << StringUtils::URLEncode(m_charset.c_str()) << "&";
@@ -64,7 +73,10 @@ void Content::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
 void Content::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Data=" << StringUtils::URLEncode(m_data.c_str()) << "&";
+  if(m_dataHasBeenSet)
+  {
+      oStream << location << ".Data=" << StringUtils::URLEncode(m_data.c_str()) << "&";
+  }
   if(m_charsetHasBeenSet)
   {
       oStream << location << ".Charset=" << StringUtils::URLEncode(m_charset.c_str()) << "&";

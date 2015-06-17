@@ -21,7 +21,8 @@ using namespace Aws::codedeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest()
+GetApplicationRequest::GetApplicationRequest() : 
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String GetApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
+
+  }
 
   return payload.WriteReadable();
 }

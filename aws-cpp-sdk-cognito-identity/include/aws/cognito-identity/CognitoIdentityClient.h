@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-identity/model/CreateIdentityPoolResult.h>
+#include <aws/cognito-identity/model/DeleteIdentitiesResult.h>
 #include <aws/cognito-identity/model/DescribeIdentityResult.h>
 #include <aws/cognito-identity/model/DescribeIdentityPoolResult.h>
 #include <aws/cognito-identity/model/GetCredentialsForIdentityResult.h>
@@ -35,6 +36,7 @@
 #include <aws/cognito-identity/model/MergeDeveloperIdentitiesResult.h>
 #include <aws/cognito-identity/model/UpdateIdentityPoolResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -78,6 +80,7 @@ namespace CognitoIdentity
 namespace Model
 {
     class CreateIdentityPoolRequest;
+    class DeleteIdentitiesRequest;
     class DeleteIdentityPoolRequest;
     class DescribeIdentityRequest;
     class DescribeIdentityPoolRequest;
@@ -96,6 +99,7 @@ namespace Model
     class UpdateIdentityPoolRequest;
 
   typedef Utils::Outcome<CreateIdentityPoolResult, Client::AWSError<CognitoIdentityErrors>> CreateIdentityPoolOutcome;
+  typedef Utils::Outcome<DeleteIdentitiesResult, Client::AWSError<CognitoIdentityErrors>> DeleteIdentitiesOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<CognitoIdentityErrors>> DeleteIdentityPoolOutcome;
   typedef Utils::Outcome<DescribeIdentityResult, Client::AWSError<CognitoIdentityErrors>> DescribeIdentityOutcome;
   typedef Utils::Outcome<DescribeIdentityPoolResult, Client::AWSError<CognitoIdentityErrors>> DescribeIdentityPoolOutcome;
@@ -114,6 +118,7 @@ namespace Model
   typedef Utils::Outcome<UpdateIdentityPoolResult, Client::AWSError<CognitoIdentityErrors>> UpdateIdentityPoolOutcome;
 
   typedef std::future<CreateIdentityPoolOutcome> CreateIdentityPoolOutcomeCallable;
+  typedef std::future<DeleteIdentitiesOutcome> DeleteIdentitiesOutcomeCallable;
   typedef std::future<DeleteIdentityPoolOutcome> DeleteIdentityPoolOutcomeCallable;
   typedef std::future<DescribeIdentityOutcome> DescribeIdentityOutcomeCallable;
   typedef std::future<DescribeIdentityPoolOutcome> DescribeIdentityPoolOutcomeCallable;
@@ -134,23 +139,24 @@ namespace Model
 
     class CognitoIdentityClient;
 
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::CreateIdentityPoolRequest&, const Model::CreateIdentityPoolOutcome&> CreateIdentityPoolOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DeleteIdentityPoolRequest&, const Model::DeleteIdentityPoolOutcome&> DeleteIdentityPoolOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DescribeIdentityRequest&, const Model::DescribeIdentityOutcome&> DescribeIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DescribeIdentityPoolRequest&, const Model::DescribeIdentityPoolOutcome&> DescribeIdentityPoolOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetCredentialsForIdentityRequest&, const Model::GetCredentialsForIdentityOutcome&> GetCredentialsForIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetIdRequest&, const Model::GetIdOutcome&> GetIdOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetIdentityPoolRolesRequest&, const Model::GetIdentityPoolRolesOutcome&> GetIdentityPoolRolesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetOpenIdTokenRequest&, const Model::GetOpenIdTokenOutcome&> GetOpenIdTokenOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetOpenIdTokenForDeveloperIdentityRequest&, const Model::GetOpenIdTokenForDeveloperIdentityOutcome&> GetOpenIdTokenForDeveloperIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&> ListIdentitiesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::ListIdentityPoolsRequest&, const Model::ListIdentityPoolsOutcome&> ListIdentityPoolsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::LookupDeveloperIdentityRequest&, const Model::LookupDeveloperIdentityOutcome&> LookupDeveloperIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::MergeDeveloperIdentitiesRequest&, const Model::MergeDeveloperIdentitiesOutcome&> MergeDeveloperIdentitiesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::SetIdentityPoolRolesRequest&, const Model::SetIdentityPoolRolesOutcome&> SetIdentityPoolRolesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::UnlinkDeveloperIdentityRequest&, const Model::UnlinkDeveloperIdentityOutcome&> UnlinkDeveloperIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::UnlinkIdentityRequest&, const Model::UnlinkIdentityOutcome&> UnlinkIdentityOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::UpdateIdentityPoolRequest&, const Model::UpdateIdentityPoolOutcome&> UpdateIdentityPoolOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::CreateIdentityPoolRequest&, const Model::CreateIdentityPoolOutcome&, const Aws::Client::AsyncCallerContext*> CreateIdentityPoolOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DeleteIdentitiesRequest&, const Model::DeleteIdentitiesOutcome&, const Aws::Client::AsyncCallerContext*> DeleteIdentitiesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DeleteIdentityPoolRequest&, const Model::DeleteIdentityPoolOutcome&, const Aws::Client::AsyncCallerContext*> DeleteIdentityPoolOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DescribeIdentityRequest&, const Model::DescribeIdentityOutcome&, const Aws::Client::AsyncCallerContext*> DescribeIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::DescribeIdentityPoolRequest&, const Model::DescribeIdentityPoolOutcome&, const Aws::Client::AsyncCallerContext*> DescribeIdentityPoolOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetCredentialsForIdentityRequest&, const Model::GetCredentialsForIdentityOutcome&, const Aws::Client::AsyncCallerContext*> GetCredentialsForIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetIdRequest&, const Model::GetIdOutcome&, const Aws::Client::AsyncCallerContext*> GetIdOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetIdentityPoolRolesRequest&, const Model::GetIdentityPoolRolesOutcome&, const Aws::Client::AsyncCallerContext*> GetIdentityPoolRolesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetOpenIdTokenRequest&, const Model::GetOpenIdTokenOutcome&, const Aws::Client::AsyncCallerContext*> GetOpenIdTokenOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::GetOpenIdTokenForDeveloperIdentityRequest&, const Model::GetOpenIdTokenForDeveloperIdentityOutcome&, const Aws::Client::AsyncCallerContext*> GetOpenIdTokenForDeveloperIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&, const Aws::Client::AsyncCallerContext*> ListIdentitiesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::ListIdentityPoolsRequest&, const Model::ListIdentityPoolsOutcome&, const Aws::Client::AsyncCallerContext*> ListIdentityPoolsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::LookupDeveloperIdentityRequest&, const Model::LookupDeveloperIdentityOutcome&, const Aws::Client::AsyncCallerContext*> LookupDeveloperIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::MergeDeveloperIdentitiesRequest&, const Model::MergeDeveloperIdentitiesOutcome&, const Aws::Client::AsyncCallerContext*> MergeDeveloperIdentitiesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::SetIdentityPoolRolesRequest&, const Model::SetIdentityPoolRolesOutcome&, const Aws::Client::AsyncCallerContext*> SetIdentityPoolRolesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::UnlinkDeveloperIdentityRequest&, const Model::UnlinkDeveloperIdentityOutcome&, const Aws::Client::AsyncCallerContext*> UnlinkDeveloperIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::UnlinkIdentityRequest&, const Model::UnlinkIdentityOutcome&, const Aws::Client::AsyncCallerContext*> UnlinkIdentityOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CognitoIdentityClient, const Model::UpdateIdentityPoolRequest&, const Model::UpdateIdentityPoolOutcome&, const Aws::Client::AsyncCallerContext*> UpdateIdentityPoolOutcomeReceivedEvent;
 
   /*
     <fullname>Amazon Cognito</fullname> <p>Amazon Cognito is a web service that delivers scoped temporary credentials to mobile devices and other untrusted environments. Amazon Cognito uniquely identifies a device and supplies the user with a consistent identity over the lifetime of an application.</p> <p>Using Amazon Cognito, you can enable authentication with one or more third-party identity providers (Facebook, Google, or Login with Amazon), and you can also choose to support unauthenticated access from your app. Cognito delivers a unique identifier for each user and acts as an OpenID token provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege AWS credentials.</p> <p>To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the end user is authenticated with one of the supported identity providers, set the <code>Logins</code> map with the identity provider token. <code>GetId</code> returns a unique identifier for the user.</p> <p>Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned by <code>GetId</code>. Assuming your identity pool has been configured via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code> will return AWS credentials for your use. If your pool has not been configured with <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS and retrieve AWS credentials. This call expects the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a> to retrieve AWS credentials.</p> <p>If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.</p>
@@ -199,7 +205,26 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateIdentityPoolAsync(const Model::CreateIdentityPoolRequest& request) const;
+     void CreateIdentityPoolAsync(const Model::CreateIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>
+     */
+     Model::DeleteIdentitiesOutcome DeleteIdentities(const Model::DeleteIdentitiesRequest& request) const;
+
+     /*
+       <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::DeleteIdentitiesOutcomeCallable DeleteIdentitiesCallable(const Model::DeleteIdentitiesRequest& request) const;
+
+     /*
+       <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void DeleteIdentitiesAsync(const Model::DeleteIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -218,7 +243,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteIdentityPoolAsync(const Model::DeleteIdentityPoolRequest& request) const;
+     void DeleteIdentityPoolAsync(const Model::DeleteIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -237,7 +262,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeIdentityAsync(const Model::DescribeIdentityRequest& request) const;
+     void DescribeIdentityAsync(const Model::DescribeIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -256,7 +281,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeIdentityPoolAsync(const Model::DescribeIdentityPoolRequest& request) const;
+     void DescribeIdentityPoolAsync(const Model::DescribeIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns credentials for the the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p> <p>This is a public API. You do not need any credentials to call this API.</p>
@@ -275,7 +300,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetCredentialsForIdentityAsync(const Model::GetCredentialsForIdentityRequest& request) const;
+     void GetCredentialsForIdentityAsync(const Model::GetCredentialsForIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p> <p>token+";"+tokenSecret.</p> <p>This is a public API. You do not need any credentials to call this API.</p>
@@ -294,7 +319,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetIdAsync(const Model::GetIdRequest& request) const;
+     void GetIdAsync(const Model::GetIdRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -313,7 +338,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetIdentityPoolRolesAsync(const Model::GetIdentityPoolRolesRequest& request) const;
+     void GetIdentityPoolRolesAsync(const Model::GetIdentityPoolRolesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 15 minutes.</p> <p>This is a public API. You do not need any credentials to call this API.</p>
@@ -332,7 +357,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetOpenIdTokenAsync(const Model::GetOpenIdTokenRequest& request) const;
+     void GetOpenIdTokenAsync(const Model::GetOpenIdTokenRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the "domain" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -351,7 +376,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetOpenIdTokenForDeveloperIdentityAsync(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request) const;
+     void GetOpenIdTokenForDeveloperIdentityAsync(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists the identities in a pool.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -370,7 +395,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListIdentitiesAsync(const Model::ListIdentitiesRequest& request) const;
+     void ListIdentitiesAsync(const Model::ListIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Lists all of the Cognito identity pools registered for your account.</p> <p>This is a public API. You do not need any credentials to call this API.</p>
@@ -389,7 +414,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListIdentityPoolsAsync(const Model::ListIdentityPoolsRequest& request) const;
+     void ListIdentityPoolsAsync(const Model::ListIdentityPoolsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -408,7 +433,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void LookupDeveloperIdentityAsync(const Model::LookupDeveloperIdentityRequest& request) const;
+     void LookupDeveloperIdentityAsync(const Model::LookupDeveloperIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -427,7 +452,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void MergeDeveloperIdentitiesAsync(const Model::MergeDeveloperIdentitiesRequest& request) const;
+     void MergeDeveloperIdentitiesAsync(const Model::MergeDeveloperIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -446,7 +471,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void SetIdentityPoolRolesAsync(const Model::SetIdentityPoolRolesRequest& request) const;
+     void SetIdentityPoolRolesAsync(const Model::SetIdentityPoolRolesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>
@@ -465,7 +490,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UnlinkDeveloperIdentityAsync(const Model::UnlinkDeveloperIdentityRequest& request) const;
+     void UnlinkDeveloperIdentityAsync(const Model::UnlinkDeveloperIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>
@@ -484,7 +509,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UnlinkIdentityAsync(const Model::UnlinkIdentityRequest& request) const;
+     void UnlinkIdentityAsync(const Model::UnlinkIdentityRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates a user pool.</p> <p>You must use AWS Developer credentials to call this API.</p>
@@ -503,7 +528,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateIdentityPoolAsync(const Model::UpdateIdentityPoolRequest& request) const;
+     void UpdateIdentityPoolAsync(const Model::UpdateIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for CreateIdentityPoolAsync to call upon completion to the handler chain. You need to call this to
@@ -520,6 +545,23 @@ namespace Model
     inline void ClearAllCreateIdentityPoolOutcomeReceivedHandlers()
     {
       m_onCreateIdentityPoolOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for DeleteIdentitiesAsync to call upon completion to the handler chain. You need to call this to
+    * use DeleteIdentitiesAsync.
+    */
+    inline void RegisterDeleteIdentitiesOutcomeReceivedHandler(const DeleteIdentitiesOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onDeleteIdentitiesOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for DeleteIdentities.
+    */
+    inline void ClearAllDeleteIdentitiesOutcomeReceivedHandlers()
+    {
+      m_onDeleteIdentitiesOutcomeReceived.Clear();
     }
 
    /**
@@ -798,29 +840,31 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void CreateIdentityPoolAsyncHelper(const Model::CreateIdentityPoolRequest& request) const;
-    void DeleteIdentityPoolAsyncHelper(const Model::DeleteIdentityPoolRequest& request) const;
-    void DescribeIdentityAsyncHelper(const Model::DescribeIdentityRequest& request) const;
-    void DescribeIdentityPoolAsyncHelper(const Model::DescribeIdentityPoolRequest& request) const;
-    void GetCredentialsForIdentityAsyncHelper(const Model::GetCredentialsForIdentityRequest& request) const;
-    void GetIdAsyncHelper(const Model::GetIdRequest& request) const;
-    void GetIdentityPoolRolesAsyncHelper(const Model::GetIdentityPoolRolesRequest& request) const;
-    void GetOpenIdTokenAsyncHelper(const Model::GetOpenIdTokenRequest& request) const;
-    void GetOpenIdTokenForDeveloperIdentityAsyncHelper(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request) const;
-    void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request) const;
-    void ListIdentityPoolsAsyncHelper(const Model::ListIdentityPoolsRequest& request) const;
-    void LookupDeveloperIdentityAsyncHelper(const Model::LookupDeveloperIdentityRequest& request) const;
-    void MergeDeveloperIdentitiesAsyncHelper(const Model::MergeDeveloperIdentitiesRequest& request) const;
-    void SetIdentityPoolRolesAsyncHelper(const Model::SetIdentityPoolRolesRequest& request) const;
-    void UnlinkDeveloperIdentityAsyncHelper(const Model::UnlinkDeveloperIdentityRequest& request) const;
-    void UnlinkIdentityAsyncHelper(const Model::UnlinkIdentityRequest& request) const;
-    void UpdateIdentityPoolAsyncHelper(const Model::UpdateIdentityPoolRequest& request) const;
+    void CreateIdentityPoolAsyncHelper(const Model::CreateIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteIdentitiesAsyncHelper(const Model::DeleteIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteIdentityPoolAsyncHelper(const Model::DeleteIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeIdentityAsyncHelper(const Model::DescribeIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeIdentityPoolAsyncHelper(const Model::DescribeIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetCredentialsForIdentityAsyncHelper(const Model::GetCredentialsForIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetIdAsyncHelper(const Model::GetIdRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetIdentityPoolRolesAsyncHelper(const Model::GetIdentityPoolRolesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetOpenIdTokenAsyncHelper(const Model::GetOpenIdTokenRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetOpenIdTokenForDeveloperIdentityAsyncHelper(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListIdentityPoolsAsyncHelper(const Model::ListIdentityPoolsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void LookupDeveloperIdentityAsyncHelper(const Model::LookupDeveloperIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void MergeDeveloperIdentitiesAsyncHelper(const Model::MergeDeveloperIdentitiesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void SetIdentityPoolRolesAsyncHelper(const Model::SetIdentityPoolRolesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UnlinkDeveloperIdentityAsyncHelper(const Model::UnlinkDeveloperIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UnlinkIdentityAsyncHelper(const Model::UnlinkIdentityRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateIdentityPoolAsyncHelper(const Model::UpdateIdentityPoolRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
 
     /** events **/
     CreateIdentityPoolOutcomeReceivedEvent m_onCreateIdentityPoolOutcomeReceived;
+    DeleteIdentitiesOutcomeReceivedEvent m_onDeleteIdentitiesOutcomeReceived;
     DeleteIdentityPoolOutcomeReceivedEvent m_onDeleteIdentityPoolOutcomeReceived;
     DescribeIdentityOutcomeReceivedEvent m_onDescribeIdentityOutcomeReceived;
     DescribeIdentityPoolOutcomeReceivedEvent m_onDescribeIdentityPoolOutcomeReceived;

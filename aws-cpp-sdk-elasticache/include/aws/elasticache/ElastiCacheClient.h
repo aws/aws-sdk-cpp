@@ -56,6 +56,7 @@
 #include <aws/elasticache/model/ResetCacheParameterGroupResult.h>
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -215,43 +216,43 @@ namespace Model
 
   class ElastiCacheClient;
 
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&> AddTagsToResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::AuthorizeCacheSecurityGroupIngressRequest&, const Model::AuthorizeCacheSecurityGroupIngressOutcome&> AuthorizeCacheSecurityGroupIngressOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&> CopySnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheClusterRequest&, const Model::CreateCacheClusterOutcome&> CreateCacheClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheParameterGroupRequest&, const Model::CreateCacheParameterGroupOutcome&> CreateCacheParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheSecurityGroupRequest&, const Model::CreateCacheSecurityGroupOutcome&> CreateCacheSecurityGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheSubnetGroupRequest&, const Model::CreateCacheSubnetGroupOutcome&> CreateCacheSubnetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateReplicationGroupRequest&, const Model::CreateReplicationGroupOutcome&> CreateReplicationGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&> CreateSnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheClusterRequest&, const Model::DeleteCacheClusterOutcome&> DeleteCacheClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheParameterGroupRequest&, const Model::DeleteCacheParameterGroupOutcome&> DeleteCacheParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheSecurityGroupRequest&, const Model::DeleteCacheSecurityGroupOutcome&> DeleteCacheSecurityGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheSubnetGroupRequest&, const Model::DeleteCacheSubnetGroupOutcome&> DeleteCacheSubnetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteReplicationGroupRequest&, const Model::DeleteReplicationGroupOutcome&> DeleteReplicationGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&> DeleteSnapshotOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheClustersRequest&, const Model::DescribeCacheClustersOutcome&> DescribeCacheClustersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheEngineVersionsRequest&, const Model::DescribeCacheEngineVersionsOutcome&> DescribeCacheEngineVersionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheParameterGroupsRequest&, const Model::DescribeCacheParameterGroupsOutcome&> DescribeCacheParameterGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheParametersRequest&, const Model::DescribeCacheParametersOutcome&> DescribeCacheParametersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheSecurityGroupsRequest&, const Model::DescribeCacheSecurityGroupsOutcome&> DescribeCacheSecurityGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheSubnetGroupsRequest&, const Model::DescribeCacheSubnetGroupsOutcome&> DescribeCacheSubnetGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeEngineDefaultParametersRequest&, const Model::DescribeEngineDefaultParametersOutcome&> DescribeEngineDefaultParametersOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&> DescribeEventsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeReplicationGroupsRequest&, const Model::DescribeReplicationGroupsOutcome&> DescribeReplicationGroupsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeReservedCacheNodesRequest&, const Model::DescribeReservedCacheNodesOutcome&> DescribeReservedCacheNodesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeReservedCacheNodesOfferingsRequest&, const Model::DescribeReservedCacheNodesOfferingsOutcome&> DescribeReservedCacheNodesOfferingsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&> DescribeSnapshotsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&> ListTagsForResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyCacheClusterRequest&, const Model::ModifyCacheClusterOutcome&> ModifyCacheClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyCacheParameterGroupRequest&, const Model::ModifyCacheParameterGroupOutcome&> ModifyCacheParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyCacheSubnetGroupRequest&, const Model::ModifyCacheSubnetGroupOutcome&> ModifyCacheSubnetGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyReplicationGroupRequest&, const Model::ModifyReplicationGroupOutcome&> ModifyReplicationGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::PurchaseReservedCacheNodesOfferingRequest&, const Model::PurchaseReservedCacheNodesOfferingOutcome&> PurchaseReservedCacheNodesOfferingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::RebootCacheClusterRequest&, const Model::RebootCacheClusterOutcome&> RebootCacheClusterOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&> RemoveTagsFromResourceOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ResetCacheParameterGroupRequest&, const Model::ResetCacheParameterGroupOutcome&> ResetCacheParameterGroupOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<ElastiCacheClient, const Model::RevokeCacheSecurityGroupIngressRequest&, const Model::RevokeCacheSecurityGroupIngressOutcome&> RevokeCacheSecurityGroupIngressOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const Aws::Client::AsyncCallerContext*> AddTagsToResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::AuthorizeCacheSecurityGroupIngressRequest&, const Model::AuthorizeCacheSecurityGroupIngressOutcome&, const Aws::Client::AsyncCallerContext*> AuthorizeCacheSecurityGroupIngressOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const Aws::Client::AsyncCallerContext*> CopySnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheClusterRequest&, const Model::CreateCacheClusterOutcome&, const Aws::Client::AsyncCallerContext*> CreateCacheClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheParameterGroupRequest&, const Model::CreateCacheParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateCacheParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheSecurityGroupRequest&, const Model::CreateCacheSecurityGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateCacheSecurityGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateCacheSubnetGroupRequest&, const Model::CreateCacheSubnetGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateCacheSubnetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateReplicationGroupRequest&, const Model::CreateReplicationGroupOutcome&, const Aws::Client::AsyncCallerContext*> CreateReplicationGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const Aws::Client::AsyncCallerContext*> CreateSnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheClusterRequest&, const Model::DeleteCacheClusterOutcome&, const Aws::Client::AsyncCallerContext*> DeleteCacheClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheParameterGroupRequest&, const Model::DeleteCacheParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteCacheParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheSecurityGroupRequest&, const Model::DeleteCacheSecurityGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteCacheSecurityGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteCacheSubnetGroupRequest&, const Model::DeleteCacheSubnetGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteCacheSubnetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteReplicationGroupRequest&, const Model::DeleteReplicationGroupOutcome&, const Aws::Client::AsyncCallerContext*> DeleteReplicationGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const Aws::Client::AsyncCallerContext*> DeleteSnapshotOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheClustersRequest&, const Model::DescribeCacheClustersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCacheClustersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheEngineVersionsRequest&, const Model::DescribeCacheEngineVersionsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCacheEngineVersionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheParameterGroupsRequest&, const Model::DescribeCacheParameterGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCacheParameterGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheParametersRequest&, const Model::DescribeCacheParametersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCacheParametersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheSecurityGroupsRequest&, const Model::DescribeCacheSecurityGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCacheSecurityGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeCacheSubnetGroupsRequest&, const Model::DescribeCacheSubnetGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeCacheSubnetGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeEngineDefaultParametersRequest&, const Model::DescribeEngineDefaultParametersOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEngineDefaultParametersOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeEventsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeReplicationGroupsRequest&, const Model::DescribeReplicationGroupsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeReplicationGroupsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeReservedCacheNodesRequest&, const Model::DescribeReservedCacheNodesOutcome&, const Aws::Client::AsyncCallerContext*> DescribeReservedCacheNodesOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeReservedCacheNodesOfferingsRequest&, const Model::DescribeReservedCacheNodesOfferingsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeReservedCacheNodesOfferingsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const Aws::Client::AsyncCallerContext*> DescribeSnapshotsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const Aws::Client::AsyncCallerContext*> ListTagsForResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyCacheClusterRequest&, const Model::ModifyCacheClusterOutcome&, const Aws::Client::AsyncCallerContext*> ModifyCacheClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyCacheParameterGroupRequest&, const Model::ModifyCacheParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> ModifyCacheParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyCacheSubnetGroupRequest&, const Model::ModifyCacheSubnetGroupOutcome&, const Aws::Client::AsyncCallerContext*> ModifyCacheSubnetGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ModifyReplicationGroupRequest&, const Model::ModifyReplicationGroupOutcome&, const Aws::Client::AsyncCallerContext*> ModifyReplicationGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::PurchaseReservedCacheNodesOfferingRequest&, const Model::PurchaseReservedCacheNodesOfferingOutcome&, const Aws::Client::AsyncCallerContext*> PurchaseReservedCacheNodesOfferingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::RebootCacheClusterRequest&, const Model::RebootCacheClusterOutcome&, const Aws::Client::AsyncCallerContext*> RebootCacheClusterOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const Aws::Client::AsyncCallerContext*> RemoveTagsFromResourceOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::ResetCacheParameterGroupRequest&, const Model::ResetCacheParameterGroupOutcome&, const Aws::Client::AsyncCallerContext*> ResetCacheParameterGroupOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<ElastiCacheClient, const Model::RevokeCacheSecurityGroupIngressRequest&, const Model::RevokeCacheSecurityGroupIngressOutcome&, const Aws::Client::AsyncCallerContext*> RevokeCacheSecurityGroupIngressOutcomeReceivedEvent;
 
   /*
     <fullname>Amazon ElastiCache</fullname> <p>Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the cloud.</p> <p>With ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of the administrative burden of launching and managing a distributed cache. The service makes setup, scaling, and cluster failure handling much simpler than in a self-managed cache deployment.</p> <p>In addition, through integration with Amazon CloudWatch, customers get enhanced visibility into the key performance statistics associated with their cache and can receive alarms if a part of their cache runs hot.</p>
@@ -300,7 +301,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request) const;
+     void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region. </note>
@@ -319,7 +320,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AuthorizeCacheSecurityGroupIngressAsync(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
+     void AuthorizeCacheSecurityGroupIngressAsync(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
@@ -338,7 +339,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CopySnapshotAsync(const Model::CopySnapshotRequest& request) const;
+     void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>
@@ -357,7 +358,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateCacheClusterAsync(const Model::CreateCacheClusterRequest& request) const;
+     void CreateCacheClusterAsync(const Model::CreateCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.</p>
@@ -376,7 +377,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateCacheParameterGroupAsync(const Model::CreateCacheParameterGroupRequest& request) const;
+     void CreateCacheParameterGroupAsync(const Model::CreateCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.</p> <p>Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
@@ -395,7 +396,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateCacheSecurityGroupAsync(const Model::CreateCacheSecurityGroupRequest& request) const;
+     void CreateCacheSecurityGroupAsync(const Model::CreateCacheSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.</p> <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).</p>
@@ -414,7 +415,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateCacheSubnetGroupAsync(const Model::CreateCacheSubnetGroupRequest& request) const;
+     void CreateCacheSubnetGroupAsync(const Model::CreateCacheSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CreateReplicationGroup</i> action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.</p> <p>When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
@@ -433,7 +434,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request) const;
+     void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific moment in time.</p>
@@ -452,7 +453,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request) const;
+     void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.</p>
@@ -471,7 +472,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteCacheClusterAsync(const Model::DeleteCacheClusterRequest& request) const;
+     void DeleteCacheClusterAsync(const Model::DeleteCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>
@@ -490,7 +491,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteCacheParameterGroupAsync(const Model::DeleteCacheParameterGroupRequest& request) const;
+     void DeleteCacheParameterGroupAsync(const Model::DeleteCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.</p> <note>You cannot delete a cache security group if it is associated with any cache clusters.</note>
@@ -509,7 +510,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteCacheSecurityGroupAsync(const Model::DeleteCacheSecurityGroupRequest& request) const;
+     void DeleteCacheSecurityGroupAsync(const Model::DeleteCacheSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p> <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
@@ -528,7 +529,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteCacheSubnetGroupAsync(const Model::DeleteCacheSubnetGroupRequest& request) const;
+     void DeleteCacheSubnetGroupAsync(const Model::DeleteCacheSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p> <p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>
@@ -547,7 +548,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteReplicationGroupAsync(const Model::DeleteReplicationGroupRequest& request) const;
+     void DeleteReplicationGroupAsync(const Model::DeleteReplicationGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.</p>
@@ -566,7 +567,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request) const;
+     void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeCacheClusters</i> action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</p>
@@ -585,7 +586,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCacheClustersAsync(const Model::DescribeCacheClustersRequest& request) const;
+     void DescribeCacheClustersAsync(const Model::DescribeCacheClustersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache engines and their versions.</p>
@@ -604,7 +605,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCacheEngineVersionsAsync(const Model::DescribeCacheEngineVersionsRequest& request) const;
+     void DescribeCacheEngineVersionsAsync(const Model::DescribeCacheEngineVersionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.</p>
@@ -623,7 +624,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCacheParameterGroupsAsync(const Model::DescribeCacheParameterGroupsRequest& request) const;
+     void DescribeCacheParameterGroupsAsync(const Model::DescribeCacheParameterGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list for a particular cache parameter group.</p>
@@ -642,7 +643,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCacheParametersAsync(const Model::DescribeCacheParametersRequest& request) const;
+     void DescribeCacheParametersAsync(const Model::DescribeCacheParametersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.</p>
@@ -661,7 +662,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCacheSecurityGroupsAsync(const Model::DescribeCacheSecurityGroupsRequest& request) const;
+     void DescribeCacheSecurityGroupsAsync(const Model::DescribeCacheSecurityGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
@@ -680,7 +681,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeCacheSubnetGroupsAsync(const Model::DescribeCacheSubnetGroupsRequest& request) const;
+     void DescribeCacheSubnetGroupsAsync(const Model::DescribeCacheSubnetGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system parameter information for the specified cache engine.</p>
@@ -699,7 +700,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request) const;
+     void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeEvents</i> action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
@@ -718,7 +719,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeEventsAsync(const Model::DescribeEventsRequest& request) const;
+     void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeReplicationGroups</i> action returns information about a particular replication group. If no identifier is specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</p>
@@ -737,7 +738,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeReplicationGroupsAsync(const Model::DescribeReplicationGroupsRequest& request) const;
+     void DescribeReplicationGroupsAsync(const Model::DescribeReplicationGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>
@@ -756,7 +757,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeReservedCacheNodesAsync(const Model::DescribeReservedCacheNodesRequest& request) const;
+     void DescribeReservedCacheNodesAsync(const Model::DescribeReservedCacheNodesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache node offerings.</p>
@@ -775,7 +776,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeReservedCacheNodesOfferingsAsync(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
+     void DescribeReservedCacheNodesOfferingsAsync(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>
@@ -794,7 +795,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request) const;
+     void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>ListTagsForResource</i> action lists all cost allocation tags currently on the named resource. A <i>cost allocation tag</i> is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>
@@ -813,7 +814,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request) const;
+     void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
@@ -832,7 +833,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyCacheClusterAsync(const Model::ModifyCacheClusterRequest& request) const;
+     void ModifyCacheClusterAsync(const Model::ModifyCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
@@ -851,7 +852,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyCacheParameterGroupAsync(const Model::ModifyCacheParameterGroupRequest& request) const;
+     void ModifyCacheParameterGroupAsync(const Model::ModifyCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.</p>
@@ -870,7 +871,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyCacheSubnetGroupAsync(const Model::ModifyCacheSubnetGroupRequest& request) const;
+     void ModifyCacheSubnetGroupAsync(const Model::ModifyCacheSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.</p>
@@ -889,7 +890,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request) const;
+     void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved cache node offering.</p>
@@ -908,7 +909,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void PurchaseReservedCacheNodesOfferingAsync(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
+     void PurchaseReservedCacheNodesOfferingAsync(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache cluster event is created.</p>
@@ -927,7 +928,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RebootCacheClusterAsync(const Model::RebootCacheClusterRequest& request) const;
+     void RebootCacheClusterAsync(const Model::RebootCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code> list from the named resource.</p>
@@ -946,7 +947,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request) const;
+     void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</p>
@@ -965,7 +966,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ResetCacheParameterGroupAsync(const Model::ResetCacheParameterGroupRequest& request) const;
+     void ResetCacheParameterGroupAsync(const Model::ResetCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.</p>
@@ -984,7 +985,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RevokeCacheSecurityGroupIngressAsync(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
+     void RevokeCacheSecurityGroupIngressAsync(const Model::RevokeCacheSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddTagsToResourceAsync to call upon completion to the handler chain. You need to call this to
@@ -1619,43 +1620,43 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request) const;
-    void AuthorizeCacheSecurityGroupIngressAsyncHelper(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
-    void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request) const;
-    void CreateCacheClusterAsyncHelper(const Model::CreateCacheClusterRequest& request) const;
-    void CreateCacheParameterGroupAsyncHelper(const Model::CreateCacheParameterGroupRequest& request) const;
-    void CreateCacheSecurityGroupAsyncHelper(const Model::CreateCacheSecurityGroupRequest& request) const;
-    void CreateCacheSubnetGroupAsyncHelper(const Model::CreateCacheSubnetGroupRequest& request) const;
-    void CreateReplicationGroupAsyncHelper(const Model::CreateReplicationGroupRequest& request) const;
-    void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request) const;
-    void DeleteCacheClusterAsyncHelper(const Model::DeleteCacheClusterRequest& request) const;
-    void DeleteCacheParameterGroupAsyncHelper(const Model::DeleteCacheParameterGroupRequest& request) const;
-    void DeleteCacheSecurityGroupAsyncHelper(const Model::DeleteCacheSecurityGroupRequest& request) const;
-    void DeleteCacheSubnetGroupAsyncHelper(const Model::DeleteCacheSubnetGroupRequest& request) const;
-    void DeleteReplicationGroupAsyncHelper(const Model::DeleteReplicationGroupRequest& request) const;
-    void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request) const;
-    void DescribeCacheClustersAsyncHelper(const Model::DescribeCacheClustersRequest& request) const;
-    void DescribeCacheEngineVersionsAsyncHelper(const Model::DescribeCacheEngineVersionsRequest& request) const;
-    void DescribeCacheParameterGroupsAsyncHelper(const Model::DescribeCacheParameterGroupsRequest& request) const;
-    void DescribeCacheParametersAsyncHelper(const Model::DescribeCacheParametersRequest& request) const;
-    void DescribeCacheSecurityGroupsAsyncHelper(const Model::DescribeCacheSecurityGroupsRequest& request) const;
-    void DescribeCacheSubnetGroupsAsyncHelper(const Model::DescribeCacheSubnetGroupsRequest& request) const;
-    void DescribeEngineDefaultParametersAsyncHelper(const Model::DescribeEngineDefaultParametersRequest& request) const;
-    void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request) const;
-    void DescribeReplicationGroupsAsyncHelper(const Model::DescribeReplicationGroupsRequest& request) const;
-    void DescribeReservedCacheNodesAsyncHelper(const Model::DescribeReservedCacheNodesRequest& request) const;
-    void DescribeReservedCacheNodesOfferingsAsyncHelper(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
-    void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request) const;
-    void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request) const;
-    void ModifyCacheClusterAsyncHelper(const Model::ModifyCacheClusterRequest& request) const;
-    void ModifyCacheParameterGroupAsyncHelper(const Model::ModifyCacheParameterGroupRequest& request) const;
-    void ModifyCacheSubnetGroupAsyncHelper(const Model::ModifyCacheSubnetGroupRequest& request) const;
-    void ModifyReplicationGroupAsyncHelper(const Model::ModifyReplicationGroupRequest& request) const;
-    void PurchaseReservedCacheNodesOfferingAsyncHelper(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
-    void RebootCacheClusterAsyncHelper(const Model::RebootCacheClusterRequest& request) const;
-    void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request) const;
-    void ResetCacheParameterGroupAsyncHelper(const Model::ResetCacheParameterGroupRequest& request) const;
-    void RevokeCacheSecurityGroupIngressAsyncHelper(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
+    void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AuthorizeCacheSecurityGroupIngressAsyncHelper(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateCacheClusterAsyncHelper(const Model::CreateCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateCacheParameterGroupAsyncHelper(const Model::CreateCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateCacheSecurityGroupAsyncHelper(const Model::CreateCacheSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateCacheSubnetGroupAsyncHelper(const Model::CreateCacheSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateReplicationGroupAsyncHelper(const Model::CreateReplicationGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteCacheClusterAsyncHelper(const Model::DeleteCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteCacheParameterGroupAsyncHelper(const Model::DeleteCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteCacheSecurityGroupAsyncHelper(const Model::DeleteCacheSecurityGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteCacheSubnetGroupAsyncHelper(const Model::DeleteCacheSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteReplicationGroupAsyncHelper(const Model::DeleteReplicationGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCacheClustersAsyncHelper(const Model::DescribeCacheClustersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCacheEngineVersionsAsyncHelper(const Model::DescribeCacheEngineVersionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCacheParameterGroupsAsyncHelper(const Model::DescribeCacheParameterGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCacheParametersAsyncHelper(const Model::DescribeCacheParametersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCacheSecurityGroupsAsyncHelper(const Model::DescribeCacheSecurityGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeCacheSubnetGroupsAsyncHelper(const Model::DescribeCacheSubnetGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEngineDefaultParametersAsyncHelper(const Model::DescribeEngineDefaultParametersRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeReplicationGroupsAsyncHelper(const Model::DescribeReplicationGroupsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeReservedCacheNodesAsyncHelper(const Model::DescribeReservedCacheNodesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeReservedCacheNodesOfferingsAsyncHelper(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyCacheClusterAsyncHelper(const Model::ModifyCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyCacheParameterGroupAsyncHelper(const Model::ModifyCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyCacheSubnetGroupAsyncHelper(const Model::ModifyCacheSubnetGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ModifyReplicationGroupAsyncHelper(const Model::ModifyReplicationGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void PurchaseReservedCacheNodesOfferingAsyncHelper(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RebootCacheClusterAsyncHelper(const Model::RebootCacheClusterRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ResetCacheParameterGroupAsyncHelper(const Model::ResetCacheParameterGroupRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RevokeCacheSecurityGroupIngressAsyncHelper(const Model::RevokeCacheSecurityGroupIngressRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

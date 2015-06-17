@@ -45,12 +45,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -69,7 +69,7 @@ namespace Model
     /*
      <p>The tags to add, as key/value pairs.</p>
     */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
      <p>The tags to add, as key/value pairs.</p>
@@ -79,11 +79,13 @@ namespace Model
     /*
      <p>The tags to add, as key/value pairs.</p>
     */
-    inline AddTagsRequest& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    inline AddTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

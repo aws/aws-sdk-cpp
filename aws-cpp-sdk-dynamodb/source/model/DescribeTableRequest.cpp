@@ -21,7 +21,8 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTableRequest::DescribeTableRequest()
+DescribeTableRequest::DescribeTableRequest() : 
+    m_tableNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DescribeTableRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("TableName", m_tableName);
+  if(m_tableNameHasBeenSet)
+  {
+   payload.WithString("TableName", m_tableName);
+
+  }
 
   return payload.WriteReadable();
 }

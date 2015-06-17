@@ -20,6 +20,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() : 
+    m_clusterIdentifierHasBeenSet(false),
+    m_snapshotIdentifierHasBeenSet(false),
     m_snapshotClusterIdentifierHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -47,8 +49,14 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RestoreFromClusterSnapshot&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
-  ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+  if(m_snapshotIdentifierHasBeenSet)
+  {
+    ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
   if(m_snapshotClusterIdentifierHasBeenSet)
   {
     ss << "SnapshotClusterIdentifier=" << StringUtils::URLEncode(m_snapshotClusterIdentifier.c_str()) << "&";

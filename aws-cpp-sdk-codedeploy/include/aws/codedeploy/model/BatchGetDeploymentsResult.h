@@ -34,7 +34,7 @@ namespace codedeploy
 namespace Model
 {
   /*
-    <p>Represents the output of a batch get deployments operation.</p>
+    $shape.documentation
   */
   class AWS_CODEDEPLOY_API BatchGetDeploymentsResult
   {
@@ -43,23 +43,15 @@ namespace Model
     BatchGetDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     BatchGetDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    
     inline const Aws::Vector<DeploymentInfo>& GetDeploymentsInfo() const{ return m_deploymentsInfo; }
-    /*
-     <p>Information about the deployments.</p>
-    */
+    
     inline void SetDeploymentsInfo(const Aws::Vector<DeploymentInfo>& value) { m_deploymentsInfo = value; }
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    
     inline BatchGetDeploymentsResult&  WithDeploymentsInfo(const Aws::Vector<DeploymentInfo>& value) { SetDeploymentsInfo(value); return *this;}
 
-    /*
-     <p>Information about the deployments.</p>
-    */
+    
     inline BatchGetDeploymentsResult& AddDeploymentsInfo(const DeploymentInfo& value) { m_deploymentsInfo.push_back(value); return *this; }
 
   private:

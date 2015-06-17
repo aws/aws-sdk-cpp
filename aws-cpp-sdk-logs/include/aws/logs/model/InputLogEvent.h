@@ -30,7 +30,7 @@ namespace CloudWatchLogs
 namespace Model
 {
   /*
-    A log event is a record of some activity that was recorded by the application or resource being monitored. The log event record that Amazon CloudWatch Logs understands contains two properties: the timestamp of when the event occurred, and the raw event message.
+    <p>A log event is a record of some activity that was recorded by the application or resource being monitored. The log event record that Amazon CloudWatch Logs understands contains two properties: the timestamp of when the event occurred, and the raw event message.</p>
   */
   class AWS_CLOUDWATCHLOGS_API InputLogEvent
   {
@@ -43,7 +43,7 @@ namespace Model
     
     inline long long GetTimestamp() const{ return m_timestamp; }
     
-    inline void SetTimestamp(long long value) { m_timestamp = value; }
+    inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     
     inline InputLogEvent&  WithTimestamp(long long value) { SetTimestamp(value); return *this;}
@@ -51,10 +51,10 @@ namespace Model
     
     inline const Aws::String& GetMessage() const{ return m_message; }
     
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     
-    inline void SetMessage(const char* value) { m_message.assign(value); }
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     
     inline InputLogEvent&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
@@ -64,7 +64,9 @@ namespace Model
 
   private:
     long long m_timestamp;
+    bool m_timestampHasBeenSet;
     Aws::String m_message;
+    bool m_messageHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 AuthorizeClusterSecurityGroupIngressRequest::AuthorizeClusterSecurityGroupIngressRequest() : 
+    m_clusterSecurityGroupNameHasBeenSet(false),
     m_cIDRIPHasBeenSet(false),
     m_eC2SecurityGroupNameHasBeenSet(false),
     m_eC2SecurityGroupOwnerIdHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() cons
 {
   Aws::StringStream ss;
   ss << "Action=AuthorizeClusterSecurityGroupIngress&";
-  ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
+  if(m_clusterSecurityGroupNameHasBeenSet)
+  {
+    ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
+  }
   if(m_cIDRIPHasBeenSet)
   {
     ss << "CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";

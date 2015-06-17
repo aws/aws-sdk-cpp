@@ -41,11 +41,12 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode alarmHistoryItemsNode = resultNode.FirstChild("AlarmHistoryItems");
+    XmlNode alarmHistoryItemsNodeParent = resultNode.FirstChild("AlarmHistoryItems");
+    XmlNode alarmHistoryItemsNode = alarmHistoryItemsNodeParent.FirstChild("member");
     while(!alarmHistoryItemsNode.IsNull())
     {
       m_alarmHistoryItems.push_back(alarmHistoryItemsNode);
-      alarmHistoryItemsNode = alarmHistoryItemsNode.NextNode("AlarmHistoryItems");
+      alarmHistoryItemsNode = alarmHistoryItemsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

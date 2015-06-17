@@ -36,6 +36,7 @@
 #include <aws/lambda/model/UpdateFunctionCodeResult.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationResult.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -132,22 +133,22 @@ namespace Model
 
   class LambdaClient;
 
-  typedef Aws::Utils::Event<LambdaClient, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&> AddPermissionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::CreateEventSourceMappingRequest&, const Model::CreateEventSourceMappingOutcome&> CreateEventSourceMappingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::CreateFunctionRequest&, const Model::CreateFunctionOutcome&> CreateFunctionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::DeleteEventSourceMappingRequest&, const Model::DeleteEventSourceMappingOutcome&> DeleteEventSourceMappingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&> DeleteFunctionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::GetEventSourceMappingRequest&, const Model::GetEventSourceMappingOutcome&> GetEventSourceMappingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&> GetFunctionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&> GetFunctionConfigurationOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&> GetPolicyOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::InvokeRequest&, const Model::InvokeOutcome&> InvokeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&> ListEventSourceMappingsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&> ListFunctionsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&> RemovePermissionOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::UpdateEventSourceMappingRequest&, const Model::UpdateEventSourceMappingOutcome&> UpdateEventSourceMappingOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::UpdateFunctionCodeRequest&, const Model::UpdateFunctionCodeOutcome&> UpdateFunctionCodeOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<LambdaClient, const Model::UpdateFunctionConfigurationRequest&, const Model::UpdateFunctionConfigurationOutcome&> UpdateFunctionConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const Aws::Client::AsyncCallerContext*> AddPermissionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::CreateEventSourceMappingRequest&, const Model::CreateEventSourceMappingOutcome&, const Aws::Client::AsyncCallerContext*> CreateEventSourceMappingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::CreateFunctionRequest&, const Model::CreateFunctionOutcome&, const Aws::Client::AsyncCallerContext*> CreateFunctionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::DeleteEventSourceMappingRequest&, const Model::DeleteEventSourceMappingOutcome&, const Aws::Client::AsyncCallerContext*> DeleteEventSourceMappingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const Aws::Client::AsyncCallerContext*> DeleteFunctionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::GetEventSourceMappingRequest&, const Model::GetEventSourceMappingOutcome&, const Aws::Client::AsyncCallerContext*> GetEventSourceMappingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const Aws::Client::AsyncCallerContext*> GetFunctionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> GetFunctionConfigurationOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const Aws::Client::AsyncCallerContext*> GetPolicyOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::InvokeRequest&, const Model::InvokeOutcome&, const Aws::Client::AsyncCallerContext*> InvokeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&, const Aws::Client::AsyncCallerContext*> ListEventSourceMappingsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const Aws::Client::AsyncCallerContext*> ListFunctionsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const Aws::Client::AsyncCallerContext*> RemovePermissionOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::UpdateEventSourceMappingRequest&, const Model::UpdateEventSourceMappingOutcome&, const Aws::Client::AsyncCallerContext*> UpdateEventSourceMappingOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::UpdateFunctionCodeRequest&, const Model::UpdateFunctionCodeOutcome&, const Aws::Client::AsyncCallerContext*> UpdateFunctionCodeOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<LambdaClient, const Model::UpdateFunctionConfigurationRequest&, const Model::UpdateFunctionConfigurationOutcome&, const Aws::Client::AsyncCallerContext*> UpdateFunctionConfigurationOutcomeReceivedEvent;
 
   /*
     <fullname>AWS Lambda</fullname> <p><b>Overview</b></p> <p>This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
@@ -196,7 +197,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void AddPermissionAsync(const Model::AddPermissionRequest& request) const;
+     void AddPermissionAsync(const Model::AddPermissionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Identifies a stream as an event source for a Lambda function. It can be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes the specified function when records are posted to the stream.</p> <p>This is the pull model, where AWS Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p> <p>This association between an Amazon Kinesis stream and a Lambda function is called the event source mapping. You provide the configuration information (for example, which stream to read from and which Lambda function to invoke) for the event source mapping in the request body.</p> <p> Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with multiple AWS Lambda function. A given Lambda function can be associated with multiple AWS event sources. </p> <p>This operation requires permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
@@ -215,7 +216,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateEventSourceMappingAsync(const Model::CreateEventSourceMappingRequest& request) const;
+     void CreateEventSourceMappingAsync(const Model::CreateEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Creates a new Lambda function. The function metadata is created from the request parameters, and the code for the function is provided by a .zip file in the request body. If the function name already exists, the operation will fail. Note that the function name is case-sensitive. </p> <p>This operation requires permission for the <code>lambda:CreateFunction</code> action.</p>
@@ -234,7 +235,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateFunctionAsync(const Model::CreateFunctionRequest& request) const;
+     void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Removes an event source mapping. This means AWS Lambda will no longer invoke the function for events in the associated source.</p> <p>This operation requires permission for the <code>lambda:DeleteEventSourceMapping</code> action.</p>
@@ -253,7 +254,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteEventSourceMappingAsync(const Model::DeleteEventSourceMappingRequest& request) const;
+     void DeleteEventSourceMappingAsync(const Model::DeleteEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Deletes the specified Lambda function code and configuration.</p> <p>When you delete a function the associated access policy is also deleted. You will need to delete the event source mappings explicitly.</p> <p>This operation requires permission for the <code>lambda:DeleteFunction</code> action.</p>
@@ -272,7 +273,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request) const;
+     void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns configuration information for the specified event source mapping (see <a>CreateEventSourceMapping</a>).</p> <p>This operation requires permission for the <code>lambda:GetEventSourceMapping</code> action.</p>
@@ -291,7 +292,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetEventSourceMappingAsync(const Model::GetEventSourceMappingRequest& request) const;
+     void GetEventSourceMappingAsync(const Model::GetEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the configuration information of the Lambda function and a presigned URL link to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip file. Note that the URL is valid for up to 10 minutes. The configuration information is the same information you provided as parameters when uploading the function.</p> <p>This operation requires permission for the <code>lambda:GetFunction</code> action.</p>
@@ -310,7 +311,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetFunctionAsync(const Model::GetFunctionRequest& request) const;
+     void GetFunctionAsync(const Model::GetFunctionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the configuration information of the Lambda function. This the same information you provided as parameters when uploading the function by using <a>CreateFunction</a>.</p> <p>This operation requires permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>
@@ -329,7 +330,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetFunctionConfigurationAsync(const Model::GetFunctionConfigurationRequest& request) const;
+     void GetFunctionConfigurationAsync(const Model::GetFunctionConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns the access policy, containing a list of permissions granted via the <code>AddPermission</code> API, associated with the specified bucket.</p> <p>You need permission for the <code>lambda:GetPolicy action.</code></p>
@@ -348,7 +349,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetPolicyAsync(const Model::GetPolicyRequest& request) const;
+     void GetPolicyAsync(const Model::GetPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Invokes a specified Lambda function. </p> <p>This operation requires permission for the <code>lambda:InvokeFunction</code> action.</p>
@@ -367,7 +368,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void InvokeAsync(const Model::InvokeRequest& request) const;
+     void InvokeAsync(const Model::InvokeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of event source mappings you created using the <code>CreateEventSourceMapping</code> (see <a>CreateEventSourceMapping</a>), where you identify a stream as an event source. This list does not include Amazon S3 event sources. </p> <p>For each mapping, the API returns configuration information. You can optionally specify filters to retrieve specific event source mappings.</p> <p>This operation requires permission for the <code>lambda:ListEventSourceMappings</code> action.</p>
@@ -386,7 +387,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListEventSourceMappingsAsync(const Model::ListEventSourceMappingsRequest& request) const;
+     void ListEventSourceMappingsAsync(const Model::ListEventSourceMappingsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Returns a list of your Lambda functions. For each function, the response includes the function configuration information. You must use <a>GetFunction</a> to retrieve the code for your function.</p> <p>This operation requires permission for the <code>lambda:ListFunctions</code> action.</p>
@@ -405,7 +406,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListFunctionsAsync(const Model::ListFunctionsRequest& request) const;
+     void ListFunctionsAsync(const Model::ListFunctionsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>You can remove individual permissions from an access policy associated with a Lambda function by providing a Statement ID. </p> <p>Note that removal of a permission will cause an active event source to lose permission to the function. </p> <p>You need permission for the <code>lambda:RemovePermission</code> action.</p>
@@ -424,7 +425,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void RemovePermissionAsync(const Model::RemovePermissionRequest& request) const;
+     void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>You can update an event source mapping. This is useful if you want to change the parameters of the existing mapping without losing your position in the stream. You can change which function will receive the stream records, but to change the stream itself, you must create a new mapping. </p> <p>This operation requires permission for the <code>lambda:UpdateEventSourceMapping</code> action.</p>
@@ -443,7 +444,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateEventSourceMappingAsync(const Model::UpdateEventSourceMappingRequest& request) const;
+     void UpdateEventSourceMappingAsync(const Model::UpdateEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p> Updates the code for the specified Lambda function. This operation must only be used on an existing Lambda function and cannot be used to update the function configuration. </p> <p>This operation requires permission for the <code>lambda:UpdateFunctionCode</code> action.</p>
@@ -462,7 +463,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request) const;
+     void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code. </p> <p>This operation requires permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>
@@ -481,7 +482,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request) const;
+     void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for AddPermissionAsync to call upon completion to the handler chain. You need to call this to
@@ -759,22 +760,22 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request) const;
-    void CreateEventSourceMappingAsyncHelper(const Model::CreateEventSourceMappingRequest& request) const;
-    void CreateFunctionAsyncHelper(const Model::CreateFunctionRequest& request) const;
-    void DeleteEventSourceMappingAsyncHelper(const Model::DeleteEventSourceMappingRequest& request) const;
-    void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request) const;
-    void GetEventSourceMappingAsyncHelper(const Model::GetEventSourceMappingRequest& request) const;
-    void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request) const;
-    void GetFunctionConfigurationAsyncHelper(const Model::GetFunctionConfigurationRequest& request) const;
-    void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request) const;
-    void InvokeAsyncHelper(const Model::InvokeRequest& request) const;
-    void ListEventSourceMappingsAsyncHelper(const Model::ListEventSourceMappingsRequest& request) const;
-    void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request) const;
-    void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request) const;
-    void UpdateEventSourceMappingAsyncHelper(const Model::UpdateEventSourceMappingRequest& request) const;
-    void UpdateFunctionCodeAsyncHelper(const Model::UpdateFunctionCodeRequest& request) const;
-    void UpdateFunctionConfigurationAsyncHelper(const Model::UpdateFunctionConfigurationRequest& request) const;
+    void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateEventSourceMappingAsyncHelper(const Model::CreateEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateFunctionAsyncHelper(const Model::CreateFunctionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteEventSourceMappingAsyncHelper(const Model::DeleteEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetEventSourceMappingAsyncHelper(const Model::GetEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetFunctionConfigurationAsyncHelper(const Model::GetFunctionConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void InvokeAsyncHelper(const Model::InvokeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListEventSourceMappingsAsyncHelper(const Model::ListEventSourceMappingsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateEventSourceMappingAsyncHelper(const Model::UpdateEventSourceMappingRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateFunctionCodeAsyncHelper(const Model::UpdateFunctionCodeRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateFunctionConfigurationAsyncHelper(const Model::UpdateFunctionConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

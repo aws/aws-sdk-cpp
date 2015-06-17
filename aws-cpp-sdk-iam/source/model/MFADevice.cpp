@@ -24,12 +24,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 MFADevice::MFADevice() : 
-    m_enableDate(0.0)
+    m_userNameHasBeenSet(false),
+    m_serialNumberHasBeenSet(false),
+    m_enableDate(0.0),
+    m_enableDateHasBeenSet(false)
 {
 }
 
 MFADevice::MFADevice(const XmlNode& xmlNode) : 
-    m_enableDate(0.0)
+    m_userNameHasBeenSet(false),
+    m_serialNumberHasBeenSet(false),
+    m_enableDate(0.0),
+    m_enableDateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,11 +47,23 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+    if(!userNameNode.IsNull())
+    {
+      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userNameHasBeenSet = true;
+    }
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
-    m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
+    if(!serialNumberNode.IsNull())
+    {
+      m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
+      m_serialNumberHasBeenSet = true;
+    }
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
-    m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());
+    if(!enableDateNode.IsNull())
+    {
+      m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());
+      m_enableDateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -53,14 +71,32 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
 
 void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << index << locationValue << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
-  oStream << location << index << locationValue << ".EnableDate=" << m_enableDate << "&";
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_serialNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  }
+  if(m_enableDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableDate=" << m_enableDate << "&";
+  }
 }
 
 void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
-  oStream << location << ".EnableDate=" << m_enableDate << "&";
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_serialNumberHasBeenSet)
+  {
+      oStream << location << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  }
+  if(m_enableDateHasBeenSet)
+  {
+      oStream << location << ".EnableDate=" << m_enableDate << "&";
+  }
 }

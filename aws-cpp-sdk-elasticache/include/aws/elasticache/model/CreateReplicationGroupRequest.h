@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The replication group identifier. This parameter is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
     */
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /*
      <p>The replication group identifier. This parameter is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
     */
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupId.assign(value); }
+    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
 
     /*
      <p>The replication group identifier. This parameter is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>A user-created description for the replication group.</p>
     */
-    inline void SetReplicationGroupDescription(const Aws::String& value) { m_replicationGroupDescription = value; }
+    inline void SetReplicationGroupDescription(const Aws::String& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = value; }
 
     /*
      <p>A user-created description for the replication group.</p>
     */
-    inline void SetReplicationGroupDescription(const char* value) { m_replicationGroupDescription.assign(value); }
+    inline void SetReplicationGroupDescription(const char* value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription.assign(value); }
 
     /*
      <p>A user-created description for the replication group.</p>
@@ -511,7 +511,9 @@ namespace Model
 
   private:
     Aws::String m_replicationGroupId;
+    bool m_replicationGroupIdHasBeenSet;
     Aws::String m_replicationGroupDescription;
+    bool m_replicationGroupDescriptionHasBeenSet;
     Aws::String m_primaryClusterId;
     bool m_primaryClusterIdHasBeenSet;
     bool m_automaticFailoverEnabled;

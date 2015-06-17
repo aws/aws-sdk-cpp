@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 FilterLogEventsRequest::FilterLogEventsRequest() : 
+    m_logGroupNameHasBeenSet(false),
     m_logStreamNamesHasBeenSet(false),
     m_startTime(0),
     m_startTimeHasBeenSet(false),
@@ -40,7 +41,11 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
+
+  }
 
   if(m_logStreamNamesHasBeenSet)
   {

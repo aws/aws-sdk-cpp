@@ -41,7 +41,7 @@ namespace Model
     /*
      <p> A list of alarms to be deleted. </p>
     */
-    inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNames = value; }
+    inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /*
      <p> A list of alarms to be deleted. </p>
@@ -51,15 +51,16 @@ namespace Model
     /*
      <p> A list of alarms to be deleted. </p>
     */
-    inline DeleteAlarmsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNames.push_back(value); return *this; }
+    inline DeleteAlarmsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /*
      <p> A list of alarms to be deleted. </p>
     */
-    inline DeleteAlarmsRequest& AddAlarmNames(const char* value) { m_alarmNames.push_back(value); return *this; }
+    inline DeleteAlarmsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_alarmNames;
+    bool m_alarmNamesHasBeenSet;
   };
 
 } // namespace Model

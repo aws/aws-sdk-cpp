@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     */
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     */
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /*
      <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
@@ -71,12 +71,12 @@ namespace Model
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     */
-    inline void SetValue(const Aws::String& value) { m_value = value; }
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     */
-    inline void SetValue(const char* value) { m_value.assign(value); }
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /*
      <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
@@ -104,7 +104,9 @@ namespace Model
 
   private:
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_value;
+    bool m_valueHasBeenSet;
     bool m_secure;
     bool m_secureHasBeenSet;
   };

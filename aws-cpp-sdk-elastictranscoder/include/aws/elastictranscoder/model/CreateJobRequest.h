@@ -46,12 +46,12 @@ namespace Model
     /*
      <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
@@ -70,7 +70,7 @@ namespace Model
     /*
      <p>A section of the request body that provides information about the file that is being transcoded.</p>
     */
-    inline void SetInput(const JobInput& value) { m_input = value; }
+    inline void SetInput(const JobInput& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /*
      <p>A section of the request body that provides information about the file that is being transcoded.</p>
@@ -173,7 +173,9 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     JobInput m_input;
+    bool m_inputHasBeenSet;
     CreateJobOutput m_output;
     bool m_outputHasBeenSet;
     Aws::Vector<CreateJobOutput> m_outputs;

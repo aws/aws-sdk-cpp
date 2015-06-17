@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
     */
-    inline void SetEventType(const Aws::String& value) { m_eventType = value; }
+    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
     */
-    inline void SetEventType(const char* value) { m_eventType.assign(value); }
+    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /*
      <p>A name signifying an event that occurred in your app. This is used for grouping and aggregating like events together for reporting purposes.</p>
@@ -73,12 +73,12 @@ namespace Model
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
-    inline void SetTimestamp(const Aws::String& value) { m_timestamp = value; }
+    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
     */
-    inline void SetTimestamp(const char* value) { m_timestamp.assign(value); }
+    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
 
     /*
      <p>The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z</p>
@@ -178,7 +178,9 @@ namespace Model
 
   private:
     Aws::String m_eventType;
+    bool m_eventTypeHasBeenSet;
     Aws::String m_timestamp;
+    bool m_timestampHasBeenSet;
     Session m_session;
     bool m_sessionHasBeenSet;
     Aws::String m_version;

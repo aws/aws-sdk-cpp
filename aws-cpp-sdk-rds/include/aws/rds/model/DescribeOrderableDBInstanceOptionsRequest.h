@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
     */
-    inline void SetEngine(const Aws::String& value) { m_engine = value; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
     */
-    inline void SetEngine(const char* value) { m_engine.assign(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /*
      <p> The name of the engine to retrieve DB instance options for. </p>
@@ -205,6 +205,7 @@ namespace Model
 
   private:
     Aws::String m_engine;
+    bool m_engineHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
     Aws::String m_dBInstanceClass;

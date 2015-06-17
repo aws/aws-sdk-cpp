@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
     */
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
     */
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /*
      <p>The name (friendly name, not ARN) of the group to detach the policy from.</p>
@@ -60,10 +60,10 @@ namespace Model
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
     
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
+    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     
     inline DetachGroupPolicyRequest&  WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
@@ -73,7 +73,9 @@ namespace Model
 
   private:
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet;
   };
 
 } // namespace Model

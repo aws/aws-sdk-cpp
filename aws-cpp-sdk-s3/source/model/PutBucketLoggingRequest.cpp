@@ -23,6 +23,8 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 PutBucketLoggingRequest::PutBucketLoggingRequest() : 
+    m_bucketHasBeenSet(false),
+    m_bucketLoggingStatusHasBeenSet(false),
     m_contentMD5HasBeenSet(false)
 {
 }

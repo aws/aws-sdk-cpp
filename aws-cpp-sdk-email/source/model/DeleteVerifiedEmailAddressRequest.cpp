@@ -19,7 +19,8 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteVerifiedEmailAddressRequest::DeleteVerifiedEmailAddressRequest()
+DeleteVerifiedEmailAddressRequest::DeleteVerifiedEmailAddressRequest() : 
+    m_emailAddressHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteVerifiedEmailAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteVerifiedEmailAddress&";
-  ss << "EmailAddress=" << StringUtils::URLEncode(m_emailAddress.c_str()) << "&";
+  if(m_emailAddressHasBeenSet)
+  {
+    ss << "EmailAddress=" << StringUtils::URLEncode(m_emailAddress.c_str()) << "&";
+  }
   ss << "Version=2010-12-01";
   return ss.str();
 }

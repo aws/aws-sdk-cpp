@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name for the server certificate. Do not include the path in this value.</p>
     */
-    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateName = value; }
+    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
      <p>The name for the server certificate. Do not include the path in this value.</p>
     */
-    inline void SetServerCertificateName(const char* value) { m_serverCertificateName.assign(value); }
+    inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /*
      <p>The name for the server certificate. Do not include the path in this value.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The contents of the public key certificate in PEM-encoded format.</p>
     */
-    inline void SetCertificateBody(const Aws::String& value) { m_certificateBody = value; }
+    inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /*
      <p>The contents of the public key certificate in PEM-encoded format.</p>
     */
-    inline void SetCertificateBody(const char* value) { m_certificateBody.assign(value); }
+    inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
     /*
      <p>The contents of the public key certificate in PEM-encoded format.</p>
@@ -112,12 +112,12 @@ namespace Model
     /*
      <p>The contents of the private key in PEM-encoded format.</p>
     */
-    inline void SetPrivateKey(const Aws::String& value) { m_privateKey = value; }
+    inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /*
      <p>The contents of the private key in PEM-encoded format.</p>
     */
-    inline void SetPrivateKey(const char* value) { m_privateKey.assign(value); }
+    inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /*
      <p>The contents of the private key in PEM-encoded format.</p>
@@ -157,8 +157,11 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet;
     Aws::String m_serverCertificateName;
+    bool m_serverCertificateNameHasBeenSet;
     Aws::String m_certificateBody;
+    bool m_certificateBodyHasBeenSet;
     Aws::String m_privateKey;
+    bool m_privateKeyHasBeenSet;
     Aws::String m_certificateChain;
     bool m_certificateChainHasBeenSet;
   };

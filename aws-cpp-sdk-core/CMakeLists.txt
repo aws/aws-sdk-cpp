@@ -239,7 +239,10 @@ endif()
 
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS})
 
-install (TARGETS aws-cpp-sdk-core DESTINATION lib)
+install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+                                  LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+				  RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
 install (FILES ${AWS_HEADERS} DESTINATION include/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION include/aws/core/auth)
 install (FILES ${AWS_CLIENT_HEADERS} DESTINATION include/aws/core/client)

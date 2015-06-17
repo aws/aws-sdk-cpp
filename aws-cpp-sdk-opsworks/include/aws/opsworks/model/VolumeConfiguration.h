@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
-    inline void SetMountPoint(const Aws::String& value) { m_mountPoint = value; }
+    inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
     */
-    inline void SetMountPoint(const char* value) { m_mountPoint.assign(value); }
+    inline void SetMountPoint(const char* value) { m_mountPointHasBeenSet = true; m_mountPoint.assign(value); }
 
     /*
      <p>The volume mount point. For example "/dev/sdh".</p>
@@ -85,7 +85,7 @@ namespace Model
     /*
      <p>The number of disks in the volume.</p>
     */
-    inline void SetNumberOfDisks(long value) { m_numberOfDisks = value; }
+    inline void SetNumberOfDisks(long value) { m_numberOfDisksHasBeenSet = true; m_numberOfDisks = value; }
 
     /*
      <p>The number of disks in the volume.</p>
@@ -99,7 +99,7 @@ namespace Model
     /*
      <p>The volume size.</p>
     */
-    inline void SetSize(long value) { m_size = value; }
+    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /*
      <p>The volume size.</p>
@@ -146,10 +146,13 @@ namespace Model
 
   private:
     Aws::String m_mountPoint;
+    bool m_mountPointHasBeenSet;
     long m_raidLevel;
     bool m_raidLevelHasBeenSet;
     long m_numberOfDisks;
+    bool m_numberOfDisksHasBeenSet;
     long m_size;
+    bool m_sizeHasBeenSet;
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
     long m_iops;

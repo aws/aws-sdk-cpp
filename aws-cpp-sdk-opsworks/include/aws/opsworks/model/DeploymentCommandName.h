@@ -28,6 +28,8 @@ namespace Model
     update_dependencies,
     update_custom_cookbooks,
     execute_recipes,
+    configure,
+    setup,
     deploy,
     rollback,
     start,

@@ -20,6 +20,7 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 CreateCacheClusterRequest::CreateCacheClusterRequest() : 
+    m_cacheClusterIdHasBeenSet(false),
     m_replicationGroupIdHasBeenSet(false),
     m_aZModeHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
@@ -52,7 +53,10 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateCacheCluster&";
-  ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  if(m_cacheClusterIdHasBeenSet)
+  {
+    ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  }
   if(m_replicationGroupIdHasBeenSet)
   {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";

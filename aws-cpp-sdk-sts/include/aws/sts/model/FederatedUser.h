@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     */
-    inline void SetFederatedUserId(const Aws::String& value) { m_federatedUserId = value; }
+    inline void SetFederatedUserId(const Aws::String& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = value; }
 
     /*
      <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     */
-    inline void SetFederatedUserId(const char* value) { m_federatedUserId.assign(value); }
+    inline void SetFederatedUserId(const char* value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId.assign(value); }
 
     /*
      <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
@@ -74,12 +74,12 @@ namespace Model
     /*
      <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>. </p>
     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /*
      <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>. </p>
     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /*
      <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>. </p>
@@ -93,7 +93,9 @@ namespace Model
 
   private:
     Aws::String m_federatedUserId;
+    bool m_federatedUserIdHasBeenSet;
     Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

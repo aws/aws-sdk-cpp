@@ -46,10 +46,10 @@ namespace Model
     
     inline const Aws::String& GetKey() const{ return m_key; }
     
-    inline void SetKey(const Aws::String& value) { m_key = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(const char* value) { m_key.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     
     inline Tag&  WithKey(const Aws::String& value) { SetKey(value); return *this;}
@@ -73,6 +73,7 @@ namespace Model
 
   private:
     Aws::String m_key;
+    bool m_keyHasBeenSet;
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

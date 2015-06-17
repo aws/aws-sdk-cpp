@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ObjectIdentifier::ObjectIdentifier() : 
+    m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false)
 {
 }
 
 ObjectIdentifier::ObjectIdentifier(const XmlNode& xmlNode) : 
+    m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ ObjectIdentifier& ObjectIdentifier::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_keyHasBeenSet = true;
+    }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
@@ -56,8 +62,12 @@ ObjectIdentifier& ObjectIdentifier::operator =(const XmlNode& xmlNode)
 void ObjectIdentifier::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode keyNode = parentNode.CreateChildElement("Key");
-  keyNode.SetText(m_key);
+  if(m_keyHasBeenSet)
+  {
+   XmlNode keyNode = parentNode.CreateChildElement("Key");
+   keyNode.SetText(m_key);
+  }
+
   if(m_versionIdHasBeenSet)
   {
    XmlNode versionIdNode = parentNode.CreateChildElement("VersionId");

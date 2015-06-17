@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The address.</p>
     */
-    inline void SetElasticIp(const Aws::String& value) { m_elasticIp = value; }
+    inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /*
      <p>The address.</p>
     */
-    inline void SetElasticIp(const char* value) { m_elasticIp.assign(value); }
+    inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /*
      <p>The address.</p>
@@ -85,6 +85,7 @@ namespace Model
 
   private:
     Aws::String m_elasticIp;
+    bool m_elasticIpHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

@@ -20,6 +20,9 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 CreateDBParameterGroupRequest::CreateDBParameterGroupRequest() : 
+    m_dBParameterGroupNameHasBeenSet(false),
+    m_dBParameterGroupFamilyHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,9 +31,18 @@ Aws::String CreateDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateDBParameterGroup&";
-  ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
-  ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
-  ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if(m_dBParameterGroupNameHasBeenSet)
+  {
+    ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  }
+  if(m_dBParameterGroupFamilyHasBeenSet)
+  {
+    ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;

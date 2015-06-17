@@ -25,10 +25,13 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListPartsRequest::ListPartsRequest() : 
+    m_bucketHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_maxParts(0),
     m_maxPartsHasBeenSet(false),
     m_partNumberMarker(0),
     m_partNumberMarkerHasBeenSet(false),
+    m_uploadIdHasBeenSet(false),
     m_requestPayerHasBeenSet(false)
 {
 }
@@ -55,9 +58,13 @@ void ListPartsRequest::AddQueryStringParameters(URI& uri) const
      ss.str("");
     }
 
-    ss << m_uploadId;
-    uri.AddQueryStringParameter("uploadId", ss.str());
-    ss.str("");
+    if(m_uploadIdHasBeenSet)
+    {
+     ss << m_uploadId;
+     uri.AddQueryStringParameter("uploadId", ss.str());
+     ss.str("");
+    }
+
 }
 
 Aws::Http::HeaderValueCollection ListPartsRequest::GetRequestSpecificHeaders() const

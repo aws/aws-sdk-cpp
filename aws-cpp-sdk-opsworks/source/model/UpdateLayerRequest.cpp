@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateLayerRequest::UpdateLayerRequest() : 
+    m_layerIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
@@ -48,7 +49,11 @@ Aws::String UpdateLayerRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("LayerId", m_layerId);
+  if(m_layerIdHasBeenSet)
+  {
+   payload.WithString("LayerId", m_layerId);
+
+  }
 
   if(m_nameHasBeenSet)
   {

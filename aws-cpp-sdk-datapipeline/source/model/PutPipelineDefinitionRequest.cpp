@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutPipelineDefinitionRequest::PutPipelineDefinitionRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_pipelineObjectsHasBeenSet(false),
     m_parameterObjectsHasBeenSet(false),
     m_parameterValuesHasBeenSet(false)
 {
@@ -31,14 +33,22 @@ Aws::String PutPipelineDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
-
-  Array<JsonValue> pipelineObjectsJsonList(m_pipelineObjects.size());
-  for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
+  if(m_pipelineIdHasBeenSet)
   {
-    pipelineObjectsJsonList[pipelineObjectsIndex].AsObject(m_pipelineObjects[pipelineObjectsIndex].Jsonize());
+   payload.WithString("pipelineId", m_pipelineId);
+
   }
-  payload.WithArray("pipelineObjects", std::move(pipelineObjectsJsonList));
+
+  if(m_pipelineObjectsHasBeenSet)
+  {
+   Array<JsonValue> pipelineObjectsJsonList(m_pipelineObjects.size());
+   for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
+   {
+     pipelineObjectsJsonList[pipelineObjectsIndex].AsObject(m_pipelineObjects[pipelineObjectsIndex].Jsonize());
+   }
+   payload.WithArray("pipelineObjects", std::move(pipelineObjectsJsonList));
+
+  }
 
   if(m_parameterObjectsHasBeenSet)
   {

@@ -25,7 +25,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a get deployment instance operation.</p>
   */
   class AWS_CODEDEPLOY_API GetDeploymentInstanceRequest : public codedeployRequest
   {
@@ -36,57 +35,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
+    
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
+    
+    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
-    inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
+    
+    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
+    
     inline GetDeploymentInstanceRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
+    
     inline GetDeploymentInstanceRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>The unique ID of an instance in the deployment's deployment group.</p>
-    */
+    
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    /*
-     <p>The unique ID of an instance in the deployment's deployment group.</p>
-    */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    /*
-     <p>The unique ID of an instance in the deployment's deployment group.</p>
-    */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    /*
-     <p>The unique ID of an instance in the deployment's deployment group.</p>
-    */
+    
     inline GetDeploymentInstanceRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The unique ID of an instance in the deployment's deployment group.</p>
-    */
+    
     inline GetDeploymentInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
     Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet;
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
   };
 
 } // namespace Model

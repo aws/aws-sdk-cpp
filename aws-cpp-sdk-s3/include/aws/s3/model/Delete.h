@@ -45,13 +45,13 @@ namespace Model
     
     inline const Aws::Vector<ObjectIdentifier>& GetObjects() const{ return m_objects; }
     
-    inline void SetObjects(const Aws::Vector<ObjectIdentifier>& value) { m_objects = value; }
+    inline void SetObjects(const Aws::Vector<ObjectIdentifier>& value) { m_objectsHasBeenSet = true; m_objects = value; }
 
     
     inline Delete&  WithObjects(const Aws::Vector<ObjectIdentifier>& value) { SetObjects(value); return *this;}
 
     
-    inline Delete& AddObjects(const ObjectIdentifier& value) { m_objects.push_back(value); return *this; }
+    inline Delete& AddObjects(const ObjectIdentifier& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
 
     /*
      Element to enable quiet mode for the request. When you add this element, you must set its value to true.
@@ -69,6 +69,7 @@ namespace Model
 
   private:
     Aws::Vector<ObjectIdentifier> m_objects;
+    bool m_objectsHasBeenSet;
     bool m_quiet;
     bool m_quietHasBeenSet;
   };

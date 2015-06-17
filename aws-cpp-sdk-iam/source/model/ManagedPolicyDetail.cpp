@@ -128,13 +128,14 @@ ManagedPolicyDetail& ManagedPolicyDetail::operator =(const XmlNode& xmlNode)
       m_updateDate = StringUtils::ConvertToDouble(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str());
       m_updateDateHasBeenSet = true;
     }
-    XmlNode policyVersionListNode = resultNode.FirstChild("PolicyVersionList");
+    XmlNode policyVersionListNodeParent = resultNode.FirstChild("PolicyVersionList");
+    XmlNode policyVersionListNode = policyVersionListNodeParent.FirstChild("member");
     if(!policyVersionListNode.IsNull())
     {
       while(!policyVersionListNode.IsNull())
       {
         m_policyVersionList.push_back(policyVersionListNode);
-        policyVersionListNode = policyVersionListNode.NextNode("PolicyVersionList");
+        policyVersionListNode = policyVersionListNode.NextNode("member");
       }
 
       m_policyVersionListHasBeenSet = true;

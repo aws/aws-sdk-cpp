@@ -50,12 +50,12 @@ namespace Model
     /*
      <p>The name of the process.</p>
     */
-    inline void SetProcessName(const Aws::String& value) { m_processName = value; }
+    inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
     /*
      <p>The name of the process.</p>
     */
-    inline void SetProcessName(const char* value) { m_processName.assign(value); }
+    inline void SetProcessName(const char* value) { m_processNameHasBeenSet = true; m_processName.assign(value); }
 
     /*
      <p>The name of the process.</p>
@@ -69,6 +69,7 @@ namespace Model
 
   private:
     Aws::String m_processName;
+    bool m_processNameHasBeenSet;
   };
 
 } // namespace Model

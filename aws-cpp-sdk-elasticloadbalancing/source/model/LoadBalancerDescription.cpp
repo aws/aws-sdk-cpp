@@ -96,13 +96,14 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_canonicalHostedZoneNameID = StringUtils::Trim(canonicalHostedZoneNameIDNode.GetText().c_str());
       m_canonicalHostedZoneNameIDHasBeenSet = true;
     }
-    XmlNode listenerDescriptionsNode = resultNode.FirstChild("ListenerDescriptions");
+    XmlNode listenerDescriptionsNodeParent = resultNode.FirstChild("ListenerDescriptions");
+    XmlNode listenerDescriptionsNode = listenerDescriptionsNodeParent.FirstChild("member");
     if(!listenerDescriptionsNode.IsNull())
     {
       while(!listenerDescriptionsNode.IsNull())
       {
         m_listenerDescriptions.push_back(listenerDescriptionsNode);
-        listenerDescriptionsNode = listenerDescriptionsNode.NextNode("ListenerDescriptions");
+        listenerDescriptionsNode = listenerDescriptionsNode.NextNode("member");
       }
 
       m_listenerDescriptionsHasBeenSet = true;
@@ -113,35 +114,38 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_policies = policiesNode;
       m_policiesHasBeenSet = true;
     }
-    XmlNode backendServerDescriptionsNode = resultNode.FirstChild("BackendServerDescriptions");
+    XmlNode backendServerDescriptionsNodeParent = resultNode.FirstChild("BackendServerDescriptions");
+    XmlNode backendServerDescriptionsNode = backendServerDescriptionsNodeParent.FirstChild("member");
     if(!backendServerDescriptionsNode.IsNull())
     {
       while(!backendServerDescriptionsNode.IsNull())
       {
         m_backendServerDescriptions.push_back(backendServerDescriptionsNode);
-        backendServerDescriptionsNode = backendServerDescriptionsNode.NextNode("BackendServerDescriptions");
+        backendServerDescriptionsNode = backendServerDescriptionsNode.NextNode("member");
       }
 
       m_backendServerDescriptionsHasBeenSet = true;
     }
-    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
+    XmlNode availabilityZonesNodeParent = resultNode.FirstChild("AvailabilityZones");
+    XmlNode availabilityZonesNode = availabilityZonesNodeParent.FirstChild("member");
     if(!availabilityZonesNode.IsNull())
     {
       while(!availabilityZonesNode.IsNull())
       {
         m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesNode.GetText().c_str()));
-        availabilityZonesNode = availabilityZonesNode.NextNode("AvailabilityZones");
+        availabilityZonesNode = availabilityZonesNode.NextNode("member");
       }
 
       m_availabilityZonesHasBeenSet = true;
     }
-    XmlNode subnetsNode = resultNode.FirstChild("Subnets");
+    XmlNode subnetsNodeParent = resultNode.FirstChild("Subnets");
+    XmlNode subnetsNode = subnetsNodeParent.FirstChild("member");
     if(!subnetsNode.IsNull())
     {
       while(!subnetsNode.IsNull())
       {
         m_subnets.push_back(StringUtils::Trim(subnetsNode.GetText().c_str()));
-        subnetsNode = subnetsNode.NextNode("Subnets");
+        subnetsNode = subnetsNode.NextNode("member");
       }
 
       m_subnetsHasBeenSet = true;
@@ -152,13 +156,14 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_vPCId = StringUtils::Trim(vPCIdNode.GetText().c_str());
       m_vPCIdHasBeenSet = true;
     }
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNodeParent = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = instancesNodeParent.FirstChild("member");
     if(!instancesNode.IsNull())
     {
       while(!instancesNode.IsNull())
       {
         m_instances.push_back(instancesNode);
-        instancesNode = instancesNode.NextNode("Instances");
+        instancesNode = instancesNode.NextNode("member");
       }
 
       m_instancesHasBeenSet = true;
@@ -175,13 +180,14 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_sourceSecurityGroup = sourceSecurityGroupNode;
       m_sourceSecurityGroupHasBeenSet = true;
     }
-    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
+    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
     if(!securityGroupsNode.IsNull())
     {
       while(!securityGroupsNode.IsNull())
       {
         m_securityGroups.push_back(StringUtils::Trim(securityGroupsNode.GetText().c_str()));
-        securityGroupsNode = securityGroupsNode.NextNode("SecurityGroups");
+        securityGroupsNode = securityGroupsNode.NextNode("member");
       }
 
       m_securityGroupsHasBeenSet = true;

@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 RedirectAllRequestsTo::RedirectAllRequestsTo() : 
+    m_hostNameHasBeenSet(false),
     m_protocolHasBeenSet(false)
 {
 }
 
 RedirectAllRequestsTo::RedirectAllRequestsTo(const XmlNode& xmlNode) : 
+    m_hostNameHasBeenSet(false),
     m_protocolHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
-    m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
+    if(!hostNameNode.IsNull())
+    {
+      m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
+      m_hostNameHasBeenSet = true;
+    }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
@@ -56,8 +62,12 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
 void RedirectAllRequestsTo::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode hostNameNode = parentNode.CreateChildElement("HostName");
-  hostNameNode.SetText(m_hostName);
+  if(m_hostNameHasBeenSet)
+  {
+   XmlNode hostNameNode = parentNode.CreateChildElement("HostName");
+   hostNameNode.SetText(m_hostName);
+  }
+
   if(m_protocolHasBeenSet)
   {
    XmlNode protocolNode = parentNode.CreateChildElement("Protocol");

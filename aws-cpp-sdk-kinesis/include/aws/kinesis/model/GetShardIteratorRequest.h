@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The name of the stream.</p>
     */
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /*
      <p>The name of the stream.</p>
     */
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /*
      <p>The name of the stream.</p>
@@ -68,12 +68,12 @@ namespace Model
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
     */
-    inline void SetShardId(const Aws::String& value) { m_shardId = value; }
+    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
     */
-    inline void SetShardId(const char* value) { m_shardId.assign(value); }
+    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
 
     /*
      <p>The shard ID of the shard to get the iterator for.</p>
@@ -92,7 +92,7 @@ namespace Model
     /*
      <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
     */
-    inline void SetShardIteratorType(const ShardIteratorType& value) { m_shardIteratorType = value; }
+    inline void SetShardIteratorType(const ShardIteratorType& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
 
     /*
      <p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid shard iterator types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li> </ul>
@@ -125,8 +125,11 @@ namespace Model
 
   private:
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
     Aws::String m_shardId;
+    bool m_shardIdHasBeenSet;
     ShardIteratorType m_shardIteratorType;
+    bool m_shardIteratorTypeHasBeenSet;
     Aws::String m_startingSequenceNumber;
     bool m_startingSequenceNumberHasBeenSet;
   };

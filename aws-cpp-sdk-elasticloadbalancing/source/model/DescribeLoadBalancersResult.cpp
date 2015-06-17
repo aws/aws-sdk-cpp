@@ -41,11 +41,12 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode loadBalancerDescriptionsNode = resultNode.FirstChild("LoadBalancerDescriptions");
+    XmlNode loadBalancerDescriptionsNodeParent = resultNode.FirstChild("LoadBalancerDescriptions");
+    XmlNode loadBalancerDescriptionsNode = loadBalancerDescriptionsNodeParent.FirstChild("member");
     while(!loadBalancerDescriptionsNode.IsNull())
     {
       m_loadBalancerDescriptions.push_back(loadBalancerDescriptionsNode);
-      loadBalancerDescriptionsNode = loadBalancerDescriptionsNode.NextNode("LoadBalancerDescriptions");
+      loadBalancerDescriptionsNode = loadBalancerDescriptionsNode.NextNode("member");
     }
 
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");

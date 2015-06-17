@@ -21,7 +21,8 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableKeyRequest::EnableKeyRequest()
+EnableKeyRequest::EnableKeyRequest() : 
+    m_keyIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String EnableKeyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("KeyId", m_keyId);
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
+
+  }
 
   return payload.WriteReadable();
 }

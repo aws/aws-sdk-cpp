@@ -48,7 +48,7 @@ namespace Model
     /*
      <p>The step configuration.</p>
     */
-    inline void SetStepConfig(const StepConfig& value) { m_stepConfig = value; }
+    inline void SetStepConfig(const StepConfig& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
 
     /*
      <p>The step configuration.</p>
@@ -62,7 +62,7 @@ namespace Model
     /*
      <p>The description of the step status.</p>
     */
-    inline void SetExecutionStatusDetail(const StepExecutionStatusDetail& value) { m_executionStatusDetail = value; }
+    inline void SetExecutionStatusDetail(const StepExecutionStatusDetail& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
 
     /*
      <p>The description of the step status.</p>
@@ -71,7 +71,9 @@ namespace Model
 
   private:
     StepConfig m_stepConfig;
+    bool m_stepConfigHasBeenSet;
     StepExecutionStatusDetail m_executionStatusDetail;
+    bool m_executionStatusDetailHasBeenSet;
   };
 
 } // namespace Model

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the Auto Scaling group.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the Auto Scaling group.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic. </p>
     */
-    inline void SetTopicARN(const Aws::String& value) { m_topicARN = value; }
+    inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic. </p>
     */
-    inline void SetTopicARN(const char* value) { m_topicARN.assign(value); }
+    inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
 
     /*
      <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic. </p>
@@ -89,7 +89,7 @@ namespace Model
     /*
      <p>The type of event that will cause the notification to be sent. For details about notification types supported by Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.</p>
     */
-    inline void SetNotificationTypes(const Aws::Vector<Aws::String>& value) { m_notificationTypes = value; }
+    inline void SetNotificationTypes(const Aws::Vector<Aws::String>& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes = value; }
 
     /*
      <p>The type of event that will cause the notification to be sent. For details about notification types supported by Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.</p>
@@ -99,17 +99,20 @@ namespace Model
     /*
      <p>The type of event that will cause the notification to be sent. For details about notification types supported by Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.</p>
     */
-    inline PutNotificationConfigurationRequest& AddNotificationTypes(const Aws::String& value) { m_notificationTypes.push_back(value); return *this; }
+    inline PutNotificationConfigurationRequest& AddNotificationTypes(const Aws::String& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }
 
     /*
      <p>The type of event that will cause the notification to be sent. For details about notification types supported by Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.</p>
     */
-    inline PutNotificationConfigurationRequest& AddNotificationTypes(const char* value) { m_notificationTypes.push_back(value); return *this; }
+    inline PutNotificationConfigurationRequest& AddNotificationTypes(const char* value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_topicARN;
+    bool m_topicARNHasBeenSet;
     Aws::Vector<Aws::String> m_notificationTypes;
+    bool m_notificationTypesHasBeenSet;
   };
 
 } // namespace Model

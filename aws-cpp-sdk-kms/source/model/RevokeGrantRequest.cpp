@@ -21,7 +21,9 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeGrantRequest::RevokeGrantRequest()
+RevokeGrantRequest::RevokeGrantRequest() : 
+    m_keyIdHasBeenSet(false),
+    m_grantIdHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String RevokeGrantRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("KeyId", m_keyId);
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
 
-  payload.WithString("GrantId", m_grantId);
+  }
+
+  if(m_grantIdHasBeenSet)
+  {
+   payload.WithString("GrantId", m_grantId);
+
+  }
 
   return payload.WriteReadable();
 }

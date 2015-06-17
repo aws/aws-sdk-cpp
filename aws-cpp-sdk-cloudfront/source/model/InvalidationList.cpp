@@ -24,19 +24,27 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 InvalidationList::InvalidationList() : 
+    m_markerHasBeenSet(false),
     m_nextMarkerHasBeenSet(false),
     m_maxItems(0),
+    m_maxItemsHasBeenSet(false),
     m_isTruncated(false),
+    m_isTruncatedHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 InvalidationList::InvalidationList(const XmlNode& xmlNode) : 
+    m_markerHasBeenSet(false),
     m_nextMarkerHasBeenSet(false),
     m_maxItems(0),
+    m_maxItemsHasBeenSet(false),
     m_isTruncated(false),
+    m_isTruncatedHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -49,7 +57,11 @@ InvalidationList& InvalidationList::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_markerHasBeenSet = true;
+    }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
@@ -57,18 +69,31 @@ InvalidationList& InvalidationList::operator =(const XmlNode& xmlNode)
       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
-    m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(maxItemsNode.GetText().c_str()).c_str());
+    if(!maxItemsNode.IsNull())
+    {
+      m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(maxItemsNode.GetText().c_str()).c_str());
+      m_maxItemsHasBeenSet = true;
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
+    }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode invalidationSummaryNode = resultNode.FirstChild("InvalidationSummary");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode invalidationSummaryNodeParent = resultNode.FirstChild("InvalidationSummary");
+    XmlNode invalidationSummaryNode = invalidationSummaryNodeParent.FirstChild("member");
     if(!invalidationSummaryNode.IsNull())
     {
       while(!invalidationSummaryNode.IsNull())
       {
         m_items.push_back(invalidationSummaryNode);
-        invalidationSummaryNode = invalidationSummaryNode.NextNode("InvalidationSummary");
+        invalidationSummaryNode = invalidationSummaryNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -81,26 +106,42 @@ InvalidationList& InvalidationList::operator =(const XmlNode& xmlNode)
 void InvalidationList::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode markerNode = parentNode.CreateChildElement("Marker");
-  markerNode.SetText(m_marker);
+  if(m_markerHasBeenSet)
+  {
+   XmlNode markerNode = parentNode.CreateChildElement("Marker");
+   markerNode.SetText(m_marker);
+  }
+
   if(m_nextMarkerHasBeenSet)
   {
    XmlNode nextMarkerNode = parentNode.CreateChildElement("NextMarker");
    nextMarkerNode.SetText(m_nextMarker);
   }
 
-  XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
+  if(m_maxItemsHasBeenSet)
+  {
+   XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
   ss << m_maxItems;
-  maxItemsNode.SetText(ss.str());
+   maxItemsNode.SetText(ss.str());
   ss.str("");
-  XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
+  }
+
+  if(m_isTruncatedHasBeenSet)
+  {
+   XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
   ss << m_isTruncated;
-  isTruncatedNode.SetText(ss.str());
+   isTruncatedNode.SetText(ss.str());
   ss.str("");
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  }
+
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

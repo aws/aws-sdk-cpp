@@ -21,7 +21,9 @@ using namespace Aws::Utils;
 
 EnterStandbyRequest::EnterStandbyRequest() : 
     m_instanceIdsHasBeenSet(false),
-    m_shouldDecrementDesiredCapacity(false)
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_shouldDecrementDesiredCapacity(false),
+    m_shouldDecrementDesiredCapacityHasBeenSet(false)
 {
 }
 
@@ -39,8 +41,14 @@ Aws::String EnterStandbyRequest::SerializePayload() const
       instanceIdsCount++;
     }
   }
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
-  ss << "ShouldDecrementDesiredCapacity=" << m_shouldDecrementDesiredCapacity << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_shouldDecrementDesiredCapacityHasBeenSet)
+  {
+    ss << "ShouldDecrementDesiredCapacity=" << m_shouldDecrementDesiredCapacity << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

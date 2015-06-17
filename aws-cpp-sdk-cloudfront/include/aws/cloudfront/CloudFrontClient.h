@@ -40,6 +40,7 @@
 #include <aws/cloudfront/model/UpdateDistribution2014_11_06Result.h>
 #include <aws/cloudfront/model/UpdateStreamingDistribution2014_11_06Result.h>
 #include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <future>
 
 namespace Aws
@@ -151,27 +152,27 @@ namespace Model
 
   class CloudFrontClient;
 
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Outcome&> CreateCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateDistribution2014_11_06Request&, const Model::CreateDistribution2014_11_06Outcome&> CreateDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateInvalidation2014_11_06Request&, const Model::CreateInvalidation2014_11_06Outcome&> CreateInvalidation2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateStreamingDistribution2014_11_06Request&, const Model::CreateStreamingDistribution2014_11_06Outcome&> CreateStreamingDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Outcome&> DeleteCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::DeleteDistribution2014_11_06Request&, const Model::DeleteDistribution2014_11_06Outcome&> DeleteDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::DeleteStreamingDistribution2014_11_06Request&, const Model::DeleteStreamingDistribution2014_11_06Outcome&> DeleteStreamingDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::GetCloudFrontOriginAccessIdentity2014_11_06Outcome&> GetCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request&, const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Outcome&> GetCloudFrontOriginAccessIdentityConfig2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetDistribution2014_11_06Request&, const Model::GetDistribution2014_11_06Outcome&> GetDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetDistributionConfig2014_11_06Request&, const Model::GetDistributionConfig2014_11_06Outcome&> GetDistributionConfig2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetInvalidation2014_11_06Request&, const Model::GetInvalidation2014_11_06Outcome&> GetInvalidation2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetStreamingDistribution2014_11_06Request&, const Model::GetStreamingDistribution2014_11_06Outcome&> GetStreamingDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetStreamingDistributionConfig2014_11_06Request&, const Model::GetStreamingDistributionConfig2014_11_06Outcome&> GetStreamingDistributionConfig2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListCloudFrontOriginAccessIdentities2014_11_06Request&, const Model::ListCloudFrontOriginAccessIdentities2014_11_06Outcome&> ListCloudFrontOriginAccessIdentities2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListDistributions2014_11_06Request&, const Model::ListDistributions2014_11_06Outcome&> ListDistributions2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListInvalidations2014_11_06Request&, const Model::ListInvalidations2014_11_06Outcome&> ListInvalidations2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListStreamingDistributions2014_11_06Request&, const Model::ListStreamingDistributions2014_11_06Outcome&> ListStreamingDistributions2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Outcome&> UpdateCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::UpdateDistribution2014_11_06Request&, const Model::UpdateDistribution2014_11_06Outcome&> UpdateDistribution2014_11_06OutcomeReceivedEvent;
-  typedef Aws::Utils::Event<CloudFrontClient, const Model::UpdateStreamingDistribution2014_11_06Request&, const Model::UpdateStreamingDistribution2014_11_06Outcome&> UpdateStreamingDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> CreateCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateDistribution2014_11_06Request&, const Model::CreateDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> CreateDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateInvalidation2014_11_06Request&, const Model::CreateInvalidation2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> CreateInvalidation2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::CreateStreamingDistribution2014_11_06Request&, const Model::CreateStreamingDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> CreateStreamingDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> DeleteCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::DeleteDistribution2014_11_06Request&, const Model::DeleteDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> DeleteDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::DeleteStreamingDistribution2014_11_06Request&, const Model::DeleteStreamingDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> DeleteStreamingDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::GetCloudFrontOriginAccessIdentity2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request&, const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetCloudFrontOriginAccessIdentityConfig2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetDistribution2014_11_06Request&, const Model::GetDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetDistributionConfig2014_11_06Request&, const Model::GetDistributionConfig2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetDistributionConfig2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetInvalidation2014_11_06Request&, const Model::GetInvalidation2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetInvalidation2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetStreamingDistribution2014_11_06Request&, const Model::GetStreamingDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetStreamingDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::GetStreamingDistributionConfig2014_11_06Request&, const Model::GetStreamingDistributionConfig2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> GetStreamingDistributionConfig2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListCloudFrontOriginAccessIdentities2014_11_06Request&, const Model::ListCloudFrontOriginAccessIdentities2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> ListCloudFrontOriginAccessIdentities2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListDistributions2014_11_06Request&, const Model::ListDistributions2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> ListDistributions2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListInvalidations2014_11_06Request&, const Model::ListInvalidations2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> ListInvalidations2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::ListStreamingDistributions2014_11_06Request&, const Model::ListStreamingDistributions2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> ListStreamingDistributions2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Request&, const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> UpdateCloudFrontOriginAccessIdentity2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::UpdateDistribution2014_11_06Request&, const Model::UpdateDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> UpdateDistribution2014_11_06OutcomeReceivedEvent;
+  typedef Aws::Utils::Event<CloudFrontClient, const Model::UpdateStreamingDistribution2014_11_06Request&, const Model::UpdateStreamingDistribution2014_11_06Outcome&, const Aws::Client::AsyncCallerContext*> UpdateStreamingDistribution2014_11_06OutcomeReceivedEvent;
 
   /*
     ${serviceModel.documentation}
@@ -220,7 +221,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateCloudFrontOriginAccessIdentity2014_11_06Async(const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
+     void CreateCloudFrontOriginAccessIdentity2014_11_06Async(const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Create a new distribution.
@@ -239,7 +240,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateDistribution2014_11_06Async(const Model::CreateDistribution2014_11_06Request& request) const;
+     void CreateDistribution2014_11_06Async(const Model::CreateDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Create a new invalidation.
@@ -258,7 +259,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateInvalidation2014_11_06Async(const Model::CreateInvalidation2014_11_06Request& request) const;
+     void CreateInvalidation2014_11_06Async(const Model::CreateInvalidation2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Create a new streaming distribution.
@@ -277,7 +278,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void CreateStreamingDistribution2014_11_06Async(const Model::CreateStreamingDistribution2014_11_06Request& request) const;
+     void CreateStreamingDistribution2014_11_06Async(const Model::CreateStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Delete an origin access identity.
@@ -296,7 +297,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteCloudFrontOriginAccessIdentity2014_11_06Async(const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
+     void DeleteCloudFrontOriginAccessIdentity2014_11_06Async(const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Delete a distribution.
@@ -315,7 +316,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteDistribution2014_11_06Async(const Model::DeleteDistribution2014_11_06Request& request) const;
+     void DeleteDistribution2014_11_06Async(const Model::DeleteDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Delete a streaming distribution.
@@ -334,7 +335,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void DeleteStreamingDistribution2014_11_06Async(const Model::DeleteStreamingDistribution2014_11_06Request& request) const;
+     void DeleteStreamingDistribution2014_11_06Async(const Model::DeleteStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the information about an origin access identity.
@@ -353,7 +354,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetCloudFrontOriginAccessIdentity2014_11_06Async(const Model::GetCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
+     void GetCloudFrontOriginAccessIdentity2014_11_06Async(const Model::GetCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the configuration information about an origin access identity.
@@ -372,7 +373,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetCloudFrontOriginAccessIdentityConfig2014_11_06Async(const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request) const;
+     void GetCloudFrontOriginAccessIdentityConfig2014_11_06Async(const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the information about a distribution.
@@ -391,7 +392,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetDistribution2014_11_06Async(const Model::GetDistribution2014_11_06Request& request) const;
+     void GetDistribution2014_11_06Async(const Model::GetDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the configuration information about a distribution.
@@ -410,7 +411,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetDistributionConfig2014_11_06Async(const Model::GetDistributionConfig2014_11_06Request& request) const;
+     void GetDistributionConfig2014_11_06Async(const Model::GetDistributionConfig2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the information about an invalidation.
@@ -429,7 +430,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetInvalidation2014_11_06Async(const Model::GetInvalidation2014_11_06Request& request) const;
+     void GetInvalidation2014_11_06Async(const Model::GetInvalidation2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the information about a streaming distribution.
@@ -448,7 +449,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetStreamingDistribution2014_11_06Async(const Model::GetStreamingDistribution2014_11_06Request& request) const;
+     void GetStreamingDistribution2014_11_06Async(const Model::GetStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Get the configuration information about a streaming distribution.
@@ -467,7 +468,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void GetStreamingDistributionConfig2014_11_06Async(const Model::GetStreamingDistributionConfig2014_11_06Request& request) const;
+     void GetStreamingDistributionConfig2014_11_06Async(const Model::GetStreamingDistributionConfig2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        List origin access identities.
@@ -486,7 +487,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListCloudFrontOriginAccessIdentities2014_11_06Async(const Model::ListCloudFrontOriginAccessIdentities2014_11_06Request& request) const;
+     void ListCloudFrontOriginAccessIdentities2014_11_06Async(const Model::ListCloudFrontOriginAccessIdentities2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        List distributions.
@@ -505,7 +506,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListDistributions2014_11_06Async(const Model::ListDistributions2014_11_06Request& request) const;
+     void ListDistributions2014_11_06Async(const Model::ListDistributions2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        List invalidation batches.
@@ -524,7 +525,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListInvalidations2014_11_06Async(const Model::ListInvalidations2014_11_06Request& request) const;
+     void ListInvalidations2014_11_06Async(const Model::ListInvalidations2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        List streaming distributions.
@@ -543,7 +544,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void ListStreamingDistributions2014_11_06Async(const Model::ListStreamingDistributions2014_11_06Request& request) const;
+     void ListStreamingDistributions2014_11_06Async(const Model::ListStreamingDistributions2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Update an origin access identity.
@@ -562,7 +563,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateCloudFrontOriginAccessIdentity2014_11_06Async(const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
+     void UpdateCloudFrontOriginAccessIdentity2014_11_06Async(const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Update a distribution.
@@ -581,7 +582,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateDistribution2014_11_06Async(const Model::UpdateDistribution2014_11_06Request& request) const;
+     void UpdateDistribution2014_11_06Async(const Model::UpdateDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        Update a streaming distribution.
@@ -600,7 +601,7 @@ namespace Model
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
-     void UpdateStreamingDistribution2014_11_06Async(const Model::UpdateStreamingDistribution2014_11_06Request& request) const;
+     void UpdateStreamingDistribution2014_11_06Async(const Model::UpdateStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
    /**
     * Adds an event handler for CreateCloudFrontOriginAccessIdentity2014_11_06Async to call upon completion to the handler chain. You need to call this to
@@ -963,27 +964,27 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
     /**Async helpers**/
-    void CreateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
-    void CreateDistribution2014_11_06AsyncHelper(const Model::CreateDistribution2014_11_06Request& request) const;
-    void CreateInvalidation2014_11_06AsyncHelper(const Model::CreateInvalidation2014_11_06Request& request) const;
-    void CreateStreamingDistribution2014_11_06AsyncHelper(const Model::CreateStreamingDistribution2014_11_06Request& request) const;
-    void DeleteCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
-    void DeleteDistribution2014_11_06AsyncHelper(const Model::DeleteDistribution2014_11_06Request& request) const;
-    void DeleteStreamingDistribution2014_11_06AsyncHelper(const Model::DeleteStreamingDistribution2014_11_06Request& request) const;
-    void GetCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::GetCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
-    void GetCloudFrontOriginAccessIdentityConfig2014_11_06AsyncHelper(const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request) const;
-    void GetDistribution2014_11_06AsyncHelper(const Model::GetDistribution2014_11_06Request& request) const;
-    void GetDistributionConfig2014_11_06AsyncHelper(const Model::GetDistributionConfig2014_11_06Request& request) const;
-    void GetInvalidation2014_11_06AsyncHelper(const Model::GetInvalidation2014_11_06Request& request) const;
-    void GetStreamingDistribution2014_11_06AsyncHelper(const Model::GetStreamingDistribution2014_11_06Request& request) const;
-    void GetStreamingDistributionConfig2014_11_06AsyncHelper(const Model::GetStreamingDistributionConfig2014_11_06Request& request) const;
-    void ListCloudFrontOriginAccessIdentities2014_11_06AsyncHelper(const Model::ListCloudFrontOriginAccessIdentities2014_11_06Request& request) const;
-    void ListDistributions2014_11_06AsyncHelper(const Model::ListDistributions2014_11_06Request& request) const;
-    void ListInvalidations2014_11_06AsyncHelper(const Model::ListInvalidations2014_11_06Request& request) const;
-    void ListStreamingDistributions2014_11_06AsyncHelper(const Model::ListStreamingDistributions2014_11_06Request& request) const;
-    void UpdateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request) const;
-    void UpdateDistribution2014_11_06AsyncHelper(const Model::UpdateDistribution2014_11_06Request& request) const;
-    void UpdateStreamingDistribution2014_11_06AsyncHelper(const Model::UpdateStreamingDistribution2014_11_06Request& request) const;
+    void CreateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateDistribution2014_11_06AsyncHelper(const Model::CreateDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateInvalidation2014_11_06AsyncHelper(const Model::CreateInvalidation2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void CreateStreamingDistribution2014_11_06AsyncHelper(const Model::CreateStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteDistribution2014_11_06AsyncHelper(const Model::DeleteDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void DeleteStreamingDistribution2014_11_06AsyncHelper(const Model::DeleteStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::GetCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetCloudFrontOriginAccessIdentityConfig2014_11_06AsyncHelper(const Model::GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetDistribution2014_11_06AsyncHelper(const Model::GetDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetDistributionConfig2014_11_06AsyncHelper(const Model::GetDistributionConfig2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetInvalidation2014_11_06AsyncHelper(const Model::GetInvalidation2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetStreamingDistribution2014_11_06AsyncHelper(const Model::GetStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void GetStreamingDistributionConfig2014_11_06AsyncHelper(const Model::GetStreamingDistributionConfig2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListCloudFrontOriginAccessIdentities2014_11_06AsyncHelper(const Model::ListCloudFrontOriginAccessIdentities2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListDistributions2014_11_06AsyncHelper(const Model::ListDistributions2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListInvalidations2014_11_06AsyncHelper(const Model::ListInvalidations2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListStreamingDistributions2014_11_06AsyncHelper(const Model::ListStreamingDistributions2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const Model::UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateDistribution2014_11_06AsyncHelper(const Model::UpdateDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
+    void UpdateStreamingDistribution2014_11_06AsyncHelper(const Model::UpdateStreamingDistribution2014_11_06Request& request, const Aws::Client::AsyncCallerContext* context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;

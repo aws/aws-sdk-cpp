@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DescribeDBParametersRequest::DescribeDBParametersRequest() : 
+    m_dBParameterGroupNameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxRecords(0),
@@ -32,7 +33,10 @@ Aws::String DescribeDBParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeDBParameters&";
-  ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  if(m_dBParameterGroupNameHasBeenSet)
+  {
+    ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  }
   if(m_sourceHasBeenSet)
   {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";

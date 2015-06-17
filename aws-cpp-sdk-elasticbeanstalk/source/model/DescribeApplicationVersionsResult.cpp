@@ -41,11 +41,12 @@ DescribeApplicationVersionsResult& DescribeApplicationVersionsResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode applicationVersionsNode = resultNode.FirstChild("ApplicationVersions");
+    XmlNode applicationVersionsNodeParent = resultNode.FirstChild("ApplicationVersions");
+    XmlNode applicationVersionsNode = applicationVersionsNodeParent.FirstChild("member");
     while(!applicationVersionsNode.IsNull())
     {
       m_applicationVersions.push_back(applicationVersionsNode);
-      applicationVersionsNode = applicationVersionsNode.NextNode("ApplicationVersions");
+      applicationVersionsNode = applicationVersionsNode.NextNode("member");
     }
 
   }

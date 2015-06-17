@@ -20,6 +20,8 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 EnableSnapshotCopyRequest::EnableSnapshotCopyRequest() : 
+    m_clusterIdentifierHasBeenSet(false),
+    m_destinationRegionHasBeenSet(false),
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false)
 {
@@ -29,8 +31,14 @@ Aws::String EnableSnapshotCopyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=EnableSnapshotCopy&";
-  ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
-  ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+  if(m_destinationRegionHasBeenSet)
+  {
+    ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
+  }
   if(m_retentionPeriodHasBeenSet)
   {
     ss << "RetentionPeriod=" << m_retentionPeriod << "&";

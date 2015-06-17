@@ -43,11 +43,12 @@ DescribeEventsResult& DescribeEventsResult::operator =(const AmazonWebServiceRes
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode eventNode = resultNode.FirstChild("Event");
+    XmlNode eventNodeParent = resultNode.FirstChild("Event");
+    XmlNode eventNode = eventNodeParent.FirstChild("member");
     while(!eventNode.IsNull())
     {
       m_events.push_back(eventNode);
-      eventNode = eventNode.NextNode("Event");
+      eventNode = eventNode.NextNode("member");
     }
 
   }

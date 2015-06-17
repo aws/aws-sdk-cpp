@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
     */
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionName = value; }
+    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
     */
-    inline void SetSubscriptionName(const char* value) { m_subscriptionName.assign(value); }
+    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /*
      <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
     */
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
     */
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifier.assign(value); }
+    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /*
      <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group. </p>
@@ -84,7 +84,9 @@ namespace Model
 
   private:
     Aws::String m_subscriptionName;
+    bool m_subscriptionNameHasBeenSet;
     Aws::String m_sourceIdentifier;
+    bool m_sourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

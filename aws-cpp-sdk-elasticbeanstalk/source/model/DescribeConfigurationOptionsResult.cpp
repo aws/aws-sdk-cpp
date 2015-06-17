@@ -43,11 +43,12 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
   {
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
-    XmlNode optionsNode = resultNode.FirstChild("Options");
+    XmlNode optionsNodeParent = resultNode.FirstChild("Options");
+    XmlNode optionsNode = optionsNodeParent.FirstChild("member");
     while(!optionsNode.IsNull())
     {
       m_options.push_back(optionsNode);
-      optionsNode = optionsNode.NextNode("Options");
+      optionsNode = optionsNode.NextNode("member");
     }
 
   }

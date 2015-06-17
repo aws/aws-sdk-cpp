@@ -21,7 +21,10 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatasetRequest::DeleteDatasetRequest()
+DeleteDatasetRequest::DeleteDatasetRequest() : 
+    m_identityPoolIdHasBeenSet(false),
+    m_identityIdHasBeenSet(false),
+    m_datasetNameHasBeenSet(false)
 {
 }
 

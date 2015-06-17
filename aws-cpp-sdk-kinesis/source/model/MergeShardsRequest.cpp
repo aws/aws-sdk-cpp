@@ -21,7 +21,10 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeShardsRequest::MergeShardsRequest()
+MergeShardsRequest::MergeShardsRequest() : 
+    m_streamNameHasBeenSet(false),
+    m_shardToMergeHasBeenSet(false),
+    m_adjacentShardToMergeHasBeenSet(false)
 {
 }
 
@@ -29,11 +32,23 @@ Aws::String MergeShardsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
 
-  payload.WithString("ShardToMerge", m_shardToMerge);
+  }
 
-  payload.WithString("AdjacentShardToMerge", m_adjacentShardToMerge);
+  if(m_shardToMergeHasBeenSet)
+  {
+   payload.WithString("ShardToMerge", m_shardToMerge);
+
+  }
+
+  if(m_adjacentShardToMergeHasBeenSet)
+  {
+   payload.WithString("AdjacentShardToMerge", m_adjacentShardToMerge);
+
+  }
 
   return payload.WriteReadable();
 }

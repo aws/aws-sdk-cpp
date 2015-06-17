@@ -20,6 +20,7 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
@@ -43,7 +44,10 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UpdateAutoScalingGroup&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";

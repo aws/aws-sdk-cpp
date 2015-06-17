@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>
     */
-    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArn = value; }
+    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>
     */
-    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArn.assign(value); }
+    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
     /*
      <p>PlatformApplicationArn of platform application object to delete.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_platformApplicationArn;
+    bool m_platformApplicationArnHasBeenSet;
   };
 
 } // namespace Model

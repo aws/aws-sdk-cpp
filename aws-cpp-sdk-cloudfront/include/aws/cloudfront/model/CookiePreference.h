@@ -49,7 +49,7 @@ namespace Model
     /*
      Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
     */
-    inline void SetForward(const ItemSelection& value) { m_forward = value; }
+    inline void SetForward(const ItemSelection& value) { m_forwardHasBeenSet = true; m_forward = value; }
 
     /*
      Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
@@ -72,6 +72,7 @@ namespace Model
 
   private:
     ItemSelection m_forward;
+    bool m_forwardHasBeenSet;
     CookieNames m_whitelistedNames;
     bool m_whitelistedNamesHasBeenSet;
   };

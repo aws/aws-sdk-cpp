@@ -19,7 +19,9 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyCacheParameterGroupRequest::ModifyCacheParameterGroupRequest()
+ModifyCacheParameterGroupRequest::ModifyCacheParameterGroupRequest() : 
+    m_cacheParameterGroupNameHasBeenSet(false),
+    m_parameterNameValuesHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyCacheParameterGroup&";
-  ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
-  unsigned parameterNameValuesCount = 1;
-  for(auto& item : m_parameterNameValues)
+  if(m_cacheParameterGroupNameHasBeenSet)
   {
-    item.OutputToStream(ss, "ParameterNameValue.", parameterNameValuesCount, "");
-    parameterNameValuesCount++;
+    ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
+  }
+  if(m_parameterNameValuesHasBeenSet)
+  {
+    unsigned parameterNameValuesCount = 1;
+    for(auto& item : m_parameterNameValues)
+    {
+      item.OutputToStream(ss, "ParameterNameValue.", parameterNameValuesCount, "");
+      parameterNameValuesCount++;
+    }
   }
   ss << "Version=2015-02-02";
   return ss.str();

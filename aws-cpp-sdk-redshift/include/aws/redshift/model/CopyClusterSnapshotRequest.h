@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
     */
-    inline void SetSourceSnapshotIdentifier(const Aws::String& value) { m_sourceSnapshotIdentifier = value; }
+    inline void SetSourceSnapshotIdentifier(const Aws::String& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = value; }
 
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
     */
-    inline void SetSourceSnapshotIdentifier(const char* value) { m_sourceSnapshotIdentifier.assign(value); }
+    inline void SetSourceSnapshotIdentifier(const char* value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier.assign(value); }
 
     /*
      <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li> </ul>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
     */
-    inline void SetTargetSnapshotIdentifier(const Aws::String& value) { m_targetSnapshotIdentifier = value; }
+    inline void SetTargetSnapshotIdentifier(const Aws::String& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
 
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
     */
-    inline void SetTargetSnapshotIdentifier(const char* value) { m_targetSnapshotIdentifier.assign(value); }
+    inline void SetTargetSnapshotIdentifier(const char* value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier.assign(value); }
 
     /*
      <p> The identifier given to the new manual snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for the AWS account that is making the request.</li> </ul>
@@ -108,9 +108,11 @@ namespace Model
 
   private:
     Aws::String m_sourceSnapshotIdentifier;
+    bool m_sourceSnapshotIdentifierHasBeenSet;
     Aws::String m_sourceSnapshotClusterIdentifier;
     bool m_sourceSnapshotClusterIdentifierHasBeenSet;
     Aws::String m_targetSnapshotIdentifier;
+    bool m_targetSnapshotIdentifierHasBeenSet;
   };
 
 } // namespace Model

@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>The external port of the load balancer for the policy.</p>
     */
-    inline void SetLoadBalancerPort(long value) { m_loadBalancerPort = value; }
+    inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /*
      <p>The external port of the load balancer for the policy.</p>
@@ -79,7 +79,7 @@ namespace Model
     /*
      <p>The names of the policies. If the list is empty, the current policy is removed from the listener.</p>
     */
-    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
+    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /*
      <p>The names of the policies. If the list is empty, the current policy is removed from the listener.</p>
@@ -89,17 +89,20 @@ namespace Model
     /*
      <p>The names of the policies. If the list is empty, the current policy is removed from the listener.</p>
     */
-    inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
+    inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /*
      <p>The names of the policies. If the list is empty, the current policy is removed from the listener.</p>
     */
-    inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
+    inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     long m_loadBalancerPort;
+    bool m_loadBalancerPortHasBeenSet;
     Aws::Vector<Aws::String> m_policyNames;
+    bool m_policyNamesHasBeenSet;
   };
 
 } // namespace Model

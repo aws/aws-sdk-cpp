@@ -64,12 +64,12 @@ namespace Model
     /*
      Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
-    inline void SetQueueArn(const Aws::String& value) { m_queueArn = value; }
+    inline void SetQueueArn(const Aws::String& value) { m_queueArnHasBeenSet = true; m_queueArn = value; }
 
     /*
      Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
     */
-    inline void SetQueueArn(const char* value) { m_queueArn.assign(value); }
+    inline void SetQueueArn(const char* value) { m_queueArnHasBeenSet = true; m_queueArn.assign(value); }
 
     /*
      Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects events of specified type.
@@ -84,19 +84,21 @@ namespace Model
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
     
-    inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
+    inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
     inline QueueConfiguration&  WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     
-    inline QueueConfiguration& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
+    inline QueueConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
     Aws::String m_queueArn;
+    bool m_queueArnHasBeenSet;
     Aws::Vector<Event> m_events;
+    bool m_eventsHasBeenSet;
   };
 
 } // namespace Model

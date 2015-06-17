@@ -36,10 +36,10 @@ namespace Model
     
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     
     inline ListTagsForResourceRequest&  WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
@@ -63,6 +63,7 @@ namespace Model
 
   private:
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

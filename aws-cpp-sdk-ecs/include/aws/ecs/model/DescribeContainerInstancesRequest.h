@@ -67,7 +67,7 @@ namespace Model
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstances = value; }
+    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
@@ -77,17 +77,18 @@ namespace Model
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline DescribeContainerInstancesRequest& AddContainerInstances(const Aws::String& value) { m_containerInstances.push_back(value); return *this; }
+    inline DescribeContainerInstancesRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /*
      <p>A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN) entries.</p>
     */
-    inline DescribeContainerInstancesRequest& AddContainerInstances(const char* value) { m_containerInstances.push_back(value); return *this; }
+    inline DescribeContainerInstancesRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
     Aws::Vector<Aws::String> m_containerInstances;
+    bool m_containerInstancesHasBeenSet;
   };
 
 } // namespace Model

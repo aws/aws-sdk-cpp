@@ -49,7 +49,7 @@ namespace Model
     /*
      The number of active CloudFront key pairs for AwsAccountNumber.
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      The number of active CloudFront key pairs for AwsAccountNumber.
@@ -82,6 +82,7 @@ namespace Model
 
   private:
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

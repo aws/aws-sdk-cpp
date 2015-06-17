@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnassignInstanceRequest::UnassignInstanceRequest()
+UnassignInstanceRequest::UnassignInstanceRequest() : 
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String UnassignInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("InstanceId", m_instanceId);
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
 
   return payload.WriteReadable();
 }

@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the subscription. </p> <p>Constraints: The name must be less than 255 characters. </p>
     */
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionName = value; }
+    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /*
      <p>The name of the subscription. </p> <p>Constraints: The name must be less than 255 characters. </p>
     */
-    inline void SetSubscriptionName(const char* value) { m_subscriptionName.assign(value); }
+    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /*
      <p>The name of the subscription. </p> <p>Constraints: The name must be less than 255 characters. </p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p> The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
     */
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArn = value; }
+    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /*
      <p> The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
     */
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArn.assign(value); }
+    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /*
      <p> The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
@@ -183,7 +183,9 @@ namespace Model
 
   private:
     Aws::String m_subscriptionName;
+    bool m_subscriptionNameHasBeenSet;
     Aws::String m_snsTopicArn;
+    bool m_snsTopicArnHasBeenSet;
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
     Aws::Vector<Aws::String> m_eventCategories;

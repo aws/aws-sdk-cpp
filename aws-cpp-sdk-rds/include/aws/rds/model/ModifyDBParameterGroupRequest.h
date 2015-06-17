@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB parameter group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /*
      <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB parameter group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
-    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /*
      <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must be the name of an existing DB parameter group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
@@ -67,7 +67,7 @@ namespace Model
     /*
      <p> An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. </p> <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover. </note>
     */
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
+    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /*
      <p> An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. </p> <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover. </note>
@@ -77,11 +77,13 @@ namespace Model
     /*
      <p> An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. </p> <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover. </note>
     */
-    inline ModifyDBParameterGroupRequest& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
+    inline ModifyDBParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
   private:
     Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
     Aws::Vector<Parameter> m_parameters;
+    bool m_parametersHasBeenSet;
   };
 
 } // namespace Model

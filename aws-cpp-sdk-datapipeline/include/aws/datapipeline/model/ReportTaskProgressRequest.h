@@ -45,12 +45,12 @@ namespace Model
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
+    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
     */
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
+    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /*
      <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
@@ -83,6 +83,7 @@ namespace Model
 
   private:
     Aws::String m_taskId;
+    bool m_taskIdHasBeenSet;
     Aws::Vector<Field> m_fields;
     bool m_fieldsHasBeenSet;
   };

@@ -19,7 +19,9 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DeleteLoadBalancerListenersRequest::DeleteLoadBalancerListenersRequest()
+DeleteLoadBalancerListenersRequest::DeleteLoadBalancerListenersRequest() : 
+    m_loadBalancerNameHasBeenSet(false),
+    m_loadBalancerPortsHasBeenSet(false)
 {
 }
 
@@ -27,13 +29,19 @@ Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteLoadBalancerListeners&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  unsigned loadBalancerPortsCount = 1;
-  for(auto& item : m_loadBalancerPorts)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    ss << "LoadBalancerPorts." << loadBalancerPortsCount << "="
-        << item << "&";
-    loadBalancerPortsCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_loadBalancerPortsHasBeenSet)
+  {
+    unsigned loadBalancerPortsCount = 1;
+    for(auto& item : m_loadBalancerPorts)
+    {
+      ss << "LoadBalancerPorts." << loadBalancerPortsCount << "="
+          << item << "&";
+      loadBalancerPortsCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

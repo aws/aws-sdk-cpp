@@ -24,7 +24,12 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 DefaultCacheBehavior::DefaultCacheBehavior() : 
+    m_targetOriginIdHasBeenSet(false),
+    m_forwardedValuesHasBeenSet(false),
+    m_trustedSignersHasBeenSet(false),
+    m_viewerProtocolPolicyHasBeenSet(false),
     m_minTTL(0),
+    m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
     m_smoothStreamingHasBeenSet(false)
@@ -32,7 +37,12 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
 }
 
 DefaultCacheBehavior::DefaultCacheBehavior(const XmlNode& xmlNode) : 
+    m_targetOriginIdHasBeenSet(false),
+    m_forwardedValuesHasBeenSet(false),
+    m_trustedSignersHasBeenSet(false),
+    m_viewerProtocolPolicyHasBeenSet(false),
     m_minTTL(0),
+    m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
     m_smoothStreamingHasBeenSet(false)
@@ -47,15 +57,35 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode targetOriginIdNode = resultNode.FirstChild("TargetOriginId");
-    m_targetOriginId = StringUtils::Trim(targetOriginIdNode.GetText().c_str());
+    if(!targetOriginIdNode.IsNull())
+    {
+      m_targetOriginId = StringUtils::Trim(targetOriginIdNode.GetText().c_str());
+      m_targetOriginIdHasBeenSet = true;
+    }
     XmlNode forwardedValuesNode = resultNode.FirstChild("ForwardedValues");
-    m_forwardedValues = forwardedValuesNode;
+    if(!forwardedValuesNode.IsNull())
+    {
+      m_forwardedValues = forwardedValuesNode;
+      m_forwardedValuesHasBeenSet = true;
+    }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
-    m_trustedSigners = trustedSignersNode;
+    if(!trustedSignersNode.IsNull())
+    {
+      m_trustedSigners = trustedSignersNode;
+      m_trustedSignersHasBeenSet = true;
+    }
     XmlNode viewerProtocolPolicyNode = resultNode.FirstChild("ViewerProtocolPolicy");
-    m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(viewerProtocolPolicyNode.GetText().c_str()).c_str());
+    if(!viewerProtocolPolicyNode.IsNull())
+    {
+      m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(viewerProtocolPolicyNode.GetText().c_str()).c_str());
+      m_viewerProtocolPolicyHasBeenSet = true;
+    }
     XmlNode minTTLNode = resultNode.FirstChild("MinTTL");
-    m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(minTTLNode.GetText().c_str()).c_str());
+    if(!minTTLNode.IsNull())
+    {
+      m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(minTTLNode.GetText().c_str()).c_str());
+      m_minTTLHasBeenSet = true;
+    }
     XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethods");
     if(!allowedMethodsNode.IsNull())
     {
@@ -76,18 +106,38 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
 void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode targetOriginIdNode = parentNode.CreateChildElement("TargetOriginId");
-  targetOriginIdNode.SetText(m_targetOriginId);
-  XmlNode forwardedValuesNode = parentNode.CreateChildElement("ForwardedValues");
-  m_forwardedValues.AddToNode(forwardedValuesNode);
-  XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
-  m_trustedSigners.AddToNode(trustedSignersNode);
-  XmlNode viewerProtocolPolicyNode = parentNode.CreateChildElement("ViewerProtocolPolicy");
-  viewerProtocolPolicyNode.SetText(ViewerProtocolPolicyMapper::GetNameForViewerProtocolPolicy(m_viewerProtocolPolicy));
-  XmlNode minTTLNode = parentNode.CreateChildElement("MinTTL");
+  if(m_targetOriginIdHasBeenSet)
+  {
+   XmlNode targetOriginIdNode = parentNode.CreateChildElement("TargetOriginId");
+   targetOriginIdNode.SetText(m_targetOriginId);
+  }
+
+  if(m_forwardedValuesHasBeenSet)
+  {
+   XmlNode forwardedValuesNode = parentNode.CreateChildElement("ForwardedValues");
+   m_forwardedValues.AddToNode(forwardedValuesNode);
+  }
+
+  if(m_trustedSignersHasBeenSet)
+  {
+   XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
+   m_trustedSigners.AddToNode(trustedSignersNode);
+  }
+
+  if(m_viewerProtocolPolicyHasBeenSet)
+  {
+   XmlNode viewerProtocolPolicyNode = parentNode.CreateChildElement("ViewerProtocolPolicy");
+   viewerProtocolPolicyNode.SetText(ViewerProtocolPolicyMapper::GetNameForViewerProtocolPolicy(m_viewerProtocolPolicy));
+  }
+
+  if(m_minTTLHasBeenSet)
+  {
+   XmlNode minTTLNode = parentNode.CreateChildElement("MinTTL");
   ss << m_minTTL;
-  minTTLNode.SetText(ss.str());
+   minTTLNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_allowedMethodsHasBeenSet)
   {
    XmlNode allowedMethodsNode = parentNode.CreateChildElement("AllowedMethods");

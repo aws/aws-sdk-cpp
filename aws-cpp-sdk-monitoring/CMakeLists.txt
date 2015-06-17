@@ -55,7 +55,11 @@ project(aws-cpp-sdk-monitoring)
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 
-  install (TARGETS aws-cpp-sdk-monitoring DESTINATION lib)
+  install (TARGETS aws-cpp-sdk-monitoring
+           ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
   install (FILES ${AWS_MONITORING_HEADERS} DESTINATION include/aws/monitoring)
   install (FILES ${AWS_MONITORING_MODEL_HEADERS} DESTINATION include/aws/monitoring/model)
 

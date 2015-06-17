@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 KeyMetadata::KeyMetadata() : 
     m_aWSAccountIdHasBeenSet(false),
+    m_keyIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
@@ -35,6 +36,7 @@ KeyMetadata::KeyMetadata() :
 
 KeyMetadata::KeyMetadata(const JsonValue& jsonValue) : 
     m_aWSAccountIdHasBeenSet(false),
+    m_keyIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
@@ -55,7 +57,12 @@ KeyMetadata& KeyMetadata::operator =(const JsonValue& jsonValue)
     m_aWSAccountIdHasBeenSet = true;
   }
 
-  m_keyId = jsonValue.GetString("KeyId");
+  if(jsonValue.ValueExists("KeyId"))
+  {
+    m_keyId = jsonValue.GetString("KeyId");
+
+    m_keyIdHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Arn"))
   {
@@ -105,7 +112,11 @@ JsonValue KeyMetadata::Jsonize() const
 
   }
 
-  payload.WithString("KeyId", m_keyId);
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
+
+  }
 
   if(m_arnHasBeenSet)
   {

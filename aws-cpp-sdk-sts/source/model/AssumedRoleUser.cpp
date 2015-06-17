@@ -23,11 +23,15 @@ using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-AssumedRoleUser::AssumedRoleUser()
+AssumedRoleUser::AssumedRoleUser() : 
+    m_assumedRoleIdHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
-AssumedRoleUser::AssumedRoleUser(const XmlNode& xmlNode)
+AssumedRoleUser::AssumedRoleUser(const XmlNode& xmlNode) : 
+    m_assumedRoleIdHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,9 +43,17 @@ AssumedRoleUser& AssumedRoleUser::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode assumedRoleIdNode = resultNode.FirstChild("AssumedRoleId");
-    m_assumedRoleId = StringUtils::Trim(assumedRoleIdNode.GetText().c_str());
+    if(!assumedRoleIdNode.IsNull())
+    {
+      m_assumedRoleId = StringUtils::Trim(assumedRoleIdNode.GetText().c_str());
+      m_assumedRoleIdHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+    if(!arnNode.IsNull())
+    {
+      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,12 +61,24 @@ AssumedRoleUser& AssumedRoleUser::operator =(const XmlNode& xmlNode)
 
 void AssumedRoleUser::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  if(m_assumedRoleIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
 }
 
 void AssumedRoleUser::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
-  oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  if(m_assumedRoleIdHasBeenSet)
+  {
+      oStream << location << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
 }

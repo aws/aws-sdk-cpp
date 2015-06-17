@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateGrantRequest::CreateGrantRequest() : 
+    m_keyIdHasBeenSet(false),
+    m_granteePrincipalHasBeenSet(false),
     m_retiringPrincipalHasBeenSet(false),
     m_operationsHasBeenSet(false),
     m_constraintsHasBeenSet(false),
@@ -33,9 +35,17 @@ Aws::String CreateGrantRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("KeyId", m_keyId);
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
 
-  payload.WithString("GranteePrincipal", m_granteePrincipal);
+  }
+
+  if(m_granteePrincipalHasBeenSet)
+  {
+   payload.WithString("GranteePrincipal", m_granteePrincipal);
+
+  }
 
   if(m_retiringPrincipalHasBeenSet)
   {

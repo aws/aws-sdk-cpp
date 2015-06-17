@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateElasticIpRequest::UpdateElasticIpRequest() : 
+    m_elasticIpHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
 }
@@ -30,7 +31,11 @@ Aws::String UpdateElasticIpRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ElasticIp", m_elasticIp);
+  if(m_elasticIpHasBeenSet)
+  {
+   payload.WithString("ElasticIp", m_elasticIp);
+
+  }
 
   if(m_nameHasBeenSet)
   {

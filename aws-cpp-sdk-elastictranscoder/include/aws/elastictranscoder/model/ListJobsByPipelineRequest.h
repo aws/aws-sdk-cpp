@@ -47,12 +47,12 @@ namespace Model
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p> The ID of the pipeline for which you want to get job information. </p>
@@ -114,6 +114,7 @@ namespace Model
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::String m_ascending;
     bool m_ascendingHasBeenSet;
     Aws::String m_pageToken;

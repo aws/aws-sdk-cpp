@@ -128,13 +128,14 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
       m_cooldown = StringUtils::ConvertToInt32(StringUtils::Trim(cooldownNode.GetText().c_str()).c_str());
       m_cooldownHasBeenSet = true;
     }
-    XmlNode stepAdjustmentsNode = resultNode.FirstChild("StepAdjustments");
+    XmlNode stepAdjustmentsNodeParent = resultNode.FirstChild("StepAdjustments");
+    XmlNode stepAdjustmentsNode = stepAdjustmentsNodeParent.FirstChild("member");
     if(!stepAdjustmentsNode.IsNull())
     {
       while(!stepAdjustmentsNode.IsNull())
       {
         m_stepAdjustments.push_back(stepAdjustmentsNode);
-        stepAdjustmentsNode = stepAdjustmentsNode.NextNode("StepAdjustments");
+        stepAdjustmentsNode = stepAdjustmentsNode.NextNode("member");
       }
 
       m_stepAdjustmentsHasBeenSet = true;
@@ -151,13 +152,14 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
       m_estimatedInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(estimatedInstanceWarmupNode.GetText().c_str()).c_str());
       m_estimatedInstanceWarmupHasBeenSet = true;
     }
-    XmlNode alarmsNode = resultNode.FirstChild("Alarms");
+    XmlNode alarmsNodeParent = resultNode.FirstChild("Alarms");
+    XmlNode alarmsNode = alarmsNodeParent.FirstChild("member");
     if(!alarmsNode.IsNull())
     {
       while(!alarmsNode.IsNull())
       {
         m_alarms.push_back(alarmsNode);
-        alarmsNode = alarmsNode.NextNode("Alarms");
+        alarmsNode = alarmsNode.NextNode("member");
       }
 
       m_alarmsHasBeenSet = true;

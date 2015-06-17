@@ -43,12 +43,12 @@ namespace Model
     /*
      <p> The name for the subnet group. Amazon Redshift stores the value as a lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all subnet groups that are created by your AWS account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
     */
-    inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /*
      <p> The name for the subnet group. Amazon Redshift stores the value as a lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all subnet groups that are created by your AWS account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
     */
-    inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupName.assign(value); }
+    inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
 
     /*
      <p> The name for the subnet group. Amazon Redshift stores the value as a lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all subnet groups that are created by your AWS account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
@@ -67,12 +67,12 @@ namespace Model
     /*
      <p>A description for the subnet group.</p>
     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
      <p>A description for the subnet group.</p>
     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
      <p>A description for the subnet group.</p>
@@ -91,7 +91,7 @@ namespace Model
     /*
      <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
     */
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
+    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /*
      <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
@@ -101,12 +101,12 @@ namespace Model
     /*
      <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
     */
-    inline CreateClusterSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
+    inline CreateClusterSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /*
      <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request. </p>
     */
-    inline CreateClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
+    inline CreateClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /*
      <p>A list of tag instances.</p>
@@ -129,8 +129,11 @@ namespace Model
 
   private:
     Aws::String m_clusterSubnetGroupName;
+    bool m_clusterSubnetGroupNameHasBeenSet;
     Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

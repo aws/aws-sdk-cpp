@@ -24,12 +24,16 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ReplaceableAttribute::ReplaceableAttribute() : 
+    m_nameHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_replace(false),
     m_replaceHasBeenSet(false)
 {
 }
 
 ReplaceableAttribute::ReplaceableAttribute(const XmlNode& xmlNode) : 
+    m_nameHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_replace(false),
     m_replaceHasBeenSet(false)
 {
@@ -43,9 +47,17 @@ ReplaceableAttribute& ReplaceableAttribute::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
+    if(!nameNode.IsNull())
+    {
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
+    }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    m_value = StringUtils::Trim(valueNode.GetText().c_str());
+    if(!valueNode.IsNull())
+    {
+      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_valueHasBeenSet = true;
+    }
     XmlNode replaceNode = resultNode.FirstChild("Replace");
     if(!replaceNode.IsNull())
     {
@@ -59,8 +71,14 @@ ReplaceableAttribute& ReplaceableAttribute::operator =(const XmlNode& xmlNode)
 
 void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_valueHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  }
   if(m_replaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Replace=" << m_replace << "&";
@@ -69,8 +87,14 @@ void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* loc
 
 void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_valueHasBeenSet)
+  {
+      oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  }
   if(m_replaceHasBeenSet)
   {
       oStream << location << ".Replace=" << m_replace << "&";

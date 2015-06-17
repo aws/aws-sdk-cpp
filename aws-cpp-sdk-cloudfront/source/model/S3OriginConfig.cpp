@@ -23,11 +23,13 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-S3OriginConfig::S3OriginConfig()
+S3OriginConfig::S3OriginConfig() : 
+    m_originAccessIdentityHasBeenSet(false)
 {
 }
 
-S3OriginConfig::S3OriginConfig(const XmlNode& xmlNode)
+S3OriginConfig::S3OriginConfig(const XmlNode& xmlNode) : 
+    m_originAccessIdentityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ S3OriginConfig& S3OriginConfig::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode originAccessIdentityNode = resultNode.FirstChild("OriginAccessIdentity");
-    m_originAccessIdentity = StringUtils::Trim(originAccessIdentityNode.GetText().c_str());
+    if(!originAccessIdentityNode.IsNull())
+    {
+      m_originAccessIdentity = StringUtils::Trim(originAccessIdentityNode.GetText().c_str());
+      m_originAccessIdentityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +54,10 @@ S3OriginConfig& S3OriginConfig::operator =(const XmlNode& xmlNode)
 void S3OriginConfig::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode originAccessIdentityNode = parentNode.CreateChildElement("OriginAccessIdentity");
-  originAccessIdentityNode.SetText(m_originAccessIdentity);
+  if(m_originAccessIdentityHasBeenSet)
+  {
+   XmlNode originAccessIdentityNode = parentNode.CreateChildElement("OriginAccessIdentity");
+   originAccessIdentityNode.SetText(m_originAccessIdentity);
+  }
+
 }

@@ -21,7 +21,9 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLogStreamRequest::CreateLogStreamRequest()
+CreateLogStreamRequest::CreateLogStreamRequest() : 
+    m_logGroupNameHasBeenSet(false),
+    m_logStreamNameHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,17 @@ Aws::String CreateLogStreamRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
 
-  payload.WithString("logStreamName", m_logStreamName);
+  }
+
+  if(m_logStreamNameHasBeenSet)
+  {
+   payload.WithString("logStreamName", m_logStreamName);
+
+  }
 
   return payload.WriteReadable();
 }

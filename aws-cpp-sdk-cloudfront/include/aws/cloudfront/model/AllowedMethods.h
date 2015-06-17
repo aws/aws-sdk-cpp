@@ -50,7 +50,7 @@ namespace Model
     /*
      The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
     */
-    inline void SetQuantity(long value) { m_quantity = value; }
+    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /*
      The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).
@@ -64,7 +64,7 @@ namespace Model
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
     */
-    inline void SetItems(const Aws::Vector<Method>& value) { m_items = value; }
+    inline void SetItems(const Aws::Vector<Method>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
@@ -74,7 +74,7 @@ namespace Model
     /*
      A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
     */
-    inline AllowedMethods& AddItems(const Method& value) { m_items.push_back(value); return *this; }
+    inline AllowedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     
     inline const CachedMethods& GetCachedMethods() const{ return m_cachedMethods; }
@@ -86,7 +86,9 @@ namespace Model
 
   private:
     long m_quantity;
+    bool m_quantityHasBeenSet;
     Aws::Vector<Method> m_items;
+    bool m_itemsHasBeenSet;
     CachedMethods m_cachedMethods;
     bool m_cachedMethodsHasBeenSet;
   };

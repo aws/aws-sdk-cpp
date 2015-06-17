@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceNameHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -28,7 +29,10 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListTagsForResource&";
-  ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  if(m_resourceNameHasBeenSet)
+  {
+    ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
+  }
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;

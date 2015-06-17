@@ -25,6 +25,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 AbortMultipartUploadRequest::AbortMultipartUploadRequest() : 
+    m_bucketHasBeenSet(false),
+    m_keyHasBeenSet(false),
+    m_uploadIdHasBeenSet(false),
     m_requestPayerHasBeenSet(false)
 {
 }
@@ -37,9 +40,13 @@ Aws::String AbortMultipartUploadRequest::SerializePayload() const
 void AbortMultipartUploadRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    ss << m_uploadId;
-    uri.AddQueryStringParameter("uploadId", ss.str());
-    ss.str("");
+    if(m_uploadIdHasBeenSet)
+    {
+     ss << m_uploadId;
+     uri.AddQueryStringParameter("uploadId", ss.str());
+     ss.str("");
+    }
+
 }
 
 Aws::Http::HeaderValueCollection AbortMultipartUploadRequest::GetRequestSpecificHeaders() const

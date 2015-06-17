@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     */
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     */
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
+    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /*
      <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
@@ -65,12 +65,12 @@ namespace Model
     /*
      <p>Unique ID for this identity.</p>
     */
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
+    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /*
      <p>Unique ID for this identity.</p>
     */
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
+    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /*
      <p>Unique ID for this identity.</p>
@@ -89,12 +89,12 @@ namespace Model
     /*
      <p>The name of the dataset to subcribe to.</p>
     */
-    inline void SetDatasetName(const Aws::String& value) { m_datasetName = value; }
+    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /*
      <p>The name of the dataset to subcribe to.</p>
     */
-    inline void SetDatasetName(const char* value) { m_datasetName.assign(value); }
+    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /*
      <p>The name of the dataset to subcribe to.</p>
@@ -113,12 +113,12 @@ namespace Model
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
-    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
+    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>
     */
-    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
+    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
 
     /*
      <p>The unique ID generated for this device by Cognito.</p>
@@ -132,9 +132,13 @@ namespace Model
 
   private:
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet;
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet;
     Aws::String m_datasetName;
+    bool m_datasetNameHasBeenSet;
     Aws::String m_deviceId;
+    bool m_deviceIdHasBeenSet;
   };
 
 } // namespace Model

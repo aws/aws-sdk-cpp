@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ListIdentityPoolsRequest::ListIdentityPoolsRequest() : 
     m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -31,7 +32,11 @@ Aws::String ListIdentityPoolsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithInteger("MaxResults", m_maxResults);
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

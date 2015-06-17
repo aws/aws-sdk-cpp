@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
     */
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /*
      <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
     */
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerName.assign(value); }
+    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /*
      <p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
@@ -61,23 +61,23 @@ namespace Model
     inline CreateLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /*
-     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
     /*
-     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listeners = value; }
+    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /*
-     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
     inline CreateLoadBalancerRequest&  WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
 
     /*
-     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+     <p>The listeners.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
     */
-    inline CreateLoadBalancerRequest& AddListeners(const Listener& value) { m_listeners.push_back(value); return *this; }
+    inline CreateLoadBalancerRequest& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /*
      <p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p> <p>You must specify at least one Availability Zone.</p> <p>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
@@ -196,7 +196,9 @@ namespace Model
 
   private:
     Aws::String m_loadBalancerName;
+    bool m_loadBalancerNameHasBeenSet;
     Aws::Vector<Listener> m_listeners;
+    bool m_listenersHasBeenSet;
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
     Aws::Vector<Aws::String> m_subnets;

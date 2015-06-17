@@ -55,7 +55,11 @@ project(aws-cpp-sdk-mobileanalytics)
   #uncomment when unit tests are automatically generated
   #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
 
-  install (TARGETS aws-cpp-sdk-mobileanalytics DESTINATION lib)
+  install (TARGETS aws-cpp-sdk-mobileanalytics
+           ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+           RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+
   install (FILES ${AWS_MOBILEANALYTICS_HEADERS} DESTINATION include/aws/mobileanalytics)
   install (FILES ${AWS_MOBILEANALYTICS_MODEL_HEADERS} DESTINATION include/aws/mobileanalytics/model)
 

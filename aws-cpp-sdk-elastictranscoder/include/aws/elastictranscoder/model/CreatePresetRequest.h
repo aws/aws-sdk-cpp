@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
@@ -92,12 +92,12 @@ namespace Model
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     */
-    inline void SetContainer(const Aws::String& value) { m_container = value; }
+    inline void SetContainer(const Aws::String& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     */
-    inline void SetContainer(const char* value) { m_container.assign(value); }
+    inline void SetContainer(const char* value) { m_containerHasBeenSet = true; m_container.assign(value); }
 
     /*
      <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
@@ -153,9 +153,11 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::String m_container;
+    bool m_containerHasBeenSet;
     VideoParameters m_video;
     bool m_videoHasBeenSet;
     AudioParameters m_audio;

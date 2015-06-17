@@ -21,20 +21,34 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttributeDefinition::AttributeDefinition()
+AttributeDefinition::AttributeDefinition() : 
+    m_attributeNameHasBeenSet(false),
+    m_attributeTypeHasBeenSet(false)
 {
 }
 
-AttributeDefinition::AttributeDefinition(const JsonValue& jsonValue)
+AttributeDefinition::AttributeDefinition(const JsonValue& jsonValue) : 
+    m_attributeNameHasBeenSet(false),
+    m_attributeTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AttributeDefinition& AttributeDefinition::operator =(const JsonValue& jsonValue)
 {
-  m_attributeName = jsonValue.GetString("AttributeName");
+  if(jsonValue.ValueExists("AttributeName"))
+  {
+    m_attributeName = jsonValue.GetString("AttributeName");
 
-  m_attributeType = ScalarAttributeTypeMapper::GetScalarAttributeTypeForName(jsonValue.GetString("AttributeType"));
+    m_attributeNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AttributeType"))
+  {
+    m_attributeType = ScalarAttributeTypeMapper::GetScalarAttributeTypeForName(jsonValue.GetString("AttributeType"));
+
+    m_attributeTypeHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,8 +57,16 @@ JsonValue AttributeDefinition::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("AttributeName", m_attributeName);
+  if(m_attributeNameHasBeenSet)
+  {
+   payload.WithString("AttributeName", m_attributeName);
 
-  payload.WithString("AttributeType", ScalarAttributeTypeMapper::GetNameForScalarAttributeType(m_attributeType));
+  }
+
+  if(m_attributeTypeHasBeenSet)
+  {
+   payload.WithString("AttributeType", ScalarAttributeTypeMapper::GetNameForScalarAttributeType(m_attributeType));
+  }
+
   return std::move(payload);
 }

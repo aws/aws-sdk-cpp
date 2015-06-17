@@ -19,7 +19,8 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBSubnetGroupRequest::DeleteDBSubnetGroupRequest()
+DeleteDBSubnetGroupRequest::DeleteDBSubnetGroupRequest() : 
+    m_dBSubnetGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteDBSubnetGroup&";
-  ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  if(m_dBSubnetGroupNameHasBeenSet)
+  {
+    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
   ss << "Version=2014-10-31";
   return ss.str();
 }

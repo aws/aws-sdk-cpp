@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListMultipartUploadsRequest::ListMultipartUploadsRequest() : 
+    m_bucketHasBeenSet(false),
     m_delimiterHasBeenSet(false),
     m_encodingTypeHasBeenSet(false),
     m_keyMarkerHasBeenSet(false),

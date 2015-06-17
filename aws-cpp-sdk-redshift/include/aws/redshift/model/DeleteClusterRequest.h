@@ -41,12 +41,12 @@ namespace Model
     /*
      <p> The identifier of the cluster to be deleted. </p> <p>Constraints:</p> <ul> <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The identifier of the cluster to be deleted. </p> <p>Constraints:</p> <ul> <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The identifier of the cluster to be deleted. </p> <p>Constraints:</p> <ul> <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
@@ -98,6 +98,7 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     bool m_skipFinalClusterSnapshot;
     bool m_skipFinalClusterSnapshotHasBeenSet;
     Aws::String m_finalClusterSnapshotIdentifier;

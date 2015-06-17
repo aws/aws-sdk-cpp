@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
     */
-    inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupName = value; }
+    inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /*
      <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
     */
-    inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupName.assign(value); }
+    inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
     /*
      <p>The name of the cache security group to delete.</p> <note>You cannot delete the default security group.</note>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_cacheSecurityGroupName;
+    bool m_cacheSecurityGroupNameHasBeenSet;
   };
 
 } // namespace Model

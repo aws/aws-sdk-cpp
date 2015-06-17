@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to update the thumbprint for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action. </p>
     */
-    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArn = value; }
+    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to update the thumbprint for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action. </p>
     */
-    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArn.assign(value); }
+    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to update the thumbprint for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action. </p>
@@ -65,7 +65,7 @@ namespace Model
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
-    inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintList = value; }
+    inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
 
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
@@ -75,16 +75,18 @@ namespace Model
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
-    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintList.push_back(value); return *this; }
+    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
 
     /*
      <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     */
-    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const char* value) { m_thumbprintList.push_back(value); return *this; }
+    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
 
   private:
     Aws::String m_openIDConnectProviderArn;
+    bool m_openIDConnectProviderArnHasBeenSet;
     Aws::Vector<Aws::String> m_thumbprintList;
+    bool m_thumbprintListHasBeenSet;
   };
 
 } // namespace Model

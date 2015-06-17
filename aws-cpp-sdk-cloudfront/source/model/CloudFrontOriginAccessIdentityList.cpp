@@ -24,19 +24,27 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 CloudFrontOriginAccessIdentityList::CloudFrontOriginAccessIdentityList() : 
+    m_markerHasBeenSet(false),
     m_nextMarkerHasBeenSet(false),
     m_maxItems(0),
+    m_maxItemsHasBeenSet(false),
     m_isTruncated(false),
+    m_isTruncatedHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 CloudFrontOriginAccessIdentityList::CloudFrontOriginAccessIdentityList(const XmlNode& xmlNode) : 
+    m_markerHasBeenSet(false),
     m_nextMarkerHasBeenSet(false),
     m_maxItems(0),
+    m_maxItemsHasBeenSet(false),
     m_isTruncated(false),
+    m_isTruncatedHasBeenSet(false),
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -49,7 +57,11 @@ CloudFrontOriginAccessIdentityList& CloudFrontOriginAccessIdentityList::operator
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_markerHasBeenSet = true;
+    }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
@@ -57,18 +69,31 @@ CloudFrontOriginAccessIdentityList& CloudFrontOriginAccessIdentityList::operator
       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
-    m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(maxItemsNode.GetText().c_str()).c_str());
+    if(!maxItemsNode.IsNull())
+    {
+      m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(maxItemsNode.GetText().c_str()).c_str());
+      m_maxItemsHasBeenSet = true;
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
+    }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode cloudFrontOriginAccessIdentitySummaryNode = resultNode.FirstChild("CloudFrontOriginAccessIdentitySummary");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode cloudFrontOriginAccessIdentitySummaryNodeParent = resultNode.FirstChild("CloudFrontOriginAccessIdentitySummary");
+    XmlNode cloudFrontOriginAccessIdentitySummaryNode = cloudFrontOriginAccessIdentitySummaryNodeParent.FirstChild("member");
     if(!cloudFrontOriginAccessIdentitySummaryNode.IsNull())
     {
       while(!cloudFrontOriginAccessIdentitySummaryNode.IsNull())
       {
         m_items.push_back(cloudFrontOriginAccessIdentitySummaryNode);
-        cloudFrontOriginAccessIdentitySummaryNode = cloudFrontOriginAccessIdentitySummaryNode.NextNode("CloudFrontOriginAccessIdentitySummary");
+        cloudFrontOriginAccessIdentitySummaryNode = cloudFrontOriginAccessIdentitySummaryNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -81,26 +106,42 @@ CloudFrontOriginAccessIdentityList& CloudFrontOriginAccessIdentityList::operator
 void CloudFrontOriginAccessIdentityList::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode markerNode = parentNode.CreateChildElement("Marker");
-  markerNode.SetText(m_marker);
+  if(m_markerHasBeenSet)
+  {
+   XmlNode markerNode = parentNode.CreateChildElement("Marker");
+   markerNode.SetText(m_marker);
+  }
+
   if(m_nextMarkerHasBeenSet)
   {
    XmlNode nextMarkerNode = parentNode.CreateChildElement("NextMarker");
    nextMarkerNode.SetText(m_nextMarker);
   }
 
-  XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
+  if(m_maxItemsHasBeenSet)
+  {
+   XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
   ss << m_maxItems;
-  maxItemsNode.SetText(ss.str());
+   maxItemsNode.SetText(ss.str());
   ss.str("");
-  XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
+  }
+
+  if(m_isTruncatedHasBeenSet)
+  {
+   XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
   ss << m_isTruncated;
-  isTruncatedNode.SetText(ss.str());
+   isTruncatedNode.SetText(ss.str());
   ss.str("");
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  }
+
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

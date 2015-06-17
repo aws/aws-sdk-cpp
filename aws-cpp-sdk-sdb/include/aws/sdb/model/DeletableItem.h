@@ -48,10 +48,10 @@ namespace Model
     
     inline const Aws::String& GetName() const{ return m_name; }
     
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
     inline DeletableItem&  WithName(const Aws::String& value) { SetName(value); return *this;}
@@ -72,6 +72,7 @@ namespace Model
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::Vector<DeletableAttribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

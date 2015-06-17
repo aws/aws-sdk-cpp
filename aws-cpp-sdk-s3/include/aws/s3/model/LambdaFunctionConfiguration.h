@@ -64,12 +64,12 @@ namespace Model
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
     */
-    inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArn = value; }
+    inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
 
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
     */
-    inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArn.assign(value); }
+    inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
 
     /*
      Lambda cloud function ARN that Amazon S3 can invoke when it detects events of the specified type.
@@ -84,19 +84,21 @@ namespace Model
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
     
-    inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
+    inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
     inline LambdaFunctionConfiguration&  WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     
-    inline LambdaFunctionConfiguration& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
+    inline LambdaFunctionConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
     Aws::String m_lambdaFunctionArn;
+    bool m_lambdaFunctionArnHasBeenSet;
     Aws::Vector<Event> m_events;
+    bool m_eventsHasBeenSet;
   };
 
 } // namespace Model

@@ -27,7 +27,6 @@ namespace Model
 {
 
   /*
-    <p>Represents the input of a list deployment instances operation.</p>
   */
   class AWS_CODEDEPLOY_API ListDeploymentInstancesRequest : public codedeployRequest
   {
@@ -38,75 +37,48 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
+    
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
+    
+    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
-    inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
+    
+    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
+    
     inline ListDeploymentInstancesRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>The unique ID of a deployment.</p>
-    */
+    
     inline ListDeploymentInstancesRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
-    */
+    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    /*
-     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
-    */
+    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    /*
-     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
-    */
+    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    /*
-     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
-    */
+    
     inline ListDeploymentInstancesRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>An identifier that was returned from the previous list deployment instances call, which can be used to return the next set of deployment instances in the list.</p>
-    */
+    
     inline ListDeploymentInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
-    */
+    
     inline const Aws::Vector<InstanceStatus>& GetInstanceStatusFilter() const{ return m_instanceStatusFilter; }
-    /*
-     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
-    */
+    
     inline void SetInstanceStatusFilter(const Aws::Vector<InstanceStatus>& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter = value; }
 
-    /*
-     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
-    */
+    
     inline ListDeploymentInstancesRequest&  WithInstanceStatusFilter(const Aws::Vector<InstanceStatus>& value) { SetInstanceStatusFilter(value); return *this;}
 
-    /*
-     <p>A subset of instances to list, by status:</p> <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li> <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li> <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li> <li>Failed: Include in the resulting list those instances with failed deployments.</li> <li>Skipped: Include in the resulting list those instances with skipped deployments.</li> <li>Unknown: Include in the resulting list those instances with deployments in an unknown state.</li> </ul>
-    */
+    
     inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(const InstanceStatus& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
 
   private:
     Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
     Aws::Vector<InstanceStatus> m_instanceStatusFilter;

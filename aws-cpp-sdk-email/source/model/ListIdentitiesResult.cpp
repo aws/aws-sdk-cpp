@@ -41,11 +41,12 @@ ListIdentitiesResult& ListIdentitiesResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode identitiesNode = resultNode.FirstChild("Identities");
+    XmlNode identitiesNodeParent = resultNode.FirstChild("Identities");
+    XmlNode identitiesNode = identitiesNodeParent.FirstChild("member");
     while(!identitiesNode.IsNull())
     {
       m_identities.push_back(StringUtils::Trim(identitiesNode.GetText().c_str()));
-      identitiesNode = identitiesNode.NextNode("Identities");
+      identitiesNode = identitiesNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

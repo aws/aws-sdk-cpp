@@ -19,7 +19,9 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-AddUserToGroupRequest::AddUserToGroupRequest()
+AddUserToGroupRequest::AddUserToGroupRequest() : 
+    m_groupNameHasBeenSet(false),
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -27,8 +29,14 @@ Aws::String AddUserToGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AddUserToGroup&";
-  ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_userNameHasBeenSet)
+  {
+    ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

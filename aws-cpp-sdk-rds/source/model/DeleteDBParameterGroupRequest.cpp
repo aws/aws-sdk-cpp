@@ -19,7 +19,8 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBParameterGroupRequest::DeleteDBParameterGroupRequest()
+DeleteDBParameterGroupRequest::DeleteDBParameterGroupRequest() : 
+    m_dBParameterGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteDBParameterGroup&";
-  ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  if(m_dBParameterGroupNameHasBeenSet)
+  {
+    ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
+  }
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -21,7 +21,9 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToStreamRequest::AddTagsToStreamRequest()
+AddTagsToStreamRequest::AddTagsToStreamRequest() : 
+    m_streamNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String AddTagsToStreamRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
-
-  JsonValue tagsJsonMap;
-  for(auto& tagsItem : m_tags)
+  if(m_streamNameHasBeenSet)
   {
-    tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   payload.WithString("StreamName", m_streamName);
+
   }
-  payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
 
   return payload.WriteReadable();
 }

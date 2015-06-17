@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteRoleRequest::DeleteRoleRequest()
+DeleteRoleRequest::DeleteRoleRequest() : 
+    m_roleNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteRole&";
-  ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  if(m_roleNameHasBeenSet)
+  {
+    ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

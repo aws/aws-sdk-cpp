@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The ID of the parameter value.</p>
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      <p>The ID of the parameter value.</p>
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      <p>The ID of the parameter value.</p>
@@ -71,12 +71,12 @@ namespace Model
     /*
      <p>The field value, expressed as a String.</p>
     */
-    inline void SetStringValue(const Aws::String& value) { m_stringValue = value; }
+    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /*
      <p>The field value, expressed as a String.</p>
     */
-    inline void SetStringValue(const char* value) { m_stringValue.assign(value); }
+    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
 
     /*
      <p>The field value, expressed as a String.</p>
@@ -90,7 +90,9 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet;
   };
 
 } // namespace Model

@@ -23,11 +23,13 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Destination::Destination()
+Destination::Destination() : 
+    m_bucketHasBeenSet(false)
 {
 }
 
-Destination::Destination(const XmlNode& xmlNode)
+Destination::Destination(const XmlNode& xmlNode) : 
+    m_bucketHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+    if(!bucketNode.IsNull())
+    {
+      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucketHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +54,10 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
 void Destination::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-  bucketNode.SetText(m_bucket);
+  if(m_bucketHasBeenSet)
+  {
+   XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
+   bucketNode.SetText(m_bucket);
+  }
+
 }

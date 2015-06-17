@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetLogEventsRequest::GetLogEventsRequest() : 
+    m_logGroupNameHasBeenSet(false),
+    m_logStreamNameHasBeenSet(false),
     m_startTime(0),
     m_startTimeHasBeenSet(false),
     m_endTime(0),
@@ -38,9 +40,17 @@ Aws::String GetLogEventsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("logGroupName", m_logGroupName);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
 
-  payload.WithString("logStreamName", m_logStreamName);
+  }
+
+  if(m_logStreamNameHasBeenSet)
+  {
+   payload.WithString("logStreamName", m_logStreamName);
+
+  }
 
   if(m_startTimeHasBeenSet)
   {

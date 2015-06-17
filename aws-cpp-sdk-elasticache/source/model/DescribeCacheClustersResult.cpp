@@ -43,11 +43,12 @@ DescribeCacheClustersResult& DescribeCacheClustersResult::operator =(const Amazo
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheClusterNode = resultNode.FirstChild("CacheCluster");
+    XmlNode cacheClusterNodeParent = resultNode.FirstChild("CacheCluster");
+    XmlNode cacheClusterNode = cacheClusterNodeParent.FirstChild("member");
     while(!cacheClusterNode.IsNull())
     {
       m_cacheClusters.push_back(cacheClusterNode);
-      cacheClusterNode = cacheClusterNode.NextNode("CacheCluster");
+      cacheClusterNode = cacheClusterNode.NextNode("member");
     }
 
   }

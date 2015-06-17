@@ -72,12 +72,12 @@ namespace Model
     /*
      <p>Unique identifier for the key.</p>
     */
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
+    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /*
      <p>Unique identifier for the key.</p>
     */
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
+    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /*
      <p>Unique identifier for the key.</p>
@@ -183,6 +183,7 @@ namespace Model
     Aws::String m_aWSAccountId;
     bool m_aWSAccountIdHasBeenSet;
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;
     double m_creationDate;

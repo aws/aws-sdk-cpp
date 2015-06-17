@@ -21,7 +21,9 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetInvalidation2014_11_06Request::GetInvalidation2014_11_06Request()
+GetInvalidation2014_11_06Request::GetInvalidation2014_11_06Request() : 
+    m_distributionIdHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 

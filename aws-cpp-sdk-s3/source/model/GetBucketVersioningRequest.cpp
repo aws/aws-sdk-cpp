@@ -21,7 +21,8 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetBucketVersioningRequest::GetBucketVersioningRequest()
+GetBucketVersioningRequest::GetBucketVersioningRequest() : 
+    m_bucketHasBeenSet(false)
 {
 }
 

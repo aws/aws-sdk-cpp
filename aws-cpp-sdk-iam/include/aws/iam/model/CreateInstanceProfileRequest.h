@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the instance profile to create.</p>
     */
-    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileName = value; }
+    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /*
      <p>The name of the instance profile to create.</p>
     */
-    inline void SetInstanceProfileName(const char* value) { m_instanceProfileName.assign(value); }
+    inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
     /*
      <p>The name of the instance profile to create.</p>
@@ -83,6 +83,7 @@ namespace Model
 
   private:
     Aws::String m_instanceProfileName;
+    bool m_instanceProfileNameHasBeenSet;
     Aws::String m_path;
     bool m_pathHasBeenSet;
   };

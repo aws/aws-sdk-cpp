@@ -43,12 +43,12 @@ namespace Model
     /*
      The name of the domain in which to perform the operation.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain in which to perform the operation.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The name of the domain in which to perform the operation.
@@ -67,12 +67,12 @@ namespace Model
     /*
      The name of the item.
     */
-    inline void SetItemName(const Aws::String& value) { m_itemName = value; }
+    inline void SetItemName(const Aws::String& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
 
     /*
      The name of the item.
     */
-    inline void SetItemName(const char* value) { m_itemName.assign(value); }
+    inline void SetItemName(const char* value) { m_itemNameHasBeenSet = true; m_itemName.assign(value); }
 
     /*
      The name of the item.
@@ -91,7 +91,7 @@ namespace Model
     /*
      The list of attributes.
     */
-    inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributes = value; }
+    inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /*
      The list of attributes.
@@ -101,7 +101,7 @@ namespace Model
     /*
      The list of attributes.
     */
-    inline PutAttributesRequest& AddAttributes(const ReplaceableAttribute& value) { m_attributes.push_back(value); return *this; }
+    inline PutAttributesRequest& AddAttributes(const ReplaceableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /*
      The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.
@@ -119,8 +119,11 @@ namespace Model
 
   private:
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     Aws::String m_itemName;
+    bool m_itemNameHasBeenSet;
     Aws::Vector<ReplaceableAttribute> m_attributes;
+    bool m_attributesHasBeenSet;
     UpdateCondition m_expected;
     bool m_expectedHasBeenSet;
   };

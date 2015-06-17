@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListDeploymentInstancesRequest::ListDeploymentInstancesRequest() : 
+    m_deploymentIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_instanceStatusFilterHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String ListDeploymentInstancesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("deploymentId", m_deploymentId);
+  if(m_deploymentIdHasBeenSet)
+  {
+   payload.WithString("deploymentId", m_deploymentId);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

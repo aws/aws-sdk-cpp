@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetTerminationProtectionRequest::SetTerminationProtectionRequest() : 
-    m_terminationProtected(false)
+    m_jobFlowIdsHasBeenSet(false),
+    m_terminationProtected(false),
+    m_terminationProtectedHasBeenSet(false)
 {
 }
 
@@ -30,14 +32,22 @@ Aws::String SetTerminationProtectionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
-  for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
+  if(m_jobFlowIdsHasBeenSet)
   {
-    jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);
-  }
-  payload.WithArray("JobFlowIds", std::move(jobFlowIdsJsonList));
+   Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
+   for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
+   {
+     jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);
+   }
+   payload.WithArray("JobFlowIds", std::move(jobFlowIdsJsonList));
 
-  payload.WithBool("TerminationProtected", m_terminationProtected);
+  }
+
+  if(m_terminationProtectedHasBeenSet)
+  {
+   payload.WithBool("TerminationProtected", m_terminationProtected);
+
+  }
 
   return payload.WriteReadable();
 }

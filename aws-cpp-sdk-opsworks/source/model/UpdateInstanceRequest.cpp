@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateInstanceRequest::UpdateInstanceRequest() : 
+    m_instanceIdHasBeenSet(false),
     m_layerIdsHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_autoScalingTypeHasBeenSet(false),
@@ -33,7 +34,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_installUpdatesOnBoot(false),
     m_installUpdatesOnBootHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -41,7 +43,11 @@ Aws::String UpdateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("InstanceId", m_instanceId);
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
 
   if(m_layerIdsHasBeenSet)
   {
@@ -103,6 +109,12 @@ Aws::String UpdateInstanceRequest::SerializePayload() const
   if(m_ebsOptimizedHasBeenSet)
   {
    payload.WithBool("EbsOptimized", m_ebsOptimized);
+
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("AgentVersion", m_agentVersion);
 
   }
 

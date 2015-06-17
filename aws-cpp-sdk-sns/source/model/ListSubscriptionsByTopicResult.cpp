@@ -41,11 +41,12 @@ ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode subscriptionsNode = resultNode.FirstChild("Subscriptions");
+    XmlNode subscriptionsNodeParent = resultNode.FirstChild("Subscriptions");
+    XmlNode subscriptionsNode = subscriptionsNodeParent.FirstChild("member");
     while(!subscriptionsNode.IsNull())
     {
       m_subscriptions.push_back(subscriptionsNode);
-      subscriptionsNode = subscriptionsNode.NextNode("Subscriptions");
+      subscriptionsNode = subscriptionsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

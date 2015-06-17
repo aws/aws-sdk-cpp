@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InitiateJobRequest::InitiateJobRequest() : 
+    m_accountIdHasBeenSet(false),
+    m_vaultNameHasBeenSet(false),
     m_jobParametersHasBeenSet(false)
 {
 }

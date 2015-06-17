@@ -19,7 +19,8 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-DeleteTopicRequest::DeleteTopicRequest()
+DeleteTopicRequest::DeleteTopicRequest() : 
+    m_topicArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteTopicRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteTopic&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  if(m_topicArnHasBeenSet)
+  {
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

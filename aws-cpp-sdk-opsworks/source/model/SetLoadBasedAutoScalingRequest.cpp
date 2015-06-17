@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetLoadBasedAutoScalingRequest::SetLoadBasedAutoScalingRequest() : 
+    m_layerIdHasBeenSet(false),
     m_enable(false),
     m_enableHasBeenSet(false),
     m_upScalingHasBeenSet(false),
@@ -33,7 +34,11 @@ Aws::String SetLoadBasedAutoScalingRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("LayerId", m_layerId);
+  if(m_layerIdHasBeenSet)
+  {
+   payload.WithString("LayerId", m_layerId);
+
+  }
 
   if(m_enableHasBeenSet)
   {

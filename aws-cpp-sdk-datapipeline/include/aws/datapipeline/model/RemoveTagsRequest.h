@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineId = value; }
+    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /*
      <p>The ID of the pipeline.</p>
     */
-    inline void SetPipelineId(const char* value) { m_pipelineId.assign(value); }
+    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /*
      <p>The ID of the pipeline.</p>
@@ -68,7 +68,7 @@ namespace Model
     /*
      <p>The keys of the tags to remove.</p>
     */
-    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeys = value; }
+    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /*
      <p>The keys of the tags to remove.</p>
@@ -78,16 +78,18 @@ namespace Model
     /*
      <p>The keys of the tags to remove.</p>
     */
-    inline RemoveTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /*
      <p>The keys of the tags to remove.</p>
     */
-    inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
     Aws::String m_pipelineId;
+    bool m_pipelineIdHasBeenSet;
     Aws::Vector<Aws::String> m_tagKeys;
+    bool m_tagKeysHasBeenSet;
   };
 
 } // namespace Model

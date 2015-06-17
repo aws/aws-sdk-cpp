@@ -21,7 +21,8 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStreamRequest::DeleteStreamRequest()
+DeleteStreamRequest::DeleteStreamRequest() : 
+    m_streamNameHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DeleteStreamRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("StreamName", m_streamName);
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
+
+  }
 
   return payload.WriteReadable();
 }

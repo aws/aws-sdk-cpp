@@ -23,11 +23,15 @@ using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ReplaceableItem::ReplaceableItem()
+ReplaceableItem::ReplaceableItem() : 
+    m_nameHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
-ReplaceableItem::ReplaceableItem(const XmlNode& xmlNode)
+ReplaceableItem::ReplaceableItem(const XmlNode& xmlNode) : 
+    m_nameHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,14 +43,22 @@ ReplaceableItem& ReplaceableItem::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
-    XmlNode attributeNode = resultNode.FirstChild("Attribute");
-    while(!attributeNode.IsNull())
+    if(!nameNode.IsNull())
     {
-      m_attributes.push_back(attributeNode);
-      attributeNode = attributeNode.NextNode("Attribute");
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
     }
+    XmlNode attributeNode = resultNode.FirstChild("Attribute");
+    if(!attributeNode.IsNull())
+    {
+      while(!attributeNode.IsNull())
+      {
+        m_attributes.push_back(attributeNode);
+        attributeNode = attributeNode.NextNode("Attribute");
+      }
 
+      m_attributesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -54,22 +66,34 @@ ReplaceableItem& ReplaceableItem::operator =(const XmlNode& xmlNode)
 
 void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  for(auto& item : m_attributes)
+  if(m_nameHasBeenSet)
   {
-    Aws::StringStream attributesSs;
-    attributesSs << location << index << locationValue << ".Attribute";
-    item.OutputToStream(oStream, attributesSs.str().c_str());
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_attributesHasBeenSet)
+  {
+      for(auto& item : m_attributes)
+      {
+        Aws::StringStream attributesSs;
+        attributesSs << location << index << locationValue << ".Attribute";
+        item.OutputToStream(oStream, attributesSs.str().c_str());
+      }
   }
 }
 
 void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  for(auto& item : m_attributes)
+  if(m_nameHasBeenSet)
   {
-    Aws::String locationAndListMember(location);
-    locationAndListMember += ".Attribute";
-    item.OutputToStream(oStream, locationAndListMember.c_str());
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_attributesHasBeenSet)
+  {
+      for(auto& item : m_attributes)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".Attribute";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
   }
 }

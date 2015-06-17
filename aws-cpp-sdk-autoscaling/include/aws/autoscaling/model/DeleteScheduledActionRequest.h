@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The name of the action to delete.</p>
     */
-    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionName = value; }
+    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
 
     /*
      <p>The name of the action to delete.</p>
     */
-    inline void SetScheduledActionName(const char* value) { m_scheduledActionName.assign(value); }
+    inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
 
     /*
      <p>The name of the action to delete.</p>
@@ -85,6 +85,7 @@ namespace Model
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_scheduledActionName;
+    bool m_scheduledActionNameHasBeenSet;
   };
 
 } // namespace Model

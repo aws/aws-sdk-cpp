@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The name of the group. This name must be unique within the scope of your AWS account.</p>
     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /*
      <p>The name of the group. This name must be unique within the scope of your AWS account.</p>
     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupName.assign(value); }
+    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /*
      <p>The name of the group. This name must be unique within the scope of your AWS account.</p>
@@ -114,7 +114,7 @@ namespace Model
     /*
      <p>The minimum size of the group.</p>
     */
-    inline void SetMinSize(long value) { m_minSize = value; }
+    inline void SetMinSize(long value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /*
      <p>The minimum size of the group.</p>
@@ -128,7 +128,7 @@ namespace Model
     /*
      <p>The maximum size of the group.</p>
     */
-    inline void SetMaxSize(long value) { m_maxSize = value; }
+    inline void SetMaxSize(long value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /*
      <p>The maximum size of the group.</p>
@@ -342,12 +342,15 @@ namespace Model
 
   private:
     Aws::String m_autoScalingGroupName;
+    bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
     long m_minSize;
+    bool m_minSizeHasBeenSet;
     long m_maxSize;
+    bool m_maxSizeHasBeenSet;
     long m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
     long m_defaultCooldown;

@@ -43,12 +43,12 @@ namespace Model
     /*
      <p>The instance ID.</p>
     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /*
      <p>The instance ID.</p>
     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /*
      <p>The instance ID.</p>
@@ -67,7 +67,7 @@ namespace Model
     /*
      <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     */
-    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIds = value; }
+    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
     /*
      <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
@@ -77,16 +77,18 @@ namespace Model
     /*
      <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     */
-    inline AssignInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIds.push_back(value); return *this; }
+    inline AssignInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
     /*
      <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     */
-    inline AssignInstanceRequest& AddLayerIds(const char* value) { m_layerIds.push_back(value); return *this; }
+    inline AssignInstanceRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
   private:
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     Aws::Vector<Aws::String> m_layerIds;
+    bool m_layerIdsHasBeenSet;
   };
 
 } // namespace Model

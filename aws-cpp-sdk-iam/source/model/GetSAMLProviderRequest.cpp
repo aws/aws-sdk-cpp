@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetSAMLProviderRequest::GetSAMLProviderRequest()
+GetSAMLProviderRequest::GetSAMLProviderRequest() : 
+    m_sAMLProviderArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetSAMLProvider&";
-  ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  if(m_sAMLProviderArnHasBeenSet)
+  {
+    ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

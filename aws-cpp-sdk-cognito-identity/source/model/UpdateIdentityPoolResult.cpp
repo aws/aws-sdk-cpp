@@ -38,11 +38,23 @@ UpdateIdentityPoolResult::UpdateIdentityPoolResult(const AmazonWebServiceResult<
 UpdateIdentityPoolResult& UpdateIdentityPoolResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  m_identityPoolId = jsonValue.GetString("IdentityPoolId");
+  if(jsonValue.ValueExists("IdentityPoolId"))
+  {
+    m_identityPoolId = jsonValue.GetString("IdentityPoolId");
 
-  m_identityPoolName = jsonValue.GetString("IdentityPoolName");
+  }
 
-  m_allowUnauthenticatedIdentities = jsonValue.GetBool("AllowUnauthenticatedIdentities");
+  if(jsonValue.ValueExists("IdentityPoolName"))
+  {
+    m_identityPoolName = jsonValue.GetString("IdentityPoolName");
+
+  }
+
+  if(jsonValue.ValueExists("AllowUnauthenticatedIdentities"))
+  {
+    m_allowUnauthenticatedIdentities = jsonValue.GetBool("AllowUnauthenticatedIdentities");
+
+  }
 
   if(jsonValue.ValueExists("SupportedLoginProviders"))
   {

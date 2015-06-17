@@ -19,7 +19,10 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CreatePlatformApplicationRequest::CreatePlatformApplicationRequest()
+CreatePlatformApplicationRequest::CreatePlatformApplicationRequest() : 
+    m_nameHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
@@ -27,16 +30,25 @@ Aws::String CreatePlatformApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreatePlatformApplication&";
-  ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  ss << "Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
-  unsigned attributesCount = 1;
-  for(auto& item : m_attributes)
+  if(m_nameHasBeenSet)
   {
-    ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapKey.locationName}="
-        << StringUtils::URLEncode(item.first.c_str()) << "&";
-    ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapValue.locationName}="
-        << StringUtils::URLEncode(item.second.c_str()) << "&";
-    attributesCount++;
+    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_platformHasBeenSet)
+  {
+    ss << "Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
+  }
+  if(m_attributesHasBeenSet)
+  {
+    unsigned attributesCount = 1;
+    for(auto& item : m_attributes)
+    {
+      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapKey.locationName}="
+          << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "${member.value.locationName}." << attributesCount << ".${member.value.shape.mapValue.locationName}="
+          << StringUtils::URLEncode(item.second.c_str()) << "&";
+      attributesCount++;
+    }
   }
   ss << "Version=2010-03-31";
   return ss.str();

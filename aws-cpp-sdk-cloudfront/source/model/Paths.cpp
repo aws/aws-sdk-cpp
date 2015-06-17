@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 
 Paths::Paths() : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
 }
 
 Paths::Paths(const XmlNode& xmlNode) : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
     m_itemsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,14 +45,19 @@ Paths& Paths::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode pathNode = resultNode.FirstChild("Path");
+    if(!quantityNode.IsNull())
+    {
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
+    }
+    XmlNode pathNodeParent = resultNode.FirstChild("Path");
+    XmlNode pathNode = pathNodeParent.FirstChild("member");
     if(!pathNode.IsNull())
     {
       while(!pathNode.IsNull())
       {
         m_items.push_back(StringUtils::Trim(pathNode.GetText().c_str()));
-        pathNode = pathNode.NextNode("Path");
+        pathNode = pathNode.NextNode("member");
       }
 
       m_itemsHasBeenSet = true;
@@ -63,10 +70,14 @@ Paths& Paths::operator =(const XmlNode& xmlNode)
 void Paths::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  if(m_quantityHasBeenSet)
+  {
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
   ss << m_quantity;
-  quantityNode.SetText(ss.str());
+   quantityNode.SetText(ss.str());
   ss.str("");
+  }
+
   if(m_itemsHasBeenSet)
   {
    for(const auto& item : m_items)

@@ -20,6 +20,7 @@ using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
 GetFederationTokenRequest::GetFederationTokenRequest() : 
+    m_nameHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false)
@@ -30,7 +31,10 @@ Aws::String GetFederationTokenRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetFederationToken&";
-  ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   if(m_policyHasBeenSet)
   {
     ss << "Policy=" << StringUtils::URLEncode(m_policy.c_str()) << "&";

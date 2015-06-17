@@ -21,7 +21,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTimeBasedAutoScalingRequest::DescribeTimeBasedAutoScalingRequest()
+DescribeTimeBasedAutoScalingRequest::DescribeTimeBasedAutoScalingRequest() : 
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -29,12 +30,16 @@ Aws::String DescribeTimeBasedAutoScalingRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
-  for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
+  if(m_instanceIdsHasBeenSet)
   {
-    instanceIdsJsonList[instanceIdsIndex].AsString(m_instanceIds[instanceIdsIndex]);
+   Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
+   for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
+   {
+     instanceIdsJsonList[instanceIdsIndex].AsString(m_instanceIds[instanceIdsIndex]);
+   }
+   payload.WithArray("InstanceIds", std::move(instanceIdsJsonList));
+
   }
-  payload.WithArray("InstanceIds", std::move(instanceIdsJsonList));
 
   return payload.WriteReadable();
 }

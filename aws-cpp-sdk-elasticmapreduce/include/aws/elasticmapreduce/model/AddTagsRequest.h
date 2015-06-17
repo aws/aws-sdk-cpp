@@ -45,12 +45,12 @@ namespace Model
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
     */
-    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
+    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
     */
-    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
+    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /*
      <p>The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</p>
@@ -69,7 +69,7 @@ namespace Model
     /*
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
@@ -79,11 +79,13 @@ namespace Model
     /*
      <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     */
-    inline AddTagsRequest& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    inline AddTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet;
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

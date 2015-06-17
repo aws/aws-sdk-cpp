@@ -21,7 +21,11 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeDeveloperIdentitiesRequest::MergeDeveloperIdentitiesRequest()
+MergeDeveloperIdentitiesRequest::MergeDeveloperIdentitiesRequest() : 
+    m_sourceUserIdentifierHasBeenSet(false),
+    m_destinationUserIdentifierHasBeenSet(false),
+    m_developerProviderNameHasBeenSet(false),
+    m_identityPoolIdHasBeenSet(false)
 {
 }
 
@@ -29,13 +33,29 @@ Aws::String MergeDeveloperIdentitiesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("SourceUserIdentifier", m_sourceUserIdentifier);
+  if(m_sourceUserIdentifierHasBeenSet)
+  {
+   payload.WithString("SourceUserIdentifier", m_sourceUserIdentifier);
 
-  payload.WithString("DestinationUserIdentifier", m_destinationUserIdentifier);
+  }
 
-  payload.WithString("DeveloperProviderName", m_developerProviderName);
+  if(m_destinationUserIdentifierHasBeenSet)
+  {
+   payload.WithString("DestinationUserIdentifier", m_destinationUserIdentifier);
 
-  payload.WithString("IdentityPoolId", m_identityPoolId);
+  }
+
+  if(m_developerProviderNameHasBeenSet)
+  {
+   payload.WithString("DeveloperProviderName", m_developerProviderName);
+
+  }
+
+  if(m_identityPoolIdHasBeenSet)
+  {
+   payload.WithString("IdentityPoolId", m_identityPoolId);
+
+  }
 
   return payload.WriteReadable();
 }

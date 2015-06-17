@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 DeletableItem::DeletableItem() : 
+    m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
 }
 
 DeletableItem::DeletableItem(const XmlNode& xmlNode) : 
+    m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
   *this = xmlNode;
@@ -41,7 +43,11 @@ DeletableItem& DeletableItem::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
+    if(!nameNode.IsNull())
+    {
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
+    }
     XmlNode attributeNode = resultNode.FirstChild("Attribute");
     if(!attributeNode.IsNull())
     {
@@ -60,7 +66,10 @@ DeletableItem& DeletableItem::operator =(const XmlNode& xmlNode)
 
 void DeletableItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   if(m_attributesHasBeenSet)
   {
       for(auto& item : m_attributes)
@@ -74,7 +83,10 @@ void DeletableItem::OutputToStream(Aws::OStream& oStream, const char* location, 
 
 void DeletableItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
   if(m_attributesHasBeenSet)
   {
       for(auto& item : m_attributes)

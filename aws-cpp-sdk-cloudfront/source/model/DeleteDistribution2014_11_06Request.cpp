@@ -23,6 +23,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 DeleteDistribution2014_11_06Request::DeleteDistribution2014_11_06Request() : 
+    m_idHasBeenSet(false),
     m_ifMatchHasBeenSet(false)
 {
 }

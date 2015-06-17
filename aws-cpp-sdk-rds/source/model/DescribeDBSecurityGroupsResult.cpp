@@ -43,11 +43,12 @@ DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
+    XmlNode dBSecurityGroupNodeParent = resultNode.FirstChild("DBSecurityGroup");
+    XmlNode dBSecurityGroupNode = dBSecurityGroupNodeParent.FirstChild("member");
     while(!dBSecurityGroupNode.IsNull())
     {
       m_dBSecurityGroups.push_back(dBSecurityGroupNode);
-      dBSecurityGroupNode = dBSecurityGroupNode.NextNode("DBSecurityGroup");
+      dBSecurityGroupNode = dBSecurityGroupNode.NextNode("member");
     }
 
   }

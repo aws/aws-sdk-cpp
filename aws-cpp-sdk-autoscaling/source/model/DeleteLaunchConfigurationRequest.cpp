@@ -19,7 +19,8 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteLaunchConfigurationRequest::DeleteLaunchConfigurationRequest()
+DeleteLaunchConfigurationRequest::DeleteLaunchConfigurationRequest() : 
+    m_launchConfigurationNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteLaunchConfiguration&";
-  ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  if(m_launchConfigurationNameHasBeenSet)
+  {
+    ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

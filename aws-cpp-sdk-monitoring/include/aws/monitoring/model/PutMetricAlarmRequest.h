@@ -45,12 +45,12 @@ namespace Model
     /*
      <p> The descriptive name for the alarm. This name must be unique within the user's AWS account </p>
     */
-    inline void SetAlarmName(const Aws::String& value) { m_alarmName = value; }
+    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /*
      <p> The descriptive name for the alarm. This name must be unique within the user's AWS account </p>
     */
-    inline void SetAlarmName(const char* value) { m_alarmName.assign(value); }
+    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /*
      <p> The descriptive name for the alarm. This name must be unique within the user's AWS account </p>
@@ -179,12 +179,12 @@ namespace Model
     /*
      <p> The name for the alarm's associated metric. </p>
     */
-    inline void SetMetricName(const Aws::String& value) { m_metricName = value; }
+    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /*
      <p> The name for the alarm's associated metric. </p>
     */
-    inline void SetMetricName(const char* value) { m_metricName.assign(value); }
+    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /*
      <p> The name for the alarm's associated metric. </p>
@@ -203,12 +203,12 @@ namespace Model
     /*
      <p> The namespace for the alarm's associated metric. </p>
     */
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> The namespace for the alarm's associated metric. </p>
     */
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /*
      <p> The namespace for the alarm's associated metric. </p>
@@ -227,7 +227,7 @@ namespace Model
     /*
      <p> The statistic to apply to the alarm's associated metric. </p>
     */
-    inline void SetStatistic(const Statistic& value) { m_statistic = value; }
+    inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /*
      <p> The statistic to apply to the alarm's associated metric. </p>
@@ -260,7 +260,7 @@ namespace Model
     /*
      <p> The period in seconds over which the specified statistic is applied. </p>
     */
-    inline void SetPeriod(long value) { m_period = value; }
+    inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
 
     /*
      <p> The period in seconds over which the specified statistic is applied. </p>
@@ -288,7 +288,7 @@ namespace Model
     /*
      <p> The number of periods over which data is compared to the specified threshold. </p>
     */
-    inline void SetEvaluationPeriods(long value) { m_evaluationPeriods = value; }
+    inline void SetEvaluationPeriods(long value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /*
      <p> The number of periods over which data is compared to the specified threshold. </p>
@@ -302,7 +302,7 @@ namespace Model
     /*
      <p> The value against which the specified statistic is compared. </p>
     */
-    inline void SetThreshold(double value) { m_threshold = value; }
+    inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /*
      <p> The value against which the specified statistic is compared. </p>
@@ -316,7 +316,7 @@ namespace Model
     /*
      <p> The arithmetic operation to use when comparing the specified <code>Statistic</code> and <code>Threshold</code>. The specified <code>Statistic</code> value is used as the first operand. </p>
     */
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperator = value; }
+    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /*
      <p> The arithmetic operation to use when comparing the specified <code>Statistic</code> and <code>Threshold</code>. The specified <code>Statistic</code> value is used as the first operand. </p>
@@ -325,6 +325,7 @@ namespace Model
 
   private:
     Aws::String m_alarmName;
+    bool m_alarmNameHasBeenSet;
     Aws::String m_alarmDescription;
     bool m_alarmDescriptionHasBeenSet;
     bool m_actionsEnabled;
@@ -336,16 +337,23 @@ namespace Model
     Aws::Vector<Aws::String> m_insufficientDataActions;
     bool m_insufficientDataActionsHasBeenSet;
     Aws::String m_metricName;
+    bool m_metricNameHasBeenSet;
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
     Statistic m_statistic;
+    bool m_statisticHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
     long m_period;
+    bool m_periodHasBeenSet;
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
     long m_evaluationPeriods;
+    bool m_evaluationPeriodsHasBeenSet;
     double m_threshold;
+    bool m_thresholdHasBeenSet;
     ComparisonOperator m_comparisonOperator;
+    bool m_comparisonOperatorHasBeenSet;
   };
 
 } // namespace Model

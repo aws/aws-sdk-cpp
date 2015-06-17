@@ -41,11 +41,12 @@ DescribeLifecycleHooksResult& DescribeLifecycleHooksResult::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode lifecycleHooksNode = resultNode.FirstChild("LifecycleHooks");
+    XmlNode lifecycleHooksNodeParent = resultNode.FirstChild("LifecycleHooks");
+    XmlNode lifecycleHooksNode = lifecycleHooksNodeParent.FirstChild("member");
     while(!lifecycleHooksNode.IsNull())
     {
       m_lifecycleHooks.push_back(lifecycleHooksNode);
-      lifecycleHooksNode = lifecycleHooksNode.NextNode("LifecycleHooks");
+      lifecycleHooksNode = lifecycleHooksNode.NextNode("member");
     }
 
   }

@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DescribeEngineDefaultParametersRequest::DescribeEngineDefaultParametersRequest() : 
+    m_dBParameterGroupFamilyHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -31,7 +32,10 @@ Aws::String DescribeEngineDefaultParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeEngineDefaultParameters&";
-  ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
+  if(m_dBParameterGroupFamilyHasBeenSet)
+  {
+    ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
+  }
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;

@@ -25,12 +25,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 MessageAttributeValue::MessageAttributeValue() : 
+    m_dataTypeHasBeenSet(false),
     m_stringValueHasBeenSet(false),
     m_binaryValueHasBeenSet(false)
 {
 }
 
 MessageAttributeValue::MessageAttributeValue(const XmlNode& xmlNode) : 
+    m_dataTypeHasBeenSet(false),
     m_stringValueHasBeenSet(false),
     m_binaryValueHasBeenSet(false)
 {
@@ -44,7 +46,11 @@ MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
-    m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
+    if(!dataTypeNode.IsNull())
+    {
+      m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
+      m_dataTypeHasBeenSet = true;
+    }
     XmlNode stringValueNode = resultNode.FirstChild("StringValue");
     if(!stringValueNode.IsNull())
     {
@@ -64,7 +70,10 @@ MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
 
 void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  if(m_dataTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  }
   if(m_stringValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
@@ -77,7 +86,10 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
 
 void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  if(m_dataTypeHasBeenSet)
+  {
+      oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  }
   if(m_stringValueHasBeenSet)
   {
       oStream << location << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";

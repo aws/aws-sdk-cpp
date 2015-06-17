@@ -21,7 +21,10 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnlinkIdentityRequest::UnlinkIdentityRequest()
+UnlinkIdentityRequest::UnlinkIdentityRequest() : 
+    m_identityIdHasBeenSet(false),
+    m_loginsHasBeenSet(false),
+    m_loginsToRemoveHasBeenSet(false)
 {
 }
 
@@ -29,21 +32,33 @@ Aws::String UnlinkIdentityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("IdentityId", m_identityId);
-
-  JsonValue loginsJsonMap;
-  for(auto& loginsItem : m_logins)
+  if(m_identityIdHasBeenSet)
   {
-    loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
-  }
-  payload.WithObject("Logins", std::move(loginsJsonMap));
+   payload.WithString("IdentityId", m_identityId);
 
-  Array<JsonValue> loginsToRemoveJsonList(m_loginsToRemove.size());
-  for(unsigned loginsToRemoveIndex = 0; loginsToRemoveIndex < loginsToRemoveJsonList.GetLength(); ++loginsToRemoveIndex)
-  {
-    loginsToRemoveJsonList[loginsToRemoveIndex].AsString(m_loginsToRemove[loginsToRemoveIndex]);
   }
-  payload.WithArray("LoginsToRemove", std::move(loginsToRemoveJsonList));
+
+  if(m_loginsHasBeenSet)
+  {
+   JsonValue loginsJsonMap;
+   for(auto& loginsItem : m_logins)
+   {
+     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+   }
+   payload.WithObject("Logins", std::move(loginsJsonMap));
+
+  }
+
+  if(m_loginsToRemoveHasBeenSet)
+  {
+   Array<JsonValue> loginsToRemoveJsonList(m_loginsToRemove.size());
+   for(unsigned loginsToRemoveIndex = 0; loginsToRemoveIndex < loginsToRemoveJsonList.GetLength(); ++loginsToRemoveIndex)
+   {
+     loginsToRemoveJsonList[loginsToRemoveIndex].AsString(m_loginsToRemove[loginsToRemoveIndex]);
+   }
+   payload.WithArray("LoginsToRemove", std::move(loginsToRemoveJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

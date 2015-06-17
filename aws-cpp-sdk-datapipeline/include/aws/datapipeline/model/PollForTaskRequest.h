@@ -44,12 +44,12 @@ namespace Model
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     */
-    inline void SetWorkerGroup(const Aws::String& value) { m_workerGroup = value; }
+    inline void SetWorkerGroup(const Aws::String& value) { m_workerGroupHasBeenSet = true; m_workerGroup = value; }
 
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     */
-    inline void SetWorkerGroup(const char* value) { m_workerGroup.assign(value); }
+    inline void SetWorkerGroup(const char* value) { m_workerGroupHasBeenSet = true; m_workerGroup.assign(value); }
 
     /*
      <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
@@ -101,6 +101,7 @@ namespace Model
 
   private:
     Aws::String m_workerGroup;
+    bool m_workerGroupHasBeenSet;
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
     InstanceIdentity m_instanceIdentity;

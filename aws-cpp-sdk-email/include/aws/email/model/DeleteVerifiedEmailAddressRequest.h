@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>An email address to be removed from the list of verified addresses.</p>
     */
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddress = value; }
+    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /*
      <p>An email address to be removed from the list of verified addresses.</p>
     */
-    inline void SetEmailAddress(const char* value) { m_emailAddress.assign(value); }
+    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /*
      <p>An email address to be removed from the list of verified addresses.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_emailAddress;
+    bool m_emailAddressHasBeenSet;
   };
 
 } // namespace Model

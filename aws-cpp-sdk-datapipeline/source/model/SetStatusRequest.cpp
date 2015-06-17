@@ -21,7 +21,10 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetStatusRequest::SetStatusRequest()
+SetStatusRequest::SetStatusRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_objectIdsHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -29,16 +32,28 @@ Aws::String SetStatusRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
-
-  Array<JsonValue> objectIdsJsonList(m_objectIds.size());
-  for(unsigned objectIdsIndex = 0; objectIdsIndex < objectIdsJsonList.GetLength(); ++objectIdsIndex)
+  if(m_pipelineIdHasBeenSet)
   {
-    objectIdsJsonList[objectIdsIndex].AsString(m_objectIds[objectIdsIndex]);
-  }
-  payload.WithArray("objectIds", std::move(objectIdsJsonList));
+   payload.WithString("pipelineId", m_pipelineId);
 
-  payload.WithString("status", m_status);
+  }
+
+  if(m_objectIdsHasBeenSet)
+  {
+   Array<JsonValue> objectIdsJsonList(m_objectIds.size());
+   for(unsigned objectIdsIndex = 0; objectIdsIndex < objectIdsJsonList.GetLength(); ++objectIdsIndex)
+   {
+     objectIdsJsonList[objectIdsIndex].AsString(m_objectIds[objectIdsIndex]);
+   }
+   payload.WithArray("objectIds", std::move(objectIdsJsonList));
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", m_status);
+
+  }
 
   return payload.WriteReadable();
 }

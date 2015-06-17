@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
     */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
     */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /*
      <p>The Amazon EC2 Availability Zone for the job flow.</p>
@@ -66,6 +66,7 @@ namespace Model
 
   private:
     Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
   };
 
 } // namespace Model

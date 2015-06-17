@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The ID of the reserved cache node offering to purchase.</p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
     */
-    inline void SetReservedCacheNodesOfferingId(const Aws::String& value) { m_reservedCacheNodesOfferingId = value; }
+    inline void SetReservedCacheNodesOfferingId(const Aws::String& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
 
     /*
      <p>The ID of the reserved cache node offering to purchase.</p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
     */
-    inline void SetReservedCacheNodesOfferingId(const char* value) { m_reservedCacheNodesOfferingId.assign(value); }
+    inline void SetReservedCacheNodesOfferingId(const char* value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId.assign(value); }
 
     /*
      <p>The ID of the reserved cache node offering to purchase.</p> <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
@@ -98,6 +98,7 @@ namespace Model
 
   private:
     Aws::String m_reservedCacheNodesOfferingId;
+    bool m_reservedCacheNodesOfferingIdHasBeenSet;
     Aws::String m_reservedCacheNodeId;
     bool m_reservedCacheNodeIdHasBeenSet;
     long m_cacheNodeCount;

@@ -74,12 +74,12 @@ namespace Model
     /*
      Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
     */
-    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
+    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /*
      Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
     */
-    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
+    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /*
      Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.
@@ -98,7 +98,7 @@ namespace Model
     /*
      The rule is ignored if status is not Enabled.
     */
-    inline void SetStatus(const ReplicationRuleStatus& value) { m_status = value; }
+    inline void SetStatus(const ReplicationRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      The rule is ignored if status is not Enabled.
@@ -108,7 +108,7 @@ namespace Model
     
     inline const Destination& GetDestination() const{ return m_destination; }
     
-    inline void SetDestination(const Destination& value) { m_destination = value; }
+    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     
     inline ReplicationRule&  WithDestination(const Destination& value) { SetDestination(value); return *this;}
@@ -117,8 +117,11 @@ namespace Model
     Aws::String m_iD;
     bool m_iDHasBeenSet;
     Aws::String m_prefix;
+    bool m_prefixHasBeenSet;
     ReplicationRuleStatus m_status;
+    bool m_statusHasBeenSet;
     Destination m_destination;
+    bool m_destinationHasBeenSet;
   };
 
 } // namespace Model

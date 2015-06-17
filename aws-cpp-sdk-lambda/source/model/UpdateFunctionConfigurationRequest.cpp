@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() : 
+    m_functionNameHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_handlerHasBeenSet(false),
     m_descriptionHasBeenSet(false),

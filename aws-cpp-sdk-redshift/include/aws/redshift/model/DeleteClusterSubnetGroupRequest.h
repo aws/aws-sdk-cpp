@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>
     */
-    inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>
     */
-    inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupName.assign(value); }
+    inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
 
     /*
      <p>The name of the cluster subnet group name to be deleted.</p>
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_clusterSubnetGroupName;
+    bool m_clusterSubnetGroupNameHasBeenSet;
   };
 
 } // namespace Model

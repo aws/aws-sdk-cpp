@@ -21,7 +21,9 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemovePermissionRequest::RemovePermissionRequest()
+RemovePermissionRequest::RemovePermissionRequest() : 
+    m_functionNameHasBeenSet(false),
+    m_statementIdHasBeenSet(false)
 {
 }
 

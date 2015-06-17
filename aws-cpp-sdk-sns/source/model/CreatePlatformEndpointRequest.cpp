@@ -20,6 +20,8 @@ using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
 CreatePlatformEndpointRequest::CreatePlatformEndpointRequest() : 
+    m_platformApplicationArnHasBeenSet(false),
+    m_tokenHasBeenSet(false),
     m_customUserDataHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
@@ -29,8 +31,14 @@ Aws::String CreatePlatformEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreatePlatformEndpoint&";
-  ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
-  ss << "Token=" << StringUtils::URLEncode(m_token.c_str()) << "&";
+  if(m_platformApplicationArnHasBeenSet)
+  {
+    ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
+  }
+  if(m_tokenHasBeenSet)
+  {
+    ss << "Token=" << StringUtils::URLEncode(m_token.c_str()) << "&";
+  }
   if(m_customUserDataHasBeenSet)
   {
     ss << "CustomUserData=" << StringUtils::URLEncode(m_customUserData.c_str()) << "&";

@@ -41,11 +41,12 @@ DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult
 
   if(!resultNode.IsNull())
   {
-    XmlNode resourcePendingMaintenanceActionsNode = resultNode.FirstChild("ResourcePendingMaintenanceActions");
+    XmlNode resourcePendingMaintenanceActionsNodeParent = resultNode.FirstChild("ResourcePendingMaintenanceActions");
+    XmlNode resourcePendingMaintenanceActionsNode = resourcePendingMaintenanceActionsNodeParent.FirstChild("member");
     while(!resourcePendingMaintenanceActionsNode.IsNull())
     {
       m_pendingMaintenanceActions.push_back(resourcePendingMaintenanceActionsNode);
-      resourcePendingMaintenanceActionsNode = resourcePendingMaintenanceActionsNode.NextNode("ResourcePendingMaintenanceActions");
+      resourcePendingMaintenanceActionsNode = resourcePendingMaintenanceActionsNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

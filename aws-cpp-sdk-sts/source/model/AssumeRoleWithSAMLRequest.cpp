@@ -20,6 +20,9 @@ using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
 AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() : 
+    m_roleArnHasBeenSet(false),
+    m_principalArnHasBeenSet(false),
+    m_sAMLAssertionHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false)
@@ -30,9 +33,18 @@ Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssumeRoleWithSAML&";
-  ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
-  ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
-  ss << "SAMLAssertion=" << StringUtils::URLEncode(m_sAMLAssertion.c_str()) << "&";
+  if(m_roleArnHasBeenSet)
+  {
+    ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+  }
+  if(m_principalArnHasBeenSet)
+  {
+    ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
+  }
+  if(m_sAMLAssertionHasBeenSet)
+  {
+    ss << "SAMLAssertion=" << StringUtils::URLEncode(m_sAMLAssertion.c_str()) << "&";
+  }
   if(m_policyHasBeenSet)
   {
     ss << "Policy=" << StringUtils::URLEncode(m_policy.c_str()) << "&";

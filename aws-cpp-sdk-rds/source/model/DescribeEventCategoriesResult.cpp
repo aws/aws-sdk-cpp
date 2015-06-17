@@ -41,11 +41,12 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode eventCategoriesMapNode = resultNode.FirstChild("EventCategoriesMap");
+    XmlNode eventCategoriesMapNodeParent = resultNode.FirstChild("EventCategoriesMap");
+    XmlNode eventCategoriesMapNode = eventCategoriesMapNodeParent.FirstChild("member");
     while(!eventCategoriesMapNode.IsNull())
     {
       m_eventCategoriesMapList.push_back(eventCategoriesMapNode);
-      eventCategoriesMapNode = eventCategoriesMapNode.NextNode("EventCategoriesMap");
+      eventCategoriesMapNode = eventCategoriesMapNode.NextNode("member");
     }
 
   }

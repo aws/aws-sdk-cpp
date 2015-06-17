@@ -44,12 +44,12 @@ namespace Model
     /*
      <p> The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /*
      <p> The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /*
      <p> The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
@@ -68,12 +68,12 @@ namespace Model
     /*
      <p>The name of the configuration template.</p> <p>Constraint: This name must be unique per application. </p> <p>Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /*
      <p>The name of the configuration template.</p> <p>Constraint: This name must be unique per application. </p> <p>Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     */
-    inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /*
      <p>The name of the configuration template.</p> <p>Constraint: This name must be unique per application. </p> <p>Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
@@ -192,7 +192,9 @@ namespace Model
 
   private:
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet;
     Aws::String m_templateName;
+    bool m_templateNameHasBeenSet;
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
     SourceConfiguration m_sourceConfiguration;

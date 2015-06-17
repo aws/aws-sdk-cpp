@@ -133,12 +133,12 @@ namespace Model
     /*
      <p>Amazon SQS supports the following logical data types: String, Number, and Binary. In addition, you can append your own custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
-    inline void SetDataType(const Aws::String& value) { m_dataType = value; }
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /*
      <p>Amazon SQS supports the following logical data types: String, Number, and Binary. In addition, you can append your own custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     */
-    inline void SetDataType(const char* value) { m_dataType.assign(value); }
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
     /*
      <p>Amazon SQS supports the following logical data types: String, Number, and Binary. In addition, you can append your own custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
@@ -160,6 +160,7 @@ namespace Model
     Aws::Vector<Aws::Utils::ByteBuffer> m_binaryListValues;
     bool m_binaryListValuesHasBeenSet;
     Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model

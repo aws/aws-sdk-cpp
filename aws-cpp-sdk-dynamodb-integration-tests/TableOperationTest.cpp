@@ -84,10 +84,11 @@ public:
     std::mutex updateItemResultMutex;
     std::condition_variable updateItemResultSemaphore;
 
-    void GetItemOutcomeReceived(const DynamoDBClient* sender, const GetItemRequest& request, const GetItemOutcome& outcome)
+    void GetItemOutcomeReceived(const DynamoDBClient* sender, const GetItemRequest& request, const GetItemOutcome& outcome, const AsyncCallerContext* context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
+        AWS_UNREFERENCED_PARAM(context);
 
         std::lock_guard<std::mutex> locker(getItemResultMutex);
         getItemResultsFromCallbackTest.push_back(outcome);
@@ -98,10 +99,11 @@ public:
         }
     }
 
-    void PutItemOutcomeReceived(const DynamoDBClient* sender, const PutItemRequest& request, const PutItemOutcome& outcome)
+    void PutItemOutcomeReceived(const DynamoDBClient* sender, const PutItemRequest& request, const PutItemOutcome& outcome, const AsyncCallerContext* context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
+        AWS_UNREFERENCED_PARAM(context);
 
         std::lock_guard<std::mutex> locker(putItemResultMutex);
         putItemResultsFromCallbackTest.push_back(outcome);
@@ -112,10 +114,11 @@ public:
         }
     }
 
-    void DeleteItemOutcomeReceived(const DynamoDBClient* sender, const DeleteItemRequest& request, const DeleteItemOutcome& outcome)
+    void DeleteItemOutcomeReceived(const DynamoDBClient* sender, const DeleteItemRequest& request, const DeleteItemOutcome& outcome, const AsyncCallerContext* context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
+        AWS_UNREFERENCED_PARAM(context);
 
         std::lock_guard<std::mutex> locker(deleteItemResultMutex);
         deleteItemResultsFromCallbackTest.push_back(outcome);
@@ -126,10 +129,11 @@ public:
         }
     }
 
-    void UpdateItemOutcomeReceived(const DynamoDBClient* sender, const UpdateItemRequest& request, const UpdateItemOutcome& outcome)
+    void UpdateItemOutcomeReceived(const DynamoDBClient* sender, const UpdateItemRequest& request, const UpdateItemOutcome& outcome, const AsyncCallerContext* context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
+        AWS_UNREFERENCED_PARAM(context);
 
         std::lock_guard<std::mutex> locker(updateItemResultMutex);
         updateItemResultsFromCallbackTest.push_back(outcome);
@@ -594,10 +598,14 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     CreateTable(CRUD_CALLBACKS_TEST_TABLE, 50, 50);
 
     //registering a member function is ugly business even in modern c++
-    m_client->RegisterPutItemOutcomeReceivedHandler(std::bind(&TableOperationTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    m_client->RegisterGetItemOutcomeReceivedHandler(std::bind(&TableOperationTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    m_client->RegisterDeleteItemOutcomeReceivedHandler(std::bind(&TableOperationTest::DeleteItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    m_client->RegisterUpdateItemOutcomeReceivedHandler(std::bind(&TableOperationTest::UpdateItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+    m_client->RegisterPutItemOutcomeReceivedHandler(std::bind(&TableOperationTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                                              std::placeholders::_3, std::placeholders::_4));
+    m_client->RegisterGetItemOutcomeReceivedHandler(std::bind(&TableOperationTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                                              std::placeholders::_3, std::placeholders::_4));
+    m_client->RegisterDeleteItemOutcomeReceivedHandler(std::bind(&TableOperationTest::DeleteItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                                                 std::placeholders::_3, std::placeholders::_4));
+    m_client->RegisterUpdateItemOutcomeReceivedHandler(std::bind(&TableOperationTest::UpdateItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                                                 std::placeholders::_3, std::placeholders::_4));
 
     //now put 50 items in the table asynchronously
     Aws::String testValueColumnName = "TestValue";

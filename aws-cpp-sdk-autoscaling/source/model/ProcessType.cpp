@@ -23,11 +23,13 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ProcessType::ProcessType()
+ProcessType::ProcessType() : 
+    m_processNameHasBeenSet(false)
 {
 }
 
-ProcessType::ProcessType(const XmlNode& xmlNode)
+ProcessType::ProcessType(const XmlNode& xmlNode) : 
+    m_processNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ ProcessType& ProcessType::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode processNameNode = resultNode.FirstChild("ProcessName");
-    m_processName = StringUtils::Trim(processNameNode.GetText().c_str());
+    if(!processNameNode.IsNull())
+    {
+      m_processName = StringUtils::Trim(processNameNode.GetText().c_str());
+      m_processNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -47,10 +53,16 @@ ProcessType& ProcessType::operator =(const XmlNode& xmlNode)
 
 void ProcessType::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
+  if(m_processNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
+  }
 }
 
 void ProcessType::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
+  if(m_processNameHasBeenSet)
+  {
+      oStream << location << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
+  }
 }

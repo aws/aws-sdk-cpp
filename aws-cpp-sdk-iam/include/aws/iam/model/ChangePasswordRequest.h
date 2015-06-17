@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The IAM user's current password.</p>
     */
-    inline void SetOldPassword(const Aws::String& value) { m_oldPassword = value; }
+    inline void SetOldPassword(const Aws::String& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = value; }
 
     /*
      <p>The IAM user's current password.</p>
     */
-    inline void SetOldPassword(const char* value) { m_oldPassword.assign(value); }
+    inline void SetOldPassword(const char* value) { m_oldPasswordHasBeenSet = true; m_oldPassword.assign(value); }
 
     /*
      <p>The IAM user's current password.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
     */
-    inline void SetNewPassword(const Aws::String& value) { m_newPassword = value; }
+    inline void SetNewPassword(const Aws::String& value) { m_newPasswordHasBeenSet = true; m_newPassword = value; }
 
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
     */
-    inline void SetNewPassword(const char* value) { m_newPassword.assign(value); }
+    inline void SetNewPassword(const char* value) { m_newPasswordHasBeenSet = true; m_newPassword.assign(value); }
 
     /*
      <p>The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_oldPassword;
+    bool m_oldPasswordHasBeenSet;
     Aws::String m_newPassword;
+    bool m_newPasswordHasBeenSet;
   };
 
 } // namespace Model

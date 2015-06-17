@@ -20,7 +20,8 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 DeleteAccessKeyRequest::DeleteAccessKeyRequest() : 
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_accessKeyIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,10 @@ Aws::String DeleteAccessKeyRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
-  ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
+  if(m_accessKeyIdHasBeenSet)
+  {
+    ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

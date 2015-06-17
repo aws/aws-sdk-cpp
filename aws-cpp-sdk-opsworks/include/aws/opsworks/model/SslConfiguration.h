@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The contents of the certificate's domain.crt file.</p>
     */
-    inline void SetCertificate(const Aws::String& value) { m_certificate = value; }
+    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /*
      <p>The contents of the certificate's domain.crt file.</p>
     */
-    inline void SetCertificate(const char* value) { m_certificate.assign(value); }
+    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /*
      <p>The contents of the certificate's domain.crt file.</p>
@@ -71,12 +71,12 @@ namespace Model
     /*
      <p>The private key; the contents of the certificate's domain.kex file.</p>
     */
-    inline void SetPrivateKey(const Aws::String& value) { m_privateKey = value; }
+    inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /*
      <p>The private key; the contents of the certificate's domain.kex file.</p>
     */
-    inline void SetPrivateKey(const char* value) { m_privateKey.assign(value); }
+    inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /*
      <p>The private key; the contents of the certificate's domain.kex file.</p>
@@ -114,7 +114,9 @@ namespace Model
 
   private:
     Aws::String m_certificate;
+    bool m_certificateHasBeenSet;
     Aws::String m_privateKey;
+    bool m_privateKeyHasBeenSet;
     Aws::String m_chain;
     bool m_chainHasBeenSet;
   };

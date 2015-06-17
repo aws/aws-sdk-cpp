@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The email address to be verified.</p>
     */
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddress = value; }
+    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /*
      <p>The email address to be verified.</p>
     */
-    inline void SetEmailAddress(const char* value) { m_emailAddress.assign(value); }
+    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /*
      <p>The email address to be verified.</p>
@@ -60,6 +60,7 @@ namespace Model
 
   private:
     Aws::String m_emailAddress;
+    bool m_emailAddressHasBeenSet;
   };
 
 } // namespace Model

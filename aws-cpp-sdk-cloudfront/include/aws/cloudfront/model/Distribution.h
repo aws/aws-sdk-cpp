@@ -50,12 +50,12 @@ namespace Model
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -74,12 +74,12 @@ namespace Model
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -98,7 +98,7 @@ namespace Model
     /*
      The date and time the distribution was last modified.
     */
-    inline void SetLastModifiedTime(double value) { m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(double value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /*
      The date and time the distribution was last modified.
@@ -112,7 +112,7 @@ namespace Model
     /*
      The number of invalidation batches currently in progress.
     */
-    inline void SetInProgressInvalidationBatches(long value) { m_inProgressInvalidationBatches = value; }
+    inline void SetInProgressInvalidationBatches(long value) { m_inProgressInvalidationBatchesHasBeenSet = true; m_inProgressInvalidationBatches = value; }
 
     /*
      The number of invalidation batches currently in progress.
@@ -126,12 +126,12 @@ namespace Model
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
@@ -150,7 +150,7 @@ namespace Model
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
     */
-    inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSigners = value; }
+    inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
     /*
      CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
@@ -164,7 +164,7 @@ namespace Model
     /*
      The current configuration information for the distribution.
     */
-    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfig = value; }
+    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
     /*
      The current configuration information for the distribution.
@@ -173,12 +173,19 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
     double m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet;
     long m_inProgressInvalidationBatches;
+    bool m_inProgressInvalidationBatchesHasBeenSet;
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     ActiveTrustedSigners m_activeTrustedSigners;
+    bool m_activeTrustedSignersHasBeenSet;
     DistributionConfig m_distributionConfig;
+    bool m_distributionConfigHasBeenSet;
   };
 
 } // namespace Model

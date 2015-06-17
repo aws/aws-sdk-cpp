@@ -25,12 +25,16 @@ using namespace Aws::Utils;
 
 AllowedMethods::AllowedMethods() : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
+    m_itemsHasBeenSet(false),
     m_cachedMethodsHasBeenSet(false)
 {
 }
 
 AllowedMethods::AllowedMethods(const XmlNode& xmlNode) : 
     m_quantity(0),
+    m_quantityHasBeenSet(false),
+    m_itemsHasBeenSet(false),
     m_cachedMethodsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -43,14 +47,23 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
-    XmlNode methodNode = resultNode.FirstChild("Method");
-    while(!methodNode.IsNull())
+    if(!quantityNode.IsNull())
     {
-      m_items.push_back(MethodMapper::GetMethodForName(StringUtils::Trim(methodNode.GetText().c_str())));
-      methodNode = methodNode.NextNode("Method");
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantityHasBeenSet = true;
     }
+    XmlNode methodNodeParent = resultNode.FirstChild("Method");
+    XmlNode methodNode = methodNodeParent.FirstChild("member");
+    if(!methodNode.IsNull())
+    {
+      while(!methodNode.IsNull())
+      {
+        m_items.push_back(MethodMapper::GetMethodForName(StringUtils::Trim(methodNode.GetText().c_str())));
+        methodNode = methodNode.NextNode("member");
+      }
 
+      m_itemsHasBeenSet = true;
+    }
     XmlNode cachedMethodsNode = resultNode.FirstChild("CachedMethods");
     if(!methodNode.IsNull())
     {
@@ -65,15 +78,23 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
 void AllowedMethods::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
-  ss << m_quantity;
-  quantityNode.SetText(ss.str());
-  ss.str("");
-  for(const auto& item : m_items)
+  if(m_quantityHasBeenSet)
   {
-    XmlNode itemsNode = parentNode.CreateChildElement("Method");
-    itemsNode.SetText(MethodMapper::GetNameForMethod(item));
+   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+  ss << m_quantity;
+   quantityNode.SetText(ss.str());
+  ss.str("");
   }
+
+  if(m_itemsHasBeenSet)
+  {
+   for(const auto& item : m_items)
+   {
+     XmlNode itemsNode = parentNode.CreateChildElement("Method");
+     itemsNode.SetText(MethodMapper::GetNameForMethod(item));
+   }
+  }
+
   if(m_cachedMethodsHasBeenSet)
   {
    XmlNode cachedMethodsNode = parentNode.CreateChildElement("CachedMethods");

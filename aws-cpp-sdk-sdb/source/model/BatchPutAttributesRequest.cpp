@@ -19,7 +19,9 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-BatchPutAttributesRequest::BatchPutAttributesRequest()
+BatchPutAttributesRequest::BatchPutAttributesRequest() : 
+    m_domainNameHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -27,12 +29,18 @@ Aws::String BatchPutAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=BatchPutAttributes&";
-  ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
-  unsigned itemsCount = 1;
-  for(auto& item : m_items)
+  if(m_domainNameHasBeenSet)
   {
-    item.OutputToStream(ss, "Item.", itemsCount, "");
-    itemsCount++;
+    ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
+  }
+  if(m_itemsHasBeenSet)
+  {
+    unsigned itemsCount = 1;
+    for(auto& item : m_items)
+    {
+      item.OutputToStream(ss, "Item.", itemsCount, "");
+      itemsCount++;
+    }
   }
   ss << "Version=2009-04-15";
   return ss.str();

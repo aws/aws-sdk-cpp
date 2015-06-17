@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ActivatePipelineRequest::ActivatePipelineRequest() : 
+    m_pipelineIdHasBeenSet(false),
     m_parameterValuesHasBeenSet(false),
     m_startTimestamp(0.0),
     m_startTimestampHasBeenSet(false)
@@ -32,7 +33,11 @@ Aws::String ActivatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
+  if(m_pipelineIdHasBeenSet)
+  {
+   payload.WithString("pipelineId", m_pipelineId);
+
+  }
 
   if(m_parameterValuesHasBeenSet)
   {

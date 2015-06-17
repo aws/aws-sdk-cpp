@@ -41,7 +41,7 @@ namespace Model
     /*
      <p>The names of the load balancers.</p>
     */
-    inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNames = value; }
+    inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /*
      <p>The names of the load balancers.</p>
@@ -51,15 +51,16 @@ namespace Model
     /*
      <p>The names of the load balancers.</p>
     */
-    inline DescribeTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNames.push_back(value); return *this; }
+    inline DescribeTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /*
      <p>The names of the load balancers.</p>
     */
-    inline DescribeTagsRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNames.push_back(value); return *this; }
+    inline DescribeTagsRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_loadBalancerNames;
+    bool m_loadBalancerNamesHasBeenSet;
   };
 
 } // namespace Model

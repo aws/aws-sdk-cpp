@@ -43,11 +43,12 @@ ListAccessKeysResult& ListAccessKeysResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode accessKeyMetadataNode = resultNode.FirstChild("AccessKeyMetadata");
+    XmlNode accessKeyMetadataNodeParent = resultNode.FirstChild("AccessKeyMetadata");
+    XmlNode accessKeyMetadataNode = accessKeyMetadataNodeParent.FirstChild("member");
     while(!accessKeyMetadataNode.IsNull())
     {
       m_accessKeyMetadata.push_back(accessKeyMetadataNode);
-      accessKeyMetadataNode = accessKeyMetadataNode.NextNode("AccessKeyMetadata");
+      accessKeyMetadataNode = accessKeyMetadataNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

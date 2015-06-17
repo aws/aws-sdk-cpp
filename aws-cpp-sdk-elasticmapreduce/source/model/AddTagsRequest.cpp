@@ -21,7 +21,9 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsRequest::AddTagsRequest()
+AddTagsRequest::AddTagsRequest() : 
+    m_resourceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String AddTagsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ResourceId", m_resourceId);
-
-  Array<JsonValue> tagsJsonList(m_tags.size());
-  for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+  if(m_resourceIdHasBeenSet)
   {
-    tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   payload.WithString("ResourceId", m_resourceId);
+
   }
-  payload.WithArray("Tags", std::move(tagsJsonList));
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

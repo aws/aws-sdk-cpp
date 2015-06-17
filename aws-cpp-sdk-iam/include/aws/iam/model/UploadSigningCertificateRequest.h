@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The contents of the signing certificate.</p>
     */
-    inline void SetCertificateBody(const Aws::String& value) { m_certificateBody = value; }
+    inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /*
      <p>The contents of the signing certificate.</p>
     */
-    inline void SetCertificateBody(const char* value) { m_certificateBody.assign(value); }
+    inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
     /*
      <p>The contents of the signing certificate.</p>
@@ -85,6 +85,7 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_certificateBody;
+    bool m_certificateBodyHasBeenSet;
   };
 
 } // namespace Model

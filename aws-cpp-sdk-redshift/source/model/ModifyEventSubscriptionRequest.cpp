@@ -20,6 +20,7 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 ModifyEventSubscriptionRequest::ModifyEventSubscriptionRequest() : 
+    m_subscriptionNameHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_sourceIdsHasBeenSet(false),
@@ -34,7 +35,10 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyEventSubscription&";
-  ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
+  if(m_subscriptionNameHasBeenSet)
+  {
+    ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
+  }
   if(m_snsTopicArnHasBeenSet)
   {
     ss << "SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";

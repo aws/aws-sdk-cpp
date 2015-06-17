@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The volume ID.</p>
     */
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
+    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /*
      <p>The volume ID.</p>
     */
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
+    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /*
      <p>The volume ID.</p>
@@ -85,6 +85,7 @@ namespace Model
 
   private:
     Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

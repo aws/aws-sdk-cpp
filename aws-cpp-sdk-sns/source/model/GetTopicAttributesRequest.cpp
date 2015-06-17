@@ -19,7 +19,8 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetTopicAttributesRequest::GetTopicAttributesRequest()
+GetTopicAttributesRequest::GetTopicAttributesRequest() : 
+    m_topicArnHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String GetTopicAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetTopicAttributes&";
-  ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  if(m_topicArnHasBeenSet)
+  {
+    ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
   ss << "Version=2010-03-31";
   return ss.str();
 }

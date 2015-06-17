@@ -20,6 +20,8 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 PutLifecycleHookRequest::PutLifecycleHookRequest() : 
+    m_lifecycleHookNameHasBeenSet(false),
+    m_autoScalingGroupNameHasBeenSet(false),
     m_lifecycleTransitionHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_notificationTargetARNHasBeenSet(false),
@@ -34,8 +36,14 @@ Aws::String PutLifecycleHookRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PutLifecycleHook&";
-  ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_lifecycleHookNameHasBeenSet)
+  {
+    ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
+  }
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_lifecycleTransitionHasBeenSet)
   {
     ss << "LifecycleTransition=" << StringUtils::URLEncode(m_lifecycleTransition.c_str()) << "&";

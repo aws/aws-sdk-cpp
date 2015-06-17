@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListDeploymentGroupsRequest::ListDeploymentGroupsRequest() : 
+    m_applicationNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -30,7 +31,11 @@ Aws::String ListDeploymentGroupsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("applicationName", m_applicationName);
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("applicationName", m_applicationName);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

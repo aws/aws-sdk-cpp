@@ -41,11 +41,12 @@ DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode scheduledUpdateGroupActionsNode = resultNode.FirstChild("ScheduledUpdateGroupActions");
+    XmlNode scheduledUpdateGroupActionsNodeParent = resultNode.FirstChild("ScheduledUpdateGroupActions");
+    XmlNode scheduledUpdateGroupActionsNode = scheduledUpdateGroupActionsNodeParent.FirstChild("member");
     while(!scheduledUpdateGroupActionsNode.IsNull())
     {
       m_scheduledUpdateGroupActions.push_back(scheduledUpdateGroupActionsNode);
-      scheduledUpdateGroupActionsNode = scheduledUpdateGroupActionsNode.NextNode("ScheduledUpdateGroupActions");
+      scheduledUpdateGroupActionsNode = scheduledUpdateGroupActionsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

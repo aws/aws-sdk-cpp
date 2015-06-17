@@ -22,11 +22,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SslConfiguration::SslConfiguration() : 
+    m_certificateHasBeenSet(false),
+    m_privateKeyHasBeenSet(false),
     m_chainHasBeenSet(false)
 {
 }
 
 SslConfiguration::SslConfiguration(const JsonValue& jsonValue) : 
+    m_certificateHasBeenSet(false),
+    m_privateKeyHasBeenSet(false),
     m_chainHasBeenSet(false)
 {
   *this = jsonValue;
@@ -34,9 +38,19 @@ SslConfiguration::SslConfiguration(const JsonValue& jsonValue) :
 
 SslConfiguration& SslConfiguration::operator =(const JsonValue& jsonValue)
 {
-  m_certificate = jsonValue.GetString("Certificate");
+  if(jsonValue.ValueExists("Certificate"))
+  {
+    m_certificate = jsonValue.GetString("Certificate");
 
-  m_privateKey = jsonValue.GetString("PrivateKey");
+    m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivateKey"))
+  {
+    m_privateKey = jsonValue.GetString("PrivateKey");
+
+    m_privateKeyHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("Chain"))
   {
@@ -52,9 +66,17 @@ JsonValue SslConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("Certificate", m_certificate);
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("Certificate", m_certificate);
 
-  payload.WithString("PrivateKey", m_privateKey);
+  }
+
+  if(m_privateKeyHasBeenSet)
+  {
+   payload.WithString("PrivateKey", m_privateKey);
+
+  }
 
   if(m_chainHasBeenSet)
   {

@@ -49,12 +49,12 @@ namespace Model
     /*
      <p>The source stack ID.</p>
     */
-    inline void SetSourceStackId(const Aws::String& value) { m_sourceStackId = value; }
+    inline void SetSourceStackId(const Aws::String& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = value; }
 
     /*
      <p>The source stack ID.</p>
     */
-    inline void SetSourceStackId(const char* value) { m_sourceStackId.assign(value); }
+    inline void SetSourceStackId(const char* value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId.assign(value); }
 
     /*
      <p>The source stack ID.</p>
@@ -169,12 +169,12 @@ namespace Model
     /*
      <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p> </note>
     */
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /*
      <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p> </note>
     */
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArn.assign(value); }
+    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /*
      <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p> </note>
@@ -470,8 +470,23 @@ namespace Model
     */
     inline CloneStackRequest&  WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
 
+    
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    
+    inline CloneStackRequest&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    
+    inline CloneStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
     Aws::String m_sourceStackId;
+    bool m_sourceStackIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_region;
@@ -481,6 +496,7 @@ namespace Model
     Aws::Map<StackAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
     Aws::String m_serviceRoleArn;
+    bool m_serviceRoleArnHasBeenSet;
     Aws::String m_defaultInstanceProfileArn;
     bool m_defaultInstanceProfileArnHasBeenSet;
     Aws::String m_defaultOs;
@@ -511,6 +527,8 @@ namespace Model
     bool m_cloneAppIdsHasBeenSet;
     RootDeviceType m_defaultRootDeviceType;
     bool m_defaultRootDeviceTypeHasBeenSet;
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

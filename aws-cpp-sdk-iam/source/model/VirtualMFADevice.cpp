@@ -25,6 +25,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 VirtualMFADevice::VirtualMFADevice() : 
+    m_serialNumberHasBeenSet(false),
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
@@ -34,6 +35,7 @@ VirtualMFADevice::VirtualMFADevice() :
 }
 
 VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode) : 
+    m_serialNumberHasBeenSet(false),
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
@@ -50,7 +52,11 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
-    m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
+    if(!serialNumberNode.IsNull())
+    {
+      m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
+      m_serialNumberHasBeenSet = true;
+    }
     XmlNode base32StringSeedNode = resultNode.FirstChild("Base32StringSeed");
     if(!base32StringSeedNode.IsNull())
     {
@@ -82,7 +88,10 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
 
 void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  if(m_serialNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  }
   if(m_base32StringSeedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Base32StringSeed=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_base32StringSeed).c_str()) << "&";
@@ -105,7 +114,10 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
 
 void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  if(m_serialNumberHasBeenSet)
+  {
+      oStream << location << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
+  }
   if(m_base32StringSeedHasBeenSet)
   {
       oStream << location << ".Base32StringSeed=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_base32StringSeed).c_str()) << "&";

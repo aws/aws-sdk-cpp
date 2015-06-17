@@ -20,7 +20,9 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 CopyClusterSnapshotRequest::CopyClusterSnapshotRequest() : 
-    m_sourceSnapshotClusterIdentifierHasBeenSet(false)
+    m_sourceSnapshotIdentifierHasBeenSet(false),
+    m_sourceSnapshotClusterIdentifierHasBeenSet(false),
+    m_targetSnapshotIdentifierHasBeenSet(false)
 {
 }
 
@@ -28,12 +30,18 @@ Aws::String CopyClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopyClusterSnapshot&";
-  ss << "SourceSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceSnapshotIdentifier.c_str()) << "&";
+  if(m_sourceSnapshotIdentifierHasBeenSet)
+  {
+    ss << "SourceSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceSnapshotIdentifier.c_str()) << "&";
+  }
   if(m_sourceSnapshotClusterIdentifierHasBeenSet)
   {
     ss << "SourceSnapshotClusterIdentifier=" << StringUtils::URLEncode(m_sourceSnapshotClusterIdentifier.c_str()) << "&";
   }
-  ss << "TargetSnapshotIdentifier=" << StringUtils::URLEncode(m_targetSnapshotIdentifier.c_str()) << "&";
+  if(m_targetSnapshotIdentifierHasBeenSet)
+  {
+    ss << "TargetSnapshotIdentifier=" << StringUtils::URLEncode(m_targetSnapshotIdentifier.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

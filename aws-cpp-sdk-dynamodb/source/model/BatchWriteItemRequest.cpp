@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchWriteItemRequest::BatchWriteItemRequest() : 
+    m_requestItemsHasBeenSet(false),
     m_returnConsumedCapacityHasBeenSet(false),
     m_returnItemCollectionMetricsHasBeenSet(false)
 {
@@ -31,17 +32,21 @@ Aws::String BatchWriteItemRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  JsonValue requestItemsJsonMap;
-  for(auto& requestItemsItem : m_requestItems)
+  if(m_requestItemsHasBeenSet)
   {
-    Array<JsonValue> writeRequestsJsonList(requestItemsItem.second.size());
-    for(unsigned writeRequestsIndex = 0; writeRequestsIndex < writeRequestsJsonList.GetLength(); ++writeRequestsIndex)
-    {
-      writeRequestsJsonList[writeRequestsIndex].AsObject(requestItemsItem.second[writeRequestsIndex].Jsonize());
-    }
-    requestItemsJsonMap.WithArray(requestItemsItem.first, std::move(writeRequestsJsonList));
+   JsonValue requestItemsJsonMap;
+   for(auto& requestItemsItem : m_requestItems)
+   {
+     Array<JsonValue> writeRequestsJsonList(requestItemsItem.second.size());
+     for(unsigned writeRequestsIndex = 0; writeRequestsIndex < writeRequestsJsonList.GetLength(); ++writeRequestsIndex)
+     {
+       writeRequestsJsonList[writeRequestsIndex].AsObject(requestItemsItem.second[writeRequestsIndex].Jsonize());
+     }
+     requestItemsJsonMap.WithArray(requestItemsItem.first, std::move(writeRequestsJsonList));
+   }
+   payload.WithObject("RequestItems", std::move(requestItemsJsonMap));
+
   }
-  payload.WithObject("WriteRequests", std::move(requestItemsJsonMap));
 
   if(m_returnConsumedCapacityHasBeenSet)
   {

@@ -42,7 +42,8 @@ EnvironmentDescription::EnvironmentDescription() :
     m_abortableOperationInProgressHasBeenSet(false),
     m_healthHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_tierHasBeenSet(false)
+    m_tierHasBeenSet(false),
+    m_responseMetadataHasBeenSet(false)
 {
 }
 
@@ -65,7 +66,8 @@ EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) :
     m_abortableOperationInProgressHasBeenSet(false),
     m_healthHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_tierHasBeenSet(false)
+    m_tierHasBeenSet(false),
+    m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -247,9 +249,12 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       tierLocationAndMemberSs << location << index << locationValue << ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMemberSs.str().c_str());
   }
-  Aws::StringStream responseMetadataLocationAndMemberSs;
-  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
+  if(m_responseMetadataHasBeenSet)
+  {
+      Aws::StringStream responseMetadataLocationAndMemberSs;
+      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
+  }
 }
 
 void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -322,7 +327,10 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       tierLocationAndMember += ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMember.c_str());
   }
-  Aws::String responseMetadataLocationAndMember(location);
-  responseMetadataLocationAndMember += ".ResponseMetadata";
-  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
+  if(m_responseMetadataHasBeenSet)
+  {
+      Aws::String responseMetadataLocationAndMember(location);
+      responseMetadataLocationAndMember += ".ResponseMetadata";
+      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
+  }
 }

@@ -43,11 +43,12 @@ ListUsersResult& ListUsersResult::operator =(const AmazonWebServiceResult<XmlDoc
 
   if(!resultNode.IsNull())
   {
-    XmlNode usersNode = resultNode.FirstChild("Users");
+    XmlNode usersNodeParent = resultNode.FirstChild("Users");
+    XmlNode usersNode = usersNodeParent.FirstChild("member");
     while(!usersNode.IsNull())
     {
       m_users.push_back(usersNode);
-      usersNode = usersNode.NextNode("Users");
+      usersNode = usersNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

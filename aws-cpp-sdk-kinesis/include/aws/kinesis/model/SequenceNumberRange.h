@@ -47,12 +47,12 @@ namespace Model
     /*
      <p>The starting sequence number for the range.</p>
     */
-    inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumber = value; }
+    inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
     /*
      <p>The starting sequence number for the range.</p>
     */
-    inline void SetStartingSequenceNumber(const char* value) { m_startingSequenceNumber.assign(value); }
+    inline void SetStartingSequenceNumber(const char* value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber.assign(value); }
 
     /*
      <p>The starting sequence number for the range.</p>
@@ -90,6 +90,7 @@ namespace Model
 
   private:
     Aws::String m_startingSequenceNumber;
+    bool m_startingSequenceNumberHasBeenSet;
     Aws::String m_endingSequenceNumber;
     bool m_endingSequenceNumberHasBeenSet;
   };

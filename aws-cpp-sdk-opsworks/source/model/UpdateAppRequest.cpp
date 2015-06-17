@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAppRequest::UpdateAppRequest() : 
+    m_appIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dataSourcesHasBeenSet(false),
@@ -40,7 +41,11 @@ Aws::String UpdateAppRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("AppId", m_appId);
+  if(m_appIdHasBeenSet)
+  {
+   payload.WithString("AppId", m_appId);
+
+  }
 
   if(m_nameHasBeenSet)
   {

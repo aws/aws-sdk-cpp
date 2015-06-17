@@ -24,16 +24,25 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 AutoScalingGroup::AutoScalingGroup() : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_autoScalingGroupARNHasBeenSet(false),
+    m_launchConfigurationNameHasBeenSet(false),
     m_minSize(0),
+    m_minSizeHasBeenSet(false),
     m_maxSize(0),
+    m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
+    m_desiredCapacityHasBeenSet(false),
     m_defaultCooldown(0),
+    m_defaultCooldownHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_createdTime(0.0),
+    m_createdTimeHasBeenSet(false),
     m_suspendedProcessesHasBeenSet(false),
     m_placementGroupHasBeenSet(false),
     m_vPCZoneIdentifierHasBeenSet(false),
@@ -45,16 +54,25 @@ AutoScalingGroup::AutoScalingGroup() :
 }
 
 AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_autoScalingGroupARNHasBeenSet(false),
+    m_launchConfigurationNameHasBeenSet(false),
     m_minSize(0),
+    m_minSizeHasBeenSet(false),
     m_maxSize(0),
+    m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
+    m_desiredCapacityHasBeenSet(false),
     m_defaultCooldown(0),
+    m_defaultCooldownHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_createdTime(0.0),
+    m_createdTimeHasBeenSet(false),
     m_suspendedProcessesHasBeenSet(false),
     m_placementGroupHasBeenSet(false),
     m_vPCZoneIdentifierHasBeenSet(false),
@@ -73,7 +91,11 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
-    m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+    if(!autoScalingGroupNameNode.IsNull())
+    {
+      m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+      m_autoScalingGroupNameHasBeenSet = true;
+    }
     XmlNode autoScalingGroupARNNode = resultNode.FirstChild("AutoScalingGroupARN");
     if(!autoScalingGroupARNNode.IsNull())
     {
@@ -81,61 +103,97 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_autoScalingGroupARNHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
-    m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
-    XmlNode minSizeNode = resultNode.FirstChild("MinSize");
-    m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(minSizeNode.GetText().c_str()).c_str());
-    XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
-    m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxSizeNode.GetText().c_str()).c_str());
-    XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
-    m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(desiredCapacityNode.GetText().c_str()).c_str());
-    XmlNode defaultCooldownNode = resultNode.FirstChild("DefaultCooldown");
-    m_defaultCooldown = StringUtils::ConvertToInt32(StringUtils::Trim(defaultCooldownNode.GetText().c_str()).c_str());
-    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
-    while(!availabilityZonesNode.IsNull())
+    if(!launchConfigurationNameNode.IsNull())
     {
-      m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesNode.GetText().c_str()));
-      availabilityZonesNode = availabilityZonesNode.NextNode("AvailabilityZones");
+      m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+      m_launchConfigurationNameHasBeenSet = true;
     }
+    XmlNode minSizeNode = resultNode.FirstChild("MinSize");
+    if(!minSizeNode.IsNull())
+    {
+      m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(minSizeNode.GetText().c_str()).c_str());
+      m_minSizeHasBeenSet = true;
+    }
+    XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
+    if(!maxSizeNode.IsNull())
+    {
+      m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxSizeNode.GetText().c_str()).c_str());
+      m_maxSizeHasBeenSet = true;
+    }
+    XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
+    if(!desiredCapacityNode.IsNull())
+    {
+      m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(desiredCapacityNode.GetText().c_str()).c_str());
+      m_desiredCapacityHasBeenSet = true;
+    }
+    XmlNode defaultCooldownNode = resultNode.FirstChild("DefaultCooldown");
+    if(!defaultCooldownNode.IsNull())
+    {
+      m_defaultCooldown = StringUtils::ConvertToInt32(StringUtils::Trim(defaultCooldownNode.GetText().c_str()).c_str());
+      m_defaultCooldownHasBeenSet = true;
+    }
+    XmlNode availabilityZonesNodeParent = resultNode.FirstChild("AvailabilityZones");
+    XmlNode availabilityZonesNode = availabilityZonesNodeParent.FirstChild("member");
+    if(!availabilityZonesNode.IsNull())
+    {
+      while(!availabilityZonesNode.IsNull())
+      {
+        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesNode.GetText().c_str()));
+        availabilityZonesNode = availabilityZonesNode.NextNode("member");
+      }
 
-    XmlNode loadBalancerNamesNode = resultNode.FirstChild("LoadBalancerNames");
+      m_availabilityZonesHasBeenSet = true;
+    }
+    XmlNode loadBalancerNamesNodeParent = resultNode.FirstChild("LoadBalancerNames");
+    XmlNode loadBalancerNamesNode = loadBalancerNamesNodeParent.FirstChild("member");
     if(!loadBalancerNamesNode.IsNull())
     {
       while(!loadBalancerNamesNode.IsNull())
       {
         m_loadBalancerNames.push_back(StringUtils::Trim(loadBalancerNamesNode.GetText().c_str()));
-        loadBalancerNamesNode = loadBalancerNamesNode.NextNode("LoadBalancerNames");
+        loadBalancerNamesNode = loadBalancerNamesNode.NextNode("member");
       }
 
       m_loadBalancerNamesHasBeenSet = true;
     }
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
-    m_healthCheckType = StringUtils::Trim(healthCheckTypeNode.GetText().c_str());
+    if(!loadBalancerNamesNode.IsNull())
+    {
+      m_healthCheckType = StringUtils::Trim(healthCheckTypeNode.GetText().c_str());
+      m_healthCheckTypeHasBeenSet = true;
+    }
     XmlNode healthCheckGracePeriodNode = resultNode.FirstChild("HealthCheckGracePeriod");
     if(!loadBalancerNamesNode.IsNull())
     {
       m_healthCheckGracePeriod = StringUtils::ConvertToInt32(StringUtils::Trim(healthCheckGracePeriodNode.GetText().c_str()).c_str());
       m_healthCheckGracePeriodHasBeenSet = true;
     }
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNodeParent = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = instancesNodeParent.FirstChild("member");
     if(!instancesNode.IsNull())
     {
       while(!instancesNode.IsNull())
       {
         m_instances.push_back(instancesNode);
-        instancesNode = instancesNode.NextNode("Instances");
+        instancesNode = instancesNode.NextNode("member");
       }
 
       m_instancesHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
-    m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
-    XmlNode suspendedProcessesNode = resultNode.FirstChild("SuspendedProcesses");
+    if(!instancesNode.IsNull())
+    {
+      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTimeHasBeenSet = true;
+    }
+    XmlNode suspendedProcessesNodeParent = resultNode.FirstChild("SuspendedProcesses");
+    XmlNode suspendedProcessesNode = suspendedProcessesNodeParent.FirstChild("member");
     if(!suspendedProcessesNode.IsNull())
     {
       while(!suspendedProcessesNode.IsNull())
       {
         m_suspendedProcesses.push_back(suspendedProcessesNode);
-        suspendedProcessesNode = suspendedProcessesNode.NextNode("SuspendedProcesses");
+        suspendedProcessesNode = suspendedProcessesNode.NextNode("member");
       }
 
       m_suspendedProcessesHasBeenSet = true;
@@ -152,13 +210,14 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_vPCZoneIdentifier = StringUtils::Trim(vPCZoneIdentifierNode.GetText().c_str());
       m_vPCZoneIdentifierHasBeenSet = true;
     }
-    XmlNode enabledMetricsNode = resultNode.FirstChild("EnabledMetrics");
+    XmlNode enabledMetricsNodeParent = resultNode.FirstChild("EnabledMetrics");
+    XmlNode enabledMetricsNode = enabledMetricsNodeParent.FirstChild("member");
     if(!enabledMetricsNode.IsNull())
     {
       while(!enabledMetricsNode.IsNull())
       {
         m_enabledMetrics.push_back(enabledMetricsNode);
-        enabledMetricsNode = enabledMetricsNode.NextNode("EnabledMetrics");
+        enabledMetricsNode = enabledMetricsNode.NextNode("member");
       }
 
       m_enabledMetricsHasBeenSet = true;
@@ -169,24 +228,26 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNodeParent = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = tagsNodeParent.FirstChild("member");
     if(!tagsNode.IsNull())
     {
       while(!tagsNode.IsNull())
       {
         m_tags.push_back(tagsNode);
-        tagsNode = tagsNode.NextNode("Tags");
+        tagsNode = tagsNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode terminationPoliciesNode = resultNode.FirstChild("TerminationPolicies");
+    XmlNode terminationPoliciesNodeParent = resultNode.FirstChild("TerminationPolicies");
+    XmlNode terminationPoliciesNode = terminationPoliciesNodeParent.FirstChild("member");
     if(!terminationPoliciesNode.IsNull())
     {
       while(!terminationPoliciesNode.IsNull())
       {
         m_terminationPolicies.push_back(StringUtils::Trim(terminationPoliciesNode.GetText().c_str()));
-        terminationPoliciesNode = terminationPoliciesNode.NextNode("TerminationPolicies");
+        terminationPoliciesNode = terminationPoliciesNode.NextNode("member");
       }
 
       m_terminationPoliciesHasBeenSet = true;
@@ -198,19 +259,40 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_autoScalingGroupARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoScalingGroupARN=" << StringUtils::URLEncode(m_autoScalingGroupARN.c_str()) << "&";
   }
-  oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
-  oStream << location << index << locationValue << ".MinSize=" << m_minSize << "&";
-  oStream << location << index << locationValue << ".MaxSize=" << m_maxSize << "&";
-  oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
-  oStream << location << index << locationValue << ".DefaultCooldown=" << m_defaultCooldown << "&";
-  for(auto& item : m_availabilityZones)
+  if(m_launchConfigurationNameHasBeenSet)
   {
-    oStream << location << index << locationValue << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+      oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+  if(m_minSizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinSize=" << m_minSize << "&";
+  }
+  if(m_maxSizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxSize=" << m_maxSize << "&";
+  }
+  if(m_desiredCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+  if(m_defaultCooldownHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultCooldown=" << m_defaultCooldown << "&";
+  }
+  if(m_availabilityZonesHasBeenSet)
+  {
+      for(auto& item : m_availabilityZones)
+      {
+        oStream << location << index << locationValue << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_loadBalancerNamesHasBeenSet)
   {
@@ -219,7 +301,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".LoadBalancerNames=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  oStream << location << index << locationValue << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
+  if(m_healthCheckTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
+  }
   if(m_healthCheckGracePeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckGracePeriod=" << m_healthCheckGracePeriod << "&";
@@ -233,7 +318,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
-  oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+  if(m_createdTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+  }
   if(m_suspendedProcessesHasBeenSet)
   {
       for(auto& item : m_suspendedProcesses)
@@ -284,19 +372,40 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+      oStream << location << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_autoScalingGroupARNHasBeenSet)
   {
       oStream << location << ".AutoScalingGroupARN=" << StringUtils::URLEncode(m_autoScalingGroupARN.c_str()) << "&";
   }
-  oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
-  oStream << location << ".MinSize=" << m_minSize << "&";
-  oStream << location << ".MaxSize=" << m_maxSize << "&";
-  oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
-  oStream << location << ".DefaultCooldown=" << m_defaultCooldown << "&";
-  for(auto& item : m_availabilityZones)
+  if(m_launchConfigurationNameHasBeenSet)
   {
-    oStream << location << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+      oStream << location << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
+  }
+  if(m_minSizeHasBeenSet)
+  {
+      oStream << location << ".MinSize=" << m_minSize << "&";
+  }
+  if(m_maxSizeHasBeenSet)
+  {
+      oStream << location << ".MaxSize=" << m_maxSize << "&";
+  }
+  if(m_desiredCapacityHasBeenSet)
+  {
+      oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+  if(m_defaultCooldownHasBeenSet)
+  {
+      oStream << location << ".DefaultCooldown=" << m_defaultCooldown << "&";
+  }
+  if(m_availabilityZonesHasBeenSet)
+  {
+      for(auto& item : m_availabilityZones)
+      {
+        oStream << location << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_loadBalancerNamesHasBeenSet)
   {
@@ -305,7 +414,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << ".LoadBalancerNames=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  oStream << location << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
+  if(m_healthCheckTypeHasBeenSet)
+  {
+      oStream << location << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
+  }
   if(m_healthCheckGracePeriodHasBeenSet)
   {
       oStream << location << ".HealthCheckGracePeriod=" << m_healthCheckGracePeriod << "&";
@@ -319,7 +431,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, locationAndListMember.c_str());
       }
   }
-  oStream << location << ".CreatedTime=" << m_createdTime << "&";
+  if(m_createdTimeHasBeenSet)
+  {
+      oStream << location << ".CreatedTime=" << m_createdTime << "&";
+  }
   if(m_suspendedProcessesHasBeenSet)
   {
       for(auto& item : m_suspendedProcesses)

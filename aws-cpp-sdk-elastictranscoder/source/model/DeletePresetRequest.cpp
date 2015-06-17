@@ -21,7 +21,8 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePresetRequest::DeletePresetRequest()
+DeletePresetRequest::DeletePresetRequest() : 
+    m_idHasBeenSet(false)
 {
 }
 

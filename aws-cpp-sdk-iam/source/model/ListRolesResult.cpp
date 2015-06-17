@@ -43,11 +43,12 @@ ListRolesResult& ListRolesResult::operator =(const AmazonWebServiceResult<XmlDoc
 
   if(!resultNode.IsNull())
   {
-    XmlNode rolesNode = resultNode.FirstChild("Roles");
+    XmlNode rolesNodeParent = resultNode.FirstChild("Roles");
+    XmlNode rolesNode = rolesNodeParent.FirstChild("member");
     while(!rolesNode.IsNull())
     {
       m_roles.push_back(rolesNode);
-      rolesNode = rolesNode.NextNode("Roles");
+      rolesNode = rolesNode.NextNode("member");
     }
 
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");

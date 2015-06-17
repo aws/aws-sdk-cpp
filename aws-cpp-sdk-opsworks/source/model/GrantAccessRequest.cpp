@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GrantAccessRequest::GrantAccessRequest() : 
+    m_instanceIdHasBeenSet(false),
     m_validForInMinutes(0),
     m_validForInMinutesHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String GrantAccessRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("InstanceId", m_instanceId);
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
 
   if(m_validForInMinutesHasBeenSet)
   {

@@ -78,24 +78,26 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_pendingModifiedValues = pendingModifiedValuesNode;
       m_pendingModifiedValuesHasBeenSet = true;
     }
-    XmlNode clusterIdNode = resultNode.FirstChild("ClusterId");
+    XmlNode clusterIdNodeParent = resultNode.FirstChild("ClusterId");
+    XmlNode clusterIdNode = clusterIdNodeParent.FirstChild("member");
     if(!clusterIdNode.IsNull())
     {
       while(!clusterIdNode.IsNull())
       {
         m_memberClusters.push_back(StringUtils::Trim(clusterIdNode.GetText().c_str()));
-        clusterIdNode = clusterIdNode.NextNode("ClusterId");
+        clusterIdNode = clusterIdNode.NextNode("member");
       }
 
       m_memberClustersHasBeenSet = true;
     }
-    XmlNode nodeGroupNode = resultNode.FirstChild("NodeGroup");
+    XmlNode nodeGroupNodeParent = resultNode.FirstChild("NodeGroup");
+    XmlNode nodeGroupNode = nodeGroupNodeParent.FirstChild("member");
     if(!nodeGroupNode.IsNull())
     {
       while(!nodeGroupNode.IsNull())
       {
         m_nodeGroups.push_back(nodeGroupNode);
-        nodeGroupNode = nodeGroupNode.NextNode("NodeGroup");
+        nodeGroupNode = nodeGroupNode.NextNode("member");
       }
 
       m_nodeGroupsHasBeenSet = true;

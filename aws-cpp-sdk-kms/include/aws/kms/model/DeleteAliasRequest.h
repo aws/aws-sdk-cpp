@@ -42,12 +42,12 @@ namespace Model
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
     */
-    inline void SetAliasName(const Aws::String& value) { m_aliasName = value; }
+    inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
     */
-    inline void SetAliasName(const char* value) { m_aliasName.assign(value); }
+    inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /*
      <p>The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</p>
@@ -61,6 +61,7 @@ namespace Model
 
   private:
     Aws::String m_aliasName;
+    bool m_aliasNameHasBeenSet;
   };
 
 } // namespace Model

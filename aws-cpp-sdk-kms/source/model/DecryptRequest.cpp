@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DecryptRequest::DecryptRequest() : 
+    m_ciphertextBlobHasBeenSet(false),
     m_encryptionContextHasBeenSet(false),
     m_grantTokensHasBeenSet(false)
 {
@@ -32,7 +33,11 @@ Aws::String DecryptRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("CiphertextBlob", HashingUtils::Base64Encode(m_ciphertextBlob));
+  if(m_ciphertextBlobHasBeenSet)
+  {
+   payload.WithString("CiphertextBlob", HashingUtils::Base64Encode(m_ciphertextBlob));
+  }
+
   if(m_encryptionContextHasBeenSet)
   {
    JsonValue encryptionContextJsonMap;

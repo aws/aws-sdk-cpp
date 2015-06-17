@@ -19,7 +19,8 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteInstanceProfileRequest::DeleteInstanceProfileRequest()
+DeleteInstanceProfileRequest::DeleteInstanceProfileRequest() : 
+    m_instanceProfileNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteInstanceProfile&";
-  ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  if(m_instanceProfileNameHasBeenSet)
+  {
+    ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
+  }
   ss << "Version=2010-05-08";
   return ss.str();
 }

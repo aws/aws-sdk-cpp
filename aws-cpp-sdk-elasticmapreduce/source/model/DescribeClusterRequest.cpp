@@ -21,7 +21,8 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClusterRequest::DescribeClusterRequest()
+DescribeClusterRequest::DescribeClusterRequest() : 
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,11 @@ Aws::String DescribeClusterRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("ClusterId", m_clusterId);
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
+
+  }
 
   return payload.WriteReadable();
 }

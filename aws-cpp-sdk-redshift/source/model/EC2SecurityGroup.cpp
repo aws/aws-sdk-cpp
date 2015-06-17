@@ -64,13 +64,14 @@ EC2SecurityGroup& EC2SecurityGroup::operator =(const XmlNode& xmlNode)
       m_eC2SecurityGroupOwnerId = StringUtils::Trim(eC2SecurityGroupOwnerIdNode.GetText().c_str());
       m_eC2SecurityGroupOwnerIdHasBeenSet = true;
     }
-    XmlNode tagNode = resultNode.FirstChild("Tag");
+    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
+    XmlNode tagNode = tagNodeParent.FirstChild("member");
     if(!tagNode.IsNull())
     {
       while(!tagNode.IsNull())
       {
         m_tags.push_back(tagNode);
-        tagNode = tagNode.NextNode("Tag");
+        tagNode = tagNode.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;

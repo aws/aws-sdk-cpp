@@ -41,11 +41,12 @@ DetachLoadBalancerFromSubnetsResult& DetachLoadBalancerFromSubnetsResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode subnetsNode = resultNode.FirstChild("Subnets");
+    XmlNode subnetsNodeParent = resultNode.FirstChild("Subnets");
+    XmlNode subnetsNode = subnetsNodeParent.FirstChild("member");
     while(!subnetsNode.IsNull())
     {
       m_subnets.push_back(StringUtils::Trim(subnetsNode.GetText().c_str()));
-      subnetsNode = subnetsNode.NextNode("Subnets");
+      subnetsNode = subnetsNode.NextNode("member");
     }
 
   }

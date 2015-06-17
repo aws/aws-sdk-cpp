@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeObjectsRequest::DescribeObjectsRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_objectIdsHasBeenSet(false),
     m_evaluateExpressions(false),
     m_evaluateExpressionsHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -32,14 +34,22 @@ Aws::String DescribeObjectsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
-
-  Array<JsonValue> objectIdsJsonList(m_objectIds.size());
-  for(unsigned objectIdsIndex = 0; objectIdsIndex < objectIdsJsonList.GetLength(); ++objectIdsIndex)
+  if(m_pipelineIdHasBeenSet)
   {
-    objectIdsJsonList[objectIdsIndex].AsString(m_objectIds[objectIdsIndex]);
+   payload.WithString("pipelineId", m_pipelineId);
+
   }
-  payload.WithArray("objectIds", std::move(objectIdsJsonList));
+
+  if(m_objectIdsHasBeenSet)
+  {
+   Array<JsonValue> objectIdsJsonList(m_objectIds.size());
+   for(unsigned objectIdsIndex = 0; objectIdsIndex < objectIdsJsonList.GetLength(); ++objectIdsIndex)
+   {
+     objectIdsJsonList[objectIdsIndex].AsString(m_objectIds[objectIdsIndex]);
+   }
+   payload.WithArray("objectIds", std::move(objectIdsJsonList));
+
+  }
 
   if(m_evaluateExpressionsHasBeenSet)
   {

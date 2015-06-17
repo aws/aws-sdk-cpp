@@ -27,6 +27,7 @@ Grantee::Grantee() :
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_uRIHasBeenSet(false)
 {
 }
@@ -35,6 +36,7 @@ Grantee::Grantee(const XmlNode& xmlNode) :
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_uRIHasBeenSet(false)
 {
   *this = xmlNode;
@@ -65,7 +67,11 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
       m_iDHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
-    m_type = TypeMapper::GetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+    if(!typeNode.IsNull())
+    {
+      m_type = TypeMapper::GetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_typeHasBeenSet = true;
+    }
     XmlNode uRINode = resultNode.FirstChild("URI");
     if(!uRINode.IsNull())
     {
@@ -98,11 +104,15 @@ void Grantee::AddToNode(XmlNode& parentNode) const
    iDNode.SetText(m_iD);
   }
 
-  XmlNode typeNode = parentNode.CreateChildElement("Type");
-  typeNode.SetText(TypeMapper::GetNameForType(m_type));
+  if(m_typeHasBeenSet)
+  {
+   XmlNode typeNode = parentNode.CreateChildElement("Type");
+   typeNode.SetText(TypeMapper::GetNameForType(m_type));
+  }
+
   if(m_uRIHasBeenSet)
   {
-   XmlNode uRINode = parentNode.CreateChildElement("xsi:type");
+   XmlNode uRINode = parentNode.CreateChildElement("URI");
    uRINode.SetText(m_uRI);
   }
 

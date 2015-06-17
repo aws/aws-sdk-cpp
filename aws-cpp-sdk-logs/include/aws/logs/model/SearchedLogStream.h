@@ -30,7 +30,7 @@ namespace CloudWatchLogs
 namespace Model
 {
   /*
-    An object indicating the search status of a log stream in a <code class="code">FilterLogEvents</code> request.
+    <p>An object indicating the search status of a log stream in a <code class="code">FilterLogEvents</code> request.</p>
   */
   class AWS_CLOUDWATCHLOGS_API SearchedLogStream
   {
@@ -41,40 +41,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /*
-     The name of the log stream.
+     <p>The name of the log stream.</p>
     */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
     /*
-     The name of the log stream.
+     <p>The name of the log stream.</p>
     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /*
-     The name of the log stream.
+     <p>The name of the log stream.</p>
     */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /*
-     The name of the log stream.
+     <p>The name of the log stream.</p>
     */
     inline SearchedLogStream&  WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /*
-     The name of the log stream.
+     <p>The name of the log stream.</p>
     */
     inline SearchedLogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
     /*
-     Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.
+     <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
     */
     inline bool GetSearchedCompletely() const{ return m_searchedCompletely; }
     /*
-     Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.
+     <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
     */
     inline void SetSearchedCompletely(bool value) { m_searchedCompletelyHasBeenSet = true; m_searchedCompletely = value; }
 
     /*
-     Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.
+     <p>Indicates whether all the events in this log stream were searched or more data exists to search by paginating further.</p>
     */
     inline SearchedLogStream&  WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
 

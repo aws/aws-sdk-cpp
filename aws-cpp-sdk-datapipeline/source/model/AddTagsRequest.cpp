@@ -21,7 +21,9 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsRequest::AddTagsRequest()
+AddTagsRequest::AddTagsRequest() : 
+    m_pipelineIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String AddTagsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("pipelineId", m_pipelineId);
-
-  Array<JsonValue> tagsJsonList(m_tags.size());
-  for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+  if(m_pipelineIdHasBeenSet)
   {
-    tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   payload.WithString("pipelineId", m_pipelineId);
+
   }
-  payload.WithArray("tags", std::move(tagsJsonList));
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
 
   return payload.WriteReadable();
 }

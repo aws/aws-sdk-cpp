@@ -42,12 +42,12 @@ namespace Model
     /*
      <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
     */
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /*
      <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
     */
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /*
      <p> The identifier of the cluster that will be created from restoring the snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> </p>
@@ -66,12 +66,12 @@ namespace Model
     /*
      <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /*
      <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
     */
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifier.assign(value); }
+    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /*
      <p> The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. </p> <p>Example: <code>my-snapshot-id</code></p>
@@ -429,7 +429,9 @@ namespace Model
 
   private:
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
     Aws::String m_snapshotIdentifier;
+    bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
     long m_port;

@@ -21,22 +21,29 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRequest::PutRequest()
+PutRequest::PutRequest() : 
+    m_itemHasBeenSet(false)
 {
 }
 
-PutRequest::PutRequest(const JsonValue& jsonValue)
+PutRequest::PutRequest(const JsonValue& jsonValue) : 
+    m_itemHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PutRequest& PutRequest::operator =(const JsonValue& jsonValue)
 {
-  Aws::Map<Aws::String, JsonValue> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
-  for(auto& itemItem : itemJsonMap)
+  if(jsonValue.ValueExists("Item"))
   {
-    m_item[itemItem.first] = itemItem.second.AsObject();
+    Aws::Map<Aws::String, JsonValue> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
+    for(auto& itemItem : itemJsonMap)
+    {
+      m_item[itemItem.first] = itemItem.second.AsObject();
+    }
+    m_itemHasBeenSet = true;
   }
+
   return *this;
 }
 
@@ -44,12 +51,16 @@ JsonValue PutRequest::Jsonize() const
 {
   JsonValue payload;
 
-  JsonValue itemJsonMap;
-  for(auto& itemItem : m_item)
+  if(m_itemHasBeenSet)
   {
-    itemJsonMap.WithObject(itemItem.first, itemItem.second.Jsonize());
+   JsonValue itemJsonMap;
+   for(auto& itemItem : m_item)
+   {
+     itemJsonMap.WithObject(itemItem.first, itemItem.second.Jsonize());
+   }
+   payload.WithObject("Item", std::move(itemJsonMap));
+
   }
-  payload.WithObject("Item", std::move(itemJsonMap));
 
   return std::move(payload);
 }

@@ -27,14 +27,18 @@
 #include <aws/email/SESEndpoint.h>
 #include <aws/email/SESErrorMarshaller.h>
 #include <aws/email/model/DeleteIdentityRequest.h>
+#include <aws/email/model/DeleteIdentityPolicyRequest.h>
 #include <aws/email/model/DeleteVerifiedEmailAddressRequest.h>
 #include <aws/email/model/GetIdentityDkimAttributesRequest.h>
 #include <aws/email/model/GetIdentityNotificationAttributesRequest.h>
+#include <aws/email/model/GetIdentityPoliciesRequest.h>
 #include <aws/email/model/GetIdentityVerificationAttributesRequest.h>
 #include <aws/email/model/GetSendQuotaRequest.h>
 #include <aws/email/model/GetSendStatisticsRequest.h>
 #include <aws/email/model/ListIdentitiesRequest.h>
+#include <aws/email/model/ListIdentityPoliciesRequest.h>
 #include <aws/email/model/ListVerifiedEmailAddressesRequest.h>
+#include <aws/email/model/PutIdentityPolicyRequest.h>
 #include <aws/email/model/SendEmailRequest.h>
 #include <aws/email/model/SendRawEmailRequest.h>
 #include <aws/email/model/SetIdentityDkimEnabledRequest.h>
@@ -127,14 +131,45 @@ DeleteIdentityOutcomeCallable SESClient::DeleteIdentityCallable(const DeleteIden
   return std::async(std::launch::async, &SESClient::DeleteIdentity, this, request);
 }
 
-void SESClient::DeleteIdentityAsync(const DeleteIdentityRequest& request) const
+void SESClient::DeleteIdentityAsync(const DeleteIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::DeleteIdentityAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::DeleteIdentityAsyncHelper, this, request, context);
 }
 
-void SESClient::DeleteIdentityAsyncHelper(const DeleteIdentityRequest& request) const
+void SESClient::DeleteIdentityAsyncHelper(const DeleteIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteIdentityOutcomeReceived(this, request, DeleteIdentity(request));
+  m_onDeleteIdentityOutcomeReceived(this, request, DeleteIdentity(request), context);
+}
+
+DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentityPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteIdentityPolicyOutcome(DeleteIdentityPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteIdentityPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteIdentityPolicyOutcomeCallable SESClient::DeleteIdentityPolicyCallable(const DeleteIdentityPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DeleteIdentityPolicy, this, request);
+}
+
+void SESClient::DeleteIdentityPolicyAsync(const DeleteIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&SESClient::DeleteIdentityPolicyAsyncHelper, this, request, context);
+}
+
+void SESClient::DeleteIdentityPolicyAsyncHelper(const DeleteIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+{
+  m_onDeleteIdentityPolicyOutcomeReceived(this, request, DeleteIdentityPolicy(request), context);
 }
 
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const
@@ -158,14 +193,14 @@ DeleteVerifiedEmailAddressOutcomeCallable SESClient::DeleteVerifiedEmailAddressC
   return std::async(std::launch::async, &SESClient::DeleteVerifiedEmailAddress, this, request);
 }
 
-void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddressRequest& request) const
+void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddressRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::DeleteVerifiedEmailAddressAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::DeleteVerifiedEmailAddressAsyncHelper, this, request, context);
 }
 
-void SESClient::DeleteVerifiedEmailAddressAsyncHelper(const DeleteVerifiedEmailAddressRequest& request) const
+void SESClient::DeleteVerifiedEmailAddressAsyncHelper(const DeleteVerifiedEmailAddressRequest& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteVerifiedEmailAddressOutcomeReceived(this, request, DeleteVerifiedEmailAddress(request));
+  m_onDeleteVerifiedEmailAddressOutcomeReceived(this, request, DeleteVerifiedEmailAddress(request), context);
 }
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
@@ -189,14 +224,14 @@ GetIdentityDkimAttributesOutcomeCallable SESClient::GetIdentityDkimAttributesCal
   return std::async(std::launch::async, &SESClient::GetIdentityDkimAttributes, this, request);
 }
 
-void SESClient::GetIdentityDkimAttributesAsync(const GetIdentityDkimAttributesRequest& request) const
+void SESClient::GetIdentityDkimAttributesAsync(const GetIdentityDkimAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityDkimAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::GetIdentityDkimAttributesAsyncHelper, this, request, context);
 }
 
-void SESClient::GetIdentityDkimAttributesAsyncHelper(const GetIdentityDkimAttributesRequest& request) const
+void SESClient::GetIdentityDkimAttributesAsyncHelper(const GetIdentityDkimAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetIdentityDkimAttributesOutcomeReceived(this, request, GetIdentityDkimAttributes(request));
+  m_onGetIdentityDkimAttributesOutcomeReceived(this, request, GetIdentityDkimAttributes(request), context);
 }
 
 GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttributes(const GetIdentityNotificationAttributesRequest& request) const
@@ -220,14 +255,45 @@ GetIdentityNotificationAttributesOutcomeCallable SESClient::GetIdentityNotificat
   return std::async(std::launch::async, &SESClient::GetIdentityNotificationAttributes, this, request);
 }
 
-void SESClient::GetIdentityNotificationAttributesAsync(const GetIdentityNotificationAttributesRequest& request) const
+void SESClient::GetIdentityNotificationAttributesAsync(const GetIdentityNotificationAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityNotificationAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::GetIdentityNotificationAttributesAsyncHelper, this, request, context);
 }
 
-void SESClient::GetIdentityNotificationAttributesAsyncHelper(const GetIdentityNotificationAttributesRequest& request) const
+void SESClient::GetIdentityNotificationAttributesAsyncHelper(const GetIdentityNotificationAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetIdentityNotificationAttributesOutcomeReceived(this, request, GetIdentityNotificationAttributes(request));
+  m_onGetIdentityNotificationAttributesOutcomeReceived(this, request, GetIdentityNotificationAttributes(request), context);
+}
+
+GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPoliciesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetIdentityPoliciesOutcome(GetIdentityPoliciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetIdentityPoliciesOutcome(outcome.GetError());
+  }
+}
+
+GetIdentityPoliciesOutcomeCallable SESClient::GetIdentityPoliciesCallable(const GetIdentityPoliciesRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::GetIdentityPolicies, this, request);
+}
+
+void SESClient::GetIdentityPoliciesAsync(const GetIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&SESClient::GetIdentityPoliciesAsyncHelper, this, request, context);
+}
+
+void SESClient::GetIdentityPoliciesAsyncHelper(const GetIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+{
+  m_onGetIdentityPoliciesOutcomeReceived(this, request, GetIdentityPolicies(request), context);
 }
 
 GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttributes(const GetIdentityVerificationAttributesRequest& request) const
@@ -251,14 +317,14 @@ GetIdentityVerificationAttributesOutcomeCallable SESClient::GetIdentityVerificat
   return std::async(std::launch::async, &SESClient::GetIdentityVerificationAttributes, this, request);
 }
 
-void SESClient::GetIdentityVerificationAttributesAsync(const GetIdentityVerificationAttributesRequest& request) const
+void SESClient::GetIdentityVerificationAttributesAsync(const GetIdentityVerificationAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityVerificationAttributesAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::GetIdentityVerificationAttributesAsyncHelper, this, request, context);
 }
 
-void SESClient::GetIdentityVerificationAttributesAsyncHelper(const GetIdentityVerificationAttributesRequest& request) const
+void SESClient::GetIdentityVerificationAttributesAsyncHelper(const GetIdentityVerificationAttributesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetIdentityVerificationAttributesOutcomeReceived(this, request, GetIdentityVerificationAttributes(request));
+  m_onGetIdentityVerificationAttributesOutcomeReceived(this, request, GetIdentityVerificationAttributes(request), context);
 }
 
 GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) const
@@ -282,14 +348,14 @@ GetSendQuotaOutcomeCallable SESClient::GetSendQuotaCallable(const GetSendQuotaRe
   return std::async(std::launch::async, &SESClient::GetSendQuota, this, request);
 }
 
-void SESClient::GetSendQuotaAsync(const GetSendQuotaRequest& request) const
+void SESClient::GetSendQuotaAsync(const GetSendQuotaRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::GetSendQuotaAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::GetSendQuotaAsyncHelper, this, request, context);
 }
 
-void SESClient::GetSendQuotaAsyncHelper(const GetSendQuotaRequest& request) const
+void SESClient::GetSendQuotaAsyncHelper(const GetSendQuotaRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetSendQuotaOutcomeReceived(this, request, GetSendQuota(request));
+  m_onGetSendQuotaOutcomeReceived(this, request, GetSendQuota(request), context);
 }
 
 GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsRequest& request) const
@@ -313,14 +379,14 @@ GetSendStatisticsOutcomeCallable SESClient::GetSendStatisticsCallable(const GetS
   return std::async(std::launch::async, &SESClient::GetSendStatistics, this, request);
 }
 
-void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request) const
+void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::GetSendStatisticsAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::GetSendStatisticsAsyncHelper, this, request, context);
 }
 
-void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& request) const
+void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& request, const AsyncCallerContext* context) const
 {
-  m_onGetSendStatisticsOutcomeReceived(this, request, GetSendStatistics(request));
+  m_onGetSendStatisticsOutcomeReceived(this, request, GetSendStatistics(request), context);
 }
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const
@@ -344,14 +410,45 @@ ListIdentitiesOutcomeCallable SESClient::ListIdentitiesCallable(const ListIdenti
   return std::async(std::launch::async, &SESClient::ListIdentities, this, request);
 }
 
-void SESClient::ListIdentitiesAsync(const ListIdentitiesRequest& request) const
+void SESClient::ListIdentitiesAsync(const ListIdentitiesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::ListIdentitiesAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::ListIdentitiesAsyncHelper, this, request, context);
 }
 
-void SESClient::ListIdentitiesAsyncHelper(const ListIdentitiesRequest& request) const
+void SESClient::ListIdentitiesAsyncHelper(const ListIdentitiesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListIdentitiesOutcomeReceived(this, request, ListIdentities(request));
+  m_onListIdentitiesOutcomeReceived(this, request, ListIdentities(request), context);
+}
+
+ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPoliciesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListIdentityPoliciesOutcome(ListIdentityPoliciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListIdentityPoliciesOutcome(outcome.GetError());
+  }
+}
+
+ListIdentityPoliciesOutcomeCallable SESClient::ListIdentityPoliciesCallable(const ListIdentityPoliciesRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::ListIdentityPolicies, this, request);
+}
+
+void SESClient::ListIdentityPoliciesAsync(const ListIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&SESClient::ListIdentityPoliciesAsyncHelper, this, request, context);
+}
+
+void SESClient::ListIdentityPoliciesAsyncHelper(const ListIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+{
+  m_onListIdentityPoliciesOutcomeReceived(this, request, ListIdentityPolicies(request), context);
 }
 
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const
@@ -375,14 +472,45 @@ ListVerifiedEmailAddressesOutcomeCallable SESClient::ListVerifiedEmailAddressesC
   return std::async(std::launch::async, &SESClient::ListVerifiedEmailAddresses, this, request);
 }
 
-void SESClient::ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequest& request) const
+void SESClient::ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::ListVerifiedEmailAddressesAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::ListVerifiedEmailAddressesAsyncHelper, this, request, context);
 }
 
-void SESClient::ListVerifiedEmailAddressesAsyncHelper(const ListVerifiedEmailAddressesRequest& request) const
+void SESClient::ListVerifiedEmailAddressesAsyncHelper(const ListVerifiedEmailAddressesRequest& request, const AsyncCallerContext* context) const
 {
-  m_onListVerifiedEmailAddressesOutcomeReceived(this, request, ListVerifiedEmailAddresses(request));
+  m_onListVerifiedEmailAddressesOutcomeReceived(this, request, ListVerifiedEmailAddresses(request), context);
+}
+
+PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutIdentityPolicyOutcome(PutIdentityPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutIdentityPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutIdentityPolicyOutcomeCallable SESClient::PutIdentityPolicyCallable(const PutIdentityPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::PutIdentityPolicy, this, request);
+}
+
+void SESClient::PutIdentityPolicyAsync(const PutIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&SESClient::PutIdentityPolicyAsyncHelper, this, request, context);
+}
+
+void SESClient::PutIdentityPolicyAsyncHelper(const PutIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+{
+  m_onPutIdentityPolicyOutcomeReceived(this, request, PutIdentityPolicy(request), context);
 }
 
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
@@ -406,14 +534,14 @@ SendEmailOutcomeCallable SESClient::SendEmailCallable(const SendEmailRequest& re
   return std::async(std::launch::async, &SESClient::SendEmail, this, request);
 }
 
-void SESClient::SendEmailAsync(const SendEmailRequest& request) const
+void SESClient::SendEmailAsync(const SendEmailRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::SendEmailAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::SendEmailAsyncHelper, this, request, context);
 }
 
-void SESClient::SendEmailAsyncHelper(const SendEmailRequest& request) const
+void SESClient::SendEmailAsyncHelper(const SendEmailRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSendEmailOutcomeReceived(this, request, SendEmail(request));
+  m_onSendEmailOutcomeReceived(this, request, SendEmail(request), context);
 }
 
 SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) const
@@ -437,14 +565,14 @@ SendRawEmailOutcomeCallable SESClient::SendRawEmailCallable(const SendRawEmailRe
   return std::async(std::launch::async, &SESClient::SendRawEmail, this, request);
 }
 
-void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request) const
+void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::SendRawEmailAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::SendRawEmailAsyncHelper, this, request, context);
 }
 
-void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request) const
+void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSendRawEmailOutcomeReceived(this, request, SendRawEmail(request));
+  m_onSendRawEmailOutcomeReceived(this, request, SendRawEmail(request), context);
 }
 
 SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentityDkimEnabledRequest& request) const
@@ -468,14 +596,14 @@ SetIdentityDkimEnabledOutcomeCallable SESClient::SetIdentityDkimEnabledCallable(
   return std::async(std::launch::async, &SESClient::SetIdentityDkimEnabled, this, request);
 }
 
-void SESClient::SetIdentityDkimEnabledAsync(const SetIdentityDkimEnabledRequest& request) const
+void SESClient::SetIdentityDkimEnabledAsync(const SetIdentityDkimEnabledRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::SetIdentityDkimEnabledAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::SetIdentityDkimEnabledAsyncHelper, this, request, context);
 }
 
-void SESClient::SetIdentityDkimEnabledAsyncHelper(const SetIdentityDkimEnabledRequest& request) const
+void SESClient::SetIdentityDkimEnabledAsyncHelper(const SetIdentityDkimEnabledRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetIdentityDkimEnabledOutcomeReceived(this, request, SetIdentityDkimEnabled(request));
+  m_onSetIdentityDkimEnabledOutcomeReceived(this, request, SetIdentityDkimEnabled(request), context);
 }
 
 SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwardingEnabled(const SetIdentityFeedbackForwardingEnabledRequest& request) const
@@ -499,14 +627,14 @@ SetIdentityFeedbackForwardingEnabledOutcomeCallable SESClient::SetIdentityFeedba
   return std::async(std::launch::async, &SESClient::SetIdentityFeedbackForwardingEnabled, this, request);
 }
 
-void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedbackForwardingEnabledRequest& request) const
+void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedbackForwardingEnabledRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper, this, request, context);
 }
 
-void SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper(const SetIdentityFeedbackForwardingEnabledRequest& request) const
+void SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper(const SetIdentityFeedbackForwardingEnabledRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetIdentityFeedbackForwardingEnabledOutcomeReceived(this, request, SetIdentityFeedbackForwardingEnabled(request));
+  m_onSetIdentityFeedbackForwardingEnabledOutcomeReceived(this, request, SetIdentityFeedbackForwardingEnabled(request), context);
 }
 
 SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(const SetIdentityNotificationTopicRequest& request) const
@@ -530,14 +658,14 @@ SetIdentityNotificationTopicOutcomeCallable SESClient::SetIdentityNotificationTo
   return std::async(std::launch::async, &SESClient::SetIdentityNotificationTopic, this, request);
 }
 
-void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationTopicRequest& request) const
+void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationTopicRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::SetIdentityNotificationTopicAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::SetIdentityNotificationTopicAsyncHelper, this, request, context);
 }
 
-void SESClient::SetIdentityNotificationTopicAsyncHelper(const SetIdentityNotificationTopicRequest& request) const
+void SESClient::SetIdentityNotificationTopicAsyncHelper(const SetIdentityNotificationTopicRequest& request, const AsyncCallerContext* context) const
 {
-  m_onSetIdentityNotificationTopicOutcomeReceived(this, request, SetIdentityNotificationTopic(request));
+  m_onSetIdentityNotificationTopicOutcomeReceived(this, request, SetIdentityNotificationTopic(request), context);
 }
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const
@@ -561,14 +689,14 @@ VerifyDomainDkimOutcomeCallable SESClient::VerifyDomainDkimCallable(const Verify
   return std::async(std::launch::async, &SESClient::VerifyDomainDkim, this, request);
 }
 
-void SESClient::VerifyDomainDkimAsync(const VerifyDomainDkimRequest& request) const
+void SESClient::VerifyDomainDkimAsync(const VerifyDomainDkimRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::VerifyDomainDkimAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::VerifyDomainDkimAsyncHelper, this, request, context);
 }
 
-void SESClient::VerifyDomainDkimAsyncHelper(const VerifyDomainDkimRequest& request) const
+void SESClient::VerifyDomainDkimAsyncHelper(const VerifyDomainDkimRequest& request, const AsyncCallerContext* context) const
 {
-  m_onVerifyDomainDkimOutcomeReceived(this, request, VerifyDomainDkim(request));
+  m_onVerifyDomainDkimOutcomeReceived(this, request, VerifyDomainDkim(request), context);
 }
 
 VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainIdentityRequest& request) const
@@ -592,14 +720,14 @@ VerifyDomainIdentityOutcomeCallable SESClient::VerifyDomainIdentityCallable(cons
   return std::async(std::launch::async, &SESClient::VerifyDomainIdentity, this, request);
 }
 
-void SESClient::VerifyDomainIdentityAsync(const VerifyDomainIdentityRequest& request) const
+void SESClient::VerifyDomainIdentityAsync(const VerifyDomainIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::VerifyDomainIdentityAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::VerifyDomainIdentityAsyncHelper, this, request, context);
 }
 
-void SESClient::VerifyDomainIdentityAsyncHelper(const VerifyDomainIdentityRequest& request) const
+void SESClient::VerifyDomainIdentityAsyncHelper(const VerifyDomainIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_onVerifyDomainIdentityOutcomeReceived(this, request, VerifyDomainIdentity(request));
+  m_onVerifyDomainIdentityOutcomeReceived(this, request, VerifyDomainIdentity(request), context);
 }
 
 VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddressRequest& request) const
@@ -623,14 +751,14 @@ VerifyEmailAddressOutcomeCallable SESClient::VerifyEmailAddressCallable(const Ve
   return std::async(std::launch::async, &SESClient::VerifyEmailAddress, this, request);
 }
 
-void SESClient::VerifyEmailAddressAsync(const VerifyEmailAddressRequest& request) const
+void SESClient::VerifyEmailAddressAsync(const VerifyEmailAddressRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::VerifyEmailAddressAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::VerifyEmailAddressAsyncHelper, this, request, context);
 }
 
-void SESClient::VerifyEmailAddressAsyncHelper(const VerifyEmailAddressRequest& request) const
+void SESClient::VerifyEmailAddressAsyncHelper(const VerifyEmailAddressRequest& request, const AsyncCallerContext* context) const
 {
-  m_onVerifyEmailAddressOutcomeReceived(this, request, VerifyEmailAddress(request));
+  m_onVerifyEmailAddressOutcomeReceived(this, request, VerifyEmailAddress(request), context);
 }
 
 VerifyEmailIdentityOutcome SESClient::VerifyEmailIdentity(const VerifyEmailIdentityRequest& request) const
@@ -654,13 +782,13 @@ VerifyEmailIdentityOutcomeCallable SESClient::VerifyEmailIdentityCallable(const 
   return std::async(std::launch::async, &SESClient::VerifyEmailIdentity, this, request);
 }
 
-void SESClient::VerifyEmailIdentityAsync(const VerifyEmailIdentityRequest& request) const
+void SESClient::VerifyEmailIdentityAsync(const VerifyEmailIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&SESClient::VerifyEmailIdentityAsyncHelper, this, request);
+  m_executor->Submit(&SESClient::VerifyEmailIdentityAsyncHelper, this, request, context);
 }
 
-void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest& request) const
+void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest& request, const AsyncCallerContext* context) const
 {
-  m_onVerifyEmailIdentityOutcomeReceived(this, request, VerifyEmailIdentity(request));
+  m_onVerifyEmailIdentityOutcomeReceived(this, request, VerifyEmailIdentity(request), context);
 }
 

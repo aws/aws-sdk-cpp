@@ -20,7 +20,9 @@ using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
 RevokeSnapshotAccessRequest::RevokeSnapshotAccessRequest() : 
-    m_snapshotClusterIdentifierHasBeenSet(false)
+    m_snapshotIdentifierHasBeenSet(false),
+    m_snapshotClusterIdentifierHasBeenSet(false),
+    m_accountWithRestoreAccessHasBeenSet(false)
 {
 }
 
@@ -28,12 +30,18 @@ Aws::String RevokeSnapshotAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RevokeSnapshotAccess&";
-  ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  if(m_snapshotIdentifierHasBeenSet)
+  {
+    ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
   if(m_snapshotClusterIdentifierHasBeenSet)
   {
     ss << "SnapshotClusterIdentifier=" << StringUtils::URLEncode(m_snapshotClusterIdentifier.c_str()) << "&";
   }
-  ss << "AccountWithRestoreAccess=" << StringUtils::URLEncode(m_accountWithRestoreAccess.c_str()) << "&";
+  if(m_accountWithRestoreAccessHasBeenSet)
+  {
+    ss << "AccountWithRestoreAccess=" << StringUtils::URLEncode(m_accountWithRestoreAccess.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

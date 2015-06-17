@@ -21,25 +21,46 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-LocalSecondaryIndex::LocalSecondaryIndex()
+LocalSecondaryIndex::LocalSecondaryIndex() : 
+    m_indexNameHasBeenSet(false),
+    m_keySchemaHasBeenSet(false),
+    m_projectionHasBeenSet(false)
 {
 }
 
-LocalSecondaryIndex::LocalSecondaryIndex(const JsonValue& jsonValue)
+LocalSecondaryIndex::LocalSecondaryIndex(const JsonValue& jsonValue) : 
+    m_indexNameHasBeenSet(false),
+    m_keySchemaHasBeenSet(false),
+    m_projectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 LocalSecondaryIndex& LocalSecondaryIndex::operator =(const JsonValue& jsonValue)
 {
-  m_indexName = jsonValue.GetString("IndexName");
-
-  Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
-  for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+  if(jsonValue.ValueExists("IndexName"))
   {
-    m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
+    m_indexName = jsonValue.GetString("IndexName");
+
+    m_indexNameHasBeenSet = true;
   }
-  m_projection = jsonValue.GetObject("Projection");
+
+  if(jsonValue.ValueExists("KeySchema"))
+  {
+    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+    {
+      m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
+    }
+    m_keySchemaHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Projection"))
+  {
+    m_projection = jsonValue.GetObject("Projection");
+
+    m_projectionHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -48,16 +69,28 @@ JsonValue LocalSecondaryIndex::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("IndexName", m_indexName);
-
-  Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-  for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+  if(m_indexNameHasBeenSet)
   {
-    keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
-  }
-  payload.WithArray("KeySchema", std::move(keySchemaJsonList));
+   payload.WithString("IndexName", m_indexName);
 
-  payload.WithObject("Projection", m_projection.Jsonize());
+  }
+
+  if(m_keySchemaHasBeenSet)
+  {
+   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+   {
+     keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
+   }
+   payload.WithArray("KeySchema", std::move(keySchemaJsonList));
+
+  }
+
+  if(m_projectionHasBeenSet)
+  {
+   payload.WithObject("Projection", m_projection.Jsonize());
+
+  }
 
   return std::move(payload);
 }

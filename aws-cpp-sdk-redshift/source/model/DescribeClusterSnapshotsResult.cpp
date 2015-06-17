@@ -43,11 +43,12 @@ DescribeClusterSnapshotsResult& DescribeClusterSnapshotsResult::operator =(const
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
     m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
+    XmlNode snapshotNodeParent = resultNode.FirstChild("Snapshot");
+    XmlNode snapshotNode = snapshotNodeParent.FirstChild("member");
     while(!snapshotNode.IsNull())
     {
       m_snapshots.push_back(snapshotNode);
-      snapshotNode = snapshotNode.NextNode("Snapshot");
+      snapshotNode = snapshotNode.NextNode("member");
     }
 
   }

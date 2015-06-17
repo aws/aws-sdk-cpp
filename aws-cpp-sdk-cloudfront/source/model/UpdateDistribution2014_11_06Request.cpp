@@ -23,6 +23,8 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 UpdateDistribution2014_11_06Request::UpdateDistribution2014_11_06Request() : 
+    m_distributionConfigHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_ifMatchHasBeenSet(false)
 {
 }

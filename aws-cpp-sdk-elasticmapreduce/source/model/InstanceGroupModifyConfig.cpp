@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InstanceGroupModifyConfig::InstanceGroupModifyConfig() : 
+    m_instanceGroupIdHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_eC2InstanceIdsToTerminateHasBeenSet(false)
@@ -29,6 +30,7 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig() :
 }
 
 InstanceGroupModifyConfig::InstanceGroupModifyConfig(const JsonValue& jsonValue) : 
+    m_instanceGroupIdHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_eC2InstanceIdsToTerminateHasBeenSet(false)
@@ -38,7 +40,12 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig(const JsonValue& jsonValue)
 
 InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(const JsonValue& jsonValue)
 {
-  m_instanceGroupId = jsonValue.GetString("InstanceGroupId");
+  if(jsonValue.ValueExists("InstanceGroupId"))
+  {
+    m_instanceGroupId = jsonValue.GetString("InstanceGroupId");
+
+    m_instanceGroupIdHasBeenSet = true;
+  }
 
   if(jsonValue.ValueExists("InstanceCount"))
   {
@@ -64,7 +71,11 @@ JsonValue InstanceGroupModifyConfig::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("InstanceGroupId", m_instanceGroupId);
+  if(m_instanceGroupIdHasBeenSet)
+  {
+   payload.WithString("InstanceGroupId", m_instanceGroupId);
+
+  }
 
   if(m_instanceCountHasBeenSet)
   {

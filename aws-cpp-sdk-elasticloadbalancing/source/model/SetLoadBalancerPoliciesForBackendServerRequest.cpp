@@ -20,7 +20,10 @@ using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
 SetLoadBalancerPoliciesForBackendServerRequest::SetLoadBalancerPoliciesForBackendServerRequest() : 
-    m_instancePort(0)
+    m_loadBalancerNameHasBeenSet(false),
+    m_instancePort(0),
+    m_instancePortHasBeenSet(false),
+    m_policyNamesHasBeenSet(false)
 {
 }
 
@@ -28,14 +31,23 @@ Aws::String SetLoadBalancerPoliciesForBackendServerRequest::SerializePayload() c
 {
   Aws::StringStream ss;
   ss << "Action=SetLoadBalancerPoliciesForBackendServer&";
-  ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
-  ss << "InstancePort=" << m_instancePort << "&";
-  unsigned policyNamesCount = 1;
-  for(auto& item : m_policyNames)
+  if(m_loadBalancerNameHasBeenSet)
   {
-    ss << "PolicyNames." << policyNamesCount << "="
-        << StringUtils::URLEncode(item.c_str()) << "&";
-    policyNamesCount++;
+    ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
+  }
+  if(m_instancePortHasBeenSet)
+  {
+    ss << "InstancePort=" << m_instancePort << "&";
+  }
+  if(m_policyNamesHasBeenSet)
+  {
+    unsigned policyNamesCount = 1;
+    for(auto& item : m_policyNames)
+    {
+      ss << "PolicyNames." << policyNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      policyNamesCount++;
+    }
   }
   ss << "Version=2012-06-01";
   return ss.str();

@@ -85,12 +85,12 @@ namespace Model
     /*
      Prefix identifying one or more objects to which the rule applies.
     */
-    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
+    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /*
      Prefix identifying one or more objects to which the rule applies.
     */
-    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
+    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /*
      Prefix identifying one or more objects to which the rule applies.
@@ -109,7 +109,7 @@ namespace Model
     /*
      If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
     */
-    inline void SetStatus(const ExpirationStatus& value) { m_status = value; }
+    inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.
@@ -146,7 +146,9 @@ namespace Model
     Aws::String m_iD;
     bool m_iDHasBeenSet;
     Aws::String m_prefix;
+    bool m_prefixHasBeenSet;
     ExpirationStatus m_status;
+    bool m_statusHasBeenSet;
     Transition m_transition;
     bool m_transitionHasBeenSet;
     NoncurrentVersionTransition m_noncurrentVersionTransition;

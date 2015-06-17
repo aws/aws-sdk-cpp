@@ -42,12 +42,12 @@ namespace Model
     /*
      <p> The namespace for the metric data. </p> <note> You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for other Amazon Web Services products that send metrics to Amazon CloudWatch. </note>
     */
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> The namespace for the metric data. </p> <note> You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for other Amazon Web Services products that send metrics to Amazon CloudWatch. </note>
     */
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /*
      <p> The namespace for the metric data. </p> <note> You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for other Amazon Web Services products that send metrics to Amazon CloudWatch. </note>
@@ -66,7 +66,7 @@ namespace Model
     /*
      <p> A list of data describing the metric. </p>
     */
-    inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricData = value; }
+    inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     /*
      <p> A list of data describing the metric. </p>
@@ -76,11 +76,13 @@ namespace Model
     /*
      <p> A list of data describing the metric. </p>
     */
-    inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricData.push_back(value); return *this; }
+    inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 
   private:
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
     Aws::Vector<MetricDatum> m_metricData;
+    bool m_metricDataHasBeenSet;
   };
 
 } // namespace Model

@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetTaskStatusRequest::SetTaskStatusRequest() : 
+    m_taskIdHasBeenSet(false),
+    m_taskStatusHasBeenSet(false),
     m_errorIdHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_errorStackTraceHasBeenSet(false)
@@ -32,9 +34,17 @@ Aws::String SetTaskStatusRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("taskId", m_taskId);
+  if(m_taskIdHasBeenSet)
+  {
+   payload.WithString("taskId", m_taskId);
 
-  payload.WithString("taskStatus", TaskStatusMapper::GetNameForTaskStatus(m_taskStatus));
+  }
+
+  if(m_taskStatusHasBeenSet)
+  {
+   payload.WithString("taskStatus", TaskStatusMapper::GetNameForTaskStatus(m_taskStatus));
+  }
+
   if(m_errorIdHasBeenSet)
   {
    payload.WithString("errorId", m_errorId);

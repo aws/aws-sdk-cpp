@@ -24,14 +24,24 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 User::User() : 
+    m_pathHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_createDate(0.0),
+    m_createDateHasBeenSet(false),
     m_passwordLastUsed(0.0),
     m_passwordLastUsedHasBeenSet(false)
 {
 }
 
 User::User(const XmlNode& xmlNode) : 
+    m_pathHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_createDate(0.0),
+    m_createDateHasBeenSet(false),
     m_passwordLastUsed(0.0),
     m_passwordLastUsedHasBeenSet(false)
 {
@@ -45,15 +55,35 @@ User& User::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode pathNode = resultNode.FirstChild("Path");
-    m_path = StringUtils::Trim(pathNode.GetText().c_str());
+    if(!pathNode.IsNull())
+    {
+      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_pathHasBeenSet = true;
+    }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+    if(!userNameNode.IsNull())
+    {
+      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userNameHasBeenSet = true;
+    }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
-    m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+    if(!userIdNode.IsNull())
+    {
+      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userIdHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
-    m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+    if(!arnNode.IsNull())
+    {
+      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arnHasBeenSet = true;
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    if(!createDateNode.IsNull())
+    {
+      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDateHasBeenSet = true;
+    }
     XmlNode passwordLastUsedNode = resultNode.FirstChild("PasswordLastUsed");
     if(!passwordLastUsedNode.IsNull())
     {
@@ -67,11 +97,26 @@ User& User::operator =(const XmlNode& xmlNode)
 
 void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
-  oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_userIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+  }
   if(m_passwordLastUsedHasBeenSet)
   {
       oStream << location << index << locationValue << ".PasswordLastUsed=" << m_passwordLastUsed << "&";
@@ -80,11 +125,26 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
 void User::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
-  oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
-  oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  oStream << location << ".CreateDate=" << m_createDate << "&";
+  if(m_pathHasBeenSet)
+  {
+      oStream << location << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+  if(m_userNameHasBeenSet)
+  {
+      oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if(m_userIdHasBeenSet)
+  {
+      oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+  if(m_arnHasBeenSet)
+  {
+      oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if(m_createDateHasBeenSet)
+  {
+      oStream << location << ".CreateDate=" << m_createDate << "&";
+  }
   if(m_passwordLastUsedHasBeenSet)
   {
       oStream << location << ".PasswordLastUsed=" << m_passwordLastUsed << "&";

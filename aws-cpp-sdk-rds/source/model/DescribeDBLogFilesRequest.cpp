@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DescribeDBLogFilesRequest::DescribeDBLogFilesRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_filenameContainsHasBeenSet(false),
     m_fileLastWritten(0),
     m_fileLastWrittenHasBeenSet(false),
@@ -36,7 +37,10 @@ Aws::String DescribeDBLogFilesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeDBLogFiles&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_filenameContainsHasBeenSet)
   {
     ss << "FilenameContains=" << StringUtils::URLEncode(m_filenameContains.c_str()) << "&";

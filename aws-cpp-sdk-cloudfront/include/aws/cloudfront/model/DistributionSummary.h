@@ -56,12 +56,12 @@ namespace Model
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -80,12 +80,12 @@ namespace Model
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
      This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.
@@ -104,7 +104,7 @@ namespace Model
     /*
      The date and time the distribution was last modified.
     */
-    inline void SetLastModifiedTime(double value) { m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(double value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /*
      The date and time the distribution was last modified.
@@ -118,12 +118,12 @@ namespace Model
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
@@ -142,7 +142,7 @@ namespace Model
     /*
      A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
     */
-    inline void SetAliases(const Aliases& value) { m_aliases = value; }
+    inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
     /*
      A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
@@ -156,7 +156,7 @@ namespace Model
     /*
      A complex type that contains information about origins for this distribution.
     */
-    inline void SetOrigins(const Origins& value) { m_origins = value; }
+    inline void SetOrigins(const Origins& value) { m_originsHasBeenSet = true; m_origins = value; }
 
     /*
      A complex type that contains information about origins for this distribution.
@@ -170,7 +170,7 @@ namespace Model
     /*
      A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
     */
-    inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehavior = value; }
+    inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
 
     /*
      A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
@@ -184,7 +184,7 @@ namespace Model
     /*
      A complex type that contains zero or more CacheBehavior elements.
     */
-    inline void SetCacheBehaviors(const CacheBehaviors& value) { m_cacheBehaviors = value; }
+    inline void SetCacheBehaviors(const CacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
 
     /*
      A complex type that contains zero or more CacheBehavior elements.
@@ -198,7 +198,7 @@ namespace Model
     /*
      A complex type that contains zero or more CustomErrorResponses elements.
     */
-    inline void SetCustomErrorResponses(const CustomErrorResponses& value) { m_customErrorResponses = value; }
+    inline void SetCustomErrorResponses(const CustomErrorResponses& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = value; }
 
     /*
      A complex type that contains zero or more CustomErrorResponses elements.
@@ -212,12 +212,12 @@ namespace Model
     /*
      The comment originally specified when this distribution was created.
     */
-    inline void SetComment(const Aws::String& value) { m_comment = value; }
+    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /*
      The comment originally specified when this distribution was created.
     */
-    inline void SetComment(const char* value) { m_comment.assign(value); }
+    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /*
      The comment originally specified when this distribution was created.
@@ -232,7 +232,7 @@ namespace Model
     
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
     
-    inline void SetPriceClass(const PriceClass& value) { m_priceClass = value; }
+    inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     
     inline DistributionSummary&  WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
@@ -244,7 +244,7 @@ namespace Model
     /*
      Whether the distribution is enabled to accept end user requests for content.
     */
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /*
      Whether the distribution is enabled to accept end user requests for content.
@@ -254,7 +254,7 @@ namespace Model
     
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
     
-    inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificate = value; }
+    inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     
     inline DistributionSummary&  WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
@@ -262,26 +262,40 @@ namespace Model
     
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
     
-    inline void SetRestrictions(const Restrictions& value) { m_restrictions = value; }
+    inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
 
     
     inline DistributionSummary&  WithRestrictions(const Restrictions& value) { SetRestrictions(value); return *this;}
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_status;
+    bool m_statusHasBeenSet;
     double m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet;
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
     Aliases m_aliases;
+    bool m_aliasesHasBeenSet;
     Origins m_origins;
+    bool m_originsHasBeenSet;
     DefaultCacheBehavior m_defaultCacheBehavior;
+    bool m_defaultCacheBehaviorHasBeenSet;
     CacheBehaviors m_cacheBehaviors;
+    bool m_cacheBehaviorsHasBeenSet;
     CustomErrorResponses m_customErrorResponses;
+    bool m_customErrorResponsesHasBeenSet;
     Aws::String m_comment;
+    bool m_commentHasBeenSet;
     PriceClass m_priceClass;
+    bool m_priceClassHasBeenSet;
     bool m_enabled;
+    bool m_enabledHasBeenSet;
     ViewerCertificate m_viewerCertificate;
+    bool m_viewerCertificateHasBeenSet;
     Restrictions m_restrictions;
+    bool m_restrictionsHasBeenSet;
   };
 
 } // namespace Model

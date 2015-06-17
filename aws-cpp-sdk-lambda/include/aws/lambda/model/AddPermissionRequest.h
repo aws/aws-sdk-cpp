@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>Name of the Lambda function whose access policy you are updating by adding a new permission.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline void SetFunctionName(const Aws::String& value) { m_functionName = value; }
+    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /*
      <p>Name of the Lambda function whose access policy you are updating by adding a new permission.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
     */
-    inline void SetFunctionName(const char* value) { m_functionName.assign(value); }
+    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /*
      <p>Name of the Lambda function whose access policy you are updating by adding a new permission.</p> <p> You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>A unique statement identifier.</p>
     */
-    inline void SetStatementId(const Aws::String& value) { m_statementId = value; }
+    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /*
      <p>A unique statement identifier.</p>
     */
-    inline void SetStatementId(const char* value) { m_statementId.assign(value); }
+    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
 
     /*
      <p>A unique statement identifier.</p>
@@ -88,12 +88,12 @@ namespace Model
     /*
      <p>The AWS Lambda action you want to allow in this statement. Each Lambda action is a string starting with "lambda:" followed by the API name (see <a>Operations</a>). For example, "lambda:CreateFunction". You can use wildcard ("lambda:*") to grant permission for all AWS Lambda actions. </p>
     */
-    inline void SetAction(const Aws::String& value) { m_action = value; }
+    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /*
      <p>The AWS Lambda action you want to allow in this statement. Each Lambda action is a string starting with "lambda:" followed by the API name (see <a>Operations</a>). For example, "lambda:CreateFunction". You can use wildcard ("lambda:*") to grant permission for all AWS Lambda actions. </p>
     */
-    inline void SetAction(const char* value) { m_action.assign(value); }
+    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
 
     /*
      <p>The AWS Lambda action you want to allow in this statement. Each Lambda action is a string starting with "lambda:" followed by the API name (see <a>Operations</a>). For example, "lambda:CreateFunction". You can use wildcard ("lambda:*") to grant permission for all AWS Lambda actions. </p>
@@ -112,12 +112,12 @@ namespace Model
     /*
      <p>The principal who is getting this permission. It can be Amazon S3 service Principal ("s3.amazonaws.com") if you want Amazon S3 to invoke the function, an AWS account ID if you are granting cross-account permission, or any valid AWS service principal such as "sns.amazonaws.com". For example, you might want to allow a custom application in another AWS account to push events to AWS Lambda by invoking your function. </p>
     */
-    inline void SetPrincipal(const Aws::String& value) { m_principal = value; }
+    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /*
      <p>The principal who is getting this permission. It can be Amazon S3 service Principal ("s3.amazonaws.com") if you want Amazon S3 to invoke the function, an AWS account ID if you are granting cross-account permission, or any valid AWS service principal such as "sns.amazonaws.com". For example, you might want to allow a custom application in another AWS account to push events to AWS Lambda by invoking your function. </p>
     */
-    inline void SetPrincipal(const char* value) { m_principal.assign(value); }
+    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /*
      <p>The principal who is getting this permission. It can be Amazon S3 service Principal ("s3.amazonaws.com") if you want Amazon S3 to invoke the function, an AWS account ID if you are granting cross-account permission, or any valid AWS service principal such as "sns.amazonaws.com". For example, you might want to allow a custom application in another AWS account to push events to AWS Lambda by invoking your function. </p>
@@ -179,9 +179,13 @@ namespace Model
 
   private:
     Aws::String m_functionName;
+    bool m_functionNameHasBeenSet;
     Aws::String m_statementId;
+    bool m_statementIdHasBeenSet;
     Aws::String m_action;
+    bool m_actionHasBeenSet;
     Aws::String m_principal;
+    bool m_principalHasBeenSet;
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
     Aws::String m_sourceAccount;

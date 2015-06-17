@@ -44,12 +44,12 @@ namespace Model
     /*
      <p> The name of the metric. </p>
     */
-    inline void SetMetricName(const Aws::String& value) { m_metricName = value; }
+    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /*
      <p> The name of the metric. </p>
     */
-    inline void SetMetricName(const char* value) { m_metricName.assign(value); }
+    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /*
      <p> The name of the metric. </p>
@@ -68,12 +68,12 @@ namespace Model
     /*
      <p> The namespace of the metric. </p>
     */
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /*
      <p> The namespace of the metric. </p>
     */
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /*
      <p> The namespace of the metric. </p>
@@ -148,7 +148,9 @@ namespace Model
 
   private:
     Aws::String m_metricName;
+    bool m_metricNameHasBeenSet;
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;

@@ -43,11 +43,12 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const AmazonWeb
   {
     XmlNode labelNode = resultNode.FirstChild("Label");
     m_label = StringUtils::Trim(labelNode.GetText().c_str());
-    XmlNode datapointsNode = resultNode.FirstChild("Datapoints");
+    XmlNode datapointsNodeParent = resultNode.FirstChild("Datapoints");
+    XmlNode datapointsNode = datapointsNodeParent.FirstChild("member");
     while(!datapointsNode.IsNull())
     {
       m_datapoints.push_back(datapointsNode);
-      datapointsNode = datapointsNode.NextNode("Datapoints");
+      datapointsNode = datapointsNode.NextNode("member");
     }
 
   }

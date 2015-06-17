@@ -52,12 +52,12 @@ namespace Model
     /*
      The name of the replaceable item.
     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /*
      The name of the replaceable item.
     */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /*
      The name of the replaceable item.
@@ -76,7 +76,7 @@ namespace Model
     /*
      The list of attributes for a replaceable item.
     */
-    inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributes = value; }
+    inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /*
      The list of attributes for a replaceable item.
@@ -86,11 +86,13 @@ namespace Model
     /*
      The list of attributes for a replaceable item.
     */
-    inline ReplaceableItem& AddAttributes(const ReplaceableAttribute& value) { m_attributes.push_back(value); return *this; }
+    inline ReplaceableItem& AddAttributes(const ReplaceableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::Vector<ReplaceableAttribute> m_attributes;
+    bool m_attributesHasBeenSet;
   };
 
 } // namespace Model

@@ -21,20 +21,34 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ParameterAttribute::ParameterAttribute()
+ParameterAttribute::ParameterAttribute() : 
+    m_keyHasBeenSet(false),
+    m_stringValueHasBeenSet(false)
 {
 }
 
-ParameterAttribute::ParameterAttribute(const JsonValue& jsonValue)
+ParameterAttribute::ParameterAttribute(const JsonValue& jsonValue) : 
+    m_keyHasBeenSet(false),
+    m_stringValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ParameterAttribute& ParameterAttribute::operator =(const JsonValue& jsonValue)
 {
-  m_key = jsonValue.GetString("key");
+  if(jsonValue.ValueExists("key"))
+  {
+    m_key = jsonValue.GetString("key");
 
-  m_stringValue = jsonValue.GetString("stringValue");
+    m_keyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stringValue"))
+  {
+    m_stringValue = jsonValue.GetString("stringValue");
+
+    m_stringValueHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -43,9 +57,17 @@ JsonValue ParameterAttribute::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("key", m_key);
+  if(m_keyHasBeenSet)
+  {
+   payload.WithString("key", m_key);
 
-  payload.WithString("stringValue", m_stringValue);
+  }
+
+  if(m_stringValueHasBeenSet)
+  {
+   payload.WithString("stringValue", m_stringValue);
+
+  }
 
   return std::move(payload);
 }

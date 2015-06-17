@@ -19,7 +19,8 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteClusterSecurityGroupRequest::DeleteClusterSecurityGroupRequest()
+DeleteClusterSecurityGroupRequest::DeleteClusterSecurityGroupRequest() : 
+    m_clusterSecurityGroupNameHasBeenSet(false)
 {
 }
 
@@ -27,7 +28,10 @@ Aws::String DeleteClusterSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteClusterSecurityGroup&";
-  ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
+  if(m_clusterSecurityGroupNameHasBeenSet)
+  {
+    ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
+  }
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -40,12 +40,12 @@ namespace Model
     /*
      The name of the domain for which to display the metadata of.
     */
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /*
      The name of the domain for which to display the metadata of.
     */
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /*
      The name of the domain for which to display the metadata of.
@@ -59,6 +59,7 @@ namespace Model
 
   private:
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
   };
 
 } // namespace Model

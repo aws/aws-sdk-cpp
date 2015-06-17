@@ -40,12 +40,12 @@ namespace Model
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to remove the client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
     */
-    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArn = value; }
+    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to remove the client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
     */
-    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArn.assign(value); }
+    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
 
     /*
      <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to remove the client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
@@ -64,12 +64,12 @@ namespace Model
     /*
      <p>The client ID (also known as audience) to remove from the IAM OpenID Connect provider. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
     */
-    inline void SetClientID(const Aws::String& value) { m_clientID = value; }
+    inline void SetClientID(const Aws::String& value) { m_clientIDHasBeenSet = true; m_clientID = value; }
 
     /*
      <p>The client ID (also known as audience) to remove from the IAM OpenID Connect provider. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
     */
-    inline void SetClientID(const char* value) { m_clientID.assign(value); }
+    inline void SetClientID(const char* value) { m_clientIDHasBeenSet = true; m_clientID.assign(value); }
 
     /*
      <p>The client ID (also known as audience) to remove from the IAM OpenID Connect provider. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
@@ -83,7 +83,9 @@ namespace Model
 
   private:
     Aws::String m_openIDConnectProviderArn;
+    bool m_openIDConnectProviderArnHasBeenSet;
     Aws::String m_clientID;
+    bool m_clientIDHasBeenSet;
   };
 
 } // namespace Model

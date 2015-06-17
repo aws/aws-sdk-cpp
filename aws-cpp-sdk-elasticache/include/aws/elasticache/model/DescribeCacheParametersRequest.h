@@ -41,12 +41,12 @@ namespace Model
     /*
      <p>The name of a specific cache parameter group to return details for.</p>
     */
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /*
      <p>The name of a specific cache parameter group to return details for.</p>
     */
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /*
      <p>The name of a specific cache parameter group to return details for.</p>
@@ -122,6 +122,7 @@ namespace Model
 
   private:
     Aws::String m_cacheParameterGroupName;
+    bool m_cacheParameterGroupNameHasBeenSet;
     Aws::String m_source;
     bool m_sourceHasBeenSet;
     long m_maxRecords;

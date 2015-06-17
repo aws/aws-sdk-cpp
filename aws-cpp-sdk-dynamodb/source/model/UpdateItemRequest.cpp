@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateItemRequest::UpdateItemRequest() : 
+    m_tableNameHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_attributeUpdatesHasBeenSet(false),
     m_expectedHasBeenSet(false),
     m_conditionalOperatorHasBeenSet(false),
@@ -39,14 +41,22 @@ Aws::String UpdateItemRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("TableName", m_tableName);
-
-  JsonValue keyJsonMap;
-  for(auto& keyItem : m_key)
+  if(m_tableNameHasBeenSet)
   {
-    keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
+   payload.WithString("TableName", m_tableName);
+
   }
-  payload.WithObject("Key", std::move(keyJsonMap));
+
+  if(m_keyHasBeenSet)
+  {
+   JsonValue keyJsonMap;
+   for(auto& keyItem : m_key)
+   {
+     keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
+   }
+   payload.WithObject("Key", std::move(keyJsonMap));
+
+  }
 
   if(m_attributeUpdatesHasBeenSet)
   {

@@ -21,7 +21,9 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRecordsRequest::PutRecordsRequest()
+PutRecordsRequest::PutRecordsRequest() : 
+    m_recordsHasBeenSet(false),
+    m_streamNameHasBeenSet(false)
 {
 }
 
@@ -29,14 +31,22 @@ Aws::String PutRecordsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  Array<JsonValue> recordsJsonList(m_records.size());
-  for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+  if(m_recordsHasBeenSet)
   {
-    recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
-  }
-  payload.WithArray("Records", std::move(recordsJsonList));
+   Array<JsonValue> recordsJsonList(m_records.size());
+   for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+   {
+     recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
+   }
+   payload.WithArray("Records", std::move(recordsJsonList));
 
-  payload.WithString("StreamName", m_streamName);
+  }
+
+  if(m_streamNameHasBeenSet)
+  {
+   payload.WithString("StreamName", m_streamName);
+
+  }
 
   return payload.WriteReadable();
 }

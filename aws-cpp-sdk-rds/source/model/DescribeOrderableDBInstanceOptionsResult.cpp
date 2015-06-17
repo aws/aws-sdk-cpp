@@ -41,11 +41,12 @@ DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode orderableDBInstanceOptionNode = resultNode.FirstChild("OrderableDBInstanceOption");
+    XmlNode orderableDBInstanceOptionNodeParent = resultNode.FirstChild("OrderableDBInstanceOption");
+    XmlNode orderableDBInstanceOptionNode = orderableDBInstanceOptionNodeParent.FirstChild("member");
     while(!orderableDBInstanceOptionNode.IsNull())
     {
       m_orderableDBInstanceOptions.push_back(orderableDBInstanceOptionNode);
-      orderableDBInstanceOptionNode = orderableDBInstanceOptionNode.NextNode("OrderableDBInstanceOption");
+      orderableDBInstanceOptionNode = orderableDBInstanceOptionNode.NextNode("member");
     }
 
     XmlNode markerNode = resultNode.FirstChild("Marker");

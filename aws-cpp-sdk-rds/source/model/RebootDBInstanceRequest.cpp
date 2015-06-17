@@ -20,6 +20,7 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 RebootDBInstanceRequest::RebootDBInstanceRequest() : 
+    m_dBInstanceIdentifierHasBeenSet(false),
     m_forceFailover(false),
     m_forceFailoverHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String RebootDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RebootDBInstance&";
-  ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  if(m_dBInstanceIdentifierHasBeenSet)
+  {
+    ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
   if(m_forceFailoverHasBeenSet)
   {
     ss << "ForceFailover=" << m_forceFailover << "&";

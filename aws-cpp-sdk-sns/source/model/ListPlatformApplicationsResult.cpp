@@ -41,11 +41,12 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode platformApplicationsNode = resultNode.FirstChild("PlatformApplications");
+    XmlNode platformApplicationsNodeParent = resultNode.FirstChild("PlatformApplications");
+    XmlNode platformApplicationsNode = platformApplicationsNodeParent.FirstChild("member");
     while(!platformApplicationsNode.IsNull())
     {
       m_platformApplications.push_back(platformApplicationsNode);
-      platformApplicationsNode = platformApplicationsNode.NextNode("PlatformApplications");
+      platformApplicationsNode = platformApplicationsNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

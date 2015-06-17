@@ -21,27 +21,55 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction()
+CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction() : 
+    m_indexNameHasBeenSet(false),
+    m_keySchemaHasBeenSet(false),
+    m_projectionHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false)
 {
 }
 
-CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction(const JsonValue& jsonValue)
+CreateGlobalSecondaryIndexAction::CreateGlobalSecondaryIndexAction(const JsonValue& jsonValue) : 
+    m_indexNameHasBeenSet(false),
+    m_keySchemaHasBeenSet(false),
+    m_projectionHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CreateGlobalSecondaryIndexAction& CreateGlobalSecondaryIndexAction::operator =(const JsonValue& jsonValue)
 {
-  m_indexName = jsonValue.GetString("IndexName");
-
-  Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
-  for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+  if(jsonValue.ValueExists("IndexName"))
   {
-    m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
-  }
-  m_projection = jsonValue.GetObject("Projection");
+    m_indexName = jsonValue.GetString("IndexName");
 
-  m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
+    m_indexNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeySchema"))
+  {
+    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+    {
+      m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
+    }
+    m_keySchemaHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Projection"))
+  {
+    m_projection = jsonValue.GetObject("Projection");
+
+    m_projectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisionedThroughput"))
+  {
+    m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
+
+    m_provisionedThroughputHasBeenSet = true;
+  }
 
   return *this;
 }
@@ -50,18 +78,34 @@ JsonValue CreateGlobalSecondaryIndexAction::Jsonize() const
 {
   JsonValue payload;
 
-  payload.WithString("IndexName", m_indexName);
-
-  Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-  for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+  if(m_indexNameHasBeenSet)
   {
-    keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
+   payload.WithString("IndexName", m_indexName);
+
   }
-  payload.WithArray("KeySchema", std::move(keySchemaJsonList));
 
-  payload.WithObject("Projection", m_projection.Jsonize());
+  if(m_keySchemaHasBeenSet)
+  {
+   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
+   {
+     keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
+   }
+   payload.WithArray("KeySchema", std::move(keySchemaJsonList));
 
-  payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+  }
+
+  if(m_projectionHasBeenSet)
+  {
+   payload.WithObject("Projection", m_projection.Jsonize());
+
+  }
+
+  if(m_provisionedThroughputHasBeenSet)
+  {
+   payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  }
 
   return std::move(payload);
 }

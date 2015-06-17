@@ -19,7 +19,10 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest()
+RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest() : 
+    m_lifecycleHookNameHasBeenSet(false),
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_lifecycleActionTokenHasBeenSet(false)
 {
 }
 
@@ -27,9 +30,18 @@ Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RecordLifecycleActionHeartbeat&";
-  ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
-  ss << "LifecycleActionToken=" << StringUtils::URLEncode(m_lifecycleActionToken.c_str()) << "&";
+  if(m_lifecycleHookNameHasBeenSet)
+  {
+    ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
+  }
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+  if(m_lifecycleActionTokenHasBeenSet)
+  {
+    ss << "LifecycleActionToken=" << StringUtils::URLEncode(m_lifecycleActionToken.c_str()) << "&";
+  }
   ss << "Version=2011-01-01";
   return ss.str();
 }

@@ -24,12 +24,16 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 LambdaFunctionConfiguration::LambdaFunctionConfiguration() : 
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_lambdaFunctionArnHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
 }
 
 LambdaFunctionConfiguration::LambdaFunctionConfiguration(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_lambdaFunctionArnHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -47,14 +51,22 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
       m_idHasBeenSet = true;
     }
     XmlNode lambdaFunctionArnNode = resultNode.FirstChild("LambdaFunctionArn");
-    m_lambdaFunctionArn = StringUtils::Trim(lambdaFunctionArnNode.GetText().c_str());
-    XmlNode eventsNode = resultNode.FirstChild("Events");
-    while(!eventsNode.IsNull())
+    if(!lambdaFunctionArnNode.IsNull())
     {
-      m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
-      eventsNode = eventsNode.NextNode("Events");
+      m_lambdaFunctionArn = StringUtils::Trim(lambdaFunctionArnNode.GetText().c_str());
+      m_lambdaFunctionArnHasBeenSet = true;
     }
+    XmlNode eventsNode = resultNode.FirstChild("Events");
+    if(!eventsNode.IsNull())
+    {
+      while(!eventsNode.IsNull())
+      {
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
+        eventsNode = eventsNode.NextNode("Events");
+      }
 
+      m_eventsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -69,11 +81,19 @@ void LambdaFunctionConfiguration::AddToNode(XmlNode& parentNode) const
    idNode.SetText(m_id);
   }
 
-  XmlNode lambdaFunctionArnNode = parentNode.CreateChildElement("LambdaFunctionArn");
-  lambdaFunctionArnNode.SetText(m_lambdaFunctionArn);
-  for(const auto& item : m_events)
+  if(m_lambdaFunctionArnHasBeenSet)
   {
-    XmlNode eventsNode = parentNode.CreateChildElement("Event");
-    eventsNode.SetText(EventMapper::GetNameForEvent(item));
+   XmlNode lambdaFunctionArnNode = parentNode.CreateChildElement("LambdaFunctionArn");
+   lambdaFunctionArnNode.SetText(m_lambdaFunctionArn);
   }
+
+  if(m_eventsHasBeenSet)
+  {
+   for(const auto& item : m_events)
+   {
+     XmlNode eventsNode = parentNode.CreateChildElement("Event");
+     eventsNode.SetText(EventMapper::GetNameForEvent(item));
+   }
+  }
+
 }

@@ -43,12 +43,12 @@ namespace Model
     /*
      The origin access identity's id.
     */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /*
      The origin access identity's id.
     */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /*
      The origin access identity's id.
@@ -86,6 +86,7 @@ namespace Model
 
   private:
     Aws::String m_id;
+    bool m_idHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

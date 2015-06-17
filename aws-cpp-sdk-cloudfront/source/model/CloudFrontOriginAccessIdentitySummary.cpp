@@ -23,11 +23,17 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary()
+CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary() : 
+    m_idHasBeenSet(false),
+    m_s3CanonicalUserIdHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
-CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary(const XmlNode& xmlNode)
+CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_s3CanonicalUserIdHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,11 +45,23 @@ CloudFrontOriginAccessIdentitySummary& CloudFrontOriginAccessIdentitySummary::op
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode s3CanonicalUserIdNode = resultNode.FirstChild("S3CanonicalUserId");
-    m_s3CanonicalUserId = StringUtils::Trim(s3CanonicalUserIdNode.GetText().c_str());
+    if(!s3CanonicalUserIdNode.IsNull())
+    {
+      m_s3CanonicalUserId = StringUtils::Trim(s3CanonicalUserIdNode.GetText().c_str());
+      m_s3CanonicalUserIdHasBeenSet = true;
+    }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    if(!commentNode.IsNull())
+    {
+      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_commentHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -52,10 +70,22 @@ CloudFrontOriginAccessIdentitySummary& CloudFrontOriginAccessIdentitySummary::op
 void CloudFrontOriginAccessIdentitySummary::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode s3CanonicalUserIdNode = parentNode.CreateChildElement("S3CanonicalUserId");
-  s3CanonicalUserIdNode.SetText(m_s3CanonicalUserId);
-  XmlNode commentNode = parentNode.CreateChildElement("Comment");
-  commentNode.SetText(m_comment);
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_s3CanonicalUserIdHasBeenSet)
+  {
+   XmlNode s3CanonicalUserIdNode = parentNode.CreateChildElement("S3CanonicalUserId");
+   s3CanonicalUserIdNode.SetText(m_s3CanonicalUserId);
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   XmlNode commentNode = parentNode.CreateChildElement("Comment");
+   commentNode.SetText(m_comment);
+  }
+
 }

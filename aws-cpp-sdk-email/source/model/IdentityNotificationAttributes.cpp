@@ -24,12 +24,20 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 IdentityNotificationAttributes::IdentityNotificationAttributes() : 
-    m_forwardingEnabled(false)
+    m_bounceTopicHasBeenSet(false),
+    m_complaintTopicHasBeenSet(false),
+    m_deliveryTopicHasBeenSet(false),
+    m_forwardingEnabled(false),
+    m_forwardingEnabledHasBeenSet(false)
 {
 }
 
 IdentityNotificationAttributes::IdentityNotificationAttributes(const XmlNode& xmlNode) : 
-    m_forwardingEnabled(false)
+    m_bounceTopicHasBeenSet(false),
+    m_complaintTopicHasBeenSet(false),
+    m_deliveryTopicHasBeenSet(false),
+    m_forwardingEnabled(false),
+    m_forwardingEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -41,13 +49,29 @@ IdentityNotificationAttributes& IdentityNotificationAttributes::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode bounceTopicNode = resultNode.FirstChild("BounceTopic");
-    m_bounceTopic = StringUtils::Trim(bounceTopicNode.GetText().c_str());
+    if(!bounceTopicNode.IsNull())
+    {
+      m_bounceTopic = StringUtils::Trim(bounceTopicNode.GetText().c_str());
+      m_bounceTopicHasBeenSet = true;
+    }
     XmlNode complaintTopicNode = resultNode.FirstChild("ComplaintTopic");
-    m_complaintTopic = StringUtils::Trim(complaintTopicNode.GetText().c_str());
+    if(!complaintTopicNode.IsNull())
+    {
+      m_complaintTopic = StringUtils::Trim(complaintTopicNode.GetText().c_str());
+      m_complaintTopicHasBeenSet = true;
+    }
     XmlNode deliveryTopicNode = resultNode.FirstChild("DeliveryTopic");
-    m_deliveryTopic = StringUtils::Trim(deliveryTopicNode.GetText().c_str());
+    if(!deliveryTopicNode.IsNull())
+    {
+      m_deliveryTopic = StringUtils::Trim(deliveryTopicNode.GetText().c_str());
+      m_deliveryTopicHasBeenSet = true;
+    }
     XmlNode forwardingEnabledNode = resultNode.FirstChild("ForwardingEnabled");
-    m_forwardingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(forwardingEnabledNode.GetText().c_str()).c_str());
+    if(!forwardingEnabledNode.IsNull())
+    {
+      m_forwardingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(forwardingEnabledNode.GetText().c_str()).c_str());
+      m_forwardingEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,16 +79,40 @@ IdentityNotificationAttributes& IdentityNotificationAttributes::operator =(const
 
 void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  oStream << location << index << locationValue << ".BounceTopic=" << StringUtils::URLEncode(m_bounceTopic.c_str()) << "&";
-  oStream << location << index << locationValue << ".ComplaintTopic=" << StringUtils::URLEncode(m_complaintTopic.c_str()) << "&";
-  oStream << location << index << locationValue << ".DeliveryTopic=" << StringUtils::URLEncode(m_deliveryTopic.c_str()) << "&";
-  oStream << location << index << locationValue << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+  if(m_bounceTopicHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BounceTopic=" << StringUtils::URLEncode(m_bounceTopic.c_str()) << "&";
+  }
+  if(m_complaintTopicHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ComplaintTopic=" << StringUtils::URLEncode(m_complaintTopic.c_str()) << "&";
+  }
+  if(m_deliveryTopicHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeliveryTopic=" << StringUtils::URLEncode(m_deliveryTopic.c_str()) << "&";
+  }
+  if(m_forwardingEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+  }
 }
 
 void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  oStream << location << ".BounceTopic=" << StringUtils::URLEncode(m_bounceTopic.c_str()) << "&";
-  oStream << location << ".ComplaintTopic=" << StringUtils::URLEncode(m_complaintTopic.c_str()) << "&";
-  oStream << location << ".DeliveryTopic=" << StringUtils::URLEncode(m_deliveryTopic.c_str()) << "&";
-  oStream << location << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+  if(m_bounceTopicHasBeenSet)
+  {
+      oStream << location << ".BounceTopic=" << StringUtils::URLEncode(m_bounceTopic.c_str()) << "&";
+  }
+  if(m_complaintTopicHasBeenSet)
+  {
+      oStream << location << ".ComplaintTopic=" << StringUtils::URLEncode(m_complaintTopic.c_str()) << "&";
+  }
+  if(m_deliveryTopicHasBeenSet)
+  {
+      oStream << location << ".DeliveryTopic=" << StringUtils::URLEncode(m_deliveryTopic.c_str()) << "&";
+  }
+  if(m_forwardingEnabledHasBeenSet)
+  {
+      oStream << location << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+  }
 }

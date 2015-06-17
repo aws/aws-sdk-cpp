@@ -41,11 +41,12 @@ DescribeAutoScalingInstancesResult& DescribeAutoScalingInstancesResult::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode autoScalingInstancesNode = resultNode.FirstChild("AutoScalingInstances");
+    XmlNode autoScalingInstancesNodeParent = resultNode.FirstChild("AutoScalingInstances");
+    XmlNode autoScalingInstancesNode = autoScalingInstancesNodeParent.FirstChild("member");
     while(!autoScalingInstancesNode.IsNull())
     {
       m_autoScalingInstances.push_back(autoScalingInstancesNode);
-      autoScalingInstancesNode = autoScalingInstancesNode.NextNode("AutoScalingInstances");
+      autoScalingInstancesNode = autoScalingInstancesNode.NextNode("member");
     }
 
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");

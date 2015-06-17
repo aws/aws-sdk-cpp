@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateRdsDbInstanceRequest::UpdateRdsDbInstanceRequest() : 
+    m_rdsDbInstanceArnHasBeenSet(false),
     m_dbUserHasBeenSet(false),
     m_dbPasswordHasBeenSet(false)
 {
@@ -31,7 +32,11 @@ Aws::String UpdateRdsDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  payload.WithString("RdsDbInstanceArn", m_rdsDbInstanceArn);
+  if(m_rdsDbInstanceArnHasBeenSet)
+  {
+   payload.WithString("RdsDbInstanceArn", m_rdsDbInstanceArn);
+
+  }
 
   if(m_dbUserHasBeenSet)
   {

@@ -21,7 +21,8 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetStreamingDistributionConfig2014_11_06Request::GetStreamingDistributionConfig2014_11_06Request()
+GetStreamingDistributionConfig2014_11_06Request::GetStreamingDistributionConfig2014_11_06Request() : 
+    m_idHasBeenSet(false)
 {
 }
 

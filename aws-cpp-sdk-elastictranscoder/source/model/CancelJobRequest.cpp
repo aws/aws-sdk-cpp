@@ -21,7 +21,8 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelJobRequest::CancelJobRequest()
+CancelJobRequest::CancelJobRequest() : 
+    m_idHasBeenSet(false)
 {
 }
 

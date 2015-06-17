@@ -20,6 +20,7 @@ using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
 DeleteAutoScalingGroupRequest::DeleteAutoScalingGroupRequest() : 
+    m_autoScalingGroupNameHasBeenSet(false),
     m_forceDelete(false),
     m_forceDeleteHasBeenSet(false)
 {
@@ -29,7 +30,10 @@ Aws::String DeleteAutoScalingGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteAutoScalingGroup&";
-  ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  if(m_autoScalingGroupNameHasBeenSet)
+  {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
   if(m_forceDeleteHasBeenSet)
   {
     ss << "ForceDelete=" << m_forceDelete << "&";

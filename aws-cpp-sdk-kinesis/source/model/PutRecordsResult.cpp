@@ -44,11 +44,15 @@ PutRecordsResult& PutRecordsResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
-  Array<JsonValue> recordsJsonList = jsonValue.GetArray("Records");
-  for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+  if(jsonValue.ValueExists("Records"))
   {
-    m_records.push_back(recordsJsonList[recordsIndex].AsObject());
+    Array<JsonValue> recordsJsonList = jsonValue.GetArray("Records");
+    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+    {
+      m_records.push_back(recordsJsonList[recordsIndex].AsObject());
+    }
   }
+
 
 
   return *this;

@@ -23,11 +23,13 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-Restrictions::Restrictions()
+Restrictions::Restrictions() : 
+    m_geoRestrictionHasBeenSet(false)
 {
 }
 
-Restrictions::Restrictions(const XmlNode& xmlNode)
+Restrictions::Restrictions(const XmlNode& xmlNode) : 
+    m_geoRestrictionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -39,7 +41,11 @@ Restrictions& Restrictions::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode geoRestrictionNode = resultNode.FirstChild("GeoRestriction");
-    m_geoRestriction = geoRestrictionNode;
+    if(!geoRestrictionNode.IsNull())
+    {
+      m_geoRestriction = geoRestrictionNode;
+      m_geoRestrictionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +54,10 @@ Restrictions& Restrictions::operator =(const XmlNode& xmlNode)
 void Restrictions::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode geoRestrictionNode = parentNode.CreateChildElement("GeoRestriction");
-  m_geoRestriction.AddToNode(geoRestrictionNode);
+  if(m_geoRestrictionHasBeenSet)
+  {
+   XmlNode geoRestrictionNode = parentNode.CreateChildElement("GeoRestriction");
+   m_geoRestriction.AddToNode(geoRestrictionNode);
+  }
+
 }

@@ -24,14 +24,42 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 DistributionSummary::DistributionSummary() : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_enabled(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_originsHasBeenSet(false),
+    m_defaultCacheBehaviorHasBeenSet(false),
+    m_cacheBehaviorsHasBeenSet(false),
+    m_customErrorResponsesHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
+    m_viewerCertificateHasBeenSet(false),
+    m_restrictionsHasBeenSet(false)
 {
 }
 
 DistributionSummary::DistributionSummary(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_lastModifiedTime(0.0),
-    m_enabled(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_originsHasBeenSet(false),
+    m_defaultCacheBehaviorHasBeenSet(false),
+    m_cacheBehaviorsHasBeenSet(false),
+    m_customErrorResponsesHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_priceClassHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
+    m_viewerCertificateHasBeenSet(false),
+    m_restrictionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,33 +71,89 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
   if(!resultNode.IsNull())
   {
     XmlNode idNode = resultNode.FirstChild("Id");
-    m_id = StringUtils::Trim(idNode.GetText().c_str());
+    if(!idNode.IsNull())
+    {
+      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_idHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = StringUtils::Trim(statusNode.GetText().c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+    if(!lastModifiedTimeNode.IsNull())
+    {
+      m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+      m_lastModifiedTimeHasBeenSet = true;
+    }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+    if(!domainNameNode.IsNull())
+    {
+      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainNameHasBeenSet = true;
+    }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
-    m_aliases = aliasesNode;
+    if(!aliasesNode.IsNull())
+    {
+      m_aliases = aliasesNode;
+      m_aliasesHasBeenSet = true;
+    }
     XmlNode originsNode = resultNode.FirstChild("Origins");
-    m_origins = originsNode;
+    if(!originsNode.IsNull())
+    {
+      m_origins = originsNode;
+      m_originsHasBeenSet = true;
+    }
     XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
-    m_defaultCacheBehavior = defaultCacheBehaviorNode;
+    if(!defaultCacheBehaviorNode.IsNull())
+    {
+      m_defaultCacheBehavior = defaultCacheBehaviorNode;
+      m_defaultCacheBehaviorHasBeenSet = true;
+    }
     XmlNode cacheBehaviorsNode = resultNode.FirstChild("CacheBehaviors");
-    m_cacheBehaviors = cacheBehaviorsNode;
+    if(!cacheBehaviorsNode.IsNull())
+    {
+      m_cacheBehaviors = cacheBehaviorsNode;
+      m_cacheBehaviorsHasBeenSet = true;
+    }
     XmlNode customErrorResponsesNode = resultNode.FirstChild("CustomErrorResponses");
-    m_customErrorResponses = customErrorResponsesNode;
+    if(!customErrorResponsesNode.IsNull())
+    {
+      m_customErrorResponses = customErrorResponsesNode;
+      m_customErrorResponsesHasBeenSet = true;
+    }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+    if(!commentNode.IsNull())
+    {
+      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_commentHasBeenSet = true;
+    }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
-    m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
+    if(!priceClassNode.IsNull())
+    {
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(priceClassNode.GetText().c_str()).c_str());
+      m_priceClassHasBeenSet = true;
+    }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+    if(!enabledNode.IsNull())
+    {
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabledHasBeenSet = true;
+    }
     XmlNode viewerCertificateNode = resultNode.FirstChild("ViewerCertificate");
-    m_viewerCertificate = viewerCertificateNode;
+    if(!viewerCertificateNode.IsNull())
+    {
+      m_viewerCertificate = viewerCertificateNode;
+      m_viewerCertificateHasBeenSet = true;
+    }
     XmlNode restrictionsNode = resultNode.FirstChild("Restrictions");
-    m_restrictions = restrictionsNode;
+    if(!restrictionsNode.IsNull())
+    {
+      m_restrictions = restrictionsNode;
+      m_restrictionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,36 +162,92 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
 void DistributionSummary::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
-  XmlNode idNode = parentNode.CreateChildElement("Id");
-  idNode.SetText(m_id);
-  XmlNode statusNode = parentNode.CreateChildElement("Status");
-  statusNode.SetText(m_status);
-  XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+  if(m_idHasBeenSet)
+  {
+   XmlNode idNode = parentNode.CreateChildElement("Id");
+   idNode.SetText(m_id);
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
+   statusNode.SetText(m_status);
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
   ss << m_lastModifiedTime;
-  lastModifiedTimeNode.SetText(ss.str());
+   lastModifiedTimeNode.SetText(ss.str());
   ss.str("");
-  XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-  domainNameNode.SetText(m_domainName);
-  XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
-  m_aliases.AddToNode(aliasesNode);
-  XmlNode originsNode = parentNode.CreateChildElement("Origins");
-  m_origins.AddToNode(originsNode);
-  XmlNode defaultCacheBehaviorNode = parentNode.CreateChildElement("DefaultCacheBehavior");
-  m_defaultCacheBehavior.AddToNode(defaultCacheBehaviorNode);
-  XmlNode cacheBehaviorsNode = parentNode.CreateChildElement("CacheBehaviors");
-  m_cacheBehaviors.AddToNode(cacheBehaviorsNode);
-  XmlNode customErrorResponsesNode = parentNode.CreateChildElement("CustomErrorResponses");
-  m_customErrorResponses.AddToNode(customErrorResponsesNode);
-  XmlNode commentNode = parentNode.CreateChildElement("Comment");
-  commentNode.SetText(m_comment);
-  XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
-  priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
-  XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+   domainNameNode.SetText(m_domainName);
+  }
+
+  if(m_aliasesHasBeenSet)
+  {
+   XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
+   m_aliases.AddToNode(aliasesNode);
+  }
+
+  if(m_originsHasBeenSet)
+  {
+   XmlNode originsNode = parentNode.CreateChildElement("Origins");
+   m_origins.AddToNode(originsNode);
+  }
+
+  if(m_defaultCacheBehaviorHasBeenSet)
+  {
+   XmlNode defaultCacheBehaviorNode = parentNode.CreateChildElement("DefaultCacheBehavior");
+   m_defaultCacheBehavior.AddToNode(defaultCacheBehaviorNode);
+  }
+
+  if(m_cacheBehaviorsHasBeenSet)
+  {
+   XmlNode cacheBehaviorsNode = parentNode.CreateChildElement("CacheBehaviors");
+   m_cacheBehaviors.AddToNode(cacheBehaviorsNode);
+  }
+
+  if(m_customErrorResponsesHasBeenSet)
+  {
+   XmlNode customErrorResponsesNode = parentNode.CreateChildElement("CustomErrorResponses");
+   m_customErrorResponses.AddToNode(customErrorResponsesNode);
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   XmlNode commentNode = parentNode.CreateChildElement("Comment");
+   commentNode.SetText(m_comment);
+  }
+
+  if(m_priceClassHasBeenSet)
+  {
+   XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
+   priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
   ss << m_enabled;
-  enabledNode.SetText(ss.str());
+   enabledNode.SetText(ss.str());
   ss.str("");
-  XmlNode viewerCertificateNode = parentNode.CreateChildElement("ViewerCertificate");
-  m_viewerCertificate.AddToNode(viewerCertificateNode);
-  XmlNode restrictionsNode = parentNode.CreateChildElement("Restrictions");
-  m_restrictions.AddToNode(restrictionsNode);
+  }
+
+  if(m_viewerCertificateHasBeenSet)
+  {
+   XmlNode viewerCertificateNode = parentNode.CreateChildElement("ViewerCertificate");
+   m_viewerCertificate.AddToNode(viewerCertificateNode);
+  }
+
+  if(m_restrictionsHasBeenSet)
+  {
+   XmlNode restrictionsNode = parentNode.CreateChildElement("Restrictions");
+   m_restrictions.AddToNode(restrictionsNode);
+  }
+
 }
