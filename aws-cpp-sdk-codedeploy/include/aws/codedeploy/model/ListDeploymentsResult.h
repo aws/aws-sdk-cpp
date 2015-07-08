@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -29,12 +29,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a list deployments operation.</p>
   */
   class AWS_CODEDEPLOY_API ListDeploymentsResult
   {
@@ -43,32 +43,52 @@ namespace Model
     ListDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>A list of deployment IDs.</p>
+    */
     inline const Aws::Vector<Aws::String>& GetDeployments() const{ return m_deployments; }
-    
+    /*
+     <p>A list of deployment IDs.</p>
+    */
     inline void SetDeployments(const Aws::Vector<Aws::String>& value) { m_deployments = value; }
 
-    
+    /*
+     <p>A list of deployment IDs.</p>
+    */
     inline ListDeploymentsResult&  WithDeployments(const Aws::Vector<Aws::String>& value) { SetDeployments(value); return *this;}
 
-    
+    /*
+     <p>A list of deployment IDs.</p>
+    */
     inline ListDeploymentsResult& AddDeployments(const Aws::String& value) { m_deployments.push_back(value); return *this; }
 
-    
+    /*
+     <p>A list of deployment IDs.</p>
+    */
     inline ListDeploymentsResult& AddDeployments(const char* value) { m_deployments.push_back(value); return *this; }
 
-    
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
     inline ListDeploymentsResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /*
+     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    */
     inline ListDeploymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
@@ -77,5 +97,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

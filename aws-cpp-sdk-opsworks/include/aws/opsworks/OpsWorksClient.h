@@ -478,19 +478,19 @@ namespace Model
      void AttachElasticLoadBalancerAsync(const Model::AttachElasticLoadBalancerRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+       <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By default, all parameters are set to the values used by the parent stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
      */
      Model::CloneStackOutcome CloneStack(const Model::CloneStackRequest& request) const;
 
      /*
-       <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+       <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By default, all parameters are set to the values used by the parent stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CloneStackOutcomeCallable CloneStackCallable(const Model::CloneStackRequest& request) const;
 
      /*
-       <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+       <p>Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By default, all parameters are set to the values used by the parent stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -782,19 +782,19 @@ namespace Model
      void DeregisterVolumeAsync(const Model::DeregisterVolumeRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       ${operation.documentation}
+       <p>Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
      */
      Model::DescribeAgentVersionsOutcome DescribeAgentVersions(const Model::DescribeAgentVersionsRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeAgentVersionsOutcomeCallable DescribeAgentVersionsCallable(const Model::DescribeAgentVersionsRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -1219,19 +1219,19 @@ namespace Model
      void GetHostnameSuggestionAsync(const Model::GetHostnameSuggestionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <note>This API can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
+       <note>This action can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
      */
      Model::GrantAccessOutcome GrantAccess(const Model::GrantAccessRequest& request) const;
 
      /*
-       <note>This API can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
+       <note>This action can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GrantAccessOutcomeCallable GrantAccessCallable(const Model::GrantAccessRequest& request) const;
 
      /*
-       <note>This API can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
+       <note>This action can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -1276,19 +1276,19 @@ namespace Model
      void RegisterElasticIpAsync(const Model::RegisterElasticIpRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+       <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stack</a>.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
      */
      Model::RegisterInstanceOutcome RegisterInstance(const Model::RegisterInstanceRequest& request) const;
 
      /*
-       <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+       <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stack</a>.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::RegisterInstanceOutcomeCallable RegisterInstanceCallable(const Model::RegisterInstanceRequest& request) const;
 
      /*
-       <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+       <p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stack</a>.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */

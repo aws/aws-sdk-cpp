@@ -103,18 +103,18 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << std::endl;
-    configFile << "[Somebody Else]" << std::endl;
-    configFile << "aws_access_key_id=SomebodyElseAccessId" << std::endl;
+    configFile << "[Somebody Else ]" << std::endl;
+    configFile << "aws_access_key_id = SomebodyElseAccessId" << std::endl;
     configFile << "something else to break the parser" << std::endl;
     configFile << "#test comment" << std::endl;
     configFile << "[default]" << std::endl;
-    configFile << "aws_access_key_id=DefaultAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=DefaultSecretKey" << std::endl;
+    configFile << "aws_access_key_id = DefaultAccessKey" << std::endl;
+    configFile << "aws_secret_access_key=DefaultSecretKey " << std::endl;
     configFile << "aws_session_token=DefaultSessionToken" << std::endl;
     configFile << std::endl;
-    configFile << "[Somebody Else Again]" << std::endl;
-    configFile << "aws_secret_access_key=SomebodyElseAgainAccessId" << std::endl;
-    configFile << "aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
+    configFile << " [Somebody Else Again]" << std::endl;
+    configFile << "aws_secret_access_key = SomebodyElseAgainAccessId" << std::endl;
+    configFile << " aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
     configFile << "aws_session_token=SomebodyElseAgainSessionToken" << std::endl;
 
     configFile.flush();
@@ -152,10 +152,10 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVars)
     setenv("AWS_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
-    configFile << "[someProfile]" << std::endl;
-    configFile << "aws_access_key_id=SomeProfileAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=SomeProfileSecretKey" << std::endl;
-    configFile << "aws_session_token=SomeProfileSessionToken" << std::endl;
+    configFile << "[ someProfile]" << std::endl;
+    configFile << " aws_access_key_id = SomeProfileAccessKey " << std::endl;
+    configFile << "aws_secret_access_key =SomeProfileSecretKey" << std::endl;
+    configFile << "aws_session_token=SomeProfileSessionToken " << std::endl;
     configFile << std::endl;
 
     configFile.flush();
@@ -193,15 +193,15 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVarsButSpecifiedPro
     setenv("AWS_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
-    configFile << "[someProfile]" << std::endl;
-    configFile << "aws_access_key_id=SomeProfileAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=SomeProfileSecretKey" << std::endl;
-    configFile << "aws_session_token=SomeProfileSessionToken" << std::endl;
+    configFile << " [ someProfile]" << std::endl;
+    configFile << " aws_access_key_id = SomeProfileAccessKey" << std::endl;
+    configFile << "aws_secret_access_key=SomeProfileSecretKey " << std::endl;
+    configFile << "aws_session_token= SomeProfileSessionToken" << std::endl;
     configFile << std::endl;
     configFile << "[customProfile]" << std::endl;
-    configFile << "aws_access_key_id=customProfileAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=customProfileSecretKey" << std::endl;
-    configFile << "aws_session_token=customProfileSessionToken" << std::endl;
+    configFile << "aws_access_key_id =customProfileAccessKey" << std::endl;
+    configFile << "aws_secret_access_key=customProfileSecretKey " << std::endl;
+    configFile << " aws_session_token=customProfileSessionToken" << std::endl;
     configFile << std::endl;
 
     configFile.flush();

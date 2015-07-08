@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a create deployment group operation.</p>
   */
   class AWS_CODEDEPLOY_API CreateDeploymentGroupResult
   {
@@ -42,18 +42,28 @@ namespace Model
     CreateDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>A unique deployment group ID.</p>
+    */
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
-    
+    /*
+     <p>A unique deployment group ID.</p>
+    */
     inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupId = value; }
 
-    
+    /*
+     <p>A unique deployment group ID.</p>
+    */
     inline void SetDeploymentGroupId(const char* value) { m_deploymentGroupId.assign(value); }
 
-    
+    /*
+     <p>A unique deployment group ID.</p>
+    */
     inline CreateDeploymentGroupResult&  WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
 
-    
+    /*
+     <p>A unique deployment group ID.</p>
+    */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const char* value) { SetDeploymentGroupId(value); return *this;}
 
   private:
@@ -61,5 +71,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

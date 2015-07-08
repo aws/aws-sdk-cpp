@@ -51,11 +51,12 @@ file(GLOB UTILS_STL_HEADERS "include/aws/core/utils/memory/stl/*.h")
 file(GLOB UTILS_LOGGING_HEADERS "include/aws/core/utils/logging/*.h")
 file(GLOB UTILS_RATE_LIMITER_HEADERS "include/aws/core/utils/ratelimiter/*.h")
 file(GLOB UTILS_STREAM_HEADERS "include/aws/core/utils/stream/*.h")
-file(GLOB JSONCPP_HEADERS "include/aws/external/json/*.h")
-file(GLOB TINYXML2_HEADERS "include/aws/external/tinyxml2.h")
+file(GLOB JSONCPP_HEADERS "include/aws/core/external/json-cpp/*.h")
+file(GLOB TINYXML2_HEADERS "include/aws/core/external/tinyxml2/tinyxml2.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
-file(GLOB AWS_EXTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/*.cpp")
+file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
+file(GLOB AWS_JSONCPP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/json-cpp/*.cpp")
 file(GLOB AWS_AUTH_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/*.cpp")
 file(GLOB AWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp")
 file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp")
@@ -101,7 +102,8 @@ file(GLOB AWSNativeSDK_SHARED_SRC
   ${TINYXML2_HEADERS}
 
   ${AWS_SOURCE}
-  ${AWS_EXTERNAL_SOURCE}
+  ${AWS_TINYXML2_SOURCE}
+  ${AWS_JSONCPP_SOURCE}
   ${AWS_AUTH_SOURCE}
   ${AWS_CLIENT_SOURCE}
   ${AWS_INTERNAL_SOURCE}
@@ -161,11 +163,12 @@ if(PLATFORM_WINDOWS)
      source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
      source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
      source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
-     source_group("Header Files\\aws\\external\\json" FILES ${JSONCPP_HEADERS})
-     source_group("Header Files\\aws\\external" FILES ${TINYXML2_HEADERS})
+     source_group("Header Files\\aws\\core\\external\\json-cpp" FILES ${JSONCPP_HEADERS})
+     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
 
      source_group("Source Files" FILES ${AWS_SOURCE})
-     source_group("Source Files\\external" FILES ${AWS_EXTERNAL_SOURCE})
+     source_group("Source Files\\external\\json-cpp" FILES ${AWS_JSONCPP_SOURCE})
+     source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
      source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
      source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
      source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
@@ -239,9 +242,9 @@ endif()
 
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS})
 
-install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
                                   LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-				  RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+				                  RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
 
 install (FILES ${AWS_HEADERS} DESTINATION include/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION include/aws/core/auth)
@@ -263,8 +266,8 @@ install (FILES ${UTILS_STL_HEADERS} DESTINATION include/aws/core/utils/memory/st
 install (FILES ${UTILS_RATE_LIMITER_HEADERS} DESTINATION include/aws/core/utils/ratelimiter)
 install (FILES ${UTILS_STREAM_HEADERS} DESTINATION include/aws/core/utils/stream)
 install (FILES ${UTILS_THREADING_HEADERS} DESTINATION include/aws/core/utils/threading)
-install (FILES ${JSONCPP_HEADERS} DESTINATION include/aws/external/json)
-install (FILES ${TINYXML2_HEADERS} DESTINATION include/aws/external)
+install (FILES ${JSONCPP_HEADERS} DESTINATION include/aws/core/external/json-cpp)
+install (FILES ${TINYXML2_HEADERS} DESTINATION include/aws/core/external/tinyxml2)
 
 #platform specific headers
 if(PLATFORM_WINDOWS)

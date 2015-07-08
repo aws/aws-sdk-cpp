@@ -89,16 +89,26 @@ namespace Model
     /*
      If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
     */
-    inline double GetExpiration() const{ return m_expiration; }
+    inline const Aws::String& GetExpiration() const{ return m_expiration; }
     /*
      If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
     */
-    inline void SetExpiration(double value) { m_expiration = value; }
+    inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /*
      If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
     */
-    inline CompleteMultipartUploadResult&  WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline void SetExpiration(const char* value) { m_expiration.assign(value); }
+
+    /*
+     If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+    */
+    inline CompleteMultipartUploadResult&  WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
+
+    /*
+     If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+    */
+    inline CompleteMultipartUploadResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
     /*
      Entity tag of the object.
@@ -198,7 +208,7 @@ namespace Model
     Aws::String m_location;
     Aws::String m_bucket;
     Aws::String m_key;
-    double m_expiration;
+    Aws::String m_expiration;
     Aws::String m_eTag;
     ServerSideEncryption m_serverSideEncryption;
     Aws::String m_versionId;

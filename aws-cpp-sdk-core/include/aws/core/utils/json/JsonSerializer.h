@@ -20,7 +20,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/external/json/json.h>
+#include <aws/core/external/json-cpp/json.h>
 
 #include <utility>
 
@@ -311,14 +311,14 @@ public:
 
     void AppendValue(const JsonValue& value);
 
-    ::Json::Value& ModifyRawValue() { return m_value; }
+    Aws::External::Json::Value& ModifyRawValue() { return m_value; }
 
 private:
-    JsonValue(const ::Json::Value& value);
+    JsonValue(const Aws::External::Json::Value& value);
 
-    JsonValue& operator=(::Json::Value& other);
+    JsonValue& operator=(Aws::External::Json::Value& other);
 
-    mutable ::Json::Value m_value;
+    mutable Aws::External::Json::Value m_value;
     bool m_wasParseSuccessful;
     Aws::String m_errorMessage;
 };

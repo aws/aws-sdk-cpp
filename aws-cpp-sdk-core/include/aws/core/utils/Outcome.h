@@ -88,7 +88,12 @@ public:
         return *this;
     }
 
-    inline R& GetResult()
+    inline const R& GetResult() const
+    {
+        return result;
+    }
+
+    inline R& GetResult() 
     {
         return result;
     }
@@ -98,7 +103,7 @@ public:
         return std::move(result);
     }
 
-    inline E& GetError()
+    inline const E& GetError() const
     {
         return error;
     }

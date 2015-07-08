@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/GenericRevisionInfo.h>
@@ -30,12 +30,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a get application revision operation.</p>
   */
   class AWS_CODEDEPLOY_API GetApplicationRevisionResult
   {
@@ -44,34 +44,56 @@ namespace Model
     GetApplicationRevisionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetApplicationRevisionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
     inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
 
-    
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
     inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
 
-    
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
     inline GetApplicationRevisionResult&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of the application that corresponds to the revision.</p>
+    */
     inline GetApplicationRevisionResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>Additional information about the revision, including the revision's type and its location.</p>
+    */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
-    
+    /*
+     <p>Additional information about the revision, including the revision's type and its location.</p>
+    */
     inline void SetRevision(const RevisionLocation& value) { m_revision = value; }
 
-    
+    /*
+     <p>Additional information about the revision, including the revision's type and its location.</p>
+    */
     inline GetApplicationRevisionResult&  WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
-    
+    /*
+     <p>General information about the revision.</p>
+    */
     inline const GenericRevisionInfo& GetRevisionInfo() const{ return m_revisionInfo; }
-    
+    /*
+     <p>General information about the revision.</p>
+    */
     inline void SetRevisionInfo(const GenericRevisionInfo& value) { m_revisionInfo = value; }
 
-    
+    /*
+     <p>General information about the revision.</p>
+    */
     inline GetApplicationRevisionResult&  WithRevisionInfo(const GenericRevisionInfo& value) { SetRevisionInfo(value); return *this;}
 
   private:
@@ -81,5 +103,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

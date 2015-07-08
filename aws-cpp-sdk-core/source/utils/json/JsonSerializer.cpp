@@ -15,8 +15,6 @@
 
 #include <aws/core/utils/json/JsonSerializer.h>
 
-#include <aws/external/json/json.h>
-
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
@@ -26,7 +24,7 @@ JsonValue::JsonValue() : m_wasParseSuccessful(true)
 
 JsonValue::JsonValue(const Aws::String& value) : m_wasParseSuccessful(true)
 {
-    ::Json::Reader reader;
+    Aws::External::Json::Reader reader;
 
     if (!reader.parse(value, m_value))
     {
@@ -37,7 +35,7 @@ JsonValue::JsonValue(const Aws::String& value) : m_wasParseSuccessful(true)
 
 JsonValue::JsonValue(Aws::IStream& istream) : m_wasParseSuccessful(true)
 {
-    ::Json::Reader reader;
+    Aws::External::Json::Reader reader;
 
     if (!reader.parse(istream, m_value))
     {
@@ -76,12 +74,12 @@ JsonValue& JsonValue::operator=(JsonValue&& other)
     return AsObject(other);
 }
 
-JsonValue::JsonValue(const ::Json::Value& value)
+JsonValue::JsonValue(const Aws::External::Json::Value& value)
 {
     m_value = value;
 }
 
-JsonValue& JsonValue::operator=(::Json::Value& other)
+JsonValue& JsonValue::operator=(Aws::External::Json::Value& other)
 {
     m_value = other;
     return *this;
@@ -267,7 +265,7 @@ Array<JsonValue> JsonValue::GetArray(const Aws::String& key) const
 
 JsonValue& JsonValue::WithArray(const char* key, const Array<Aws::String>& array)
 {
-    ::Json::Value arrayValue;
+    Aws::External::Json::Value arrayValue;
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
         arrayValue.append(array[i]);
@@ -285,7 +283,7 @@ JsonValue& JsonValue::WithArray(const Aws::String& key, const Array<Aws::String>
 
 JsonValue& JsonValue::WithArray(const Aws::String& key, Array<Aws::String>&& array)
 {
-    ::Json::Value arrayValue;
+    Aws::External::Json::Value arrayValue;
     for (unsigned i = 0; i < array.GetLength(); ++i)
         arrayValue.append(std::move(array[i]));
 
@@ -296,7 +294,7 @@ JsonValue& JsonValue::WithArray(const Aws::String& key, Array<Aws::String>&& arr
 
 JsonValue& JsonValue::WithArray(const Aws::String& key, const Array<JsonValue>& array)
 {
-    ::Json::Value arrayValue;
+    Aws::External::Json::Value arrayValue;
     for (unsigned i = 0; i < array.GetLength(); ++i)
         arrayValue.append(array[i].m_value);
 
@@ -307,7 +305,7 @@ JsonValue& JsonValue::WithArray(const Aws::String& key, const Array<JsonValue>& 
 
 JsonValue& JsonValue::WithArray(const Aws::String& key, Array<JsonValue>&& array)
 {
-    ::Json::Value arrayValue;
+    Aws::External::Json::Value arrayValue;
     for (unsigned i = 0; i < array.GetLength(); ++i)
         arrayValue.append(std::move(array[i].m_value));
 
@@ -323,7 +321,7 @@ void JsonValue::AppendValue(const JsonValue& value)
 
 JsonValue& JsonValue::AsArray(const Array<JsonValue>& array)
 {
-    ::Json::Value arrayValue;
+    Aws::External::Json::Value arrayValue;
     for (unsigned i = 0; i < array.GetLength(); ++i)
         arrayValue.append(array[i].m_value);
 
@@ -333,7 +331,7 @@ JsonValue& JsonValue::AsArray(const Array<JsonValue>& array)
 
 JsonValue& JsonValue::AsArray(Array<JsonValue> && array)
 {
-    ::Json::Value arrayValue;
+    Aws::External::Json::Value arrayValue;
     for (unsigned i = 0; i < array.GetLength(); ++i)
         arrayValue.append(std::move(array[i].m_value));
 
@@ -406,7 +404,7 @@ Aws::Map<Aws::String, JsonValue> JsonValue::GetAllObjects() const
 {
     Aws::Map<Aws::String, JsonValue> valueMap;
 
-    for (::Json::ValueIterator iter = m_value.begin(); iter != m_value.end(); ++iter)
+    for (Aws::External::Json::ValueIterator iter = m_value.begin(); iter != m_value.end(); ++iter)
     {
         valueMap[iter.key().asString()] = *iter;
     }
@@ -431,7 +429,7 @@ Aws::String JsonValue::WriteCompact(bool treatAsObject) const
         return "{}";
     }
 
-    ::Json::FastWriter fastWriter;
+    Aws::External::Json::FastWriter fastWriter;
     return fastWriter.write(m_value);
 }
 
@@ -454,7 +452,7 @@ Aws::String JsonValue::WriteReadable(bool treatAsObject) const
         return "{\n}\n";
     }
 
-    ::Json::StyledWriter styledWriter;
+    Aws::External::Json::StyledWriter styledWriter;
     return styledWriter.write(m_value);
 }
 
@@ -465,6 +463,6 @@ void JsonValue::WriteReadable(Aws::OStream& ostream, bool treatAsObject) const
         ostream <<  "{\n}\n";
     }
 
-    ::Json::StyledStreamWriter styledStreamWriter;
+    Aws::External::Json::StyledStreamWriter styledStreamWriter;
     styledStreamWriter.write(ostream, m_value);
 }

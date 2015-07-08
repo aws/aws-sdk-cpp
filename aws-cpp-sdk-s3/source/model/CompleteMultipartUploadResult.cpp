@@ -25,13 +25,11 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompleteMultipartUploadResult::CompleteMultipartUploadResult() : 
-    m_expiration(0.0)
+CompleteMultipartUploadResult::CompleteMultipartUploadResult()
 {
 }
 
-CompleteMultipartUploadResult::CompleteMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_expiration(0.0)
+CompleteMultipartUploadResult::CompleteMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -57,7 +55,7 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
   const auto& expirationIter = headers.find("x-amz-expiration");
   if(expirationIter != headers.end())
   {
-     m_expiration = StringUtils::ConvertToDouble(expirationIter->second.c_str());
+    m_expiration = expirationIter->second;
   }
 
   const auto& serverSideEncryptionIter = headers.find("x-amz-server-side-encryption");

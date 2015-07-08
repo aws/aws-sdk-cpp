@@ -58,54 +58,54 @@ namespace Model
     inline PutScheduledUpdateGroupActionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
-     <p> The name of this scaling action. </p>
+     <p>The name of this scaling action.</p>
     */
     inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
     /*
-     <p> The name of this scaling action. </p>
+     <p>The name of this scaling action.</p>
     */
     inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
 
     /*
-     <p> The name of this scaling action. </p>
+     <p>The name of this scaling action.</p>
     */
     inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
 
     /*
-     <p> The name of this scaling action. </p>
+     <p>The name of this scaling action.</p>
     */
     inline PutScheduledUpdateGroupActionRequest&  WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
 
     /*
-     <p> The name of this scaling action. </p>
+     <p>The name of this scaling action.</p>
     */
     inline PutScheduledUpdateGroupActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
 
     /*
-     <p><code>Time</code> is deprecated.</p> <p>The time for this action to start. <code>Time</code> is an alias for <code>StartTime</code> and can be specified instead of <code>StartTime</code>, or vice versa. If both <code>Time</code> and <code>StartTime</code> are specified, their values should be identical. Otherwise, <code>PutScheduledUpdateGroupAction</code> will return an error.</p>
+     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p> <p>The time for this action to start. If both <code>Time</code> and <code>StartTime</code> are specified, their values must be identical.</p>
     */
     inline double GetTime() const{ return m_time; }
     /*
-     <p><code>Time</code> is deprecated.</p> <p>The time for this action to start. <code>Time</code> is an alias for <code>StartTime</code> and can be specified instead of <code>StartTime</code>, or vice versa. If both <code>Time</code> and <code>StartTime</code> are specified, their values should be identical. Otherwise, <code>PutScheduledUpdateGroupAction</code> will return an error.</p>
+     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p> <p>The time for this action to start. If both <code>Time</code> and <code>StartTime</code> are specified, their values must be identical.</p>
     */
     inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
 
     /*
-     <p><code>Time</code> is deprecated.</p> <p>The time for this action to start. <code>Time</code> is an alias for <code>StartTime</code> and can be specified instead of <code>StartTime</code>, or vice versa. If both <code>Time</code> and <code>StartTime</code> are specified, their values should be identical. Otherwise, <code>PutScheduledUpdateGroupAction</code> will return an error.</p>
+     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p> <p>The time for this action to start. If both <code>Time</code> and <code>StartTime</code> are specified, their values must be identical.</p>
     */
     inline PutScheduledUpdateGroupActionRequest&  WithTime(double value) { SetTime(value); return *this;}
 
     /*
-     <p>The time for this action to start, as in <code>--start-time 2010-06-01T00:00:00Z</code>.</p> <p>If you try to schedule your action in the past, Auto Scaling returns an error message. </p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try to schedule your action in the past, Auto Scaling returns an error message. </p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     */
     inline double GetStartTime() const{ return m_startTime; }
     /*
-     <p>The time for this action to start, as in <code>--start-time 2010-06-01T00:00:00Z</code>.</p> <p>If you try to schedule your action in the past, Auto Scaling returns an error message. </p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try to schedule your action in the past, Auto Scaling returns an error message. </p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
-     <p>The time for this action to start, as in <code>--start-time 2010-06-01T00:00:00Z</code>.</p> <p>If you try to schedule your action in the past, Auto Scaling returns an error message. </p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try to schedule your action in the past, Auto Scaling returns an error message. </p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     */
     inline PutScheduledUpdateGroupActionRequest&  WithStartTime(double value) { SetStartTime(value); return *this;}
 
@@ -124,40 +124,40 @@ namespace Model
     inline PutScheduledUpdateGroupActionRequest&  WithEndTime(double value) { SetEndTime(value); return *this;}
 
     /*
-     <p> The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For information about cron syntax, go to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in Wikipedia.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
     /*
-     <p> The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For information about cron syntax, go to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in Wikipedia.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /*
-     <p> The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For information about cron syntax, go to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in Wikipedia.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
     /*
-     <p> The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For information about cron syntax, go to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in Wikipedia.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline PutScheduledUpdateGroupActionRequest&  WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
     /*
-     <p> The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For information about cron syntax, go to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in Wikipedia.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
     /*
-     <p> The minimum size for the new Auto Scaling group. </p>
+     <p> The minimum size for the Auto Scaling group. </p>
     */
     inline long GetMinSize() const{ return m_minSize; }
     /*
-     <p> The minimum size for the new Auto Scaling group. </p>
+     <p> The minimum size for the Auto Scaling group. </p>
     */
     inline void SetMinSize(long value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /*
-     <p> The minimum size for the new Auto Scaling group. </p>
+     <p> The minimum size for the Auto Scaling group. </p>
     */
     inline PutScheduledUpdateGroupActionRequest&  WithMinSize(long value) { SetMinSize(value); return *this;}
 
@@ -176,16 +176,16 @@ namespace Model
     inline PutScheduledUpdateGroupActionRequest&  WithMaxSize(long value) { SetMaxSize(value); return *this;}
 
     /*
-     <p> The number of Amazon EC2 instances that should be running in the group. </p>
+     <p> The number of EC2 instances that should be running in the group. </p>
     */
     inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
     /*
-     <p> The number of Amazon EC2 instances that should be running in the group. </p>
+     <p> The number of EC2 instances that should be running in the group. </p>
     */
     inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /*
-     <p> The number of Amazon EC2 instances that should be running in the group. </p>
+     <p> The number of EC2 instances that should be running in the group. </p>
     */
     inline PutScheduledUpdateGroupActionRequest&  WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 

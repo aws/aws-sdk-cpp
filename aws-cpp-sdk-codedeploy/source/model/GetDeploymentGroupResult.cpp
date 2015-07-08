@@ -19,7 +19,7 @@
 
 #include <utility>
 
-using namespace Aws::codedeploy::Model;
+using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;

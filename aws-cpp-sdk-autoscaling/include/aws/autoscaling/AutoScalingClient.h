@@ -323,38 +323,38 @@ namespace Model
       ~AutoScalingClient();
 
      /*
-       <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach Amazon EC2 Instances to Your Existing Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::AttachInstancesOutcome AttachInstances(const Model::AttachInstancesRequest& request) const;
 
      /*
-       <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach Amazon EC2 Instances to Your Existing Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::AttachInstancesOutcomeCallable AttachInstancesCallable(const Model::AttachInstancesRequest& request) const;
 
      /*
-       <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach Amazon EC2 Instances to Your Existing Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       ${operation.documentation}
+       <p>Attaches one or more load balancers to the specified Auto Scaling group.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Attaches one or more load balancers to the specified Auto Scaling group.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Attaches one or more load balancers to the specified Auto Scaling group.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -380,76 +380,76 @@ namespace Model
      void CompleteLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
+       <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest& request) const;
 
      /*
-       <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
+       <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateAutoScalingGroupOutcomeCallable CreateAutoScalingGroupCallable(const Model::CreateAutoScalingGroupRequest& request) const;
 
      /*
-       <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
+       <p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void CreateAutoScalingGroupAsync(const Model::CreateAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
+       <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::CreateLaunchConfigurationOutcome CreateLaunchConfiguration(const Model::CreateLaunchConfigurationRequest& request) const;
 
      /*
-       <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
+       <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateLaunchConfigurationOutcomeCallable CreateLaunchConfigurationCallable(const Model::CreateLaunchConfigurationRequest& request) const;
 
      /*
-       <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating these limits, see <a>DescribeAccountLimits</a>.</p>
+       <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void CreateLaunchConfigurationAsync(const Model::CreateLaunchConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates or updates tags for the specified Auto Scaling group.</p> <note> A tag's definition is composed of a resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request Parameters for more information. </note> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add, Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Creates or updates tags for the specified Auto Scaling group.</p> <p>A tag is defined by its resource ID, resource type, key, value, and propagate flag. The value and the propagate flag are optional parameters. The only supported resource type is <code>auto-scaling-group</code>, and the resource ID must be the name of the group. The <code>PropagateAtLaunch</code> flag determines whether the tag is added to instances launched in the group. Valid values are <code>true</code> or <code>false</code>.</p> <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::CreateOrUpdateTagsOutcome CreateOrUpdateTags(const Model::CreateOrUpdateTagsRequest& request) const;
 
      /*
-       <p>Creates or updates tags for the specified Auto Scaling group.</p> <note> A tag's definition is composed of a resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request Parameters for more information. </note> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add, Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Creates or updates tags for the specified Auto Scaling group.</p> <p>A tag is defined by its resource ID, resource type, key, value, and propagate flag. The value and the propagate flag are optional parameters. The only supported resource type is <code>auto-scaling-group</code>, and the resource ID must be the name of the group. The <code>PropagateAtLaunch</code> flag determines whether the tag is added to instances launched in the group. Valid values are <code>true</code> or <code>false</code>.</p> <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::CreateOrUpdateTagsOutcomeCallable CreateOrUpdateTagsCallable(const Model::CreateOrUpdateTagsRequest& request) const;
 
      /*
-       <p>Creates or updates tags for the specified Auto Scaling group.</p> <note> A tag's definition is composed of a resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request Parameters for more information. </note> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add, Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Creates or updates tags for the specified Auto Scaling group.</p> <p>A tag is defined by its resource ID, resource type, key, value, and propagate flag. The value and the propagate flag are optional parameters. The only supported resource type is <code>auto-scaling-group</code>, and the resource ID must be the name of the group. The <code>PropagateAtLaunch</code> flag determines whether the tag is added to instances launched in the group. Valid values are <code>true</code> or <code>false</code>.</p> <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void CreateOrUpdateTagsAsync(const Model::CreateOrUpdateTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <a>DeleteAutoScalingGroup</a>, you can call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the AutoScalingGroup to zero.</p>
+       <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <code>DeleteAutoScalingGroup</code>, call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the Auto Scaling group to zero.</p>
      */
      Model::DeleteAutoScalingGroupOutcome DeleteAutoScalingGroup(const Model::DeleteAutoScalingGroupRequest& request) const;
 
      /*
-       <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <a>DeleteAutoScalingGroup</a>, you can call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the AutoScalingGroup to zero.</p>
+       <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <code>DeleteAutoScalingGroup</code>, call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the Auto Scaling group to zero.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeleteAutoScalingGroupOutcomeCallable DeleteAutoScalingGroupCallable(const Model::DeleteAutoScalingGroupRequest& request) const;
 
      /*
-       <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <a>DeleteAutoScalingGroup</a>, you can call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the AutoScalingGroup to zero.</p>
+       <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no instances and no scaling activities in progress.</p> <p>To remove all instances before calling <code>DeleteAutoScalingGroup</code>, call <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the Auto Scaling group to zero.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -570,114 +570,114 @@ namespace Model
      void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a>.</p>
+       <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
      Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
      /*
-       <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a>.</p>
+       <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
 
      /*
-       <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a>.</p>
+       <p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
+       <p>Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
      */
      Model::DescribeAdjustmentTypesOutcome DescribeAdjustmentTypes(const Model::DescribeAdjustmentTypesRequest& request) const;
 
      /*
-       <p>Lists the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
+       <p>Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeAdjustmentTypesOutcomeCallable DescribeAdjustmentTypesCallable(const Model::DescribeAdjustmentTypesRequest& request) const;
 
      /*
-       <p>Lists the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
+       <p>Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeAdjustmentTypesAsync(const Model::DescribeAdjustmentTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p>
      */
      Model::DescribeAutoScalingGroupsOutcome DescribeAutoScalingGroups(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
      /*
-       <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeAutoScalingGroupsOutcomeCallable DescribeAutoScalingGroupsCallable(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
      /*
-       <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeAutoScalingGroupsAsync(const Model::DescribeAutoScalingGroupsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p> <p>You can describe up to a maximum of 50 instances with a single call. By default, a call returns up to 20 instances. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p>
      */
      Model::DescribeAutoScalingInstancesOutcome DescribeAutoScalingInstances(const Model::DescribeAutoScalingInstancesRequest& request) const;
 
      /*
-       <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p> <p>You can describe up to a maximum of 50 instances with a single call. By default, a call returns up to 20 instances. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeAutoScalingInstancesOutcomeCallable DescribeAutoScalingInstancesCallable(const Model::DescribeAutoScalingInstancesRequest& request) const;
 
      /*
-       <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p> <p>You can describe up to a maximum of 50 instances with a single call. By default, a call returns up to 20 instances. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeAutoScalingInstancesAsync(const Model::DescribeAutoScalingInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the notification types that are supported by Auto Scaling.</p>
+       <p>Describes the notification types that are supported by Auto Scaling.</p>
      */
      Model::DescribeAutoScalingNotificationTypesOutcome DescribeAutoScalingNotificationTypes(const Model::DescribeAutoScalingNotificationTypesRequest& request) const;
 
      /*
-       <p>Lists the notification types that are supported by Auto Scaling.</p>
+       <p>Describes the notification types that are supported by Auto Scaling.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeAutoScalingNotificationTypesOutcomeCallable DescribeAutoScalingNotificationTypesCallable(const Model::DescribeAutoScalingNotificationTypesRequest& request) const;
 
      /*
-       <p>Lists the notification types that are supported by Auto Scaling.</p>
+       <p>Describes the notification types that are supported by Auto Scaling.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeAutoScalingNotificationTypesAsync(const Model::DescribeAutoScalingNotificationTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p>
      */
      Model::DescribeLaunchConfigurationsOutcome DescribeLaunchConfigurations(const Model::DescribeLaunchConfigurationsRequest& request) const;
 
      /*
-       <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeLaunchConfigurationsOutcomeCallable DescribeLaunchConfigurationsCallable(const Model::DescribeLaunchConfigurationsRequest& request) const;
 
      /*
-       <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -722,38 +722,38 @@ namespace Model
      void DescribeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       ${operation.documentation}
+       <p>Describes the load balancers for the specified Auto Scaling group.</p>
      */
      Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Describes the load balancers for the specified Auto Scaling group.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeLoadBalancersOutcomeCallable DescribeLoadBalancersCallable(const Model::DescribeLoadBalancersRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Describes the load balancers for the specified Auto Scaling group.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p> Returns a list of metrics and a corresponding list of granularities for each metric. </p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+       <p>Describes the available CloudWatch metrics for Auto Scaling.</p> <p>Note that the <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>
      */
      Model::DescribeMetricCollectionTypesOutcome DescribeMetricCollectionTypes(const Model::DescribeMetricCollectionTypesRequest& request) const;
 
      /*
-       <p> Returns a list of metrics and a corresponding list of granularities for each metric. </p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+       <p>Describes the available CloudWatch metrics for Auto Scaling.</p> <p>Note that the <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeMetricCollectionTypesOutcomeCallable DescribeMetricCollectionTypesCallable(const Model::DescribeMetricCollectionTypesRequest& request) const;
 
      /*
-       <p> Returns a list of metrics and a corresponding list of granularities for each metric. </p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+       <p>Describes the available CloudWatch metrics for Auto Scaling.</p> <p>Note that the <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -779,76 +779,76 @@ namespace Model
      void DescribeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes the policies for the specified Auto Scaling group.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes the policies for the specified Auto Scaling group.</p>
      */
      Model::DescribePoliciesOutcome DescribePolicies(const Model::DescribePoliciesRequest& request) const;
 
      /*
-       <p>Describes the policies for the specified Auto Scaling group.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes the policies for the specified Auto Scaling group.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribePoliciesOutcomeCallable DescribePoliciesCallable(const Model::DescribePoliciesRequest& request) const;
 
      /*
-       <p>Describes the policies for the specified Auto Scaling group.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes the policies for the specified Auto Scaling group.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribePoliciesAsync(const Model::DescribePoliciesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p>
      */
      Model::DescribeScalingActivitiesOutcome DescribeScalingActivities(const Model::DescribeScalingActivitiesRequest& request) const;
 
      /*
-       <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeScalingActivitiesOutcomeCallable DescribeScalingActivitiesCallable(const Model::DescribeScalingActivitiesRequest& request) const;
 
      /*
-       <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p> <p>You can specify a maximum number of items to be returned with a single call. If there are more items to return, the call returns a token. To get the next set of items, repeat the call with the returned token in the <code>NextToken</code> parameter.</p>
+       <p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeScalingActivitiesAsync(const Model::DescribeScalingActivitiesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a> actions.</p>
+       <p>Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.</p>
      */
      Model::DescribeScalingProcessTypesOutcome DescribeScalingProcessTypes(const Model::DescribeScalingProcessTypesRequest& request) const;
 
      /*
-       <p>Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a> actions.</p>
+       <p>Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeScalingProcessTypesOutcomeCallable DescribeScalingProcessTypesCallable(const Model::DescribeScalingProcessTypesRequest& request) const;
 
      /*
-       <p>Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a> actions.</p>
+       <p>Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DescribeScalingProcessTypesAsync(const Model::DescribeScalingProcessTypesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the actions scheduled for your Auto Scaling group that haven't been executed. To list the actions that were already executed, use <a>DescribeScalingActivities</a>.</p>
+       <p>Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.</p>
      */
      Model::DescribeScheduledActionsOutcome DescribeScheduledActions(const Model::DescribeScheduledActionsRequest& request) const;
 
      /*
-       <p>Lists the actions scheduled for your Auto Scaling group that haven't been executed. To list the actions that were already executed, use <a>DescribeScalingActivities</a>.</p>
+       <p>Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeScheduledActionsOutcomeCallable DescribeScheduledActionsCallable(const Model::DescribeScheduledActionsRequest& request) const;
 
      /*
-       <p>Lists the actions scheduled for your Auto Scaling group that haven't been executed. To list the actions that were already executed, use <a>DescribeScalingActivities</a>.</p>
+       <p>Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -874,19 +874,19 @@ namespace Model
      void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Lists the termination policies supported by Auto Scaling.</p>
+       <p>Describes the termination policies supported by Auto Scaling.</p>
      */
      Model::DescribeTerminationPolicyTypesOutcome DescribeTerminationPolicyTypes(const Model::DescribeTerminationPolicyTypesRequest& request) const;
 
      /*
-       <p>Lists the termination policies supported by Auto Scaling.</p>
+       <p>Describes the termination policies supported by Auto Scaling.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeTerminationPolicyTypesOutcomeCallable DescribeTerminationPolicyTypesCallable(const Model::DescribeTerminationPolicyTypesRequest& request) const;
 
      /*
-       <p>Lists the termination policies supported by Auto Scaling.</p>
+       <p>Describes the termination policies supported by Auto Scaling.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -912,19 +912,19 @@ namespace Model
      void DetachInstancesAsync(const Model::DetachInstancesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       ${operation.documentation}
+       <p>Removes one or more load balancers from the specified Auto Scaling group.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>
      */
      Model::DetachLoadBalancersOutcome DetachLoadBalancers(const Model::DetachLoadBalancersRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Removes one or more load balancers from the specified Auto Scaling group.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DetachLoadBalancersOutcomeCallable DetachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request) const;
 
      /*
-       ${operation.documentation}
+       <p>Removes one or more load balancers from the specified Auto Scaling group.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -1026,19 +1026,19 @@ namespace Model
      void ExitStandbyAsync(const Model::ExitStandbyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per region, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
      Model::PutLifecycleHookOutcome PutLifecycleHook(const Model::PutLifecycleHookRequest& request) const;
 
      /*
-       <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per region, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::PutLifecycleHookOutcomeCallable PutLifecycleHookCallable(const Model::PutLifecycleHookRequest& request) const;
 
      /*
-       <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+       <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This operation is a part of the basic sequence for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>Create a notification target. A target can be either an Amazon SQS queue or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling to publish lifecycle notifications to the designated SQS queue or SNS topic.</li> <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch or when instances terminate.</b></li> <li>If necessary, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle action.</li> </ol> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per region, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -1064,38 +1064,38 @@ namespace Model
      void PutNotificationConfigurationAsync(const Model::PutNotificationConfigurationRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p>
+       <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p> <p>If you exceed your maximum limit of step adjustments, which by default is 20 per region, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
      Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
      /*
-       <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p>
+       <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p> <p>If you exceed your maximum limit of step adjustments, which by default is 20 per region, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
 
      /*
-       <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p>
+       <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p> <p>If you exceed your maximum limit of step adjustments, which by default is 20 per region, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p> <note> <p>Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.</p> </note>
+       <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::PutScheduledUpdateGroupActionOutcome PutScheduledUpdateGroupAction(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
      /*
-       <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p> <note> <p>Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.</p> </note>
+       <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::PutScheduledUpdateGroupActionOutcomeCallable PutScheduledUpdateGroupActionCallable(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
      /*
-       <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p> <note> <p>Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.</p> </note>
+       <p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -1140,19 +1140,19 @@ namespace Model
      void ResumeProcessesAsync(const Model::ResumeProcessesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Sets the size of the specified <a>AutoScalingGroup</a>.</p>
+       <p>Sets the size of the specified Auto Scaling group.</p> <p>For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
      Model::SetDesiredCapacityOutcome SetDesiredCapacity(const Model::SetDesiredCapacityRequest& request) const;
 
      /*
-       <p>Sets the size of the specified <a>AutoScalingGroup</a>.</p>
+       <p>Sets the size of the specified Auto Scaling group.</p> <p>For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::SetDesiredCapacityOutcomeCallable SetDesiredCapacityCallable(const Model::SetDesiredCapacityRequest& request) const;
 
      /*
-       <p>Sets the size of the specified <a>AutoScalingGroup</a>.</p>
+       <p>Sets the size of the specified Auto Scaling group.</p> <p>For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -1197,38 +1197,38 @@ namespace Model
      void SuspendProcessesAsync(const Model::SuspendProcessesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <note>This call simply makes a termination request. The instances is not terminated immediately.</note>
+       <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <p>This call simply makes a termination request. The instances is not terminated immediately.</p>
      */
      Model::TerminateInstanceInAutoScalingGroupOutcome TerminateInstanceInAutoScalingGroup(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
 
      /*
-       <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <note>This call simply makes a termination request. The instances is not terminated immediately.</note>
+       <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <p>This call simply makes a termination request. The instances is not terminated immediately.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::TerminateInstanceInAutoScalingGroupOutcomeCallable TerminateInstanceInAutoScalingGroupCallable(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
 
      /*
-       <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <note>This call simply makes a termination request. The instances is not terminated immediately.</note>
+       <p>Terminates the specified instance and optionally adjusts the desired group size.</p> <p>This call simply makes a termination request. The instances is not terminated immediately.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void TerminateInstanceInAutoScalingGroupAsync(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p> Updates the configuration for the specified <a>AutoScalingGroup</a>. </p> <note> <p> To update an Auto Scaling group with a launch configuration that has the <code>InstanceMonitoring</code> flag set to <code>False</code>, you must first ensure that collection of group metrics is disabled. Otherwise, calls to <a>UpdateAutoScalingGroup</a> will fail. If you have previously enabled group metrics collection, you can disable collection of all group metrics by calling <a>DisableMetricsCollection</a>. </p> </note> <p> The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected. </p> <note> <ul> <li> <p>If a new value is specified for <i>MinSize</i> without specifying the value for <i>DesiredCapacity</i>, and if the new <i>MinSize</i> is larger than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MinSize</i>. </p> </li> <li> <p>If a new value is specified for <i>MaxSize</i> without specifying the value for <i>DesiredCapacity</i>, and the new <i>MaxSize</i> is smaller than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MaxSize</i>. </p> </li> <li> <p>All other optional parameters are left unchanged if not passed in the request.</p> </li> </ul> </note>
+       <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>
      */
      Model::UpdateAutoScalingGroupOutcome UpdateAutoScalingGroup(const Model::UpdateAutoScalingGroupRequest& request) const;
 
      /*
-       <p> Updates the configuration for the specified <a>AutoScalingGroup</a>. </p> <note> <p> To update an Auto Scaling group with a launch configuration that has the <code>InstanceMonitoring</code> flag set to <code>False</code>, you must first ensure that collection of group metrics is disabled. Otherwise, calls to <a>UpdateAutoScalingGroup</a> will fail. If you have previously enabled group metrics collection, you can disable collection of all group metrics by calling <a>DisableMetricsCollection</a>. </p> </note> <p> The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected. </p> <note> <ul> <li> <p>If a new value is specified for <i>MinSize</i> without specifying the value for <i>DesiredCapacity</i>, and if the new <i>MinSize</i> is larger than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MinSize</i>. </p> </li> <li> <p>If a new value is specified for <i>MaxSize</i> without specifying the value for <i>DesiredCapacity</i>, and the new <i>MaxSize</i> is smaller than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MaxSize</i>. </p> </li> <li> <p>All other optional parameters are left unchanged if not passed in the request.</p> </li> </ul> </note>
+       <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::UpdateAutoScalingGroupOutcomeCallable UpdateAutoScalingGroupCallable(const Model::UpdateAutoScalingGroupRequest& request) const;
 
      /*
-       <p> Updates the configuration for the specified <a>AutoScalingGroup</a>. </p> <note> <p> To update an Auto Scaling group with a launch configuration that has the <code>InstanceMonitoring</code> flag set to <code>False</code>, you must first ensure that collection of group metrics is disabled. Otherwise, calls to <a>UpdateAutoScalingGroup</a> will fail. If you have previously enabled group metrics collection, you can disable collection of all group metrics by calling <a>DisableMetricsCollection</a>. </p> </note> <p> The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected. </p> <note> <ul> <li> <p>If a new value is specified for <i>MinSize</i> without specifying the value for <i>DesiredCapacity</i>, and if the new <i>MinSize</i> is larger than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MinSize</i>. </p> </li> <li> <p>If a new value is specified for <i>MaxSize</i> without specifying the value for <i>DesiredCapacity</i>, and the new <i>MaxSize</i> is smaller than the current size of the Auto Scaling group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the new <i>MaxSize</i>. </p> </li> <li> <p>All other optional parameters are left unchanged if not passed in the request.</p> </li> </ul> </note>
+       <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */

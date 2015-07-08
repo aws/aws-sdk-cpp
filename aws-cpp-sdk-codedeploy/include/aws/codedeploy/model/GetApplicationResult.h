@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/ApplicationInfo.h>
 
 namespace Aws
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a get application operation.</p>
   */
   class AWS_CODEDEPLOY_API GetApplicationResult
   {
@@ -42,12 +42,18 @@ namespace Model
     GetApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>Information about the application.</p>
+    */
     inline const ApplicationInfo& GetApplication() const{ return m_application; }
-    
+    /*
+     <p>Information about the application.</p>
+    */
     inline void SetApplication(const ApplicationInfo& value) { m_application = value; }
 
-    
+    /*
+     <p>Information about the application.</p>
+    */
     inline GetApplicationResult&  WithApplication(const ApplicationInfo& value) { SetApplication(value); return *this;}
 
   private:
@@ -55,5 +61,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

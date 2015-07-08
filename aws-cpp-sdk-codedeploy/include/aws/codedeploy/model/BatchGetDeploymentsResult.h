@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/DeploymentInfo.h>
 
@@ -29,12 +29,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a batch get deployments operation.</p>
   */
   class AWS_CODEDEPLOY_API BatchGetDeploymentsResult
   {
@@ -43,15 +43,23 @@ namespace Model
     BatchGetDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     BatchGetDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>Information about the deployments.</p>
+    */
     inline const Aws::Vector<DeploymentInfo>& GetDeploymentsInfo() const{ return m_deploymentsInfo; }
-    
+    /*
+     <p>Information about the deployments.</p>
+    */
     inline void SetDeploymentsInfo(const Aws::Vector<DeploymentInfo>& value) { m_deploymentsInfo = value; }
 
-    
+    /*
+     <p>Information about the deployments.</p>
+    */
     inline BatchGetDeploymentsResult&  WithDeploymentsInfo(const Aws::Vector<DeploymentInfo>& value) { SetDeploymentsInfo(value); return *this;}
 
-    
+    /*
+     <p>Information about the deployments.</p>
+    */
     inline BatchGetDeploymentsResult& AddDeploymentsInfo(const DeploymentInfo& value) { m_deploymentsInfo.push_back(value); return *this; }
 
   private:
@@ -59,5 +67,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

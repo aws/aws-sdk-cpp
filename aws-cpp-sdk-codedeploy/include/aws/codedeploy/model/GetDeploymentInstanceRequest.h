@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a get deployment instance operation.</p>
   */
-  class AWS_CODEDEPLOY_API GetDeploymentInstanceRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API GetDeploymentInstanceRequest : public CodeDeployRequest
   {
   public:
     GetDeploymentInstanceRequest();
@@ -35,32 +36,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline GetDeploymentInstanceRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline GetDeploymentInstanceRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
-    
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
     inline GetDeploymentInstanceRequest&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    
+    /*
+     <p>The unique ID of an instance in the deployment's deployment group.</p>
+    */
     inline GetDeploymentInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
@@ -71,5 +92,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

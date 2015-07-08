@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -22,11 +22,11 @@ namespace Aws
 
 enum class Region;
 
-namespace codedeploy
+namespace CodeDeploy
 {
-namespace codedeployEndpoint
+namespace CodeDeployEndpoint
 {
 AWS_CODEDEPLOY_API Aws::String ForRegion(Region region);
-} // namespace codedeployEndpoint
-} // namespace codedeploy
+} // namespace CodeDeployEndpoint
+} // namespace CodeDeploy
 } // namespace Aws

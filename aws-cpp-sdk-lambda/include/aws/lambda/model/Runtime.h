@@ -24,7 +24,8 @@ namespace Model
 {
   enum class Runtime
   {
-    nodejs
+    nodejs,
+    java8
   };
 
 namespace RuntimeMapper

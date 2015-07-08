@@ -16,7 +16,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <aws/core/utils/StringUtils.h>
-#include <aws/external/tinyxml2.h>
+#include <aws/core/external/tinyxml2/tinyxml2.h>
 
 #include <utility>
 #include <algorithm>
@@ -123,8 +123,8 @@ Aws::String XmlNode::GetText() const
 {
     if (m_node != nullptr)
     {
-        tinyxml2::XMLPrinter printer;
-        tinyxml2::XMLNode* node = m_node->FirstChild();
+        Aws::External::tinyxml2::XMLPrinter printer;
+        Aws::External::tinyxml2::XMLNode* node = m_node->FirstChild();
         while (node != nullptr)
         {
             node->Accept(&printer);
@@ -141,20 +141,20 @@ void XmlNode::SetText(const Aws::String& textValue)
 {
     if (m_node != nullptr)
     {
-        tinyxml2::XMLText* text = m_doc->m_doc->NewText(textValue.c_str());
+        Aws::External::tinyxml2::XMLText* text = m_doc->m_doc->NewText(textValue.c_str());
         m_node->InsertEndChild(text);
     }
 }
 
 XmlNode XmlNode::CreateChildElement(const Aws::String& name)
 {
-    tinyxml2::XMLElement* element = m_doc->m_doc->NewElement(name.c_str());
+    Aws::External::tinyxml2::XMLElement* element = m_doc->m_doc->NewElement(name.c_str());
     return XmlNode(m_node->InsertEndChild(element), *m_doc);
 }
 
 XmlNode XmlNode::CreateSiblingElement(const Aws::String& name)
 {
-    tinyxml2::XMLElement* element = m_doc->m_doc->NewElement(name.c_str());
+    Aws::External::tinyxml2::XMLElement* element = m_doc->m_doc->NewElement(name.c_str());
     return XmlNode(m_node->Parent()->InsertEndChild(element), *m_doc);
 }
 
@@ -167,7 +167,7 @@ static const char* allocationTag = "XmlDocument";
 
 XmlDocument::XmlDocument()
 {
-    m_doc = Aws::New<tinyxml2::XMLDocument>(allocationTag, true, tinyxml2::Whitespace::PRESERVE_WHITESPACE);
+    m_doc = Aws::New<Aws::External::tinyxml2::XMLDocument>(allocationTag, true, Aws::External::tinyxml2::Whitespace::PRESERVE_WHITESPACE);
 }
 
 XmlDocument::XmlDocument(XmlDocument&& doc) : m_doc{ std::move(doc.m_doc) } // take the innards
@@ -197,7 +197,7 @@ Aws::String XmlDocument::GetErrorMessage() const
 
 Aws::String XmlDocument::ConvertToString() const
 {
-    tinyxml2::XMLPrinter printer;
+    Aws::External::tinyxml2::XMLPrinter printer;
     printer.PushHeader(false, true);
     m_doc->Accept(&printer);
 
@@ -220,7 +220,7 @@ XmlDocument XmlDocument::CreateFromXmlString(const Aws::String& xmlText)
 XmlDocument XmlDocument::CreateWithRootNode(const Aws::String& rootNodeName)
 {
     XmlDocument xmlDocument;
-    tinyxml2::XMLElement* rootNode = xmlDocument.m_doc->NewElement(rootNodeName.c_str());
+    Aws::External::tinyxml2::XMLElement* rootNode = xmlDocument.m_doc->NewElement(rootNodeName.c_str());
     xmlDocument.m_doc->LinkEndChild(rootNode);
 
     return std::move(xmlDocument);

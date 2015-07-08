@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/RevisionLocationType.h>
 #include <aws/codedeploy/model/S3Location.h>
 #include <aws/codedeploy/model/GitHubLocation.h>
@@ -27,12 +27,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Information about an application revision's location.</p>
   */
   class AWS_CODEDEPLOY_API RevisionLocation
   {
@@ -42,12 +42,18 @@ namespace Model
     RevisionLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
+    */
     inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
-    
+    /*
+     <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
+    */
     inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
-    
+    /*
+     <p>The application revision's type:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>
+    */
     inline RevisionLocation&  WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
 
     
@@ -76,5 +82,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

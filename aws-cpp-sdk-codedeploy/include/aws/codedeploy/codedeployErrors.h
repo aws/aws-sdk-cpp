@@ -15,13 +15,13 @@
 #pragma once
 
 #include <aws/core/client/CoreErrors.h>
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
-enum class AWS_CODEDEPLOY_API codedeployErrors
+enum class AWS_CODEDEPLOY_API CodeDeployErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -106,10 +106,10 @@ enum class AWS_CODEDEPLOY_API codedeployErrors
   TAG_LIMIT_EXCEEDED,
   TAG_REQUIRED
 };
-namespace codedeployErrorMapper
+namespace CodeDeployErrorMapper
 {
   AWS_CODEDEPLOY_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

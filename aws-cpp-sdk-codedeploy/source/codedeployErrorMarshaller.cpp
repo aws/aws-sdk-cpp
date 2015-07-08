@@ -13,15 +13,15 @@
 * permissions and limitations under the License.
 */
 #include <aws/core/client/AWSError.h>
-#include <aws/codedeploy/codedeployErrorMarshaller.h>
-#include <aws/codedeploy/codedeployErrors.h>
+#include <aws/codedeploy/CodeDeployErrorMarshaller.h>
+#include <aws/codedeploy/CodeDeployErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::codedeploy;
+using namespace Aws::CodeDeploy;
 
-AWSError<CoreErrors> codedeployErrorMarshaller::FindErrorByName(const char* errorName) const
+AWSError<CoreErrors> CodeDeployErrorMarshaller::FindErrorByName(const char* errorName) const
 {
-  AWSError<CoreErrors> error = codedeployErrorMapper::GetErrorForName(errorName);
+  AWSError<CoreErrors> error = CodeDeployErrorMapper::GetErrorForName(errorName);
   if(error.GetErrorType() != CoreErrors::UNKNOWN)
   {
     return error;

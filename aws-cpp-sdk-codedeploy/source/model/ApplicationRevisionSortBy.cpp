@@ -23,7 +23,7 @@ static const int lastUsedTime_HASH = HashingUtils::HashString("lastUsedTime");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -66,5 +66,5 @@ Aws::String GetNameForApplicationRevisionSortBy(ApplicationRevisionSortBy value)
 
 } // namespace ApplicationRevisionSortByMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

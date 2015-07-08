@@ -13,19 +13,19 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
-  class AWS_CODEDEPLOY_API codedeployRequest : public AmazonSerializableWebServiceRequest
+  class AWS_CODEDEPLOY_API CodeDeployRequest : public AmazonSerializableWebServiceRequest
   {
   public:
-    virtual ~codedeployRequest () {}
+    virtual ~CodeDeployRequest () {}
     virtual Aws::String SerializePayload() const override = 0;
 
     void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }
@@ -43,5 +43,5 @@ namespace codedeploy
   };
 
 
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/TaskDefinitionStatus.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 
@@ -111,16 +112,16 @@ namespace Model
     inline TaskDefinition& WithFamily(const char* value) { SetFamily(value); return *this;}
 
     /*
-     <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a task definition in the same family, the revision value increases by one.</p>
+     <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a new revision of a task definition in the same family, the revision value always increases by one (even if you have deregistered previous revisions in this family).</p>
     */
     inline long GetRevision() const{ return m_revision; }
     /*
-     <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a task definition in the same family, the revision value increases by one.</p>
+     <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a new revision of a task definition in the same family, the revision value always increases by one (even if you have deregistered previous revisions in this family).</p>
     */
     inline void SetRevision(long value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /*
-     <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a task definition in the same family, the revision value increases by one.</p>
+     <p>The revision of the task in a particular family. You can think of the revision as a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>, and each time you register a new revision of a task definition in the same family, the revision value always increases by one (even if you have deregistered previous revisions in this family).</p>
     */
     inline TaskDefinition&  WithRevision(long value) { SetRevision(value); return *this;}
 
@@ -143,6 +144,20 @@ namespace Model
     */
     inline TaskDefinition& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
+    /*
+     <p>The status of the task definition.</p>
+    */
+    inline const TaskDefinitionStatus& GetStatus() const{ return m_status; }
+    /*
+     <p>The status of the task definition.</p>
+    */
+    inline void SetStatus(const TaskDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The status of the task definition.</p>
+    */
+    inline TaskDefinition&  WithStatus(const TaskDefinitionStatus& value) { SetStatus(value); return *this;}
+
   private:
     Aws::String m_taskDefinitionArn;
     bool m_taskDefinitionArnHasBeenSet;
@@ -154,6 +169,8 @@ namespace Model
     bool m_revisionHasBeenSet;
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
+    TaskDefinitionStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

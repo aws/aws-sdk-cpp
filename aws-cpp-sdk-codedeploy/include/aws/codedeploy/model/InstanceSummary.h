@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/InstanceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Information about an instance in a deployment.</p>
   */
   class AWS_CODEDEPLOY_API InstanceSummary
   {
@@ -43,59 +43,99 @@ namespace Model
     InstanceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The deployment ID.</p>
+    */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    
+    /*
+     <p>The deployment ID.</p>
+    */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    
+    /*
+     <p>The deployment ID.</p>
+    */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    
+    /*
+     <p>The deployment ID.</p>
+    */
     inline InstanceSummary&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    
+    /*
+     <p>The deployment ID.</p>
+    */
     inline InstanceSummary& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
-    
+    /*
+     <p>The instance ID.</p>
+    */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    
+    /*
+     <p>The instance ID.</p>
+    */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
-    
+    /*
+     <p>The instance ID.</p>
+    */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
-    
+    /*
+     <p>The instance ID.</p>
+    */
     inline InstanceSummary&  WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    
+    /*
+     <p>The instance ID.</p>
+    */
     inline InstanceSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    
+    /*
+     <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
+    */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
-    
+    /*
+     <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
+    */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /*
+     <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress: The deployment is in progress for this instance.</li> <li>Succeeded: The deployment has succeeded for this instance.</li> <li>Failed: The deployment has failed for this instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li> <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
+    */
     inline InstanceSummary&  WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
 
-    
+    /*
+     <p>A timestamp indicating when the instance information was last updated.</p>
+    */
     inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    
+    /*
+     <p>A timestamp indicating when the instance information was last updated.</p>
+    */
     inline void SetLastUpdatedAt(double value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
-    
+    /*
+     <p>A timestamp indicating when the instance information was last updated.</p>
+    */
     inline InstanceSummary&  WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
 
-    
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
     inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
-    
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
     inline void SetLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = value; }
 
-    
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
     inline InstanceSummary&  WithLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { SetLifecycleEvents(value); return *this;}
 
-    
+    /*
+     <p>A list of lifecycle events for this instance.</p>
+    */
     inline InstanceSummary& AddLifecycleEvents(const LifecycleEvent& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
 
   private:
@@ -112,5 +152,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

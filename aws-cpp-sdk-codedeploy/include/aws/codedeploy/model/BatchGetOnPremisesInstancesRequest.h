@@ -13,21 +13,22 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a batch get on-premises instances operation.</p>
   */
-  class AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesRequest : public CodeDeployRequest
   {
   public:
     BatchGetOnPremisesInstancesRequest();
@@ -36,18 +37,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The names of the on-premises instances to get information about.</p>
+    */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
-    
+    /*
+     <p>The names of the on-premises instances to get information about.</p>
+    */
     inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
-    
+    /*
+     <p>The names of the on-premises instances to get information about.</p>
+    */
     inline BatchGetOnPremisesInstancesRequest&  WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
 
-    
+    /*
+     <p>The names of the on-premises instances to get information about.</p>
+    */
     inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
-    
+    /*
+     <p>The names of the on-premises instances to get information about.</p>
+    */
     inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
   private:
@@ -56,5 +67,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

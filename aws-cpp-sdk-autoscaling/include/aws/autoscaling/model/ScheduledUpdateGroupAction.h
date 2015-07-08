@@ -116,16 +116,16 @@ namespace Model
     inline ScheduledUpdateGroupAction& WithScheduledActionARN(const char* value) { SetScheduledActionARN(value); return *this;}
 
     /*
-     <p><code>Time</code> is deprecated.</p> <p>The time that the action is scheduled to begin. <code>Time</code> is an alias for <code>StartTime</code>.</p>
+     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline double GetTime() const{ return m_time; }
     /*
-     <p><code>Time</code> is deprecated.</p> <p>The time that the action is scheduled to begin. <code>Time</code> is an alias for <code>StartTime</code>.</p>
+     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
 
     /*
-     <p><code>Time</code> is deprecated.</p> <p>The time that the action is scheduled to begin. <code>Time</code> is an alias for <code>StartTime</code>.</p>
+     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline ScheduledUpdateGroupAction&  WithTime(double value) { SetTime(value); return *this;}
 
@@ -158,26 +158,26 @@ namespace Model
     inline ScheduledUpdateGroupAction&  WithEndTime(double value) { SetEndTime(value); return *this;}
 
     /*
-     <p>The regular schedule that an action occurs.</p>
+     <p>The recurring schedule for the action.</p>
     */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
     /*
-     <p>The regular schedule that an action occurs.</p>
+     <p>The recurring schedule for the action.</p>
     */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /*
-     <p>The regular schedule that an action occurs.</p>
+     <p>The recurring schedule for the action.</p>
     */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
     /*
-     <p>The regular schedule that an action occurs.</p>
+     <p>The recurring schedule for the action.</p>
     */
     inline ScheduledUpdateGroupAction&  WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
     /*
-     <p>The regular schedule that an action occurs.</p>
+     <p>The recurring schedule for the action.</p>
     */
     inline ScheduledUpdateGroupAction& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 

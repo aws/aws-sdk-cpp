@@ -23,6 +23,8 @@ using namespace Aws::Utils;
 
 ListTaskDefinitionsRequest::ListTaskDefinitionsRequest() : 
     m_familyPrefixHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -37,6 +39,16 @@ Aws::String ListTaskDefinitionsRequest::SerializePayload() const
   {
    payload.WithString("familyPrefix", m_familyPrefix);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TaskDefinitionStatusMapper::GetNameForTaskDefinitionStatus(m_status));
+  }
+
+  if(m_sortHasBeenSet)
+  {
+   payload.WithString("sort", SortOrderMapper::GetNameForSortOrder(m_sort));
   }
 
   if(m_nextTokenHasBeenSet)

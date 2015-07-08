@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/InstanceSummary.h>
 
 namespace Aws
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a get deployment instance operation.</p>
   */
   class AWS_CODEDEPLOY_API GetDeploymentInstanceResult
   {
@@ -42,12 +42,18 @@ namespace Model
     GetDeploymentInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>Information about the instance.</p>
+    */
     inline const InstanceSummary& GetInstanceSummary() const{ return m_instanceSummary; }
-    
+    /*
+     <p>Information about the instance.</p>
+    */
     inline void SetInstanceSummary(const InstanceSummary& value) { m_instanceSummary = value; }
 
-    
+    /*
+     <p>Information about the instance.</p>
+    */
     inline GetDeploymentInstanceResult&  WithInstanceSummary(const InstanceSummary& value) { SetInstanceSummary(value); return *this;}
 
   private:
@@ -55,5 +61,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

@@ -22,7 +22,7 @@ static const int FLEET_PERCENT_HASH = HashingUtils::HashString("FLEET_PERCENT");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -59,5 +59,5 @@ Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType value)
 
 } // namespace MinimumHealthyHostsTypeMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

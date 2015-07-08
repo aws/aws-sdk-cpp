@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a list deployment groups operation.</p>
   */
-  class AWS_CODEDEPLOY_API ListDeploymentGroupsRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API ListDeploymentGroupsRequest : public CodeDeployRequest
   {
   public:
     ListDeploymentGroupsRequest();
@@ -35,32 +36,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline ListDeploymentGroupsRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline ListDeploymentGroupsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
     inline ListDeploymentGroupsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployment groups call, which can be used to return the next set of deployment groups in the list.</p>
+    */
     inline ListDeploymentGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
@@ -71,5 +92,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

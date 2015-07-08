@@ -92,12 +92,18 @@ namespace Model
     */
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
-    
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
     inline const VersionInfo& GetVersionInfo() const{ return m_versionInfo; }
-    
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
     inline void SetVersionInfo(const VersionInfo& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
 
-    
+    /*
+     <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+    */
     inline ContainerInstance&  WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
 
     /*

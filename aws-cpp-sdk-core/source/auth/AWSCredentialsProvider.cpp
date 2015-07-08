@@ -245,7 +245,7 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
         Aws::String line;
         while (std::getline(profileFile, line))
         {
-            Aws::String trimmedLine = StringUtils::Trim(line.c_str());
+            Aws::String trimmedLine(StringUtils::Trim(line.c_str()));
 
             if (trimmedLine.empty() || trimmedLine.front() == '#')
                 continue;
@@ -257,12 +257,15 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
             }
 
             Aws::Vector<Aws::String> propertyPair = StringUtils::Split(trimmedLine, '=');
+
             if (propertyPair.size() == 2)
             {
-                AWS_LOG_TRACE(profileLogTag, "Found property %s for profile %s", propertyPair[0].c_str(), profile.c_str());
-                if (propertyPair[0] == AWS_ACCESS_KEY_ID || propertyPair[0] == AWS_SECRET_ACCESS_KEY || propertyPair[0] == AWS_SESSION_TOKEN ||
-                    propertyPair[0] == AWS_ACCOUNT_ID)
-                    propertyValueMap[profile + ":" + StringUtils::Trim(propertyPair[0].c_str())] = StringUtils::Trim(propertyPair[1].c_str());
+                Aws::String key(StringUtils::Trim(propertyPair[0].c_str()));
+                Aws::String value(StringUtils::Trim(propertyPair[1].c_str()));
+
+                AWS_LOGSTREAM_TRACE(profileLogTag, "Found property " << key << "for profile " << profile);
+                if (key == AWS_ACCESS_KEY_ID || key == AWS_SECRET_ACCESS_KEY || key == AWS_SESSION_TOKEN || key == AWS_ACCOUNT_ID)
+                    propertyValueMap[profile + ":" + key] = value;
             }
         }
     }

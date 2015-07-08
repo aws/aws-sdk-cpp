@@ -36,21 +36,21 @@ namespace Model
 
 
     /*
-     <p>The value of the filter type used to identify the tags to be returned. For example, you can filter so that tags are returned according to Auto Scaling group, the key and value, or whether the new tag will be applied to instances launched after the tag is created (PropagateAtLaunch).</p>
+     <p>A filter used to scope the tags to return.</p>
     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     /*
-     <p>The value of the filter type used to identify the tags to be returned. For example, you can filter so that tags are returned according to Auto Scaling group, the key and value, or whether the new tag will be applied to instances launched after the tag is created (PropagateAtLaunch).</p>
+     <p>A filter used to scope the tags to return.</p>
     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /*
-     <p>The value of the filter type used to identify the tags to be returned. For example, you can filter so that tags are returned according to Auto Scaling group, the key and value, or whether the new tag will be applied to instances launched after the tag is created (PropagateAtLaunch).</p>
+     <p>A filter used to scope the tags to return.</p>
     */
     inline DescribeTagsRequest&  WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /*
-     <p>The value of the filter type used to identify the tags to be returned. For example, you can filter so that tags are returned according to Auto Scaling group, the key and value, or whether the new tag will be applied to instances launched after the tag is created (PropagateAtLaunch).</p>
+     <p>A filter used to scope the tags to return.</p>
     */
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

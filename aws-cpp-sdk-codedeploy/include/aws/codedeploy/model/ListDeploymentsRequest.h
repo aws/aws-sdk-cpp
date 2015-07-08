@@ -13,8 +13,8 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/TimeRange.h>
@@ -22,14 +22,15 @@
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a list deployments operation.</p>
   */
-  class AWS_CODEDEPLOY_API ListDeploymentsRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API ListDeploymentsRequest : public CodeDeployRequest
   {
   public:
     ListDeploymentsRequest();
@@ -38,65 +39,109 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline ListDeploymentsRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline ListDeploymentsRequest&  WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
-    
+    /*
+     <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in the resulting list created deployments.</li> <li>Queued: Include in the resulting list queued deployments.</li> <li>In Progress: Include in the resulting list in-progress deployments.</li> <li>Succeeded: Include in the resulting list succeeded deployments.</li> <li>Failed: Include in the resulting list failed deployments.</li> <li>Aborted: Include in the resulting list aborted deployments.</li> </ul>
+    */
     inline const Aws::Vector<DeploymentStatus>& GetIncludeOnlyStatuses() const{ return m_includeOnlyStatuses; }
-    
+    /*
+     <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in the resulting list created deployments.</li> <li>Queued: Include in the resulting list queued deployments.</li> <li>In Progress: Include in the resulting list in-progress deployments.</li> <li>Succeeded: Include in the resulting list succeeded deployments.</li> <li>Failed: Include in the resulting list failed deployments.</li> <li>Aborted: Include in the resulting list aborted deployments.</li> </ul>
+    */
     inline void SetIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
 
-    
+    /*
+     <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in the resulting list created deployments.</li> <li>Queued: Include in the resulting list queued deployments.</li> <li>In Progress: Include in the resulting list in-progress deployments.</li> <li>Succeeded: Include in the resulting list succeeded deployments.</li> <li>Failed: Include in the resulting list failed deployments.</li> <li>Aborted: Include in the resulting list aborted deployments.</li> </ul>
+    */
     inline ListDeploymentsRequest&  WithIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { SetIncludeOnlyStatuses(value); return *this;}
 
-    
+    /*
+     <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in the resulting list created deployments.</li> <li>Queued: Include in the resulting list queued deployments.</li> <li>In Progress: Include in the resulting list in-progress deployments.</li> <li>Succeeded: Include in the resulting list succeeded deployments.</li> <li>Failed: Include in the resulting list failed deployments.</li> <li>Aborted: Include in the resulting list aborted deployments.</li> </ul>
+    */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(const DeploymentStatus& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
 
-    
+    /*
+     <p>A deployment creation start- and end-time range for returning a subset of the list of deployments.</p>
+    */
     inline const TimeRange& GetCreateTimeRange() const{ return m_createTimeRange; }
-    
+    /*
+     <p>A deployment creation start- and end-time range for returning a subset of the list of deployments.</p>
+    */
     inline void SetCreateTimeRange(const TimeRange& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = value; }
 
-    
+    /*
+     <p>A deployment creation start- and end-time range for returning a subset of the list of deployments.</p>
+    */
     inline ListDeploymentsRequest&  WithCreateTimeRange(const TimeRange& value) { SetCreateTimeRange(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployments call, which can be used to return the next set of deployments in the list.</p>
+    */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    
+    /*
+     <p>An identifier that was returned from the previous list deployments call, which can be used to return the next set of deployments in the list.</p>
+    */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployments call, which can be used to return the next set of deployments in the list.</p>
+    */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployments call, which can be used to return the next set of deployments in the list.</p>
+    */
     inline ListDeploymentsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list deployments call, which can be used to return the next set of deployments in the list.</p>
+    */
     inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
@@ -113,5 +158,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

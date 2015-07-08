@@ -26,7 +26,7 @@ static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -87,5 +87,5 @@ Aws::String GetNameForInstanceStatus(InstanceStatus value)
 
 } // namespace InstanceStatusMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

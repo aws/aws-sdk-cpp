@@ -149,16 +149,16 @@ namespace Model
     inline AutoScalingGroup&  WithMaxSize(long value) { SetMaxSize(value); return *this;}
 
     /*
-     <p>The size of the group.</p>
+     <p>The desired size of the group.</p>
     */
     inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
     /*
-     <p>The size of the group.</p>
+     <p>The desired size of the group.</p>
     */
     inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /*
-     <p>The size of the group.</p>
+     <p>The desired size of the group.</p>
     */
     inline AutoScalingGroup&  WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 
@@ -363,88 +363,88 @@ namespace Model
     inline AutoScalingGroup& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
 
     /*
-     <p>The metrics enabled for this Auto Scaling group.</p>
+     <p>The metrics enabled for the group.</p>
     */
     inline const Aws::Vector<EnabledMetric>& GetEnabledMetrics() const{ return m_enabledMetrics; }
     /*
-     <p>The metrics enabled for this Auto Scaling group.</p>
+     <p>The metrics enabled for the group.</p>
     */
     inline void SetEnabledMetrics(const Aws::Vector<EnabledMetric>& value) { m_enabledMetricsHasBeenSet = true; m_enabledMetrics = value; }
 
     /*
-     <p>The metrics enabled for this Auto Scaling group.</p>
+     <p>The metrics enabled for the group.</p>
     */
     inline AutoScalingGroup&  WithEnabledMetrics(const Aws::Vector<EnabledMetric>& value) { SetEnabledMetrics(value); return *this;}
 
     /*
-     <p>The metrics enabled for this Auto Scaling group.</p>
+     <p>The metrics enabled for the group.</p>
     */
     inline AutoScalingGroup& AddEnabledMetrics(const EnabledMetric& value) { m_enabledMetricsHasBeenSet = true; m_enabledMetrics.push_back(value); return *this; }
 
     /*
-     <p>The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.</p>
+     <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.</p>
     */
     inline const Aws::String& GetStatus() const{ return m_status; }
     /*
-     <p>The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.</p>
+     <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.</p>
     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /*
-     <p>The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.</p>
+     <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.</p>
     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /*
-     <p>The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.</p>
+     <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.</p>
     */
     inline AutoScalingGroup&  WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /*
-     <p>The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.</p>
+     <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.</p>
     */
     inline AutoScalingGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /*
-     <p>The tags for the Auto Scaling group.</p>
+     <p>The tags for the group.</p>
     */
     inline const Aws::Vector<TagDescription>& GetTags() const{ return m_tags; }
     /*
-     <p>The tags for the Auto Scaling group.</p>
+     <p>The tags for the group.</p>
     */
     inline void SetTags(const Aws::Vector<TagDescription>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /*
-     <p>The tags for the Auto Scaling group.</p>
+     <p>The tags for the group.</p>
     */
     inline AutoScalingGroup&  WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
 
     /*
-     <p>The tags for the Auto Scaling group.</p>
+     <p>The tags for the group.</p>
     */
     inline AutoScalingGroup& AddTags(const TagDescription& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /*
-     <p>The termination policies for this Auto Scaling group.</p>
+     <p>The termination policies for the group.</p>
     */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
     /*
-     <p>The termination policies for this Auto Scaling group.</p>
+     <p>The termination policies for the group.</p>
     */
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
     /*
-     <p>The termination policies for this Auto Scaling group.</p>
+     <p>The termination policies for the group.</p>
     */
     inline AutoScalingGroup&  WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
     /*
-     <p>The termination policies for this Auto Scaling group.</p>
+     <p>The termination policies for the group.</p>
     */
     inline AutoScalingGroup& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
     /*
-     <p>The termination policies for this Auto Scaling group.</p>
+     <p>The termination policies for the group.</p>
     */
     inline AutoScalingGroup& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 

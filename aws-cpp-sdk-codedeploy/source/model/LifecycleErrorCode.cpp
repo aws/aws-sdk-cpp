@@ -26,7 +26,7 @@ static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -87,5 +87,5 @@ Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode value)
 
 } // namespace LifecycleErrorCodeMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

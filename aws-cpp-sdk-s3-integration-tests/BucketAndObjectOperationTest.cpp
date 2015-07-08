@@ -358,9 +358,9 @@ TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
     getObjectRequest.SetBucket(fullBucketName);
     getObjectRequest.SetKey(TEST_OBJ_KEY);
 
-    GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+    GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);    
     ASSERT_TRUE(getObjectOutcome.IsSuccess());
-    ss.str("");
+    ss.str("");    
     ss << getObjectOutcome.GetResult().GetBody().rdbuf();
     ASSERT_EQ("Test Object", ss.str());
 

@@ -143,26 +143,26 @@ namespace Model
     inline Stack& WithRegion(const char* value) { SetRegion(value); return *this;}
 
     /*
-     <p>The VPC ID, if the stack is running in a VPC.</p>
+     <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
     /*
-     <p>The VPC ID, if the stack is running in a VPC.</p>
+     <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /*
-     <p>The VPC ID, if the stack is running in a VPC.</p>
+     <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /*
-     <p>The VPC ID, if the stack is running in a VPC.</p>
+     <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     */
     inline Stack&  WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /*
-     <p>The VPC ID, if the stack is running in a VPC.</p>
+     <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     */
     inline Stack& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -311,50 +311,50 @@ namespace Model
     inline Stack& WithDefaultAvailabilityZone(const char* value) { SetDefaultAvailabilityZone(value); return *this;}
 
     /*
-     <p>The default subnet ID, if the stack is running in a VPC.</p>
+     <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline const Aws::String& GetDefaultSubnetId() const{ return m_defaultSubnetId; }
     /*
-     <p>The default subnet ID, if the stack is running in a VPC.</p>
+     <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetDefaultSubnetId(const Aws::String& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = value; }
 
     /*
-     <p>The default subnet ID, if the stack is running in a VPC.</p>
+     <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetDefaultSubnetId(const char* value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId.assign(value); }
 
     /*
-     <p>The default subnet ID, if the stack is running in a VPC.</p>
+     <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline Stack&  WithDefaultSubnetId(const Aws::String& value) { SetDefaultSubnetId(value); return *this;}
 
     /*
-     <p>The default subnet ID, if the stack is running in a VPC.</p>
+     <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline Stack& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
 
     /*
-     <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
     /*
-     <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
     /*
-     <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     */
     inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
 
     /*
-     <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     */
     inline Stack&  WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
 
     /*
-     <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     */
     inline Stack& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
@@ -447,26 +447,26 @@ namespace Model
     inline Stack& WithDefaultSshKeyName(const char* value) { SetDefaultSshKeyName(value); return *this;}
 
     /*
-     <p>Date when the stack was created.</p>
+     <p>The date when the stack was created.</p>
     */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
     /*
-     <p>Date when the stack was created.</p>
+     <p>The date when the stack was created.</p>
     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /*
-     <p>Date when the stack was created.</p>
+     <p>The date when the stack was created.</p>
     */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /*
-     <p>Date when the stack was created.</p>
+     <p>The date when the stack was created.</p>
     */
     inline Stack&  WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /*
-     <p>Date when the stack was created.</p>
+     <p>The date when the stack was created.</p>
     */
     inline Stack& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
@@ -484,18 +484,28 @@ namespace Model
     */
     inline Stack&  WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-    
+    /*
+     <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    */
     inline Stack&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    */
     inline Stack& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
   private:

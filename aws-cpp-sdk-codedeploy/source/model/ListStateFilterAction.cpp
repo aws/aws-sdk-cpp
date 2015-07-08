@@ -23,7 +23,7 @@ static const int ignore_HASH = HashingUtils::HashString("ignore");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -66,5 +66,5 @@ Aws::String GetNameForListStateFilterAction(ListStateFilterAction value)
 
 } // namespace ListStateFilterActionMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

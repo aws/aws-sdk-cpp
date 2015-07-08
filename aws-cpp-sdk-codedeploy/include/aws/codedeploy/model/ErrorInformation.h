@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/ErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -26,12 +26,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Information about a deployment error.</p>
   */
   class AWS_CODEDEPLOY_API ErrorInformation
   {
@@ -41,26 +41,42 @@ namespace Model
     ErrorInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The error code:</p> <ul> <li>APPLICATION_MISSING: The application was missing. Note that this error code will most likely be raised if the application is deleted after the deployment is created but before it starts.</li> <li>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. Note that this error code will most likely be raised if the deployment group is deleted after the deployment is created but before it starts.</li> <li>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be able to successfully deploy within the specified instance health constraints.</li> <li>HEALTH_CONSTRAINTS_INVALID: The revision can never successfully deploy within the instance health constraints as specified.</li> <li>IAM_ROLE_MISSING: The service role cannot be accessed.</li> <li>IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.</li> <li>INTERNAL_ERROR: There was an internal error.</li> <li>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.</li> <li>NO_INSTANCES: No instances were specified, or no instances can be found.</li> <li>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</li> <li>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</li> <li>TIMEOUT: The deployment has timed out.</li> <li>REVISION_MISSING: The revision ID was missing. Note that this error code will most likely be raised if the revision is deleted after the deployment is created but before it starts.</li> </ul>
+    */
     inline const ErrorCode& GetCode() const{ return m_code; }
-    
+    /*
+     <p>The error code:</p> <ul> <li>APPLICATION_MISSING: The application was missing. Note that this error code will most likely be raised if the application is deleted after the deployment is created but before it starts.</li> <li>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. Note that this error code will most likely be raised if the deployment group is deleted after the deployment is created but before it starts.</li> <li>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be able to successfully deploy within the specified instance health constraints.</li> <li>HEALTH_CONSTRAINTS_INVALID: The revision can never successfully deploy within the instance health constraints as specified.</li> <li>IAM_ROLE_MISSING: The service role cannot be accessed.</li> <li>IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.</li> <li>INTERNAL_ERROR: There was an internal error.</li> <li>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.</li> <li>NO_INSTANCES: No instances were specified, or no instances can be found.</li> <li>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</li> <li>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</li> <li>TIMEOUT: The deployment has timed out.</li> <li>REVISION_MISSING: The revision ID was missing. Note that this error code will most likely be raised if the revision is deleted after the deployment is created but before it starts.</li> </ul>
+    */
     inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    
+    /*
+     <p>The error code:</p> <ul> <li>APPLICATION_MISSING: The application was missing. Note that this error code will most likely be raised if the application is deleted after the deployment is created but before it starts.</li> <li>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. Note that this error code will most likely be raised if the deployment group is deleted after the deployment is created but before it starts.</li> <li>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be able to successfully deploy within the specified instance health constraints.</li> <li>HEALTH_CONSTRAINTS_INVALID: The revision can never successfully deploy within the instance health constraints as specified.</li> <li>IAM_ROLE_MISSING: The service role cannot be accessed.</li> <li>IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.</li> <li>INTERNAL_ERROR: There was an internal error.</li> <li>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.</li> <li>NO_INSTANCES: No instances were specified, or no instances can be found.</li> <li>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</li> <li>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</li> <li>TIMEOUT: The deployment has timed out.</li> <li>REVISION_MISSING: The revision ID was missing. Note that this error code will most likely be raised if the revision is deleted after the deployment is created but before it starts.</li> </ul>
+    */
     inline ErrorInformation&  WithCode(const ErrorCode& value) { SetCode(value); return *this;}
 
-    
+    /*
+     <p>An accompanying error message.</p>
+    */
     inline const Aws::String& GetMessage() const{ return m_message; }
-    
+    /*
+     <p>An accompanying error message.</p>
+    */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /*
+     <p>An accompanying error message.</p>
+    */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /*
+     <p>An accompanying error message.</p>
+    */
     inline ErrorInformation&  WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /*
+     <p>An accompanying error message.</p>
+    */
     inline ErrorInformation& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
@@ -71,5 +87,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

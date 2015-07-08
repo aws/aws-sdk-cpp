@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 
 namespace Aws
 {
@@ -24,12 +24,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Information about the deployment status of the instances in the deployment.</p>
   */
   class AWS_CODEDEPLOY_API DeploymentOverview
   {
@@ -39,44 +39,74 @@ namespace Model
     DeploymentOverview& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The number of instances that are pending in the deployment.</p>
+    */
     inline long long GetPending() const{ return m_pending; }
-    
+    /*
+     <p>The number of instances that are pending in the deployment.</p>
+    */
     inline void SetPending(long long value) { m_pendingHasBeenSet = true; m_pending = value; }
 
-    
+    /*
+     <p>The number of instances that are pending in the deployment.</p>
+    */
     inline DeploymentOverview&  WithPending(long long value) { SetPending(value); return *this;}
 
-    
+    /*
+     <p>The number of instances that are in progress in the deployment.</p>
+    */
     inline long long GetInProgress() const{ return m_inProgress; }
-    
+    /*
+     <p>The number of instances that are in progress in the deployment.</p>
+    */
     inline void SetInProgress(long long value) { m_inProgressHasBeenSet = true; m_inProgress = value; }
 
-    
+    /*
+     <p>The number of instances that are in progress in the deployment.</p>
+    */
     inline DeploymentOverview&  WithInProgress(long long value) { SetInProgress(value); return *this;}
 
-    
+    /*
+     <p>The number of instances that have succeeded in the deployment.</p>
+    */
     inline long long GetSucceeded() const{ return m_succeeded; }
-    
+    /*
+     <p>The number of instances that have succeeded in the deployment.</p>
+    */
     inline void SetSucceeded(long long value) { m_succeededHasBeenSet = true; m_succeeded = value; }
 
-    
+    /*
+     <p>The number of instances that have succeeded in the deployment.</p>
+    */
     inline DeploymentOverview&  WithSucceeded(long long value) { SetSucceeded(value); return *this;}
 
-    
+    /*
+     <p>The number of instances that have failed in the deployment.</p>
+    */
     inline long long GetFailed() const{ return m_failed; }
-    
+    /*
+     <p>The number of instances that have failed in the deployment.</p>
+    */
     inline void SetFailed(long long value) { m_failedHasBeenSet = true; m_failed = value; }
 
-    
+    /*
+     <p>The number of instances that have failed in the deployment.</p>
+    */
     inline DeploymentOverview&  WithFailed(long long value) { SetFailed(value); return *this;}
 
-    
+    /*
+     <p>The number of instances that have been skipped in the deployment.</p>
+    */
     inline long long GetSkipped() const{ return m_skipped; }
-    
+    /*
+     <p>The number of instances that have been skipped in the deployment.</p>
+    */
     inline void SetSkipped(long long value) { m_skippedHasBeenSet = true; m_skipped = value; }
 
-    
+    /*
+     <p>The number of instances that have been skipped in the deployment.</p>
+    */
     inline DeploymentOverview&  WithSkipped(long long value) { SetSkipped(value); return *this;}
 
   private:
@@ -93,5 +123,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

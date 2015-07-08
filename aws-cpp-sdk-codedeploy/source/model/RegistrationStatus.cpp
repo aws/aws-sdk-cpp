@@ -22,7 +22,7 @@ static const int Deregistered_HASH = HashingUtils::HashString("Deregistered");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -59,5 +59,5 @@ Aws::String GetNameForRegistrationStatus(RegistrationStatus value)
 
 } // namespace RegistrationStatusMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

@@ -34,7 +34,7 @@ namespace OpsWorks
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>
   */
   class AWS_OPSWORKS_API DescribeAgentVersionsResult
   {
@@ -43,15 +43,23 @@ namespace Model
     DescribeAgentVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeAgentVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    */
     inline const Aws::Vector<AgentVersion>& GetAgentVersions() const{ return m_agentVersions; }
-    
+    /*
+     <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    */
     inline void SetAgentVersions(const Aws::Vector<AgentVersion>& value) { m_agentVersions = value; }
 
-    
+    /*
+     <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    */
     inline DescribeAgentVersionsResult&  WithAgentVersions(const Aws::Vector<AgentVersion>& value) { SetAgentVersions(value); return *this;}
 
-    
+    /*
+     <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    */
     inline DescribeAgentVersionsResult& AddAgentVersions(const AgentVersion& value) { m_agentVersions.push_back(value); return *this; }
 
   private:

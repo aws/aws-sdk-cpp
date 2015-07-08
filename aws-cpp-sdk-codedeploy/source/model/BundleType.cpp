@@ -23,7 +23,7 @@ static const int zip_HASH = HashingUtils::HashString("zip");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -66,5 +66,5 @@ Aws::String GetNameForBundleType(BundleType value)
 
 } // namespace BundleTypeMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a delete deployment group operation.</p>
   */
-  class AWS_CODEDEPLOY_API DeleteDeploymentGroupRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API DeleteDeploymentGroupRequest : public CodeDeployRequest
   {
   public:
     DeleteDeploymentGroupRequest();
@@ -35,32 +36,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline DeleteDeploymentGroupRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline DeleteDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline DeleteDeploymentGroupRequest&  WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing deployment group for the specified application.</p>
+    */
     inline DeleteDeploymentGroupRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
   private:
@@ -71,5 +92,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

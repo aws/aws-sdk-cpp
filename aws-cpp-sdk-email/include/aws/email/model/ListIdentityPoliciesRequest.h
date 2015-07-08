@@ -35,26 +35,26 @@ namespace Model
 
 
     /*
-     <p>The email address or domain whose policies will be listed.</p> <p>The identity must be owned by the caller.</p>
+     <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
     */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
     /*
-     <p>The email address or domain whose policies will be listed.</p> <p>The identity must be owned by the caller.</p>
+     <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /*
-     <p>The email address or domain whose policies will be listed.</p> <p>The identity must be owned by the caller.</p>
+     <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
     */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /*
-     <p>The email address or domain whose policies will be listed.</p> <p>The identity must be owned by the caller.</p>
+     <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
     */
     inline ListIdentityPoliciesRequest&  WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
 
     /*
-     <p>The email address or domain whose policies will be listed.</p> <p>The identity must be owned by the caller.</p>
+     <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To successfully call this API, you must own the identity.</p>
     */
     inline ListIdentityPoliciesRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 

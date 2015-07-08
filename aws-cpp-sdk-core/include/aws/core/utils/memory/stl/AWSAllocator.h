@@ -45,28 +45,16 @@ namespace Aws
 
             typename Base::pointer allocate(size_type n, const void *hint = nullptr)
             {
-                Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
-                if(memorySystem != nullptr)
-                {
-                    return reinterpret_cast<typename Base::pointer>(memorySystem->AllocateMemory(n * sizeof(T), 1, "AWSSTL"));
-                }
-                else
-                {
-                    return Base::allocate(n, hint);
-                }
+                AWS_UNREFERENCED_PARAM(hint);
+
+                return reinterpret_cast<typename Base::pointer>(Malloc("AWSSTL", n * sizeof(T)));
             }
 
             void deallocate(typename Base::pointer p, size_type n)
             {
-                Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
-                if(memorySystem != nullptr)
-                {
-                    memorySystem->FreeMemory(p);
-                }
-                else
-                {
-                    Base::deallocate(p, n);
-                }
+                AWS_UNREFERENCED_PARAM(n);
+
+                Free(p);
             }
 
     };

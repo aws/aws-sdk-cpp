@@ -18,6 +18,7 @@
 using namespace Aws::Utils;
 
 static const int nodejs_HASH = HashingUtils::HashString("nodejs");
+static const int java8_HASH = HashingUtils::HashString("java8");
 
 namespace Aws
 {
@@ -35,6 +36,10 @@ Runtime GetRuntimeForName(const Aws::String& name)
   {
     return Runtime::nodejs;
   }
+  else if (hashCode == java8_HASH)
+  {
+    return Runtime::java8;
+  }
 
   return Runtime::nodejs;
 }
@@ -45,6 +50,8 @@ Aws::String GetNameForRuntime(Runtime value)
   {
   case Runtime::nodejs:
     return "nodejs";
+  case Runtime::java8:
+    return "java8";
   default:
     return "nodejs";
   }

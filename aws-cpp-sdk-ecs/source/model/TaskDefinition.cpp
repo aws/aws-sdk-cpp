@@ -27,7 +27,8 @@ TaskDefinition::TaskDefinition() :
     m_familyHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,8 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_familyHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_volumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = TaskDefinitionStatusMapper::GetTaskDefinitionStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,11 @@ JsonValue TaskDefinition::Jsonize() const
    }
    payload.WithArray("volumes", std::move(volumesJsonList));
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TaskDefinitionStatusMapper::GetNameForTaskDefinitionStatus(m_status));
   }
 
   return std::move(payload);

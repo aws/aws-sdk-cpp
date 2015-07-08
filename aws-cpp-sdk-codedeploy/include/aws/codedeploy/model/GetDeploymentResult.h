@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/DeploymentInfo.h>
 
 namespace Aws
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a get deployment operation.</p>
   */
   class AWS_CODEDEPLOY_API GetDeploymentResult
   {
@@ -42,12 +42,18 @@ namespace Model
     GetDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>Information about the deployment.</p>
+    */
     inline const DeploymentInfo& GetDeploymentInfo() const{ return m_deploymentInfo; }
-    
+    /*
+     <p>Information about the deployment.</p>
+    */
     inline void SetDeploymentInfo(const DeploymentInfo& value) { m_deploymentInfo = value; }
 
-    
+    /*
+     <p>Information about the deployment.</p>
+    */
     inline GetDeploymentResult&  WithDeploymentInfo(const DeploymentInfo& value) { SetDeploymentInfo(value); return *this;}
 
   private:
@@ -55,5 +61,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

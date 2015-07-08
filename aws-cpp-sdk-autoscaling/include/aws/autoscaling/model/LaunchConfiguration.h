@@ -143,26 +143,26 @@ namespace Model
     inline LaunchConfiguration& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
     /*
-     <p>The security groups to associate with the EC2 instances.</p>
+     <p>The security groups to associate with the instances.</p>
     */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
     /*
-     <p>The security groups to associate with the EC2 instances.</p>
+     <p>The security groups to associate with the instances.</p>
     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /*
-     <p>The security groups to associate with the EC2 instances.</p>
+     <p>The security groups to associate with the instances.</p>
     */
     inline LaunchConfiguration&  WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /*
-     <p>The security groups to associate with the EC2 instances.</p>
+     <p>The security groups to associate with the instances.</p>
     */
     inline LaunchConfiguration& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /*
-     <p>The security groups to associate with the EC2 instances.</p>
+     <p>The security groups to associate with the instances.</p>
     */
     inline LaunchConfiguration& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
@@ -215,50 +215,50 @@ namespace Model
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /*
-     <p>The user data available to the EC2 instances.</p>
+     <p>The user data available to the instances.</p>
     */
     inline const Aws::String& GetUserData() const{ return m_userData; }
     /*
-     <p>The user data available to the EC2 instances.</p>
+     <p>The user data available to the instances.</p>
     */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /*
-     <p>The user data available to the EC2 instances.</p>
+     <p>The user data available to the instances.</p>
     */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /*
-     <p>The user data available to the EC2 instances.</p>
+     <p>The user data available to the instances.</p>
     */
     inline LaunchConfiguration&  WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /*
-     <p>The user data available to the EC2 instances.</p>
+     <p>The user data available to the instances.</p>
     */
     inline LaunchConfiguration& WithUserData(const char* value) { SetUserData(value); return *this;}
 
     /*
-     <p>The instance type for the EC2 instances.</p>
+     <p>The instance type for the instances.</p>
     */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
     /*
-     <p>The instance type for the EC2 instances.</p>
+     <p>The instance type for the instances.</p>
     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
-     <p>The instance type for the EC2 instances.</p>
+     <p>The instance type for the instances.</p>
     */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /*
-     <p>The instance type for the EC2 instances.</p>
+     <p>The instance type for the instances.</p>
     */
     inline LaunchConfiguration&  WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /*
-     <p>The instance type for the EC2 instances.</p>
+     <p>The instance type for the instances.</p>
     */
     inline LaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -311,21 +311,21 @@ namespace Model
     inline LaunchConfiguration& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
     /*
-     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+     <p>A block device mapping, which specifies the block devices for the instance.</p>
     */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
     /*
-     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+     <p>A block device mapping, which specifies the block devices for the instance.</p>
     */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /*
-     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+     <p>A block device mapping, which specifies the block devices for the instance.</p>
     */
     inline LaunchConfiguration&  WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /*
-     <p>A block device mapping that specifies how block devices are exposed to the instance. Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.</p>
+     <p>A block device mapping, which specifies the block devices for the instance.</p>
     */
     inline LaunchConfiguration& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
@@ -420,40 +420,40 @@ namespace Model
     inline LaunchConfiguration&  WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /*
-     <p>Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
+     <p>Specifies whether the instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
     */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
     /*
-     <p>Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
+     <p>Specifies whether the instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
     */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /*
-     <p>Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
+     <p>Specifies whether the instances are associated with a public IP address (<code>true</code>) or not (<code>false</code>).</p>
     */
     inline LaunchConfiguration&  WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
     /*
-     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.</p>
     */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
     /*
-     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.</p>
     */
     inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
 
     /*
-     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.</p>
     */
     inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
 
     /*
-     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.</p>
     */
     inline LaunchConfiguration&  WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
 
     /*
-     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched in a VPC.</p>
+     <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.</p>
     */
     inline LaunchConfiguration& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
 

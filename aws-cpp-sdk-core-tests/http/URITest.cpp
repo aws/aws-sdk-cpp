@@ -181,3 +181,38 @@ TEST(URITest, TestParse)
     AWS_END_MEMORY_TEST
 }
 
+TEST(URITest, TestParseWithColon)
+{
+    AWS_BEGIN_MEMORY_TEST(16, 10)
+
+    const char* strUri = "https://test.com/path/1234:_Some_Path";
+    URI uri(strUri);
+
+    EXPECT_EQ(Scheme::HTTPS, uri.GetScheme());
+    EXPECT_STREQ("test.com", uri.GetAuthority().c_str());
+    EXPECT_EQ(443, uri.GetPort());
+    EXPECT_STREQ("/path/1234:_Some_Path", uri.GetPath().c_str());
+    EXPECT_STREQ(strUri, uri.GetURIString().c_str());
+
+    const char* strUriWithPort = "https://test.com:8080/path/1234:_Some_Path";
+    URI uriWithPort(strUriWithPort);
+
+    EXPECT_EQ(Scheme::HTTPS, uriWithPort.GetScheme());
+    EXPECT_STREQ("test.com", uriWithPort.GetAuthority().c_str());
+    EXPECT_EQ(8080, uriWithPort.GetPort());
+    EXPECT_STREQ("/path/1234:_Some_Path", uriWithPort.GetPath().c_str());
+    EXPECT_STREQ(strUriWithPort, uriWithPort.GetURIString().c_str());
+
+
+    const char* strComplexUri = "http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key";
+    URI complexUri(strComplexUri);
+
+    EXPECT_EQ(Scheme::HTTP, complexUri.GetScheme());
+    EXPECT_STREQ("s3.us-east-1.amazonaws.com", complexUri.GetAuthority().c_str());
+    EXPECT_EQ(80, complexUri.GetPort());
+    EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
+    EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
+
+    AWS_END_MEMORY_TEST
+}
+

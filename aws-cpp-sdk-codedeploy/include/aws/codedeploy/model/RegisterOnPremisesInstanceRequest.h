@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of register on-premises instance operation.</p>
   */
-  class AWS_CODEDEPLOY_API RegisterOnPremisesInstanceRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API RegisterOnPremisesInstanceRequest : public CodeDeployRequest
   {
   public:
     RegisterOnPremisesInstanceRequest();
@@ -35,32 +36,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
-    
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
-    
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
 
-    
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
     inline RegisterOnPremisesInstanceRequest&  WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
 
-    
+    /*
+     <p>The name of the on-premises instance to register.</p>
+    */
     inline RegisterOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
-    
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
-    
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
-    
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
-    
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
     inline RegisterOnPremisesInstanceRequest&  WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
-    
+    /*
+     <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    */
     inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
   private:
@@ -71,5 +92,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

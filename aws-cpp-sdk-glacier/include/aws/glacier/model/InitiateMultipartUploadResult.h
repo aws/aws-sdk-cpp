@@ -33,7 +33,7 @@ namespace Glacier
 namespace Model
 {
   /*
-    <p>Contains the Amazon Glacier response to your request.</p>
+    <p>The Amazon Glacier response to your request.</p>
   */
   class AWS_GLACIER_API InitiateMultipartUploadResult
   {

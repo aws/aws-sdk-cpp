@@ -31,7 +31,7 @@ namespace AutoScaling
 namespace Model
 {
   /*
-    <p>Describes a tag applied to an Auto Scaling group.</p>
+    <p>Describes a tag for an Auto Scaling group.</p>
   */
   class AWS_AUTOSCALING_API TagDescription
   {
@@ -68,26 +68,26 @@ namespace Model
     inline TagDescription& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /*
-     <p>The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <code>auto-scaling-group</code> resource type.</p>
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     /*
-     <p>The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <code>auto-scaling-group</code> resource type.</p>
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /*
-     <p>The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <code>auto-scaling-group</code> resource type.</p>
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /*
-     <p>The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <code>auto-scaling-group</code> resource type.</p>
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline TagDescription&  WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /*
-     <p>The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <code>auto-scaling-group</code> resource type.</p>
+     <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     */
     inline TagDescription& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -140,16 +140,16 @@ namespace Model
     inline TagDescription& WithValue(const char* value) { SetValue(value); return *this;}
 
     /*
-     <p>Specifies whether the tag is applied to instances launched after the tag is created. The same behavior applies to updates: If you change a tag, it is applied to all instances launched after you made the change.</p>
+     <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     */
     inline bool GetPropagateAtLaunch() const{ return m_propagateAtLaunch; }
     /*
-     <p>Specifies whether the tag is applied to instances launched after the tag is created. The same behavior applies to updates: If you change a tag, it is applied to all instances launched after you made the change.</p>
+     <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     */
     inline void SetPropagateAtLaunch(bool value) { m_propagateAtLaunchHasBeenSet = true; m_propagateAtLaunch = value; }
 
     /*
-     <p>Specifies whether the tag is applied to instances launched after the tag is created. The same behavior applies to updates: If you change a tag, it is applied to all instances launched after you made the change.</p>
+     <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     */
     inline TagDescription&  WithPropagateAtLaunch(bool value) { SetPropagateAtLaunch(value); return *this;}
 

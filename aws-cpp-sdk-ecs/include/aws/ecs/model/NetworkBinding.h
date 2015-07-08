@@ -94,16 +94,16 @@ namespace Model
     inline NetworkBinding&  WithHostPort(long value) { SetHostPort(value); return *this;}
 
     /*
-     <p>The protocol used for the network binding. The default is TCP.</p>
+     <p>The protocol used for the network binding.</p>
     */
     inline const TransportProtocol& GetProtocol() const{ return m_protocol; }
     /*
-     <p>The protocol used for the network binding. The default is TCP.</p>
+     <p>The protocol used for the network binding.</p>
     */
     inline void SetProtocol(const TransportProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /*
-     <p>The protocol used for the network binding. The default is TCP.</p>
+     <p>The protocol used for the network binding.</p>
     */
     inline NetworkBinding&  WithProtocol(const TransportProtocol& value) { SetProtocol(value); return *this;}
 

@@ -82,18 +82,28 @@ namespace Model
     */
     inline DescribePoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
-    
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
     inline const Aws::Vector<Aws::String>& GetPolicyTypes() const{ return m_policyTypes; }
-    
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
     inline void SetPolicyTypes(const Aws::Vector<Aws::String>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
 
-    
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
     inline DescribePoliciesRequest&  WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
 
-    
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
     inline DescribePoliciesRequest& AddPolicyTypes(const Aws::String& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
-    
+    /*
+     <p>One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.</p>
+    */
     inline DescribePoliciesRequest& AddPolicyTypes(const char* value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
     /*

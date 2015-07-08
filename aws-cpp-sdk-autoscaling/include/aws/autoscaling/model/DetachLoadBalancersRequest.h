@@ -34,32 +34,52 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /*
+     <p>The name of the group.</p>
+    */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-    
+    /*
+     <p>The name of the group.</p>
+    */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
-    
+    /*
+     <p>The name of the group.</p>
+    */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
-    
+    /*
+     <p>The name of the group.</p>
+    */
     inline DetachLoadBalancersRequest&  WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
-    
+    /*
+     <p>The name of the group.</p>
+    */
     inline DetachLoadBalancersRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
-    
+    /*
+     <p>One or more load balancer names.</p>
+    */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
-    
+    /*
+     <p>One or more load balancer names.</p>
+    */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
-    
+    /*
+     <p>One or more load balancer names.</p>
+    */
     inline DetachLoadBalancersRequest&  WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
-    
+    /*
+     <p>One or more load balancer names.</p>
+    */
     inline DetachLoadBalancersRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
-    
+    /*
+     <p>One or more load balancer names.</p>
+    */
     inline DetachLoadBalancersRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
   private:

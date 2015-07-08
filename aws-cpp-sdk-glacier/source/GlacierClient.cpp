@@ -27,6 +27,7 @@
 #include <aws/glacier/GlacierEndpoint.h>
 #include <aws/glacier/GlacierErrorMarshaller.h>
 #include <aws/glacier/model/AbortMultipartUploadRequest.h>
+#include <aws/glacier/model/AddTagsToVaultRequest.h>
 #include <aws/glacier/model/CompleteMultipartUploadRequest.h>
 #include <aws/glacier/model/CreateVaultRequest.h>
 #include <aws/glacier/model/DeleteArchiveRequest.h>
@@ -44,7 +45,9 @@
 #include <aws/glacier/model/ListJobsRequest.h>
 #include <aws/glacier/model/ListMultipartUploadsRequest.h>
 #include <aws/glacier/model/ListPartsRequest.h>
+#include <aws/glacier/model/ListTagsForVaultRequest.h>
 #include <aws/glacier/model/ListVaultsRequest.h>
+#include <aws/glacier/model/RemoveTagsFromVaultRequest.h>
 #include <aws/glacier/model/SetDataRetrievalPolicyRequest.h>
 #include <aws/glacier/model/SetVaultAccessPolicyRequest.h>
 #include <aws/glacier/model/SetVaultNotificationsRequest.h>
@@ -145,6 +148,41 @@ void GlacierClient::AbortMultipartUploadAsync(const AbortMultipartUploadRequest&
 void GlacierClient::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRequest& request, const AsyncCallerContext* context) const
 {
   m_onAbortMultipartUploadOutcomeReceived(this, request, AbortMultipartUpload(request), context);
+}
+
+AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetAccountId();
+  ss << "/vaults/";
+  ss << request.GetVaultName();
+  ss << "/tags?operation=add";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddTagsToVaultOutcome(NoResult());
+  }
+  else
+  {
+    return AddTagsToVaultOutcome(outcome.GetError());
+  }
+}
+
+AddTagsToVaultOutcomeCallable GlacierClient::AddTagsToVaultCallable(const AddTagsToVaultRequest& request) const
+{
+  return std::async(std::launch::async, &GlacierClient::AddTagsToVault, this, request);
+}
+
+void GlacierClient::AddTagsToVaultAsync(const AddTagsToVaultRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&GlacierClient::AddTagsToVaultAsyncHelper, this, request, context);
+}
+
+void GlacierClient::AddTagsToVaultAsyncHelper(const AddTagsToVaultRequest& request, const AsyncCallerContext* context) const
+{
+  m_onAddTagsToVaultOutcomeReceived(this, request, AddTagsToVault(request), context);
 }
 
 CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
@@ -743,6 +781,41 @@ void GlacierClient::ListPartsAsyncHelper(const ListPartsRequest& request, const 
   m_onListPartsOutcomeReceived(this, request, ListParts(request), context);
 }
 
+ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetAccountId();
+  ss << "/vaults/";
+  ss << request.GetVaultName();
+  ss << "/tags";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForVaultOutcome(ListTagsForVaultResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForVaultOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForVaultOutcomeCallable GlacierClient::ListTagsForVaultCallable(const ListTagsForVaultRequest& request) const
+{
+  return std::async(std::launch::async, &GlacierClient::ListTagsForVault, this, request);
+}
+
+void GlacierClient::ListTagsForVaultAsync(const ListTagsForVaultRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&GlacierClient::ListTagsForVaultAsyncHelper, this, request, context);
+}
+
+void GlacierClient::ListTagsForVaultAsyncHelper(const ListTagsForVaultRequest& request, const AsyncCallerContext* context) const
+{
+  m_onListTagsForVaultOutcomeReceived(this, request, ListTagsForVault(request), context);
+}
+
 ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) const
 {
   Aws::StringStream ss;
@@ -774,6 +847,41 @@ void GlacierClient::ListVaultsAsync(const ListVaultsRequest& request, const Asyn
 void GlacierClient::ListVaultsAsyncHelper(const ListVaultsRequest& request, const AsyncCallerContext* context) const
 {
   m_onListVaultsOutcomeReceived(this, request, ListVaults(request), context);
+}
+
+RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetAccountId();
+  ss << "/vaults/";
+  ss << request.GetVaultName();
+  ss << "/tags?operation=remove";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemoveTagsFromVaultOutcome(NoResult());
+  }
+  else
+  {
+    return RemoveTagsFromVaultOutcome(outcome.GetError());
+  }
+}
+
+RemoveTagsFromVaultOutcomeCallable GlacierClient::RemoveTagsFromVaultCallable(const RemoveTagsFromVaultRequest& request) const
+{
+  return std::async(std::launch::async, &GlacierClient::RemoveTagsFromVault, this, request);
+}
+
+void GlacierClient::RemoveTagsFromVaultAsync(const RemoveTagsFromVaultRequest& request, const AsyncCallerContext* context) const
+{
+  m_executor->Submit(&GlacierClient::RemoveTagsFromVaultAsyncHelper, this, request, context);
+}
+
+void GlacierClient::RemoveTagsFromVaultAsyncHelper(const RemoveTagsFromVaultRequest& request, const AsyncCallerContext* context) const
+{
+  m_onRemoveTagsFromVaultOutcomeReceived(this, request, RemoveTagsFromVault(request), context);
 }
 
 SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDataRetrievalPolicyRequest& request) const

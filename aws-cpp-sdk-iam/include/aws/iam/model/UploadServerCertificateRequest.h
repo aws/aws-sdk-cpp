@@ -58,26 +58,26 @@ namespace Model
     inline UploadServerCertificateRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
     /*
-     <p>The name for the server certificate. Do not include the path in this value.</p>
+     <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
     /*
-     <p>The name for the server certificate. Do not include the path in this value.</p>
+     <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /*
-     <p>The name for the server certificate. Do not include the path in this value.</p>
+     <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /*
-     <p>The name for the server certificate. Do not include the path in this value.</p>
+     <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     */
     inline UploadServerCertificateRequest&  WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
 
     /*
-     <p>The name for the server certificate. Do not include the path in this value.</p>
+     <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     */
     inline UploadServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 

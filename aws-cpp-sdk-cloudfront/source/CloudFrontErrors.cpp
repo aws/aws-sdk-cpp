@@ -60,6 +60,7 @@ static const int INVALID_ERROR_CODE_HASH = HashingUtils::HashString("InvalidErro
 static const int INVALID_GEO_RESTRICTION_PARAMETER_HASH = HashingUtils::HashString("InvalidGeoRestrictionParameter");
 static const int C_N_A_M_E_ALREADY_EXISTS_HASH = HashingUtils::HashString("CNAMEAlreadyExists");
 static const int TOO_MANY_HEADERS_IN_FORWARDED_VALUES_HASH = HashingUtils::HashString("TooManyHeadersInForwardedValues");
+static const int INVALID_T_T_L_ORDER_HASH = HashingUtils::HashString("InvalidTTLOrder");
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgument");
 static const int NO_SUCH_STREAMING_DISTRIBUTION_HASH = HashingUtils::HashString("NoSuchStreamingDistribution");
 static const int BATCH_TOO_LARGE_HASH = HashingUtils::HashString("BatchTooLarge");
@@ -237,6 +238,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_HEADERS_IN_FORWARDED_VALUES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_HEADERS_IN_FORWARDED_VALUES), false);
+  }
+  else if (hashCode == INVALID_T_T_L_ORDER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_T_T_L_ORDER), false);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {

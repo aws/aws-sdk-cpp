@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a get deployment operation.</p>
   */
-  class AWS_CODEDEPLOY_API GetDeploymentRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API GetDeploymentRequest : public CodeDeployRequest
   {
   public:
     GetDeploymentRequest();
@@ -35,18 +36,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
     inline GetDeploymentRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    
+    /*
+     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
+    */
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
@@ -55,5 +66,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

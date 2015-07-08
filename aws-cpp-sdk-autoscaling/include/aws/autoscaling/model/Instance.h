@@ -69,40 +69,40 @@ namespace Model
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /*
-     <p>The Availability Zone associated with this instance.</p>
+     <p>The Availability Zone in which the instance is running.</p>
     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
     /*
-     <p>The Availability Zone associated with this instance.</p>
+     <p>The Availability Zone in which the instance is running.</p>
     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /*
-     <p>The Availability Zone associated with this instance.</p>
+     <p>The Availability Zone in which the instance is running.</p>
     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /*
-     <p>The Availability Zone associated with this instance.</p>
+     <p>The Availability Zone in which the instance is running.</p>
     */
     inline Instance&  WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /*
-     <p>The Availability Zone associated with this instance.</p>
+     <p>The Availability Zone in which the instance is running.</p>
     */
     inline Instance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /*
-     <p>A description of the current lifecycle state.</p> <note> <p>The <code>Quarantined</code> lifecycle state is not used.</p> </note>
+     <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
     */
     inline const LifecycleState& GetLifecycleState() const{ return m_lifecycleState; }
     /*
-     <p>A description of the current lifecycle state.</p> <note> <p>The <code>Quarantined</code> lifecycle state is not used.</p> </note>
+     <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
     */
     inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /*
-     <p>A description of the current lifecycle state.</p> <note> <p>The <code>Quarantined</code> lifecycle state is not used.</p> </note>
+     <p>A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.</p>
     */
     inline Instance&  WithLifecycleState(const LifecycleState& value) { SetLifecycleState(value); return *this;}
 

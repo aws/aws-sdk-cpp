@@ -59,50 +59,50 @@ namespace Model
     inline EnableMetricsCollectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the <code>GroupStandbyInstances</code> metric is not enabled by default. You must explicitly request this metric.</p>
     */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the <code>GroupStandbyInstances</code> metric is not enabled by default. You must explicitly request this metric.</p>
     */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the <code>GroupStandbyInstances</code> metric is not enabled by default. You must explicitly request this metric.</p>
     */
     inline EnableMetricsCollectionRequest&  WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the <code>GroupStandbyInstances</code> metric is not enabled by default. You must explicitly request this metric.</p>
     */
     inline EnableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <p>If you omit this parameter, all metrics are enabled.</p> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the <code>GroupStandbyInstances</code> metric is not enabled by default. You must explicitly request this metric.</p>
     */
     inline EnableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /*
-     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+     <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
     */
     inline const Aws::String& GetGranularity() const{ return m_granularity; }
     /*
-     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+     <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
     */
     inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /*
-     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+     <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
     */
     inline void SetGranularity(const char* value) { m_granularityHasBeenSet = true; m_granularity.assign(value); }
 
     /*
-     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+     <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
     */
     inline EnableMetricsCollectionRequest&  WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
 
     /*
-     <p>The granularity to associate with the metrics to collect. Currently, the only valid value is "1Minute".</p>
+     <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
     */
     inline EnableMetricsCollectionRequest& WithGranularity(const char* value) { SetGranularity(value); return *this;}
 

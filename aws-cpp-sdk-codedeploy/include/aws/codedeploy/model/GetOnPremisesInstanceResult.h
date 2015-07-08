@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/InstanceInfo.h>
 
 namespace Aws
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a get on-premises instance operation.</p>
   */
   class AWS_CODEDEPLOY_API GetOnPremisesInstanceResult
   {
@@ -42,12 +42,18 @@ namespace Model
     GetOnPremisesInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetOnPremisesInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>Information about the on-premises instance.</p>
+    */
     inline const InstanceInfo& GetInstanceInfo() const{ return m_instanceInfo; }
-    
+    /*
+     <p>Information about the on-premises instance.</p>
+    */
     inline void SetInstanceInfo(const InstanceInfo& value) { m_instanceInfo = value; }
 
-    
+    /*
+     <p>Information about the on-premises instance.</p>
+    */
     inline GetOnPremisesInstanceResult&  WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
 
   private:
@@ -55,5 +61,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

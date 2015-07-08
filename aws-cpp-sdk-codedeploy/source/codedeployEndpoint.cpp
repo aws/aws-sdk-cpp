@@ -12,17 +12,17 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/codedeploy/codedeployEndpoint.h>
+#include <aws/codedeploy/CodeDeployEndpoint.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
 using namespace Aws;
-using namespace Aws::codedeploy;
+using namespace Aws::CodeDeploy;
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
-namespace codedeployEndpoint
+namespace CodeDeployEndpoint
 {
   Aws::String ForRegion(Region region)
   {
@@ -51,7 +51,7 @@ namespace codedeployEndpoint
     }
   }
 
-} // namespace codedeployEndpoint
-} // namespace codedeploy
+} // namespace CodeDeployEndpoint
+} // namespace CodeDeploy
 } // namespace Aws
 

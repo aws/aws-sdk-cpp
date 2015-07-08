@@ -31,7 +31,7 @@ namespace OpsWorks
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Describes an agent version.</p>
   */
   class AWS_OPSWORKS_API AgentVersion
   {
@@ -41,26 +41,42 @@ namespace Model
     AgentVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The agent version.</p>
+    */
     inline const Aws::String& GetVersion() const{ return m_version; }
-    
+    /*
+     <p>The agent version.</p>
+    */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
-    
+    /*
+     <p>The agent version.</p>
+    */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
-    
+    /*
+     <p>The agent version.</p>
+    */
     inline AgentVersion&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
-    
+    /*
+     <p>The agent version.</p>
+    */
     inline AgentVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
 
-    
+    /*
+     <p>The configuration manager.</p>
+    */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
-    
+    /*
+     <p>The configuration manager.</p>
+    */
     inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
 
-    
+    /*
+     <p>The configuration manager.</p>
+    */
     inline AgentVersion&  WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
 
   private:

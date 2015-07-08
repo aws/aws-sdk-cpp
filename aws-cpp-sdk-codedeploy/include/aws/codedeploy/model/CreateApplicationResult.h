@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -28,12 +28,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the output of a create application operation.</p>
   */
   class AWS_CODEDEPLOY_API CreateApplicationResult
   {
@@ -42,18 +42,28 @@ namespace Model
     CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /*
+     <p>A unique application ID.</p>
+    */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-    
+    /*
+     <p>A unique application ID.</p>
+    */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
-    
+    /*
+     <p>A unique application ID.</p>
+    */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
-    
+    /*
+     <p>A unique application ID.</p>
+    */
     inline CreateApplicationResult&  WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
-    
+    /*
+     <p>A unique application ID.</p>
+    */
     inline CreateApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
@@ -61,5 +71,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

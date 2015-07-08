@@ -22,7 +22,7 @@ static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -59,5 +59,5 @@ Aws::String GetNameForStopStatus(StopStatus value)
 
 } // namespace StopStatusMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

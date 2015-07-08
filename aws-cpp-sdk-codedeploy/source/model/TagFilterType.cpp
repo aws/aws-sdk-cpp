@@ -23,7 +23,7 @@ static const int KEY_AND_VALUE_HASH = HashingUtils::HashString("KEY_AND_VALUE");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -66,5 +66,5 @@ Aws::String GetNameForTagFilterType(TagFilterType value)
 
 } // namespace TagFilterTypeMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

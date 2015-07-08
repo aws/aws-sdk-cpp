@@ -14,7 +14,7 @@
 */
 #pragma once
 
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
@@ -22,14 +22,14 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODEDEPLOY_API codedeployErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CODEDEPLOY_API CodeDeployErrorMarshaller : public Client::AWSErrorMarshaller
 {
 public:
-  codedeployErrorMarshaller() {}
-  virtual ~codedeployErrorMarshaller() {}
+  CodeDeployErrorMarshaller() {}
+  virtual ~CodeDeployErrorMarshaller() {}
 
   virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
 };
 
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

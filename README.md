@@ -41,6 +41,7 @@ That's it! This will build the entire source tree for your platform, run unit te
 
 Set this value to 1 to use a custom memory manager. When using this option, all STL types will use our custom allocation interface which you can install a custom allocator into.
 If this is set to 0, you should still use our STL template types to help with DLL safety on windows. Note: Whatever value you use here, you need to make sure you use accross your entire build system since a mismatch here will cause linker errors.
+Custom memory management defaults to off if static linking is enabled; because of the increased safety it adds in avoiding cross-DLL allocation/deallocation, it defaults to on if dynamic linking is enabled.
 
 #####STATIC_LINKING 
 
@@ -146,14 +147,8 @@ Some new rules that need to be followed by code inside the SDK:
 - new and delete should never be used. Use Aws::New<> and Aws::Delete<>.
 - new[] and delete[] should never be used. Use Aws::NewArray<> and Aws::DeleteArray<>.
 - use Aws::MakeShared; never use std::make_shared
-- If you want to use a unique_ptr to a single object, you need to make Aws::Deleter<T> the second type parameter, ie:
-
-`std::unique_ptr<MyClass, Aws::Deleter<MyClass>> somePointer = Aws::New<MyClass>(...);`
-
-- If you want to use a unique_ptr to an array of objects, you need to make Aws::ArrayDelete<T> the second type parameter, ie:
-
-`std::unique_ptr<MyClass, Aws::ArrayDelete<MyClass>> somePointer = Aws::NewArray<MyClass>(...);`
-
+- use Aws::UniquePtr for unique pointers to a single object; create this using the Aws::MakeUnique function
+- use Aws::UniqueArray for unique pointers to an array of objects; create this using the Aws::MakeUniqueArray function
 - Never use stl containers directly. Use one of the Aws:: typedefs, or if one does not exist, add a typedef for the desired container.
 
 `Aws::Map<Aws::String, Aws::String> m_kvPairs;`

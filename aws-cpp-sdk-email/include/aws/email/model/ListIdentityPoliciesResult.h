@@ -45,26 +45,26 @@ namespace Model
     ListIdentityPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /*
-     <p>A list of policy names applying to the requested identity.</p>
+     <p>A list of names of policies that apply to the specified identity.</p>
     */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
     /*
-     <p>A list of policy names applying to the requested identity.</p>
+     <p>A list of names of policies that apply to the specified identity.</p>
     */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
 
     /*
-     <p>A list of policy names applying to the requested identity.</p>
+     <p>A list of names of policies that apply to the specified identity.</p>
     */
     inline ListIdentityPoliciesResult&  WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /*
-     <p>A list of policy names applying to the requested identity.</p>
+     <p>A list of names of policies that apply to the specified identity.</p>
     */
     inline ListIdentityPoliciesResult& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
 
     /*
-     <p>A list of policy names applying to the requested identity.</p>
+     <p>A list of names of policies that apply to the specified identity.</p>
     */
     inline ListIdentityPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 

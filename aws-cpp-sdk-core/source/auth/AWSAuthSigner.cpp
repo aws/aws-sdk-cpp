@@ -103,6 +103,11 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 {
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
+    if (!credentials.GetSessionToken().empty())
+    {
+        request.SetAwsSessionToken(credentials.GetSessionToken());
+    }
+
     //calculate date header to use in internal signature (this also goes into date header).
     Aws::String dateHeaderValue = DateTime::CalculateGmtTimestampAsString("%Y%m%dT%H%M%SZ");
     request.SetHeaderValue(AWS_DATE_HEADER, dateHeaderValue);
@@ -235,11 +240,6 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
     Aws::String awsAuthString = ss.str();
     AWS_LOG_DEBUG(v4LogTag, "Signing request with: %s", awsAuthString.c_str());
     request.SetAwsAuthorization(awsAuthString.c_str());
-
-    if (!credentials.GetSessionToken().empty())
-    {
-        request.SetAwsSessionToken(credentials.GetSessionToken());
-    }
 
     return true;
 }

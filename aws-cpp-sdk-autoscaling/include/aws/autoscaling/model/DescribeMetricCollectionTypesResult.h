@@ -46,40 +46,40 @@ namespace Model
     DescribeMetricCollectionTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics.</p>
     */
     inline const Aws::Vector<MetricCollectionType>& GetMetrics() const{ return m_metrics; }
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics.</p>
     */
     inline void SetMetrics(const Aws::Vector<MetricCollectionType>& value) { m_metrics = value; }
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics.</p>
     */
     inline DescribeMetricCollectionTypesResult&  WithMetrics(const Aws::Vector<MetricCollectionType>& value) { SetMetrics(value); return *this;}
 
     /*
-     <p>One or more of the following metrics:</p> <ul> <li><p>GroupMinSize</p></li> <li><p>GroupMaxSize</p></li> <li><p>GroupDesiredCapacity</p></li> <li><p>GroupInServiceInstances</p></li> <li><p>GroupPendingInstances</p></li> <li><p>GroupStandbyInstances</p></li> <li><p>GroupTerminatingInstances</p></li> <li><p>GroupTotalInstances</p></li> </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request it when calling <a>EnableMetricsCollection</a>.</p> </note>
+     <p>One or more metrics.</p>
     */
     inline DescribeMetricCollectionTypesResult& AddMetrics(const MetricCollectionType& value) { m_metrics.push_back(value); return *this; }
 
     /*
-     <p>The granularities for the listed metrics.</p>
+     <p>The granularities for the metrics.</p>
     */
     inline const Aws::Vector<MetricGranularityType>& GetGranularities() const{ return m_granularities; }
     /*
-     <p>The granularities for the listed metrics.</p>
+     <p>The granularities for the metrics.</p>
     */
     inline void SetGranularities(const Aws::Vector<MetricGranularityType>& value) { m_granularities = value; }
 
     /*
-     <p>The granularities for the listed metrics.</p>
+     <p>The granularities for the metrics.</p>
     */
     inline DescribeMetricCollectionTypesResult&  WithGranularities(const Aws::Vector<MetricGranularityType>& value) { SetGranularities(value); return *this;}
 
     /*
-     <p>The granularities for the listed metrics.</p>
+     <p>The granularities for the metrics.</p>
     */
     inline DescribeMetricCollectionTypesResult& AddGranularities(const MetricGranularityType& value) { m_granularities.push_back(value); return *this; }
 

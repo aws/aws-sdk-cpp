@@ -112,26 +112,26 @@ namespace Model
     inline SetPermissionRequest&  WithAllowSudo(bool value) { SetAllowSudo(value); return *this;}
 
     /*
-     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline const Aws::String& GetLevel() const{ return m_level; }
     /*
-     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline void SetLevel(const Aws::String& value) { m_levelHasBeenSet = true; m_level = value; }
 
     /*
-     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline void SetLevel(const char* value) { m_levelHasBeenSet = true; m_level.assign(value); }
 
     /*
-     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline SetPermissionRequest&  WithLevel(const Aws::String& value) { SetLevel(value); return *this;}
 
     /*
-     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
+     <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code> </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> <p>For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     */
     inline SetPermissionRequest& WithLevel(const char* value) { SetLevel(value); return *this;}
 

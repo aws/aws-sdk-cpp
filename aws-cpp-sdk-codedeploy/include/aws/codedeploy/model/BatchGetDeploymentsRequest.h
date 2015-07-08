@@ -13,21 +13,22 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a batch get deployments operation.</p>
   */
-  class AWS_CODEDEPLOY_API BatchGetDeploymentsRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API BatchGetDeploymentsRequest : public CodeDeployRequest
   {
   public:
     BatchGetDeploymentsRequest();
@@ -36,18 +37,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
     inline const Aws::Vector<Aws::String>& GetDeploymentIds() const{ return m_deploymentIds; }
-    
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
     inline void SetDeploymentIds(const Aws::Vector<Aws::String>& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
 
-    
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
     inline BatchGetDeploymentsRequest&  WithDeploymentIds(const Aws::Vector<Aws::String>& value) { SetDeploymentIds(value); return *this;}
 
-    
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const Aws::String& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 
-    
+    /*
+     <p>A list of deployment IDs, with multiple deployment IDs separated by spaces.</p>
+    */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const char* value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 
   private:
@@ -56,5 +67,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

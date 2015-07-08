@@ -27,7 +27,6 @@ using namespace Aws;
 
 HeadObjectResult::HeadObjectResult() : 
     m_deleteMarker(false),
-    m_expiration(0.0),
     m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
@@ -37,7 +36,6 @@ HeadObjectResult::HeadObjectResult() :
 
 HeadObjectResult::HeadObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_deleteMarker(false),
-    m_expiration(0.0),
     m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
@@ -71,7 +69,7 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& expirationIter = headers.find("x-amz-expiration");
   if(expirationIter != headers.end())
   {
-     m_expiration = StringUtils::ConvertToDouble(expirationIter->second.c_str());
+    m_expiration = expirationIter->second;
   }
 
   const auto& restoreIter = headers.find("x-amz-restore");

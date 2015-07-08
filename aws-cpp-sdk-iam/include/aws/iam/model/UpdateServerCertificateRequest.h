@@ -82,26 +82,26 @@ namespace Model
     inline UpdateServerCertificateRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
 
     /*
-     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. </p>
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline const Aws::String& GetNewServerCertificateName() const{ return m_newServerCertificateName; }
     /*
-     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. </p>
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline void SetNewServerCertificateName(const Aws::String& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
 
     /*
-     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. </p>
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline void SetNewServerCertificateName(const char* value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName.assign(value); }
 
     /*
-     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. </p>
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline UpdateServerCertificateRequest&  WithNewServerCertificateName(const Aws::String& value) { SetNewServerCertificateName(value); return *this;}
 
     /*
-     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. </p>
+     <p> The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>
     */
     inline UpdateServerCertificateRequest& WithNewServerCertificateName(const char* value) { SetNewServerCertificateName(value); return *this;}
 

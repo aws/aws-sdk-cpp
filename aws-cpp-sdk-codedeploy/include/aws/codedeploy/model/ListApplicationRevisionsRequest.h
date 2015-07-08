@@ -13,8 +13,8 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/ApplicationRevisionSortBy.h>
 #include <aws/codedeploy/model/SortOrder.h>
@@ -22,14 +22,15 @@
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a list application revisions operation.</p>
   */
-  class AWS_CODEDEPLOY_API ListApplicationRevisionsRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API ListApplicationRevisionsRequest : public CodeDeployRequest
   {
   public:
     ListApplicationRevisionsRequest();
@@ -38,84 +39,142 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline ListApplicationRevisionsRequest&  WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    */
     inline ListApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    
+    /*
+     <p>The column name to sort the list results by:</p> <ul> <li>registerTime: Sort the list results by when the revisions were registered with AWS CodeDeploy.</li> <li>firstUsedTime: Sort the list results by when the revisions were first used by in a deployment.</li> <li>lastUsedTime: Sort the list results by when the revisions were last used in a deployment.</li> </ul> <p>If not specified or set to null, the results will be returned in an arbitrary order.</p>
+    */
     inline const ApplicationRevisionSortBy& GetSortBy() const{ return m_sortBy; }
-    
+    /*
+     <p>The column name to sort the list results by:</p> <ul> <li>registerTime: Sort the list results by when the revisions were registered with AWS CodeDeploy.</li> <li>firstUsedTime: Sort the list results by when the revisions were first used by in a deployment.</li> <li>lastUsedTime: Sort the list results by when the revisions were last used in a deployment.</li> </ul> <p>If not specified or set to null, the results will be returned in an arbitrary order.</p>
+    */
     inline void SetSortBy(const ApplicationRevisionSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
-    
+    /*
+     <p>The column name to sort the list results by:</p> <ul> <li>registerTime: Sort the list results by when the revisions were registered with AWS CodeDeploy.</li> <li>firstUsedTime: Sort the list results by when the revisions were first used by in a deployment.</li> <li>lastUsedTime: Sort the list results by when the revisions were last used in a deployment.</li> </ul> <p>If not specified or set to null, the results will be returned in an arbitrary order.</p>
+    */
     inline ListApplicationRevisionsRequest&  WithSortBy(const ApplicationRevisionSortBy& value) { SetSortBy(value); return *this;}
 
-    
+    /*
+     <p>The order to sort the list results by:</p> <ul> <li>ascending: Sort the list of results in ascending order.</li> <li>descending: Sort the list of results in descending order.</li> </ul> <p>If not specified, the results will be sorted in ascending order.</p> <p>If set to null, the results will be sorted in an arbitrary order.</p>
+    */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-    
+    /*
+     <p>The order to sort the list results by:</p> <ul> <li>ascending: Sort the list of results in ascending order.</li> <li>descending: Sort the list of results in descending order.</li> </ul> <p>If not specified, the results will be sorted in ascending order.</p> <p>If set to null, the results will be sorted in an arbitrary order.</p>
+    */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
-    
+    /*
+     <p>The order to sort the list results by:</p> <ul> <li>ascending: Sort the list of results in ascending order.</li> <li>descending: Sort the list of results in descending order.</li> </ul> <p>If not specified, the results will be sorted in ascending order.</p> <p>If set to null, the results will be sorted in an arbitrary order.</p>
+    */
     inline ListApplicationRevisionsRequest&  WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
-    
+    /*
+     <p>A specific Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to null, then all of the user's buckets will be searched.</p>
+    */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
-    
+    /*
+     <p>A specific Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to null, then all of the user's buckets will be searched.</p>
+    */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
-    
+    /*
+     <p>A specific Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to null, then all of the user's buckets will be searched.</p>
+    */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
-    
+    /*
+     <p>A specific Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to null, then all of the user's buckets will be searched.</p>
+    */
     inline ListApplicationRevisionsRequest&  WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
-    
+    /*
+     <p>A specific Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to null, then all of the user's buckets will be searched.</p>
+    */
     inline ListApplicationRevisionsRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
-    
+    /*
+     <p>A specific key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
-    
+    /*
+     <p>A specific key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
-    
+    /*
+     <p>A specific key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    */
     inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
 
-    
+    /*
+     <p>A specific key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    */
     inline ListApplicationRevisionsRequest&  WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
 
-    
+    /*
+     <p>A specific key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>
+    */
     inline ListApplicationRevisionsRequest& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
-    
+    /*
+     <p>Whether to list revisions based on whether the revision is the target revision of an deployment group:</p> <ul> <li>include: List revisions that are target revisions of a deployment group.</li> <li>exclude: Do not list revisions that are target revisions of a deployment group.</li> <li>ignore: List all revisions, regardless of whether they are target revisions of a deployment group.</li> </ul>
+    */
     inline const ListStateFilterAction& GetDeployed() const{ return m_deployed; }
-    
+    /*
+     <p>Whether to list revisions based on whether the revision is the target revision of an deployment group:</p> <ul> <li>include: List revisions that are target revisions of a deployment group.</li> <li>exclude: Do not list revisions that are target revisions of a deployment group.</li> <li>ignore: List all revisions, regardless of whether they are target revisions of a deployment group.</li> </ul>
+    */
     inline void SetDeployed(const ListStateFilterAction& value) { m_deployedHasBeenSet = true; m_deployed = value; }
 
-    
+    /*
+     <p>Whether to list revisions based on whether the revision is the target revision of an deployment group:</p> <ul> <li>include: List revisions that are target revisions of a deployment group.</li> <li>exclude: Do not list revisions that are target revisions of a deployment group.</li> <li>ignore: List all revisions, regardless of whether they are target revisions of a deployment group.</li> </ul>
+    */
     inline ListApplicationRevisionsRequest&  WithDeployed(const ListStateFilterAction& value) { SetDeployed(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list application revisions call, which can be used to return the next set of applications in the list.</p>
+    */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    
+    /*
+     <p>An identifier that was returned from the previous list application revisions call, which can be used to return the next set of applications in the list.</p>
+    */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list application revisions call, which can be used to return the next set of applications in the list.</p>
+    */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list application revisions call, which can be used to return the next set of applications in the list.</p>
+    */
     inline ListApplicationRevisionsRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list application revisions call, which can be used to return the next set of applications in the list.</p>
+    */
     inline ListApplicationRevisionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
@@ -136,5 +195,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

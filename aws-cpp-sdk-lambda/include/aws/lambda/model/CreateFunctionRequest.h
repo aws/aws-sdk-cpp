@@ -60,16 +60,16 @@ namespace Model
     inline CreateFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /*
-     <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</p>
+     <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports "java" and "nodejs" as the runtime.</p>
     */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
     /*
-     <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</p>
+     <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports "java" and "nodejs" as the runtime.</p>
     */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /*
-     <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</p>
+     <p>The runtime environment for the Lambda function you are uploading. Currently, Lambda supports "java" and "nodejs" as the runtime.</p>
     */
     inline CreateFunctionRequest&  WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
@@ -98,26 +98,26 @@ namespace Model
     inline CreateFunctionRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
     /*
-     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
+     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. For Java, it can be <code>package.class-name::handler</code> or <code>package.class-name</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda Function Handler (Java)</a>. </p>
     */
     inline const Aws::String& GetHandler() const{ return m_handler; }
     /*
-     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
+     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. For Java, it can be <code>package.class-name::handler</code> or <code>package.class-name</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda Function Handler (Java)</a>. </p>
     */
     inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
 
     /*
-     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
+     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. For Java, it can be <code>package.class-name::handler</code> or <code>package.class-name</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda Function Handler (Java)</a>. </p>
     */
     inline void SetHandler(const char* value) { m_handlerHasBeenSet = true; m_handler.assign(value); }
 
     /*
-     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
+     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. For Java, it can be <code>package.class-name::handler</code> or <code>package.class-name</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda Function Handler (Java)</a>. </p>
     */
     inline CreateFunctionRequest&  WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
 
     /*
-     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </p>
+     <p>The function within your code that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. For Java, it can be <code>package.class-name::handler</code> or <code>package.class-name</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda Function Handler (Java)</a>. </p>
     */
     inline CreateFunctionRequest& WithHandler(const char* value) { SetHandler(value); return *this;}
 

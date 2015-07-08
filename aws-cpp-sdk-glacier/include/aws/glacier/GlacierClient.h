@@ -34,6 +34,7 @@
 #include <aws/glacier/model/ListJobsResult.h>
 #include <aws/glacier/model/ListMultipartUploadsResult.h>
 #include <aws/glacier/model/ListPartsResult.h>
+#include <aws/glacier/model/ListTagsForVaultResult.h>
 #include <aws/glacier/model/ListVaultsResult.h>
 #include <aws/glacier/model/UploadArchiveResult.h>
 #include <aws/glacier/model/UploadMultipartPartResult.h>
@@ -82,6 +83,7 @@ namespace Glacier
 namespace Model
 {
   class AbortMultipartUploadRequest;
+  class AddTagsToVaultRequest;
   class CompleteMultipartUploadRequest;
   class CreateVaultRequest;
   class DeleteArchiveRequest;
@@ -99,7 +101,9 @@ namespace Model
   class ListJobsRequest;
   class ListMultipartUploadsRequest;
   class ListPartsRequest;
+  class ListTagsForVaultRequest;
   class ListVaultsRequest;
+  class RemoveTagsFromVaultRequest;
   class SetDataRetrievalPolicyRequest;
   class SetVaultAccessPolicyRequest;
   class SetVaultNotificationsRequest;
@@ -107,6 +111,7 @@ namespace Model
   class UploadMultipartPartRequest;
 
   typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> AbortMultipartUploadOutcome;
+  typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> AddTagsToVaultOutcome;
   typedef Utils::Outcome<CompleteMultipartUploadResult, Client::AWSError<GlacierErrors>> CompleteMultipartUploadOutcome;
   typedef Utils::Outcome<CreateVaultResult, Client::AWSError<GlacierErrors>> CreateVaultOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> DeleteArchiveOutcome;
@@ -124,7 +129,9 @@ namespace Model
   typedef Utils::Outcome<ListJobsResult, Client::AWSError<GlacierErrors>> ListJobsOutcome;
   typedef Utils::Outcome<ListMultipartUploadsResult, Client::AWSError<GlacierErrors>> ListMultipartUploadsOutcome;
   typedef Utils::Outcome<ListPartsResult, Client::AWSError<GlacierErrors>> ListPartsOutcome;
+  typedef Utils::Outcome<ListTagsForVaultResult, Client::AWSError<GlacierErrors>> ListTagsForVaultOutcome;
   typedef Utils::Outcome<ListVaultsResult, Client::AWSError<GlacierErrors>> ListVaultsOutcome;
+  typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> RemoveTagsFromVaultOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> SetDataRetrievalPolicyOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> SetVaultAccessPolicyOutcome;
   typedef Utils::Outcome<NoResult, Client::AWSError<GlacierErrors>> SetVaultNotificationsOutcome;
@@ -132,6 +139,7 @@ namespace Model
   typedef Utils::Outcome<UploadMultipartPartResult, Client::AWSError<GlacierErrors>> UploadMultipartPartOutcome;
 
   typedef std::future<AbortMultipartUploadOutcome> AbortMultipartUploadOutcomeCallable;
+  typedef std::future<AddTagsToVaultOutcome> AddTagsToVaultOutcomeCallable;
   typedef std::future<CompleteMultipartUploadOutcome> CompleteMultipartUploadOutcomeCallable;
   typedef std::future<CreateVaultOutcome> CreateVaultOutcomeCallable;
   typedef std::future<DeleteArchiveOutcome> DeleteArchiveOutcomeCallable;
@@ -149,7 +157,9 @@ namespace Model
   typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
   typedef std::future<ListMultipartUploadsOutcome> ListMultipartUploadsOutcomeCallable;
   typedef std::future<ListPartsOutcome> ListPartsOutcomeCallable;
+  typedef std::future<ListTagsForVaultOutcome> ListTagsForVaultOutcomeCallable;
   typedef std::future<ListVaultsOutcome> ListVaultsOutcomeCallable;
+  typedef std::future<RemoveTagsFromVaultOutcome> RemoveTagsFromVaultOutcomeCallable;
   typedef std::future<SetDataRetrievalPolicyOutcome> SetDataRetrievalPolicyOutcomeCallable;
   typedef std::future<SetVaultAccessPolicyOutcome> SetVaultAccessPolicyOutcomeCallable;
   typedef std::future<SetVaultNotificationsOutcome> SetVaultNotificationsOutcomeCallable;
@@ -160,6 +170,7 @@ namespace Model
   class GlacierClient;
 
   typedef Aws::Utils::Event<GlacierClient, const Model::AbortMultipartUploadRequest&, const Model::AbortMultipartUploadOutcome&, const Aws::Client::AsyncCallerContext*> AbortMultipartUploadOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<GlacierClient, const Model::AddTagsToVaultRequest&, const Model::AddTagsToVaultOutcome&, const Aws::Client::AsyncCallerContext*> AddTagsToVaultOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::CompleteMultipartUploadRequest&, const Model::CompleteMultipartUploadOutcome&, const Aws::Client::AsyncCallerContext*> CompleteMultipartUploadOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::CreateVaultRequest&, const Model::CreateVaultOutcome&, const Aws::Client::AsyncCallerContext*> CreateVaultOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::DeleteArchiveRequest&, const Model::DeleteArchiveOutcome&, const Aws::Client::AsyncCallerContext*> DeleteArchiveOutcomeReceivedEvent;
@@ -177,7 +188,9 @@ namespace Model
   typedef Aws::Utils::Event<GlacierClient, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const Aws::Client::AsyncCallerContext*> ListJobsOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const Aws::Client::AsyncCallerContext*> ListMultipartUploadsOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::ListPartsRequest&, const Model::ListPartsOutcome&, const Aws::Client::AsyncCallerContext*> ListPartsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<GlacierClient, const Model::ListTagsForVaultRequest&, const Model::ListTagsForVaultOutcome&, const Aws::Client::AsyncCallerContext*> ListTagsForVaultOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::ListVaultsRequest&, const Model::ListVaultsOutcome&, const Aws::Client::AsyncCallerContext*> ListVaultsOutcomeReceivedEvent;
+  typedef Aws::Utils::Event<GlacierClient, const Model::RemoveTagsFromVaultRequest&, const Model::RemoveTagsFromVaultOutcome&, const Aws::Client::AsyncCallerContext*> RemoveTagsFromVaultOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::SetDataRetrievalPolicyRequest&, const Model::SetDataRetrievalPolicyOutcome&, const Aws::Client::AsyncCallerContext*> SetDataRetrievalPolicyOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::SetVaultAccessPolicyRequest&, const Model::SetVaultAccessPolicyOutcome&, const Aws::Client::AsyncCallerContext*> SetVaultAccessPolicyOutcomeReceivedEvent;
   typedef Aws::Utils::Event<GlacierClient, const Model::SetVaultNotificationsRequest&, const Model::SetVaultNotificationsOutcome&, const Aws::Client::AsyncCallerContext*> SetVaultNotificationsOutcomeReceivedEvent;
@@ -232,6 +245,25 @@ namespace Model
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>This operation adds the specified tags to a vault. Each tag is composed of a key and a value. Each vault can have up to 10 tags. If your request would cause the tag limit for the vault to be exceeded, the operation throws the <code>LimitExceededException</code> error. If a tag already exists on the vault under a specified key, the existing key value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. </p>
+     */
+     Model::AddTagsToVaultOutcome AddTagsToVault(const Model::AddTagsToVaultRequest& request) const;
+
+     /*
+       <p>This operation adds the specified tags to a vault. Each tag is composed of a key and a value. Each vault can have up to 10 tags. If your request would cause the tag limit for the vault to be exceeded, the operation throws the <code>LimitExceededException</code> error. If a tag already exists on the vault under a specified key, the existing key value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. </p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::AddTagsToVaultOutcomeCallable AddTagsToVaultCallable(const Model::AddTagsToVaultRequest& request) const;
+
+     /*
+       <p>This operation adds the specified tags to a vault. Each tag is composed of a key and a value. Each vault can have up to 10 tags. If your request would cause the tag limit for the vault to be exceeded, the operation throws the <code>LimitExceededException</code> error. If a tag already exists on the vault under a specified key, the existing key value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. </p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void AddTagsToVaultAsync(const Model::AddTagsToVaultRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>You call this operation to inform Amazon Glacier that all the archive parts have been uploaded and that Amazon Glacier can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Amazon Glacier returns the URI path of the newly created archive resource. Using the URI path, you can then access the archive. After you upload an archive, you should save the archive ID returned to retrieve the archive at a later point. You can also get the vault inventory to obtain a list of archive IDs in a vault. For more information, see <a>InitiateJob</a>.</p> <p>In the request, you must include the computed SHA256 tree hash of the entire archive you have uploaded. For information about computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing Checksums</a>. On the server side, Amazon Glacier also constructs the SHA256 tree hash of the assembled archive. If the values match, Amazon Glacier saves the archive to the vault; otherwise, it returns an error, and the operation fails. The <a>ListParts</a> operation returns a list of parts uploaded for a specific multipart upload. It includes checksum information for each uploaded part that can be used to debug a bad checksum issue.</p> <p>Additionally, Amazon Glacier also checks for any missing content ranges when assembling the archive, if missing content ranges are found, Amazon Glacier returns an error and the operation fails. </p> <p>Complete Multipart Upload is an idempotent operation. After your first successful complete multipart upload, if you call the operation again within a short period, the operation will succeed and return the same archive ID. This is useful in the event you experience a network issue that causes an aborted connection or receive a 500 server error, in which case you can repeat your Complete Multipart Upload request and get the same archive ID without creating duplicate archives. Note, however, that after the multipart upload completes, you cannot call the List Parts operation and the multipart upload will not appear in List Multipart Uploads response, even if idempotent complete is possible.</p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
@@ -310,38 +342,38 @@ namespace Model
      void DeleteVaultAsync(const Model::DeleteVaultRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent?that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
+       <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
      */
      Model::DeleteVaultAccessPolicyOutcome DeleteVaultAccessPolicy(const Model::DeleteVaultAccessPolicyRequest& request) const;
 
      /*
-       <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent?that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
+       <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeleteVaultAccessPolicyOutcomeCallable DeleteVaultAccessPolicyCallable(const Model::DeleteVaultAccessPolicyRequest& request) const;
 
      /*
-       <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent?that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
+       <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void DeleteVaultAccessPolicyAsync(const Model::DeleteVaultAccessPolicyRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent;that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
+       <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
      */
      Model::DeleteVaultNotificationsOutcome DeleteVaultNotifications(const Model::DeleteVaultNotificationsRequest& request) const;
 
      /*
-       <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent;that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
+       <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeleteVaultNotificationsOutcomeCallable DeleteVaultNotificationsCallable(const Model::DeleteVaultNotificationsRequest& request) const;
 
      /*
-       <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent;that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
+       <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -424,19 +456,19 @@ namespace Model
      void GetJobOutputAsync(const Model::GetJobOutputRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>This operation retrieves the <code>access-policy</code> subresource set on the vault?for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>
+       <p>This operation retrieves the <code>access-policy</code> subresource set on the vault; for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>
      */
      Model::GetVaultAccessPolicyOutcome GetVaultAccessPolicy(const Model::GetVaultAccessPolicyRequest& request) const;
 
      /*
-       <p>This operation retrieves the <code>access-policy</code> subresource set on the vault?for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>
+       <p>This operation retrieves the <code>access-policy</code> subresource set on the vault; for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::GetVaultAccessPolicyOutcomeCallable GetVaultAccessPolicyCallable(const Model::GetVaultAccessPolicyRequest& request) const;
 
      /*
-       <p>This operation retrieves the <code>access-policy</code> subresource set on the vault?for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>
+       <p>This operation retrieves the <code>access-policy</code> subresource set on the vault; for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -557,6 +589,25 @@ namespace Model
      void ListPartsAsync(const Model::ListPartsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
+       <p>This operation lists all the tags attached to a vault. The operation returns an empty map if there are no tags. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>.</p>
+     */
+     Model::ListTagsForVaultOutcome ListTagsForVault(const Model::ListTagsForVaultRequest& request) const;
+
+     /*
+       <p>This operation lists all the tags attached to a vault. The operation returns an empty map if there are no tags. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>.</p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::ListTagsForVaultOutcomeCallable ListTagsForVaultCallable(const Model::ListTagsForVaultRequest& request) const;
+
+     /*
+       <p>This operation lists all the tags attached to a vault. The operation returns an empty map if there are no tags. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>.</p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void ListTagsForVaultAsync(const Model::ListTagsForVaultRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
        <p>This operation lists all vaults owned by the calling user's account. The list returned in the response is ASCII-sorted by vault name. </p> <p>By default, this operation returns up to 1,000 items. If there are more vaults to list, the response <code class="code">marker</code> field contains the vault Amazon Resource Name (ARN) at which to continue the list with a new List Vaults request; otherwise, the <code class="code">marker</code> field is <code class="code">null</code>. To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code> request parameter to the vault ARN you obtained from a previous List Vaults request. You can also limit the number of vaults returned in the response by specifying the <code class="code">limit</code> parameter in the request. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
      */
      Model::ListVaultsOutcome ListVaults(const Model::ListVaultsRequest& request) const;
@@ -574,6 +625,25 @@ namespace Model
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void ListVaultsAsync(const Model::ListVaultsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+
+     /*
+       <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>
+     */
+     Model::RemoveTagsFromVaultOutcome RemoveTagsFromVault(const Model::RemoveTagsFromVaultRequest& request) const;
+
+     /*
+       <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>
+
+       returns a future to the operation so that it can be executed in parallel to other requests.
+     */
+     Model::RemoveTagsFromVaultOutcomeCallable RemoveTagsFromVaultCallable(const Model::RemoveTagsFromVaultRequest& request) const;
+
+     /*
+       <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>
+
+      Queues the request into a thread executor and triggers associated callback when operation has finished.
+     */
+     void RemoveTagsFromVaultAsync(const Model::RemoveTagsFromVaultRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
        <p>This operation sets and then enacts a data retrieval policy in the region specified in the PUT request. You can set one policy per region for an AWS account. The policy is enacted within a few minutes of a successful PUT operation. </p> <p>The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted. For more information about data retrieval policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon Glacier Data Retrieval Policies</a>. </p>
@@ -685,6 +755,23 @@ namespace Model
     inline void ClearAllAbortMultipartUploadOutcomeReceivedHandlers()
     {
       m_onAbortMultipartUploadOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for AddTagsToVaultAsync to call upon completion to the handler chain. You need to call this to
+    * use AddTagsToVaultAsync.
+    */
+    inline void RegisterAddTagsToVaultOutcomeReceivedHandler(const AddTagsToVaultOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onAddTagsToVaultOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for AddTagsToVault.
+    */
+    inline void ClearAllAddTagsToVaultOutcomeReceivedHandlers()
+    {
+      m_onAddTagsToVaultOutcomeReceived.Clear();
     }
 
    /**
@@ -977,6 +1064,23 @@ namespace Model
     }
 
    /**
+    * Adds an event handler for ListTagsForVaultAsync to call upon completion to the handler chain. You need to call this to
+    * use ListTagsForVaultAsync.
+    */
+    inline void RegisterListTagsForVaultOutcomeReceivedHandler(const ListTagsForVaultOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onListTagsForVaultOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for ListTagsForVault.
+    */
+    inline void ClearAllListTagsForVaultOutcomeReceivedHandlers()
+    {
+      m_onListTagsForVaultOutcomeReceived.Clear();
+    }
+
+   /**
     * Adds an event handler for ListVaultsAsync to call upon completion to the handler chain. You need to call this to
     * use ListVaultsAsync.
     */
@@ -991,6 +1095,23 @@ namespace Model
     inline void ClearAllListVaultsOutcomeReceivedHandlers()
     {
       m_onListVaultsOutcomeReceived.Clear();
+    }
+
+   /**
+    * Adds an event handler for RemoveTagsFromVaultAsync to call upon completion to the handler chain. You need to call this to
+    * use RemoveTagsFromVaultAsync.
+    */
+    inline void RegisterRemoveTagsFromVaultOutcomeReceivedHandler(const RemoveTagsFromVaultOutcomeReceivedEvent::EventHandler& handler)
+    {
+      m_onRemoveTagsFromVaultOutcomeReceived += handler;
+    }
+
+    /**
+    * Clears all event handlers for RemoveTagsFromVault.
+    */
+    inline void ClearAllRemoveTagsFromVaultOutcomeReceivedHandlers()
+    {
+      m_onRemoveTagsFromVaultOutcomeReceived.Clear();
     }
 
    /**
@@ -1083,6 +1204,7 @@ namespace Model
 
     /**Async helpers**/
     void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void AddTagsToVaultAsyncHelper(const Model::AddTagsToVaultRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void CompleteMultipartUploadAsyncHelper(const Model::CompleteMultipartUploadRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void CreateVaultAsyncHelper(const Model::CreateVaultRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void DeleteArchiveAsyncHelper(const Model::DeleteArchiveRequest& request, const Aws::Client::AsyncCallerContext* context) const;
@@ -1100,7 +1222,9 @@ namespace Model
     void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void ListMultipartUploadsAsyncHelper(const Model::ListMultipartUploadsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void ListPartsAsyncHelper(const Model::ListPartsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void ListTagsForVaultAsyncHelper(const Model::ListTagsForVaultRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void ListVaultsAsyncHelper(const Model::ListVaultsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+    void RemoveTagsFromVaultAsyncHelper(const Model::RemoveTagsFromVaultRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void SetDataRetrievalPolicyAsyncHelper(const Model::SetDataRetrievalPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void SetVaultAccessPolicyAsyncHelper(const Model::SetVaultAccessPolicyRequest& request, const Aws::Client::AsyncCallerContext* context) const;
     void SetVaultNotificationsAsyncHelper(const Model::SetVaultNotificationsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
@@ -1112,6 +1236,7 @@ namespace Model
 
     /** events **/
     AbortMultipartUploadOutcomeReceivedEvent m_onAbortMultipartUploadOutcomeReceived;
+    AddTagsToVaultOutcomeReceivedEvent m_onAddTagsToVaultOutcomeReceived;
     CompleteMultipartUploadOutcomeReceivedEvent m_onCompleteMultipartUploadOutcomeReceived;
     CreateVaultOutcomeReceivedEvent m_onCreateVaultOutcomeReceived;
     DeleteArchiveOutcomeReceivedEvent m_onDeleteArchiveOutcomeReceived;
@@ -1129,7 +1254,9 @@ namespace Model
     ListJobsOutcomeReceivedEvent m_onListJobsOutcomeReceived;
     ListMultipartUploadsOutcomeReceivedEvent m_onListMultipartUploadsOutcomeReceived;
     ListPartsOutcomeReceivedEvent m_onListPartsOutcomeReceived;
+    ListTagsForVaultOutcomeReceivedEvent m_onListTagsForVaultOutcomeReceived;
     ListVaultsOutcomeReceivedEvent m_onListVaultsOutcomeReceived;
+    RemoveTagsFromVaultOutcomeReceivedEvent m_onRemoveTagsFromVaultOutcomeReceived;
     SetDataRetrievalPolicyOutcomeReceivedEvent m_onSetDataRetrievalPolicyOutcomeReceived;
     SetVaultAccessPolicyOutcomeReceivedEvent m_onSetVaultAccessPolicyOutcomeReceived;
     SetVaultNotificationsOutcomeReceivedEvent m_onSetVaultNotificationsOutcomeReceived;

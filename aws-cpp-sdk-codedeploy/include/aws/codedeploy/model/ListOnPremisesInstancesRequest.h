@@ -13,8 +13,8 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/codedeploy/model/RegistrationStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -22,14 +22,15 @@
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a list on-premises instances operation.</p>.
   */
-  class AWS_CODEDEPLOY_API ListOnPremisesInstancesRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API ListOnPremisesInstancesRequest : public CodeDeployRequest
   {
   public:
     ListOnPremisesInstancesRequest();
@@ -38,37 +39,61 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The on-premises instances registration status:</p> <ul> <li>Deregistered: Include in the resulting list deregistered on-premises instances.</li> <li>Registered: Include in the resulting list registered on-premises instances.</li> </ul>
+    */
     inline const RegistrationStatus& GetRegistrationStatus() const{ return m_registrationStatus; }
-    
+    /*
+     <p>The on-premises instances registration status:</p> <ul> <li>Deregistered: Include in the resulting list deregistered on-premises instances.</li> <li>Registered: Include in the resulting list registered on-premises instances.</li> </ul>
+    */
     inline void SetRegistrationStatus(const RegistrationStatus& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
 
-    
+    /*
+     <p>The on-premises instances registration status:</p> <ul> <li>Deregistered: Include in the resulting list deregistered on-premises instances.</li> <li>Registered: Include in the resulting list registered on-premises instances.</li> </ul>
+    */
     inline ListOnPremisesInstancesRequest&  WithRegistrationStatus(const RegistrationStatus& value) { SetRegistrationStatus(value); return *this;}
 
-    
+    /*
+     <p>The on-premises instance tags that will be used to restrict the corresponding on-premises instance names that are returned.</p>
+    */
     inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
-    
+    /*
+     <p>The on-premises instance tags that will be used to restrict the corresponding on-premises instance names that are returned.</p>
+    */
     inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
 
-    
+    /*
+     <p>The on-premises instance tags that will be used to restrict the corresponding on-premises instance names that are returned.</p>
+    */
     inline ListOnPremisesInstancesRequest&  WithTagFilters(const Aws::Vector<TagFilter>& value) { SetTagFilters(value); return *this;}
 
-    
+    /*
+     <p>The on-premises instance tags that will be used to restrict the corresponding on-premises instance names that are returned.</p>
+    */
     inline ListOnPremisesInstancesRequest& AddTagFilters(const TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list on-premises instances call, which can be used to return the next set of on-premises instances in the list.</p>
+    */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    
+    /*
+     <p>An identifier that was returned from the previous list on-premises instances call, which can be used to return the next set of on-premises instances in the list.</p>
+    */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list on-premises instances call, which can be used to return the next set of on-premises instances in the list.</p>
+    */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /*
+     <p>An identifier that was returned from the previous list on-premises instances call, which can be used to return the next set of on-premises instances in the list.</p>
+    */
     inline ListOnPremisesInstancesRequest&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /*
+     <p>An identifier that was returned from the previous list on-premises instances call, which can be used to return the next set of on-premises instances in the list.</p>
+    */
     inline ListOnPremisesInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
@@ -81,5 +106,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

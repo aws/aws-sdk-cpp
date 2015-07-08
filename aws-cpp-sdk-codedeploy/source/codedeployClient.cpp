@@ -23,9 +23,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
-#include <aws/codedeploy/codedeployClient.h>
-#include <aws/codedeploy/codedeployEndpoint.h>
-#include <aws/codedeploy/codedeployErrorMarshaller.h>
+#include <aws/codedeploy/CodeDeployClient.h>
+#include <aws/codedeploy/CodeDeployEndpoint.h>
+#include <aws/codedeploy/CodeDeployErrorMarshaller.h>
 #include <aws/codedeploy/model/AddTagsToOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/BatchGetApplicationsRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsRequest.h>
@@ -62,54 +62,54 @@
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
-using namespace Aws::codedeploy;
-using namespace Aws::codedeploy::Model;
+using namespace Aws::CodeDeploy;
+using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
 static const char* SERVICE_NAME = "codedeploy";
-static const char* ALLOCATION_TAG = "codedeployClient";
+static const char* ALLOCATION_TAG = "CodeDeployClient";
 
-codedeployClient::codedeployClient(const Client::ClientConfiguration& clientConfiguration) :
+CodeDeployClient::CodeDeployClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), SERVICE_NAME, clientConfiguration.region),
-    Aws::MakeShared<codedeployErrorMarshaller>(ALLOCATION_TAG)),
+    Aws::MakeShared<CodeDeployErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-codedeployClient::codedeployClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+CodeDeployClient::CodeDeployClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME, clientConfiguration.region),
-    Aws::MakeShared<codedeployErrorMarshaller>(ALLOCATION_TAG)),
+    Aws::MakeShared<CodeDeployErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-codedeployClient::codedeployClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+CodeDeployClient::CodeDeployClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const Client::ClientConfiguration& clientConfiguration, const std::shared_ptr<HttpClientFactory const>& httpClientFactory) :
   BASECLASS(httpClientFactory != nullptr ? httpClientFactory : Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME, clientConfiguration.region),
-    Aws::MakeShared<codedeployErrorMarshaller>(ALLOCATION_TAG)),
+    Aws::MakeShared<CodeDeployErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-codedeployClient::~codedeployClient()
+CodeDeployClient::~CodeDeployClient()
 {
 }
 
-void codedeployClient::init(const ClientConfiguration& config)
+void CodeDeployClient::init(const ClientConfiguration& config)
 {
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
   if(config.endpointOverride.empty())
   {
-    ss << codedeployEndpoint::ForRegion(config.region);
+    ss << CodeDeployEndpoint::ForRegion(config.region);
   }
   else
   {
@@ -119,7 +119,7 @@ void codedeployClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
-AddTagsToOnPremisesInstancesOutcome codedeployClient::AddTagsToOnPremisesInstances(const AddTagsToOnPremisesInstancesRequest& request) const
+AddTagsToOnPremisesInstancesOutcome CodeDeployClient::AddTagsToOnPremisesInstances(const AddTagsToOnPremisesInstancesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -135,22 +135,22 @@ AddTagsToOnPremisesInstancesOutcome codedeployClient::AddTagsToOnPremisesInstanc
   }
 }
 
-AddTagsToOnPremisesInstancesOutcomeCallable codedeployClient::AddTagsToOnPremisesInstancesCallable(const AddTagsToOnPremisesInstancesRequest& request) const
+AddTagsToOnPremisesInstancesOutcomeCallable CodeDeployClient::AddTagsToOnPremisesInstancesCallable(const AddTagsToOnPremisesInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::AddTagsToOnPremisesInstances, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::AddTagsToOnPremisesInstances, this, request);
 }
 
-void codedeployClient::AddTagsToOnPremisesInstancesAsync(const AddTagsToOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::AddTagsToOnPremisesInstancesAsync(const AddTagsToOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::AddTagsToOnPremisesInstancesAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::AddTagsToOnPremisesInstancesAsyncHelper, this, request, context);
 }
 
-void codedeployClient::AddTagsToOnPremisesInstancesAsyncHelper(const AddTagsToOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::AddTagsToOnPremisesInstancesAsyncHelper(const AddTagsToOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
   m_onAddTagsToOnPremisesInstancesOutcomeReceived(this, request, AddTagsToOnPremisesInstances(request), context);
 }
 
-BatchGetApplicationsOutcome codedeployClient::BatchGetApplications(const BatchGetApplicationsRequest& request) const
+BatchGetApplicationsOutcome CodeDeployClient::BatchGetApplications(const BatchGetApplicationsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -166,22 +166,22 @@ BatchGetApplicationsOutcome codedeployClient::BatchGetApplications(const BatchGe
   }
 }
 
-BatchGetApplicationsOutcomeCallable codedeployClient::BatchGetApplicationsCallable(const BatchGetApplicationsRequest& request) const
+BatchGetApplicationsOutcomeCallable CodeDeployClient::BatchGetApplicationsCallable(const BatchGetApplicationsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::BatchGetApplications, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::BatchGetApplications, this, request);
 }
 
-void codedeployClient::BatchGetApplicationsAsync(const BatchGetApplicationsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::BatchGetApplicationsAsync(const BatchGetApplicationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::BatchGetApplicationsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::BatchGetApplicationsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::BatchGetApplicationsAsyncHelper(const BatchGetApplicationsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::BatchGetApplicationsAsyncHelper(const BatchGetApplicationsRequest& request, const AsyncCallerContext* context) const
 {
   m_onBatchGetApplicationsOutcomeReceived(this, request, BatchGetApplications(request), context);
 }
 
-BatchGetDeploymentsOutcome codedeployClient::BatchGetDeployments(const BatchGetDeploymentsRequest& request) const
+BatchGetDeploymentsOutcome CodeDeployClient::BatchGetDeployments(const BatchGetDeploymentsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -197,22 +197,22 @@ BatchGetDeploymentsOutcome codedeployClient::BatchGetDeployments(const BatchGetD
   }
 }
 
-BatchGetDeploymentsOutcomeCallable codedeployClient::BatchGetDeploymentsCallable(const BatchGetDeploymentsRequest& request) const
+BatchGetDeploymentsOutcomeCallable CodeDeployClient::BatchGetDeploymentsCallable(const BatchGetDeploymentsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::BatchGetDeployments, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::BatchGetDeployments, this, request);
 }
 
-void codedeployClient::BatchGetDeploymentsAsync(const BatchGetDeploymentsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::BatchGetDeploymentsAsync(const BatchGetDeploymentsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::BatchGetDeploymentsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::BatchGetDeploymentsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::BatchGetDeploymentsAsyncHelper(const BatchGetDeploymentsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::BatchGetDeploymentsAsyncHelper(const BatchGetDeploymentsRequest& request, const AsyncCallerContext* context) const
 {
   m_onBatchGetDeploymentsOutcomeReceived(this, request, BatchGetDeployments(request), context);
 }
 
-BatchGetOnPremisesInstancesOutcome codedeployClient::BatchGetOnPremisesInstances(const BatchGetOnPremisesInstancesRequest& request) const
+BatchGetOnPremisesInstancesOutcome CodeDeployClient::BatchGetOnPremisesInstances(const BatchGetOnPremisesInstancesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -228,22 +228,22 @@ BatchGetOnPremisesInstancesOutcome codedeployClient::BatchGetOnPremisesInstances
   }
 }
 
-BatchGetOnPremisesInstancesOutcomeCallable codedeployClient::BatchGetOnPremisesInstancesCallable(const BatchGetOnPremisesInstancesRequest& request) const
+BatchGetOnPremisesInstancesOutcomeCallable CodeDeployClient::BatchGetOnPremisesInstancesCallable(const BatchGetOnPremisesInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::BatchGetOnPremisesInstances, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::BatchGetOnPremisesInstances, this, request);
 }
 
-void codedeployClient::BatchGetOnPremisesInstancesAsync(const BatchGetOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::BatchGetOnPremisesInstancesAsync(const BatchGetOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::BatchGetOnPremisesInstancesAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::BatchGetOnPremisesInstancesAsyncHelper, this, request, context);
 }
 
-void codedeployClient::BatchGetOnPremisesInstancesAsyncHelper(const BatchGetOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::BatchGetOnPremisesInstancesAsyncHelper(const BatchGetOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
   m_onBatchGetOnPremisesInstancesOutcomeReceived(this, request, BatchGetOnPremisesInstances(request), context);
 }
 
-CreateApplicationOutcome codedeployClient::CreateApplication(const CreateApplicationRequest& request) const
+CreateApplicationOutcome CodeDeployClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -259,22 +259,22 @@ CreateApplicationOutcome codedeployClient::CreateApplication(const CreateApplica
   }
 }
 
-CreateApplicationOutcomeCallable codedeployClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
+CreateApplicationOutcomeCallable CodeDeployClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::CreateApplication, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::CreateApplication, this, request);
 }
 
-void codedeployClient::CreateApplicationAsync(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateApplicationAsync(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::CreateApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::CreateApplicationAsyncHelper, this, request, context);
 }
 
-void codedeployClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
 {
   m_onCreateApplicationOutcomeReceived(this, request, CreateApplication(request), context);
 }
 
-CreateDeploymentOutcome codedeployClient::CreateDeployment(const CreateDeploymentRequest& request) const
+CreateDeploymentOutcome CodeDeployClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -290,22 +290,22 @@ CreateDeploymentOutcome codedeployClient::CreateDeployment(const CreateDeploymen
   }
 }
 
-CreateDeploymentOutcomeCallable codedeployClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
+CreateDeploymentOutcomeCallable CodeDeployClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::CreateDeployment, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::CreateDeployment, this, request);
 }
 
-void codedeployClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::CreateDeploymentAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::CreateDeploymentAsyncHelper, this, request, context);
 }
 
-void codedeployClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const AsyncCallerContext* context) const
 {
   m_onCreateDeploymentOutcomeReceived(this, request, CreateDeployment(request), context);
 }
 
-CreateDeploymentConfigOutcome codedeployClient::CreateDeploymentConfig(const CreateDeploymentConfigRequest& request) const
+CreateDeploymentConfigOutcome CodeDeployClient::CreateDeploymentConfig(const CreateDeploymentConfigRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -321,22 +321,22 @@ CreateDeploymentConfigOutcome codedeployClient::CreateDeploymentConfig(const Cre
   }
 }
 
-CreateDeploymentConfigOutcomeCallable codedeployClient::CreateDeploymentConfigCallable(const CreateDeploymentConfigRequest& request) const
+CreateDeploymentConfigOutcomeCallable CodeDeployClient::CreateDeploymentConfigCallable(const CreateDeploymentConfigRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::CreateDeploymentConfig, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::CreateDeploymentConfig, this, request);
 }
 
-void codedeployClient::CreateDeploymentConfigAsync(const CreateDeploymentConfigRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateDeploymentConfigAsync(const CreateDeploymentConfigRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::CreateDeploymentConfigAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::CreateDeploymentConfigAsyncHelper, this, request, context);
 }
 
-void codedeployClient::CreateDeploymentConfigAsyncHelper(const CreateDeploymentConfigRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateDeploymentConfigAsyncHelper(const CreateDeploymentConfigRequest& request, const AsyncCallerContext* context) const
 {
   m_onCreateDeploymentConfigOutcomeReceived(this, request, CreateDeploymentConfig(request), context);
 }
 
-CreateDeploymentGroupOutcome codedeployClient::CreateDeploymentGroup(const CreateDeploymentGroupRequest& request) const
+CreateDeploymentGroupOutcome CodeDeployClient::CreateDeploymentGroup(const CreateDeploymentGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -352,22 +352,22 @@ CreateDeploymentGroupOutcome codedeployClient::CreateDeploymentGroup(const Creat
   }
 }
 
-CreateDeploymentGroupOutcomeCallable codedeployClient::CreateDeploymentGroupCallable(const CreateDeploymentGroupRequest& request) const
+CreateDeploymentGroupOutcomeCallable CodeDeployClient::CreateDeploymentGroupCallable(const CreateDeploymentGroupRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::CreateDeploymentGroup, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::CreateDeploymentGroup, this, request);
 }
 
-void codedeployClient::CreateDeploymentGroupAsync(const CreateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateDeploymentGroupAsync(const CreateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::CreateDeploymentGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::CreateDeploymentGroupAsyncHelper, this, request, context);
 }
 
-void codedeployClient::CreateDeploymentGroupAsyncHelper(const CreateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::CreateDeploymentGroupAsyncHelper(const CreateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
   m_onCreateDeploymentGroupOutcomeReceived(this, request, CreateDeploymentGroup(request), context);
 }
 
-DeleteApplicationOutcome codedeployClient::DeleteApplication(const DeleteApplicationRequest& request) const
+DeleteApplicationOutcome CodeDeployClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -383,22 +383,22 @@ DeleteApplicationOutcome codedeployClient::DeleteApplication(const DeleteApplica
   }
 }
 
-DeleteApplicationOutcomeCallable codedeployClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
+DeleteApplicationOutcomeCallable CodeDeployClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::DeleteApplication, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::DeleteApplication, this, request);
 }
 
-void codedeployClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::DeleteApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::DeleteApplicationAsyncHelper, this, request, context);
 }
 
-void codedeployClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
 {
   m_onDeleteApplicationOutcomeReceived(this, request, DeleteApplication(request), context);
 }
 
-DeleteDeploymentConfigOutcome codedeployClient::DeleteDeploymentConfig(const DeleteDeploymentConfigRequest& request) const
+DeleteDeploymentConfigOutcome CodeDeployClient::DeleteDeploymentConfig(const DeleteDeploymentConfigRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -414,22 +414,22 @@ DeleteDeploymentConfigOutcome codedeployClient::DeleteDeploymentConfig(const Del
   }
 }
 
-DeleteDeploymentConfigOutcomeCallable codedeployClient::DeleteDeploymentConfigCallable(const DeleteDeploymentConfigRequest& request) const
+DeleteDeploymentConfigOutcomeCallable CodeDeployClient::DeleteDeploymentConfigCallable(const DeleteDeploymentConfigRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::DeleteDeploymentConfig, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::DeleteDeploymentConfig, this, request);
 }
 
-void codedeployClient::DeleteDeploymentConfigAsync(const DeleteDeploymentConfigRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeleteDeploymentConfigAsync(const DeleteDeploymentConfigRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::DeleteDeploymentConfigAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::DeleteDeploymentConfigAsyncHelper, this, request, context);
 }
 
-void codedeployClient::DeleteDeploymentConfigAsyncHelper(const DeleteDeploymentConfigRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeleteDeploymentConfigAsyncHelper(const DeleteDeploymentConfigRequest& request, const AsyncCallerContext* context) const
 {
   m_onDeleteDeploymentConfigOutcomeReceived(this, request, DeleteDeploymentConfig(request), context);
 }
 
-DeleteDeploymentGroupOutcome codedeployClient::DeleteDeploymentGroup(const DeleteDeploymentGroupRequest& request) const
+DeleteDeploymentGroupOutcome CodeDeployClient::DeleteDeploymentGroup(const DeleteDeploymentGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -445,22 +445,22 @@ DeleteDeploymentGroupOutcome codedeployClient::DeleteDeploymentGroup(const Delet
   }
 }
 
-DeleteDeploymentGroupOutcomeCallable codedeployClient::DeleteDeploymentGroupCallable(const DeleteDeploymentGroupRequest& request) const
+DeleteDeploymentGroupOutcomeCallable CodeDeployClient::DeleteDeploymentGroupCallable(const DeleteDeploymentGroupRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::DeleteDeploymentGroup, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::DeleteDeploymentGroup, this, request);
 }
 
-void codedeployClient::DeleteDeploymentGroupAsync(const DeleteDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeleteDeploymentGroupAsync(const DeleteDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::DeleteDeploymentGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::DeleteDeploymentGroupAsyncHelper, this, request, context);
 }
 
-void codedeployClient::DeleteDeploymentGroupAsyncHelper(const DeleteDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeleteDeploymentGroupAsyncHelper(const DeleteDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
   m_onDeleteDeploymentGroupOutcomeReceived(this, request, DeleteDeploymentGroup(request), context);
 }
 
-DeregisterOnPremisesInstanceOutcome codedeployClient::DeregisterOnPremisesInstance(const DeregisterOnPremisesInstanceRequest& request) const
+DeregisterOnPremisesInstanceOutcome CodeDeployClient::DeregisterOnPremisesInstance(const DeregisterOnPremisesInstanceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -476,22 +476,22 @@ DeregisterOnPremisesInstanceOutcome codedeployClient::DeregisterOnPremisesInstan
   }
 }
 
-DeregisterOnPremisesInstanceOutcomeCallable codedeployClient::DeregisterOnPremisesInstanceCallable(const DeregisterOnPremisesInstanceRequest& request) const
+DeregisterOnPremisesInstanceOutcomeCallable CodeDeployClient::DeregisterOnPremisesInstanceCallable(const DeregisterOnPremisesInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::DeregisterOnPremisesInstance, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::DeregisterOnPremisesInstance, this, request);
 }
 
-void codedeployClient::DeregisterOnPremisesInstanceAsync(const DeregisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeregisterOnPremisesInstanceAsync(const DeregisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::DeregisterOnPremisesInstanceAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::DeregisterOnPremisesInstanceAsyncHelper, this, request, context);
 }
 
-void codedeployClient::DeregisterOnPremisesInstanceAsyncHelper(const DeregisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::DeregisterOnPremisesInstanceAsyncHelper(const DeregisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
 {
   m_onDeregisterOnPremisesInstanceOutcomeReceived(this, request, DeregisterOnPremisesInstance(request), context);
 }
 
-GetApplicationOutcome codedeployClient::GetApplication(const GetApplicationRequest& request) const
+GetApplicationOutcome CodeDeployClient::GetApplication(const GetApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -507,22 +507,22 @@ GetApplicationOutcome codedeployClient::GetApplication(const GetApplicationReque
   }
 }
 
-GetApplicationOutcomeCallable codedeployClient::GetApplicationCallable(const GetApplicationRequest& request) const
+GetApplicationOutcomeCallable CodeDeployClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetApplication, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetApplication, this, request);
 }
 
-void codedeployClient::GetApplicationAsync(const GetApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetApplicationAsync(const GetApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetApplicationAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetApplicationOutcomeReceived(this, request, GetApplication(request), context);
 }
 
-GetApplicationRevisionOutcome codedeployClient::GetApplicationRevision(const GetApplicationRevisionRequest& request) const
+GetApplicationRevisionOutcome CodeDeployClient::GetApplicationRevision(const GetApplicationRevisionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -538,22 +538,22 @@ GetApplicationRevisionOutcome codedeployClient::GetApplicationRevision(const Get
   }
 }
 
-GetApplicationRevisionOutcomeCallable codedeployClient::GetApplicationRevisionCallable(const GetApplicationRevisionRequest& request) const
+GetApplicationRevisionOutcomeCallable CodeDeployClient::GetApplicationRevisionCallable(const GetApplicationRevisionRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetApplicationRevision, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetApplicationRevision, this, request);
 }
 
-void codedeployClient::GetApplicationRevisionAsync(const GetApplicationRevisionRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetApplicationRevisionAsync(const GetApplicationRevisionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetApplicationRevisionAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetApplicationRevisionAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetApplicationRevisionAsyncHelper(const GetApplicationRevisionRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetApplicationRevisionAsyncHelper(const GetApplicationRevisionRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetApplicationRevisionOutcomeReceived(this, request, GetApplicationRevision(request), context);
 }
 
-GetDeploymentOutcome codedeployClient::GetDeployment(const GetDeploymentRequest& request) const
+GetDeploymentOutcome CodeDeployClient::GetDeployment(const GetDeploymentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -569,22 +569,22 @@ GetDeploymentOutcome codedeployClient::GetDeployment(const GetDeploymentRequest&
   }
 }
 
-GetDeploymentOutcomeCallable codedeployClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
+GetDeploymentOutcomeCallable CodeDeployClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetDeployment, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetDeployment, this, request);
 }
 
-void codedeployClient::GetDeploymentAsync(const GetDeploymentRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentAsync(const GetDeploymentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetDeploymentAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetDeploymentAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetDeploymentOutcomeReceived(this, request, GetDeployment(request), context);
 }
 
-GetDeploymentConfigOutcome codedeployClient::GetDeploymentConfig(const GetDeploymentConfigRequest& request) const
+GetDeploymentConfigOutcome CodeDeployClient::GetDeploymentConfig(const GetDeploymentConfigRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -600,22 +600,22 @@ GetDeploymentConfigOutcome codedeployClient::GetDeploymentConfig(const GetDeploy
   }
 }
 
-GetDeploymentConfigOutcomeCallable codedeployClient::GetDeploymentConfigCallable(const GetDeploymentConfigRequest& request) const
+GetDeploymentConfigOutcomeCallable CodeDeployClient::GetDeploymentConfigCallable(const GetDeploymentConfigRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetDeploymentConfig, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetDeploymentConfig, this, request);
 }
 
-void codedeployClient::GetDeploymentConfigAsync(const GetDeploymentConfigRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentConfigAsync(const GetDeploymentConfigRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetDeploymentConfigAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetDeploymentConfigAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetDeploymentConfigAsyncHelper(const GetDeploymentConfigRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentConfigAsyncHelper(const GetDeploymentConfigRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetDeploymentConfigOutcomeReceived(this, request, GetDeploymentConfig(request), context);
 }
 
-GetDeploymentGroupOutcome codedeployClient::GetDeploymentGroup(const GetDeploymentGroupRequest& request) const
+GetDeploymentGroupOutcome CodeDeployClient::GetDeploymentGroup(const GetDeploymentGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -631,22 +631,22 @@ GetDeploymentGroupOutcome codedeployClient::GetDeploymentGroup(const GetDeployme
   }
 }
 
-GetDeploymentGroupOutcomeCallable codedeployClient::GetDeploymentGroupCallable(const GetDeploymentGroupRequest& request) const
+GetDeploymentGroupOutcomeCallable CodeDeployClient::GetDeploymentGroupCallable(const GetDeploymentGroupRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetDeploymentGroup, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetDeploymentGroup, this, request);
 }
 
-void codedeployClient::GetDeploymentGroupAsync(const GetDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentGroupAsync(const GetDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetDeploymentGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetDeploymentGroupAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetDeploymentGroupAsyncHelper(const GetDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentGroupAsyncHelper(const GetDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetDeploymentGroupOutcomeReceived(this, request, GetDeploymentGroup(request), context);
 }
 
-GetDeploymentInstanceOutcome codedeployClient::GetDeploymentInstance(const GetDeploymentInstanceRequest& request) const
+GetDeploymentInstanceOutcome CodeDeployClient::GetDeploymentInstance(const GetDeploymentInstanceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -662,22 +662,22 @@ GetDeploymentInstanceOutcome codedeployClient::GetDeploymentInstance(const GetDe
   }
 }
 
-GetDeploymentInstanceOutcomeCallable codedeployClient::GetDeploymentInstanceCallable(const GetDeploymentInstanceRequest& request) const
+GetDeploymentInstanceOutcomeCallable CodeDeployClient::GetDeploymentInstanceCallable(const GetDeploymentInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetDeploymentInstance, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetDeploymentInstance, this, request);
 }
 
-void codedeployClient::GetDeploymentInstanceAsync(const GetDeploymentInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentInstanceAsync(const GetDeploymentInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetDeploymentInstanceAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetDeploymentInstanceAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetDeploymentInstanceAsyncHelper(const GetDeploymentInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetDeploymentInstanceAsyncHelper(const GetDeploymentInstanceRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetDeploymentInstanceOutcomeReceived(this, request, GetDeploymentInstance(request), context);
 }
 
-GetOnPremisesInstanceOutcome codedeployClient::GetOnPremisesInstance(const GetOnPremisesInstanceRequest& request) const
+GetOnPremisesInstanceOutcome CodeDeployClient::GetOnPremisesInstance(const GetOnPremisesInstanceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -693,22 +693,22 @@ GetOnPremisesInstanceOutcome codedeployClient::GetOnPremisesInstance(const GetOn
   }
 }
 
-GetOnPremisesInstanceOutcomeCallable codedeployClient::GetOnPremisesInstanceCallable(const GetOnPremisesInstanceRequest& request) const
+GetOnPremisesInstanceOutcomeCallable CodeDeployClient::GetOnPremisesInstanceCallable(const GetOnPremisesInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::GetOnPremisesInstance, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::GetOnPremisesInstance, this, request);
 }
 
-void codedeployClient::GetOnPremisesInstanceAsync(const GetOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetOnPremisesInstanceAsync(const GetOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::GetOnPremisesInstanceAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::GetOnPremisesInstanceAsyncHelper, this, request, context);
 }
 
-void codedeployClient::GetOnPremisesInstanceAsyncHelper(const GetOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::GetOnPremisesInstanceAsyncHelper(const GetOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
 {
   m_onGetOnPremisesInstanceOutcomeReceived(this, request, GetOnPremisesInstance(request), context);
 }
 
-ListApplicationRevisionsOutcome codedeployClient::ListApplicationRevisions(const ListApplicationRevisionsRequest& request) const
+ListApplicationRevisionsOutcome CodeDeployClient::ListApplicationRevisions(const ListApplicationRevisionsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -724,22 +724,22 @@ ListApplicationRevisionsOutcome codedeployClient::ListApplicationRevisions(const
   }
 }
 
-ListApplicationRevisionsOutcomeCallable codedeployClient::ListApplicationRevisionsCallable(const ListApplicationRevisionsRequest& request) const
+ListApplicationRevisionsOutcomeCallable CodeDeployClient::ListApplicationRevisionsCallable(const ListApplicationRevisionsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListApplicationRevisions, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListApplicationRevisions, this, request);
 }
 
-void codedeployClient::ListApplicationRevisionsAsync(const ListApplicationRevisionsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListApplicationRevisionsAsync(const ListApplicationRevisionsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListApplicationRevisionsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListApplicationRevisionsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListApplicationRevisionsAsyncHelper(const ListApplicationRevisionsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListApplicationRevisionsAsyncHelper(const ListApplicationRevisionsRequest& request, const AsyncCallerContext* context) const
 {
   m_onListApplicationRevisionsOutcomeReceived(this, request, ListApplicationRevisions(request), context);
 }
 
-ListApplicationsOutcome codedeployClient::ListApplications(const ListApplicationsRequest& request) const
+ListApplicationsOutcome CodeDeployClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -755,22 +755,22 @@ ListApplicationsOutcome codedeployClient::ListApplications(const ListApplication
   }
 }
 
-ListApplicationsOutcomeCallable codedeployClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
+ListApplicationsOutcomeCallable CodeDeployClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListApplications, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListApplications, this, request);
 }
 
-void codedeployClient::ListApplicationsAsync(const ListApplicationsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListApplicationsAsync(const ListApplicationsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListApplicationsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListApplicationsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const AsyncCallerContext* context) const
 {
   m_onListApplicationsOutcomeReceived(this, request, ListApplications(request), context);
 }
 
-ListDeploymentConfigsOutcome codedeployClient::ListDeploymentConfigs(const ListDeploymentConfigsRequest& request) const
+ListDeploymentConfigsOutcome CodeDeployClient::ListDeploymentConfigs(const ListDeploymentConfigsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -786,22 +786,22 @@ ListDeploymentConfigsOutcome codedeployClient::ListDeploymentConfigs(const ListD
   }
 }
 
-ListDeploymentConfigsOutcomeCallable codedeployClient::ListDeploymentConfigsCallable(const ListDeploymentConfigsRequest& request) const
+ListDeploymentConfigsOutcomeCallable CodeDeployClient::ListDeploymentConfigsCallable(const ListDeploymentConfigsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListDeploymentConfigs, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListDeploymentConfigs, this, request);
 }
 
-void codedeployClient::ListDeploymentConfigsAsync(const ListDeploymentConfigsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentConfigsAsync(const ListDeploymentConfigsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListDeploymentConfigsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListDeploymentConfigsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListDeploymentConfigsAsyncHelper(const ListDeploymentConfigsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentConfigsAsyncHelper(const ListDeploymentConfigsRequest& request, const AsyncCallerContext* context) const
 {
   m_onListDeploymentConfigsOutcomeReceived(this, request, ListDeploymentConfigs(request), context);
 }
 
-ListDeploymentGroupsOutcome codedeployClient::ListDeploymentGroups(const ListDeploymentGroupsRequest& request) const
+ListDeploymentGroupsOutcome CodeDeployClient::ListDeploymentGroups(const ListDeploymentGroupsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -817,22 +817,22 @@ ListDeploymentGroupsOutcome codedeployClient::ListDeploymentGroups(const ListDep
   }
 }
 
-ListDeploymentGroupsOutcomeCallable codedeployClient::ListDeploymentGroupsCallable(const ListDeploymentGroupsRequest& request) const
+ListDeploymentGroupsOutcomeCallable CodeDeployClient::ListDeploymentGroupsCallable(const ListDeploymentGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListDeploymentGroups, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListDeploymentGroups, this, request);
 }
 
-void codedeployClient::ListDeploymentGroupsAsync(const ListDeploymentGroupsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentGroupsAsync(const ListDeploymentGroupsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListDeploymentGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListDeploymentGroupsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListDeploymentGroupsAsyncHelper(const ListDeploymentGroupsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentGroupsAsyncHelper(const ListDeploymentGroupsRequest& request, const AsyncCallerContext* context) const
 {
   m_onListDeploymentGroupsOutcomeReceived(this, request, ListDeploymentGroups(request), context);
 }
 
-ListDeploymentInstancesOutcome codedeployClient::ListDeploymentInstances(const ListDeploymentInstancesRequest& request) const
+ListDeploymentInstancesOutcome CodeDeployClient::ListDeploymentInstances(const ListDeploymentInstancesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -848,22 +848,22 @@ ListDeploymentInstancesOutcome codedeployClient::ListDeploymentInstances(const L
   }
 }
 
-ListDeploymentInstancesOutcomeCallable codedeployClient::ListDeploymentInstancesCallable(const ListDeploymentInstancesRequest& request) const
+ListDeploymentInstancesOutcomeCallable CodeDeployClient::ListDeploymentInstancesCallable(const ListDeploymentInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListDeploymentInstances, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListDeploymentInstances, this, request);
 }
 
-void codedeployClient::ListDeploymentInstancesAsync(const ListDeploymentInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentInstancesAsync(const ListDeploymentInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListDeploymentInstancesAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListDeploymentInstancesAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListDeploymentInstancesAsyncHelper(const ListDeploymentInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentInstancesAsyncHelper(const ListDeploymentInstancesRequest& request, const AsyncCallerContext* context) const
 {
   m_onListDeploymentInstancesOutcomeReceived(this, request, ListDeploymentInstances(request), context);
 }
 
-ListDeploymentsOutcome codedeployClient::ListDeployments(const ListDeploymentsRequest& request) const
+ListDeploymentsOutcome CodeDeployClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -879,22 +879,22 @@ ListDeploymentsOutcome codedeployClient::ListDeployments(const ListDeploymentsRe
   }
 }
 
-ListDeploymentsOutcomeCallable codedeployClient::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
+ListDeploymentsOutcomeCallable CodeDeployClient::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListDeployments, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListDeployments, this, request);
 }
 
-void codedeployClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListDeploymentsAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListDeploymentsAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const AsyncCallerContext* context) const
 {
   m_onListDeploymentsOutcomeReceived(this, request, ListDeployments(request), context);
 }
 
-ListOnPremisesInstancesOutcome codedeployClient::ListOnPremisesInstances(const ListOnPremisesInstancesRequest& request) const
+ListOnPremisesInstancesOutcome CodeDeployClient::ListOnPremisesInstances(const ListOnPremisesInstancesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -910,22 +910,22 @@ ListOnPremisesInstancesOutcome codedeployClient::ListOnPremisesInstances(const L
   }
 }
 
-ListOnPremisesInstancesOutcomeCallable codedeployClient::ListOnPremisesInstancesCallable(const ListOnPremisesInstancesRequest& request) const
+ListOnPremisesInstancesOutcomeCallable CodeDeployClient::ListOnPremisesInstancesCallable(const ListOnPremisesInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::ListOnPremisesInstances, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::ListOnPremisesInstances, this, request);
 }
 
-void codedeployClient::ListOnPremisesInstancesAsync(const ListOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListOnPremisesInstancesAsync(const ListOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::ListOnPremisesInstancesAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::ListOnPremisesInstancesAsyncHelper, this, request, context);
 }
 
-void codedeployClient::ListOnPremisesInstancesAsyncHelper(const ListOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::ListOnPremisesInstancesAsyncHelper(const ListOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
   m_onListOnPremisesInstancesOutcomeReceived(this, request, ListOnPremisesInstances(request), context);
 }
 
-RegisterApplicationRevisionOutcome codedeployClient::RegisterApplicationRevision(const RegisterApplicationRevisionRequest& request) const
+RegisterApplicationRevisionOutcome CodeDeployClient::RegisterApplicationRevision(const RegisterApplicationRevisionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -941,22 +941,22 @@ RegisterApplicationRevisionOutcome codedeployClient::RegisterApplicationRevision
   }
 }
 
-RegisterApplicationRevisionOutcomeCallable codedeployClient::RegisterApplicationRevisionCallable(const RegisterApplicationRevisionRequest& request) const
+RegisterApplicationRevisionOutcomeCallable CodeDeployClient::RegisterApplicationRevisionCallable(const RegisterApplicationRevisionRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::RegisterApplicationRevision, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::RegisterApplicationRevision, this, request);
 }
 
-void codedeployClient::RegisterApplicationRevisionAsync(const RegisterApplicationRevisionRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::RegisterApplicationRevisionAsync(const RegisterApplicationRevisionRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::RegisterApplicationRevisionAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::RegisterApplicationRevisionAsyncHelper, this, request, context);
 }
 
-void codedeployClient::RegisterApplicationRevisionAsyncHelper(const RegisterApplicationRevisionRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::RegisterApplicationRevisionAsyncHelper(const RegisterApplicationRevisionRequest& request, const AsyncCallerContext* context) const
 {
   m_onRegisterApplicationRevisionOutcomeReceived(this, request, RegisterApplicationRevision(request), context);
 }
 
-RegisterOnPremisesInstanceOutcome codedeployClient::RegisterOnPremisesInstance(const RegisterOnPremisesInstanceRequest& request) const
+RegisterOnPremisesInstanceOutcome CodeDeployClient::RegisterOnPremisesInstance(const RegisterOnPremisesInstanceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -972,22 +972,22 @@ RegisterOnPremisesInstanceOutcome codedeployClient::RegisterOnPremisesInstance(c
   }
 }
 
-RegisterOnPremisesInstanceOutcomeCallable codedeployClient::RegisterOnPremisesInstanceCallable(const RegisterOnPremisesInstanceRequest& request) const
+RegisterOnPremisesInstanceOutcomeCallable CodeDeployClient::RegisterOnPremisesInstanceCallable(const RegisterOnPremisesInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::RegisterOnPremisesInstance, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::RegisterOnPremisesInstance, this, request);
 }
 
-void codedeployClient::RegisterOnPremisesInstanceAsync(const RegisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::RegisterOnPremisesInstanceAsync(const RegisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::RegisterOnPremisesInstanceAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::RegisterOnPremisesInstanceAsyncHelper, this, request, context);
 }
 
-void codedeployClient::RegisterOnPremisesInstanceAsyncHelper(const RegisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::RegisterOnPremisesInstanceAsyncHelper(const RegisterOnPremisesInstanceRequest& request, const AsyncCallerContext* context) const
 {
   m_onRegisterOnPremisesInstanceOutcomeReceived(this, request, RegisterOnPremisesInstance(request), context);
 }
 
-RemoveTagsFromOnPremisesInstancesOutcome codedeployClient::RemoveTagsFromOnPremisesInstances(const RemoveTagsFromOnPremisesInstancesRequest& request) const
+RemoveTagsFromOnPremisesInstancesOutcome CodeDeployClient::RemoveTagsFromOnPremisesInstances(const RemoveTagsFromOnPremisesInstancesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -1003,22 +1003,22 @@ RemoveTagsFromOnPremisesInstancesOutcome codedeployClient::RemoveTagsFromOnPremi
   }
 }
 
-RemoveTagsFromOnPremisesInstancesOutcomeCallable codedeployClient::RemoveTagsFromOnPremisesInstancesCallable(const RemoveTagsFromOnPremisesInstancesRequest& request) const
+RemoveTagsFromOnPremisesInstancesOutcomeCallable CodeDeployClient::RemoveTagsFromOnPremisesInstancesCallable(const RemoveTagsFromOnPremisesInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::RemoveTagsFromOnPremisesInstances, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::RemoveTagsFromOnPremisesInstances, this, request);
 }
 
-void codedeployClient::RemoveTagsFromOnPremisesInstancesAsync(const RemoveTagsFromOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsync(const RemoveTagsFromOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper, this, request, context);
 }
 
-void codedeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper(const RemoveTagsFromOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper(const RemoveTagsFromOnPremisesInstancesRequest& request, const AsyncCallerContext* context) const
 {
   m_onRemoveTagsFromOnPremisesInstancesOutcomeReceived(this, request, RemoveTagsFromOnPremisesInstances(request), context);
 }
 
-StopDeploymentOutcome codedeployClient::StopDeployment(const StopDeploymentRequest& request) const
+StopDeploymentOutcome CodeDeployClient::StopDeployment(const StopDeploymentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -1034,22 +1034,22 @@ StopDeploymentOutcome codedeployClient::StopDeployment(const StopDeploymentReque
   }
 }
 
-StopDeploymentOutcomeCallable codedeployClient::StopDeploymentCallable(const StopDeploymentRequest& request) const
+StopDeploymentOutcomeCallable CodeDeployClient::StopDeploymentCallable(const StopDeploymentRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::StopDeployment, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::StopDeployment, this, request);
 }
 
-void codedeployClient::StopDeploymentAsync(const StopDeploymentRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::StopDeploymentAsync(const StopDeploymentRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::StopDeploymentAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::StopDeploymentAsyncHelper, this, request, context);
 }
 
-void codedeployClient::StopDeploymentAsyncHelper(const StopDeploymentRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::StopDeploymentAsyncHelper(const StopDeploymentRequest& request, const AsyncCallerContext* context) const
 {
   m_onStopDeploymentOutcomeReceived(this, request, StopDeployment(request), context);
 }
 
-UpdateApplicationOutcome codedeployClient::UpdateApplication(const UpdateApplicationRequest& request) const
+UpdateApplicationOutcome CodeDeployClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -1065,22 +1065,22 @@ UpdateApplicationOutcome codedeployClient::UpdateApplication(const UpdateApplica
   }
 }
 
-UpdateApplicationOutcomeCallable codedeployClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
+UpdateApplicationOutcomeCallable CodeDeployClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::UpdateApplication, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::UpdateApplication, this, request);
 }
 
-void codedeployClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::UpdateApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::UpdateApplicationAsyncHelper, this, request, context);
 }
 
-void codedeployClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
 {
   m_onUpdateApplicationOutcomeReceived(this, request, UpdateApplication(request), context);
 }
 
-UpdateDeploymentGroupOutcome codedeployClient::UpdateDeploymentGroup(const UpdateDeploymentGroupRequest& request) const
+UpdateDeploymentGroupOutcome CodeDeployClient::UpdateDeploymentGroup(const UpdateDeploymentGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -1096,17 +1096,17 @@ UpdateDeploymentGroupOutcome codedeployClient::UpdateDeploymentGroup(const Updat
   }
 }
 
-UpdateDeploymentGroupOutcomeCallable codedeployClient::UpdateDeploymentGroupCallable(const UpdateDeploymentGroupRequest& request) const
+UpdateDeploymentGroupOutcomeCallable CodeDeployClient::UpdateDeploymentGroupCallable(const UpdateDeploymentGroupRequest& request) const
 {
-  return std::async(std::launch::async, &codedeployClient::UpdateDeploymentGroup, this, request);
+  return std::async(std::launch::async, &CodeDeployClient::UpdateDeploymentGroup, this, request);
 }
 
-void codedeployClient::UpdateDeploymentGroupAsync(const UpdateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::UpdateDeploymentGroupAsync(const UpdateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&codedeployClient::UpdateDeploymentGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&CodeDeployClient::UpdateDeploymentGroupAsyncHelper, this, request, context);
 }
 
-void codedeployClient::UpdateDeploymentGroupAsyncHelper(const UpdateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
+void CodeDeployClient::UpdateDeploymentGroupAsyncHelper(const UpdateDeploymentGroupRequest& request, const AsyncCallerContext* context) const
 {
   m_onUpdateDeploymentGroupOutcomeReceived(this, request, UpdateDeploymentGroup(request), context);
 }

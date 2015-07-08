@@ -22,7 +22,7 @@ static const int GitHub_HASH = HashingUtils::HashString("GitHub");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -59,5 +59,5 @@ Aws::String GetNameForRevisionLocationType(RevisionLocationType value)
 
 } // namespace RevisionLocationTypeMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

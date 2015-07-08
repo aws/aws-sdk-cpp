@@ -112,7 +112,7 @@ void Grantee::AddToNode(XmlNode& parentNode) const
 
   if(m_uRIHasBeenSet)
   {
-   XmlNode uRINode = parentNode.CreateChildElement("URI");
+   XmlNode uRINode = parentNode.CreateChildElement("xsi:type");
    uRINode.SetText(m_uRI);
   }
 

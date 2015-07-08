@@ -332,19 +332,19 @@ namespace Model
      void DeregisterContainerInstanceAsync(const Model::DeregisterContainerInstanceRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>NOT YET IMPLEMENTED.</p> <p>Deregisters the specified task definition. You will no longer be able to run tasks from this definition after deregistration.</p>
+       <p>Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task definition can still scale up or down by modifying the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you cannot update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a 10 minute window following deregistration where these restrictions have not yet taken effect).</p>
      */
      Model::DeregisterTaskDefinitionOutcome DeregisterTaskDefinition(const Model::DeregisterTaskDefinitionRequest& request) const;
 
      /*
-       <p>NOT YET IMPLEMENTED.</p> <p>Deregisters the specified task definition. You will no longer be able to run tasks from this definition after deregistration.</p>
+       <p>Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task definition can still scale up or down by modifying the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you cannot update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a 10 minute window following deregistration where these restrictions have not yet taken effect).</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DeregisterTaskDefinitionOutcomeCallable DeregisterTaskDefinitionCallable(const Model::DeregisterTaskDefinitionRequest& request) const;
 
      /*
-       <p>NOT YET IMPLEMENTED.</p> <p>Deregisters the specified task definition. You will no longer be able to run tasks from this definition after deregistration.</p>
+       <p>Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task definition can still scale up or down by modifying the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you cannot update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a 10 minute window following deregistration where these restrictions have not yet taken effect).</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -408,19 +408,19 @@ namespace Model
      void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest revision in that family.</p>
+       <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note> <p>You can only describe <code>INACTIVE</code> task definitions while an active task or service references them.</p> </note>
      */
      Model::DescribeTaskDefinitionOutcome DescribeTaskDefinition(const Model::DescribeTaskDefinitionRequest& request) const;
 
      /*
-       <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest revision in that family.</p>
+       <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note> <p>You can only describe <code>INACTIVE</code> task definitions while an active task or service references them.</p> </note>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::DescribeTaskDefinitionOutcomeCallable DescribeTaskDefinitionCallable(const Model::DescribeTaskDefinitionRequest& request) const;
 
      /*
-       <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest revision in that family.</p>
+       <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note> <p>You can only describe <code>INACTIVE</code> task definitions while an active task or service references them.</p> </note>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
@@ -522,38 +522,38 @@ namespace Model
      void ListServicesAsync(const Model::ListServicesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Returns a list of task definition families that are registered to your account. You can filter the results with the <code>familyPrefix</code> parameter.</p>
+       <p>Returns a list of task definition families that are registered to your account (which may include task definition families that no longer have any <code>ACTIVE</code> task definitions). You can filter the results with the <code>familyPrefix</code> parameter.</p>
      */
      Model::ListTaskDefinitionFamiliesOutcome ListTaskDefinitionFamilies(const Model::ListTaskDefinitionFamiliesRequest& request) const;
 
      /*
-       <p>Returns a list of task definition families that are registered to your account. You can filter the results with the <code>familyPrefix</code> parameter.</p>
+       <p>Returns a list of task definition families that are registered to your account (which may include task definition families that no longer have any <code>ACTIVE</code> task definitions). You can filter the results with the <code>familyPrefix</code> parameter.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListTaskDefinitionFamiliesOutcomeCallable ListTaskDefinitionFamiliesCallable(const Model::ListTaskDefinitionFamiliesRequest& request) const;
 
      /*
-       <p>Returns a list of task definition families that are registered to your account. You can filter the results with the <code>familyPrefix</code> parameter.</p>
+       <p>Returns a list of task definition families that are registered to your account (which may include task definition families that no longer have any <code>ACTIVE</code> task definitions). You can filter the results with the <code>familyPrefix</code> parameter.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */
      void ListTaskDefinitionFamiliesAsync(const Model::ListTaskDefinitionFamiliesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
 
      /*
-       <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter.</p>
+       <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter or by status with the <code>status</code> parameter.</p>
      */
      Model::ListTaskDefinitionsOutcome ListTaskDefinitions(const Model::ListTaskDefinitionsRequest& request) const;
 
      /*
-       <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter.</p>
+       <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter or by status with the <code>status</code> parameter.</p>
 
        returns a future to the operation so that it can be executed in parallel to other requests.
      */
      Model::ListTaskDefinitionsOutcomeCallable ListTaskDefinitionsCallable(const Model::ListTaskDefinitionsRequest& request) const;
 
      /*
-       <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter.</p>
+       <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter or by status with the <code>status</code> parameter.</p>
 
       Queues the request into a thread executor and triggers associated callback when operation has finished.
      */

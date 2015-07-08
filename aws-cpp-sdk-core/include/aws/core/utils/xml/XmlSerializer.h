@@ -21,12 +21,18 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
+namespace Aws
+{
+namespace External
+{
 namespace tinyxml2
 {
 class XMLNode;
 
 class XMLDocument;
 } // namespace tinyxml2
+} // namespace External
+} // namespace Aws
 
 namespace Aws
 {
@@ -87,7 +93,7 @@ public:
     bool IsNull();
 
 private:
-    XmlNode(tinyxml2::XMLNode* node, const XmlDocument& document) :
+    XmlNode(Aws::External::tinyxml2::XMLNode* node, const XmlDocument& document) :
         m_node(node), m_doc(&document)
     {
     }
@@ -95,7 +101,7 @@ private:
     //we do not own these.... I just had to change it from ref because the compiler was
     //confused about which assignment operator to call. Do not... I repeat... do not delete
     //these pointers in your destructor.
-    tinyxml2::XMLNode* m_node;
+    Aws::External::tinyxml2::XMLNode* m_node;
     const XmlDocument* m_doc;
 
     friend class XmlDocument;
@@ -126,7 +132,7 @@ public:
 private:
     XmlDocument();
 
-    tinyxml2::XMLDocument* m_doc;
+    Aws::External::tinyxml2::XMLDocument* m_doc;
 
     friend class XmlNode;
 

@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <cctype>
 #include <cassert>
+#include <algorithm>
 
 using namespace Aws::Http;
 using namespace Aws::Utils;
@@ -297,24 +298,16 @@ void URI::ExtractAndSetAuthority(const Aws::String& uri)
         authorityStart += 3;
     }
 
-    size_t posOfPathOrQueryString = uri.find(':', authorityStart);
-
-    if (posOfPathOrQueryString == Aws::String::npos)
+    size_t posOfEndOfAuthorityPort = uri.find(':', authorityStart);
+    size_t posOfEndOfAuthoritySlash = uri.find('/', authorityStart);
+    size_t posOfEndOfAuthorityQuery = uri.find('?', authorityStart);
+    size_t posEndOfAuthority = std::min({posOfEndOfAuthorityPort, posOfEndOfAuthoritySlash, posOfEndOfAuthorityQuery});
+    if (posEndOfAuthority == Aws::String::npos)
     {
-        posOfPathOrQueryString = uri.find('/', authorityStart);
+        posEndOfAuthority = uri.length();
     }
 
-    if (posOfPathOrQueryString == Aws::String::npos)
-    {
-        posOfPathOrQueryString = uri.find('?', authorityStart);
-    }
-
-    if (posOfPathOrQueryString == Aws::String::npos)
-    {
-        posOfPathOrQueryString = uri.length();
-    }
-
-    SetAuthority(uri.substr(authorityStart, posOfPathOrQueryString - authorityStart));
+    SetAuthority(uri.substr(authorityStart, posEndOfAuthority - authorityStart));
 }
 
 void URI::ExtractAndSetPort(const Aws::String& uri)
@@ -332,7 +325,14 @@ void URI::ExtractAndSetPort(const Aws::String& uri)
 
     size_t positionOfPortDelimiter = uri.find(':', authorityStart);
 
-    if (positionOfPortDelimiter != Aws::String::npos)
+    bool hasPort = positionOfPortDelimiter != Aws::String::npos;
+
+    if ((uri.find('/', authorityStart) < positionOfPortDelimiter) || (uri.find('?', authorityStart) < positionOfPortDelimiter))
+    {
+        hasPort = false;
+    }
+
+    if (hasPort)
     {
         Aws::String strPort;
 

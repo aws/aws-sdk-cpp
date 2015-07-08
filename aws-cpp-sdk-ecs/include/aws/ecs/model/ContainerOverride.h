@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/KeyValuePair.h>
 
 namespace Aws
 {
@@ -89,11 +90,32 @@ namespace Model
     */
     inline ContainerOverride& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
+    /*
+     <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p>
+    */
+    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
+    /*
+     <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p>
+    */
+    inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /*
+     <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p>
+    */
+    inline ContainerOverride&  WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
+
+    /*
+     <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p>
+    */
+    inline ContainerOverride& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+    Aws::Vector<KeyValuePair> m_environment;
+    bool m_environmentHasBeenSet;
   };
 
 } // namespace Model

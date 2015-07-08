@@ -25,13 +25,11 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectResult::PutObjectResult() : 
-    m_expiration(0.0)
+PutObjectResult::PutObjectResult()
 {
 }
 
-PutObjectResult::PutObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_expiration(0.0)
+PutObjectResult::PutObjectResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -49,7 +47,7 @@ PutObjectResult& PutObjectResult::operator =(const AmazonWebServiceResult<XmlDoc
   const auto& expirationIter = headers.find("x-amz-expiration");
   if(expirationIter != headers.end())
   {
-     m_expiration = StringUtils::ConvertToDouble(expirationIter->second.c_str());
+    m_expiration = expirationIter->second;
   }
 
   const auto& eTagIter = headers.find("etag");

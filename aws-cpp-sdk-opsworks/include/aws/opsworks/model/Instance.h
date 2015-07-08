@@ -47,55 +47,65 @@ namespace Model
     Instance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-    
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
     inline Instance&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
-    
+    /*
+     <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    */
     inline Instance& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
     /*
-     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a></p>
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
     /*
-     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a></p>
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /*
-     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a></p>
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
 
     /*
-     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a></p>
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline Instance&  WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
 
     /*
-     <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04 LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a></p>
+     <p>A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     */
     inline Instance& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
     /*
-     <p>The instance architecture, "i386" or "x86_64".</p>
+     <p>The instance architecture: "i386" or "x86_64".</p>
     */
     inline const Architecture& GetArchitecture() const{ return m_architecture; }
     /*
-     <p>The instance architecture, "i386" or "x86_64".</p>
+     <p>The instance architecture: "i386" or "x86_64".</p>
     */
     inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /*
-     <p>The instance architecture, "i386" or "x86_64".</p>
+     <p>The instance architecture: "i386" or "x86_64".</p>
     */
     inline Instance&  WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
 
@@ -267,40 +277,40 @@ namespace Model
     inline Instance& WithHostname(const char* value) { SetHostname(value); return *this;}
 
     /*
-     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code></p>
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline const Aws::String& GetInfrastructureClass() const{ return m_infrastructureClass; }
     /*
-     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code></p>
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline void SetInfrastructureClass(const Aws::String& value) { m_infrastructureClassHasBeenSet = true; m_infrastructureClass = value; }
 
     /*
-     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code></p>
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline void SetInfrastructureClass(const char* value) { m_infrastructureClassHasBeenSet = true; m_infrastructureClass.assign(value); }
 
     /*
-     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code></p>
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline Instance&  WithInfrastructureClass(const Aws::String& value) { SetInfrastructureClass(value); return *this;}
 
     /*
-     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code></p>
+     <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     */
     inline Instance& WithInfrastructureClass(const char* value) { SetInfrastructureClass(value); return *this;}
 
     /*
-     <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
+     <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
     /*
-     <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
+     <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
 
     /*
-     <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
+     <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> </note>
     */
     inline Instance&  WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
@@ -353,26 +363,26 @@ namespace Model
     inline Instance& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
 
     /*
-     <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that specify the various types are in the API Name column of the Available Instance Types table.</p>
+     <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
     /*
-     <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that specify the various types are in the API Name column of the Available Instance Types table.</p>
+     <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /*
-     <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that specify the various types are in the API Name column of the Available Instance Types table.</p>
+     <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /*
-     <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that specify the various types are in the API Name column of the Available Instance Types table.</p>
+     <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline Instance&  WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /*
-     <p>The instance type. AWS OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that specify the various types are in the API Name column of the Available Instance Types table.</p>
+     <p>The instance type, such as <code>t2.micro</code>.</p>
     */
     inline Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -448,65 +458,75 @@ namespace Model
     */
     inline Instance& WithOs(const char* value) { SetOs(value); return *this;}
 
-    
+    /*
+     <p>The instance's platform.</p>
+    */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
-    
+    /*
+     <p>The instance's platform.</p>
+    */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
-    
+    /*
+     <p>The instance's platform.</p>
+    */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
-    
+    /*
+     <p>The instance's platform.</p>
+    */
     inline Instance&  WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
-    
+    /*
+     <p>The instance's platform.</p>
+    */
     inline Instance& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
     /*
-     <p>The instance private DNS name.</p>
+     <p>The The instance's private DNS name.</p>
     */
     inline const Aws::String& GetPrivateDns() const{ return m_privateDns; }
     /*
-     <p>The instance private DNS name.</p>
+     <p>The The instance's private DNS name.</p>
     */
     inline void SetPrivateDns(const Aws::String& value) { m_privateDnsHasBeenSet = true; m_privateDns = value; }
 
     /*
-     <p>The instance private DNS name.</p>
+     <p>The The instance's private DNS name.</p>
     */
     inline void SetPrivateDns(const char* value) { m_privateDnsHasBeenSet = true; m_privateDns.assign(value); }
 
     /*
-     <p>The instance private DNS name.</p>
+     <p>The The instance's private DNS name.</p>
     */
     inline Instance&  WithPrivateDns(const Aws::String& value) { SetPrivateDns(value); return *this;}
 
     /*
-     <p>The instance private DNS name.</p>
+     <p>The The instance's private DNS name.</p>
     */
     inline Instance& WithPrivateDns(const char* value) { SetPrivateDns(value); return *this;}
 
     /*
-     <p>The instance private IP address.</p>
+     <p>The instance's private IP address.</p>
     */
     inline const Aws::String& GetPrivateIp() const{ return m_privateIp; }
     /*
-     <p>The instance private IP address.</p>
+     <p>The instance's private IP address.</p>
     */
     inline void SetPrivateIp(const Aws::String& value) { m_privateIpHasBeenSet = true; m_privateIp = value; }
 
     /*
-     <p>The instance private IP address.</p>
+     <p>The instance's private IP address.</p>
     */
     inline void SetPrivateIp(const char* value) { m_privateIpHasBeenSet = true; m_privateIp.assign(value); }
 
     /*
-     <p>The instance private IP address.</p>
+     <p>The instance's private IP address.</p>
     */
     inline Instance&  WithPrivateIp(const Aws::String& value) { SetPrivateIp(value); return *this;}
 
     /*
-     <p>The instance private IP address.</p>
+     <p>The instance's private IP address.</p>
     */
     inline Instance& WithPrivateIp(const char* value) { SetPrivateIp(value); return *this;}
 
@@ -683,26 +703,26 @@ namespace Model
     inline Instance& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /*
-     <p>The SSH key's DSA fingerprint.</p>
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline const Aws::String& GetSshHostDsaKeyFingerprint() const{ return m_sshHostDsaKeyFingerprint; }
     /*
-     <p>The SSH key's DSA fingerprint.</p>
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline void SetSshHostDsaKeyFingerprint(const Aws::String& value) { m_sshHostDsaKeyFingerprintHasBeenSet = true; m_sshHostDsaKeyFingerprint = value; }
 
     /*
-     <p>The SSH key's DSA fingerprint.</p>
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline void SetSshHostDsaKeyFingerprint(const char* value) { m_sshHostDsaKeyFingerprintHasBeenSet = true; m_sshHostDsaKeyFingerprint.assign(value); }
 
     /*
-     <p>The SSH key's DSA fingerprint.</p>
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline Instance&  WithSshHostDsaKeyFingerprint(const Aws::String& value) { SetSshHostDsaKeyFingerprint(value); return *this;}
 
     /*
-     <p>The SSH key's DSA fingerprint.</p>
+     <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     */
     inline Instance& WithSshHostDsaKeyFingerprint(const char* value) { SetSshHostDsaKeyFingerprint(value); return *this;}
 
@@ -731,26 +751,26 @@ namespace Model
     inline Instance& WithSshHostRsaKeyFingerprint(const char* value) { SetSshHostRsaKeyFingerprint(value); return *this;}
 
     /*
-     <p>The instance's Amazon EC2 key pair name.</p>
+     <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
     /*
-     <p>The instance's Amazon EC2 key pair name.</p>
+     <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
 
     /*
-     <p>The instance's Amazon EC2 key pair name.</p>
+     <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline void SetSshKeyName(const char* value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName.assign(value); }
 
     /*
-     <p>The instance's Amazon EC2 key pair name.</p>
+     <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline Instance&  WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
 
     /*
-     <p>The instance's Amazon EC2 key pair name.</p>
+     <p>The instance's Amazon EC2 key-pair name.</p>
     */
     inline Instance& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
 
@@ -803,40 +823,40 @@ namespace Model
     inline Instance& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /*
-     <p>The instance's subnet ID, if the stack is running in a VPC.</p>
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
     /*
-     <p>The instance's subnet ID, if the stack is running in a VPC.</p>
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /*
-     <p>The instance's subnet ID, if the stack is running in a VPC.</p>
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /*
-     <p>The instance's subnet ID, if the stack is running in a VPC.</p>
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline Instance&  WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /*
-     <p>The instance's subnet ID, if the stack is running in a VPC.</p>
+     <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     */
     inline Instance& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /*
-     <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+     <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     */
     inline const VirtualizationType& GetVirtualizationType() const{ return m_virtualizationType; }
     /*
-     <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+     <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     */
     inline void SetVirtualizationType(const VirtualizationType& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /*
-     <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+     <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     */
     inline Instance&  WithVirtualizationType(const VirtualizationType& value) { SetVirtualizationType(value); return *this;}
 

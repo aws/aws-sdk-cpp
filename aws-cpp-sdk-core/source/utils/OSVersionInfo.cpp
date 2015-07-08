@@ -16,7 +16,7 @@
 #include <aws/core/utils/OSVersionInfo.h>
 #include <aws/core/utils/StringUtils.h>
 #ifdef __ANDROID__
-#include <aws/core/utils/memory/stl/AWSRegex.h>
+#include <regex>
 #endif /*__ANDROID__*/
 
 #include <stdio.h>
@@ -31,29 +31,29 @@ using namespace Aws::Utils;
 #else
 Aws::String getSysCommandOutput(const char* command)
 {
-  Aws::String outputStr;
-  FILE* outputStream;
-  const int maxBufferSize = 256;
-  char outputBuffer[maxBufferSize];
+    Aws::String outputStr;
+    FILE* outputStream;
+    const int maxBufferSize = 256;
+    char outputBuffer[maxBufferSize];
 
-  outputStream = popen(command, "r");
+    outputStream = popen(command, "r");
 
-  if (outputStream)
-  {
-    while (!feof(outputStream))
+    if (outputStream)
     {
-      if (fgets(outputBuffer, maxBufferSize, outputStream) != nullptr)
-      {
-        outputStr.append(outputBuffer);
-      }
+        while (!feof(outputStream))
+        {
+            if (fgets(outputBuffer, maxBufferSize, outputStream) != nullptr)
+            {
+                outputStr.append(outputBuffer);
+            }
+        }
+
+        pclose(outputStream);
+
+        return StringUtils::Trim(outputStr.c_str());
     }
 
-    pclose(outputStream);
-
-    return StringUtils::Trim(outputStr.c_str());
-  }
-
-  return "";
+    return "";
 }
 #endif
 
@@ -62,61 +62,64 @@ Aws::String getSysCommandOutput(const char* command)
 Aws::String OSVersionInfo::ComputeOSVersionString() const
 {
 #ifdef __ANDROID__
-  Aws::String androidBuildVersion = getSysCommandOutput("cat /proc/version 2>&1");
-  Aws::StringRegex versionRegex("version (\\S+)\\s");
+    // regex is not allocator-aware, so technically we're breaking our memory contract here (http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3254.pdf)
+    // Since it's internal, nothing escapes, and what gets allocated/deallocated is very small, I think that's acceptable for now
 
-  Aws::StringMatchResults versionMatchResults;
-  std::regex_search(androidBuildVersion.c_str(), versionMatchResults, versionRegex);
+    std::string androidBuildVersion = getSysCommandOutput("cat /proc/version 2>&1");
+    std::regex versionRegex("version (\\S+)\\s");
 
-  if(versionMatchResults.size() >= 2)
-  {
-    return Aws::String("Android/") + versionMatchResults[1].str();
-  }
+    std::smatch versionMatchResults;
+    std::regex_search(androidBuildVersion, versionMatchResults, versionRegex);
 
-  return Aws::String("Android/Unknown");
+    if(versionMatchResults.size() >= 2)
+    {
+        return Aws::String("Android/") + versionMatchResults[1].str().c_str();
+    }
+
+    return Aws::String("Android/Unknown");
 
 #elif __linux__ || __APPLE__
-  Aws::String kernelName = getSysCommandOutput("uname -s 2>&1");
-  Aws::String releaseAndMachineName = getSysCommandOutput("uname -rm 2>&1");
+    Aws::String kernelName = getSysCommandOutput("uname -s 2>&1");
+    Aws::String releaseAndMachineName = getSysCommandOutput("uname -rm 2>&1");
 
-  if(!kernelName.empty())
-  {
-    return kernelName + "/" + releaseAndMachineName;
-  }
+    if(!kernelName.empty())
+    {
+        return kernelName + "/" + releaseAndMachineName;
+    }
 
-  return "non-windows/unknown";
+    return "non-windows/unknown";
 
 #else
-  OSVERSIONINFO versionInfo;
-  ZeroMemory(&versionInfo, sizeof(OSVERSIONINFO));
-  versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-  GetVersionExA(&versionInfo);
-  Aws::StringStream ss;
-  ss << "Windows/" << versionInfo.dwMajorVersion << "." << versionInfo.dwMinorVersion << "." << versionInfo.dwBuildNumber << "-" << versionInfo.szCSDVersion;
+    OSVERSIONINFO versionInfo;
+    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFO));
+    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    GetVersionExA(&versionInfo);
+    Aws::StringStream ss;
+    ss << "Windows/" << versionInfo.dwMajorVersion << "." << versionInfo.dwMinorVersion << "." << versionInfo.dwBuildNumber << "-" << versionInfo.szCSDVersion;
 
-  SYSTEM_INFO sysInfo;
-  ZeroMemory(&sysInfo, sizeof(SYSTEM_INFO));
-  GetSystemInfo(&sysInfo);
+    SYSTEM_INFO sysInfo;
+    ZeroMemory(&sysInfo, sizeof(SYSTEM_INFO));
+    GetSystemInfo(&sysInfo);
 
-  switch (sysInfo.wProcessorArchitecture)
-  {
-    //PROCESSOR_ARCHIECTURE_AMD64
-    case 0x09:
-      ss << " AMD64";
-      break;
-    //PROCESSOR_ARCHITECTURE_IA64
-    case 0x06:
-      ss << " IA64";
-      break;
-    //PROCESSOR_ARCHITECTURE_INTEL
-    case 0x00:
-      ss << " x86";
-      break;
-    default:
-      ss << " Unknown Processor Architecture";
-      break;
-  }
+    switch (sysInfo.wProcessorArchitecture)
+    {
+        //PROCESSOR_ARCHIECTURE_AMD64
+        case 0x09:
+            ss << " AMD64";
+            break;
+        //PROCESSOR_ARCHITECTURE_IA64
+        case 0x06:
+            ss << " IA64";
+            break;
+        //PROCESSOR_ARCHITECTURE_INTEL
+        case 0x00:
+            ss << " x86";
+            break;
+        default:
+            ss << " Unknown Processor Architecture";
+            break;
+        }
 
-  return ss.str();
+    return ss.str();
 #endif
 }

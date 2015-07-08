@@ -26,7 +26,7 @@ static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -87,5 +87,5 @@ Aws::String GetNameForDeploymentStatus(DeploymentStatus value)
 
 } // namespace DeploymentStatusMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

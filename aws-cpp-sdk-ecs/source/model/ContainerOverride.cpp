@@ -23,13 +23,15 @@ using namespace Aws::Utils;
 
 ContainerOverride::ContainerOverride() : 
     m_nameHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
 ContainerOverride::ContainerOverride(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -53,6 +55,16 @@ ContainerOverride& ContainerOverride::operator =(const JsonValue& jsonValue)
     m_commandHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("environment"))
+  {
+    Array<JsonValue> environmentJsonList = jsonValue.GetArray("environment");
+    for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
+    {
+      m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
+    }
+    m_environmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +86,17 @@ JsonValue ContainerOverride::Jsonize() const
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);
    }
    payload.WithArray("command", std::move(commandJsonList));
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   Array<JsonValue> environmentJsonList(m_environment.size());
+   for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
+   {
+     environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());
+   }
+   payload.WithArray("environment", std::move(environmentJsonList));
 
   }
 

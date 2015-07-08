@@ -22,7 +22,7 @@ static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -59,5 +59,5 @@ Aws::String GetNameForDeploymentCreator(DeploymentCreator value)
 
 } // namespace DeploymentCreatorMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

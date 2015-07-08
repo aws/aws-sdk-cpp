@@ -13,12 +13,12 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -39,5 +39,5 @@ AWS_CODEDEPLOY_API LifecycleEventStatus GetLifecycleEventStatusForName(const Aws
 AWS_CODEDEPLOY_API Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus value);
 } // namespace LifecycleEventStatusMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

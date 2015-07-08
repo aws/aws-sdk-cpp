@@ -61,40 +61,40 @@ namespace Model
     inline RunTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run.</p>
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
     /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run.</p>
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run.</p>
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run.</p>
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline RunTaskRequest&  WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run.</p>
+     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.</p>
     */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
     /*
-     <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the command it should run instead of its default. A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
+     <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that is specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> </note>
     */
     inline const TaskOverride& GetOverrides() const{ return m_overrides; }
     /*
-     <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the command it should run instead of its default. A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
+     <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that is specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> </note>
     */
     inline void SetOverrides(const TaskOverride& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /*
-     <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the command it should run instead of its default. A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
+     <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that is specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> </note>
     */
     inline RunTaskRequest&  WithOverrides(const TaskOverride& value) { SetOverrides(value); return *this;}
 

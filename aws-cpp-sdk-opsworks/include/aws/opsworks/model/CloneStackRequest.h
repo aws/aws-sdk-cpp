@@ -211,26 +211,26 @@ namespace Model
     inline CloneStackRequest& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
 
     /*
-     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul> <p> The default option is the current Amazon Linux version.</p>
+     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</li> </ul> <p>The default option is the parent stack's operating system. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <note>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</note>
     */
     inline const Aws::String& GetDefaultOs() const{ return m_defaultOs; }
     /*
-     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul> <p> The default option is the current Amazon Linux version.</p>
+     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</li> </ul> <p>The default option is the parent stack's operating system. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <note>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</note>
     */
     inline void SetDefaultOs(const Aws::String& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
 
     /*
-     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul> <p> The default option is the current Amazon Linux version.</p>
+     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</li> </ul> <p>The default option is the parent stack's operating system. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <note>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</note>
     */
     inline void SetDefaultOs(const char* value) { m_defaultOsHasBeenSet = true; m_defaultOs.assign(value); }
 
     /*
-     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul> <p> The default option is the current Amazon Linux version.</p>
+     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</li> </ul> <p>The default option is the parent stack's operating system. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <note>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</note>
     */
     inline CloneStackRequest&  WithDefaultOs(const Aws::String& value) { SetDefaultOs(value); return *this;}
 
     /*
-     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul> <p> The default option is the current Amazon Linux version.</p>
+     <p>The stack's operating system, which must be set to one of the following.</p> <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</li> </ul> <p>The default option is the parent stack's operating system. For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a>.</p> <note>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</note>
     */
     inline CloneStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
 
@@ -307,40 +307,40 @@ namespace Model
     inline CloneStackRequest& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
 
     /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
+     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
     */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
     /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
+     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
     */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
     /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
+     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
     */
     inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
 
     /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
+     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
     */
     inline CloneStackRequest&  WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
 
     /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"'.:</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
+     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
     */
     inline CloneStackRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
     /*
-     <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9, 11.4, or 11.10. The default value is currently 11.4.</p>
+     <p>The configuration manager. When you clone a Linux stack we recommend that you use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10. The default value is currently 11.10.</p>
     */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
     /*
-     <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9, 11.4, or 11.10. The default value is currently 11.4.</p>
+     <p>The configuration manager. When you clone a Linux stack we recommend that you use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10. The default value is currently 11.10.</p>
     */
     inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
 
     /*
-     <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9, 11.4, or 11.10. The default value is currently 11.4.</p>
+     <p>The configuration manager. When you clone a Linux stack we recommend that you use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10. The default value is currently 11.10.</p>
     */
     inline CloneStackRequest&  WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
 
@@ -470,18 +470,28 @@ namespace Model
     */
     inline CloneStackRequest&  WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
 
-    
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically installs new agent versions on the stack's instances as soon as they are available.</li> <li>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks then automatically installs that version on the stack's instances.</li> </ul> <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p> <note>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</note>
+    */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-    
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically installs new agent versions on the stack's instances as soon as they are available.</li> <li>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks then automatically installs that version on the stack's instances.</li> </ul> <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p> <note>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</note>
+    */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
-    
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically installs new agent versions on the stack's instances as soon as they are available.</li> <li>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks then automatically installs that version on the stack's instances.</li> </ul> <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p> <note>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</note>
+    */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
-    
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically installs new agent versions on the stack's instances as soon as they are available.</li> <li>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks then automatically installs that version on the stack's instances.</li> </ul> <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p> <note>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</note>
+    */
     inline CloneStackRequest&  WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
-    
+    /*
+     <p>The default AWS OpsWorks agent version. You have the following options:</p> <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically installs new agent versions on the stack's instances as soon as they are available.</li> <li>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks then automatically installs that version on the stack's instances.</li> </ul> <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p> <note>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</note>
+    */
     inline CloneStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
   private:

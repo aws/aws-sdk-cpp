@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/Diagnostics.h>
 #include <aws/codedeploy/model/LifecycleEventStatus.h>
@@ -27,12 +27,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Information about a deployment lifecycle event.</p>
   */
   class AWS_CODEDEPLOY_API LifecycleEvent
   {
@@ -42,50 +42,84 @@ namespace Model
     LifecycleEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /*
+     <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.</p>
+    */
     inline const Aws::String& GetLifecycleEventName() const{ return m_lifecycleEventName; }
-    
+    /*
+     <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.</p>
+    */
     inline void SetLifecycleEventName(const Aws::String& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = value; }
 
-    
+    /*
+     <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.</p>
+    */
     inline void SetLifecycleEventName(const char* value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName.assign(value); }
 
-    
+    /*
+     <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.</p>
+    */
     inline LifecycleEvent&  WithLifecycleEventName(const Aws::String& value) { SetLifecycleEventName(value); return *this;}
 
-    
+    /*
+     <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.</p>
+    */
     inline LifecycleEvent& WithLifecycleEventName(const char* value) { SetLifecycleEventName(value); return *this;}
 
-    
+    /*
+     <p>Diagnostic information about the deployment lifecycle event.</p>
+    */
     inline const Diagnostics& GetDiagnostics() const{ return m_diagnostics; }
-    
+    /*
+     <p>Diagnostic information about the deployment lifecycle event.</p>
+    */
     inline void SetDiagnostics(const Diagnostics& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = value; }
 
-    
+    /*
+     <p>Diagnostic information about the deployment lifecycle event.</p>
+    */
     inline LifecycleEvent&  WithDiagnostics(const Diagnostics& value) { SetDiagnostics(value); return *this;}
 
-    
+    /*
+     <p>A timestamp indicating when the deployment lifecycle event started.</p>
+    */
     inline double GetStartTime() const{ return m_startTime; }
-    
+    /*
+     <p>A timestamp indicating when the deployment lifecycle event started.</p>
+    */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
-    
+    /*
+     <p>A timestamp indicating when the deployment lifecycle event started.</p>
+    */
     inline LifecycleEvent&  WithStartTime(double value) { SetStartTime(value); return *this;}
 
-    
+    /*
+     <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+    */
     inline double GetEndTime() const{ return m_endTime; }
-    
+    /*
+     <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+    */
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
-    
+    /*
+     <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+    */
     inline LifecycleEvent&  WithEndTime(double value) { SetEndTime(value); return *this;}
 
-    
+    /*
+     <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event is in progress.</li> <li>Succeeded: The deployment lifecycle event has succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li> <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown: The deployment lifecycle event is unknown.</li> </ul>
+    */
     inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
-    
+    /*
+     <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event is in progress.</li> <li>Succeeded: The deployment lifecycle event has succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li> <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown: The deployment lifecycle event is unknown.</li> </ul>
+    */
     inline void SetStatus(const LifecycleEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /*
+     <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event is in progress.</li> <li>Succeeded: The deployment lifecycle event has succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li> <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown: The deployment lifecycle event is unknown.</li> </ul>
+    */
     inline LifecycleEvent&  WithStatus(const LifecycleEventStatus& value) { SetStatus(value); return *this;}
 
   private:
@@ -102,5 +136,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

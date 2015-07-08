@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a get on-premises instance operation.</p>
   */
-  class AWS_CODEDEPLOY_API GetOnPremisesInstanceRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API GetOnPremisesInstanceRequest : public CodeDeployRequest
   {
   public:
     GetOnPremisesInstanceRequest();
@@ -35,18 +36,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
-    
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
-    
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
 
-    
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
     inline GetOnPremisesInstanceRequest&  WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
 
-    
+    /*
+     <p>The name of the on-premises instance to get information about</p>
+    */
     inline GetOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
@@ -55,5 +66,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

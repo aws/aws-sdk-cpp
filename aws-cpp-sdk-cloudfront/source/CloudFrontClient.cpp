@@ -26,27 +26,27 @@
 #include <aws/cloudfront/CloudFrontClient.h>
 #include <aws/cloudfront/CloudFrontEndpoint.h>
 #include <aws/cloudfront/CloudFrontErrorMarshaller.h>
-#include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2014_11_06Request.h>
-#include <aws/cloudfront/model/CreateDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/CreateInvalidation2014_11_06Request.h>
-#include <aws/cloudfront/model/CreateStreamingDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2014_11_06Request.h>
-#include <aws/cloudfront/model/DeleteDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/DeleteStreamingDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2014_11_06Request.h>
-#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2014_11_06Request.h>
-#include <aws/cloudfront/model/GetDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/GetDistributionConfig2014_11_06Request.h>
-#include <aws/cloudfront/model/GetInvalidation2014_11_06Request.h>
-#include <aws/cloudfront/model/GetStreamingDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/GetStreamingDistributionConfig2014_11_06Request.h>
-#include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2014_11_06Request.h>
-#include <aws/cloudfront/model/ListDistributions2014_11_06Request.h>
-#include <aws/cloudfront/model/ListInvalidations2014_11_06Request.h>
-#include <aws/cloudfront/model/ListStreamingDistributions2014_11_06Request.h>
-#include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2014_11_06Request.h>
-#include <aws/cloudfront/model/UpdateDistribution2014_11_06Request.h>
-#include <aws/cloudfront/model/UpdateStreamingDistribution2014_11_06Request.h>
+#include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2015_04_17Request.h>
+#include <aws/cloudfront/model/CreateDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/CreateInvalidation2015_04_17Request.h>
+#include <aws/cloudfront/model/CreateStreamingDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2015_04_17Request.h>
+#include <aws/cloudfront/model/DeleteDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/DeleteStreamingDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2015_04_17Request.h>
+#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2015_04_17Request.h>
+#include <aws/cloudfront/model/GetDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/GetDistributionConfig2015_04_17Request.h>
+#include <aws/cloudfront/model/GetInvalidation2015_04_17Request.h>
+#include <aws/cloudfront/model/GetStreamingDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/GetStreamingDistributionConfig2015_04_17Request.h>
+#include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2015_04_17Request.h>
+#include <aws/cloudfront/model/ListDistributions2015_04_17Request.h>
+#include <aws/cloudfront/model/ListInvalidations2015_04_17Request.h>
+#include <aws/cloudfront/model/ListStreamingDistributions2015_04_17Request.h>
+#include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2015_04_17Request.h>
+#include <aws/cloudfront/model/UpdateDistribution2015_04_17Request.h>
+#include <aws/cloudfront/model/UpdateStreamingDistribution2015_04_17Request.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -109,658 +109,658 @@ void CloudFrontClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
-CreateCloudFrontOriginAccessIdentity2014_11_06Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2014_11_06(const CreateCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+CreateCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/origin-access-identity/cloudfront";
+  ss << m_uri << "/2015-04-17/origin-access-identity/cloudfront";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return CreateCloudFrontOriginAccessIdentity2014_11_06Outcome(CreateCloudFrontOriginAccessIdentity2014_11_06Result(outcome.GetResult()));
+    return CreateCloudFrontOriginAccessIdentity2015_04_17Outcome(CreateCloudFrontOriginAccessIdentity2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return CreateCloudFrontOriginAccessIdentity2014_11_06Outcome(outcome.GetError());
+    return CreateCloudFrontOriginAccessIdentity2015_04_17Outcome(outcome.GetError());
   }
 }
 
-CreateCloudFrontOriginAccessIdentity2014_11_06OutcomeCallable CloudFrontClient::CreateCloudFrontOriginAccessIdentity2014_11_06Callable(const CreateCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+CreateCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17Callable(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::CreateCloudFrontOriginAccessIdentity2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2014_11_06Async(const CreateCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17Async(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const CreateCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onCreateCloudFrontOriginAccessIdentity2014_11_06OutcomeReceived(this, request, CreateCloudFrontOriginAccessIdentity2014_11_06(request), context);
+  m_onCreateCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, CreateCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
-CreateDistribution2014_11_06Outcome CloudFrontClient::CreateDistribution2014_11_06(const CreateDistribution2014_11_06Request& request) const
+CreateDistribution2015_04_17Outcome CloudFrontClient::CreateDistribution2015_04_17(const CreateDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution";
+  ss << m_uri << "/2015-04-17/distribution";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return CreateDistribution2014_11_06Outcome(CreateDistribution2014_11_06Result(outcome.GetResult()));
+    return CreateDistribution2015_04_17Outcome(CreateDistribution2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return CreateDistribution2014_11_06Outcome(outcome.GetError());
+    return CreateDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-CreateDistribution2014_11_06OutcomeCallable CloudFrontClient::CreateDistribution2014_11_06Callable(const CreateDistribution2014_11_06Request& request) const
+CreateDistribution2015_04_17OutcomeCallable CloudFrontClient::CreateDistribution2015_04_17Callable(const CreateDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::CreateDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::CreateDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateDistribution2014_11_06Async(const CreateDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateDistribution2015_04_17Async(const CreateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::CreateDistribution2014_11_06AsyncHelper(const CreateDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateDistribution2015_04_17AsyncHelper(const CreateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onCreateDistribution2014_11_06OutcomeReceived(this, request, CreateDistribution2014_11_06(request), context);
+  m_onCreateDistribution2015_04_17OutcomeReceived(this, request, CreateDistribution2015_04_17(request), context);
 }
 
-CreateInvalidation2014_11_06Outcome CloudFrontClient::CreateInvalidation2014_11_06(const CreateInvalidation2014_11_06Request& request) const
+CreateInvalidation2015_04_17Outcome CloudFrontClient::CreateInvalidation2015_04_17(const CreateInvalidation2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return CreateInvalidation2014_11_06Outcome(CreateInvalidation2014_11_06Result(outcome.GetResult()));
+    return CreateInvalidation2015_04_17Outcome(CreateInvalidation2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return CreateInvalidation2014_11_06Outcome(outcome.GetError());
+    return CreateInvalidation2015_04_17Outcome(outcome.GetError());
   }
 }
 
-CreateInvalidation2014_11_06OutcomeCallable CloudFrontClient::CreateInvalidation2014_11_06Callable(const CreateInvalidation2014_11_06Request& request) const
+CreateInvalidation2015_04_17OutcomeCallable CloudFrontClient::CreateInvalidation2015_04_17Callable(const CreateInvalidation2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::CreateInvalidation2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::CreateInvalidation2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateInvalidation2014_11_06Async(const CreateInvalidation2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateInvalidation2015_04_17Async(const CreateInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateInvalidation2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateInvalidation2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::CreateInvalidation2014_11_06AsyncHelper(const CreateInvalidation2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateInvalidation2015_04_17AsyncHelper(const CreateInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onCreateInvalidation2014_11_06OutcomeReceived(this, request, CreateInvalidation2014_11_06(request), context);
+  m_onCreateInvalidation2015_04_17OutcomeReceived(this, request, CreateInvalidation2015_04_17(request), context);
 }
 
-CreateStreamingDistribution2014_11_06Outcome CloudFrontClient::CreateStreamingDistribution2014_11_06(const CreateStreamingDistribution2014_11_06Request& request) const
+CreateStreamingDistribution2015_04_17Outcome CloudFrontClient::CreateStreamingDistribution2015_04_17(const CreateStreamingDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/streaming-distribution";
+  ss << m_uri << "/2015-04-17/streaming-distribution";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return CreateStreamingDistribution2014_11_06Outcome(CreateStreamingDistribution2014_11_06Result(outcome.GetResult()));
+    return CreateStreamingDistribution2015_04_17Outcome(CreateStreamingDistribution2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return CreateStreamingDistribution2014_11_06Outcome(outcome.GetError());
+    return CreateStreamingDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-CreateStreamingDistribution2014_11_06OutcomeCallable CloudFrontClient::CreateStreamingDistribution2014_11_06Callable(const CreateStreamingDistribution2014_11_06Request& request) const
+CreateStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::CreateStreamingDistribution2015_04_17Callable(const CreateStreamingDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::CreateStreamingDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::CreateStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateStreamingDistribution2014_11_06Async(const CreateStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateStreamingDistribution2015_04_17Async(const CreateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateStreamingDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateStreamingDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::CreateStreamingDistribution2014_11_06AsyncHelper(const CreateStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateStreamingDistribution2015_04_17AsyncHelper(const CreateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onCreateStreamingDistribution2014_11_06OutcomeReceived(this, request, CreateStreamingDistribution2014_11_06(request), context);
+  m_onCreateStreamingDistribution2015_04_17OutcomeReceived(this, request, CreateStreamingDistribution2015_04_17(request), context);
 }
 
-DeleteCloudFrontOriginAccessIdentity2014_11_06Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2014_11_06(const DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+DeleteCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/origin-access-identity/cloudfront/";
+  ss << m_uri << "/2015-04-17/origin-access-identity/cloudfront/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
-    return DeleteCloudFrontOriginAccessIdentity2014_11_06Outcome(NoResult());
+    return DeleteCloudFrontOriginAccessIdentity2015_04_17Outcome(NoResult());
   }
   else
   {
-    return DeleteCloudFrontOriginAccessIdentity2014_11_06Outcome(outcome.GetError());
+    return DeleteCloudFrontOriginAccessIdentity2015_04_17Outcome(outcome.GetError());
   }
 }
 
-DeleteCloudFrontOriginAccessIdentity2014_11_06OutcomeCallable CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2014_11_06Callable(const DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+DeleteCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17Callable(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2014_11_06Async(const DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17Async(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const DeleteCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteCloudFrontOriginAccessIdentity2014_11_06OutcomeReceived(this, request, DeleteCloudFrontOriginAccessIdentity2014_11_06(request), context);
+  m_onDeleteCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, DeleteCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
-DeleteDistribution2014_11_06Outcome CloudFrontClient::DeleteDistribution2014_11_06(const DeleteDistribution2014_11_06Request& request) const
+DeleteDistribution2015_04_17Outcome CloudFrontClient::DeleteDistribution2015_04_17(const DeleteDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
-    return DeleteDistribution2014_11_06Outcome(NoResult());
+    return DeleteDistribution2015_04_17Outcome(NoResult());
   }
   else
   {
-    return DeleteDistribution2014_11_06Outcome(outcome.GetError());
+    return DeleteDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-DeleteDistribution2014_11_06OutcomeCallable CloudFrontClient::DeleteDistribution2014_11_06Callable(const DeleteDistribution2014_11_06Request& request) const
+DeleteDistribution2015_04_17OutcomeCallable CloudFrontClient::DeleteDistribution2015_04_17Callable(const DeleteDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::DeleteDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::DeleteDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::DeleteDistribution2014_11_06Async(const DeleteDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteDistribution2015_04_17Async(const DeleteDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::DeleteDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::DeleteDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::DeleteDistribution2014_11_06AsyncHelper(const DeleteDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteDistribution2015_04_17AsyncHelper(const DeleteDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteDistribution2014_11_06OutcomeReceived(this, request, DeleteDistribution2014_11_06(request), context);
+  m_onDeleteDistribution2015_04_17OutcomeReceived(this, request, DeleteDistribution2015_04_17(request), context);
 }
 
-DeleteStreamingDistribution2014_11_06Outcome CloudFrontClient::DeleteStreamingDistribution2014_11_06(const DeleteStreamingDistribution2014_11_06Request& request) const
+DeleteStreamingDistribution2015_04_17Outcome CloudFrontClient::DeleteStreamingDistribution2015_04_17(const DeleteStreamingDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/streaming-distribution/";
+  ss << m_uri << "/2015-04-17/streaming-distribution/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
-    return DeleteStreamingDistribution2014_11_06Outcome(NoResult());
+    return DeleteStreamingDistribution2015_04_17Outcome(NoResult());
   }
   else
   {
-    return DeleteStreamingDistribution2014_11_06Outcome(outcome.GetError());
+    return DeleteStreamingDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-DeleteStreamingDistribution2014_11_06OutcomeCallable CloudFrontClient::DeleteStreamingDistribution2014_11_06Callable(const DeleteStreamingDistribution2014_11_06Request& request) const
+DeleteStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::DeleteStreamingDistribution2015_04_17Callable(const DeleteStreamingDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::DeleteStreamingDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::DeleteStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::DeleteStreamingDistribution2014_11_06Async(const DeleteStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteStreamingDistribution2015_04_17Async(const DeleteStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::DeleteStreamingDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::DeleteStreamingDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::DeleteStreamingDistribution2014_11_06AsyncHelper(const DeleteStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteStreamingDistribution2015_04_17AsyncHelper(const DeleteStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onDeleteStreamingDistribution2014_11_06OutcomeReceived(this, request, DeleteStreamingDistribution2014_11_06(request), context);
+  m_onDeleteStreamingDistribution2015_04_17OutcomeReceived(this, request, DeleteStreamingDistribution2015_04_17(request), context);
 }
 
-GetCloudFrontOriginAccessIdentity2014_11_06Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2014_11_06(const GetCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+GetCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/origin-access-identity/cloudfront/";
+  ss << m_uri << "/2015-04-17/origin-access-identity/cloudfront/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetCloudFrontOriginAccessIdentity2014_11_06Outcome(GetCloudFrontOriginAccessIdentity2014_11_06Result(outcome.GetResult()));
+    return GetCloudFrontOriginAccessIdentity2015_04_17Outcome(GetCloudFrontOriginAccessIdentity2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetCloudFrontOriginAccessIdentity2014_11_06Outcome(outcome.GetError());
+    return GetCloudFrontOriginAccessIdentity2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetCloudFrontOriginAccessIdentity2014_11_06OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentity2014_11_06Callable(const GetCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+GetCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17Callable(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetCloudFrontOriginAccessIdentity2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentity2014_11_06Async(const GetCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17Async(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentity2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const GetCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetCloudFrontOriginAccessIdentity2014_11_06OutcomeReceived(this, request, GetCloudFrontOriginAccessIdentity2014_11_06(request), context);
+  m_onGetCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, GetCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
-GetCloudFrontOriginAccessIdentityConfig2014_11_06Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2014_11_06(const GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request) const
+GetCloudFrontOriginAccessIdentityConfig2015_04_17Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/origin-access-identity/cloudfront/";
+  ss << m_uri << "/2015-04-17/origin-access-identity/cloudfront/";
   ss << request.GetId();
   ss << "/config";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetCloudFrontOriginAccessIdentityConfig2014_11_06Outcome(GetCloudFrontOriginAccessIdentityConfig2014_11_06Result(outcome.GetResult()));
+    return GetCloudFrontOriginAccessIdentityConfig2015_04_17Outcome(GetCloudFrontOriginAccessIdentityConfig2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetCloudFrontOriginAccessIdentityConfig2014_11_06Outcome(outcome.GetError());
+    return GetCloudFrontOriginAccessIdentityConfig2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetCloudFrontOriginAccessIdentityConfig2014_11_06OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2014_11_06Callable(const GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request) const
+GetCloudFrontOriginAccessIdentityConfig2015_04_17OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17Callable(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2014_11_06Async(const GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17Async(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2014_11_06AsyncHelper(const GetCloudFrontOriginAccessIdentityConfig2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17AsyncHelper(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetCloudFrontOriginAccessIdentityConfig2014_11_06OutcomeReceived(this, request, GetCloudFrontOriginAccessIdentityConfig2014_11_06(request), context);
+  m_onGetCloudFrontOriginAccessIdentityConfig2015_04_17OutcomeReceived(this, request, GetCloudFrontOriginAccessIdentityConfig2015_04_17(request), context);
 }
 
-GetDistribution2014_11_06Outcome CloudFrontClient::GetDistribution2014_11_06(const GetDistribution2014_11_06Request& request) const
+GetDistribution2015_04_17Outcome CloudFrontClient::GetDistribution2015_04_17(const GetDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetDistribution2014_11_06Outcome(GetDistribution2014_11_06Result(outcome.GetResult()));
+    return GetDistribution2015_04_17Outcome(GetDistribution2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetDistribution2014_11_06Outcome(outcome.GetError());
+    return GetDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetDistribution2014_11_06OutcomeCallable CloudFrontClient::GetDistribution2014_11_06Callable(const GetDistribution2014_11_06Request& request) const
+GetDistribution2015_04_17OutcomeCallable CloudFrontClient::GetDistribution2015_04_17Callable(const GetDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetDistribution2014_11_06Async(const GetDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistribution2015_04_17Async(const GetDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetDistribution2014_11_06AsyncHelper(const GetDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistribution2015_04_17AsyncHelper(const GetDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetDistribution2014_11_06OutcomeReceived(this, request, GetDistribution2014_11_06(request), context);
+  m_onGetDistribution2015_04_17OutcomeReceived(this, request, GetDistribution2015_04_17(request), context);
 }
 
-GetDistributionConfig2014_11_06Outcome CloudFrontClient::GetDistributionConfig2014_11_06(const GetDistributionConfig2014_11_06Request& request) const
+GetDistributionConfig2015_04_17Outcome CloudFrontClient::GetDistributionConfig2015_04_17(const GetDistributionConfig2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetId();
   ss << "/config";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetDistributionConfig2014_11_06Outcome(GetDistributionConfig2014_11_06Result(outcome.GetResult()));
+    return GetDistributionConfig2015_04_17Outcome(GetDistributionConfig2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetDistributionConfig2014_11_06Outcome(outcome.GetError());
+    return GetDistributionConfig2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetDistributionConfig2014_11_06OutcomeCallable CloudFrontClient::GetDistributionConfig2014_11_06Callable(const GetDistributionConfig2014_11_06Request& request) const
+GetDistributionConfig2015_04_17OutcomeCallable CloudFrontClient::GetDistributionConfig2015_04_17Callable(const GetDistributionConfig2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetDistributionConfig2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetDistributionConfig2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetDistributionConfig2014_11_06Async(const GetDistributionConfig2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistributionConfig2015_04_17Async(const GetDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetDistributionConfig2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetDistributionConfig2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetDistributionConfig2014_11_06AsyncHelper(const GetDistributionConfig2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistributionConfig2015_04_17AsyncHelper(const GetDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetDistributionConfig2014_11_06OutcomeReceived(this, request, GetDistributionConfig2014_11_06(request), context);
+  m_onGetDistributionConfig2015_04_17OutcomeReceived(this, request, GetDistributionConfig2015_04_17(request), context);
 }
 
-GetInvalidation2014_11_06Outcome CloudFrontClient::GetInvalidation2014_11_06(const GetInvalidation2014_11_06Request& request) const
+GetInvalidation2015_04_17Outcome CloudFrontClient::GetInvalidation2015_04_17(const GetInvalidation2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetInvalidation2014_11_06Outcome(GetInvalidation2014_11_06Result(outcome.GetResult()));
+    return GetInvalidation2015_04_17Outcome(GetInvalidation2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetInvalidation2014_11_06Outcome(outcome.GetError());
+    return GetInvalidation2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetInvalidation2014_11_06OutcomeCallable CloudFrontClient::GetInvalidation2014_11_06Callable(const GetInvalidation2014_11_06Request& request) const
+GetInvalidation2015_04_17OutcomeCallable CloudFrontClient::GetInvalidation2015_04_17Callable(const GetInvalidation2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetInvalidation2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetInvalidation2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetInvalidation2014_11_06Async(const GetInvalidation2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetInvalidation2015_04_17Async(const GetInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetInvalidation2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetInvalidation2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetInvalidation2014_11_06AsyncHelper(const GetInvalidation2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetInvalidation2015_04_17AsyncHelper(const GetInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetInvalidation2014_11_06OutcomeReceived(this, request, GetInvalidation2014_11_06(request), context);
+  m_onGetInvalidation2015_04_17OutcomeReceived(this, request, GetInvalidation2015_04_17(request), context);
 }
 
-GetStreamingDistribution2014_11_06Outcome CloudFrontClient::GetStreamingDistribution2014_11_06(const GetStreamingDistribution2014_11_06Request& request) const
+GetStreamingDistribution2015_04_17Outcome CloudFrontClient::GetStreamingDistribution2015_04_17(const GetStreamingDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/streaming-distribution/";
+  ss << m_uri << "/2015-04-17/streaming-distribution/";
   ss << request.GetId();
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetStreamingDistribution2014_11_06Outcome(GetStreamingDistribution2014_11_06Result(outcome.GetResult()));
+    return GetStreamingDistribution2015_04_17Outcome(GetStreamingDistribution2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetStreamingDistribution2014_11_06Outcome(outcome.GetError());
+    return GetStreamingDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetStreamingDistribution2014_11_06OutcomeCallable CloudFrontClient::GetStreamingDistribution2014_11_06Callable(const GetStreamingDistribution2014_11_06Request& request) const
+GetStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::GetStreamingDistribution2015_04_17Callable(const GetStreamingDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetStreamingDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetStreamingDistribution2014_11_06Async(const GetStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistribution2015_04_17Async(const GetStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetStreamingDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetStreamingDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetStreamingDistribution2014_11_06AsyncHelper(const GetStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistribution2015_04_17AsyncHelper(const GetStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetStreamingDistribution2014_11_06OutcomeReceived(this, request, GetStreamingDistribution2014_11_06(request), context);
+  m_onGetStreamingDistribution2015_04_17OutcomeReceived(this, request, GetStreamingDistribution2015_04_17(request), context);
 }
 
-GetStreamingDistributionConfig2014_11_06Outcome CloudFrontClient::GetStreamingDistributionConfig2014_11_06(const GetStreamingDistributionConfig2014_11_06Request& request) const
+GetStreamingDistributionConfig2015_04_17Outcome CloudFrontClient::GetStreamingDistributionConfig2015_04_17(const GetStreamingDistributionConfig2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/streaming-distribution/";
+  ss << m_uri << "/2015-04-17/streaming-distribution/";
   ss << request.GetId();
   ss << "/config";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetStreamingDistributionConfig2014_11_06Outcome(GetStreamingDistributionConfig2014_11_06Result(outcome.GetResult()));
+    return GetStreamingDistributionConfig2015_04_17Outcome(GetStreamingDistributionConfig2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return GetStreamingDistributionConfig2014_11_06Outcome(outcome.GetError());
+    return GetStreamingDistributionConfig2015_04_17Outcome(outcome.GetError());
   }
 }
 
-GetStreamingDistributionConfig2014_11_06OutcomeCallable CloudFrontClient::GetStreamingDistributionConfig2014_11_06Callable(const GetStreamingDistributionConfig2014_11_06Request& request) const
+GetStreamingDistributionConfig2015_04_17OutcomeCallable CloudFrontClient::GetStreamingDistributionConfig2015_04_17Callable(const GetStreamingDistributionConfig2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::GetStreamingDistributionConfig2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::GetStreamingDistributionConfig2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetStreamingDistributionConfig2014_11_06Async(const GetStreamingDistributionConfig2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistributionConfig2015_04_17Async(const GetStreamingDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetStreamingDistributionConfig2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetStreamingDistributionConfig2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::GetStreamingDistributionConfig2014_11_06AsyncHelper(const GetStreamingDistributionConfig2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistributionConfig2015_04_17AsyncHelper(const GetStreamingDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onGetStreamingDistributionConfig2014_11_06OutcomeReceived(this, request, GetStreamingDistributionConfig2014_11_06(request), context);
+  m_onGetStreamingDistributionConfig2015_04_17OutcomeReceived(this, request, GetStreamingDistributionConfig2015_04_17(request), context);
 }
 
-ListCloudFrontOriginAccessIdentities2014_11_06Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2014_11_06(const ListCloudFrontOriginAccessIdentities2014_11_06Request& request) const
+ListCloudFrontOriginAccessIdentities2015_04_17Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/origin-access-identity/cloudfront";
+  ss << m_uri << "/2015-04-17/origin-access-identity/cloudfront";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return ListCloudFrontOriginAccessIdentities2014_11_06Outcome(ListCloudFrontOriginAccessIdentities2014_11_06Result(outcome.GetResult()));
+    return ListCloudFrontOriginAccessIdentities2015_04_17Outcome(ListCloudFrontOriginAccessIdentities2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return ListCloudFrontOriginAccessIdentities2014_11_06Outcome(outcome.GetError());
+    return ListCloudFrontOriginAccessIdentities2015_04_17Outcome(outcome.GetError());
   }
 }
 
-ListCloudFrontOriginAccessIdentities2014_11_06OutcomeCallable CloudFrontClient::ListCloudFrontOriginAccessIdentities2014_11_06Callable(const ListCloudFrontOriginAccessIdentities2014_11_06Request& request) const
+ListCloudFrontOriginAccessIdentities2015_04_17OutcomeCallable CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17Callable(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::ListCloudFrontOriginAccessIdentities2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListCloudFrontOriginAccessIdentities2014_11_06Async(const ListCloudFrontOriginAccessIdentities2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17Async(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListCloudFrontOriginAccessIdentities2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::ListCloudFrontOriginAccessIdentities2014_11_06AsyncHelper(const ListCloudFrontOriginAccessIdentities2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17AsyncHelper(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onListCloudFrontOriginAccessIdentities2014_11_06OutcomeReceived(this, request, ListCloudFrontOriginAccessIdentities2014_11_06(request), context);
+  m_onListCloudFrontOriginAccessIdentities2015_04_17OutcomeReceived(this, request, ListCloudFrontOriginAccessIdentities2015_04_17(request), context);
 }
 
-ListDistributions2014_11_06Outcome CloudFrontClient::ListDistributions2014_11_06(const ListDistributions2014_11_06Request& request) const
+ListDistributions2015_04_17Outcome CloudFrontClient::ListDistributions2015_04_17(const ListDistributions2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution";
+  ss << m_uri << "/2015-04-17/distribution";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return ListDistributions2014_11_06Outcome(ListDistributions2014_11_06Result(outcome.GetResult()));
+    return ListDistributions2015_04_17Outcome(ListDistributions2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return ListDistributions2014_11_06Outcome(outcome.GetError());
+    return ListDistributions2015_04_17Outcome(outcome.GetError());
   }
 }
 
-ListDistributions2014_11_06OutcomeCallable CloudFrontClient::ListDistributions2014_11_06Callable(const ListDistributions2014_11_06Request& request) const
+ListDistributions2015_04_17OutcomeCallable CloudFrontClient::ListDistributions2015_04_17Callable(const ListDistributions2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::ListDistributions2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::ListDistributions2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListDistributions2014_11_06Async(const ListDistributions2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListDistributions2015_04_17Async(const ListDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListDistributions2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListDistributions2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::ListDistributions2014_11_06AsyncHelper(const ListDistributions2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListDistributions2015_04_17AsyncHelper(const ListDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onListDistributions2014_11_06OutcomeReceived(this, request, ListDistributions2014_11_06(request), context);
+  m_onListDistributions2015_04_17OutcomeReceived(this, request, ListDistributions2015_04_17(request), context);
 }
 
-ListInvalidations2014_11_06Outcome CloudFrontClient::ListInvalidations2014_11_06(const ListInvalidations2014_11_06Request& request) const
+ListInvalidations2015_04_17Outcome CloudFrontClient::ListInvalidations2015_04_17(const ListInvalidations2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return ListInvalidations2014_11_06Outcome(ListInvalidations2014_11_06Result(outcome.GetResult()));
+    return ListInvalidations2015_04_17Outcome(ListInvalidations2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return ListInvalidations2014_11_06Outcome(outcome.GetError());
+    return ListInvalidations2015_04_17Outcome(outcome.GetError());
   }
 }
 
-ListInvalidations2014_11_06OutcomeCallable CloudFrontClient::ListInvalidations2014_11_06Callable(const ListInvalidations2014_11_06Request& request) const
+ListInvalidations2015_04_17OutcomeCallable CloudFrontClient::ListInvalidations2015_04_17Callable(const ListInvalidations2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::ListInvalidations2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::ListInvalidations2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListInvalidations2014_11_06Async(const ListInvalidations2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListInvalidations2015_04_17Async(const ListInvalidations2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListInvalidations2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListInvalidations2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::ListInvalidations2014_11_06AsyncHelper(const ListInvalidations2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListInvalidations2015_04_17AsyncHelper(const ListInvalidations2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onListInvalidations2014_11_06OutcomeReceived(this, request, ListInvalidations2014_11_06(request), context);
+  m_onListInvalidations2015_04_17OutcomeReceived(this, request, ListInvalidations2015_04_17(request), context);
 }
 
-ListStreamingDistributions2014_11_06Outcome CloudFrontClient::ListStreamingDistributions2014_11_06(const ListStreamingDistributions2014_11_06Request& request) const
+ListStreamingDistributions2015_04_17Outcome CloudFrontClient::ListStreamingDistributions2015_04_17(const ListStreamingDistributions2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/streaming-distribution";
+  ss << m_uri << "/2015-04-17/streaming-distribution";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return ListStreamingDistributions2014_11_06Outcome(ListStreamingDistributions2014_11_06Result(outcome.GetResult()));
+    return ListStreamingDistributions2015_04_17Outcome(ListStreamingDistributions2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return ListStreamingDistributions2014_11_06Outcome(outcome.GetError());
+    return ListStreamingDistributions2015_04_17Outcome(outcome.GetError());
   }
 }
 
-ListStreamingDistributions2014_11_06OutcomeCallable CloudFrontClient::ListStreamingDistributions2014_11_06Callable(const ListStreamingDistributions2014_11_06Request& request) const
+ListStreamingDistributions2015_04_17OutcomeCallable CloudFrontClient::ListStreamingDistributions2015_04_17Callable(const ListStreamingDistributions2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::ListStreamingDistributions2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::ListStreamingDistributions2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListStreamingDistributions2014_11_06Async(const ListStreamingDistributions2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListStreamingDistributions2015_04_17Async(const ListStreamingDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListStreamingDistributions2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListStreamingDistributions2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::ListStreamingDistributions2014_11_06AsyncHelper(const ListStreamingDistributions2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListStreamingDistributions2015_04_17AsyncHelper(const ListStreamingDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onListStreamingDistributions2014_11_06OutcomeReceived(this, request, ListStreamingDistributions2014_11_06(request), context);
+  m_onListStreamingDistributions2015_04_17OutcomeReceived(this, request, ListStreamingDistributions2015_04_17(request), context);
 }
 
-UpdateCloudFrontOriginAccessIdentity2014_11_06Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2014_11_06(const UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+UpdateCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/origin-access-identity/cloudfront/";
+  ss << m_uri << "/2015-04-17/origin-access-identity/cloudfront/";
   ss << request.GetId();
   ss << "/config";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
-    return UpdateCloudFrontOriginAccessIdentity2014_11_06Outcome(UpdateCloudFrontOriginAccessIdentity2014_11_06Result(outcome.GetResult()));
+    return UpdateCloudFrontOriginAccessIdentity2015_04_17Outcome(UpdateCloudFrontOriginAccessIdentity2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return UpdateCloudFrontOriginAccessIdentity2014_11_06Outcome(outcome.GetError());
+    return UpdateCloudFrontOriginAccessIdentity2015_04_17Outcome(outcome.GetError());
   }
 }
 
-UpdateCloudFrontOriginAccessIdentity2014_11_06OutcomeCallable CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2014_11_06Callable(const UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request) const
+UpdateCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17Callable(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2014_11_06Async(const UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17Async(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2014_11_06AsyncHelper(const UpdateCloudFrontOriginAccessIdentity2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateCloudFrontOriginAccessIdentity2014_11_06OutcomeReceived(this, request, UpdateCloudFrontOriginAccessIdentity2014_11_06(request), context);
+  m_onUpdateCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, UpdateCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
-UpdateDistribution2014_11_06Outcome CloudFrontClient::UpdateDistribution2014_11_06(const UpdateDistribution2014_11_06Request& request) const
+UpdateDistribution2015_04_17Outcome CloudFrontClient::UpdateDistribution2015_04_17(const UpdateDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/distribution/";
+  ss << m_uri << "/2015-04-17/distribution/";
   ss << request.GetId();
   ss << "/config";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
-    return UpdateDistribution2014_11_06Outcome(UpdateDistribution2014_11_06Result(outcome.GetResult()));
+    return UpdateDistribution2015_04_17Outcome(UpdateDistribution2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return UpdateDistribution2014_11_06Outcome(outcome.GetError());
+    return UpdateDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-UpdateDistribution2014_11_06OutcomeCallable CloudFrontClient::UpdateDistribution2014_11_06Callable(const UpdateDistribution2014_11_06Request& request) const
+UpdateDistribution2015_04_17OutcomeCallable CloudFrontClient::UpdateDistribution2015_04_17Callable(const UpdateDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::UpdateDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::UpdateDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::UpdateDistribution2014_11_06Async(const UpdateDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateDistribution2015_04_17Async(const UpdateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::UpdateDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::UpdateDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::UpdateDistribution2014_11_06AsyncHelper(const UpdateDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateDistribution2015_04_17AsyncHelper(const UpdateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateDistribution2014_11_06OutcomeReceived(this, request, UpdateDistribution2014_11_06(request), context);
+  m_onUpdateDistribution2015_04_17OutcomeReceived(this, request, UpdateDistribution2015_04_17(request), context);
 }
 
-UpdateStreamingDistribution2014_11_06Outcome CloudFrontClient::UpdateStreamingDistribution2014_11_06(const UpdateStreamingDistribution2014_11_06Request& request) const
+UpdateStreamingDistribution2015_04_17Outcome CloudFrontClient::UpdateStreamingDistribution2015_04_17(const UpdateStreamingDistribution2015_04_17Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-11-06/streaming-distribution/";
+  ss << m_uri << "/2015-04-17/streaming-distribution/";
   ss << request.GetId();
   ss << "/config";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
-    return UpdateStreamingDistribution2014_11_06Outcome(UpdateStreamingDistribution2014_11_06Result(outcome.GetResult()));
+    return UpdateStreamingDistribution2015_04_17Outcome(UpdateStreamingDistribution2015_04_17Result(outcome.GetResult()));
   }
   else
   {
-    return UpdateStreamingDistribution2014_11_06Outcome(outcome.GetError());
+    return UpdateStreamingDistribution2015_04_17Outcome(outcome.GetError());
   }
 }
 
-UpdateStreamingDistribution2014_11_06OutcomeCallable CloudFrontClient::UpdateStreamingDistribution2014_11_06Callable(const UpdateStreamingDistribution2014_11_06Request& request) const
+UpdateStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::UpdateStreamingDistribution2015_04_17Callable(const UpdateStreamingDistribution2015_04_17Request& request) const
 {
-  return std::async(std::launch::async, &CloudFrontClient::UpdateStreamingDistribution2014_11_06, this, request);
+  return std::async(std::launch::async, &CloudFrontClient::UpdateStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::UpdateStreamingDistribution2014_11_06Async(const UpdateStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateStreamingDistribution2015_04_17Async(const UpdateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_executor->Submit(&CloudFrontClient::UpdateStreamingDistribution2014_11_06AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::UpdateStreamingDistribution2015_04_17AsyncHelper, this, request, context);
 }
 
-void CloudFrontClient::UpdateStreamingDistribution2014_11_06AsyncHelper(const UpdateStreamingDistribution2014_11_06Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateStreamingDistribution2015_04_17AsyncHelper(const UpdateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
 {
-  m_onUpdateStreamingDistribution2014_11_06OutcomeReceived(this, request, UpdateStreamingDistribution2014_11_06(request), context);
+  m_onUpdateStreamingDistribution2015_04_17OutcomeReceived(this, request, UpdateStreamingDistribution2015_04_17(request), context);
 }
 

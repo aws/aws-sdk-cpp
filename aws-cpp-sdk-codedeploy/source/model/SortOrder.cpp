@@ -22,7 +22,7 @@ static const int descending_HASH = HashingUtils::HashString("descending");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -59,5 +59,5 @@ Aws::String GetNameForSortOrder(SortOrder value)
 
 } // namespace SortOrderMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

@@ -33,7 +33,7 @@ static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
@@ -136,5 +136,5 @@ Aws::String GetNameForErrorCode(ErrorCode value)
 
 } // namespace ErrorCodeMapper
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

@@ -47,16 +47,26 @@ namespace Model
     /*
      If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
     */
-    inline double GetExpiration() const{ return m_expiration; }
+    inline const Aws::String& GetExpiration() const{ return m_expiration; }
     /*
      If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
     */
-    inline void SetExpiration(double value) { m_expiration = value; }
+    inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /*
      If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
     */
-    inline PutObjectResult&  WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline void SetExpiration(const char* value) { m_expiration.assign(value); }
+
+    /*
+     If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+    */
+    inline PutObjectResult&  WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
+
+    /*
+     If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.
+    */
+    inline PutObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
     /*
      Entity tag for the uploaded object.
@@ -201,7 +211,7 @@ namespace Model
     inline PutObjectResult&  WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
 
   private:
-    double m_expiration;
+    Aws::String m_expiration;
     Aws::String m_eTag;
     ServerSideEncryption m_serverSideEncryption;
     Aws::String m_versionId;

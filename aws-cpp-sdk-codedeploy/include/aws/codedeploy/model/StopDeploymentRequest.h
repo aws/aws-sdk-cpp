@@ -13,20 +13,21 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/codedeploy/codedeploy_EXPORTS.h>
-#include <aws/codedeploy/codedeployRequest.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace codedeploy
+namespace CodeDeploy
 {
 namespace Model
 {
 
   /*
+    <p>Represents the input of a stop deployment operation.</p>
   */
-  class AWS_CODEDEPLOY_API StopDeploymentRequest : public codedeployRequest
+  class AWS_CODEDEPLOY_API StopDeploymentRequest : public CodeDeployRequest
   {
   public:
     StopDeploymentRequest();
@@ -35,18 +36,28 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline StopDeploymentRequest&  WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    
+    /*
+     <p>The unique ID of a deployment.</p>
+    */
     inline StopDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
@@ -55,5 +66,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace codedeploy
+} // namespace CodeDeploy
 } // namespace Aws

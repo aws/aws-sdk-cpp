@@ -32,7 +32,11 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
     m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
-    m_smoothStreamingHasBeenSet(false)
+    m_smoothStreamingHasBeenSet(false),
+    m_defaultTTL(0),
+    m_defaultTTLHasBeenSet(false),
+    m_maxTTL(0),
+    m_maxTTLHasBeenSet(false)
 {
 }
 
@@ -45,7 +49,11 @@ DefaultCacheBehavior::DefaultCacheBehavior(const XmlNode& xmlNode) :
     m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
-    m_smoothStreamingHasBeenSet(false)
+    m_smoothStreamingHasBeenSet(false),
+    m_defaultTTL(0),
+    m_defaultTTLHasBeenSet(false),
+    m_maxTTL(0),
+    m_maxTTLHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -98,6 +106,18 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
       m_smoothStreaming = StringUtils::ConvertToBool(StringUtils::Trim(smoothStreamingNode.GetText().c_str()).c_str());
       m_smoothStreamingHasBeenSet = true;
     }
+    XmlNode defaultTTLNode = resultNode.FirstChild("DefaultTTL");
+    if(!defaultTTLNode.IsNull())
+    {
+      m_defaultTTL = StringUtils::ConvertToInt64(StringUtils::Trim(defaultTTLNode.GetText().c_str()).c_str());
+      m_defaultTTLHasBeenSet = true;
+    }
+    XmlNode maxTTLNode = resultNode.FirstChild("MaxTTL");
+    if(!maxTTLNode.IsNull())
+    {
+      m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(maxTTLNode.GetText().c_str()).c_str());
+      m_maxTTLHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -149,6 +169,22 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
    XmlNode smoothStreamingNode = parentNode.CreateChildElement("SmoothStreaming");
   ss << m_smoothStreaming;
    smoothStreamingNode.SetText(ss.str());
+  ss.str("");
+  }
+
+  if(m_defaultTTLHasBeenSet)
+  {
+   XmlNode defaultTTLNode = parentNode.CreateChildElement("DefaultTTL");
+  ss << m_defaultTTL;
+   defaultTTLNode.SetText(ss.str());
+  ss.str("");
+  }
+
+  if(m_maxTTLHasBeenSet)
+  {
+   XmlNode maxTTLNode = parentNode.CreateChildElement("MaxTTL");
+  ss << m_maxTTL;
+   maxTTLNode.SetText(ss.str());
   ss.str("");
   }
 

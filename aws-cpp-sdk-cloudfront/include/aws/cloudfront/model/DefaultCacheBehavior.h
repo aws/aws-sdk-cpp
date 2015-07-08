@@ -147,6 +147,34 @@ namespace Model
     */
     inline DefaultCacheBehavior&  WithSmoothStreaming(bool value) { SetSmoothStreaming(value); return *this;}
 
+    /*
+     If you don't configure your origin to add a Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+    */
+    inline long long GetDefaultTTL() const{ return m_defaultTTL; }
+    /*
+     If you don't configure your origin to add a Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+    */
+    inline void SetDefaultTTL(long long value) { m_defaultTTLHasBeenSet = true; m_defaultTTL = value; }
+
+    /*
+     If you don't configure your origin to add a Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+    */
+    inline DefaultCacheBehavior&  WithDefaultTTL(long long value) { SetDefaultTTL(value); return *this;}
+
+    /*
+     The maximum amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+    */
+    inline long long GetMaxTTL() const{ return m_maxTTL; }
+    /*
+     The maximum amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+    */
+    inline void SetMaxTTL(long long value) { m_maxTTLHasBeenSet = true; m_maxTTL = value; }
+
+    /*
+     The maximum amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+    */
+    inline DefaultCacheBehavior&  WithMaxTTL(long long value) { SetMaxTTL(value); return *this;}
+
   private:
     Aws::String m_targetOriginId;
     bool m_targetOriginIdHasBeenSet;
@@ -162,6 +190,10 @@ namespace Model
     bool m_allowedMethodsHasBeenSet;
     bool m_smoothStreaming;
     bool m_smoothStreamingHasBeenSet;
+    long long m_defaultTTL;
+    bool m_defaultTTLHasBeenSet;
+    long long m_maxTTL;
+    bool m_maxTTLHasBeenSet;
   };
 
 } // namespace Model

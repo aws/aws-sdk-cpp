@@ -16,6 +16,8 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/TaskDefinitionStatus.h>
+#include <aws/ecs/model/SortOrder.h>
 
 namespace Aws
 {
@@ -60,6 +62,34 @@ namespace Model
     inline ListTaskDefinitionsRequest& WithFamilyPrefix(const char* value) { SetFamilyPrefix(value); return *this;}
 
     /*
+     <p>The task definition status that you want to filter the <code>ListTaskDefinitions</code> results with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this parameter to <code>INACTIVE</code>, you can view task definitions that are <code>INACTIVE</code> as long as an active task or service still references them. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
+    */
+    inline const TaskDefinitionStatus& GetStatus() const{ return m_status; }
+    /*
+     <p>The task definition status that you want to filter the <code>ListTaskDefinitions</code> results with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this parameter to <code>INACTIVE</code>, you can view task definitions that are <code>INACTIVE</code> as long as an active task or service still references them. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
+    */
+    inline void SetStatus(const TaskDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /*
+     <p>The task definition status that you want to filter the <code>ListTaskDefinitions</code> results with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this parameter to <code>INACTIVE</code>, you can view task definitions that are <code>INACTIVE</code> as long as an active task or service still references them. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
+    */
+    inline ListTaskDefinitionsRequest&  WithStatus(const TaskDefinitionStatus& value) { SetStatus(value); return *this;}
+
+    /*
+     <p>The order in which to sort the results. Valid values are <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed lexicographically by family name and in ascending numerical order by revision so that the newest task definitions in a family are listed last. Setting this parameter to <code>DESC</code> reverses the sort order on family name and revision so that the newest task definitions in a family are listed first.</p>
+    */
+    inline const SortOrder& GetSort() const{ return m_sort; }
+    /*
+     <p>The order in which to sort the results. Valid values are <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed lexicographically by family name and in ascending numerical order by revision so that the newest task definitions in a family are listed last. Setting this parameter to <code>DESC</code> reverses the sort order on family name and revision so that the newest task definitions in a family are listed first.</p>
+    */
+    inline void SetSort(const SortOrder& value) { m_sortHasBeenSet = true; m_sort = value; }
+
+    /*
+     <p>The order in which to sort the results. Valid values are <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed lexicographically by family name and in ascending numerical order by revision so that the newest task definitions in a family are listed last. Setting this parameter to <code>DESC</code> reverses the sort order on family name and revision so that the newest task definitions in a family are listed first.</p>
+    */
+    inline ListTaskDefinitionsRequest&  WithSort(const SortOrder& value) { SetSort(value); return *this;}
+
+    /*
      <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -100,6 +130,10 @@ namespace Model
   private:
     Aws::String m_familyPrefix;
     bool m_familyPrefixHasBeenSet;
+    TaskDefinitionStatus m_status;
+    bool m_statusHasBeenSet;
+    SortOrder m_sort;
+    bool m_sortHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
     long m_maxResults;

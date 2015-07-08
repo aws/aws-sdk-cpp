@@ -32,7 +32,7 @@ namespace AutoScaling
 namespace Model
 {
   /*
-    <p>Describes a long-running process that represents a change to your Auto Scaling group, such as changing its size. This can also be a process to replace an instance, or a process to perform any other long-running operations.</p>
+    <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
   */
   class AWS_AUTOSCALING_API Activity
   {
@@ -93,78 +93,78 @@ namespace Model
     inline Activity& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
     /*
-     <p>A friendly, more verbose description of the scaling activity.</p>
+     <p>A friendly, more verbose description of the activity.</p>
     */
     inline const Aws::String& GetDescription() const{ return m_description; }
     /*
-     <p>A friendly, more verbose description of the scaling activity.</p>
+     <p>A friendly, more verbose description of the activity.</p>
     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /*
-     <p>A friendly, more verbose description of the scaling activity.</p>
+     <p>A friendly, more verbose description of the activity.</p>
     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /*
-     <p>A friendly, more verbose description of the scaling activity.</p>
+     <p>A friendly, more verbose description of the activity.</p>
     */
     inline Activity&  WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /*
-     <p>A friendly, more verbose description of the scaling activity.</p>
+     <p>A friendly, more verbose description of the activity.</p>
     */
     inline Activity& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /*
-     <p>The reason the activity was begun.</p>
+     <p>The reason the activity began.</p>
     */
     inline const Aws::String& GetCause() const{ return m_cause; }
     /*
-     <p>The reason the activity was begun.</p>
+     <p>The reason the activity began.</p>
     */
     inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
 
     /*
-     <p>The reason the activity was begun.</p>
+     <p>The reason the activity began.</p>
     */
     inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
 
     /*
-     <p>The reason the activity was begun.</p>
+     <p>The reason the activity began.</p>
     */
     inline Activity&  WithCause(const Aws::String& value) { SetCause(value); return *this;}
 
     /*
-     <p>The reason the activity was begun.</p>
+     <p>The reason the activity began.</p>
     */
     inline Activity& WithCause(const char* value) { SetCause(value); return *this;}
 
     /*
-     <p>The start time of this activity.</p>
+     <p>The start time of the activity.</p>
     */
     inline double GetStartTime() const{ return m_startTime; }
     /*
-     <p>The start time of this activity.</p>
+     <p>The start time of the activity.</p>
     */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
-     <p>The start time of this activity.</p>
+     <p>The start time of the activity.</p>
     */
     inline Activity&  WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /*
-     <p>The end time of this activity.</p>
+     <p>The end time of the activity.</p>
     */
     inline double GetEndTime() const{ return m_endTime; }
     /*
-     <p>The end time of this activity.</p>
+     <p>The end time of the activity.</p>
     */
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /*
-     <p>The end time of this activity.</p>
+     <p>The end time of the activity.</p>
     */
     inline Activity&  WithEndTime(double value) { SetEndTime(value); return *this;}
 
@@ -221,26 +221,26 @@ namespace Model
     inline Activity&  WithProgress(long value) { SetProgress(value); return *this;}
 
     /*
-     <p>The details about the scaling activity.</p>
+     <p>The details about the activity.</p>
     */
     inline const Aws::String& GetDetails() const{ return m_details; }
     /*
-     <p>The details about the scaling activity.</p>
+     <p>The details about the activity.</p>
     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /*
-     <p>The details about the scaling activity.</p>
+     <p>The details about the activity.</p>
     */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /*
-     <p>The details about the scaling activity.</p>
+     <p>The details about the activity.</p>
     */
     inline Activity&  WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /*
-     <p>The details about the scaling activity.</p>
+     <p>The details about the activity.</p>
     */
     inline Activity& WithDetails(const char* value) { SetDetails(value); return *this;}
 
