@@ -241,4 +241,25 @@ double StringUtils::ConvertToDouble(const char* source)
     return std::strtod(source, NULL);
 }
 
+#ifdef _WIN32
+
+Aws::WString StringUtils::ToWString(const char* source)
+{
+    Aws::WString outString;
+
+    outString.resize(std::strlen(source));
+    std::copy(source, source + std::strlen(source), outString.begin());
+    return outString;
+}
+
+Aws::String StringUtils::FromWString(const wchar_t* source)
+{
+    Aws::WString inWString(source);
+
+    Aws::String outString(inWString.begin(), inWString.end());
+    return outString;
+}
+
+#endif
+
 

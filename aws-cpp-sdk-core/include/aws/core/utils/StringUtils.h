@@ -88,6 +88,20 @@ public:
 
     //convert to double
     static double ConvertToDouble(const char* source);
+
+
+#ifdef _WIN32
+    /**
+    * Converts a string to wstring.
+    */
+    static Aws::WString ToWString(const char* source);
+
+    /**
+    * Converts a wstring to string.
+    */
+    static Aws::String FromWString(const wchar_t* source);
+#endif
+
 };
 
 } // namespace Utils

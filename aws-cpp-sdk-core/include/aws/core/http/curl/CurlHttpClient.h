@@ -44,6 +44,7 @@ private:
     Aws::String m_proxyHost;
     unsigned m_proxyPort;
     bool m_verifySSL;
+    bool m_allowRedirects;
 
     //Callback to read the content from the content body of the request
     static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata);

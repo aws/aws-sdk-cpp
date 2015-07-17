@@ -30,30 +30,30 @@ struct ClientConfiguration;
 namespace Http
 {
 
-class WinINetConnectionPoolMgr;
+class WinHttpConnectionPoolMgr;
 
-//Curl implementation of an http client. Right now it is only synchronous.
-class AWS_CORE_API WinINetSyncHttpClient : public WinSyncHttpClient
+//WinHttp implementation of an http client
+class AWS_CORE_API WinHttpSyncHttpClient : public WinSyncHttpClient
 {
 public:
     //Creates client
-    WinINetSyncHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
-    ~WinINetSyncHttpClient();
+    WinHttpSyncHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
+    ~WinHttpSyncHttpClient();
 
-    const char* GetLogTag() const override { return "WinInetSyncHttpClient"; }
+    const char* GetLogTag() const override { return "WinHttpSyncHttpClient"; }
 private:
 
     // WinHttp specific implementations
     void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const override;
-    void DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const override;
-    uint64_t DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const override;
-    bool DoReceiveResponse(void* hHttpRequest) const override;
-    bool DoQueryHeaders(void* hHttpRequest, std::shared_ptr<Aws::Http::Standard::StandardHttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const override;
-    bool DoSendRequest(void* hHttpRequest) const override;
+    void DoAddHeaders(void* httpRequest, Aws::String& headerStr) const override;
+    uint64_t DoWriteData(void* httpRequest, char* streamBuffer, uint64_t bytesRead) const override;
+    bool DoReceiveResponse(void* httpRequest) const override;
+    bool DoQueryHeaders(void* httpRequest, std::shared_ptr<Aws::Http::Standard::StandardHttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const override;
+    bool DoSendRequest(void* httpRequest) const override;
     bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
     void* GetClientModule() const override;
 
-    WinINetSyncHttpClient &operator =(const WinINetSyncHttpClient &rhs);
+    WinHttpSyncHttpClient &operator =(const WinHttpSyncHttpClient &rhs);
 };
 
 } // namespace Http

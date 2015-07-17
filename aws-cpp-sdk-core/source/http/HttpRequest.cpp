@@ -21,8 +21,8 @@ namespace Http
 {
 
 const char* DATE_HEADER = "date";
-const char* AWS_DATE_HEADER = "x-amz-date";
-const char* AWS_SECURITY_TOKEN = "x-amz-security-token";
+const char* AWS_DATE_HEADER = "X-Amz-Date";
+const char* AWS_SECURITY_TOKEN = "X-Amz-Security-Token";
 const char* ACCEPT_HEADER = "accept";
 const char* ACCEPT_CHAR_SET_HEADER = "accept-charset";
 const char* ACCEPT_ENCODING_HEADER = "accept-encoding";
@@ -35,6 +35,7 @@ const char* USER_AGENT_HEADER = "user-agent";
 const char* VIA_HEADER = "via";
 const char* HOST_HEADER = "host";
 const char* AMZ_TARGET_HEADER = "x-amz-target";
+const char* X_AMZ_EXPIRES_HEADER = "X-Amz-Expires";
 
 } // Http
 } // Aws

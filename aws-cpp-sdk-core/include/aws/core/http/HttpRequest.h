@@ -46,6 +46,7 @@ extern AWS_CORE_API const char* USER_AGENT_HEADER;
 extern AWS_CORE_API const char* VIA_HEADER;
 extern AWS_CORE_API const char* HOST_HEADER;
 extern AWS_CORE_API const char* AMZ_TARGET_HEADER;
+extern AWS_CORE_API const char* X_AMZ_EXPIRES_HEADER;
 
 class HttpRequest;
 class HttpResponse;

@@ -245,6 +245,17 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
     httpRequest.SetUserAgent(m_userAgent);
 }
 
+Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
+{
+    std::shared_ptr<HttpRequest> request = m_clientFactory->CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    if(m_signer->PresignRequest(*request, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+   
+    return "";    
+}
+
 ////////////////////////////////////////////////////////////////////////////
 AWSJsonClient::AWSJsonClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
     const Aws::Client::ClientConfiguration& configuration,

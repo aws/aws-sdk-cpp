@@ -29,25 +29,25 @@ namespace S3Endpoint
     switch(region)
     {
      case Region::US_EAST_1:
-        return "s3.us-east-1.amazonaws.com";
+        return "s3.amazonaws.com";
      case Region::US_WEST_1:
-        return "s3.us-west-1.amazonaws.com";
+        return "s3-us-west-1.amazonaws.com";
      case Region::US_WEST_2:
-        return "s3.us-west-2.amazonaws.com";
+        return "s3-us-west-2.amazonaws.com";
      case Region::EU_WEST_1:
-        return "s3.eu-west-1.amazonaws.com";
+        return "s3-eu-west-1.amazonaws.com";
      case Region::EU_CENTRAL_1:
-        return "s3.eu-central-1.amazonaws.com";
+        return "s3-eu-central-1.amazonaws.com";
      case Region::AP_SOUTHEAST_1:
-        return "s3.ap-southeast-1.amazonaws.com";
+        return "s3-ap-southeast-1.amazonaws.com";
      case Region::AP_SOUTHEAST_2:
-        return "s3.ap-southeast-2.amazonaws.com";
+        return "s3-ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
-        return "s3.ap-northeast-1.amazonaws.com";
+        return "s3-ap-northeast-1.amazonaws.com";
      case Region::SA_EAST_1:
-        return "s3.sa-east-1.amazonaws.com";
+        return "s3-sa-east-1.amazonaws.com";
      default:
-        return "s3.us-east-1.amazonaws.com";
+        return "s3.amazonaws.com";
     }
   }
 

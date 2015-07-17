@@ -21,7 +21,7 @@
 #include <aws/core/http/Scheme.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
+#include <aws/core/http/HttpTypes.h>
 
 #include <memory>
 
@@ -70,6 +70,8 @@ struct AWS_CORE_API ClientConfiguration
     bool verifySSL;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
+    Aws::Http::TransferLibType httpLibOverride;
+    bool followRedirects;
 };
 
 

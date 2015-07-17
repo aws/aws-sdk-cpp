@@ -84,6 +84,8 @@ namespace Aws
 
             virtual ~AWSClient();
 
+            Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0);
+
         protected:
 
             HttpResponseOutcome AttemptExhaustively(const Aws::String& uri,
@@ -105,7 +107,7 @@ namespace Aws
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const = 0;
 
             virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
-                const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const;
+                const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const;               
 
             const std::shared_ptr<AWSErrorMarshaller>& GetErrorMarshaller() const
             {

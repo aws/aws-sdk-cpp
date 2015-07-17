@@ -86,14 +86,14 @@ using namespace Aws::S3::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
-
 static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3Client";
+
 
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), SERVICE_NAME, clientConfiguration.region),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG), "s3.amazonaws.com"),
+    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -102,7 +102,7 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration) :
 S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME, clientConfiguration.region),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG), "s3.amazonaws.com"),
+    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -112,7 +112,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
   const Client::ClientConfiguration& clientConfiguration, const std::shared_ptr<HttpClientFactory const>& httpClientFactory) :
   BASECLASS(httpClientFactory != nullptr ? httpClientFactory : Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME, clientConfiguration.region),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG), "s3.amazonaws.com"),
+    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -138,7 +138,6 @@ void S3Client::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
   Aws::StringStream ss;
@@ -1817,3 +1816,11 @@ void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request, c
   m_onUploadPartCopyOutcomeReceived(this, request, UploadPartCopy(request), context);
 }
 
+
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
+{
+    Aws::StringStream ss;
+    ss << m_uri << "/" << bucketName << "/" << key;
+    URI uri(ss.str());
+    return AWSClient::GeneratePresignedUrl(uri, method, expirationInSeconds);
+}

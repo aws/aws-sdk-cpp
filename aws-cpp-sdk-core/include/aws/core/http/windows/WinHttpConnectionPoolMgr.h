@@ -25,29 +25,28 @@ namespace Http
 {
 
 /**
-* Connection pool manager for wininet api.
+* Connection pool manager for winhttp api.
 */
-class AWS_CORE_API WinINetConnectionPoolMgr : public WinConnectionPoolMgr
+class AWS_CORE_API WinHttpConnectionPoolMgr : public WinConnectionPoolMgr
 {
 public:
-    WinINetConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout);
+    WinHttpConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout);
 
-    virtual ~WinINetConnectionPoolMgr();
+    virtual ~WinHttpConnectionPoolMgr();
 
-    const char* GetLogTag() const override { return "WinInetConnectionPoolMgr"; }
+    const char* GetLogTag() const { return "WinHttpConnectionPoolMgr"; }
 
-private:     
+private:
 
     virtual void DoCloseHandle(void* handle) const override;
-
     virtual void* CreateNewConnection(const Aws::String& host, HostConnectionContainer& connectionContainer) const override;
 
-    WinINetConnectionPoolMgr(const WinINetConnectionPoolMgr&) = delete;
-    const WinINetConnectionPoolMgr& operator = (const WinINetConnectionPoolMgr&) = delete;
-    WinINetConnectionPoolMgr(const WinINetConnectionPoolMgr&&) = delete;
-    const WinINetConnectionPoolMgr& operator = (const WinINetConnectionPoolMgr&&) = delete;    
+    WinHttpConnectionPoolMgr(const WinHttpConnectionPoolMgr&) = delete;
+    const WinHttpConnectionPoolMgr& operator = (const WinHttpConnectionPoolMgr&) = delete;
+    WinHttpConnectionPoolMgr(const WinHttpConnectionPoolMgr&&) = delete;
+    const WinHttpConnectionPoolMgr& operator = (const WinHttpConnectionPoolMgr&&) = delete;
 
-};   
+};
 
 } // namespace Http
 } // namespace Aws

@@ -89,7 +89,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
                 m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
                 m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
-            m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL)
+                m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
@@ -161,6 +161,15 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         {
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, false);
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 0);
+        }
+
+        if (m_allowRedirects)
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 1L);
+        }
+        else
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 0L);
         }
         //curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
 

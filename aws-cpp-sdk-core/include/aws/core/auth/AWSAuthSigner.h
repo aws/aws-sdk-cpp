@@ -41,12 +41,14 @@ namespace Aws
 
     namespace Auth
     {
+        class AWSCredentials;
         class AWSCredentialsProvider;
     } // namespace Auth
 
     namespace Client
     {
         struct ClientConfiguration;
+    
 
         class AWS_CORE_API AWSAuthSigner
         {
@@ -54,7 +56,10 @@ namespace Aws
             virtual ~AWSAuthSigner() = default;
 
             virtual bool SignRequest(Aws::Http::HttpRequest& request) const = 0;
+            virtual bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds) const = 0;
         };
+
+    
 
         class AWS_CORE_API AWSAuthV4Signer : public AWSAuthSigner
         {
@@ -68,53 +73,21 @@ namespace Aws
 
             virtual ~AWSAuthV4Signer();
 
-            virtual bool SignRequest(Aws::Http::HttpRequest& request) const override;
+            bool SignRequest(Aws::Http::HttpRequest& request) const override;
+            bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds = 0) const override;
 
         private:
 
             AWSAuthV4Signer &operator =(const AWSAuthV4Signer &rhs);
-
+            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& regionName) const;
+            Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
+            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& regionName, const Aws::String& canonicalRequestHash) const;
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             Aws::String m_serviceName;
             Region m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
-        };
-
-        class AWS_CORE_API AWSAuthV2Signer : public AWSAuthSigner
-        {
-        public:
-            AWSAuthV2Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider);
-
-            AWSAuthV2Signer(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey);
-
-            virtual ~AWSAuthV2Signer();
-
-            virtual bool SignRequest(Aws::Http::HttpRequest& request) const override;
-
-        private:
-
-            AWSAuthV2Signer &operator =(const AWSAuthV2Signer& rhs);
-
-            std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
-            Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
-        };
-
-        class AWS_CORE_API AWSAuthV3Signer : public AWSAuthSigner
-        {
-            AWSAuthV3Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider);
-            AWSAuthV3Signer(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey);
-
-            virtual ~AWSAuthV3Signer();
-
-            virtual bool SignRequest(Aws::Http::HttpRequest& request) const override;
-
-        private:
-            AWSAuthV3Signer &operator =(const AWSAuthV3Signer &rhs);
-
-            std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
-            Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
-        };
+        };       
 
     } // namespace Client
 } // namespace Aws

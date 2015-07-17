@@ -36,14 +36,15 @@ using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
-static const char* logTag = "WinINetSyncHttpClient";
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
-WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config)
+WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
 {
-    AWS_LOG_INFO(logTag, "Creating http client with user agent %s with max connections %d, request timeout %d, "
+    AWS_LOG_INFO(GetLogTag(), "Creating http client with user agent %s with max connections %d, request timeout %d, "
         "and connect timeout %d",
         config.userAgent.c_str(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs);
+
+    m_allowRedirects = config.followRedirects;
 
     DWORD inetFlags = INTERNET_OPEN_TYPE_DIRECT;
     const char* proxyHosts = nullptr;
@@ -53,7 +54,7 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config)
     //setup initial proxy config.
     if (isUsingProxy)
     {
-        AWS_LOG_INFO(logTag, "Http Client is using a proxy. Setting up proxy with settings host %s, port %d, username %s.",
+        AWS_LOG_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings host %s, port %d, username %s.",
             config.proxyHost, config.proxyPort, config.proxyUserName);
 
         inetFlags = INTERNET_OPEN_TYPE_PROXY;
@@ -66,158 +67,87 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config)
         AWS_LOG_DEBUG("Adding proxy host string to wininet %s", proxyHosts);
     }
 
-    m_openHandle = InternetOpenA(config.userAgent.c_str(), inetFlags, proxyHosts, nullptr, 0);
+    SetOpenHandle(InternetOpenA(config.userAgent.c_str(), inetFlags, proxyHosts, nullptr, 0));
 
     //override offline mode.
-    InternetSetOptionA(m_openHandle, INTERNET_OPTION_IGNORE_OFFLINE, nullptr, 0);
+    InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_IGNORE_OFFLINE, nullptr, 0);
     //add proxy auth credentials to everything using this handle.
     if (isUsingProxy)
     {
-        if (!InternetSetOptionA(m_openHandle, INTERNET_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
-            AWS_LOG_FATAL(logTag, "Failed setting username for proxy with error code: %d", GetLastError());
-        if (!InternetSetOptionA(m_openHandle, INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
-            AWS_LOG_FATAL(logTag, "Failed setting password for proxy with error code: %d", GetLastError());
+        if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
+            AWS_LOG_FATAL(GetLogTag(), "Failed setting username for proxy with error code: %d", GetLastError());
+        if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
+            AWS_LOG_FATAL(GetLogTag(), "Failed setting password for proxy with error code: %d", GetLastError());
     }
 
     if (!config.verifySSL)
     {
-        AWS_LOG_WARN(logTag, "Turning ssl unknown ca verification off.");
+        AWS_LOG_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
         DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | INTERNET_FLAG_IGNORE_CERT_CN_INVALID;
 
-        if (!InternetSetOptionA(m_openHandle, INTERNET_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
-            AWS_LOG_FATAL(logTag, "Failed to turn ssl cert ca verification off.");  
+        if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
+            AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
     }
 
-    AWS_LOG_DEBUG(logTag, "API handle %p.", m_openHandle);
-    m_connectionPoolMgr = Aws::New<WinINetConnectionPoolMgr>(logTag,
-        m_openHandle, config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs);
+    AWS_LOG_DEBUG(GetLogTag(), "API handle %p.", GetOpenHandle());
+    SetConnectionPoolManager(Aws::New<WinINetConnectionPoolMgr>(GetLogTag(),
+        GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
 }
 
 
 WinINetSyncHttpClient::~WinINetSyncHttpClient()
 {
-    AWS_LOG_DEBUG(logTag, "Cleaning up client with handle %p.", m_openHandle);
-    Aws::Delete(m_connectionPoolMgr);
-    InternetCloseHandle(m_openHandle);
+
 }
 
-static HINTERNET AllocateWindowsHttpRequest(const Aws::Http::HttpRequest& request, HINTERNET connection)
+void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const
 {
-    Aws::StringStream ss;
-    ss << request.GetUri().GetPath();
-
-    if (request.GetUri().GetQueryStringParameters().size() > 0)
-    {
-        ss << request.GetUri().GetQueryString();
-    }
-
     DWORD requestFlags =
         INTERNET_FLAG_NO_AUTH | 
         INTERNET_FLAG_RELOAD | 
         INTERNET_FLAG_KEEP_CONNECTION | 
         (request.GetUri().GetScheme() == Scheme::HTTPS ? INTERNET_FLAG_SECURE : 0) |
-        INTERNET_FLAG_NO_CACHE_WRITE;
+        INTERNET_FLAG_NO_CACHE_WRITE |
+        (m_allowRedirects ? 0 : INTERNET_FLAG_NO_AUTO_REDIRECT);
 
     static LPCSTR accept[2] = { "*/*", nullptr };
     HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()),
         ss.str().c_str(), nullptr, nullptr, accept, requestFlags, 0);
-    AWS_LOG_DEBUG(logTag, "HttpOpenRequestA returned handle %p", hHttpRequest);
+    AWS_LOG_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle %p", hHttpRequest);
 
     return hHttpRequest;
 }
 
-static void AddHeadersToRequest(const HttpRequest& request, HINTERNET hHttpRequest)
+void WinINetSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const
 {
-    if(request.GetHeaders().size() > 0)
-    {
-        Aws::StringStream ss;
-        AWS_LOG_DEBUG(logTag, "with headers:");
-        for (auto& header : request.GetHeaders())
-        {
-            ss << header.first << ": " << header.second << "\r\n";
-        }
-
-        Aws::String headerString = ss.str();
-        AWS_LOGSTREAM_DEBUG(logTag, headerString);
-        HttpAddRequestHeadersA(hHttpRequest, headerString.c_str(), (DWORD)headerString.length(), HTTP_ADDREQ_FLAG_REPLACE | HTTP_ADDREQ_FLAG_ADD);
-    }
-    else
-    {
-        AWS_LOG_DEBUG(logTag, "with no headers");
-    }
+    HttpAddRequestHeadersA(hHttpRequest, headerStr.c_str(), (DWORD)headerStr.length(), HTTP_ADDREQ_FLAG_REPLACE | HTTP_ADDREQ_FLAG_ADD);
 }
 
-static bool StreamPayloadToRequest(const HttpRequest& request, HINTERNET hHttpRequest)
+uint64_t WinINetSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const
 {
-    bool success = true;
-    auto payloadStream = request.GetContentBody();
-    if(payloadStream)
+    DWORD bytesWritten = 0;
+    if(!InternetWriteFile(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
     {
-        auto startingPos = payloadStream->tellg();
-
-        char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH ];
-        bool done = false;
-        while(success && !done)
-        {
-            payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
-            std::streamsize bytesRead = payloadStream->gcount();
-            success = !payloadStream->bad();
-            request.OnDataSent(&request, (long long)bytesRead);
-
-            DWORD bytesWritten = 0;
-            if(bytesRead > 0 && !InternetWriteFile(hHttpRequest, streamBuffer, (DWORD) bytesRead, &bytesWritten))
-            {
-                success = false;
-            }
-
-            if(!payloadStream->good())
-            {
-                done = true;
-            }
-        }
-
-        payloadStream->clear();
-        payloadStream->seekg(startingPos, payloadStream->beg);
+        return 0;
     }
 
-    if(success)
-    {
-        success = HttpEndRequest(hHttpRequest, nullptr, 0, 0) != 0;
-    }
-
-    return success;
+    return bytesWritten;
 }
 
-static void LogRequestInternalFailure()
+bool WinINetSyncHttpClient::DoReceiveResponse(void* hHttpRequest) const
 {
-    static const uint32_t WINDOWS_ERROR_MESSAGE_BUFFER_SIZE = 2048;
-
-    DWORD error = GetLastError();
-
-    char messageBuffer[WINDOWS_ERROR_MESSAGE_BUFFER_SIZE];
-
-    FormatMessageA(
-        FORMAT_MESSAGE_FROM_HMODULE |
-        FORMAT_MESSAGE_IGNORE_INSERTS,
-        GetModuleHandle(TEXT("wininet.dll")),
-        error,
-        MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-        messageBuffer,
-        WINDOWS_ERROR_MESSAGE_BUFFER_SIZE, 
-        nullptr);
-    AWS_LOG_WARN(logTag, "Http Send request failed: %s", messageBuffer);
-
+    return (HttpEndRequest(hHttpRequest, nullptr, 0, 0) != 0);
 }
-
-std::shared_ptr<HttpResponse> BuildSuccessResponse(const Aws::Http::HttpRequest& request, HINTERNET hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter)
+   
+bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<StandardHttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const
 {
-    auto response = Aws::MakeShared<StandardHttpResponse>(logTag, request);
+
     char dwStatusCode[256];
     DWORD dwSize = sizeof(dwStatusCode);
 
     HttpQueryInfoA(hHttpRequest, HTTP_QUERY_STATUS_CODE, &dwStatusCode, &dwSize, 0);
     response->SetResponseCode((HttpResponseCode)atoi(dwStatusCode));
-    AWS_LOG_DEBUG(logTag, "Received response code %s.", dwStatusCode);
+    AWS_LOG_DEBUG(GetLogTag(), "Received response code %s.", dwStatusCode);
 
     char contentTypeStr[1024];
     dwSize = sizeof(contentTypeStr);
@@ -225,111 +155,31 @@ std::shared_ptr<HttpResponse> BuildSuccessResponse(const Aws::Http::HttpRequest&
     if (contentTypeStr[0] != NULL)
     {
         response->SetContentType(contentTypeStr);
-        AWS_LOGSTREAM_DEBUG(logTag, "Received content type " << contentTypeStr);
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received content type " << contentTypeStr);
     }
 
     char headerStr[1024];
     dwSize = sizeof(headerStr);
-    DWORD read = 0;
-    Aws::StringStream ss;
-    AWS_LOG_DEBUG(logTag, "Received headers:");
-    while (HttpQueryInfoA(hHttpRequest, HTTP_QUERY_RAW_HEADERS_CRLF, headerStr, &dwSize, &read) && dwSize > 0)
+    AWS_LOG_DEBUG(GetLogTag(), "Received headers:");
+    while (HttpQueryInfoA(hHttpRequest, HTTP_QUERY_RAW_HEADERS_CRLF, headerStr, &dwSize, (LPDWORD)&read) && dwSize > 0)
     {
-        AWS_LOGSTREAM_DEBUG(logTag, headerStr);
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), headerStr);
         ss << headerStr;
     }
-
-    if(readLimiter != nullptr && read > 0)
-    {
-        readLimiter->ApplyAndPayForCost(read);
-    }
-
-    Aws::Vector<Aws::String> rawHeaders = StringUtils::SplitOnLine(ss.str());
-
-    for (auto& header : rawHeaders)
-    {
-        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(header, ':');
-        if (keyValuePair.size() > 1)
-        {
-            Aws::String headerName = keyValuePair[0];
-            headerName = StringUtils::Trim(headerName.c_str());
-
-            Aws::String headerValue(keyValuePair[1]);
-
-            for (unsigned i = 2; i < keyValuePair.size(); ++i)
-            {
-                headerValue += ":";
-                headerValue += keyValuePair[i];                 
-            }
-
-            response->AddHeader(headerName, StringUtils::Trim(headerValue.c_str()));
-        }
-    }
-
-    if (request.GetMethod() != HttpMethod::HTTP_HEAD)
-    {
-        char body[1024];
-        dwSize = sizeof(body);
-        read = 0;
-
-        while (InternetReadFile(hHttpRequest, body, dwSize, &read) && read > 0)
-        {            
-            response->GetResponseBody().write(body, read);
-            request.OnDataReceived(&request, response.get(), (long long)read);
-
-            if(readLimiter != nullptr && read > 0)
-            {
-                readLimiter->ApplyAndPayForCost(read);
-            }
-        }
-    }
-
-    return response;
+    return (read != 0);
 }
 
-std::shared_ptr<HttpResponse> WinINetSyncHttpClient::MakeRequest(HttpRequest& request, 
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+bool WinINetSyncHttpClient::DoSendRequest(void* hHttpRequest) const
 {
-    AWS_LOG_TRACE(logTag, "Making Http %s request to uri %s.",
-        HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()), request.GetURIString(true).c_str());
+    return (HttpSendRequestEx(hHttpRequest, NULL, NULL, 0, 0) != 0);
+}
 
-    if(writeLimiter != nullptr)
-    {
-        writeLimiter->ApplyAndPayForCost(request.GetSize());
-    }
+bool WinINetSyncHttpClient::DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const
+{
+    return (InternetReadFile(hHttpRequest, body, (DWORD)size, (LPDWORD)&read) != 0);
+}
 
-    HINTERNET connection = m_connectionPoolMgr->AquireConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort());
-    AWS_LOG_DEBUG(logTag, "Acquired connection %p.", connection);
-
-    HINTERNET hHttpRequest = AllocateWindowsHttpRequest(request, connection);
-
-    AddHeadersToRequest(request, hHttpRequest);
-
-    bool success = HttpSendRequestEx(hHttpRequest, NULL, NULL, 0, 0) != 0;
-    if(success)
-    {
-        success = StreamPayloadToRequest(request, hHttpRequest);
-    }
-
-    std::shared_ptr<HttpResponse> response(nullptr);
-    if(success)
-    {
-        response = BuildSuccessResponse(request, hHttpRequest, readLimiter);
-    }
-    else
-    {
-        LogRequestInternalFailure();
-    }
-
-    if (hHttpRequest)
-    {
-        AWS_LOG_DEBUG(logTag, "Closing http request handle %p.", hHttpRequest);
-        InternetCloseHandle(hHttpRequest);
-    }
-
-    AWS_LOG_DEBUG(logTag, "Releasing connection handle %p.", connection);
-    m_connectionPoolMgr->ReleaseConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort(), connection);
-
-    return response;
+void* WinINetSyncHttpClient::GetClientModule() const
+{
+    return GetModuleHandle(TEXT("wininet.dll"));
 }

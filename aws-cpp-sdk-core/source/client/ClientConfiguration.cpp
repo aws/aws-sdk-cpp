@@ -49,7 +49,9 @@ ClientConfiguration::ClientConfiguration() :
     executor(Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(allocationTag)),
     verifySSL(true),
     writeRateLimiter(nullptr),
-    readRateLimiter(nullptr)
+    readRateLimiter(nullptr),
+    httpLibOverride(Aws::Http::TransferLibType::DEFAULT_CLIENT),
+    followRedirects(true)
 {
 }
 

@@ -28,8 +28,9 @@ struct ClientConfiguration;
 } // namespace Client
 namespace Http
 {
-class HttpClient;
-class HttpRequest;
+    class URI;
+    class HttpClient;
+    class HttpRequest;
 
 class AWS_CORE_API HttpClientFactory
 {
@@ -39,6 +40,8 @@ public:
     virtual std::shared_ptr<HttpClient> CreateHttpClient(const Aws::Client::ClientConfiguration& clientConfiguration) const;
 
     virtual std::shared_ptr<HttpRequest> CreateHttpRequest(const Aws::String& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const;
+
+    virtual std::shared_ptr<HttpRequest> CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const;
 };
 
 } // namespace Http

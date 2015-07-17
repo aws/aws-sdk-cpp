@@ -218,8 +218,95 @@ TEST(StringUtilsTest, TestDoubleConversion)
     ASSERT_DOUBLE_EQ(doubleValue, StringUtils::ConvertToDouble(ss.str().c_str()));
 }
 
+#ifdef _WIN32
 
+TEST(StringUtilsTest, TestWCharToString)
+{
+    AWS_BEGIN_MEMORY_TEST(16, 10)
 
+    static const wchar_t* wcharString = L"Test this string";
+
+    Aws::String outString = StringUtils::FromWString(wcharString);
+
+    ASSERT_STREQ("Test this string", outString.c_str());
+
+    AWS_END_MEMORY_TEST
+}
+
+TEST(StringUtilsTest, TestCharToWString)
+{
+    AWS_BEGIN_MEMORY_TEST(16, 10)
+
+    static const char* charString = "Test this string";
+
+    Aws::WString outString = StringUtils::ToWString(charString);
+
+    ASSERT_STREQ(L"Test this string", outString.c_str());
+
+    AWS_END_MEMORY_TEST
+}
+
+TEST(StringUtilsTest, TestWStringNonAsciiToString)
+{
+    AWS_BEGIN_MEMORY_TEST(16, 10)
+
+    Aws::WString startString;
+
+    // Toss in a couple ascii characters to start, then go over 127
+    const char startVal = 115;
+    int addValue = startVal;
+    const char incrementVal = 10;
+    const char loopCount = 10;
+    for (char i = 0; i < loopCount; ++i)
+    {
+        startString.push_back(static_cast<wchar_t>(addValue));
+        addValue += incrementVal;
+    }
+
+    Aws::String outString = StringUtils::FromWString(startString.c_str());
+    ASSERT_EQ(outString.length(), loopCount);
+
+    for (char i = 0; i < outString.length(); ++i)
+    {
+        char testValue = outString[i];
+        ASSERT_EQ(testValue, static_cast<char>(startVal + incrementVal * i));
+    }
+
+    // This loop will cross the byte limit
+    for (char i = 0; i < loopCount; ++i)
+    {
+        startString.push_back(static_cast<wchar_t>(addValue));
+        addValue += incrementVal;
+    }
+    // Verify the length, not the values though
+    outString = StringUtils::FromWString(startString.c_str());
+    ASSERT_EQ(outString.length(), loopCount * 2);
+
+    AWS_END_MEMORY_TEST
+}
+
+TEST(StringUtilsTest, TestStringNonAsciiToWString)
+{
+    AWS_BEGIN_MEMORY_TEST(16, 10)
+
+    Aws::String startString;
+
+    const char startVal = 115;
+    
+    const char incrementVal = 10;
+    const char loopCount = 10;
+    for (char i = 0; i < loopCount; ++i)
+    {
+        startString.push_back(static_cast<char>(startVal + incrementVal * i));
+    }
+
+    Aws::WString outString = StringUtils::ToWString(startString.c_str());
+    ASSERT_EQ(outString.length(), loopCount);
+
+    AWS_END_MEMORY_TEST
+}
+
+#endif
 
 
 

@@ -37,6 +37,14 @@ enum class AWS_CORE_API HttpMethod
     HTTP_HEAD
 };
 
+enum class AWS_CORE_API TransferLibType
+{
+    DEFAULT_CLIENT,
+    CURL_CLIENT,
+    WIN_INET_CLIENT,
+    WIN_HTTP_CLIENT
+};
+
 namespace HttpMethodMapper
 {
 AWS_CORE_API const char* GetNameForHttpMethod(HttpMethod httpMethod);

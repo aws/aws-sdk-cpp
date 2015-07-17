@@ -13,9 +13,11 @@
   * permissions and limitations under the License.
   */
 #include <aws/external/gtest.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/http/HttpTypes.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBErrors.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -146,10 +148,8 @@ public:
 
 protected:
 
-    static void SetUpTestCase()
+    static void SetUpClient(Aws::Http::TransferLibType transferType)
     {
-        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
-
         // Create a client
         ClientConfiguration config;
         config.endpointOverride = ENDPOINT_OVERRIDE;
@@ -158,11 +158,18 @@ protected:
         config.requestTimeoutMs = 30000;
         config.readRateLimiter = m_limiter;
         config.writeRateLimiter = m_limiter;
+        config.httpLibOverride = transferType;
 
         //to test proxy functionality, uncomment the next two lines.
         //config.proxyHost = "localhost";
         //config.proxyPort = 8080;
         m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
+    }
+
+    static void SetUpTestCase()
+    {
+        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
+        SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
 
         // delete all tables, just in case
         DeleteAllTables();
@@ -426,7 +433,6 @@ TEST_F(TableOperationTest, TestThrottling)
     }
 }
 
-
 TEST_F(TableOperationTest, TestCrudOperations)
 {
     CreateTable(CRUD_TEST_TABLE, 50, 50);
@@ -532,6 +538,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
     //now get the items again, making sure they were properly
     //updated.
     getItemOutcomes.clear();
+
     for (unsigned i = 0; i < 50; ++i)
     {
         GetItemRequest getItemRequest;
