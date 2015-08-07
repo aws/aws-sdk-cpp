@@ -46,7 +46,7 @@ BucketLogsPermission GetBucketLogsPermissionForName(const Aws::String& name)
     return BucketLogsPermission::WRITE;
   }
 
-  return BucketLogsPermission::FULL_CONTROL;
+  return BucketLogsPermission::NOT_SET;
 }
 
 Aws::String GetNameForBucketLogsPermission(BucketLogsPermission value)
@@ -60,7 +60,7 @@ Aws::String GetNameForBucketLogsPermission(BucketLogsPermission value)
   case BucketLogsPermission::WRITE:
     return "WRITE";
   default:
-    return "FULL_CONTROL";
+    return "";
   }
 }
 

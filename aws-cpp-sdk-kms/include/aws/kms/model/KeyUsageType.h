@@ -24,6 +24,7 @@ namespace Model
 {
   enum class KeyUsageType
   {
+    NOT_SET,
     ENCRYPT_DECRYPT
   };
 

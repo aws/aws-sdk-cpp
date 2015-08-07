@@ -41,7 +41,7 @@ SortOrder GetSortOrderForName(const Aws::String& name)
     return SortOrder::DESC;
   }
 
-  return SortOrder::ASC;
+  return SortOrder::NOT_SET;
 }
 
 Aws::String GetNameForSortOrder(SortOrder value)
@@ -53,7 +53,7 @@ Aws::String GetNameForSortOrder(SortOrder value)
   case SortOrder::DESC:
     return "DESC";
   default:
-    return "ASC";
+    return "";
   }
 }
 

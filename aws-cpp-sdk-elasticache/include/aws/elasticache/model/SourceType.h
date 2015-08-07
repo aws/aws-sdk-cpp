@@ -24,6 +24,7 @@ namespace Model
 {
   enum class SourceType
   {
+    NOT_SET,
     cache_cluster,
     cache_parameter_group,
     cache_security_group,

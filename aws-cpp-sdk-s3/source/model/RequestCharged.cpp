@@ -36,7 +36,7 @@ RequestCharged GetRequestChargedForName(const Aws::String& name)
     return RequestCharged::requester;
   }
 
-  return RequestCharged::requester;
+  return RequestCharged::NOT_SET;
 }
 
 Aws::String GetNameForRequestCharged(RequestCharged value)
@@ -46,7 +46,7 @@ Aws::String GetNameForRequestCharged(RequestCharged value)
   case RequestCharged::requester:
     return "requester";
   default:
-    return "requester";
+    return "";
   }
 }
 

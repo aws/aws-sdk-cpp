@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ApplyMethod
   {
+    NOT_SET,
     immediate,
     pending_reboot
   };

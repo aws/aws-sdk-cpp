@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ReportStateType
   {
+    NOT_SET,
     STARTED,
     INPROGRESS,
     COMPLETE

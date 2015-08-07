@@ -61,7 +61,7 @@ AgentUpdateStatus GetAgentUpdateStatusForName(const Aws::String& name)
     return AgentUpdateStatus::FAILED;
   }
 
-  return AgentUpdateStatus::PENDING;
+  return AgentUpdateStatus::NOT_SET;
 }
 
 Aws::String GetNameForAgentUpdateStatus(AgentUpdateStatus value)
@@ -81,7 +81,7 @@ Aws::String GetNameForAgentUpdateStatus(AgentUpdateStatus value)
   case AgentUpdateStatus::FAILED:
     return "FAILED";
   default:
-    return "PENDING";
+    return "";
   }
 }
 

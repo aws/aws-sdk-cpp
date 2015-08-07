@@ -627,13 +627,7 @@ protected:
 
         results.m_tableCreateTime = static_cast<unsigned int>(diffTime.count());
 
-        //registering a member function is ugly business even in modern c++
-        m_client->RegisterPutItemOutcomeReceivedHandler(std::bind(&InetHttpComparisonTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-        m_client->RegisterGetItemOutcomeReceivedHandler(std::bind(&InetHttpComparisonTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-        m_client->RegisterDeleteItemOutcomeReceivedHandler(std::bind(&InetHttpComparisonTest::DeleteItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-        m_client->RegisterUpdateItemOutcomeReceivedHandler(std::bind(&InetHttpComparisonTest::UpdateItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-
-        //now put 50 items in the table asynchronously
+         //now put 50 items in the table asynchronously
         Aws::String testValueColumnName = "TestValue";
         Aws::StringStream ss;
         for (unsigned i = 0; i < TEST_CHECKS; ++i)
@@ -651,7 +645,7 @@ protected:
             testValueAttribute.SetS(ss.str());
             putItemRequest.AddItem(testValueColumnName, testValueAttribute);
             ss.str("");
-            m_client->PutItemAsync(putItemRequest);
+            m_client->PutItemAsync(putItemRequest, std::bind(&InetHttpComparisonTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
         }
 
         startTime = CLOCK::now();
@@ -679,7 +673,7 @@ protected:
             attributesToGet.push_back(HASH_KEY_NAME);
             attributesToGet.push_back(testValueColumnName);
             ss.str("");
-            m_client->GetItemAsync(getItemRequest);
+            m_client->GetItemAsync(getItemRequest, std::bind(&InetHttpComparisonTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
         }
 
         startTime = CLOCK::now();
@@ -710,7 +704,7 @@ protected:
             testValueAttribute.SetValue(valueAttribute);
             updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
             ss.str("");
-            m_client->UpdateItemAsync(updateItemRequest);
+            m_client->UpdateItemAsync(updateItemRequest, std::bind(&InetHttpComparisonTest::UpdateItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
         }
 
         startTime = CLOCK::now();
@@ -738,7 +732,7 @@ protected:
             deleteItemRequest.SetTableName(tableName);
             deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
             ss.str("");
-            m_client->DeleteItemAsync(deleteItemRequest);
+            m_client->DeleteItemAsync(deleteItemRequest, std::bind(&InetHttpComparisonTest::DeleteItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
         }
 
         startTime = CLOCK::now();
@@ -750,12 +744,7 @@ protected:
         diffTime = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
         results.m_deleteTime = static_cast<unsigned int>(diffTime.count());
 
-        m_client->ClearAllGetItemOutcomeReceivedHandlers();
-        m_client->ClearAllPutItemOutcomeReceivedHandlers();
-        m_client->ClearAllDeleteItemOutcomeReceivedHandlers();
-        m_client->ClearAllUpdateItemOutcomeReceivedHandlers();
-
-        return results;
+         return results;
     }
 };
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class BulkPublishStatus
   {
+    NOT_SET,
     NOT_STARTED,
     IN_PROGRESS,
     FAILED,

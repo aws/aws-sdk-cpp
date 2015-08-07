@@ -24,6 +24,7 @@ namespace Model
 {
   enum class assignmentStatusType
   {
+    NOT_SET,
     Assigned,
     Unassigned,
     Any

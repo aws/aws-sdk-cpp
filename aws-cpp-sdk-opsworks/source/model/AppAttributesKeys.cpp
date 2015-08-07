@@ -20,6 +20,7 @@ using namespace Aws::Utils;
 static const int DocumentRoot_HASH = HashingUtils::HashString("DocumentRoot");
 static const int RailsEnv_HASH = HashingUtils::HashString("RailsEnv");
 static const int AutoBundleOnDeploy_HASH = HashingUtils::HashString("AutoBundleOnDeploy");
+static const int AwsFlowRubySettings_HASH = HashingUtils::HashString("AwsFlowRubySettings");
 
 namespace Aws
 {
@@ -45,8 +46,12 @@ AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
   {
     return AppAttributesKeys::AutoBundleOnDeploy;
   }
+  else if (hashCode == AwsFlowRubySettings_HASH)
+  {
+    return AppAttributesKeys::AwsFlowRubySettings;
+  }
 
-  return AppAttributesKeys::DocumentRoot;
+  return AppAttributesKeys::NOT_SET;
 }
 
 Aws::String GetNameForAppAttributesKeys(AppAttributesKeys value)
@@ -59,8 +64,10 @@ Aws::String GetNameForAppAttributesKeys(AppAttributesKeys value)
     return "RailsEnv";
   case AppAttributesKeys::AutoBundleOnDeploy:
     return "AutoBundleOnDeploy";
+  case AppAttributesKeys::AwsFlowRubySettings:
+    return "AwsFlowRubySettings";
   default:
-    return "DocumentRoot";
+    return "";
   }
 }
 

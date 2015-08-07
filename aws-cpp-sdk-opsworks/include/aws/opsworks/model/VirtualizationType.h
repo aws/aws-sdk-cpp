@@ -24,6 +24,7 @@ namespace Model
 {
   enum class VirtualizationType
   {
+    NOT_SET,
     paravirtual,
     hvm
   };

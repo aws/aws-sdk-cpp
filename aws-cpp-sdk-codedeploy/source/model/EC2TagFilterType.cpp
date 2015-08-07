@@ -46,7 +46,7 @@ EC2TagFilterType GetEC2TagFilterTypeForName(const Aws::String& name)
     return EC2TagFilterType::KEY_AND_VALUE;
   }
 
-  return EC2TagFilterType::KEY_ONLY;
+  return EC2TagFilterType::NOT_SET;
 }
 
 Aws::String GetNameForEC2TagFilterType(EC2TagFilterType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForEC2TagFilterType(EC2TagFilterType value)
   case EC2TagFilterType::KEY_AND_VALUE:
     return "KEY_AND_VALUE";
   default:
-    return "KEY_ONLY";
+    return "";
   }
 }
 

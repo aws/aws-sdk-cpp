@@ -86,7 +86,7 @@ public:
     std::mutex updateItemResultMutex;
     std::condition_variable updateItemResultSemaphore;
 
-    void GetItemOutcomeReceived(const DynamoDBClient* sender, const GetItemRequest& request, const GetItemOutcome& outcome, const AsyncCallerContext* context)
+    void GetItemOutcomeReceived(const DynamoDBClient* sender, const GetItemRequest& request, const GetItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
@@ -101,7 +101,7 @@ public:
         }
     }
 
-    void PutItemOutcomeReceived(const DynamoDBClient* sender, const PutItemRequest& request, const PutItemOutcome& outcome, const AsyncCallerContext* context)
+    void PutItemOutcomeReceived(const DynamoDBClient* sender, const PutItemRequest& request, const PutItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
@@ -116,7 +116,7 @@ public:
         }
     }
 
-    void DeleteItemOutcomeReceived(const DynamoDBClient* sender, const DeleteItemRequest& request, const DeleteItemOutcome& outcome, const AsyncCallerContext* context)
+    void DeleteItemOutcomeReceived(const DynamoDBClient* sender, const DeleteItemRequest& request, const DeleteItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
@@ -131,7 +131,7 @@ public:
         }
     }
 
-    void UpdateItemOutcomeReceived(const DynamoDBClient* sender, const UpdateItemRequest& request, const UpdateItemOutcome& outcome, const AsyncCallerContext* context)
+    void UpdateItemOutcomeReceived(const DynamoDBClient* sender, const UpdateItemRequest& request, const UpdateItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
     {
         AWS_UNREFERENCED_PARAM(sender);
         AWS_UNREFERENCED_PARAM(request);
@@ -605,15 +605,17 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     CreateTable(CRUD_CALLBACKS_TEST_TABLE, 50, 50);
 
     //registering a member function is ugly business even in modern c++
-    m_client->RegisterPutItemOutcomeReceivedHandler(std::bind(&TableOperationTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
-                                                              std::placeholders::_3, std::placeholders::_4));
-    m_client->RegisterGetItemOutcomeReceivedHandler(std::bind(&TableOperationTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
-                                                              std::placeholders::_3, std::placeholders::_4));
-    m_client->RegisterDeleteItemOutcomeReceivedHandler(std::bind(&TableOperationTest::DeleteItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
-                                                                 std::placeholders::_3, std::placeholders::_4));
-    m_client->RegisterUpdateItemOutcomeReceivedHandler(std::bind(&TableOperationTest::UpdateItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
-                                                                 std::placeholders::_3, std::placeholders::_4));
+    auto putItemHandler = std::bind(&TableOperationTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                    std::placeholders::_3, std::placeholders::_4);
 
+    auto getItemHandler = std::bind(&TableOperationTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+            std::placeholders::_3, std::placeholders::_4);
+
+    auto deleteItemHandler = std::bind(&TableOperationTest::DeleteItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+            std::placeholders::_3, std::placeholders::_4);
+
+    auto updateItemHandler = std::bind(&TableOperationTest::UpdateItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                       std::placeholders::_3, std::placeholders::_4);
     //now put 50 items in the table asynchronously
     Aws::String testValueColumnName = "TestValue";
     Aws::StringStream ss;
@@ -631,7 +633,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         testValueAttribute.SetS(ss.str());
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
-        m_client->PutItemAsync(putItemRequest);
+        m_client->PutItemAsync(putItemRequest, putItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -653,7 +655,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        m_client->GetItemAsync(getItemRequest);
+        m_client->GetItemAsync(getItemRequest, getItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -706,7 +708,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         testValueAttribute.SetValue(valueAttribute);
         updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
         ss.str("");
-        m_client->UpdateItemAsync(updateItemRequest);
+        m_client->UpdateItemAsync(updateItemRequest, updateItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -732,7 +734,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        m_client->GetItemAsync(getItemRequest);
+        m_client->GetItemAsync(getItemRequest, getItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -769,7 +771,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         deleteItemRequest.SetTableName(CRUD_CALLBACKS_TEST_TABLE);
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
-        m_client->DeleteItemAsync(deleteItemRequest);
+        m_client->DeleteItemAsync(deleteItemRequest, deleteItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -792,11 +794,6 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         EXPECT_TRUE(deletedKeys.find(ss.str()) != deletedKeys.end());
         ss.str("");
     }
-
-    m_client->ClearAllGetItemOutcomeReceivedHandlers();
-    m_client->ClearAllPutItemOutcomeReceivedHandlers();
-    m_client->ClearAllDeleteItemOutcomeReceivedHandlers();
-    m_client->ClearAllUpdateItemOutcomeReceivedHandlers();
 }
 
 void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)

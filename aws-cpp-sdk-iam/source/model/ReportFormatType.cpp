@@ -36,7 +36,7 @@ ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
     return ReportFormatType::text_csv;
   }
 
-  return ReportFormatType::text_csv;
+  return ReportFormatType::NOT_SET;
 }
 
 Aws::String GetNameForReportFormatType(ReportFormatType value)
@@ -46,7 +46,7 @@ Aws::String GetNameForReportFormatType(ReportFormatType value)
   case ReportFormatType::text_csv:
     return "text/csv";
   default:
-    return "text_csv";
+    return "";
   }
 }
 

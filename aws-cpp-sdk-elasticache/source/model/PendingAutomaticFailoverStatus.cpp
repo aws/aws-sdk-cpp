@@ -41,7 +41,7 @@ PendingAutomaticFailoverStatus GetPendingAutomaticFailoverStatusForName(const Aw
     return PendingAutomaticFailoverStatus::disabled;
   }
 
-  return PendingAutomaticFailoverStatus::enabled;
+  return PendingAutomaticFailoverStatus::NOT_SET;
 }
 
 Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverSta
   case PendingAutomaticFailoverStatus::disabled:
     return "disabled";
   default:
-    return "enabled";
+    return "";
   }
 }
 

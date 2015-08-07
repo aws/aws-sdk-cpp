@@ -61,7 +61,7 @@ StepState GetStepStateForName(const Aws::String& name)
     return StepState::INTERRUPTED;
   }
 
-  return StepState::PENDING;
+  return StepState::NOT_SET;
 }
 
 Aws::String GetNameForStepState(StepState value)
@@ -81,7 +81,7 @@ Aws::String GetNameForStepState(StepState value)
   case StepState::INTERRUPTED:
     return "INTERRUPTED";
   default:
-    return "PENDING";
+    return "";
   }
 }
 

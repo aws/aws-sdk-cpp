@@ -58,6 +58,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_sSECustomerAlgorithm(std::move(toMove.m_sSECustomerAlgorithm)),
     m_sSECustomerKeyMD5(std::move(toMove.m_sSECustomerKeyMD5)),
     m_sSEKMSKeyId(std::move(toMove.m_sSEKMSKeyId)),
+    m_storageClass(toMove.m_storageClass),
     m_requestCharged(toMove.m_requestCharged),
     m_replicationStatus(toMove.m_replicationStatus)
 {
@@ -93,6 +94,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_sSECustomerAlgorithm = std::move(toMove.m_sSECustomerAlgorithm);
    m_sSECustomerKeyMD5 = std::move(toMove.m_sSECustomerKeyMD5);
    m_sSEKMSKeyId = std::move(toMove.m_sSEKMSKeyId);
+   m_storageClass = toMove.m_storageClass;
    m_requestCharged = toMove.m_requestCharged;
    m_replicationStatus = toMove.m_replicationStatus;
 
@@ -249,6 +251,12 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   if(sSEKMSKeyIdIter != headers.end())
   {
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
+  }
+
+  const auto& storageClassIter = headers.find("x-amz-storage-class");
+  if(storageClassIter != headers.end())
+  {
+    m_storageClass = StorageClassMapper::GetStorageClassForName(storageClassIter->second);
   }
 
   const auto& requestChargedIter = headers.find("x-amz-request-charged");

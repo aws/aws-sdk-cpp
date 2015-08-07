@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on a volume mount point that is used in a container definition.</p>
   */
   class AWS_ECS_API MountPoint
   {

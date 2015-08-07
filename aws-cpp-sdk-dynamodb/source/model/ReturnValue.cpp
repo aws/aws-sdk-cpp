@@ -56,7 +56,7 @@ ReturnValue GetReturnValueForName(const Aws::String& name)
     return ReturnValue::UPDATED_NEW;
   }
 
-  return ReturnValue::NONE;
+  return ReturnValue::NOT_SET;
 }
 
 Aws::String GetNameForReturnValue(ReturnValue value)
@@ -74,7 +74,7 @@ Aws::String GetNameForReturnValue(ReturnValue value)
   case ReturnValue::UPDATED_NEW:
     return "UPDATED_NEW";
   default:
-    return "NONE";
+    return "";
   }
 }
 

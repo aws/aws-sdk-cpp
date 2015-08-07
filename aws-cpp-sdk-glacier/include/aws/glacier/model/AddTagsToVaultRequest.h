@@ -26,7 +26,7 @@ namespace Model
 {
 
   /*
-    <p>The input value for <code>AddTagsToVault</code>.</p>
+    <p>The input values for <code>AddTagsToVault</code>.</p>
   */
   class AWS_GLACIER_API AddTagsToVaultRequest : public GlacierRequest
   {

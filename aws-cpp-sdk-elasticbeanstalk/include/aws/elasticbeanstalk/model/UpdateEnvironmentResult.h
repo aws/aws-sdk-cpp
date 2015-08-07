@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/EnvironmentStatus.h>
 #include <aws/elasticbeanstalk/model/EnvironmentHealth.h>
+#include <aws/elasticbeanstalk/model/EnvironmentHealthStatus.h>
 #include <aws/elasticbeanstalk/model/EnvironmentResourcesDescription.h>
 #include <aws/elasticbeanstalk/model/EnvironmentTier.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
@@ -333,6 +334,14 @@ namespace Model
     */
     inline UpdateEnvironmentResult&  WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
 
+    
+    inline const EnvironmentHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+    
+    inline void SetHealthStatus(const EnvironmentHealthStatus& value) { m_healthStatus = value; }
+
+    
+    inline UpdateEnvironmentResult&  WithHealthStatus(const EnvironmentHealthStatus& value) { SetHealthStatus(value); return *this;}
+
     /*
      <p>The description of the AWS resources used by this environment.</p>
     */
@@ -384,6 +393,7 @@ namespace Model
     EnvironmentStatus m_status;
     bool m_abortableOperationInProgress;
     EnvironmentHealth m_health;
+    EnvironmentHealthStatus m_healthStatus;
     EnvironmentResourcesDescription m_resources;
     EnvironmentTier m_tier;
     ResponseMetadata m_responseMetadata;

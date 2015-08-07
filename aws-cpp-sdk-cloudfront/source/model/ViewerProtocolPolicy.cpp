@@ -46,7 +46,7 @@ ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
     return ViewerProtocolPolicy::redirect_to_https;
   }
 
-  return ViewerProtocolPolicy::allow_all;
+  return ViewerProtocolPolicy::NOT_SET;
 }
 
 Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy value)
@@ -60,7 +60,7 @@ Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy value)
   case ViewerProtocolPolicy::redirect_to_https:
     return "redirect-to-https";
   default:
-    return "allow_all";
+    return "";
   }
 }
 

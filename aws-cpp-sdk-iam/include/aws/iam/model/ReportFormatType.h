@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ReportFormatType
   {
+    NOT_SET,
     text_csv
   };
 

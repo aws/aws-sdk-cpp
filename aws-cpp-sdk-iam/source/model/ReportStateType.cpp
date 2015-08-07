@@ -46,7 +46,7 @@ ReportStateType GetReportStateTypeForName(const Aws::String& name)
     return ReportStateType::COMPLETE;
   }
 
-  return ReportStateType::STARTED;
+  return ReportStateType::NOT_SET;
 }
 
 Aws::String GetNameForReportStateType(ReportStateType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForReportStateType(ReportStateType value)
   case ReportStateType::COMPLETE:
     return "COMPLETE";
   default:
-    return "STARTED";
+    return "";
   }
 }
 

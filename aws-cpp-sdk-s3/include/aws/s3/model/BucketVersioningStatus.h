@@ -24,6 +24,7 @@ namespace Model
 {
   enum class BucketVersioningStatus
   {
+    NOT_SET,
     Enabled,
     Suspended
   };

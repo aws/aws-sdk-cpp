@@ -46,7 +46,7 @@ StatusCode GetStatusCodeForName(const Aws::String& name)
     return StatusCode::Failed;
   }
 
-  return StatusCode::InProgress;
+  return StatusCode::NOT_SET;
 }
 
 Aws::String GetNameForStatusCode(StatusCode value)
@@ -60,7 +60,7 @@ Aws::String GetNameForStatusCode(StatusCode value)
   case StatusCode::Failed:
     return "Failed";
   default:
-    return "InProgress";
+    return "";
   }
 }
 

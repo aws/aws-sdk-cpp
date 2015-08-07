@@ -41,7 +41,7 @@ AutoScalingType GetAutoScalingTypeForName(const Aws::String& name)
     return AutoScalingType::timer;
   }
 
-  return AutoScalingType::load;
+  return AutoScalingType::NOT_SET;
 }
 
 Aws::String GetNameForAutoScalingType(AutoScalingType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForAutoScalingType(AutoScalingType value)
   case AutoScalingType::timer:
     return "timer";
   default:
-    return "load";
+    return "";
   }
 }
 

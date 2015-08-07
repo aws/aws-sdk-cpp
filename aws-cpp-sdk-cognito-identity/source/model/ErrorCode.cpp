@@ -41,7 +41,7 @@ ErrorCode GetErrorCodeForName(const Aws::String& name)
     return ErrorCode::InternalServerError;
   }
 
-  return ErrorCode::AccessDenied;
+  return ErrorCode::NOT_SET;
 }
 
 Aws::String GetNameForErrorCode(ErrorCode value)
@@ -53,7 +53,7 @@ Aws::String GetNameForErrorCode(ErrorCode value)
   case ErrorCode::InternalServerError:
     return "InternalServerError";
   default:
-    return "AccessDenied";
+    return "";
   }
 }
 

@@ -51,7 +51,7 @@ SourceType GetSourceTypeForName(const Aws::String& name)
     return SourceType::s3;
   }
 
-  return SourceType::git;
+  return SourceType::NOT_SET;
 }
 
 Aws::String GetNameForSourceType(SourceType value)
@@ -67,7 +67,7 @@ Aws::String GetNameForSourceType(SourceType value)
   case SourceType::s3:
     return "s3";
   default:
-    return "git";
+    return "";
   }
 }
 

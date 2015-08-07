@@ -41,7 +41,7 @@ statusType GetstatusTypeForName(const Aws::String& name)
     return statusType::Inactive;
   }
 
-  return statusType::Active;
+  return statusType::NOT_SET;
 }
 
 Aws::String GetNameForstatusType(statusType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForstatusType(statusType value)
   case statusType::Inactive:
     return "Inactive";
   default:
-    return "Active";
+    return "";
   }
 }
 

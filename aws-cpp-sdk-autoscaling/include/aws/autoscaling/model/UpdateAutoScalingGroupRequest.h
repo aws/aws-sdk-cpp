@@ -111,16 +111,16 @@ namespace Model
     inline UpdateAutoScalingGroupRequest&  WithMaxSize(long value) { SetMaxSize(value); return *this;}
 
     /*
-     <p>The number of EC2 instances that should be running in the Auto Scaling group. This value must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
+     <p>The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     */
     inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
     /*
-     <p>The number of EC2 instances that should be running in the Auto Scaling group. This value must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
+     <p>The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     */
     inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /*
-     <p>The number of EC2 instances that should be running in the Auto Scaling group. This value must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
+     <p>The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     */
     inline UpdateAutoScalingGroupRequest&  WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 

@@ -41,7 +41,7 @@ MinimumHealthyHostsType GetMinimumHealthyHostsTypeForName(const Aws::String& nam
     return MinimumHealthyHostsType::FLEET_PERCENT;
   }
 
-  return MinimumHealthyHostsType::HOST_COUNT;
+  return MinimumHealthyHostsType::NOT_SET;
 }
 
 Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType value)
   case MinimumHealthyHostsType::FLEET_PERCENT:
     return "FLEET_PERCENT";
   default:
-    return "HOST_COUNT";
+    return "";
   }
 }
 

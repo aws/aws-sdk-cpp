@@ -46,7 +46,7 @@ ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
     return ReturnConsumedCapacity::NONE;
   }
 
-  return ReturnConsumedCapacity::INDEXES;
+  return ReturnConsumedCapacity::NOT_SET;
 }
 
 Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity value)
@@ -60,7 +60,7 @@ Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity value)
   case ReturnConsumedCapacity::NONE:
     return "NONE";
   default:
-    return "INDEXES";
+    return "";
   }
 }
 

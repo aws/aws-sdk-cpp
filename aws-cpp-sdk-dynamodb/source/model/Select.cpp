@@ -51,7 +51,7 @@ Select GetSelectForName(const Aws::String& name)
     return Select::COUNT;
   }
 
-  return Select::ALL_ATTRIBUTES;
+  return Select::NOT_SET;
 }
 
 Aws::String GetNameForSelect(Select value)
@@ -67,7 +67,7 @@ Aws::String GetNameForSelect(Select value)
   case Select::COUNT:
     return "COUNT";
   default:
-    return "ALL_ATTRIBUTES";
+    return "";
   }
 }
 

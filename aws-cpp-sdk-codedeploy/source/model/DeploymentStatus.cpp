@@ -61,7 +61,7 @@ DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
     return DeploymentStatus::Stopped;
   }
 
-  return DeploymentStatus::Created;
+  return DeploymentStatus::NOT_SET;
 }
 
 Aws::String GetNameForDeploymentStatus(DeploymentStatus value)
@@ -81,7 +81,7 @@ Aws::String GetNameForDeploymentStatus(DeploymentStatus value)
   case DeploymentStatus::Stopped:
     return "Stopped";
   default:
-    return "Created";
+    return "";
   }
 }
 

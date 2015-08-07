@@ -28,6 +28,7 @@ CreateLayerRequest::CreateLayerRequest() :
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
+    m_customJsonHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
     m_packagesHasBeenSet(false),
     m_volumeConfigurationsHasBeenSet(false),
@@ -87,6 +88,12 @@ Aws::String CreateLayerRequest::SerializePayload() const
   if(m_customInstanceProfileArnHasBeenSet)
   {
    payload.WithString("CustomInstanceProfileArn", m_customInstanceProfileArn);
+
+  }
+
+  if(m_customJsonHasBeenSet)
+  {
+   payload.WithString("CustomJson", m_customJson);
 
   }
 

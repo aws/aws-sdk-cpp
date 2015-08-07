@@ -24,8 +24,10 @@ namespace Model
 {
   enum class StorageClass
   {
+    NOT_SET,
     STANDARD,
-    REDUCED_REDUNDANCY
+    REDUCED_REDUNDANCY,
+    LT
   };
 
 namespace StorageClassMapper

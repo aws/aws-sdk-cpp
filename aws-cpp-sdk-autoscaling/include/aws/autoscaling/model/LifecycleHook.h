@@ -202,16 +202,16 @@ namespace Model
     inline LifecycleHook&  WithHeartbeatTimeout(long value) { SetHeartbeatTimeout(value); return *this;}
 
     /*
-     <p>The maximum length of time an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, this value is set at 48 hours.</p>
+     <p>The maximum length of time an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, the maximum is set to 48 hours.</p>
     */
     inline long GetGlobalTimeout() const{ return m_globalTimeout; }
     /*
-     <p>The maximum length of time an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, this value is set at 48 hours.</p>
+     <p>The maximum length of time an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, the maximum is set to 48 hours.</p>
     */
     inline void SetGlobalTimeout(long value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
 
     /*
-     <p>The maximum length of time an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, this value is set at 48 hours.</p>
+     <p>The maximum length of time an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, the maximum is set to 48 hours.</p>
     */
     inline LifecycleHook&  WithGlobalTimeout(long value) { SetGlobalTimeout(value); return *this;}
 

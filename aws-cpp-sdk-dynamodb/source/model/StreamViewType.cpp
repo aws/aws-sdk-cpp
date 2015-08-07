@@ -51,7 +51,7 @@ StreamViewType GetStreamViewTypeForName(const Aws::String& name)
     return StreamViewType::KEYS_ONLY;
   }
 
-  return StreamViewType::NEW_IMAGE;
+  return StreamViewType::NOT_SET;
 }
 
 Aws::String GetNameForStreamViewType(StreamViewType value)
@@ -67,7 +67,7 @@ Aws::String GetNameForStreamViewType(StreamViewType value)
   case StreamViewType::KEYS_ONLY:
     return "KEYS_ONLY";
   default:
-    return "NEW_IMAGE";
+    return "";
   }
 }
 

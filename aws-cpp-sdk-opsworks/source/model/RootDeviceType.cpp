@@ -41,7 +41,7 @@ RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
     return RootDeviceType::instance_store;
   }
 
-  return RootDeviceType::ebs;
+  return RootDeviceType::NOT_SET;
 }
 
 Aws::String GetNameForRootDeviceType(RootDeviceType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForRootDeviceType(RootDeviceType value)
   case RootDeviceType::instance_store:
     return "instance-store";
   default:
-    return "ebs";
+    return "";
   }
 }
 

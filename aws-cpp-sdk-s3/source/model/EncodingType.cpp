@@ -36,7 +36,7 @@ EncodingType GetEncodingTypeForName(const Aws::String& name)
     return EncodingType::url;
   }
 
-  return EncodingType::url;
+  return EncodingType::NOT_SET;
 }
 
 Aws::String GetNameForEncodingType(EncodingType value)
@@ -46,7 +46,7 @@ Aws::String GetNameForEncodingType(EncodingType value)
   case EncodingType::url:
     return "url";
   default:
-    return "url";
+    return "";
   }
 }
 

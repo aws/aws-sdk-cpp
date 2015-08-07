@@ -24,6 +24,7 @@ namespace Model
 {
   enum class JobFlowExecutionState
   {
+    NOT_SET,
     STARTING,
     BOOTSTRAPPING,
     RUNNING,

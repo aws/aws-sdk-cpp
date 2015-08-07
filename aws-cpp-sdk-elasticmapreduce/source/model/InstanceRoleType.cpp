@@ -46,7 +46,7 @@ InstanceRoleType GetInstanceRoleTypeForName(const Aws::String& name)
     return InstanceRoleType::TASK;
   }
 
-  return InstanceRoleType::MASTER;
+  return InstanceRoleType::NOT_SET;
 }
 
 Aws::String GetNameForInstanceRoleType(InstanceRoleType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForInstanceRoleType(InstanceRoleType value)
   case InstanceRoleType::TASK:
     return "TASK";
   default:
-    return "MASTER";
+    return "";
   }
 }
 

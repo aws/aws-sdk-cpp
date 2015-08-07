@@ -306,7 +306,7 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
     auto finalSigningDigest = hashResult.GetResult();
 
     auto finalSigningHash = HashingUtils::HexEncode(finalSigningDigest);
-    AWS_LOGSTREAM_DEBUG(v4LogTag, "Final computed signing hash: %s" << finalSigningHash);
+    AWS_LOGSTREAM_DEBUG(v4LogTag, "Final computed signing hash: " << finalSigningHash);
 
     return finalSigningHash;
 }
@@ -325,7 +325,7 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
     auto sha256Digest = hashResult.GetResult();
 
     Aws::String payloadHash(HashingUtils::HexEncode(sha256Digest));
-    AWS_LOGSTREAM_DEBUG(v4LogTag, "Calculated sha256 %s for payload." << payloadHash);
+    AWS_LOGSTREAM_DEBUG(v4LogTag, "Calculated sha256 " << payloadHash << " for payload.");
     return std::move(payloadHash);
 }
 

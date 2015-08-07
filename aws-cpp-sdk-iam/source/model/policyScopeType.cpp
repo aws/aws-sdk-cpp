@@ -46,7 +46,7 @@ policyScopeType GetpolicyScopeTypeForName(const Aws::String& name)
     return policyScopeType::Local;
   }
 
-  return policyScopeType::All;
+  return policyScopeType::NOT_SET;
 }
 
 Aws::String GetNameForpolicyScopeType(policyScopeType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForpolicyScopeType(policyScopeType value)
   case policyScopeType::Local:
     return "Local";
   default:
-    return "All";
+    return "";
   }
 }
 

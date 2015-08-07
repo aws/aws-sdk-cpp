@@ -41,7 +41,7 @@ Protocol GetProtocolForName(const Aws::String& name)
     return Protocol::https;
   }
 
-  return Protocol::http;
+  return Protocol::NOT_SET;
 }
 
 Aws::String GetNameForProtocol(Protocol value)
@@ -53,7 +53,7 @@ Aws::String GetNameForProtocol(Protocol value)
   case Protocol::https:
     return "https";
   default:
-    return "http";
+    return "";
   }
 }
 

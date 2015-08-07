@@ -41,7 +41,7 @@ DataKeySpec GetDataKeySpecForName(const Aws::String& name)
     return DataKeySpec::AES_128;
   }
 
-  return DataKeySpec::AES_256;
+  return DataKeySpec::NOT_SET;
 }
 
 Aws::String GetNameForDataKeySpec(DataKeySpec value)
@@ -53,7 +53,7 @@ Aws::String GetNameForDataKeySpec(DataKeySpec value)
   case DataKeySpec::AES_128:
     return "AES_128";
   default:
-    return "AES_256";
+    return "";
   }
 }
 

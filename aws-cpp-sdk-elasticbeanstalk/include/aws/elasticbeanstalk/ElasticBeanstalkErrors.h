@@ -48,7 +48,9 @@ enum class AWS_ELASTICBEANSTALK_API ElasticBeanstalkErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INSUFFICIENT_PRIVILEGES= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ELASTIC_BEANSTALK_SERVICE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_PRIVILEGES,
+  INVALID_REQUEST,
   OPERATION_IN_PROGRESS,
   S3_LOCATION_NOT_IN_SERVICE_REGION,
   S3_SUBSCRIPTION_REQUIRED,

@@ -41,7 +41,7 @@ OriginProtocolPolicy GetOriginProtocolPolicyForName(const Aws::String& name)
     return OriginProtocolPolicy::match_viewer;
   }
 
-  return OriginProtocolPolicy::http_only;
+  return OriginProtocolPolicy::NOT_SET;
 }
 
 Aws::String GetNameForOriginProtocolPolicy(OriginProtocolPolicy value)
@@ -53,7 +53,7 @@ Aws::String GetNameForOriginProtocolPolicy(OriginProtocolPolicy value)
   case OriginProtocolPolicy::match_viewer:
     return "match-viewer";
   default:
-    return "http_only";
+    return "";
   }
 }
 

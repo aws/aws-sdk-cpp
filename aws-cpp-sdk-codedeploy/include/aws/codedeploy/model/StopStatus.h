@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StopStatus
   {
+    NOT_SET,
     Pending,
     Succeeded
   };

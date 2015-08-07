@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ReturnItemCollectionMetrics
   {
+    NOT_SET,
     SIZE,
     NONE
   };

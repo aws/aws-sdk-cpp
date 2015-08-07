@@ -46,7 +46,7 @@ Type GetTypeForName(const Aws::String& name)
     return Type::Group;
   }
 
-  return Type::CanonicalUser;
+  return Type::NOT_SET;
 }
 
 Aws::String GetNameForType(Type value)
@@ -60,7 +60,7 @@ Aws::String GetNameForType(Type value)
   case Type::Group:
     return "Group";
   default:
-    return "CanonicalUser";
+    return "";
   }
 }
 

@@ -61,7 +61,7 @@ LifecycleEventStatus GetLifecycleEventStatusForName(const Aws::String& name)
     return LifecycleEventStatus::Unknown;
   }
 
-  return LifecycleEventStatus::Pending;
+  return LifecycleEventStatus::NOT_SET;
 }
 
 Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus value)
@@ -81,7 +81,7 @@ Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus value)
   case LifecycleEventStatus::Unknown:
     return "Unknown";
   default:
-    return "Pending";
+    return "";
   }
 }
 

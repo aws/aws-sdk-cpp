@@ -46,7 +46,7 @@ ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
     return ScalarAttributeType::B;
   }
 
-  return ScalarAttributeType::S;
+  return ScalarAttributeType::NOT_SET;
 }
 
 Aws::String GetNameForScalarAttributeType(ScalarAttributeType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForScalarAttributeType(ScalarAttributeType value)
   case ScalarAttributeType::B:
     return "B";
   default:
-    return "S";
+    return "";
   }
 }
 

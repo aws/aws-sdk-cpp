@@ -36,26 +36,26 @@ namespace Model
 
 
     /*
-     <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
+     <p> The DB instance identifier of the Read Replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
     /*
-     <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
+     <p> The DB instance identifier of the Read Replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
-     <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
+     <p> The DB instance identifier of the Read Replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /*
-     <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
+     <p> The DB instance identifier of the Read Replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
     inline CreateDBInstanceReadReplicaRequest&  WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
-     <p> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
+     <p> The DB instance identifier of the Read Replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </p>
     */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 

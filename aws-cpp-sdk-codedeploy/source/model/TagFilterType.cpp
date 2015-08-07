@@ -46,7 +46,7 @@ TagFilterType GetTagFilterTypeForName(const Aws::String& name)
     return TagFilterType::KEY_AND_VALUE;
   }
 
-  return TagFilterType::KEY_ONLY;
+  return TagFilterType::NOT_SET;
 }
 
 Aws::String GetNameForTagFilterType(TagFilterType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForTagFilterType(TagFilterType value)
   case TagFilterType::KEY_AND_VALUE:
     return "KEY_AND_VALUE";
   default:
-    return "KEY_ONLY";
+    return "";
   }
 }
 

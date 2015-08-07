@@ -24,6 +24,7 @@ namespace Model
 {
   enum class SourceType
   {
+    NOT_SET,
     db_instance,
     db_parameter_group,
     db_security_group,

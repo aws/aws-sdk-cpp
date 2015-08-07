@@ -56,7 +56,7 @@ InstanceStateChangeReasonCode GetInstanceStateChangeReasonCodeForName(const Aws:
     return InstanceStateChangeReasonCode::CLUSTER_TERMINATED;
   }
 
-  return InstanceStateChangeReasonCode::INTERNAL_ERROR;
+  return InstanceStateChangeReasonCode::NOT_SET;
 }
 
 Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode value)
@@ -74,7 +74,7 @@ Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCod
   case InstanceStateChangeReasonCode::CLUSTER_TERMINATED:
     return "CLUSTER_TERMINATED";
   default:
-    return "INTERNAL_ERROR";
+    return "";
   }
 }
 

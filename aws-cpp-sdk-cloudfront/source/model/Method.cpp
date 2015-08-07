@@ -66,7 +66,7 @@ Method GetMethodForName(const Aws::String& name)
     return Method::DELETE_;
   }
 
-  return Method::GET_;
+  return Method::NOT_SET;
 }
 
 Aws::String GetNameForMethod(Method value)
@@ -88,7 +88,7 @@ Aws::String GetNameForMethod(Method value)
   case Method::DELETE_:
     return "DELETE";
   default:
-    return "GET_";
+    return "";
   }
 }
 

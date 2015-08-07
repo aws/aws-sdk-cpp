@@ -41,7 +41,7 @@ VirtualizationType GetVirtualizationTypeForName(const Aws::String& name)
     return VirtualizationType::hvm;
   }
 
-  return VirtualizationType::paravirtual;
+  return VirtualizationType::NOT_SET;
 }
 
 Aws::String GetNameForVirtualizationType(VirtualizationType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForVirtualizationType(VirtualizationType value)
   case VirtualizationType::hvm:
     return "hvm";
   default:
-    return "paravirtual";
+    return "";
   }
 }
 

@@ -94,26 +94,26 @@ namespace Model
     inline OrderableDBInstanceOption& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /*
-     <p> The DB instance Class for the orderable DB instance </p>
+     <p> The DB instance class for the orderable DB instance. </p>
     */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
     /*
-     <p> The DB instance Class for the orderable DB instance </p>
+     <p> The DB instance class for the orderable DB instance. </p>
     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /*
-     <p> The DB instance Class for the orderable DB instance </p>
+     <p> The DB instance class for the orderable DB instance. </p>
     */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /*
-     <p> The DB instance Class for the orderable DB instance </p>
+     <p> The DB instance class for the orderable DB instance. </p>
     */
     inline OrderableDBInstanceOption&  WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /*
-     <p> The DB instance Class for the orderable DB instance </p>
+     <p> The DB instance class for the orderable DB instance. </p>
     */
     inline OrderableDBInstanceOption& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -142,21 +142,21 @@ namespace Model
     inline OrderableDBInstanceOption& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
     /*
-     <p> A list of availability zones for the orderable DB instance. </p>
+     <p> A list of Availability Zones for the orderable DB instance. </p>
     */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
     /*
-     <p> A list of availability zones for the orderable DB instance. </p>
+     <p> A list of Availability Zones for the orderable DB instance. </p>
     */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /*
-     <p> A list of availability zones for the orderable DB instance. </p>
+     <p> A list of Availability Zones for the orderable DB instance. </p>
     */
     inline OrderableDBInstanceOption&  WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
     /*
-     <p> A list of availability zones for the orderable DB instance. </p>
+     <p> A list of Availability Zones for the orderable DB instance. </p>
     */
     inline OrderableDBInstanceOption& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -217,26 +217,26 @@ namespace Model
     inline OrderableDBInstanceOption&  WithSupportsStorageEncryption(bool value) { SetSupportsStorageEncryption(value); return *this;}
 
     /*
-     <p> The storage type for this orderable DB instance. </p>
+     <p> Indicates the storage type for this orderable DB instance. </p>
     */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
     /*
-     <p> The storage type for this orderable DB instance. </p>
+     <p> Indicates the storage type for this orderable DB instance. </p>
     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /*
-     <p> The storage type for this orderable DB instance. </p>
+     <p> Indicates the storage type for this orderable DB instance. </p>
     */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /*
-     <p> The storage type for this orderable DB instance. </p>
+     <p> Indicates the storage type for this orderable DB instance. </p>
     */
     inline OrderableDBInstanceOption&  WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /*
-     <p> The storage type for this orderable DB instance. </p>
+     <p> Indicates the storage type for this orderable DB instance. </p>
     */
     inline OrderableDBInstanceOption& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

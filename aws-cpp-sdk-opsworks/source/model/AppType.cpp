@@ -17,6 +17,7 @@
 
 using namespace Aws::Utils;
 
+static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
 static const int java_HASH = HashingUtils::HashString("java");
 static const int rails_HASH = HashingUtils::HashString("rails");
 static const int php_HASH = HashingUtils::HashString("php");
@@ -36,7 +37,11 @@ AppType GetAppTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
-  if (hashCode == java_HASH)
+  if (hashCode == aws_flow_ruby_HASH)
+  {
+    return AppType::aws_flow_ruby;
+  }
+  else if (hashCode == java_HASH)
   {
     return AppType::java;
   }
@@ -61,13 +66,15 @@ AppType GetAppTypeForName(const Aws::String& name)
     return AppType::other;
   }
 
-  return AppType::java;
+  return AppType::NOT_SET;
 }
 
 Aws::String GetNameForAppType(AppType value)
 {
   switch(value)
   {
+  case AppType::aws_flow_ruby:
+    return "aws-flow-ruby";
   case AppType::java:
     return "java";
   case AppType::rails:
@@ -81,7 +88,7 @@ Aws::String GetNameForAppType(AppType value)
   case AppType::other:
     return "other";
   default:
-    return "java";
+    return "";
   }
 }
 

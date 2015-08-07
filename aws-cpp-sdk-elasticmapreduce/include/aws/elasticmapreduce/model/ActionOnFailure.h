@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ActionOnFailure
   {
+    NOT_SET,
     TERMINATE_JOB_FLOW,
     TERMINATE_CLUSTER,
     CANCEL_AND_WAIT,

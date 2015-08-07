@@ -24,6 +24,8 @@ namespace Model
 {
   enum class AppType
   {
+    NOT_SET,
+    aws_flow_ruby,
     java,
     rails,
     php,

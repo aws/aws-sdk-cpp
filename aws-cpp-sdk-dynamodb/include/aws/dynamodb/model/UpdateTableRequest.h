@@ -93,30 +93,36 @@ namespace Model
     inline UpdateTableRequest&  WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
     /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul>
+     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     */
     inline const Aws::Vector<GlobalSecondaryIndexUpdate>& GetGlobalSecondaryIndexUpdates() const{ return m_globalSecondaryIndexUpdates; }
     /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul>
+     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     */
     inline void SetGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexUpdate>& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = value; }
 
     /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul>
+     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     */
     inline UpdateTableRequest&  WithGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexUpdate>& value) { SetGlobalSecondaryIndexUpdates(value); return *this;}
 
     /*
-     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul>
+     <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> - add a new global secondary index to the table.</p></li> <li><p><i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the table.</p></li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     */
     inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(const GlobalSecondaryIndexUpdate& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
 
-    
+    /*
+     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
+    */
     inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
-    
+    /*
+     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
+    */
     inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
-    
+    /*
+     <p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p> </note>
+    */
     inline UpdateTableRequest&  WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
 
   private:

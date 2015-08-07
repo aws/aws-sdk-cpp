@@ -24,6 +24,7 @@ namespace Model
 {
   enum class HistoryItemType
   {
+    NOT_SET,
     ConfigurationUpdate,
     StateUpdate,
     Action

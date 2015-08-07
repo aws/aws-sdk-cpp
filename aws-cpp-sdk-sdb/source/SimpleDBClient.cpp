@@ -97,12 +97,10 @@ void SimpleDBClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 BatchDeleteAttributesOutcome SimpleDBClient::BatchDeleteAttributes(const BatchDeleteAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -119,21 +117,20 @@ BatchDeleteAttributesOutcomeCallable SimpleDBClient::BatchDeleteAttributesCallab
   return std::async(std::launch::async, &SimpleDBClient::BatchDeleteAttributes, this, request);
 }
 
-void SimpleDBClient::BatchDeleteAttributesAsync(const BatchDeleteAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::BatchDeleteAttributesAsync(const BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::BatchDeleteAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::BatchDeleteAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::BatchDeleteAttributesAsyncHelper(const BatchDeleteAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::BatchDeleteAttributesAsyncHelper(const BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onBatchDeleteAttributesOutcomeReceived(this, request, BatchDeleteAttributes(request), context);
+  handler(this, request, BatchDeleteAttributes(request), context);
 }
 
 BatchPutAttributesOutcome SimpleDBClient::BatchPutAttributes(const BatchPutAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -150,21 +147,20 @@ BatchPutAttributesOutcomeCallable SimpleDBClient::BatchPutAttributesCallable(con
   return std::async(std::launch::async, &SimpleDBClient::BatchPutAttributes, this, request);
 }
 
-void SimpleDBClient::BatchPutAttributesAsync(const BatchPutAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::BatchPutAttributesAsync(const BatchPutAttributesRequest& request, const BatchPutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::BatchPutAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::BatchPutAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::BatchPutAttributesAsyncHelper(const BatchPutAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::BatchPutAttributesAsyncHelper(const BatchPutAttributesRequest& request, const BatchPutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onBatchPutAttributesOutcomeReceived(this, request, BatchPutAttributes(request), context);
+  handler(this, request, BatchPutAttributes(request), context);
 }
 
 CreateDomainOutcome SimpleDBClient::CreateDomain(const CreateDomainRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -181,21 +177,20 @@ CreateDomainOutcomeCallable SimpleDBClient::CreateDomainCallable(const CreateDom
   return std::async(std::launch::async, &SimpleDBClient::CreateDomain, this, request);
 }
 
-void SimpleDBClient::CreateDomainAsync(const CreateDomainRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::CreateDomainAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::CreateDomainAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateDomainOutcomeReceived(this, request, CreateDomain(request), context);
+  handler(this, request, CreateDomain(request), context);
 }
 
 DeleteAttributesOutcome SimpleDBClient::DeleteAttributes(const DeleteAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -212,21 +207,20 @@ DeleteAttributesOutcomeCallable SimpleDBClient::DeleteAttributesCallable(const D
   return std::async(std::launch::async, &SimpleDBClient::DeleteAttributes, this, request);
 }
 
-void SimpleDBClient::DeleteAttributesAsync(const DeleteAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::DeleteAttributesAsync(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::DeleteAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::DeleteAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteAttributesOutcomeReceived(this, request, DeleteAttributes(request), context);
+  handler(this, request, DeleteAttributes(request), context);
 }
 
 DeleteDomainOutcome SimpleDBClient::DeleteDomain(const DeleteDomainRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -243,21 +237,20 @@ DeleteDomainOutcomeCallable SimpleDBClient::DeleteDomainCallable(const DeleteDom
   return std::async(std::launch::async, &SimpleDBClient::DeleteDomain, this, request);
 }
 
-void SimpleDBClient::DeleteDomainAsync(const DeleteDomainRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::DeleteDomainAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::DeleteDomainAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteDomainOutcomeReceived(this, request, DeleteDomain(request), context);
+  handler(this, request, DeleteDomain(request), context);
 }
 
 DomainMetadataOutcome SimpleDBClient::DomainMetadata(const DomainMetadataRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -274,21 +267,20 @@ DomainMetadataOutcomeCallable SimpleDBClient::DomainMetadataCallable(const Domai
   return std::async(std::launch::async, &SimpleDBClient::DomainMetadata, this, request);
 }
 
-void SimpleDBClient::DomainMetadataAsync(const DomainMetadataRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::DomainMetadataAsync(const DomainMetadataRequest& request, const DomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::DomainMetadataAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::DomainMetadataAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::DomainMetadataAsyncHelper(const DomainMetadataRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::DomainMetadataAsyncHelper(const DomainMetadataRequest& request, const DomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDomainMetadataOutcomeReceived(this, request, DomainMetadata(request), context);
+  handler(this, request, DomainMetadata(request), context);
 }
 
 GetAttributesOutcome SimpleDBClient::GetAttributes(const GetAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -305,21 +297,20 @@ GetAttributesOutcomeCallable SimpleDBClient::GetAttributesCallable(const GetAttr
   return std::async(std::launch::async, &SimpleDBClient::GetAttributes, this, request);
 }
 
-void SimpleDBClient::GetAttributesAsync(const GetAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::GetAttributesAsync(const GetAttributesRequest& request, const GetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::GetAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::GetAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::GetAttributesAsyncHelper(const GetAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::GetAttributesAsyncHelper(const GetAttributesRequest& request, const GetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetAttributesOutcomeReceived(this, request, GetAttributes(request), context);
+  handler(this, request, GetAttributes(request), context);
 }
 
 ListDomainsOutcome SimpleDBClient::ListDomains(const ListDomainsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -336,21 +327,20 @@ ListDomainsOutcomeCallable SimpleDBClient::ListDomainsCallable(const ListDomains
   return std::async(std::launch::async, &SimpleDBClient::ListDomains, this, request);
 }
 
-void SimpleDBClient::ListDomainsAsync(const ListDomainsRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::ListDomainsAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::ListDomainsAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListDomainsOutcomeReceived(this, request, ListDomains(request), context);
+  handler(this, request, ListDomains(request), context);
 }
 
 PutAttributesOutcome SimpleDBClient::PutAttributes(const PutAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -367,21 +357,20 @@ PutAttributesOutcomeCallable SimpleDBClient::PutAttributesCallable(const PutAttr
   return std::async(std::launch::async, &SimpleDBClient::PutAttributes, this, request);
 }
 
-void SimpleDBClient::PutAttributesAsync(const PutAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::PutAttributesAsync(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::PutAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::PutAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::PutAttributesAsyncHelper(const PutAttributesRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::PutAttributesAsyncHelper(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onPutAttributesOutcomeReceived(this, request, PutAttributes(request), context);
+  handler(this, request, PutAttributes(request), context);
 }
 
 SelectOutcome SimpleDBClient::Select(const SelectRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -398,13 +387,13 @@ SelectOutcomeCallable SimpleDBClient::SelectCallable(const SelectRequest& reques
   return std::async(std::launch::async, &SimpleDBClient::Select, this, request);
 }
 
-void SimpleDBClient::SelectAsync(const SelectRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::SelectAsync(const SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SimpleDBClient::SelectAsyncHelper, this, request, context);
+  m_executor->Submit(&SimpleDBClient::SelectAsyncHelper, this, request, handler, context);
 }
 
-void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request, const AsyncCallerContext* context) const
+void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSelectOutcomeReceived(this, request, Select(request), context);
+  handler(this, request, Select(request), context);
 }
 

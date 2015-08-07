@@ -63,7 +63,7 @@ class AWS_CORE_API DefaultLogSystem : public FormattedLogSystem
 
     protected:
 	
-	virtual void ProcessFormattedStatement(Aws::String&& statement) override;
+	    virtual void ProcessFormattedStatement(Aws::String&& statement) override;
 
     private:
 

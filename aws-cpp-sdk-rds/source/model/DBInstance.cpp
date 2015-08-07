@@ -65,6 +65,9 @@ DBInstance::DBInstance() :
     m_statusInfosHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
+    m_dbInstancePort(0),
+    m_dbInstancePortHasBeenSet(false),
+    m_dBClusterIdentifierHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
@@ -115,6 +118,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_statusInfosHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
+    m_dbInstancePort(0),
+    m_dbInstancePortHasBeenSet(false),
+    m_dBClusterIdentifierHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
@@ -364,6 +370,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_tdeCredentialArn = StringUtils::Trim(tdeCredentialArnNode.GetText().c_str());
       m_tdeCredentialArnHasBeenSet = true;
     }
+    XmlNode dbInstancePortNode = resultNode.FirstChild("DbInstancePort");
+    if(!dBInstanceStatusInfoNode.IsNull())
+    {
+      m_dbInstancePort = StringUtils::ConvertToInt32(StringUtils::Trim(dbInstancePortNode.GetText().c_str()).c_str());
+      m_dbInstancePortHasBeenSet = true;
+    }
+    XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
+    if(!dBInstanceStatusInfoNode.IsNull())
+    {
+      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
+      m_dBClusterIdentifierHasBeenSet = true;
+    }
     XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");
     if(!dBInstanceStatusInfoNode.IsNull())
     {
@@ -561,6 +579,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
   }
+  if(m_dbInstancePortHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DbInstancePort=" << m_dbInstancePort << "&";
+  }
+  if(m_dBClusterIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
+  }
   if(m_storageEncryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
@@ -746,6 +772,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_tdeCredentialArnHasBeenSet)
   {
       oStream << location << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
+  }
+  if(m_dbInstancePortHasBeenSet)
+  {
+      oStream << location << ".DbInstancePort=" << m_dbInstancePort << "&";
+  }
+  if(m_dBClusterIdentifierHasBeenSet)
+  {
+      oStream << location << ".DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
   if(m_storageEncryptedHasBeenSet)
   {

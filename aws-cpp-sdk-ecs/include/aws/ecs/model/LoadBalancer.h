@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on a load balancer that is used with a service.</p>
   */
   class AWS_ECS_API LoadBalancer
   {

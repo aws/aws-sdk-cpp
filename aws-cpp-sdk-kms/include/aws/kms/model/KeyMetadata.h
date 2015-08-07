@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/KeyUsageType.h>
+#include <aws/kms/model/KeyState.h>
 
 namespace Aws
 {
@@ -179,6 +180,22 @@ namespace Model
     */
     inline KeyMetadata&  WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
+    
+    inline const KeyState& GetKeyState() const{ return m_keyState; }
+    
+    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+
+    
+    inline KeyMetadata&  WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+
+    
+    inline double GetDeletionDate() const{ return m_deletionDate; }
+    
+    inline void SetDeletionDate(double value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
+
+    
+    inline KeyMetadata&  WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
+
   private:
     Aws::String m_aWSAccountId;
     bool m_aWSAccountIdHasBeenSet;
@@ -194,6 +211,10 @@ namespace Model
     bool m_descriptionHasBeenSet;
     KeyUsageType m_keyUsage;
     bool m_keyUsageHasBeenSet;
+    KeyState m_keyState;
+    bool m_keyStateHasBeenSet;
+    double m_deletionDate;
+    bool m_deletionDateHasBeenSet;
   };
 
 } // namespace Model

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ShardIteratorType
   {
+    NOT_SET,
     AT_SEQUENCE_NUMBER,
     AFTER_SEQUENCE_NUMBER,
     TRIM_HORIZON,

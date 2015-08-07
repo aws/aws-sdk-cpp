@@ -34,7 +34,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on a service within a cluster</p>
   */
   class AWS_ECS_API Service
   {

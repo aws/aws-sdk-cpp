@@ -41,7 +41,7 @@ DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
     return DeploymentCreator::autoscaling;
   }
 
-  return DeploymentCreator::user;
+  return DeploymentCreator::NOT_SET;
 }
 
 Aws::String GetNameForDeploymentCreator(DeploymentCreator value)
@@ -53,7 +53,7 @@ Aws::String GetNameForDeploymentCreator(DeploymentCreator value)
   case DeploymentCreator::autoscaling:
     return "autoscaling";
   default:
-    return "user";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Type
   {
+    NOT_SET,
     CanonicalUser,
     AmazonCustomerByEmail,
     Group

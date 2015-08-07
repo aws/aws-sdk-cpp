@@ -24,6 +24,7 @@ namespace Model
 {
   enum class SourceType
   {
+    NOT_SET,
     git,
     svn,
     archive,

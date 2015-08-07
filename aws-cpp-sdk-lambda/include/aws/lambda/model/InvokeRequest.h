@@ -22,6 +22,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace Lambda
 {
 namespace Model
@@ -33,6 +37,8 @@ namespace Model
   {
   public:
     InvokeRequest();
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
@@ -112,6 +118,30 @@ namespace Model
     */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 
+    /*
+     <p>Specifies Lambda function version to invoke. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To invoke the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
+    */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+    /*
+     <p>Specifies Lambda function version to invoke. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To invoke the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
+    */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>Specifies Lambda function version to invoke. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To invoke the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
+    */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /*
+     <p>Specifies Lambda function version to invoke. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To invoke the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
+    */
+    inline InvokeRequest&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>Specifies Lambda function version to invoke. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To invoke the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
+    */
+    inline InvokeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -121,6 +151,8 @@ namespace Model
     bool m_logTypeHasBeenSet;
     Aws::String m_clientContext;
     bool m_clientContextHasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

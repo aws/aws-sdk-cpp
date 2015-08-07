@@ -36,7 +36,7 @@ StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String&
     return StepStateChangeReasonCode::NONE;
   }
 
-  return StepStateChangeReasonCode::NONE;
+  return StepStateChangeReasonCode::NOT_SET;
 }
 
 Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode value)
@@ -46,7 +46,7 @@ Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode value)
   case StepStateChangeReasonCode::NONE:
     return "NONE";
   default:
-    return "NONE";
+    return "";
   }
 }
 

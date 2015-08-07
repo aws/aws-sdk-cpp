@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ReturnConsumedCapacity
   {
+    NOT_SET,
     INDEXES,
     TOTAL,
     NONE

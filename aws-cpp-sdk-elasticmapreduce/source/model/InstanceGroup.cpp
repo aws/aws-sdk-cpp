@@ -32,7 +32,8 @@ InstanceGroup::InstanceGroup() :
     m_requestedInstanceCountHasBeenSet(false),
     m_runningInstanceCount(0),
     m_runningInstanceCountHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_configurationsHasBeenSet(false)
 {
 }
 
@@ -47,7 +48,8 @@ InstanceGroup::InstanceGroup(const JsonValue& jsonValue) :
     m_requestedInstanceCountHasBeenSet(false),
     m_runningInstanceCount(0),
     m_runningInstanceCountHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_configurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,16 @@ InstanceGroup& InstanceGroup::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Configurations"))
+  {
+    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
+    {
+      m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
+    }
+    m_configurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +185,17 @@ JsonValue InstanceGroup::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithObject("Status", m_status.Jsonize());
+
+  }
+
+  if(m_configurationsHasBeenSet)
+  {
+   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
+   {
+     configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+   }
+   payload.WithArray("Configurations", std::move(configurationsJsonList));
 
   }
 

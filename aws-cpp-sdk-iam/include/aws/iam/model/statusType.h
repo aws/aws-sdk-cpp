@@ -24,6 +24,7 @@ namespace Model
 {
   enum class statusType
   {
+    NOT_SET,
     Active,
     Inactive
   };

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class LifecycleEventStatus
   {
+    NOT_SET,
     Pending,
     InProgress,
     Succeeded,

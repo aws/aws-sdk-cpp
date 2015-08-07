@@ -24,6 +24,7 @@ namespace Model
 {
   enum class AgentUpdateStatus
   {
+    NOT_SET,
     PENDING,
     STAGING,
     STAGED,

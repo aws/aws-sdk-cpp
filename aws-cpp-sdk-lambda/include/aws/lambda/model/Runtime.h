@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Runtime
   {
+    NOT_SET,
     nodejs,
     java8
   };

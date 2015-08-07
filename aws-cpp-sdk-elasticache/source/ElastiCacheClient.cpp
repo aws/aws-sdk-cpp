@@ -124,12 +124,10 @@ void ElastiCacheClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AddTagsToResourceOutcome ElastiCacheClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -146,21 +144,20 @@ AddTagsToResourceOutcomeCallable ElastiCacheClient::AddTagsToResourceCallable(co
   return std::async(std::launch::async, &ElastiCacheClient::AddTagsToResource, this, request);
 }
 
-void ElastiCacheClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::AddTagsToResourceAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddTagsToResourceOutcomeReceived(this, request, AddTagsToResource(request), context);
+  handler(this, request, AddTagsToResource(request), context);
 }
 
 AuthorizeCacheSecurityGroupIngressOutcome ElastiCacheClient::AuthorizeCacheSecurityGroupIngress(const AuthorizeCacheSecurityGroupIngressRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -177,21 +174,20 @@ AuthorizeCacheSecurityGroupIngressOutcomeCallable ElastiCacheClient::AuthorizeCa
   return std::async(std::launch::async, &ElastiCacheClient::AuthorizeCacheSecurityGroupIngress, this, request);
 }
 
-void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsync(const AuthorizeCacheSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsync(const AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper(const AuthorizeCacheSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper(const AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAuthorizeCacheSecurityGroupIngressOutcomeReceived(this, request, AuthorizeCacheSecurityGroupIngress(request), context);
+  handler(this, request, AuthorizeCacheSecurityGroupIngress(request), context);
 }
 
 CopySnapshotOutcome ElastiCacheClient::CopySnapshot(const CopySnapshotRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -208,21 +204,20 @@ CopySnapshotOutcomeCallable ElastiCacheClient::CopySnapshotCallable(const CopySn
   return std::async(std::launch::async, &ElastiCacheClient::CopySnapshot, this, request);
 }
 
-void ElastiCacheClient::CopySnapshotAsync(const CopySnapshotRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CopySnapshotAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CopySnapshotAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCopySnapshotOutcomeReceived(this, request, CopySnapshot(request), context);
+  handler(this, request, CopySnapshot(request), context);
 }
 
 CreateCacheClusterOutcome ElastiCacheClient::CreateCacheCluster(const CreateCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -239,21 +234,20 @@ CreateCacheClusterOutcomeCallable ElastiCacheClient::CreateCacheClusterCallable(
   return std::async(std::launch::async, &ElastiCacheClient::CreateCacheCluster, this, request);
 }
 
-void ElastiCacheClient::CreateCacheClusterAsync(const CreateCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheClusterAsync(const CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheClusterAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CreateCacheClusterAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CreateCacheClusterAsyncHelper(const CreateCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheClusterAsyncHelper(const CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateCacheClusterOutcomeReceived(this, request, CreateCacheCluster(request), context);
+  handler(this, request, CreateCacheCluster(request), context);
 }
 
 CreateCacheParameterGroupOutcome ElastiCacheClient::CreateCacheParameterGroup(const CreateCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -270,21 +264,20 @@ CreateCacheParameterGroupOutcomeCallable ElastiCacheClient::CreateCacheParameter
   return std::async(std::launch::async, &ElastiCacheClient::CreateCacheParameterGroup, this, request);
 }
 
-void ElastiCacheClient::CreateCacheParameterGroupAsync(const CreateCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheParameterGroupAsync(const CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheParameterGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CreateCacheParameterGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CreateCacheParameterGroupAsyncHelper(const CreateCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheParameterGroupAsyncHelper(const CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateCacheParameterGroupOutcomeReceived(this, request, CreateCacheParameterGroup(request), context);
+  handler(this, request, CreateCacheParameterGroup(request), context);
 }
 
 CreateCacheSecurityGroupOutcome ElastiCacheClient::CreateCacheSecurityGroup(const CreateCacheSecurityGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -301,21 +294,20 @@ CreateCacheSecurityGroupOutcomeCallable ElastiCacheClient::CreateCacheSecurityGr
   return std::async(std::launch::async, &ElastiCacheClient::CreateCacheSecurityGroup, this, request);
 }
 
-void ElastiCacheClient::CreateCacheSecurityGroupAsync(const CreateCacheSecurityGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheSecurityGroupAsync(const CreateCacheSecurityGroupRequest& request, const CreateCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper(const CreateCacheSecurityGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper(const CreateCacheSecurityGroupRequest& request, const CreateCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateCacheSecurityGroupOutcomeReceived(this, request, CreateCacheSecurityGroup(request), context);
+  handler(this, request, CreateCacheSecurityGroup(request), context);
 }
 
 CreateCacheSubnetGroupOutcome ElastiCacheClient::CreateCacheSubnetGroup(const CreateCacheSubnetGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -332,21 +324,20 @@ CreateCacheSubnetGroupOutcomeCallable ElastiCacheClient::CreateCacheSubnetGroupC
   return std::async(std::launch::async, &ElastiCacheClient::CreateCacheSubnetGroup, this, request);
 }
 
-void ElastiCacheClient::CreateCacheSubnetGroupAsync(const CreateCacheSubnetGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheSubnetGroupAsync(const CreateCacheSubnetGroupRequest& request, const CreateCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper(const CreateCacheSubnetGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper(const CreateCacheSubnetGroupRequest& request, const CreateCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateCacheSubnetGroupOutcomeReceived(this, request, CreateCacheSubnetGroup(request), context);
+  handler(this, request, CreateCacheSubnetGroup(request), context);
 }
 
 CreateReplicationGroupOutcome ElastiCacheClient::CreateReplicationGroup(const CreateReplicationGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -363,21 +354,20 @@ CreateReplicationGroupOutcomeCallable ElastiCacheClient::CreateReplicationGroupC
   return std::async(std::launch::async, &ElastiCacheClient::CreateReplicationGroup, this, request);
 }
 
-void ElastiCacheClient::CreateReplicationGroupAsync(const CreateReplicationGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateReplicationGroupAsync(const CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateReplicationGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CreateReplicationGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CreateReplicationGroupAsyncHelper(const CreateReplicationGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateReplicationGroupAsyncHelper(const CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateReplicationGroupOutcomeReceived(this, request, CreateReplicationGroup(request), context);
+  handler(this, request, CreateReplicationGroup(request), context);
 }
 
 CreateSnapshotOutcome ElastiCacheClient::CreateSnapshot(const CreateSnapshotRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -394,21 +384,20 @@ CreateSnapshotOutcomeCallable ElastiCacheClient::CreateSnapshotCallable(const Cr
   return std::async(std::launch::async, &ElastiCacheClient::CreateSnapshot, this, request);
 }
 
-void ElastiCacheClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateSnapshotAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::CreateSnapshotAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateSnapshotOutcomeReceived(this, request, CreateSnapshot(request), context);
+  handler(this, request, CreateSnapshot(request), context);
 }
 
 DeleteCacheClusterOutcome ElastiCacheClient::DeleteCacheCluster(const DeleteCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -425,21 +414,20 @@ DeleteCacheClusterOutcomeCallable ElastiCacheClient::DeleteCacheClusterCallable(
   return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheCluster, this, request);
 }
 
-void ElastiCacheClient::DeleteCacheClusterAsync(const DeleteCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheClusterAsync(const DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheClusterAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DeleteCacheClusterAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DeleteCacheClusterAsyncHelper(const DeleteCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheClusterAsyncHelper(const DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteCacheClusterOutcomeReceived(this, request, DeleteCacheCluster(request), context);
+  handler(this, request, DeleteCacheCluster(request), context);
 }
 
 DeleteCacheParameterGroupOutcome ElastiCacheClient::DeleteCacheParameterGroup(const DeleteCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -456,21 +444,20 @@ DeleteCacheParameterGroupOutcomeCallable ElastiCacheClient::DeleteCacheParameter
   return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheParameterGroup, this, request);
 }
 
-void ElastiCacheClient::DeleteCacheParameterGroupAsync(const DeleteCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheParameterGroupAsync(const DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper(const DeleteCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper(const DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteCacheParameterGroupOutcomeReceived(this, request, DeleteCacheParameterGroup(request), context);
+  handler(this, request, DeleteCacheParameterGroup(request), context);
 }
 
 DeleteCacheSecurityGroupOutcome ElastiCacheClient::DeleteCacheSecurityGroup(const DeleteCacheSecurityGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -487,21 +474,20 @@ DeleteCacheSecurityGroupOutcomeCallable ElastiCacheClient::DeleteCacheSecurityGr
   return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheSecurityGroup, this, request);
 }
 
-void ElastiCacheClient::DeleteCacheSecurityGroupAsync(const DeleteCacheSecurityGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheSecurityGroupAsync(const DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper(const DeleteCacheSecurityGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper(const DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteCacheSecurityGroupOutcomeReceived(this, request, DeleteCacheSecurityGroup(request), context);
+  handler(this, request, DeleteCacheSecurityGroup(request), context);
 }
 
 DeleteCacheSubnetGroupOutcome ElastiCacheClient::DeleteCacheSubnetGroup(const DeleteCacheSubnetGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -518,21 +504,20 @@ DeleteCacheSubnetGroupOutcomeCallable ElastiCacheClient::DeleteCacheSubnetGroupC
   return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheSubnetGroup, this, request);
 }
 
-void ElastiCacheClient::DeleteCacheSubnetGroupAsync(const DeleteCacheSubnetGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheSubnetGroupAsync(const DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper(const DeleteCacheSubnetGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper(const DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteCacheSubnetGroupOutcomeReceived(this, request, DeleteCacheSubnetGroup(request), context);
+  handler(this, request, DeleteCacheSubnetGroup(request), context);
 }
 
 DeleteReplicationGroupOutcome ElastiCacheClient::DeleteReplicationGroup(const DeleteReplicationGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -549,21 +534,20 @@ DeleteReplicationGroupOutcomeCallable ElastiCacheClient::DeleteReplicationGroupC
   return std::async(std::launch::async, &ElastiCacheClient::DeleteReplicationGroup, this, request);
 }
 
-void ElastiCacheClient::DeleteReplicationGroupAsync(const DeleteReplicationGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteReplicationGroupAsync(const DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteReplicationGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DeleteReplicationGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DeleteReplicationGroupAsyncHelper(const DeleteReplicationGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteReplicationGroupAsyncHelper(const DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteReplicationGroupOutcomeReceived(this, request, DeleteReplicationGroup(request), context);
+  handler(this, request, DeleteReplicationGroup(request), context);
 }
 
 DeleteSnapshotOutcome ElastiCacheClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -580,21 +564,20 @@ DeleteSnapshotOutcomeCallable ElastiCacheClient::DeleteSnapshotCallable(const De
   return std::async(std::launch::async, &ElastiCacheClient::DeleteSnapshot, this, request);
 }
 
-void ElastiCacheClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteSnapshotAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DeleteSnapshotAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteSnapshotOutcomeReceived(this, request, DeleteSnapshot(request), context);
+  handler(this, request, DeleteSnapshot(request), context);
 }
 
 DescribeCacheClustersOutcome ElastiCacheClient::DescribeCacheClusters(const DescribeCacheClustersRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -611,21 +594,20 @@ DescribeCacheClustersOutcomeCallable ElastiCacheClient::DescribeCacheClustersCal
   return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheClusters, this, request);
 }
 
-void ElastiCacheClient::DescribeCacheClustersAsync(const DescribeCacheClustersRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheClustersAsync(const DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheClustersAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeCacheClustersAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeCacheClustersAsyncHelper(const DescribeCacheClustersRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheClustersAsyncHelper(const DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeCacheClustersOutcomeReceived(this, request, DescribeCacheClusters(request), context);
+  handler(this, request, DescribeCacheClusters(request), context);
 }
 
 DescribeCacheEngineVersionsOutcome ElastiCacheClient::DescribeCacheEngineVersions(const DescribeCacheEngineVersionsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -642,21 +624,20 @@ DescribeCacheEngineVersionsOutcomeCallable ElastiCacheClient::DescribeCacheEngin
   return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheEngineVersions, this, request);
 }
 
-void ElastiCacheClient::DescribeCacheEngineVersionsAsync(const DescribeCacheEngineVersionsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheEngineVersionsAsync(const DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper(const DescribeCacheEngineVersionsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper(const DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeCacheEngineVersionsOutcomeReceived(this, request, DescribeCacheEngineVersions(request), context);
+  handler(this, request, DescribeCacheEngineVersions(request), context);
 }
 
 DescribeCacheParameterGroupsOutcome ElastiCacheClient::DescribeCacheParameterGroups(const DescribeCacheParameterGroupsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -673,21 +654,20 @@ DescribeCacheParameterGroupsOutcomeCallable ElastiCacheClient::DescribeCachePara
   return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheParameterGroups, this, request);
 }
 
-void ElastiCacheClient::DescribeCacheParameterGroupsAsync(const DescribeCacheParameterGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheParameterGroupsAsync(const DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper(const DescribeCacheParameterGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper(const DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeCacheParameterGroupsOutcomeReceived(this, request, DescribeCacheParameterGroups(request), context);
+  handler(this, request, DescribeCacheParameterGroups(request), context);
 }
 
 DescribeCacheParametersOutcome ElastiCacheClient::DescribeCacheParameters(const DescribeCacheParametersRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -704,21 +684,20 @@ DescribeCacheParametersOutcomeCallable ElastiCacheClient::DescribeCacheParameter
   return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheParameters, this, request);
 }
 
-void ElastiCacheClient::DescribeCacheParametersAsync(const DescribeCacheParametersRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheParametersAsync(const DescribeCacheParametersRequest& request, const DescribeCacheParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheParametersAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeCacheParametersAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeCacheParametersAsyncHelper(const DescribeCacheParametersRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheParametersAsyncHelper(const DescribeCacheParametersRequest& request, const DescribeCacheParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeCacheParametersOutcomeReceived(this, request, DescribeCacheParameters(request), context);
+  handler(this, request, DescribeCacheParameters(request), context);
 }
 
 DescribeCacheSecurityGroupsOutcome ElastiCacheClient::DescribeCacheSecurityGroups(const DescribeCacheSecurityGroupsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -735,21 +714,20 @@ DescribeCacheSecurityGroupsOutcomeCallable ElastiCacheClient::DescribeCacheSecur
   return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheSecurityGroups, this, request);
 }
 
-void ElastiCacheClient::DescribeCacheSecurityGroupsAsync(const DescribeCacheSecurityGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheSecurityGroupsAsync(const DescribeCacheSecurityGroupsRequest& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper(const DescribeCacheSecurityGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper(const DescribeCacheSecurityGroupsRequest& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeCacheSecurityGroupsOutcomeReceived(this, request, DescribeCacheSecurityGroups(request), context);
+  handler(this, request, DescribeCacheSecurityGroups(request), context);
 }
 
 DescribeCacheSubnetGroupsOutcome ElastiCacheClient::DescribeCacheSubnetGroups(const DescribeCacheSubnetGroupsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -766,21 +744,20 @@ DescribeCacheSubnetGroupsOutcomeCallable ElastiCacheClient::DescribeCacheSubnetG
   return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheSubnetGroups, this, request);
 }
 
-void ElastiCacheClient::DescribeCacheSubnetGroupsAsync(const DescribeCacheSubnetGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheSubnetGroupsAsync(const DescribeCacheSubnetGroupsRequest& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper(const DescribeCacheSubnetGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper(const DescribeCacheSubnetGroupsRequest& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeCacheSubnetGroupsOutcomeReceived(this, request, DescribeCacheSubnetGroups(request), context);
+  handler(this, request, DescribeCacheSubnetGroups(request), context);
 }
 
 DescribeEngineDefaultParametersOutcome ElastiCacheClient::DescribeEngineDefaultParameters(const DescribeEngineDefaultParametersRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -797,21 +774,20 @@ DescribeEngineDefaultParametersOutcomeCallable ElastiCacheClient::DescribeEngine
   return std::async(std::launch::async, &ElastiCacheClient::DescribeEngineDefaultParameters, this, request);
 }
 
-void ElastiCacheClient::DescribeEngineDefaultParametersAsync(const DescribeEngineDefaultParametersRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeEngineDefaultParametersAsync(const DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper(const DescribeEngineDefaultParametersRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper(const DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeEngineDefaultParametersOutcomeReceived(this, request, DescribeEngineDefaultParameters(request), context);
+  handler(this, request, DescribeEngineDefaultParameters(request), context);
 }
 
 DescribeEventsOutcome ElastiCacheClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -828,21 +804,20 @@ DescribeEventsOutcomeCallable ElastiCacheClient::DescribeEventsCallable(const De
   return std::async(std::launch::async, &ElastiCacheClient::DescribeEvents, this, request);
 }
 
-void ElastiCacheClient::DescribeEventsAsync(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeEventsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeEventsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeEventsOutcomeReceived(this, request, DescribeEvents(request), context);
+  handler(this, request, DescribeEvents(request), context);
 }
 
 DescribeReplicationGroupsOutcome ElastiCacheClient::DescribeReplicationGroups(const DescribeReplicationGroupsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -859,21 +834,20 @@ DescribeReplicationGroupsOutcomeCallable ElastiCacheClient::DescribeReplicationG
   return std::async(std::launch::async, &ElastiCacheClient::DescribeReplicationGroups, this, request);
 }
 
-void ElastiCacheClient::DescribeReplicationGroupsAsync(const DescribeReplicationGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeReplicationGroupsAsync(const DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeReplicationGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeReplicationGroupsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeReplicationGroupsAsyncHelper(const DescribeReplicationGroupsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeReplicationGroupsAsyncHelper(const DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeReplicationGroupsOutcomeReceived(this, request, DescribeReplicationGroups(request), context);
+  handler(this, request, DescribeReplicationGroups(request), context);
 }
 
 DescribeReservedCacheNodesOutcome ElastiCacheClient::DescribeReservedCacheNodes(const DescribeReservedCacheNodesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -890,21 +864,20 @@ DescribeReservedCacheNodesOutcomeCallable ElastiCacheClient::DescribeReservedCac
   return std::async(std::launch::async, &ElastiCacheClient::DescribeReservedCacheNodes, this, request);
 }
 
-void ElastiCacheClient::DescribeReservedCacheNodesAsync(const DescribeReservedCacheNodesRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeReservedCacheNodesAsync(const DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper(const DescribeReservedCacheNodesRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper(const DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeReservedCacheNodesOutcomeReceived(this, request, DescribeReservedCacheNodes(request), context);
+  handler(this, request, DescribeReservedCacheNodes(request), context);
 }
 
 DescribeReservedCacheNodesOfferingsOutcome ElastiCacheClient::DescribeReservedCacheNodesOfferings(const DescribeReservedCacheNodesOfferingsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -921,21 +894,20 @@ DescribeReservedCacheNodesOfferingsOutcomeCallable ElastiCacheClient::DescribeRe
   return std::async(std::launch::async, &ElastiCacheClient::DescribeReservedCacheNodesOfferings, this, request);
 }
 
-void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsync(const DescribeReservedCacheNodesOfferingsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsync(const DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper(const DescribeReservedCacheNodesOfferingsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper(const DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeReservedCacheNodesOfferingsOutcomeReceived(this, request, DescribeReservedCacheNodesOfferings(request), context);
+  handler(this, request, DescribeReservedCacheNodesOfferings(request), context);
 }
 
 DescribeSnapshotsOutcome ElastiCacheClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -952,21 +924,20 @@ DescribeSnapshotsOutcomeCallable ElastiCacheClient::DescribeSnapshotsCallable(co
   return std::async(std::launch::async, &ElastiCacheClient::DescribeSnapshots, this, request);
 }
 
-void ElastiCacheClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeSnapshotsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::DescribeSnapshotsAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeSnapshotsOutcomeReceived(this, request, DescribeSnapshots(request), context);
+  handler(this, request, DescribeSnapshots(request), context);
 }
 
 ListTagsForResourceOutcome ElastiCacheClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -983,21 +954,20 @@ ListTagsForResourceOutcomeCallable ElastiCacheClient::ListTagsForResourceCallabl
   return std::async(std::launch::async, &ElastiCacheClient::ListTagsForResource, this, request);
 }
 
-void ElastiCacheClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ListTagsForResourceAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListTagsForResourceOutcomeReceived(this, request, ListTagsForResource(request), context);
+  handler(this, request, ListTagsForResource(request), context);
 }
 
 ModifyCacheClusterOutcome ElastiCacheClient::ModifyCacheCluster(const ModifyCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1014,21 +984,20 @@ ModifyCacheClusterOutcomeCallable ElastiCacheClient::ModifyCacheClusterCallable(
   return std::async(std::launch::async, &ElastiCacheClient::ModifyCacheCluster, this, request);
 }
 
-void ElastiCacheClient::ModifyCacheClusterAsync(const ModifyCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyCacheClusterAsync(const ModifyCacheClusterRequest& request, const ModifyCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyCacheClusterAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::ModifyCacheClusterAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::ModifyCacheClusterAsyncHelper(const ModifyCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyCacheClusterAsyncHelper(const ModifyCacheClusterRequest& request, const ModifyCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onModifyCacheClusterOutcomeReceived(this, request, ModifyCacheCluster(request), context);
+  handler(this, request, ModifyCacheCluster(request), context);
 }
 
 ModifyCacheParameterGroupOutcome ElastiCacheClient::ModifyCacheParameterGroup(const ModifyCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1045,21 +1014,20 @@ ModifyCacheParameterGroupOutcomeCallable ElastiCacheClient::ModifyCacheParameter
   return std::async(std::launch::async, &ElastiCacheClient::ModifyCacheParameterGroup, this, request);
 }
 
-void ElastiCacheClient::ModifyCacheParameterGroupAsync(const ModifyCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyCacheParameterGroupAsync(const ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper(const ModifyCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper(const ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onModifyCacheParameterGroupOutcomeReceived(this, request, ModifyCacheParameterGroup(request), context);
+  handler(this, request, ModifyCacheParameterGroup(request), context);
 }
 
 ModifyCacheSubnetGroupOutcome ElastiCacheClient::ModifyCacheSubnetGroup(const ModifyCacheSubnetGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1076,21 +1044,20 @@ ModifyCacheSubnetGroupOutcomeCallable ElastiCacheClient::ModifyCacheSubnetGroupC
   return std::async(std::launch::async, &ElastiCacheClient::ModifyCacheSubnetGroup, this, request);
 }
 
-void ElastiCacheClient::ModifyCacheSubnetGroupAsync(const ModifyCacheSubnetGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyCacheSubnetGroupAsync(const ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper(const ModifyCacheSubnetGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper(const ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onModifyCacheSubnetGroupOutcomeReceived(this, request, ModifyCacheSubnetGroup(request), context);
+  handler(this, request, ModifyCacheSubnetGroup(request), context);
 }
 
 ModifyReplicationGroupOutcome ElastiCacheClient::ModifyReplicationGroup(const ModifyReplicationGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1107,21 +1074,20 @@ ModifyReplicationGroupOutcomeCallable ElastiCacheClient::ModifyReplicationGroupC
   return std::async(std::launch::async, &ElastiCacheClient::ModifyReplicationGroup, this, request);
 }
 
-void ElastiCacheClient::ModifyReplicationGroupAsync(const ModifyReplicationGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyReplicationGroupAsync(const ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyReplicationGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::ModifyReplicationGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::ModifyReplicationGroupAsyncHelper(const ModifyReplicationGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ModifyReplicationGroupAsyncHelper(const ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onModifyReplicationGroupOutcomeReceived(this, request, ModifyReplicationGroup(request), context);
+  handler(this, request, ModifyReplicationGroup(request), context);
 }
 
 PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCacheNodesOffering(const PurchaseReservedCacheNodesOfferingRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1138,21 +1104,20 @@ PurchaseReservedCacheNodesOfferingOutcomeCallable ElastiCacheClient::PurchaseRes
   return std::async(std::launch::async, &ElastiCacheClient::PurchaseReservedCacheNodesOffering, this, request);
 }
 
-void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsync(const PurchaseReservedCacheNodesOfferingRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsync(const PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper(const PurchaseReservedCacheNodesOfferingRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper(const PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onPurchaseReservedCacheNodesOfferingOutcomeReceived(this, request, PurchaseReservedCacheNodesOffering(request), context);
+  handler(this, request, PurchaseReservedCacheNodesOffering(request), context);
 }
 
 RebootCacheClusterOutcome ElastiCacheClient::RebootCacheCluster(const RebootCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1169,21 +1134,20 @@ RebootCacheClusterOutcomeCallable ElastiCacheClient::RebootCacheClusterCallable(
   return std::async(std::launch::async, &ElastiCacheClient::RebootCacheCluster, this, request);
 }
 
-void ElastiCacheClient::RebootCacheClusterAsync(const RebootCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::RebootCacheClusterAsync(const RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::RebootCacheClusterAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::RebootCacheClusterAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::RebootCacheClusterAsyncHelper(const RebootCacheClusterRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::RebootCacheClusterAsyncHelper(const RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRebootCacheClusterOutcomeReceived(this, request, RebootCacheCluster(request), context);
+  handler(this, request, RebootCacheCluster(request), context);
 }
 
 RemoveTagsFromResourceOutcome ElastiCacheClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1200,21 +1164,20 @@ RemoveTagsFromResourceOutcomeCallable ElastiCacheClient::RemoveTagsFromResourceC
   return std::async(std::launch::async, &ElastiCacheClient::RemoveTagsFromResource, this, request);
 }
 
-void ElastiCacheClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::RemoveTagsFromResourceAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRemoveTagsFromResourceOutcomeReceived(this, request, RemoveTagsFromResource(request), context);
+  handler(this, request, RemoveTagsFromResource(request), context);
 }
 
 ResetCacheParameterGroupOutcome ElastiCacheClient::ResetCacheParameterGroup(const ResetCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1231,21 +1194,20 @@ ResetCacheParameterGroupOutcomeCallable ElastiCacheClient::ResetCacheParameterGr
   return std::async(std::launch::async, &ElastiCacheClient::ResetCacheParameterGroup, this, request);
 }
 
-void ElastiCacheClient::ResetCacheParameterGroupAsync(const ResetCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ResetCacheParameterGroupAsync(const ResetCacheParameterGroupRequest& request, const ResetCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ResetCacheParameterGroupAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::ResetCacheParameterGroupAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::ResetCacheParameterGroupAsyncHelper(const ResetCacheParameterGroupRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::ResetCacheParameterGroupAsyncHelper(const ResetCacheParameterGroupRequest& request, const ResetCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onResetCacheParameterGroupOutcomeReceived(this, request, ResetCacheParameterGroup(request), context);
+  handler(this, request, ResetCacheParameterGroup(request), context);
 }
 
 RevokeCacheSecurityGroupIngressOutcome ElastiCacheClient::RevokeCacheSecurityGroupIngress(const RevokeCacheSecurityGroupIngressRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1262,13 +1224,13 @@ RevokeCacheSecurityGroupIngressOutcomeCallable ElastiCacheClient::RevokeCacheSec
   return std::async(std::launch::async, &ElastiCacheClient::RevokeCacheSecurityGroupIngress, this, request);
 }
 
-void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsync(const RevokeCacheSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsync(const RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper, this, request, context);
+  m_executor->Submit(&ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper, this, request, handler, context);
 }
 
-void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeCacheSecurityGroupIngressRequest& request, const AsyncCallerContext* context) const
+void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRevokeCacheSecurityGroupIngressOutcomeReceived(this, request, RevokeCacheSecurityGroupIngress(request), context);
+  handler(this, request, RevokeCacheSecurityGroupIngress(request), context);
 }
 

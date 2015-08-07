@@ -311,6 +311,13 @@ public:
 
     void AppendValue(const JsonValue& value);
 
+    bool IsObject() const;
+    bool IsBool() const;
+    bool IsString() const;
+    bool IsIntegerType() const;
+    bool IsFloatingPointType() const;
+    bool IsListType() const;
+
     Aws::External::Json::Value& ModifyRawValue() { return m_value; }
 
 private:

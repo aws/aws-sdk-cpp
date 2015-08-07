@@ -30,7 +30,10 @@ KeyMetadata::KeyMetadata() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
+    m_keyUsageHasBeenSet(false),
+    m_keyStateHasBeenSet(false),
+    m_deletionDate(0.0),
+    m_deletionDateHasBeenSet(false)
 {
 }
 
@@ -43,7 +46,10 @@ KeyMetadata::KeyMetadata(const JsonValue& jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
+    m_keyUsageHasBeenSet(false),
+    m_keyStateHasBeenSet(false),
+    m_deletionDate(0.0),
+    m_deletionDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +105,20 @@ KeyMetadata& KeyMetadata::operator =(const JsonValue& jsonValue)
     m_keyUsageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyState"))
+  {
+    m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
+
+    m_keyStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeletionDate"))
+  {
+    m_deletionDate = jsonValue.GetDouble("DeletionDate");
+
+    m_deletionDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +165,17 @@ JsonValue KeyMetadata::Jsonize() const
   if(m_keyUsageHasBeenSet)
   {
    payload.WithString("KeyUsage", KeyUsageTypeMapper::GetNameForKeyUsageType(m_keyUsage));
+  }
+
+  if(m_keyStateHasBeenSet)
+  {
+   payload.WithString("KeyState", KeyStateMapper::GetNameForKeyState(m_keyState));
+  }
+
+  if(m_deletionDateHasBeenSet)
+  {
+   payload.WithDouble("DeletionDate", m_deletionDate);
+
   }
 
   return std::move(payload);

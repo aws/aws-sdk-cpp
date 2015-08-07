@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ActionCode
   {
+    NOT_SET,
     ArchiveRetrieval,
     InventoryRetrieval
   };

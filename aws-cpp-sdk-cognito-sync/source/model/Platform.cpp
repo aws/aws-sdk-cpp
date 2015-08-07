@@ -51,7 +51,7 @@ Platform GetPlatformForName(const Aws::String& name)
     return Platform::ADM;
   }
 
-  return Platform::APNS;
+  return Platform::NOT_SET;
 }
 
 Aws::String GetNameForPlatform(Platform value)
@@ -67,7 +67,7 @@ Aws::String GetNameForPlatform(Platform value)
   case Platform::ADM:
     return "ADM";
   default:
-    return "APNS";
+    return "";
   }
 }
 

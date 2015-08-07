@@ -46,7 +46,7 @@ assignmentStatusType GetassignmentStatusTypeForName(const Aws::String& name)
     return assignmentStatusType::Any;
   }
 
-  return assignmentStatusType::Assigned;
+  return assignmentStatusType::NOT_SET;
 }
 
 Aws::String GetNameForassignmentStatusType(assignmentStatusType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForassignmentStatusType(assignmentStatusType value)
   case assignmentStatusType::Any:
     return "Any";
   default:
-    return "Assigned";
+    return "";
   }
 }
 

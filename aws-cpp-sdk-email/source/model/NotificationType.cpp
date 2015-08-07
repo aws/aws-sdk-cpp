@@ -46,7 +46,7 @@ NotificationType GetNotificationTypeForName(const Aws::String& name)
     return NotificationType::Delivery;
   }
 
-  return NotificationType::Bounce;
+  return NotificationType::NOT_SET;
 }
 
 Aws::String GetNameForNotificationType(NotificationType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForNotificationType(NotificationType value)
   case NotificationType::Delivery:
     return "Delivery";
   default:
-    return "Bounce";
+    return "";
   }
 }
 

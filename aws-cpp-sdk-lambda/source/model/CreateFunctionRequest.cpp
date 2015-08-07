@@ -31,7 +31,9 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_publish(false),
+    m_publishHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_codeHasBeenSet)
   {
    payload.WithObject("Code", m_code.Jsonize());
+
+  }
+
+  if(m_publishHasBeenSet)
+  {
+   payload.WithBool("Publish", m_publish);
 
   }
 

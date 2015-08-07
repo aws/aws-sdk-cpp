@@ -27,7 +27,8 @@ CreateGrantRequest::CreateGrantRequest() :
     m_retiringPrincipalHasBeenSet(false),
     m_operationsHasBeenSet(false),
     m_constraintsHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String CreateGrantRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

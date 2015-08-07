@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ConfigurationOptionValueType
   {
+    NOT_SET,
     Scalar,
     List
   };

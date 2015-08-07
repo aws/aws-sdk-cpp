@@ -24,6 +24,7 @@ namespace Model
 {
   enum class DataKeySpec
   {
+    NOT_SET,
     AES_256,
     AES_128
   };

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Statistic
   {
+    NOT_SET,
     SampleCount,
     Average,
     Sum,

@@ -48,6 +48,7 @@ DBSnapshot::DBSnapshot() :
     m_percentProgress(0),
     m_percentProgressHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
+    m_sourceDBSnapshotIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
     m_encrypted(false),
@@ -81,6 +82,7 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_percentProgress(0),
     m_percentProgressHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
+    m_sourceDBSnapshotIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
     m_encrypted(false),
@@ -204,6 +206,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_sourceRegion = StringUtils::Trim(sourceRegionNode.GetText().c_str());
       m_sourceRegionHasBeenSet = true;
     }
+    XmlNode sourceDBSnapshotIdentifierNode = resultNode.FirstChild("SourceDBSnapshotIdentifier");
+    if(!sourceDBSnapshotIdentifierNode.IsNull())
+    {
+      m_sourceDBSnapshotIdentifier = StringUtils::Trim(sourceDBSnapshotIdentifierNode.GetText().c_str());
+      m_sourceDBSnapshotIdentifierHasBeenSet = true;
+    }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
@@ -307,6 +315,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
   }
+  if(m_sourceDBSnapshotIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
+  }
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
@@ -398,6 +410,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_sourceRegionHasBeenSet)
   {
       oStream << location << ".SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
+  }
+  if(m_sourceDBSnapshotIdentifierHasBeenSet)
+  {
+      oStream << location << ".SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
   }
   if(m_storageTypeHasBeenSet)
   {

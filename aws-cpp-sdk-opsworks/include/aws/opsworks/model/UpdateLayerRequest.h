@@ -162,6 +162,30 @@ namespace Model
     inline UpdateLayerRequest& WithCustomInstanceProfileArn(const char* value) { SetCustomInstanceProfileArn(value); return *this;}
 
     /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline const Aws::String& GetCustomJson() const{ return m_customJson; }
+    /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+
+    /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
+
+    /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline UpdateLayerRequest&  WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
+
+    /*
+     <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    */
+    inline UpdateLayerRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
+
+    /*
      <p>An array containing the layer's custom security group IDs.</p>
     */
     inline const Aws::Vector<Aws::String>& GetCustomSecurityGroupIds() const{ return m_customSecurityGroupIds; }
@@ -337,6 +361,8 @@ namespace Model
     bool m_attributesHasBeenSet;
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
+    Aws::String m_customJson;
+    bool m_customJsonHasBeenSet;
     Aws::Vector<Aws::String> m_customSecurityGroupIds;
     bool m_customSecurityGroupIdsHasBeenSet;
     Aws::Vector<Aws::String> m_packages;

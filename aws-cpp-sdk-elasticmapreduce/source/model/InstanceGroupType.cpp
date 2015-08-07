@@ -46,7 +46,7 @@ InstanceGroupType GetInstanceGroupTypeForName(const Aws::String& name)
     return InstanceGroupType::TASK;
   }
 
-  return InstanceGroupType::MASTER;
+  return InstanceGroupType::NOT_SET;
 }
 
 Aws::String GetNameForInstanceGroupType(InstanceGroupType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForInstanceGroupType(InstanceGroupType value)
   case InstanceGroupType::TASK:
     return "TASK";
   default:
-    return "MASTER";
+    return "";
   }
 }
 

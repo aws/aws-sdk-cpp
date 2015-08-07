@@ -24,6 +24,7 @@ namespace Model
 {
   enum class SortOrder
   {
+    NOT_SET,
     ASC,
     DESC
   };

@@ -71,7 +71,7 @@ GrantOperation GetGrantOperationForName(const Aws::String& name)
     return GrantOperation::RetireGrant;
   }
 
-  return GrantOperation::Decrypt;
+  return GrantOperation::NOT_SET;
 }
 
 Aws::String GetNameForGrantOperation(GrantOperation value)
@@ -95,7 +95,7 @@ Aws::String GetNameForGrantOperation(GrantOperation value)
   case GrantOperation::RetireGrant:
     return "RetireGrant";
   default:
-    return "Decrypt";
+    return "";
   }
 }
 

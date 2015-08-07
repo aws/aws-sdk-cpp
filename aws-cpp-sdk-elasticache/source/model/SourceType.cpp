@@ -51,7 +51,7 @@ SourceType GetSourceTypeForName(const Aws::String& name)
     return SourceType::cache_subnet_group;
   }
 
-  return SourceType::cache_cluster;
+  return SourceType::NOT_SET;
 }
 
 Aws::String GetNameForSourceType(SourceType value)
@@ -67,7 +67,7 @@ Aws::String GetNameForSourceType(SourceType value)
   case SourceType::cache_subnet_group:
     return "cache-subnet-group";
   default:
-    return "cache_cluster";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StreamViewType
   {
+    NOT_SET,
     NEW_IMAGE,
     OLD_IMAGE,
     NEW_AND_OLD_IMAGES,

@@ -36,7 +36,7 @@ ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String&
     return ObjectVersionStorageClass::STANDARD;
   }
 
-  return ObjectVersionStorageClass::STANDARD;
+  return ObjectVersionStorageClass::NOT_SET;
 }
 
 Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass value)
@@ -46,7 +46,7 @@ Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass value)
   case ObjectVersionStorageClass::STANDARD:
     return "STANDARD";
   default:
-    return "STANDARD";
+    return "";
   }
 }
 

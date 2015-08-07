@@ -46,7 +46,7 @@ PriceClass GetPriceClassForName(const Aws::String& name)
     return PriceClass::PriceClass_All;
   }
 
-  return PriceClass::PriceClass_100;
+  return PriceClass::NOT_SET;
 }
 
 Aws::String GetNameForPriceClass(PriceClass value)
@@ -60,7 +60,7 @@ Aws::String GetNameForPriceClass(PriceClass value)
   case PriceClass::PriceClass_All:
     return "PriceClass_All";
   default:
-    return "PriceClass_100";
+    return "";
   }
 }
 

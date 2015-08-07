@@ -51,7 +51,7 @@ SourceType GetSourceTypeForName(const Aws::String& name)
     return SourceType::db_snapshot;
   }
 
-  return SourceType::db_instance;
+  return SourceType::NOT_SET;
 }
 
 Aws::String GetNameForSourceType(SourceType value)
@@ -67,7 +67,7 @@ Aws::String GetNameForSourceType(SourceType value)
   case SourceType::db_snapshot:
     return "db-snapshot";
   default:
-    return "db_instance";
+    return "";
   }
 }
 

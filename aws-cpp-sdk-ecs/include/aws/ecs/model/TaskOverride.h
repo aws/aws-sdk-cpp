@@ -31,7 +31,7 @@ namespace ECS
 namespace Model
 {
   /*
-    <p>A list of container overrides in JSON format that specify the name of a container in a task definition and the command it should run instead of its default.</p>
+    <p>The overrides associated with a task.</p>
   */
   class AWS_ECS_API TaskOverride
   {

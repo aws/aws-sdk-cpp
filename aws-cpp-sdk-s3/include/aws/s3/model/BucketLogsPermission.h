@@ -24,6 +24,7 @@ namespace Model
 {
   enum class BucketLogsPermission
   {
+    NOT_SET,
     FULL_CONTROL,
     READ,
     WRITE

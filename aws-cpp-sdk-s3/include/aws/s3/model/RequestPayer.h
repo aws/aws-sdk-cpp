@@ -24,6 +24,7 @@ namespace Model
 {
   enum class RequestPayer
   {
+    NOT_SET,
     requester
   };
 

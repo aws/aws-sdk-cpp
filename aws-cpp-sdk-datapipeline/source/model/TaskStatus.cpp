@@ -46,7 +46,7 @@ TaskStatus GetTaskStatusForName(const Aws::String& name)
     return TaskStatus::FALSE;
   }
 
-  return TaskStatus::FINISHED;
+  return TaskStatus::NOT_SET;
 }
 
 Aws::String GetNameForTaskStatus(TaskStatus value)
@@ -60,7 +60,7 @@ Aws::String GetNameForTaskStatus(TaskStatus value)
   case TaskStatus::FALSE:
     return "FALSE";
   default:
-    return "FINISHED";
+    return "";
   }
 }
 

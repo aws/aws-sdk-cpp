@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Permission
   {
+    NOT_SET,
     FULL_CONTROL,
     WRITE,
     WRITE_ACP,

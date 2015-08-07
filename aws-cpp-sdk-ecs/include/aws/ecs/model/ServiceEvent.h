@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on an event associated with a service.</p>
   */
   class AWS_ECS_API ServiceEvent
   {

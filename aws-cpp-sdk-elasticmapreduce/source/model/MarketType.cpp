@@ -41,7 +41,7 @@ MarketType GetMarketTypeForName(const Aws::String& name)
     return MarketType::SPOT;
   }
 
-  return MarketType::ON_DEMAND;
+  return MarketType::NOT_SET;
 }
 
 Aws::String GetNameForMarketType(MarketType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForMarketType(MarketType value)
   case MarketType::SPOT:
     return "SPOT";
   default:
-    return "ON_DEMAND";
+    return "";
   }
 }
 

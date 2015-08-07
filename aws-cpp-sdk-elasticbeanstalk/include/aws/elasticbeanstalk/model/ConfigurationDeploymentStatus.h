@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ConfigurationDeploymentStatus
   {
+    NOT_SET,
     deployed,
     pending,
     failed

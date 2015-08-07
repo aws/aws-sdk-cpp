@@ -24,6 +24,7 @@ namespace Model
 {
   enum class MinimumHealthyHostsType
   {
+    NOT_SET,
     HOST_COUNT,
     FLEET_PERCENT
   };

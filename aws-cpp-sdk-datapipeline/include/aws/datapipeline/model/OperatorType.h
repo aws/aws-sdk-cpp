@@ -24,6 +24,7 @@ namespace Model
 {
   enum class OperatorType
   {
+    NOT_SET,
     EQ,
     REF_EQ,
     LE,

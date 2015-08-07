@@ -24,6 +24,7 @@ namespace Model
 {
   enum class NotificationType
   {
+    NOT_SET,
     Bounce,
     Complaint,
     Delivery

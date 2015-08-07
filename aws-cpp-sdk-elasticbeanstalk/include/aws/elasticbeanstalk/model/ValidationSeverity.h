@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ValidationSeverity
   {
+    NOT_SET,
     error,
     warning
   };

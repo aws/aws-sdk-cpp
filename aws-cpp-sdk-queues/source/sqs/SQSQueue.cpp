@@ -18,11 +18,13 @@
 #include <aws/sqs/model/DeleteMessageRequest.h>
 #include <aws/sqs/model/SendMessageRequest.h>
 #include <aws/sqs/model/GetQueueUrlRequest.h>
+#include <aws/sqs/model/GetQueueAttributesRequest.h>
 #include <aws/sqs/model/CreateQueueRequest.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/logging/LogSystemInterface.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
+#include <algorithm>
 
 using namespace Aws::SQS;
 using namespace Aws::SQS::Model;
@@ -50,10 +52,6 @@ SQSQueue::SQSQueue(const std::shared_ptr<SQSClient>& client, const char* queueNa
    m_queueName(queueName),
    m_visibilityTimeout(visibilityTimeout)
 {
-    m_client->RegisterDeleteMessageOutcomeReceivedHandler(std::bind(&SQSQueue::OnMessageDeletedOutcomeReceived, this, std::placeholders::_1,
-                                                                    std::placeholders::_2, std::placeholders::_3, std::placeholders::_4));
-    m_client->RegisterSendMessageOutcomeReceivedHandler(std::bind(&SQSQueue::OnMessageSentOutcomeReceived, this, std::placeholders::_1,
-                                                                  std::placeholders::_2, std::placeholders::_3, std::placeholders::_4));
 }
 
 Message SQSQueue::Top() const
@@ -101,8 +99,9 @@ void SQSQueue::Delete(const Message& message)
         deleteMessageRequest.SetQueueUrl(m_queueUrl);
         deleteMessageRequest.SetReceiptHandle(message.GetReceiptHandle());
 
-        AsyncCallerContext* deleteMessageContext = Aws::New<QueueMessageContext>(CLASS_TAG, message);
-        m_client->DeleteMessageAsync(deleteMessageRequest, deleteMessageContext);
+	std::shared_ptr<AsyncCallerContext> deleteMessageContext = Aws::MakeShared<QueueMessageContext>(CLASS_TAG, message);
+        m_client->DeleteMessageAsync(deleteMessageRequest, std::bind(&SQSQueue::OnMessageDeletedOutcomeReceived, this, std::placeholders::_1,
+                                                                     std::placeholders::_2, std::placeholders::_3, std::placeholders::_4), deleteMessageContext);
     }
     else
     {
@@ -120,14 +119,33 @@ void SQSQueue::Push(const Message& message)
        sendMessageRequest.SetMessageBody(message.GetBody());
        sendMessageRequest.SetMessageAttributes(message.GetMessageAttributes());
 
-       AsyncCallerContext* sendMessageContext = Aws::New<QueueMessageContext>(CLASS_TAG, message);
+       std::shared_ptr<AsyncCallerContext> sendMessageContext = Aws::MakeShared<QueueMessageContext>(CLASS_TAG, message);
 
-       m_client->SendMessageAsync(sendMessageRequest, sendMessageContext);
+       m_client->SendMessageAsync(sendMessageRequest, std::bind(&SQSQueue::OnMessageSentOutcomeReceived, this, std::placeholders::_1,
+                                                                std::placeholders::_2, std::placeholders::_3, std::placeholders::_4), sendMessageContext);
    }
     else
    {
        AWS_LOG_ERROR(CLASS_TAG, "Queue is not initialized, not pushing. Call EnsureQueueIsInitialized before calling this method.");
    }
+}
+
+void SQSQueue::RequestArn()
+{
+    if (IsInitialized())
+    {
+        AWS_LOGSTREAM_TRACE(CLASS_TAG, "Retrieving arn for " << m_queueUrl);
+        Aws::SQS::Model::GetQueueAttributesRequest queueAttributesRequest;
+        queueAttributesRequest.AddAttributeNames(Aws::SQS::Model::QueueAttributeName::QueueArn);
+        queueAttributesRequest.SetQueueUrl(m_queueUrl);
+
+        m_client->GetQueueAttributesAsync(queueAttributesRequest, std::bind(&SQSQueue::OnGetQueueAttributesOutcomeReceived, this, std::placeholders::_1,
+                                                                            std::placeholders::_2, std::placeholders::_3, std::placeholders::_4));
+    }
+    else
+    {
+        AWS_LOG_ERROR(CLASS_TAG, "Queue is not initialized, cannot get Arn. Call EnsureQueueIsInitialized before calling this method.");
+    }
 }
 
 void SQSQueue::EnsureQueueIsInitialized()
@@ -179,38 +197,108 @@ void SQSQueue::EnsureQueueIsInitialized()
 }
 
 void SQSQueue::OnMessageDeletedOutcomeReceived(const SQSClient*, const DeleteMessageRequest&,
-                                     const DeleteMessageOutcome& deleteMessageOutcome, const AsyncCallerContext* context)
+					       const DeleteMessageOutcome& deleteMessageOutcome, const std::shared_ptr<const AsyncCallerContext>& context)
 {
+    auto queueContext = std::dynamic_pointer_cast<const QueueMessageContext>(context);
     if (!deleteMessageOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(CLASS_TAG, "Delete message failed with error: " << deleteMessageOutcome.GetError().GetExceptionName() <<
                                      " and message: " << deleteMessageOutcome.GetError().GetMessage());
 
-        OnMessageDeleteFailed(this, ((QueueMessageContext*)context)->GetMessage());
+        auto& deleteFailed = GetMessageDeleteFailedEventHandler();
+
+        if (deleteFailed)
+        {
+            deleteFailed(this, queueContext->GetMessage());
+        }
     }
     else
     {
         AWS_LOG_TRACE(CLASS_TAG, "Message successfully deleted.");
-        OnMessageDeleteSucceeded(this, ((QueueMessageContext*)context)->GetMessage());
-    }
+        auto& deleteSuccess = GetMessageDeleteSuccessEventHandler();
 
-    Aws::Delete<QueueMessageContext>((QueueMessageContext*)context);
+        if (deleteSuccess)
+        {
+            deleteSuccess(this, queueContext->GetMessage());
+        }
+    }
 }
 
 void SQSQueue::OnMessageSentOutcomeReceived(const SQSClient*, const SendMessageRequest&,
-                                  const SendMessageOutcome& sendMessageOutcome, const AsyncCallerContext* context)
+					    const SendMessageOutcome& sendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>& context)
 {
+    auto queueContext = std::dynamic_pointer_cast<const QueueMessageContext>(context);
     if (!sendMessageOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(CLASS_TAG, "Send message failed with error: " << sendMessageOutcome.GetError().GetExceptionName() <<
                                      " and message: " << sendMessageOutcome.GetError().GetMessage());
-        OnMessageSendFailed(this, ((QueueMessageContext*)context)->GetMessage());
+        auto& sendFailed = GetMessageSendFailedEventHandler();
+
+        if (sendFailed)
+        {
+            sendFailed(this, queueContext->GetMessage());
+        }
     }
     else
     {
         AWS_LOG_TRACE(CLASS_TAG, "Message successfully sent.");
-        OnMessageSendSucceeded(this, ((QueueMessageContext*)context)->GetMessage());
-    }
+        auto& sendSuccess = GetMessageSendSuccessEventHandler();
 
-    Aws::Delete<QueueMessageContext>((QueueMessageContext*)context);
+        if (sendSuccess)
+        {
+            sendSuccess(this, queueContext->GetMessage());
+        }
+    }
 }
+
+void SQSQueue::OnGetQueueAttributesOutcomeReceived(const SQSClient*, const GetQueueAttributesRequest& request,
+						   const GetQueueAttributesOutcome& getQueueAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)
+{
+    if (!getQueueAttributeOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(CLASS_TAG, "GetQueueAttribute failed with error: " << getQueueAttributeOutcome.GetError().GetExceptionName());
+
+        auto& queueAttributeFailedHandler = GetQueueAttributeFailedEventHandler();
+        
+        if (queueAttributeFailedHandler)
+        {
+            queueAttributeFailedHandler(this, request);
+        }
+    }
+    else
+    {
+        AWS_LOG_TRACE(CLASS_TAG, "GetQueueAttribute successfull.");
+        auto& queueAttributeSuccessHandler = GetQueueAttributeSuccessEventHandler();
+
+        if (queueAttributeSuccessHandler)
+        {
+            queueAttributeSuccessHandler(this, getQueueAttributeOutcome);
+        }
+
+        auto attributes = getQueueAttributeOutcome.GetResult().GetAttributes();
+
+        if (std::find(request.GetAttributeNames().begin(), request.GetAttributeNames().end(), QueueAttributeName::QueueArn) != request.GetAttributeNames().end())
+        {
+            auto arn = attributes.find(QueueAttributeName::QueueArn);
+            if (arn != attributes.end())
+            {
+                auto& arnSuccessHandler = GetQueueArnSuccessEventHandler();
+
+                if (arnSuccessHandler)
+                {
+                    arnSuccessHandler(this, arn->second);
+                }
+             }
+            else
+            {
+                auto& arnFailedHandler = GetQueueArnFailedEventHandler();
+
+                if (arnFailedHandler)
+                {
+                    arnFailedHandler(this, request);
+                }
+            }
+        }
+    }
+}
+

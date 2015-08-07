@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StepStateChangeReasonCode
   {
+    NOT_SET,
     NONE
   };
 

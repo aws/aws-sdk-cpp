@@ -24,6 +24,7 @@ namespace Model
 {
   enum class GeoRestrictionType
   {
+    NOT_SET,
     blacklist,
     whitelist,
     none

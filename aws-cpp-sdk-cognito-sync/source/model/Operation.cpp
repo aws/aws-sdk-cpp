@@ -41,7 +41,7 @@ Operation GetOperationForName(const Aws::String& name)
     return Operation::remove;
   }
 
-  return Operation::replace;
+  return Operation::NOT_SET;
 }
 
 Aws::String GetNameForOperation(Operation value)
@@ -53,7 +53,7 @@ Aws::String GetNameForOperation(Operation value)
   case Operation::remove:
     return "remove";
   default:
-    return "replace";
+    return "";
   }
 }
 

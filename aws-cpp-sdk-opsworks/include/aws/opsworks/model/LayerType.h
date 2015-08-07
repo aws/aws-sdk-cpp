@@ -24,6 +24,9 @@ namespace Model
 {
   enum class LayerType
   {
+    NOT_SET,
+    aws_flow_ruby,
+    ecs_cluster,
     java_app,
     lb,
     web,

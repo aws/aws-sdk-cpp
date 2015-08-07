@@ -53,26 +53,26 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /*
-     <p> Contains a user-supplied database identifier. This is the unique key that identifies a DB instance. </p>
+     <p> Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance. </p>
     */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
     /*
-     <p> Contains a user-supplied database identifier. This is the unique key that identifies a DB instance. </p>
+     <p> Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance. </p>
     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /*
-     <p> Contains a user-supplied database identifier. This is the unique key that identifies a DB instance. </p>
+     <p> Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance. </p>
     */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /*
-     <p> Contains a user-supplied database identifier. This is the unique key that identifies a DB instance. </p>
+     <p> Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance. </p>
     */
     inline DBInstance&  WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
-     <p> Contains a user-supplied database identifier. This is the unique key that identifies a DB instance. </p>
+     <p> Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance. </p>
     */
     inline DBInstance& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -372,26 +372,26 @@ namespace Model
     inline DBInstance&  WithDBSubnetGroup(const DBSubnetGroup& value) { SetDBSubnetGroup(value); return *this;}
 
     /*
-     <p> Specifies the weekly time range (in UTC) during which system maintenance can occur. </p>
+     <p> Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
     /*
-     <p> Specifies the weekly time range (in UTC) during which system maintenance can occur. </p>
+     <p> Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /*
-     <p> Specifies the weekly time range (in UTC) during which system maintenance can occur. </p>
+     <p> Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /*
-     <p> Specifies the weekly time range (in UTC) during which system maintenance can occur. </p>
+     <p> Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline DBInstance&  WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /*
-     <p> Specifies the weekly time range (in UTC) during which system maintenance can occur. </p>
+     <p> Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). </p>
     */
     inline DBInstance& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -710,6 +710,44 @@ namespace Model
     inline DBInstance& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
     /*
+     <p> Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port. </p>
+    */
+    inline long GetDbInstancePort() const{ return m_dbInstancePort; }
+    /*
+     <p> Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port. </p>
+    */
+    inline void SetDbInstancePort(long value) { m_dbInstancePortHasBeenSet = true; m_dbInstancePort = value; }
+
+    /*
+     <p> Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port. </p>
+    */
+    inline DBInstance&  WithDbInstancePort(long value) { SetDbInstancePort(value); return *this;}
+
+    /*
+     <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    */
+    inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+    /*
+     <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    */
+    inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+
+    /*
+     <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    */
+    inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
+
+    /*
+     <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    */
+    inline DBInstance&  WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
+
+    /*
+     <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    */
+    inline DBInstance& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+
+    /*
      <p> Specifies whether the DB instance is encrypted. </p>
     */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
@@ -862,6 +900,10 @@ namespace Model
     bool m_storageTypeHasBeenSet;
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
+    long m_dbInstancePort;
+    bool m_dbInstancePortHasBeenSet;
+    Aws::String m_dBClusterIdentifier;
+    bool m_dBClusterIdentifierHasBeenSet;
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
     Aws::String m_kmsKeyId;

@@ -41,7 +41,7 @@ MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)
     return MetadataDirective::REPLACE;
   }
 
-  return MetadataDirective::COPY;
+  return MetadataDirective::NOT_SET;
 }
 
 Aws::String GetNameForMetadataDirective(MetadataDirective value)
@@ -53,7 +53,7 @@ Aws::String GetNameForMetadataDirective(MetadataDirective value)
   case MetadataDirective::REPLACE:
     return "REPLACE";
   default:
-    return "COPY";
+    return "";
   }
 }
 

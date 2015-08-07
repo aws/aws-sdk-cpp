@@ -84,16 +84,16 @@ namespace Model
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
     /*
-     <p>Force the deregistration of the container instance. You can use the <code>force</code> parameter if you have several tasks running on a container instance and you don't want to run <code>StopTask</code> for each task before deregistering the container instance.</p>
+     <p>Force the deregistration of the container instance. If you have tasks running on the container instance when you deregister it with the <code>force</code> option, these tasks remain running and they will continue to pass Elastic Load Balancing load balancer health checks until you terminate the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler will start another copy of that task on a different container instance if possible.</p>
     */
     inline bool GetForce() const{ return m_force; }
     /*
-     <p>Force the deregistration of the container instance. You can use the <code>force</code> parameter if you have several tasks running on a container instance and you don't want to run <code>StopTask</code> for each task before deregistering the container instance.</p>
+     <p>Force the deregistration of the container instance. If you have tasks running on the container instance when you deregister it with the <code>force</code> option, these tasks remain running and they will continue to pass Elastic Load Balancing load balancer health checks until you terminate the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler will start another copy of that task on a different container instance if possible.</p>
     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /*
-     <p>Force the deregistration of the container instance. You can use the <code>force</code> parameter if you have several tasks running on a container instance and you don't want to run <code>StopTask</code> for each task before deregistering the container instance.</p>
+     <p>Force the deregistration of the container instance. If you have tasks running on the container instance when you deregister it with the <code>force</code> option, these tasks remain running and they will continue to pass Elastic Load Balancing load balancer health checks until you terminate the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler will start another copy of that task on a different container instance if possible.</p>
     */
     inline DeregisterContainerInstanceRequest&  WithForce(bool value) { SetForce(value); return *this;}
 

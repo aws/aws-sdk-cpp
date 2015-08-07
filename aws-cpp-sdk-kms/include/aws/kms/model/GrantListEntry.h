@@ -43,6 +43,20 @@ namespace Model
     GrantListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+    
+    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    
+    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    
+    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
+
+    
+    inline GrantListEntry&  WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    
+    inline GrantListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
     /*
      <p>Unique grant identifier.</p>
     */
@@ -173,6 +187,8 @@ namespace Model
     inline GrantListEntry&  WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
   private:
+    Aws::String m_keyId;
+    bool m_keyIdHasBeenSet;
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet;
     Aws::String m_granteePrincipal;

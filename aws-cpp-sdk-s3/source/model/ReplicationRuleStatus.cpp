@@ -41,7 +41,7 @@ ReplicationRuleStatus GetReplicationRuleStatusForName(const Aws::String& name)
     return ReplicationRuleStatus::Disabled;
   }
 
-  return ReplicationRuleStatus::Enabled;
+  return ReplicationRuleStatus::NOT_SET;
 }
 
 Aws::String GetNameForReplicationRuleStatus(ReplicationRuleStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForReplicationRuleStatus(ReplicationRuleStatus value)
   case ReplicationRuleStatus::Disabled:
     return "Disabled";
   default:
-    return "Enabled";
+    return "";
   }
 }
 

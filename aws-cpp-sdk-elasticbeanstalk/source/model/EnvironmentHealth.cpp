@@ -51,7 +51,7 @@ EnvironmentHealth GetEnvironmentHealthForName(const Aws::String& name)
     return EnvironmentHealth::Grey;
   }
 
-  return EnvironmentHealth::Green;
+  return EnvironmentHealth::NOT_SET;
 }
 
 Aws::String GetNameForEnvironmentHealth(EnvironmentHealth value)
@@ -67,7 +67,7 @@ Aws::String GetNameForEnvironmentHealth(EnvironmentHealth value)
   case EnvironmentHealth::Grey:
     return "Grey";
   default:
-    return "Green";
+    return "";
   }
 }
 

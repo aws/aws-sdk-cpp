@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Platform
   {
+    NOT_SET,
     APNS,
     APNS_SANDBOX,
     GCM,

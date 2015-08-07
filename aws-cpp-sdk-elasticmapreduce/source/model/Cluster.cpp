@@ -29,6 +29,7 @@ Cluster::Cluster() :
     m_logUriHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
+    m_releaseLabelHasBeenSet(false),
     m_autoTerminate(false),
     m_autoTerminateHasBeenSet(false),
     m_terminationProtected(false),
@@ -40,7 +41,8 @@ Cluster::Cluster() :
     m_serviceRoleHasBeenSet(false),
     m_normalizedInstanceHours(0),
     m_normalizedInstanceHoursHasBeenSet(false),
-    m_masterPublicDnsNameHasBeenSet(false)
+    m_masterPublicDnsNameHasBeenSet(false),
+    m_configurationsHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,7 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_logUriHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
+    m_releaseLabelHasBeenSet(false),
     m_autoTerminate(false),
     m_autoTerminateHasBeenSet(false),
     m_terminationProtected(false),
@@ -63,7 +66,8 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_serviceRoleHasBeenSet(false),
     m_normalizedInstanceHours(0),
     m_normalizedInstanceHoursHasBeenSet(false),
-    m_masterPublicDnsNameHasBeenSet(false)
+    m_masterPublicDnsNameHasBeenSet(false),
+    m_configurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +121,13 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_runningAmiVersion = jsonValue.GetString("RunningAmiVersion");
 
     m_runningAmiVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReleaseLabel"))
+  {
+    m_releaseLabel = jsonValue.GetString("ReleaseLabel");
+
+    m_releaseLabelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AutoTerminate"))
@@ -181,6 +192,16 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_masterPublicDnsNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Configurations"))
+  {
+    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
+    {
+      m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
+    }
+    m_configurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +248,12 @@ JsonValue Cluster::Jsonize() const
   if(m_runningAmiVersionHasBeenSet)
   {
    payload.WithString("RunningAmiVersion", m_runningAmiVersion);
+
+  }
+
+  if(m_releaseLabelHasBeenSet)
+  {
+   payload.WithString("ReleaseLabel", m_releaseLabel);
 
   }
 
@@ -285,6 +312,17 @@ JsonValue Cluster::Jsonize() const
   if(m_masterPublicDnsNameHasBeenSet)
   {
    payload.WithString("MasterPublicDnsName", m_masterPublicDnsName);
+
+  }
+
+  if(m_configurationsHasBeenSet)
+  {
+   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
+   {
+     configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+   }
+   payload.WithArray("Configurations", std::move(configurationsJsonList));
 
   }
 

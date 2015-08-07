@@ -33,7 +33,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on a task in a cluster.</p>
   */
   class AWS_ECS_API Task
   {

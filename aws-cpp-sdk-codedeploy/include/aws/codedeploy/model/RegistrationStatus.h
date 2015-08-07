@@ -24,6 +24,7 @@ namespace Model
 {
   enum class RegistrationStatus
   {
+    NOT_SET,
     Registered,
     Deregistered
   };

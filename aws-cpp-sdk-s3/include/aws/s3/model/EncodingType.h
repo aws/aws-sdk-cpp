@@ -24,6 +24,7 @@ namespace Model
 {
   enum class EncodingType
   {
+    NOT_SET,
     url
   };
 

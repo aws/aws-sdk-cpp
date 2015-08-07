@@ -24,6 +24,7 @@ namespace Model
 {
   enum class DeploymentCommandName
   {
+    NOT_SET,
     install_dependencies,
     update_dependencies,
     update_custom_cookbooks,

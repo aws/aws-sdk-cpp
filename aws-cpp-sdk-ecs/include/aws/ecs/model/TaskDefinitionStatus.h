@@ -24,6 +24,7 @@ namespace Model
 {
   enum class TaskDefinitionStatus
   {
+    NOT_SET,
     ACTIVE,
     INACTIVE
   };

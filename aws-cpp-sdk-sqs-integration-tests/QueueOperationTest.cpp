@@ -34,6 +34,10 @@
 #include <aws/sqs/model/ListDeadLetterSourceQueuesRequest.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/ProxyConfig.h>
+#include <aws/sqs/model/ChangeMessageVisibilityBatchRequestEntry.h>
+#include <aws/sqs/model/ChangeMessageVisibilityBatchRequest.h>
+#include <aws/sqs/model/SendMessageBatchRequestEntry.h>
+#include <aws/sqs/model/SendMessageBatchRequest.h>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -53,6 +57,7 @@ static const char* ATTRIBUTES_QUEUE_NAME = TEST_QUEUE_PREFIX "Attributes";
 static const char* PERMISSIONS_QUEUE_NAME = TEST_QUEUE_PREFIX "Permissions";
 static const char* DEAD_LETTER_QUEUE_NAME = TEST_QUEUE_PREFIX "DeadLetter";
 static const char* DEAD_LETTER_SOURCE_QUEUE_NAME = TEST_QUEUE_PREFIX "DeadLetterSource";
+static const char* CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME = TEST_QUEUE_PREFIX "ChangeMessageVisibilityBatch";
 static const char* ALLOCATION_TAG = "QueueOperationTest";
 
 namespace
@@ -400,4 +405,84 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
     deleteQueueRequest.WithQueueUrl(deadLetterQueueUrl);
     deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
     ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
+}
+
+TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
+{
+  CreateQueueRequest createQueueRequest;
+  createQueueRequest.SetQueueName(CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME);
+
+  auto createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
+  ASSERT_TRUE(createQueueOutcome.IsSuccess());
+  auto queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
+
+  SendMessageBatchRequestEntry sendMessageBatchRequestEntry_1;
+  SendMessageBatchRequestEntry sendMessageBatchRequestEntry_2;
+  SendMessageBatchRequestEntry sendMessageBatchRequestEntry_3;
+  SendMessageBatchRequest sendMessageBatchRequest;
+  sendMessageBatchRequest
+    .AddEntries(sendMessageBatchRequestEntry_1.WithMessageBody("TestMessageBody_1").WithId("TestMessageId_1"))
+    .AddEntries(sendMessageBatchRequestEntry_2.WithMessageBody("TestMessageBody_2").WithId("TestMessageId_2"))
+    .AddEntries(sendMessageBatchRequestEntry_3.WithMessageBody("TestMessageBody_3").WithId("TestMessageId_3"))
+    .WithQueueUrl(queueUrl);
+
+  auto sendMessageBatchOutcome = sqsClient->SendMessageBatch(sendMessageBatchRequest);
+  ASSERT_TRUE(sendMessageBatchOutcome.IsSuccess());
+  ASSERT_EQ(3u, sendMessageBatchOutcome.GetResult().GetSuccessful().size());
+
+  ReceiveMessageRequest receiveMessageRequest;
+  receiveMessageRequest
+    .WithQueueUrl(queueUrl)
+    .WithMaxNumberOfMessages(3);
+
+  Vector<Message> messages;
+  while (messages.size() < 3u)
+  {
+    auto receiveMessageOutcome = sqsClient->ReceiveMessage(receiveMessageRequest);
+    ASSERT_TRUE(receiveMessageOutcome.IsSuccess());
+    for (auto& message : receiveMessageOutcome.GetResult().GetMessages())
+    {
+      messages.push_back(message);
+    }
+  }
+  ASSERT_EQ(3u, messages.size());
+
+  ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest;
+  auto haveSetOneValidTime = false;
+  for (auto& message : messages)
+  {
+    ChangeMessageVisibilityBatchRequestEntry changeMessageVisibilityBatchRequestEntry;
+    changeMessageVisibilityBatchRequestEntry
+      .WithId(message.GetMessageId())
+      .WithReceiptHandle(message.GetReceiptHandle());
+    if (haveSetOneValidTime)
+    {
+      // Not legal. There's a maximum time of 12 hours.
+      changeMessageVisibilityBatchRequestEntry.SetVisibilityTimeout(50000);
+    }
+    else
+    {
+      // Legal
+      changeMessageVisibilityBatchRequestEntry.SetVisibilityTimeout(1000);
+      haveSetOneValidTime = true;
+    }
+    changeMessageVisibilityBatchRequest.AddEntries(changeMessageVisibilityBatchRequestEntry);
+  }
+  changeMessageVisibilityBatchRequest.WithQueueUrl(queueUrl);
+  auto changeMessageVisibilityBatchOutcome = sqsClient->ChangeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
+  ASSERT_TRUE(changeMessageVisibilityBatchOutcome.IsSuccess());
+  EXPECT_EQ(2u, changeMessageVisibilityBatchOutcome.GetResult().GetFailed().size());
+  EXPECT_EQ(1u, changeMessageVisibilityBatchOutcome.GetResult().GetSuccessful().size());
+
+  for (auto& batchResultErrorEntry : changeMessageVisibilityBatchOutcome.GetResult().GetFailed())
+  {
+    EXPECT_EQ("InvalidParameterValue", batchResultErrorEntry.GetCode());
+    EXPECT_TRUE(batchResultErrorEntry.GetSenderFault());
+  }
+
+  DeleteQueueRequest deleteQueueRequest;
+  deleteQueueRequest.WithQueueUrl(queueUrl);
+
+  auto deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
+  ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }

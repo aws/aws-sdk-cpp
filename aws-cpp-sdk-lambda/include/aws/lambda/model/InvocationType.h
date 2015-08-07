@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InvocationType
   {
+    NOT_SET,
     Event,
     RequestResponse,
     DryRun

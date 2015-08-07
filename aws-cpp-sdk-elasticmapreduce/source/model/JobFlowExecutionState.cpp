@@ -71,7 +71,7 @@ JobFlowExecutionState GetJobFlowExecutionStateForName(const Aws::String& name)
     return JobFlowExecutionState::FAILED;
   }
 
-  return JobFlowExecutionState::STARTING;
+  return JobFlowExecutionState::NOT_SET;
 }
 
 Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState value)
@@ -95,7 +95,7 @@ Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState value)
   case JobFlowExecutionState::FAILED:
     return "FAILED";
   default:
-    return "STARTING";
+    return "";
   }
 }
 

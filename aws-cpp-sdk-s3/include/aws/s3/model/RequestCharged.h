@@ -24,6 +24,7 @@ namespace Model
 {
   enum class RequestCharged
   {
+    NOT_SET,
     requester
   };
 

@@ -41,7 +41,7 @@ LogType GetLogTypeForName(const Aws::String& name)
     return LogType::Tail;
   }
 
-  return LogType::None;
+  return LogType::NOT_SET;
 }
 
 Aws::String GetNameForLogType(LogType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForLogType(LogType value)
   case LogType::Tail:
     return "Tail";
   default:
-    return "None";
+    return "";
   }
 }
 

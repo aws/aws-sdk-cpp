@@ -24,6 +24,7 @@ namespace Model
 {
   enum class OrderBy
   {
+    NOT_SET,
     LogStreamName,
     LastEventTime
   };

@@ -96,7 +96,7 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
     return ComparisonOperator::BEGINS_WITH;
   }
 
-  return ComparisonOperator::EQ;
+  return ComparisonOperator::NOT_SET;
 }
 
 Aws::String GetNameForComparisonOperator(ComparisonOperator value)
@@ -130,7 +130,7 @@ Aws::String GetNameForComparisonOperator(ComparisonOperator value)
   case ComparisonOperator::BEGINS_WITH:
     return "BEGINS_WITH";
   default:
-    return "EQ";
+    return "";
   }
 }
 

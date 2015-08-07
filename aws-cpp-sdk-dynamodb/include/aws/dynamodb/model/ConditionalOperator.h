@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ConditionalOperator
   {
+    NOT_SET,
     AND,
     OR
   };

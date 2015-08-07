@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InstanceGroupState
   {
+    NOT_SET,
     PROVISIONING,
     BOOTSTRAPPING,
     RUNNING,

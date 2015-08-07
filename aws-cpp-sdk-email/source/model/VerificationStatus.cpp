@@ -56,7 +56,7 @@ VerificationStatus GetVerificationStatusForName(const Aws::String& name)
     return VerificationStatus::NotStarted;
   }
 
-  return VerificationStatus::Pending;
+  return VerificationStatus::NOT_SET;
 }
 
 Aws::String GetNameForVerificationStatus(VerificationStatus value)
@@ -74,7 +74,7 @@ Aws::String GetNameForVerificationStatus(VerificationStatus value)
   case VerificationStatus::NotStarted:
     return "NotStarted";
   default:
-    return "Pending";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StandardUnit
   {
+    NOT_SET,
     Seconds,
     Microseconds,
     Milliseconds,

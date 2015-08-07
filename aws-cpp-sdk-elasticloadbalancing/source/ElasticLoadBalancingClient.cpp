@@ -115,12 +115,10 @@ void ElasticLoadBalancingClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AddTagsOutcome ElasticLoadBalancingClient::AddTags(const AddTagsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -137,21 +135,20 @@ AddTagsOutcomeCallable ElasticLoadBalancingClient::AddTagsCallable(const AddTags
   return std::async(std::launch::async, &ElasticLoadBalancingClient::AddTags, this, request);
 }
 
-void ElasticLoadBalancingClient::AddTagsAsync(const AddTagsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::AddTagsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::AddTagsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddTagsOutcomeReceived(this, request, AddTags(request), context);
+  handler(this, request, AddTags(request), context);
 }
 
 ApplySecurityGroupsToLoadBalancerOutcome ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancer(const ApplySecurityGroupsToLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -168,21 +165,20 @@ ApplySecurityGroupsToLoadBalancerOutcomeCallable ElasticLoadBalancingClient::App
   return std::async(std::launch::async, &ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsync(const ApplySecurityGroupsToLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsync(const ApplySecurityGroupsToLoadBalancerRequest& request, const ApplySecurityGroupsToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper(const ApplySecurityGroupsToLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper(const ApplySecurityGroupsToLoadBalancerRequest& request, const ApplySecurityGroupsToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onApplySecurityGroupsToLoadBalancerOutcomeReceived(this, request, ApplySecurityGroupsToLoadBalancer(request), context);
+  handler(this, request, ApplySecurityGroupsToLoadBalancer(request), context);
 }
 
 AttachLoadBalancerToSubnetsOutcome ElasticLoadBalancingClient::AttachLoadBalancerToSubnets(const AttachLoadBalancerToSubnetsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -199,21 +195,20 @@ AttachLoadBalancerToSubnetsOutcomeCallable ElasticLoadBalancingClient::AttachLoa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::AttachLoadBalancerToSubnets, this, request);
 }
 
-void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsync(const AttachLoadBalancerToSubnetsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsync(const AttachLoadBalancerToSubnetsRequest& request, const AttachLoadBalancerToSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper(const AttachLoadBalancerToSubnetsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper(const AttachLoadBalancerToSubnetsRequest& request, const AttachLoadBalancerToSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAttachLoadBalancerToSubnetsOutcomeReceived(this, request, AttachLoadBalancerToSubnets(request), context);
+  handler(this, request, AttachLoadBalancerToSubnets(request), context);
 }
 
 ConfigureHealthCheckOutcome ElasticLoadBalancingClient::ConfigureHealthCheck(const ConfigureHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -230,21 +225,20 @@ ConfigureHealthCheckOutcomeCallable ElasticLoadBalancingClient::ConfigureHealthC
   return std::async(std::launch::async, &ElasticLoadBalancingClient::ConfigureHealthCheck, this, request);
 }
 
-void ElasticLoadBalancingClient::ConfigureHealthCheckAsync(const ConfigureHealthCheckRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::ConfigureHealthCheckAsync(const ConfigureHealthCheckRequest& request, const ConfigureHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper(const ConfigureHealthCheckRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper(const ConfigureHealthCheckRequest& request, const ConfigureHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onConfigureHealthCheckOutcomeReceived(this, request, ConfigureHealthCheck(request), context);
+  handler(this, request, ConfigureHealthCheck(request), context);
 }
 
 CreateAppCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateAppCookieStickinessPolicy(const CreateAppCookieStickinessPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -261,21 +255,20 @@ CreateAppCookieStickinessPolicyOutcomeCallable ElasticLoadBalancingClient::Creat
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateAppCookieStickinessPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsync(const CreateAppCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsync(const CreateAppCookieStickinessPolicyRequest& request, const CreateAppCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper(const CreateAppCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper(const CreateAppCookieStickinessPolicyRequest& request, const CreateAppCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateAppCookieStickinessPolicyOutcomeReceived(this, request, CreateAppCookieStickinessPolicy(request), context);
+  handler(this, request, CreateAppCookieStickinessPolicy(request), context);
 }
 
 CreateLBCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateLBCookieStickinessPolicy(const CreateLBCookieStickinessPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -292,21 +285,20 @@ CreateLBCookieStickinessPolicyOutcomeCallable ElasticLoadBalancingClient::Create
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLBCookieStickinessPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsync(const CreateLBCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsync(const CreateLBCookieStickinessPolicyRequest& request, const CreateLBCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper(const CreateLBCookieStickinessPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper(const CreateLBCookieStickinessPolicyRequest& request, const CreateLBCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateLBCookieStickinessPolicyOutcomeReceived(this, request, CreateLBCookieStickinessPolicy(request), context);
+  handler(this, request, CreateLBCookieStickinessPolicy(request), context);
 }
 
 CreateLoadBalancerOutcome ElasticLoadBalancingClient::CreateLoadBalancer(const CreateLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -323,21 +315,20 @@ CreateLoadBalancerOutcomeCallable ElasticLoadBalancingClient::CreateLoadBalancer
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper(const CreateLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateLoadBalancerOutcomeReceived(this, request, CreateLoadBalancer(request), context);
+  handler(this, request, CreateLoadBalancer(request), context);
 }
 
 CreateLoadBalancerListenersOutcome ElasticLoadBalancingClient::CreateLoadBalancerListeners(const CreateLoadBalancerListenersRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -354,21 +345,20 @@ CreateLoadBalancerListenersOutcomeCallable ElasticLoadBalancingClient::CreateLoa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLoadBalancerListeners, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsync(const CreateLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsync(const CreateLoadBalancerListenersRequest& request, const CreateLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper(const CreateLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper(const CreateLoadBalancerListenersRequest& request, const CreateLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateLoadBalancerListenersOutcomeReceived(this, request, CreateLoadBalancerListeners(request), context);
+  handler(this, request, CreateLoadBalancerListeners(request), context);
 }
 
 CreateLoadBalancerPolicyOutcome ElasticLoadBalancingClient::CreateLoadBalancerPolicy(const CreateLoadBalancerPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -385,21 +375,20 @@ CreateLoadBalancerPolicyOutcomeCallable ElasticLoadBalancingClient::CreateLoadBa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::CreateLoadBalancerPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsync(const CreateLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsync(const CreateLoadBalancerPolicyRequest& request, const CreateLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper(const CreateLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper(const CreateLoadBalancerPolicyRequest& request, const CreateLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateLoadBalancerPolicyOutcomeReceived(this, request, CreateLoadBalancerPolicy(request), context);
+  handler(this, request, CreateLoadBalancerPolicy(request), context);
 }
 
 DeleteLoadBalancerOutcome ElasticLoadBalancingClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -416,21 +405,20 @@ DeleteLoadBalancerOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBalancer
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeleteLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper(const DeleteLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteLoadBalancerOutcomeReceived(this, request, DeleteLoadBalancer(request), context);
+  handler(this, request, DeleteLoadBalancer(request), context);
 }
 
 DeleteLoadBalancerListenersOutcome ElasticLoadBalancingClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -447,21 +435,20 @@ DeleteLoadBalancerListenersOutcomeCallable ElasticLoadBalancingClient::DeleteLoa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeleteLoadBalancerListeners, this, request);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper(const DeleteLoadBalancerListenersRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteLoadBalancerListenersOutcomeReceived(this, request, DeleteLoadBalancerListeners(request), context);
+  handler(this, request, DeleteLoadBalancerListeners(request), context);
 }
 
 DeleteLoadBalancerPolicyOutcome ElasticLoadBalancingClient::DeleteLoadBalancerPolicy(const DeleteLoadBalancerPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -478,21 +465,20 @@ DeleteLoadBalancerPolicyOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBa
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeleteLoadBalancerPolicy, this, request);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsync(const DeleteLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsync(const DeleteLoadBalancerPolicyRequest& request, const DeleteLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper(const DeleteLoadBalancerPolicyRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper(const DeleteLoadBalancerPolicyRequest& request, const DeleteLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteLoadBalancerPolicyOutcomeReceived(this, request, DeleteLoadBalancerPolicy(request), context);
+  handler(this, request, DeleteLoadBalancerPolicy(request), context);
 }
 
 DeregisterInstancesFromLoadBalancerOutcome ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancer(const DeregisterInstancesFromLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -509,21 +495,20 @@ DeregisterInstancesFromLoadBalancerOutcomeCallable ElasticLoadBalancingClient::D
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsync(const DeregisterInstancesFromLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsync(const DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper(const DeregisterInstancesFromLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper(const DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeregisterInstancesFromLoadBalancerOutcomeReceived(this, request, DeregisterInstancesFromLoadBalancer(request), context);
+  handler(this, request, DeregisterInstancesFromLoadBalancer(request), context);
 }
 
 DescribeInstanceHealthOutcome ElasticLoadBalancingClient::DescribeInstanceHealth(const DescribeInstanceHealthRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -540,21 +525,20 @@ DescribeInstanceHealthOutcomeCallable ElasticLoadBalancingClient::DescribeInstan
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeInstanceHealth, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeInstanceHealthAsync(const DescribeInstanceHealthRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeInstanceHealthAsync(const DescribeInstanceHealthRequest& request, const DescribeInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper(const DescribeInstanceHealthRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper(const DescribeInstanceHealthRequest& request, const DescribeInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeInstanceHealthOutcomeReceived(this, request, DescribeInstanceHealth(request), context);
+  handler(this, request, DescribeInstanceHealth(request), context);
 }
 
 DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerAttributes(const DescribeLoadBalancerAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -571,21 +555,20 @@ DescribeLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingClient::Descri
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancerAttributes, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper(const DescribeLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper(const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeLoadBalancerAttributesOutcomeReceived(this, request, DescribeLoadBalancerAttributes(request), context);
+  handler(this, request, DescribeLoadBalancerAttributes(request), context);
 }
 
 DescribeLoadBalancerPoliciesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerPolicies(const DescribeLoadBalancerPoliciesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -602,21 +585,20 @@ DescribeLoadBalancerPoliciesOutcomeCallable ElasticLoadBalancingClient::Describe
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancerPolicies, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsync(const DescribeLoadBalancerPoliciesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsync(const DescribeLoadBalancerPoliciesRequest& request, const DescribeLoadBalancerPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper(const DescribeLoadBalancerPoliciesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper(const DescribeLoadBalancerPoliciesRequest& request, const DescribeLoadBalancerPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeLoadBalancerPoliciesOutcomeReceived(this, request, DescribeLoadBalancerPolicies(request), context);
+  handler(this, request, DescribeLoadBalancerPolicies(request), context);
 }
 
 DescribeLoadBalancerPolicyTypesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypes(const DescribeLoadBalancerPolicyTypesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -633,21 +615,20 @@ DescribeLoadBalancerPolicyTypesOutcomeCallable ElasticLoadBalancingClient::Descr
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypes, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsync(const DescribeLoadBalancerPolicyTypesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsync(const DescribeLoadBalancerPolicyTypesRequest& request, const DescribeLoadBalancerPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper(const DescribeLoadBalancerPolicyTypesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper(const DescribeLoadBalancerPolicyTypesRequest& request, const DescribeLoadBalancerPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeLoadBalancerPolicyTypesOutcomeReceived(this, request, DescribeLoadBalancerPolicyTypes(request), context);
+  handler(this, request, DescribeLoadBalancerPolicyTypes(request), context);
 }
 
 DescribeLoadBalancersOutcome ElasticLoadBalancingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -664,21 +645,20 @@ DescribeLoadBalancersOutcomeCallable ElasticLoadBalancingClient::DescribeLoadBal
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeLoadBalancers, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeLoadBalancersOutcomeReceived(this, request, DescribeLoadBalancers(request), context);
+  handler(this, request, DescribeLoadBalancers(request), context);
 }
 
 DescribeTagsOutcome ElasticLoadBalancingClient::DescribeTags(const DescribeTagsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -695,21 +675,20 @@ DescribeTagsOutcomeCallable ElasticLoadBalancingClient::DescribeTagsCallable(con
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DescribeTags, this, request);
 }
 
-void ElasticLoadBalancingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DescribeTagsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DescribeTagsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeTagsOutcomeReceived(this, request, DescribeTags(request), context);
+  handler(this, request, DescribeTags(request), context);
 }
 
 DetachLoadBalancerFromSubnetsOutcome ElasticLoadBalancingClient::DetachLoadBalancerFromSubnets(const DetachLoadBalancerFromSubnetsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -726,21 +705,20 @@ DetachLoadBalancerFromSubnetsOutcomeCallable ElasticLoadBalancingClient::DetachL
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DetachLoadBalancerFromSubnets, this, request);
 }
 
-void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsync(const DetachLoadBalancerFromSubnetsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsync(const DetachLoadBalancerFromSubnetsRequest& request, const DetachLoadBalancerFromSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper(const DetachLoadBalancerFromSubnetsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper(const DetachLoadBalancerFromSubnetsRequest& request, const DetachLoadBalancerFromSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDetachLoadBalancerFromSubnetsOutcomeReceived(this, request, DetachLoadBalancerFromSubnets(request), context);
+  handler(this, request, DetachLoadBalancerFromSubnets(request), context);
 }
 
 DisableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancer(const DisableAvailabilityZonesForLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -757,21 +735,20 @@ DisableAvailabilityZonesForLoadBalancerOutcomeCallable ElasticLoadBalancingClien
   return std::async(std::launch::async, &ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsync(const DisableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsync(const DisableAvailabilityZonesForLoadBalancerRequest& request, const DisableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper(const DisableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHelper(const DisableAvailabilityZonesForLoadBalancerRequest& request, const DisableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDisableAvailabilityZonesForLoadBalancerOutcomeReceived(this, request, DisableAvailabilityZonesForLoadBalancer(request), context);
+  handler(this, request, DisableAvailabilityZonesForLoadBalancer(request), context);
 }
 
 EnableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancer(const EnableAvailabilityZonesForLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -788,21 +765,20 @@ EnableAvailabilityZonesForLoadBalancerOutcomeCallable ElasticLoadBalancingClient
   return std::async(std::launch::async, &ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsync(const EnableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsync(const EnableAvailabilityZonesForLoadBalancerRequest& request, const EnableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper(const EnableAvailabilityZonesForLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelper(const EnableAvailabilityZonesForLoadBalancerRequest& request, const EnableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onEnableAvailabilityZonesForLoadBalancerOutcomeReceived(this, request, EnableAvailabilityZonesForLoadBalancer(request), context);
+  handler(this, request, EnableAvailabilityZonesForLoadBalancer(request), context);
 }
 
 ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingClient::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -819,21 +795,20 @@ ModifyLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingClient::ModifyLo
   return std::async(std::launch::async, &ElasticLoadBalancingClient::ModifyLoadBalancerAttributes, this, request);
 }
 
-void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper(const ModifyLoadBalancerAttributesRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onModifyLoadBalancerAttributesOutcomeReceived(this, request, ModifyLoadBalancerAttributes(request), context);
+  handler(this, request, ModifyLoadBalancerAttributes(request), context);
 }
 
 RegisterInstancesWithLoadBalancerOutcome ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancer(const RegisterInstancesWithLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -850,21 +825,20 @@ RegisterInstancesWithLoadBalancerOutcomeCallable ElasticLoadBalancingClient::Reg
   return std::async(std::launch::async, &ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancer, this, request);
 }
 
-void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsync(const RegisterInstancesWithLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsync(const RegisterInstancesWithLoadBalancerRequest& request, const RegisterInstancesWithLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper(const RegisterInstancesWithLoadBalancerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper(const RegisterInstancesWithLoadBalancerRequest& request, const RegisterInstancesWithLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRegisterInstancesWithLoadBalancerOutcomeReceived(this, request, RegisterInstancesWithLoadBalancer(request), context);
+  handler(this, request, RegisterInstancesWithLoadBalancer(request), context);
 }
 
 RemoveTagsOutcome ElasticLoadBalancingClient::RemoveTags(const RemoveTagsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -881,21 +855,20 @@ RemoveTagsOutcomeCallable ElasticLoadBalancingClient::RemoveTagsCallable(const R
   return std::async(std::launch::async, &ElasticLoadBalancingClient::RemoveTags, this, request);
 }
 
-void ElasticLoadBalancingClient::RemoveTagsAsync(const RemoveTagsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::RemoveTagsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::RemoveTagsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRemoveTagsOutcomeReceived(this, request, RemoveTags(request), context);
+  handler(this, request, RemoveTags(request), context);
 }
 
 SetLoadBalancerListenerSSLCertificateOutcome ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificate(const SetLoadBalancerListenerSSLCertificateRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -912,21 +885,20 @@ SetLoadBalancerListenerSSLCertificateOutcomeCallable ElasticLoadBalancingClient:
   return std::async(std::launch::async, &ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificate, this, request);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsync(const SetLoadBalancerListenerSSLCertificateRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsync(const SetLoadBalancerListenerSSLCertificateRequest& request, const SetLoadBalancerListenerSSLCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper(const SetLoadBalancerListenerSSLCertificateRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelper(const SetLoadBalancerListenerSSLCertificateRequest& request, const SetLoadBalancerListenerSSLCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetLoadBalancerListenerSSLCertificateOutcomeReceived(this, request, SetLoadBalancerListenerSSLCertificate(request), context);
+  handler(this, request, SetLoadBalancerListenerSSLCertificate(request), context);
 }
 
 SetLoadBalancerPoliciesForBackendServerOutcome ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServer(const SetLoadBalancerPoliciesForBackendServerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -943,21 +915,20 @@ SetLoadBalancerPoliciesForBackendServerOutcomeCallable ElasticLoadBalancingClien
   return std::async(std::launch::async, &ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServer, this, request);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsync(const SetLoadBalancerPoliciesForBackendServerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsync(const SetLoadBalancerPoliciesForBackendServerRequest& request, const SetLoadBalancerPoliciesForBackendServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper(const SetLoadBalancerPoliciesForBackendServerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHelper(const SetLoadBalancerPoliciesForBackendServerRequest& request, const SetLoadBalancerPoliciesForBackendServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetLoadBalancerPoliciesForBackendServerOutcomeReceived(this, request, SetLoadBalancerPoliciesForBackendServer(request), context);
+  handler(this, request, SetLoadBalancerPoliciesForBackendServer(request), context);
 }
 
 SetLoadBalancerPoliciesOfListenerOutcome ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListener(const SetLoadBalancerPoliciesOfListenerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -974,13 +945,13 @@ SetLoadBalancerPoliciesOfListenerOutcomeCallable ElasticLoadBalancingClient::Set
   return std::async(std::launch::async, &ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListener, this, request);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsync(const SetLoadBalancerPoliciesOfListenerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsync(const SetLoadBalancerPoliciesOfListenerRequest& request, const SetLoadBalancerPoliciesOfListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper(const SetLoadBalancerPoliciesOfListenerRequest& request, const AsyncCallerContext* context) const
+void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper(const SetLoadBalancerPoliciesOfListenerRequest& request, const SetLoadBalancerPoliciesOfListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetLoadBalancerPoliciesOfListenerOutcomeReceived(this, request, SetLoadBalancerPoliciesOfListener(request), context);
+  handler(this, request, SetLoadBalancerPoliciesOfListener(request), context);
 }
 

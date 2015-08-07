@@ -41,7 +41,7 @@ RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
     return RegistrationStatus::Deregistered;
   }
 
-  return RegistrationStatus::Registered;
+  return RegistrationStatus::NOT_SET;
 }
 
 Aws::String GetNameForRegistrationStatus(RegistrationStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForRegistrationStatus(RegistrationStatus value)
   case RegistrationStatus::Deregistered:
     return "Deregistered";
   default:
-    return "Registered";
+    return "";
   }
 }
 

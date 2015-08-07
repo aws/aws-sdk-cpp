@@ -102,7 +102,6 @@ void EMRClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AddInstanceGroupsOutcome EMRClient::AddInstanceGroups(const AddInstanceGroupsRequest& request) const
 {
   Aws::StringStream ss;
@@ -124,14 +123,14 @@ AddInstanceGroupsOutcomeCallable EMRClient::AddInstanceGroupsCallable(const AddI
   return std::async(std::launch::async, &EMRClient::AddInstanceGroups, this, request);
 }
 
-void EMRClient::AddInstanceGroupsAsync(const AddInstanceGroupsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::AddInstanceGroupsAsync(const AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::AddInstanceGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::AddInstanceGroupsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::AddInstanceGroupsAsyncHelper(const AddInstanceGroupsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::AddInstanceGroupsAsyncHelper(const AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddInstanceGroupsOutcomeReceived(this, request, AddInstanceGroups(request), context);
+  handler(this, request, AddInstanceGroups(request), context);
 }
 
 AddJobFlowStepsOutcome EMRClient::AddJobFlowSteps(const AddJobFlowStepsRequest& request) const
@@ -155,14 +154,14 @@ AddJobFlowStepsOutcomeCallable EMRClient::AddJobFlowStepsCallable(const AddJobFl
   return std::async(std::launch::async, &EMRClient::AddJobFlowSteps, this, request);
 }
 
-void EMRClient::AddJobFlowStepsAsync(const AddJobFlowStepsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::AddJobFlowStepsAsync(const AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::AddJobFlowStepsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::AddJobFlowStepsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::AddJobFlowStepsAsyncHelper(const AddJobFlowStepsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::AddJobFlowStepsAsyncHelper(const AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddJobFlowStepsOutcomeReceived(this, request, AddJobFlowSteps(request), context);
+  handler(this, request, AddJobFlowSteps(request), context);
 }
 
 AddTagsOutcome EMRClient::AddTags(const AddTagsRequest& request) const
@@ -186,14 +185,14 @@ AddTagsOutcomeCallable EMRClient::AddTagsCallable(const AddTagsRequest& request)
   return std::async(std::launch::async, &EMRClient::AddTags, this, request);
 }
 
-void EMRClient::AddTagsAsync(const AddTagsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::AddTagsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::AddTagsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddTagsOutcomeReceived(this, request, AddTags(request), context);
+  handler(this, request, AddTags(request), context);
 }
 
 DescribeClusterOutcome EMRClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -217,14 +216,14 @@ DescribeClusterOutcomeCallable EMRClient::DescribeClusterCallable(const Describe
   return std::async(std::launch::async, &EMRClient::DescribeCluster, this, request);
 }
 
-void EMRClient::DescribeClusterAsync(const DescribeClusterRequest& request, const AsyncCallerContext* context) const
+void EMRClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::DescribeClusterAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::DescribeClusterAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const AsyncCallerContext* context) const
+void EMRClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeClusterOutcomeReceived(this, request, DescribeCluster(request), context);
+  handler(this, request, DescribeCluster(request), context);
 }
 
 DescribeStepOutcome EMRClient::DescribeStep(const DescribeStepRequest& request) const
@@ -248,14 +247,14 @@ DescribeStepOutcomeCallable EMRClient::DescribeStepCallable(const DescribeStepRe
   return std::async(std::launch::async, &EMRClient::DescribeStep, this, request);
 }
 
-void EMRClient::DescribeStepAsync(const DescribeStepRequest& request, const AsyncCallerContext* context) const
+void EMRClient::DescribeStepAsync(const DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::DescribeStepAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::DescribeStepAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::DescribeStepAsyncHelper(const DescribeStepRequest& request, const AsyncCallerContext* context) const
+void EMRClient::DescribeStepAsyncHelper(const DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeStepOutcomeReceived(this, request, DescribeStep(request), context);
+  handler(this, request, DescribeStep(request), context);
 }
 
 ListBootstrapActionsOutcome EMRClient::ListBootstrapActions(const ListBootstrapActionsRequest& request) const
@@ -279,14 +278,14 @@ ListBootstrapActionsOutcomeCallable EMRClient::ListBootstrapActionsCallable(cons
   return std::async(std::launch::async, &EMRClient::ListBootstrapActions, this, request);
 }
 
-void EMRClient::ListBootstrapActionsAsync(const ListBootstrapActionsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListBootstrapActionsAsync(const ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::ListBootstrapActionsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::ListBootstrapActionsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::ListBootstrapActionsAsyncHelper(const ListBootstrapActionsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListBootstrapActionsAsyncHelper(const ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListBootstrapActionsOutcomeReceived(this, request, ListBootstrapActions(request), context);
+  handler(this, request, ListBootstrapActions(request), context);
 }
 
 ListClustersOutcome EMRClient::ListClusters(const ListClustersRequest& request) const
@@ -310,14 +309,14 @@ ListClustersOutcomeCallable EMRClient::ListClustersCallable(const ListClustersRe
   return std::async(std::launch::async, &EMRClient::ListClusters, this, request);
 }
 
-void EMRClient::ListClustersAsync(const ListClustersRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::ListClustersAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::ListClustersAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::ListClustersAsyncHelper(const ListClustersRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListClustersOutcomeReceived(this, request, ListClusters(request), context);
+  handler(this, request, ListClusters(request), context);
 }
 
 ListInstanceGroupsOutcome EMRClient::ListInstanceGroups(const ListInstanceGroupsRequest& request) const
@@ -341,14 +340,14 @@ ListInstanceGroupsOutcomeCallable EMRClient::ListInstanceGroupsCallable(const Li
   return std::async(std::launch::async, &EMRClient::ListInstanceGroups, this, request);
 }
 
-void EMRClient::ListInstanceGroupsAsync(const ListInstanceGroupsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListInstanceGroupsAsync(const ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::ListInstanceGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::ListInstanceGroupsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::ListInstanceGroupsAsyncHelper(const ListInstanceGroupsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListInstanceGroupsAsyncHelper(const ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListInstanceGroupsOutcomeReceived(this, request, ListInstanceGroups(request), context);
+  handler(this, request, ListInstanceGroups(request), context);
 }
 
 ListInstancesOutcome EMRClient::ListInstances(const ListInstancesRequest& request) const
@@ -372,14 +371,14 @@ ListInstancesOutcomeCallable EMRClient::ListInstancesCallable(const ListInstance
   return std::async(std::launch::async, &EMRClient::ListInstances, this, request);
 }
 
-void EMRClient::ListInstancesAsync(const ListInstancesRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::ListInstancesAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::ListInstancesAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListInstancesOutcomeReceived(this, request, ListInstances(request), context);
+  handler(this, request, ListInstances(request), context);
 }
 
 ListStepsOutcome EMRClient::ListSteps(const ListStepsRequest& request) const
@@ -403,14 +402,14 @@ ListStepsOutcomeCallable EMRClient::ListStepsCallable(const ListStepsRequest& re
   return std::async(std::launch::async, &EMRClient::ListSteps, this, request);
 }
 
-void EMRClient::ListStepsAsync(const ListStepsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListStepsAsync(const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::ListStepsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::ListStepsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::ListStepsAsyncHelper(const ListStepsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ListStepsAsyncHelper(const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListStepsOutcomeReceived(this, request, ListSteps(request), context);
+  handler(this, request, ListSteps(request), context);
 }
 
 ModifyInstanceGroupsOutcome EMRClient::ModifyInstanceGroups(const ModifyInstanceGroupsRequest& request) const
@@ -434,14 +433,14 @@ ModifyInstanceGroupsOutcomeCallable EMRClient::ModifyInstanceGroupsCallable(cons
   return std::async(std::launch::async, &EMRClient::ModifyInstanceGroups, this, request);
 }
 
-void EMRClient::ModifyInstanceGroupsAsync(const ModifyInstanceGroupsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ModifyInstanceGroupsAsync(const ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::ModifyInstanceGroupsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::ModifyInstanceGroupsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::ModifyInstanceGroupsAsyncHelper(const ModifyInstanceGroupsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::ModifyInstanceGroupsAsyncHelper(const ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onModifyInstanceGroupsOutcomeReceived(this, request, ModifyInstanceGroups(request), context);
+  handler(this, request, ModifyInstanceGroups(request), context);
 }
 
 RemoveTagsOutcome EMRClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -465,14 +464,14 @@ RemoveTagsOutcomeCallable EMRClient::RemoveTagsCallable(const RemoveTagsRequest&
   return std::async(std::launch::async, &EMRClient::RemoveTags, this, request);
 }
 
-void EMRClient::RemoveTagsAsync(const RemoveTagsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::RemoveTagsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::RemoveTagsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRemoveTagsOutcomeReceived(this, request, RemoveTags(request), context);
+  handler(this, request, RemoveTags(request), context);
 }
 
 RunJobFlowOutcome EMRClient::RunJobFlow(const RunJobFlowRequest& request) const
@@ -496,14 +495,14 @@ RunJobFlowOutcomeCallable EMRClient::RunJobFlowCallable(const RunJobFlowRequest&
   return std::async(std::launch::async, &EMRClient::RunJobFlow, this, request);
 }
 
-void EMRClient::RunJobFlowAsync(const RunJobFlowRequest& request, const AsyncCallerContext* context) const
+void EMRClient::RunJobFlowAsync(const RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::RunJobFlowAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::RunJobFlowAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::RunJobFlowAsyncHelper(const RunJobFlowRequest& request, const AsyncCallerContext* context) const
+void EMRClient::RunJobFlowAsyncHelper(const RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRunJobFlowOutcomeReceived(this, request, RunJobFlow(request), context);
+  handler(this, request, RunJobFlow(request), context);
 }
 
 SetTerminationProtectionOutcome EMRClient::SetTerminationProtection(const SetTerminationProtectionRequest& request) const
@@ -527,14 +526,14 @@ SetTerminationProtectionOutcomeCallable EMRClient::SetTerminationProtectionCalla
   return std::async(std::launch::async, &EMRClient::SetTerminationProtection, this, request);
 }
 
-void EMRClient::SetTerminationProtectionAsync(const SetTerminationProtectionRequest& request, const AsyncCallerContext* context) const
+void EMRClient::SetTerminationProtectionAsync(const SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::SetTerminationProtectionAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::SetTerminationProtectionAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::SetTerminationProtectionAsyncHelper(const SetTerminationProtectionRequest& request, const AsyncCallerContext* context) const
+void EMRClient::SetTerminationProtectionAsyncHelper(const SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetTerminationProtectionOutcomeReceived(this, request, SetTerminationProtection(request), context);
+  handler(this, request, SetTerminationProtection(request), context);
 }
 
 SetVisibleToAllUsersOutcome EMRClient::SetVisibleToAllUsers(const SetVisibleToAllUsersRequest& request) const
@@ -558,14 +557,14 @@ SetVisibleToAllUsersOutcomeCallable EMRClient::SetVisibleToAllUsersCallable(cons
   return std::async(std::launch::async, &EMRClient::SetVisibleToAllUsers, this, request);
 }
 
-void EMRClient::SetVisibleToAllUsersAsync(const SetVisibleToAllUsersRequest& request, const AsyncCallerContext* context) const
+void EMRClient::SetVisibleToAllUsersAsync(const SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::SetVisibleToAllUsersAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::SetVisibleToAllUsersAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::SetVisibleToAllUsersAsyncHelper(const SetVisibleToAllUsersRequest& request, const AsyncCallerContext* context) const
+void EMRClient::SetVisibleToAllUsersAsyncHelper(const SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetVisibleToAllUsersOutcomeReceived(this, request, SetVisibleToAllUsers(request), context);
+  handler(this, request, SetVisibleToAllUsers(request), context);
 }
 
 TerminateJobFlowsOutcome EMRClient::TerminateJobFlows(const TerminateJobFlowsRequest& request) const
@@ -589,13 +588,13 @@ TerminateJobFlowsOutcomeCallable EMRClient::TerminateJobFlowsCallable(const Term
   return std::async(std::launch::async, &EMRClient::TerminateJobFlows, this, request);
 }
 
-void EMRClient::TerminateJobFlowsAsync(const TerminateJobFlowsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::TerminateJobFlowsAsync(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&EMRClient::TerminateJobFlowsAsyncHelper, this, request, context);
+  m_executor->Submit(&EMRClient::TerminateJobFlowsAsyncHelper, this, request, handler, context);
 }
 
-void EMRClient::TerminateJobFlowsAsyncHelper(const TerminateJobFlowsRequest& request, const AsyncCallerContext* context) const
+void EMRClient::TerminateJobFlowsAsyncHelper(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onTerminateJobFlowsOutcomeReceived(this, request, TerminateJobFlows(request), context);
+  handler(this, request, TerminateJobFlows(request), context);
 }
 

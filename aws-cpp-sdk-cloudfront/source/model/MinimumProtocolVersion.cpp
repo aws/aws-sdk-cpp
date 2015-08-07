@@ -41,7 +41,7 @@ MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
     return MinimumProtocolVersion::TLSv1;
   }
 
-  return MinimumProtocolVersion::SSLv3;
+  return MinimumProtocolVersion::NOT_SET;
 }
 
 Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion value)
@@ -53,7 +53,7 @@ Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion value)
   case MinimumProtocolVersion::TLSv1:
     return "TLSv1";
   default:
-    return "SSLv3";
+    return "";
   }
 }
 

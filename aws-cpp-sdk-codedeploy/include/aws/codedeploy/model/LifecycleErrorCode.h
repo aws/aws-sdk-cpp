@@ -24,6 +24,7 @@ namespace Model
 {
   enum class LifecycleErrorCode
   {
+    NOT_SET,
     Success,
     ScriptMissing,
     ScriptNotExecutable,

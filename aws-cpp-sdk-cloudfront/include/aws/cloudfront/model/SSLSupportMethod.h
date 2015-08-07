@@ -24,6 +24,7 @@ namespace Model
 {
   enum class SSLSupportMethod
   {
+    NOT_SET,
     sni_only,
     vip
   };

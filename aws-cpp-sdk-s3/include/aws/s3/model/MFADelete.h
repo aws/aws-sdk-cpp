@@ -24,6 +24,7 @@ namespace Model
 {
   enum class MFADelete
   {
+    NOT_SET,
     Enabled,
     Disabled
   };

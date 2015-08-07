@@ -94,26 +94,26 @@ namespace Model
     inline OptionGroup& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
 
     /*
-     <p> Engine name that this option group can be applied to. </p>
+     <p> Indicates the name of the engine that this option group can be applied to. </p>
     */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
     /*
-     <p> Engine name that this option group can be applied to. </p>
+     <p> Indicates the name of the engine that this option group can be applied to. </p>
     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /*
-     <p> Engine name that this option group can be applied to. </p>
+     <p> Indicates the name of the engine that this option group can be applied to. </p>
     */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /*
-     <p> Engine name that this option group can be applied to. </p>
+     <p> Indicates the name of the engine that this option group can be applied to. </p>
     */
     inline OptionGroup&  WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /*
-     <p> Engine name that this option group can be applied to. </p>
+     <p> Indicates the name of the engine that this option group can be applied to. </p>
     */
     inline OptionGroup& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

@@ -41,7 +41,7 @@ ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
     return ValidationSeverity::warning;
   }
 
-  return ValidationSeverity::error;
+  return ValidationSeverity::NOT_SET;
 }
 
 Aws::String GetNameForValidationSeverity(ValidationSeverity value)
@@ -53,7 +53,7 @@ Aws::String GetNameForValidationSeverity(ValidationSeverity value)
   case ValidationSeverity::warning:
     return "warning";
   default:
-    return "error";
+    return "";
   }
 }
 

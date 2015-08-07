@@ -103,7 +103,6 @@ void ElasticTranscoderClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& request) const
 {
   Aws::StringStream ss;
@@ -126,14 +125,14 @@ CancelJobOutcomeCallable ElasticTranscoderClient::CancelJobCallable(const Cancel
   return std::async(std::launch::async, &ElasticTranscoderClient::CancelJob, this, request);
 }
 
-void ElasticTranscoderClient::CancelJobAsync(const CancelJobRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::CancelJobAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::CancelJobAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::CancelJobAsyncHelper(const CancelJobRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCancelJobOutcomeReceived(this, request, CancelJob(request), context);
+  handler(this, request, CancelJob(request), context);
 }
 
 CreateJobOutcome ElasticTranscoderClient::CreateJob(const CreateJobRequest& request) const
@@ -157,14 +156,14 @@ CreateJobOutcomeCallable ElasticTranscoderClient::CreateJobCallable(const Create
   return std::async(std::launch::async, &ElasticTranscoderClient::CreateJob, this, request);
 }
 
-void ElasticTranscoderClient::CreateJobAsync(const CreateJobRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::CreateJobAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::CreateJobAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::CreateJobAsyncHelper(const CreateJobRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateJobOutcomeReceived(this, request, CreateJob(request), context);
+  handler(this, request, CreateJob(request), context);
 }
 
 CreatePipelineOutcome ElasticTranscoderClient::CreatePipeline(const CreatePipelineRequest& request) const
@@ -188,14 +187,14 @@ CreatePipelineOutcomeCallable ElasticTranscoderClient::CreatePipelineCallable(co
   return std::async(std::launch::async, &ElasticTranscoderClient::CreatePipeline, this, request);
 }
 
-void ElasticTranscoderClient::CreatePipelineAsync(const CreatePipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::CreatePipelineAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::CreatePipelineAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::CreatePipelineAsyncHelper(const CreatePipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CreatePipelineAsyncHelper(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreatePipelineOutcomeReceived(this, request, CreatePipeline(request), context);
+  handler(this, request, CreatePipeline(request), context);
 }
 
 CreatePresetOutcome ElasticTranscoderClient::CreatePreset(const CreatePresetRequest& request) const
@@ -219,14 +218,14 @@ CreatePresetOutcomeCallable ElasticTranscoderClient::CreatePresetCallable(const 
   return std::async(std::launch::async, &ElasticTranscoderClient::CreatePreset, this, request);
 }
 
-void ElasticTranscoderClient::CreatePresetAsync(const CreatePresetRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CreatePresetAsync(const CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::CreatePresetAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::CreatePresetAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::CreatePresetAsyncHelper(const CreatePresetRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::CreatePresetAsyncHelper(const CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreatePresetOutcomeReceived(this, request, CreatePreset(request), context);
+  handler(this, request, CreatePreset(request), context);
 }
 
 DeletePipelineOutcome ElasticTranscoderClient::DeletePipeline(const DeletePipelineRequest& request) const
@@ -251,14 +250,14 @@ DeletePipelineOutcomeCallable ElasticTranscoderClient::DeletePipelineCallable(co
   return std::async(std::launch::async, &ElasticTranscoderClient::DeletePipeline, this, request);
 }
 
-void ElasticTranscoderClient::DeletePipelineAsync(const DeletePipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::DeletePipelineAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::DeletePipelineAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeletePipelineOutcomeReceived(this, request, DeletePipeline(request), context);
+  handler(this, request, DeletePipeline(request), context);
 }
 
 DeletePresetOutcome ElasticTranscoderClient::DeletePreset(const DeletePresetRequest& request) const
@@ -283,14 +282,14 @@ DeletePresetOutcomeCallable ElasticTranscoderClient::DeletePresetCallable(const 
   return std::async(std::launch::async, &ElasticTranscoderClient::DeletePreset, this, request);
 }
 
-void ElasticTranscoderClient::DeletePresetAsync(const DeletePresetRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::DeletePresetAsync(const DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::DeletePresetAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::DeletePresetAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::DeletePresetAsyncHelper(const DeletePresetRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::DeletePresetAsyncHelper(const DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeletePresetOutcomeReceived(this, request, DeletePreset(request), context);
+  handler(this, request, DeletePreset(request), context);
 }
 
 ListJobsByPipelineOutcome ElasticTranscoderClient::ListJobsByPipeline(const ListJobsByPipelineRequest& request) const
@@ -315,14 +314,14 @@ ListJobsByPipelineOutcomeCallable ElasticTranscoderClient::ListJobsByPipelineCal
   return std::async(std::launch::async, &ElasticTranscoderClient::ListJobsByPipeline, this, request);
 }
 
-void ElasticTranscoderClient::ListJobsByPipelineAsync(const ListJobsByPipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListJobsByPipelineAsync(const ListJobsByPipelineRequest& request, const ListJobsByPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ListJobsByPipelineAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ListJobsByPipelineAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ListJobsByPipelineAsyncHelper(const ListJobsByPipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListJobsByPipelineAsyncHelper(const ListJobsByPipelineRequest& request, const ListJobsByPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListJobsByPipelineOutcomeReceived(this, request, ListJobsByPipeline(request), context);
+  handler(this, request, ListJobsByPipeline(request), context);
 }
 
 ListJobsByStatusOutcome ElasticTranscoderClient::ListJobsByStatus(const ListJobsByStatusRequest& request) const
@@ -347,14 +346,14 @@ ListJobsByStatusOutcomeCallable ElasticTranscoderClient::ListJobsByStatusCallabl
   return std::async(std::launch::async, &ElasticTranscoderClient::ListJobsByStatus, this, request);
 }
 
-void ElasticTranscoderClient::ListJobsByStatusAsync(const ListJobsByStatusRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListJobsByStatusAsync(const ListJobsByStatusRequest& request, const ListJobsByStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ListJobsByStatusAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ListJobsByStatusAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ListJobsByStatusAsyncHelper(const ListJobsByStatusRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListJobsByStatusAsyncHelper(const ListJobsByStatusRequest& request, const ListJobsByStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListJobsByStatusOutcomeReceived(this, request, ListJobsByStatus(request), context);
+  handler(this, request, ListJobsByStatus(request), context);
 }
 
 ListPipelinesOutcome ElasticTranscoderClient::ListPipelines(const ListPipelinesRequest& request) const
@@ -378,14 +377,14 @@ ListPipelinesOutcomeCallable ElasticTranscoderClient::ListPipelinesCallable(cons
   return std::async(std::launch::async, &ElasticTranscoderClient::ListPipelines, this, request);
 }
 
-void ElasticTranscoderClient::ListPipelinesAsync(const ListPipelinesRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ListPipelinesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ListPipelinesAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListPipelinesOutcomeReceived(this, request, ListPipelines(request), context);
+  handler(this, request, ListPipelines(request), context);
 }
 
 ListPresetsOutcome ElasticTranscoderClient::ListPresets(const ListPresetsRequest& request) const
@@ -409,14 +408,14 @@ ListPresetsOutcomeCallable ElasticTranscoderClient::ListPresetsCallable(const Li
   return std::async(std::launch::async, &ElasticTranscoderClient::ListPresets, this, request);
 }
 
-void ElasticTranscoderClient::ListPresetsAsync(const ListPresetsRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListPresetsAsync(const ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ListPresetsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ListPresetsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ListPresetsAsyncHelper(const ListPresetsRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ListPresetsAsyncHelper(const ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListPresetsOutcomeReceived(this, request, ListPresets(request), context);
+  handler(this, request, ListPresets(request), context);
 }
 
 ReadJobOutcome ElasticTranscoderClient::ReadJob(const ReadJobRequest& request) const
@@ -441,14 +440,14 @@ ReadJobOutcomeCallable ElasticTranscoderClient::ReadJobCallable(const ReadJobReq
   return std::async(std::launch::async, &ElasticTranscoderClient::ReadJob, this, request);
 }
 
-void ElasticTranscoderClient::ReadJobAsync(const ReadJobRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ReadJobAsync(const ReadJobRequest& request, const ReadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ReadJobAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ReadJobAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ReadJobAsyncHelper(const ReadJobRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ReadJobAsyncHelper(const ReadJobRequest& request, const ReadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onReadJobOutcomeReceived(this, request, ReadJob(request), context);
+  handler(this, request, ReadJob(request), context);
 }
 
 ReadPipelineOutcome ElasticTranscoderClient::ReadPipeline(const ReadPipelineRequest& request) const
@@ -473,14 +472,14 @@ ReadPipelineOutcomeCallable ElasticTranscoderClient::ReadPipelineCallable(const 
   return std::async(std::launch::async, &ElasticTranscoderClient::ReadPipeline, this, request);
 }
 
-void ElasticTranscoderClient::ReadPipelineAsync(const ReadPipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ReadPipelineAsync(const ReadPipelineRequest& request, const ReadPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ReadPipelineAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ReadPipelineAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ReadPipelineAsyncHelper(const ReadPipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ReadPipelineAsyncHelper(const ReadPipelineRequest& request, const ReadPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onReadPipelineOutcomeReceived(this, request, ReadPipeline(request), context);
+  handler(this, request, ReadPipeline(request), context);
 }
 
 ReadPresetOutcome ElasticTranscoderClient::ReadPreset(const ReadPresetRequest& request) const
@@ -505,14 +504,14 @@ ReadPresetOutcomeCallable ElasticTranscoderClient::ReadPresetCallable(const Read
   return std::async(std::launch::async, &ElasticTranscoderClient::ReadPreset, this, request);
 }
 
-void ElasticTranscoderClient::ReadPresetAsync(const ReadPresetRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ReadPresetAsync(const ReadPresetRequest& request, const ReadPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::ReadPresetAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::ReadPresetAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::ReadPresetAsyncHelper(const ReadPresetRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::ReadPresetAsyncHelper(const ReadPresetRequest& request, const ReadPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onReadPresetOutcomeReceived(this, request, ReadPreset(request), context);
+  handler(this, request, ReadPreset(request), context);
 }
 
 TestRoleOutcome ElasticTranscoderClient::TestRole(const TestRoleRequest& request) const
@@ -536,14 +535,14 @@ TestRoleOutcomeCallable ElasticTranscoderClient::TestRoleCallable(const TestRole
   return std::async(std::launch::async, &ElasticTranscoderClient::TestRole, this, request);
 }
 
-void ElasticTranscoderClient::TestRoleAsync(const TestRoleRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::TestRoleAsync(const TestRoleRequest& request, const TestRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::TestRoleAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::TestRoleAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::TestRoleAsyncHelper(const TestRoleRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::TestRoleAsyncHelper(const TestRoleRequest& request, const TestRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onTestRoleOutcomeReceived(this, request, TestRole(request), context);
+  handler(this, request, TestRole(request), context);
 }
 
 UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipelineRequest& request) const
@@ -568,14 +567,14 @@ UpdatePipelineOutcomeCallable ElasticTranscoderClient::UpdatePipelineCallable(co
   return std::async(std::launch::async, &ElasticTranscoderClient::UpdatePipeline, this, request);
 }
 
-void ElasticTranscoderClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::UpdatePipelineAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::UpdatePipelineAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::UpdatePipelineAsyncHelper(const UpdatePipelineRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::UpdatePipelineAsyncHelper(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdatePipelineOutcomeReceived(this, request, UpdatePipeline(request), context);
+  handler(this, request, UpdatePipeline(request), context);
 }
 
 UpdatePipelineNotificationsOutcome ElasticTranscoderClient::UpdatePipelineNotifications(const UpdatePipelineNotificationsRequest& request) const
@@ -601,14 +600,14 @@ UpdatePipelineNotificationsOutcomeCallable ElasticTranscoderClient::UpdatePipeli
   return std::async(std::launch::async, &ElasticTranscoderClient::UpdatePipelineNotifications, this, request);
 }
 
-void ElasticTranscoderClient::UpdatePipelineNotificationsAsync(const UpdatePipelineNotificationsRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::UpdatePipelineNotificationsAsync(const UpdatePipelineNotificationsRequest& request, const UpdatePipelineNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::UpdatePipelineNotificationsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::UpdatePipelineNotificationsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::UpdatePipelineNotificationsAsyncHelper(const UpdatePipelineNotificationsRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::UpdatePipelineNotificationsAsyncHelper(const UpdatePipelineNotificationsRequest& request, const UpdatePipelineNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdatePipelineNotificationsOutcomeReceived(this, request, UpdatePipelineNotifications(request), context);
+  handler(this, request, UpdatePipelineNotifications(request), context);
 }
 
 UpdatePipelineStatusOutcome ElasticTranscoderClient::UpdatePipelineStatus(const UpdatePipelineStatusRequest& request) const
@@ -634,13 +633,14 @@ UpdatePipelineStatusOutcomeCallable ElasticTranscoderClient::UpdatePipelineStatu
   return std::async(std::launch::async, &ElasticTranscoderClient::UpdatePipelineStatus, this, request);
 }
 
-void ElasticTranscoderClient::UpdatePipelineStatusAsync(const UpdatePipelineStatusRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::UpdatePipelineStatusAsync(const UpdatePipelineStatusRequest& request, const UpdatePipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticTranscoderClient::UpdatePipelineStatusAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticTranscoderClient::UpdatePipelineStatusAsyncHelper, this, request, handler, context);
 }
 
-void ElasticTranscoderClient::UpdatePipelineStatusAsyncHelper(const UpdatePipelineStatusRequest& request, const AsyncCallerContext* context) const
+void ElasticTranscoderClient::UpdatePipelineStatusAsyncHelper(const UpdatePipelineStatusRequest& request, const UpdatePipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdatePipelineStatusOutcomeReceived(this, request, UpdatePipelineStatus(request), context);
+  handler(this, request, UpdatePipelineStatus(request), context);
 }
+
 

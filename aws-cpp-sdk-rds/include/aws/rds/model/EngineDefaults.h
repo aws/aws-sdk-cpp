@@ -46,26 +46,26 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /*
-     <p> Specifies the name of the DB parameter group family which the engine default parameters apply to. </p>
+     <p> Specifies the name of the DB parameter group family that the engine default parameters apply to. </p>
     */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
     /*
-     <p> Specifies the name of the DB parameter group family which the engine default parameters apply to. </p>
+     <p> Specifies the name of the DB parameter group family that the engine default parameters apply to. </p>
     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /*
-     <p> Specifies the name of the DB parameter group family which the engine default parameters apply to. </p>
+     <p> Specifies the name of the DB parameter group family that the engine default parameters apply to. </p>
     */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /*
-     <p> Specifies the name of the DB parameter group family which the engine default parameters apply to. </p>
+     <p> Specifies the name of the DB parameter group family that the engine default parameters apply to. </p>
     */
     inline EngineDefaults&  WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /*
-     <p> Specifies the name of the DB parameter group family which the engine default parameters apply to. </p>
+     <p> Specifies the name of the DB parameter group family that the engine default parameters apply to. </p>
     */
     inline EngineDefaults& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

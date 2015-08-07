@@ -24,6 +24,7 @@ namespace Model
 {
   enum class MFADeleteStatus
   {
+    NOT_SET,
     Enabled,
     Disabled
   };

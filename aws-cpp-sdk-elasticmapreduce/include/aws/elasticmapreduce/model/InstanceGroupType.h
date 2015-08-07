@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InstanceGroupType
   {
+    NOT_SET,
     MASTER,
     CORE,
     TASK

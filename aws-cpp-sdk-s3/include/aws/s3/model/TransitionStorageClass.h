@@ -24,6 +24,7 @@ namespace Model
 {
   enum class TransitionStorageClass
   {
+    NOT_SET,
     GLACIER
   };
 

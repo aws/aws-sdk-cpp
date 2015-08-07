@@ -18,6 +18,7 @@
 using namespace Aws::Utils;
 
 static const int AES256_HASH = HashingUtils::HashString("AES256");
+static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
 
 namespace Aws
 {
@@ -35,8 +36,12 @@ ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name)
   {
     return ServerSideEncryption::AES256;
   }
+  else if (hashCode == aws_kms_HASH)
+  {
+    return ServerSideEncryption::aws_kms;
+  }
 
-  return ServerSideEncryption::AES256;
+  return ServerSideEncryption::NOT_SET;
 }
 
 Aws::String GetNameForServerSideEncryption(ServerSideEncryption value)
@@ -45,8 +50,10 @@ Aws::String GetNameForServerSideEncryption(ServerSideEncryption value)
   {
   case ServerSideEncryption::AES256:
     return "AES256";
+  case ServerSideEncryption::aws_kms:
+    return "aws:kms";
   default:
-    return "AES256";
+    return "";
   }
 }
 

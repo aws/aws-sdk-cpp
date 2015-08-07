@@ -81,7 +81,7 @@ BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& n
     return BucketLocationConstraint::eu_central_1;
   }
 
-  return BucketLocationConstraint::EU;
+  return BucketLocationConstraint::NOT_SET;
 }
 
 Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint value)
@@ -109,7 +109,7 @@ Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint value)
   case BucketLocationConstraint::eu_central_1:
     return "eu-central-1";
   default:
-    return "EU";
+    return "";
   }
 }
 

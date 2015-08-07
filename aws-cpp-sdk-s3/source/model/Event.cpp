@@ -23,6 +23,9 @@ static const int s3_ObjectCreated_Put_HASH = HashingUtils::HashString("s3:Object
 static const int s3_ObjectCreated_Post_HASH = HashingUtils::HashString("s3:ObjectCreated:Post");
 static const int s3_ObjectCreated_Copy_HASH = HashingUtils::HashString("s3:ObjectCreated:Copy");
 static const int s3_ObjectCreated_CompleteMultipartUpload_HASH = HashingUtils::HashString("s3:ObjectCreated:CompleteMultipartUpload");
+static const int s3_ObjectRemoved___HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
+static const int s3_ObjectRemoved_Delete_HASH = HashingUtils::HashString("s3:ObjectRemoved:Delete");
+static const int s3_ObjectRemoved_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
 
 namespace Aws
 {
@@ -60,8 +63,20 @@ Event GetEventForName(const Aws::String& name)
   {
     return Event::s3_ObjectCreated_CompleteMultipartUpload;
   }
+  else if (hashCode == s3_ObjectRemoved___HASH)
+  {
+    return Event::s3_ObjectRemoved__;
+  }
+  else if (hashCode == s3_ObjectRemoved_Delete_HASH)
+  {
+    return Event::s3_ObjectRemoved_Delete;
+  }
+  else if (hashCode == s3_ObjectRemoved_DeleteMarkerCreated_HASH)
+  {
+    return Event::s3_ObjectRemoved_DeleteMarkerCreated;
+  }
 
-  return Event::s3_ReducedRedundancyLostObject;
+  return Event::NOT_SET;
 }
 
 Aws::String GetNameForEvent(Event value)
@@ -80,8 +95,14 @@ Aws::String GetNameForEvent(Event value)
     return "s3:ObjectCreated:Copy";
   case Event::s3_ObjectCreated_CompleteMultipartUpload:
     return "s3:ObjectCreated:CompleteMultipartUpload";
+  case Event::s3_ObjectRemoved__:
+    return "s3:ObjectRemoved:*";
+  case Event::s3_ObjectRemoved_Delete:
+    return "s3:ObjectRemoved:Delete";
+  case Event::s3_ObjectRemoved_DeleteMarkerCreated:
+    return "s3:ObjectRemoved:DeleteMarkerCreated";
   default:
-    return "s3_ReducedRedundancyLostObject";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Payer
   {
+    NOT_SET,
     Requester,
     BucketOwner
   };

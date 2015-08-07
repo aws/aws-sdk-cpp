@@ -93,12 +93,10 @@ void STSClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -115,21 +113,20 @@ AssumeRoleOutcomeCallable STSClient::AssumeRoleCallable(const AssumeRoleRequest&
   return std::async(std::launch::async, &STSClient::AssumeRole, this, request);
 }
 
-void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AsyncCallerContext* context) const
+void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&STSClient::AssumeRoleAsyncHelper, this, request, context);
+  m_executor->Submit(&STSClient::AssumeRoleAsyncHelper, this, request, handler, context);
 }
 
-void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request, const AsyncCallerContext* context) const
+void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAssumeRoleOutcomeReceived(this, request, AssumeRole(request), context);
+  handler(this, request, AssumeRole(request), context);
 }
 
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -146,21 +143,20 @@ AssumeRoleWithSAMLOutcomeCallable STSClient::AssumeRoleWithSAMLCallable(const As
   return std::async(std::launch::async, &STSClient::AssumeRoleWithSAML, this, request);
 }
 
-void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AsyncCallerContext* context) const
+void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&STSClient::AssumeRoleWithSAMLAsyncHelper, this, request, context);
+  m_executor->Submit(&STSClient::AssumeRoleWithSAMLAsyncHelper, this, request, handler, context);
 }
 
-void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& request, const AsyncCallerContext* context) const
+void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAssumeRoleWithSAMLOutcomeReceived(this, request, AssumeRoleWithSAML(request), context);
+  handler(this, request, AssumeRoleWithSAML(request), context);
 }
 
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -177,21 +173,20 @@ AssumeRoleWithWebIdentityOutcomeCallable STSClient::AssumeRoleWithWebIdentityCal
   return std::async(std::launch::async, &STSClient::AssumeRoleWithWebIdentity, this, request);
 }
 
-void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AsyncCallerContext* context) const
+void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&STSClient::AssumeRoleWithWebIdentityAsyncHelper, this, request, context);
+  m_executor->Submit(&STSClient::AssumeRoleWithWebIdentityAsyncHelper, this, request, handler, context);
 }
 
-void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIdentityRequest& request, const AsyncCallerContext* context) const
+void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAssumeRoleWithWebIdentityOutcomeReceived(this, request, AssumeRoleWithWebIdentity(request), context);
+  handler(this, request, AssumeRoleWithWebIdentity(request), context);
 }
 
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -208,21 +203,20 @@ DecodeAuthorizationMessageOutcomeCallable STSClient::DecodeAuthorizationMessageC
   return std::async(std::launch::async, &STSClient::DecodeAuthorizationMessage, this, request);
 }
 
-void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const AsyncCallerContext* context) const
+void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&STSClient::DecodeAuthorizationMessageAsyncHelper, this, request, context);
+  m_executor->Submit(&STSClient::DecodeAuthorizationMessageAsyncHelper, this, request, handler, context);
 }
 
-void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const AsyncCallerContext* context) const
+void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDecodeAuthorizationMessageOutcomeReceived(this, request, DecodeAuthorizationMessage(request), context);
+  handler(this, request, DecodeAuthorizationMessage(request), context);
 }
 
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -239,21 +233,20 @@ GetFederationTokenOutcomeCallable STSClient::GetFederationTokenCallable(const Ge
   return std::async(std::launch::async, &STSClient::GetFederationToken, this, request);
 }
 
-void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const AsyncCallerContext* context) const
+void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&STSClient::GetFederationTokenAsyncHelper, this, request, context);
+  m_executor->Submit(&STSClient::GetFederationTokenAsyncHelper, this, request, handler, context);
 }
 
-void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request, const AsyncCallerContext* context) const
+void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetFederationTokenOutcomeReceived(this, request, GetFederationToken(request), context);
+  handler(this, request, GetFederationToken(request), context);
 }
 
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -270,13 +263,13 @@ GetSessionTokenOutcomeCallable STSClient::GetSessionTokenCallable(const GetSessi
   return std::async(std::launch::async, &STSClient::GetSessionToken, this, request);
 }
 
-void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const AsyncCallerContext* context) const
+void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&STSClient::GetSessionTokenAsyncHelper, this, request, context);
+  m_executor->Submit(&STSClient::GetSessionTokenAsyncHelper, this, request, handler, context);
 }
 
-void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request, const AsyncCallerContext* context) const
+void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetSessionTokenOutcomeReceived(this, request, GetSessionToken(request), context);
+  handler(this, request, GetSessionToken(request), context);
 }
 

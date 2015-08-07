@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ReturnValue
   {
+    NOT_SET,
     NONE,
     ALL_OLD,
     UPDATED_OLD,

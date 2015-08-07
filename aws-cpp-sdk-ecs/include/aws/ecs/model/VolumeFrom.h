@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on a data volume from another container.</p>
   */
   class AWS_ECS_API VolumeFrom
   {

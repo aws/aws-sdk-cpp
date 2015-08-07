@@ -422,6 +422,36 @@ bool JsonValue::ValueExists(const Aws::String& key) const
     return ValueExists(key.c_str());
 }
 
+bool JsonValue::IsObject() const
+{
+    return m_value.isObject();
+}
+
+bool JsonValue::IsBool() const
+{
+    return m_value.isBool();
+}
+
+bool JsonValue::IsString() const
+{
+    return m_value.isString();
+}
+
+bool JsonValue::IsIntegerType() const
+{
+    return m_value.isIntegral();
+}
+
+bool JsonValue::IsFloatingPointType() const
+{
+    return m_value.isDouble();
+}
+
+bool JsonValue::IsListType() const
+{
+    return m_value.isArray();
+}
+
 Aws::String JsonValue::WriteCompact(bool treatAsObject) const
 {
     if (treatAsObject && m_value.isNull())

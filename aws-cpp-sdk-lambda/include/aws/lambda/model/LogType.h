@@ -24,6 +24,7 @@ namespace Model
 {
   enum class LogType
   {
+    NOT_SET,
     None,
     Tail
   };

@@ -28,18 +28,26 @@ namespace Aws
     }
     namespace Auth
     {
+        struct LoginAccessTokens
+        {
+            LoginAccessTokens() : longTermTokenExpiry(0) {}
+            Aws::String accessToken;
+            Aws::String longTermToken;
+            long long longTermTokenExpiry;
+        };
+
         class AWS_IDENTITY_MANAGEMENT_API PersistentCognitoIdentityProvider
         {
         public:
             virtual bool HasIdentityId() const = 0;
             virtual bool HasLogins() const = 0;
             virtual Aws::String GetIdentityId() const = 0;
-            virtual Aws::Map<Aws::String, Aws::String> GetLogins() const = 0;
+            virtual Aws::Map<Aws::String, LoginAccessTokens> GetLogins() = 0;
             virtual Aws::String GetAccountId() const = 0;
             virtual Aws::String GetIdentityPoolId() const = 0;
             virtual void PersistIdentityId(const Aws::String&) = 0;
-            virtual void PersistLogins(const Aws::Map<Aws::String, Aws::String>&) = 0;
-            inline void ClearLogins() { PersistLogins(Aws::Map<Aws::String, Aws::String>()); }
+            virtual void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>&) = 0;
+            inline void ClearLogins() { PersistLogins(Aws::Map<Aws::String, LoginAccessTokens>()); }
             inline void ClearIdentity() { PersistIdentityId(""); }
             inline void Logout() { ClearIdentity(); ClearLogins(); }
         };
@@ -48,26 +56,28 @@ namespace Aws
         {
         public:
             PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId);
+            PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, const char* identitiesFilePath);
 
             bool HasIdentityId() const override { return !m_identityId.empty(); }
             bool HasLogins() const override { return !m_logins.empty(); }
             Aws::String GetIdentityId() const override { return m_identityId; }
-            Aws::Map<Aws::String, Aws::String> GetLogins() const override { return m_logins; }
+            Aws::Map<Aws::String, LoginAccessTokens> GetLogins() override { return m_logins; }
             inline Aws::String GetAccountId() const override { return m_accountId; }
             inline Aws::String GetIdentityPoolId() const override { return m_identityPoolId; }
             void PersistIdentityId(const Aws::String&) override;
-            void PersistLogins(const Aws::Map<Aws::String, Aws::String>&) override;
+            void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>&) override;
 
         private:
             Utils::Json::JsonValue LoadJsonDocFromFile() const;
             void PersistChangesToFile(const Utils::Json::JsonValue&) const;
+            void LoadAndParseDoc();
 
             std::mutex m_docMutex;
             Aws::String m_identityPoolId;
             Aws::String m_accountId;
             Aws::String m_identityId;
-            Aws::Map<Aws::String, Aws::String> m_logins;
-
+            Aws::Map<Aws::String, LoginAccessTokens> m_logins;
+            Aws::String m_identityFilePath;
         };
 
         typedef PersistentCognitoIdentityProvider_JsonFileImpl DefaultPersistentCognitoIdentityProvider;

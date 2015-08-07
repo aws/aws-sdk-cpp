@@ -102,6 +102,24 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("CodeSha256"))
+  {
+    m_codeSha256 = jsonValue.GetString("CodeSha256");
+
+  }
+
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+  }
+
+  if(jsonValue.ValueExists("DefaultVersion"))
+  {
+    m_defaultVersion = jsonValue.GetString("DefaultVersion");
+
+  }
+
 
 
   return *this;

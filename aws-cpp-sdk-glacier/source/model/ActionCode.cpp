@@ -41,7 +41,7 @@ ActionCode GetActionCodeForName(const Aws::String& name)
     return ActionCode::InventoryRetrieval;
   }
 
-  return ActionCode::ArchiveRetrieval;
+  return ActionCode::NOT_SET;
 }
 
 Aws::String GetNameForActionCode(ActionCode value)
@@ -53,7 +53,7 @@ Aws::String GetNameForActionCode(ActionCode value)
   case ActionCode::InventoryRetrieval:
     return "InventoryRetrieval";
   default:
-    return "ArchiveRetrieval";
+    return "";
   }
 }
 

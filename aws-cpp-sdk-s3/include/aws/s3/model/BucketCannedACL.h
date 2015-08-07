@@ -24,6 +24,7 @@ namespace Model
 {
   enum class BucketCannedACL
   {
+    NOT_SET,
     private_,
     public_read,
     public_read_write,

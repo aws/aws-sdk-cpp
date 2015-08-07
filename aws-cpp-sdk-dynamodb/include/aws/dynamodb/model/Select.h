@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Select
   {
+    NOT_SET,
     ALL_ATTRIBUTES,
     ALL_PROJECTED_ATTRIBUTES,
     SPECIFIC_ATTRIBUTES,

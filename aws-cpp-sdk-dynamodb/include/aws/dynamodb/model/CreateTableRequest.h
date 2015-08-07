@@ -151,12 +151,18 @@ namespace Model
     
     inline CreateTableRequest&  WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
-    
+    /*
+     <p>The settings for DynamoDB Streams on the table. These settings consist of:</p> <ul> <li> <p><i>StreamEnabled</i> - Indicates whether Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p><i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i> determines what information is written to the table's stream. Valid values for <i>StreamViewType</i> are:</p> <ul> <li><p><i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the stream.</p></li> <li><p><i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written to the stream.</p></li> <li><p><i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written to the stream.</p></li> <li><p><i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are written to the stream.</p></li> </ul> </li> </ul>
+    */
     inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
-    
+    /*
+     <p>The settings for DynamoDB Streams on the table. These settings consist of:</p> <ul> <li> <p><i>StreamEnabled</i> - Indicates whether Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p><i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i> determines what information is written to the table's stream. Valid values for <i>StreamViewType</i> are:</p> <ul> <li><p><i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the stream.</p></li> <li><p><i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written to the stream.</p></li> <li><p><i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written to the stream.</p></li> <li><p><i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are written to the stream.</p></li> </ul> </li> </ul>
+    */
     inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
-    
+    /*
+     <p>The settings for DynamoDB Streams on the table. These settings consist of:</p> <ul> <li> <p><i>StreamEnabled</i> - Indicates whether Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p><i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i> determines what information is written to the table's stream. Valid values for <i>StreamViewType</i> are:</p> <ul> <li><p><i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the stream.</p></li> <li><p><i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written to the stream.</p></li> <li><p><i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written to the stream.</p></li> <li><p><i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are written to the stream.</p></li> </ul> </li> </ul>
+    */
     inline CreateTableRequest&  WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
 
   private:

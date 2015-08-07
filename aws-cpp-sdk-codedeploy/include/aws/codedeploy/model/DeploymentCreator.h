@@ -24,6 +24,7 @@ namespace Model
 {
   enum class DeploymentCreator
   {
+    NOT_SET,
     user,
     autoscaling
   };

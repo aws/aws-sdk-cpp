@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>The details of an Amazon ECS service deployment.</p>
   */
   class AWS_ECS_API Deployment
   {

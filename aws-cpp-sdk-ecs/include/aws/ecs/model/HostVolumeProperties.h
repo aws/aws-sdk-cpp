@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on a container instance host volume.</p>
   */
   class AWS_ECS_API HostVolumeProperties
   {

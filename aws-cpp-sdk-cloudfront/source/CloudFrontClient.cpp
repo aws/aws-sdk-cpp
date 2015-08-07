@@ -108,7 +108,6 @@ void CloudFrontClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 CreateCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request) const
 {
   Aws::StringStream ss;
@@ -129,14 +128,14 @@ CreateCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::
   return std::async(std::launch::async, &CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17Async(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17Async(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const CreateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const CreateCloudFrontOriginAccessIdentity2015_04_17Request& request, const CreateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, CreateCloudFrontOriginAccessIdentity2015_04_17(request), context);
+  handler(this, request, CreateCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
 CreateDistribution2015_04_17Outcome CloudFrontClient::CreateDistribution2015_04_17(const CreateDistribution2015_04_17Request& request) const
@@ -159,14 +158,14 @@ CreateDistribution2015_04_17OutcomeCallable CloudFrontClient::CreateDistribution
   return std::async(std::launch::async, &CloudFrontClient::CreateDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateDistribution2015_04_17Async(const CreateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateDistribution2015_04_17Async(const CreateDistribution2015_04_17Request& request, const CreateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::CreateDistribution2015_04_17AsyncHelper(const CreateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateDistribution2015_04_17AsyncHelper(const CreateDistribution2015_04_17Request& request, const CreateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateDistribution2015_04_17OutcomeReceived(this, request, CreateDistribution2015_04_17(request), context);
+  handler(this, request, CreateDistribution2015_04_17(request), context);
 }
 
 CreateInvalidation2015_04_17Outcome CloudFrontClient::CreateInvalidation2015_04_17(const CreateInvalidation2015_04_17Request& request) const
@@ -191,14 +190,14 @@ CreateInvalidation2015_04_17OutcomeCallable CloudFrontClient::CreateInvalidation
   return std::async(std::launch::async, &CloudFrontClient::CreateInvalidation2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateInvalidation2015_04_17Async(const CreateInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateInvalidation2015_04_17Async(const CreateInvalidation2015_04_17Request& request, const CreateInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateInvalidation2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateInvalidation2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::CreateInvalidation2015_04_17AsyncHelper(const CreateInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateInvalidation2015_04_17AsyncHelper(const CreateInvalidation2015_04_17Request& request, const CreateInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateInvalidation2015_04_17OutcomeReceived(this, request, CreateInvalidation2015_04_17(request), context);
+  handler(this, request, CreateInvalidation2015_04_17(request), context);
 }
 
 CreateStreamingDistribution2015_04_17Outcome CloudFrontClient::CreateStreamingDistribution2015_04_17(const CreateStreamingDistribution2015_04_17Request& request) const
@@ -221,14 +220,14 @@ CreateStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::CreateStr
   return std::async(std::launch::async, &CloudFrontClient::CreateStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::CreateStreamingDistribution2015_04_17Async(const CreateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateStreamingDistribution2015_04_17Async(const CreateStreamingDistribution2015_04_17Request& request, const CreateStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::CreateStreamingDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::CreateStreamingDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::CreateStreamingDistribution2015_04_17AsyncHelper(const CreateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::CreateStreamingDistribution2015_04_17AsyncHelper(const CreateStreamingDistribution2015_04_17Request& request, const CreateStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateStreamingDistribution2015_04_17OutcomeReceived(this, request, CreateStreamingDistribution2015_04_17(request), context);
+  handler(this, request, CreateStreamingDistribution2015_04_17(request), context);
 }
 
 DeleteCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request) const
@@ -252,14 +251,14 @@ DeleteCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::
   return std::async(std::launch::async, &CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17Async(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17Async(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const DeleteCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const DeleteCloudFrontOriginAccessIdentity2015_04_17Request& request, const DeleteCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, DeleteCloudFrontOriginAccessIdentity2015_04_17(request), context);
+  handler(this, request, DeleteCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
 DeleteDistribution2015_04_17Outcome CloudFrontClient::DeleteDistribution2015_04_17(const DeleteDistribution2015_04_17Request& request) const
@@ -283,14 +282,14 @@ DeleteDistribution2015_04_17OutcomeCallable CloudFrontClient::DeleteDistribution
   return std::async(std::launch::async, &CloudFrontClient::DeleteDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::DeleteDistribution2015_04_17Async(const DeleteDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteDistribution2015_04_17Async(const DeleteDistribution2015_04_17Request& request, const DeleteDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::DeleteDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::DeleteDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::DeleteDistribution2015_04_17AsyncHelper(const DeleteDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteDistribution2015_04_17AsyncHelper(const DeleteDistribution2015_04_17Request& request, const DeleteDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteDistribution2015_04_17OutcomeReceived(this, request, DeleteDistribution2015_04_17(request), context);
+  handler(this, request, DeleteDistribution2015_04_17(request), context);
 }
 
 DeleteStreamingDistribution2015_04_17Outcome CloudFrontClient::DeleteStreamingDistribution2015_04_17(const DeleteStreamingDistribution2015_04_17Request& request) const
@@ -314,14 +313,14 @@ DeleteStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::DeleteStr
   return std::async(std::launch::async, &CloudFrontClient::DeleteStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::DeleteStreamingDistribution2015_04_17Async(const DeleteStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteStreamingDistribution2015_04_17Async(const DeleteStreamingDistribution2015_04_17Request& request, const DeleteStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::DeleteStreamingDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::DeleteStreamingDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::DeleteStreamingDistribution2015_04_17AsyncHelper(const DeleteStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::DeleteStreamingDistribution2015_04_17AsyncHelper(const DeleteStreamingDistribution2015_04_17Request& request, const DeleteStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteStreamingDistribution2015_04_17OutcomeReceived(this, request, DeleteStreamingDistribution2015_04_17(request), context);
+  handler(this, request, DeleteStreamingDistribution2015_04_17(request), context);
 }
 
 GetCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request) const
@@ -345,14 +344,14 @@ GetCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::Get
   return std::async(std::launch::async, &CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17Async(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17Async(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const GetCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const GetCloudFrontOriginAccessIdentity2015_04_17Request& request, const GetCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, GetCloudFrontOriginAccessIdentity2015_04_17(request), context);
+  handler(this, request, GetCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
 GetCloudFrontOriginAccessIdentityConfig2015_04_17Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request) const
@@ -377,14 +376,14 @@ GetCloudFrontOriginAccessIdentityConfig2015_04_17OutcomeCallable CloudFrontClien
   return std::async(std::launch::async, &CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17Async(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17Async(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const GetCloudFrontOriginAccessIdentityConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17AsyncHelper(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2015_04_17AsyncHelper(const GetCloudFrontOriginAccessIdentityConfig2015_04_17Request& request, const GetCloudFrontOriginAccessIdentityConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetCloudFrontOriginAccessIdentityConfig2015_04_17OutcomeReceived(this, request, GetCloudFrontOriginAccessIdentityConfig2015_04_17(request), context);
+  handler(this, request, GetCloudFrontOriginAccessIdentityConfig2015_04_17(request), context);
 }
 
 GetDistribution2015_04_17Outcome CloudFrontClient::GetDistribution2015_04_17(const GetDistribution2015_04_17Request& request) const
@@ -408,14 +407,14 @@ GetDistribution2015_04_17OutcomeCallable CloudFrontClient::GetDistribution2015_0
   return std::async(std::launch::async, &CloudFrontClient::GetDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetDistribution2015_04_17Async(const GetDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistribution2015_04_17Async(const GetDistribution2015_04_17Request& request, const GetDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetDistribution2015_04_17AsyncHelper(const GetDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistribution2015_04_17AsyncHelper(const GetDistribution2015_04_17Request& request, const GetDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetDistribution2015_04_17OutcomeReceived(this, request, GetDistribution2015_04_17(request), context);
+  handler(this, request, GetDistribution2015_04_17(request), context);
 }
 
 GetDistributionConfig2015_04_17Outcome CloudFrontClient::GetDistributionConfig2015_04_17(const GetDistributionConfig2015_04_17Request& request) const
@@ -440,14 +439,14 @@ GetDistributionConfig2015_04_17OutcomeCallable CloudFrontClient::GetDistribution
   return std::async(std::launch::async, &CloudFrontClient::GetDistributionConfig2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetDistributionConfig2015_04_17Async(const GetDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistributionConfig2015_04_17Async(const GetDistributionConfig2015_04_17Request& request, const GetDistributionConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetDistributionConfig2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetDistributionConfig2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetDistributionConfig2015_04_17AsyncHelper(const GetDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetDistributionConfig2015_04_17AsyncHelper(const GetDistributionConfig2015_04_17Request& request, const GetDistributionConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetDistributionConfig2015_04_17OutcomeReceived(this, request, GetDistributionConfig2015_04_17(request), context);
+  handler(this, request, GetDistributionConfig2015_04_17(request), context);
 }
 
 GetInvalidation2015_04_17Outcome CloudFrontClient::GetInvalidation2015_04_17(const GetInvalidation2015_04_17Request& request) const
@@ -473,14 +472,14 @@ GetInvalidation2015_04_17OutcomeCallable CloudFrontClient::GetInvalidation2015_0
   return std::async(std::launch::async, &CloudFrontClient::GetInvalidation2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetInvalidation2015_04_17Async(const GetInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetInvalidation2015_04_17Async(const GetInvalidation2015_04_17Request& request, const GetInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetInvalidation2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetInvalidation2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetInvalidation2015_04_17AsyncHelper(const GetInvalidation2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetInvalidation2015_04_17AsyncHelper(const GetInvalidation2015_04_17Request& request, const GetInvalidation2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetInvalidation2015_04_17OutcomeReceived(this, request, GetInvalidation2015_04_17(request), context);
+  handler(this, request, GetInvalidation2015_04_17(request), context);
 }
 
 GetStreamingDistribution2015_04_17Outcome CloudFrontClient::GetStreamingDistribution2015_04_17(const GetStreamingDistribution2015_04_17Request& request) const
@@ -504,14 +503,14 @@ GetStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::GetStreaming
   return std::async(std::launch::async, &CloudFrontClient::GetStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetStreamingDistribution2015_04_17Async(const GetStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistribution2015_04_17Async(const GetStreamingDistribution2015_04_17Request& request, const GetStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetStreamingDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetStreamingDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetStreamingDistribution2015_04_17AsyncHelper(const GetStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistribution2015_04_17AsyncHelper(const GetStreamingDistribution2015_04_17Request& request, const GetStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetStreamingDistribution2015_04_17OutcomeReceived(this, request, GetStreamingDistribution2015_04_17(request), context);
+  handler(this, request, GetStreamingDistribution2015_04_17(request), context);
 }
 
 GetStreamingDistributionConfig2015_04_17Outcome CloudFrontClient::GetStreamingDistributionConfig2015_04_17(const GetStreamingDistributionConfig2015_04_17Request& request) const
@@ -536,14 +535,14 @@ GetStreamingDistributionConfig2015_04_17OutcomeCallable CloudFrontClient::GetStr
   return std::async(std::launch::async, &CloudFrontClient::GetStreamingDistributionConfig2015_04_17, this, request);
 }
 
-void CloudFrontClient::GetStreamingDistributionConfig2015_04_17Async(const GetStreamingDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistributionConfig2015_04_17Async(const GetStreamingDistributionConfig2015_04_17Request& request, const GetStreamingDistributionConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::GetStreamingDistributionConfig2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::GetStreamingDistributionConfig2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::GetStreamingDistributionConfig2015_04_17AsyncHelper(const GetStreamingDistributionConfig2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::GetStreamingDistributionConfig2015_04_17AsyncHelper(const GetStreamingDistributionConfig2015_04_17Request& request, const GetStreamingDistributionConfig2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetStreamingDistributionConfig2015_04_17OutcomeReceived(this, request, GetStreamingDistributionConfig2015_04_17(request), context);
+  handler(this, request, GetStreamingDistributionConfig2015_04_17(request), context);
 }
 
 ListCloudFrontOriginAccessIdentities2015_04_17Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request) const
@@ -566,14 +565,14 @@ ListCloudFrontOriginAccessIdentities2015_04_17OutcomeCallable CloudFrontClient::
   return std::async(std::launch::async, &CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17Async(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17Async(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const ListCloudFrontOriginAccessIdentities2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17AsyncHelper(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListCloudFrontOriginAccessIdentities2015_04_17AsyncHelper(const ListCloudFrontOriginAccessIdentities2015_04_17Request& request, const ListCloudFrontOriginAccessIdentities2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListCloudFrontOriginAccessIdentities2015_04_17OutcomeReceived(this, request, ListCloudFrontOriginAccessIdentities2015_04_17(request), context);
+  handler(this, request, ListCloudFrontOriginAccessIdentities2015_04_17(request), context);
 }
 
 ListDistributions2015_04_17Outcome CloudFrontClient::ListDistributions2015_04_17(const ListDistributions2015_04_17Request& request) const
@@ -596,14 +595,14 @@ ListDistributions2015_04_17OutcomeCallable CloudFrontClient::ListDistributions20
   return std::async(std::launch::async, &CloudFrontClient::ListDistributions2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListDistributions2015_04_17Async(const ListDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListDistributions2015_04_17Async(const ListDistributions2015_04_17Request& request, const ListDistributions2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListDistributions2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListDistributions2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::ListDistributions2015_04_17AsyncHelper(const ListDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListDistributions2015_04_17AsyncHelper(const ListDistributions2015_04_17Request& request, const ListDistributions2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListDistributions2015_04_17OutcomeReceived(this, request, ListDistributions2015_04_17(request), context);
+  handler(this, request, ListDistributions2015_04_17(request), context);
 }
 
 ListInvalidations2015_04_17Outcome CloudFrontClient::ListInvalidations2015_04_17(const ListInvalidations2015_04_17Request& request) const
@@ -628,14 +627,14 @@ ListInvalidations2015_04_17OutcomeCallable CloudFrontClient::ListInvalidations20
   return std::async(std::launch::async, &CloudFrontClient::ListInvalidations2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListInvalidations2015_04_17Async(const ListInvalidations2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListInvalidations2015_04_17Async(const ListInvalidations2015_04_17Request& request, const ListInvalidations2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListInvalidations2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListInvalidations2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::ListInvalidations2015_04_17AsyncHelper(const ListInvalidations2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListInvalidations2015_04_17AsyncHelper(const ListInvalidations2015_04_17Request& request, const ListInvalidations2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListInvalidations2015_04_17OutcomeReceived(this, request, ListInvalidations2015_04_17(request), context);
+  handler(this, request, ListInvalidations2015_04_17(request), context);
 }
 
 ListStreamingDistributions2015_04_17Outcome CloudFrontClient::ListStreamingDistributions2015_04_17(const ListStreamingDistributions2015_04_17Request& request) const
@@ -658,14 +657,14 @@ ListStreamingDistributions2015_04_17OutcomeCallable CloudFrontClient::ListStream
   return std::async(std::launch::async, &CloudFrontClient::ListStreamingDistributions2015_04_17, this, request);
 }
 
-void CloudFrontClient::ListStreamingDistributions2015_04_17Async(const ListStreamingDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListStreamingDistributions2015_04_17Async(const ListStreamingDistributions2015_04_17Request& request, const ListStreamingDistributions2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::ListStreamingDistributions2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::ListStreamingDistributions2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::ListStreamingDistributions2015_04_17AsyncHelper(const ListStreamingDistributions2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::ListStreamingDistributions2015_04_17AsyncHelper(const ListStreamingDistributions2015_04_17Request& request, const ListStreamingDistributions2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListStreamingDistributions2015_04_17OutcomeReceived(this, request, ListStreamingDistributions2015_04_17(request), context);
+  handler(this, request, ListStreamingDistributions2015_04_17(request), context);
 }
 
 UpdateCloudFrontOriginAccessIdentity2015_04_17Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request) const
@@ -690,14 +689,14 @@ UpdateCloudFrontOriginAccessIdentity2015_04_17OutcomeCallable CloudFrontClient::
   return std::async(std::launch::async, &CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17, this, request);
 }
 
-void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17Async(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17Async(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const UpdateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2015_04_17AsyncHelper(const UpdateCloudFrontOriginAccessIdentity2015_04_17Request& request, const UpdateCloudFrontOriginAccessIdentity2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateCloudFrontOriginAccessIdentity2015_04_17OutcomeReceived(this, request, UpdateCloudFrontOriginAccessIdentity2015_04_17(request), context);
+  handler(this, request, UpdateCloudFrontOriginAccessIdentity2015_04_17(request), context);
 }
 
 UpdateDistribution2015_04_17Outcome CloudFrontClient::UpdateDistribution2015_04_17(const UpdateDistribution2015_04_17Request& request) const
@@ -722,14 +721,14 @@ UpdateDistribution2015_04_17OutcomeCallable CloudFrontClient::UpdateDistribution
   return std::async(std::launch::async, &CloudFrontClient::UpdateDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::UpdateDistribution2015_04_17Async(const UpdateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateDistribution2015_04_17Async(const UpdateDistribution2015_04_17Request& request, const UpdateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::UpdateDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::UpdateDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::UpdateDistribution2015_04_17AsyncHelper(const UpdateDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateDistribution2015_04_17AsyncHelper(const UpdateDistribution2015_04_17Request& request, const UpdateDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateDistribution2015_04_17OutcomeReceived(this, request, UpdateDistribution2015_04_17(request), context);
+  handler(this, request, UpdateDistribution2015_04_17(request), context);
 }
 
 UpdateStreamingDistribution2015_04_17Outcome CloudFrontClient::UpdateStreamingDistribution2015_04_17(const UpdateStreamingDistribution2015_04_17Request& request) const
@@ -754,13 +753,13 @@ UpdateStreamingDistribution2015_04_17OutcomeCallable CloudFrontClient::UpdateStr
   return std::async(std::launch::async, &CloudFrontClient::UpdateStreamingDistribution2015_04_17, this, request);
 }
 
-void CloudFrontClient::UpdateStreamingDistribution2015_04_17Async(const UpdateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateStreamingDistribution2015_04_17Async(const UpdateStreamingDistribution2015_04_17Request& request, const UpdateStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudFrontClient::UpdateStreamingDistribution2015_04_17AsyncHelper, this, request, context);
+  m_executor->Submit(&CloudFrontClient::UpdateStreamingDistribution2015_04_17AsyncHelper, this, request, handler, context);
 }
 
-void CloudFrontClient::UpdateStreamingDistribution2015_04_17AsyncHelper(const UpdateStreamingDistribution2015_04_17Request& request, const AsyncCallerContext* context) const
+void CloudFrontClient::UpdateStreamingDistribution2015_04_17AsyncHelper(const UpdateStreamingDistribution2015_04_17Request& request, const UpdateStreamingDistribution2015_04_17ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateStreamingDistribution2015_04_17OutcomeReceived(this, request, UpdateStreamingDistribution2015_04_17(request), context);
+  handler(this, request, UpdateStreamingDistribution2015_04_17(request), context);
 }
 

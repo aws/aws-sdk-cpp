@@ -46,7 +46,7 @@ ConfigurationDeploymentStatus GetConfigurationDeploymentStatusForName(const Aws:
     return ConfigurationDeploymentStatus::failed;
   }
 
-  return ConfigurationDeploymentStatus::deployed;
+  return ConfigurationDeploymentStatus::NOT_SET;
 }
 
 Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus value)
@@ -60,7 +60,7 @@ Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatu
   case ConfigurationDeploymentStatus::failed:
     return "failed";
   default:
-    return "deployed";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ProjectionType
   {
+    NOT_SET,
     ALL,
     KEYS_ONLY,
     INCLUDE

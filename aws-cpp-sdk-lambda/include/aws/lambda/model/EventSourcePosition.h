@@ -24,6 +24,7 @@ namespace Model
 {
   enum class EventSourcePosition
   {
+    NOT_SET,
     TRIM_HORIZON,
     LATEST
   };

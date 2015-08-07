@@ -74,7 +74,7 @@ namespace
     public:
         static std::shared_ptr<S3Client> Client;
         static std::shared_ptr<HttpClientFactory> ClientFactory;
-        static std::shared_ptr<HttpClient> HttpClient;
+        static std::shared_ptr<HttpClient> m_HttpClient;
         static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> Limiter;
         static Aws::String TimeStamp;
 
@@ -103,7 +103,7 @@ namespace
             }
 
             Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory);
-            HttpClient = ClientFactory->CreateHttpClient(config);
+            m_HttpClient = ClientFactory->CreateHttpClient(config);
         }
 
         static void TearDownTestCase()
@@ -265,7 +265,7 @@ namespace
 
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::Client(nullptr);
     std::shared_ptr<HttpClientFactory> BucketAndObjectOperationTest::ClientFactory(nullptr);
-    std::shared_ptr<HttpClient> BucketAndObjectOperationTest::HttpClient(nullptr);
+    std::shared_ptr<HttpClient> BucketAndObjectOperationTest::m_HttpClient(nullptr);
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> BucketAndObjectOperationTest::Limiter(nullptr);
     Aws::String BucketAndObjectOperationTest::TimeStamp("");
 
@@ -430,7 +430,7 @@ namespace
         intConverter << objectStream->tellp();
         putRequest->SetContentLength(intConverter.str());
         putRequest->SetContentType("text/plain");
-        std::shared_ptr<HttpResponse> putResponse = HttpClient->MakeRequest(*putRequest);
+        std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(*putRequest);
         std::cout << putResponse->GetResponseBody().rdbuf();
         ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
@@ -438,7 +438,7 @@ namespace
 
         Aws::String presignedUrlGet = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET);
         std::shared_ptr<HttpRequest> getRequest = ClientFactory->CreateHttpRequest(presignedUrlGet, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<HttpResponse> getResponse = HttpClient->MakeRequest(*getRequest);
+        std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(*getRequest);
 
         ASSERT_EQ(HttpResponseCode::OK, getResponse->GetResponseCode());
         Aws::StringStream ss;
@@ -447,10 +447,10 @@ namespace
 
         Aws::String presignedUrlDelete = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_DELETE);
         std::shared_ptr<HttpRequest> deleteRequest = ClientFactory->CreateHttpRequest(presignedUrlDelete, HttpMethod::HTTP_DELETE, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<HttpResponse> deleteResponse = HttpClient->MakeRequest(*deleteRequest);
+        std::shared_ptr<HttpResponse> deleteResponse = m_HttpClient->MakeRequest(*deleteRequest);
         ASSERT_EQ(HttpResponseCode::NO_CONTENT, deleteResponse->GetResponseCode());
 
-        WaitForBucketToEmpty(fullBucketName);
+        WaitForBucketToEmpty(fullBucketName); 
     }
 
     TEST_F(BucketAndObjectOperationTest, TestMultiPartObjectOperations)
@@ -562,7 +562,68 @@ namespace
         GetObjectRequest getObjectRequest2;
         getObjectRequest2.SetBucket(fullBucketName);
         getObjectRequest2.SetKey(multipartKeyName);
-        getObjectRequest2.SetResponseStreamFactory([]() { return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out); });
+        getObjectRequest2.SetResponseStreamFactory(
+            [](){ 
+                // NOTE: If using an FStream in order to download a file from S3 to a physical file, then we need to specify
+                // the filemode "std::ios_base::out | std::ios_base::in | std::ios_base::trunc" --
+                // If the file transfer fails, then the error stream from the httpRequest is written to the file instead of the
+                    // actual file contents.
+                // If this is the case, then the BuildAWSError function assumes it can 'read' the stream in order to read in the
+                // error status and create an AWSError.  If the file is not marked as read/write (or write only), this will fail
+                // and the error status will instead be an XML_PARSE_ERROR error because the BuildAWSError function failed
+                // The 'truncate' is required to ensure that if the file download IS successful, then it can be written to the
+                // FStream (if ::trunc is not specified, then the FStream.write fails for some unknown reason)
+
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out | std::ios_base::in | std::ios_base::trunc); 
+            }
+        );
+
+        {
+            // Enclose scope just to make sure the download file is properly closed before we reread it
+            GetObjectOutcome getObjectOutcome2 = Client->GetObject(getObjectRequest2);
+            ASSERT_TRUE(getObjectOutcome2.IsSuccess());
+        }
+
+        // Test the download of a non-existent file, to ensure that the error handling works correctly
+        GetObjectRequest getObjectRequest3;
+        getObjectRequest3.SetBucket("FAIL");
+        getObjectRequest3.SetKey("FAIL");
+        getObjectRequest3.SetResponseStreamFactory(
+            [](){
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out | std::ios_base::in | std::ios_base::trunc);
+            }
+        );
+
+        {
+            // Enclose scope just to make sure the download file is properly closed before we reread it
+            GetObjectOutcome getObjectOutcome3 = Client->GetObject(getObjectRequest3);
+
+            std::remove(DOWNLOADED_FILENAME);
+
+            ASSERT_FALSE(getObjectOutcome3.IsSuccess());
+        }
+
+        // Perform the same test again, except with an incorrectly set stream IO trait (this should still pass, but it
+        // shouldn't crash anywhere in the log generation)
+
+        GetObjectRequest getObjectRequest4;
+        getObjectRequest4.SetBucket("FAIL");
+        getObjectRequest4.SetKey("FAIL");
+        getObjectRequest4.SetResponseStreamFactory(
+            [](){
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out);
+            }
+        );
+
+        {
+            // Enclose scope just to make sure the download file is properly closed before we reread it
+            GetObjectOutcome getObjectOutcome4 = Client->GetObject(getObjectRequest4);
+
+            std::remove(DOWNLOADED_FILENAME);
+
+            ASSERT_FALSE(getObjectOutcome4.IsSuccess());
+        }
+
 
         {
             // Enclose scope just to make sure the download file is properly closed before we reread it

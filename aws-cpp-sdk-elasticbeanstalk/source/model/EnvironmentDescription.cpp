@@ -41,6 +41,7 @@ EnvironmentDescription::EnvironmentDescription() :
     m_abortableOperationInProgress(false),
     m_abortableOperationInProgressHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
@@ -65,6 +66,7 @@ EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) :
     m_abortableOperationInProgress(false),
     m_abortableOperationInProgressHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
@@ -162,6 +164,12 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
       m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(healthNode.GetText().c_str()).c_str());
       m_healthHasBeenSet = true;
     }
+    XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
+    if(!healthStatusNode.IsNull())
+    {
+      m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(healthStatusNode.GetText().c_str()).c_str());
+      m_healthStatusHasBeenSet = true;
+    }
     XmlNode resourcesNode = resultNode.FirstChild("Resources");
     if(!resourcesNode.IsNull())
     {
@@ -236,6 +244,10 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_healthHasBeenSet)
   {
       oStream << location << index << locationValue << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
+  }
+  if(m_healthStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HealthStatus=" << EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus) << "&";
   }
   if(m_resourcesHasBeenSet)
   {
@@ -314,6 +326,10 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_healthHasBeenSet)
   {
       oStream << location << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
+  }
+  if(m_healthStatusHasBeenSet)
+  {
+      oStream << location << ".HealthStatus=" << EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus) << "&";
   }
   if(m_resourcesHasBeenSet)
   {

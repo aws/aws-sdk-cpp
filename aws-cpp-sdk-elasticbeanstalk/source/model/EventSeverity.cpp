@@ -61,7 +61,7 @@ EventSeverity GetEventSeverityForName(const Aws::String& name)
     return EventSeverity::FATAL;
   }
 
-  return EventSeverity::TRACE;
+  return EventSeverity::NOT_SET;
 }
 
 Aws::String GetNameForEventSeverity(EventSeverity value)
@@ -81,7 +81,7 @@ Aws::String GetNameForEventSeverity(EventSeverity value)
   case EventSeverity::FATAL:
     return "FATAL";
   default:
-    return "TRACE";
+    return "";
   }
 }
 

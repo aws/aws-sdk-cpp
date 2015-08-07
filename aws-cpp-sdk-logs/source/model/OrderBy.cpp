@@ -41,7 +41,7 @@ OrderBy GetOrderByForName(const Aws::String& name)
     return OrderBy::LastEventTime;
   }
 
-  return OrderBy::LogStreamName;
+  return OrderBy::NOT_SET;
 }
 
 Aws::String GetNameForOrderBy(OrderBy value)
@@ -53,7 +53,7 @@ Aws::String GetNameForOrderBy(OrderBy value)
   case OrderBy::LastEventTime:
     return "LastEventTime";
   default:
-    return "LogStreamName";
+    return "";
   }
 }
 

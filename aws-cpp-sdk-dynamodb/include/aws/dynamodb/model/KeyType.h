@@ -24,6 +24,7 @@ namespace Model
 {
   enum class KeyType
   {
+    NOT_SET,
     HASH,
     RANGE
   };

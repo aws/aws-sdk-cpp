@@ -46,7 +46,7 @@ ItemSelection GetItemSelectionForName(const Aws::String& name)
     return ItemSelection::all;
   }
 
-  return ItemSelection::none;
+  return ItemSelection::NOT_SET;
 }
 
 Aws::String GetNameForItemSelection(ItemSelection value)
@@ -60,7 +60,7 @@ Aws::String GetNameForItemSelection(ItemSelection value)
   case ItemSelection::all:
     return "all";
   default:
-    return "none";
+    return "";
   }
 }
 

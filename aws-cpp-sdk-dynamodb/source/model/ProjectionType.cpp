@@ -46,7 +46,7 @@ ProjectionType GetProjectionTypeForName(const Aws::String& name)
     return ProjectionType::INCLUDE;
   }
 
-  return ProjectionType::ALL;
+  return ProjectionType::NOT_SET;
 }
 
 Aws::String GetNameForProjectionType(ProjectionType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForProjectionType(ProjectionType value)
   case ProjectionType::INCLUDE:
     return "INCLUDE";
   default:
-    return "ALL";
+    return "";
   }
 }
 

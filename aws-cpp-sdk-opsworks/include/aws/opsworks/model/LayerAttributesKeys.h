@@ -24,6 +24,8 @@ namespace Model
 {
   enum class LayerAttributesKeys
   {
+    NOT_SET,
+    EcsClusterArn,
     EnableHaproxyStats,
     HaproxyStatsUrl,
     HaproxyStatsUser,

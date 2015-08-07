@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ScalarAttributeType
   {
+    NOT_SET,
     S,
     N,
     B

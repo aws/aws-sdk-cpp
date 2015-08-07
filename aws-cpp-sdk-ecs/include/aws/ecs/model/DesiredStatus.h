@@ -24,6 +24,7 @@ namespace Model
 {
   enum class DesiredStatus
   {
+    NOT_SET,
     RUNNING,
     PENDING,
     STOPPED

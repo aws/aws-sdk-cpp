@@ -41,7 +41,7 @@ ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
     return ConditionalOperator::OR;
   }
 
-  return ConditionalOperator::AND;
+  return ConditionalOperator::NOT_SET;
 }
 
 Aws::String GetNameForConditionalOperator(ConditionalOperator value)
@@ -53,7 +53,7 @@ Aws::String GetNameForConditionalOperator(ConditionalOperator value)
   case ConditionalOperator::OR:
     return "OR";
   default:
-    return "AND";
+    return "";
   }
 }
 

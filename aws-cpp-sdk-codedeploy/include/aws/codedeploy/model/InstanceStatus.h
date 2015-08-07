@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InstanceStatus
   {
+    NOT_SET,
     Pending,
     InProgress,
     Succeeded,

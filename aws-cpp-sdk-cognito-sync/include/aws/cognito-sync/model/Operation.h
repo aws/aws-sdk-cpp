@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Operation
   {
+    NOT_SET,
     replace,
     remove
   };

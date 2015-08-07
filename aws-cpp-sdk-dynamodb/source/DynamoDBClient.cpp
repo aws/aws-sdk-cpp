@@ -99,7 +99,6 @@ void DynamoDBClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const
 {
   Aws::StringStream ss;
@@ -121,14 +120,14 @@ BatchGetItemOutcomeCallable DynamoDBClient::BatchGetItemCallable(const BatchGetI
   return std::async(std::launch::async, &DynamoDBClient::BatchGetItem, this, request);
 }
 
-void DynamoDBClient::BatchGetItemAsync(const BatchGetItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::BatchGetItemAsync(const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::BatchGetItemAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::BatchGetItemAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::BatchGetItemAsyncHelper(const BatchGetItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::BatchGetItemAsyncHelper(const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onBatchGetItemOutcomeReceived(this, request, BatchGetItem(request), context);
+  handler(this, request, BatchGetItem(request), context);
 }
 
 BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest& request) const
@@ -152,14 +151,14 @@ BatchWriteItemOutcomeCallable DynamoDBClient::BatchWriteItemCallable(const Batch
   return std::async(std::launch::async, &DynamoDBClient::BatchWriteItem, this, request);
 }
 
-void DynamoDBClient::BatchWriteItemAsync(const BatchWriteItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::BatchWriteItemAsync(const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::BatchWriteItemAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::BatchWriteItemAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::BatchWriteItemAsyncHelper(const BatchWriteItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::BatchWriteItemAsyncHelper(const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onBatchWriteItemOutcomeReceived(this, request, BatchWriteItem(request), context);
+  handler(this, request, BatchWriteItem(request), context);
 }
 
 CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request) const
@@ -183,14 +182,14 @@ CreateTableOutcomeCallable DynamoDBClient::CreateTableCallable(const CreateTable
   return std::async(std::launch::async, &DynamoDBClient::CreateTable, this, request);
 }
 
-void DynamoDBClient::CreateTableAsync(const CreateTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::CreateTableAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::CreateTableAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::CreateTableAsyncHelper(const CreateTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::CreateTableAsyncHelper(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateTableOutcomeReceived(this, request, CreateTable(request), context);
+  handler(this, request, CreateTable(request), context);
 }
 
 DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) const
@@ -214,14 +213,14 @@ DeleteItemOutcomeCallable DynamoDBClient::DeleteItemCallable(const DeleteItemReq
   return std::async(std::launch::async, &DynamoDBClient::DeleteItem, this, request);
 }
 
-void DynamoDBClient::DeleteItemAsync(const DeleteItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::DeleteItemAsync(const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::DeleteItemAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::DeleteItemAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::DeleteItemAsyncHelper(const DeleteItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::DeleteItemAsyncHelper(const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteItemOutcomeReceived(this, request, DeleteItem(request), context);
+  handler(this, request, DeleteItem(request), context);
 }
 
 DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request) const
@@ -245,14 +244,14 @@ DeleteTableOutcomeCallable DynamoDBClient::DeleteTableCallable(const DeleteTable
   return std::async(std::launch::async, &DynamoDBClient::DeleteTable, this, request);
 }
 
-void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::DeleteTableAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::DeleteTableAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteTableOutcomeReceived(this, request, DeleteTable(request), context);
+  handler(this, request, DeleteTable(request), context);
 }
 
 DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& request) const
@@ -276,14 +275,14 @@ DescribeTableOutcomeCallable DynamoDBClient::DescribeTableCallable(const Describ
   return std::async(std::launch::async, &DynamoDBClient::DescribeTable, this, request);
 }
 
-void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::DescribeTableAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::DescribeTableAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeTableOutcomeReceived(this, request, DescribeTable(request), context);
+  handler(this, request, DescribeTable(request), context);
 }
 
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
@@ -307,14 +306,14 @@ GetItemOutcomeCallable DynamoDBClient::GetItemCallable(const GetItemRequest& req
   return std::async(std::launch::async, &DynamoDBClient::GetItem, this, request);
 }
 
-void DynamoDBClient::GetItemAsync(const GetItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::GetItemAsync(const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::GetItemAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::GetItemAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::GetItemAsyncHelper(const GetItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::GetItemAsyncHelper(const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetItemOutcomeReceived(this, request, GetItem(request), context);
+  handler(this, request, GetItem(request), context);
 }
 
 ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) const
@@ -338,14 +337,14 @@ ListTablesOutcomeCallable DynamoDBClient::ListTablesCallable(const ListTablesReq
   return std::async(std::launch::async, &DynamoDBClient::ListTables, this, request);
 }
 
-void DynamoDBClient::ListTablesAsync(const ListTablesRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::ListTablesAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::ListTablesAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::ListTablesAsyncHelper(const ListTablesRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListTablesOutcomeReceived(this, request, ListTables(request), context);
+  handler(this, request, ListTables(request), context);
 }
 
 PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
@@ -369,14 +368,14 @@ PutItemOutcomeCallable DynamoDBClient::PutItemCallable(const PutItemRequest& req
   return std::async(std::launch::async, &DynamoDBClient::PutItem, this, request);
 }
 
-void DynamoDBClient::PutItemAsync(const PutItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::PutItemAsync(const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::PutItemAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::PutItemAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::PutItemAsyncHelper(const PutItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::PutItemAsyncHelper(const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onPutItemOutcomeReceived(this, request, PutItem(request), context);
+  handler(this, request, PutItem(request), context);
 }
 
 QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
@@ -400,14 +399,14 @@ QueryOutcomeCallable DynamoDBClient::QueryCallable(const QueryRequest& request) 
   return std::async(std::launch::async, &DynamoDBClient::Query, this, request);
 }
 
-void DynamoDBClient::QueryAsync(const QueryRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::QueryAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::QueryAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::QueryAsyncHelper(const QueryRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::QueryAsyncHelper(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onQueryOutcomeReceived(this, request, Query(request), context);
+  handler(this, request, Query(request), context);
 }
 
 ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
@@ -431,14 +430,14 @@ ScanOutcomeCallable DynamoDBClient::ScanCallable(const ScanRequest& request) con
   return std::async(std::launch::async, &DynamoDBClient::Scan, this, request);
 }
 
-void DynamoDBClient::ScanAsync(const ScanRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::ScanAsync(const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::ScanAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::ScanAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::ScanAsyncHelper(const ScanRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::ScanAsyncHelper(const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onScanOutcomeReceived(this, request, Scan(request), context);
+  handler(this, request, Scan(request), context);
 }
 
 UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) const
@@ -462,14 +461,14 @@ UpdateItemOutcomeCallable DynamoDBClient::UpdateItemCallable(const UpdateItemReq
   return std::async(std::launch::async, &DynamoDBClient::UpdateItem, this, request);
 }
 
-void DynamoDBClient::UpdateItemAsync(const UpdateItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::UpdateItemAsync(const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::UpdateItemAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::UpdateItemAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::UpdateItemAsyncHelper(const UpdateItemRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::UpdateItemAsyncHelper(const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateItemOutcomeReceived(this, request, UpdateItem(request), context);
+  handler(this, request, UpdateItem(request), context);
 }
 
 UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request) const
@@ -493,13 +492,13 @@ UpdateTableOutcomeCallable DynamoDBClient::UpdateTableCallable(const UpdateTable
   return std::async(std::launch::async, &DynamoDBClient::UpdateTable, this, request);
 }
 
-void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DynamoDBClient::UpdateTableAsyncHelper, this, request, context);
+  m_executor->Submit(&DynamoDBClient::UpdateTableAsyncHelper, this, request, handler, context);
 }
 
-void DynamoDBClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const AsyncCallerContext* context) const
+void DynamoDBClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateTableOutcomeReceived(this, request, UpdateTable(request), context);
+  handler(this, request, UpdateTable(request), context);
 }
 

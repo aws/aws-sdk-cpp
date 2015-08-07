@@ -24,6 +24,7 @@ namespace Model
 {
   enum class MinimumProtocolVersion
   {
+    NOT_SET,
     SSLv3,
     TLSv1
   };

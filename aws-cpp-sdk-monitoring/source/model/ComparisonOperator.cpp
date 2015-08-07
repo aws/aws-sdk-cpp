@@ -51,7 +51,7 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
     return ComparisonOperator::LessThanOrEqualToThreshold;
   }
 
-  return ComparisonOperator::GreaterThanOrEqualToThreshold;
+  return ComparisonOperator::NOT_SET;
 }
 
 Aws::String GetNameForComparisonOperator(ComparisonOperator value)
@@ -67,7 +67,7 @@ Aws::String GetNameForComparisonOperator(ComparisonOperator value)
   case ComparisonOperator::LessThanOrEqualToThreshold:
     return "LessThanOrEqualToThreshold";
   default:
-    return "GreaterThanOrEqualToThreshold";
+    return "";
   }
 }
 

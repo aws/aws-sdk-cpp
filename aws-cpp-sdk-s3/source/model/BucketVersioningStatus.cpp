@@ -41,7 +41,7 @@ BucketVersioningStatus GetBucketVersioningStatusForName(const Aws::String& name)
     return BucketVersioningStatus::Suspended;
   }
 
-  return BucketVersioningStatus::Enabled;
+  return BucketVersioningStatus::NOT_SET;
 }
 
 Aws::String GetNameForBucketVersioningStatus(BucketVersioningStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForBucketVersioningStatus(BucketVersioningStatus value)
   case BucketVersioningStatus::Suspended:
     return "Suspended";
   default:
-    return "Enabled";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class TagFilterType
   {
+    NOT_SET,
     KEY_ONLY,
     VALUE_ONLY,
     KEY_AND_VALUE

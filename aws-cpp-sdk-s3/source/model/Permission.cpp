@@ -56,7 +56,7 @@ Permission GetPermissionForName(const Aws::String& name)
     return Permission::READ_ACP;
   }
 
-  return Permission::FULL_CONTROL;
+  return Permission::NOT_SET;
 }
 
 Aws::String GetNameForPermission(Permission value)
@@ -74,7 +74,7 @@ Aws::String GetNameForPermission(Permission value)
   case Permission::READ_ACP:
     return "READ_ACP";
   default:
-    return "FULL_CONTROL";
+    return "";
   }
 }
 

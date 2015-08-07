@@ -41,7 +41,7 @@ IdentityType GetIdentityTypeForName(const Aws::String& name)
     return IdentityType::Domain;
   }
 
-  return IdentityType::EmailAddress;
+  return IdentityType::NOT_SET;
 }
 
 Aws::String GetNameForIdentityType(IdentityType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForIdentityType(IdentityType value)
   case IdentityType::Domain:
     return "Domain";
   default:
-    return "EmailAddress";
+    return "";
   }
 }
 

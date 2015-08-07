@@ -41,7 +41,7 @@ StopStatus GetStopStatusForName(const Aws::String& name)
     return StopStatus::Succeeded;
   }
 
-  return StopStatus::Pending;
+  return StopStatus::NOT_SET;
 }
 
 Aws::String GetNameForStopStatus(StopStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForStopStatus(StopStatus value)
   case StopStatus::Succeeded:
     return "Succeeded";
   default:
-    return "Pending";
+    return "";
   }
 }
 

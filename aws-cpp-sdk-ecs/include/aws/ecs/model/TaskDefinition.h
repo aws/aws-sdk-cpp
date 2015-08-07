@@ -34,7 +34,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details of a task definition.</p>
   */
   class AWS_ECS_API TaskDefinition
   {

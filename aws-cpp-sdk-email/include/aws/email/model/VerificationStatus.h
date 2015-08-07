@@ -24,6 +24,7 @@ namespace Model
 {
   enum class VerificationStatus
   {
+    NOT_SET,
     Pending,
     Success,
     Failed,

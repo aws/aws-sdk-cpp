@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ErrorCode
   {
+    NOT_SET,
     DEPLOYMENT_GROUP_MISSING,
     APPLICATION_MISSING,
     REVISION_MISSING,

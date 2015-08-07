@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Method
   {
+    NOT_SET,
     GET_,
     HEAD,
     POST,

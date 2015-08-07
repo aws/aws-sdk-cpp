@@ -24,6 +24,7 @@ namespace Model
 {
   enum class EnvironmentStatus
   {
+    NOT_SET,
     Launching,
     Updating,
     Ready,

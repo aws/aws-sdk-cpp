@@ -24,6 +24,7 @@ namespace Model
 {
   enum class VolumeType
   {
+    NOT_SET,
     gp2,
     io1,
     standard

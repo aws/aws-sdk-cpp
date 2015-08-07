@@ -24,6 +24,7 @@ namespace Model
 {
   enum class summaryKeyType
   {
+    NOT_SET,
     Users,
     UsersQuota,
     Groups,

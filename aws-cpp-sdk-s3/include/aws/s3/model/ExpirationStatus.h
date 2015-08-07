@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ExpirationStatus
   {
+    NOT_SET,
     Enabled,
     Disabled
   };

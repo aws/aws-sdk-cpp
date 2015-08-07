@@ -56,7 +56,7 @@ EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
     return EnvironmentStatus::Terminated;
   }
 
-  return EnvironmentStatus::Launching;
+  return EnvironmentStatus::NOT_SET;
 }
 
 Aws::String GetNameForEnvironmentStatus(EnvironmentStatus value)
@@ -74,7 +74,7 @@ Aws::String GetNameForEnvironmentStatus(EnvironmentStatus value)
   case EnvironmentStatus::Terminated:
     return "Terminated";
   default:
-    return "Launching";
+    return "";
   }
 }
 

@@ -56,7 +56,7 @@ InstanceState GetInstanceStateForName(const Aws::String& name)
     return InstanceState::TERMINATED;
   }
 
-  return InstanceState::AWAITING_FULFILLMENT;
+  return InstanceState::NOT_SET;
 }
 
 Aws::String GetNameForInstanceState(InstanceState value)
@@ -74,7 +74,7 @@ Aws::String GetNameForInstanceState(InstanceState value)
   case InstanceState::TERMINATED:
     return "TERMINATED";
   default:
-    return "AWAITING_FULFILLMENT";
+    return "";
   }
 }
 

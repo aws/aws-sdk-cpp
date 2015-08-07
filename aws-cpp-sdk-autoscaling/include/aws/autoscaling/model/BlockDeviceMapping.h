@@ -107,16 +107,16 @@ namespace Model
     inline BlockDeviceMapping&  WithEbs(const Ebs& value) { SetEbs(value); return *this;}
 
     /*
-     <p>Suppresses a device mapping.</p> <p>If <code>NoDevice</code> is set to <code>true</code> for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
+     <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
     */
     inline bool GetNoDevice() const{ return m_noDevice; }
     /*
-     <p>Suppresses a device mapping.</p> <p>If <code>NoDevice</code> is set to <code>true</code> for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
+     <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
     */
     inline void SetNoDevice(bool value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /*
-     <p>Suppresses a device mapping.</p> <p>If <code>NoDevice</code> is set to <code>true</code> for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
+     <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling launches a replacement instance if the instance fails the health check.</p>
     */
     inline BlockDeviceMapping&  WithNoDevice(bool value) { SetNoDevice(value); return *this;}
 

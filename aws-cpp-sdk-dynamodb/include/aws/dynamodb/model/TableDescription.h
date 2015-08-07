@@ -190,18 +190,28 @@ namespace Model
     */
     inline TableDescription&  WithItemCount(long long value) { SetItemCount(value); return *this;}
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+    */
     inline const Aws::String& GetTableArn() const{ return m_tableArn; }
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+    */
     inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+    */
     inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+    */
     inline TableDescription&  WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+    */
     inline TableDescription& WithTableArn(const char* value) { SetTableArn(value); return *this;}
 
     /*
@@ -242,40 +252,66 @@ namespace Model
     */
     inline TableDescription& AddGlobalSecondaryIndexes(const GlobalSecondaryIndexDescription& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
 
-    
+    /*
+     <p>The current DynamoDB Streams configuration for the table.</p>
+    */
     inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
-    
+    /*
+     <p>The current DynamoDB Streams configuration for the table.</p>
+    */
     inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
-    
+    /*
+     <p>The current DynamoDB Streams configuration for the table.</p>
+    */
     inline TableDescription&  WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
 
-    
+    /*
+     <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name.</p></li> <li><p>the <i>StreamLabel</i>.</p></li> </ul>
+    */
     inline const Aws::String& GetLatestStreamLabel() const{ return m_latestStreamLabel; }
-    
+    /*
+     <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name.</p></li> <li><p>the <i>StreamLabel</i>.</p></li> </ul>
+    */
     inline void SetLatestStreamLabel(const Aws::String& value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel = value; }
 
-    
+    /*
+     <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name.</p></li> <li><p>the <i>StreamLabel</i>.</p></li> </ul>
+    */
     inline void SetLatestStreamLabel(const char* value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel.assign(value); }
 
-    
+    /*
+     <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name.</p></li> <li><p>the <i>StreamLabel</i>.</p></li> </ul>
+    */
     inline TableDescription&  WithLatestStreamLabel(const Aws::String& value) { SetLatestStreamLabel(value); return *this;}
 
-    
+    /*
+     <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name.</p></li> <li><p>the <i>StreamLabel</i>.</p></li> </ul>
+    */
     inline TableDescription& WithLatestStreamLabel(const char* value) { SetLatestStreamLabel(value); return *this;}
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    */
     inline const Aws::String& GetLatestStreamArn() const{ return m_latestStreamArn; }
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    */
     inline void SetLatestStreamArn(const Aws::String& value) { m_latestStreamArnHasBeenSet = true; m_latestStreamArn = value; }
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    */
     inline void SetLatestStreamArn(const char* value) { m_latestStreamArnHasBeenSet = true; m_latestStreamArn.assign(value); }
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    */
     inline TableDescription&  WithLatestStreamArn(const Aws::String& value) { SetLatestStreamArn(value); return *this;}
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    */
     inline TableDescription& WithLatestStreamArn(const char* value) { SetLatestStreamArn(value); return *this;}
 
   private:

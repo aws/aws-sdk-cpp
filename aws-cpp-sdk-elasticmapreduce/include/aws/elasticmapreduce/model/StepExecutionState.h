@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StepExecutionState
   {
+    NOT_SET,
     PENDING,
     RUNNING,
     CONTINUE,

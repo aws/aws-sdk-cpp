@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ObjectVersionStorageClass
   {
+    NOT_SET,
     STANDARD
   };
 

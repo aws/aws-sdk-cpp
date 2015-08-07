@@ -407,18 +407,37 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
 
+    // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
+    // file pointer back to the beginning in order to correctly read the input using the XML string iterator
+    if ((httpResponse->GetResponseBody().tellp() > 0) 
+        && (httpResponse->GetResponseBody().tellg() > 0))
+    {
+        httpResponse->GetResponseBody().seekg(0);
+    }
+
     XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse->GetResponseBody());
     AWS_LOGSTREAM_TRACE(LOG_TAG, "Error response is " << doc.ConvertToString());
-    XmlNode errorNode = doc.GetRootElement();
-    if (errorNode.GetName() != "Error")
+    if (doc.WasParseSuccessful())
     {
-        errorNode = doc.GetRootElement().FirstChild("Error");
-    }
-    XmlNode codeNode = errorNode.FirstChild("Code");
-    XmlNode messageNode = errorNode.FirstChild("Message");
+        XmlNode errorNode = doc.GetRootElement();
+        if (errorNode.GetName() != "Error")
+        {
+            errorNode = doc.GetRootElement().FirstChild("Error");
+        }
+        XmlNode codeNode = errorNode.FirstChild("Code");
+        XmlNode messageNode = errorNode.FirstChild("Message");
 
-    return GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
-        StringUtils::Trim(messageNode.GetText().c_str()));
+        return GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
+            StringUtils::Trim(messageNode.GetText().c_str()));
+    }
+    else
+    {
+        // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
+        // going to dump the XML parsing error and the http response code as a string
+        Aws::StringStream ss;
+        ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << httpResponse->GetResponseCode();
+        return GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
+    }
 }
 
 AWSJsonRestClient::AWSJsonRestClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,

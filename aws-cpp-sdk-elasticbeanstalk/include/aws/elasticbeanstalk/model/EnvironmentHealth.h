@@ -24,6 +24,7 @@ namespace Model
 {
   enum class EnvironmentHealth
   {
+    NOT_SET,
     Green,
     Yellow,
     Red,

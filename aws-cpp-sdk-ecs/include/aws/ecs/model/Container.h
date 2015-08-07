@@ -32,7 +32,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>A docker container that is part of a task.</p>
   */
   class AWS_ECS_API Container
   {
@@ -176,15 +176,23 @@ namespace Model
     */
     inline Container& WithReason(const char* value) { SetReason(value); return *this;}
 
-    
+    /*
+     <p>The network bindings associated with the container.</p>
+    */
     inline const Aws::Vector<NetworkBinding>& GetNetworkBindings() const{ return m_networkBindings; }
-    
+    /*
+     <p>The network bindings associated with the container.</p>
+    */
     inline void SetNetworkBindings(const Aws::Vector<NetworkBinding>& value) { m_networkBindingsHasBeenSet = true; m_networkBindings = value; }
 
-    
+    /*
+     <p>The network bindings associated with the container.</p>
+    */
     inline Container&  WithNetworkBindings(const Aws::Vector<NetworkBinding>& value) { SetNetworkBindings(value); return *this;}
 
-    
+    /*
+     <p>The network bindings associated with the container.</p>
+    */
     inline Container& AddNetworkBindings(const NetworkBinding& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(value); return *this; }
 
   private:

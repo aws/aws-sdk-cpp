@@ -46,7 +46,7 @@ DesiredStatus GetDesiredStatusForName(const Aws::String& name)
     return DesiredStatus::STOPPED;
   }
 
-  return DesiredStatus::RUNNING;
+  return DesiredStatus::NOT_SET;
 }
 
 Aws::String GetNameForDesiredStatus(DesiredStatus value)
@@ -60,7 +60,7 @@ Aws::String GetNameForDesiredStatus(DesiredStatus value)
   case DesiredStatus::STOPPED:
     return "STOPPED";
   default:
-    return "RUNNING";
+    return "";
   }
 }
 

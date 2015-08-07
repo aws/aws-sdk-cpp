@@ -56,7 +56,7 @@ OperatorType GetOperatorTypeForName(const Aws::String& name)
     return OperatorType::BETWEEN;
   }
 
-  return OperatorType::EQ;
+  return OperatorType::NOT_SET;
 }
 
 Aws::String GetNameForOperatorType(OperatorType value)
@@ -74,7 +74,7 @@ Aws::String GetNameForOperatorType(OperatorType value)
   case OperatorType::BETWEEN:
     return "BETWEEN";
   default:
-    return "EQ";
+    return "";
   }
 }
 

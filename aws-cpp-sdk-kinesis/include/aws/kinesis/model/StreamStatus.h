@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StreamStatus
   {
+    NOT_SET,
     CREATING,
     DELETING,
     ACTIVE,

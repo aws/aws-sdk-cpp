@@ -157,16 +157,22 @@ TEST(StringUtilsTest, TestURLEncodeAndDecode)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String toEncode = "/Test Path/value=reserved%";
+    Aws::String toEncode = "/Test Path/value=reserved%!";
 
     //test the encoding happened and was deterministic
     Aws::String encoded = StringUtils::URLEncode(toEncode.c_str());
-    ASSERT_STREQ("%2FTest%20Path%2Fvalue%3Dreserved%25", encoded.c_str());
+    ASSERT_STREQ("%2FTest%20Path%2Fvalue%3Dreserved%25%21", encoded.c_str());
 
     //test that encode and decode are inverse operations.
     Aws::String decoded = StringUtils::URLDecode(encoded.c_str());
 
     ASSERT_STREQ(toEncode.c_str(), decoded.c_str());
+
+    Aws::String securityTokenSample = "AQoDYXdzEHwa8AQuv9uqBq1xdJgujBb+oQI0m8d6uyXZo5MY1uSK1YIGYRlKSJPC4sOcK30w4EB6g3cA+jJe810K65eDgf60vQBEjwPA9VK4iVbu4M5a0JW2dEgJUnnXG5XNSWEzDhuROjfM+lJ55StL5KxAB7QiNZR1S5p+KdSGLEcIGTsvNRKZ6P1iLD4FRiM+80xo3lZydiLSPRl3jSNYmnSuzBMnpm4xca4BqBFY9vyL0xIvm7bRaObHjuN+ug/wUiELm/XiDexCjTHPh4AHjRovuQNSarsyE7XtvzFVL22TZGbiKT6cI4M+QR7VoJ6Bcwx4sp1DcuilGvXubcPTfrGHe01Vb0cKHysBcidJym1FRb6bA1artV3++CmbzW3z81gi7rG1P6d2vBQUG1PiYJSPDQ8AjEz+NK5sOviMJzo8jJVGwfvs73w51XOBe4DblpR+pDQ0IxEnmlkeHzBTQnqaW8czlaE2dqGfSkA8J/DwhjK+iZTgwUggIYWnaG+OpX8ngV9zkC+QotCx+D8VQ5FvNUV/QpJNpOEunbZTlQHJeF/G7zNstwXPQUTYv/JNmgmOWx1KoHRgCILRGbzj8JhO4ozSbsqDZ4hgGpaDYhU+vIX7kPXWvyGHk8B+3dcZa9NxpSC+CDzW+oj7xXe5y6J+v0q+r3MYv67gE/FpljdpGHvRJ9DeQh7Db83frdeYWjJir3K3ZjLCf6W/Yuaos362bu3RSFIk5def037eGwctuh85zdyvHDai+MGKKAa5xOMkYOb/Wnqd73OTAKRMsQLxPqGP0sDPpAJZm0Q8iMi0JP3JHgIb8GWMliWWcpBDHEtuouuWLLkgmY21rQU=";
+    encoded = StringUtils::URLEncode(securityTokenSample.c_str());
+
+    Aws::String urlEncodedSample = "AQoDYXdzEHwa8AQuv9uqBq1xdJgujBb%2BoQI0m8d6uyXZo5MY1uSK1YIGYRlKSJPC4sOcK30w4EB6g3cA%2BjJe810K65eDgf60vQBEjwPA9VK4iVbu4M5a0JW2dEgJUnnXG5XNSWEzDhuROjfM%2BlJ55StL5KxAB7QiNZR1S5p%2BKdSGLEcIGTsvNRKZ6P1iLD4FRiM%2B80xo3lZydiLSPRl3jSNYmnSuzBMnpm4xca4BqBFY9vyL0xIvm7bRaObHjuN%2Bug%2FwUiELm%2FXiDexCjTHPh4AHjRovuQNSarsyE7XtvzFVL22TZGbiKT6cI4M%2BQR7VoJ6Bcwx4sp1DcuilGvXubcPTfrGHe01Vb0cKHysBcidJym1FRb6bA1artV3%2B%2BCmbzW3z81gi7rG1P6d2vBQUG1PiYJSPDQ8AjEz%2BNK5sOviMJzo8jJVGwfvs73w51XOBe4DblpR%2BpDQ0IxEnmlkeHzBTQnqaW8czlaE2dqGfSkA8J%2FDwhjK%2BiZTgwUggIYWnaG%2BOpX8ngV9zkC%2BQotCx%2BD8VQ5FvNUV%2FQpJNpOEunbZTlQHJeF%2FG7zNstwXPQUTYv%2FJNmgmOWx1KoHRgCILRGbzj8JhO4ozSbsqDZ4hgGpaDYhU%2BvIX7kPXWvyGHk8B%2B3dcZa9NxpSC%2BCDzW%2Boj7xXe5y6J%2Bv0q%2Br3MYv67gE%2FFpljdpGHvRJ9DeQh7Db83frdeYWjJir3K3ZjLCf6W%2FYuaos362bu3RSFIk5def037eGwctuh85zdyvHDai%2BMGKKAa5xOMkYOb%2FWnqd73OTAKRMsQLxPqGP0sDPpAJZm0Q8iMi0JP3JHgIb8GWMliWWcpBDHEtuouuWLLkgmY21rQU%3D";
+    ASSERT_EQ(urlEncodedSample, encoded);
 
     //test that a string that doesn't need encoding is not altered.
     Aws::String shouldBeTheSameAsEncoded = StringUtils::URLEncode("IShouldNotChange");

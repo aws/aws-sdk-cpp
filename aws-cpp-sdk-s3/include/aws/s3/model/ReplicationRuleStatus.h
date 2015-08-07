@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ReplicationRuleStatus
   {
+    NOT_SET,
     Enabled,
     Disabled
   };

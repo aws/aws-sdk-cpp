@@ -46,7 +46,7 @@ HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
     return HistoryItemType::Action;
   }
 
-  return HistoryItemType::ConfigurationUpdate;
+  return HistoryItemType::NOT_SET;
 }
 
 Aws::String GetNameForHistoryItemType(HistoryItemType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForHistoryItemType(HistoryItemType value)
   case HistoryItemType::Action:
     return "Action";
   default:
-    return "ConfigurationUpdate";
+    return "";
   }
 }
 

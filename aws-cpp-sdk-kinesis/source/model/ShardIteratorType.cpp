@@ -51,7 +51,7 @@ ShardIteratorType GetShardIteratorTypeForName(const Aws::String& name)
     return ShardIteratorType::LATEST;
   }
 
-  return ShardIteratorType::AT_SEQUENCE_NUMBER;
+  return ShardIteratorType::NOT_SET;
 }
 
 Aws::String GetNameForShardIteratorType(ShardIteratorType value)
@@ -67,7 +67,7 @@ Aws::String GetNameForShardIteratorType(ShardIteratorType value)
   case ShardIteratorType::LATEST:
     return "LATEST";
   default:
-    return "AT_SEQUENCE_NUMBER";
+    return "";
   }
 }
 

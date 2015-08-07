@@ -41,7 +41,7 @@ ConfigurationOptionValueType GetConfigurationOptionValueTypeForName(const Aws::S
     return ConfigurationOptionValueType::List;
   }
 
-  return ConfigurationOptionValueType::Scalar;
+  return ConfigurationOptionValueType::NOT_SET;
 }
 
 Aws::String GetNameForConfigurationOptionValueType(ConfigurationOptionValueType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForConfigurationOptionValueType(ConfigurationOptionValueType 
   case ConfigurationOptionValueType::List:
     return "List";
   default:
-    return "Scalar";
+    return "";
   }
 }
 

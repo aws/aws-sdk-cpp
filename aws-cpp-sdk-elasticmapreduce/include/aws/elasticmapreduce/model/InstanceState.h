@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InstanceState
   {
+    NOT_SET,
     AWAITING_FULFILLMENT,
     PROVISIONING,
     BOOTSTRAPPING,

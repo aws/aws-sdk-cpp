@@ -41,7 +41,7 @@ MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
     return MFADeleteStatus::Disabled;
   }
 
-  return MFADeleteStatus::Enabled;
+  return MFADeleteStatus::NOT_SET;
 }
 
 Aws::String GetNameForMFADeleteStatus(MFADeleteStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForMFADeleteStatus(MFADeleteStatus value)
   case MFADeleteStatus::Disabled:
     return "Disabled";
   default:
-    return "Enabled";
+    return "";
   }
 }
 

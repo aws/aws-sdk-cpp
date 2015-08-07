@@ -85,16 +85,16 @@ namespace Model
     inline DescribeDBLogFilesRequest& WithFilenameContains(const char* value) { SetFilenameContains(value); return *this;}
 
     /*
-     <p> Filters the available log files for files written since the specified date, in POSIX timestamp format. </p>
+     <p> Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds. </p>
     */
     inline long long GetFileLastWritten() const{ return m_fileLastWritten; }
     /*
-     <p> Filters the available log files for files written since the specified date, in POSIX timestamp format. </p>
+     <p> Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds. </p>
     */
     inline void SetFileLastWritten(long long value) { m_fileLastWrittenHasBeenSet = true; m_fileLastWritten = value; }
 
     /*
-     <p> Filters the available log files for files written since the specified date, in POSIX timestamp format. </p>
+     <p> Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds. </p>
     */
     inline DescribeDBLogFilesRequest&  WithFileLastWritten(long long value) { SetFileLastWritten(value); return *this;}
 

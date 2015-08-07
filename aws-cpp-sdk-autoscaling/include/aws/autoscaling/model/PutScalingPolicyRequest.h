@@ -160,87 +160,87 @@ namespace Model
     inline PutScalingPolicyRequest&  WithMinAdjustmentMagnitude(long value) { SetMinAdjustmentMagnitude(value); return *this;}
 
     /*
-     <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p><code>ScalingAdjustment</code> is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
+     <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p>This parameter is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
     */
     inline long GetScalingAdjustment() const{ return m_scalingAdjustment; }
     /*
-     <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p><code>ScalingAdjustment</code> is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
+     <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p>This parameter is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
     */
     inline void SetScalingAdjustment(long value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /*
-     <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p><code>ScalingAdjustment</code> is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
+     <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p>This parameter is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
     */
     inline PutScalingPolicyRequest&  WithScalingAdjustment(long value) { SetScalingAdjustment(value); return *this;}
 
     /*
-     <p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.</p> <p>This value is not supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     <p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. If this parameter is not specified, the default cooldown period for the group applies.</p> <p>This parameter is not supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline long GetCooldown() const{ return m_cooldown; }
     /*
-     <p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.</p> <p>This value is not supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     <p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. If this parameter is not specified, the default cooldown period for the group applies.</p> <p>This parameter is not supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline void SetCooldown(long value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /*
-     <p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.</p> <p>This value is not supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     <p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. If this parameter is not specified, the default cooldown period for the group applies.</p> <p>This parameter is not supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline PutScalingPolicyRequest&  WithCooldown(long value) { SetCooldown(value); return *this;}
 
     /*
-     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline const Aws::String& GetMetricAggregationType() const{ return m_metricAggregationType; }
     /*
-     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline void SetMetricAggregationType(const Aws::String& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
 
     /*
-     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline void SetMetricAggregationType(const char* value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType.assign(value); }
 
     /*
-     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline PutScalingPolicyRequest&  WithMetricAggregationType(const Aws::String& value) { SetMetricAggregationType(value); return *this;}
 
     /*
-     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline PutScalingPolicyRequest& WithMetricAggregationType(const char* value) { SetMetricAggregationType(value); return *this;}
 
     /*
-     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This value is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
+     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     */
     inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const{ return m_stepAdjustments; }
     /*
-     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This value is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
+     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     */
     inline void SetStepAdjustments(const Aws::Vector<StepAdjustment>& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
 
     /*
-     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This value is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
+     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     */
     inline PutScalingPolicyRequest&  WithStepAdjustments(const Aws::Vector<StepAdjustment>& value) { SetStepAdjustments(value); return *this;}
 
     /*
-     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This value is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
+     <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     */
     inline PutScalingPolicyRequest& AddStepAdjustments(const StepAdjustment& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(value); return *this; }
 
     /*
-     <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The default is to use the value specified for the default cooldown period for the group.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline long GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
     /*
-     <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The default is to use the value specified for the default cooldown period for the group.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline void SetEstimatedInstanceWarmup(long value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /*
-     <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p> <p>This value is not supported if the policy type is <code>SimpleScaling</code>.</p>
+     <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The default is to use the value specified for the default cooldown period for the group.</p> <p>This parameter is not supported if the policy type is <code>SimpleScaling</code>.</p>
     */
     inline PutScalingPolicyRequest&  WithEstimatedInstanceWarmup(long value) { SetEstimatedInstanceWarmup(value); return *this;}
 

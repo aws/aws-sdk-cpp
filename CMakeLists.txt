@@ -48,20 +48,25 @@ else()
     message(FATAL_ERROR "Unknown target platform.  How did this happen?")
 endif()
 
-if("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "1")
+# shared libraries as intermediate (non-leaf) targets are not supported in android due to std::string issues
+if("${STATIC_LINKING}" STREQUAL "1")
+    SET(BUILD_SHARED_LIBS 0)
+    SET(ARCHIVE_DIRECTORY "lib")
+    message(STATUS "Dynamic linking disabled")
+else()
+    SET(BUILD_SHARED_LIBS 1)
+    SET(ARCHIVE_DIRECTORY "bin")
+    message(STATUS "Dynamic linking enabled")
+endif()
+
+# If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
+# We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
+# allocate in one DLLs heap while freeing in another (which will lead to runtime crashes)
+if(("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "1") OR (BUILD_SHARED_LIBS AND NOT ("${CUSTOM_MEMORY_MANAGEMENT}" STREQUAL "0")))
     add_definitions(-DAWS_CUSTOM_MEMORY_MANAGEMENT)
     message(STATUS "Custom memory management enabled; stl objects now using custom allocators")
 else()
     message(STATUS "Custom memory management disabled")
-endif()
-
-# shared libraries as intermediate (non-leaf) targets are not supported in android due to std::string issues
-if("${STATIC_LINKING}" STREQUAL "1")
-    SET(BUILD_SHARED_LIBS 0)
-    message(STATUS "Dynamic linking disabled")
-else()
-    SET(BUILD_SHARED_LIBS 1)
-    message(STATUS "Dynamic linking enabled")
 endif()
 
 # on Windows, set CURL_DIR to a valid curl install directory in order to use the curl client rather than the windows-specific one
@@ -84,12 +89,35 @@ endif()
 
 project(AWSNativeSDKAll)
 
+# install setup
+# This install section must come after the initial "project(..)" declaration since that's when the compiler settings are discovered; prior to that CMAKE_SIZEOF_VOID_P is empty
+# install syntax (after building): cmake -DCMAKE_INSTALL_CONFIG_NAME=<Release/Debug> -DCMAKE_INSTALL_PREFIX=<install_root> -P cmake_install.cmake
+# ToDo: consoles
+if(PLATFORM_WINDOWS)
+    set(SDK_INSTALL_BINARY_PREFIX "windows")
+elseif(PLATFORM_LINUX)
+    set(SDK_INSTALL_BINARY_PREFIX "linux")
+elseif(PLATFORM_ANDROID)
+    set(SDK_INSTALL_BINARY_PREFIX "android")
+elseif(PLATFORM_MAC)
+    set(SDK_INSTALL_BINARY_PREFIX "mac")
+endif()
+
+# ToDo: Mac/ios/android/consoles
+if(PLATFORM_WINDOWS OR PLATFORM_LINUX)
+    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+        set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/intel64")
+    else()
+        set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/ia32")
+    endif()
+endif()
+
+message(STATUS "Install binary prefix: ${SDK_INSTALL_BINARY_PREFIX}")
+
 if(BUILD_SHARED_LIBS)
     SET(LIBTYPE SHARED)
     if(PLATFORM_WINDOWS)
         add_definitions("-DUSE_IMPORT_EXPORT")
-        add_definitions("-DJSON_DLL_BUILD")
-        add_definitions("-DTINYXML2_EXPORT")
         SET(SUFFIX dll)
     elseif(PLATFORM_LINUX OR PLATFORM_ANDROID)
         SET(SUFFIX so)
@@ -298,12 +326,18 @@ if(PLATFORM_ANDROID)
 
 endif()
 
+#release pdbs in windows
+if(PLATFORM_WINDOWS)
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
+    set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
+endif()
+
 # default libraries to link in per-platform
 if(PLATFORM_WINDOWS)
     if(USE_CURL_CLIENT)
         set(PLATFORM_DEP_LIBS libcurl)
     else()
-        set(PLATFORM_DEP_LIBS Wininet)
+        set(PLATFORM_DEP_LIBS Wininet winhttp)
     endif()
     set(PLATFORM_DEP_LIBS ${PLATFORM_DEP_LIBS} Bcrypt Crypt32 Userenv )
 elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
@@ -312,8 +346,9 @@ elseif(PLATFORM_ANDROID)
     set(PLATFORM_DEP_LIBS curl ssl crypto ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a log atomic)
 endif()
 
-#Do Not increment version number for export builds
-set(GENERATE_VERSION_INFO 0)
+if(NOT BRAZIL_BUILD)
+    set(GENERATE_VERSION_INFO 1)
+endif()
 
 add_subdirectory(aws-cpp-sdk-core)
 add_subdirectory(testing-resources)
@@ -331,7 +366,7 @@ add_subdirectory(aws-cpp-sdk-opsworks)
 add_subdirectory(aws-cpp-sdk-cloudfront)
 add_subdirectory(aws-cpp-sdk-kms)
 add_subdirectory(aws-cpp-sdk-codedeploy)
-add_subdirectory(aws-cpp-sdk-redshift)
+#add_subdirectory(aws-cpp-sdk-redshift)
 add_subdirectory(aws-cpp-sdk-iam)
 add_subdirectory(aws-cpp-sdk-ecs)
 add_subdirectory(aws-cpp-sdk-datapipeline)
@@ -349,6 +384,9 @@ add_subdirectory(aws-cpp-sdk-sns)
 add_subdirectory(aws-cpp-sdk-autoscaling)
 add_subdirectory(aws-cpp-sdk-rds)
 add_subdirectory(aws-cpp-sdk-logging)
+add_subdirectory(aws-cpp-sdk-access-management)
+add_subdirectory(aws-cpp-sdk-transfer)
+add_subdirectory(aws-cpp-sdk-queues)
 
 if(PLATFORM_ANDROID)
     add_subdirectory(android-unified-tests)
@@ -361,6 +399,11 @@ else()
     add_subdirectory(aws-cpp-sdk-s3-integration-tests)
     add_subdirectory(aws-cpp-sdk-identity-management-tests)
     add_subdirectory(aws-cpp-sdk-logging-tests)
+    add_subdirectory(aws-cpp-sdk-transfer-tests)
+
+    if(PLATFORM_WINDOWS)
+        add_subdirectory(aws-cpp-sdk-wininet-winhttp-test)
+    endif()
 endif()
 
 if(BUILD_EXAMPLES)

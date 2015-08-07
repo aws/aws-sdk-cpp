@@ -238,7 +238,11 @@ size_t CurlHttpClient::WriteData(char *ptr, size_t size, size_t nmemb, void* use
         }
 
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
-        context->m_request->OnDataReceived.Invoke(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
+        auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
+        if(receivedHandler)
+        {
+            receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
+        }
 
         AWS_LOG_TRACE(CurlTag, "%d bytes written to response.", sizeToWrite);
         return sizeToWrite;
@@ -288,7 +292,11 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
         size_t amountToRead = static_cast< size_t >(std::min<decltype(length)>(length - currentPos, size * nmemb));
 
         ioStream->read(ptr, amountToRead);
-        request->OnDataSent.Invoke(request, amountToRead);
+        auto& sentHandler = request->GetDataSentEventHandler();
+        if(sentHandler)
+        {
+            sentHandler(request, amountToRead);
+        }
 
         return amountToRead;
     }

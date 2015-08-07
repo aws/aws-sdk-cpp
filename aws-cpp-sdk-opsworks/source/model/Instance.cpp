@@ -32,6 +32,8 @@ Instance::Instance() :
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_ecsClusterArnHasBeenSet(false),
+    m_ecsContainerInstanceArnHasBeenSet(false),
     m_elasticIpHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_infrastructureClassHasBeenSet(false),
@@ -75,6 +77,8 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_ecsClusterArnHasBeenSet(false),
+    m_ecsContainerInstanceArnHasBeenSet(false),
     m_elasticIpHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_infrastructureClassHasBeenSet(false),
@@ -174,6 +178,20 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
 
     m_ec2InstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EcsClusterArn"))
+  {
+    m_ecsClusterArn = jsonValue.GetString("EcsClusterArn");
+
+    m_ecsClusterArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EcsContainerInstanceArn"))
+  {
+    m_ecsContainerInstanceArn = jsonValue.GetString("EcsContainerInstanceArn");
+
+    m_ecsContainerInstanceArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ElasticIp"))
@@ -439,6 +457,18 @@ JsonValue Instance::Jsonize() const
   if(m_ec2InstanceIdHasBeenSet)
   {
    payload.WithString("Ec2InstanceId", m_ec2InstanceId);
+
+  }
+
+  if(m_ecsClusterArnHasBeenSet)
+  {
+   payload.WithString("EcsClusterArn", m_ecsClusterArn);
+
+  }
+
+  if(m_ecsContainerInstanceArnHasBeenSet)
+  {
+   payload.WithString("EcsContainerInstanceArn", m_ecsContainerInstanceArn);
 
   }
 

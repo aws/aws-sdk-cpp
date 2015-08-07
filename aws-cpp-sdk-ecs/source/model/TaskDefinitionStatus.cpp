@@ -41,7 +41,7 @@ TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
     return TaskDefinitionStatus::INACTIVE;
   }
 
-  return TaskDefinitionStatus::ACTIVE;
+  return TaskDefinitionStatus::NOT_SET;
 }
 
 Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus value)
   case TaskDefinitionStatus::INACTIVE:
     return "INACTIVE";
   default:
-    return "ACTIVE";
+    return "";
   }
 }
 

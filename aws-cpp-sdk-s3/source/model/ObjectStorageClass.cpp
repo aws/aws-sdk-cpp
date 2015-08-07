@@ -46,7 +46,7 @@ ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
     return ObjectStorageClass::GLACIER;
   }
 
-  return ObjectStorageClass::STANDARD;
+  return ObjectStorageClass::NOT_SET;
 }
 
 Aws::String GetNameForObjectStorageClass(ObjectStorageClass value)
@@ -60,7 +60,7 @@ Aws::String GetNameForObjectStorageClass(ObjectStorageClass value)
   case ObjectStorageClass::GLACIER:
     return "GLACIER";
   default:
-    return "STANDARD";
+    return "";
   }
 }
 

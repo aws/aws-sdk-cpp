@@ -122,18 +122,28 @@ namespace Model
     */
     inline LocalSecondaryIndexDescription&  WithItemCount(long long value) { SetItemCount(value); return *this;}
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
     inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
     inline void SetIndexArn(const Aws::String& value) { m_indexArnHasBeenSet = true; m_indexArn = value; }
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
     inline void SetIndexArn(const char* value) { m_indexArnHasBeenSet = true; m_indexArn.assign(value); }
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
     inline LocalSecondaryIndexDescription&  WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
 
-    
+    /*
+     <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    */
     inline LocalSecondaryIndexDescription& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
 
   private:

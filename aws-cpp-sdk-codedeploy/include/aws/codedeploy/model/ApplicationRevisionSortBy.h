@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ApplicationRevisionSortBy
   {
+    NOT_SET,
     registerTime,
     firstUsedTime,
     lastUsedTime

@@ -41,9 +41,11 @@
 #include <aws/elasticbeanstalk/model/DescribeApplicationsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeConfigurationOptionsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeConfigurationSettingsRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentResourcesRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeInstancesHealthRequest.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
 #include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
 #include <aws/elasticbeanstalk/model/RequestEnvironmentInfoRequest.h>
@@ -117,12 +119,10 @@ void ElasticBeanstalkClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AbortEnvironmentUpdateOutcome ElasticBeanstalkClient::AbortEnvironmentUpdate(const AbortEnvironmentUpdateRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -139,21 +139,20 @@ AbortEnvironmentUpdateOutcomeCallable ElasticBeanstalkClient::AbortEnvironmentUp
   return std::async(std::launch::async, &ElasticBeanstalkClient::AbortEnvironmentUpdate, this, request);
 }
 
-void ElasticBeanstalkClient::AbortEnvironmentUpdateAsync(const AbortEnvironmentUpdateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::AbortEnvironmentUpdateAsync(const AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper(const AbortEnvironmentUpdateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper(const AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAbortEnvironmentUpdateOutcomeReceived(this, request, AbortEnvironmentUpdate(request), context);
+  handler(this, request, AbortEnvironmentUpdate(request), context);
 }
 
 CheckDNSAvailabilityOutcome ElasticBeanstalkClient::CheckDNSAvailability(const CheckDNSAvailabilityRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -170,21 +169,20 @@ CheckDNSAvailabilityOutcomeCallable ElasticBeanstalkClient::CheckDNSAvailability
   return std::async(std::launch::async, &ElasticBeanstalkClient::CheckDNSAvailability, this, request);
 }
 
-void ElasticBeanstalkClient::CheckDNSAvailabilityAsync(const CheckDNSAvailabilityRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CheckDNSAvailabilityAsync(const CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper(const CheckDNSAvailabilityRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper(const CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCheckDNSAvailabilityOutcomeReceived(this, request, CheckDNSAvailability(request), context);
+  handler(this, request, CheckDNSAvailability(request), context);
 }
 
 CreateApplicationOutcome ElasticBeanstalkClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -201,21 +199,20 @@ CreateApplicationOutcomeCallable ElasticBeanstalkClient::CreateApplicationCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateApplication, this, request);
 }
 
-void ElasticBeanstalkClient::CreateApplicationAsync(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateApplicationOutcomeReceived(this, request, CreateApplication(request), context);
+  handler(this, request, CreateApplication(request), context);
 }
 
 CreateApplicationVersionOutcome ElasticBeanstalkClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -232,21 +229,20 @@ CreateApplicationVersionOutcomeCallable ElasticBeanstalkClient::CreateApplicatio
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateApplicationVersion, this, request);
 }
 
-void ElasticBeanstalkClient::CreateApplicationVersionAsync(const CreateApplicationVersionRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateApplicationVersionAsync(const CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper(const CreateApplicationVersionRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper(const CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateApplicationVersionOutcomeReceived(this, request, CreateApplicationVersion(request), context);
+  handler(this, request, CreateApplicationVersion(request), context);
 }
 
 CreateConfigurationTemplateOutcome ElasticBeanstalkClient::CreateConfigurationTemplate(const CreateConfigurationTemplateRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -263,21 +259,20 @@ CreateConfigurationTemplateOutcomeCallable ElasticBeanstalkClient::CreateConfigu
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateConfigurationTemplate, this, request);
 }
 
-void ElasticBeanstalkClient::CreateConfigurationTemplateAsync(const CreateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateConfigurationTemplateAsync(const CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper(const CreateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper(const CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateConfigurationTemplateOutcomeReceived(this, request, CreateConfigurationTemplate(request), context);
+  handler(this, request, CreateConfigurationTemplate(request), context);
 }
 
 CreateEnvironmentOutcome ElasticBeanstalkClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -294,21 +289,20 @@ CreateEnvironmentOutcomeCallable ElasticBeanstalkClient::CreateEnvironmentCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateEnvironmentAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateEnvironmentAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateEnvironmentOutcomeReceived(this, request, CreateEnvironment(request), context);
+  handler(this, request, CreateEnvironment(request), context);
 }
 
 CreateStorageLocationOutcome ElasticBeanstalkClient::CreateStorageLocation(const CreateStorageLocationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -325,21 +319,20 @@ CreateStorageLocationOutcomeCallable ElasticBeanstalkClient::CreateStorageLocati
   return std::async(std::launch::async, &ElasticBeanstalkClient::CreateStorageLocation, this, request);
 }
 
-void ElasticBeanstalkClient::CreateStorageLocationAsync(const CreateStorageLocationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateStorageLocationAsync(const CreateStorageLocationRequest& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::CreateStorageLocationAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::CreateStorageLocationAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::CreateStorageLocationAsyncHelper(const CreateStorageLocationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::CreateStorageLocationAsyncHelper(const CreateStorageLocationRequest& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateStorageLocationOutcomeReceived(this, request, CreateStorageLocation(request), context);
+  handler(this, request, CreateStorageLocation(request), context);
 }
 
 DeleteApplicationOutcome ElasticBeanstalkClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -356,21 +349,20 @@ DeleteApplicationOutcomeCallable ElasticBeanstalkClient::DeleteApplicationCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteApplication, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteApplicationOutcomeReceived(this, request, DeleteApplication(request), context);
+  handler(this, request, DeleteApplication(request), context);
 }
 
 DeleteApplicationVersionOutcome ElasticBeanstalkClient::DeleteApplicationVersion(const DeleteApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -387,21 +379,20 @@ DeleteApplicationVersionOutcomeCallable ElasticBeanstalkClient::DeleteApplicatio
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteApplicationVersion, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationVersionAsync(const DeleteApplicationVersionRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteApplicationVersionAsync(const DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper(const DeleteApplicationVersionRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper(const DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteApplicationVersionOutcomeReceived(this, request, DeleteApplicationVersion(request), context);
+  handler(this, request, DeleteApplicationVersion(request), context);
 }
 
 DeleteConfigurationTemplateOutcome ElasticBeanstalkClient::DeleteConfigurationTemplate(const DeleteConfigurationTemplateRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -418,21 +409,20 @@ DeleteConfigurationTemplateOutcomeCallable ElasticBeanstalkClient::DeleteConfigu
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteConfigurationTemplate, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteConfigurationTemplateAsync(const DeleteConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteConfigurationTemplateAsync(const DeleteConfigurationTemplateRequest& request, const DeleteConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper(const DeleteConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper(const DeleteConfigurationTemplateRequest& request, const DeleteConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteConfigurationTemplateOutcomeReceived(this, request, DeleteConfigurationTemplate(request), context);
+  handler(this, request, DeleteConfigurationTemplate(request), context);
 }
 
 DeleteEnvironmentConfigurationOutcome ElasticBeanstalkClient::DeleteEnvironmentConfiguration(const DeleteEnvironmentConfigurationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -449,21 +439,20 @@ DeleteEnvironmentConfigurationOutcomeCallable ElasticBeanstalkClient::DeleteEnvi
   return std::async(std::launch::async, &ElasticBeanstalkClient::DeleteEnvironmentConfiguration, this, request);
 }
 
-void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsync(const DeleteEnvironmentConfigurationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsync(const DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper(const DeleteEnvironmentConfigurationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper(const DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteEnvironmentConfigurationOutcomeReceived(this, request, DeleteEnvironmentConfiguration(request), context);
+  handler(this, request, DeleteEnvironmentConfiguration(request), context);
 }
 
 DescribeApplicationVersionsOutcome ElasticBeanstalkClient::DescribeApplicationVersions(const DescribeApplicationVersionsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -480,21 +469,20 @@ DescribeApplicationVersionsOutcomeCallable ElasticBeanstalkClient::DescribeAppli
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeApplicationVersions, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationVersionsAsync(const DescribeApplicationVersionsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeApplicationVersionsAsync(const DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper(const DescribeApplicationVersionsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper(const DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeApplicationVersionsOutcomeReceived(this, request, DescribeApplicationVersions(request), context);
+  handler(this, request, DescribeApplicationVersions(request), context);
 }
 
 DescribeApplicationsOutcome ElasticBeanstalkClient::DescribeApplications(const DescribeApplicationsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -511,21 +499,20 @@ DescribeApplicationsOutcomeCallable ElasticBeanstalkClient::DescribeApplications
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeApplications, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeApplicationsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeApplicationsAsyncHelper(const DescribeApplicationsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeApplicationsAsyncHelper(const DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeApplicationsOutcomeReceived(this, request, DescribeApplications(request), context);
+  handler(this, request, DescribeApplications(request), context);
 }
 
 DescribeConfigurationOptionsOutcome ElasticBeanstalkClient::DescribeConfigurationOptions(const DescribeConfigurationOptionsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -542,21 +529,20 @@ DescribeConfigurationOptionsOutcomeCallable ElasticBeanstalkClient::DescribeConf
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeConfigurationOptions, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationOptionsAsync(const DescribeConfigurationOptionsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeConfigurationOptionsAsync(const DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper(const DescribeConfigurationOptionsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper(const DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeConfigurationOptionsOutcomeReceived(this, request, DescribeConfigurationOptions(request), context);
+  handler(this, request, DescribeConfigurationOptions(request), context);
 }
 
 DescribeConfigurationSettingsOutcome ElasticBeanstalkClient::DescribeConfigurationSettings(const DescribeConfigurationSettingsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -573,21 +559,50 @@ DescribeConfigurationSettingsOutcomeCallable ElasticBeanstalkClient::DescribeCon
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeConfigurationSettings, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationSettingsAsync(const DescribeConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeConfigurationSettingsAsync(const DescribeConfigurationSettingsRequest& request, const DescribeConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper(const DescribeConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper(const DescribeConfigurationSettingsRequest& request, const DescribeConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeConfigurationSettingsOutcomeReceived(this, request, DescribeConfigurationSettings(request), context);
+  handler(this, request, DescribeConfigurationSettings(request), context);
+}
+
+DescribeEnvironmentHealthOutcome ElasticBeanstalkClient::DescribeEnvironmentHealth(const DescribeEnvironmentHealthRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEnvironmentHealthOutcome(DescribeEnvironmentHealthResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEnvironmentHealthOutcome(outcome.GetError());
+  }
+}
+
+DescribeEnvironmentHealthOutcomeCallable ElasticBeanstalkClient::DescribeEnvironmentHealthCallable(const DescribeEnvironmentHealthRequest& request) const
+{
+  return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironmentHealth, this, request);
+}
+
+void ElasticBeanstalkClient::DescribeEnvironmentHealthAsync(const DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentHealthAsyncHelper, this, request, handler, context);
+}
+
+void ElasticBeanstalkClient::DescribeEnvironmentHealthAsyncHelper(const DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEnvironmentHealth(request), context);
 }
 
 DescribeEnvironmentResourcesOutcome ElasticBeanstalkClient::DescribeEnvironmentResources(const DescribeEnvironmentResourcesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -604,21 +619,20 @@ DescribeEnvironmentResourcesOutcomeCallable ElasticBeanstalkClient::DescribeEnvi
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironmentResources, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsync(const DescribeEnvironmentResourcesRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsync(const DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper(const DescribeEnvironmentResourcesRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper(const DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeEnvironmentResourcesOutcomeReceived(this, request, DescribeEnvironmentResources(request), context);
+  handler(this, request, DescribeEnvironmentResources(request), context);
 }
 
 DescribeEnvironmentsOutcome ElasticBeanstalkClient::DescribeEnvironments(const DescribeEnvironmentsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -635,21 +649,20 @@ DescribeEnvironmentsOutcomeCallable ElasticBeanstalkClient::DescribeEnvironments
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironments, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper(const DescribeEnvironmentsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeEnvironmentsOutcomeReceived(this, request, DescribeEnvironments(request), context);
+  handler(this, request, DescribeEnvironments(request), context);
 }
 
 DescribeEventsOutcome ElasticBeanstalkClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -666,21 +679,50 @@ DescribeEventsOutcomeCallable ElasticBeanstalkClient::DescribeEventsCallable(con
   return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEvents, this, request);
 }
 
-void ElasticBeanstalkClient::DescribeEventsAsync(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::DescribeEventsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEventsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDescribeEventsOutcomeReceived(this, request, DescribeEvents(request), context);
+  handler(this, request, DescribeEvents(request), context);
+}
+
+DescribeInstancesHealthOutcome ElasticBeanstalkClient::DescribeInstancesHealth(const DescribeInstancesHealthRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeInstancesHealthOutcome(DescribeInstancesHealthResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeInstancesHealthOutcome(outcome.GetError());
+  }
+}
+
+DescribeInstancesHealthOutcomeCallable ElasticBeanstalkClient::DescribeInstancesHealthCallable(const DescribeInstancesHealthRequest& request) const
+{
+  return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeInstancesHealth, this, request);
+}
+
+void ElasticBeanstalkClient::DescribeInstancesHealthAsync(const DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeInstancesHealthAsyncHelper, this, request, handler, context);
+}
+
+void ElasticBeanstalkClient::DescribeInstancesHealthAsyncHelper(const DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInstancesHealth(request), context);
 }
 
 ListAvailableSolutionStacksOutcome ElasticBeanstalkClient::ListAvailableSolutionStacks(const ListAvailableSolutionStacksRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -697,21 +739,20 @@ ListAvailableSolutionStacksOutcomeCallable ElasticBeanstalkClient::ListAvailable
   return std::async(std::launch::async, &ElasticBeanstalkClient::ListAvailableSolutionStacks, this, request);
 }
 
-void ElasticBeanstalkClient::ListAvailableSolutionStacksAsync(const ListAvailableSolutionStacksRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::ListAvailableSolutionStacksAsync(const ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAvailableSolutionStacksRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListAvailableSolutionStacksOutcomeReceived(this, request, ListAvailableSolutionStacks(request), context);
+  handler(this, request, ListAvailableSolutionStacks(request), context);
 }
 
 RebuildEnvironmentOutcome ElasticBeanstalkClient::RebuildEnvironment(const RebuildEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -728,21 +769,20 @@ RebuildEnvironmentOutcomeCallable ElasticBeanstalkClient::RebuildEnvironmentCall
   return std::async(std::launch::async, &ElasticBeanstalkClient::RebuildEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::RebuildEnvironmentAsync(const RebuildEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RebuildEnvironmentAsync(const RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper(const RebuildEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper(const RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRebuildEnvironmentOutcomeReceived(this, request, RebuildEnvironment(request), context);
+  handler(this, request, RebuildEnvironment(request), context);
 }
 
 RequestEnvironmentInfoOutcome ElasticBeanstalkClient::RequestEnvironmentInfo(const RequestEnvironmentInfoRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -759,21 +799,20 @@ RequestEnvironmentInfoOutcomeCallable ElasticBeanstalkClient::RequestEnvironment
   return std::async(std::launch::async, &ElasticBeanstalkClient::RequestEnvironmentInfo, this, request);
 }
 
-void ElasticBeanstalkClient::RequestEnvironmentInfoAsync(const RequestEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RequestEnvironmentInfoAsync(const RequestEnvironmentInfoRequest& request, const RequestEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper(const RequestEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper(const RequestEnvironmentInfoRequest& request, const RequestEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRequestEnvironmentInfoOutcomeReceived(this, request, RequestEnvironmentInfo(request), context);
+  handler(this, request, RequestEnvironmentInfo(request), context);
 }
 
 RestartAppServerOutcome ElasticBeanstalkClient::RestartAppServer(const RestartAppServerRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -790,21 +829,20 @@ RestartAppServerOutcomeCallable ElasticBeanstalkClient::RestartAppServerCallable
   return std::async(std::launch::async, &ElasticBeanstalkClient::RestartAppServer, this, request);
 }
 
-void ElasticBeanstalkClient::RestartAppServerAsync(const RestartAppServerRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RestartAppServerAsync(const RestartAppServerRequest& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RestartAppServerAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::RestartAppServerAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::RestartAppServerAsyncHelper(const RestartAppServerRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RestartAppServerAsyncHelper(const RestartAppServerRequest& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRestartAppServerOutcomeReceived(this, request, RestartAppServer(request), context);
+  handler(this, request, RestartAppServer(request), context);
 }
 
 RetrieveEnvironmentInfoOutcome ElasticBeanstalkClient::RetrieveEnvironmentInfo(const RetrieveEnvironmentInfoRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -821,21 +859,20 @@ RetrieveEnvironmentInfoOutcomeCallable ElasticBeanstalkClient::RetrieveEnvironme
   return std::async(std::launch::async, &ElasticBeanstalkClient::RetrieveEnvironmentInfo, this, request);
 }
 
-void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsync(const RetrieveEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsync(const RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper(const RetrieveEnvironmentInfoRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper(const RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRetrieveEnvironmentInfoOutcomeReceived(this, request, RetrieveEnvironmentInfo(request), context);
+  handler(this, request, RetrieveEnvironmentInfo(request), context);
 }
 
 SwapEnvironmentCNAMEsOutcome ElasticBeanstalkClient::SwapEnvironmentCNAMEs(const SwapEnvironmentCNAMEsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -852,21 +889,20 @@ SwapEnvironmentCNAMEsOutcomeCallable ElasticBeanstalkClient::SwapEnvironmentCNAM
   return std::async(std::launch::async, &ElasticBeanstalkClient::SwapEnvironmentCNAMEs, this, request);
 }
 
-void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsync(const SwapEnvironmentCNAMEsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsync(const SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper(const SwapEnvironmentCNAMEsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper(const SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSwapEnvironmentCNAMEsOutcomeReceived(this, request, SwapEnvironmentCNAMEs(request), context);
+  handler(this, request, SwapEnvironmentCNAMEs(request), context);
 }
 
 TerminateEnvironmentOutcome ElasticBeanstalkClient::TerminateEnvironment(const TerminateEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -883,21 +919,20 @@ TerminateEnvironmentOutcomeCallable ElasticBeanstalkClient::TerminateEnvironment
   return std::async(std::launch::async, &ElasticBeanstalkClient::TerminateEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::TerminateEnvironmentAsync(const TerminateEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::TerminateEnvironmentAsync(const TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper(const TerminateEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper(const TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onTerminateEnvironmentOutcomeReceived(this, request, TerminateEnvironment(request), context);
+  handler(this, request, TerminateEnvironment(request), context);
 }
 
 UpdateApplicationOutcome ElasticBeanstalkClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -914,21 +949,20 @@ UpdateApplicationOutcomeCallable ElasticBeanstalkClient::UpdateApplicationCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateApplication, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateApplicationOutcomeReceived(this, request, UpdateApplication(request), context);
+  handler(this, request, UpdateApplication(request), context);
 }
 
 UpdateApplicationVersionOutcome ElasticBeanstalkClient::UpdateApplicationVersion(const UpdateApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -945,21 +979,20 @@ UpdateApplicationVersionOutcomeCallable ElasticBeanstalkClient::UpdateApplicatio
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateApplicationVersion, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationVersionAsync(const UpdateApplicationVersionRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateApplicationVersionAsync(const UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper(const UpdateApplicationVersionRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper(const UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateApplicationVersionOutcomeReceived(this, request, UpdateApplicationVersion(request), context);
+  handler(this, request, UpdateApplicationVersion(request), context);
 }
 
 UpdateConfigurationTemplateOutcome ElasticBeanstalkClient::UpdateConfigurationTemplate(const UpdateConfigurationTemplateRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -976,21 +1009,20 @@ UpdateConfigurationTemplateOutcomeCallable ElasticBeanstalkClient::UpdateConfigu
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateConfigurationTemplate, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateConfigurationTemplateAsync(const UpdateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateConfigurationTemplateAsync(const UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper(const UpdateConfigurationTemplateRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper(const UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateConfigurationTemplateOutcomeReceived(this, request, UpdateConfigurationTemplate(request), context);
+  handler(this, request, UpdateConfigurationTemplate(request), context);
 }
 
 UpdateEnvironmentOutcome ElasticBeanstalkClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1007,21 +1039,20 @@ UpdateEnvironmentOutcomeCallable ElasticBeanstalkClient::UpdateEnvironmentCallab
   return std::async(std::launch::async, &ElasticBeanstalkClient::UpdateEnvironment, this, request);
 }
 
-void ElasticBeanstalkClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUpdateEnvironmentOutcomeReceived(this, request, UpdateEnvironment(request), context);
+  handler(this, request, UpdateEnvironment(request), context);
 }
 
 ValidateConfigurationSettingsOutcome ElasticBeanstalkClient::ValidateConfigurationSettings(const ValidateConfigurationSettingsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1038,13 +1069,13 @@ ValidateConfigurationSettingsOutcomeCallable ElasticBeanstalkClient::ValidateCon
   return std::async(std::launch::async, &ElasticBeanstalkClient::ValidateConfigurationSettings, this, request);
 }
 
-void ElasticBeanstalkClient::ValidateConfigurationSettingsAsync(const ValidateConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::ValidateConfigurationSettingsAsync(const ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper, this, request, context);
+  m_executor->Submit(&ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper, this, request, handler, context);
 }
 
-void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const ValidateConfigurationSettingsRequest& request, const AsyncCallerContext* context) const
+void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onValidateConfigurationSettingsOutcomeReceived(this, request, ValidateConfigurationSettings(request), context);
+  handler(this, request, ValidateConfigurationSettings(request), context);
 }
 

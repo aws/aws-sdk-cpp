@@ -19,6 +19,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace Lambda
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
   public:
     DeleteFunctionRequest();
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /*
@@ -57,9 +63,35 @@ namespace Model
     */
     inline DeleteFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+    /*
+     <p>Specifies the version of the Lambda function to delete. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To delete the HEAD version you must delete the entire function by not specifying any version in this parameter and not specifying any version in the <code>FunctionName</code>. </p>
+    */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+    /*
+     <p>Specifies the version of the Lambda function to delete. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To delete the HEAD version you must delete the entire function by not specifying any version in this parameter and not specifying any version in the <code>FunctionName</code>. </p>
+    */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /*
+     <p>Specifies the version of the Lambda function to delete. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To delete the HEAD version you must delete the entire function by not specifying any version in this parameter and not specifying any version in the <code>FunctionName</code>. </p>
+    */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /*
+     <p>Specifies the version of the Lambda function to delete. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To delete the HEAD version you must delete the entire function by not specifying any version in this parameter and not specifying any version in the <code>FunctionName</code>. </p>
+    */
+    inline DeleteFunctionRequest&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /*
+     <p>Specifies the version of the Lambda function to delete. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To delete the HEAD version you must delete the entire function by not specifying any version in this parameter and not specifying any version in the <code>FunctionName</code>. </p>
+    */
+    inline DeleteFunctionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

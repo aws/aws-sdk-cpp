@@ -51,7 +51,7 @@ ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
     return ReplicationStatus::REPLICA;
   }
 
-  return ReplicationStatus::COMPLETE;
+  return ReplicationStatus::NOT_SET;
 }
 
 Aws::String GetNameForReplicationStatus(ReplicationStatus value)
@@ -67,7 +67,7 @@ Aws::String GetNameForReplicationStatus(ReplicationStatus value)
   case ReplicationStatus::REPLICA:
     return "REPLICA";
   default:
-    return "COMPLETE";
+    return "";
   }
 }
 

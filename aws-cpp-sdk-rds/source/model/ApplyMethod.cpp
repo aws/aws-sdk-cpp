@@ -41,7 +41,7 @@ ApplyMethod GetApplyMethodForName(const Aws::String& name)
     return ApplyMethod::pending_reboot;
   }
 
-  return ApplyMethod::immediate;
+  return ApplyMethod::NOT_SET;
 }
 
 Aws::String GetNameForApplyMethod(ApplyMethod value)
@@ -53,7 +53,7 @@ Aws::String GetNameForApplyMethod(ApplyMethod value)
   case ApplyMethod::pending_reboot:
     return "pending-reboot";
   default:
-    return "immediate";
+    return "";
   }
 }
 

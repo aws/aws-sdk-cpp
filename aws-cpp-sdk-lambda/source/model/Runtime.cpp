@@ -41,7 +41,7 @@ Runtime GetRuntimeForName(const Aws::String& name)
     return Runtime::java8;
   }
 
-  return Runtime::nodejs;
+  return Runtime::NOT_SET;
 }
 
 Aws::String GetNameForRuntime(Runtime value)
@@ -53,7 +53,7 @@ Aws::String GetNameForRuntime(Runtime value)
   case Runtime::java8:
     return "java8";
   default:
-    return "nodejs";
+    return "";
   }
 }
 

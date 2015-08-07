@@ -157,26 +157,26 @@ namespace Model
     inline DescribeReservedDBInstancesRequest& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
 
     /*
-     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </code></p>
+     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
     /*
-     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </code></p>
+     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /*
-     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </code></p>
+     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     */
     inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
 
     /*
-     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </code></p>
+     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     */
     inline DescribeReservedDBInstancesRequest&  WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
 
     /*
-     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </code></p>
+     <p> The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. </p> <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     */
     inline DescribeReservedDBInstancesRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
@@ -214,16 +214,16 @@ namespace Model
     inline DescribeReservedDBInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /*
-     <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
     inline long GetMaxRecords() const{ return m_maxRecords; }
     /*
-     <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /*
-     <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
     */
     inline DescribeReservedDBInstancesRequest&  WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 

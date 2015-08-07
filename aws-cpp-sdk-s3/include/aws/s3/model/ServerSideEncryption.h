@@ -24,7 +24,9 @@ namespace Model
 {
   enum class ServerSideEncryption
   {
-    AES256
+    NOT_SET,
+    AES256,
+    aws_kms
   };
 
 namespace ServerSideEncryptionMapper

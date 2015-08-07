@@ -51,7 +51,7 @@ ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
     return ActionOnFailure::CONTINUE;
   }
 
-  return ActionOnFailure::TERMINATE_JOB_FLOW;
+  return ActionOnFailure::NOT_SET;
 }
 
 Aws::String GetNameForActionOnFailure(ActionOnFailure value)
@@ -67,7 +67,7 @@ Aws::String GetNameForActionOnFailure(ActionOnFailure value)
   case ActionOnFailure::CONTINUE:
     return "CONTINUE";
   default:
-    return "TERMINATE_JOB_FLOW";
+    return "";
   }
 }
 

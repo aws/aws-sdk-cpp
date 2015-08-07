@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StateValue
   {
+    NOT_SET,
     OK,
     ALARM,
     INSUFFICIENT_DATA

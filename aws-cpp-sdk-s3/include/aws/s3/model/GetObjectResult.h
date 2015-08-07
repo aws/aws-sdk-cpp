@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestCharged.h>
 #include <aws/s3/model/ReplicationStatus.h>
 
@@ -514,6 +515,14 @@ namespace Model
     inline GetObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
     
+    inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+    
+    inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
+
+    
+    inline GetObjectResult&  WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
+
+    
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
     
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
@@ -553,6 +562,7 @@ namespace Model
     Aws::String m_sSECustomerAlgorithm;
     Aws::String m_sSECustomerKeyMD5;
     Aws::String m_sSEKMSKeyId;
+    StorageClass m_storageClass;
     RequestCharged m_requestCharged;
     ReplicationStatus m_replicationStatus;
   };

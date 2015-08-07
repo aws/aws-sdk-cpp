@@ -24,6 +24,7 @@ namespace Model
 {
   enum class policyScopeType
   {
+    NOT_SET,
     All,
     AWS,
     Local

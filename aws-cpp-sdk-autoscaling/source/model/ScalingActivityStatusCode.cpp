@@ -86,7 +86,7 @@ ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String&
     return ScalingActivityStatusCode::Cancelled;
   }
 
-  return ScalingActivityStatusCode::WaitingForSpotInstanceRequestId;
+  return ScalingActivityStatusCode::NOT_SET;
 }
 
 Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode value)
@@ -116,7 +116,7 @@ Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode value)
   case ScalingActivityStatusCode::Cancelled:
     return "Cancelled";
   default:
-    return "WaitingForSpotInstanceRequestId";
+    return "";
   }
 }
 

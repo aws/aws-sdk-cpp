@@ -24,6 +24,7 @@ namespace Model
 {
   enum class DeploymentStatus
   {
+    NOT_SET,
     Created,
     Queued,
     InProgress,

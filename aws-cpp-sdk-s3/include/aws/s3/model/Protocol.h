@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Protocol
   {
+    NOT_SET,
     http,
     https
   };

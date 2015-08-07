@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ClusterState
   {
+    NOT_SET,
     STARTING,
     BOOTSTRAPPING,
     RUNNING,

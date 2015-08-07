@@ -41,7 +41,7 @@ Architecture GetArchitectureForName(const Aws::String& name)
     return Architecture::i386;
   }
 
-  return Architecture::x86_64;
+  return Architecture::NOT_SET;
 }
 
 Aws::String GetNameForArchitecture(Architecture value)
@@ -53,7 +53,7 @@ Aws::String GetNameForArchitecture(Architecture value)
   case Architecture::i386:
     return "i386";
   default:
-    return "x86_64";
+    return "";
   }
 }
 

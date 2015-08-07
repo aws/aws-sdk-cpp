@@ -61,7 +61,7 @@ ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name)
     return ObjectCannedACL::bucket_owner_full_control;
   }
 
-  return ObjectCannedACL::private_;
+  return ObjectCannedACL::NOT_SET;
 }
 
 Aws::String GetNameForObjectCannedACL(ObjectCannedACL value)
@@ -81,7 +81,7 @@ Aws::String GetNameForObjectCannedACL(ObjectCannedACL value)
   case ObjectCannedACL::bucket_owner_full_control:
     return "bucket-owner-full-control";
   default:
-    return "private_";
+    return "";
   }
 }
 

@@ -61,7 +61,7 @@ InstanceStatus GetInstanceStatusForName(const Aws::String& name)
     return InstanceStatus::Unknown;
   }
 
-  return InstanceStatus::Pending;
+  return InstanceStatus::NOT_SET;
 }
 
 Aws::String GetNameForInstanceStatus(InstanceStatus value)
@@ -81,7 +81,7 @@ Aws::String GetNameForInstanceStatus(InstanceStatus value)
   case InstanceStatus::Unknown:
     return "Unknown";
   default:
-    return "Pending";
+    return "";
   }
 }
 

@@ -1,0 +1,140 @@
+
+/*
+* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/transfer/DownloadFileRequest.h>
+
+#include <aws/transfer/TransferClient.h>
+#include <aws/transfer/TransferContext.h>
+
+#include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/ListObjectsRequest.h>
+
+#include <algorithm>
+
+using namespace Aws::S3::Model;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Transfer
+{
+
+static const char* ALLOCATION_TAG = "TransferAPI";
+
+DownloadFileRequest::DownloadFileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client) : S3FileRequest(fileName, bucketName, keyName, s3Client),
+m_gotContents(false),
+m_fileSize(0)
+{
+
+}
+
+DownloadFileRequest::~DownloadFileRequest()
+{
+
+}
+
+float DownloadFileRequest::GetProgress() const
+{
+    if (m_fileSize)
+    {
+        // Measure by data processed here soon
+    }
+    return (CompletedSuccessfully() ? 100.0f : 0.0f);
+}
+
+bool DownloadFileRequest::IsReady() const
+{
+    return true;
+}
+
+bool DownloadFileRequest::ReadyForDelete() const
+{ 
+    return (IsDone());
+}
+
+bool DownloadFileRequest::DoCancelAction()
+{
+    // Do we need to tell S3 something here?
+    return true;
+}
+
+bool DownloadFileRequest::DoSingleObjectDownload()
+{
+    if (!IsReady())
+    {
+        return false;
+    }
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetBucketName());
+    getObjectRequest.SetKey(GetKeyName());
+    getObjectRequest.SetResponseStreamFactory([this]() { return Aws::New<Aws::FStream>(ALLOCATION_TAG, GetFileName().c_str(), std::ios::binary | std::ios_base::out); });
+
+    std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<DownloadFileContext>(ALLOCATION_TAG, shared_from_this());
+
+    GetS3Client()->GetObjectAsync(getObjectRequest, &TransferClient::OnGetObject, context);
+
+    return false;
+}
+
+bool DownloadFileRequest::HandleGetObjectOutcome(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::GetObjectOutcome& outcome)
+{
+    AWS_UNREFERENCED_PARAM(request);
+
+    if (outcome.IsSuccess())
+    {
+        CompletionSuccess();
+        return true;
+    }
+    CompletionFailure(outcome.GetError().GetMessage().c_str());
+    return false;
+}
+
+void DownloadFileRequest::GetContents()
+{
+    if (m_gotContents)
+    {
+        return;
+    }
+
+    ListObjectsRequest listObjectsRequest;
+    listObjectsRequest.SetBucket(GetBucketName());
+
+    std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<DownloadFileContext>(ALLOCATION_TAG, shared_from_this());
+
+    GetS3Client()->ListObjectsAsync(listObjectsRequest, &TransferClient::OnListObjects, context);
+}
+
+bool DownloadFileRequest::HandleListObjectsOutcome(const Aws::S3::Model::ListObjectsRequest& request, const Aws::S3::Model::ListObjectsOutcome& outcome)
+{
+    AWS_UNREFERENCED_PARAM(request);
+
+    if (outcome.IsSuccess())
+    {
+        if (outcome.GetResult().GetContents().size())
+        {
+            auto thisObj = std::find_if(outcome.GetResult().GetContents().cbegin(), outcome.GetResult().GetContents().cend(), [&](const Object& thisObject) { return thisObject.GetKey() == GetKeyName();  });
+            if (thisObj != outcome.GetResult().GetContents().end())
+            {
+                m_fileSize = thisObj->GetSize();
+            }
+        }
+    }
+    m_gotContents = true;
+    return true;
+}
+
+} // namespace Transfer
+} // namespace Aws

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StreamingStatus
   {
+    NOT_SET,
     ENABLED,
     DISABLED
   };

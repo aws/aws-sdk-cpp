@@ -46,7 +46,7 @@ ApplicationRevisionSortBy GetApplicationRevisionSortByForName(const Aws::String&
     return ApplicationRevisionSortBy::lastUsedTime;
   }
 
-  return ApplicationRevisionSortBy::registerTime;
+  return ApplicationRevisionSortBy::NOT_SET;
 }
 
 Aws::String GetNameForApplicationRevisionSortBy(ApplicationRevisionSortBy value)
@@ -60,7 +60,7 @@ Aws::String GetNameForApplicationRevisionSortBy(ApplicationRevisionSortBy value)
   case ApplicationRevisionSortBy::lastUsedTime:
     return "lastUsedTime";
   default:
-    return "registerTime";
+    return "";
   }
 }
 

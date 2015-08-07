@@ -18,7 +18,6 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/Event.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sdb/model/DomainMetadataResult.h>
@@ -27,7 +26,9 @@
 #include <aws/sdb/model/SelectResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/http/HttpTypes.h>
 #include <future>
+#include <functional>
 
 namespace Aws
 {
@@ -69,52 +70,52 @@ namespace SimpleDB
 
 namespace Model
 {
-  class BatchDeleteAttributesRequest;
-  class BatchPutAttributesRequest;
-  class CreateDomainRequest;
-  class DeleteAttributesRequest;
-  class DeleteDomainRequest;
-  class DomainMetadataRequest;
-  class GetAttributesRequest;
-  class ListDomainsRequest;
-  class PutAttributesRequest;
-  class SelectRequest;
+        class BatchDeleteAttributesRequest;
+        class BatchPutAttributesRequest;
+        class CreateDomainRequest;
+        class DeleteAttributesRequest;
+        class DeleteDomainRequest;
+        class DomainMetadataRequest;
+        class GetAttributesRequest;
+        class ListDomainsRequest;
+        class PutAttributesRequest;
+        class SelectRequest;
 
-  typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
-  typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
-  typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
-  typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
-  typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
-  typedef Utils::Outcome<DomainMetadataResult, Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
-  typedef Utils::Outcome<GetAttributesResult, Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
-  typedef Utils::Outcome<ListDomainsResult, Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
-  typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
-  typedef Utils::Outcome<SelectResult, Client::AWSError<SimpleDBErrors>> SelectOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
+        typedef Utils::Outcome<DomainMetadataResult, Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
+        typedef Utils::Outcome<GetAttributesResult, Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
+        typedef Utils::Outcome<ListDomainsResult, Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
+        typedef Utils::Outcome<SelectResult, Client::AWSError<SimpleDBErrors>> SelectOutcome;
 
-  typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
-  typedef std::future<BatchPutAttributesOutcome> BatchPutAttributesOutcomeCallable;
-  typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-  typedef std::future<DeleteAttributesOutcome> DeleteAttributesOutcomeCallable;
-  typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-  typedef std::future<DomainMetadataOutcome> DomainMetadataOutcomeCallable;
-  typedef std::future<GetAttributesOutcome> GetAttributesOutcomeCallable;
-  typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
-  typedef std::future<PutAttributesOutcome> PutAttributesOutcomeCallable;
-  typedef std::future<SelectOutcome> SelectOutcomeCallable;
+        typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
+        typedef std::future<BatchPutAttributesOutcome> BatchPutAttributesOutcomeCallable;
+        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
+        typedef std::future<DeleteAttributesOutcome> DeleteAttributesOutcomeCallable;
+        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
+        typedef std::future<DomainMetadataOutcome> DomainMetadataOutcomeCallable;
+        typedef std::future<GetAttributesOutcome> GetAttributesOutcomeCallable;
+        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
+        typedef std::future<PutAttributesOutcome> PutAttributesOutcomeCallable;
+        typedef std::future<SelectOutcome> SelectOutcomeCallable;
 } // namespace Model
 
   class SimpleDBClient;
 
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::BatchDeleteAttributesRequest&, const Model::BatchDeleteAttributesOutcome&, const Aws::Client::AsyncCallerContext*> BatchDeleteAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::BatchPutAttributesRequest&, const Model::BatchPutAttributesOutcome&, const Aws::Client::AsyncCallerContext*> BatchPutAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const Aws::Client::AsyncCallerContext*> CreateDomainOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::DeleteAttributesRequest&, const Model::DeleteAttributesOutcome&, const Aws::Client::AsyncCallerContext*> DeleteAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const Aws::Client::AsyncCallerContext*> DeleteDomainOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::DomainMetadataRequest&, const Model::DomainMetadataOutcome&, const Aws::Client::AsyncCallerContext*> DomainMetadataOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::GetAttributesRequest&, const Model::GetAttributesOutcome&, const Aws::Client::AsyncCallerContext*> GetAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const Aws::Client::AsyncCallerContext*> ListDomainsOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::PutAttributesRequest&, const Model::PutAttributesOutcome&, const Aws::Client::AsyncCallerContext*> PutAttributesOutcomeReceivedEvent;
-  typedef Aws::Utils::Event<SimpleDBClient, const Model::SelectRequest&, const Model::SelectOutcome&, const Aws::Client::AsyncCallerContext*> SelectOutcomeReceivedEvent;
+    typedef std::function<void(const SimpleDBClient*, const Model::BatchDeleteAttributesRequest&, const Model::BatchDeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteAttributesResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::BatchPutAttributesRequest&, const Model::BatchPutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutAttributesResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::DeleteAttributesRequest&, const Model::DeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributesResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::DomainMetadataRequest&, const Model::DomainMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DomainMetadataResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::GetAttributesRequest&, const Model::GetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributesResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::PutAttributesRequest&, const Model::PutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAttributesResponseReceivedHandler;
+    typedef std::function<void(const SimpleDBClient*, const Model::SelectRequest&, const Model::SelectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResponseReceivedHandler;
 
   /*
     Amazon SimpleDB is a web service providing the core database functions of data indexing and querying in the cloud. By offloading the time and effort associated with building and operating a web-scale database, SimpleDB provides developers the freedom to focus on application development. <p> A traditional, clustered relational database requires a sizable upfront capital outlay, is complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven computing environment, are able to scale instantly, and pay only for what they use. </p> <p> Visit <a href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for more information. </p>
@@ -124,417 +125,235 @@ namespace Model
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
 
-     /**
-      * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
-      * is not specified, it will be initialized to default values.
-      */
-      SimpleDBClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
-
-     /**
-      * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-      * is not specified, it will be initialized to default values.
-      */
-      SimpleDBClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
-
-     /**
-      * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-      * the default http client factory will be used
-      */
-      SimpleDBClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-        const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-        const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
-
-      ~SimpleDBClient();
-
-     /*
-       <p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <note> <p> If you specify BatchDeleteAttributes without attributes or values, all the attributes for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent operation; running it multiple times on the same item or attribute doesn't result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or fails in its entirety. There are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. </p> <p> This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
-     */
-     Model::BatchDeleteAttributesOutcome BatchDeleteAttributes(const Model::BatchDeleteAttributesRequest& request) const;
-
-     /*
-       <p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <note> <p> If you specify BatchDeleteAttributes without attributes or values, all the attributes for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent operation; running it multiple times on the same item or attribute doesn't result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or fails in its entirety. There are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. </p> <p> This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
-
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::BatchDeleteAttributesOutcomeCallable BatchDeleteAttributesCallable(const Model::BatchDeleteAttributesRequest& request) const;
-
-     /*
-       <p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <note> <p> If you specify BatchDeleteAttributes without attributes or values, all the attributes for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent operation; running it multiple times on the same item or attribute doesn't result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or fails in its entirety. There are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. </p> <p> This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
+        /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SimpleDBClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+
+        /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SimpleDBClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+
+        /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SimpleDBClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
+            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+
+        ~SimpleDBClient();
+        /*
+            <p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <note> <p> If you specify BatchDeleteAttributes without attributes or values, all the attributes for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent operation; running it multiple times on the same item or attribute doesn't result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or fails in its entirety. There are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. </p> <p> This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
+        */
+        Model::BatchDeleteAttributesOutcome BatchDeleteAttributes(const Model::BatchDeleteAttributesRequest& request) const;
+
+        /*
+            <p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <note> <p> If you specify BatchDeleteAttributes without attributes or values, all the attributes for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent operation; running it multiple times on the same item or attribute doesn't result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or fails in its entirety. There are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. </p> <p> This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::BatchDeleteAttributesOutcomeCallable BatchDeleteAttributesCallable(const Model::BatchDeleteAttributesRequest& request) const;
+
+        /*
+            <p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <note> <p> If you specify BatchDeleteAttributes without attributes or values, all the attributes for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent operation; running it multiple times on the same item or attribute doesn't result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or fails in its entirety. There are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. </p> <p> This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void BatchDeleteAttributesAsync(const Model::BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <note> You cannot specify an empty string as an item or as an attribute name. The <code>BatchPutAttributes</code> operation succeeds or fails in its entirety. There are no partial puts. </note> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
+        */
+        Model::BatchPutAttributesOutcome BatchPutAttributes(const Model::BatchPutAttributesRequest& request) const;
+
+        /*
+            <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <note> You cannot specify an empty string as an item or as an attribute name. The <code>BatchPutAttributes</code> operation succeeds or fails in its entirety. There are no partial puts. </note> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::BatchPutAttributesOutcomeCallable BatchPutAttributesCallable(const Model::BatchPutAttributesRequest& request) const;
+
+        /*
+            <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <note> You cannot specify an empty string as an item or as an attribute name. The <code>BatchPutAttributes</code> operation succeeds or fails in its entirety. There are no partial puts. </note> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void BatchPutAttributesAsync(const Model::BatchPutAttributesRequest& request, const BatchPutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            <p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <note> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </note> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
+        */
+        Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
+
+        /*
+            <p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <note> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </note> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
+
+        /*
+            <p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <note> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </note> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            <p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <note> If <code>DeleteAttributes</code> is called without being passed any attributes or values specified, all the attributes for the item are deleted. </note> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>
+        */
+        Model::DeleteAttributesOutcome DeleteAttributes(const Model::DeleteAttributesRequest& request) const;
+
+        /*
+            <p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <note> If <code>DeleteAttributes</code> is called without being passed any attributes or values specified, all the attributes for the item are deleted. </note> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DeleteAttributesOutcomeCallable DeleteAttributesCallable(const Model::DeleteAttributesRequest& request) const;
+
+        /*
+            <p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <note> If <code>DeleteAttributes</code> is called without being passed any attributes or values specified, all the attributes for the item are deleted. </note> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>
 
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void BatchDeleteAttributesAsync(const Model::BatchDeleteAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <note> You cannot specify an empty string as an item or as an attribute name. The <code>BatchPutAttributes</code> operation succeeds or fails in its entirety. There are no partial puts. </note> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
-     */
-     Model::BatchPutAttributesOutcome BatchPutAttributes(const Model::BatchPutAttributesRequest& request) const;
-
-     /*
-       <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <note> You cannot specify an empty string as an item or as an attribute name. The <code>BatchPutAttributes</code> operation succeeds or fails in its entirety. There are no partial puts. </note> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DeleteAttributesAsync(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or running the function multiple times using the same domain name will not result in an error response. </note>
+        */
+        Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::BatchPutAttributesOutcomeCallable BatchPutAttributesCallable(const Model::BatchPutAttributesRequest& request) const;
+        /*
+            <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or running the function multiple times using the same domain name will not result in an error response. </note>
 
-     /*
-       <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <note> You cannot specify an empty string as an item or as an attribute name. The <code>BatchPutAttributes</code> operation succeeds or fails in its entirety. There are no partial puts. </note> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
 
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void BatchPutAttributesAsync(const Model::BatchPutAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <note> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </note> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
-     */
-     Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
+        /*
+            <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or running the function multiple times using the same domain name will not result in an error response. </note>
 
-     /*
-       <p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <note> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </note> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
+        /*
+            <p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>
+        */
+        Model::DomainMetadataOutcome DomainMetadata(const Model::DomainMetadataRequest& request) const;
 
-     /*
-       <p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <note> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </note> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
+        /*
+            <p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>
 
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void CreateDomainAsync(const Model::CreateDomainRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <note> If <code>DeleteAttributes</code> is called without being passed any attributes or values specified, all the attributes for the item are deleted. </note> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>
-     */
-     Model::DeleteAttributesOutcome DeleteAttributes(const Model::DeleteAttributesRequest& request) const;
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DomainMetadataOutcomeCallable DomainMetadataCallable(const Model::DomainMetadataRequest& request) const;
 
-     /*
-       <p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <note> If <code>DeleteAttributes</code> is called without being passed any attributes or values specified, all the attributes for the item are deleted. </note> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>
+        /*
+            <p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>
 
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::DeleteAttributesOutcomeCallable DeleteAttributesCallable(const Model::DeleteAttributesRequest& request) const;
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DomainMetadataAsync(const Model::DomainMetadataRequest& request, const DomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-     /*
-       <p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <note> If <code>DeleteAttributes</code> is called without being passed any attributes or values specified, all the attributes for the item are deleted. </note> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>
+        /*
+            <p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p> <note> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned. </note>
+        */
+        Model::GetAttributesOutcome GetAttributes(const Model::GetAttributesRequest& request) const;
 
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void DeleteAttributesAsync(const Model::DeleteAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or running the function multiple times using the same domain name will not result in an error response. </note>
-     */
-     Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
+        /*
+            <p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p> <note> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned. </note>
 
-     /*
-       <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or running the function multiple times using the same domain name will not result in an error response. </note>
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::GetAttributesOutcomeCallable GetAttributesCallable(const Model::GetAttributesRequest& request) const;
 
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
+        /*
+            <p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p> <note> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned. </note>
 
-     /*
-       <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or running the function multiple times using the same domain name will not result in an error response. </note>
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void GetAttributesAsync(const Model::GetAttributesRequest& request, const GetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
+        /*
+            <p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>
+        */
+        Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-     /*
-       <p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>
-     */
-     Model::DomainMetadataOutcome DomainMetadata(const Model::DomainMetadataRequest& request) const;
+        /*
+            <p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>
 
-     /*
-       <p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
 
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::DomainMetadataOutcomeCallable DomainMetadataCallable(const Model::DomainMetadataRequest& request) const;
-
-     /*
-       <p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>
-
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void DomainMetadataAsync(const Model::DomainMetadataRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p> <note> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned. </note>
-     */
-     Model::GetAttributesOutcome GetAttributes(const Model::GetAttributesRequest& request) const;
-
-     /*
-       <p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p> <note> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned. </note>
-
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::GetAttributesOutcomeCallable GetAttributesCallable(const Model::GetAttributesRequest& request) const;
-
-     /*
-       <p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p> <note> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned. </note>
-
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void GetAttributesAsync(const Model::GetAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>
-     */
-     Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
-
-     /*
-       <p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>
-
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-     /*
-       <p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>
-
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void ListDomainsAsync(const Model::ListDomainsRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <note> Using <code>PutAttributes</code> to replace attribute values that do not exist will not result in an error response. </note> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>
-     */
-     Model::PutAttributesOutcome PutAttributes(const Model::PutAttributesRequest& request) const;
-
-     /*
-       <p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <note> Using <code>PutAttributes</code> to replace attribute values that do not exist will not result in an error response. </note> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>
-
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::PutAttributesOutcomeCallable PutAttributesCallable(const Model::PutAttributesRequest& request) const;
-
-     /*
-       <p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <note> Using <code>PutAttributes</code> to replace attribute values that do not exist will not result in an error response. </note> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>
-
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void PutAttributesAsync(const Model::PutAttributesRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-     /*
-       <p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>
-     */
-     Model::SelectOutcome Select(const Model::SelectRequest& request) const;
-
-     /*
-       <p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>
-
-       returns a future to the operation so that it can be executed in parallel to other requests.
-     */
-     Model::SelectOutcomeCallable SelectCallable(const Model::SelectRequest& request) const;
-
-     /*
-       <p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>
-
-      Queues the request into a thread executor and triggers associated callback when operation has finished.
-     */
-     void SelectAsync(const Model::SelectRequest& request, const Aws::Client::AsyncCallerContext* context = nullptr) const;
-
-   /**
-    * Adds an event handler for BatchDeleteAttributesAsync to call upon completion to the handler chain. You need to call this to
-    * use BatchDeleteAttributesAsync.
-    */
-    inline void RegisterBatchDeleteAttributesOutcomeReceivedHandler(const BatchDeleteAttributesOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onBatchDeleteAttributesOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for BatchDeleteAttributes.
-    */
-    inline void ClearAllBatchDeleteAttributesOutcomeReceivedHandlers()
-    {
-      m_onBatchDeleteAttributesOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for BatchPutAttributesAsync to call upon completion to the handler chain. You need to call this to
-    * use BatchPutAttributesAsync.
-    */
-    inline void RegisterBatchPutAttributesOutcomeReceivedHandler(const BatchPutAttributesOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onBatchPutAttributesOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for BatchPutAttributes.
-    */
-    inline void ClearAllBatchPutAttributesOutcomeReceivedHandlers()
-    {
-      m_onBatchPutAttributesOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for CreateDomainAsync to call upon completion to the handler chain. You need to call this to
-    * use CreateDomainAsync.
-    */
-    inline void RegisterCreateDomainOutcomeReceivedHandler(const CreateDomainOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onCreateDomainOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for CreateDomain.
-    */
-    inline void ClearAllCreateDomainOutcomeReceivedHandlers()
-    {
-      m_onCreateDomainOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for DeleteAttributesAsync to call upon completion to the handler chain. You need to call this to
-    * use DeleteAttributesAsync.
-    */
-    inline void RegisterDeleteAttributesOutcomeReceivedHandler(const DeleteAttributesOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onDeleteAttributesOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for DeleteAttributes.
-    */
-    inline void ClearAllDeleteAttributesOutcomeReceivedHandlers()
-    {
-      m_onDeleteAttributesOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for DeleteDomainAsync to call upon completion to the handler chain. You need to call this to
-    * use DeleteDomainAsync.
-    */
-    inline void RegisterDeleteDomainOutcomeReceivedHandler(const DeleteDomainOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onDeleteDomainOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for DeleteDomain.
-    */
-    inline void ClearAllDeleteDomainOutcomeReceivedHandlers()
-    {
-      m_onDeleteDomainOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for DomainMetadataAsync to call upon completion to the handler chain. You need to call this to
-    * use DomainMetadataAsync.
-    */
-    inline void RegisterDomainMetadataOutcomeReceivedHandler(const DomainMetadataOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onDomainMetadataOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for DomainMetadata.
-    */
-    inline void ClearAllDomainMetadataOutcomeReceivedHandlers()
-    {
-      m_onDomainMetadataOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for GetAttributesAsync to call upon completion to the handler chain. You need to call this to
-    * use GetAttributesAsync.
-    */
-    inline void RegisterGetAttributesOutcomeReceivedHandler(const GetAttributesOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onGetAttributesOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for GetAttributes.
-    */
-    inline void ClearAllGetAttributesOutcomeReceivedHandlers()
-    {
-      m_onGetAttributesOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for ListDomainsAsync to call upon completion to the handler chain. You need to call this to
-    * use ListDomainsAsync.
-    */
-    inline void RegisterListDomainsOutcomeReceivedHandler(const ListDomainsOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onListDomainsOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for ListDomains.
-    */
-    inline void ClearAllListDomainsOutcomeReceivedHandlers()
-    {
-      m_onListDomainsOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for PutAttributesAsync to call upon completion to the handler chain. You need to call this to
-    * use PutAttributesAsync.
-    */
-    inline void RegisterPutAttributesOutcomeReceivedHandler(const PutAttributesOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onPutAttributesOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for PutAttributes.
-    */
-    inline void ClearAllPutAttributesOutcomeReceivedHandlers()
-    {
-      m_onPutAttributesOutcomeReceived.Clear();
-    }
-
-   /**
-    * Adds an event handler for SelectAsync to call upon completion to the handler chain. You need to call this to
-    * use SelectAsync.
-    */
-    inline void RegisterSelectOutcomeReceivedHandler(const SelectOutcomeReceivedEvent::EventHandler& handler)
-    {
-      m_onSelectOutcomeReceived += handler;
-    }
-
-    /**
-    * Clears all event handlers for Select.
-    */
-    inline void ClearAllSelectOutcomeReceivedHandlers()
-    {
-      m_onSelectOutcomeReceived.Clear();
-    }
+        /*
+            <p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>. A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            <p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <note> Using <code>PutAttributes</code> to replace attribute values that do not exist will not result in an error response. </note> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>
+        */
+        Model::PutAttributesOutcome PutAttributes(const Model::PutAttributesRequest& request) const;
+
+        /*
+            <p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <note> Using <code>PutAttributes</code> to replace attribute values that do not exist will not result in an error response. </note> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::PutAttributesOutcomeCallable PutAttributesCallable(const Model::PutAttributesRequest& request) const;
+
+        /*
+            <p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ "first_name", "first_value" }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <note> Using <code>PutAttributes</code> to replace attribute values that do not exist will not result in an error response. </note> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void PutAttributesAsync(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            <p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>
+        */
+        Model::SelectOutcome Select(const Model::SelectRequest& request) const;
+
+        /*
+            <p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::SelectOutcomeCallable SelectCallable(const Model::SelectRequest& request) const;
+
+        /*
+            <p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void SelectAsync(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-    /**Async helpers**/
-    void BatchDeleteAttributesAsyncHelper(const Model::BatchDeleteAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void BatchPutAttributesAsyncHelper(const Model::BatchPutAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void DeleteAttributesAsyncHelper(const Model::DeleteAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void DomainMetadataAsyncHelper(const Model::DomainMetadataRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void GetAttributesAsyncHelper(const Model::GetAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void PutAttributesAsyncHelper(const Model::PutAttributesRequest& request, const Aws::Client::AsyncCallerContext* context) const;
-    void SelectAsyncHelper(const Model::SelectRequest& request, const Aws::Client::AsyncCallerContext* context) const;
+/**Async helpers**/
+        void BatchDeleteAttributesAsyncHelper(const Model::BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchPutAttributesAsyncHelper(const Model::BatchPutAttributesRequest& request, const BatchPutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAttributesAsyncHelper(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DomainMetadataAsyncHelper(const Model::DomainMetadataRequest& request, const DomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAttributesAsyncHelper(const Model::GetAttributesRequest& request, const GetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAttributesAsyncHelper(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SelectAsyncHelper(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
-
-    /** events **/
-    BatchDeleteAttributesOutcomeReceivedEvent m_onBatchDeleteAttributesOutcomeReceived;
-    BatchPutAttributesOutcomeReceivedEvent m_onBatchPutAttributesOutcomeReceived;
-    CreateDomainOutcomeReceivedEvent m_onCreateDomainOutcomeReceived;
-    DeleteAttributesOutcomeReceivedEvent m_onDeleteAttributesOutcomeReceived;
-    DeleteDomainOutcomeReceivedEvent m_onDeleteDomainOutcomeReceived;
-    DomainMetadataOutcomeReceivedEvent m_onDomainMetadataOutcomeReceived;
-    GetAttributesOutcomeReceivedEvent m_onGetAttributesOutcomeReceived;
-    ListDomainsOutcomeReceivedEvent m_onListDomainsOutcomeReceived;
-    PutAttributesOutcomeReceivedEvent m_onPutAttributesOutcomeReceived;
-    SelectOutcomeReceivedEvent m_onSelectOutcomeReceived;
   };
 
 } // namespace SimpleDB

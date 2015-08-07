@@ -56,7 +56,7 @@ EntityType GetEntityTypeForName(const Aws::String& name)
     return EntityType::AWSManagedPolicy;
   }
 
-  return EntityType::User;
+  return EntityType::NOT_SET;
 }
 
 Aws::String GetNameForEntityType(EntityType value)
@@ -74,7 +74,7 @@ Aws::String GetNameForEntityType(EntityType value)
   case EntityType::AWSManagedPolicy:
     return "AWSManagedPolicy";
   default:
-    return "User";
+    return "";
   }
 }
 

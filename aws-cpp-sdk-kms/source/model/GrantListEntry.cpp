@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GrantListEntry::GrantListEntry() : 
+    m_keyIdHasBeenSet(false),
     m_grantIdHasBeenSet(false),
     m_granteePrincipalHasBeenSet(false),
     m_retiringPrincipalHasBeenSet(false),
@@ -32,6 +33,7 @@ GrantListEntry::GrantListEntry() :
 }
 
 GrantListEntry::GrantListEntry(const JsonValue& jsonValue) : 
+    m_keyIdHasBeenSet(false),
     m_grantIdHasBeenSet(false),
     m_granteePrincipalHasBeenSet(false),
     m_retiringPrincipalHasBeenSet(false),
@@ -44,6 +46,13 @@ GrantListEntry::GrantListEntry(const JsonValue& jsonValue) :
 
 GrantListEntry& GrantListEntry::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("KeyId"))
+  {
+    m_keyId = jsonValue.GetString("KeyId");
+
+    m_keyIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GrantId"))
   {
     m_grantId = jsonValue.GetString("GrantId");
@@ -95,6 +104,12 @@ GrantListEntry& GrantListEntry::operator =(const JsonValue& jsonValue)
 JsonValue GrantListEntry::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
+
+  }
 
   if(m_grantIdHasBeenSet)
   {

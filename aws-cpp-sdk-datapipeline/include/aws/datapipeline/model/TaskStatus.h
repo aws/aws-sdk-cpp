@@ -24,6 +24,7 @@ namespace Model
 {
   enum class TaskStatus
   {
+    NOT_SET,
     FINISHED,
     FAILED,
     FALSE

@@ -51,7 +51,7 @@ BulkPublishStatus GetBulkPublishStatusForName(const Aws::String& name)
     return BulkPublishStatus::SUCCEEDED;
   }
 
-  return BulkPublishStatus::NOT_STARTED;
+  return BulkPublishStatus::NOT_SET;
 }
 
 Aws::String GetNameForBulkPublishStatus(BulkPublishStatus value)
@@ -67,7 +67,7 @@ Aws::String GetNameForBulkPublishStatus(BulkPublishStatus value)
   case BulkPublishStatus::SUCCEEDED:
     return "SUCCEEDED";
   default:
-    return "NOT_STARTED";
+    return "";
   }
 }
 

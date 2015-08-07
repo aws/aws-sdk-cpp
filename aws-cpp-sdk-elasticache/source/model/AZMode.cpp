@@ -41,7 +41,7 @@ AZMode GetAZModeForName(const Aws::String& name)
     return AZMode::cross_az;
   }
 
-  return AZMode::single_az;
+  return AZMode::NOT_SET;
 }
 
 Aws::String GetNameForAZMode(AZMode value)
@@ -53,7 +53,7 @@ Aws::String GetNameForAZMode(AZMode value)
   case AZMode::cross_az:
     return "cross-az";
   default:
-    return "single_az";
+    return "";
   }
 }
 

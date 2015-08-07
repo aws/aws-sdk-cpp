@@ -29,6 +29,7 @@ Layer::Layer() :
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
+    m_customJsonHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
     m_defaultSecurityGroupNamesHasBeenSet(false),
     m_packagesHasBeenSet(false),
@@ -58,6 +59,7 @@ Layer::Layer(const JsonValue& jsonValue) :
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
+    m_customJsonHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
     m_defaultSecurityGroupNamesHasBeenSet(false),
     m_packagesHasBeenSet(false),
@@ -132,6 +134,13 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
     m_customInstanceProfileArn = jsonValue.GetString("CustomInstanceProfileArn");
 
     m_customInstanceProfileArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomJson"))
+  {
+    m_customJson = jsonValue.GetString("CustomJson");
+
+    m_customJsonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomSecurityGroupIds"))
@@ -287,6 +296,12 @@ JsonValue Layer::Jsonize() const
   if(m_customInstanceProfileArnHasBeenSet)
   {
    payload.WithString("CustomInstanceProfileArn", m_customInstanceProfileArn);
+
+  }
+
+  if(m_customJsonHasBeenSet)
+  {
+   payload.WithString("CustomJson", m_customJson);
 
   }
 

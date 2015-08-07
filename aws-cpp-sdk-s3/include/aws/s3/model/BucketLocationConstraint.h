@@ -24,6 +24,7 @@ namespace Model
 {
   enum class BucketLocationConstraint
   {
+    NOT_SET,
     EU,
     eu_west_1,
     us_west_1,

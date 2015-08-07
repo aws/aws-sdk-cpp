@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StatusCode
   {
+    NOT_SET,
     InProgress,
     Succeeded,
     Failed

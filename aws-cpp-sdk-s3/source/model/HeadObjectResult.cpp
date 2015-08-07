@@ -185,6 +185,12 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
   }
 
+  const auto& storageClassIter = headers.find("x-amz-storage-class");
+  if(storageClassIter != headers.end())
+  {
+    m_storageClass = StorageClassMapper::GetStorageClassForName(storageClassIter->second);
+  }
+
   const auto& requestChargedIter = headers.find("x-amz-request-charged");
   if(requestChargedIter != headers.end())
   {

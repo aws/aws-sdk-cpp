@@ -20,7 +20,6 @@
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <fstream>
 
@@ -48,20 +47,20 @@ public:
     bool HasLogins() const override { return !m_logins.empty(); }
     Aws::String GetIdentityId() const override { return m_identityId; }
     void SetIdentityId(const Aws::String& identityId) { m_identityId = identityId; }
-    Aws::Map<Aws::String, Aws::String> GetLogins() const override { return m_logins; }
-    void SetLogins(const Aws::Map<Aws::String, Aws::String>& logins) { m_logins = logins; }
+    Aws::Map<Aws::String, LoginAccessTokens> GetLogins() override { return m_logins; }
+    void SetLogins(const Aws::Map<Aws::String, LoginAccessTokens>& logins) { m_logins = logins; }
     Aws::String GetAccountId() const override { return m_accountId; }
     void SetAccountId(const Aws::String& accountId) { m_accountId = accountId; }
     Aws::String GetIdentityPoolId() const override { return m_identityPoolId; }
     void SetIdentityPoolId(const Aws::String& identityPoolId) { m_identityPoolId = identityPoolId; }
     void PersistIdentityId(const Aws::String& identityId) override { SetIdentityId(identityId); identityId.empty() ? m_identityIdPersisted = false : m_identityIdPersisted = true; }
-    void PersistLogins(const Aws::Map<Aws::String, Aws::String>& logins) override { SetLogins(logins); logins.empty() ? m_loginsPersisted = false : m_loginsPersisted = true; }
+    void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>& logins) override { SetLogins(logins); logins.empty() ? m_loginsPersisted = false : m_loginsPersisted = true; }
     bool IsIdentityIdPersisted() { return m_identityIdPersisted; }
     bool IsLoginsPersisted() { return m_loginsPersisted; }
 
 private:
     Aws::String m_identityId;
-    Aws::Map<Aws::String, Aws::String> m_logins;
+    Aws::Map<Aws::String, LoginAccessTokens> m_logins;
     Aws::String m_accountId;
     Aws::String m_identityPoolId;
     bool m_identityIdPersisted;
@@ -240,8 +239,10 @@ namespace
         AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody());
 
         mockHttpClient->AddResponseToReturn(getCredsResponse);
-        Aws::Map<Aws::String, Aws::String> logins;
-        logins[LOGIN_KEY] = LOGIN_ID;
+        Aws::Map<Aws::String, LoginAccessTokens> logins;
+        LoginAccessTokens loginAccessTokens;
+        loginAccessTokens.accessToken = LOGIN_ID;
+        logins[LOGIN_KEY] = loginAccessTokens;
         mockIdentityRepository->SetLogins(logins);
 
         CognitoCachingAuthenticatedCredentialsProvider cognitoCachingAuthenticatedCredentialsProvider(mockIdentityRepository, cognitoIdentityClient);
@@ -250,7 +251,7 @@ namespace
         ASSERT_EQ(SECRET_KEY_ID_1, credentials.GetAWSSecretKey());
         ASSERT_EQ(IDENTITY_1, mockIdentityRepository->GetIdentityId());
         ASSERT_EQ(1u, mockIdentityRepository->GetLogins().size());
-        ASSERT_EQ(LOGIN_ID, mockIdentityRepository->GetLogins()[LOGIN_KEY]);
+        ASSERT_EQ(LOGIN_ID, mockIdentityRepository->GetLogins()[LOGIN_KEY].accessToken);
         ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
         ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
@@ -265,7 +266,7 @@ namespace
         ASSERT_EQ(SECRET_KEY_ID_1, credentials.GetAWSSecretKey());
         ASSERT_EQ(IDENTITY_1, mockIdentityRepository->GetIdentityId());
         ASSERT_EQ(1u, mockIdentityRepository->GetLogins().size());
-        ASSERT_EQ(LOGIN_ID, mockIdentityRepository->GetLogins()[LOGIN_KEY]);
+        ASSERT_EQ(LOGIN_ID, mockIdentityRepository->GetLogins()[LOGIN_KEY].accessToken);
         ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
         ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());

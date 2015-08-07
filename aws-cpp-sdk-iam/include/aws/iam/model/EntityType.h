@@ -24,6 +24,7 @@ namespace Model
 {
   enum class EntityType
   {
+    NOT_SET,
     User,
     Role,
     Group,

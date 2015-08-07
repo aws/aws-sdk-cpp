@@ -87,7 +87,6 @@ void MobileAnalyticsClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 PutEventsOutcome MobileAnalyticsClient::PutEvents(const PutEventsRequest& request) const
 {
   Aws::StringStream ss;
@@ -109,13 +108,14 @@ PutEventsOutcomeCallable MobileAnalyticsClient::PutEventsCallable(const PutEvent
   return std::async(std::launch::async, &MobileAnalyticsClient::PutEvents, this, request);
 }
 
-void MobileAnalyticsClient::PutEventsAsync(const PutEventsRequest& request, const AsyncCallerContext* context) const
+void MobileAnalyticsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&MobileAnalyticsClient::PutEventsAsyncHelper, this, request, context);
+  m_executor->Submit(&MobileAnalyticsClient::PutEventsAsyncHelper, this, request, handler, context);
 }
 
-void MobileAnalyticsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const AsyncCallerContext* context) const
+void MobileAnalyticsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onPutEventsOutcomeReceived(this, request, PutEvents(request), context);
+  handler(this, request, PutEvents(request), context);
 }
+
 

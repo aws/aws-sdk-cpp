@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StackAttributesKeys
   {
+    NOT_SET,
     Color
   };
 

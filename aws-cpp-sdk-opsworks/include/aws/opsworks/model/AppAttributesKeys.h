@@ -24,9 +24,11 @@ namespace Model
 {
   enum class AppAttributesKeys
   {
+    NOT_SET,
     DocumentRoot,
     RailsEnv,
-    AutoBundleOnDeploy
+    AutoBundleOnDeploy,
+    AwsFlowRubySettings
   };
 
 namespace AppAttributesKeysMapper

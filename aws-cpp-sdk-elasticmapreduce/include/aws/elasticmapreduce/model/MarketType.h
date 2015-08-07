@@ -24,6 +24,7 @@ namespace Model
 {
   enum class MarketType
   {
+    NOT_SET,
     ON_DEMAND,
     SPOT
   };

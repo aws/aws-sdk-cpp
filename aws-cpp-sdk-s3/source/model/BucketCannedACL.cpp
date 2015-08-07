@@ -51,7 +51,7 @@ BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)
     return BucketCannedACL::authenticated_read;
   }
 
-  return BucketCannedACL::private_;
+  return BucketCannedACL::NOT_SET;
 }
 
 Aws::String GetNameForBucketCannedACL(BucketCannedACL value)
@@ -67,7 +67,7 @@ Aws::String GetNameForBucketCannedACL(BucketCannedACL value)
   case BucketCannedACL::authenticated_read:
     return "authenticated-read";
   default:
-    return "private_";
+    return "";
   }
 }
 

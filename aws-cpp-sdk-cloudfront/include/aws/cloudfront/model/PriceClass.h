@@ -24,6 +24,7 @@ namespace Model
 {
   enum class PriceClass
   {
+    NOT_SET,
     PriceClass_100,
     PriceClass_200,
     PriceClass_All

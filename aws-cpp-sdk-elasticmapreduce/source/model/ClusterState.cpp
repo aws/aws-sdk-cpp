@@ -66,7 +66,7 @@ ClusterState GetClusterStateForName(const Aws::String& name)
     return ClusterState::TERMINATED_WITH_ERRORS;
   }
 
-  return ClusterState::STARTING;
+  return ClusterState::NOT_SET;
 }
 
 Aws::String GetNameForClusterState(ClusterState value)
@@ -88,7 +88,7 @@ Aws::String GetNameForClusterState(ClusterState value)
   case ClusterState::TERMINATED_WITH_ERRORS:
     return "TERMINATED_WITH_ERRORS";
   default:
-    return "STARTING";
+    return "";
   }
 }
 

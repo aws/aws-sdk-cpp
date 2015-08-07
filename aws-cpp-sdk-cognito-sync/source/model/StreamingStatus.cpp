@@ -41,7 +41,7 @@ StreamingStatus GetStreamingStatusForName(const Aws::String& name)
     return StreamingStatus::DISABLED;
   }
 
-  return StreamingStatus::ENABLED;
+  return StreamingStatus::NOT_SET;
 }
 
 Aws::String GetNameForStreamingStatus(StreamingStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForStreamingStatus(StreamingStatus value)
   case StreamingStatus::DISABLED:
     return "DISABLED";
   default:
-    return "ENABLED";
+    return "";
   }
 }
 

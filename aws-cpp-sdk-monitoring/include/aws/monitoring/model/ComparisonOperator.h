@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ComparisonOperator
   {
+    NOT_SET,
     GreaterThanOrEqualToThreshold,
     GreaterThanThreshold,
     LessThanThreshold,

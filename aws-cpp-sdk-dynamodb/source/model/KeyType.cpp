@@ -41,7 +41,7 @@ KeyType GetKeyTypeForName(const Aws::String& name)
     return KeyType::RANGE;
   }
 
-  return KeyType::HASH;
+  return KeyType::NOT_SET;
 }
 
 Aws::String GetNameForKeyType(KeyType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForKeyType(KeyType value)
   case KeyType::RANGE:
     return "RANGE";
   default:
-    return "HASH";
+    return "";
   }
 }
 

@@ -41,7 +41,7 @@ EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
     return EventSourcePosition::LATEST;
   }
 
-  return EventSourcePosition::TRIM_HORIZON;
+  return EventSourcePosition::NOT_SET;
 }
 
 Aws::String GetNameForEventSourcePosition(EventSourcePosition value)
@@ -53,7 +53,7 @@ Aws::String GetNameForEventSourcePosition(EventSourcePosition value)
   case EventSourcePosition::LATEST:
     return "LATEST";
   default:
-    return "TRIM_HORIZON";
+    return "";
   }
 }
 

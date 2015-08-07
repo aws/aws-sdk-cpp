@@ -24,6 +24,7 @@ namespace Model
 {
   enum class PendingAutomaticFailoverStatus
   {
+    NOT_SET,
     enabled,
     disabled
   };

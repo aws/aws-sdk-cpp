@@ -26,11 +26,14 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_logUriHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
+    m_releaseLabelHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_stepsHasBeenSet(false),
     m_bootstrapActionsHasBeenSet(false),
     m_supportedProductsHasBeenSet(false),
     m_newSupportedProductsHasBeenSet(false),
+    m_applicationsHasBeenSet(false),
+    m_configurationsHasBeenSet(false),
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_jobFlowRoleHasBeenSet(false),
@@ -64,6 +67,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_amiVersionHasBeenSet)
   {
    payload.WithString("AmiVersion", m_amiVersion);
+
+  }
+
+  if(m_releaseLabelHasBeenSet)
+  {
+   payload.WithString("ReleaseLabel", m_releaseLabel);
 
   }
 
@@ -114,6 +123,28 @@ Aws::String RunJobFlowRequest::SerializePayload() const
      newSupportedProductsJsonList[newSupportedProductsIndex].AsObject(m_newSupportedProducts[newSupportedProductsIndex].Jsonize());
    }
    payload.WithArray("NewSupportedProducts", std::move(newSupportedProductsJsonList));
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsObject(m_applications[applicationsIndex].Jsonize());
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
+
+  }
+
+  if(m_configurationsHasBeenSet)
+  {
+   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
+   {
+     configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+   }
+   payload.WithArray("Configurations", std::move(configurationsJsonList));
 
   }
 

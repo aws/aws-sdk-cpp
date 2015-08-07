@@ -24,6 +24,7 @@ namespace Model
 {
   enum class OriginProtocolPolicy
   {
+    NOT_SET,
     http_only,
     match_viewer
   };

@@ -46,7 +46,7 @@ GeoRestrictionType GetGeoRestrictionTypeForName(const Aws::String& name)
     return GeoRestrictionType::none;
   }
 
-  return GeoRestrictionType::blacklist;
+  return GeoRestrictionType::NOT_SET;
 }
 
 Aws::String GetNameForGeoRestrictionType(GeoRestrictionType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForGeoRestrictionType(GeoRestrictionType value)
   case GeoRestrictionType::none:
     return "none";
   default:
-    return "blacklist";
+    return "";
   }
 }
 

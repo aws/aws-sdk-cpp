@@ -30,7 +30,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>A failed resource.</p>
   */
   class AWS_ECS_API Failure
   {

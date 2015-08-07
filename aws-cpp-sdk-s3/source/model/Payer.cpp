@@ -41,7 +41,7 @@ Payer GetPayerForName(const Aws::String& name)
     return Payer::BucketOwner;
   }
 
-  return Payer::Requester;
+  return Payer::NOT_SET;
 }
 
 Aws::String GetNameForPayer(Payer value)
@@ -53,7 +53,7 @@ Aws::String GetNameForPayer(Payer value)
   case Payer::BucketOwner:
     return "BucketOwner";
   default:
-    return "Requester";
+    return "";
   }
 }
 

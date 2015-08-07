@@ -52,6 +52,7 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_dBClusterIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
     m_tdeCredentialPasswordHasBeenSet(false),
@@ -181,6 +182,10 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
       item.OutputToStream(ss, "Tag.", tagsCount, "");
       tagsCount++;
     }
+  }
+  if(m_dBClusterIdentifierHasBeenSet)
+  {
+    ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
   if(m_storageTypeHasBeenSet)
   {

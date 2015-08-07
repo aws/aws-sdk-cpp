@@ -96,7 +96,7 @@ QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
     return QueueAttributeName::RedrivePolicy;
   }
 
-  return QueueAttributeName::Policy;
+  return QueueAttributeName::NOT_SET;
 }
 
 Aws::String GetNameForQueueAttributeName(QueueAttributeName value)
@@ -130,7 +130,7 @@ Aws::String GetNameForQueueAttributeName(QueueAttributeName value)
   case QueueAttributeName::RedrivePolicy:
     return "RedrivePolicy";
   default:
-    return "Policy";
+    return "";
   }
 }
 

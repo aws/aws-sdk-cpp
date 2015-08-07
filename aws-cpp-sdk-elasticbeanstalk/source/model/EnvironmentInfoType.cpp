@@ -41,7 +41,7 @@ EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
     return EnvironmentInfoType::bundle;
   }
 
-  return EnvironmentInfoType::tail;
+  return EnvironmentInfoType::NOT_SET;
 }
 
 Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType value)
   case EnvironmentInfoType::bundle:
     return "bundle";
   default:
-    return "tail";
+    return "";
   }
 }
 

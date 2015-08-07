@@ -24,6 +24,7 @@ namespace Model
 {
   enum class QueueAttributeName
   {
+    NOT_SET,
     Policy,
     VisibilityTimeout,
     MaximumMessageSize,

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class IdentityType
   {
+    NOT_SET,
     EmailAddress,
     Domain
   };

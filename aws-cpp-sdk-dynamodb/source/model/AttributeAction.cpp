@@ -46,7 +46,7 @@ AttributeAction GetAttributeActionForName(const Aws::String& name)
     return AttributeAction::DELETE_;
   }
 
-  return AttributeAction::ADD;
+  return AttributeAction::NOT_SET;
 }
 
 Aws::String GetNameForAttributeAction(AttributeAction value)
@@ -60,7 +60,7 @@ Aws::String GetNameForAttributeAction(AttributeAction value)
   case AttributeAction::DELETE_:
     return "DELETE";
   default:
-    return "ADD";
+    return "";
   }
 }
 

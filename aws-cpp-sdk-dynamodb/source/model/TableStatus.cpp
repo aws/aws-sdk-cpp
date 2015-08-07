@@ -51,7 +51,7 @@ TableStatus GetTableStatusForName(const Aws::String& name)
     return TableStatus::ACTIVE;
   }
 
-  return TableStatus::CREATING;
+  return TableStatus::NOT_SET;
 }
 
 Aws::String GetNameForTableStatus(TableStatus value)
@@ -67,7 +67,7 @@ Aws::String GetNameForTableStatus(TableStatus value)
   case TableStatus::ACTIVE:
     return "ACTIVE";
   default:
-    return "CREATING";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ObjectStorageClass
   {
+    NOT_SET,
     STANDARD,
     REDUCED_REDUNDANCY,
     GLACIER

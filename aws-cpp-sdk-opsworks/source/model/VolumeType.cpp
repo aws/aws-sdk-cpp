@@ -46,7 +46,7 @@ VolumeType GetVolumeTypeForName(const Aws::String& name)
     return VolumeType::standard;
   }
 
-  return VolumeType::gp2;
+  return VolumeType::NOT_SET;
 }
 
 Aws::String GetNameForVolumeType(VolumeType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForVolumeType(VolumeType value)
   case VolumeType::standard:
     return "standard";
   default:
-    return "gp2";
+    return "";
   }
 }
 

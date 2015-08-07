@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ListStateFilterAction
   {
+    NOT_SET,
     include,
     exclude,
     ignore

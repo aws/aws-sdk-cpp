@@ -136,30 +136,30 @@ namespace Model
     inline CreateAutoScalingGroupRequest&  WithMaxSize(long value) { SetMaxSize(value); return *this;}
 
     /*
-     <p>The number of EC2 instances that should be running in the group. This value must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
+     <p>The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     */
     inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
     /*
-     <p>The number of EC2 instances that should be running in the group. This value must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
+     <p>The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     */
     inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /*
-     <p>The number of EC2 instances that should be running in the group. This value must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
+     <p>The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
     */
     inline CreateAutoScalingGroupRequest&  WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 
     /*
-     <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.</p> <p>If <code>DefaultCooldown</code> is not specified, the default value is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.</p> <p>If this parameter is not specified, the default value is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline long GetDefaultCooldown() const{ return m_defaultCooldown; }
     /*
-     <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.</p> <p>If <code>DefaultCooldown</code> is not specified, the default value is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.</p> <p>If this parameter is not specified, the default value is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline void SetDefaultCooldown(long value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /*
-     <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.</p> <p>If <code>DefaultCooldown</code> is not specified, the default value is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.</p> <p>If this parameter is not specified, the default value is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
     */
     inline CreateAutoScalingGroupRequest&  WithDefaultCooldown(long value) { SetDefaultCooldown(value); return *this;}
 

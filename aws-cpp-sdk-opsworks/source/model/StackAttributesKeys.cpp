@@ -36,7 +36,7 @@ StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
     return StackAttributesKeys::Color;
   }
 
-  return StackAttributesKeys::Color;
+  return StackAttributesKeys::NOT_SET;
 }
 
 Aws::String GetNameForStackAttributesKeys(StackAttributesKeys value)
@@ -46,7 +46,7 @@ Aws::String GetNameForStackAttributesKeys(StackAttributesKeys value)
   case StackAttributesKeys::Color:
     return "Color";
   default:
-    return "Color";
+    return "";
   }
 }
 

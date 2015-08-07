@@ -17,6 +17,7 @@
 
 using namespace Aws::Utils;
 
+static const int EcsClusterArn_HASH = HashingUtils::HashString("EcsClusterArn");
 static const int EnableHaproxyStats_HASH = HashingUtils::HashString("EnableHaproxyStats");
 static const int HaproxyStatsUrl_HASH = HashingUtils::HashString("HaproxyStatsUrl");
 static const int HaproxyStatsUser_HASH = HashingUtils::HashString("HaproxyStatsUser");
@@ -54,7 +55,11 @@ LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
-  if (hashCode == EnableHaproxyStats_HASH)
+  if (hashCode == EcsClusterArn_HASH)
+  {
+    return LayerAttributesKeys::EcsClusterArn;
+  }
+  else if (hashCode == EnableHaproxyStats_HASH)
   {
     return LayerAttributesKeys::EnableHaproxyStats;
   }
@@ -151,13 +156,15 @@ LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
     return LayerAttributesKeys::JavaAppServerVersion;
   }
 
-  return LayerAttributesKeys::EnableHaproxyStats;
+  return LayerAttributesKeys::NOT_SET;
 }
 
 Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys value)
 {
   switch(value)
   {
+  case LayerAttributesKeys::EcsClusterArn:
+    return "EcsClusterArn";
   case LayerAttributesKeys::EnableHaproxyStats:
     return "EnableHaproxyStats";
   case LayerAttributesKeys::HaproxyStatsUrl:
@@ -207,7 +214,7 @@ Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys value)
   case LayerAttributesKeys::JavaAppServerVersion:
     return "JavaAppServerVersion";
   default:
-    return "EnableHaproxyStats";
+    return "";
   }
 }
 

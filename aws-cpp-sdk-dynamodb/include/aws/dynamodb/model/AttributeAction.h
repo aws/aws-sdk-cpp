@@ -24,6 +24,7 @@ namespace Model
 {
   enum class AttributeAction
   {
+    NOT_SET,
     ADD,
     PUT,
     DELETE_

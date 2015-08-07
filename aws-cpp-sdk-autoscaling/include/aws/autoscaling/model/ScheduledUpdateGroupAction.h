@@ -116,44 +116,44 @@ namespace Model
     inline ScheduledUpdateGroupAction& WithScheduledActionARN(const char* value) { SetScheduledActionARN(value); return *this;}
 
     /*
-     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p>
+     <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline double GetTime() const{ return m_time; }
     /*
-     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p>
+     <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
 
     /*
-     <p><code>Time</code> is deprecated; use <code>StartTime</code> instead.</p>
+     <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
     */
     inline ScheduledUpdateGroupAction&  WithTime(double value) { SetTime(value); return *this;}
 
     /*
-     <p>The time that the action is scheduled to begin. This value can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline double GetStartTime() const{ return m_startTime; }
     /*
-     <p>The time that the action is scheduled to begin. This value can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /*
-     <p>The time that the action is scheduled to begin. This value can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
+     <p>The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.</p> <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop.</p>
     */
     inline ScheduledUpdateGroupAction&  WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /*
-     <p>The time that the action is scheduled to end. This value can be up to one month in the future.</p>
+     <p>The date and time that the action is scheduled to end. This date and time can be up to one month in the future.</p>
     */
     inline double GetEndTime() const{ return m_endTime; }
     /*
-     <p>The time that the action is scheduled to end. This value can be up to one month in the future.</p>
+     <p>The date and time that the action is scheduled to end. This date and time can be up to one month in the future.</p>
     */
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /*
-     <p>The time that the action is scheduled to end. This value can be up to one month in the future.</p>
+     <p>The date and time that the action is scheduled to end. This date and time can be up to one month in the future.</p>
     */
     inline ScheduledUpdateGroupAction&  WithEndTime(double value) { SetEndTime(value); return *this;}
 

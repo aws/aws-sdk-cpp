@@ -109,12 +109,10 @@ void SESClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -131,21 +129,20 @@ DeleteIdentityOutcomeCallable SESClient::DeleteIdentityCallable(const DeleteIden
   return std::async(std::launch::async, &SESClient::DeleteIdentity, this, request);
 }
 
-void SESClient::DeleteIdentityAsync(const DeleteIdentityRequest& request, const AsyncCallerContext* context) const
+void SESClient::DeleteIdentityAsync(const DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::DeleteIdentityAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::DeleteIdentityAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::DeleteIdentityAsyncHelper(const DeleteIdentityRequest& request, const AsyncCallerContext* context) const
+void SESClient::DeleteIdentityAsyncHelper(const DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteIdentityOutcomeReceived(this, request, DeleteIdentity(request), context);
+  handler(this, request, DeleteIdentity(request), context);
 }
 
 DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentityPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -162,21 +159,20 @@ DeleteIdentityPolicyOutcomeCallable SESClient::DeleteIdentityPolicyCallable(cons
   return std::async(std::launch::async, &SESClient::DeleteIdentityPolicy, this, request);
 }
 
-void SESClient::DeleteIdentityPolicyAsync(const DeleteIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+void SESClient::DeleteIdentityPolicyAsync(const DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::DeleteIdentityPolicyAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::DeleteIdentityPolicyAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::DeleteIdentityPolicyAsyncHelper(const DeleteIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+void SESClient::DeleteIdentityPolicyAsyncHelper(const DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteIdentityPolicyOutcomeReceived(this, request, DeleteIdentityPolicy(request), context);
+  handler(this, request, DeleteIdentityPolicy(request), context);
 }
 
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -193,21 +189,20 @@ DeleteVerifiedEmailAddressOutcomeCallable SESClient::DeleteVerifiedEmailAddressC
   return std::async(std::launch::async, &SESClient::DeleteVerifiedEmailAddress, this, request);
 }
 
-void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddressRequest& request, const AsyncCallerContext* context) const
+void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::DeleteVerifiedEmailAddressAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::DeleteVerifiedEmailAddressAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::DeleteVerifiedEmailAddressAsyncHelper(const DeleteVerifiedEmailAddressRequest& request, const AsyncCallerContext* context) const
+void SESClient::DeleteVerifiedEmailAddressAsyncHelper(const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteVerifiedEmailAddressOutcomeReceived(this, request, DeleteVerifiedEmailAddress(request), context);
+  handler(this, request, DeleteVerifiedEmailAddress(request), context);
 }
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -224,21 +219,20 @@ GetIdentityDkimAttributesOutcomeCallable SESClient::GetIdentityDkimAttributesCal
   return std::async(std::launch::async, &SESClient::GetIdentityDkimAttributes, this, request);
 }
 
-void SESClient::GetIdentityDkimAttributesAsync(const GetIdentityDkimAttributesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityDkimAttributesAsync(const GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityDkimAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::GetIdentityDkimAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::GetIdentityDkimAttributesAsyncHelper(const GetIdentityDkimAttributesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityDkimAttributesAsyncHelper(const GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetIdentityDkimAttributesOutcomeReceived(this, request, GetIdentityDkimAttributes(request), context);
+  handler(this, request, GetIdentityDkimAttributes(request), context);
 }
 
 GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttributes(const GetIdentityNotificationAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -255,21 +249,20 @@ GetIdentityNotificationAttributesOutcomeCallable SESClient::GetIdentityNotificat
   return std::async(std::launch::async, &SESClient::GetIdentityNotificationAttributes, this, request);
 }
 
-void SESClient::GetIdentityNotificationAttributesAsync(const GetIdentityNotificationAttributesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityNotificationAttributesAsync(const GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityNotificationAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::GetIdentityNotificationAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::GetIdentityNotificationAttributesAsyncHelper(const GetIdentityNotificationAttributesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityNotificationAttributesAsyncHelper(const GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetIdentityNotificationAttributesOutcomeReceived(this, request, GetIdentityNotificationAttributes(request), context);
+  handler(this, request, GetIdentityNotificationAttributes(request), context);
 }
 
 GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPoliciesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -286,21 +279,20 @@ GetIdentityPoliciesOutcomeCallable SESClient::GetIdentityPoliciesCallable(const 
   return std::async(std::launch::async, &SESClient::GetIdentityPolicies, this, request);
 }
 
-void SESClient::GetIdentityPoliciesAsync(const GetIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityPoliciesAsync(const GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityPoliciesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::GetIdentityPoliciesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::GetIdentityPoliciesAsyncHelper(const GetIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityPoliciesAsyncHelper(const GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetIdentityPoliciesOutcomeReceived(this, request, GetIdentityPolicies(request), context);
+  handler(this, request, GetIdentityPolicies(request), context);
 }
 
 GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttributes(const GetIdentityVerificationAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -317,21 +309,20 @@ GetIdentityVerificationAttributesOutcomeCallable SESClient::GetIdentityVerificat
   return std::async(std::launch::async, &SESClient::GetIdentityVerificationAttributes, this, request);
 }
 
-void SESClient::GetIdentityVerificationAttributesAsync(const GetIdentityVerificationAttributesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityVerificationAttributesAsync(const GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::GetIdentityVerificationAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::GetIdentityVerificationAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::GetIdentityVerificationAttributesAsyncHelper(const GetIdentityVerificationAttributesRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetIdentityVerificationAttributesAsyncHelper(const GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetIdentityVerificationAttributesOutcomeReceived(this, request, GetIdentityVerificationAttributes(request), context);
+  handler(this, request, GetIdentityVerificationAttributes(request), context);
 }
 
 GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -348,21 +339,20 @@ GetSendQuotaOutcomeCallable SESClient::GetSendQuotaCallable(const GetSendQuotaRe
   return std::async(std::launch::async, &SESClient::GetSendQuota, this, request);
 }
 
-void SESClient::GetSendQuotaAsync(const GetSendQuotaRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetSendQuotaAsync(const GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::GetSendQuotaAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::GetSendQuotaAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::GetSendQuotaAsyncHelper(const GetSendQuotaRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetSendQuotaAsyncHelper(const GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetSendQuotaOutcomeReceived(this, request, GetSendQuota(request), context);
+  handler(this, request, GetSendQuota(request), context);
 }
 
 GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -379,21 +369,20 @@ GetSendStatisticsOutcomeCallable SESClient::GetSendStatisticsCallable(const GetS
   return std::async(std::launch::async, &SESClient::GetSendStatistics, this, request);
 }
 
-void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::GetSendStatisticsAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::GetSendStatisticsAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& request, const AsyncCallerContext* context) const
+void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetSendStatisticsOutcomeReceived(this, request, GetSendStatistics(request), context);
+  handler(this, request, GetSendStatistics(request), context);
 }
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -410,21 +399,20 @@ ListIdentitiesOutcomeCallable SESClient::ListIdentitiesCallable(const ListIdenti
   return std::async(std::launch::async, &SESClient::ListIdentities, this, request);
 }
 
-void SESClient::ListIdentitiesAsync(const ListIdentitiesRequest& request, const AsyncCallerContext* context) const
+void SESClient::ListIdentitiesAsync(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::ListIdentitiesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::ListIdentitiesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::ListIdentitiesAsyncHelper(const ListIdentitiesRequest& request, const AsyncCallerContext* context) const
+void SESClient::ListIdentitiesAsyncHelper(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListIdentitiesOutcomeReceived(this, request, ListIdentities(request), context);
+  handler(this, request, ListIdentities(request), context);
 }
 
 ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPoliciesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -441,21 +429,20 @@ ListIdentityPoliciesOutcomeCallable SESClient::ListIdentityPoliciesCallable(cons
   return std::async(std::launch::async, &SESClient::ListIdentityPolicies, this, request);
 }
 
-void SESClient::ListIdentityPoliciesAsync(const ListIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+void SESClient::ListIdentityPoliciesAsync(const ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::ListIdentityPoliciesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::ListIdentityPoliciesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::ListIdentityPoliciesAsyncHelper(const ListIdentityPoliciesRequest& request, const AsyncCallerContext* context) const
+void SESClient::ListIdentityPoliciesAsyncHelper(const ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListIdentityPoliciesOutcomeReceived(this, request, ListIdentityPolicies(request), context);
+  handler(this, request, ListIdentityPolicies(request), context);
 }
 
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -472,21 +459,20 @@ ListVerifiedEmailAddressesOutcomeCallable SESClient::ListVerifiedEmailAddressesC
   return std::async(std::launch::async, &SESClient::ListVerifiedEmailAddresses, this, request);
 }
 
-void SESClient::ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequest& request, const AsyncCallerContext* context) const
+void SESClient::ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::ListVerifiedEmailAddressesAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::ListVerifiedEmailAddressesAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::ListVerifiedEmailAddressesAsyncHelper(const ListVerifiedEmailAddressesRequest& request, const AsyncCallerContext* context) const
+void SESClient::ListVerifiedEmailAddressesAsyncHelper(const ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListVerifiedEmailAddressesOutcomeReceived(this, request, ListVerifiedEmailAddresses(request), context);
+  handler(this, request, ListVerifiedEmailAddresses(request), context);
 }
 
 PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -503,21 +489,20 @@ PutIdentityPolicyOutcomeCallable SESClient::PutIdentityPolicyCallable(const PutI
   return std::async(std::launch::async, &SESClient::PutIdentityPolicy, this, request);
 }
 
-void SESClient::PutIdentityPolicyAsync(const PutIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+void SESClient::PutIdentityPolicyAsync(const PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::PutIdentityPolicyAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::PutIdentityPolicyAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::PutIdentityPolicyAsyncHelper(const PutIdentityPolicyRequest& request, const AsyncCallerContext* context) const
+void SESClient::PutIdentityPolicyAsyncHelper(const PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onPutIdentityPolicyOutcomeReceived(this, request, PutIdentityPolicy(request), context);
+  handler(this, request, PutIdentityPolicy(request), context);
 }
 
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -534,21 +519,20 @@ SendEmailOutcomeCallable SESClient::SendEmailCallable(const SendEmailRequest& re
   return std::async(std::launch::async, &SESClient::SendEmail, this, request);
 }
 
-void SESClient::SendEmailAsync(const SendEmailRequest& request, const AsyncCallerContext* context) const
+void SESClient::SendEmailAsync(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::SendEmailAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::SendEmailAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::SendEmailAsyncHelper(const SendEmailRequest& request, const AsyncCallerContext* context) const
+void SESClient::SendEmailAsyncHelper(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSendEmailOutcomeReceived(this, request, SendEmail(request), context);
+  handler(this, request, SendEmail(request), context);
 }
 
 SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -565,21 +549,20 @@ SendRawEmailOutcomeCallable SESClient::SendRawEmailCallable(const SendRawEmailRe
   return std::async(std::launch::async, &SESClient::SendRawEmail, this, request);
 }
 
-void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const AsyncCallerContext* context) const
+void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::SendRawEmailAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::SendRawEmailAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request, const AsyncCallerContext* context) const
+void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSendRawEmailOutcomeReceived(this, request, SendRawEmail(request), context);
+  handler(this, request, SendRawEmail(request), context);
 }
 
 SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentityDkimEnabledRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -596,21 +579,20 @@ SetIdentityDkimEnabledOutcomeCallable SESClient::SetIdentityDkimEnabledCallable(
   return std::async(std::launch::async, &SESClient::SetIdentityDkimEnabled, this, request);
 }
 
-void SESClient::SetIdentityDkimEnabledAsync(const SetIdentityDkimEnabledRequest& request, const AsyncCallerContext* context) const
+void SESClient::SetIdentityDkimEnabledAsync(const SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::SetIdentityDkimEnabledAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::SetIdentityDkimEnabledAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::SetIdentityDkimEnabledAsyncHelper(const SetIdentityDkimEnabledRequest& request, const AsyncCallerContext* context) const
+void SESClient::SetIdentityDkimEnabledAsyncHelper(const SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetIdentityDkimEnabledOutcomeReceived(this, request, SetIdentityDkimEnabled(request), context);
+  handler(this, request, SetIdentityDkimEnabled(request), context);
 }
 
 SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwardingEnabled(const SetIdentityFeedbackForwardingEnabledRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -627,21 +609,20 @@ SetIdentityFeedbackForwardingEnabledOutcomeCallable SESClient::SetIdentityFeedba
   return std::async(std::launch::async, &SESClient::SetIdentityFeedbackForwardingEnabled, this, request);
 }
 
-void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedbackForwardingEnabledRequest& request, const AsyncCallerContext* context) const
+void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper(const SetIdentityFeedbackForwardingEnabledRequest& request, const AsyncCallerContext* context) const
+void SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper(const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetIdentityFeedbackForwardingEnabledOutcomeReceived(this, request, SetIdentityFeedbackForwardingEnabled(request), context);
+  handler(this, request, SetIdentityFeedbackForwardingEnabled(request), context);
 }
 
 SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(const SetIdentityNotificationTopicRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -658,21 +639,20 @@ SetIdentityNotificationTopicOutcomeCallable SESClient::SetIdentityNotificationTo
   return std::async(std::launch::async, &SESClient::SetIdentityNotificationTopic, this, request);
 }
 
-void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationTopicRequest& request, const AsyncCallerContext* context) const
+void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::SetIdentityNotificationTopicAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::SetIdentityNotificationTopicAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::SetIdentityNotificationTopicAsyncHelper(const SetIdentityNotificationTopicRequest& request, const AsyncCallerContext* context) const
+void SESClient::SetIdentityNotificationTopicAsyncHelper(const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetIdentityNotificationTopicOutcomeReceived(this, request, SetIdentityNotificationTopic(request), context);
+  handler(this, request, SetIdentityNotificationTopic(request), context);
 }
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -689,21 +669,20 @@ VerifyDomainDkimOutcomeCallable SESClient::VerifyDomainDkimCallable(const Verify
   return std::async(std::launch::async, &SESClient::VerifyDomainDkim, this, request);
 }
 
-void SESClient::VerifyDomainDkimAsync(const VerifyDomainDkimRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyDomainDkimAsync(const VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::VerifyDomainDkimAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::VerifyDomainDkimAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::VerifyDomainDkimAsyncHelper(const VerifyDomainDkimRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyDomainDkimAsyncHelper(const VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onVerifyDomainDkimOutcomeReceived(this, request, VerifyDomainDkim(request), context);
+  handler(this, request, VerifyDomainDkim(request), context);
 }
 
 VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainIdentityRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -720,21 +699,20 @@ VerifyDomainIdentityOutcomeCallable SESClient::VerifyDomainIdentityCallable(cons
   return std::async(std::launch::async, &SESClient::VerifyDomainIdentity, this, request);
 }
 
-void SESClient::VerifyDomainIdentityAsync(const VerifyDomainIdentityRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyDomainIdentityAsync(const VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::VerifyDomainIdentityAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::VerifyDomainIdentityAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::VerifyDomainIdentityAsyncHelper(const VerifyDomainIdentityRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyDomainIdentityAsyncHelper(const VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onVerifyDomainIdentityOutcomeReceived(this, request, VerifyDomainIdentity(request), context);
+  handler(this, request, VerifyDomainIdentity(request), context);
 }
 
 VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddressRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -751,21 +729,20 @@ VerifyEmailAddressOutcomeCallable SESClient::VerifyEmailAddressCallable(const Ve
   return std::async(std::launch::async, &SESClient::VerifyEmailAddress, this, request);
 }
 
-void SESClient::VerifyEmailAddressAsync(const VerifyEmailAddressRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyEmailAddressAsync(const VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::VerifyEmailAddressAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::VerifyEmailAddressAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::VerifyEmailAddressAsyncHelper(const VerifyEmailAddressRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyEmailAddressAsyncHelper(const VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onVerifyEmailAddressOutcomeReceived(this, request, VerifyEmailAddress(request), context);
+  handler(this, request, VerifyEmailAddress(request), context);
 }
 
 VerifyEmailIdentityOutcome SESClient::VerifyEmailIdentity(const VerifyEmailIdentityRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -782,13 +759,13 @@ VerifyEmailIdentityOutcomeCallable SESClient::VerifyEmailIdentityCallable(const 
   return std::async(std::launch::async, &SESClient::VerifyEmailIdentity, this, request);
 }
 
-void SESClient::VerifyEmailIdentityAsync(const VerifyEmailIdentityRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyEmailIdentityAsync(const VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SESClient::VerifyEmailIdentityAsyncHelper, this, request, context);
+  m_executor->Submit(&SESClient::VerifyEmailIdentityAsyncHelper, this, request, handler, context);
 }
 
-void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest& request, const AsyncCallerContext* context) const
+void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest& request, const VerifyEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onVerifyEmailIdentityOutcomeReceived(this, request, VerifyEmailIdentity(request), context);
+  handler(this, request, VerifyEmailIdentity(request), context);
 }
 

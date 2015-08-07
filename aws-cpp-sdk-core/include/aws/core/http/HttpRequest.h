@@ -22,9 +22,8 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/ResponseStream.h>
-#include <aws/core/utils/Event.h>
-
 #include <memory>
+#include <functional>
 
 namespace Aws
 {
@@ -51,8 +50,8 @@ extern AWS_CORE_API const char* X_AMZ_EXPIRES_HEADER;
 class HttpRequest;
 class HttpResponse;
 
-typedef Utils::Event<HttpRequest, HttpResponse*, long long> DataReceivedEventHandler;
-typedef Utils::Event<HttpRequest, long long> DataSentEventHandler;
+typedef std::function<void(const HttpRequest*, HttpResponse*, long long)> DataReceivedEventHandler;
+typedef std::function<void(const HttpRequest*, long long)> DataSentEventHandler;
 
 /**
   * Abstract class for representing an HttpRequest.
@@ -206,13 +205,18 @@ public:
     {
         SetHeaderValue(VIA_HEADER, value);
     }
-
-    DataReceivedEventHandler OnDataReceived;
-    DataSentEventHandler OnDataSent;
+    inline void SetDataReceivedEventHandler(const DataReceivedEventHandler& dataReceivedEventHandler) { onDataReceived = dataReceivedEventHandler; }
+    inline void SetDataSentEventHandler(const DataSentEventHandler& dataSentEventHandler) { onDataSent = dataSentEventHandler; }
+    inline void SetDataReceivedEventHandler(DataReceivedEventHandler&& dataReceivedEventHandler) { onDataReceived = dataReceivedEventHandler; }
+    inline void SetDataSentEventHandler(DataSentEventHandler&& dataSentEventHandler) { onDataSent = dataSentEventHandler; }
+    inline const DataReceivedEventHandler& GetDataReceivedEventHandler() const { return onDataReceived; }
+    inline const DataSentEventHandler& GetDataSentEventHandler() const { return onDataSent; }
 
 private:
     URI m_uri;
     HttpMethod m_method;
+    DataReceivedEventHandler onDataReceived;
+    DataSentEventHandler onDataSent;
 
 };
 

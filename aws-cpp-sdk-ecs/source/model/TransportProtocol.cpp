@@ -41,7 +41,7 @@ TransportProtocol GetTransportProtocolForName(const Aws::String& name)
     return TransportProtocol::udp;
   }
 
-  return TransportProtocol::tcp;
+  return TransportProtocol::NOT_SET;
 }
 
 Aws::String GetNameForTransportProtocol(TransportProtocol value)
@@ -53,7 +53,7 @@ Aws::String GetNameForTransportProtocol(TransportProtocol value)
   case TransportProtocol::udp:
     return "udp";
   default:
-    return "tcp";
+    return "";
   }
 }
 

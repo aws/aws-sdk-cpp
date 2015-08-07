@@ -115,12 +115,10 @@ void SNSClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
-
 AddPermissionOutcome SNSClient::AddPermission(const AddPermissionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -137,21 +135,20 @@ AddPermissionOutcomeCallable SNSClient::AddPermissionCallable(const AddPermissio
   return std::async(std::launch::async, &SNSClient::AddPermission, this, request);
 }
 
-void SNSClient::AddPermissionAsync(const AddPermissionRequest& request, const AsyncCallerContext* context) const
+void SNSClient::AddPermissionAsync(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::AddPermissionAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::AddPermissionAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AsyncCallerContext* context) const
+void SNSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddPermissionOutcomeReceived(this, request, AddPermission(request), context);
+  handler(this, request, AddPermission(request), context);
 }
 
 AddTagsToResourceOutcome SNSClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -168,21 +165,20 @@ AddTagsToResourceOutcomeCallable SNSClient::AddTagsToResourceCallable(const AddT
   return std::async(std::launch::async, &SNSClient::AddTagsToResource, this, request);
 }
 
-void SNSClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AsyncCallerContext* context) const
+void SNSClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::AddTagsToResourceAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AsyncCallerContext* context) const
+void SNSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onAddTagsToResourceOutcomeReceived(this, request, AddTagsToResource(request), context);
+  handler(this, request, AddTagsToResource(request), context);
 }
 
 ConfirmSubscriptionOutcome SNSClient::ConfirmSubscription(const ConfirmSubscriptionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -199,21 +195,20 @@ ConfirmSubscriptionOutcomeCallable SNSClient::ConfirmSubscriptionCallable(const 
   return std::async(std::launch::async, &SNSClient::ConfirmSubscription, this, request);
 }
 
-void SNSClient::ConfirmSubscriptionAsync(const ConfirmSubscriptionRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ConfirmSubscriptionAsync(const ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ConfirmSubscriptionAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ConfirmSubscriptionAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ConfirmSubscriptionAsyncHelper(const ConfirmSubscriptionRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ConfirmSubscriptionAsyncHelper(const ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onConfirmSubscriptionOutcomeReceived(this, request, ConfirmSubscription(request), context);
+  handler(this, request, ConfirmSubscription(request), context);
 }
 
 CreatePlatformApplicationOutcome SNSClient::CreatePlatformApplication(const CreatePlatformApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -230,21 +225,20 @@ CreatePlatformApplicationOutcomeCallable SNSClient::CreatePlatformApplicationCal
   return std::async(std::launch::async, &SNSClient::CreatePlatformApplication, this, request);
 }
 
-void SNSClient::CreatePlatformApplicationAsync(const CreatePlatformApplicationRequest& request, const AsyncCallerContext* context) const
+void SNSClient::CreatePlatformApplicationAsync(const CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CreatePlatformApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::CreatePlatformApplicationAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::CreatePlatformApplicationAsyncHelper(const CreatePlatformApplicationRequest& request, const AsyncCallerContext* context) const
+void SNSClient::CreatePlatformApplicationAsyncHelper(const CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreatePlatformApplicationOutcomeReceived(this, request, CreatePlatformApplication(request), context);
+  handler(this, request, CreatePlatformApplication(request), context);
 }
 
 CreatePlatformEndpointOutcome SNSClient::CreatePlatformEndpoint(const CreatePlatformEndpointRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -261,21 +255,20 @@ CreatePlatformEndpointOutcomeCallable SNSClient::CreatePlatformEndpointCallable(
   return std::async(std::launch::async, &SNSClient::CreatePlatformEndpoint, this, request);
 }
 
-void SNSClient::CreatePlatformEndpointAsync(const CreatePlatformEndpointRequest& request, const AsyncCallerContext* context) const
+void SNSClient::CreatePlatformEndpointAsync(const CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CreatePlatformEndpointAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::CreatePlatformEndpointAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::CreatePlatformEndpointAsyncHelper(const CreatePlatformEndpointRequest& request, const AsyncCallerContext* context) const
+void SNSClient::CreatePlatformEndpointAsyncHelper(const CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreatePlatformEndpointOutcomeReceived(this, request, CreatePlatformEndpoint(request), context);
+  handler(this, request, CreatePlatformEndpoint(request), context);
 }
 
 CreateTopicOutcome SNSClient::CreateTopic(const CreateTopicRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -292,21 +285,20 @@ CreateTopicOutcomeCallable SNSClient::CreateTopicCallable(const CreateTopicReque
   return std::async(std::launch::async, &SNSClient::CreateTopic, this, request);
 }
 
-void SNSClient::CreateTopicAsync(const CreateTopicRequest& request, const AsyncCallerContext* context) const
+void SNSClient::CreateTopicAsync(const CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CreateTopicAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::CreateTopicAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::CreateTopicAsyncHelper(const CreateTopicRequest& request, const AsyncCallerContext* context) const
+void SNSClient::CreateTopicAsyncHelper(const CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onCreateTopicOutcomeReceived(this, request, CreateTopic(request), context);
+  handler(this, request, CreateTopic(request), context);
 }
 
 DeleteEndpointOutcome SNSClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -323,21 +315,20 @@ DeleteEndpointOutcomeCallable SNSClient::DeleteEndpointCallable(const DeleteEndp
   return std::async(std::launch::async, &SNSClient::DeleteEndpoint, this, request);
 }
 
-void SNSClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const AsyncCallerContext* context) const
+void SNSClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::DeleteEndpointAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::DeleteEndpointAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const AsyncCallerContext* context) const
+void SNSClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteEndpointOutcomeReceived(this, request, DeleteEndpoint(request), context);
+  handler(this, request, DeleteEndpoint(request), context);
 }
 
 DeletePlatformApplicationOutcome SNSClient::DeletePlatformApplication(const DeletePlatformApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -354,21 +345,20 @@ DeletePlatformApplicationOutcomeCallable SNSClient::DeletePlatformApplicationCal
   return std::async(std::launch::async, &SNSClient::DeletePlatformApplication, this, request);
 }
 
-void SNSClient::DeletePlatformApplicationAsync(const DeletePlatformApplicationRequest& request, const AsyncCallerContext* context) const
+void SNSClient::DeletePlatformApplicationAsync(const DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::DeletePlatformApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::DeletePlatformApplicationAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::DeletePlatformApplicationAsyncHelper(const DeletePlatformApplicationRequest& request, const AsyncCallerContext* context) const
+void SNSClient::DeletePlatformApplicationAsyncHelper(const DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeletePlatformApplicationOutcomeReceived(this, request, DeletePlatformApplication(request), context);
+  handler(this, request, DeletePlatformApplication(request), context);
 }
 
 DeleteTopicOutcome SNSClient::DeleteTopic(const DeleteTopicRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -385,21 +375,20 @@ DeleteTopicOutcomeCallable SNSClient::DeleteTopicCallable(const DeleteTopicReque
   return std::async(std::launch::async, &SNSClient::DeleteTopic, this, request);
 }
 
-void SNSClient::DeleteTopicAsync(const DeleteTopicRequest& request, const AsyncCallerContext* context) const
+void SNSClient::DeleteTopicAsync(const DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::DeleteTopicAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::DeleteTopicAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::DeleteTopicAsyncHelper(const DeleteTopicRequest& request, const AsyncCallerContext* context) const
+void SNSClient::DeleteTopicAsyncHelper(const DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onDeleteTopicOutcomeReceived(this, request, DeleteTopic(request), context);
+  handler(this, request, DeleteTopic(request), context);
 }
 
 GetEndpointAttributesOutcome SNSClient::GetEndpointAttributes(const GetEndpointAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -416,21 +405,20 @@ GetEndpointAttributesOutcomeCallable SNSClient::GetEndpointAttributesCallable(co
   return std::async(std::launch::async, &SNSClient::GetEndpointAttributes, this, request);
 }
 
-void SNSClient::GetEndpointAttributesAsync(const GetEndpointAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetEndpointAttributesAsync(const GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetEndpointAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::GetEndpointAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::GetEndpointAttributesAsyncHelper(const GetEndpointAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetEndpointAttributesAsyncHelper(const GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetEndpointAttributesOutcomeReceived(this, request, GetEndpointAttributes(request), context);
+  handler(this, request, GetEndpointAttributes(request), context);
 }
 
 GetPlatformApplicationAttributesOutcome SNSClient::GetPlatformApplicationAttributes(const GetPlatformApplicationAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -447,21 +435,20 @@ GetPlatformApplicationAttributesOutcomeCallable SNSClient::GetPlatformApplicatio
   return std::async(std::launch::async, &SNSClient::GetPlatformApplicationAttributes, this, request);
 }
 
-void SNSClient::GetPlatformApplicationAttributesAsync(const GetPlatformApplicationAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetPlatformApplicationAttributesAsync(const GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetPlatformApplicationAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::GetPlatformApplicationAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::GetPlatformApplicationAttributesAsyncHelper(const GetPlatformApplicationAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetPlatformApplicationAttributesAsyncHelper(const GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetPlatformApplicationAttributesOutcomeReceived(this, request, GetPlatformApplicationAttributes(request), context);
+  handler(this, request, GetPlatformApplicationAttributes(request), context);
 }
 
 GetSubscriptionAttributesOutcome SNSClient::GetSubscriptionAttributes(const GetSubscriptionAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -478,21 +465,20 @@ GetSubscriptionAttributesOutcomeCallable SNSClient::GetSubscriptionAttributesCal
   return std::async(std::launch::async, &SNSClient::GetSubscriptionAttributes, this, request);
 }
 
-void SNSClient::GetSubscriptionAttributesAsync(const GetSubscriptionAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetSubscriptionAttributesAsync(const GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetSubscriptionAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::GetSubscriptionAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::GetSubscriptionAttributesAsyncHelper(const GetSubscriptionAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetSubscriptionAttributesAsyncHelper(const GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetSubscriptionAttributesOutcomeReceived(this, request, GetSubscriptionAttributes(request), context);
+  handler(this, request, GetSubscriptionAttributes(request), context);
 }
 
 GetTopicAttributesOutcome SNSClient::GetTopicAttributes(const GetTopicAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -509,21 +495,20 @@ GetTopicAttributesOutcomeCallable SNSClient::GetTopicAttributesCallable(const Ge
   return std::async(std::launch::async, &SNSClient::GetTopicAttributes, this, request);
 }
 
-void SNSClient::GetTopicAttributesAsync(const GetTopicAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetTopicAttributesAsync(const GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetTopicAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::GetTopicAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::GetTopicAttributesAsyncHelper(const GetTopicAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::GetTopicAttributesAsyncHelper(const GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onGetTopicAttributesOutcomeReceived(this, request, GetTopicAttributes(request), context);
+  handler(this, request, GetTopicAttributes(request), context);
 }
 
 ListEndpointsByPlatformApplicationOutcome SNSClient::ListEndpointsByPlatformApplication(const ListEndpointsByPlatformApplicationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -540,21 +525,20 @@ ListEndpointsByPlatformApplicationOutcomeCallable SNSClient::ListEndpointsByPlat
   return std::async(std::launch::async, &SNSClient::ListEndpointsByPlatformApplication, this, request);
 }
 
-void SNSClient::ListEndpointsByPlatformApplicationAsync(const ListEndpointsByPlatformApplicationRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListEndpointsByPlatformApplicationAsync(const ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListEndpointsByPlatformApplicationAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ListEndpointsByPlatformApplicationAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ListEndpointsByPlatformApplicationAsyncHelper(const ListEndpointsByPlatformApplicationRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListEndpointsByPlatformApplicationAsyncHelper(const ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListEndpointsByPlatformApplicationOutcomeReceived(this, request, ListEndpointsByPlatformApplication(request), context);
+  handler(this, request, ListEndpointsByPlatformApplication(request), context);
 }
 
 ListPlatformApplicationsOutcome SNSClient::ListPlatformApplications(const ListPlatformApplicationsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -571,21 +555,20 @@ ListPlatformApplicationsOutcomeCallable SNSClient::ListPlatformApplicationsCalla
   return std::async(std::launch::async, &SNSClient::ListPlatformApplications, this, request);
 }
 
-void SNSClient::ListPlatformApplicationsAsync(const ListPlatformApplicationsRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListPlatformApplicationsAsync(const ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListPlatformApplicationsAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ListPlatformApplicationsAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ListPlatformApplicationsAsyncHelper(const ListPlatformApplicationsRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListPlatformApplicationsAsyncHelper(const ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListPlatformApplicationsOutcomeReceived(this, request, ListPlatformApplications(request), context);
+  handler(this, request, ListPlatformApplications(request), context);
 }
 
 ListSubscriptionsOutcome SNSClient::ListSubscriptions(const ListSubscriptionsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -602,21 +585,20 @@ ListSubscriptionsOutcomeCallable SNSClient::ListSubscriptionsCallable(const List
   return std::async(std::launch::async, &SNSClient::ListSubscriptions, this, request);
 }
 
-void SNSClient::ListSubscriptionsAsync(const ListSubscriptionsRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListSubscriptionsAsync(const ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListSubscriptionsAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ListSubscriptionsAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ListSubscriptionsAsyncHelper(const ListSubscriptionsRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListSubscriptionsAsyncHelper(const ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListSubscriptionsOutcomeReceived(this, request, ListSubscriptions(request), context);
+  handler(this, request, ListSubscriptions(request), context);
 }
 
 ListSubscriptionsByTopicOutcome SNSClient::ListSubscriptionsByTopic(const ListSubscriptionsByTopicRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -633,21 +615,20 @@ ListSubscriptionsByTopicOutcomeCallable SNSClient::ListSubscriptionsByTopicCalla
   return std::async(std::launch::async, &SNSClient::ListSubscriptionsByTopic, this, request);
 }
 
-void SNSClient::ListSubscriptionsByTopicAsync(const ListSubscriptionsByTopicRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListSubscriptionsByTopicAsync(const ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListSubscriptionsByTopicAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ListSubscriptionsByTopicAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ListSubscriptionsByTopicAsyncHelper(const ListSubscriptionsByTopicRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListSubscriptionsByTopicAsyncHelper(const ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListSubscriptionsByTopicOutcomeReceived(this, request, ListSubscriptionsByTopic(request), context);
+  handler(this, request, ListSubscriptionsByTopic(request), context);
 }
 
 ListTagsForResourceOutcome SNSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -664,21 +645,20 @@ ListTagsForResourceOutcomeCallable SNSClient::ListTagsForResourceCallable(const 
   return std::async(std::launch::async, &SNSClient::ListTagsForResource, this, request);
 }
 
-void SNSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListTagsForResourceAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListTagsForResourceOutcomeReceived(this, request, ListTagsForResource(request), context);
+  handler(this, request, ListTagsForResource(request), context);
 }
 
 ListTopicsOutcome SNSClient::ListTopics(const ListTopicsRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -695,21 +675,20 @@ ListTopicsOutcomeCallable SNSClient::ListTopicsCallable(const ListTopicsRequest&
   return std::async(std::launch::async, &SNSClient::ListTopics, this, request);
 }
 
-void SNSClient::ListTopicsAsync(const ListTopicsRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListTopicsAsync(const ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListTopicsAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::ListTopicsAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::ListTopicsAsyncHelper(const ListTopicsRequest& request, const AsyncCallerContext* context) const
+void SNSClient::ListTopicsAsyncHelper(const ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onListTopicsOutcomeReceived(this, request, ListTopics(request), context);
+  handler(this, request, ListTopics(request), context);
 }
 
 PublishOutcome SNSClient::Publish(const PublishRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -726,21 +705,20 @@ PublishOutcomeCallable SNSClient::PublishCallable(const PublishRequest& request)
   return std::async(std::launch::async, &SNSClient::Publish, this, request);
 }
 
-void SNSClient::PublishAsync(const PublishRequest& request, const AsyncCallerContext* context) const
+void SNSClient::PublishAsync(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::PublishAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::PublishAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::PublishAsyncHelper(const PublishRequest& request, const AsyncCallerContext* context) const
+void SNSClient::PublishAsyncHelper(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onPublishOutcomeReceived(this, request, Publish(request), context);
+  handler(this, request, Publish(request), context);
 }
 
 RemovePermissionOutcome SNSClient::RemovePermission(const RemovePermissionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -757,21 +735,20 @@ RemovePermissionOutcomeCallable SNSClient::RemovePermissionCallable(const Remove
   return std::async(std::launch::async, &SNSClient::RemovePermission, this, request);
 }
 
-void SNSClient::RemovePermissionAsync(const RemovePermissionRequest& request, const AsyncCallerContext* context) const
+void SNSClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::RemovePermissionAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::RemovePermissionAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const AsyncCallerContext* context) const
+void SNSClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRemovePermissionOutcomeReceived(this, request, RemovePermission(request), context);
+  handler(this, request, RemovePermission(request), context);
 }
 
 RemoveTagsFromResourceOutcome SNSClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -788,21 +765,20 @@ RemoveTagsFromResourceOutcomeCallable SNSClient::RemoveTagsFromResourceCallable(
   return std::async(std::launch::async, &SNSClient::RemoveTagsFromResource, this, request);
 }
 
-void SNSClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const AsyncCallerContext* context) const
+void SNSClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::RemoveTagsFromResourceAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const AsyncCallerContext* context) const
+void SNSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onRemoveTagsFromResourceOutcomeReceived(this, request, RemoveTagsFromResource(request), context);
+  handler(this, request, RemoveTagsFromResource(request), context);
 }
 
 SetEndpointAttributesOutcome SNSClient::SetEndpointAttributes(const SetEndpointAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -819,21 +795,20 @@ SetEndpointAttributesOutcomeCallable SNSClient::SetEndpointAttributesCallable(co
   return std::async(std::launch::async, &SNSClient::SetEndpointAttributes, this, request);
 }
 
-void SNSClient::SetEndpointAttributesAsync(const SetEndpointAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetEndpointAttributesAsync(const SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetEndpointAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::SetEndpointAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::SetEndpointAttributesAsyncHelper(const SetEndpointAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetEndpointAttributesAsyncHelper(const SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetEndpointAttributesOutcomeReceived(this, request, SetEndpointAttributes(request), context);
+  handler(this, request, SetEndpointAttributes(request), context);
 }
 
 SetPlatformApplicationAttributesOutcome SNSClient::SetPlatformApplicationAttributes(const SetPlatformApplicationAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -850,21 +825,20 @@ SetPlatformApplicationAttributesOutcomeCallable SNSClient::SetPlatformApplicatio
   return std::async(std::launch::async, &SNSClient::SetPlatformApplicationAttributes, this, request);
 }
 
-void SNSClient::SetPlatformApplicationAttributesAsync(const SetPlatformApplicationAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetPlatformApplicationAttributesAsync(const SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetPlatformApplicationAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::SetPlatformApplicationAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::SetPlatformApplicationAttributesAsyncHelper(const SetPlatformApplicationAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetPlatformApplicationAttributesAsyncHelper(const SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetPlatformApplicationAttributesOutcomeReceived(this, request, SetPlatformApplicationAttributes(request), context);
+  handler(this, request, SetPlatformApplicationAttributes(request), context);
 }
 
 SetSubscriptionAttributesOutcome SNSClient::SetSubscriptionAttributes(const SetSubscriptionAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -881,21 +855,20 @@ SetSubscriptionAttributesOutcomeCallable SNSClient::SetSubscriptionAttributesCal
   return std::async(std::launch::async, &SNSClient::SetSubscriptionAttributes, this, request);
 }
 
-void SNSClient::SetSubscriptionAttributesAsync(const SetSubscriptionAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetSubscriptionAttributesAsync(const SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetSubscriptionAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::SetSubscriptionAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::SetSubscriptionAttributesAsyncHelper(const SetSubscriptionAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetSubscriptionAttributesAsyncHelper(const SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetSubscriptionAttributesOutcomeReceived(this, request, SetSubscriptionAttributes(request), context);
+  handler(this, request, SetSubscriptionAttributes(request), context);
 }
 
 SetTopicAttributesOutcome SNSClient::SetTopicAttributes(const SetTopicAttributesRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -912,21 +885,20 @@ SetTopicAttributesOutcomeCallable SNSClient::SetTopicAttributesCallable(const Se
   return std::async(std::launch::async, &SNSClient::SetTopicAttributes, this, request);
 }
 
-void SNSClient::SetTopicAttributesAsync(const SetTopicAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetTopicAttributesAsync(const SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetTopicAttributesAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::SetTopicAttributesAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::SetTopicAttributesAsyncHelper(const SetTopicAttributesRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SetTopicAttributesAsyncHelper(const SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSetTopicAttributesOutcomeReceived(this, request, SetTopicAttributes(request), context);
+  handler(this, request, SetTopicAttributes(request), context);
 }
 
 SubscribeOutcome SNSClient::Subscribe(const SubscribeRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -943,21 +915,20 @@ SubscribeOutcomeCallable SNSClient::SubscribeCallable(const SubscribeRequest& re
   return std::async(std::launch::async, &SNSClient::Subscribe, this, request);
 }
 
-void SNSClient::SubscribeAsync(const SubscribeRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SubscribeAsync(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SubscribeAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::SubscribeAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::SubscribeAsyncHelper(const SubscribeRequest& request, const AsyncCallerContext* context) const
+void SNSClient::SubscribeAsyncHelper(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onSubscribeOutcomeReceived(this, request, Subscribe(request), context);
+  handler(this, request, Subscribe(request), context);
 }
 
 UnsubscribeOutcome SNSClient::Unsubscribe(const UnsubscribeRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -974,13 +945,13 @@ UnsubscribeOutcomeCallable SNSClient::UnsubscribeCallable(const UnsubscribeReque
   return std::async(std::launch::async, &SNSClient::Unsubscribe, this, request);
 }
 
-void SNSClient::UnsubscribeAsync(const UnsubscribeRequest& request, const AsyncCallerContext* context) const
+void SNSClient::UnsubscribeAsync(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::UnsubscribeAsyncHelper, this, request, context);
+  m_executor->Submit(&SNSClient::UnsubscribeAsyncHelper, this, request, handler, context);
 }
 
-void SNSClient::UnsubscribeAsyncHelper(const UnsubscribeRequest& request, const AsyncCallerContext* context) const
+void SNSClient::UnsubscribeAsyncHelper(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_onUnsubscribeOutcomeReceived(this, request, Unsubscribe(request), context);
+  handler(this, request, Unsubscribe(request), context);
 }
 

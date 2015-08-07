@@ -41,7 +41,7 @@ SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
     return SSLSupportMethod::vip;
   }
 
-  return SSLSupportMethod::sni_only;
+  return SSLSupportMethod::NOT_SET;
 }
 
 Aws::String GetNameForSSLSupportMethod(SSLSupportMethod value)
@@ -53,7 +53,7 @@ Aws::String GetNameForSSLSupportMethod(SSLSupportMethod value)
   case SSLSupportMethod::vip:
     return "vip";
   default:
-    return "sni_only";
+    return "";
   }
 }
 

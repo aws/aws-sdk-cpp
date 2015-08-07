@@ -56,7 +56,7 @@ Statistic GetStatisticForName(const Aws::String& name)
     return Statistic::Maximum;
   }
 
-  return Statistic::SampleCount;
+  return Statistic::NOT_SET;
 }
 
 Aws::String GetNameForStatistic(Statistic value)
@@ -74,7 +74,7 @@ Aws::String GetNameForStatistic(Statistic value)
   case Statistic::Maximum:
     return "Maximum";
   default:
-    return "SampleCount";
+    return "";
   }
 }
 

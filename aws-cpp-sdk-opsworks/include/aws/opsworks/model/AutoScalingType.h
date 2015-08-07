@@ -24,6 +24,7 @@ namespace Model
 {
   enum class AutoScalingType
   {
+    NOT_SET,
     load,
     timer
   };

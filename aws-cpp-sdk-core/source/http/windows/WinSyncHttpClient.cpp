@@ -127,6 +127,12 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 }
             }
 
+            auto& sentHandler = request.GetDataSentEventHandler();
+            if (sentHandler)
+            {
+                sentHandler(&request, (long long)bytesWritten);
+            }
+
             if(!payloadStream->good())
             {
                 done = true;
@@ -212,6 +218,11 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
             if(readLimiter != nullptr && read > 0)
             {
                 readLimiter->ApplyAndPayForCost(read);
+                auto& receivedHandler = request.GetDataReceivedEventHandler();
+                if (receivedHandler)
+                {
+                    receivedHandler(&request, response.get(), (long long)read);
+                }
             }
         }
     }

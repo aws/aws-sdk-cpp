@@ -41,7 +41,7 @@ ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::Str
     return ReturnItemCollectionMetrics::NONE;
   }
 
-  return ReturnItemCollectionMetrics::SIZE;
+  return ReturnItemCollectionMetrics::NOT_SET;
 }
 
 Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics value)
@@ -53,7 +53,7 @@ Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics va
   case ReturnItemCollectionMetrics::NONE:
     return "NONE";
   default:
-    return "SIZE";
+    return "";
   }
 }
 

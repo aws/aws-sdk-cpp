@@ -24,12 +24,16 @@ namespace Model
 {
   enum class Event
   {
+    NOT_SET,
     s3_ReducedRedundancyLostObject,
     s3_ObjectCreated__,
     s3_ObjectCreated_Put,
     s3_ObjectCreated_Post,
     s3_ObjectCreated_Copy,
-    s3_ObjectCreated_CompleteMultipartUpload
+    s3_ObjectCreated_CompleteMultipartUpload,
+    s3_ObjectRemoved__,
+    s3_ObjectRemoved_Delete,
+    s3_ObjectRemoved_DeleteMarkerCreated
   };
 
 namespace EventMapper

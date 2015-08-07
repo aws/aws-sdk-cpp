@@ -41,7 +41,7 @@ RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
     return RevisionLocationType::GitHub;
   }
 
-  return RevisionLocationType::S3;
+  return RevisionLocationType::NOT_SET;
 }
 
 Aws::String GetNameForRevisionLocationType(RevisionLocationType value)
@@ -53,7 +53,7 @@ Aws::String GetNameForRevisionLocationType(RevisionLocationType value)
   case RevisionLocationType::GitHub:
     return "GitHub";
   default:
-    return "S3";
+    return "";
   }
 }
 

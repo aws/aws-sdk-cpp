@@ -46,7 +46,7 @@ BundleType GetBundleTypeForName(const Aws::String& name)
     return BundleType::zip;
   }
 
-  return BundleType::tar;
+  return BundleType::NOT_SET;
 }
 
 Aws::String GetNameForBundleType(BundleType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForBundleType(BundleType value)
   case BundleType::zip:
     return "zip";
   default:
-    return "tar";
+    return "";
   }
 }
 

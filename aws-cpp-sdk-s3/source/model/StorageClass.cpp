@@ -19,6 +19,7 @@ using namespace Aws::Utils;
 
 static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 static const int REDUCED_REDUNDANCY_HASH = HashingUtils::HashString("REDUCED_REDUNDANCY");
+static const int LT_HASH = HashingUtils::HashString("LT");
 
 namespace Aws
 {
@@ -40,8 +41,12 @@ StorageClass GetStorageClassForName(const Aws::String& name)
   {
     return StorageClass::REDUCED_REDUNDANCY;
   }
+  else if (hashCode == LT_HASH)
+  {
+    return StorageClass::LT;
+  }
 
-  return StorageClass::STANDARD;
+  return StorageClass::NOT_SET;
 }
 
 Aws::String GetNameForStorageClass(StorageClass value)
@@ -52,8 +57,10 @@ Aws::String GetNameForStorageClass(StorageClass value)
     return "STANDARD";
   case StorageClass::REDUCED_REDUNDANCY:
     return "REDUCED_REDUNDANCY";
+  case StorageClass::LT:
+    return "LT";
   default:
-    return "STANDARD";
+    return "";
   }
 }
 

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ViewerProtocolPolicy
   {
+    NOT_SET,
     allow_all,
     https_only,
     redirect_to_https

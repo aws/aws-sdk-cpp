@@ -24,6 +24,7 @@ namespace Model
 {
   enum class RootDeviceType
   {
+    NOT_SET,
     ebs,
     instance_store
   };

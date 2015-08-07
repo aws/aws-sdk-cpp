@@ -24,6 +24,7 @@ namespace Model
 {
   enum class AZMode
   {
+    NOT_SET,
     single_az,
     cross_az
   };

@@ -51,7 +51,7 @@ AutomaticFailoverStatus GetAutomaticFailoverStatusForName(const Aws::String& nam
     return AutomaticFailoverStatus::disabling;
   }
 
-  return AutomaticFailoverStatus::enabled;
+  return AutomaticFailoverStatus::NOT_SET;
 }
 
 Aws::String GetNameForAutomaticFailoverStatus(AutomaticFailoverStatus value)
@@ -67,7 +67,7 @@ Aws::String GetNameForAutomaticFailoverStatus(AutomaticFailoverStatus value)
   case AutomaticFailoverStatus::disabling:
     return "disabling";
   default:
-    return "enabled";
+    return "";
   }
 }
 

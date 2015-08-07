@@ -24,6 +24,7 @@ namespace Model
 {
   enum class StepState
   {
+    NOT_SET,
     PENDING,
     RUNNING,
     COMPLETED,

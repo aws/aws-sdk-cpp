@@ -156,7 +156,7 @@ summaryKeyType GetsummaryKeyTypeForName(const Aws::String& name)
     return summaryKeyType::VersionsPerPolicyQuota;
   }
 
-  return summaryKeyType::Users;
+  return summaryKeyType::NOT_SET;
 }
 
 Aws::String GetNameForsummaryKeyType(summaryKeyType value)
@@ -214,7 +214,7 @@ Aws::String GetNameForsummaryKeyType(summaryKeyType value)
   case summaryKeyType::VersionsPerPolicyQuota:
     return "VersionsPerPolicyQuota";
   default:
-    return "Users";
+    return "";
   }
 }
 

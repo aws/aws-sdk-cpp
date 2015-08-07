@@ -24,6 +24,7 @@ namespace Model
 {
   enum class AutomaticFailoverStatus
   {
+    NOT_SET,
     enabled,
     disabled,
     enabling,

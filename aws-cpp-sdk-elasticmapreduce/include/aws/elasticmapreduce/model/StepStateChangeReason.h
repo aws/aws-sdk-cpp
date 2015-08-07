@@ -42,16 +42,16 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /*
-     <p>The programmable code for the state change reason. </p>
+     <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
     */
     inline const StepStateChangeReasonCode& GetCode() const{ return m_code; }
     /*
-     <p>The programmable code for the state change reason. </p>
+     <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
     */
     inline void SetCode(const StepStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /*
-     <p>The programmable code for the state change reason. </p>
+     <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change. </p>
     */
     inline StepStateChangeReason&  WithCode(const StepStateChangeReasonCode& value) { SetCode(value); return *this;}
 

@@ -80,11 +80,17 @@ bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
     return expiry < (Utils::DateTime::ComputeCurrentTimestampInAmazonFormat() - GRACE_BUFFER);
 }
 
+
 GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdentityClient& cognitoIdentityClient,
                                                              PersistentCognitoIdentityProvider& identityRepository,
                                                              const char* logTag, bool includeLogins)
 {
     auto logins = identityRepository.GetLogins();
+    Aws::Map<Aws::String, Aws::String> cognitoLogins;
+    for(auto& login : logins)
+    {
+        cognitoLogins[login.first] = login.second.accessToken;
+    }
 
     if (!identityRepository.HasIdentityId())
     {
@@ -100,7 +106,8 @@ GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdenti
         getIdRequest.SetIdentityPoolId(identityPoolId);
         if(includeLogins)
         {
-            getIdRequest.SetLogins(logins);
+
+            getIdRequest.SetLogins(cognitoLogins);
         }
 
         auto getIdOutcome = cognitoIdentityClient.GetId(getIdRequest);
@@ -128,7 +135,7 @@ GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdenti
     getCredentialsForIdentityRequest.SetIdentityId(identityRepository.GetIdentityId());
     if(includeLogins)
     {
-        getCredentialsForIdentityRequest.SetLogins(logins);
+        getCredentialsForIdentityRequest.SetLogins(cognitoLogins);
     }
 
     return cognitoIdentityClient.GetCredentialsForIdentity(getCredentialsForIdentityRequest);

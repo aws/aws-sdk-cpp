@@ -46,7 +46,7 @@ InvocationType GetInvocationTypeForName(const Aws::String& name)
     return InvocationType::DryRun;
   }
 
-  return InvocationType::Event;
+  return InvocationType::NOT_SET;
 }
 
 Aws::String GetNameForInvocationType(InvocationType value)
@@ -60,7 +60,7 @@ Aws::String GetNameForInvocationType(InvocationType value)
   case InvocationType::DryRun:
     return "DryRun";
   default:
-    return "Event";
+    return "";
   }
 }
 

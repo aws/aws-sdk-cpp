@@ -143,6 +143,30 @@ namespace Model
     */
     inline RegisterContainerInstanceRequest&  WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
 
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline RegisterContainerInstanceRequest&  WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
+
+    /*
+     <p>The Amazon Resource Name (ARN) of the container instance (if it was previously registered).</p>
+    */
+    inline RegisterContainerInstanceRequest& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
+
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
@@ -154,6 +178,8 @@ namespace Model
     bool m_totalResourcesHasBeenSet;
     VersionInfo m_versionInfo;
     bool m_versionInfoHasBeenSet;
+    Aws::String m_containerInstanceArn;
+    bool m_containerInstanceArnHasBeenSet;
   };
 
 } // namespace Model

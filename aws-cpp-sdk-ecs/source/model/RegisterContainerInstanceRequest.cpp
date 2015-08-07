@@ -26,7 +26,8 @@ RegisterContainerInstanceRequest::RegisterContainerInstanceRequest() :
     m_instanceIdentityDocumentHasBeenSet(false),
     m_instanceIdentityDocumentSignatureHasBeenSet(false),
     m_totalResourcesHasBeenSet(false),
-    m_versionInfoHasBeenSet(false)
+    m_versionInfoHasBeenSet(false),
+    m_containerInstanceArnHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
   if(m_versionInfoHasBeenSet)
   {
    payload.WithObject("versionInfo", m_versionInfo.Jsonize());
+
+  }
+
+  if(m_containerInstanceArnHasBeenSet)
+  {
+   payload.WithString("containerInstanceArn", m_containerInstanceArn);
 
   }
 

@@ -229,6 +229,54 @@ namespace Model
     inline Instance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
     /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+    /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
+
+    /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline void SetEcsClusterArn(const char* value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn.assign(value); }
+
+    /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline Instance&  WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
+
+    /*
+     <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    */
+    inline Instance& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline const Aws::String& GetEcsContainerInstanceArn() const{ return m_ecsContainerInstanceArn; }
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline void SetEcsContainerInstanceArn(const Aws::String& value) { m_ecsContainerInstanceArnHasBeenSet = true; m_ecsContainerInstanceArn = value; }
+
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline void SetEcsContainerInstanceArn(const char* value) { m_ecsContainerInstanceArnHasBeenSet = true; m_ecsContainerInstanceArn.assign(value); }
+
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline Instance&  WithEcsContainerInstanceArn(const Aws::String& value) { SetEcsContainerInstanceArn(value); return *this;}
+
+    /*
+     <p>For container instances, the instance's ARN.</p>
+    */
+    inline Instance& WithEcsContainerInstanceArn(const char* value) { SetEcsContainerInstanceArn(value); return *this;}
+
+    /*
      <p>The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
     */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
@@ -879,6 +927,10 @@ namespace Model
     bool m_ebsOptimizedHasBeenSet;
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+    Aws::String m_ecsClusterArn;
+    bool m_ecsClusterArnHasBeenSet;
+    Aws::String m_ecsContainerInstanceArn;
+    bool m_ecsContainerInstanceArnHasBeenSet;
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
     Aws::String m_hostname;

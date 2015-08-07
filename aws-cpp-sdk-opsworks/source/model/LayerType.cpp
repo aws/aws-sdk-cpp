@@ -17,6 +17,8 @@
 
 using namespace Aws::Utils;
 
+static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
+static const int ecs_cluster_HASH = HashingUtils::HashString("ecs-cluster");
 static const int java_app_HASH = HashingUtils::HashString("java-app");
 static const int lb_HASH = HashingUtils::HashString("lb");
 static const int web_HASH = HashingUtils::HashString("web");
@@ -40,7 +42,15 @@ LayerType GetLayerTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
-  if (hashCode == java_app_HASH)
+  if (hashCode == aws_flow_ruby_HASH)
+  {
+    return LayerType::aws_flow_ruby;
+  }
+  else if (hashCode == ecs_cluster_HASH)
+  {
+    return LayerType::ecs_cluster;
+  }
+  else if (hashCode == java_app_HASH)
   {
     return LayerType::java_app;
   }
@@ -81,13 +91,17 @@ LayerType GetLayerTypeForName(const Aws::String& name)
     return LayerType::custom;
   }
 
-  return LayerType::java_app;
+  return LayerType::NOT_SET;
 }
 
 Aws::String GetNameForLayerType(LayerType value)
 {
   switch(value)
   {
+  case LayerType::aws_flow_ruby:
+    return "aws-flow-ruby";
+  case LayerType::ecs_cluster:
+    return "ecs-cluster";
   case LayerType::java_app:
     return "java-app";
   case LayerType::lb:
@@ -109,7 +123,7 @@ Aws::String GetNameForLayerType(LayerType value)
   case LayerType::custom:
     return "custom";
   default:
-    return "java_app";
+    return "";
   }
 }
 

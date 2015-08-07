@@ -24,6 +24,7 @@ namespace Model
 {
   enum class LifecycleState
   {
+    NOT_SET,
     Pending,
     Pending_Wait,
     Pending_Proceed,

@@ -36,7 +36,7 @@ KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
     return KeyUsageType::ENCRYPT_DECRYPT;
   }
 
-  return KeyUsageType::ENCRYPT_DECRYPT;
+  return KeyUsageType::NOT_SET;
 }
 
 Aws::String GetNameForKeyUsageType(KeyUsageType value)
@@ -46,7 +46,7 @@ Aws::String GetNameForKeyUsageType(KeyUsageType value)
   case KeyUsageType::ENCRYPT_DECRYPT:
     return "ENCRYPT_DECRYPT";
   default:
-    return "ENCRYPT_DECRYPT";
+    return "";
   }
 }
 

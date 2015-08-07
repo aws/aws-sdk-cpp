@@ -51,7 +51,7 @@ StreamStatus GetStreamStatusForName(const Aws::String& name)
     return StreamStatus::UPDATING;
   }
 
-  return StreamStatus::CREATING;
+  return StreamStatus::NOT_SET;
 }
 
 Aws::String GetNameForStreamStatus(StreamStatus value)
@@ -67,7 +67,7 @@ Aws::String GetNameForStreamStatus(StreamStatus value)
   case StreamStatus::UPDATING:
     return "UPDATING";
   default:
-    return "CREATING";
+    return "";
   }
 }
 

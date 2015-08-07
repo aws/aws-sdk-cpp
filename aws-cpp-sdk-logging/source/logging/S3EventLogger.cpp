@@ -32,8 +32,14 @@ namespace Aws
 {
 namespace Logging
 {
-
     static const char* TAG = "S3EventLogger";
+
+    static void PutObjectReceivedHandler(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest&, const Aws::S3::Model::PutObjectOutcome&,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+    {
+       //do nothing
+    }
+
     S3EventLogger::S3EventLogger(const std::shared_ptr<Aws::S3::S3Client>& s3Client,
                   const S3EventLoggerConfiguration& config):
                   m_s3client(s3Client),
@@ -91,7 +97,7 @@ namespace Logging
     void S3EventLogger::FlushAsync()
     {
         auto putRequest = FlushEventsAndBuildPutRequest();
-        m_s3client->PutObjectAsync(putRequest);
+        m_s3client->PutObjectAsync(putRequest, PutObjectReceivedHandler);
     }
 
     Aws::S3::Model::PutObjectRequest  S3EventLogger::FlushEventsAndBuildPutRequest()

@@ -96,7 +96,7 @@ ErrorCode GetErrorCodeForName(const Aws::String& name)
     return ErrorCode::THROTTLED;
   }
 
-  return ErrorCode::DEPLOYMENT_GROUP_MISSING;
+  return ErrorCode::NOT_SET;
 }
 
 Aws::String GetNameForErrorCode(ErrorCode value)
@@ -130,7 +130,7 @@ Aws::String GetNameForErrorCode(ErrorCode value)
   case ErrorCode::THROTTLED:
     return "THROTTLED";
   default:
-    return "DEPLOYMENT_GROUP_MISSING";
+    return "";
   }
 }
 

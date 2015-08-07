@@ -24,6 +24,7 @@ namespace Model
 {
   enum class GrantOperation
   {
+    NOT_SET,
     Decrypt,
     Encrypt,
     GenerateDataKey,

@@ -158,26 +158,26 @@ namespace Model
     inline Layer& WithShortname(const char* value) { SetShortname(value); return *this;}
 
     /*
-     <p>The layer attributes.</p> <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</note>
+     <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p> <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     */
     inline const Aws::Map<LayerAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
     /*
-     <p>The layer attributes.</p> <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</note>
+     <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p> <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     */
     inline void SetAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /*
-     <p>The layer attributes.</p> <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</note>
+     <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p> <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     */
     inline Layer&  WithAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /*
-     <p>The layer attributes.</p> <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</note>
+     <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p> <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /*
-     <p>The layer attributes.</p> <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</note>
+     <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p> <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
@@ -204,6 +204,30 @@ namespace Model
      <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     */
     inline Layer& WithCustomInstanceProfileArn(const char* value) { SetCustomInstanceProfileArn(value); return *this;}
+
+    /*
+     <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    */
+    inline const Aws::String& GetCustomJson() const{ return m_customJson; }
+    /*
+     <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    */
+    inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+
+    /*
+     <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    */
+    inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
+
+    /*
+     <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    */
+    inline Layer&  WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
+
+    /*
+     <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    */
+    inline Layer& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
     /*
      <p>An array containing the layer's custom security group IDs.</p>
@@ -441,6 +465,8 @@ namespace Model
     bool m_attributesHasBeenSet;
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
+    Aws::String m_customJson;
+    bool m_customJsonHasBeenSet;
     Aws::Vector<Aws::String> m_customSecurityGroupIds;
     bool m_customSecurityGroupIdsHasBeenSet;
     Aws::Vector<Aws::String> m_defaultSecurityGroupNames;

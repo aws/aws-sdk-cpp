@@ -24,6 +24,7 @@ namespace Model
 {
   enum class RevisionLocationType
   {
+    NOT_SET,
     S3,
     GitHub
   };

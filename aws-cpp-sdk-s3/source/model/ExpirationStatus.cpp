@@ -41,7 +41,7 @@ ExpirationStatus GetExpirationStatusForName(const Aws::String& name)
     return ExpirationStatus::Disabled;
   }
 
-  return ExpirationStatus::Enabled;
+  return ExpirationStatus::NOT_SET;
 }
 
 Aws::String GetNameForExpirationStatus(ExpirationStatus value)
@@ -53,7 +53,7 @@ Aws::String GetNameForExpirationStatus(ExpirationStatus value)
   case ExpirationStatus::Disabled:
     return "Disabled";
   default:
-    return "Enabled";
+    return "";
   }
 }
 

@@ -91,7 +91,7 @@ DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
     return DeploymentCommandName::undeploy;
   }
 
-  return DeploymentCommandName::install_dependencies;
+  return DeploymentCommandName::NOT_SET;
 }
 
 Aws::String GetNameForDeploymentCommandName(DeploymentCommandName value)
@@ -123,7 +123,7 @@ Aws::String GetNameForDeploymentCommandName(DeploymentCommandName value)
   case DeploymentCommandName::undeploy:
     return "undeploy";
   default:
-    return "install_dependencies";
+    return "";
   }
 }
 

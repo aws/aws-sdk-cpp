@@ -32,7 +32,7 @@ namespace ECS
 namespace Model
 {
   /*
-    <p>The name of a container in a task definition and the command it should run instead of its default.</p>
+    <p>The overrides that should be sent to a container.</p>
   */
   class AWS_ECS_API ContainerOverride
   {

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class MetadataDirective
   {
+    NOT_SET,
     COPY,
     REPLACE
   };

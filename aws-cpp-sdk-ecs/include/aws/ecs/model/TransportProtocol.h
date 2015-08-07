@@ -24,6 +24,7 @@ namespace Model
 {
   enum class TransportProtocol
   {
+    NOT_SET,
     tcp,
     udp
   };

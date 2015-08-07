@@ -22,22 +22,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListGrantsRequest::ListGrantsRequest() : 
-    m_keyIdHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_keyIdHasBeenSet(false)
 {
 }
 
 Aws::String ListGrantsRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_keyIdHasBeenSet)
-  {
-   payload.WithString("KeyId", m_keyId);
-
-  }
 
   if(m_limitHasBeenSet)
   {
@@ -48,6 +42,12 @@ Aws::String ListGrantsRequest::SerializePayload() const
   if(m_markerHasBeenSet)
   {
    payload.WithString("Marker", m_marker);
+
+  }
+
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
 
   }
 

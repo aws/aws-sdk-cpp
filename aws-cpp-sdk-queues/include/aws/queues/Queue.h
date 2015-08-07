@@ -14,12 +14,11 @@
   */
 #pragma once
 
-#include <aws/core/utils/Event.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/queues/Queues_EXPORTS.h>
 #include <thread>
 #include <atomic>
-
+#include <functional>
 
 namespace Aws
 {
@@ -34,11 +33,11 @@ namespace Aws
         template<typename MESSAGE_TYPE>
         class Queue
         {
-            typedef Aws::Utils::Event<Queue, const MESSAGE_TYPE&, bool&> MessageReceivedEvent;
-            typedef Aws::Utils::Event<Queue, const MESSAGE_TYPE&> MessageDeleteFailedEvent;
-            typedef Aws::Utils::Event<Queue, const MESSAGE_TYPE&> MessageDeleteSuccessEvent;
-            typedef Aws::Utils::Event<Queue, const MESSAGE_TYPE&> MessageSendFailedEvent;
-            typedef Aws::Utils::Event<Queue, const MESSAGE_TYPE&> MessageSendSuccessEvent;
+            typedef std::function<void(const Queue*, const MESSAGE_TYPE&, bool&)> MessageReceivedEventHandler;
+            typedef std::function<void(const Queue*, const MESSAGE_TYPE&)> MessageDeleteFailedEventHandler;
+            typedef std::function<void(const Queue*, const MESSAGE_TYPE&)> MessageDeleteSuccessEventHandler;
+            typedef std::function<void(const Queue*, const MESSAGE_TYPE&)> MessageSendFailedEventHandler;
+            typedef std::function<void(const Queue*, const MESSAGE_TYPE&)> MessageSendSuccessEventHandler;
 
         public:
             /**
@@ -91,30 +90,23 @@ namespace Aws
                 }
             }
 
-            /**
-             * Event to register for if you want asynchronous notification of a message being recieved on the queue.
-             */
-            MessageReceivedEvent OnMessageReceived;
+            inline void SetMessageReceivedEventHandler(const MessageReceivedEventHandler& messageHandler) { m_messageReceivedHandler = messageHandler; }
+            inline void SetMessageDeleteFailedEventHandler(const MessageDeleteFailedEventHandler& messageHandler) { m_messageDeleteFailedHandler = messageHandler; }
+            inline void SetMessageDeleteSuccessEventHandler(const MessageDeleteSuccessEventHandler& messageHandler) { m_messageDeleteSuccessHandler = messageHandler; }
+            inline void SetMessageSendFailedEventHandler(const MessageSendFailedEventHandler& messageHandler) { m_messageSendFailedHandler = messageHandler; }
+            inline void SetMessageSendSuccessEventHandler(const MessageSendSuccessEventHandler& messageHandler) { m_messageSendSuccessHandler = messageHandler; }
 
-            /**
-             * Notification that a message deletion failed.
-             */
-            MessageDeleteFailedEvent OnMessageDeleteFailed;
+            inline void SetMessageReceivedEventHandler(MessageReceivedEventHandler&& messageHandler) { m_messageReceivedHandler = messageHandler; }
+            inline void SetMessageDeleteFailedEventHandler(MessageDeleteFailedEventHandler&& messageHandler) { m_messageDeleteFailedHandler = messageHandler; }
+            inline void SetMessageDeleteSuccessEventHandler(MessageDeleteSuccessEventHandler&& messageHandler) { m_messageDeleteSuccessHandler = messageHandler; }
+            inline void SetMessageSendFailedEventHandler(MessageSendFailedEventHandler&& messageHandler) { m_messageSendFailedHandler = messageHandler; }
+            inline void SetMessageSendSuccessEventHandler(MessageSendSuccessEventHandler&& messageHandler) { m_messageSendSuccessHandler = messageHandler; }
 
-            /**
-             * Notification that a message deletion succeeded.
-             */
-            MessageDeleteSuccessEvent OnMessageDeleteSucceeded;
-
-            /**
-             * Notification that a message send operation failed.
-             */
-            MessageSendFailedEvent OnMessageSendFailed;
-
-            /**
-             * Notification that a message send was successful.
-             */
-            MessageSendSuccessEvent OnMessageSendSucceeded;
+            inline const MessageReceivedEventHandler& GetMessageReceivedEventHandler() const { return m_messageReceivedHandler; }
+            inline const MessageDeleteFailedEventHandler& GetMessageDeleteFailedEventHandler() const { return m_messageDeleteFailedHandler; }
+            inline const MessageDeleteSuccessEventHandler& GetMessageDeleteSuccessEventHandler() const { return m_messageDeleteSuccessHandler; }
+            inline const MessageSendFailedEventHandler& GetMessageSendFailedEventHandler() const { return m_messageSendFailedHandler; }
+            inline const MessageSendSuccessEventHandler& GetMessageSendSuccessEventHandler() const { return m_messageSendSuccessHandler; }
 
         protected:
             std::atomic<bool> m_continue;
@@ -127,7 +119,12 @@ namespace Aws
                     auto start = std::chrono::system_clock::now();
                     MESSAGE_TYPE topMessage = Top();
                     bool deleteMessage = false;
-                    OnMessageReceived(this, topMessage, deleteMessage);
+                    
+                    auto& receivedHandler = GetMessageReceivedEventHandler();
+                    if (receivedHandler)
+                    {
+                        receivedHandler(this, topMessage, deleteMessage);
+                    }
 
                     if (deleteMessage)
                     {
@@ -149,6 +146,13 @@ namespace Aws
 
             unsigned m_pollingFrequencyMs;
             Aws::UniquePtr<std::thread> m_pollingThread;
+
+            // Handlers
+            MessageReceivedEventHandler m_messageReceivedHandler;
+            MessageDeleteFailedEventHandler m_messageDeleteFailedHandler;
+            MessageDeleteSuccessEventHandler m_messageDeleteSuccessHandler;
+            MessageSendFailedEventHandler m_messageSendFailedHandler;
+            MessageSendSuccessEventHandler m_messageSendSuccessHandler;
         };
     }
 }

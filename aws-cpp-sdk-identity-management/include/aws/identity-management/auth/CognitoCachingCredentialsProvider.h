@@ -86,7 +86,7 @@ namespace Aws
         {
         public:
             /**
-             * PersistentCognitoIdentityProvider is responsible for storing and retrieving cognito identity information
+             * PersistentCognitoIdentityProvider is responsible for storing and retrieving cognito-identity information
              * from memory or file system.
              */
             CognitoCachingAuthenticatedCredentialsProvider(const std::shared_ptr<PersistentCognitoIdentityProvider>& identityRepository,

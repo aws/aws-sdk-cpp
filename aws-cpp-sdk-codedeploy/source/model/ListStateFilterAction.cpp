@@ -46,7 +46,7 @@ ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
     return ListStateFilterAction::ignore;
   }
 
-  return ListStateFilterAction::include;
+  return ListStateFilterAction::NOT_SET;
 }
 
 Aws::String GetNameForListStateFilterAction(ListStateFilterAction value)
@@ -60,7 +60,7 @@ Aws::String GetNameForListStateFilterAction(ListStateFilterAction value)
   case ListStateFilterAction::ignore:
     return "ignore";
   default:
-    return "include";
+    return "";
   }
 }
 

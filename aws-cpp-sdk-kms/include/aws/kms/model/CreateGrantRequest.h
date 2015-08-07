@@ -167,6 +167,20 @@ namespace Model
     */
     inline CreateGrantRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
+    
+    inline const Aws::String& GetName() const{ return m_name; }
+    
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    
+    inline CreateGrantRequest&  WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline CreateGrantRequest& WithName(const char* value) { SetName(value); return *this;}
+
   private:
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
@@ -180,6 +194,8 @@ namespace Model
     bool m_constraintsHasBeenSet;
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
   };
 
 } // namespace Model

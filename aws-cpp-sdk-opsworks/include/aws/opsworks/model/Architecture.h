@@ -24,6 +24,7 @@ namespace Model
 {
   enum class Architecture
   {
+    NOT_SET,
     x86_64,
     i386
   };

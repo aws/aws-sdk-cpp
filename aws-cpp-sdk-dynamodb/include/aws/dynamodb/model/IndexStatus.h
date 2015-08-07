@@ -24,6 +24,7 @@ namespace Model
 {
   enum class IndexStatus
   {
+    NOT_SET,
     CREATING,
     UPDATING,
     DELETING,

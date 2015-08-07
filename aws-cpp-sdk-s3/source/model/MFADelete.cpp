@@ -41,7 +41,7 @@ MFADelete GetMFADeleteForName(const Aws::String& name)
     return MFADelete::Disabled;
   }
 
-  return MFADelete::Enabled;
+  return MFADelete::NOT_SET;
 }
 
 Aws::String GetNameForMFADelete(MFADelete value)
@@ -53,7 +53,7 @@ Aws::String GetNameForMFADelete(MFADelete value)
   case MFADelete::Disabled:
     return "Disabled";
   default:
-    return "Enabled";
+    return "";
   }
 }
 

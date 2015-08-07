@@ -46,7 +46,7 @@ StateValue GetStateValueForName(const Aws::String& name)
     return StateValue::INSUFFICIENT_DATA;
   }
 
-  return StateValue::OK;
+  return StateValue::NOT_SET;
 }
 
 Aws::String GetNameForStateValue(StateValue value)
@@ -60,7 +60,7 @@ Aws::String GetNameForStateValue(StateValue value)
   case StateValue::INSUFFICIENT_DATA:
     return "INSUFFICIENT_DATA";
   default:
-    return "OK";
+    return "";
   }
 }
 

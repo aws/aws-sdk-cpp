@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ItemSelection
   {
+    NOT_SET,
     none,
     whitelist,
     all

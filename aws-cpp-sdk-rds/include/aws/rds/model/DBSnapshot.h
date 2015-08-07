@@ -92,16 +92,16 @@ namespace Model
     inline DBSnapshot& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
     /*
-     <p> Provides the time (UTC) when the snapshot was taken. </p>
+     <p> Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
     /*
-     <p> Provides the time (UTC) when the snapshot was taken. </p>
+     <p> Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline void SetSnapshotCreateTime(double value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /*
-     <p> Provides the time (UTC) when the snapshot was taken. </p>
+     <p> Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline DBSnapshot&  WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
 
@@ -206,40 +206,40 @@ namespace Model
     inline DBSnapshot& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /*
-     <p> Provides the Vpc Id associated with the DB snapshot. </p>
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
     /*
-     <p> Provides the Vpc Id associated with the DB snapshot. </p>
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /*
-     <p> Provides the Vpc Id associated with the DB snapshot. </p>
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /*
-     <p> Provides the Vpc Id associated with the DB snapshot. </p>
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline DBSnapshot&  WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /*
-     <p> Provides the Vpc Id associated with the DB snapshot. </p>
+     <p> Provides the VPC ID associated with the DB snapshot. </p>
     */
     inline DBSnapshot& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /*
-     <p> Specifies the time (UTC) when the snapshot was taken. </p>
+     <p> Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline double GetInstanceCreateTime() const{ return m_instanceCreateTime; }
     /*
-     <p> Specifies the time (UTC) when the snapshot was taken. </p>
+     <p> Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline void SetInstanceCreateTime(double value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /*
-     <p> Specifies the time (UTC) when the snapshot was taken. </p>
+     <p> Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC). </p>
     */
     inline DBSnapshot&  WithInstanceCreateTime(double value) { SetInstanceCreateTime(value); return *this;}
 
@@ -416,6 +416,30 @@ namespace Model
     inline DBSnapshot& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
     /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
+    /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
+
+    /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier.assign(value); }
+
+    /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline DBSnapshot&  WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
+
+    /*
+     <p> The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy. </p>
+    */
+    inline DBSnapshot& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
+
+    /*
      <p> Specifies the storage type associated with DB Snapshot. </p>
     */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
@@ -538,6 +562,8 @@ namespace Model
     bool m_percentProgressHasBeenSet;
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;
+    Aws::String m_sourceDBSnapshotIdentifier;
+    bool m_sourceDBSnapshotIdentifierHasBeenSet;
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
     Aws::String m_tdeCredentialArn;

@@ -66,7 +66,7 @@ ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::S
     return ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED;
   }
 
-  return ClusterStateChangeReasonCode::INTERNAL_ERROR;
+  return ClusterStateChangeReasonCode::NOT_SET;
 }
 
 Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode value)
@@ -88,7 +88,7 @@ Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode 
   case ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED:
     return "ALL_STEPS_COMPLETED";
   default:
-    return "INTERNAL_ERROR";
+    return "";
   }
 }
 

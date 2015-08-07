@@ -81,7 +81,7 @@ InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
     return InstanceGroupState::ENDED;
   }
 
-  return InstanceGroupState::PROVISIONING;
+  return InstanceGroupState::NOT_SET;
 }
 
 Aws::String GetNameForInstanceGroupState(InstanceGroupState value)
@@ -109,7 +109,7 @@ Aws::String GetNameForInstanceGroupState(InstanceGroupState value)
   case InstanceGroupState::ENDED:
     return "ENDED";
   default:
-    return "PROVISIONING";
+    return "";
   }
 }
 

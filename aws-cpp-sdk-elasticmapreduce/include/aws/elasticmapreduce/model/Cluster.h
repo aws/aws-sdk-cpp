@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Tag.h>
+#include <aws/elasticmapreduce/model/Configuration.h>
 
 namespace Aws
 {
@@ -164,28 +165,52 @@ namespace Model
     inline Cluster& WithRequestedAmiVersion(const char* value) { SetRequestedAmiVersion(value); return *this;}
 
     /*
-     <p>The AMI version running on this cluster. This differs from the requested version only if the requested version is a meta version, such as "latest". </p>
+     <p>The AMI version running on this cluster. </p>
     */
     inline const Aws::String& GetRunningAmiVersion() const{ return m_runningAmiVersion; }
     /*
-     <p>The AMI version running on this cluster. This differs from the requested version only if the requested version is a meta version, such as "latest". </p>
+     <p>The AMI version running on this cluster. </p>
     */
     inline void SetRunningAmiVersion(const Aws::String& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
 
     /*
-     <p>The AMI version running on this cluster. This differs from the requested version only if the requested version is a meta version, such as "latest". </p>
+     <p>The AMI version running on this cluster. </p>
     */
     inline void SetRunningAmiVersion(const char* value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion.assign(value); }
 
     /*
-     <p>The AMI version running on this cluster. This differs from the requested version only if the requested version is a meta version, such as "latest". </p>
+     <p>The AMI version running on this cluster. </p>
     */
     inline Cluster&  WithRunningAmiVersion(const Aws::String& value) { SetRunningAmiVersion(value); return *this;}
 
     /*
-     <p>The AMI version running on this cluster. This differs from the requested version only if the requested version is a meta version, such as "latest". </p>
+     <p>The AMI version running on this cluster. </p>
     */
     inline Cluster& WithRunningAmiVersion(const char* value) { SetRunningAmiVersion(value); return *this;}
+
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
+
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
+
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline Cluster&  WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
+
+    /*
+     <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+    */
+    inline Cluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
     /*
      <p>Specifies whether the cluster should terminate after completing all steps.</p>
@@ -306,28 +331,47 @@ namespace Model
     inline Cluster&  WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
 
     /*
-     <p>The public DNS name of the master Ec2 instance.</p>
+     <p>The public DNS name of the master EC2 instance.</p>
     */
     inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
     /*
-     <p>The public DNS name of the master Ec2 instance.</p>
+     <p>The public DNS name of the master EC2 instance.</p>
     */
     inline void SetMasterPublicDnsName(const Aws::String& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
 
     /*
-     <p>The public DNS name of the master Ec2 instance.</p>
+     <p>The public DNS name of the master EC2 instance.</p>
     */
     inline void SetMasterPublicDnsName(const char* value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName.assign(value); }
 
     /*
-     <p>The public DNS name of the master Ec2 instance.</p>
+     <p>The public DNS name of the master EC2 instance.</p>
     */
     inline Cluster&  WithMasterPublicDnsName(const Aws::String& value) { SetMasterPublicDnsName(value); return *this;}
 
     /*
-     <p>The public DNS name of the master Ec2 instance.</p>
+     <p>The public DNS name of the master EC2 instance.</p>
     */
     inline Cluster& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline Cluster&  WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+
+    /*
+     <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of Configurations supplied to the EMR cluster.</p>
+    */
+    inline Cluster& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
@@ -344,6 +388,8 @@ namespace Model
     bool m_requestedAmiVersionHasBeenSet;
     Aws::String m_runningAmiVersion;
     bool m_runningAmiVersionHasBeenSet;
+    Aws::String m_releaseLabel;
+    bool m_releaseLabelHasBeenSet;
     bool m_autoTerminate;
     bool m_autoTerminateHasBeenSet;
     bool m_terminationProtected;
@@ -360,6 +406,8 @@ namespace Model
     bool m_normalizedInstanceHoursHasBeenSet;
     Aws::String m_masterPublicDnsName;
     bool m_masterPublicDnsNameHasBeenSet;
+    Aws::Vector<Configuration> m_configurations;
+    bool m_configurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -24,6 +24,7 @@ namespace Model
 {
   enum class EventSeverity
   {
+    NOT_SET,
     TRACE,
     DEBUG,
     INFO,

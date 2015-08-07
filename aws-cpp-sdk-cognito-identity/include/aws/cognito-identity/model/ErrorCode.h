@@ -24,6 +24,7 @@ namespace Model
 {
   enum class ErrorCode
   {
+    NOT_SET,
     AccessDenied,
     InternalServerError
   };

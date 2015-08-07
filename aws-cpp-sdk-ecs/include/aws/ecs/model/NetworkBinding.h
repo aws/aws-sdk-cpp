@@ -31,7 +31,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Details on the network bindings between a container and its host container instance.</p>
   */
   class AWS_ECS_API NetworkBinding
   {

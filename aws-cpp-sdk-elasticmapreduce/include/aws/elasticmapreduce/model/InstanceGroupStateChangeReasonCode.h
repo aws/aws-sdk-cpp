@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InstanceGroupStateChangeReasonCode
   {
+    NOT_SET,
     INTERNAL_ERROR,
     VALIDATION_ERROR,
     INSTANCE_FAILURE,

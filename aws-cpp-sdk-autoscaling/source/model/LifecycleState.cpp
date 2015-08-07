@@ -96,7 +96,7 @@ LifecycleState GetLifecycleStateForName(const Aws::String& name)
     return LifecycleState::Standby;
   }
 
-  return LifecycleState::Pending;
+  return LifecycleState::NOT_SET;
 }
 
 Aws::String GetNameForLifecycleState(LifecycleState value)
@@ -130,7 +130,7 @@ Aws::String GetNameForLifecycleState(LifecycleState value)
   case LifecycleState::Standby:
     return "Standby";
   default:
-    return "Pending";
+    return "";
   }
 }
 

@@ -61,7 +61,7 @@ LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
     return LifecycleErrorCode::UnknownError;
   }
 
-  return LifecycleErrorCode::Success;
+  return LifecycleErrorCode::NOT_SET;
 }
 
 Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode value)
@@ -81,7 +81,7 @@ Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode value)
   case LifecycleErrorCode::UnknownError:
     return "UnknownError";
   default:
-    return "Success";
+    return "";
   }
 }
 

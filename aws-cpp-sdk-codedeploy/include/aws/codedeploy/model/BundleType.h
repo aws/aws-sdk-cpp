@@ -24,6 +24,7 @@ namespace Model
 {
   enum class BundleType
   {
+    NOT_SET,
     tar,
     tgz,
     zip

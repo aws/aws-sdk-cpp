@@ -51,7 +51,7 @@ IndexStatus GetIndexStatusForName(const Aws::String& name)
     return IndexStatus::ACTIVE;
   }
 
-  return IndexStatus::CREATING;
+  return IndexStatus::NOT_SET;
 }
 
 Aws::String GetNameForIndexStatus(IndexStatus value)
@@ -67,7 +67,7 @@ Aws::String GetNameForIndexStatus(IndexStatus value)
   case IndexStatus::ACTIVE:
     return "ACTIVE";
   default:
-    return "CREATING";
+    return "";
   }
 }
 

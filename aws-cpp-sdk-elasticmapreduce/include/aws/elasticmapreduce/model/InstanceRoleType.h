@@ -24,6 +24,7 @@ namespace Model
 {
   enum class InstanceRoleType
   {
+    NOT_SET,
     MASTER,
     CORE,
     TASK

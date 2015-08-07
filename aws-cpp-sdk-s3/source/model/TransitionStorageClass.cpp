@@ -36,7 +36,7 @@ TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
     return TransitionStorageClass::GLACIER;
   }
 
-  return TransitionStorageClass::GLACIER;
+  return TransitionStorageClass::NOT_SET;
 }
 
 Aws::String GetNameForTransitionStorageClass(TransitionStorageClass value)
@@ -46,7 +46,7 @@ Aws::String GetNameForTransitionStorageClass(TransitionStorageClass value)
   case TransitionStorageClass::GLACIER:
     return "GLACIER";
   default:
-    return "GLACIER";
+    return "";
   }
 }
 

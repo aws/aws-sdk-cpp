@@ -36,7 +36,7 @@ RequestPayer GetRequestPayerForName(const Aws::String& name)
     return RequestPayer::requester;
   }
 
-  return RequestPayer::requester;
+  return RequestPayer::NOT_SET;
 }
 
 Aws::String GetNameForRequestPayer(RequestPayer value)
@@ -46,7 +46,7 @@ Aws::String GetNameForRequestPayer(RequestPayer value)
   case RequestPayer::requester:
     return "requester";
   default:
-    return "requester";
+    return "";
   }
 }
 

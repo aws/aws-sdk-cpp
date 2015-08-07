@@ -31,7 +31,7 @@ namespace ECS
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>A data volume used in a task definition.</p>
   */
   class AWS_ECS_API Volume
   {

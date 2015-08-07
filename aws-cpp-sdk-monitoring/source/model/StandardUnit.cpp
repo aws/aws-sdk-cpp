@@ -166,7 +166,7 @@ StandardUnit GetStandardUnitForName(const Aws::String& name)
     return StandardUnit::None;
   }
 
-  return StandardUnit::Seconds;
+  return StandardUnit::NOT_SET;
 }
 
 Aws::String GetNameForStandardUnit(StandardUnit value)
@@ -228,7 +228,7 @@ Aws::String GetNameForStandardUnit(StandardUnit value)
   case StandardUnit::None:
     return "None";
   default:
-    return "Seconds";
+    return "";
   }
 }
 
