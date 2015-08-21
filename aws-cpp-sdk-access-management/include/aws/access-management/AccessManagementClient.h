@@ -70,11 +70,15 @@ class AWS_ACCESS_MANAGEMENT_API AccessManagementClient
 
         using PolicyGeneratorFunction = std::function< Aws::String(void) >;
 
+        // Misc
+        static Aws::String ExtractAccountIdFromArn(const Aws::String& arn);
+
         // Compound Operation API for IAM
         bool GetOrCreateGroup (const Aws::String& groupName, Aws::IAM::Model::Group& groupData);
         bool GetOrCreatePolicy(const Aws::String& policyName, const PolicyGeneratorFunction& policyGenerator, Aws::IAM::Model::Policy& policyData);
         bool GetOrCreateRole  (const Aws::String& roleName, const PolicyGeneratorFunction& assumedPolicyGenerator, Aws::IAM::Model::Role& roleData);
         bool GetOrCreateUser  (const Aws::String& userName, Aws::IAM::Model::User& userData);
+        Aws::String GetAccountId();
 
         bool AttachPolicyToGroupIfNot(const Aws::IAM::Model::Policy& policyData, const Aws::String& groupName);
         bool AttachPolicyToRoleIfNot (const Aws::IAM::Model::Policy& policyData, const Aws::String& roleName);
@@ -125,10 +129,7 @@ class AWS_ACCESS_MANAGEMENT_API AccessManagementClient
         bool DeleteGroup (const Aws::String& groupName);
         bool DeletePolicy(const Aws::String& policyName);
         bool DeleteRole  (const Aws::String& roleName);
-        bool DeleteUser  (const Aws::String& userName);
-
-        // Misc
-        Aws::String ExtractAccountIdFromArn(const Aws::String& arn);
+        bool DeleteUser  (const Aws::String& userName);       
 
         bool DoesCredentialsFileExist    (const Aws::String& credentialsFilename);
         bool CreateCredentialsFileForUser(const Aws::String& credentialsFilename, const Aws::String& userName);

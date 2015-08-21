@@ -39,7 +39,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsStorageEncryptionHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_supportsIops(false),
-    m_supportsIopsHasBeenSet(false)
+    m_supportsIopsHasBeenSet(false),
+    m_supportsEnhancedMonitoring(false),
+    m_supportsEnhancedMonitoringHasBeenSet(false)
 {
 }
 
@@ -59,7 +61,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsStorageEncryptionHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_supportsIops(false),
-    m_supportsIopsHasBeenSet(false)
+    m_supportsIopsHasBeenSet(false),
+    m_supportsEnhancedMonitoring(false),
+    m_supportsEnhancedMonitoringHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -94,53 +98,59 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
       m_licenseModelHasBeenSet = true;
     }
-    XmlNode availabilityZoneNodeParent = resultNode.FirstChild("AvailabilityZone");
-    XmlNode availabilityZoneNode = availabilityZoneNodeParent.FirstChild("member");
-    if(!availabilityZoneNode.IsNull())
+    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
+    if(!availabilityZonesNode.IsNull())
     {
-      while(!availabilityZoneNode.IsNull())
+      XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(availabilityZoneNode);
-        availabilityZoneNode = availabilityZoneNode.NextNode("member");
+        m_availabilityZones.push_back(availabilityZonesMember);
+        availabilityZonesMember = availabilityZonesMember.NextNode("AvailabilityZone");
       }
 
       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode multiAZCapableNode = resultNode.FirstChild("MultiAZCapable");
-    if(!availabilityZoneNode.IsNull())
+    if(!multiAZCapableNode.IsNull())
     {
       m_multiAZCapable = StringUtils::ConvertToBool(StringUtils::Trim(multiAZCapableNode.GetText().c_str()).c_str());
       m_multiAZCapableHasBeenSet = true;
     }
     XmlNode readReplicaCapableNode = resultNode.FirstChild("ReadReplicaCapable");
-    if(!availabilityZoneNode.IsNull())
+    if(!readReplicaCapableNode.IsNull())
     {
       m_readReplicaCapable = StringUtils::ConvertToBool(StringUtils::Trim(readReplicaCapableNode.GetText().c_str()).c_str());
       m_readReplicaCapableHasBeenSet = true;
     }
     XmlNode vpcNode = resultNode.FirstChild("Vpc");
-    if(!availabilityZoneNode.IsNull())
+    if(!vpcNode.IsNull())
     {
       m_vpc = StringUtils::ConvertToBool(StringUtils::Trim(vpcNode.GetText().c_str()).c_str());
       m_vpcHasBeenSet = true;
     }
     XmlNode supportsStorageEncryptionNode = resultNode.FirstChild("SupportsStorageEncryption");
-    if(!availabilityZoneNode.IsNull())
+    if(!supportsStorageEncryptionNode.IsNull())
     {
       m_supportsStorageEncryption = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageEncryptionNode.GetText().c_str()).c_str());
       m_supportsStorageEncryptionHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(!availabilityZoneNode.IsNull())
+    if(!storageTypeNode.IsNull())
     {
       m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
       m_storageTypeHasBeenSet = true;
     }
     XmlNode supportsIopsNode = resultNode.FirstChild("SupportsIops");
-    if(!availabilityZoneNode.IsNull())
+    if(!supportsIopsNode.IsNull())
     {
       m_supportsIops = StringUtils::ConvertToBool(StringUtils::Trim(supportsIopsNode.GetText().c_str()).c_str());
       m_supportsIopsHasBeenSet = true;
+    }
+    XmlNode supportsEnhancedMonitoringNode = resultNode.FirstChild("SupportsEnhancedMonitoring");
+    if(!supportsEnhancedMonitoringNode.IsNull())
+    {
+      m_supportsEnhancedMonitoring = StringUtils::ConvertToBool(StringUtils::Trim(supportsEnhancedMonitoringNode.GetText().c_str()).c_str());
+      m_supportsEnhancedMonitoringHasBeenSet = true;
     }
   }
 
@@ -198,6 +208,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".SupportsIops=" << m_supportsIops << "&";
   }
+  if(m_supportsEnhancedMonitoringHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
+  }
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -250,5 +264,9 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsIopsHasBeenSet)
   {
       oStream << location << ".SupportsIops=" << m_supportsIops << "&";
+  }
+  if(m_supportsEnhancedMonitoringHasBeenSet)
+  {
+      oStream << location << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
   }
 }

@@ -38,7 +38,7 @@ Aws::String CreateLoadBalancerListenersRequest::SerializePayload() const
     unsigned listenersCount = 1;
     for(auto& item : m_listeners)
     {
-      item.OutputToStream(ss, "Listeners.", listenersCount, "");
+      item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
       listenersCount++;
     }
   }

@@ -41,14 +41,17 @@ DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode adjustmentTypesNodeParent = resultNode.FirstChild("AdjustmentTypes");
-    XmlNode adjustmentTypesNode = adjustmentTypesNodeParent.FirstChild("member");
-    while(!adjustmentTypesNode.IsNull())
+    XmlNode adjustmentTypesNode = resultNode.FirstChild("AdjustmentTypes");
+    if(!adjustmentTypesNode.IsNull())
     {
-      m_adjustmentTypes.push_back(adjustmentTypesNode);
-      adjustmentTypesNode = adjustmentTypesNode.NextNode("member");
-    }
+      XmlNode adjustmentTypesMember = adjustmentTypesNode.FirstChild("member");
+      while(!adjustmentTypesMember.IsNull())
+      {
+        m_adjustmentTypes.push_back(adjustmentTypesMember);
+        adjustmentTypesMember = adjustmentTypesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

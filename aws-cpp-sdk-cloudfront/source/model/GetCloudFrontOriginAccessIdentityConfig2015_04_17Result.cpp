@@ -42,7 +42,10 @@ GetCloudFrontOriginAccessIdentityConfig2015_04_17Result& GetCloudFrontOriginAcce
   if(!resultNode.IsNull())
   {
     XmlNode cloudFrontOriginAccessIdentityConfigNode = resultNode.FirstChild("CloudFrontOriginAccessIdentityConfig");
-    m_cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfigNode;
+    if(!cloudFrontOriginAccessIdentityConfigNode.IsNull())
+    {
+      m_cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfigNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

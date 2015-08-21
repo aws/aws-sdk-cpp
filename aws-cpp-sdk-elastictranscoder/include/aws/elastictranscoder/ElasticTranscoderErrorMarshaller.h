@@ -15,14 +15,14 @@
 #pragma once
 
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
-#include <aws/core/client/AWSRestfulJsonErrorMarshaller.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Client
 {
 
-class AWS_ELASTICTRANSCODER_API ElasticTranscoderErrorMarshaller : public Client::AWSRestfulJsonErrorMarshaller
+class AWS_ELASTICTRANSCODER_API ElasticTranscoderErrorMarshaller : public Client::AWSErrorMarshaller
 {
 public:
   ElasticTranscoderErrorMarshaller() {}
@@ -31,5 +31,5 @@ public:
   virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
 };
 
-} // namespace Client
+} // namespace ElasticTranscoder
 } // namespace Aws

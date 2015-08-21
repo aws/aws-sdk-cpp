@@ -41,15 +41,22 @@ SelectResult& SelectResult::operator =(const AmazonWebServiceResult<XmlDocument>
 
   if(!resultNode.IsNull())
   {
-    XmlNode itemNode = resultNode.FirstChild("Item");
-    while(!itemNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Item");
+    if(!itemsNode.IsNull())
     {
-      m_items.push_back(itemNode);
-      itemNode = itemNode.NextNode("Item");
-    }
+      XmlNode itemMember = itemsNode;
+      while(!itemMember.IsNull())
+      {
+        m_items.push_back(itemMember);
+        itemMember = itemMember.NextNode("Item");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

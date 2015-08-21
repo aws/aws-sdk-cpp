@@ -41,16 +41,22 @@ DescribeAutoScalingGroupsResult& DescribeAutoScalingGroupsResult::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode autoScalingGroupsNodeParent = resultNode.FirstChild("AutoScalingGroups");
-    XmlNode autoScalingGroupsNode = autoScalingGroupsNodeParent.FirstChild("member");
-    while(!autoScalingGroupsNode.IsNull())
+    XmlNode autoScalingGroupsNode = resultNode.FirstChild("AutoScalingGroups");
+    if(!autoScalingGroupsNode.IsNull())
     {
-      m_autoScalingGroups.push_back(autoScalingGroupsNode);
-      autoScalingGroupsNode = autoScalingGroupsNode.NextNode("member");
-    }
+      XmlNode autoScalingGroupsMember = autoScalingGroupsNode.FirstChild("member");
+      while(!autoScalingGroupsMember.IsNull())
+      {
+        m_autoScalingGroups.push_back(autoScalingGroupsMember);
+        autoScalingGroupsMember = autoScalingGroupsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

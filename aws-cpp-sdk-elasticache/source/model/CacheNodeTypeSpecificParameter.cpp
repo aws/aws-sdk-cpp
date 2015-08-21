@@ -98,14 +98,14 @@ CacheNodeTypeSpecificParameter& CacheNodeTypeSpecificParameter::operator =(const
       m_minimumEngineVersion = StringUtils::Trim(minimumEngineVersionNode.GetText().c_str());
       m_minimumEngineVersionHasBeenSet = true;
     }
-    XmlNode cacheNodeTypeSpecificValueNodeParent = resultNode.FirstChild("CacheNodeTypeSpecificValue");
-    XmlNode cacheNodeTypeSpecificValueNode = cacheNodeTypeSpecificValueNodeParent.FirstChild("member");
-    if(!cacheNodeTypeSpecificValueNode.IsNull())
+    XmlNode cacheNodeTypeSpecificValuesNode = resultNode.FirstChild("CacheNodeTypeSpecificValues");
+    if(!cacheNodeTypeSpecificValuesNode.IsNull())
     {
-      while(!cacheNodeTypeSpecificValueNode.IsNull())
+      XmlNode cacheNodeTypeSpecificValuesMember = cacheNodeTypeSpecificValuesNode.FirstChild("CacheNodeTypeSpecificValue");
+      while(!cacheNodeTypeSpecificValuesMember.IsNull())
       {
-        m_cacheNodeTypeSpecificValues.push_back(cacheNodeTypeSpecificValueNode);
-        cacheNodeTypeSpecificValueNode = cacheNodeTypeSpecificValueNode.NextNode("member");
+        m_cacheNodeTypeSpecificValues.push_back(cacheNodeTypeSpecificValuesMember);
+        cacheNodeTypeSpecificValuesMember = cacheNodeTypeSpecificValuesMember.NextNode("CacheNodeTypeSpecificValue");
       }
 
       m_cacheNodeTypeSpecificValuesHasBeenSet = true;

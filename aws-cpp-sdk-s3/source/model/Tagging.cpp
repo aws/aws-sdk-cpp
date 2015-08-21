@@ -40,14 +40,14 @@ Tagging& Tagging::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagNodeParent = resultNode.FirstChild("Tag");
-    XmlNode tagNode = tagNodeParent.FirstChild("member");
-    if(!tagNode.IsNull())
+    XmlNode tagSetNode = resultNode.FirstChild("TagSet");
+    if(!tagSetNode.IsNull())
     {
-      while(!tagNode.IsNull())
+      XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
+      while(!tagSetMember.IsNull())
       {
-        m_tagSet.push_back(tagNode);
-        tagNode = tagNode.NextNode("member");
+        m_tagSet.push_back(tagSetMember);
+        tagSetMember = tagSetMember.NextNode("Tag");
       }
 
       m_tagSetHasBeenSet = true;

@@ -43,18 +43,27 @@ ListInstanceProfilesResult& ListInstanceProfilesResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceProfilesNodeParent = resultNode.FirstChild("InstanceProfiles");
-    XmlNode instanceProfilesNode = instanceProfilesNodeParent.FirstChild("member");
-    while(!instanceProfilesNode.IsNull())
+    XmlNode instanceProfilesNode = resultNode.FirstChild("InstanceProfiles");
+    if(!instanceProfilesNode.IsNull())
     {
-      m_instanceProfiles.push_back(instanceProfilesNode);
-      instanceProfilesNode = instanceProfilesNode.NextNode("member");
-    }
+      XmlNode instanceProfilesMember = instanceProfilesNode.FirstChild("member");
+      while(!instanceProfilesMember.IsNull())
+      {
+        m_instanceProfiles.push_back(instanceProfilesMember);
+        instanceProfilesMember = instanceProfilesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -15,14 +15,14 @@
 #pragma once
 
 #include <aws/glacier/Glacier_EXPORTS.h>
-#include <aws/core/client/AWSRestfulJsonErrorMarshaller.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Client
 {
 
-class AWS_GLACIER_API GlacierErrorMarshaller : public Client::AWSRestfulJsonErrorMarshaller
+class AWS_GLACIER_API GlacierErrorMarshaller : public Client::AWSErrorMarshaller
 {
 public:
   GlacierErrorMarshaller() {}
@@ -31,5 +31,5 @@ public:
   virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
 };
 
-} // namespace Client
+} // namespace Glacier
 } // namespace Aws

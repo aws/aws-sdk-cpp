@@ -42,15 +42,21 @@ DescribeReservedCacheNodesOfferingsResult& DescribeReservedCacheNodesOfferingsRe
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedCacheNodesOfferingNodeParent = resultNode.FirstChild("ReservedCacheNodesOffering");
-    XmlNode reservedCacheNodesOfferingNode = reservedCacheNodesOfferingNodeParent.FirstChild("member");
-    while(!reservedCacheNodesOfferingNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_reservedCacheNodesOfferings.push_back(reservedCacheNodesOfferingNode);
-      reservedCacheNodesOfferingNode = reservedCacheNodesOfferingNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode reservedCacheNodesOfferingsNode = resultNode.FirstChild("ReservedCacheNodesOfferings");
+    if(!reservedCacheNodesOfferingsNode.IsNull())
+    {
+      XmlNode reservedCacheNodesOfferingsMember = reservedCacheNodesOfferingsNode.FirstChild("ReservedCacheNodesOffering");
+      while(!reservedCacheNodesOfferingsMember.IsNull())
+      {
+        m_reservedCacheNodesOfferings.push_back(reservedCacheNodesOfferingsMember);
+        reservedCacheNodesOfferingsMember = reservedCacheNodesOfferingsMember.NextNode("ReservedCacheNodesOffering");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

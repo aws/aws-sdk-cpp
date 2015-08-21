@@ -42,15 +42,21 @@ DescribeCacheClustersResult& DescribeCacheClustersResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheClusterNodeParent = resultNode.FirstChild("CacheCluster");
-    XmlNode cacheClusterNode = cacheClusterNodeParent.FirstChild("member");
-    while(!cacheClusterNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_cacheClusters.push_back(cacheClusterNode);
-      cacheClusterNode = cacheClusterNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode cacheClustersNode = resultNode.FirstChild("CacheClusters");
+    if(!cacheClustersNode.IsNull())
+    {
+      XmlNode cacheClustersMember = cacheClustersNode.FirstChild("CacheCluster");
+      while(!cacheClustersMember.IsNull())
+      {
+        m_cacheClusters.push_back(cacheClustersMember);
+        cacheClustersMember = cacheClustersMember.NextNode("CacheCluster");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

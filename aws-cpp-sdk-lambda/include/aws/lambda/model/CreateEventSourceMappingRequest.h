@@ -83,16 +83,16 @@ namespace Model
     inline CreateEventSourceMappingRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /*
-     <p>Indicates whether AWS Lambda should begin polling the event source. By default, <code>Enabled</code> is true. </p>
+     <p>Indicates whether AWS Lambda should begin polling the event source, the default is not enabled. </p>
     */
     inline bool GetEnabled() const{ return m_enabled; }
     /*
-     <p>Indicates whether AWS Lambda should begin polling the event source. By default, <code>Enabled</code> is true. </p>
+     <p>Indicates whether AWS Lambda should begin polling the event source, the default is not enabled. </p>
     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /*
-     <p>Indicates whether AWS Lambda should begin polling the event source. By default, <code>Enabled</code> is true. </p>
+     <p>Indicates whether AWS Lambda should begin polling the event source, the default is not enabled. </p>
     */
     inline CreateEventSourceMappingRequest&  WithEnabled(bool value) { SetEnabled(value); return *this;}
 

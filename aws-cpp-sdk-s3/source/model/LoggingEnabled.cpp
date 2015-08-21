@@ -50,20 +50,20 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
       m_targetBucket = StringUtils::Trim(targetBucketNode.GetText().c_str());
       m_targetBucketHasBeenSet = true;
     }
-    XmlNode grantNodeParent = resultNode.FirstChild("Grant");
-    XmlNode grantNode = grantNodeParent.FirstChild("member");
-    if(!grantNode.IsNull())
+    XmlNode targetGrantsNode = resultNode.FirstChild("TargetGrants");
+    if(!targetGrantsNode.IsNull())
     {
-      while(!grantNode.IsNull())
+      XmlNode targetGrantsMember = targetGrantsNode.FirstChild("Grant");
+      while(!targetGrantsMember.IsNull())
       {
-        m_targetGrants.push_back(grantNode);
-        grantNode = grantNode.NextNode("member");
+        m_targetGrants.push_back(targetGrantsMember);
+        targetGrantsMember = targetGrantsMember.NextNode("Grant");
       }
 
       m_targetGrantsHasBeenSet = true;
     }
     XmlNode targetPrefixNode = resultNode.FirstChild("TargetPrefix");
-    if(!grantNode.IsNull())
+    if(!targetPrefixNode.IsNull())
     {
       m_targetPrefix = StringUtils::Trim(targetPrefixNode.GetText().c_str());
       m_targetPrefixHasBeenSet = true;

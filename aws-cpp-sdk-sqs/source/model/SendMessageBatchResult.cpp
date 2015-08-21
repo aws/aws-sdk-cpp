@@ -41,20 +41,28 @@ SendMessageBatchResult& SendMessageBatchResult::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode sendMessageBatchResultEntryNode = resultNode.FirstChild("SendMessageBatchResultEntry");
-    while(!sendMessageBatchResultEntryNode.IsNull())
+    XmlNode successfulNode = resultNode.FirstChild("SendMessageBatchResultEntry");
+    if(!successfulNode.IsNull())
     {
-      m_successful.push_back(sendMessageBatchResultEntryNode);
-      sendMessageBatchResultEntryNode = sendMessageBatchResultEntryNode.NextNode("SendMessageBatchResultEntry");
-    }
+      XmlNode sendMessageBatchResultEntryMember = successfulNode;
+      while(!sendMessageBatchResultEntryMember.IsNull())
+      {
+        m_successful.push_back(sendMessageBatchResultEntryMember);
+        sendMessageBatchResultEntryMember = sendMessageBatchResultEntryMember.NextNode("SendMessageBatchResultEntry");
+      }
 
-    XmlNode batchResultErrorEntryNode = resultNode.FirstChild("BatchResultErrorEntry");
-    while(!batchResultErrorEntryNode.IsNull())
+    }
+    XmlNode failedNode = resultNode.FirstChild("BatchResultErrorEntry");
+    if(!failedNode.IsNull())
     {
-      m_failed.push_back(batchResultErrorEntryNode);
-      batchResultErrorEntryNode = batchResultErrorEntryNode.NextNode("BatchResultErrorEntry");
-    }
+      XmlNode batchResultErrorEntryMember = failedNode;
+      while(!batchResultErrorEntryMember.IsNull())
+      {
+        m_failed.push_back(batchResultErrorEntryMember);
+        batchResultErrorEntryMember = batchResultErrorEntryMember.NextNode("BatchResultErrorEntry");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

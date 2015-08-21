@@ -102,6 +102,12 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 {
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
+    //don't sign anonymous requests
+    if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
+    {
+        return true;
+    }
+
     if (!credentials.GetSessionToken().empty())
     {
         request.SetAwsSessionToken(credentials.GetSessionToken());
@@ -178,11 +184,19 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 
 bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long expirationTimeInSeconds) const
 {
+    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+
+    //don't sign anonymous requests
+    if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
+    {
+        return true;
+    }
+
     Aws::StringStream intConversionStream;
     intConversionStream << expirationTimeInSeconds;
     request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());
 
-    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+   
 
     if (!credentials.GetSessionToken().empty())
     {

@@ -38,7 +38,7 @@ Aws::String AddTagsToResourceRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }

@@ -42,7 +42,10 @@ CreatePolicyVersionResult& CreatePolicyVersionResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode policyVersionNode = resultNode.FirstChild("PolicyVersion");
-    m_policyVersion = policyVersionNode;
+    if(!policyVersionNode.IsNull())
+    {
+      m_policyVersion = policyVersionNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

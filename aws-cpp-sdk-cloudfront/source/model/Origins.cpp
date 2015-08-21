@@ -50,14 +50,14 @@ Origins& Origins::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode originNodeParent = resultNode.FirstChild("Origin");
-    XmlNode originNode = originNodeParent.FirstChild("member");
-    if(!originNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!originNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("Origin");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(originNode);
-        originNode = originNode.NextNode("member");
+        m_items.push_back(itemsMember);
+        itemsMember = itemsMember.NextNode("Origin");
       }
 
       m_itemsHasBeenSet = true;

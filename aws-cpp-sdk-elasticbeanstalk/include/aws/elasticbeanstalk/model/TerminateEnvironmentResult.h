@@ -334,12 +334,18 @@ namespace Model
     */
     inline TerminateEnvironmentResult&  WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
 
-    
+    /*
+     <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    */
     inline const EnvironmentHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
-    
+    /*
+     <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    */
     inline void SetHealthStatus(const EnvironmentHealthStatus& value) { m_healthStatus = value; }
 
-    
+    /*
+     <p>Returns the health status of the application running in your environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    */
     inline TerminateEnvironmentResult&  WithHealthStatus(const EnvironmentHealthStatus& value) { SetHealthStatus(value); return *this;}
 
     /*

@@ -50,14 +50,14 @@ CachedMethods& CachedMethods::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode methodNodeParent = resultNode.FirstChild("Method");
-    XmlNode methodNode = methodNodeParent.FirstChild("member");
-    if(!methodNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!methodNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("Method");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(MethodMapper::GetMethodForName(StringUtils::Trim(methodNode.GetText().c_str())));
-        methodNode = methodNode.NextNode("member");
+        m_items.push_back(MethodMapper::GetMethodForName(StringUtils::Trim(itemsMember.GetText().c_str())));
+        itemsMember = itemsMember.NextNode("Method");
       }
 
       m_itemsHasBeenSet = true;

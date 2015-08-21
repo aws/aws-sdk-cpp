@@ -42,15 +42,21 @@ DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBSecurityGroupNodeParent = resultNode.FirstChild("DBSecurityGroup");
-    XmlNode dBSecurityGroupNode = dBSecurityGroupNodeParent.FirstChild("member");
-    while(!dBSecurityGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBSecurityGroups.push_back(dBSecurityGroupNode);
-      dBSecurityGroupNode = dBSecurityGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBSecurityGroupsNode = resultNode.FirstChild("DBSecurityGroups");
+    if(!dBSecurityGroupsNode.IsNull())
+    {
+      XmlNode dBSecurityGroupsMember = dBSecurityGroupsNode.FirstChild("DBSecurityGroup");
+      while(!dBSecurityGroupsMember.IsNull())
+      {
+        m_dBSecurityGroups.push_back(dBSecurityGroupsMember);
+        dBSecurityGroupsMember = dBSecurityGroupsMember.NextNode("DBSecurityGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

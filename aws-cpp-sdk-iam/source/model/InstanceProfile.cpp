@@ -82,14 +82,14 @@ InstanceProfile& InstanceProfile::operator =(const XmlNode& xmlNode)
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
       m_createDateHasBeenSet = true;
     }
-    XmlNode rolesNodeParent = resultNode.FirstChild("Roles");
-    XmlNode rolesNode = rolesNodeParent.FirstChild("member");
+    XmlNode rolesNode = resultNode.FirstChild("Roles");
     if(!rolesNode.IsNull())
     {
-      while(!rolesNode.IsNull())
+      XmlNode rolesMember = rolesNode.FirstChild("member");
+      while(!rolesMember.IsNull())
       {
-        m_roles.push_back(rolesNode);
-        rolesNode = rolesNode.NextNode("member");
+        m_roles.push_back(rolesMember);
+        rolesMember = rolesMember.NextNode("member");
       }
 
       m_rolesHasBeenSet = true;

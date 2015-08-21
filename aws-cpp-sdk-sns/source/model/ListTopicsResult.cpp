@@ -41,16 +41,22 @@ ListTopicsResult& ListTopicsResult::operator =(const AmazonWebServiceResult<XmlD
 
   if(!resultNode.IsNull())
   {
-    XmlNode topicsNodeParent = resultNode.FirstChild("Topics");
-    XmlNode topicsNode = topicsNodeParent.FirstChild("member");
-    while(!topicsNode.IsNull())
+    XmlNode topicsNode = resultNode.FirstChild("Topics");
+    if(!topicsNode.IsNull())
     {
-      m_topics.push_back(topicsNode);
-      topicsNode = topicsNode.NextNode("member");
-    }
+      XmlNode topicsMember = topicsNode.FirstChild("member");
+      while(!topicsMember.IsNull())
+      {
+        m_topics.push_back(topicsMember);
+        topicsMember = topicsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

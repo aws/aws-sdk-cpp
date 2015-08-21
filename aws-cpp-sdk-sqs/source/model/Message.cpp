@@ -76,36 +76,38 @@ Message& Message::operator =(const XmlNode& xmlNode)
       m_body = StringUtils::Trim(bodyNode.GetText().c_str());
       m_bodyHasBeenSet = true;
     }
-    XmlNode attributeNode = resultNode.FirstChild("Attribute");
-    if(!attributeNode.IsNull())
+    XmlNode attributesNode = resultNode.FirstChild("Attribute");
+    if(!attributesNode.IsNull())
     {
-      while(!attributeNode.IsNull())
+      XmlNode attributeEntry = attributesNode;
+      while(!attributeEntry.IsNull())
       {
-        XmlNode keyNode = attributeNode.FirstChild("Name");
-        XmlNode valueNode = attributeNode.FirstChild("Value");
+        XmlNode keyNode = attributeEntry.FirstChild("Name");
+        XmlNode valueNode = attributeEntry.FirstChild("Value");
         m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
             StringUtils::Trim(valueNode.GetText().c_str());
-        attributeNode = attributeNode.NextNode("Attribute");
+        attributeEntry = attributeEntry.NextNode("Attribute");
       }
 
       m_attributesHasBeenSet = true;
     }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
-    if(!attributeNode.IsNull())
+    if(!mD5OfMessageAttributesNode.IsNull())
     {
       m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());
       m_mD5OfMessageAttributesHasBeenSet = true;
     }
-    XmlNode messageAttributeNode = resultNode.FirstChild("MessageAttribute");
-    if(!messageAttributeNode.IsNull())
+    XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttribute");
+    if(!messageAttributesNode.IsNull())
     {
-      while(!messageAttributeNode.IsNull())
+      XmlNode messageAttributeEntry = messageAttributesNode;
+      while(!messageAttributeEntry.IsNull())
       {
-        XmlNode keyNode = messageAttributeNode.FirstChild("Name");
-        XmlNode valueNode = messageAttributeNode.FirstChild("Value");
+        XmlNode keyNode = messageAttributeEntry.FirstChild("Name");
+        XmlNode valueNode = messageAttributeEntry.FirstChild("Value");
         m_messageAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
             valueNode;
-        messageAttributeNode = messageAttributeNode.NextNode("MessageAttribute");
+        messageAttributeEntry = messageAttributeEntry.NextNode("MessageAttribute");
       }
 
       m_messageAttributesHasBeenSet = true;

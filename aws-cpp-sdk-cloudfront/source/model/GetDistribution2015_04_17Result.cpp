@@ -42,7 +42,10 @@ GetDistribution2015_04_17Result& GetDistribution2015_04_17Result::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode distributionNode = resultNode.FirstChild("Distribution");
-    m_distribution = distributionNode;
+    if(!distributionNode.IsNull())
+    {
+      m_distribution = distributionNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -41,14 +41,17 @@ DescribeApplicationsResult& DescribeApplicationsResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode applicationsNodeParent = resultNode.FirstChild("Applications");
-    XmlNode applicationsNode = applicationsNodeParent.FirstChild("member");
-    while(!applicationsNode.IsNull())
+    XmlNode applicationsNode = resultNode.FirstChild("Applications");
+    if(!applicationsNode.IsNull())
     {
-      m_applications.push_back(applicationsNode);
-      applicationsNode = applicationsNode.NextNode("member");
-    }
+      XmlNode applicationsMember = applicationsNode.FirstChild("member");
+      while(!applicationsMember.IsNull())
+      {
+        m_applications.push_back(applicationsMember);
+        applicationsMember = applicationsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

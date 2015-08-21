@@ -44,7 +44,7 @@ Aws::String DescribeInstancesHealthRequest::SerializePayload() const
     unsigned attributeNamesCount = 1;
     for(auto& item : m_attributeNames)
     {
-      ss << "AttributeNames." << attributeNamesCount << "="
+      ss << "AttributeNames.member." << attributeNamesCount << "="
           << StringUtils::URLEncode(InstancesHealthAttributeMapper::GetNameForInstancesHealthAttribute(item).c_str()) << "&";
       attributeNamesCount++;
     }

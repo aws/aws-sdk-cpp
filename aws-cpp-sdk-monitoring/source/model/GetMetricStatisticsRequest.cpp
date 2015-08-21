@@ -51,7 +51,7 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
     unsigned dimensionsCount = 1;
     for(auto& item : m_dimensions)
     {
-      item.OutputToStream(ss, "Dimensions.", dimensionsCount, "");
+      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
       dimensionsCount++;
     }
   }
@@ -72,7 +72,7 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
     unsigned statisticsCount = 1;
     for(auto& item : m_statistics)
     {
-      ss << "Statistics." << statisticsCount << "="
+      ss << "Statistics.member." << statisticsCount << "="
           << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item).c_str()) << "&";
       statisticsCount++;
     }

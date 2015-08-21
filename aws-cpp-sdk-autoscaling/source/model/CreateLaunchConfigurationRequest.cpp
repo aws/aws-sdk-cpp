@@ -64,7 +64,7 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
     unsigned securityGroupsCount = 1;
     for(auto& item : m_securityGroups)
     {
-      ss << "SecurityGroups." << securityGroupsCount << "="
+      ss << "SecurityGroups.member." << securityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupsCount++;
     }
@@ -78,7 +78,7 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
     unsigned classicLinkVPCSecurityGroupsCount = 1;
     for(auto& item : m_classicLinkVPCSecurityGroups)
     {
-      ss << "ClassicLinkVPCSecurityGroups." << classicLinkVPCSecurityGroupsCount << "="
+      ss << "ClassicLinkVPCSecurityGroups.member." << classicLinkVPCSecurityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       classicLinkVPCSecurityGroupsCount++;
     }
@@ -108,7 +108,7 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
     unsigned blockDeviceMappingsCount = 1;
     for(auto& item : m_blockDeviceMappings)
     {
-      item.OutputToStream(ss, "BlockDeviceMappings.", blockDeviceMappingsCount, "");
+      item.OutputToStream(ss, "BlockDeviceMappings.member.", blockDeviceMappingsCount, "");
       blockDeviceMappingsCount++;
     }
   }

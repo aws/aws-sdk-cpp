@@ -110,14 +110,14 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
       m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
       m_dateUpdatedHasBeenSet = true;
     }
-    XmlNode optionSettingsNodeParent = resultNode.FirstChild("OptionSettings");
-    XmlNode optionSettingsNode = optionSettingsNodeParent.FirstChild("member");
+    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
     if(!optionSettingsNode.IsNull())
     {
-      while(!optionSettingsNode.IsNull())
+      XmlNode optionSettingsMember = optionSettingsNode.FirstChild("member");
+      while(!optionSettingsMember.IsNull())
       {
-        m_optionSettings.push_back(optionSettingsNode);
-        optionSettingsNode = optionSettingsNode.NextNode("member");
+        m_optionSettings.push_back(optionSettingsMember);
+        optionSettingsMember = optionSettingsMember.NextNode("member");
       }
 
       m_optionSettingsHasBeenSet = true;

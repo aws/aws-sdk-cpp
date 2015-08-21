@@ -134,7 +134,7 @@ void TransferClient::OnCreateBucket(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
  
-    auto uploadContext = std::dynamic_pointer_cast<const UploadFileContext>(context);
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
 
     std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
 
@@ -148,7 +148,7 @@ void TransferClient::OnCreateMultipartUpload(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto uploadContext = std::dynamic_pointer_cast<const UploadFileContext>(context);
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
 
     std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
 
@@ -162,7 +162,7 @@ void TransferClient::OnHeadBucket(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto uploadContext = std::dynamic_pointer_cast<const UploadFileContext>(context);
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
 
     std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
 
@@ -176,7 +176,7 @@ void TransferClient::OnUploadPartRequest(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto uploadContext = std::dynamic_pointer_cast<const UploadFileContext>(context);
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
 
     std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
 
@@ -191,7 +191,7 @@ void TransferClient::OnCompleteMultipartUpload(const Aws::S3::S3Client* s3Client
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto uploadContext = std::dynamic_pointer_cast<const UploadFileContext>(context);
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
 
     std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
 
@@ -205,7 +205,7 @@ void TransferClient::OnPutObject(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto uploadContext = std::dynamic_pointer_cast<const UploadFileContext>(context);
+    auto uploadContext = std::static_pointer_cast<const UploadFileContext>(context);
 
     std::shared_ptr<UploadFileRequest> uploadRequest = uploadContext->GetUploadRequest();
 
@@ -219,7 +219,7 @@ void TransferClient::OnGetObject(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto downloadContext = std::dynamic_pointer_cast<const DownloadFileContext>(context);
+    auto downloadContext = std::static_pointer_cast<const DownloadFileContext>(context);
 
     std::shared_ptr<DownloadFileRequest> downloadRequest = downloadContext->GetDownloadRequest();
 
@@ -234,7 +234,7 @@ void TransferClient::OnListObjects(const Aws::S3::S3Client* s3Client,
 {
     AWS_UNREFERENCED_PARAM(s3Client);
 
-    auto downloadContext = std::dynamic_pointer_cast<const DownloadFileContext>(context);
+    auto downloadContext = std::static_pointer_cast<const DownloadFileContext>(context);
 
     std::shared_ptr<DownloadFileRequest> downloadRequest = downloadContext->GetDownloadRequest();
 

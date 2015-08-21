@@ -42,7 +42,10 @@ CreateGroupResult& CreateGroupResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode groupNode = resultNode.FirstChild("Group");
-    m_group = groupNode;
+    if(!groupNode.IsNull())
+    {
+      m_group = groupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

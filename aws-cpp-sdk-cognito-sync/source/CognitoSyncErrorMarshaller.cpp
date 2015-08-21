@@ -27,5 +27,5 @@ AWSError<CoreErrors> CognitoSyncErrorMarshaller::FindErrorByName(const char* err
     return error;
   }
 
-  return AWSRestfulJsonErrorMarshaller::FindErrorByName(errorName);
+  return AWSErrorMarshaller::FindErrorByName(errorName);
 }

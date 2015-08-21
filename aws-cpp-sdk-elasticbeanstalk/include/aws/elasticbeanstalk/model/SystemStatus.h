@@ -32,7 +32,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents CPU utilization and load average information for applications running in the specified environment.</p>
   */
   class AWS_ELASTICBEANSTALK_API SystemStatus
   {
@@ -52,15 +52,23 @@ namespace Model
     
     inline SystemStatus&  WithCPUUtilization(const CPUUtilization& value) { SetCPUUtilization(value); return *this;}
 
-    
+    /*
+     <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    */
     inline const Aws::Vector<double>& GetLoadAverage() const{ return m_loadAverage; }
-    
+    /*
+     <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    */
     inline void SetLoadAverage(const Aws::Vector<double>& value) { m_loadAverageHasBeenSet = true; m_loadAverage = value; }
 
-    
+    /*
+     <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    */
     inline SystemStatus&  WithLoadAverage(const Aws::Vector<double>& value) { SetLoadAverage(value); return *this;}
 
-    
+    /*
+     <p>Load average in the last 1-minute and 5-minute periods. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    */
     inline SystemStatus& AddLoadAverage(double value) { m_loadAverageHasBeenSet = true; m_loadAverage.push_back(value); return *this; }
 
   private:

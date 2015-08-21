@@ -41,14 +41,17 @@ ListIdentityPoliciesResult& ListIdentityPoliciesResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode policyNamesNodeParent = resultNode.FirstChild("PolicyNames");
-    XmlNode policyNamesNode = policyNamesNodeParent.FirstChild("member");
-    while(!policyNamesNode.IsNull())
+    XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
+    if(!policyNamesNode.IsNull())
     {
-      m_policyNames.push_back(StringUtils::Trim(policyNamesNode.GetText().c_str()));
-      policyNamesNode = policyNamesNode.NextNode("member");
-    }
+      XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      while(!policyNamesMember.IsNull())
+      {
+        m_policyNames.push_back(StringUtils::Trim(policyNamesMember.GetText().c_str()));
+        policyNamesMember = policyNamesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

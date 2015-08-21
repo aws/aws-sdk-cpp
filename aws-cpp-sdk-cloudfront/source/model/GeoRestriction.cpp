@@ -58,14 +58,14 @@ GeoRestriction& GeoRestriction::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode locationNodeParent = resultNode.FirstChild("Location");
-    XmlNode locationNode = locationNodeParent.FirstChild("member");
-    if(!locationNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!locationNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("Location");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(locationNode.GetText().c_str()));
-        locationNode = locationNode.NextNode("member");
+        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        itemsMember = itemsMember.NextNode("Location");
       }
 
       m_itemsHasBeenSet = true;

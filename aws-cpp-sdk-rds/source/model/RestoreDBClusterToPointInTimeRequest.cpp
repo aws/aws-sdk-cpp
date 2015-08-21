@@ -72,7 +72,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
     unsigned vpcSecurityGroupIdsCount = 1;
     for(auto& item : m_vpcSecurityGroupIds)
     {
-      ss << "VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
+      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcSecurityGroupIdsCount++;
     }
@@ -82,7 +82,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }

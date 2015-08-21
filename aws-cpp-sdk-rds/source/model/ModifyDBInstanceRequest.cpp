@@ -24,6 +24,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
+    m_dBSubnetGroupNameHasBeenSet(false),
     m_dBSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_applyImmediately(false),
@@ -48,7 +49,12 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
     m_tdeCredentialPasswordHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false)
 {
 }
 
@@ -68,12 +74,16 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
+  if(m_dBSubnetGroupNameHasBeenSet)
+  {
+    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
   if(m_dBSecurityGroupsHasBeenSet)
   {
     unsigned dBSecurityGroupsCount = 1;
     for(auto& item : m_dBSecurityGroups)
     {
-      ss << "DBSecurityGroupName." << dBSecurityGroupsCount << "="
+      ss << "DBSecurityGroups.member." << dBSecurityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       dBSecurityGroupsCount++;
     }
@@ -83,7 +93,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     unsigned vpcSecurityGroupIdsCount = 1;
     for(auto& item : m_vpcSecurityGroupIds)
     {
-      ss << "VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
+      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcSecurityGroupIdsCount++;
     }
@@ -155,6 +165,18 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_cACertificateIdentifierHasBeenSet)
   {
     ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
   }
   ss << "Version=2014-10-31";
   return ss.str();

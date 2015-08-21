@@ -50,32 +50,66 @@ ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDoc
   if(!resultNode.IsNull())
   {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
-    XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
-    XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
-    m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
-    XmlNode partNumberMarkerNode = resultNode.FirstChild("PartNumberMarker");
-    m_partNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(partNumberMarkerNode.GetText().c_str()).c_str());
-    XmlNode nextPartNumberMarkerNode = resultNode.FirstChild("NextPartNumberMarker");
-    m_nextPartNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(nextPartNumberMarkerNode.GetText().c_str()).c_str());
-    XmlNode maxPartsNode = resultNode.FirstChild("MaxParts");
-    m_maxParts = StringUtils::ConvertToInt32(StringUtils::Trim(maxPartsNode.GetText().c_str()).c_str());
-    XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
-    XmlNode partNode = resultNode.FirstChild("${member.location}");
-    while(!partNode.IsNull())
+    if(!bucketNode.IsNull())
     {
-      m_parts.push_back(partNode);
-      partNode = partNode.NextNode("Part");
+      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
     }
+    XmlNode keyNode = resultNode.FirstChild("Key");
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    }
+    XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
+    if(!uploadIdNode.IsNull())
+    {
+      m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
+    }
+    XmlNode partNumberMarkerNode = resultNode.FirstChild("PartNumberMarker");
+    if(!partNumberMarkerNode.IsNull())
+    {
+      m_partNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(partNumberMarkerNode.GetText().c_str()).c_str());
+    }
+    XmlNode nextPartNumberMarkerNode = resultNode.FirstChild("NextPartNumberMarker");
+    if(!nextPartNumberMarkerNode.IsNull())
+    {
+      m_nextPartNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(nextPartNumberMarkerNode.GetText().c_str()).c_str());
+    }
+    XmlNode maxPartsNode = resultNode.FirstChild("MaxParts");
+    if(!maxPartsNode.IsNull())
+    {
+      m_maxParts = StringUtils::ConvertToInt32(StringUtils::Trim(maxPartsNode.GetText().c_str()).c_str());
+    }
+    XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
+    XmlNode partsNode = resultNode.FirstChild("Parts");
+    if(!partsNode.IsNull())
+    {
+      XmlNode partsMember = partsNode;
+      while(!partsMember.IsNull())
+      {
+        m_parts.push_back(partsMember);
+        partsMember = partsMember.NextNode("Part");
+      }
 
+    }
     XmlNode initiatorNode = resultNode.FirstChild("Initiator");
-    m_initiator = initiatorNode;
+    if(!initiatorNode.IsNull())
+    {
+      m_initiator = initiatorNode;
+    }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    m_owner = ownerNode;
+    if(!ownerNode.IsNull())
+    {
+      m_owner = ownerNode;
+    }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
-    m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
+    if(!storageClassNode.IsNull())
+    {
+      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

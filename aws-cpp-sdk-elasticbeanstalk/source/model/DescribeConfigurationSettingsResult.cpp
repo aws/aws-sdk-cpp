@@ -41,14 +41,17 @@ DescribeConfigurationSettingsResult& DescribeConfigurationSettingsResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode configurationSettingsNodeParent = resultNode.FirstChild("ConfigurationSettings");
-    XmlNode configurationSettingsNode = configurationSettingsNodeParent.FirstChild("member");
-    while(!configurationSettingsNode.IsNull())
+    XmlNode configurationSettingsNode = resultNode.FirstChild("ConfigurationSettings");
+    if(!configurationSettingsNode.IsNull())
     {
-      m_configurationSettings.push_back(configurationSettingsNode);
-      configurationSettingsNode = configurationSettingsNode.NextNode("member");
-    }
+      XmlNode configurationSettingsMember = configurationSettingsNode.FirstChild("member");
+      while(!configurationSettingsMember.IsNull())
+      {
+        m_configurationSettings.push_back(configurationSettingsMember);
+        configurationSettingsMember = configurationSettingsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

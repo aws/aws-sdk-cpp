@@ -42,16 +42,20 @@ GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult
   if(!resultNode.IsNull())
   {
     XmlNode notificationAttributesNode = resultNode.FirstChild("NotificationAttributes");
-    notificationAttributesNode = notificationAttributesNode.FirstChild("entry");
-    while(!notificationAttributesNode.IsNull())
-    {
-      XmlNode keyNode = notificationAttributesNode.FirstChild("key");
-      XmlNode valueNode = notificationAttributesNode.FirstChild("value");
-      m_notificationAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
-          valueNode;
-      notificationAttributesNode = notificationAttributesNode.NextNode("entry");
-    }
 
+    if(!notificationAttributesNode.IsNull())
+    {
+      XmlNode notificationAttributesEntry = notificationAttributesNode.FirstChild("entry");
+      while(!notificationAttributesEntry.IsNull())
+      {
+        XmlNode keyNode = notificationAttributesEntry.FirstChild("key");
+        XmlNode valueNode = notificationAttributesEntry.FirstChild("value");
+        m_notificationAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+            valueNode;
+        notificationAttributesEntry = notificationAttributesEntry.NextNode("entry");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

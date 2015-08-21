@@ -118,4 +118,3 @@ void MobileAnalyticsClient::PutEventsAsyncHelper(const PutEventsRequest& request
   handler(this, request, PutEvents(request), context);
 }
 
-

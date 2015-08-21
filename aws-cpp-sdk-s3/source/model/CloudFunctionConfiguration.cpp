@@ -55,22 +55,23 @@ CloudFunctionConfiguration& CloudFunctionConfiguration::operator =(const XmlNode
     XmlNode eventsNode = resultNode.FirstChild("Events");
     if(!eventsNode.IsNull())
     {
-      while(!eventsNode.IsNull())
+      XmlNode eventsMember = eventsNode;
+      while(!eventsMember.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
-        eventsNode = eventsNode.NextNode("Events");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsMember.GetText().c_str())));
+        eventsMember = eventsMember.NextNode("Event");
       }
 
       m_eventsHasBeenSet = true;
     }
     XmlNode cloudFunctionNode = resultNode.FirstChild("CloudFunction");
-    if(!eventsNode.IsNull())
+    if(!cloudFunctionNode.IsNull())
     {
       m_cloudFunction = StringUtils::Trim(cloudFunctionNode.GetText().c_str());
       m_cloudFunctionHasBeenSet = true;
     }
     XmlNode invocationRoleNode = resultNode.FirstChild("InvocationRole");
-    if(!eventsNode.IsNull())
+    if(!invocationRoleNode.IsNull())
     {
       m_invocationRole = StringUtils::Trim(invocationRoleNode.GetText().c_str());
       m_invocationRoleHasBeenSet = true;

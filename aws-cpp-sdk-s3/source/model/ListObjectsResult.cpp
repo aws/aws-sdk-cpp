@@ -45,35 +45,67 @@ ListObjectsResult& ListObjectsResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
-    m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
-    XmlNode objectNode = resultNode.FirstChild("Contents");
-    while(!objectNode.IsNull())
+    if(!nextMarkerNode.IsNull())
     {
-      m_contents.push_back(objectNode);
-      objectNode = objectNode.NextNode("Contents");
+      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
     }
+    XmlNode contentsNode = resultNode.FirstChild("Contents");
+    if(!contentsNode.IsNull())
+    {
+      XmlNode contentsMember = contentsNode;
+      while(!contentsMember.IsNull())
+      {
+        m_contents.push_back(contentsMember);
+        contentsMember = contentsMember.NextNode("Contents");
+      }
 
+    }
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
-    XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
-    XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
-    m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
-    XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
-    m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(maxKeysNode.GetText().c_str()).c_str());
-    XmlNode commonPrefixNode = resultNode.FirstChild("CommonPrefixes");
-    while(!commonPrefixNode.IsNull())
+    if(!nameNode.IsNull())
     {
-      m_commonPrefixes.push_back(commonPrefixNode);
-      commonPrefixNode = commonPrefixNode.NextNode("CommonPrefixes");
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
     }
+    XmlNode prefixNode = resultNode.FirstChild("Prefix");
+    if(!prefixNode.IsNull())
+    {
+      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+    }
+    XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
+    if(!delimiterNode.IsNull())
+    {
+      m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
+    }
+    XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
+    if(!maxKeysNode.IsNull())
+    {
+      m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(maxKeysNode.GetText().c_str()).c_str());
+    }
+    XmlNode commonPrefixesNode = resultNode.FirstChild("CommonPrefixes");
+    if(!commonPrefixesNode.IsNull())
+    {
+      XmlNode commonPrefixesMember = commonPrefixesNode;
+      while(!commonPrefixesMember.IsNull())
+      {
+        m_commonPrefixes.push_back(commonPrefixesMember);
+        commonPrefixesMember = commonPrefixesMember.NextNode("CommonPrefixes");
+      }
 
+    }
     XmlNode encodingTypeNode = resultNode.FirstChild("EncodingType");
-    m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());
+    if(!encodingTypeNode.IsNull())
+    {
+      m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());
+    }
   }
 
   return *this;

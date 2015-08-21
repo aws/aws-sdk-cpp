@@ -56,14 +56,14 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
       m_domain = StringUtils::Trim(domainNode.GetText().c_str());
       m_domainHasBeenSet = true;
     }
-    XmlNode listenersNodeParent = resultNode.FirstChild("Listeners");
-    XmlNode listenersNode = listenersNodeParent.FirstChild("member");
+    XmlNode listenersNode = resultNode.FirstChild("Listeners");
     if(!listenersNode.IsNull())
     {
-      while(!listenersNode.IsNull())
+      XmlNode listenersMember = listenersNode.FirstChild("member");
+      while(!listenersMember.IsNull())
       {
-        m_listeners.push_back(listenersNode);
-        listenersNode = listenersNode.NextNode("member");
+        m_listeners.push_back(listenersMember);
+        listenersMember = listenersMember.NextNode("member");
       }
 
       m_listenersHasBeenSet = true;

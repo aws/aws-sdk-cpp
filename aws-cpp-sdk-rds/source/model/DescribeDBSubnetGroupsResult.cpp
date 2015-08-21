@@ -42,15 +42,21 @@ DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBSubnetGroupNodeParent = resultNode.FirstChild("DBSubnetGroup");
-    XmlNode dBSubnetGroupNode = dBSubnetGroupNodeParent.FirstChild("member");
-    while(!dBSubnetGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBSubnetGroups.push_back(dBSubnetGroupNode);
-      dBSubnetGroupNode = dBSubnetGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBSubnetGroupsNode = resultNode.FirstChild("DBSubnetGroups");
+    if(!dBSubnetGroupsNode.IsNull())
+    {
+      XmlNode dBSubnetGroupsMember = dBSubnetGroupsNode.FirstChild("DBSubnetGroup");
+      while(!dBSubnetGroupsMember.IsNull())
+      {
+        m_dBSubnetGroups.push_back(dBSubnetGroupsMember);
+        dBSubnetGroupsMember = dBSubnetGroupsMember.NextNode("DBSubnetGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

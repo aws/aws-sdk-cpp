@@ -35,10 +35,10 @@ using namespace Aws::Utils::Logging;
 struct CurlWriteCallbackContext
 {
     CurlWriteCallbackContext(HttpRequest* request, HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
-        m_request(request),
-        m_response(response),
-        m_rateLimiter(rateLimiter)
-    {}
+            m_request(request),
+            m_response(response),
+            m_rateLimiter(rateLimiter)
+    { }
 
     HttpRequest* m_request;
     HttpResponse* m_response;
@@ -86,22 +86,22 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
 }
 
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
-                m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
-    m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
-                m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
-                m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_allowRedirects(clientConfig.followRedirects)
+        m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
+        m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
+        m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
+        m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
 
-std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
-    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     Aws::String url = request.GetURIString();
     AWS_LOGSTREAM_TRACE(CurlTag, "Making request to " << url);
     struct curl_slist* headers = NULL;
 
-    if(writeLimiter != nullptr)
+    if (writeLimiter != nullptr)
     {
         writeLimiter->ApplyAndPayForCost(request.GetSize());
     }
@@ -120,7 +120,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
     }
     headers = curl_slist_append(headers, "transfer-encoding:");
 
-    if(!request.HasHeader(Http::CONTENT_LENGTH_HEADER))
+    if (!request.HasHeader(Http::CONTENT_LENGTH_HEADER))
     {
         headers = curl_slist_append(headers, "content-length:");
     }
@@ -152,10 +152,16 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, &CurlHttpClient::WriteHeader);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, response.get());
 
-        if(m_verifySSL)
+        if (m_verifySSL)
         {
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, true);
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 2);
+
+#if LIBCURL_VERSION_MAJOR >= 7
+#if LIBCURL_VERSION_MINOR >= 34
+            curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
+#endif //LIBCURL_VERSION_MINOR
+#endif //LIBCURL_VERSION_MAJOR
         }
         else
         {
@@ -173,7 +179,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
         //curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
 
-        if(m_isUsingProxy)
+        if (m_isUsingProxy)
         {
             curl_easy_setopt(connectionHandle, CURLOPT_PROXY, m_proxyHost.c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) m_proxyPort);
@@ -203,7 +209,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 
             char* contentType = nullptr;
             curl_easy_getinfo(connectionHandle, CURLINFO_CONTENT_TYPE, &contentType);
-            if(contentType)
+            if (contentType)
             {
                 response->SetContentType(contentType);
             }
@@ -224,7 +230,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 }
 
 
-size_t CurlHttpClient::WriteData(char *ptr, size_t size, size_t nmemb, void* userdata)
+size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
     {
@@ -232,14 +238,14 @@ size_t CurlHttpClient::WriteData(char *ptr, size_t size, size_t nmemb, void* use
         HttpResponse* response = context->m_response;
 
         size_t sizeToWrite = size * nmemb;
-        if(context->m_rateLimiter)
+        if (context->m_rateLimiter)
         {
             context->m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(sizeToWrite));
         }
 
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
-        if(receivedHandler)
+        if (receivedHandler)
         {
             receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
         }
@@ -250,7 +256,7 @@ size_t CurlHttpClient::WriteData(char *ptr, size_t size, size_t nmemb, void* use
     return 0;
 }
 
-size_t CurlHttpClient::WriteHeader(char *ptr, size_t size, size_t nmemb, void* userdata)
+size_t CurlHttpClient::WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
     {
@@ -266,7 +272,7 @@ size_t CurlHttpClient::WriteHeader(char *ptr, size_t size, size_t nmemb, void* u
             headerName = StringUtils::Trim(headerName.c_str());
 
 
-            Aws::String headerValue = headerLine.substr(headerName.length()+1).c_str();
+            Aws::String headerValue = headerLine.substr(headerName.length() + 1).c_str();
             headerValue = StringUtils::Trim(headerValue.c_str());
 
 
@@ -293,7 +299,7 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
 
         ioStream->read(ptr, amountToRead);
         auto& sentHandler = request->GetDataSentEventHandler();
-        if(sentHandler)
+        if (sentHandler)
         {
             sentHandler(request, amountToRead);
         }

@@ -41,14 +41,17 @@ DescribeApplicationVersionsResult& DescribeApplicationVersionsResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode applicationVersionsNodeParent = resultNode.FirstChild("ApplicationVersions");
-    XmlNode applicationVersionsNode = applicationVersionsNodeParent.FirstChild("member");
-    while(!applicationVersionsNode.IsNull())
+    XmlNode applicationVersionsNode = resultNode.FirstChild("ApplicationVersions");
+    if(!applicationVersionsNode.IsNull())
     {
-      m_applicationVersions.push_back(applicationVersionsNode);
-      applicationVersionsNode = applicationVersionsNode.NextNode("member");
-    }
+      XmlNode applicationVersionsMember = applicationVersionsNode.FirstChild("member");
+      while(!applicationVersionsMember.IsNull())
+      {
+        m_applicationVersions.push_back(applicationVersionsMember);
+        applicationVersionsMember = applicationVersionsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

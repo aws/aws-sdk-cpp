@@ -41,14 +41,17 @@ DescribeLifecycleHookTypesResult& DescribeLifecycleHookTypesResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode lifecycleHookTypesNodeParent = resultNode.FirstChild("LifecycleHookTypes");
-    XmlNode lifecycleHookTypesNode = lifecycleHookTypesNodeParent.FirstChild("member");
-    while(!lifecycleHookTypesNode.IsNull())
+    XmlNode lifecycleHookTypesNode = resultNode.FirstChild("LifecycleHookTypes");
+    if(!lifecycleHookTypesNode.IsNull())
     {
-      m_lifecycleHookTypes.push_back(StringUtils::Trim(lifecycleHookTypesNode.GetText().c_str()));
-      lifecycleHookTypesNode = lifecycleHookTypesNode.NextNode("member");
-    }
+      XmlNode lifecycleHookTypesMember = lifecycleHookTypesNode.FirstChild("member");
+      while(!lifecycleHookTypesMember.IsNull())
+      {
+        m_lifecycleHookTypes.push_back(StringUtils::Trim(lifecycleHookTypesMember.GetText().c_str()));
+        lifecycleHookTypesMember = lifecycleHookTypesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

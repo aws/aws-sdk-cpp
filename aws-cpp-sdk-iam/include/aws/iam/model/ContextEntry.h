@@ -17,7 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iam/model/ContextValueType.h>
+#include <aws/iam/model/ContextKeyTypeEnum.h>
 
 namespace Aws
 {
@@ -74,20 +74,20 @@ namespace Model
     inline ContextEntry& AddContextKeyValues(const char* value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
 
     
-    inline const ContextValueType& GetContextValue() const{ return m_contextValue; }
+    inline const ContextKeyTypeEnum& GetContextKeyType() const{ return m_contextKeyType; }
     
-    inline void SetContextValue(const ContextValueType& value) { m_contextValueHasBeenSet = true; m_contextValue = value; }
+    inline void SetContextKeyType(const ContextKeyTypeEnum& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = value; }
 
     
-    inline ContextEntry&  WithContextValue(const ContextValueType& value) { SetContextValue(value); return *this;}
+    inline ContextEntry&  WithContextKeyType(const ContextKeyTypeEnum& value) { SetContextKeyType(value); return *this;}
 
   private:
     Aws::String m_contextKeyName;
     bool m_contextKeyNameHasBeenSet;
     Aws::Vector<Aws::String> m_contextKeyValues;
     bool m_contextKeyValuesHasBeenSet;
-    ContextValueType m_contextValue;
-    bool m_contextValueHasBeenSet;
+    ContextKeyTypeEnum m_contextKeyType;
+    bool m_contextKeyTypeHasBeenSet;
   };
 
 } // namespace Model

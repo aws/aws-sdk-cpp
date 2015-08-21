@@ -37,7 +37,9 @@ m_keyName(keyName),
 m_S3Client(s3Client),
 m_isDone(false),
 m_completedSuccessfully(false),
-m_cancelled(false)
+m_cancelled(false),
+m_fileSize(0),
+m_progress(0)
 {
 
 }
@@ -96,6 +98,16 @@ void S3FileRequest::Cancel()
     SetDone();
 }
 
+void S3FileRequest::RegisterProgress(long long progressAmount)
+{
+    m_progress += progressAmount;
+}
+
+uint64_t S3FileRequest::GetProgressAmount() const
+{
+    return m_progress;
+}
+
 void S3FileRequest::SetDone()
 {
     m_isDone.store(true);
@@ -105,6 +117,23 @@ void S3FileRequest::CompletionSuccess()
 {
     SetCompleted();
     SetDone();
+}
+
+float S3FileRequest::GetProgress() const
+{
+    if (CompletedSuccessfully())
+    {
+        return 100.0f;
+    }
+    if (m_fileSize)
+    {
+        if (!GetProgressAmount())
+        {
+            return 0.0;
+        }
+        return std::min(static_cast<float>(static_cast<double>(GetProgressAmount()) * 100.0f / m_fileSize), 100.0f);
+    }
+    return 0.0f;
 }
 
 void S3FileRequest::CompletionFailure(const char* failureStr)

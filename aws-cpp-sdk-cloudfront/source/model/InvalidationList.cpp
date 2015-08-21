@@ -86,14 +86,14 @@ InvalidationList& InvalidationList::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode invalidationSummaryNodeParent = resultNode.FirstChild("InvalidationSummary");
-    XmlNode invalidationSummaryNode = invalidationSummaryNodeParent.FirstChild("member");
-    if(!invalidationSummaryNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!invalidationSummaryNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("InvalidationSummary");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(invalidationSummaryNode);
-        invalidationSummaryNode = invalidationSummaryNode.NextNode("member");
+        m_items.push_back(itemsMember);
+        itemsMember = itemsMember.NextNode("InvalidationSummary");
       }
 
       m_itemsHasBeenSet = true;

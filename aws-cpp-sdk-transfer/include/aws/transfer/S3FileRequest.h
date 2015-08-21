@@ -40,8 +40,8 @@ public:
     S3FileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client);
     ~S3FileRequest();
 
-    // Any derived class should define some sort of measure of progress
-    virtual float GetProgress() const = 0;
+    // S3FileRequest defines this as progress out of file size - inherited classes that can't conform to this for some reason should derive their own
+    virtual float GetProgress() const;
 
     // Simple accessors to return values passed into constructor
     const Aws::String& GetBucketName() const;
@@ -70,6 +70,9 @@ public:
     // Different file requests will have different meanings for ready - some may need S3 buckets created, some may need files opened
     virtual bool IsReady() const = 0;
 
+    // For uploads, look at the file on disk, for downloads, request content manifest from S3
+    inline virtual uint64_t GetFileSize() const { return m_fileSize; }
+
 protected:
 
     const std::shared_ptr<Aws::S3::S3Client>& GetS3Client() const;
@@ -84,6 +87,10 @@ protected:
     void CompletionSuccess();
     virtual void CompletionFailure(const char* failureStr);
 
+    inline virtual void SetFileSize(uint64_t curSize) { m_fileSize = curSize; }
+
+    void RegisterProgress(int64_t progressAmount);
+    uint64_t GetProgressAmount() const;
 private:
     Aws::String m_fileName;
     Aws::String m_bucketName;
@@ -99,6 +106,8 @@ private:
     std::atomic<bool> m_completedSuccessfully;
 
     bool m_cancelled;
+    uint64_t m_fileSize;
+    std::atomic<uint64_t> m_progress;
 };
 
 } // namespace Transfer

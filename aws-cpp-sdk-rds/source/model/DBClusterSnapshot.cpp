@@ -78,98 +78,98 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode availabilityZoneNodeParent = resultNode.FirstChild("AvailabilityZone");
-    XmlNode availabilityZoneNode = availabilityZoneNodeParent.FirstChild("member");
-    if(!availabilityZoneNode.IsNull())
+    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
+    if(!availabilityZonesNode.IsNull())
     {
-      while(!availabilityZoneNode.IsNull())
+      XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZoneNode.GetText().c_str()));
-        availabilityZoneNode = availabilityZoneNode.NextNode("member");
+        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        availabilityZonesMember = availabilityZonesMember.NextNode("AvailabilityZone");
       }
 
       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode dBClusterSnapshotIdentifierNode = resultNode.FirstChild("DBClusterSnapshotIdentifier");
-    if(!availabilityZoneNode.IsNull())
+    if(!dBClusterSnapshotIdentifierNode.IsNull())
     {
       m_dBClusterSnapshotIdentifier = StringUtils::Trim(dBClusterSnapshotIdentifierNode.GetText().c_str());
       m_dBClusterSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
-    if(!availabilityZoneNode.IsNull())
+    if(!dBClusterIdentifierNode.IsNull())
     {
       m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
-    if(!availabilityZoneNode.IsNull())
+    if(!snapshotCreateTimeNode.IsNull())
     {
       m_snapshotCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str());
       m_snapshotCreateTimeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
-    if(!availabilityZoneNode.IsNull())
+    if(!engineNode.IsNull())
     {
       m_engine = StringUtils::Trim(engineNode.GetText().c_str());
       m_engineHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
-    if(!availabilityZoneNode.IsNull())
+    if(!allocatedStorageNode.IsNull())
     {
       m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(allocatedStorageNode.GetText().c_str()).c_str());
       m_allocatedStorageHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!availabilityZoneNode.IsNull())
+    if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
-    if(!availabilityZoneNode.IsNull())
+    if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
-    if(!availabilityZoneNode.IsNull())
+    if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
-    if(!availabilityZoneNode.IsNull())
+    if(!clusterCreateTimeNode.IsNull())
     {
       m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
-    if(!availabilityZoneNode.IsNull())
+    if(!masterUsernameNode.IsNull())
     {
       m_masterUsername = StringUtils::Trim(masterUsernameNode.GetText().c_str());
       m_masterUsernameHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(!availabilityZoneNode.IsNull())
+    if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
-    if(!availabilityZoneNode.IsNull())
+    if(!licenseModelNode.IsNull())
     {
       m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
       m_licenseModelHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
-    if(!availabilityZoneNode.IsNull())
+    if(!snapshotTypeNode.IsNull())
     {
       m_snapshotType = StringUtils::Trim(snapshotTypeNode.GetText().c_str());
       m_snapshotTypeHasBeenSet = true;
     }
     XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
-    if(!availabilityZoneNode.IsNull())
+    if(!percentProgressNode.IsNull())
     {
       m_percentProgress = StringUtils::ConvertToInt32(StringUtils::Trim(percentProgressNode.GetText().c_str()).c_str());
       m_percentProgressHasBeenSet = true;

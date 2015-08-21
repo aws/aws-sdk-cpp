@@ -42,7 +42,10 @@ ModifyCacheParameterGroupResult& ModifyCacheParameterGroupResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupNameNode = resultNode.FirstChild("CacheParameterGroupName");
-    m_cacheParameterGroupName = StringUtils::Trim(cacheParameterGroupNameNode.GetText().c_str());
+    if(!cacheParameterGroupNameNode.IsNull())
+    {
+      m_cacheParameterGroupName = StringUtils::Trim(cacheParameterGroupNameNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

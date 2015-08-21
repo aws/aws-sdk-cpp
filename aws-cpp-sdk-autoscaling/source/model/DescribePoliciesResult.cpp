@@ -41,16 +41,22 @@ DescribePoliciesResult& DescribePoliciesResult::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode scalingPoliciesNodeParent = resultNode.FirstChild("ScalingPolicies");
-    XmlNode scalingPoliciesNode = scalingPoliciesNodeParent.FirstChild("member");
-    while(!scalingPoliciesNode.IsNull())
+    XmlNode scalingPoliciesNode = resultNode.FirstChild("ScalingPolicies");
+    if(!scalingPoliciesNode.IsNull())
     {
-      m_scalingPolicies.push_back(scalingPoliciesNode);
-      scalingPoliciesNode = scalingPoliciesNode.NextNode("member");
-    }
+      XmlNode scalingPoliciesMember = scalingPoliciesNode.FirstChild("member");
+      while(!scalingPoliciesMember.IsNull())
+      {
+        m_scalingPolicies.push_back(scalingPoliciesMember);
+        scalingPoliciesMember = scalingPoliciesMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

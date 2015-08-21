@@ -21,12 +21,12 @@ using namespace Aws::Lambda;
 using namespace Aws::Utils;
 
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
+static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
-static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 
 namespace Aws
@@ -44,6 +44,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_CONFLICT), false);
   }
+  else if (hashCode == REQUEST_TOO_LARGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
+  }
+  else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_STORAGE_EXCEEDED), false);
+  }
   else if (hashCode == INVALID_REQUEST_CONTENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_REQUEST_CONTENT), false);
@@ -56,17 +64,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), false);
   }
-  else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_STORAGE_EXCEEDED), false);
-  }
   else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), false);
-  }
-  else if (hashCode == REQUEST_TOO_LARGE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
   }
   else if (hashCode == SERVICE_HASH)
   {

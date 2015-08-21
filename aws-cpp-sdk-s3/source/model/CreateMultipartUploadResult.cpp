@@ -42,11 +42,20 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+    if(!bucketNode.IsNull())
+    {
+      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+    }
     XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    }
     XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
-    m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
+    if(!uploadIdNode.IsNull())
+    {
+      m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

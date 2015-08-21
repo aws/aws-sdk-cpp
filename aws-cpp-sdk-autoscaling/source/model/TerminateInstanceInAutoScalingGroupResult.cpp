@@ -42,7 +42,10 @@ TerminateInstanceInAutoScalingGroupResult& TerminateInstanceInAutoScalingGroupRe
   if(!resultNode.IsNull())
   {
     XmlNode activityNode = resultNode.FirstChild("Activity");
-    m_activity = activityNode;
+    if(!activityNode.IsNull())
+    {
+      m_activity = activityNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

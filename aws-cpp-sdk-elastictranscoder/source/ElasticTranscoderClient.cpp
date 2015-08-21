@@ -643,4 +643,3 @@ void ElasticTranscoderClient::UpdatePipelineStatusAsyncHelper(const UpdatePipeli
   handler(this, request, UpdatePipelineStatus(request), context);
 }
 
-

@@ -15,9 +15,9 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
-#include <aws/iam/model/SimulationPolicySource.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iam/model/SimulationScenario.h>
+#include <aws/iam/model/ContextEntry.h>
 
 namespace Aws
 {
@@ -36,29 +36,83 @@ namespace Model
 
 
     
-    inline const SimulationPolicySource& GetSimulationPolicies() const{ return m_simulationPolicies; }
+    inline const Aws::String& GetGetPolicyFor() const{ return m_getPolicyFor; }
     
-    inline void SetSimulationPolicies(const SimulationPolicySource& value) { m_simulationPoliciesHasBeenSet = true; m_simulationPolicies = value; }
+    inline void SetGetPolicyFor(const Aws::String& value) { m_getPolicyForHasBeenSet = true; m_getPolicyFor = value; }
 
     
-    inline SimulatePolicyRequest&  WithSimulationPolicies(const SimulationPolicySource& value) { SetSimulationPolicies(value); return *this;}
+    inline void SetGetPolicyFor(const char* value) { m_getPolicyForHasBeenSet = true; m_getPolicyFor.assign(value); }
 
     
-    inline const Aws::Vector<SimulationScenario>& GetSimulationScenarios() const{ return m_simulationScenarios; }
-    
-    inline void SetSimulationScenarios(const Aws::Vector<SimulationScenario>& value) { m_simulationScenariosHasBeenSet = true; m_simulationScenarios = value; }
+    inline SimulatePolicyRequest&  WithGetPolicyFor(const Aws::String& value) { SetGetPolicyFor(value); return *this;}
 
     
-    inline SimulatePolicyRequest&  WithSimulationScenarios(const Aws::Vector<SimulationScenario>& value) { SetSimulationScenarios(value); return *this;}
+    inline SimulatePolicyRequest& WithGetPolicyFor(const char* value) { SetGetPolicyFor(value); return *this;}
 
     
-    inline SimulatePolicyRequest& AddSimulationScenarios(const SimulationScenario& value) { m_simulationScenariosHasBeenSet = true; m_simulationScenarios.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
+    
+    inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
+
+    
+    inline SimulatePolicyRequest&  WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
+
+    
+    inline SimulatePolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+
+    
+    inline SimulatePolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+
+    
+    inline const Aws::Vector<Aws::String>& GetActionNames() const{ return m_actionNames; }
+    
+    inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
+
+    
+    inline SimulatePolicyRequest&  WithActionNames(const Aws::Vector<Aws::String>& value) { SetActionNames(value); return *this;}
+
+    
+    inline SimulatePolicyRequest& AddActionNames(const Aws::String& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
+
+    
+    inline SimulatePolicyRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
+
+    
+    inline const Aws::Vector<Aws::String>& GetResourceNames() const{ return m_resourceNames; }
+    
+    inline void SetResourceNames(const Aws::Vector<Aws::String>& value) { m_resourceNamesHasBeenSet = true; m_resourceNames = value; }
+
+    
+    inline SimulatePolicyRequest&  WithResourceNames(const Aws::Vector<Aws::String>& value) { SetResourceNames(value); return *this;}
+
+    
+    inline SimulatePolicyRequest& AddResourceNames(const Aws::String& value) { m_resourceNamesHasBeenSet = true; m_resourceNames.push_back(value); return *this; }
+
+    
+    inline SimulatePolicyRequest& AddResourceNames(const char* value) { m_resourceNamesHasBeenSet = true; m_resourceNames.push_back(value); return *this; }
+
+    
+    inline const Aws::Vector<ContextEntry>& GetContextEntries() const{ return m_contextEntries; }
+    
+    inline void SetContextEntries(const Aws::Vector<ContextEntry>& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
+
+    
+    inline SimulatePolicyRequest&  WithContextEntries(const Aws::Vector<ContextEntry>& value) { SetContextEntries(value); return *this;}
+
+    
+    inline SimulatePolicyRequest& AddContextEntries(const ContextEntry& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
 
   private:
-    SimulationPolicySource m_simulationPolicies;
-    bool m_simulationPoliciesHasBeenSet;
-    Aws::Vector<SimulationScenario> m_simulationScenarios;
-    bool m_simulationScenariosHasBeenSet;
+    Aws::String m_getPolicyFor;
+    bool m_getPolicyForHasBeenSet;
+    Aws::Vector<Aws::String> m_policyInputList;
+    bool m_policyInputListHasBeenSet;
+    Aws::Vector<Aws::String> m_actionNames;
+    bool m_actionNamesHasBeenSet;
+    Aws::Vector<Aws::String> m_resourceNames;
+    bool m_resourceNamesHasBeenSet;
+    Aws::Vector<ContextEntry> m_contextEntries;
+    bool m_contextEntriesHasBeenSet;
   };
 
 } // namespace Model

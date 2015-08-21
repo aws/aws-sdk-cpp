@@ -49,7 +49,7 @@ Aws::String UpdateConfigurationTemplateRequest::SerializePayload() const
     unsigned optionSettingsCount = 1;
     for(auto& item : m_optionSettings)
     {
-      item.OutputToStream(ss, "OptionSettings.", optionSettingsCount, "");
+      item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
       optionSettingsCount++;
     }
   }
@@ -58,7 +58,7 @@ Aws::String UpdateConfigurationTemplateRequest::SerializePayload() const
     unsigned optionsToRemoveCount = 1;
     for(auto& item : m_optionsToRemove)
     {
-      item.OutputToStream(ss, "OptionsToRemove.", optionsToRemoveCount, "");
+      item.OutputToStream(ss, "OptionsToRemove.member.", optionsToRemoveCount, "");
       optionsToRemoveCount++;
     }
   }

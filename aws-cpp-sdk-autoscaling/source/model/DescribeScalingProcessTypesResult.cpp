@@ -41,14 +41,17 @@ DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode processesNodeParent = resultNode.FirstChild("Processes");
-    XmlNode processesNode = processesNodeParent.FirstChild("member");
-    while(!processesNode.IsNull())
+    XmlNode processesNode = resultNode.FirstChild("Processes");
+    if(!processesNode.IsNull())
     {
-      m_processes.push_back(processesNode);
-      processesNode = processesNode.NextNode("member");
-    }
+      XmlNode processesMember = processesNode.FirstChild("member");
+      while(!processesMember.IsNull())
+      {
+        m_processes.push_back(processesMember);
+        processesMember = processesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

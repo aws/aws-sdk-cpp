@@ -41,14 +41,17 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode eventCategoriesMapNodeParent = resultNode.FirstChild("EventCategoriesMap");
-    XmlNode eventCategoriesMapNode = eventCategoriesMapNodeParent.FirstChild("member");
-    while(!eventCategoriesMapNode.IsNull())
+    XmlNode eventCategoriesMapListNode = resultNode.FirstChild("EventCategoriesMapList");
+    if(!eventCategoriesMapListNode.IsNull())
     {
-      m_eventCategoriesMapList.push_back(eventCategoriesMapNode);
-      eventCategoriesMapNode = eventCategoriesMapNode.NextNode("member");
-    }
+      XmlNode eventCategoriesMapListMember = eventCategoriesMapListNode.FirstChild("EventCategoriesMap");
+      while(!eventCategoriesMapListMember.IsNull())
+      {
+        m_eventCategoriesMapList.push_back(eventCategoriesMapListMember);
+        eventCategoriesMapListMember = eventCategoriesMapListMember.NextNode("EventCategoriesMap");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -243,78 +243,6 @@ namespace Model
     */
     inline CreateFunctionResult& WithLastModified(const char* value) { SetLastModified(value); return *this;}
 
-    /*
-     <p>It is the SHA256 hash of your function deployment package.</p>
-    */
-    inline const Aws::String& GetCodeSha256() const{ return m_codeSha256; }
-    /*
-     <p>It is the SHA256 hash of your function deployment package.</p>
-    */
-    inline void SetCodeSha256(const Aws::String& value) { m_codeSha256 = value; }
-
-    /*
-     <p>It is the SHA256 hash of your function deployment package.</p>
-    */
-    inline void SetCodeSha256(const char* value) { m_codeSha256.assign(value); }
-
-    /*
-     <p>It is the SHA256 hash of your function deployment package.</p>
-    */
-    inline CreateFunctionResult&  WithCodeSha256(const Aws::String& value) { SetCodeSha256(value); return *this;}
-
-    /*
-     <p>It is the SHA256 hash of your function deployment package.</p>
-    */
-    inline CreateFunctionResult& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
-
-    /*
-     <p>The version of the Lambda function.</p>
-    */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    /*
-     <p>The version of the Lambda function.</p>
-    */
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-
-    /*
-     <p>The version of the Lambda function.</p>
-    */
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-
-    /*
-     <p>The version of the Lambda function.</p>
-    */
-    inline CreateFunctionResult&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /*
-     <p>The version of the Lambda function.</p>
-    */
-    inline CreateFunctionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
-
-    /*
-     <p>The default version of the Lambda function.</p>
-    */
-    inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
-    /*
-     <p>The default version of the Lambda function.</p>
-    */
-    inline void SetDefaultVersion(const Aws::String& value) { m_defaultVersion = value; }
-
-    /*
-     <p>The default version of the Lambda function.</p>
-    */
-    inline void SetDefaultVersion(const char* value) { m_defaultVersion.assign(value); }
-
-    /*
-     <p>The default version of the Lambda function.</p>
-    */
-    inline CreateFunctionResult&  WithDefaultVersion(const Aws::String& value) { SetDefaultVersion(value); return *this;}
-
-    /*
-     <p>The default version of the Lambda function.</p>
-    */
-    inline CreateFunctionResult& WithDefaultVersion(const char* value) { SetDefaultVersion(value); return *this;}
-
   private:
     Aws::String m_functionName;
     Aws::String m_functionArn;
@@ -326,9 +254,6 @@ namespace Model
     long m_timeout;
     long m_memorySize;
     Aws::String m_lastModified;
-    Aws::String m_codeSha256;
-    Aws::String m_version;
-    Aws::String m_defaultVersion;
   };
 
 } // namespace Model

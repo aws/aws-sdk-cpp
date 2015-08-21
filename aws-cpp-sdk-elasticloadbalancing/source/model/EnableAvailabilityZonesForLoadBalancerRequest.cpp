@@ -38,7 +38,7 @@ Aws::String EnableAvailabilityZonesForLoadBalancerRequest::SerializePayload() co
     unsigned availabilityZonesCount = 1;
     for(auto& item : m_availabilityZones)
     {
-      ss << "AvailabilityZones." << availabilityZonesCount << "="
+      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       availabilityZonesCount++;
     }

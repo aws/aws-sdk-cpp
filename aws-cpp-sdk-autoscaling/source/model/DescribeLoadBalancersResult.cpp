@@ -41,16 +41,22 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode loadBalancersNodeParent = resultNode.FirstChild("LoadBalancers");
-    XmlNode loadBalancersNode = loadBalancersNodeParent.FirstChild("member");
-    while(!loadBalancersNode.IsNull())
+    XmlNode loadBalancersNode = resultNode.FirstChild("LoadBalancers");
+    if(!loadBalancersNode.IsNull())
     {
-      m_loadBalancers.push_back(loadBalancersNode);
-      loadBalancersNode = loadBalancersNode.NextNode("member");
-    }
+      XmlNode loadBalancersMember = loadBalancersNode.FirstChild("member");
+      while(!loadBalancersMember.IsNull())
+      {
+        m_loadBalancers.push_back(loadBalancersMember);
+        loadBalancersMember = loadBalancersMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

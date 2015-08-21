@@ -41,14 +41,17 @@ ListVerifiedEmailAddressesResult& ListVerifiedEmailAddressesResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode verifiedEmailAddressesNodeParent = resultNode.FirstChild("VerifiedEmailAddresses");
-    XmlNode verifiedEmailAddressesNode = verifiedEmailAddressesNodeParent.FirstChild("member");
-    while(!verifiedEmailAddressesNode.IsNull())
+    XmlNode verifiedEmailAddressesNode = resultNode.FirstChild("VerifiedEmailAddresses");
+    if(!verifiedEmailAddressesNode.IsNull())
     {
-      m_verifiedEmailAddresses.push_back(StringUtils::Trim(verifiedEmailAddressesNode.GetText().c_str()));
-      verifiedEmailAddressesNode = verifiedEmailAddressesNode.NextNode("member");
-    }
+      XmlNode verifiedEmailAddressesMember = verifiedEmailAddressesNode.FirstChild("member");
+      while(!verifiedEmailAddressesMember.IsNull())
+      {
+        m_verifiedEmailAddresses.push_back(StringUtils::Trim(verifiedEmailAddressesMember.GetText().c_str()));
+        verifiedEmailAddressesMember = verifiedEmailAddressesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

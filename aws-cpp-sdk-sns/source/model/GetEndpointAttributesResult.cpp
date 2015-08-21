@@ -42,16 +42,20 @@ GetEndpointAttributesResult& GetEndpointAttributesResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode attributesNode = resultNode.FirstChild("Attributes");
-    attributesNode = attributesNode.FirstChild("entry");
-    while(!attributesNode.IsNull())
-    {
-      XmlNode keyNode = attributesNode.FirstChild("key");
-      XmlNode valueNode = attributesNode.FirstChild("value");
-      m_attributes[StringUtils::Trim(keyNode.GetText().c_str())] =
-          StringUtils::Trim(valueNode.GetText().c_str());
-      attributesNode = attributesNode.NextNode("entry");
-    }
 
+    if(!attributesNode.IsNull())
+    {
+      XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      while(!attributesEntry.IsNull())
+      {
+        XmlNode keyNode = attributesEntry.FirstChild("key");
+        XmlNode valueNode = attributesEntry.FirstChild("value");
+        m_attributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+            StringUtils::Trim(valueNode.GetText().c_str());
+        attributesEntry = attributesEntry.NextNode("entry");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

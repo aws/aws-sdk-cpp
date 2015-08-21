@@ -26,8 +26,7 @@ namespace Model
   {
     NOT_SET,
     STANDARD,
-    REDUCED_REDUNDANCY,
-    LT
+    REDUCED_REDUNDANCY
   };
 
 namespace StorageClassMapper

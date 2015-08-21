@@ -304,7 +304,10 @@ TEST_F(TableOperationTest, TestListTable)
                  [](const Aws::String& tableName) { return tableName.find(TEST_TABLE_PREFIX) == 0; });
 
     EXPECT_EQ(1uL, filteredTableNames.size());
-    EXPECT_EQ(SIMPLE_TABLE, filteredTableNames[0]);
+    if(filteredTableNames.size() > 0)
+    {
+        EXPECT_EQ(SIMPLE_TABLE, filteredTableNames[0]);
+    }
 }
 
 TEST_F(TableOperationTest, TestUpdateThroughput)

@@ -36,7 +36,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>See the example below for a sample response.</p>
   */
   class AWS_ELASTICBEANSTALK_API DescribeInstancesHealthResult
   {
@@ -45,37 +45,61 @@ namespace Model
     DescribeInstancesHealthResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeInstancesHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
     inline const Aws::Vector<SingleInstanceHealth>& GetInstanceHealthList() const{ return m_instanceHealthList; }
-    
+    /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
     inline void SetInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { m_instanceHealthList = value; }
 
-    
+    /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
     inline DescribeInstancesHealthResult&  WithInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { SetInstanceHealthList(value); return *this;}
 
-    
+    /*
+     <p>Contains the response body with information about the health of the instance.</p>
+    */
     inline DescribeInstancesHealthResult& AddInstanceHealthList(const SingleInstanceHealth& value) { m_instanceHealthList.push_back(value); return *this; }
 
-    
+    /*
+     <p>The date and time the information was last refreshed.</p>
+    */
     inline double GetRefreshedAt() const{ return m_refreshedAt; }
-    
+    /*
+     <p>The date and time the information was last refreshed.</p>
+    */
     inline void SetRefreshedAt(double value) { m_refreshedAt = value; }
 
-    
+    /*
+     <p>The date and time the information was last refreshed.</p>
+    */
     inline DescribeInstancesHealthResult&  WithRefreshedAt(double value) { SetRefreshedAt(value); return *this;}
 
-    
+    /*
+     <p>The next token.</p>
+    */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    
+    /*
+     <p>The next token.</p>
+    */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /*
+     <p>The next token.</p>
+    */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /*
+     <p>The next token.</p>
+    */
     inline DescribeInstancesHealthResult&  WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /*
+     <p>The next token.</p>
+    */
     inline DescribeInstancesHealthResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

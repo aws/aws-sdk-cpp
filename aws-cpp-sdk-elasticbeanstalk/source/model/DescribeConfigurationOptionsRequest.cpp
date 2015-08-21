@@ -53,7 +53,7 @@ Aws::String DescribeConfigurationOptionsRequest::SerializePayload() const
     unsigned optionsCount = 1;
     for(auto& item : m_options)
     {
-      item.OutputToStream(ss, "Options.", optionsCount, "");
+      item.OutputToStream(ss, "Options.member.", optionsCount, "");
       optionsCount++;
     }
   }

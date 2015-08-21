@@ -42,7 +42,7 @@ Aws::String DescribePoliciesRequest::SerializePayload() const
     unsigned policyNamesCount = 1;
     for(auto& item : m_policyNames)
     {
-      ss << "PolicyNames." << policyNamesCount << "="
+      ss << "PolicyNames.member." << policyNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       policyNamesCount++;
     }
@@ -52,7 +52,7 @@ Aws::String DescribePoliciesRequest::SerializePayload() const
     unsigned policyTypesCount = 1;
     for(auto& item : m_policyTypes)
     {
-      ss << "PolicyTypes." << policyTypesCount << "="
+      ss << "PolicyTypes.member." << policyTypesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       policyTypesCount++;
     }

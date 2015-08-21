@@ -42,7 +42,10 @@ GetQueueUrlResult& GetQueueUrlResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode queueUrlNode = resultNode.FirstChild("QueueUrl");
-    m_queueUrl = StringUtils::Trim(queueUrlNode.GetText().c_str());
+    if(!queueUrlNode.IsNull())
+    {
+      m_queueUrl = StringUtils::Trim(queueUrlNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

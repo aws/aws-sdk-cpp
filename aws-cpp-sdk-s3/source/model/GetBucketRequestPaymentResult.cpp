@@ -41,7 +41,10 @@ GetBucketRequestPaymentResult& GetBucketRequestPaymentResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode payerNode = resultNode.FirstChild("Payer");
-    m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(payerNode.GetText().c_str()).c_str());
+    if(!payerNode.IsNull())
+    {
+      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(payerNode.GetText().c_str()).c_str());
+    }
   }
 
   return *this;

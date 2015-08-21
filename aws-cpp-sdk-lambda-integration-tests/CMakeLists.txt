@@ -19,6 +19,9 @@ endif()
 
 set(AWS_LAMBDA_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-iam/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-access-management/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kinesis/include/"
   "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
@@ -35,5 +38,5 @@ endif()
 
 enable_testing()
 add_executable(runLambdaIntegrationTests ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
-target_link_libraries(runLambdaIntegrationTests aws-cpp-sdk-lambda aws-cpp-sdk-kinesis testing-resources)
-copyDlls(runLambdaIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-kinesis aws-cpp-sdk-lambda testing-resources)
+target_link_libraries(runLambdaIntegrationTests aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
+copyDlls(runLambdaIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)

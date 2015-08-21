@@ -209,7 +209,10 @@ QueryResult AccessManagementClient::GetRole(const Aws::String& roleName, Aws::IA
 QueryResult AccessManagementClient::GetUser(const Aws::String& userName, Aws::IAM::Model::User& userData)
 {
     GetUserRequest getUserRequest;
-    getUserRequest.SetUserName(userName);
+    if (!userName.empty())
+    {
+        getUserRequest.SetUserName(userName);
+    }
 
     auto outcome = m_iamClient->GetUser(getUserRequest);
     if (!outcome.IsSuccess())
@@ -1525,6 +1528,19 @@ bool AccessManagementClient::GetOrCreateUser(const Aws::String& userName, Aws::I
     }
 
     return false;
+}
+
+Aws::String AccessManagementClient::GetAccountId()
+{
+    Aws::IAM::Model::User user;
+    auto queryResult = GetUser("", user);
+
+    if (queryResult == QueryResult::YES)
+    {
+        return ExtractAccountIdFromArn(user.GetArn());
+    }
+
+    return "";
 }
 
 bool AccessManagementClient::AttachPolicyToGroupIfNot(const Policy& policyData, const Aws::String& groupName)

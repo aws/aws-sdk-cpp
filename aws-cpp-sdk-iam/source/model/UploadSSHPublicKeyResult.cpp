@@ -42,7 +42,10 @@ UploadSSHPublicKeyResult& UploadSSHPublicKeyResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode sSHPublicKeyNode = resultNode.FirstChild("SSHPublicKey");
-    m_sSHPublicKey = sSHPublicKeyNode;
+    if(!sSHPublicKeyNode.IsNull())
+    {
+      m_sSHPublicKey = sSHPublicKeyNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

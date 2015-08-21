@@ -20,8 +20,18 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/CloneReceiptRuleSetResult.h>
+#include <aws/email/model/CreateReceiptFilterResult.h>
+#include <aws/email/model/CreateReceiptRuleResult.h>
+#include <aws/email/model/CreateReceiptRuleSetResult.h>
 #include <aws/email/model/DeleteIdentityResult.h>
 #include <aws/email/model/DeleteIdentityPolicyResult.h>
+#include <aws/email/model/DeleteReceiptFilterResult.h>
+#include <aws/email/model/DeleteReceiptRuleResult.h>
+#include <aws/email/model/DeleteReceiptRuleSetResult.h>
+#include <aws/email/model/DescribeActiveReceiptRuleSetResult.h>
+#include <aws/email/model/DescribeReceiptRuleResult.h>
+#include <aws/email/model/DescribeReceiptRuleSetResult.h>
 #include <aws/email/model/GetIdentityDkimAttributesResult.h>
 #include <aws/email/model/GetIdentityNotificationAttributesResult.h>
 #include <aws/email/model/GetIdentityPoliciesResult.h>
@@ -30,13 +40,20 @@
 #include <aws/email/model/GetSendStatisticsResult.h>
 #include <aws/email/model/ListIdentitiesResult.h>
 #include <aws/email/model/ListIdentityPoliciesResult.h>
+#include <aws/email/model/ListReceiptFiltersResult.h>
+#include <aws/email/model/ListReceiptRuleSetsResult.h>
 #include <aws/email/model/ListVerifiedEmailAddressesResult.h>
 #include <aws/email/model/PutIdentityPolicyResult.h>
+#include <aws/email/model/ReorderReceiptRuleSetResult.h>
+#include <aws/email/model/SendBounceResult.h>
 #include <aws/email/model/SendEmailResult.h>
 #include <aws/email/model/SendRawEmailResult.h>
+#include <aws/email/model/SetActiveReceiptRuleSetResult.h>
 #include <aws/email/model/SetIdentityDkimEnabledResult.h>
 #include <aws/email/model/SetIdentityFeedbackForwardingEnabledResult.h>
 #include <aws/email/model/SetIdentityNotificationTopicResult.h>
+#include <aws/email/model/SetReceiptRulePositionResult.h>
+#include <aws/email/model/UpdateReceiptRuleResult.h>
 #include <aws/email/model/VerifyDomainDkimResult.h>
 #include <aws/email/model/VerifyDomainIdentityResult.h>
 #include <aws/email/model/VerifyEmailIdentityResult.h>
@@ -86,9 +103,19 @@ namespace SES
 
 namespace Model
 {
+        class CloneReceiptRuleSetRequest;
+        class CreateReceiptFilterRequest;
+        class CreateReceiptRuleRequest;
+        class CreateReceiptRuleSetRequest;
         class DeleteIdentityRequest;
         class DeleteIdentityPolicyRequest;
+        class DeleteReceiptFilterRequest;
+        class DeleteReceiptRuleRequest;
+        class DeleteReceiptRuleSetRequest;
         class DeleteVerifiedEmailAddressRequest;
+        class DescribeActiveReceiptRuleSetRequest;
+        class DescribeReceiptRuleRequest;
+        class DescribeReceiptRuleSetRequest;
         class GetIdentityDkimAttributesRequest;
         class GetIdentityNotificationAttributesRequest;
         class GetIdentityPoliciesRequest;
@@ -97,21 +124,38 @@ namespace Model
         class GetSendStatisticsRequest;
         class ListIdentitiesRequest;
         class ListIdentityPoliciesRequest;
+        class ListReceiptFiltersRequest;
+        class ListReceiptRuleSetsRequest;
         class ListVerifiedEmailAddressesRequest;
         class PutIdentityPolicyRequest;
+        class ReorderReceiptRuleSetRequest;
+        class SendBounceRequest;
         class SendEmailRequest;
         class SendRawEmailRequest;
+        class SetActiveReceiptRuleSetRequest;
         class SetIdentityDkimEnabledRequest;
         class SetIdentityFeedbackForwardingEnabledRequest;
         class SetIdentityNotificationTopicRequest;
+        class SetReceiptRulePositionRequest;
+        class UpdateReceiptRuleRequest;
         class VerifyDomainDkimRequest;
         class VerifyDomainIdentityRequest;
         class VerifyEmailAddressRequest;
         class VerifyEmailIdentityRequest;
 
+        typedef Utils::Outcome<CloneReceiptRuleSetResult, Client::AWSError<SESErrors>> CloneReceiptRuleSetOutcome;
+        typedef Utils::Outcome<CreateReceiptFilterResult, Client::AWSError<SESErrors>> CreateReceiptFilterOutcome;
+        typedef Utils::Outcome<CreateReceiptRuleResult, Client::AWSError<SESErrors>> CreateReceiptRuleOutcome;
+        typedef Utils::Outcome<CreateReceiptRuleSetResult, Client::AWSError<SESErrors>> CreateReceiptRuleSetOutcome;
         typedef Utils::Outcome<DeleteIdentityResult, Client::AWSError<SESErrors>> DeleteIdentityOutcome;
         typedef Utils::Outcome<DeleteIdentityPolicyResult, Client::AWSError<SESErrors>> DeleteIdentityPolicyOutcome;
+        typedef Utils::Outcome<DeleteReceiptFilterResult, Client::AWSError<SESErrors>> DeleteReceiptFilterOutcome;
+        typedef Utils::Outcome<DeleteReceiptRuleResult, Client::AWSError<SESErrors>> DeleteReceiptRuleOutcome;
+        typedef Utils::Outcome<DeleteReceiptRuleSetResult, Client::AWSError<SESErrors>> DeleteReceiptRuleSetOutcome;
         typedef Utils::Outcome<NoResult, Client::AWSError<SESErrors>> DeleteVerifiedEmailAddressOutcome;
+        typedef Utils::Outcome<DescribeActiveReceiptRuleSetResult, Client::AWSError<SESErrors>> DescribeActiveReceiptRuleSetOutcome;
+        typedef Utils::Outcome<DescribeReceiptRuleResult, Client::AWSError<SESErrors>> DescribeReceiptRuleOutcome;
+        typedef Utils::Outcome<DescribeReceiptRuleSetResult, Client::AWSError<SESErrors>> DescribeReceiptRuleSetOutcome;
         typedef Utils::Outcome<GetIdentityDkimAttributesResult, Client::AWSError<SESErrors>> GetIdentityDkimAttributesOutcome;
         typedef Utils::Outcome<GetIdentityNotificationAttributesResult, Client::AWSError<SESErrors>> GetIdentityNotificationAttributesOutcome;
         typedef Utils::Outcome<GetIdentityPoliciesResult, Client::AWSError<SESErrors>> GetIdentityPoliciesOutcome;
@@ -120,21 +164,38 @@ namespace Model
         typedef Utils::Outcome<GetSendStatisticsResult, Client::AWSError<SESErrors>> GetSendStatisticsOutcome;
         typedef Utils::Outcome<ListIdentitiesResult, Client::AWSError<SESErrors>> ListIdentitiesOutcome;
         typedef Utils::Outcome<ListIdentityPoliciesResult, Client::AWSError<SESErrors>> ListIdentityPoliciesOutcome;
+        typedef Utils::Outcome<ListReceiptFiltersResult, Client::AWSError<SESErrors>> ListReceiptFiltersOutcome;
+        typedef Utils::Outcome<ListReceiptRuleSetsResult, Client::AWSError<SESErrors>> ListReceiptRuleSetsOutcome;
         typedef Utils::Outcome<ListVerifiedEmailAddressesResult, Client::AWSError<SESErrors>> ListVerifiedEmailAddressesOutcome;
         typedef Utils::Outcome<PutIdentityPolicyResult, Client::AWSError<SESErrors>> PutIdentityPolicyOutcome;
+        typedef Utils::Outcome<ReorderReceiptRuleSetResult, Client::AWSError<SESErrors>> ReorderReceiptRuleSetOutcome;
+        typedef Utils::Outcome<SendBounceResult, Client::AWSError<SESErrors>> SendBounceOutcome;
         typedef Utils::Outcome<SendEmailResult, Client::AWSError<SESErrors>> SendEmailOutcome;
         typedef Utils::Outcome<SendRawEmailResult, Client::AWSError<SESErrors>> SendRawEmailOutcome;
+        typedef Utils::Outcome<SetActiveReceiptRuleSetResult, Client::AWSError<SESErrors>> SetActiveReceiptRuleSetOutcome;
         typedef Utils::Outcome<SetIdentityDkimEnabledResult, Client::AWSError<SESErrors>> SetIdentityDkimEnabledOutcome;
         typedef Utils::Outcome<SetIdentityFeedbackForwardingEnabledResult, Client::AWSError<SESErrors>> SetIdentityFeedbackForwardingEnabledOutcome;
         typedef Utils::Outcome<SetIdentityNotificationTopicResult, Client::AWSError<SESErrors>> SetIdentityNotificationTopicOutcome;
+        typedef Utils::Outcome<SetReceiptRulePositionResult, Client::AWSError<SESErrors>> SetReceiptRulePositionOutcome;
+        typedef Utils::Outcome<UpdateReceiptRuleResult, Client::AWSError<SESErrors>> UpdateReceiptRuleOutcome;
         typedef Utils::Outcome<VerifyDomainDkimResult, Client::AWSError<SESErrors>> VerifyDomainDkimOutcome;
         typedef Utils::Outcome<VerifyDomainIdentityResult, Client::AWSError<SESErrors>> VerifyDomainIdentityOutcome;
         typedef Utils::Outcome<NoResult, Client::AWSError<SESErrors>> VerifyEmailAddressOutcome;
         typedef Utils::Outcome<VerifyEmailIdentityResult, Client::AWSError<SESErrors>> VerifyEmailIdentityOutcome;
 
+        typedef std::future<CloneReceiptRuleSetOutcome> CloneReceiptRuleSetOutcomeCallable;
+        typedef std::future<CreateReceiptFilterOutcome> CreateReceiptFilterOutcomeCallable;
+        typedef std::future<CreateReceiptRuleOutcome> CreateReceiptRuleOutcomeCallable;
+        typedef std::future<CreateReceiptRuleSetOutcome> CreateReceiptRuleSetOutcomeCallable;
         typedef std::future<DeleteIdentityOutcome> DeleteIdentityOutcomeCallable;
         typedef std::future<DeleteIdentityPolicyOutcome> DeleteIdentityPolicyOutcomeCallable;
+        typedef std::future<DeleteReceiptFilterOutcome> DeleteReceiptFilterOutcomeCallable;
+        typedef std::future<DeleteReceiptRuleOutcome> DeleteReceiptRuleOutcomeCallable;
+        typedef std::future<DeleteReceiptRuleSetOutcome> DeleteReceiptRuleSetOutcomeCallable;
         typedef std::future<DeleteVerifiedEmailAddressOutcome> DeleteVerifiedEmailAddressOutcomeCallable;
+        typedef std::future<DescribeActiveReceiptRuleSetOutcome> DescribeActiveReceiptRuleSetOutcomeCallable;
+        typedef std::future<DescribeReceiptRuleOutcome> DescribeReceiptRuleOutcomeCallable;
+        typedef std::future<DescribeReceiptRuleSetOutcome> DescribeReceiptRuleSetOutcomeCallable;
         typedef std::future<GetIdentityDkimAttributesOutcome> GetIdentityDkimAttributesOutcomeCallable;
         typedef std::future<GetIdentityNotificationAttributesOutcome> GetIdentityNotificationAttributesOutcomeCallable;
         typedef std::future<GetIdentityPoliciesOutcome> GetIdentityPoliciesOutcomeCallable;
@@ -143,13 +204,20 @@ namespace Model
         typedef std::future<GetSendStatisticsOutcome> GetSendStatisticsOutcomeCallable;
         typedef std::future<ListIdentitiesOutcome> ListIdentitiesOutcomeCallable;
         typedef std::future<ListIdentityPoliciesOutcome> ListIdentityPoliciesOutcomeCallable;
+        typedef std::future<ListReceiptFiltersOutcome> ListReceiptFiltersOutcomeCallable;
+        typedef std::future<ListReceiptRuleSetsOutcome> ListReceiptRuleSetsOutcomeCallable;
         typedef std::future<ListVerifiedEmailAddressesOutcome> ListVerifiedEmailAddressesOutcomeCallable;
         typedef std::future<PutIdentityPolicyOutcome> PutIdentityPolicyOutcomeCallable;
+        typedef std::future<ReorderReceiptRuleSetOutcome> ReorderReceiptRuleSetOutcomeCallable;
+        typedef std::future<SendBounceOutcome> SendBounceOutcomeCallable;
         typedef std::future<SendEmailOutcome> SendEmailOutcomeCallable;
         typedef std::future<SendRawEmailOutcome> SendRawEmailOutcomeCallable;
+        typedef std::future<SetActiveReceiptRuleSetOutcome> SetActiveReceiptRuleSetOutcomeCallable;
         typedef std::future<SetIdentityDkimEnabledOutcome> SetIdentityDkimEnabledOutcomeCallable;
         typedef std::future<SetIdentityFeedbackForwardingEnabledOutcome> SetIdentityFeedbackForwardingEnabledOutcomeCallable;
         typedef std::future<SetIdentityNotificationTopicOutcome> SetIdentityNotificationTopicOutcomeCallable;
+        typedef std::future<SetReceiptRulePositionOutcome> SetReceiptRulePositionOutcomeCallable;
+        typedef std::future<UpdateReceiptRuleOutcome> UpdateReceiptRuleOutcomeCallable;
         typedef std::future<VerifyDomainDkimOutcome> VerifyDomainDkimOutcomeCallable;
         typedef std::future<VerifyDomainIdentityOutcome> VerifyDomainIdentityOutcomeCallable;
         typedef std::future<VerifyEmailAddressOutcome> VerifyEmailAddressOutcomeCallable;
@@ -158,9 +226,19 @@ namespace Model
 
   class SESClient;
 
+    typedef std::function<void(const SESClient*, const Model::CloneReceiptRuleSetRequest&, const Model::CloneReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloneReceiptRuleSetResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::CreateReceiptFilterRequest&, const Model::CreateReceiptFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReceiptFilterResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::CreateReceiptRuleRequest&, const Model::CreateReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReceiptRuleResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::CreateReceiptRuleSetRequest&, const Model::CreateReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteIdentityRequest&, const Model::DeleteIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteIdentityPolicyRequest&, const Model::DeleteIdentityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityPolicyResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DeleteReceiptFilterRequest&, const Model::DeleteReceiptFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReceiptFilterResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DeleteReceiptRuleRequest&, const Model::DeleteReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReceiptRuleResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DeleteReceiptRuleSetRequest&, const Model::DeleteReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteVerifiedEmailAddressRequest&, const Model::DeleteVerifiedEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVerifiedEmailAddressResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DescribeActiveReceiptRuleSetRequest&, const Model::DescribeActiveReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActiveReceiptRuleSetResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DescribeReceiptRuleRequest&, const Model::DescribeReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReceiptRuleResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DescribeReceiptRuleSetRequest&, const Model::DescribeReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityDkimAttributesRequest&, const Model::GetIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityDkimAttributesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityNotificationAttributesRequest&, const Model::GetIdentityNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityPoliciesRequest&, const Model::GetIdentityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityPoliciesResponseReceivedHandler;
@@ -169,13 +247,20 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::GetSendStatisticsRequest&, const Model::GetSendStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSendStatisticsResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentitiesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::ListIdentityPoliciesRequest&, const Model::ListIdentityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityPoliciesResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::ListReceiptFiltersRequest&, const Model::ListReceiptFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceiptFiltersResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::ListReceiptRuleSetsRequest&, const Model::ListReceiptRuleSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceiptRuleSetsResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::ListVerifiedEmailAddressesRequest&, const Model::ListVerifiedEmailAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVerifiedEmailAddressesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::PutIdentityPolicyRequest&, const Model::PutIdentityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIdentityPolicyResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::ReorderReceiptRuleSetRequest&, const Model::ReorderReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReorderReceiptRuleSetResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::SendBounceRequest&, const Model::SendBounceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendBounceResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SendEmailRequest&, const Model::SendEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEmailResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SendRawEmailRequest&, const Model::SendRawEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendRawEmailResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::SetActiveReceiptRuleSetRequest&, const Model::SetActiveReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetActiveReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityDkimEnabledRequest&, const Model::SetIdentityDkimEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityDkimEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityFeedbackForwardingEnabledRequest&, const Model::SetIdentityFeedbackForwardingEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityFeedbackForwardingEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityNotificationTopicResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::SetReceiptRulePositionRequest&, const Model::SetReceiptRulePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetReceiptRulePositionResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::UpdateReceiptRuleRequest&, const Model::UpdateReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReceiptRuleResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::VerifyDomainDkimRequest&, const Model::VerifyDomainDkimOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyDomainDkimResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::VerifyDomainIdentityRequest&, const Model::VerifyDomainIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyDomainIdentityResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::VerifyEmailAddressRequest&, const Model::VerifyEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyEmailAddressResponseReceivedHandler;
@@ -210,6 +295,82 @@ namespace Model
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
         ~SESClient();
+        /*
+            ${operation.documentation}
+        */
+        Model::CloneReceiptRuleSetOutcome CloneReceiptRuleSet(const Model::CloneReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::CloneReceiptRuleSetOutcomeCallable CloneReceiptRuleSetCallable(const Model::CloneReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void CloneReceiptRuleSetAsync(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::CreateReceiptFilterOutcome CreateReceiptFilter(const Model::CreateReceiptFilterRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::CreateReceiptFilterOutcomeCallable CreateReceiptFilterCallable(const Model::CreateReceiptFilterRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void CreateReceiptFilterAsync(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::CreateReceiptRuleOutcome CreateReceiptRule(const Model::CreateReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::CreateReceiptRuleOutcomeCallable CreateReceiptRuleCallable(const Model::CreateReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void CreateReceiptRuleAsync(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::CreateReceiptRuleSetOutcome CreateReceiptRuleSet(const Model::CreateReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::CreateReceiptRuleSetOutcomeCallable CreateReceiptRuleSetCallable(const Model::CreateReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void CreateReceiptRuleSetAsync(const Model::CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
         /*
             <p>Deletes the specified identity (email address or domain) from the list of verified identities.</p> <p>This action is throttled at one request per second.</p>
         */
@@ -249,6 +410,63 @@ namespace Model
         void DeleteIdentityPolicyAsync(const Model::DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
+            ${operation.documentation}
+        */
+        Model::DeleteReceiptFilterOutcome DeleteReceiptFilter(const Model::DeleteReceiptFilterRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DeleteReceiptFilterOutcomeCallable DeleteReceiptFilterCallable(const Model::DeleteReceiptFilterRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DeleteReceiptFilterAsync(const Model::DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::DeleteReceiptRuleOutcome DeleteReceiptRule(const Model::DeleteReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DeleteReceiptRuleOutcomeCallable DeleteReceiptRuleCallable(const Model::DeleteReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DeleteReceiptRuleAsync(const Model::DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::DeleteReceiptRuleSetOutcome DeleteReceiptRuleSet(const Model::DeleteReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DeleteReceiptRuleSetOutcomeCallable DeleteReceiptRuleSetCallable(const Model::DeleteReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DeleteReceiptRuleSetAsync(const Model::DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
             <p>Deletes the specified email address from the list of verified addresses.</p> <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>
         */
         Model::DeleteVerifiedEmailAddressOutcome DeleteVerifiedEmailAddress(const Model::DeleteVerifiedEmailAddressRequest& request) const;
@@ -266,6 +484,63 @@ namespace Model
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void DeleteVerifiedEmailAddressAsync(const Model::DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DescribeActiveReceiptRuleSetOutcomeCallable DescribeActiveReceiptRuleSetCallable(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DescribeActiveReceiptRuleSetAsync(const Model::DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::DescribeReceiptRuleOutcome DescribeReceiptRule(const Model::DescribeReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DescribeReceiptRuleOutcomeCallable DescribeReceiptRuleCallable(const Model::DescribeReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DescribeReceiptRuleAsync(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::DescribeReceiptRuleSetOutcome DescribeReceiptRuleSet(const Model::DescribeReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DescribeReceiptRuleSetOutcomeCallable DescribeReceiptRuleSetCallable(const Model::DescribeReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DescribeReceiptRuleSetAsync(const Model::DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p> <p>This action takes a list of identities as input and returns the following information for each:</p> <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li> <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</li> </ul> <p>This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
@@ -420,6 +695,44 @@ namespace Model
         void ListIdentityPoliciesAsync(const Model::ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
+            ${operation.documentation}
+        */
+        Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const Model::ListReceiptFiltersRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void ListReceiptFiltersAsync(const Model::ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::ListReceiptRuleSetsOutcomeCallable ListReceiptRuleSetsCallable(const Model::ListReceiptRuleSetsRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void ListReceiptRuleSetsAsync(const Model::ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
             <p>Returns a list containing all of the email addresses that have been verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now preferred.</important> <p>This action is throttled at one request per second.</p>
         */
         Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request) const;
@@ -458,6 +771,44 @@ namespace Model
         void PutIdentityPolicyAsync(const Model::PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
+            ${operation.documentation}
+        */
+        Model::ReorderReceiptRuleSetOutcome ReorderReceiptRuleSet(const Model::ReorderReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::ReorderReceiptRuleSetOutcomeCallable ReorderReceiptRuleSetCallable(const Model::ReorderReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void ReorderReceiptRuleSetAsync(const Model::ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            Generates and sends a bounce in response to a valid message received through the Inbound pipeline. This API gives you a lot of freedom in specifying as many optional DSN fields as desired (in addition to the fields required by RFC 3464).
+        */
+        Model::SendBounceOutcome SendBounce(const Model::SendBounceRequest& request) const;
+
+        /*
+            Generates and sends a bounce in response to a valid message received through the Inbound pipeline. This API gives you a lot of freedom in specifying as many optional DSN fields as desired (in addition to the fields required by RFC 3464).
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::SendBounceOutcomeCallable SendBounceCallable(const Model::SendBounceRequest& request) const;
+
+        /*
+            Generates and sends a bounce in response to a valid message received through the Inbound pipeline. This API gives you a lot of freedom in specifying as many optional DSN fields as desired (in addition to the fields required by RFC 3464).
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void SendBounceAsync(const Model::SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
             <p>Composes an email message based on input data, and then immediately queues the message for sending. </p> <p>There are several important points to know about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a>.</li> </ul>
         */
         Model::SendEmailOutcome SendEmail(const Model::SendEmailRequest& request) const;
@@ -494,6 +845,25 @@ namespace Model
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void SendRawEmailAsync(const Model::SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::SetActiveReceiptRuleSetOutcomeCallable SetActiveReceiptRuleSetCallable(const Model::SetActiveReceiptRuleSetRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void SetActiveReceiptRuleSetAsync(const Model::SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Enables or disables Easy DKIM signing of email sent from an identity:</p> <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li> </ul> <p>For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one request per second.</p> <p>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
@@ -551,6 +921,44 @@ namespace Model
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void SetIdentityNotificationTopicAsync(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::SetReceiptRulePositionOutcome SetReceiptRulePosition(const Model::SetReceiptRulePositionRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::SetReceiptRulePositionOutcomeCallable SetReceiptRulePositionCallable(const Model::SetReceiptRulePositionRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void SetReceiptRulePositionAsync(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::UpdateReceiptRuleOutcome UpdateReceiptRule(const Model::UpdateReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::UpdateReceiptRuleOutcomeCallable UpdateReceiptRuleCallable(const Model::UpdateReceiptRuleRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void UpdateReceiptRuleAsync(const Model::UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain.</p> <p>This action is throttled at one request per second.</p> <p>To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
@@ -633,9 +1041,19 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
 /**Async helpers**/
+        void CloneReceiptRuleSetAsyncHelper(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateReceiptFilterAsyncHelper(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateReceiptRuleAsyncHelper(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateReceiptRuleSetAsyncHelper(const Model::CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIdentityAsyncHelper(const Model::DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIdentityPolicyAsyncHelper(const Model::DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteReceiptFilterAsyncHelper(const Model::DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteReceiptRuleAsyncHelper(const Model::DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteReceiptRuleSetAsyncHelper(const Model::DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVerifiedEmailAddressAsyncHelper(const Model::DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeActiveReceiptRuleSetAsyncHelper(const Model::DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReceiptRuleAsyncHelper(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReceiptRuleSetAsyncHelper(const Model::DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityDkimAttributesAsyncHelper(const Model::GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityNotificationAttributesAsyncHelper(const Model::GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityPoliciesAsyncHelper(const Model::GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -644,13 +1062,20 @@ namespace Model
         void GetSendStatisticsAsyncHelper(const Model::GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIdentityPoliciesAsyncHelper(const Model::ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReceiptFiltersAsyncHelper(const Model::ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReceiptRuleSetsAsyncHelper(const Model::ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVerifiedEmailAddressesAsyncHelper(const Model::ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIdentityPolicyAsyncHelper(const Model::PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ReorderReceiptRuleSetAsyncHelper(const Model::ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendBounceAsyncHelper(const Model::SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendEmailAsyncHelper(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendRawEmailAsyncHelper(const Model::SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetActiveReceiptRuleSetAsyncHelper(const Model::SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityDkimEnabledAsyncHelper(const Model::SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityFeedbackForwardingEnabledAsyncHelper(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetReceiptRulePositionAsyncHelper(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateReceiptRuleAsyncHelper(const Model::UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyDomainDkimAsyncHelper(const Model::VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyDomainIdentityAsyncHelper(const Model::VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyEmailAddressAsyncHelper(const Model::VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

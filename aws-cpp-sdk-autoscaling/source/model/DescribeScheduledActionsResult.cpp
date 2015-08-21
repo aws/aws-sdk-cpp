@@ -41,16 +41,22 @@ DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode scheduledUpdateGroupActionsNodeParent = resultNode.FirstChild("ScheduledUpdateGroupActions");
-    XmlNode scheduledUpdateGroupActionsNode = scheduledUpdateGroupActionsNodeParent.FirstChild("member");
-    while(!scheduledUpdateGroupActionsNode.IsNull())
+    XmlNode scheduledUpdateGroupActionsNode = resultNode.FirstChild("ScheduledUpdateGroupActions");
+    if(!scheduledUpdateGroupActionsNode.IsNull())
     {
-      m_scheduledUpdateGroupActions.push_back(scheduledUpdateGroupActionsNode);
-      scheduledUpdateGroupActionsNode = scheduledUpdateGroupActionsNode.NextNode("member");
-    }
+      XmlNode scheduledUpdateGroupActionsMember = scheduledUpdateGroupActionsNode.FirstChild("member");
+      while(!scheduledUpdateGroupActionsMember.IsNull())
+      {
+        m_scheduledUpdateGroupActions.push_back(scheduledUpdateGroupActionsMember);
+        scheduledUpdateGroupActionsMember = scheduledUpdateGroupActionsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

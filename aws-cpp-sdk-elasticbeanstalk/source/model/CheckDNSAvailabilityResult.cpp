@@ -44,9 +44,15 @@ CheckDNSAvailabilityResult& CheckDNSAvailabilityResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode availableNode = resultNode.FirstChild("Available");
-    m_available = StringUtils::ConvertToBool(StringUtils::Trim(availableNode.GetText().c_str()).c_str());
+    if(!availableNode.IsNull())
+    {
+      m_available = StringUtils::ConvertToBool(StringUtils::Trim(availableNode.GetText().c_str()).c_str());
+    }
     XmlNode fullyQualifiedCNAMENode = resultNode.FirstChild("FullyQualifiedCNAME");
-    m_fullyQualifiedCNAME = StringUtils::Trim(fullyQualifiedCNAMENode.GetText().c_str());
+    if(!fullyQualifiedCNAMENode.IsNull())
+    {
+      m_fullyQualifiedCNAME = StringUtils::Trim(fullyQualifiedCNAMENode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

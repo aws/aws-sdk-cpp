@@ -106,110 +106,110 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
       m_keyNameHasBeenSet = true;
     }
-    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
-    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
+    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
     if(!securityGroupsNode.IsNull())
     {
-      while(!securityGroupsNode.IsNull())
+      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
+      while(!securityGroupsMember.IsNull())
       {
-        m_securityGroups.push_back(StringUtils::Trim(securityGroupsNode.GetText().c_str()));
-        securityGroupsNode = securityGroupsNode.NextNode("member");
+        m_securityGroups.push_back(StringUtils::Trim(securityGroupsMember.GetText().c_str()));
+        securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 
       m_securityGroupsHasBeenSet = true;
     }
     XmlNode classicLinkVPCIdNode = resultNode.FirstChild("ClassicLinkVPCId");
-    if(!securityGroupsNode.IsNull())
+    if(!classicLinkVPCIdNode.IsNull())
     {
       m_classicLinkVPCId = StringUtils::Trim(classicLinkVPCIdNode.GetText().c_str());
       m_classicLinkVPCIdHasBeenSet = true;
     }
-    XmlNode classicLinkVPCSecurityGroupsNodeParent = resultNode.FirstChild("ClassicLinkVPCSecurityGroups");
-    XmlNode classicLinkVPCSecurityGroupsNode = classicLinkVPCSecurityGroupsNodeParent.FirstChild("member");
+    XmlNode classicLinkVPCSecurityGroupsNode = resultNode.FirstChild("ClassicLinkVPCSecurityGroups");
     if(!classicLinkVPCSecurityGroupsNode.IsNull())
     {
-      while(!classicLinkVPCSecurityGroupsNode.IsNull())
+      XmlNode classicLinkVPCSecurityGroupsMember = classicLinkVPCSecurityGroupsNode.FirstChild("member");
+      while(!classicLinkVPCSecurityGroupsMember.IsNull())
       {
-        m_classicLinkVPCSecurityGroups.push_back(StringUtils::Trim(classicLinkVPCSecurityGroupsNode.GetText().c_str()));
-        classicLinkVPCSecurityGroupsNode = classicLinkVPCSecurityGroupsNode.NextNode("member");
+        m_classicLinkVPCSecurityGroups.push_back(StringUtils::Trim(classicLinkVPCSecurityGroupsMember.GetText().c_str()));
+        classicLinkVPCSecurityGroupsMember = classicLinkVPCSecurityGroupsMember.NextNode("member");
       }
 
       m_classicLinkVPCSecurityGroupsHasBeenSet = true;
     }
     XmlNode userDataNode = resultNode.FirstChild("UserData");
-    if(!classicLinkVPCSecurityGroupsNode.IsNull())
+    if(!userDataNode.IsNull())
     {
       m_userData = StringUtils::Trim(userDataNode.GetText().c_str());
       m_userDataHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
-    if(!classicLinkVPCSecurityGroupsNode.IsNull())
+    if(!instanceTypeNode.IsNull())
     {
       m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("KernelId");
-    if(!classicLinkVPCSecurityGroupsNode.IsNull())
+    if(!kernelIdNode.IsNull())
     {
       m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
       m_kernelIdHasBeenSet = true;
     }
     XmlNode ramdiskIdNode = resultNode.FirstChild("RamdiskId");
-    if(!classicLinkVPCSecurityGroupsNode.IsNull())
+    if(!ramdiskIdNode.IsNull())
     {
       m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
       m_ramdiskIdHasBeenSet = true;
     }
-    XmlNode blockDeviceMappingsNodeParent = resultNode.FirstChild("BlockDeviceMappings");
-    XmlNode blockDeviceMappingsNode = blockDeviceMappingsNodeParent.FirstChild("member");
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
     if(!blockDeviceMappingsNode.IsNull())
     {
-      while(!blockDeviceMappingsNode.IsNull())
+      XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("member");
+      while(!blockDeviceMappingsMember.IsNull())
       {
-        m_blockDeviceMappings.push_back(blockDeviceMappingsNode);
-        blockDeviceMappingsNode = blockDeviceMappingsNode.NextNode("member");
+        m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
+        blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("member");
       }
 
       m_blockDeviceMappingsHasBeenSet = true;
     }
     XmlNode instanceMonitoringNode = resultNode.FirstChild("InstanceMonitoring");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!instanceMonitoringNode.IsNull())
     {
       m_instanceMonitoring = instanceMonitoringNode;
       m_instanceMonitoringHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("SpotPrice");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!spotPriceNode.IsNull())
     {
       m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
       m_spotPriceHasBeenSet = true;
     }
     XmlNode iamInstanceProfileNode = resultNode.FirstChild("IamInstanceProfile");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!iamInstanceProfileNode.IsNull())
     {
       m_iamInstanceProfile = StringUtils::Trim(iamInstanceProfileNode.GetText().c_str());
       m_iamInstanceProfileHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!createdTimeNode.IsNull())
     {
       m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
       m_createdTimeHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("EbsOptimized");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!ebsOptimizedNode.IsNull())
     {
       m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(ebsOptimizedNode.GetText().c_str()).c_str());
       m_ebsOptimizedHasBeenSet = true;
     }
     XmlNode associatePublicIpAddressNode = resultNode.FirstChild("AssociatePublicIpAddress");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!associatePublicIpAddressNode.IsNull())
     {
       m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(associatePublicIpAddressNode.GetText().c_str()).c_str());
       m_associatePublicIpAddressHasBeenSet = true;
     }
     XmlNode placementTenancyNode = resultNode.FirstChild("PlacementTenancy");
-    if(!blockDeviceMappingsNode.IsNull())
+    if(!placementTenancyNode.IsNull())
     {
       m_placementTenancy = StringUtils::Trim(placementTenancyNode.GetText().c_str());
       m_placementTenancyHasBeenSet = true;

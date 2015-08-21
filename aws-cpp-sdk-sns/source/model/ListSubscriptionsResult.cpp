@@ -41,16 +41,22 @@ ListSubscriptionsResult& ListSubscriptionsResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode subscriptionsNodeParent = resultNode.FirstChild("Subscriptions");
-    XmlNode subscriptionsNode = subscriptionsNodeParent.FirstChild("member");
-    while(!subscriptionsNode.IsNull())
+    XmlNode subscriptionsNode = resultNode.FirstChild("Subscriptions");
+    if(!subscriptionsNode.IsNull())
     {
-      m_subscriptions.push_back(subscriptionsNode);
-      subscriptionsNode = subscriptionsNode.NextNode("member");
-    }
+      XmlNode subscriptionsMember = subscriptionsNode.FirstChild("member");
+      while(!subscriptionsMember.IsNull())
+      {
+        m_subscriptions.push_back(subscriptionsMember);
+        subscriptionsMember = subscriptionsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

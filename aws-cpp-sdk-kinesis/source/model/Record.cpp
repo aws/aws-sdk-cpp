@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 Record::Record() : 
     m_sequenceNumberHasBeenSet(false),
+    m_approximateArrivalTimestamp(0.0),
+    m_approximateArrivalTimestampHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_partitionKeyHasBeenSet(false)
 {
@@ -31,6 +33,8 @@ Record::Record() :
 
 Record::Record(const JsonValue& jsonValue) : 
     m_sequenceNumberHasBeenSet(false),
+    m_approximateArrivalTimestamp(0.0),
+    m_approximateArrivalTimestampHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_partitionKeyHasBeenSet(false)
 {
@@ -44,6 +48,13 @@ Record& Record::operator =(const JsonValue& jsonValue)
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
 
     m_sequenceNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApproximateArrivalTimestamp"))
+  {
+    m_approximateArrivalTimestamp = jsonValue.GetDouble("ApproximateArrivalTimestamp");
+
+    m_approximateArrivalTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Data"))
@@ -70,6 +81,12 @@ JsonValue Record::Jsonize() const
   if(m_sequenceNumberHasBeenSet)
   {
    payload.WithString("SequenceNumber", m_sequenceNumber);
+
+  }
+
+  if(m_approximateArrivalTimestampHasBeenSet)
+  {
+   payload.WithDouble("ApproximateArrivalTimestamp", m_approximateArrivalTimestamp);
 
   }
 

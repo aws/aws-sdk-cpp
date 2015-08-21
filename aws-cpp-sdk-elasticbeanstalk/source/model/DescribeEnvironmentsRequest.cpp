@@ -48,7 +48,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
     unsigned environmentIdsCount = 1;
     for(auto& item : m_environmentIds)
     {
-      ss << "EnvironmentIds." << environmentIdsCount << "="
+      ss << "EnvironmentIds.member." << environmentIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       environmentIdsCount++;
     }
@@ -58,7 +58,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
     unsigned environmentNamesCount = 1;
     for(auto& item : m_environmentNames)
     {
-      ss << "EnvironmentNames." << environmentNamesCount << "="
+      ss << "EnvironmentNames.member." << environmentNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       environmentNamesCount++;
     }

@@ -41,7 +41,10 @@ ListStreamingDistributions2015_04_17Result& ListStreamingDistributions2015_04_17
   if(!resultNode.IsNull())
   {
     XmlNode streamingDistributionListNode = resultNode.FirstChild("StreamingDistributionList");
-    m_streamingDistributionList = streamingDistributionListNode;
+    if(!streamingDistributionListNode.IsNull())
+    {
+      m_streamingDistributionList = streamingDistributionListNode;
+    }
   }
 
   return *this;

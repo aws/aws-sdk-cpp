@@ -42,13 +42,25 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode locationNode = resultNode.FirstChild("Location");
-    m_location = StringUtils::Trim(locationNode.GetText().c_str());
+    if(!locationNode.IsNull())
+    {
+      m_location = StringUtils::Trim(locationNode.GetText().c_str());
+    }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+    if(!bucketNode.IsNull())
+    {
+      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+    }
     XmlNode keyNode = resultNode.FirstChild("Key");
-    m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    if(!keyNode.IsNull())
+    {
+      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+    }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
-    m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+    if(!eTagNode.IsNull())
+    {
+      m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

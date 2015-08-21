@@ -41,22 +41,28 @@ DescribeMetricCollectionTypesResult& DescribeMetricCollectionTypesResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode metricsNodeParent = resultNode.FirstChild("Metrics");
-    XmlNode metricsNode = metricsNodeParent.FirstChild("member");
-    while(!metricsNode.IsNull())
+    XmlNode metricsNode = resultNode.FirstChild("Metrics");
+    if(!metricsNode.IsNull())
     {
-      m_metrics.push_back(metricsNode);
-      metricsNode = metricsNode.NextNode("member");
-    }
+      XmlNode metricsMember = metricsNode.FirstChild("member");
+      while(!metricsMember.IsNull())
+      {
+        m_metrics.push_back(metricsMember);
+        metricsMember = metricsMember.NextNode("member");
+      }
 
-    XmlNode granularitiesNodeParent = resultNode.FirstChild("Granularities");
-    XmlNode granularitiesNode = granularitiesNodeParent.FirstChild("member");
-    while(!granularitiesNode.IsNull())
+    }
+    XmlNode granularitiesNode = resultNode.FirstChild("Granularities");
+    if(!granularitiesNode.IsNull())
     {
-      m_granularities.push_back(granularitiesNode);
-      granularitiesNode = granularitiesNode.NextNode("member");
-    }
+      XmlNode granularitiesMember = granularitiesNode.FirstChild("member");
+      while(!granularitiesMember.IsNull())
+      {
+        m_granularities.push_back(granularitiesMember);
+        granularitiesMember = granularitiesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

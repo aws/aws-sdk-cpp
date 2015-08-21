@@ -50,14 +50,14 @@ BackendServerDescription& BackendServerDescription::operator =(const XmlNode& xm
       m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(instancePortNode.GetText().c_str()).c_str());
       m_instancePortHasBeenSet = true;
     }
-    XmlNode policyNamesNodeParent = resultNode.FirstChild("PolicyNames");
-    XmlNode policyNamesNode = policyNamesNodeParent.FirstChild("member");
+    XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
     if(!policyNamesNode.IsNull())
     {
-      while(!policyNamesNode.IsNull())
+      XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      while(!policyNamesMember.IsNull())
       {
-        m_policyNames.push_back(StringUtils::Trim(policyNamesNode.GetText().c_str()));
-        policyNamesNode = policyNamesNode.NextNode("member");
+        m_policyNames.push_back(StringUtils::Trim(policyNamesMember.GetText().c_str()));
+        policyNamesMember = policyNamesMember.NextNode("member");
       }
 
       m_policyNamesHasBeenSet = true;

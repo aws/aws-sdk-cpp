@@ -73,7 +73,7 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
     unsigned availabilityZonesCount = 1;
     for(auto& item : m_availabilityZones)
     {
-      ss << "AvailabilityZones." << availabilityZonesCount << "="
+      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       availabilityZonesCount++;
     }
@@ -99,7 +99,7 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
     unsigned terminationPoliciesCount = 1;
     for(auto& item : m_terminationPolicies)
     {
-      ss << "TerminationPolicies." << terminationPoliciesCount << "="
+      ss << "TerminationPolicies.member." << terminationPoliciesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       terminationPoliciesCount++;
     }

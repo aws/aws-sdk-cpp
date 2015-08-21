@@ -41,16 +41,22 @@ DescribeScalingActivitiesResult& DescribeScalingActivitiesResult::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode activitiesNodeParent = resultNode.FirstChild("Activities");
-    XmlNode activitiesNode = activitiesNodeParent.FirstChild("member");
-    while(!activitiesNode.IsNull())
+    XmlNode activitiesNode = resultNode.FirstChild("Activities");
+    if(!activitiesNode.IsNull())
     {
-      m_activities.push_back(activitiesNode);
-      activitiesNode = activitiesNode.NextNode("member");
-    }
+      XmlNode activitiesMember = activitiesNode.FirstChild("member");
+      while(!activitiesMember.IsNull())
+      {
+        m_activities.push_back(activitiesMember);
+        activitiesMember = activitiesMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

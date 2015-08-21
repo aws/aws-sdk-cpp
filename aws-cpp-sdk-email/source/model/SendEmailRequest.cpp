@@ -51,7 +51,7 @@ Aws::String SendEmailRequest::SerializePayload() const
     unsigned replyToAddressesCount = 1;
     for(auto& item : m_replyToAddresses)
     {
-      ss << "ReplyToAddresses." << replyToAddressesCount << "="
+      ss << "ReplyToAddresses.member." << replyToAddressesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       replyToAddressesCount++;
     }

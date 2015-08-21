@@ -219,26 +219,26 @@ namespace Model
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
     /*
-     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>MySQL</code></p>
+     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>aurora</code></p>
     */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     /*
-     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>MySQL</code></p>
+     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>aurora</code></p>
     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /*
-     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>MySQL</code></p>
+     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>aurora</code></p>
     */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /*
-     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>MySQL</code></p>
+     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>aurora</code></p>
     */
     inline CreateDBClusterRequest&  WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /*
-     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>MySQL</code></p>
+     <p>The name of the database engine to be used for this DB cluster. </p> <p>Valid Values: <code>aurora</code></p>
     */
     inline CreateDBClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

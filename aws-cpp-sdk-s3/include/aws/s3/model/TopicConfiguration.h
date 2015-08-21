@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3/model/NotificationConfigurationFilter.h>
 #include <aws/s3/model/Event.h>
 
 namespace Aws
@@ -92,6 +93,14 @@ namespace Model
     
     inline TopicConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
+    
+    inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+    
+    inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline TopicConfiguration&  WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -99,6 +108,8 @@ namespace Model
     bool m_topicArnHasBeenSet;
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+    NotificationConfigurationFilter m_filter;
+    bool m_filterHasBeenSet;
   };
 
 } // namespace Model

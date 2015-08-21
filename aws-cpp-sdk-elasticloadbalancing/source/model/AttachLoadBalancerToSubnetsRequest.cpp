@@ -38,7 +38,7 @@ Aws::String AttachLoadBalancerToSubnetsRequest::SerializePayload() const
     unsigned subnetsCount = 1;
     for(auto& item : m_subnets)
     {
-      ss << "Subnets." << subnetsCount << "="
+      ss << "Subnets.member." << subnetsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetsCount++;
     }

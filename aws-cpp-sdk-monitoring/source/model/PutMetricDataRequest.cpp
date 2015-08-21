@@ -38,7 +38,7 @@ Aws::String PutMetricDataRequest::SerializePayload() const
     unsigned metricDataCount = 1;
     for(auto& item : m_metricData)
     {
-      item.OutputToStream(ss, "MetricData.", metricDataCount, "");
+      item.OutputToStream(ss, "MetricData.member.", metricDataCount, "");
       metricDataCount++;
     }
   }

@@ -24,7 +24,7 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     for (auto credentialsProvider : m_providerChain)
     {
         AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
-        if (!credentials.GetAWSSecretKey().empty() && !credentials.GetAWSSecretKey().empty())
+        if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
         {
             return std::move(credentials);
         }

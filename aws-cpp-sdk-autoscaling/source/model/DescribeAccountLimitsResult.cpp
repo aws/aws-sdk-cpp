@@ -46,9 +46,15 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Amazo
   if(!resultNode.IsNull())
   {
     XmlNode maxNumberOfAutoScalingGroupsNode = resultNode.FirstChild("MaxNumberOfAutoScalingGroups");
-    m_maxNumberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfAutoScalingGroupsNode.GetText().c_str()).c_str());
+    if(!maxNumberOfAutoScalingGroupsNode.IsNull())
+    {
+      m_maxNumberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfAutoScalingGroupsNode.GetText().c_str()).c_str());
+    }
     XmlNode maxNumberOfLaunchConfigurationsNode = resultNode.FirstChild("MaxNumberOfLaunchConfigurations");
-    m_maxNumberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfLaunchConfigurationsNode.GetText().c_str()).c_str());
+    if(!maxNumberOfLaunchConfigurationsNode.IsNull())
+    {
+      m_maxNumberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfLaunchConfigurationsNode.GetText().c_str()).c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

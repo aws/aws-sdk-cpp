@@ -42,15 +42,21 @@ DescribeDBClusterParameterGroupsResult& DescribeDBClusterParameterGroupsResult::
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBClusterParameterGroupNodeParent = resultNode.FirstChild("DBClusterParameterGroup");
-    XmlNode dBClusterParameterGroupNode = dBClusterParameterGroupNodeParent.FirstChild("member");
-    while(!dBClusterParameterGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBClusterParameterGroups.push_back(dBClusterParameterGroupNode);
-      dBClusterParameterGroupNode = dBClusterParameterGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBClusterParameterGroupsNode = resultNode.FirstChild("DBClusterParameterGroups");
+    if(!dBClusterParameterGroupsNode.IsNull())
+    {
+      XmlNode dBClusterParameterGroupsMember = dBClusterParameterGroupsNode.FirstChild("DBClusterParameterGroup");
+      while(!dBClusterParameterGroupsMember.IsNull())
+      {
+        m_dBClusterParameterGroups.push_back(dBClusterParameterGroupsMember);
+        dBClusterParameterGroupsMember = dBClusterParameterGroupsMember.NextNode("DBClusterParameterGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

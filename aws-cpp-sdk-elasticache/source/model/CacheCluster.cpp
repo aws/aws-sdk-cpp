@@ -168,74 +168,74 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_notificationConfiguration = notificationConfigurationNode;
       m_notificationConfigurationHasBeenSet = true;
     }
-    XmlNode cacheSecurityGroupNodeParent = resultNode.FirstChild("CacheSecurityGroup");
-    XmlNode cacheSecurityGroupNode = cacheSecurityGroupNodeParent.FirstChild("member");
-    if(!cacheSecurityGroupNode.IsNull())
+    XmlNode cacheSecurityGroupsNode = resultNode.FirstChild("CacheSecurityGroups");
+    if(!cacheSecurityGroupsNode.IsNull())
     {
-      while(!cacheSecurityGroupNode.IsNull())
+      XmlNode cacheSecurityGroupsMember = cacheSecurityGroupsNode.FirstChild("CacheSecurityGroup");
+      while(!cacheSecurityGroupsMember.IsNull())
       {
-        m_cacheSecurityGroups.push_back(cacheSecurityGroupNode);
-        cacheSecurityGroupNode = cacheSecurityGroupNode.NextNode("member");
+        m_cacheSecurityGroups.push_back(cacheSecurityGroupsMember);
+        cacheSecurityGroupsMember = cacheSecurityGroupsMember.NextNode("CacheSecurityGroup");
       }
 
       m_cacheSecurityGroupsHasBeenSet = true;
     }
     XmlNode cacheParameterGroupNode = resultNode.FirstChild("CacheParameterGroup");
-    if(!cacheSecurityGroupNode.IsNull())
+    if(!cacheParameterGroupNode.IsNull())
     {
       m_cacheParameterGroup = cacheParameterGroupNode;
       m_cacheParameterGroupHasBeenSet = true;
     }
     XmlNode cacheSubnetGroupNameNode = resultNode.FirstChild("CacheSubnetGroupName");
-    if(!cacheSecurityGroupNode.IsNull())
+    if(!cacheSubnetGroupNameNode.IsNull())
     {
       m_cacheSubnetGroupName = StringUtils::Trim(cacheSubnetGroupNameNode.GetText().c_str());
       m_cacheSubnetGroupNameHasBeenSet = true;
     }
-    XmlNode cacheNodeNodeParent = resultNode.FirstChild("CacheNode");
-    XmlNode cacheNodeNode = cacheNodeNodeParent.FirstChild("member");
-    if(!cacheNodeNode.IsNull())
+    XmlNode cacheNodesNode = resultNode.FirstChild("CacheNodes");
+    if(!cacheNodesNode.IsNull())
     {
-      while(!cacheNodeNode.IsNull())
+      XmlNode cacheNodesMember = cacheNodesNode.FirstChild("CacheNode");
+      while(!cacheNodesMember.IsNull())
       {
-        m_cacheNodes.push_back(cacheNodeNode);
-        cacheNodeNode = cacheNodeNode.NextNode("member");
+        m_cacheNodes.push_back(cacheNodesMember);
+        cacheNodesMember = cacheNodesMember.NextNode("CacheNode");
       }
 
       m_cacheNodesHasBeenSet = true;
     }
     XmlNode autoMinorVersionUpgradeNode = resultNode.FirstChild("AutoMinorVersionUpgrade");
-    if(!cacheNodeNode.IsNull())
+    if(!autoMinorVersionUpgradeNode.IsNull())
     {
       m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(autoMinorVersionUpgradeNode.GetText().c_str()).c_str());
       m_autoMinorVersionUpgradeHasBeenSet = true;
     }
-    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
-    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
+    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
     if(!securityGroupsNode.IsNull())
     {
-      while(!securityGroupsNode.IsNull())
+      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
+      while(!securityGroupsMember.IsNull())
       {
-        m_securityGroups.push_back(securityGroupsNode);
-        securityGroupsNode = securityGroupsNode.NextNode("member");
+        m_securityGroups.push_back(securityGroupsMember);
+        securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 
       m_securityGroupsHasBeenSet = true;
     }
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
-    if(!securityGroupsNode.IsNull())
+    if(!replicationGroupIdNode.IsNull())
     {
       m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode snapshotRetentionLimitNode = resultNode.FirstChild("SnapshotRetentionLimit");
-    if(!securityGroupsNode.IsNull())
+    if(!snapshotRetentionLimitNode.IsNull())
     {
       m_snapshotRetentionLimit = StringUtils::ConvertToInt32(StringUtils::Trim(snapshotRetentionLimitNode.GetText().c_str()).c_str());
       m_snapshotRetentionLimitHasBeenSet = true;
     }
     XmlNode snapshotWindowNode = resultNode.FirstChild("SnapshotWindow");
-    if(!securityGroupsNode.IsNull())
+    if(!snapshotWindowNode.IsNull())
     {
       m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
       m_snapshotWindowHasBeenSet = true;

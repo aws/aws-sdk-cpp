@@ -48,39 +48,90 @@ UpdateEnvironmentResult& UpdateEnvironmentResult::operator =(const AmazonWebServ
   if(!resultNode.IsNull())
   {
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
-    m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+    if(!environmentNameNode.IsNull())
+    {
+      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+    }
     XmlNode environmentIdNode = resultNode.FirstChild("EnvironmentId");
-    m_environmentId = StringUtils::Trim(environmentIdNode.GetText().c_str());
+    if(!environmentIdNode.IsNull())
+    {
+      m_environmentId = StringUtils::Trim(environmentIdNode.GetText().c_str());
+    }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
-    m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+    if(!applicationNameNode.IsNull())
+    {
+      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+    }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
-    m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+    if(!versionLabelNode.IsNull())
+    {
+      m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+    }
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
-    m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+    if(!solutionStackNameNode.IsNull())
+    {
+      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+    }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
-    m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+    if(!templateNameNode.IsNull())
+    {
+      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+    }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    }
     XmlNode endpointURLNode = resultNode.FirstChild("EndpointURL");
-    m_endpointURL = StringUtils::Trim(endpointURLNode.GetText().c_str());
+    if(!endpointURLNode.IsNull())
+    {
+      m_endpointURL = StringUtils::Trim(endpointURLNode.GetText().c_str());
+    }
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
-    m_cNAME = StringUtils::Trim(cNAMENode.GetText().c_str());
+    if(!cNAMENode.IsNull())
+    {
+      m_cNAME = StringUtils::Trim(cNAMENode.GetText().c_str());
+    }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
-    m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+    if(!dateCreatedNode.IsNull())
+    {
+      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+    }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
-    m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+    if(!dateUpdatedNode.IsNull())
+    {
+      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    }
     XmlNode abortableOperationInProgressNode = resultNode.FirstChild("AbortableOperationInProgress");
-    m_abortableOperationInProgress = StringUtils::ConvertToBool(StringUtils::Trim(abortableOperationInProgressNode.GetText().c_str()).c_str());
+    if(!abortableOperationInProgressNode.IsNull())
+    {
+      m_abortableOperationInProgress = StringUtils::ConvertToBool(StringUtils::Trim(abortableOperationInProgressNode.GetText().c_str()).c_str());
+    }
     XmlNode healthNode = resultNode.FirstChild("Health");
-    m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(healthNode.GetText().c_str()).c_str());
+    if(!healthNode.IsNull())
+    {
+      m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(healthNode.GetText().c_str()).c_str());
+    }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
-    m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(healthStatusNode.GetText().c_str()).c_str());
+    if(!healthStatusNode.IsNull())
+    {
+      m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(healthStatusNode.GetText().c_str()).c_str());
+    }
     XmlNode resourcesNode = resultNode.FirstChild("Resources");
-    m_resources = resourcesNode;
+    if(!resourcesNode.IsNull())
+    {
+      m_resources = resourcesNode;
+    }
     XmlNode tierNode = resultNode.FirstChild("Tier");
-    m_tier = tierNode;
+    if(!tierNode.IsNull())
+    {
+      m_tier = tierNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

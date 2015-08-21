@@ -215,9 +215,12 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
         while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0)
         {
             response->GetResponseBody().write(body, read);
-            if(readLimiter != nullptr && read > 0)
+            if (read > 0)
             {
-                readLimiter->ApplyAndPayForCost(read);
+                if (readLimiter != nullptr)
+                {
+                    readLimiter->ApplyAndPayForCost(read);
+                }
                 auto& receivedHandler = request.GetDataReceivedEventHandler();
                 if (receivedHandler)
                 {

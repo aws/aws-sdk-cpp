@@ -66,7 +66,7 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
     unsigned vpcSecurityGroupIdsCount = 1;
     for(auto& item : m_vpcSecurityGroupIds)
     {
-      ss << "VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
+      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcSecurityGroupIdsCount++;
     }

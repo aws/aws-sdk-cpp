@@ -42,15 +42,21 @@ DescribeDBClusterSnapshotsResult& DescribeDBClusterSnapshotsResult::operator =(c
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBClusterSnapshotNodeParent = resultNode.FirstChild("DBClusterSnapshot");
-    XmlNode dBClusterSnapshotNode = dBClusterSnapshotNodeParent.FirstChild("member");
-    while(!dBClusterSnapshotNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBClusterSnapshots.push_back(dBClusterSnapshotNode);
-      dBClusterSnapshotNode = dBClusterSnapshotNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBClusterSnapshotsNode = resultNode.FirstChild("DBClusterSnapshots");
+    if(!dBClusterSnapshotsNode.IsNull())
+    {
+      XmlNode dBClusterSnapshotsMember = dBClusterSnapshotsNode.FirstChild("DBClusterSnapshot");
+      while(!dBClusterSnapshotsMember.IsNull())
+      {
+        m_dBClusterSnapshots.push_back(dBClusterSnapshotsMember);
+        dBClusterSnapshotsMember = dBClusterSnapshotsMember.NextNode("DBClusterSnapshot");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

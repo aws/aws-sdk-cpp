@@ -44,7 +44,7 @@ Aws::String ResetDBParameterGroupRequest::SerializePayload() const
     unsigned parametersCount = 1;
     for(auto& item : m_parameters)
     {
-      item.OutputToStream(ss, "Parameter.", parametersCount, "");
+      item.OutputToStream(ss, "Parameters.member.", parametersCount, "");
       parametersCount++;
     }
   }

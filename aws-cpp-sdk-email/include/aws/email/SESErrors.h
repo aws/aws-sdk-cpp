@@ -48,8 +48,15 @@ enum class AWS_SES_API SESErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_POLICY= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  MESSAGE_REJECTED
+  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CANNOT_DELETE,
+  INVALID_POLICY,
+  INVALID_S3_BUCKET,
+  INVALID_SNS_TOPIC,
+  LIMIT_EXCEEDED,
+  MESSAGE_REJECTED,
+  RULE_DOES_NOT_EXIST,
+  RULE_SET_DOES_NOT_EXIST
 };
 namespace SESErrorMapper
 {

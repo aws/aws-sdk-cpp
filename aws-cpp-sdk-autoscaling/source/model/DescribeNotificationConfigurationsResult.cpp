@@ -41,16 +41,22 @@ DescribeNotificationConfigurationsResult& DescribeNotificationConfigurationsResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode notificationConfigurationsNodeParent = resultNode.FirstChild("NotificationConfigurations");
-    XmlNode notificationConfigurationsNode = notificationConfigurationsNodeParent.FirstChild("member");
-    while(!notificationConfigurationsNode.IsNull())
+    XmlNode notificationConfigurationsNode = resultNode.FirstChild("NotificationConfigurations");
+    if(!notificationConfigurationsNode.IsNull())
     {
-      m_notificationConfigurations.push_back(notificationConfigurationsNode);
-      notificationConfigurationsNode = notificationConfigurationsNode.NextNode("member");
-    }
+      XmlNode notificationConfigurationsMember = notificationConfigurationsNode.FirstChild("member");
+      while(!notificationConfigurationsMember.IsNull())
+      {
+        m_notificationConfigurations.push_back(notificationConfigurationsMember);
+        notificationConfigurationsMember = notificationConfigurationsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

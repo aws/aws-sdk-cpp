@@ -41,16 +41,22 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode metricAlarmsNodeParent = resultNode.FirstChild("MetricAlarms");
-    XmlNode metricAlarmsNode = metricAlarmsNodeParent.FirstChild("member");
-    while(!metricAlarmsNode.IsNull())
+    XmlNode metricAlarmsNode = resultNode.FirstChild("MetricAlarms");
+    if(!metricAlarmsNode.IsNull())
     {
-      m_metricAlarms.push_back(metricAlarmsNode);
-      metricAlarmsNode = metricAlarmsNode.NextNode("member");
-    }
+      XmlNode metricAlarmsMember = metricAlarmsNode.FirstChild("member");
+      while(!metricAlarmsMember.IsNull())
+      {
+        m_metricAlarms.push_back(metricAlarmsMember);
+        metricAlarmsMember = metricAlarmsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

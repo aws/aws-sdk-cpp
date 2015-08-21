@@ -42,7 +42,10 @@ UploadSigningCertificateResult& UploadSigningCertificateResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode certificateNode = resultNode.FirstChild("Certificate");
-    m_certificate = certificateNode;
+    if(!certificateNode.IsNull())
+    {
+      m_certificate = certificateNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

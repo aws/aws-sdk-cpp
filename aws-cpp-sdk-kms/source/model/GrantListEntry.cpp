@@ -24,6 +24,9 @@ using namespace Aws::Utils;
 GrantListEntry::GrantListEntry() : 
     m_keyIdHasBeenSet(false),
     m_grantIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_creationDate(0.0),
+    m_creationDateHasBeenSet(false),
     m_granteePrincipalHasBeenSet(false),
     m_retiringPrincipalHasBeenSet(false),
     m_issuingAccountHasBeenSet(false),
@@ -35,6 +38,9 @@ GrantListEntry::GrantListEntry() :
 GrantListEntry::GrantListEntry(const JsonValue& jsonValue) : 
     m_keyIdHasBeenSet(false),
     m_grantIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_creationDate(0.0),
+    m_creationDateHasBeenSet(false),
     m_granteePrincipalHasBeenSet(false),
     m_retiringPrincipalHasBeenSet(false),
     m_issuingAccountHasBeenSet(false),
@@ -58,6 +64,20 @@ GrantListEntry& GrantListEntry::operator =(const JsonValue& jsonValue)
     m_grantId = jsonValue.GetString("GrantId");
 
     m_grantIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreationDate"))
+  {
+    m_creationDate = jsonValue.GetDouble("CreationDate");
+
+    m_creationDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GranteePrincipal"))
@@ -114,6 +134,18 @@ JsonValue GrantListEntry::Jsonize() const
   if(m_grantIdHasBeenSet)
   {
    payload.WithString("GrantId", m_grantId);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_creationDateHasBeenSet)
+  {
+   payload.WithDouble("CreationDate", m_creationDate);
 
   }
 

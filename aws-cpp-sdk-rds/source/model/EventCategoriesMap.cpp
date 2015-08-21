@@ -48,14 +48,14 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
       m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
       m_sourceTypeHasBeenSet = true;
     }
-    XmlNode eventCategoryNodeParent = resultNode.FirstChild("EventCategory");
-    XmlNode eventCategoryNode = eventCategoryNodeParent.FirstChild("member");
-    if(!eventCategoryNode.IsNull())
+    XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
+    if(!eventCategoriesNode.IsNull())
     {
-      while(!eventCategoryNode.IsNull())
+      XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      while(!eventCategoriesMember.IsNull())
       {
-        m_eventCategories.push_back(StringUtils::Trim(eventCategoryNode.GetText().c_str()));
-        eventCategoryNode = eventCategoryNode.NextNode("member");
+        m_eventCategories.push_back(StringUtils::Trim(eventCategoriesMember.GetText().c_str()));
+        eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
       m_eventCategoriesHasBeenSet = true;

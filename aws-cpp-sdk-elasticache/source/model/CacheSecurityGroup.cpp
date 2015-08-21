@@ -64,14 +64,14 @@ CacheSecurityGroup& CacheSecurityGroup::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
-    XmlNode eC2SecurityGroupNodeParent = resultNode.FirstChild("EC2SecurityGroup");
-    XmlNode eC2SecurityGroupNode = eC2SecurityGroupNodeParent.FirstChild("member");
-    if(!eC2SecurityGroupNode.IsNull())
+    XmlNode eC2SecurityGroupsNode = resultNode.FirstChild("EC2SecurityGroups");
+    if(!eC2SecurityGroupsNode.IsNull())
     {
-      while(!eC2SecurityGroupNode.IsNull())
+      XmlNode eC2SecurityGroupsMember = eC2SecurityGroupsNode.FirstChild("EC2SecurityGroup");
+      while(!eC2SecurityGroupsMember.IsNull())
       {
-        m_eC2SecurityGroups.push_back(eC2SecurityGroupNode);
-        eC2SecurityGroupNode = eC2SecurityGroupNode.NextNode("member");
+        m_eC2SecurityGroups.push_back(eC2SecurityGroupsMember);
+        eC2SecurityGroupsMember = eC2SecurityGroupsMember.NextNode("EC2SecurityGroup");
       }
 
       m_eC2SecurityGroupsHasBeenSet = true;

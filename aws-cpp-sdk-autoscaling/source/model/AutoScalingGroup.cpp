@@ -132,122 +132,122 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_defaultCooldown = StringUtils::ConvertToInt32(StringUtils::Trim(defaultCooldownNode.GetText().c_str()).c_str());
       m_defaultCooldownHasBeenSet = true;
     }
-    XmlNode availabilityZonesNodeParent = resultNode.FirstChild("AvailabilityZones");
-    XmlNode availabilityZonesNode = availabilityZonesNodeParent.FirstChild("member");
+    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
     {
-      while(!availabilityZonesNode.IsNull())
+      XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
+      while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesNode.GetText().c_str()));
-        availabilityZonesNode = availabilityZonesNode.NextNode("member");
+        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
 
       m_availabilityZonesHasBeenSet = true;
     }
-    XmlNode loadBalancerNamesNodeParent = resultNode.FirstChild("LoadBalancerNames");
-    XmlNode loadBalancerNamesNode = loadBalancerNamesNodeParent.FirstChild("member");
+    XmlNode loadBalancerNamesNode = resultNode.FirstChild("LoadBalancerNames");
     if(!loadBalancerNamesNode.IsNull())
     {
-      while(!loadBalancerNamesNode.IsNull())
+      XmlNode loadBalancerNamesMember = loadBalancerNamesNode.FirstChild("member");
+      while(!loadBalancerNamesMember.IsNull())
       {
-        m_loadBalancerNames.push_back(StringUtils::Trim(loadBalancerNamesNode.GetText().c_str()));
-        loadBalancerNamesNode = loadBalancerNamesNode.NextNode("member");
+        m_loadBalancerNames.push_back(StringUtils::Trim(loadBalancerNamesMember.GetText().c_str()));
+        loadBalancerNamesMember = loadBalancerNamesMember.NextNode("member");
       }
 
       m_loadBalancerNamesHasBeenSet = true;
     }
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
-    if(!loadBalancerNamesNode.IsNull())
+    if(!healthCheckTypeNode.IsNull())
     {
       m_healthCheckType = StringUtils::Trim(healthCheckTypeNode.GetText().c_str());
       m_healthCheckTypeHasBeenSet = true;
     }
     XmlNode healthCheckGracePeriodNode = resultNode.FirstChild("HealthCheckGracePeriod");
-    if(!loadBalancerNamesNode.IsNull())
+    if(!healthCheckGracePeriodNode.IsNull())
     {
       m_healthCheckGracePeriod = StringUtils::ConvertToInt32(StringUtils::Trim(healthCheckGracePeriodNode.GetText().c_str()).c_str());
       m_healthCheckGracePeriodHasBeenSet = true;
     }
-    XmlNode instancesNodeParent = resultNode.FirstChild("Instances");
-    XmlNode instancesNode = instancesNodeParent.FirstChild("member");
+    XmlNode instancesNode = resultNode.FirstChild("Instances");
     if(!instancesNode.IsNull())
     {
-      while(!instancesNode.IsNull())
+      XmlNode instancesMember = instancesNode.FirstChild("member");
+      while(!instancesMember.IsNull())
       {
-        m_instances.push_back(instancesNode);
-        instancesNode = instancesNode.NextNode("member");
+        m_instances.push_back(instancesMember);
+        instancesMember = instancesMember.NextNode("member");
       }
 
       m_instancesHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
-    if(!instancesNode.IsNull())
+    if(!createdTimeNode.IsNull())
     {
       m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
       m_createdTimeHasBeenSet = true;
     }
-    XmlNode suspendedProcessesNodeParent = resultNode.FirstChild("SuspendedProcesses");
-    XmlNode suspendedProcessesNode = suspendedProcessesNodeParent.FirstChild("member");
+    XmlNode suspendedProcessesNode = resultNode.FirstChild("SuspendedProcesses");
     if(!suspendedProcessesNode.IsNull())
     {
-      while(!suspendedProcessesNode.IsNull())
+      XmlNode suspendedProcessesMember = suspendedProcessesNode.FirstChild("member");
+      while(!suspendedProcessesMember.IsNull())
       {
-        m_suspendedProcesses.push_back(suspendedProcessesNode);
-        suspendedProcessesNode = suspendedProcessesNode.NextNode("member");
+        m_suspendedProcesses.push_back(suspendedProcessesMember);
+        suspendedProcessesMember = suspendedProcessesMember.NextNode("member");
       }
 
       m_suspendedProcessesHasBeenSet = true;
     }
     XmlNode placementGroupNode = resultNode.FirstChild("PlacementGroup");
-    if(!suspendedProcessesNode.IsNull())
+    if(!placementGroupNode.IsNull())
     {
       m_placementGroup = StringUtils::Trim(placementGroupNode.GetText().c_str());
       m_placementGroupHasBeenSet = true;
     }
     XmlNode vPCZoneIdentifierNode = resultNode.FirstChild("VPCZoneIdentifier");
-    if(!suspendedProcessesNode.IsNull())
+    if(!vPCZoneIdentifierNode.IsNull())
     {
       m_vPCZoneIdentifier = StringUtils::Trim(vPCZoneIdentifierNode.GetText().c_str());
       m_vPCZoneIdentifierHasBeenSet = true;
     }
-    XmlNode enabledMetricsNodeParent = resultNode.FirstChild("EnabledMetrics");
-    XmlNode enabledMetricsNode = enabledMetricsNodeParent.FirstChild("member");
+    XmlNode enabledMetricsNode = resultNode.FirstChild("EnabledMetrics");
     if(!enabledMetricsNode.IsNull())
     {
-      while(!enabledMetricsNode.IsNull())
+      XmlNode enabledMetricsMember = enabledMetricsNode.FirstChild("member");
+      while(!enabledMetricsMember.IsNull())
       {
-        m_enabledMetrics.push_back(enabledMetricsNode);
-        enabledMetricsNode = enabledMetricsNode.NextNode("member");
+        m_enabledMetrics.push_back(enabledMetricsMember);
+        enabledMetricsMember = enabledMetricsMember.NextNode("member");
       }
 
       m_enabledMetricsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!enabledMetricsNode.IsNull())
+    if(!statusNode.IsNull())
     {
       m_status = StringUtils::Trim(statusNode.GetText().c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode tagsNodeParent = resultNode.FirstChild("Tags");
-    XmlNode tagsNode = tagsNodeParent.FirstChild("member");
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
-      while(!tagsNode.IsNull())
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
       {
-        m_tags.push_back(tagsNode);
-        tagsNode = tagsNode.NextNode("member");
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
       }
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode terminationPoliciesNodeParent = resultNode.FirstChild("TerminationPolicies");
-    XmlNode terminationPoliciesNode = terminationPoliciesNodeParent.FirstChild("member");
+    XmlNode terminationPoliciesNode = resultNode.FirstChild("TerminationPolicies");
     if(!terminationPoliciesNode.IsNull())
     {
-      while(!terminationPoliciesNode.IsNull())
+      XmlNode terminationPoliciesMember = terminationPoliciesNode.FirstChild("member");
+      while(!terminationPoliciesMember.IsNull())
       {
-        m_terminationPolicies.push_back(StringUtils::Trim(terminationPoliciesNode.GetText().c_str()));
-        terminationPoliciesNode = terminationPoliciesNode.NextNode("member");
+        m_terminationPolicies.push_back(StringUtils::Trim(terminationPoliciesMember.GetText().c_str()));
+        terminationPoliciesMember = terminationPoliciesMember.NextNode("member");
       }
 
       m_terminationPoliciesHasBeenSet = true;

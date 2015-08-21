@@ -45,7 +45,7 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const
     unsigned scheduledActionNamesCount = 1;
     for(auto& item : m_scheduledActionNames)
     {
-      ss << "ScheduledActionNames." << scheduledActionNamesCount << "="
+      ss << "ScheduledActionNames.member." << scheduledActionNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       scheduledActionNamesCount++;
     }

@@ -43,18 +43,27 @@ ListGroupPoliciesResult& ListGroupPoliciesResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode policyNamesNodeParent = resultNode.FirstChild("PolicyNames");
-    XmlNode policyNamesNode = policyNamesNodeParent.FirstChild("member");
-    while(!policyNamesNode.IsNull())
+    XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
+    if(!policyNamesNode.IsNull())
     {
-      m_policyNames.push_back(StringUtils::Trim(policyNamesNode.GetText().c_str()));
-      policyNamesNode = policyNamesNode.NextNode("member");
-    }
+      XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      while(!policyNamesMember.IsNull())
+      {
+        m_policyNames.push_back(StringUtils::Trim(policyNamesMember.GetText().c_str()));
+        policyNamesMember = policyNamesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

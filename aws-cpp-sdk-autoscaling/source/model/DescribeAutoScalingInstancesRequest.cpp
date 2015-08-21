@@ -36,7 +36,7 @@ Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const
     unsigned instanceIdsCount = 1;
     for(auto& item : m_instanceIds)
     {
-      ss << "InstanceIds." << instanceIdsCount << "="
+      ss << "InstanceIds.member." << instanceIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }

@@ -41,13 +41,17 @@ ReceiveMessageResult& ReceiveMessageResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode messageNode = resultNode.FirstChild("Message");
-    while(!messageNode.IsNull())
+    XmlNode messagesNode = resultNode.FirstChild("Message");
+    if(!messagesNode.IsNull())
     {
-      m_messages.push_back(messageNode);
-      messageNode = messageNode.NextNode("Message");
-    }
+      XmlNode messageMember = messagesNode;
+      while(!messageMember.IsNull())
+      {
+        m_messages.push_back(messageMember);
+        messageMember = messageMember.NextNode("Message");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

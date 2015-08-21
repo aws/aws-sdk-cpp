@@ -60,14 +60,14 @@ ActiveTrustedSigners& ActiveTrustedSigners::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode signerNodeParent = resultNode.FirstChild("Signer");
-    XmlNode signerNode = signerNodeParent.FirstChild("member");
-    if(!signerNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!signerNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("Signer");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(signerNode);
-        signerNode = signerNode.NextNode("member");
+        m_items.push_back(itemsMember);
+        itemsMember = itemsMember.NextNode("Signer");
       }
 
       m_itemsHasBeenSet = true;

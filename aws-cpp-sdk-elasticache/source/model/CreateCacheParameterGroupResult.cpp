@@ -42,7 +42,10 @@ CreateCacheParameterGroupResult& CreateCacheParameterGroupResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode cacheParameterGroupNode = resultNode.FirstChild("CacheParameterGroup");
-    m_cacheParameterGroup = cacheParameterGroupNode;
+    if(!cacheParameterGroupNode.IsNull())
+    {
+      m_cacheParameterGroup = cacheParameterGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

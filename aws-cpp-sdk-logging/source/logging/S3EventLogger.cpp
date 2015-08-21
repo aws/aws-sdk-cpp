@@ -79,7 +79,7 @@ namespace Logging
         {
 
             resultMessage << "Wrote: " << putRequest.GetKey() << " with size " << putRequest.GetContentLength();
-            AWS_LOG_INFO(TAG, resultMessage.str().c_str());
+            AWS_LOGSTREAM_INFO(TAG, resultMessage.rdbuf());
 
             FlushResult result;
             result.key = putRequest.GetKey();
@@ -89,7 +89,7 @@ namespace Logging
         else
         {
             resultMessage <<"Error writing S3 file: " << putOutcome.GetError().GetMessage();
-            AWS_LOG_ERROR(TAG, resultMessage.str().c_str());
+            AWS_LOGSTREAM_ERROR(TAG, resultMessage.rdbuf());
             return FlushErrors::UNKNOWN;
         }
     }

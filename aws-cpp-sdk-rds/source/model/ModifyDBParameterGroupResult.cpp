@@ -42,7 +42,10 @@ ModifyDBParameterGroupResult& ModifyDBParameterGroupResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
-    m_dBParameterGroupName = StringUtils::Trim(dBParameterGroupNameNode.GetText().c_str());
+    if(!dBParameterGroupNameNode.IsNull())
+    {
+      m_dBParameterGroupName = StringUtils::Trim(dBParameterGroupNameNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -94,32 +94,32 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
       m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
       m_sourceTypeHasBeenSet = true;
     }
-    XmlNode sourceIdNodeParent = resultNode.FirstChild("SourceId");
-    XmlNode sourceIdNode = sourceIdNodeParent.FirstChild("member");
-    if(!sourceIdNode.IsNull())
+    XmlNode sourceIdsListNode = resultNode.FirstChild("SourceIdsList");
+    if(!sourceIdsListNode.IsNull())
     {
-      while(!sourceIdNode.IsNull())
+      XmlNode sourceIdsListMember = sourceIdsListNode.FirstChild("SourceId");
+      while(!sourceIdsListMember.IsNull())
       {
-        m_sourceIdsList.push_back(StringUtils::Trim(sourceIdNode.GetText().c_str()));
-        sourceIdNode = sourceIdNode.NextNode("member");
+        m_sourceIdsList.push_back(StringUtils::Trim(sourceIdsListMember.GetText().c_str()));
+        sourceIdsListMember = sourceIdsListMember.NextNode("SourceId");
       }
 
       m_sourceIdsListHasBeenSet = true;
     }
-    XmlNode eventCategoryNodeParent = resultNode.FirstChild("EventCategory");
-    XmlNode eventCategoryNode = eventCategoryNodeParent.FirstChild("member");
-    if(!eventCategoryNode.IsNull())
+    XmlNode eventCategoriesListNode = resultNode.FirstChild("EventCategoriesList");
+    if(!eventCategoriesListNode.IsNull())
     {
-      while(!eventCategoryNode.IsNull())
+      XmlNode eventCategoriesListMember = eventCategoriesListNode.FirstChild("EventCategory");
+      while(!eventCategoriesListMember.IsNull())
       {
-        m_eventCategoriesList.push_back(StringUtils::Trim(eventCategoryNode.GetText().c_str()));
-        eventCategoryNode = eventCategoryNode.NextNode("member");
+        m_eventCategoriesList.push_back(StringUtils::Trim(eventCategoriesListMember.GetText().c_str()));
+        eventCategoriesListMember = eventCategoriesListMember.NextNode("EventCategory");
       }
 
       m_eventCategoriesListHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!eventCategoryNode.IsNull())
+    if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;

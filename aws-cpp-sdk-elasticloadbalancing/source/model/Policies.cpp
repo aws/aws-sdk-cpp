@@ -44,38 +44,38 @@ Policies& Policies::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode appCookieStickinessPoliciesNodeParent = resultNode.FirstChild("AppCookieStickinessPolicies");
-    XmlNode appCookieStickinessPoliciesNode = appCookieStickinessPoliciesNodeParent.FirstChild("member");
+    XmlNode appCookieStickinessPoliciesNode = resultNode.FirstChild("AppCookieStickinessPolicies");
     if(!appCookieStickinessPoliciesNode.IsNull())
     {
-      while(!appCookieStickinessPoliciesNode.IsNull())
+      XmlNode appCookieStickinessPoliciesMember = appCookieStickinessPoliciesNode.FirstChild("member");
+      while(!appCookieStickinessPoliciesMember.IsNull())
       {
-        m_appCookieStickinessPolicies.push_back(appCookieStickinessPoliciesNode);
-        appCookieStickinessPoliciesNode = appCookieStickinessPoliciesNode.NextNode("member");
+        m_appCookieStickinessPolicies.push_back(appCookieStickinessPoliciesMember);
+        appCookieStickinessPoliciesMember = appCookieStickinessPoliciesMember.NextNode("member");
       }
 
       m_appCookieStickinessPoliciesHasBeenSet = true;
     }
-    XmlNode lBCookieStickinessPoliciesNodeParent = resultNode.FirstChild("LBCookieStickinessPolicies");
-    XmlNode lBCookieStickinessPoliciesNode = lBCookieStickinessPoliciesNodeParent.FirstChild("member");
+    XmlNode lBCookieStickinessPoliciesNode = resultNode.FirstChild("LBCookieStickinessPolicies");
     if(!lBCookieStickinessPoliciesNode.IsNull())
     {
-      while(!lBCookieStickinessPoliciesNode.IsNull())
+      XmlNode lBCookieStickinessPoliciesMember = lBCookieStickinessPoliciesNode.FirstChild("member");
+      while(!lBCookieStickinessPoliciesMember.IsNull())
       {
-        m_lBCookieStickinessPolicies.push_back(lBCookieStickinessPoliciesNode);
-        lBCookieStickinessPoliciesNode = lBCookieStickinessPoliciesNode.NextNode("member");
+        m_lBCookieStickinessPolicies.push_back(lBCookieStickinessPoliciesMember);
+        lBCookieStickinessPoliciesMember = lBCookieStickinessPoliciesMember.NextNode("member");
       }
 
       m_lBCookieStickinessPoliciesHasBeenSet = true;
     }
-    XmlNode otherPoliciesNodeParent = resultNode.FirstChild("OtherPolicies");
-    XmlNode otherPoliciesNode = otherPoliciesNodeParent.FirstChild("member");
+    XmlNode otherPoliciesNode = resultNode.FirstChild("OtherPolicies");
     if(!otherPoliciesNode.IsNull())
     {
-      while(!otherPoliciesNode.IsNull())
+      XmlNode otherPoliciesMember = otherPoliciesNode.FirstChild("member");
+      while(!otherPoliciesMember.IsNull())
       {
-        m_otherPolicies.push_back(StringUtils::Trim(otherPoliciesNode.GetText().c_str()));
-        otherPoliciesNode = otherPoliciesNode.NextNode("member");
+        m_otherPolicies.push_back(StringUtils::Trim(otherPoliciesMember.GetText().c_str()));
+        otherPoliciesMember = otherPoliciesMember.NextNode("member");
       }
 
       m_otherPoliciesHasBeenSet = true;

@@ -42,15 +42,21 @@ DescribeCacheParameterGroupsResult& DescribeCacheParameterGroupsResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheParameterGroupNodeParent = resultNode.FirstChild("CacheParameterGroup");
-    XmlNode cacheParameterGroupNode = cacheParameterGroupNodeParent.FirstChild("member");
-    while(!cacheParameterGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_cacheParameterGroups.push_back(cacheParameterGroupNode);
-      cacheParameterGroupNode = cacheParameterGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode cacheParameterGroupsNode = resultNode.FirstChild("CacheParameterGroups");
+    if(!cacheParameterGroupsNode.IsNull())
+    {
+      XmlNode cacheParameterGroupsMember = cacheParameterGroupsNode.FirstChild("CacheParameterGroup");
+      while(!cacheParameterGroupsMember.IsNull())
+      {
+        m_cacheParameterGroups.push_back(cacheParameterGroupsMember);
+        cacheParameterGroupsMember = cacheParameterGroupsMember.NextNode("CacheParameterGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

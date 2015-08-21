@@ -42,7 +42,10 @@ DescribeLoadBalancerAttributesResult& DescribeLoadBalancerAttributesResult::oper
   if(!resultNode.IsNull())
   {
     XmlNode loadBalancerAttributesNode = resultNode.FirstChild("LoadBalancerAttributes");
-    m_loadBalancerAttributes = loadBalancerAttributesNode;
+    if(!loadBalancerAttributesNode.IsNull())
+    {
+      m_loadBalancerAttributes = loadBalancerAttributesNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -17,7 +17,6 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iam/model/PolicyToSimulate.h>
 
 namespace Aws
 {
@@ -50,20 +49,23 @@ namespace Model
     inline GetContextKeysForPolicyRequest& WithGetPolicyFor(const char* value) { SetGetPolicyFor(value); return *this;}
 
     
-    inline const Aws::Vector<PolicyToSimulate>& GetPolicyInputList() const{ return m_policyInputList; }
+    inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
     
-    inline void SetPolicyInputList(const Aws::Vector<PolicyToSimulate>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
+    inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
     
-    inline GetContextKeysForPolicyRequest&  WithPolicyInputList(const Aws::Vector<PolicyToSimulate>& value) { SetPolicyInputList(value); return *this;}
+    inline GetContextKeysForPolicyRequest&  WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
     
-    inline GetContextKeysForPolicyRequest& AddPolicyInputList(const PolicyToSimulate& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+    inline GetContextKeysForPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+
+    
+    inline GetContextKeysForPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
   private:
     Aws::String m_getPolicyFor;
     bool m_getPolicyForHasBeenSet;
-    Aws::Vector<PolicyToSimulate> m_policyInputList;
+    Aws::Vector<Aws::String> m_policyInputList;
     bool m_policyInputListHasBeenSet;
   };
 

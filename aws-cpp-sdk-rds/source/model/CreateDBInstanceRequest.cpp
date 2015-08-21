@@ -58,7 +58,12 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_tdeCredentialPasswordHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false)
 {
 }
 
@@ -99,7 +104,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     unsigned dBSecurityGroupsCount = 1;
     for(auto& item : m_dBSecurityGroups)
     {
-      ss << "DBSecurityGroupName." << dBSecurityGroupsCount << "="
+      ss << "DBSecurityGroups.member." << dBSecurityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       dBSecurityGroupsCount++;
     }
@@ -109,7 +114,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     unsigned vpcSecurityGroupIdsCount = 1;
     for(auto& item : m_vpcSecurityGroupIds)
     {
-      ss << "VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
+      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcSecurityGroupIdsCount++;
     }
@@ -179,7 +184,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }
@@ -206,6 +211,18 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
   }
   ss << "Version=2014-10-31";
   return ss.str();

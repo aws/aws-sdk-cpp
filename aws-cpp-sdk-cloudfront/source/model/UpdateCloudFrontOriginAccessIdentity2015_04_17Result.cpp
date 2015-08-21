@@ -42,7 +42,10 @@ UpdateCloudFrontOriginAccessIdentity2015_04_17Result& UpdateCloudFrontOriginAcce
   if(!resultNode.IsNull())
   {
     XmlNode cloudFrontOriginAccessIdentityNode = resultNode.FirstChild("CloudFrontOriginAccessIdentity");
-    m_cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentityNode;
+    if(!cloudFrontOriginAccessIdentityNode.IsNull())
+    {
+      m_cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentityNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

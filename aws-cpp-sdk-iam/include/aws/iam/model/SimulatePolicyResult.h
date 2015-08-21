@@ -16,7 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/model/ResponseMetadata.h>
-#include <aws/iam/model/EvaluatedScenario.h>
+#include <aws/iam/model/EvaluationResult.h>
 
 namespace Aws
 {
@@ -45,15 +45,15 @@ namespace Model
     SimulatePolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     
-    inline const Aws::Vector<EvaluatedScenario>& GetEvaluatedScenarios() const{ return m_evaluatedScenarios; }
+    inline const Aws::Vector<EvaluationResult>& GetEvaluationResults() const{ return m_evaluationResults; }
     
-    inline void SetEvaluatedScenarios(const Aws::Vector<EvaluatedScenario>& value) { m_evaluatedScenarios = value; }
+    inline void SetEvaluationResults(const Aws::Vector<EvaluationResult>& value) { m_evaluationResults = value; }
 
     
-    inline SimulatePolicyResult&  WithEvaluatedScenarios(const Aws::Vector<EvaluatedScenario>& value) { SetEvaluatedScenarios(value); return *this;}
+    inline SimulatePolicyResult&  WithEvaluationResults(const Aws::Vector<EvaluationResult>& value) { SetEvaluationResults(value); return *this;}
 
     
-    inline SimulatePolicyResult& AddEvaluatedScenarios(const EvaluatedScenario& value) { m_evaluatedScenarios.push_back(value); return *this; }
+    inline SimulatePolicyResult& AddEvaluationResults(const EvaluationResult& value) { m_evaluationResults.push_back(value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -64,7 +64,7 @@ namespace Model
     inline SimulatePolicyResult&  WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
   private:
-    Aws::Vector<EvaluatedScenario> m_evaluatedScenarios;
+    Aws::Vector<EvaluationResult> m_evaluationResults;
     ResponseMetadata m_responseMetadata;
   };
 

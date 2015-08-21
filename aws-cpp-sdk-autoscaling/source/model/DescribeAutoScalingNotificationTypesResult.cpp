@@ -41,14 +41,17 @@ DescribeAutoScalingNotificationTypesResult& DescribeAutoScalingNotificationTypes
 
   if(!resultNode.IsNull())
   {
-    XmlNode autoScalingNotificationTypesNodeParent = resultNode.FirstChild("AutoScalingNotificationTypes");
-    XmlNode autoScalingNotificationTypesNode = autoScalingNotificationTypesNodeParent.FirstChild("member");
-    while(!autoScalingNotificationTypesNode.IsNull())
+    XmlNode autoScalingNotificationTypesNode = resultNode.FirstChild("AutoScalingNotificationTypes");
+    if(!autoScalingNotificationTypesNode.IsNull())
     {
-      m_autoScalingNotificationTypes.push_back(StringUtils::Trim(autoScalingNotificationTypesNode.GetText().c_str()));
-      autoScalingNotificationTypesNode = autoScalingNotificationTypesNode.NextNode("member");
-    }
+      XmlNode autoScalingNotificationTypesMember = autoScalingNotificationTypesNode.FirstChild("member");
+      while(!autoScalingNotificationTypesMember.IsNull())
+      {
+        m_autoScalingNotificationTypes.push_back(StringUtils::Trim(autoScalingNotificationTypesMember.GetText().c_str()));
+        autoScalingNotificationTypesMember = autoScalingNotificationTypesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

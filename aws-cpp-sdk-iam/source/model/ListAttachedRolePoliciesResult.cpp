@@ -43,18 +43,27 @@ ListAttachedRolePoliciesResult& ListAttachedRolePoliciesResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode attachedPoliciesNodeParent = resultNode.FirstChild("AttachedPolicies");
-    XmlNode attachedPoliciesNode = attachedPoliciesNodeParent.FirstChild("member");
-    while(!attachedPoliciesNode.IsNull())
+    XmlNode attachedPoliciesNode = resultNode.FirstChild("AttachedPolicies");
+    if(!attachedPoliciesNode.IsNull())
     {
-      m_attachedPolicies.push_back(attachedPoliciesNode);
-      attachedPoliciesNode = attachedPoliciesNode.NextNode("member");
-    }
+      XmlNode attachedPoliciesMember = attachedPoliciesNode.FirstChild("member");
+      while(!attachedPoliciesMember.IsNull())
+      {
+        m_attachedPolicies.push_back(attachedPoliciesMember);
+        attachedPoliciesMember = attachedPoliciesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

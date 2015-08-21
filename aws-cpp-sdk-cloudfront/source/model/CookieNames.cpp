@@ -50,14 +50,14 @@ CookieNames& CookieNames::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode nameNodeParent = resultNode.FirstChild("Name");
-    XmlNode nameNode = nameNodeParent.FirstChild("member");
-    if(!nameNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!nameNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("Name");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(nameNode.GetText().c_str()));
-        nameNode = nameNode.NextNode("member");
+        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        itemsMember = itemsMember.NextNode("Name");
       }
 
       m_itemsHasBeenSet = true;

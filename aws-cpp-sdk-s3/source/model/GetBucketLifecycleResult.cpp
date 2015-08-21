@@ -40,13 +40,17 @@ GetBucketLifecycleResult& GetBucketLifecycleResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode ruleNode = resultNode.FirstChild("${member.location}");
-    while(!ruleNode.IsNull())
+    XmlNode rulesNode = resultNode.FirstChild("Rules");
+    if(!rulesNode.IsNull())
     {
-      m_rules.push_back(ruleNode);
-      ruleNode = ruleNode.NextNode("Rule");
-    }
+      XmlNode rulesMember = rulesNode;
+      while(!rulesMember.IsNull())
+      {
+        m_rules.push_back(rulesMember);
+        rulesMember = rulesMember.NextNode("Rule");
+      }
 
+    }
   }
 
   return *this;

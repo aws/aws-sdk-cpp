@@ -43,18 +43,27 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceHealthListNodeParent = resultNode.FirstChild("InstanceHealthList");
-    XmlNode instanceHealthListNode = instanceHealthListNodeParent.FirstChild("member");
-    while(!instanceHealthListNode.IsNull())
+    XmlNode instanceHealthListNode = resultNode.FirstChild("InstanceHealthList");
+    if(!instanceHealthListNode.IsNull())
     {
-      m_instanceHealthList.push_back(instanceHealthListNode);
-      instanceHealthListNode = instanceHealthListNode.NextNode("member");
-    }
+      XmlNode instanceHealthListMember = instanceHealthListNode.FirstChild("member");
+      while(!instanceHealthListMember.IsNull())
+      {
+        m_instanceHealthList.push_back(instanceHealthListMember);
+        instanceHealthListMember = instanceHealthListMember.NextNode("member");
+      }
 
+    }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
-    m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
+    if(!refreshedAtNode.IsNull())
+    {
+      m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

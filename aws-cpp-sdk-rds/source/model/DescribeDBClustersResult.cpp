@@ -42,15 +42,21 @@ DescribeDBClustersResult& DescribeDBClustersResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBClusterNodeParent = resultNode.FirstChild("DBCluster");
-    XmlNode dBClusterNode = dBClusterNodeParent.FirstChild("member");
-    while(!dBClusterNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBClusters.push_back(dBClusterNode);
-      dBClusterNode = dBClusterNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBClustersNode = resultNode.FirstChild("DBClusters");
+    if(!dBClustersNode.IsNull())
+    {
+      XmlNode dBClustersMember = dBClustersNode.FirstChild("DBCluster");
+      while(!dBClustersMember.IsNull())
+      {
+        m_dBClusters.push_back(dBClustersMember);
+        dBClustersMember = dBClustersMember.NextNode("DBCluster");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

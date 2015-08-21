@@ -41,14 +41,17 @@ GetContextKeysForPolicyResult& GetContextKeysForPolicyResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode contextEntriesNodeParent = resultNode.FirstChild("ContextEntries");
-    XmlNode contextEntriesNode = contextEntriesNodeParent.FirstChild("member");
-    while(!contextEntriesNode.IsNull())
+    XmlNode contextEntriesNode = resultNode.FirstChild("ContextEntries");
+    if(!contextEntriesNode.IsNull())
     {
-      m_contextEntries.push_back(contextEntriesNode);
-      contextEntriesNode = contextEntriesNode.NextNode("member");
-    }
+      XmlNode contextEntriesMember = contextEntriesNode.FirstChild("member");
+      while(!contextEntriesMember.IsNull())
+      {
+        m_contextEntries.push_back(contextEntriesMember);
+        contextEntriesMember = contextEntriesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

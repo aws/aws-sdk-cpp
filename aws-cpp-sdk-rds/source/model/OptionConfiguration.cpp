@@ -62,38 +62,38 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
-    XmlNode dBSecurityGroupNameNodeParent = resultNode.FirstChild("DBSecurityGroupName");
-    XmlNode dBSecurityGroupNameNode = dBSecurityGroupNameNodeParent.FirstChild("member");
-    if(!dBSecurityGroupNameNode.IsNull())
+    XmlNode dBSecurityGroupMembershipsNode = resultNode.FirstChild("DBSecurityGroupMemberships");
+    if(!dBSecurityGroupMembershipsNode.IsNull())
     {
-      while(!dBSecurityGroupNameNode.IsNull())
+      XmlNode dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsNode.FirstChild("DBSecurityGroupName");
+      while(!dBSecurityGroupMembershipsMember.IsNull())
       {
-        m_dBSecurityGroupMemberships.push_back(StringUtils::Trim(dBSecurityGroupNameNode.GetText().c_str()));
-        dBSecurityGroupNameNode = dBSecurityGroupNameNode.NextNode("member");
+        m_dBSecurityGroupMemberships.push_back(StringUtils::Trim(dBSecurityGroupMembershipsMember.GetText().c_str()));
+        dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsMember.NextNode("DBSecurityGroupName");
       }
 
       m_dBSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupIdNodeParent = resultNode.FirstChild("VpcSecurityGroupId");
-    XmlNode vpcSecurityGroupIdNode = vpcSecurityGroupIdNodeParent.FirstChild("member");
-    if(!vpcSecurityGroupIdNode.IsNull())
+    XmlNode vpcSecurityGroupMembershipsNode = resultNode.FirstChild("VpcSecurityGroupMemberships");
+    if(!vpcSecurityGroupMembershipsNode.IsNull())
     {
-      while(!vpcSecurityGroupIdNode.IsNull())
+      XmlNode vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsNode.FirstChild("VpcSecurityGroupId");
+      while(!vpcSecurityGroupMembershipsMember.IsNull())
       {
-        m_vpcSecurityGroupMemberships.push_back(StringUtils::Trim(vpcSecurityGroupIdNode.GetText().c_str()));
-        vpcSecurityGroupIdNode = vpcSecurityGroupIdNode.NextNode("member");
+        m_vpcSecurityGroupMemberships.push_back(StringUtils::Trim(vpcSecurityGroupMembershipsMember.GetText().c_str()));
+        vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsMember.NextNode("VpcSecurityGroupId");
       }
 
       m_vpcSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode optionSettingNodeParent = resultNode.FirstChild("OptionSetting");
-    XmlNode optionSettingNode = optionSettingNodeParent.FirstChild("member");
-    if(!optionSettingNode.IsNull())
+    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
+    if(!optionSettingsNode.IsNull())
     {
-      while(!optionSettingNode.IsNull())
+      XmlNode optionSettingsMember = optionSettingsNode.FirstChild("OptionSetting");
+      while(!optionSettingsMember.IsNull())
       {
-        m_optionSettings.push_back(optionSettingNode);
-        optionSettingNode = optionSettingNode.NextNode("member");
+        m_optionSettings.push_back(optionSettingsMember);
+        optionSettingsMember = optionSettingsMember.NextNode("OptionSetting");
       }
 
       m_optionSettingsHasBeenSet = true;

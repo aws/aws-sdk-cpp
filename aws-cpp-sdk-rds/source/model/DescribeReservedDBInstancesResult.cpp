@@ -42,15 +42,21 @@ DescribeReservedDBInstancesResult& DescribeReservedDBInstancesResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode reservedDBInstanceNodeParent = resultNode.FirstChild("ReservedDBInstance");
-    XmlNode reservedDBInstanceNode = reservedDBInstanceNodeParent.FirstChild("member");
-    while(!reservedDBInstanceNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_reservedDBInstances.push_back(reservedDBInstanceNode);
-      reservedDBInstanceNode = reservedDBInstanceNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode reservedDBInstancesNode = resultNode.FirstChild("ReservedDBInstances");
+    if(!reservedDBInstancesNode.IsNull())
+    {
+      XmlNode reservedDBInstancesMember = reservedDBInstancesNode.FirstChild("ReservedDBInstance");
+      while(!reservedDBInstancesMember.IsNull())
+      {
+        m_reservedDBInstances.push_back(reservedDBInstancesMember);
+        reservedDBInstancesMember = reservedDBInstancesMember.NextNode("ReservedDBInstance");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

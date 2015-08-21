@@ -44,7 +44,7 @@ Aws::String AddPermissionRequest::SerializePayload() const
     unsigned aWSAccountIdCount = 1;
     for(auto& item : m_aWSAccountId)
     {
-      ss << "AWSAccountId." << aWSAccountIdCount << "="
+      ss << "AWSAccountId.member." << aWSAccountIdCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       aWSAccountIdCount++;
     }
@@ -54,7 +54,7 @@ Aws::String AddPermissionRequest::SerializePayload() const
     unsigned actionNameCount = 1;
     for(auto& item : m_actionName)
     {
-      ss << "ActionName." << actionNameCount << "="
+      ss << "ActionName.member." << actionNameCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       actionNameCount++;
     }

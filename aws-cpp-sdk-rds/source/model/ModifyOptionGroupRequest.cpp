@@ -41,7 +41,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
     unsigned optionsToIncludeCount = 1;
     for(auto& item : m_optionsToInclude)
     {
-      item.OutputToStream(ss, "OptionConfiguration.", optionsToIncludeCount, "");
+      item.OutputToStream(ss, "OptionsToInclude.member.", optionsToIncludeCount, "");
       optionsToIncludeCount++;
     }
   }
@@ -50,7 +50,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
     unsigned optionsToRemoveCount = 1;
     for(auto& item : m_optionsToRemove)
     {
-      ss << "OptionsToRemove." << optionsToRemoveCount << "="
+      ss << "OptionsToRemove.member." << optionsToRemoveCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       optionsToRemoveCount++;
     }

@@ -41,16 +41,22 @@ DescribeDBLogFilesResult& DescribeDBLogFilesResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode describeDBLogFilesDetailsNodeParent = resultNode.FirstChild("DescribeDBLogFilesDetails");
-    XmlNode describeDBLogFilesDetailsNode = describeDBLogFilesDetailsNodeParent.FirstChild("member");
-    while(!describeDBLogFilesDetailsNode.IsNull())
+    XmlNode describeDBLogFilesNode = resultNode.FirstChild("DescribeDBLogFiles");
+    if(!describeDBLogFilesNode.IsNull())
     {
-      m_describeDBLogFiles.push_back(describeDBLogFilesDetailsNode);
-      describeDBLogFilesDetailsNode = describeDBLogFilesDetailsNode.NextNode("member");
-    }
+      XmlNode describeDBLogFilesMember = describeDBLogFilesNode.FirstChild("DescribeDBLogFilesDetails");
+      while(!describeDBLogFilesMember.IsNull())
+      {
+        m_describeDBLogFiles.push_back(describeDBLogFilesMember);
+        describeDBLogFilesMember = describeDBLogFilesMember.NextNode("DescribeDBLogFilesDetails");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

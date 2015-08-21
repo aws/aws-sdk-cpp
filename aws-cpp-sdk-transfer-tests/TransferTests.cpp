@@ -29,6 +29,7 @@
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 
 #include <aws/transfer/UploadFileRequest.h>
 #include <aws/transfer/DownloadFileRequest.h>
@@ -50,6 +51,11 @@ static const char* SMALL_FILE_KEY = "SmallFileKey";
 
 static const char* MEDIUM_TEST_FILE_NAME = "MedTransferTestFile.txt";
 static const char* MEDIUM_FILE_KEY = "MediumFileKey";
+
+static const char* MULTI_PART_CONTENT_FILE = "MultiContentTransferTestFile.txt";
+static const char* MULTI_PART_CONTENT_KEY = "MultiContentKey";
+static const char* MULTI_PART_CONTENT_TEXT = "This is a test..##";
+static const char* MULTI_PART_CONTENT_DOWNLOAD = "MultiContentDownloadTransferTestFile.txt";
 
 static const char* CONTENT_TEST_FILE_TEXT = "This is a test..";
 static const char* CONTENT_TEST_FILE_NAME = "ContentTransferTestFile.txt";
@@ -76,7 +82,6 @@ static const char* testString = "S3 MultiPart upload Test File ";
 static const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
 static const uint32_t TEST_WAIT_TIMEOUT = 10;
 static const uint32_t TEST_WAIT_TIMEOUT_LONG = 200;
-static const uint32_t TEST_DOWNLOAD_WAIT_TIMEOUT_LONG = 300;
 
 namespace 
 {
@@ -91,13 +96,14 @@ public:
 
 protected:
 
-    static void CreateTestFile(const Aws::String& fileName, unsigned fileSize)
+    static void CreateTestFile(const Aws::String& fileName, unsigned fileSize, const Aws::String& putString)
     {
         Aws::OFStream testFile;
         testFile.open(fileName.c_str());
-        for (uint32_t i = testStrLen; i <= fileSize; i += testStrLen)
+        auto putStringLength = putString.length();
+        for (auto i = putStringLength; i <= fileSize; i += putStringLength)
         {
-            testFile << testString;
+            testFile << putString;
         }
         testFile.close();
     }
@@ -110,6 +116,54 @@ protected:
 
         testFile.close();
     }
+
+    static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
+    {
+        Aws::IFStream inFile1(fileName.c_str(), std::ios::binary | std::ios::ate);
+        Aws::IFStream inFile2(fileName2.c_str(), std::ios::binary | std::ios::ate);
+        Aws::StringStream testStr1;
+
+        const auto READ_BLOCK_SIZE = 1024 * 5;
+
+        const auto fileSize = inFile1.tellg();
+
+        if (!inFile1.good() || !inFile2.good())
+        {
+            return false;
+        }
+        if (fileSize != inFile2.tellg())
+        {
+            return false;
+        }
+
+        inFile1.seekg(0);
+        inFile2.seekg(0);
+
+        char inBlock1[READ_BLOCK_SIZE];
+        char inBlock2[READ_BLOCK_SIZE];
+
+        auto curFilePos = inFile1.tellg();
+        while (curFilePos < fileSize)
+        {
+            auto readAmount1 = inFile1.read(inBlock1, READ_BLOCK_SIZE).gcount();
+            auto readAmount2 = inFile2.read(inBlock2, READ_BLOCK_SIZE).gcount();
+            if (readAmount1 != readAmount2)
+            {
+                return false;
+            }
+            if (!readAmount1)
+            {
+                return true;
+            }
+            if (memcmp(inBlock1, inBlock2, READ_BLOCK_SIZE) != 0)
+            {
+                return false;
+            }
+            curFilePos = inFile1.tellg();
+        }
+        return true;
+    }
+
     static void SetUpTestCase()
     {
         // Create a client
@@ -128,12 +182,13 @@ protected:
 
         DeleteBucket(TEST_BUCKET_NAME);
 
-        CreateTestFile(TEST_FILE_NAME, MB5_BUFFER_SIZE);
-        CreateTestFile(SMALL_TEST_FILE_NAME, SMALL_TEST_SIZE);
-        CreateTestFile(BIG_TEST_FILE_NAME, BIG_TEST_SIZE);
-        CreateTestFile(MEDIUM_TEST_FILE_NAME, MEDIUM_TEST_SIZE);
+        CreateTestFile(TEST_FILE_NAME, MB5_BUFFER_SIZE, testString);
+        CreateTestFile(SMALL_TEST_FILE_NAME, SMALL_TEST_SIZE, testString);
+        CreateTestFile(BIG_TEST_FILE_NAME, BIG_TEST_SIZE, testString);
+        CreateTestFile(MEDIUM_TEST_FILE_NAME, MEDIUM_TEST_SIZE, testString);
         CreateTestFile(CONTENT_TEST_FILE_NAME, CONTENT_TEST_FILE_TEXT);
-        CreateTestFile(CANCEL_TEST_FILE_NAME, CANCEL_TEST_SIZE);
+        CreateTestFile(CANCEL_TEST_FILE_NAME, CANCEL_TEST_SIZE, testString);
+        CreateTestFile(MULTI_PART_CONTENT_FILE, MEDIUM_TEST_SIZE, MULTI_PART_CONTENT_TEXT);
     }
 
     static bool EmptyBucket(const Aws::String& bucketName)
@@ -252,7 +307,7 @@ protected:
         unsigned timeoutCount = 0;
         std::cout << "Initial Download progress - " << thisRequest->GetProgress() << std::endl;
         float totalProgress = thisRequest->GetProgress();
-        while (timeoutCount++ < TEST_DOWNLOAD_WAIT_TIMEOUT_LONG)
+        while (timeoutCount++ < TEST_WAIT_TIMEOUT_LONG)
         {
             if (thisRequest->IsDone() || (thisRequest->GetProgress() >= progressPercent && progressPercent < 100.0f))
             {
@@ -292,19 +347,21 @@ protected:
         remove(MEDIUM_TEST_FILE_NAME);
         remove(CONTENT_TEST_DOWNLOAD_FILE_NAME);
         remove(CANCEL_TEST_FILE_NAME);
+        remove(MULTI_PART_CONTENT_FILE);
+        remove(MULTI_PART_CONTENT_DOWNLOAD);
 
         const uint32_t cConcurrentTestDownloads = 5;
         for (uint32_t i = 1; i <= cConcurrentTestDownloads; ++i)
         {
             Aws::String testFile(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-            testFile += std::to_string(i).c_str();
+            testFile += StringUtils::to_string(i);
             remove(testFile.c_str());
         }
         const uint32_t cConcurrentBigTestDownloads = 3;
         for (uint32_t i = 1; i <= cConcurrentBigTestDownloads; ++i)
         {
             Aws::String testFile(BIG_TEST_FILE_NAME);
-            testFile += std::to_string(i).c_str();
+            testFile += StringUtils::to_string(i);
             remove(testFile.c_str());
         }
         m_s3Client = nullptr;
@@ -327,7 +384,10 @@ std::shared_ptr<TransferClient> TransferTests::m_transferClient(nullptr);
 
 TEST_F(TransferTests, Test1)
 {
-
+    if (EmptyBucket(TEST_BUCKET_NAME))
+    {
+        WaitForBucketToEmpty(TEST_BUCKET_NAME);
+    }
     GetObjectRequest getObjectRequest;
     getObjectRequest.SetBucket(TEST_BUCKET_NAME);
     getObjectRequest.SetKey(TEST_FILE_NAME);
@@ -342,7 +402,7 @@ TEST_F(TransferTests, Test1)
     // Test with default behavior of using file name as key
     std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(TEST_FILE_NAME, TEST_BUCKET_NAME, "", "", cCreateBucket);
 
-    EXPECT_EQ(requestPtr->GetTotalParts(), 1); // Should be just under 5 megs
+    EXPECT_EQ(requestPtr->GetTotalParts(), 1u); // Should be just under 5 megs
 
     EXPECT_FALSE(requestPtr->IsDone());
 
@@ -364,7 +424,7 @@ TEST_F(TransferTests, Test1)
 
     ListObjectsOutcome listOutcome = m_s3Client->ListObjects(listRequest);
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 }
 
 TEST_F(TransferTests, SmallTest)
@@ -387,7 +447,7 @@ TEST_F(TransferTests, SmallTest)
     // Not creating the bucket.. it should be there
     std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(SMALL_TEST_FILE_NAME, TEST_BUCKET_NAME, SMALL_FILE_KEY, "", true);
 
-    EXPECT_EQ(requestPtr->GetTotalParts(), 1); // Should be about 2.5 megs
+    EXPECT_EQ(requestPtr->GetTotalParts(), 1u); // Should be about 2.5 megs
 
     EXPECT_FALSE(requestPtr->IsDone());
 
@@ -409,7 +469,7 @@ TEST_F(TransferTests, SmallTest)
     getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_TRUE(getObjectOutcome.IsSuccess());
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 }
 
 TEST_F(TransferTests, ContentTest)
@@ -431,7 +491,7 @@ TEST_F(TransferTests, ContentTest)
 
     std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CONTENT_TEST_FILE_NAME, TEST_BUCKET_NAME, CONTENT_FILE_KEY, "");
 
-    EXPECT_EQ(requestPtr->GetTotalParts(), 1); // Should be tiny
+    EXPECT_EQ(requestPtr->GetTotalParts(), 1u); // Should be tiny
 
     EXPECT_FALSE(requestPtr->IsDone());
 
@@ -457,7 +517,7 @@ TEST_F(TransferTests, ContentTest)
     ss << getObjectOutcome.GetResult().GetBody().rdbuf();
     EXPECT_EQ(CONTENT_TEST_FILE_TEXT, ss.str());
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 }
 
 TEST_F(TransferTests, MediumTest)
@@ -508,9 +568,9 @@ TEST_F(TransferTests, MediumTest)
 
     ListObjectsOutcome listOutcome = m_s3Client->ListObjects(listRequest);
 
-    ASSERT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    ASSERT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents()[0].GetSize(), fileSize);
+    EXPECT_EQ(static_cast<uint64_t>(listOutcome.GetResult().GetContents()[0].GetSize()), fileSize);
 
     std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(MEDIUM_TEST_FILE_NAME, TEST_BUCKET_NAME, MEDIUM_FILE_KEY);
 
@@ -574,9 +634,9 @@ TEST_F(TransferTests, BigTest)
 
     ListObjectsOutcome listOutcome = m_s3Client->ListObjects(listRequest);
 
-    ASSERT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    ASSERT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents()[0].GetSize(), fileSize);
+    EXPECT_EQ(static_cast<uint64_t>(listOutcome.GetResult().GetContents()[0].GetSize()), fileSize);
 
     std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(BIG_TEST_FILE_NAME, TEST_BUCKET_NAME, BIG_FILE_KEY);
 
@@ -621,11 +681,11 @@ TEST_F(TransferTests, CancelTest)
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
 
-    EXPECT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0);
+    EXPECT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0u);
 
     EXPECT_FALSE(requestPtr->CompletedSuccessfully());
 
-    EXPECT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0);
+    EXPECT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0u);
 }
 
 
@@ -648,7 +708,7 @@ TEST_F(TransferTests, DownloadContentTest)
 
     std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CONTENT_TEST_FILE_NAME, TEST_BUCKET_NAME, CONTENT_FILE_KEY, "", true);
 
-    EXPECT_EQ(requestPtr->GetTotalParts(), 1); // Should be tiny
+    EXPECT_EQ(requestPtr->GetTotalParts(), 1u); // Should be tiny
 
     EXPECT_FALSE(requestPtr->IsDone());
 
@@ -669,7 +729,7 @@ TEST_F(TransferTests, DownloadContentTest)
 
     EXPECT_TRUE(listOutcome.IsSuccess());
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 
     std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(CONTENT_TEST_DOWNLOAD_FILE_NAME, TEST_BUCKET_NAME, CONTENT_FILE_KEY);
 
@@ -687,6 +747,56 @@ TEST_F(TransferTests, DownloadContentTest)
     }
     EXPECT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
 
+}
+
+TEST_F(TransferTests, MultiPartContentTest)
+{
+    if (EmptyBucket(TEST_BUCKET_NAME))
+    {
+        WaitForBucketToEmpty(TEST_BUCKET_NAME);
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(TEST_BUCKET_NAME);
+    getObjectRequest.SetKey(MULTI_PART_CONTENT_KEY);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    ListMultipartUploadsRequest listMultipartRequest;
+    listMultipartRequest.SetBucket(TEST_BUCKET_NAME);
+
+    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(MULTI_PART_CONTENT_FILE, TEST_BUCKET_NAME, MULTI_PART_CONTENT_KEY, "", true);
+
+    EXPECT_EQ(requestPtr->GetTotalParts(), PARTS_IN_MEDIUM_TEST); // > 1 part
+
+    EXPECT_FALSE(requestPtr->IsDone());
+
+    requestPtr->WaitUntilDone();
+
+    EXPECT_TRUE(requestPtr->IsDone());
+
+    EXPECT_TRUE(requestPtr->CompletedSuccessfully());
+
+    WaitForObjectToPropagate(TEST_BUCKET_NAME, MULTI_PART_CONTENT_KEY);
+    ListObjectsRequest listRequest;
+    listRequest.SetBucket(TEST_BUCKET_NAME);
+
+    ListObjectsOutcome listOutcome = m_s3Client->ListObjects(listRequest);
+
+    EXPECT_TRUE(listOutcome.IsSuccess());
+
+    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+
+    std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(MULTI_PART_CONTENT_DOWNLOAD, TEST_BUCKET_NAME, MULTI_PART_CONTENT_KEY);
+
+    downloadPtr->WaitUntilDone();
+
+    EXPECT_TRUE(downloadPtr->IsDone());
+
+    EXPECT_TRUE(downloadPtr->CompletedSuccessfully());
+
+    EXPECT_TRUE(AreFilesSame(MULTI_PART_CONTENT_DOWNLOAD, MULTI_PART_CONTENT_FILE));
 }
 
 TEST_F(TransferTests, MultiDownloadTest)
@@ -708,7 +818,7 @@ TEST_F(TransferTests, MultiDownloadTest)
 
     std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CONTENT_TEST_FILE_NAME, TEST_BUCKET_NAME, CONTENT_FILE_KEY, "", true);
 
-    EXPECT_EQ(requestPtr->GetTotalParts(), 1); // Should be tiny
+    EXPECT_EQ(requestPtr->GetTotalParts(), 1u); // Should be tiny
 
     EXPECT_FALSE(requestPtr->IsDone());
 
@@ -729,7 +839,7 @@ TEST_F(TransferTests, MultiDownloadTest)
 
     EXPECT_TRUE(listOutcome.IsSuccess());
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1);
+    EXPECT_EQ(listOutcome.GetResult().GetContents().size(), 1u);
 
     Aws::String dir1(CONTENT_TEST_DOWNLOAD_FILE_NAME);
     dir1 += "1";
@@ -879,12 +989,11 @@ TEST_F(TransferTests, MultiBigTest)
 
     ListObjectsOutcome listOutcome = m_s3Client->ListObjects(listRequest);
 
-    ASSERT_EQ(listOutcome.GetResult().GetContents().size(), 3);
+    ASSERT_EQ(listOutcome.GetResult().GetContents().size(), 3u);
 
-    EXPECT_EQ(listOutcome.GetResult().GetContents()[0].GetSize(), fileSize);
-    EXPECT_EQ(listOutcome.GetResult().GetContents()[1].GetSize(), fileSize);
-
-    EXPECT_EQ(listOutcome.GetResult().GetContents()[2].GetSize(), fileSize);
+    EXPECT_EQ(static_cast<uint64_t>(listOutcome.GetResult().GetContents()[0].GetSize()), fileSize);
+    EXPECT_EQ(static_cast<uint64_t>(listOutcome.GetResult().GetContents()[1].GetSize()), fileSize);
+    EXPECT_EQ(static_cast<uint64_t>(listOutcome.GetResult().GetContents()[2].GetSize()), fileSize);
 
 
 }

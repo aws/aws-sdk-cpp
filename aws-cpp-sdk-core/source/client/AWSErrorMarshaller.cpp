@@ -30,31 +30,30 @@ AWSErrorMarshaller::AWSErrorMarshaller()
 AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionName, const Aws::String& message) const
 {
     auto locationOfPound = exceptionName.find_first_of('#');
-
+    auto locationOfColon = exceptionName.find_first_of(':');
+    Aws::String formalExceptionName;
 
     if (locationOfPound != Aws::String::npos)
     {
-        Aws::String formalExceptionName = exceptionName.substr(locationOfPound + 1);
-        AWSError<CoreErrors> error = FindErrorByName(formalExceptionName.c_str());
-        if (error.GetErrorType() != CoreErrors::UNKNOWN)
-        {
-            AWS_LOG_WARN(logTag, "Encountered AWSError\n%s\n%s:", formalExceptionName.c_str(), message.c_str());
-            error.SetExceptionName(formalExceptionName);
-            error.SetMessage(message);
-            return error;
-        }
+        formalExceptionName = exceptionName.substr(locationOfPound + 1);       
+    }
+    else if (locationOfColon != Aws::String::npos)
+    {
+        formalExceptionName = exceptionName.substr(0, locationOfColon);       
     }
     else
     {
-        AWSError<CoreErrors> error = FindErrorByName(exceptionName.c_str());
-        AWS_LOG_WARN(logTag, "Encountered AWSError\n%s\n%s:", exceptionName.c_str(), message.c_str());
-        if (error.GetErrorType() != CoreErrors::UNKNOWN)
-        {
-            error.SetExceptionName(exceptionName);
-            error.SetMessage(message);
-            return error;
-        }
+        formalExceptionName = exceptionName;
     }
+
+    AWSError<CoreErrors> error = FindErrorByName(formalExceptionName.c_str());
+    if (error.GetErrorType() != CoreErrors::UNKNOWN)
+    {
+        AWS_LOG_WARN(logTag, "Encountered AWSError\n%s\n%s:", formalExceptionName.c_str(), message.c_str());
+        error.SetExceptionName(formalExceptionName);
+        error.SetMessage(message);
+        return error;
+    }    
 
     AWS_LOG_WARN(logTag, "Encountered Unknown AWSError\n%s\n%s:", exceptionName.c_str(), message.c_str());
 

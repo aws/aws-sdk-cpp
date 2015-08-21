@@ -38,7 +38,7 @@ Aws::String DescribeApplicationVersionsRequest::SerializePayload() const
     unsigned versionLabelsCount = 1;
     for(auto& item : m_versionLabels)
     {
-      ss << "VersionLabels." << versionLabelsCount << "="
+      ss << "VersionLabels.member." << versionLabelsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       versionLabelsCount++;
     }

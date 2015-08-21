@@ -50,14 +50,14 @@ Paths& Paths::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode pathNodeParent = resultNode.FirstChild("Path");
-    XmlNode pathNode = pathNodeParent.FirstChild("member");
-    if(!pathNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!pathNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("Path");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(pathNode.GetText().c_str()));
-        pathNode = pathNode.NextNode("member");
+        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        itemsMember = itemsMember.NextNode("Path");
       }
 
       m_itemsHasBeenSet = true;

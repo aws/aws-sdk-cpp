@@ -41,7 +41,10 @@ ListCloudFrontOriginAccessIdentities2015_04_17Result& ListCloudFrontOriginAccess
   if(!resultNode.IsNull())
   {
     XmlNode cloudFrontOriginAccessIdentityListNode = resultNode.FirstChild("CloudFrontOriginAccessIdentityList");
-    m_cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityListNode;
+    if(!cloudFrontOriginAccessIdentityListNode.IsNull())
+    {
+      m_cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityListNode;
+    }
   }
 
   return *this;

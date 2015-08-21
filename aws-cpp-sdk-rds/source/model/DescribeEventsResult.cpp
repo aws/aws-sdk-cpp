@@ -42,15 +42,21 @@ DescribeEventsResult& DescribeEventsResult::operator =(const AmazonWebServiceRes
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode eventNodeParent = resultNode.FirstChild("Event");
-    XmlNode eventNode = eventNodeParent.FirstChild("member");
-    while(!eventNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_events.push_back(eventNode);
-      eventNode = eventNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode eventsNode = resultNode.FirstChild("Events");
+    if(!eventsNode.IsNull())
+    {
+      XmlNode eventsMember = eventsNode.FirstChild("Event");
+      while(!eventsMember.IsNull())
+      {
+        m_events.push_back(eventsMember);
+        eventsMember = eventsMember.NextNode("Event");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

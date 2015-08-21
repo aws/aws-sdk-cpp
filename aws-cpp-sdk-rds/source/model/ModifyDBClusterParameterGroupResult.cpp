@@ -42,7 +42,10 @@ ModifyDBClusterParameterGroupResult& ModifyDBClusterParameterGroupResult::operat
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterParameterGroupNameNode = resultNode.FirstChild("DBClusterParameterGroupName");
-    m_dBClusterParameterGroupName = StringUtils::Trim(dBClusterParameterGroupNameNode.GetText().c_str());
+    if(!dBClusterParameterGroupNameNode.IsNull())
+    {
+      m_dBClusterParameterGroupName = StringUtils::Trim(dBClusterParameterGroupNameNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

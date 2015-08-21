@@ -51,10 +51,11 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
     XmlNode rulesNode = resultNode.FirstChild("Rules");
     if(!rulesNode.IsNull())
     {
-      while(!rulesNode.IsNull())
+      XmlNode rulesMember = rulesNode;
+      while(!rulesMember.IsNull())
       {
-        m_rules.push_back(rulesNode);
-        rulesNode = rulesNode.NextNode("Rules");
+        m_rules.push_back(rulesMember);
+        rulesMember = rulesMember.NextNode("Rule");
       }
 
       m_rulesHasBeenSet = true;

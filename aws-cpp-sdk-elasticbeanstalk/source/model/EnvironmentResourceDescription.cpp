@@ -58,74 +58,74 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
       m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
       m_environmentNameHasBeenSet = true;
     }
-    XmlNode autoScalingGroupsNodeParent = resultNode.FirstChild("AutoScalingGroups");
-    XmlNode autoScalingGroupsNode = autoScalingGroupsNodeParent.FirstChild("member");
+    XmlNode autoScalingGroupsNode = resultNode.FirstChild("AutoScalingGroups");
     if(!autoScalingGroupsNode.IsNull())
     {
-      while(!autoScalingGroupsNode.IsNull())
+      XmlNode autoScalingGroupsMember = autoScalingGroupsNode.FirstChild("member");
+      while(!autoScalingGroupsMember.IsNull())
       {
-        m_autoScalingGroups.push_back(autoScalingGroupsNode);
-        autoScalingGroupsNode = autoScalingGroupsNode.NextNode("member");
+        m_autoScalingGroups.push_back(autoScalingGroupsMember);
+        autoScalingGroupsMember = autoScalingGroupsMember.NextNode("member");
       }
 
       m_autoScalingGroupsHasBeenSet = true;
     }
-    XmlNode instancesNodeParent = resultNode.FirstChild("Instances");
-    XmlNode instancesNode = instancesNodeParent.FirstChild("member");
+    XmlNode instancesNode = resultNode.FirstChild("Instances");
     if(!instancesNode.IsNull())
     {
-      while(!instancesNode.IsNull())
+      XmlNode instancesMember = instancesNode.FirstChild("member");
+      while(!instancesMember.IsNull())
       {
-        m_instances.push_back(instancesNode);
-        instancesNode = instancesNode.NextNode("member");
+        m_instances.push_back(instancesMember);
+        instancesMember = instancesMember.NextNode("member");
       }
 
       m_instancesHasBeenSet = true;
     }
-    XmlNode launchConfigurationsNodeParent = resultNode.FirstChild("LaunchConfigurations");
-    XmlNode launchConfigurationsNode = launchConfigurationsNodeParent.FirstChild("member");
+    XmlNode launchConfigurationsNode = resultNode.FirstChild("LaunchConfigurations");
     if(!launchConfigurationsNode.IsNull())
     {
-      while(!launchConfigurationsNode.IsNull())
+      XmlNode launchConfigurationsMember = launchConfigurationsNode.FirstChild("member");
+      while(!launchConfigurationsMember.IsNull())
       {
-        m_launchConfigurations.push_back(launchConfigurationsNode);
-        launchConfigurationsNode = launchConfigurationsNode.NextNode("member");
+        m_launchConfigurations.push_back(launchConfigurationsMember);
+        launchConfigurationsMember = launchConfigurationsMember.NextNode("member");
       }
 
       m_launchConfigurationsHasBeenSet = true;
     }
-    XmlNode loadBalancersNodeParent = resultNode.FirstChild("LoadBalancers");
-    XmlNode loadBalancersNode = loadBalancersNodeParent.FirstChild("member");
+    XmlNode loadBalancersNode = resultNode.FirstChild("LoadBalancers");
     if(!loadBalancersNode.IsNull())
     {
-      while(!loadBalancersNode.IsNull())
+      XmlNode loadBalancersMember = loadBalancersNode.FirstChild("member");
+      while(!loadBalancersMember.IsNull())
       {
-        m_loadBalancers.push_back(loadBalancersNode);
-        loadBalancersNode = loadBalancersNode.NextNode("member");
+        m_loadBalancers.push_back(loadBalancersMember);
+        loadBalancersMember = loadBalancersMember.NextNode("member");
       }
 
       m_loadBalancersHasBeenSet = true;
     }
-    XmlNode triggersNodeParent = resultNode.FirstChild("Triggers");
-    XmlNode triggersNode = triggersNodeParent.FirstChild("member");
+    XmlNode triggersNode = resultNode.FirstChild("Triggers");
     if(!triggersNode.IsNull())
     {
-      while(!triggersNode.IsNull())
+      XmlNode triggersMember = triggersNode.FirstChild("member");
+      while(!triggersMember.IsNull())
       {
-        m_triggers.push_back(triggersNode);
-        triggersNode = triggersNode.NextNode("member");
+        m_triggers.push_back(triggersMember);
+        triggersMember = triggersMember.NextNode("member");
       }
 
       m_triggersHasBeenSet = true;
     }
-    XmlNode queuesNodeParent = resultNode.FirstChild("Queues");
-    XmlNode queuesNode = queuesNodeParent.FirstChild("member");
+    XmlNode queuesNode = resultNode.FirstChild("Queues");
     if(!queuesNode.IsNull())
     {
-      while(!queuesNode.IsNull())
+      XmlNode queuesMember = queuesNode.FirstChild("member");
+      while(!queuesMember.IsNull())
       {
-        m_queues.push_back(queuesNode);
-        queuesNode = queuesNode.NextNode("member");
+        m_queues.push_back(queuesMember);
+        queuesMember = queuesMember.NextNode("member");
       }
 
       m_queuesHasBeenSet = true;

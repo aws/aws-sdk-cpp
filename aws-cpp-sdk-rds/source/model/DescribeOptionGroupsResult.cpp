@@ -41,16 +41,22 @@ DescribeOptionGroupsResult& DescribeOptionGroupsResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode optionGroupNodeParent = resultNode.FirstChild("OptionGroup");
-    XmlNode optionGroupNode = optionGroupNodeParent.FirstChild("member");
-    while(!optionGroupNode.IsNull())
+    XmlNode optionGroupsListNode = resultNode.FirstChild("OptionGroupsList");
+    if(!optionGroupsListNode.IsNull())
     {
-      m_optionGroupsList.push_back(optionGroupNode);
-      optionGroupNode = optionGroupNode.NextNode("member");
-    }
+      XmlNode optionGroupsListMember = optionGroupsListNode.FirstChild("OptionGroup");
+      while(!optionGroupsListMember.IsNull())
+      {
+        m_optionGroupsList.push_back(optionGroupsListMember);
+        optionGroupsListMember = optionGroupsListMember.NextNode("OptionGroup");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

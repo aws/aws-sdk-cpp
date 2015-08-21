@@ -41,16 +41,22 @@ DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode loadBalancerDescriptionsNodeParent = resultNode.FirstChild("LoadBalancerDescriptions");
-    XmlNode loadBalancerDescriptionsNode = loadBalancerDescriptionsNodeParent.FirstChild("member");
-    while(!loadBalancerDescriptionsNode.IsNull())
+    XmlNode loadBalancerDescriptionsNode = resultNode.FirstChild("LoadBalancerDescriptions");
+    if(!loadBalancerDescriptionsNode.IsNull())
     {
-      m_loadBalancerDescriptions.push_back(loadBalancerDescriptionsNode);
-      loadBalancerDescriptionsNode = loadBalancerDescriptionsNode.NextNode("member");
-    }
+      XmlNode loadBalancerDescriptionsMember = loadBalancerDescriptionsNode.FirstChild("member");
+      while(!loadBalancerDescriptionsMember.IsNull())
+      {
+        m_loadBalancerDescriptions.push_back(loadBalancerDescriptionsMember);
+        loadBalancerDescriptionsMember = loadBalancerDescriptionsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
-    m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+    if(!nextMarkerNode.IsNull())
+    {
+      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

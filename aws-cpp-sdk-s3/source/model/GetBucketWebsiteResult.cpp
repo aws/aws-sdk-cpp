@@ -41,19 +41,31 @@ GetBucketWebsiteResult& GetBucketWebsiteResult::operator =(const AmazonWebServic
   if(!resultNode.IsNull())
   {
     XmlNode redirectAllRequestsToNode = resultNode.FirstChild("RedirectAllRequestsTo");
-    m_redirectAllRequestsTo = redirectAllRequestsToNode;
-    XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
-    m_indexDocument = indexDocumentNode;
-    XmlNode errorDocumentNode = resultNode.FirstChild("ErrorDocument");
-    m_errorDocument = errorDocumentNode;
-    XmlNode routingRuleNodeParent = resultNode.FirstChild("RoutingRules");
-    XmlNode routingRuleNode = routingRuleNodeParent.FirstChild("RoutingRule");
-    while(!routingRuleNode.IsNull())
+    if(!redirectAllRequestsToNode.IsNull())
     {
-      m_routingRules.push_back(routingRuleNode);
-      routingRuleNode = routingRuleNode.NextNode("RoutingRule");
+      m_redirectAllRequestsTo = redirectAllRequestsToNode;
     }
+    XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
+    if(!indexDocumentNode.IsNull())
+    {
+      m_indexDocument = indexDocumentNode;
+    }
+    XmlNode errorDocumentNode = resultNode.FirstChild("ErrorDocument");
+    if(!errorDocumentNode.IsNull())
+    {
+      m_errorDocument = errorDocumentNode;
+    }
+    XmlNode routingRulesNode = resultNode.FirstChild("RoutingRules");
+    if(!routingRulesNode.IsNull())
+    {
+      XmlNode routingRulesMember = routingRulesNode.FirstChild("RoutingRule");
+      while(!routingRulesMember.IsNull())
+      {
+        m_routingRules.push_back(routingRulesMember);
+        routingRulesMember = routingRulesMember.NextNode("RoutingRule");
+      }
 
+    }
   }
 
   return *this;

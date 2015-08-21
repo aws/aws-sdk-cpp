@@ -43,18 +43,27 @@ ListRolesResult& ListRolesResult::operator =(const AmazonWebServiceResult<XmlDoc
 
   if(!resultNode.IsNull())
   {
-    XmlNode rolesNodeParent = resultNode.FirstChild("Roles");
-    XmlNode rolesNode = rolesNodeParent.FirstChild("member");
-    while(!rolesNode.IsNull())
+    XmlNode rolesNode = resultNode.FirstChild("Roles");
+    if(!rolesNode.IsNull())
     {
-      m_roles.push_back(rolesNode);
-      rolesNode = rolesNode.NextNode("member");
-    }
+      XmlNode rolesMember = rolesNode.FirstChild("member");
+      while(!rolesMember.IsNull())
+      {
+        m_roles.push_back(rolesMember);
+        rolesMember = rolesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

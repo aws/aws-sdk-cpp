@@ -90,38 +90,38 @@ Option& Option::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
-    XmlNode optionSettingNodeParent = resultNode.FirstChild("OptionSetting");
-    XmlNode optionSettingNode = optionSettingNodeParent.FirstChild("member");
-    if(!optionSettingNode.IsNull())
+    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
+    if(!optionSettingsNode.IsNull())
     {
-      while(!optionSettingNode.IsNull())
+      XmlNode optionSettingsMember = optionSettingsNode.FirstChild("OptionSetting");
+      while(!optionSettingsMember.IsNull())
       {
-        m_optionSettings.push_back(optionSettingNode);
-        optionSettingNode = optionSettingNode.NextNode("member");
+        m_optionSettings.push_back(optionSettingsMember);
+        optionSettingsMember = optionSettingsMember.NextNode("OptionSetting");
       }
 
       m_optionSettingsHasBeenSet = true;
     }
-    XmlNode dBSecurityGroupNodeParent = resultNode.FirstChild("DBSecurityGroup");
-    XmlNode dBSecurityGroupNode = dBSecurityGroupNodeParent.FirstChild("member");
-    if(!dBSecurityGroupNode.IsNull())
+    XmlNode dBSecurityGroupMembershipsNode = resultNode.FirstChild("DBSecurityGroupMemberships");
+    if(!dBSecurityGroupMembershipsNode.IsNull())
     {
-      while(!dBSecurityGroupNode.IsNull())
+      XmlNode dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsNode.FirstChild("DBSecurityGroup");
+      while(!dBSecurityGroupMembershipsMember.IsNull())
       {
-        m_dBSecurityGroupMemberships.push_back(dBSecurityGroupNode);
-        dBSecurityGroupNode = dBSecurityGroupNode.NextNode("member");
+        m_dBSecurityGroupMemberships.push_back(dBSecurityGroupMembershipsMember);
+        dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsMember.NextNode("DBSecurityGroup");
       }
 
       m_dBSecurityGroupMembershipsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupMembershipNodeParent = resultNode.FirstChild("VpcSecurityGroupMembership");
-    XmlNode vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNodeParent.FirstChild("member");
-    if(!vpcSecurityGroupMembershipNode.IsNull())
+    XmlNode vpcSecurityGroupMembershipsNode = resultNode.FirstChild("VpcSecurityGroupMemberships");
+    if(!vpcSecurityGroupMembershipsNode.IsNull())
     {
-      while(!vpcSecurityGroupMembershipNode.IsNull())
+      XmlNode vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsNode.FirstChild("VpcSecurityGroupMembership");
+      while(!vpcSecurityGroupMembershipsMember.IsNull())
       {
-        m_vpcSecurityGroupMemberships.push_back(vpcSecurityGroupMembershipNode);
-        vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNode.NextNode("member");
+        m_vpcSecurityGroupMemberships.push_back(vpcSecurityGroupMembershipsMember);
+        vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsMember.NextNode("VpcSecurityGroupMembership");
       }
 
       m_vpcSecurityGroupMembershipsHasBeenSet = true;

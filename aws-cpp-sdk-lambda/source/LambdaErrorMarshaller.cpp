@@ -27,5 +27,5 @@ AWSError<CoreErrors> LambdaErrorMarshaller::FindErrorByName(const char* errorNam
     return error;
   }
 
-  return AWSRestfulJsonErrorMarshaller::FindErrorByName(errorName);
+  return AWSErrorMarshaller::FindErrorByName(errorName);
 }

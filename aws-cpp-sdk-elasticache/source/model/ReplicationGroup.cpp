@@ -78,38 +78,38 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_pendingModifiedValues = pendingModifiedValuesNode;
       m_pendingModifiedValuesHasBeenSet = true;
     }
-    XmlNode clusterIdNodeParent = resultNode.FirstChild("ClusterId");
-    XmlNode clusterIdNode = clusterIdNodeParent.FirstChild("member");
-    if(!clusterIdNode.IsNull())
+    XmlNode memberClustersNode = resultNode.FirstChild("MemberClusters");
+    if(!memberClustersNode.IsNull())
     {
-      while(!clusterIdNode.IsNull())
+      XmlNode memberClustersMember = memberClustersNode.FirstChild("ClusterId");
+      while(!memberClustersMember.IsNull())
       {
-        m_memberClusters.push_back(StringUtils::Trim(clusterIdNode.GetText().c_str()));
-        clusterIdNode = clusterIdNode.NextNode("member");
+        m_memberClusters.push_back(StringUtils::Trim(memberClustersMember.GetText().c_str()));
+        memberClustersMember = memberClustersMember.NextNode("ClusterId");
       }
 
       m_memberClustersHasBeenSet = true;
     }
-    XmlNode nodeGroupNodeParent = resultNode.FirstChild("NodeGroup");
-    XmlNode nodeGroupNode = nodeGroupNodeParent.FirstChild("member");
-    if(!nodeGroupNode.IsNull())
+    XmlNode nodeGroupsNode = resultNode.FirstChild("NodeGroups");
+    if(!nodeGroupsNode.IsNull())
     {
-      while(!nodeGroupNode.IsNull())
+      XmlNode nodeGroupsMember = nodeGroupsNode.FirstChild("NodeGroup");
+      while(!nodeGroupsMember.IsNull())
       {
-        m_nodeGroups.push_back(nodeGroupNode);
-        nodeGroupNode = nodeGroupNode.NextNode("member");
+        m_nodeGroups.push_back(nodeGroupsMember);
+        nodeGroupsMember = nodeGroupsMember.NextNode("NodeGroup");
       }
 
       m_nodeGroupsHasBeenSet = true;
     }
     XmlNode snapshottingClusterIdNode = resultNode.FirstChild("SnapshottingClusterId");
-    if(!nodeGroupNode.IsNull())
+    if(!snapshottingClusterIdNode.IsNull())
     {
       m_snapshottingClusterId = StringUtils::Trim(snapshottingClusterIdNode.GetText().c_str());
       m_snapshottingClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
-    if(!nodeGroupNode.IsNull())
+    if(!automaticFailoverNode.IsNull())
     {
       m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverNode.GetText().c_str()).c_str());
       m_automaticFailoverHasBeenSet = true;

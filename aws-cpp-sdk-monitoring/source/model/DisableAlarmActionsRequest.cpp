@@ -33,7 +33,7 @@ Aws::String DisableAlarmActionsRequest::SerializePayload() const
     unsigned alarmNamesCount = 1;
     for(auto& item : m_alarmNames)
     {
-      ss << "AlarmNames." << alarmNamesCount << "="
+      ss << "AlarmNames.member." << alarmNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       alarmNamesCount++;
     }

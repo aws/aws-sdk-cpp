@@ -33,7 +33,7 @@ Aws::String DescribeApplicationsRequest::SerializePayload() const
     unsigned applicationNamesCount = 1;
     for(auto& item : m_applicationNames)
     {
-      ss << "ApplicationNames." << applicationNamesCount << "="
+      ss << "ApplicationNames.member." << applicationNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       applicationNamesCount++;
     }

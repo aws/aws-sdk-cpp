@@ -38,8 +38,6 @@
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
-#include <aws/lambda/model/ListVersionsByFunctionRequest.h>
-#include <aws/lambda/model/PublishVersionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/lambda/model/UpdateFunctionCodeRequest.h>
@@ -109,7 +107,7 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-  ss << "/policy";
+  ss << "/versions/HEAD/policy";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -300,6 +298,7 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
+  ss << "/versions/HEAD";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
@@ -332,7 +331,7 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-  ss << "/configuration";
+  ss << "/versions/HEAD/configuration";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
@@ -365,7 +364,7 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-  ss << "/policy";
+  ss << "/versions/HEAD/policy";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
@@ -488,78 +487,12 @@ void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request,
   handler(this, request, ListFunctions(request), context);
 }
 
-ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListVersionsByFunctionOutcome(ListVersionsByFunctionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListVersionsByFunctionOutcome(outcome.GetError());
-  }
-}
-
-ListVersionsByFunctionOutcomeCallable LambdaClient::ListVersionsByFunctionCallable(const ListVersionsByFunctionRequest& request) const
-{
-  return std::async(std::launch::async, &LambdaClient::ListVersionsByFunction, this, request);
-}
-
-void LambdaClient::ListVersionsByFunctionAsync(const ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&LambdaClient::ListVersionsByFunctionAsyncHelper, this, request, handler, context);
-}
-
-void LambdaClient::ListVersionsByFunctionAsyncHelper(const ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVersionsByFunction(request), context);
-}
-
-PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
-  ss << request.GetFunctionName();
-  ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return PublishVersionOutcome(PublishVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PublishVersionOutcome(outcome.GetError());
-  }
-}
-
-PublishVersionOutcomeCallable LambdaClient::PublishVersionCallable(const PublishVersionRequest& request) const
-{
-  return std::async(std::launch::async, &LambdaClient::PublishVersion, this, request);
-}
-
-void LambdaClient::PublishVersionAsync(const PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&LambdaClient::PublishVersionAsyncHelper, this, request, handler, context);
-}
-
-void LambdaClient::PublishVersionAsyncHelper(const PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PublishVersion(request), context);
-}
-
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-  ss << "/policy/";
+  ss << "/versions/HEAD/policy/";
   ss << request.GetStatementId();
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
@@ -625,7 +558,7 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-  ss << "/code";
+  ss << "/versions/HEAD/code";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
@@ -658,7 +591,7 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
   Aws::StringStream ss;
   ss << m_uri << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-  ss << "/configuration";
+  ss << "/versions/HEAD/configuration";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
@@ -685,5 +618,4 @@ void LambdaClient::UpdateFunctionConfigurationAsyncHelper(const UpdateFunctionCo
 {
   handler(this, request, UpdateFunctionConfiguration(request), context);
 }
-
 

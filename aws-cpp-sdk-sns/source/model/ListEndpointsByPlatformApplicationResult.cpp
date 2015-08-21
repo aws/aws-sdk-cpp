@@ -41,16 +41,22 @@ ListEndpointsByPlatformApplicationResult& ListEndpointsByPlatformApplicationResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode endpointsNodeParent = resultNode.FirstChild("Endpoints");
-    XmlNode endpointsNode = endpointsNodeParent.FirstChild("member");
-    while(!endpointsNode.IsNull())
+    XmlNode endpointsNode = resultNode.FirstChild("Endpoints");
+    if(!endpointsNode.IsNull())
     {
-      m_endpoints.push_back(endpointsNode);
-      endpointsNode = endpointsNode.NextNode("member");
-    }
+      XmlNode endpointsMember = endpointsNode.FirstChild("member");
+      while(!endpointsMember.IsNull())
+      {
+        m_endpoints.push_back(endpointsMember);
+        endpointsMember = endpointsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

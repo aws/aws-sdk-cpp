@@ -42,16 +42,20 @@ GetAccountSummaryResult& GetAccountSummaryResult::operator =(const AmazonWebServ
   if(!resultNode.IsNull())
   {
     XmlNode summaryMapNode = resultNode.FirstChild("SummaryMap");
-    summaryMapNode = summaryMapNode.FirstChild("entry");
-    while(!summaryMapNode.IsNull())
-    {
-      XmlNode keyNode = summaryMapNode.FirstChild("key");
-      XmlNode valueNode = summaryMapNode.FirstChild("value");
-      m_summaryMap[summaryKeyTypeMapper::GetsummaryKeyTypeForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-         StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
-      summaryMapNode = summaryMapNode.NextNode("entry");
-    }
 
+    if(!summaryMapNode.IsNull())
+    {
+      XmlNode summaryMapEntry = summaryMapNode.FirstChild("entry");
+      while(!summaryMapEntry.IsNull())
+      {
+        XmlNode keyNode = summaryMapEntry.FirstChild("key");
+        XmlNode valueNode = summaryMapEntry.FirstChild("value");
+        m_summaryMap[summaryKeyTypeMapper::GetsummaryKeyTypeForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
+           StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+        summaryMapEntry = summaryMapEntry.NextNode("entry");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

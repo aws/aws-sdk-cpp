@@ -42,7 +42,10 @@ PromoteReadReplicaResult& PromoteReadReplicaResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode dBInstanceNode = resultNode.FirstChild("DBInstance");
-    m_dBInstance = dBInstanceNode;
+    if(!dBInstanceNode.IsNull())
+    {
+      m_dBInstance = dBInstanceNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

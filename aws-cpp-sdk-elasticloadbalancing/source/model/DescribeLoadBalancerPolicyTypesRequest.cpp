@@ -33,7 +33,7 @@ Aws::String DescribeLoadBalancerPolicyTypesRequest::SerializePayload() const
     unsigned policyTypeNamesCount = 1;
     for(auto& item : m_policyTypeNames)
     {
-      ss << "PolicyTypeNames." << policyTypeNamesCount << "="
+      ss << "PolicyTypeNames.member." << policyTypeNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       policyTypeNamesCount++;
     }

@@ -42,7 +42,10 @@ PurchaseReservedDBInstancesOfferingResult& PurchaseReservedDBInstancesOfferingRe
   if(!resultNode.IsNull())
   {
     XmlNode reservedDBInstanceNode = resultNode.FirstChild("ReservedDBInstance");
-    m_reservedDBInstance = reservedDBInstanceNode;
+    if(!reservedDBInstanceNode.IsNull())
+    {
+      m_reservedDBInstance = reservedDBInstanceNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

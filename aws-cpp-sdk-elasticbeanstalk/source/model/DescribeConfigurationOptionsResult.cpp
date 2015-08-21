@@ -42,15 +42,21 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
-    m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
-    XmlNode optionsNodeParent = resultNode.FirstChild("Options");
-    XmlNode optionsNode = optionsNodeParent.FirstChild("member");
-    while(!optionsNode.IsNull())
+    if(!solutionStackNameNode.IsNull())
     {
-      m_options.push_back(optionsNode);
-      optionsNode = optionsNode.NextNode("member");
+      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
     }
+    XmlNode optionsNode = resultNode.FirstChild("Options");
+    if(!optionsNode.IsNull())
+    {
+      XmlNode optionsMember = optionsNode.FirstChild("member");
+      while(!optionsMember.IsNull())
+      {
+        m_options.push_back(optionsMember);
+        optionsMember = optionsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

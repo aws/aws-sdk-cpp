@@ -35,8 +35,7 @@ namespace Transfer
 static const char* ALLOCATION_TAG = "TransferAPI";
 
 DownloadFileRequest::DownloadFileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client) : S3FileRequest(fileName, bucketName, keyName, s3Client),
-m_gotContents(false),
-m_fileSize(0)
+m_gotContents(false)
 {
 
 }
@@ -46,18 +45,15 @@ DownloadFileRequest::~DownloadFileRequest()
 
 }
 
-float DownloadFileRequest::GetProgress() const
-{
-    if (m_fileSize)
-    {
-        // Measure by data processed here soon
-    }
-    return (CompletedSuccessfully() ? 100.0f : 0.0f);
-}
 
 bool DownloadFileRequest::IsReady() const
 {
     return true;
+}
+
+void DownloadFileRequest::OnDataReceived(const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long amountReceived)
+{
+    RegisterProgress(amountReceived);
 }
 
 bool DownloadFileRequest::ReadyForDelete() const
@@ -81,6 +77,8 @@ bool DownloadFileRequest::DoSingleObjectDownload()
     getObjectRequest.SetBucket(GetBucketName());
     getObjectRequest.SetKey(GetKeyName());
     getObjectRequest.SetResponseStreamFactory([this]() { return Aws::New<Aws::FStream>(ALLOCATION_TAG, GetFileName().c_str(), std::ios::binary | std::ios_base::out); });
+
+    getObjectRequest.SetDataReceivedEventHandler(std::bind(&DownloadFileRequest::OnDataReceived, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<DownloadFileContext>(ALLOCATION_TAG, shared_from_this());
 
@@ -128,7 +126,7 @@ bool DownloadFileRequest::HandleListObjectsOutcome(const Aws::S3::Model::ListObj
             auto thisObj = std::find_if(outcome.GetResult().GetContents().cbegin(), outcome.GetResult().GetContents().cend(), [&](const Object& thisObject) { return thisObject.GetKey() == GetKeyName();  });
             if (thisObj != outcome.GetResult().GetContents().end())
             {
-                m_fileSize = thisObj->GetSize();
+                SetFileSize(thisObj->GetSize());
             }
         }
     }

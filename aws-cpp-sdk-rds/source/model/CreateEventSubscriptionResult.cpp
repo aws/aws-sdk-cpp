@@ -42,7 +42,10 @@ CreateEventSubscriptionResult& CreateEventSubscriptionResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode eventSubscriptionNode = resultNode.FirstChild("EventSubscription");
-    m_eventSubscription = eventSubscriptionNode;
+    if(!eventSubscriptionNode.IsNull())
+    {
+      m_eventSubscription = eventSubscriptionNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

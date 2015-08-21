@@ -75,10 +75,12 @@ namespace Model
 {
         class AddTagsToStreamRequest;
         class CreateStreamRequest;
+        class DecreaseStreamRetentionPeriodRequest;
         class DeleteStreamRequest;
         class DescribeStreamRequest;
         class GetRecordsRequest;
         class GetShardIteratorRequest;
+        class IncreaseStreamRetentionPeriodRequest;
         class ListStreamsRequest;
         class ListTagsForStreamRequest;
         class MergeShardsRequest;
@@ -89,10 +91,12 @@ namespace Model
 
         typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> AddTagsToStreamOutcome;
         typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> CreateStreamOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> DecreaseStreamRetentionPeriodOutcome;
         typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> DeleteStreamOutcome;
         typedef Utils::Outcome<DescribeStreamResult, Client::AWSError<KinesisErrors>> DescribeStreamOutcome;
         typedef Utils::Outcome<GetRecordsResult, Client::AWSError<KinesisErrors>> GetRecordsOutcome;
         typedef Utils::Outcome<GetShardIteratorResult, Client::AWSError<KinesisErrors>> GetShardIteratorOutcome;
+        typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> IncreaseStreamRetentionPeriodOutcome;
         typedef Utils::Outcome<ListStreamsResult, Client::AWSError<KinesisErrors>> ListStreamsOutcome;
         typedef Utils::Outcome<ListTagsForStreamResult, Client::AWSError<KinesisErrors>> ListTagsForStreamOutcome;
         typedef Utils::Outcome<NoResult, Client::AWSError<KinesisErrors>> MergeShardsOutcome;
@@ -103,10 +107,12 @@ namespace Model
 
         typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
         typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
+        typedef std::future<DecreaseStreamRetentionPeriodOutcome> DecreaseStreamRetentionPeriodOutcomeCallable;
         typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
         typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
         typedef std::future<GetRecordsOutcome> GetRecordsOutcomeCallable;
         typedef std::future<GetShardIteratorOutcome> GetShardIteratorOutcomeCallable;
+        typedef std::future<IncreaseStreamRetentionPeriodOutcome> IncreaseStreamRetentionPeriodOutcomeCallable;
         typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
         typedef std::future<ListTagsForStreamOutcome> ListTagsForStreamOutcomeCallable;
         typedef std::future<MergeShardsOutcome> MergeShardsOutcomeCallable;
@@ -120,10 +126,12 @@ namespace Model
 
     typedef std::function<void(const KinesisClient*, const Model::AddTagsToStreamRequest&, const Model::AddTagsToStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::CreateStreamRequest&, const Model::CreateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::DecreaseStreamRetentionPeriodRequest&, const Model::DecreaseStreamRetentionPeriodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecreaseStreamRetentionPeriodResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::DeleteStreamRequest&, const Model::DeleteStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::GetRecordsRequest&, const Model::GetRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordsResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::GetShardIteratorRequest&, const Model::GetShardIteratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShardIteratorResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::IncreaseStreamRetentionPeriodRequest&, const Model::IncreaseStreamRetentionPeriodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseStreamRetentionPeriodResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::ListTagsForStreamRequest&, const Model::ListTagsForStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::MergeShardsRequest&, const Model::MergeShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeShardsResponseReceivedHandler;
@@ -200,6 +208,25 @@ namespace Model
         void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
+            ${operation.documentation}
+        */
+        Model::DecreaseStreamRetentionPeriodOutcome DecreaseStreamRetentionPeriod(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::DecreaseStreamRetentionPeriodOutcomeCallable DecreaseStreamRetentionPeriodCallable(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void DecreaseStreamRetentionPeriodAsync(const Model::DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
             <p>Deletes a stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it will receive the exception <code>ResourceNotFoundException</code>.</p> <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</p> <p><b>Note:</b> Amazon Kinesis might continue to accept data read and write operations, such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p> <p>When you delete a stream, any shards in that stream are also deleted, and any tags are dissociated from the stream.</p> <p>You can use the <a>DescribeStream</a> operation to check the state of the stream, which is returned in <code>StreamStatus</code>.</p> <p><a>DeleteStream</a> has a limit of 5 transactions per second per account.</p>
         */
         Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
@@ -274,6 +301,25 @@ namespace Model
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         void GetShardIteratorAsync(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /*
+            ${operation.documentation}
+        */
+        Model::IncreaseStreamRetentionPeriodOutcome IncreaseStreamRetentionPeriod(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        returns a future to the operation so that it can be executed in parallel to other requests.
+        */
+        Model::IncreaseStreamRetentionPeriodOutcomeCallable IncreaseStreamRetentionPeriodCallable(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
+
+        /*
+            ${operation.documentation}
+
+        Queues the request into a thread executor and triggers associated callback when operation has finished.
+        */
+        void IncreaseStreamRetentionPeriodAsync(const Model::IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
             <p> Lists your streams.</p> <p> The number of streams may be too large to return from a single call to <code>ListStreams</code>. You can limit the number of returned streams using the <code>Limit</code> parameter. If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis uses the default limit, which is currently 10.</p> <p> You can detect if there are more streams available to list by using the <code>HasMoreStreams</code> flag from the returned output. If there are more streams available, you can request more streams by using the name of the last stream returned by the <code>ListStreams</code> request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request to <code>ListStreams</code>. The group of stream names returned by the subsequent request is then added to the list. You can continue this process until all the stream names have been collected in the list. </p> <p><a>ListStreams</a> has a limit of 5 transactions per second per account.</p>
@@ -415,10 +461,12 @@ namespace Model
     /**Async helpers**/
         void AddTagsToStreamAsyncHelper(const Model::AddTagsToStreamRequest& request, const AddTagsToStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamAsyncHelper(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DecreaseStreamRetentionPeriodAsyncHelper(const Model::DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamAsyncHelper(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStreamAsyncHelper(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRecordsAsyncHelper(const Model::GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetShardIteratorAsyncHelper(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void IncreaseStreamRetentionPeriodAsyncHelper(const Model::IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForStreamAsyncHelper(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MergeShardsAsyncHelper(const Model::MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

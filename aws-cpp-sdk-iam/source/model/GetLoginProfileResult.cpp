@@ -42,7 +42,10 @@ GetLoginProfileResult& GetLoginProfileResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode loginProfileNode = resultNode.FirstChild("LoginProfile");
-    m_loginProfile = loginProfileNode;
+    if(!loginProfileNode.IsNull())
+    {
+      m_loginProfile = loginProfileNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

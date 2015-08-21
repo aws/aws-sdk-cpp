@@ -41,16 +41,20 @@ GetQueueAttributesResult& GetQueueAttributesResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode attributeNode = resultNode.FirstChild("Attribute");
-    while(!attributeNode.IsNull())
+    XmlNode attributesNode = resultNode.FirstChild("Attribute");
+    if(!attributesNode.IsNull())
     {
-      XmlNode keyNode = attributeNode.FirstChild("Name");
-      XmlNode valueNode = attributeNode.FirstChild("Value");
-      m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-          StringUtils::Trim(valueNode.GetText().c_str());
-      attributeNode = attributeNode.NextNode("Attribute");
-    }
+      XmlNode attributeEntry = attributesNode;
+      while(!attributeEntry.IsNull())
+      {
+        XmlNode keyNode = attributeEntry.FirstChild("Name");
+        XmlNode valueNode = attributeEntry.FirstChild("Value");
+        m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
+            StringUtils::Trim(valueNode.GetText().c_str());
+        attributeEntry = attributeEntry.NextNode("Attribute");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

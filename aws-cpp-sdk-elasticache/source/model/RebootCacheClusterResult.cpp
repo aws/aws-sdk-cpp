@@ -42,7 +42,10 @@ RebootCacheClusterResult& RebootCacheClusterResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode cacheClusterNode = resultNode.FirstChild("CacheCluster");
-    m_cacheCluster = cacheClusterNode;
+    if(!cacheClusterNode.IsNull())
+    {
+      m_cacheCluster = cacheClusterNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -46,29 +46,56 @@ CreateConfigurationTemplateResult& CreateConfigurationTemplateResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
-    m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
-    XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
-    m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
-    XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
-    m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
-    XmlNode descriptionNode = resultNode.FirstChild("Description");
-    m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
-    XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
-    m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
-    XmlNode deploymentStatusNode = resultNode.FirstChild("DeploymentStatus");
-    m_deploymentStatus = ConfigurationDeploymentStatusMapper::GetConfigurationDeploymentStatusForName(StringUtils::Trim(deploymentStatusNode.GetText().c_str()).c_str());
-    XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
-    m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
-    XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
-    m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
-    XmlNode optionSettingsNodeParent = resultNode.FirstChild("OptionSettings");
-    XmlNode optionSettingsNode = optionSettingsNodeParent.FirstChild("member");
-    while(!optionSettingsNode.IsNull())
+    if(!solutionStackNameNode.IsNull())
     {
-      m_optionSettings.push_back(optionSettingsNode);
-      optionSettingsNode = optionSettingsNode.NextNode("member");
+      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
     }
+    XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
+    if(!applicationNameNode.IsNull())
+    {
+      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+    }
+    XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
+    if(!templateNameNode.IsNull())
+    {
+      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    }
+    XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
+    if(!environmentNameNode.IsNull())
+    {
+      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+    }
+    XmlNode deploymentStatusNode = resultNode.FirstChild("DeploymentStatus");
+    if(!deploymentStatusNode.IsNull())
+    {
+      m_deploymentStatus = ConfigurationDeploymentStatusMapper::GetConfigurationDeploymentStatusForName(StringUtils::Trim(deploymentStatusNode.GetText().c_str()).c_str());
+    }
+    XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
+    if(!dateCreatedNode.IsNull())
+    {
+      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+    }
+    XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
+    if(!dateUpdatedNode.IsNull())
+    {
+      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+    }
+    XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
+    if(!optionSettingsNode.IsNull())
+    {
+      XmlNode optionSettingsMember = optionSettingsNode.FirstChild("member");
+      while(!optionSettingsMember.IsNull())
+      {
+        m_optionSettings.push_back(optionSettingsMember);
+        optionSettingsMember = optionSettingsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -42,7 +42,10 @@ GetServerCertificateResult& GetServerCertificateResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode serverCertificateNode = resultNode.FirstChild("ServerCertificate");
-    m_serverCertificate = serverCertificateNode;
+    if(!serverCertificateNode.IsNull())
+    {
+      m_serverCertificate = serverCertificateNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

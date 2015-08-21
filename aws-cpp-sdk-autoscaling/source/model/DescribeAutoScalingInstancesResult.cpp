@@ -41,16 +41,22 @@ DescribeAutoScalingInstancesResult& DescribeAutoScalingInstancesResult::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode autoScalingInstancesNodeParent = resultNode.FirstChild("AutoScalingInstances");
-    XmlNode autoScalingInstancesNode = autoScalingInstancesNodeParent.FirstChild("member");
-    while(!autoScalingInstancesNode.IsNull())
+    XmlNode autoScalingInstancesNode = resultNode.FirstChild("AutoScalingInstances");
+    if(!autoScalingInstancesNode.IsNull())
     {
-      m_autoScalingInstances.push_back(autoScalingInstancesNode);
-      autoScalingInstancesNode = autoScalingInstancesNode.NextNode("member");
-    }
+      XmlNode autoScalingInstancesMember = autoScalingInstancesNode.FirstChild("member");
+      while(!autoScalingInstancesMember.IsNull())
+      {
+        m_autoScalingInstances.push_back(autoScalingInstancesMember);
+        autoScalingInstancesMember = autoScalingInstancesMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

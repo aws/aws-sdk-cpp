@@ -41,15 +41,22 @@ ListDomainsResult& ListDomainsResult::operator =(const AmazonWebServiceResult<Xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    while(!domainNameNode.IsNull())
+    XmlNode domainNamesNode = resultNode.FirstChild("DomainName");
+    if(!domainNamesNode.IsNull())
     {
-      m_domainNames.push_back(StringUtils::Trim(domainNameNode.GetText().c_str()));
-      domainNameNode = domainNameNode.NextNode("DomainName");
-    }
+      XmlNode domainNameMember = domainNamesNode;
+      while(!domainNameMember.IsNull())
+      {
+        m_domainNames.push_back(StringUtils::Trim(domainNameMember.GetText().c_str()));
+        domainNameMember = domainNameMember.NextNode("DomainName");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

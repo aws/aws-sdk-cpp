@@ -38,7 +38,7 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
     unsigned securityGroupsCount = 1;
     for(auto& item : m_securityGroups)
     {
-      ss << "SecurityGroups." << securityGroupsCount << "="
+      ss << "SecurityGroups.member." << securityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupsCount++;
     }

@@ -43,18 +43,27 @@ ListSigningCertificatesResult& ListSigningCertificatesResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode certificatesNodeParent = resultNode.FirstChild("Certificates");
-    XmlNode certificatesNode = certificatesNodeParent.FirstChild("member");
-    while(!certificatesNode.IsNull())
+    XmlNode certificatesNode = resultNode.FirstChild("Certificates");
+    if(!certificatesNode.IsNull())
     {
-      m_certificates.push_back(certificatesNode);
-      certificatesNode = certificatesNode.NextNode("member");
-    }
+      XmlNode certificatesMember = certificatesNode.FirstChild("member");
+      while(!certificatesMember.IsNull())
+      {
+        m_certificates.push_back(certificatesMember);
+        certificatesMember = certificatesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

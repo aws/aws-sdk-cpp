@@ -86,14 +86,14 @@ CloudFrontOriginAccessIdentityList& CloudFrontOriginAccessIdentityList::operator
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode cloudFrontOriginAccessIdentitySummaryNodeParent = resultNode.FirstChild("CloudFrontOriginAccessIdentitySummary");
-    XmlNode cloudFrontOriginAccessIdentitySummaryNode = cloudFrontOriginAccessIdentitySummaryNodeParent.FirstChild("member");
-    if(!cloudFrontOriginAccessIdentitySummaryNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!cloudFrontOriginAccessIdentitySummaryNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("CloudFrontOriginAccessIdentitySummary");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(cloudFrontOriginAccessIdentitySummaryNode);
-        cloudFrontOriginAccessIdentitySummaryNode = cloudFrontOriginAccessIdentitySummaryNode.NextNode("member");
+        m_items.push_back(itemsMember);
+        itemsMember = itemsMember.NextNode("CloudFrontOriginAccessIdentitySummary");
       }
 
       m_itemsHasBeenSet = true;

@@ -60,14 +60,14 @@ TrustedSigners& TrustedSigners::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode awsAccountNumberNodeParent = resultNode.FirstChild("AwsAccountNumber");
-    XmlNode awsAccountNumberNode = awsAccountNumberNodeParent.FirstChild("member");
-    if(!awsAccountNumberNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!awsAccountNumberNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("AwsAccountNumber");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(awsAccountNumberNode.GetText().c_str()));
-        awsAccountNumberNode = awsAccountNumberNode.NextNode("member");
+        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        itemsMember = itemsMember.NextNode("AwsAccountNumber");
       }
 
       m_itemsHasBeenSet = true;

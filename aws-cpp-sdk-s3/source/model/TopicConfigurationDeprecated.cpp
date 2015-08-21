@@ -53,16 +53,17 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
     XmlNode eventsNode = resultNode.FirstChild("Events");
     if(!eventsNode.IsNull())
     {
-      while(!eventsNode.IsNull())
+      XmlNode eventsMember = eventsNode;
+      while(!eventsMember.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
-        eventsNode = eventsNode.NextNode("Events");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsMember.GetText().c_str())));
+        eventsMember = eventsMember.NextNode("Event");
       }
 
       m_eventsHasBeenSet = true;
     }
     XmlNode topicNode = resultNode.FirstChild("Topic");
-    if(!eventsNode.IsNull())
+    if(!topicNode.IsNull())
     {
       m_topic = StringUtils::Trim(topicNode.GetText().c_str());
       m_topicHasBeenSet = true;

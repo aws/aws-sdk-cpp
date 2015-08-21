@@ -40,13 +40,17 @@ GetBucketCorsResult& GetBucketCorsResult::operator =(const AmazonWebServiceResul
 
   if(!resultNode.IsNull())
   {
-    XmlNode cORSRuleNode = resultNode.FirstChild("${member.location}");
-    while(!cORSRuleNode.IsNull())
+    XmlNode cORSRulesNode = resultNode.FirstChild("CORSRules");
+    if(!cORSRulesNode.IsNull())
     {
-      m_cORSRules.push_back(cORSRuleNode);
-      cORSRuleNode = cORSRuleNode.NextNode("CORSRule");
-    }
+      XmlNode cORSRulesMember = cORSRulesNode;
+      while(!cORSRulesMember.IsNull())
+      {
+        m_cORSRules.push_back(cORSRulesMember);
+        cORSRulesMember = cORSRulesMember.NextNode("CORSRule");
+      }
 
+    }
   }
 
   return *this;

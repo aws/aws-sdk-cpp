@@ -38,7 +38,7 @@ Aws::String DescribeInstanceHealthRequest::SerializePayload() const
     unsigned instancesCount = 1;
     for(auto& item : m_instances)
     {
-      item.OutputToStream(ss, "Instances.", instancesCount, "");
+      item.OutputToStream(ss, "Instances.member.", instancesCount, "");
       instancesCount++;
     }
   }

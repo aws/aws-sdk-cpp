@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/CharacterSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/UpgradeTarget.h>
 
 namespace Aws
 {
@@ -198,6 +199,25 @@ namespace Model
     */
     inline DBEngineVersion& AddSupportedCharacterSets(const CharacterSet& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(value); return *this; }
 
+    /*
+     <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    */
+    inline const Aws::Vector<UpgradeTarget>& GetValidUpgradeTarget() const{ return m_validUpgradeTarget; }
+    /*
+     <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    */
+    inline void SetValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget = value; }
+
+    /*
+     <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    */
+    inline DBEngineVersion&  WithValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { SetValidUpgradeTarget(value); return *this;}
+
+    /*
+     <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    */
+    inline DBEngineVersion& AddValidUpgradeTarget(const UpgradeTarget& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget.push_back(value); return *this; }
+
   private:
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -213,6 +233,8 @@ namespace Model
     bool m_defaultCharacterSetHasBeenSet;
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
     bool m_supportedCharacterSetsHasBeenSet;
+    Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
+    bool m_validUpgradeTargetHasBeenSet;
   };
 
 } // namespace Model

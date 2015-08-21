@@ -19,10 +19,6 @@
 
 namespace Aws
 {
-namespace Http
-{
-    class URI;
-} //namespace Http
 namespace Lambda
 {
 namespace Model
@@ -35,8 +31,6 @@ namespace Model
   public:
     UpdateFunctionConfigurationRequest();
     Aws::String SerializePayload() const override;
-
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /*
@@ -163,54 +157,6 @@ namespace Model
     */
     inline UpdateFunctionConfigurationRequest&  WithMemorySize(long value) { SetMemorySize(value); return *this;}
 
-    /*
-     <p>Specifies Lambda function version to update. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To update the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    /*
-     <p>Specifies Lambda function version to update. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To update the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /*
-     <p>Specifies Lambda function version to update. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To update the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /*
-     <p>Specifies Lambda function version to update. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To update the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline UpdateFunctionConfigurationRequest&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /*
-     <p>Specifies Lambda function version to update. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To update the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline UpdateFunctionConfigurationRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
-    /*
-     <p>Modifies the default function version. If current default version is 1 and you set this parameter to 2, the default version of your Lambda function will be 2. You can use the <code>UpdateFunctionConfiguration</code> to either update the default version value or update other configuration parameters of the default version, but not both. If you are updating configuration parameters for a specific version, you can set that version to be the default version by setting this parameter to the same version. For example, if you are updating configuration for version 1 of a Lambda function, this parameter can be either 1 or null. </p>
-    */
-    inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
-    /*
-     <p>Modifies the default function version. If current default version is 1 and you set this parameter to 2, the default version of your Lambda function will be 2. You can use the <code>UpdateFunctionConfiguration</code> to either update the default version value or update other configuration parameters of the default version, but not both. If you are updating configuration parameters for a specific version, you can set that version to be the default version by setting this parameter to the same version. For example, if you are updating configuration for version 1 of a Lambda function, this parameter can be either 1 or null. </p>
-    */
-    inline void SetDefaultVersion(const Aws::String& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
-
-    /*
-     <p>Modifies the default function version. If current default version is 1 and you set this parameter to 2, the default version of your Lambda function will be 2. You can use the <code>UpdateFunctionConfiguration</code> to either update the default version value or update other configuration parameters of the default version, but not both. If you are updating configuration parameters for a specific version, you can set that version to be the default version by setting this parameter to the same version. For example, if you are updating configuration for version 1 of a Lambda function, this parameter can be either 1 or null. </p>
-    */
-    inline void SetDefaultVersion(const char* value) { m_defaultVersionHasBeenSet = true; m_defaultVersion.assign(value); }
-
-    /*
-     <p>Modifies the default function version. If current default version is 1 and you set this parameter to 2, the default version of your Lambda function will be 2. You can use the <code>UpdateFunctionConfiguration</code> to either update the default version value or update other configuration parameters of the default version, but not both. If you are updating configuration parameters for a specific version, you can set that version to be the default version by setting this parameter to the same version. For example, if you are updating configuration for version 1 of a Lambda function, this parameter can be either 1 or null. </p>
-    */
-    inline UpdateFunctionConfigurationRequest&  WithDefaultVersion(const Aws::String& value) { SetDefaultVersion(value); return *this;}
-
-    /*
-     <p>Modifies the default function version. If current default version is 1 and you set this parameter to 2, the default version of your Lambda function will be 2. You can use the <code>UpdateFunctionConfiguration</code> to either update the default version value or update other configuration parameters of the default version, but not both. If you are updating configuration parameters for a specific version, you can set that version to be the default version by setting this parameter to the same version. For example, if you are updating configuration for version 1 of a Lambda function, this parameter can be either 1 or null. </p>
-    */
-    inline UpdateFunctionConfigurationRequest& WithDefaultVersion(const char* value) { SetDefaultVersion(value); return *this;}
-
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -224,10 +170,6 @@ namespace Model
     bool m_timeoutHasBeenSet;
     long m_memorySize;
     bool m_memorySizeHasBeenSet;
-    Aws::String m_version;
-    bool m_versionHasBeenSet;
-    Aws::String m_defaultVersion;
-    bool m_defaultVersionHasBeenSet;
   };
 
 } // namespace Model

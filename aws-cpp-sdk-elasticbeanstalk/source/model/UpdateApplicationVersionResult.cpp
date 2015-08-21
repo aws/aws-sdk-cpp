@@ -42,7 +42,10 @@ UpdateApplicationVersionResult& UpdateApplicationVersionResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode applicationVersionNode = resultNode.FirstChild("ApplicationVersion");
-    m_applicationVersion = applicationVersionNode;
+    if(!applicationVersionNode.IsNull())
+    {
+      m_applicationVersion = applicationVersionNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

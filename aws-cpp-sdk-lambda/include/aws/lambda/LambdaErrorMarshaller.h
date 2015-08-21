@@ -15,14 +15,14 @@
 #pragma once
 
 #include <aws/lambda/Lambda_EXPORTS.h>
-#include <aws/core/client/AWSRestfulJsonErrorMarshaller.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Client
 {
 
-class AWS_LAMBDA_API LambdaErrorMarshaller : public Client::AWSRestfulJsonErrorMarshaller
+class AWS_LAMBDA_API LambdaErrorMarshaller : public Client::AWSErrorMarshaller
 {
 public:
   LambdaErrorMarshaller() {}
@@ -31,5 +31,5 @@ public:
   virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
 };
 
-} // namespace Client
+} // namespace Lambda
 } // namespace Aws

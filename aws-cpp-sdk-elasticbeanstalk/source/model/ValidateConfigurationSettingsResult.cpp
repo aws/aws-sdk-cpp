@@ -41,14 +41,17 @@ ValidateConfigurationSettingsResult& ValidateConfigurationSettingsResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode messagesNodeParent = resultNode.FirstChild("Messages");
-    XmlNode messagesNode = messagesNodeParent.FirstChild("member");
-    while(!messagesNode.IsNull())
+    XmlNode messagesNode = resultNode.FirstChild("Messages");
+    if(!messagesNode.IsNull())
     {
-      m_messages.push_back(messagesNode);
-      messagesNode = messagesNode.NextNode("member");
-    }
+      XmlNode messagesMember = messagesNode.FirstChild("member");
+      while(!messagesMember.IsNull())
+      {
+        m_messages.push_back(messagesMember);
+        messagesMember = messagesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -122,122 +122,122 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_actionsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(actionsEnabledNode.GetText().c_str()).c_str());
       m_actionsEnabledHasBeenSet = true;
     }
-    XmlNode oKActionsNodeParent = resultNode.FirstChild("OKActions");
-    XmlNode oKActionsNode = oKActionsNodeParent.FirstChild("member");
+    XmlNode oKActionsNode = resultNode.FirstChild("OKActions");
     if(!oKActionsNode.IsNull())
     {
-      while(!oKActionsNode.IsNull())
+      XmlNode oKActionsMember = oKActionsNode.FirstChild("member");
+      while(!oKActionsMember.IsNull())
       {
-        m_oKActions.push_back(StringUtils::Trim(oKActionsNode.GetText().c_str()));
-        oKActionsNode = oKActionsNode.NextNode("member");
+        m_oKActions.push_back(StringUtils::Trim(oKActionsMember.GetText().c_str()));
+        oKActionsMember = oKActionsMember.NextNode("member");
       }
 
       m_oKActionsHasBeenSet = true;
     }
-    XmlNode alarmActionsNodeParent = resultNode.FirstChild("AlarmActions");
-    XmlNode alarmActionsNode = alarmActionsNodeParent.FirstChild("member");
+    XmlNode alarmActionsNode = resultNode.FirstChild("AlarmActions");
     if(!alarmActionsNode.IsNull())
     {
-      while(!alarmActionsNode.IsNull())
+      XmlNode alarmActionsMember = alarmActionsNode.FirstChild("member");
+      while(!alarmActionsMember.IsNull())
       {
-        m_alarmActions.push_back(StringUtils::Trim(alarmActionsNode.GetText().c_str()));
-        alarmActionsNode = alarmActionsNode.NextNode("member");
+        m_alarmActions.push_back(StringUtils::Trim(alarmActionsMember.GetText().c_str()));
+        alarmActionsMember = alarmActionsMember.NextNode("member");
       }
 
       m_alarmActionsHasBeenSet = true;
     }
-    XmlNode insufficientDataActionsNodeParent = resultNode.FirstChild("InsufficientDataActions");
-    XmlNode insufficientDataActionsNode = insufficientDataActionsNodeParent.FirstChild("member");
+    XmlNode insufficientDataActionsNode = resultNode.FirstChild("InsufficientDataActions");
     if(!insufficientDataActionsNode.IsNull())
     {
-      while(!insufficientDataActionsNode.IsNull())
+      XmlNode insufficientDataActionsMember = insufficientDataActionsNode.FirstChild("member");
+      while(!insufficientDataActionsMember.IsNull())
       {
-        m_insufficientDataActions.push_back(StringUtils::Trim(insufficientDataActionsNode.GetText().c_str()));
-        insufficientDataActionsNode = insufficientDataActionsNode.NextNode("member");
+        m_insufficientDataActions.push_back(StringUtils::Trim(insufficientDataActionsMember.GetText().c_str()));
+        insufficientDataActionsMember = insufficientDataActionsMember.NextNode("member");
       }
 
       m_insufficientDataActionsHasBeenSet = true;
     }
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!stateValueNode.IsNull())
     {
       m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(stateValueNode.GetText().c_str()).c_str());
       m_stateValueHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("StateReason");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!stateReasonNode.IsNull())
     {
       m_stateReason = StringUtils::Trim(stateReasonNode.GetText().c_str());
       m_stateReasonHasBeenSet = true;
     }
     XmlNode stateReasonDataNode = resultNode.FirstChild("StateReasonData");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!stateReasonDataNode.IsNull())
     {
       m_stateReasonData = StringUtils::Trim(stateReasonDataNode.GetText().c_str());
       m_stateReasonDataHasBeenSet = true;
     }
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!stateUpdatedTimestampNode.IsNull())
     {
       m_stateUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str()).c_str());
       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!metricNameNode.IsNull())
     {
       m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!namespaceNode.IsNull())
     {
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
-    if(!insufficientDataActionsNode.IsNull())
+    if(!statisticNode.IsNull())
     {
       m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(statisticNode.GetText().c_str()).c_str());
       m_statisticHasBeenSet = true;
     }
-    XmlNode dimensionsNodeParent = resultNode.FirstChild("Dimensions");
-    XmlNode dimensionsNode = dimensionsNodeParent.FirstChild("member");
+    XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
-      while(!dimensionsNode.IsNull())
+      XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      while(!dimensionsMember.IsNull())
       {
-        m_dimensions.push_back(dimensionsNode);
-        dimensionsNode = dimensionsNode.NextNode("member");
+        m_dimensions.push_back(dimensionsMember);
+        dimensionsMember = dimensionsMember.NextNode("member");
       }
 
       m_dimensionsHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
-    if(!dimensionsNode.IsNull())
+    if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(periodNode.GetText().c_str()).c_str());
       m_periodHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
-    if(!dimensionsNode.IsNull())
+    if(!unitNode.IsNull())
     {
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());
       m_unitHasBeenSet = true;
     }
     XmlNode evaluationPeriodsNode = resultNode.FirstChild("EvaluationPeriods");
-    if(!dimensionsNode.IsNull())
+    if(!evaluationPeriodsNode.IsNull())
     {
       m_evaluationPeriods = StringUtils::ConvertToInt32(StringUtils::Trim(evaluationPeriodsNode.GetText().c_str()).c_str());
       m_evaluationPeriodsHasBeenSet = true;
     }
     XmlNode thresholdNode = resultNode.FirstChild("Threshold");
-    if(!dimensionsNode.IsNull())
+    if(!thresholdNode.IsNull())
     {
       m_threshold = StringUtils::ConvertToDouble(StringUtils::Trim(thresholdNode.GetText().c_str()).c_str());
       m_thresholdHasBeenSet = true;
     }
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
-    if(!dimensionsNode.IsNull())
+    if(!comparisonOperatorNode.IsNull())
     {
       m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(comparisonOperatorNode.GetText().c_str()).c_str());
       m_comparisonOperatorHasBeenSet = true;

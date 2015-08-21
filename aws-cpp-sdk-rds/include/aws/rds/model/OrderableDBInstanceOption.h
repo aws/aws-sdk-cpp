@@ -254,6 +254,20 @@ namespace Model
     */
     inline OrderableDBInstanceOption&  WithSupportsIops(bool value) { SetSupportsIops(value); return *this;}
 
+    /*
+     <p>Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.</p>
+    */
+    inline bool GetSupportsEnhancedMonitoring() const{ return m_supportsEnhancedMonitoring; }
+    /*
+     <p>Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.</p>
+    */
+    inline void SetSupportsEnhancedMonitoring(bool value) { m_supportsEnhancedMonitoringHasBeenSet = true; m_supportsEnhancedMonitoring = value; }
+
+    /*
+     <p>Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.</p>
+    */
+    inline OrderableDBInstanceOption&  WithSupportsEnhancedMonitoring(bool value) { SetSupportsEnhancedMonitoring(value); return *this;}
+
   private:
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -277,6 +291,8 @@ namespace Model
     bool m_storageTypeHasBeenSet;
     bool m_supportsIops;
     bool m_supportsIopsHasBeenSet;
+    bool m_supportsEnhancedMonitoring;
+    bool m_supportsEnhancedMonitoringHasBeenSet;
   };
 
 } // namespace Model

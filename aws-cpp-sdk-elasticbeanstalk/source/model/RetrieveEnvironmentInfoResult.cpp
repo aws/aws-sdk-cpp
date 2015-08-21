@@ -41,14 +41,17 @@ RetrieveEnvironmentInfoResult& RetrieveEnvironmentInfoResult::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode environmentInfoNodeParent = resultNode.FirstChild("EnvironmentInfo");
-    XmlNode environmentInfoNode = environmentInfoNodeParent.FirstChild("member");
-    while(!environmentInfoNode.IsNull())
+    XmlNode environmentInfoNode = resultNode.FirstChild("EnvironmentInfo");
+    if(!environmentInfoNode.IsNull())
     {
-      m_environmentInfo.push_back(environmentInfoNode);
-      environmentInfoNode = environmentInfoNode.NextNode("member");
-    }
+      XmlNode environmentInfoMember = environmentInfoNode.FirstChild("member");
+      while(!environmentInfoMember.IsNull())
+      {
+        m_environmentInfo.push_back(environmentInfoMember);
+        environmentInfoMember = environmentInfoMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

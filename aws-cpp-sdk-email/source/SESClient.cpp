@@ -26,9 +26,19 @@
 #include <aws/email/SESClient.h>
 #include <aws/email/SESEndpoint.h>
 #include <aws/email/SESErrorMarshaller.h>
+#include <aws/email/model/CloneReceiptRuleSetRequest.h>
+#include <aws/email/model/CreateReceiptFilterRequest.h>
+#include <aws/email/model/CreateReceiptRuleRequest.h>
+#include <aws/email/model/CreateReceiptRuleSetRequest.h>
 #include <aws/email/model/DeleteIdentityRequest.h>
 #include <aws/email/model/DeleteIdentityPolicyRequest.h>
+#include <aws/email/model/DeleteReceiptFilterRequest.h>
+#include <aws/email/model/DeleteReceiptRuleRequest.h>
+#include <aws/email/model/DeleteReceiptRuleSetRequest.h>
 #include <aws/email/model/DeleteVerifiedEmailAddressRequest.h>
+#include <aws/email/model/DescribeActiveReceiptRuleSetRequest.h>
+#include <aws/email/model/DescribeReceiptRuleRequest.h>
+#include <aws/email/model/DescribeReceiptRuleSetRequest.h>
 #include <aws/email/model/GetIdentityDkimAttributesRequest.h>
 #include <aws/email/model/GetIdentityNotificationAttributesRequest.h>
 #include <aws/email/model/GetIdentityPoliciesRequest.h>
@@ -37,13 +47,20 @@
 #include <aws/email/model/GetSendStatisticsRequest.h>
 #include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/email/model/ListIdentityPoliciesRequest.h>
+#include <aws/email/model/ListReceiptFiltersRequest.h>
+#include <aws/email/model/ListReceiptRuleSetsRequest.h>
 #include <aws/email/model/ListVerifiedEmailAddressesRequest.h>
 #include <aws/email/model/PutIdentityPolicyRequest.h>
+#include <aws/email/model/ReorderReceiptRuleSetRequest.h>
+#include <aws/email/model/SendBounceRequest.h>
 #include <aws/email/model/SendEmailRequest.h>
 #include <aws/email/model/SendRawEmailRequest.h>
+#include <aws/email/model/SetActiveReceiptRuleSetRequest.h>
 #include <aws/email/model/SetIdentityDkimEnabledRequest.h>
 #include <aws/email/model/SetIdentityFeedbackForwardingEnabledRequest.h>
 #include <aws/email/model/SetIdentityNotificationTopicRequest.h>
+#include <aws/email/model/SetReceiptRulePositionRequest.h>
+#include <aws/email/model/UpdateReceiptRuleRequest.h>
 #include <aws/email/model/VerifyDomainDkimRequest.h>
 #include <aws/email/model/VerifyDomainIdentityRequest.h>
 #include <aws/email/model/VerifyEmailAddressRequest.h>
@@ -109,6 +126,126 @@ void SESClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CloneReceiptRuleSetOutcome(CloneReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CloneReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+CloneReceiptRuleSetOutcomeCallable SESClient::CloneReceiptRuleSetCallable(const CloneReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::CloneReceiptRuleSet, this, request);
+}
+
+void SESClient::CloneReceiptRuleSetAsync(const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::CloneReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::CloneReceiptRuleSetAsyncHelper(const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CloneReceiptRuleSet(request), context);
+}
+
+CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateReceiptFilterOutcome(CreateReceiptFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateReceiptFilterOutcome(outcome.GetError());
+  }
+}
+
+CreateReceiptFilterOutcomeCallable SESClient::CreateReceiptFilterCallable(const CreateReceiptFilterRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::CreateReceiptFilter, this, request);
+}
+
+void SESClient::CreateReceiptFilterAsync(const CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::CreateReceiptFilterAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::CreateReceiptFilterAsyncHelper(const CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReceiptFilter(request), context);
+}
+
+CreateReceiptRuleOutcome SESClient::CreateReceiptRule(const CreateReceiptRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateReceiptRuleOutcome(CreateReceiptRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateReceiptRuleOutcome(outcome.GetError());
+  }
+}
+
+CreateReceiptRuleOutcomeCallable SESClient::CreateReceiptRuleCallable(const CreateReceiptRuleRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::CreateReceiptRule, this, request);
+}
+
+void SESClient::CreateReceiptRuleAsync(const CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::CreateReceiptRuleAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::CreateReceiptRuleAsyncHelper(const CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReceiptRule(request), context);
+}
+
+CreateReceiptRuleSetOutcome SESClient::CreateReceiptRuleSet(const CreateReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateReceiptRuleSetOutcome(CreateReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+CreateReceiptRuleSetOutcomeCallable SESClient::CreateReceiptRuleSetCallable(const CreateReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::CreateReceiptRuleSet, this, request);
+}
+
+void SESClient::CreateReceiptRuleSetAsync(const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::CreateReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::CreateReceiptRuleSetAsyncHelper(const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReceiptRuleSet(request), context);
+}
+
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
 {
   Aws::StringStream ss;
@@ -169,6 +306,96 @@ void SESClient::DeleteIdentityPolicyAsyncHelper(const DeleteIdentityPolicyReques
   handler(this, request, DeleteIdentityPolicy(request), context);
 }
 
+DeleteReceiptFilterOutcome SESClient::DeleteReceiptFilter(const DeleteReceiptFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteReceiptFilterOutcome(DeleteReceiptFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteReceiptFilterOutcome(outcome.GetError());
+  }
+}
+
+DeleteReceiptFilterOutcomeCallable SESClient::DeleteReceiptFilterCallable(const DeleteReceiptFilterRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DeleteReceiptFilter, this, request);
+}
+
+void SESClient::DeleteReceiptFilterAsync(const DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::DeleteReceiptFilterAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::DeleteReceiptFilterAsyncHelper(const DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteReceiptFilter(request), context);
+}
+
+DeleteReceiptRuleOutcome SESClient::DeleteReceiptRule(const DeleteReceiptRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteReceiptRuleOutcome(DeleteReceiptRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteReceiptRuleOutcome(outcome.GetError());
+  }
+}
+
+DeleteReceiptRuleOutcomeCallable SESClient::DeleteReceiptRuleCallable(const DeleteReceiptRuleRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DeleteReceiptRule, this, request);
+}
+
+void SESClient::DeleteReceiptRuleAsync(const DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::DeleteReceiptRuleAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::DeleteReceiptRuleAsyncHelper(const DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteReceiptRule(request), context);
+}
+
+DeleteReceiptRuleSetOutcome SESClient::DeleteReceiptRuleSet(const DeleteReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteReceiptRuleSetOutcome(DeleteReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+DeleteReceiptRuleSetOutcomeCallable SESClient::DeleteReceiptRuleSetCallable(const DeleteReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DeleteReceiptRuleSet, this, request);
+}
+
+void SESClient::DeleteReceiptRuleSetAsync(const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::DeleteReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::DeleteReceiptRuleSetAsyncHelper(const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteReceiptRuleSet(request), context);
+}
+
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const
 {
   Aws::StringStream ss;
@@ -197,6 +424,96 @@ void SESClient::DeleteVerifiedEmailAddressAsync(const DeleteVerifiedEmailAddress
 void SESClient::DeleteVerifiedEmailAddressAsyncHelper(const DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVerifiedEmailAddress(request), context);
+}
+
+DescribeActiveReceiptRuleSetOutcome SESClient::DescribeActiveReceiptRuleSet(const DescribeActiveReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeActiveReceiptRuleSetOutcome(DescribeActiveReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeActiveReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+DescribeActiveReceiptRuleSetOutcomeCallable SESClient::DescribeActiveReceiptRuleSetCallable(const DescribeActiveReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DescribeActiveReceiptRuleSet, this, request);
+}
+
+void SESClient::DescribeActiveReceiptRuleSetAsync(const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::DescribeActiveReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::DescribeActiveReceiptRuleSetAsyncHelper(const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeActiveReceiptRuleSet(request), context);
+}
+
+DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeReceiptRuleOutcome(DescribeReceiptRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeReceiptRuleOutcome(outcome.GetError());
+  }
+}
+
+DescribeReceiptRuleOutcomeCallable SESClient::DescribeReceiptRuleCallable(const DescribeReceiptRuleRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DescribeReceiptRule, this, request);
+}
+
+void SESClient::DescribeReceiptRuleAsync(const DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::DescribeReceiptRuleAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::DescribeReceiptRuleAsyncHelper(const DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReceiptRule(request), context);
+}
+
+DescribeReceiptRuleSetOutcome SESClient::DescribeReceiptRuleSet(const DescribeReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeReceiptRuleSetOutcome(DescribeReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+DescribeReceiptRuleSetOutcomeCallable SESClient::DescribeReceiptRuleSetCallable(const DescribeReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::DescribeReceiptRuleSet, this, request);
+}
+
+void SESClient::DescribeReceiptRuleSetAsync(const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::DescribeReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::DescribeReceiptRuleSetAsyncHelper(const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReceiptRuleSet(request), context);
 }
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
@@ -439,6 +756,66 @@ void SESClient::ListIdentityPoliciesAsyncHelper(const ListIdentityPoliciesReques
   handler(this, request, ListIdentityPolicies(request), context);
 }
 
+ListReceiptFiltersOutcome SESClient::ListReceiptFilters(const ListReceiptFiltersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListReceiptFiltersOutcome(ListReceiptFiltersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListReceiptFiltersOutcome(outcome.GetError());
+  }
+}
+
+ListReceiptFiltersOutcomeCallable SESClient::ListReceiptFiltersCallable(const ListReceiptFiltersRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::ListReceiptFilters, this, request);
+}
+
+void SESClient::ListReceiptFiltersAsync(const ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::ListReceiptFiltersAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::ListReceiptFiltersAsyncHelper(const ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReceiptFilters(request), context);
+}
+
+ListReceiptRuleSetsOutcome SESClient::ListReceiptRuleSets(const ListReceiptRuleSetsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListReceiptRuleSetsOutcome(ListReceiptRuleSetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListReceiptRuleSetsOutcome(outcome.GetError());
+  }
+}
+
+ListReceiptRuleSetsOutcomeCallable SESClient::ListReceiptRuleSetsCallable(const ListReceiptRuleSetsRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::ListReceiptRuleSets, this, request);
+}
+
+void SESClient::ListReceiptRuleSetsAsync(const ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::ListReceiptRuleSetsAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::ListReceiptRuleSetsAsyncHelper(const ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReceiptRuleSets(request), context);
+}
+
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const
 {
   Aws::StringStream ss;
@@ -499,6 +876,66 @@ void SESClient::PutIdentityPolicyAsyncHelper(const PutIdentityPolicyRequest& req
   handler(this, request, PutIdentityPolicy(request), context);
 }
 
+ReorderReceiptRuleSetOutcome SESClient::ReorderReceiptRuleSet(const ReorderReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ReorderReceiptRuleSetOutcome(ReorderReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ReorderReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+ReorderReceiptRuleSetOutcomeCallable SESClient::ReorderReceiptRuleSetCallable(const ReorderReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::ReorderReceiptRuleSet, this, request);
+}
+
+void SESClient::ReorderReceiptRuleSetAsync(const ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::ReorderReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::ReorderReceiptRuleSetAsyncHelper(const ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReorderReceiptRuleSet(request), context);
+}
+
+SendBounceOutcome SESClient::SendBounce(const SendBounceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SendBounceOutcome(SendBounceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendBounceOutcome(outcome.GetError());
+  }
+}
+
+SendBounceOutcomeCallable SESClient::SendBounceCallable(const SendBounceRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::SendBounce, this, request);
+}
+
+void SESClient::SendBounceAsync(const SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::SendBounceAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::SendBounceAsyncHelper(const SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendBounce(request), context);
+}
+
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
 {
   Aws::StringStream ss;
@@ -557,6 +994,36 @@ void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const Send
 void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendRawEmail(request), context);
+}
+
+SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiveReceiptRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetActiveReceiptRuleSetOutcome(SetActiveReceiptRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetActiveReceiptRuleSetOutcome(outcome.GetError());
+  }
+}
+
+SetActiveReceiptRuleSetOutcomeCallable SESClient::SetActiveReceiptRuleSetCallable(const SetActiveReceiptRuleSetRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::SetActiveReceiptRuleSet, this, request);
+}
+
+void SESClient::SetActiveReceiptRuleSetAsync(const SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::SetActiveReceiptRuleSetAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::SetActiveReceiptRuleSetAsyncHelper(const SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetActiveReceiptRuleSet(request), context);
 }
 
 SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentityDkimEnabledRequest& request) const
@@ -647,6 +1114,66 @@ void SESClient::SetIdentityNotificationTopicAsync(const SetIdentityNotificationT
 void SESClient::SetIdentityNotificationTopicAsyncHelper(const SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetIdentityNotificationTopic(request), context);
+}
+
+SetReceiptRulePositionOutcome SESClient::SetReceiptRulePosition(const SetReceiptRulePositionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetReceiptRulePositionOutcome(SetReceiptRulePositionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetReceiptRulePositionOutcome(outcome.GetError());
+  }
+}
+
+SetReceiptRulePositionOutcomeCallable SESClient::SetReceiptRulePositionCallable(const SetReceiptRulePositionRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::SetReceiptRulePosition, this, request);
+}
+
+void SESClient::SetReceiptRulePositionAsync(const SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::SetReceiptRulePositionAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::SetReceiptRulePositionAsyncHelper(const SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetReceiptRulePosition(request), context);
+}
+
+UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateReceiptRuleOutcome(UpdateReceiptRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateReceiptRuleOutcome(outcome.GetError());
+  }
+}
+
+UpdateReceiptRuleOutcomeCallable SESClient::UpdateReceiptRuleCallable(const UpdateReceiptRuleRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::UpdateReceiptRule, this, request);
+}
+
+void SESClient::UpdateReceiptRuleAsync(const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::UpdateReceiptRuleAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::UpdateReceiptRuleAsyncHelper(const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateReceiptRule(request), context);
 }
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const

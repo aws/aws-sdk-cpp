@@ -42,15 +42,21 @@ DescribeDBInstancesResult& DescribeDBInstancesResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBInstanceNodeParent = resultNode.FirstChild("DBInstance");
-    XmlNode dBInstanceNode = dBInstanceNodeParent.FirstChild("member");
-    while(!dBInstanceNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBInstances.push_back(dBInstanceNode);
-      dBInstanceNode = dBInstanceNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBInstancesNode = resultNode.FirstChild("DBInstances");
+    if(!dBInstancesNode.IsNull())
+    {
+      XmlNode dBInstancesMember = dBInstancesNode.FirstChild("DBInstance");
+      while(!dBInstancesMember.IsNull())
+      {
+        m_dBInstances.push_back(dBInstancesMember);
+        dBInstancesMember = dBInstancesMember.NextNode("DBInstance");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

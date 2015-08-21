@@ -42,16 +42,20 @@ GetIdentityPoliciesResult& GetIdentityPoliciesResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode policiesNode = resultNode.FirstChild("Policies");
-    policiesNode = policiesNode.FirstChild("entry");
-    while(!policiesNode.IsNull())
-    {
-      XmlNode keyNode = policiesNode.FirstChild("key");
-      XmlNode valueNode = policiesNode.FirstChild("value");
-      m_policies[StringUtils::Trim(keyNode.GetText().c_str())] =
-          StringUtils::Trim(valueNode.GetText().c_str());
-      policiesNode = policiesNode.NextNode("entry");
-    }
 
+    if(!policiesNode.IsNull())
+    {
+      XmlNode policiesEntry = policiesNode.FirstChild("entry");
+      while(!policiesEntry.IsNull())
+      {
+        XmlNode keyNode = policiesEntry.FirstChild("key");
+        XmlNode valueNode = policiesEntry.FirstChild("value");
+        m_policies[StringUtils::Trim(keyNode.GetText().c_str())] =
+            StringUtils::Trim(valueNode.GetText().c_str());
+        policiesEntry = policiesEntry.NextNode("entry");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

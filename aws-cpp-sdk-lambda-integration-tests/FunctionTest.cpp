@@ -44,6 +44,10 @@
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 
+#include <aws/iam/IAMClient.h>
+#include <aws/access-management/AccessManagementClient.h>
+#include <aws/cognito-identity/CognitoIdentityClient.h>
+
 using namespace Aws::Auth;
 using namespace Aws::Http;
 using namespace Aws::Client;
@@ -51,6 +55,8 @@ using namespace Aws::Lambda;
 using namespace Aws::Lambda::Model;
 using namespace Aws::Kinesis;
 using namespace Aws::Kinesis::Model;
+using namespace Aws::CognitoIdentity;
+
 
 #define TEST_FUNCTION_PREFIX  "IntegrationTest_"
 #define KINESIS_STREAM_NAME  "AWSNativeSDKIntegrationTest"
@@ -66,10 +72,9 @@ static const char* UNHANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/unhandled.zip
 
 static const char* ALLOCATION_TAG = "FunctionTest";
 
-static const char* KINESIS_STREAM_ARN = "arn:aws:kinesis:us-east-1:554229317296:stream/" KINESIS_STREAM_NAME;
+static const char* IAM_ROLE_NAME = "AWSNativeSDKLambdaIntegrationTestRole";
+static const char* IAM_POLICY_ARN = "arn:aws:iam::aws:policy/service-role/AWSLambdaKinesisExecutionRole";
 
-//This was manually created
-static const char* IAM_ROLE = "arn:aws:iam::554229317296:role/awsnativesdk_lambda_integration_test";
 
 namespace {
 
@@ -79,7 +84,8 @@ public:
     static std::shared_ptr<LambdaClient> m_client;
     static std::shared_ptr<KinesisClient> m_kinesis_client;
     static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
-
+    static std::shared_ptr<Aws::IAM::Model::Role> m_role;
+    static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
 protected:
 
     static void SetUpTestCase()
@@ -97,105 +103,143 @@ protected:
         //to test proxy functionality, uncomment the next two lines.
         m_client = Aws::MakeShared<LambdaClient>(ALLOCATION_TAG, config);
         m_kinesis_client = Aws::MakeShared<KinesisClient>(ALLOCATION_TAG, config);
-	    DeleteKinesisStream();
+
+        //Create our IAM Role, so that the Lambda tests have the right policies.
+        m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
+        ClientConfiguration clientConfig;
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
+        auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
+        m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, iamClient, cognitoClient);
+        
+        DeleteIAMRole();
+        CreateIAMRole();
+
+        DeleteKinesisStream();
         CreateKinesisStream();
 
         // delete all functions, just in case
         DeleteAllFunctions();
-	CreateAllFunctions();
+        CreateAllFunctions();
     }
 
     static void TearDownTestCase()
     {
         DeleteAllFunctions();
         DeleteKinesisStream();
+        DeleteIAMRole();
 
         m_limiter = nullptr;
         m_client = nullptr;
         m_kinesis_client = nullptr;
+        m_role = nullptr;
+        m_accessManagementClient = nullptr;
     }
 
     static void CreateAllFunctions()
     {
-	CreateFunction(SIMPLE_FUNCTION, SIMPLE_FUNCTION_CODE);
-	CreateFunction(HANDLED_ERROR_FUNCTION, HANDLED_ERROR_FUNCTION_CODE);
-	CreateFunction(UNHANDLED_ERROR_FUNCTION, UNHANDLED_ERROR_FUNCTION_CODE);
+        CreateFunction(SIMPLE_FUNCTION, SIMPLE_FUNCTION_CODE);
+        CreateFunction(HANDLED_ERROR_FUNCTION, HANDLED_ERROR_FUNCTION_CODE);
+        CreateFunction(UNHANDLED_ERROR_FUNCTION, UNHANDLED_ERROR_FUNCTION_CODE);
     }
 
     static void DeleteAllFunctions()
     {
         DeleteFunction(SIMPLE_FUNCTION);
         DeleteFunction(HANDLED_ERROR_FUNCTION);
-	DeleteFunction(UNHANDLED_ERROR_FUNCTION);
+        DeleteFunction(UNHANDLED_ERROR_FUNCTION);
     }
 
     enum class ResourceStatusType
     {
-	READY,
-	NOT_FOUND
+        READY,
+        NOT_FOUND
     };
 
     static void WaitForFunctionStatus(Aws::String functionName, ResourceStatusType status)
     {
-	bool done = false;
-	while(!done)
-	{
-	    ListFunctionsRequest listFunctionsRequest;
-	    ListFunctionsOutcome listFunctionsOutcome = m_client->ListFunctions(listFunctionsRequest);
+        bool done = false;
+        while(!done)
+        {
+            ListFunctionsRequest listFunctionsRequest;
+            ListFunctionsOutcome listFunctionsOutcome = m_client->ListFunctions(listFunctionsRequest);
 
-	    EXPECT_TRUE(listFunctionsOutcome.IsSuccess());
+            EXPECT_TRUE(listFunctionsOutcome.IsSuccess());
 
-	    auto functions = listFunctionsOutcome.GetResult().GetFunctions();
+            auto functions = listFunctionsOutcome.GetResult().GetFunctions();
 
-	    auto iter = std::find_if(functions.cbegin(), 
-				     functions.cend(), 
-				     [=](const FunctionConfiguration& function){ return function.GetFunctionName() == functionName; });
+            auto iter = std::find_if(functions.cbegin(), 
+                                     functions.cend(), 
+                                     [=](const FunctionConfiguration& function){ return function.GetFunctionName() == functionName; });
 
-	    switch(status)
-	    {
-	        case ResourceStatusType::READY:
-		    if(iter != functions.cend())
-		    {
-			return;
-		    }
-		    break;
+            switch(status)
+            {
+            case ResourceStatusType::READY:
+                if(iter != functions.cend())
+                {
+                    return;
+                }
+                break;
 
-	        case ResourceStatusType::NOT_FOUND:
-		    if(iter == functions.cend())
-		    {
-			return;
-		    }
-		    break;
-	    }
+            case ResourceStatusType::NOT_FOUND:
+                if(iter == functions.cend())
+                {
+                    return;
+                }
+                break;
+            }
 
-	    std::this_thread::sleep_for(std::chrono::seconds(1));	    
-	}
+            std::this_thread::sleep_for(std::chrono::seconds(1));	    
+        }
     }
 
     static void DeleteFunction(Aws::String functionName)
     {
-	DeleteFunctionRequest deleteFunctionRequest;
-	deleteFunctionRequest.SetFunctionName(functionName);
+        DeleteFunctionRequest deleteFunctionRequest;
+        deleteFunctionRequest.SetFunctionName(functionName);
 
-	bool done = false;
-	while(!done)
-	{
-	    DeleteFunctionOutcome deleteFunctionOutcome = m_client->DeleteFunction(deleteFunctionRequest);
-	    if (deleteFunctionOutcome.IsSuccess() || deleteFunctionOutcome.GetError().GetErrorType() == LambdaErrors::RESOURCE_NOT_FOUND)
-	    {
-		done = true;
-	    }
-	}
+        bool done = false;
+        while(!done)
+        {
+            DeleteFunctionOutcome deleteFunctionOutcome = m_client->DeleteFunction(deleteFunctionRequest);
+            if (deleteFunctionOutcome.IsSuccess())
+            {
+                done = true;
+            }
+            else
+            {
+                //Look at the specific error, from here:  http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html
+                //Some we will want to handle by aborting, others we can continue to spin on.
+                auto errCode = deleteFunctionOutcome.GetError().GetErrorType();
+                switch (errCode)
+                {
+                case LambdaErrors::RESOURCE_NOT_FOUND:
+                    //The function was already deleted or not present.
+                    done = true;
+                    break;
+                case LambdaErrors::TOO_MANY_REQUESTS:
+                    //This is OK; Keep spinning.
+                    break;
+                default:
+                    //Something bad happened, and we can't commit to this being successful.
+                    FAIL();
+                    break;
+                }
+            }
+        }
 
-	WaitForFunctionStatus(functionName, ResourceStatusType::NOT_FOUND);
+        WaitForFunctionStatus(functionName, ResourceStatusType::NOT_FOUND);
     }
 
     static void CreateFunction(Aws::String functionName,Aws::String zipLocation)
     {
+        //Get the ARN off the IAM role.  We'll need this for creating the functions.
+        auto & roleARN = m_role->GetArn();
+
+        //Now attempt to create the function.
         CreateFunctionRequest createFunctionRequest;
         createFunctionRequest.SetHandler("test.handler");
         createFunctionRequest.SetFunctionName(functionName);
-        createFunctionRequest.SetRole(IAM_ROLE);
+        createFunctionRequest.SetRole(roleARN);
         FunctionCode functionCode;
 
         std::ifstream fc(zipLocation.c_str());
@@ -207,13 +251,13 @@ protected:
         createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
-	ASSERT_TRUE(createFunctionOutcome.IsSuccess());
+        ASSERT_TRUE(createFunctionOutcome.IsSuccess());
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
-        ASSERT_EQ(IAM_ROLE,createFunctionOutcome.GetResult().GetRole());
+        ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
         ASSERT_EQ("nodejs", Aws::Lambda::Model::RuntimeMapper::GetNameForRuntime(createFunctionOutcome.GetResult().GetRuntime()));
- 
-	WaitForFunctionStatus(functionName, ResourceStatusType::READY);
+
+        WaitForFunctionStatus(functionName, ResourceStatusType::READY);
     }
 
     static void CreateKinesisStream()
@@ -236,34 +280,34 @@ protected:
         DescribeStreamRequest describeStreamRequest;
         describeStreamRequest.SetStreamName(streamName);
 
-	bool done = false;
-	while(!done)
-	{
-	    DescribeStreamOutcome describeStreamOutcome = m_kinesis_client->DescribeStream(describeStreamRequest);
+        bool done = false;
+        while(!done)
+        {
+            DescribeStreamOutcome describeStreamOutcome = m_kinesis_client->DescribeStream(describeStreamRequest);
 
-	    switch(status)
-	    {
-  	        case ResourceStatusType::NOT_FOUND:
-		    if(!describeStreamOutcome.IsSuccess())
-		    {
-			return;
-		    }
-		    break;
+            switch(status)
+            {
+            case ResourceStatusType::NOT_FOUND:
+                if(!describeStreamOutcome.IsSuccess())
+                {
+                    return;
+                }
+                break;
 
-	        case ResourceStatusType::READY:
-		    if(describeStreamOutcome.IsSuccess())
-		    {
-			auto streamStatus = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamStatus();
-			if(streamStatus == StreamStatus::ACTIVE)
-			{
-			    return;
-			}
-		    }
-		    break;
-	    }
+            case ResourceStatusType::READY:
+                if(describeStreamOutcome.IsSuccess())
+                {
+                    auto streamStatus = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamStatus();
+                    if(streamStatus == StreamStatus::ACTIVE)
+                    {
+                        return;
+                    }
+                }
+                break;
+            }
 
-	    std::this_thread::sleep_for(std::chrono::seconds(1));
-	}
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
     }
 
     static void DeleteKinesisStream()
@@ -272,13 +316,48 @@ protected:
         deleteStreamRequest.SetStreamName(KINESIS_STREAM_NAME);
         m_kinesis_client->DeleteStream(deleteStreamRequest);
 
-	WaitForKinesisStream(KINESIS_STREAM_NAME, ResourceStatusType::NOT_FOUND);
+        WaitForKinesisStream(KINESIS_STREAM_NAME, ResourceStatusType::NOT_FOUND);
+    }
+
+    static void CreateIAMRole()
+    {
+        //Who can assume this role, and what access conditions exist?
+        char const * trustRelationship = 
+            "{"
+              "\"Version\": \"2012-10-17\","
+              "\"Statement\": ["
+                "{"
+                   "\"Sid\": \"\","
+                   "\"Effect\": \"Allow\","
+                   "\"Principal\": {"
+                     "\"Service\": \"lambda.amazonaws.com\""
+                   "},"
+                   "\"Action\": \"sts:AssumeRole\""
+                "}"
+              "]"
+            "}";
+        const bool roleCreationSuccessful = m_accessManagementClient->CreateRole(IAM_ROLE_NAME, trustRelationship, *m_role);
+        ASSERT_TRUE(roleCreationSuccessful);
+
+        //Apply the policy ARN saying what this role is allowed to do.
+        const bool policyApplied = m_accessManagementClient->AttachPolicyToRole(IAM_POLICY_ARN, IAM_ROLE_NAME);
+        ASSERT_TRUE(policyApplied);
+    }
+
+    static void DeleteIAMRole()
+    {
+        //This will return true even if the IAM role never existed.
+        const bool removedSuccessfully = m_accessManagementClient->DeleteRole(IAM_ROLE_NAME);
+        ASSERT_TRUE(removedSuccessfully);
     }
 };
 
 std::shared_ptr<LambdaClient> FunctionTest::m_client(nullptr);
 std::shared_ptr<KinesisClient> FunctionTest::m_kinesis_client(nullptr);
 std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> FunctionTest::m_limiter(nullptr);
+std::shared_ptr<Aws::IAM::Model::Role> FunctionTest::m_role(nullptr);
+std::shared_ptr< Aws::AccessManagement::AccessManagementClient > FunctionTest::m_accessManagementClient(nullptr);
+
 
 TEST_F(FunctionTest, TestListFunction)
 {
@@ -447,7 +526,7 @@ TEST_F(FunctionTest, TestPermissions)
     addPermissionRequest.SetStatementId("12345");
 
     auto outcome = m_client->AddPermission(addPermissionRequest);
-    EXPECT_TRUE(outcome.IsSuccess());
+    ASSERT_TRUE(outcome.IsSuccess());
 
     AddPermissionResult result = outcome.GetResult();
     auto statement = Aws::Utils::Json::JsonValue(result.GetStatement());
@@ -459,7 +538,8 @@ TEST_F(FunctionTest, TestPermissions)
     GetPolicyRequest getPolicyRequest;
     getPolicyRequest.SetFunctionName(SIMPLE_FUNCTION);
     auto getPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
-    EXPECT_TRUE(getPolicyOutcome.IsSuccess());
+    //If this fails, stop.
+    ASSERT_TRUE(getPolicyOutcome.IsSuccess());
     GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
     auto getPolicyStatement = Aws::Utils::Json::JsonValue(getPolicyResult.GetPolicy());
 
@@ -484,11 +564,36 @@ TEST_F(FunctionTest, TestPermissions)
 
 TEST_F(FunctionTest, TestEventSources) 
 {
+    //Attempt to get the ARN of the stream we created during the init.
+    DescribeStreamRequest describeStreamRequest;
+    describeStreamRequest.SetStreamName(KINESIS_STREAM_NAME);
+
+    Aws::String streamARN;
+    bool done = false;
+    while(!done)
+    {
+        DescribeStreamOutcome describeStreamOutcome = m_kinesis_client->DescribeStream(describeStreamRequest);
+        if (describeStreamOutcome.IsSuccess())
+        {
+            done = true;
+            DescribeStreamResult result = describeStreamOutcome.GetResult();
+            const StreamDescription & description = result.GetStreamDescription();
+            streamARN = description.GetStreamARN();
+        }
+        else
+        {
+            auto errCode = describeStreamOutcome.GetError().GetErrorType();
+            ASSERT_TRUE(KinesisErrors::LIMIT_EXCEEDED == errCode);
+            //If the limit was exceeded, wait and try again.
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    }
+
     CreateEventSourceMappingRequest createEventSourceMappingRequest;
     createEventSourceMappingRequest.SetFunctionName(SIMPLE_FUNCTION);
     createEventSourceMappingRequest.SetEnabled(false);
     //Not a real stream
-    createEventSourceMappingRequest.SetEventSourceArn(KINESIS_STREAM_ARN);
+    createEventSourceMappingRequest.SetEventSourceArn(streamARN);
     createEventSourceMappingRequest.SetStartingPosition(EventSourcePosition::LATEST);
     createEventSourceMappingRequest.SetBatchSize(99);
 
@@ -500,7 +605,7 @@ TEST_F(FunctionTest, TestEventSources)
         EXPECT_EQ(99,createResult.GetBatchSize());
         EXPECT_NE(std::string::npos,createResult.GetFunctionArn().find(SIMPLE_FUNCTION));
         EXPECT_EQ("Creating",createResult.GetState());
-        EXPECT_EQ(KINESIS_STREAM_ARN,createResult.GetEventSourceArn());
+        EXPECT_EQ(streamARN,createResult.GetEventSourceArn());
         createdMappingUUID = createResult.GetUUID();
     }
     else

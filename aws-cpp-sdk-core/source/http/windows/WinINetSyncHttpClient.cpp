@@ -74,9 +74,9 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config)
     //add proxy auth credentials to everything using this handle.
     if (isUsingProxy)
     {
-        if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
+        if (!config.proxyUserName.empty() && !InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
             AWS_LOG_FATAL(GetLogTag(), "Failed setting username for proxy with error code: %d", GetLastError());
-        if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
+        if (!config.proxyPassword.empty() && !InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
             AWS_LOG_FATAL(GetLogTag(), "Failed setting password for proxy with error code: %d", GetLastError());
     }
 

@@ -72,14 +72,14 @@ LoadBalancerAttributes& LoadBalancerAttributes::operator =(const XmlNode& xmlNod
       m_connectionSettings = connectionSettingsNode;
       m_connectionSettingsHasBeenSet = true;
     }
-    XmlNode additionalAttributesNodeParent = resultNode.FirstChild("AdditionalAttributes");
-    XmlNode additionalAttributesNode = additionalAttributesNodeParent.FirstChild("member");
+    XmlNode additionalAttributesNode = resultNode.FirstChild("AdditionalAttributes");
     if(!additionalAttributesNode.IsNull())
     {
-      while(!additionalAttributesNode.IsNull())
+      XmlNode additionalAttributesMember = additionalAttributesNode.FirstChild("member");
+      while(!additionalAttributesMember.IsNull())
       {
-        m_additionalAttributes.push_back(additionalAttributesNode);
-        additionalAttributesNode = additionalAttributesNode.NextNode("member");
+        m_additionalAttributes.push_back(additionalAttributesMember);
+        additionalAttributesMember = additionalAttributesMember.NextNode("member");
       }
 
       m_additionalAttributesHasBeenSet = true;

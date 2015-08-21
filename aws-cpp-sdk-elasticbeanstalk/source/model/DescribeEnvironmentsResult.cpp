@@ -41,14 +41,17 @@ DescribeEnvironmentsResult& DescribeEnvironmentsResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode environmentsNodeParent = resultNode.FirstChild("Environments");
-    XmlNode environmentsNode = environmentsNodeParent.FirstChild("member");
-    while(!environmentsNode.IsNull())
+    XmlNode environmentsNode = resultNode.FirstChild("Environments");
+    if(!environmentsNode.IsNull())
     {
-      m_environments.push_back(environmentsNode);
-      environmentsNode = environmentsNode.NextNode("member");
-    }
+      XmlNode environmentsMember = environmentsNode.FirstChild("member");
+      while(!environmentsMember.IsNull())
+      {
+        m_environments.push_back(environmentsMember);
+        environmentsMember = environmentsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

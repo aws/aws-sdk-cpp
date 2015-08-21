@@ -48,13 +48,14 @@ ReplaceableItem& ReplaceableItem::operator =(const XmlNode& xmlNode)
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
-    XmlNode attributeNode = resultNode.FirstChild("Attribute");
-    if(!attributeNode.IsNull())
+    XmlNode attributesNode = resultNode.FirstChild("Attribute");
+    if(!attributesNode.IsNull())
     {
-      while(!attributeNode.IsNull())
+      XmlNode attributeMember = attributesNode;
+      while(!attributeMember.IsNull())
       {
-        m_attributes.push_back(attributeNode);
-        attributeNode = attributeNode.NextNode("Attribute");
+        m_attributes.push_back(attributeMember);
+        attributeMember = attributeMember.NextNode("Attribute");
       }
 
       m_attributesHasBeenSet = true;

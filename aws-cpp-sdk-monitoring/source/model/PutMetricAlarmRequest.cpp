@@ -63,7 +63,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
     unsigned oKActionsCount = 1;
     for(auto& item : m_oKActions)
     {
-      ss << "OKActions." << oKActionsCount << "="
+      ss << "OKActions.member." << oKActionsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       oKActionsCount++;
     }
@@ -73,7 +73,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
     unsigned alarmActionsCount = 1;
     for(auto& item : m_alarmActions)
     {
-      ss << "AlarmActions." << alarmActionsCount << "="
+      ss << "AlarmActions.member." << alarmActionsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       alarmActionsCount++;
     }
@@ -83,7 +83,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
     unsigned insufficientDataActionsCount = 1;
     for(auto& item : m_insufficientDataActions)
     {
-      ss << "InsufficientDataActions." << insufficientDataActionsCount << "="
+      ss << "InsufficientDataActions.member." << insufficientDataActionsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       insufficientDataActionsCount++;
     }
@@ -105,7 +105,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
     unsigned dimensionsCount = 1;
     for(auto& item : m_dimensions)
     {
-      item.OutputToStream(ss, "Dimensions.", dimensionsCount, "");
+      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
       dimensionsCount++;
     }
   }

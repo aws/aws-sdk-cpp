@@ -43,18 +43,27 @@ ListMFADevicesResult& ListMFADevicesResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode mFADevicesNodeParent = resultNode.FirstChild("MFADevices");
-    XmlNode mFADevicesNode = mFADevicesNodeParent.FirstChild("member");
-    while(!mFADevicesNode.IsNull())
+    XmlNode mFADevicesNode = resultNode.FirstChild("MFADevices");
+    if(!mFADevicesNode.IsNull())
     {
-      m_mFADevices.push_back(mFADevicesNode);
-      mFADevicesNode = mFADevicesNode.NextNode("member");
-    }
+      XmlNode mFADevicesMember = mFADevicesNode.FirstChild("member");
+      while(!mFADevicesMember.IsNull())
+      {
+        m_mFADevices.push_back(mFADevicesMember);
+        mFADevicesMember = mFADevicesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

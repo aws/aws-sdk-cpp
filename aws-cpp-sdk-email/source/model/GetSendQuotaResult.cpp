@@ -48,11 +48,20 @@ GetSendQuotaResult& GetSendQuotaResult::operator =(const AmazonWebServiceResult<
   if(!resultNode.IsNull())
   {
     XmlNode max24HourSendNode = resultNode.FirstChild("Max24HourSend");
-    m_max24HourSend = StringUtils::ConvertToDouble(StringUtils::Trim(max24HourSendNode.GetText().c_str()).c_str());
+    if(!max24HourSendNode.IsNull())
+    {
+      m_max24HourSend = StringUtils::ConvertToDouble(StringUtils::Trim(max24HourSendNode.GetText().c_str()).c_str());
+    }
     XmlNode maxSendRateNode = resultNode.FirstChild("MaxSendRate");
-    m_maxSendRate = StringUtils::ConvertToDouble(StringUtils::Trim(maxSendRateNode.GetText().c_str()).c_str());
+    if(!maxSendRateNode.IsNull())
+    {
+      m_maxSendRate = StringUtils::ConvertToDouble(StringUtils::Trim(maxSendRateNode.GetText().c_str()).c_str());
+    }
     XmlNode sentLast24HoursNode = resultNode.FirstChild("SentLast24Hours");
-    m_sentLast24Hours = StringUtils::ConvertToDouble(StringUtils::Trim(sentLast24HoursNode.GetText().c_str()).c_str());
+    if(!sentLast24HoursNode.IsNull())
+    {
+      m_sentLast24Hours = StringUtils::ConvertToDouble(StringUtils::Trim(sentLast24HoursNode.GetText().c_str()).c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

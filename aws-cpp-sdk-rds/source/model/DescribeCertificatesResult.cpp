@@ -41,16 +41,22 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode certificateNodeParent = resultNode.FirstChild("Certificate");
-    XmlNode certificateNode = certificateNodeParent.FirstChild("member");
-    while(!certificateNode.IsNull())
+    XmlNode certificatesNode = resultNode.FirstChild("Certificates");
+    if(!certificatesNode.IsNull())
     {
-      m_certificates.push_back(certificateNode);
-      certificateNode = certificateNode.NextNode("member");
-    }
+      XmlNode certificatesMember = certificatesNode.FirstChild("Certificate");
+      while(!certificatesMember.IsNull())
+      {
+        m_certificates.push_back(certificatesMember);
+        certificatesMember = certificatesMember.NextNode("Certificate");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

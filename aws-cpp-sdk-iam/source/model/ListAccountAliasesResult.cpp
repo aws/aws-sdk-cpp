@@ -43,18 +43,27 @@ ListAccountAliasesResult& ListAccountAliasesResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode accountAliasesNodeParent = resultNode.FirstChild("AccountAliases");
-    XmlNode accountAliasesNode = accountAliasesNodeParent.FirstChild("member");
-    while(!accountAliasesNode.IsNull())
+    XmlNode accountAliasesNode = resultNode.FirstChild("AccountAliases");
+    if(!accountAliasesNode.IsNull())
     {
-      m_accountAliases.push_back(StringUtils::Trim(accountAliasesNode.GetText().c_str()));
-      accountAliasesNode = accountAliasesNode.NextNode("member");
-    }
+      XmlNode accountAliasesMember = accountAliasesNode.FirstChild("member");
+      while(!accountAliasesMember.IsNull())
+      {
+        m_accountAliases.push_back(StringUtils::Trim(accountAliasesMember.GetText().c_str()));
+        accountAliasesMember = accountAliasesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

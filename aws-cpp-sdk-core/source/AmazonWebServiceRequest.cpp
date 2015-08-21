@@ -20,7 +20,9 @@
 using namespace Aws;
 
 AmazonWebServiceRequest::AmazonWebServiceRequest() :
-    m_responseStreamFactory(AWS_BUILD_FUNCTION(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod))
+    m_responseStreamFactory(AWS_BUILD_FUNCTION(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod)),
+    m_onDataReceived(nullptr),
+    m_onDataSent(nullptr)
 {
 }
 

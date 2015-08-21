@@ -38,7 +38,7 @@ Aws::String DisableMetricsCollectionRequest::SerializePayload() const
     unsigned metricsCount = 1;
     for(auto& item : m_metrics)
     {
-      ss << "Metrics." << metricsCount << "="
+      ss << "Metrics.member." << metricsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       metricsCount++;
     }

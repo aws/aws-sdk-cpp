@@ -81,11 +81,37 @@ namespace Model
     */
     inline Endpoint&  WithPort(long value) { SetPort(value); return *this;}
 
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline Endpoint&  WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline Endpoint& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
   private:
     Aws::String m_address;
     bool m_addressHasBeenSet;
     long m_port;
     bool m_portHasBeenSet;
+    Aws::String m_hostedZoneId;
+    bool m_hostedZoneIdHasBeenSet;
   };
 
 } // namespace Model

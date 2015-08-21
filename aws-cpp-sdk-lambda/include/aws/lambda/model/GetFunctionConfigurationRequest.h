@@ -19,10 +19,6 @@
 
 namespace Aws
 {
-namespace Http
-{
-    class URI;
-} //namespace Http
 namespace Lambda
 {
 namespace Model
@@ -35,8 +31,6 @@ namespace Model
   public:
     GetFunctionConfigurationRequest();
     Aws::String SerializePayload() const override;
-
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /*
@@ -63,35 +57,9 @@ namespace Model
     */
     inline GetFunctionConfigurationRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
-    /*
-     <p>Specifies Lambda function version for which you want to retrieve the configuration. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To get configuration information for the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    /*
-     <p>Specifies Lambda function version for which you want to retrieve the configuration. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To get configuration information for the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /*
-     <p>Specifies Lambda function version for which you want to retrieve the configuration. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To get configuration information for the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /*
-     <p>Specifies Lambda function version for which you want to retrieve the configuration. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To get configuration information for the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline GetFunctionConfigurationRequest&  WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /*
-     <p>Specifies Lambda function version for which you want to retrieve the configuration. If you specify an ARN with version information as the <code>FunctionName</code>, you either don't specify this parameter at all or you must specify the same version that you provided in the <code>FunctionName</code>. To get configuration information for the default version of a function, do not include version in the function name ARN and do not set this parameter. </p>
-    */
-    inline GetFunctionConfigurationRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
-    Aws::String m_version;
-    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

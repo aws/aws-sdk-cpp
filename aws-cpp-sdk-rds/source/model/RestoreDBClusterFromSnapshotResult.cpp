@@ -42,7 +42,10 @@ RestoreDBClusterFromSnapshotResult& RestoreDBClusterFromSnapshotResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterNode = resultNode.FirstChild("DBCluster");
-    m_dBCluster = dBClusterNode;
+    if(!dBClusterNode.IsNull())
+    {
+      m_dBCluster = dBClusterNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

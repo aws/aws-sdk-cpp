@@ -43,18 +43,27 @@ ListPoliciesResult& ListPoliciesResult::operator =(const AmazonWebServiceResult<
 
   if(!resultNode.IsNull())
   {
-    XmlNode policiesNodeParent = resultNode.FirstChild("Policies");
-    XmlNode policiesNode = policiesNodeParent.FirstChild("member");
-    while(!policiesNode.IsNull())
+    XmlNode policiesNode = resultNode.FirstChild("Policies");
+    if(!policiesNode.IsNull())
     {
-      m_policies.push_back(policiesNode);
-      policiesNode = policiesNode.NextNode("member");
-    }
+      XmlNode policiesMember = policiesNode.FirstChild("member");
+      while(!policiesMember.IsNull())
+      {
+        m_policies.push_back(policiesMember);
+        policiesMember = policiesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

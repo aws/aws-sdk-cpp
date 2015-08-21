@@ -41,14 +41,17 @@ AttachLoadBalancerToSubnetsResult& AttachLoadBalancerToSubnetsResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode subnetsNodeParent = resultNode.FirstChild("Subnets");
-    XmlNode subnetsNode = subnetsNodeParent.FirstChild("member");
-    while(!subnetsNode.IsNull())
+    XmlNode subnetsNode = resultNode.FirstChild("Subnets");
+    if(!subnetsNode.IsNull())
     {
-      m_subnets.push_back(StringUtils::Trim(subnetsNode.GetText().c_str()));
-      subnetsNode = subnetsNode.NextNode("member");
-    }
+      XmlNode subnetsMember = subnetsNode.FirstChild("member");
+      while(!subnetsMember.IsNull())
+      {
+        m_subnets.push_back(StringUtils::Trim(subnetsMember.GetText().c_str()));
+        subnetsMember = subnetsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -80,7 +80,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
     unsigned availabilityZonesCount = 1;
     for(auto& item : m_availabilityZones)
     {
-      ss << "AvailabilityZones." << availabilityZonesCount << "="
+      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       availabilityZonesCount++;
     }
@@ -90,7 +90,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
     unsigned loadBalancerNamesCount = 1;
     for(auto& item : m_loadBalancerNames)
     {
-      ss << "LoadBalancerNames." << loadBalancerNamesCount << "="
+      ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       loadBalancerNamesCount++;
     }
@@ -116,7 +116,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
     unsigned terminationPoliciesCount = 1;
     for(auto& item : m_terminationPolicies)
     {
-      ss << "TerminationPolicies." << terminationPoliciesCount << "="
+      ss << "TerminationPolicies.member." << terminationPoliciesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       terminationPoliciesCount++;
     }
@@ -126,7 +126,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tags.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }

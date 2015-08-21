@@ -20,8 +20,11 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 SimulatePolicyRequest::SimulatePolicyRequest() : 
-    m_simulationPoliciesHasBeenSet(false),
-    m_simulationScenariosHasBeenSet(false)
+    m_getPolicyForHasBeenSet(false),
+    m_policyInputListHasBeenSet(false),
+    m_actionNamesHasBeenSet(false),
+    m_resourceNamesHasBeenSet(false),
+    m_contextEntriesHasBeenSet(false)
 {
 }
 
@@ -29,17 +32,47 @@ Aws::String SimulatePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=SimulatePolicy&";
-  if(m_simulationPoliciesHasBeenSet)
+  if(m_getPolicyForHasBeenSet)
   {
-    m_simulationPolicies.OutputToStream(ss, "SimulationPolicies.");
+    ss << "GetPolicyFor=" << StringUtils::URLEncode(m_getPolicyFor.c_str()) << "&";
   }
-  if(m_simulationScenariosHasBeenSet)
+  if(m_policyInputListHasBeenSet)
   {
-    unsigned simulationScenariosCount = 1;
-    for(auto& item : m_simulationScenarios)
+    unsigned policyInputListCount = 1;
+    for(auto& item : m_policyInputList)
     {
-      item.OutputToStream(ss, "SimulationScenarios.", simulationScenariosCount, "");
-      simulationScenariosCount++;
+      ss << "PolicyInputList.member." << policyInputListCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      policyInputListCount++;
+    }
+  }
+  if(m_actionNamesHasBeenSet)
+  {
+    unsigned actionNamesCount = 1;
+    for(auto& item : m_actionNames)
+    {
+      ss << "ActionNames.member." << actionNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      actionNamesCount++;
+    }
+  }
+  if(m_resourceNamesHasBeenSet)
+  {
+    unsigned resourceNamesCount = 1;
+    for(auto& item : m_resourceNames)
+    {
+      ss << "ResourceNames.member." << resourceNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      resourceNamesCount++;
+    }
+  }
+  if(m_contextEntriesHasBeenSet)
+  {
+    unsigned contextEntriesCount = 1;
+    for(auto& item : m_contextEntries)
+    {
+      item.OutputToStream(ss, "ContextEntries.member.", contextEntriesCount, "");
+      contextEntriesCount++;
     }
   }
   ss << "Version=2010-05-08";

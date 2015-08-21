@@ -42,7 +42,10 @@ CreateTopicResult& CreateTopicResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
-    m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+    if(!topicArnNode.IsNull())
+    {
+      m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

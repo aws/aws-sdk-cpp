@@ -19,8 +19,13 @@ file(GLOB S3_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-integration-tests/Bucket
 file(GLOB LAMBDA_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda-integration-tests/FunctionTest.cpp")
 file(GLOB COGNITO_IDENTITY_IDENTITY_POOL_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/IdentityPoolOperationTest.cpp")
 file(GLOB COGNITO_IDENTITY_CREDENTIALS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/GetCredentialsTest.cpp")
+file(GLOB TRANSFER_RESOURCE_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer-tests/ResourceTests.cpp")
+file(GLOB TRANSFER_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer-tests/TransferTests.cpp")
+file(GLOB LOGGING_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-logging-tests/LoggingTest.cpp")
+file(GLOB IDENTITY_MANAGEMENT_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-identity-management-tests/auth/*.cpp")
 file(GLOB TEST_SRC "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp")
 
+# commented-out tests are not working on android yet
 file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC 
     ${CORE_AWS_SRC}
     ${CORE_AWS_AUTH_SRC}
@@ -35,9 +40,13 @@ file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC
     ${DYNAMODB_SRC}
     ${SQS_SRC}
     ${S3_SRC}
-    ${LAMBDA_SRC}
+#    ${LAMBDA_SRC}
     ${COGNITO_IDENTITY_IDENTITY_POOL_SRC}
     ${COGNITO_IDENTITY_CREDENTIALS_SRC}
+    ${TRANSFER_RESOURCE_SRC}
+#    ${TRANSFER_SRC}
+    ${LOGGING_SRC}
+#    ${IDENTITY_MANAGEMENT_SRC}
     ${TEST_SRC}
 )
 
@@ -53,6 +62,9 @@ set(AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kinesis/include/"
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
+    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer/include/"
+    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-logging/include/"
+    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-identity-management/include/"
     "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
 )
 
@@ -70,6 +82,9 @@ target_link_libraries(android-unified-tests
 		      aws-cpp-sdk-lambda 
 		      aws-cpp-sdk-kinesis
 		      aws-cpp-sdk-cognito-identity
+		      aws-cpp-sdk-transfer
+		      aws-cpp-sdk-logging
+		      aws-cpp-sdk-identity-management
 		      testing-resources 
 		      aws-cpp-sdk-core 
 		      ${PLATFORM_DEP_LIBS})

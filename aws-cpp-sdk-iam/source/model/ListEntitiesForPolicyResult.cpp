@@ -43,34 +43,49 @@ ListEntitiesForPolicyResult& ListEntitiesForPolicyResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode policyGroupsNodeParent = resultNode.FirstChild("PolicyGroups");
-    XmlNode policyGroupsNode = policyGroupsNodeParent.FirstChild("member");
-    while(!policyGroupsNode.IsNull())
+    XmlNode policyGroupsNode = resultNode.FirstChild("PolicyGroups");
+    if(!policyGroupsNode.IsNull())
     {
-      m_policyGroups.push_back(policyGroupsNode);
-      policyGroupsNode = policyGroupsNode.NextNode("member");
-    }
+      XmlNode policyGroupsMember = policyGroupsNode.FirstChild("member");
+      while(!policyGroupsMember.IsNull())
+      {
+        m_policyGroups.push_back(policyGroupsMember);
+        policyGroupsMember = policyGroupsMember.NextNode("member");
+      }
 
-    XmlNode policyUsersNodeParent = resultNode.FirstChild("PolicyUsers");
-    XmlNode policyUsersNode = policyUsersNodeParent.FirstChild("member");
-    while(!policyUsersNode.IsNull())
+    }
+    XmlNode policyUsersNode = resultNode.FirstChild("PolicyUsers");
+    if(!policyUsersNode.IsNull())
     {
-      m_policyUsers.push_back(policyUsersNode);
-      policyUsersNode = policyUsersNode.NextNode("member");
-    }
+      XmlNode policyUsersMember = policyUsersNode.FirstChild("member");
+      while(!policyUsersMember.IsNull())
+      {
+        m_policyUsers.push_back(policyUsersMember);
+        policyUsersMember = policyUsersMember.NextNode("member");
+      }
 
-    XmlNode policyRolesNodeParent = resultNode.FirstChild("PolicyRoles");
-    XmlNode policyRolesNode = policyRolesNodeParent.FirstChild("member");
-    while(!policyRolesNode.IsNull())
+    }
+    XmlNode policyRolesNode = resultNode.FirstChild("PolicyRoles");
+    if(!policyRolesNode.IsNull())
     {
-      m_policyRoles.push_back(policyRolesNode);
-      policyRolesNode = policyRolesNode.NextNode("member");
-    }
+      XmlNode policyRolesMember = policyRolesNode.FirstChild("member");
+      while(!policyRolesMember.IsNull())
+      {
+        m_policyRoles.push_back(policyRolesMember);
+        policyRolesMember = policyRolesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

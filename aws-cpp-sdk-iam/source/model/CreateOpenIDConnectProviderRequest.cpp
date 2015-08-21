@@ -39,7 +39,7 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
     unsigned clientIDListCount = 1;
     for(auto& item : m_clientIDList)
     {
-      ss << "ClientIDList." << clientIDListCount << "="
+      ss << "ClientIDList.member." << clientIDListCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       clientIDListCount++;
     }
@@ -49,7 +49,7 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
     unsigned thumbprintListCount = 1;
     for(auto& item : m_thumbprintList)
     {
-      ss << "ThumbprintList." << thumbprintListCount << "="
+      ss << "ThumbprintList.member." << thumbprintListCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       thumbprintListCount++;
     }

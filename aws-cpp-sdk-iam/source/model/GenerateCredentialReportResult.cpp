@@ -42,9 +42,15 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode stateNode = resultNode.FirstChild("State");
-    m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+    if(!stateNode.IsNull())
+    {
+      m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+    }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

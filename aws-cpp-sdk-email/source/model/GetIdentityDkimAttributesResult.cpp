@@ -42,16 +42,20 @@ GetIdentityDkimAttributesResult& GetIdentityDkimAttributesResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode dkimAttributesNode = resultNode.FirstChild("DkimAttributes");
-    dkimAttributesNode = dkimAttributesNode.FirstChild("entry");
-    while(!dkimAttributesNode.IsNull())
-    {
-      XmlNode keyNode = dkimAttributesNode.FirstChild("key");
-      XmlNode valueNode = dkimAttributesNode.FirstChild("value");
-      m_dkimAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
-          valueNode;
-      dkimAttributesNode = dkimAttributesNode.NextNode("entry");
-    }
 
+    if(!dkimAttributesNode.IsNull())
+    {
+      XmlNode dkimAttributesEntry = dkimAttributesNode.FirstChild("entry");
+      while(!dkimAttributesEntry.IsNull())
+      {
+        XmlNode keyNode = dkimAttributesEntry.FirstChild("key");
+        XmlNode valueNode = dkimAttributesEntry.FirstChild("value");
+        m_dkimAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+            valueNode;
+        dkimAttributesEntry = dkimAttributesEntry.NextNode("entry");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

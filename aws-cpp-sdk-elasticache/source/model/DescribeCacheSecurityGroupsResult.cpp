@@ -42,15 +42,21 @@ DescribeCacheSecurityGroupsResult& DescribeCacheSecurityGroupsResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheSecurityGroupNodeParent = resultNode.FirstChild("CacheSecurityGroup");
-    XmlNode cacheSecurityGroupNode = cacheSecurityGroupNodeParent.FirstChild("member");
-    while(!cacheSecurityGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_cacheSecurityGroups.push_back(cacheSecurityGroupNode);
-      cacheSecurityGroupNode = cacheSecurityGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode cacheSecurityGroupsNode = resultNode.FirstChild("CacheSecurityGroups");
+    if(!cacheSecurityGroupsNode.IsNull())
+    {
+      XmlNode cacheSecurityGroupsMember = cacheSecurityGroupsNode.FirstChild("CacheSecurityGroup");
+      while(!cacheSecurityGroupsMember.IsNull())
+      {
+        m_cacheSecurityGroups.push_back(cacheSecurityGroupsMember);
+        cacheSecurityGroupsMember = cacheSecurityGroupsMember.NextNode("CacheSecurityGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

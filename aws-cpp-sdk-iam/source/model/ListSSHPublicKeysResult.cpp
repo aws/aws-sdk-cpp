@@ -43,18 +43,27 @@ ListSSHPublicKeysResult& ListSSHPublicKeysResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode sSHPublicKeysNodeParent = resultNode.FirstChild("SSHPublicKeys");
-    XmlNode sSHPublicKeysNode = sSHPublicKeysNodeParent.FirstChild("member");
-    while(!sSHPublicKeysNode.IsNull())
+    XmlNode sSHPublicKeysNode = resultNode.FirstChild("SSHPublicKeys");
+    if(!sSHPublicKeysNode.IsNull())
     {
-      m_sSHPublicKeys.push_back(sSHPublicKeysNode);
-      sSHPublicKeysNode = sSHPublicKeysNode.NextNode("member");
-    }
+      XmlNode sSHPublicKeysMember = sSHPublicKeysNode.FirstChild("member");
+      while(!sSHPublicKeysMember.IsNull())
+      {
+        m_sSHPublicKeys.push_back(sSHPublicKeysMember);
+        sSHPublicKeysMember = sSHPublicKeysMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

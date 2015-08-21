@@ -104,38 +104,38 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
       m_valueType = ConfigurationOptionValueTypeMapper::GetConfigurationOptionValueTypeForName(StringUtils::Trim(valueTypeNode.GetText().c_str()).c_str());
       m_valueTypeHasBeenSet = true;
     }
-    XmlNode valueOptionsNodeParent = resultNode.FirstChild("ValueOptions");
-    XmlNode valueOptionsNode = valueOptionsNodeParent.FirstChild("member");
+    XmlNode valueOptionsNode = resultNode.FirstChild("ValueOptions");
     if(!valueOptionsNode.IsNull())
     {
-      while(!valueOptionsNode.IsNull())
+      XmlNode valueOptionsMember = valueOptionsNode.FirstChild("member");
+      while(!valueOptionsMember.IsNull())
       {
-        m_valueOptions.push_back(StringUtils::Trim(valueOptionsNode.GetText().c_str()));
-        valueOptionsNode = valueOptionsNode.NextNode("member");
+        m_valueOptions.push_back(StringUtils::Trim(valueOptionsMember.GetText().c_str()));
+        valueOptionsMember = valueOptionsMember.NextNode("member");
       }
 
       m_valueOptionsHasBeenSet = true;
     }
     XmlNode minValueNode = resultNode.FirstChild("MinValue");
-    if(!valueOptionsNode.IsNull())
+    if(!minValueNode.IsNull())
     {
       m_minValue = StringUtils::ConvertToInt32(StringUtils::Trim(minValueNode.GetText().c_str()).c_str());
       m_minValueHasBeenSet = true;
     }
     XmlNode maxValueNode = resultNode.FirstChild("MaxValue");
-    if(!valueOptionsNode.IsNull())
+    if(!maxValueNode.IsNull())
     {
       m_maxValue = StringUtils::ConvertToInt32(StringUtils::Trim(maxValueNode.GetText().c_str()).c_str());
       m_maxValueHasBeenSet = true;
     }
     XmlNode maxLengthNode = resultNode.FirstChild("MaxLength");
-    if(!valueOptionsNode.IsNull())
+    if(!maxLengthNode.IsNull())
     {
       m_maxLength = StringUtils::ConvertToInt32(StringUtils::Trim(maxLengthNode.GetText().c_str()).c_str());
       m_maxLengthHasBeenSet = true;
     }
     XmlNode regexNode = resultNode.FirstChild("Regex");
-    if(!valueOptionsNode.IsNull())
+    if(!regexNode.IsNull())
     {
       m_regex = regexNode;
       m_regexHasBeenSet = true;

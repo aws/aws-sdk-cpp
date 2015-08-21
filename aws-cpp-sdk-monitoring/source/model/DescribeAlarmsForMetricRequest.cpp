@@ -51,7 +51,7 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
     unsigned dimensionsCount = 1;
     for(auto& item : m_dimensions)
     {
-      item.OutputToStream(ss, "Dimensions.", dimensionsCount, "");
+      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
       dimensionsCount++;
     }
   }

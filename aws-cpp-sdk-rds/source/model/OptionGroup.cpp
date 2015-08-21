@@ -78,26 +78,26 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
       m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
       m_majorEngineVersionHasBeenSet = true;
     }
-    XmlNode optionNodeParent = resultNode.FirstChild("Option");
-    XmlNode optionNode = optionNodeParent.FirstChild("member");
-    if(!optionNode.IsNull())
+    XmlNode optionsNode = resultNode.FirstChild("Options");
+    if(!optionsNode.IsNull())
     {
-      while(!optionNode.IsNull())
+      XmlNode optionsMember = optionsNode.FirstChild("Option");
+      while(!optionsMember.IsNull())
       {
-        m_options.push_back(optionNode);
-        optionNode = optionNode.NextNode("member");
+        m_options.push_back(optionsMember);
+        optionsMember = optionsMember.NextNode("Option");
       }
 
       m_optionsHasBeenSet = true;
     }
     XmlNode allowsVpcAndNonVpcInstanceMembershipsNode = resultNode.FirstChild("AllowsVpcAndNonVpcInstanceMemberships");
-    if(!optionNode.IsNull())
+    if(!allowsVpcAndNonVpcInstanceMembershipsNode.IsNull())
     {
       m_allowsVpcAndNonVpcInstanceMemberships = StringUtils::ConvertToBool(StringUtils::Trim(allowsVpcAndNonVpcInstanceMembershipsNode.GetText().c_str()).c_str());
       m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
-    if(!optionNode.IsNull())
+    if(!vpcIdNode.IsNull())
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;

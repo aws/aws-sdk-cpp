@@ -56,14 +56,14 @@ PolicyTypeDescription& PolicyTypeDescription::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
-    XmlNode policyAttributeTypeDescriptionsNodeParent = resultNode.FirstChild("PolicyAttributeTypeDescriptions");
-    XmlNode policyAttributeTypeDescriptionsNode = policyAttributeTypeDescriptionsNodeParent.FirstChild("member");
+    XmlNode policyAttributeTypeDescriptionsNode = resultNode.FirstChild("PolicyAttributeTypeDescriptions");
     if(!policyAttributeTypeDescriptionsNode.IsNull())
     {
-      while(!policyAttributeTypeDescriptionsNode.IsNull())
+      XmlNode policyAttributeTypeDescriptionsMember = policyAttributeTypeDescriptionsNode.FirstChild("member");
+      while(!policyAttributeTypeDescriptionsMember.IsNull())
       {
-        m_policyAttributeTypeDescriptions.push_back(policyAttributeTypeDescriptionsNode);
-        policyAttributeTypeDescriptionsNode = policyAttributeTypeDescriptionsNode.NextNode("member");
+        m_policyAttributeTypeDescriptions.push_back(policyAttributeTypeDescriptionsMember);
+        policyAttributeTypeDescriptionsMember = policyAttributeTypeDescriptionsMember.NextNode("member");
       }
 
       m_policyAttributeTypeDescriptionsHasBeenSet = true;

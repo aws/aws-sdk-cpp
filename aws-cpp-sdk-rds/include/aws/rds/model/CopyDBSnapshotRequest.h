@@ -95,6 +95,20 @@ namespace Model
     
     inline CopyDBSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
+    /*
+     <p>True to copy all tags from the source DB snapshot to the target DB snapshot; otherwise false. The default is false.</p>
+    */
+    inline bool GetCopyTags() const{ return m_copyTags; }
+    /*
+     <p>True to copy all tags from the source DB snapshot to the target DB snapshot; otherwise false. The default is false.</p>
+    */
+    inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
+
+    /*
+     <p>True to copy all tags from the source DB snapshot to the target DB snapshot; otherwise false. The default is false.</p>
+    */
+    inline CopyDBSnapshotRequest&  WithCopyTags(bool value) { SetCopyTags(value); return *this;}
+
   private:
     Aws::String m_sourceDBSnapshotIdentifier;
     bool m_sourceDBSnapshotIdentifierHasBeenSet;
@@ -102,6 +116,8 @@ namespace Model
     bool m_targetDBSnapshotIdentifierHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+    bool m_copyTags;
+    bool m_copyTagsHasBeenSet;
   };
 
 } // namespace Model

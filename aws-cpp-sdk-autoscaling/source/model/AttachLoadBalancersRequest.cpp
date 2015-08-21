@@ -38,7 +38,7 @@ Aws::String AttachLoadBalancersRequest::SerializePayload() const
     unsigned loadBalancerNamesCount = 1;
     for(auto& item : m_loadBalancerNames)
     {
-      ss << "LoadBalancerNames." << loadBalancerNamesCount << "="
+      ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       loadBalancerNamesCount++;
     }

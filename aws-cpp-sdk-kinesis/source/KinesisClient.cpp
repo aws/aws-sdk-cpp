@@ -28,10 +28,12 @@
 #include <aws/kinesis/KinesisErrorMarshaller.h>
 #include <aws/kinesis/model/AddTagsToStreamRequest.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
+#include <aws/kinesis/model/DecreaseStreamRetentionPeriodRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/GetRecordsRequest.h>
 #include <aws/kinesis/model/GetShardIteratorRequest.h>
+#include <aws/kinesis/model/IncreaseStreamRetentionPeriodRequest.h>
 #include <aws/kinesis/model/ListStreamsRequest.h>
 #include <aws/kinesis/model/ListTagsForStreamRequest.h>
 #include <aws/kinesis/model/MergeShardsRequest.h>
@@ -161,6 +163,37 @@ void KinesisClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, 
   handler(this, request, CreateStream(request), context);
 }
 
+DecreaseStreamRetentionPeriodOutcome KinesisClient::DecreaseStreamRetentionPeriod(const DecreaseStreamRetentionPeriodRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DecreaseStreamRetentionPeriodOutcome(NoResult());
+  }
+  else
+  {
+    return DecreaseStreamRetentionPeriodOutcome(outcome.GetError());
+  }
+}
+
+DecreaseStreamRetentionPeriodOutcomeCallable KinesisClient::DecreaseStreamRetentionPeriodCallable(const DecreaseStreamRetentionPeriodRequest& request) const
+{
+  return std::async(std::launch::async, &KinesisClient::DecreaseStreamRetentionPeriod, this, request);
+}
+
+void KinesisClient::DecreaseStreamRetentionPeriodAsync(const DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&KinesisClient::DecreaseStreamRetentionPeriodAsyncHelper, this, request, handler, context);
+}
+
+void KinesisClient::DecreaseStreamRetentionPeriodAsyncHelper(const DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DecreaseStreamRetentionPeriod(request), context);
+}
+
 DeleteStreamOutcome KinesisClient::DeleteStream(const DeleteStreamRequest& request) const
 {
   Aws::StringStream ss;
@@ -283,6 +316,37 @@ void KinesisClient::GetShardIteratorAsync(const GetShardIteratorRequest& request
 void KinesisClient::GetShardIteratorAsyncHelper(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetShardIterator(request), context);
+}
+
+IncreaseStreamRetentionPeriodOutcome KinesisClient::IncreaseStreamRetentionPeriod(const IncreaseStreamRetentionPeriodRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return IncreaseStreamRetentionPeriodOutcome(NoResult());
+  }
+  else
+  {
+    return IncreaseStreamRetentionPeriodOutcome(outcome.GetError());
+  }
+}
+
+IncreaseStreamRetentionPeriodOutcomeCallable KinesisClient::IncreaseStreamRetentionPeriodCallable(const IncreaseStreamRetentionPeriodRequest& request) const
+{
+  return std::async(std::launch::async, &KinesisClient::IncreaseStreamRetentionPeriod, this, request);
+}
+
+void KinesisClient::IncreaseStreamRetentionPeriodAsync(const IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&KinesisClient::IncreaseStreamRetentionPeriodAsyncHelper, this, request, handler, context);
+}
+
+void KinesisClient::IncreaseStreamRetentionPeriodAsyncHelper(const IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, IncreaseStreamRetentionPeriod(request), context);
 }
 
 ListStreamsOutcome KinesisClient::ListStreams(const ListStreamsRequest& request) const

@@ -48,14 +48,14 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
       m_resourceIdentifier = StringUtils::Trim(resourceIdentifierNode.GetText().c_str());
       m_resourceIdentifierHasBeenSet = true;
     }
-    XmlNode pendingMaintenanceActionNodeParent = resultNode.FirstChild("PendingMaintenanceAction");
-    XmlNode pendingMaintenanceActionNode = pendingMaintenanceActionNodeParent.FirstChild("member");
-    if(!pendingMaintenanceActionNode.IsNull())
+    XmlNode pendingMaintenanceActionDetailsNode = resultNode.FirstChild("PendingMaintenanceActionDetails");
+    if(!pendingMaintenanceActionDetailsNode.IsNull())
     {
-      while(!pendingMaintenanceActionNode.IsNull())
+      XmlNode pendingMaintenanceActionDetailsMember = pendingMaintenanceActionDetailsNode.FirstChild("PendingMaintenanceAction");
+      while(!pendingMaintenanceActionDetailsMember.IsNull())
       {
-        m_pendingMaintenanceActionDetails.push_back(pendingMaintenanceActionNode);
-        pendingMaintenanceActionNode = pendingMaintenanceActionNode.NextNode("member");
+        m_pendingMaintenanceActionDetails.push_back(pendingMaintenanceActionDetailsMember);
+        pendingMaintenanceActionDetailsMember = pendingMaintenanceActionDetailsMember.NextNode("PendingMaintenanceAction");
       }
 
       m_pendingMaintenanceActionDetailsHasBeenSet = true;

@@ -36,7 +36,7 @@ Aws::String GetAccountAuthorizationDetailsRequest::SerializePayload() const
     unsigned filterCount = 1;
     for(auto& item : m_filter)
     {
-      ss << "Filter." << filterCount << "="
+      ss << "Filter.member." << filterCount << "="
           << StringUtils::URLEncode(EntityTypeMapper::GetNameForEntityType(item).c_str()) << "&";
       filterCount++;
     }

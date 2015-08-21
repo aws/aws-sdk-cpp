@@ -272,7 +272,7 @@ TEST(StringUtilsTest, TestWStringNonAsciiToString)
     Aws::String outString = StringUtils::FromWString(startString.c_str());
     ASSERT_EQ(outString.length(), loopCount);
 
-    for (char i = 0; i < outString.length(); ++i)
+    for (size_t i = 0; i < outString.length(); ++i)
     {
         char testValue = outString[i];
         ASSERT_EQ(testValue, static_cast<char>(startVal + incrementVal * i));

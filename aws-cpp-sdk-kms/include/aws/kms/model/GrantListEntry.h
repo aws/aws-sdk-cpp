@@ -81,6 +81,28 @@ namespace Model
     */
     inline GrantListEntry& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
+    
+    inline const Aws::String& GetName() const{ return m_name; }
+    
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    
+    inline GrantListEntry&  WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline GrantListEntry& WithName(const char* value) { SetName(value); return *this;}
+
+    
+    inline double GetCreationDate() const{ return m_creationDate; }
+    
+    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    
+    inline GrantListEntry&  WithCreationDate(double value) { SetCreationDate(value); return *this;}
+
     /*
      <p>The principal that receives the grant permission.</p>
     */
@@ -191,6 +213,10 @@ namespace Model
     bool m_keyIdHasBeenSet;
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    double m_creationDate;
+    bool m_creationDateHasBeenSet;
     Aws::String m_granteePrincipal;
     bool m_granteePrincipalHasBeenSet;
     Aws::String m_retiringPrincipal;

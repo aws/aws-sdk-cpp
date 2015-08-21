@@ -44,7 +44,7 @@ Aws::String CreateDBSubnetGroupRequest::SerializePayload() const
     unsigned subnetIdsCount = 1;
     for(auto& item : m_subnetIds)
     {
-      ss << "SubnetIdentifier." << subnetIdsCount << "="
+      ss << "SubnetIds.member." << subnetIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetIdsCount++;
     }
@@ -54,7 +54,7 @@ Aws::String CreateDBSubnetGroupRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }

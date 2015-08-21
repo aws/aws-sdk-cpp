@@ -66,16 +66,17 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
       m_delaySeconds = StringUtils::ConvertToInt32(StringUtils::Trim(delaySecondsNode.GetText().c_str()).c_str());
       m_delaySecondsHasBeenSet = true;
     }
-    XmlNode messageAttributeNode = resultNode.FirstChild("MessageAttribute");
-    if(!messageAttributeNode.IsNull())
+    XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttribute");
+    if(!messageAttributesNode.IsNull())
     {
-      while(!messageAttributeNode.IsNull())
+      XmlNode messageAttributeEntry = messageAttributesNode;
+      while(!messageAttributeEntry.IsNull())
       {
-        XmlNode keyNode = messageAttributeNode.FirstChild("Name");
-        XmlNode valueNode = messageAttributeNode.FirstChild("Value");
+        XmlNode keyNode = messageAttributeEntry.FirstChild("Name");
+        XmlNode valueNode = messageAttributeEntry.FirstChild("Value");
         m_messageAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
             valueNode;
-        messageAttributeNode = messageAttributeNode.NextNode("MessageAttribute");
+        messageAttributeEntry = messageAttributeEntry.NextNode("MessageAttribute");
       }
 
       m_messageAttributesHasBeenSet = true;

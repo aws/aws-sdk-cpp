@@ -40,9 +40,8 @@ static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
 WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 {
-    AWS_LOG_INFO(GetLogTag(), "Creating http client with user agent %s with max connections %d, request timeout %d, "
-        "and connect timeout %d",
-        config.userAgent.c_str(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs);
+    AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections 
+        << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
     DWORD winhttpFlags = WINHTTP_ACCESS_TYPE_NO_PROXY;
     const char* proxyHosts = nullptr;
@@ -57,8 +56,8 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config)
 
     if (isUsingProxy)
     {
-        AWS_LOG_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings host %s, port %d, username %s.",
-            config.proxyHost, config.proxyPort, config.proxyUserName);
+        AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings host " << config.proxyHost
+             << ", port " << config.proxyPort << ", username " << config.proxyUserName);
 
         winhttpFlags = WINHTTP_ACCESS_TYPE_NAMED_PROXY;
         Aws::StringStream ss;
@@ -68,7 +67,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config)
         proxyHosts = strProxyHosts.c_str();
 
         proxyString = StringUtils::ToWString(proxyHosts);
-        AWS_LOG_DEBUG("Adding proxy host string to winhttp %s", proxyHosts);
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Adding proxy host string to winhttp " << proxyHosts);
     }
 
     Aws::WString openString = StringUtils::ToWString(config.userAgent.c_str());
@@ -78,10 +77,10 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config)
     //add proxy auth credentials to everything using this handle.
     if (isUsingProxy)
     {
-        if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
-            AWS_LOG_FATAL(GetLogTag(), "Failed setting username for proxy with error code: %d", GetLastError());
-        if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
-            AWS_LOG_FATAL(GetLogTag(), "Failed setting password for proxy with error code: %d", GetLastError());
+        if (!config.proxyUserName.empty() && !WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting username for proxy with error code: " << GetLastError());
+        if (!config.proxyPassword.empty() && !WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
     }
 
     if (!config.verifySSL)
@@ -91,6 +90,15 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config)
 
         if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
             AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+    }
+    else
+    {
+        //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
+        if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
+        {
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting secure crypto protocols with error code: " << GetLastError());
+        }
     }
 
     AWS_LOG_DEBUG(GetLogTag(), "API handle %p.", GetOpenHandle());
@@ -159,7 +167,7 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
 
     WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_STATUS_CODE, WINHTTP_HEADER_NAME_BY_INDEX, &dwStatusCode, &dwSize, 0);
     response->SetResponseCode((HttpResponseCode)_wtoi(dwStatusCode));
-    AWS_LOG_DEBUG(GetLogTag(), "Received response code %s.", dwStatusCode);
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received response code " << dwStatusCode);
 
     wchar_t contentTypeStr[1024];
     dwSize = sizeof(contentTypeStr);

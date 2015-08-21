@@ -41,14 +41,17 @@ VerifyDomainDkimResult& VerifyDomainDkimResult::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode dkimTokensNodeParent = resultNode.FirstChild("DkimTokens");
-    XmlNode dkimTokensNode = dkimTokensNodeParent.FirstChild("member");
-    while(!dkimTokensNode.IsNull())
+    XmlNode dkimTokensNode = resultNode.FirstChild("DkimTokens");
+    if(!dkimTokensNode.IsNull())
     {
-      m_dkimTokens.push_back(StringUtils::Trim(dkimTokensNode.GetText().c_str()));
-      dkimTokensNode = dkimTokensNode.NextNode("member");
-    }
+      XmlNode dkimTokensMember = dkimTokensNode.FirstChild("member");
+      while(!dkimTokensMember.IsNull())
+      {
+        m_dkimTokens.push_back(StringUtils::Trim(dkimTokensMember.GetText().c_str()));
+        dkimTokensMember = dkimTokensMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

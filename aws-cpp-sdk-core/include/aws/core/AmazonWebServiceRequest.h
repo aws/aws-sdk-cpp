@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/http/HttpRequest.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 
@@ -45,10 +46,20 @@ public:
     const Aws::IOStreamFactory& GetResponseStreamFactory() const { return m_responseStreamFactory; }
     void SetResponseStreamFactory(const Aws::IOStreamFactory& factory) { m_responseStreamFactory = AWS_BUILD_FUNCTION(factory); }
 
+    inline virtual void SetDataReceivedEventHandler(const Aws::Http::DataReceivedEventHandler& dataReceivedEventHandler) { m_onDataReceived = dataReceivedEventHandler; }
+    inline virtual void SetDataSentEventHandler(const Aws::Http::DataSentEventHandler& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
+    inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = dataReceivedEventHandler; }
+    inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
+
+    inline virtual const Aws::Http::DataReceivedEventHandler& GetDataReceivedEventHandler() const { return m_onDataReceived; }
+    inline virtual const Aws::Http::DataSentEventHandler& GetDataSentEventHandler() const { return m_onDataSent; }
+
 private:
 
     Aws::IOStreamFactory m_responseStreamFactory;
 
+    Aws::Http::DataReceivedEventHandler m_onDataReceived;
+    Aws::Http::DataSentEventHandler m_onDataSent;
 };
 
 } // namespace Aws

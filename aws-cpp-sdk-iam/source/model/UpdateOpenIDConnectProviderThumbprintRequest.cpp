@@ -38,7 +38,7 @@ Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() con
     unsigned thumbprintListCount = 1;
     for(auto& item : m_thumbprintList)
     {
-      ss << "ThumbprintList." << thumbprintListCount << "="
+      ss << "ThumbprintList.member." << thumbprintListCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       thumbprintListCount++;
     }

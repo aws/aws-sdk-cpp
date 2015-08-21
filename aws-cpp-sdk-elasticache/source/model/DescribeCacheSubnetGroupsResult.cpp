@@ -42,15 +42,21 @@ DescribeCacheSubnetGroupsResult& DescribeCacheSubnetGroupsResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheSubnetGroupNodeParent = resultNode.FirstChild("CacheSubnetGroup");
-    XmlNode cacheSubnetGroupNode = cacheSubnetGroupNodeParent.FirstChild("member");
-    while(!cacheSubnetGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_cacheSubnetGroups.push_back(cacheSubnetGroupNode);
-      cacheSubnetGroupNode = cacheSubnetGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode cacheSubnetGroupsNode = resultNode.FirstChild("CacheSubnetGroups");
+    if(!cacheSubnetGroupsNode.IsNull())
+    {
+      XmlNode cacheSubnetGroupsMember = cacheSubnetGroupsNode.FirstChild("CacheSubnetGroup");
+      while(!cacheSubnetGroupsMember.IsNull())
+      {
+        m_cacheSubnetGroups.push_back(cacheSubnetGroupsMember);
+        cacheSubnetGroupsMember = cacheSubnetGroupsMember.NextNode("CacheSubnetGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

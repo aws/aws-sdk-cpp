@@ -72,7 +72,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
     unsigned cacheSecurityGroupNamesCount = 1;
     for(auto& item : m_cacheSecurityGroupNames)
     {
-      ss << "CacheSecurityGroupName." << cacheSecurityGroupNamesCount << "="
+      ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       cacheSecurityGroupNamesCount++;
     }
@@ -82,7 +82,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
     unsigned securityGroupIdsCount = 1;
     for(auto& item : m_securityGroupIds)
     {
-      ss << "SecurityGroupId." << securityGroupIdsCount << "="
+      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupIdsCount++;
     }

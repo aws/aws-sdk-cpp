@@ -86,14 +86,14 @@ StreamingDistributionList& StreamingDistributionList::operator =(const XmlNode& 
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode streamingDistributionSummaryNodeParent = resultNode.FirstChild("StreamingDistributionSummary");
-    XmlNode streamingDistributionSummaryNode = streamingDistributionSummaryNodeParent.FirstChild("member");
-    if(!streamingDistributionSummaryNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!streamingDistributionSummaryNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("StreamingDistributionSummary");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(streamingDistributionSummaryNode);
-        streamingDistributionSummaryNode = streamingDistributionSummaryNode.NextNode("member");
+        m_items.push_back(itemsMember);
+        itemsMember = itemsMember.NextNode("StreamingDistributionSummary");
       }
 
       m_itemsHasBeenSet = true;

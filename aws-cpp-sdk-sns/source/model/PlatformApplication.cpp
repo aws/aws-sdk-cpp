@@ -49,16 +49,17 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
       m_platformApplicationArnHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attributes");
-    attributesNode = attributesNode.FirstChild("entry");
+
     if(!attributesNode.IsNull())
     {
-      while(!attributesNode.IsNull())
+      XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      while(!attributesEntry.IsNull())
       {
-        XmlNode keyNode = attributesNode.FirstChild("key");
-        XmlNode valueNode = attributesNode.FirstChild("value");
+        XmlNode keyNode = attributesEntry.FirstChild("key");
+        XmlNode valueNode = attributesEntry.FirstChild("value");
         m_attributes[StringUtils::Trim(keyNode.GetText().c_str())] =
             StringUtils::Trim(valueNode.GetText().c_str());
-        attributesNode = attributesNode.NextNode("entry");
+        attributesEntry = attributesEntry.NextNode("entry");
       }
 
       m_attributesHasBeenSet = true;

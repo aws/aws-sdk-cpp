@@ -40,16 +40,22 @@ ListBucketsResult& ListBucketsResult::operator =(const AmazonWebServiceResult<Xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode bucketNodeParent = resultNode.FirstChild("Buckets");
-    XmlNode bucketNode = bucketNodeParent.FirstChild("Bucket");
-    while(!bucketNode.IsNull())
+    XmlNode bucketsNode = resultNode.FirstChild("Buckets");
+    if(!bucketsNode.IsNull())
     {
-      m_buckets.push_back(bucketNode);
-      bucketNode = bucketNode.NextNode("Bucket");
-    }
+      XmlNode bucketsMember = bucketsNode.FirstChild("Bucket");
+      while(!bucketsMember.IsNull())
+      {
+        m_buckets.push_back(bucketsMember);
+        bucketsMember = bucketsMember.NextNode("Bucket");
+      }
 
+    }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    m_owner = ownerNode;
+    if(!ownerNode.IsNull())
+    {
+      m_owner = ownerNode;
+    }
   }
 
   return *this;

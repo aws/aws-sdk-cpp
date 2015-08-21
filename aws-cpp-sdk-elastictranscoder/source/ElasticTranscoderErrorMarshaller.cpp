@@ -27,5 +27,5 @@ AWSError<CoreErrors> ElasticTranscoderErrorMarshaller::FindErrorByName(const cha
     return error;
   }
 
-  return AWSRestfulJsonErrorMarshaller::FindErrorByName(errorName);
+  return AWSErrorMarshaller::FindErrorByName(errorName);
 }

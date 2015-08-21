@@ -41,13 +41,17 @@ ListQueuesResult& ListQueuesResult::operator =(const AmazonWebServiceResult<XmlD
 
   if(!resultNode.IsNull())
   {
-    XmlNode queueUrlNode = resultNode.FirstChild("QueueUrl");
-    while(!queueUrlNode.IsNull())
+    XmlNode queueUrlsNode = resultNode.FirstChild("QueueUrl");
+    if(!queueUrlsNode.IsNull())
     {
-      m_queueUrls.push_back(StringUtils::Trim(queueUrlNode.GetText().c_str()));
-      queueUrlNode = queueUrlNode.NextNode("QueueUrl");
-    }
+      XmlNode queueUrlMember = queueUrlsNode;
+      while(!queueUrlMember.IsNull())
+      {
+        m_queueUrls.push_back(StringUtils::Trim(queueUrlMember.GetText().c_str()));
+        queueUrlMember = queueUrlMember.NextNode("QueueUrl");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

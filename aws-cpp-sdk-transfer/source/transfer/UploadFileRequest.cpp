@@ -54,7 +54,6 @@ UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
                                      bool createBucket) :
 S3FileRequest(fileName, bucketName, keyName, s3Client),
-m_fileSize(0),
 m_bytesRemaining(0),
 m_partCount(0),
 m_partsReturned(0),
@@ -72,8 +71,8 @@ m_completeRetries(0)
 {
     if (m_fileStream.good() && m_fileStream.is_open())
     {
-        m_fileSize = static_cast<uint64_t>(m_fileStream.tellg());
-        m_bytesRemaining = m_fileSize;
+        SetFileSize(static_cast<uint64_t>(m_fileStream.tellg()));
+        m_bytesRemaining = GetFileSize();
         m_fileStream.seekg(0);
     }
     else
@@ -82,9 +81,9 @@ m_completeRetries(0)
         return;
     }
    
-    if (m_fileSize)
+    if (GetFileSize())
     {
-        m_totalParts = 1 + static_cast<uint32_t>((m_fileSize - 1) / MB5_BUFFER_SIZE); // How many total buffer operations are we performing
+        m_totalParts = 1 + static_cast<uint32_t>((GetFileSize() - 1) / MB5_BUFFER_SIZE); // How many total buffer operations are we performing
     }
 }
 
@@ -335,22 +334,6 @@ bool UploadFileRequest::DoCancelAction()
     return true;
 }
 
-float UploadFileRequest::GetProgress() const
-{
-    std::lock_guard<std::mutex> someLock(m_fileRequestMutex);
-    if (!m_completedParts.size() || !m_fileSize || !GetTotalParts())
-    {
-        return 0.0;
-    }
-    // Todo add more precise values from current progress
-    return static_cast<float>(static_cast<double>(m_completedParts.size()) * 100.0f / GetTotalParts());
-}
-
-uint64_t UploadFileRequest::GetFileSize() const
-{
-    return m_fileSize;
-}
-
 uint32_t UploadFileRequest::GetPartCount() const
 {
     return m_partCount.load();
@@ -483,6 +466,7 @@ bool UploadFileRequest::ProcessBuffer(const std::shared_ptr<UploadBuffer>& buffe
     thisRequest.m_partRequest.SetContentMD5(HashingUtils::Base64Encode(thisRequest.m_partMd5));
     thisRequest.m_partRequest.SetContentLength(static_cast<long>(bytesRead));
 
+    thisRequest.m_partRequest.SetDataSentEventHandler(std::bind(&UploadFileRequest::OnDataSent, this, std::placeholders::_1, std::placeholders::_2));
     {
         std::lock_guard<std::mutex> thisLock(m_pendingMutex);
 
@@ -718,10 +702,17 @@ bool UploadFileRequest::DoSingleObjectUpload(std::shared_ptr<Aws::IOStream>& str
     }
     putObjectRequest.SetKey(GetKeyName());
 
+    putObjectRequest.SetDataSentEventHandler(std::bind(&UploadFileRequest::OnDataSent, this, std::placeholders::_1, std::placeholders::_2));
+
     std::shared_ptr<Aws::Client::AsyncCallerContext> context = Aws::MakeShared<UploadFileContext>(ALLOCATION_TAG, shared_from_this());
 
     GetS3Client()->PutObjectAsync(putObjectRequest, &TransferClient::OnPutObject, context);
     return true;
+}
+
+void UploadFileRequest::OnDataSent(const Aws::Http::HttpRequest*, long long amountSent)
+{
+    RegisterProgress(amountSent);
 }
 
 bool UploadFileRequest::HandlePutObjectOutcome(const Aws::S3::Model::PutObjectRequest& request, const Aws::S3::Model::PutObjectOutcome& outcome)

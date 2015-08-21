@@ -45,46 +45,88 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const AmazonWebSe
   if(!resultNode.IsNull())
   {
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode keyMarkerNode = resultNode.FirstChild("KeyMarker");
-    m_keyMarker = StringUtils::Trim(keyMarkerNode.GetText().c_str());
+    if(!keyMarkerNode.IsNull())
+    {
+      m_keyMarker = StringUtils::Trim(keyMarkerNode.GetText().c_str());
+    }
     XmlNode versionIdMarkerNode = resultNode.FirstChild("VersionIdMarker");
-    m_versionIdMarker = StringUtils::Trim(versionIdMarkerNode.GetText().c_str());
+    if(!versionIdMarkerNode.IsNull())
+    {
+      m_versionIdMarker = StringUtils::Trim(versionIdMarkerNode.GetText().c_str());
+    }
     XmlNode nextKeyMarkerNode = resultNode.FirstChild("NextKeyMarker");
-    m_nextKeyMarker = StringUtils::Trim(nextKeyMarkerNode.GetText().c_str());
+    if(!nextKeyMarkerNode.IsNull())
+    {
+      m_nextKeyMarker = StringUtils::Trim(nextKeyMarkerNode.GetText().c_str());
+    }
     XmlNode nextVersionIdMarkerNode = resultNode.FirstChild("NextVersionIdMarker");
-    m_nextVersionIdMarker = StringUtils::Trim(nextVersionIdMarkerNode.GetText().c_str());
-    XmlNode objectVersionNode = resultNode.FirstChild("${member.location}");
-    while(!objectVersionNode.IsNull())
+    if(!nextVersionIdMarkerNode.IsNull())
     {
-      m_versions.push_back(objectVersionNode);
-      objectVersionNode = objectVersionNode.NextNode("Version");
+      m_nextVersionIdMarker = StringUtils::Trim(nextVersionIdMarkerNode.GetText().c_str());
     }
-
-    XmlNode deleteMarkerEntryNode = resultNode.FirstChild("${member.location}");
-    while(!deleteMarkerEntryNode.IsNull())
+    XmlNode versionsNode = resultNode.FirstChild("Versions");
+    if(!versionsNode.IsNull())
     {
-      m_deleteMarkers.push_back(deleteMarkerEntryNode);
-      deleteMarkerEntryNode = deleteMarkerEntryNode.NextNode("DeleteMarker");
-    }
+      XmlNode versionsMember = versionsNode;
+      while(!versionsMember.IsNull())
+      {
+        m_versions.push_back(versionsMember);
+        versionsMember = versionsMember.NextNode("Version");
+      }
 
+    }
+    XmlNode deleteMarkersNode = resultNode.FirstChild("DeleteMarkers");
+    if(!deleteMarkersNode.IsNull())
+    {
+      XmlNode deleteMarkersMember = deleteMarkersNode;
+      while(!deleteMarkersMember.IsNull())
+      {
+        m_deleteMarkers.push_back(deleteMarkersMember);
+        deleteMarkersMember = deleteMarkersMember.NextNode("DeleteMarker");
+      }
+
+    }
     XmlNode nameNode = resultNode.FirstChild("Name");
-    m_name = StringUtils::Trim(nameNode.GetText().c_str());
-    XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
-    XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
-    m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
-    XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
-    m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(maxKeysNode.GetText().c_str()).c_str());
-    XmlNode commonPrefixNode = resultNode.FirstChild("CommonPrefixes");
-    while(!commonPrefixNode.IsNull())
+    if(!nameNode.IsNull())
     {
-      m_commonPrefixes.push_back(commonPrefixNode);
-      commonPrefixNode = commonPrefixNode.NextNode("CommonPrefixes");
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
     }
+    XmlNode prefixNode = resultNode.FirstChild("Prefix");
+    if(!prefixNode.IsNull())
+    {
+      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+    }
+    XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
+    if(!delimiterNode.IsNull())
+    {
+      m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
+    }
+    XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
+    if(!maxKeysNode.IsNull())
+    {
+      m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(maxKeysNode.GetText().c_str()).c_str());
+    }
+    XmlNode commonPrefixesNode = resultNode.FirstChild("CommonPrefixes");
+    if(!commonPrefixesNode.IsNull())
+    {
+      XmlNode commonPrefixesMember = commonPrefixesNode;
+      while(!commonPrefixesMember.IsNull())
+      {
+        m_commonPrefixes.push_back(commonPrefixesMember);
+        commonPrefixesMember = commonPrefixesMember.NextNode("CommonPrefixes");
+      }
 
+    }
     XmlNode encodingTypeNode = resultNode.FirstChild("EncodingType");
-    m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());
+    if(!encodingTypeNode.IsNull())
+    {
+      m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());
+    }
   }
 
   return *this;

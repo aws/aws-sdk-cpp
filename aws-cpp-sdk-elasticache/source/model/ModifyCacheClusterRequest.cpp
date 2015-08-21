@@ -60,7 +60,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
     unsigned cacheNodeIdsToRemoveCount = 1;
     for(auto& item : m_cacheNodeIdsToRemove)
     {
-      ss << "CacheNodeId." << cacheNodeIdsToRemoveCount << "="
+      ss << "CacheNodeIdsToRemove.member." << cacheNodeIdsToRemoveCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       cacheNodeIdsToRemoveCount++;
     }
@@ -74,7 +74,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
     unsigned newAvailabilityZonesCount = 1;
     for(auto& item : m_newAvailabilityZones)
     {
-      ss << "PreferredAvailabilityZone." << newAvailabilityZonesCount << "="
+      ss << "NewAvailabilityZones.member." << newAvailabilityZonesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       newAvailabilityZonesCount++;
     }
@@ -84,7 +84,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
     unsigned cacheSecurityGroupNamesCount = 1;
     for(auto& item : m_cacheSecurityGroupNames)
     {
-      ss << "CacheSecurityGroupName." << cacheSecurityGroupNamesCount << "="
+      ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       cacheSecurityGroupNamesCount++;
     }
@@ -94,7 +94,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
     unsigned securityGroupIdsCount = 1;
     for(auto& item : m_securityGroupIds)
     {
-      ss << "SecurityGroupId." << securityGroupIdsCount << "="
+      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupIdsCount++;
     }

@@ -19,6 +19,8 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
 
 namespace Aws
 {
@@ -101,6 +103,15 @@ public:
     */
     static Aws::String FromWString(const wchar_t* source);
 #endif
+
+    // not all platforms (Android) have std::to_string
+    template< typename T >
+    static Aws::String to_string(T value)
+    {
+	Aws::OStringStream os ;
+	os << value ;
+	return os.str() ;
+    }
 
 };
 

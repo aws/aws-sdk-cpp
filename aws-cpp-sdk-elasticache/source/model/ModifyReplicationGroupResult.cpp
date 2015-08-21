@@ -42,7 +42,10 @@ ModifyReplicationGroupResult& ModifyReplicationGroupResult::operator =(const Ama
   if(!resultNode.IsNull())
   {
     XmlNode replicationGroupNode = resultNode.FirstChild("ReplicationGroup");
-    m_replicationGroup = replicationGroupNode;
+    if(!replicationGroupNode.IsNull())
+    {
+      m_replicationGroup = replicationGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

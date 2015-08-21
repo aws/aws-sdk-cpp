@@ -350,6 +350,20 @@ namespace Model
     */
     inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+    /*
+     <p>True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
+    */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+    /*
+     <p>True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
+    */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /*
+     <p>True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest&  WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     
@@ -433,6 +447,78 @@ namespace Model
     */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest&  WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p> A list of EC2 VPC security groups to associate with this DB instance. </p> <p> Default: The default EC2 VPC security group for the DB subnet group's VPC. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest&  WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p> A list of DB security groups to associate with this DB instance. </p> <p> Default: The default DB security group for the database engine. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest&  WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /*
+     <p> Specify the Active Directory Domain to restore the instance in. </p>
+    */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
   private:
     Aws::String m_sourceDBInstanceIdentifier;
     bool m_sourceDBInstanceIdentifierHasBeenSet;
@@ -466,6 +552,8 @@ namespace Model
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
     Aws::String m_storageType;
@@ -474,6 +562,12 @@ namespace Model
     bool m_tdeCredentialArnHasBeenSet;
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet;
+    Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+    bool m_vpcSecurityGroupIdsHasBeenSet;
+    Aws::Vector<Aws::String> m_dBSecurityGroups;
+    bool m_dBSecurityGroupsHasBeenSet;
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

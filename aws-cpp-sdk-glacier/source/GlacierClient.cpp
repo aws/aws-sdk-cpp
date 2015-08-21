@@ -1202,4 +1202,3 @@ void GlacierClient::UploadMultipartPartAsyncHelper(const UploadMultipartPartRequ
   handler(this, request, UploadMultipartPart(request), context);
 }
 
-

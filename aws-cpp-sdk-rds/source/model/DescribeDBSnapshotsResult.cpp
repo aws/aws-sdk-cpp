@@ -42,15 +42,21 @@ DescribeDBSnapshotsResult& DescribeDBSnapshotsResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBSnapshotNodeParent = resultNode.FirstChild("DBSnapshot");
-    XmlNode dBSnapshotNode = dBSnapshotNodeParent.FirstChild("member");
-    while(!dBSnapshotNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBSnapshots.push_back(dBSnapshotNode);
-      dBSnapshotNode = dBSnapshotNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBSnapshotsNode = resultNode.FirstChild("DBSnapshots");
+    if(!dBSnapshotsNode.IsNull())
+    {
+      XmlNode dBSnapshotsMember = dBSnapshotsNode.FirstChild("DBSnapshot");
+      while(!dBSnapshotsMember.IsNull())
+      {
+        m_dBSnapshots.push_back(dBSnapshotsMember);
+        dBSnapshotsMember = dBSnapshotsMember.NextNode("DBSnapshot");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

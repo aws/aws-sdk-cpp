@@ -270,6 +270,34 @@ namespace Model
     */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+    /*
+     <p>True to copy all tags from the Read Replica to snapshots of the Read Replica; otherwise false. The default is false.</p>
+    */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+    /*
+     <p>True to copy all tags from the Read Replica to snapshots of the Read Replica; otherwise false. The default is false.</p>
+    */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /*
+     <p>True to copy all tags from the Read Replica to snapshots of the Read Replica; otherwise false. The default is false.</p>
+    */
+    inline CreateDBInstanceReadReplicaRequest&  WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+    /*
+     <p>The interval, in seconds, between when metrics are collected for the Read Replica. Specify 0 to disable collecting metrics. The default is 60.</p> <p><b>Valid Values:</b> <code>0, 1, 5, 10, 15, 30, 60</code></p>
+    */
+    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    /*
+     <p>The interval, in seconds, between when metrics are collected for the Read Replica. Specify 0 to disable collecting metrics. The default is 60.</p> <p><b>Valid Values:</b> <code>0, 1, 5, 10, 15, 30, 60</code></p>
+    */
+    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+
+    /*
+     <p>The interval, in seconds, between when metrics are collected for the Read Replica. Specify 0 to disable collecting metrics. The default is 60.</p> <p><b>Valid Values:</b> <code>0, 1, 5, 10, 15, 30, 60</code></p>
+    */
+    inline CreateDBInstanceReadReplicaRequest&  WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
@@ -295,6 +323,10 @@ namespace Model
     bool m_dBSubnetGroupNameHasBeenSet;
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
+    long m_monitoringInterval;
+    bool m_monitoringIntervalHasBeenSet;
   };
 
 } // namespace Model

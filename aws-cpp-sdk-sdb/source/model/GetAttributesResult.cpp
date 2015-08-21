@@ -41,13 +41,17 @@ GetAttributesResult& GetAttributesResult::operator =(const AmazonWebServiceResul
 
   if(!resultNode.IsNull())
   {
-    XmlNode attributeNode = resultNode.FirstChild("Attribute");
-    while(!attributeNode.IsNull())
+    XmlNode attributesNode = resultNode.FirstChild("Attribute");
+    if(!attributesNode.IsNull())
     {
-      m_attributes.push_back(attributeNode);
-      attributeNode = attributeNode.NextNode("Attribute");
-    }
+      XmlNode attributeMember = attributesNode;
+      while(!attributeMember.IsNull())
+      {
+        m_attributes.push_back(attributeMember);
+        attributeMember = attributeMember.NextNode("Attribute");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

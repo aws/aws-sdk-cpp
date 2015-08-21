@@ -41,15 +41,21 @@ GetBucketAclResult& GetBucketAclResult::operator =(const AmazonWebServiceResult<
   if(!resultNode.IsNull())
   {
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    m_owner = ownerNode;
-    XmlNode grantNodeParent = resultNode.FirstChild("Grants");
-    XmlNode grantNode = grantNodeParent.FirstChild("Grant");
-    while(!grantNode.IsNull())
+    if(!ownerNode.IsNull())
     {
-      m_grants.push_back(grantNode);
-      grantNode = grantNode.NextNode("Grant");
+      m_owner = ownerNode;
     }
+    XmlNode grantsNode = resultNode.FirstChild("Grants");
+    if(!grantsNode.IsNull())
+    {
+      XmlNode grantsMember = grantsNode.FirstChild("Grant");
+      while(!grantsMember.IsNull())
+      {
+        m_grants.push_back(grantsMember);
+        grantsMember = grantsMember.NextNode("Grant");
+      }
 
+    }
   }
 
   return *this;

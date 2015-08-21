@@ -38,7 +38,7 @@ Aws::String SuspendProcessesRequest::SerializePayload() const
     unsigned scalingProcessesCount = 1;
     for(auto& item : m_scalingProcesses)
     {
-      ss << "ScalingProcesses." << scalingProcessesCount << "="
+      ss << "ScalingProcesses.member." << scalingProcessesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       scalingProcessesCount++;
     }

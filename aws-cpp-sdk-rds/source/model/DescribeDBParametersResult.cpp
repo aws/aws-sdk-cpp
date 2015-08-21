@@ -41,16 +41,22 @@ DescribeDBParametersResult& DescribeDBParametersResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode parameterNodeParent = resultNode.FirstChild("Parameter");
-    XmlNode parameterNode = parameterNodeParent.FirstChild("member");
-    while(!parameterNode.IsNull())
+    XmlNode parametersNode = resultNode.FirstChild("Parameters");
+    if(!parametersNode.IsNull())
     {
-      m_parameters.push_back(parameterNode);
-      parameterNode = parameterNode.NextNode("member");
-    }
+      XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      while(!parametersMember.IsNull())
+      {
+        m_parameters.push_back(parametersMember);
+        parametersMember = parametersMember.NextNode("Parameter");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

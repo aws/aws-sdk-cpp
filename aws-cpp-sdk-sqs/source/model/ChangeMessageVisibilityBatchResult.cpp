@@ -41,20 +41,28 @@ ChangeMessageVisibilityBatchResult& ChangeMessageVisibilityBatchResult::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode changeMessageVisibilityBatchResultEntryNode = resultNode.FirstChild("ChangeMessageVisibilityBatchResultEntry");
-    while(!changeMessageVisibilityBatchResultEntryNode.IsNull())
+    XmlNode successfulNode = resultNode.FirstChild("ChangeMessageVisibilityBatchResultEntry");
+    if(!successfulNode.IsNull())
     {
-      m_successful.push_back(changeMessageVisibilityBatchResultEntryNode);
-      changeMessageVisibilityBatchResultEntryNode = changeMessageVisibilityBatchResultEntryNode.NextNode("ChangeMessageVisibilityBatchResultEntry");
-    }
+      XmlNode changeMessageVisibilityBatchResultEntryMember = successfulNode;
+      while(!changeMessageVisibilityBatchResultEntryMember.IsNull())
+      {
+        m_successful.push_back(changeMessageVisibilityBatchResultEntryMember);
+        changeMessageVisibilityBatchResultEntryMember = changeMessageVisibilityBatchResultEntryMember.NextNode("ChangeMessageVisibilityBatchResultEntry");
+      }
 
-    XmlNode batchResultErrorEntryNode = resultNode.FirstChild("BatchResultErrorEntry");
-    while(!batchResultErrorEntryNode.IsNull())
+    }
+    XmlNode failedNode = resultNode.FirstChild("BatchResultErrorEntry");
+    if(!failedNode.IsNull())
     {
-      m_failed.push_back(batchResultErrorEntryNode);
-      batchResultErrorEntryNode = batchResultErrorEntryNode.NextNode("BatchResultErrorEntry");
-    }
+      XmlNode batchResultErrorEntryMember = failedNode;
+      while(!batchResultErrorEntryMember.IsNull())
+      {
+        m_failed.push_back(batchResultErrorEntryMember);
+        batchResultErrorEntryMember = batchResultErrorEntryMember.NextNode("BatchResultErrorEntry");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

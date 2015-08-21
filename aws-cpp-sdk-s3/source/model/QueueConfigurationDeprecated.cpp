@@ -53,16 +53,17 @@ QueueConfigurationDeprecated& QueueConfigurationDeprecated::operator =(const Xml
     XmlNode eventsNode = resultNode.FirstChild("Events");
     if(!eventsNode.IsNull())
     {
-      while(!eventsNode.IsNull())
+      XmlNode eventsMember = eventsNode;
+      while(!eventsMember.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
-        eventsNode = eventsNode.NextNode("Events");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsMember.GetText().c_str())));
+        eventsMember = eventsMember.NextNode("Event");
       }
 
       m_eventsHasBeenSet = true;
     }
     XmlNode queueNode = resultNode.FirstChild("Queue");
-    if(!eventsNode.IsNull())
+    if(!queueNode.IsNull())
     {
       m_queue = StringUtils::Trim(queueNode.GetText().c_str());
       m_queueHasBeenSet = true;

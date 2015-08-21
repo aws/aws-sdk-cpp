@@ -59,7 +59,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(sourceTypeNode.GetText().c_str()).c_str());
+      m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -68,20 +68,20 @@ Event& Event::operator =(const XmlNode& xmlNode)
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
       m_messageHasBeenSet = true;
     }
-    XmlNode eventCategoryNodeParent = resultNode.FirstChild("EventCategory");
-    XmlNode eventCategoryNode = eventCategoryNodeParent.FirstChild("member");
-    if(!eventCategoryNode.IsNull())
+    XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
+    if(!eventCategoriesNode.IsNull())
     {
-      while(!eventCategoryNode.IsNull())
+      XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      while(!eventCategoriesMember.IsNull())
       {
-        m_eventCategories.push_back(StringUtils::Trim(eventCategoryNode.GetText().c_str()));
-        eventCategoryNode = eventCategoryNode.NextNode("member");
+        m_eventCategories.push_back(StringUtils::Trim(eventCategoriesMember.GetText().c_str()));
+        eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
       m_eventCategoriesHasBeenSet = true;
     }
     XmlNode dateNode = resultNode.FirstChild("Date");
-    if(!eventCategoryNode.IsNull())
+    if(!dateNode.IsNull())
     {
       m_date = StringUtils::ConvertToDouble(StringUtils::Trim(dateNode.GetText().c_str()).c_str());
       m_dateHasBeenSet = true;
@@ -99,7 +99,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+      oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -126,7 +126,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+      oStream << location << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {

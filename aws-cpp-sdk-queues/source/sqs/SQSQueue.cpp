@@ -199,7 +199,7 @@ void SQSQueue::EnsureQueueIsInitialized()
 void SQSQueue::OnMessageDeletedOutcomeReceived(const SQSClient*, const DeleteMessageRequest&,
 					       const DeleteMessageOutcome& deleteMessageOutcome, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto queueContext = std::dynamic_pointer_cast<const QueueMessageContext>(context);
+    auto queueContext = std::static_pointer_cast<const QueueMessageContext>(context);
     if (!deleteMessageOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(CLASS_TAG, "Delete message failed with error: " << deleteMessageOutcome.GetError().GetExceptionName() <<
@@ -227,7 +227,7 @@ void SQSQueue::OnMessageDeletedOutcomeReceived(const SQSClient*, const DeleteMes
 void SQSQueue::OnMessageSentOutcomeReceived(const SQSClient*, const SendMessageRequest&,
 					    const SendMessageOutcome& sendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto queueContext = std::dynamic_pointer_cast<const QueueMessageContext>(context);
+    auto queueContext = std::static_pointer_cast<const QueueMessageContext>(context);
     if (!sendMessageOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(CLASS_TAG, "Send message failed with error: " << sendMessageOutcome.GetError().GetExceptionName() <<

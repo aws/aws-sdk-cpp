@@ -42,15 +42,21 @@ DescribeDBEngineVersionsResult& DescribeDBEngineVersionsResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBEngineVersionNodeParent = resultNode.FirstChild("DBEngineVersion");
-    XmlNode dBEngineVersionNode = dBEngineVersionNodeParent.FirstChild("member");
-    while(!dBEngineVersionNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBEngineVersions.push_back(dBEngineVersionNode);
-      dBEngineVersionNode = dBEngineVersionNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBEngineVersionsNode = resultNode.FirstChild("DBEngineVersions");
+    if(!dBEngineVersionsNode.IsNull())
+    {
+      XmlNode dBEngineVersionsMember = dBEngineVersionsNode.FirstChild("DBEngineVersion");
+      while(!dBEngineVersionsMember.IsNull())
+      {
+        m_dBEngineVersions.push_back(dBEngineVersionsMember);
+        dBEngineVersionsMember = dBEngineVersionsMember.NextNode("DBEngineVersion");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

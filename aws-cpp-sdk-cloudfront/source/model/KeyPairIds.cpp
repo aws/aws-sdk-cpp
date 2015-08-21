@@ -50,14 +50,14 @@ KeyPairIds& KeyPairIds::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode keyPairIdNodeParent = resultNode.FirstChild("KeyPairId");
-    XmlNode keyPairIdNode = keyPairIdNodeParent.FirstChild("member");
-    if(!keyPairIdNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!keyPairIdNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("KeyPairId");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(keyPairIdNode.GetText().c_str()));
-        keyPairIdNode = keyPairIdNode.NextNode("member");
+        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        itemsMember = itemsMember.NextNode("KeyPairId");
       }
 
       m_itemsHasBeenSet = true;

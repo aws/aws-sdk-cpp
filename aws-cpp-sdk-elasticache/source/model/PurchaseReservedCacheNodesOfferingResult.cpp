@@ -42,7 +42,10 @@ PurchaseReservedCacheNodesOfferingResult& PurchaseReservedCacheNodesOfferingResu
   if(!resultNode.IsNull())
   {
     XmlNode reservedCacheNodeNode = resultNode.FirstChild("ReservedCacheNode");
-    m_reservedCacheNode = reservedCacheNodeNode;
+    if(!reservedCacheNodeNode.IsNull())
+    {
+      m_reservedCacheNode = reservedCacheNodeNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

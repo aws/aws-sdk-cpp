@@ -42,7 +42,10 @@ UploadPartCopyResult& UploadPartCopyResult::operator =(const AmazonWebServiceRes
   if(!resultNode.IsNull())
   {
     XmlNode copyPartResultNode = resultNode.FirstChild("CopyPartResult");
-    m_copyPartResult = copyPartResultNode;
+    if(!copyPartResultNode.IsNull())
+    {
+      m_copyPartResult = copyPartResultNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

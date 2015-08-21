@@ -37,7 +37,7 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
     unsigned activityIdsCount = 1;
     for(auto& item : m_activityIds)
     {
-      ss << "ActivityIds." << activityIdsCount << "="
+      ss << "ActivityIds.member." << activityIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       activityIdsCount++;
     }

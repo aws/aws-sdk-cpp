@@ -26,14 +26,16 @@ using namespace Aws::Utils;
 LambdaFunctionConfiguration::LambdaFunctionConfiguration() : 
     m_idHasBeenSet(false),
     m_lambdaFunctionArnHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
 LambdaFunctionConfiguration::LambdaFunctionConfiguration(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_lambdaFunctionArnHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,13 +61,20 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
     XmlNode eventsNode = resultNode.FirstChild("Events");
     if(!eventsNode.IsNull())
     {
-      while(!eventsNode.IsNull())
+      XmlNode eventsMember = eventsNode;
+      while(!eventsMember.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsNode.GetText().c_str())));
-        eventsNode = eventsNode.NextNode("Events");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsMember.GetText().c_str())));
+        eventsMember = eventsMember.NextNode("Event");
       }
 
       m_eventsHasBeenSet = true;
+    }
+    XmlNode filterNode = resultNode.FirstChild("Filter");
+    if(!filterNode.IsNull())
+    {
+      m_filter = filterNode;
+      m_filterHasBeenSet = true;
     }
   }
 
@@ -77,7 +86,7 @@ void LambdaFunctionConfiguration::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_idHasBeenSet)
   {
-   XmlNode idNode = parentNode.CreateChildElement("Event");
+   XmlNode idNode = parentNode.CreateChildElement("Id");
    idNode.SetText(m_id);
   }
 
@@ -94,6 +103,12 @@ void LambdaFunctionConfiguration::AddToNode(XmlNode& parentNode) const
      XmlNode eventsNode = parentNode.CreateChildElement("Event");
      eventsNode.SetText(EventMapper::GetNameForEvent(item));
    }
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   XmlNode filterNode = parentNode.CreateChildElement("Event");
+   m_filter.AddToNode(filterNode);
   }
 
 }

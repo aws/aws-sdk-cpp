@@ -510,6 +510,30 @@ namespace Model
     */
     inline DBCluster& AddVpcSecurityGroups(const VpcSecurityGroupMembership& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
 
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline DBCluster&  WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+
+    /*
+     <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    */
+    inline DBCluster& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
   private:
     long m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
@@ -555,6 +579,8 @@ namespace Model
     bool m_dBClusterMembersHasBeenSet;
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+    Aws::String m_hostedZoneId;
+    bool m_hostedZoneIdHasBeenSet;
   };
 
 } // namespace Model

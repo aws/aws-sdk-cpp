@@ -34,7 +34,7 @@ Aws::String AddTagsRequest::SerializePayload() const
     unsigned loadBalancerNamesCount = 1;
     for(auto& item : m_loadBalancerNames)
     {
-      ss << "LoadBalancerNames." << loadBalancerNamesCount << "="
+      ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       loadBalancerNamesCount++;
     }
@@ -44,7 +44,7 @@ Aws::String AddTagsRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tags.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }

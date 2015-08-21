@@ -42,7 +42,10 @@ CopyOptionGroupResult& CopyOptionGroupResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode optionGroupNode = resultNode.FirstChild("OptionGroup");
-    m_optionGroup = optionGroupNode;
+    if(!optionGroupNode.IsNull())
+    {
+      m_optionGroup = optionGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

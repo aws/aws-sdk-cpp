@@ -43,7 +43,7 @@ Aws::String PutNotificationConfigurationRequest::SerializePayload() const
     unsigned notificationTypesCount = 1;
     for(auto& item : m_notificationTypes)
     {
-      ss << "NotificationTypes." << notificationTypesCount << "="
+      ss << "NotificationTypes.member." << notificationTypesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       notificationTypesCount++;
     }

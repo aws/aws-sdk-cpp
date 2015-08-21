@@ -42,15 +42,21 @@ DescribeCacheEngineVersionsResult& DescribeCacheEngineVersionsResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode cacheEngineVersionNodeParent = resultNode.FirstChild("CacheEngineVersion");
-    XmlNode cacheEngineVersionNode = cacheEngineVersionNodeParent.FirstChild("member");
-    while(!cacheEngineVersionNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_cacheEngineVersions.push_back(cacheEngineVersionNode);
-      cacheEngineVersionNode = cacheEngineVersionNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode cacheEngineVersionsNode = resultNode.FirstChild("CacheEngineVersions");
+    if(!cacheEngineVersionsNode.IsNull())
+    {
+      XmlNode cacheEngineVersionsMember = cacheEngineVersionsNode.FirstChild("CacheEngineVersion");
+      while(!cacheEngineVersionsMember.IsNull())
+      {
+        m_cacheEngineVersions.push_back(cacheEngineVersionsMember);
+        cacheEngineVersionsMember = cacheEngineVersionsMember.NextNode("CacheEngineVersion");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

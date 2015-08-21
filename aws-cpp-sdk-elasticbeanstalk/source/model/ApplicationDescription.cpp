@@ -78,26 +78,26 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
       m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
       m_dateUpdatedHasBeenSet = true;
     }
-    XmlNode versionsNodeParent = resultNode.FirstChild("Versions");
-    XmlNode versionsNode = versionsNodeParent.FirstChild("member");
+    XmlNode versionsNode = resultNode.FirstChild("Versions");
     if(!versionsNode.IsNull())
     {
-      while(!versionsNode.IsNull())
+      XmlNode versionsMember = versionsNode.FirstChild("member");
+      while(!versionsMember.IsNull())
       {
-        m_versions.push_back(StringUtils::Trim(versionsNode.GetText().c_str()));
-        versionsNode = versionsNode.NextNode("member");
+        m_versions.push_back(StringUtils::Trim(versionsMember.GetText().c_str()));
+        versionsMember = versionsMember.NextNode("member");
       }
 
       m_versionsHasBeenSet = true;
     }
-    XmlNode configurationTemplatesNodeParent = resultNode.FirstChild("ConfigurationTemplates");
-    XmlNode configurationTemplatesNode = configurationTemplatesNodeParent.FirstChild("member");
+    XmlNode configurationTemplatesNode = resultNode.FirstChild("ConfigurationTemplates");
     if(!configurationTemplatesNode.IsNull())
     {
-      while(!configurationTemplatesNode.IsNull())
+      XmlNode configurationTemplatesMember = configurationTemplatesNode.FirstChild("member");
+      while(!configurationTemplatesMember.IsNull())
       {
-        m_configurationTemplates.push_back(StringUtils::Trim(configurationTemplatesNode.GetText().c_str()));
-        configurationTemplatesNode = configurationTemplatesNode.NextNode("member");
+        m_configurationTemplates.push_back(StringUtils::Trim(configurationTemplatesMember.GetText().c_str()));
+        configurationTemplatesMember = configurationTemplatesMember.NextNode("member");
       }
 
       m_configurationTemplatesHasBeenSet = true;

@@ -44,27 +44,51 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
-    m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
-    XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
-    m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
-    XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
-    XmlNode colorNode = resultNode.FirstChild("Color");
-    m_color = StringUtils::Trim(colorNode.GetText().c_str());
-    XmlNode causesNodeParent = resultNode.FirstChild("Causes");
-    XmlNode causesNode = causesNodeParent.FirstChild("member");
-    while(!causesNode.IsNull())
+    if(!environmentNameNode.IsNull())
     {
-      m_causes.push_back(StringUtils::Trim(causesNode.GetText().c_str()));
-      causesNode = causesNode.NextNode("member");
+      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
     }
+    XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
+    if(!healthStatusNode.IsNull())
+    {
+      m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
+    }
+    XmlNode statusNode = resultNode.FirstChild("Status");
+    if(!statusNode.IsNull())
+    {
+      m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    }
+    XmlNode colorNode = resultNode.FirstChild("Color");
+    if(!colorNode.IsNull())
+    {
+      m_color = StringUtils::Trim(colorNode.GetText().c_str());
+    }
+    XmlNode causesNode = resultNode.FirstChild("Causes");
+    if(!causesNode.IsNull())
+    {
+      XmlNode causesMember = causesNode.FirstChild("member");
+      while(!causesMember.IsNull())
+      {
+        m_causes.push_back(StringUtils::Trim(causesMember.GetText().c_str()));
+        causesMember = causesMember.NextNode("member");
+      }
 
+    }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
-    m_applicationMetrics = applicationMetricsNode;
+    if(!applicationMetricsNode.IsNull())
+    {
+      m_applicationMetrics = applicationMetricsNode;
+    }
     XmlNode instancesHealthNode = resultNode.FirstChild("InstancesHealth");
-    m_instancesHealth = instancesHealthNode;
+    if(!instancesHealthNode.IsNull())
+    {
+      m_instancesHealth = instancesHealthNode;
+    }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
-    m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
+    if(!refreshedAtNode.IsNull())
+    {
+      m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

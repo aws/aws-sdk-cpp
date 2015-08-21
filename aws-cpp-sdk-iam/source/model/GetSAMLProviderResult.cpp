@@ -46,11 +46,20 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode sAMLMetadataDocumentNode = resultNode.FirstChild("SAMLMetadataDocument");
-    m_sAMLMetadataDocument = StringUtils::Trim(sAMLMetadataDocumentNode.GetText().c_str());
+    if(!sAMLMetadataDocumentNode.IsNull())
+    {
+      m_sAMLMetadataDocument = StringUtils::Trim(sAMLMetadataDocumentNode.GetText().c_str());
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    if(!createDateNode.IsNull())
+    {
+      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
-    m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
+    if(!validUntilNode.IsNull())
+    {
+      m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

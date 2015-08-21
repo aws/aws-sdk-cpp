@@ -50,14 +50,14 @@ Aliases& Aliases::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode cNAMENodeParent = resultNode.FirstChild("CNAME");
-    XmlNode cNAMENode = cNAMENodeParent.FirstChild("member");
-    if(!cNAMENode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!cNAMENode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("CNAME");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(cNAMENode.GetText().c_str()));
-        cNAMENode = cNAMENode.NextNode("member");
+        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        itemsMember = itemsMember.NextNode("CNAME");
       }
 
       m_itemsHasBeenSet = true;

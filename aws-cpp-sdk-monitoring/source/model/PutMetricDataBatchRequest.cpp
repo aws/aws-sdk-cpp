@@ -33,7 +33,7 @@ Aws::String PutMetricDataBatchRequest::SerializePayload() const
     unsigned metricDataBatchesCount = 1;
     for(auto& item : m_metricDataBatches)
     {
-      item.OutputToStream(ss, "MetricDataBatches.", metricDataBatchesCount, "");
+      item.OutputToStream(ss, "MetricDataBatches.member.", metricDataBatchesCount, "");
       metricDataBatchesCount++;
     }
   }

@@ -36,7 +36,7 @@ Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const
     unsigned launchConfigurationNamesCount = 1;
     for(auto& item : m_launchConfigurationNames)
     {
-      ss << "LaunchConfigurationNames." << launchConfigurationNamesCount << "="
+      ss << "LaunchConfigurationNames.member." << launchConfigurationNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       launchConfigurationNamesCount++;
     }

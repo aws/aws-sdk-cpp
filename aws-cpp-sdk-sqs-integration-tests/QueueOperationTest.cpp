@@ -38,6 +38,9 @@
 #include <aws/sqs/model/ChangeMessageVisibilityBatchRequest.h>
 #include <aws/sqs/model/SendMessageBatchRequestEntry.h>
 #include <aws/sqs/model/SendMessageBatchRequest.h>
+#include <aws/access-management/AccessManagementClient.h>
+#include <aws/iam/IAMClient.h>
+#include <aws/cognito-identity/CognitoIdentityClient.h>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -49,8 +52,6 @@ using namespace Aws::Utils::Json;
 
 #define TEST_QUEUE_PREFIX "IntegrationTest_"
 
-//we need a way to pull this at runtime.
-static const char* ACCOUNT_ID = "554229317296";
 static const char* SIMPLE_QUEUE_NAME = TEST_QUEUE_PREFIX "Simple";
 static const char* SEND_RECEIVE_QUEUE_NAME = TEST_QUEUE_PREFIX "SendReceive";
 static const char* ATTRIBUTES_QUEUE_NAME = TEST_QUEUE_PREFIX "Attributes";
@@ -73,12 +74,6 @@ public:
 protected:
     virtual void SetUp()
     {
-        m_accountId = ProfileConfigFileAWSCredentialsProvider::GetAccountIdForProfile("default");
-        if (m_accountId.size() == 0)
-        {
-            m_accountId = ACCOUNT_ID;
-        }
-
         ClientConfiguration config;
         config.scheme = Scheme::HTTPS;
         config.region = Region::US_EAST_1;
@@ -89,7 +84,12 @@ protected:
         config.proxyPort = PROXY_PORT;
 #endif
         sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
+        
+        auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
 
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
+        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+        m_accountId = accessManagementClient.GetAccountId();
         // delete queues, just in case
         DeleteAllTestQueues();
     }

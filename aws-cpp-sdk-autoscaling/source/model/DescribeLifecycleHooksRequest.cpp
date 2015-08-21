@@ -38,7 +38,7 @@ Aws::String DescribeLifecycleHooksRequest::SerializePayload() const
     unsigned lifecycleHookNamesCount = 1;
     for(auto& item : m_lifecycleHookNames)
     {
-      ss << "LifecycleHookNames." << lifecycleHookNamesCount << "="
+      ss << "LifecycleHookNames.member." << lifecycleHookNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       lifecycleHookNamesCount++;
     }

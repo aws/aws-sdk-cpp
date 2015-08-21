@@ -38,7 +38,7 @@ Aws::String RebootCacheClusterRequest::SerializePayload() const
     unsigned cacheNodeIdsToRebootCount = 1;
     for(auto& item : m_cacheNodeIdsToReboot)
     {
-      ss << "CacheNodeId." << cacheNodeIdsToRebootCount << "="
+      ss << "CacheNodeIdsToReboot.member." << cacheNodeIdsToRebootCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       cacheNodeIdsToRebootCount++;
     }

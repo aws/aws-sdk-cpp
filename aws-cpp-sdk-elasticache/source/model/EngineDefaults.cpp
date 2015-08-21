@@ -58,26 +58,26 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
       m_marker = StringUtils::Trim(markerNode.GetText().c_str());
       m_markerHasBeenSet = true;
     }
-    XmlNode parameterNodeParent = resultNode.FirstChild("Parameter");
-    XmlNode parameterNode = parameterNodeParent.FirstChild("member");
-    if(!parameterNode.IsNull())
+    XmlNode parametersNode = resultNode.FirstChild("Parameters");
+    if(!parametersNode.IsNull())
     {
-      while(!parameterNode.IsNull())
+      XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      while(!parametersMember.IsNull())
       {
-        m_parameters.push_back(parameterNode);
-        parameterNode = parameterNode.NextNode("member");
+        m_parameters.push_back(parametersMember);
+        parametersMember = parametersMember.NextNode("Parameter");
       }
 
       m_parametersHasBeenSet = true;
     }
-    XmlNode cacheNodeTypeSpecificParameterNodeParent = resultNode.FirstChild("CacheNodeTypeSpecificParameter");
-    XmlNode cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNodeParent.FirstChild("member");
-    if(!cacheNodeTypeSpecificParameterNode.IsNull())
+    XmlNode cacheNodeTypeSpecificParametersNode = resultNode.FirstChild("CacheNodeTypeSpecificParameters");
+    if(!cacheNodeTypeSpecificParametersNode.IsNull())
     {
-      while(!cacheNodeTypeSpecificParameterNode.IsNull())
+      XmlNode cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersNode.FirstChild("CacheNodeTypeSpecificParameter");
+      while(!cacheNodeTypeSpecificParametersMember.IsNull())
       {
-        m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParameterNode);
-        cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNode.NextNode("member");
+        m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParametersMember);
+        cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersMember.NextNode("CacheNodeTypeSpecificParameter");
       }
 
       m_cacheNodeTypeSpecificParametersHasBeenSet = true;

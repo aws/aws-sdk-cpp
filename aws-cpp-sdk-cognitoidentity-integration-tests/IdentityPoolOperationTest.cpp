@@ -31,6 +31,8 @@
 #include <aws/cognito-identity/model/GetOpenIdTokenForDeveloperIdentityRequest.h>
 #include <aws/cognito-identity/model/LookupDeveloperIdentityRequest.h>
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
+#include <aws/access-management/AccessManagementClient.h>
+#include <aws/iam/IAMClient.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
@@ -43,7 +45,7 @@ using namespace Aws::Client;
 
 namespace
 {
-static const char *ALLOCATION_TAG = "IdentityPoolOperationTest";
+static const char* ALLOCATION_TAG = "IdentityPoolOperationTest";
 
 class IdentityPoolOperationTest : public ::testing::Test
 {
@@ -193,8 +195,13 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 
     GetIdRequest getIdRequest;
     getIdRequest.WithIdentityPoolId(identityPoolId);
-    //no idea how to get this at runtime.
-    getIdRequest.WithAccountId("554229317296");
+    
+    ClientConfiguration clientConfig;
+
+    auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
+    Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, client);
+    
+    getIdRequest.WithAccountId(accessManagementClient.GetAccountId());
 
     GetIdOutcome getIdOutcome = client->GetId(getIdRequest);
     EXPECT_TRUE(getIdOutcome.IsSuccess());

@@ -42,7 +42,7 @@ Aws::String SendRawEmailRequest::SerializePayload() const
     unsigned destinationsCount = 1;
     for(auto& item : m_destinations)
     {
-      ss << "Destinations." << destinationsCount << "="
+      ss << "Destinations.member." << destinationsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       destinationsCount++;
     }

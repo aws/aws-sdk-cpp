@@ -42,15 +42,21 @@ DescribeDBParameterGroupsResult& DescribeDBParameterGroupsResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode dBParameterGroupNodeParent = resultNode.FirstChild("DBParameterGroup");
-    XmlNode dBParameterGroupNode = dBParameterGroupNodeParent.FirstChild("member");
-    while(!dBParameterGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_dBParameterGroups.push_back(dBParameterGroupNode);
-      dBParameterGroupNode = dBParameterGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode dBParameterGroupsNode = resultNode.FirstChild("DBParameterGroups");
+    if(!dBParameterGroupsNode.IsNull())
+    {
+      XmlNode dBParameterGroupsMember = dBParameterGroupsNode.FirstChild("DBParameterGroup");
+      while(!dBParameterGroupsMember.IsNull())
+      {
+        m_dBParameterGroups.push_back(dBParameterGroupsMember);
+        dBParameterGroupsMember = dBParameterGroupsMember.NextNode("DBParameterGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

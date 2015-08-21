@@ -43,7 +43,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
     unsigned listenersCount = 1;
     for(auto& item : m_listeners)
     {
-      item.OutputToStream(ss, "Listeners.", listenersCount, "");
+      item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
       listenersCount++;
     }
   }
@@ -52,7 +52,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
     unsigned availabilityZonesCount = 1;
     for(auto& item : m_availabilityZones)
     {
-      ss << "AvailabilityZones." << availabilityZonesCount << "="
+      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       availabilityZonesCount++;
     }
@@ -62,7 +62,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
     unsigned subnetsCount = 1;
     for(auto& item : m_subnets)
     {
-      ss << "Subnets." << subnetsCount << "="
+      ss << "Subnets.member." << subnetsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetsCount++;
     }
@@ -72,7 +72,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
     unsigned securityGroupsCount = 1;
     for(auto& item : m_securityGroups)
     {
-      ss << "SecurityGroups." << securityGroupsCount << "="
+      ss << "SecurityGroups.member." << securityGroupsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupsCount++;
     }
@@ -86,7 +86,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tags.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }

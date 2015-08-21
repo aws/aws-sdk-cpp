@@ -30,7 +30,8 @@ DBEngineVersion::DBEngineVersion() :
     m_dBEngineDescriptionHasBeenSet(false),
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false)
+    m_supportedCharacterSetsHasBeenSet(false),
+    m_validUpgradeTargetHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_dBEngineDescriptionHasBeenSet(false),
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false)
+    m_supportedCharacterSetsHasBeenSet(false),
+    m_validUpgradeTargetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -88,17 +90,29 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_defaultCharacterSet = defaultCharacterSetNode;
       m_defaultCharacterSetHasBeenSet = true;
     }
-    XmlNode characterSetNodeParent = resultNode.FirstChild("CharacterSet");
-    XmlNode characterSetNode = characterSetNodeParent.FirstChild("member");
-    if(!characterSetNode.IsNull())
+    XmlNode supportedCharacterSetsNode = resultNode.FirstChild("SupportedCharacterSets");
+    if(!supportedCharacterSetsNode.IsNull())
     {
-      while(!characterSetNode.IsNull())
+      XmlNode supportedCharacterSetsMember = supportedCharacterSetsNode.FirstChild("CharacterSet");
+      while(!supportedCharacterSetsMember.IsNull())
       {
-        m_supportedCharacterSets.push_back(characterSetNode);
-        characterSetNode = characterSetNode.NextNode("member");
+        m_supportedCharacterSets.push_back(supportedCharacterSetsMember);
+        supportedCharacterSetsMember = supportedCharacterSetsMember.NextNode("CharacterSet");
       }
 
       m_supportedCharacterSetsHasBeenSet = true;
+    }
+    XmlNode validUpgradeTargetNode = resultNode.FirstChild("ValidUpgradeTarget");
+    if(!validUpgradeTargetNode.IsNull())
+    {
+      XmlNode validUpgradeTargetMember = validUpgradeTargetNode.FirstChild("UpgradeTarget");
+      while(!validUpgradeTargetMember.IsNull())
+      {
+        m_validUpgradeTarget.push_back(validUpgradeTargetMember);
+        validUpgradeTargetMember = validUpgradeTargetMember.NextNode("UpgradeTarget");
+      }
+
+      m_validUpgradeTargetHasBeenSet = true;
     }
   }
 
@@ -142,6 +156,15 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
       }
   }
+  if(m_validUpgradeTargetHasBeenSet)
+  {
+      for(auto& item : m_validUpgradeTarget)
+      {
+        Aws::StringStream validUpgradeTargetSs;
+        validUpgradeTargetSs << location << index << locationValue << ".UpgradeTarget";
+        item.OutputToStream(oStream, validUpgradeTargetSs.str().c_str());
+      }
+  }
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -178,6 +201,15 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       {
         Aws::String locationAndListMember(location);
         locationAndListMember += ".CharacterSet";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
+  }
+  if(m_validUpgradeTargetHasBeenSet)
+  {
+      for(auto& item : m_validUpgradeTarget)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".UpgradeTarget";
         item.OutputToStream(oStream, locationAndListMember.c_str());
       }
   }

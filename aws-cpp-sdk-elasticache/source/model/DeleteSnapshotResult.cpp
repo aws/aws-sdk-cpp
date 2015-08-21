@@ -42,7 +42,10 @@ DeleteSnapshotResult& DeleteSnapshotResult::operator =(const AmazonWebServiceRes
   if(!resultNode.IsNull())
   {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    m_snapshot = snapshotNode;
+    if(!snapshotNode.IsNull())
+    {
+      m_snapshot = snapshotNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

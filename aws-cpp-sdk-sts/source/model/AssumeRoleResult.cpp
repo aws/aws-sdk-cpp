@@ -44,11 +44,20 @@ AssumeRoleResult& AssumeRoleResult::operator =(const AmazonWebServiceResult<XmlD
   if(!resultNode.IsNull())
   {
     XmlNode credentialsNode = resultNode.FirstChild("Credentials");
-    m_credentials = credentialsNode;
+    if(!credentialsNode.IsNull())
+    {
+      m_credentials = credentialsNode;
+    }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
-    m_assumedRoleUser = assumedRoleUserNode;
+    if(!assumedRoleUserNode.IsNull())
+    {
+      m_assumedRoleUser = assumedRoleUserNode;
+    }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
-    m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
+    if(!packedPolicySizeNode.IsNull())
+    {
+      m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

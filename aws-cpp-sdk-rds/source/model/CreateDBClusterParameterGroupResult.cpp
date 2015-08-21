@@ -42,7 +42,10 @@ CreateDBClusterParameterGroupResult& CreateDBClusterParameterGroupResult::operat
   if(!resultNode.IsNull())
   {
     XmlNode dBClusterParameterGroupNode = resultNode.FirstChild("DBClusterParameterGroup");
-    m_dBClusterParameterGroup = dBClusterParameterGroupNode;
+    if(!dBClusterParameterGroupNode.IsNull())
+    {
+      m_dBClusterParameterGroup = dBClusterParameterGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

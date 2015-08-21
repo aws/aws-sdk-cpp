@@ -41,22 +41,28 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode solutionStacksNodeParent = resultNode.FirstChild("SolutionStacks");
-    XmlNode solutionStacksNode = solutionStacksNodeParent.FirstChild("member");
-    while(!solutionStacksNode.IsNull())
+    XmlNode solutionStacksNode = resultNode.FirstChild("SolutionStacks");
+    if(!solutionStacksNode.IsNull())
     {
-      m_solutionStacks.push_back(StringUtils::Trim(solutionStacksNode.GetText().c_str()));
-      solutionStacksNode = solutionStacksNode.NextNode("member");
-    }
+      XmlNode solutionStacksMember = solutionStacksNode.FirstChild("member");
+      while(!solutionStacksMember.IsNull())
+      {
+        m_solutionStacks.push_back(StringUtils::Trim(solutionStacksMember.GetText().c_str()));
+        solutionStacksMember = solutionStacksMember.NextNode("member");
+      }
 
-    XmlNode solutionStackDetailsNodeParent = resultNode.FirstChild("SolutionStackDetails");
-    XmlNode solutionStackDetailsNode = solutionStackDetailsNodeParent.FirstChild("member");
-    while(!solutionStackDetailsNode.IsNull())
+    }
+    XmlNode solutionStackDetailsNode = resultNode.FirstChild("SolutionStackDetails");
+    if(!solutionStackDetailsNode.IsNull())
     {
-      m_solutionStackDetails.push_back(solutionStackDetailsNode);
-      solutionStackDetailsNode = solutionStackDetailsNode.NextNode("member");
-    }
+      XmlNode solutionStackDetailsMember = solutionStackDetailsNode.FirstChild("member");
+      while(!solutionStackDetailsMember.IsNull())
+      {
+        m_solutionStackDetails.push_back(solutionStackDetailsMember);
+        solutionStackDetailsMember = solutionStackDetailsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

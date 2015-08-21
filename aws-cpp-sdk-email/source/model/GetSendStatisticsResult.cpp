@@ -41,14 +41,17 @@ GetSendStatisticsResult& GetSendStatisticsResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode sendDataPointsNodeParent = resultNode.FirstChild("SendDataPoints");
-    XmlNode sendDataPointsNode = sendDataPointsNodeParent.FirstChild("member");
-    while(!sendDataPointsNode.IsNull())
+    XmlNode sendDataPointsNode = resultNode.FirstChild("SendDataPoints");
+    if(!sendDataPointsNode.IsNull())
     {
-      m_sendDataPoints.push_back(sendDataPointsNode);
-      sendDataPointsNode = sendDataPointsNode.NextNode("member");
-    }
+      XmlNode sendDataPointsMember = sendDataPointsNode.FirstChild("member");
+      while(!sendDataPointsMember.IsNull())
+      {
+        m_sendDataPoints.push_back(sendDataPointsMember);
+        sendDataPointsMember = sendDataPointsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

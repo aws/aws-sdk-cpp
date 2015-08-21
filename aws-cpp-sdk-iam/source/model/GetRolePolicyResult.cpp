@@ -42,11 +42,20 @@ GetRolePolicyResult& GetRolePolicyResult::operator =(const AmazonWebServiceResul
   if(!resultNode.IsNull())
   {
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
-    m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
+    if(!roleNameNode.IsNull())
+    {
+      m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
+    }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
-    m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+    if(!policyNameNode.IsNull())
+    {
+      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+    }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
-    m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
+    if(!policyDocumentNode.IsNull())
+    {
+      m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

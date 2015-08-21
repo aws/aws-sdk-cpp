@@ -42,7 +42,10 @@ CreatePlatformApplicationResult& CreatePlatformApplicationResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode platformApplicationArnNode = resultNode.FirstChild("PlatformApplicationArn");
-    m_platformApplicationArn = StringUtils::Trim(platformApplicationArnNode.GetText().c_str());
+    if(!platformApplicationArnNode.IsNull())
+    {
+      m_platformApplicationArn = StringUtils::Trim(platformApplicationArnNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

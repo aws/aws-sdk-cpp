@@ -86,14 +86,14 @@ DistributionList& DistributionList::operator =(const XmlNode& xmlNode)
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
-    XmlNode distributionSummaryNodeParent = resultNode.FirstChild("DistributionSummary");
-    XmlNode distributionSummaryNode = distributionSummaryNodeParent.FirstChild("member");
-    if(!distributionSummaryNode.IsNull())
+    XmlNode itemsNode = resultNode.FirstChild("Items");
+    if(!itemsNode.IsNull())
     {
-      while(!distributionSummaryNode.IsNull())
+      XmlNode itemsMember = itemsNode.FirstChild("DistributionSummary");
+      while(!itemsMember.IsNull())
       {
-        m_items.push_back(distributionSummaryNode);
-        distributionSummaryNode = distributionSummaryNode.NextNode("member");
+        m_items.push_back(itemsMember);
+        itemsMember = itemsMember.NextNode("DistributionSummary");
       }
 
       m_itemsHasBeenSet = true;

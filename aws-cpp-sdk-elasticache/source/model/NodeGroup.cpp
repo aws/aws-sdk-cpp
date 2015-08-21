@@ -64,14 +64,14 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
       m_primaryEndpoint = primaryEndpointNode;
       m_primaryEndpointHasBeenSet = true;
     }
-    XmlNode nodeGroupMemberNodeParent = resultNode.FirstChild("NodeGroupMember");
-    XmlNode nodeGroupMemberNode = nodeGroupMemberNodeParent.FirstChild("member");
-    if(!nodeGroupMemberNode.IsNull())
+    XmlNode nodeGroupMembersNode = resultNode.FirstChild("NodeGroupMembers");
+    if(!nodeGroupMembersNode.IsNull())
     {
-      while(!nodeGroupMemberNode.IsNull())
+      XmlNode nodeGroupMembersMember = nodeGroupMembersNode.FirstChild("NodeGroupMember");
+      while(!nodeGroupMembersMember.IsNull())
       {
-        m_nodeGroupMembers.push_back(nodeGroupMemberNode);
-        nodeGroupMemberNode = nodeGroupMemberNode.NextNode("member");
+        m_nodeGroupMembers.push_back(nodeGroupMembersMember);
+        nodeGroupMembersMember = nodeGroupMembersMember.NextNode("NodeGroupMember");
       }
 
       m_nodeGroupMembersHasBeenSet = true;

@@ -41,20 +41,28 @@ DeleteObjectsResult& DeleteObjectsResult::operator =(const AmazonWebServiceResul
 
   if(!resultNode.IsNull())
   {
-    XmlNode deletedObjectNode = resultNode.FirstChild("Deleted");
-    while(!deletedObjectNode.IsNull())
+    XmlNode deletedNode = resultNode.FirstChild("Deleted");
+    if(!deletedNode.IsNull())
     {
-      m_deleted.push_back(deletedObjectNode);
-      deletedObjectNode = deletedObjectNode.NextNode("Deleted");
-    }
+      XmlNode deletedMember = deletedNode;
+      while(!deletedMember.IsNull())
+      {
+        m_deleted.push_back(deletedMember);
+        deletedMember = deletedMember.NextNode("Deleted");
+      }
 
-    XmlNode errorNode = resultNode.FirstChild("${member.location}");
-    while(!errorNode.IsNull())
+    }
+    XmlNode errorsNode = resultNode.FirstChild("Errors");
+    if(!errorsNode.IsNull())
     {
-      m_errors.push_back(errorNode);
-      errorNode = errorNode.NextNode("Error");
-    }
+      XmlNode errorsMember = errorsNode;
+      while(!errorsMember.IsNull())
+      {
+        m_errors.push_back(errorsMember);
+        errorsMember = errorsMember.NextNode("Error");
+      }
 
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

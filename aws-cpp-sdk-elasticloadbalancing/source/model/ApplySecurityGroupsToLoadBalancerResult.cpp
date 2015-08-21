@@ -41,14 +41,17 @@ ApplySecurityGroupsToLoadBalancerResult& ApplySecurityGroupsToLoadBalancerResult
 
   if(!resultNode.IsNull())
   {
-    XmlNode securityGroupsNodeParent = resultNode.FirstChild("SecurityGroups");
-    XmlNode securityGroupsNode = securityGroupsNodeParent.FirstChild("member");
-    while(!securityGroupsNode.IsNull())
+    XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
+    if(!securityGroupsNode.IsNull())
     {
-      m_securityGroups.push_back(StringUtils::Trim(securityGroupsNode.GetText().c_str()));
-      securityGroupsNode = securityGroupsNode.NextNode("member");
-    }
+      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
+      while(!securityGroupsMember.IsNull())
+      {
+        m_securityGroups.push_back(StringUtils::Trim(securityGroupsMember.GetText().c_str()));
+        securityGroupsMember = securityGroupsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

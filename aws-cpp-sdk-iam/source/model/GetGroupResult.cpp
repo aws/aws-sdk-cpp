@@ -44,19 +44,31 @@ GetGroupResult& GetGroupResult::operator =(const AmazonWebServiceResult<XmlDocum
   if(!resultNode.IsNull())
   {
     XmlNode groupNode = resultNode.FirstChild("Group");
-    m_group = groupNode;
-    XmlNode usersNodeParent = resultNode.FirstChild("Users");
-    XmlNode usersNode = usersNodeParent.FirstChild("member");
-    while(!usersNode.IsNull())
+    if(!groupNode.IsNull())
     {
-      m_users.push_back(usersNode);
-      usersNode = usersNode.NextNode("member");
+      m_group = groupNode;
     }
+    XmlNode usersNode = resultNode.FirstChild("Users");
+    if(!usersNode.IsNull())
+    {
+      XmlNode usersMember = usersNode.FirstChild("member");
+      while(!usersMember.IsNull())
+      {
+        m_users.push_back(usersMember);
+        usersMember = usersMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

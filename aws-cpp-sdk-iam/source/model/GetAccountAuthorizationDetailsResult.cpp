@@ -43,42 +43,60 @@ GetAccountAuthorizationDetailsResult& GetAccountAuthorizationDetailsResult::oper
 
   if(!resultNode.IsNull())
   {
-    XmlNode userDetailListNodeParent = resultNode.FirstChild("UserDetailList");
-    XmlNode userDetailListNode = userDetailListNodeParent.FirstChild("member");
-    while(!userDetailListNode.IsNull())
+    XmlNode userDetailListNode = resultNode.FirstChild("UserDetailList");
+    if(!userDetailListNode.IsNull())
     {
-      m_userDetailList.push_back(userDetailListNode);
-      userDetailListNode = userDetailListNode.NextNode("member");
-    }
+      XmlNode userDetailListMember = userDetailListNode.FirstChild("member");
+      while(!userDetailListMember.IsNull())
+      {
+        m_userDetailList.push_back(userDetailListMember);
+        userDetailListMember = userDetailListMember.NextNode("member");
+      }
 
-    XmlNode groupDetailListNodeParent = resultNode.FirstChild("GroupDetailList");
-    XmlNode groupDetailListNode = groupDetailListNodeParent.FirstChild("member");
-    while(!groupDetailListNode.IsNull())
+    }
+    XmlNode groupDetailListNode = resultNode.FirstChild("GroupDetailList");
+    if(!groupDetailListNode.IsNull())
     {
-      m_groupDetailList.push_back(groupDetailListNode);
-      groupDetailListNode = groupDetailListNode.NextNode("member");
-    }
+      XmlNode groupDetailListMember = groupDetailListNode.FirstChild("member");
+      while(!groupDetailListMember.IsNull())
+      {
+        m_groupDetailList.push_back(groupDetailListMember);
+        groupDetailListMember = groupDetailListMember.NextNode("member");
+      }
 
-    XmlNode roleDetailListNodeParent = resultNode.FirstChild("RoleDetailList");
-    XmlNode roleDetailListNode = roleDetailListNodeParent.FirstChild("member");
-    while(!roleDetailListNode.IsNull())
+    }
+    XmlNode roleDetailListNode = resultNode.FirstChild("RoleDetailList");
+    if(!roleDetailListNode.IsNull())
     {
-      m_roleDetailList.push_back(roleDetailListNode);
-      roleDetailListNode = roleDetailListNode.NextNode("member");
-    }
+      XmlNode roleDetailListMember = roleDetailListNode.FirstChild("member");
+      while(!roleDetailListMember.IsNull())
+      {
+        m_roleDetailList.push_back(roleDetailListMember);
+        roleDetailListMember = roleDetailListMember.NextNode("member");
+      }
 
-    XmlNode policiesNodeParent = resultNode.FirstChild("Policies");
-    XmlNode policiesNode = policiesNodeParent.FirstChild("member");
-    while(!policiesNode.IsNull())
+    }
+    XmlNode policiesNode = resultNode.FirstChild("Policies");
+    if(!policiesNode.IsNull())
     {
-      m_policies.push_back(policiesNode);
-      policiesNode = policiesNode.NextNode("member");
-    }
+      XmlNode policiesMember = policiesNode.FirstChild("member");
+      while(!policiesMember.IsNull())
+      {
+        m_policies.push_back(policiesMember);
+        policiesMember = policiesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

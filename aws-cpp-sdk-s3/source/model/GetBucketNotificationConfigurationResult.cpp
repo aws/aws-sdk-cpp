@@ -40,27 +40,39 @@ GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode topicConfigurationNode = resultNode.FirstChild("${member.location}");
-    while(!topicConfigurationNode.IsNull())
+    XmlNode topicConfigurationsNode = resultNode.FirstChild("TopicConfigurations");
+    if(!topicConfigurationsNode.IsNull())
     {
-      m_topicConfigurations.push_back(topicConfigurationNode);
-      topicConfigurationNode = topicConfigurationNode.NextNode("TopicConfiguration");
-    }
+      XmlNode topicConfigurationsMember = topicConfigurationsNode;
+      while(!topicConfigurationsMember.IsNull())
+      {
+        m_topicConfigurations.push_back(topicConfigurationsMember);
+        topicConfigurationsMember = topicConfigurationsMember.NextNode("TopicConfiguration");
+      }
 
-    XmlNode queueConfigurationNode = resultNode.FirstChild("${member.location}");
-    while(!queueConfigurationNode.IsNull())
+    }
+    XmlNode queueConfigurationsNode = resultNode.FirstChild("QueueConfigurations");
+    if(!queueConfigurationsNode.IsNull())
     {
-      m_queueConfigurations.push_back(queueConfigurationNode);
-      queueConfigurationNode = queueConfigurationNode.NextNode("QueueConfiguration");
-    }
+      XmlNode queueConfigurationsMember = queueConfigurationsNode;
+      while(!queueConfigurationsMember.IsNull())
+      {
+        m_queueConfigurations.push_back(queueConfigurationsMember);
+        queueConfigurationsMember = queueConfigurationsMember.NextNode("QueueConfiguration");
+      }
 
-    XmlNode lambdaFunctionConfigurationNode = resultNode.FirstChild("${member.location}");
-    while(!lambdaFunctionConfigurationNode.IsNull())
+    }
+    XmlNode lambdaFunctionConfigurationsNode = resultNode.FirstChild("LambdaFunctionConfigurations");
+    if(!lambdaFunctionConfigurationsNode.IsNull())
     {
-      m_lambdaFunctionConfigurations.push_back(lambdaFunctionConfigurationNode);
-      lambdaFunctionConfigurationNode = lambdaFunctionConfigurationNode.NextNode("CloudFunctionConfiguration");
-    }
+      XmlNode lambdaFunctionConfigurationsMember = lambdaFunctionConfigurationsNode;
+      while(!lambdaFunctionConfigurationsMember.IsNull())
+      {
+        m_lambdaFunctionConfigurations.push_back(lambdaFunctionConfigurationsMember);
+        lambdaFunctionConfigurationsMember = lambdaFunctionConfigurationsMember.NextNode("CloudFunctionConfiguration");
+      }
 
+    }
   }
 
   return *this;

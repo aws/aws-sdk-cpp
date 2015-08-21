@@ -84,26 +84,26 @@ GroupDetail& GroupDetail::operator =(const XmlNode& xmlNode)
       m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
       m_createDateHasBeenSet = true;
     }
-    XmlNode groupPolicyListNodeParent = resultNode.FirstChild("GroupPolicyList");
-    XmlNode groupPolicyListNode = groupPolicyListNodeParent.FirstChild("member");
+    XmlNode groupPolicyListNode = resultNode.FirstChild("GroupPolicyList");
     if(!groupPolicyListNode.IsNull())
     {
-      while(!groupPolicyListNode.IsNull())
+      XmlNode groupPolicyListMember = groupPolicyListNode.FirstChild("member");
+      while(!groupPolicyListMember.IsNull())
       {
-        m_groupPolicyList.push_back(groupPolicyListNode);
-        groupPolicyListNode = groupPolicyListNode.NextNode("member");
+        m_groupPolicyList.push_back(groupPolicyListMember);
+        groupPolicyListMember = groupPolicyListMember.NextNode("member");
       }
 
       m_groupPolicyListHasBeenSet = true;
     }
-    XmlNode attachedManagedPoliciesNodeParent = resultNode.FirstChild("AttachedManagedPolicies");
-    XmlNode attachedManagedPoliciesNode = attachedManagedPoliciesNodeParent.FirstChild("member");
+    XmlNode attachedManagedPoliciesNode = resultNode.FirstChild("AttachedManagedPolicies");
     if(!attachedManagedPoliciesNode.IsNull())
     {
-      while(!attachedManagedPoliciesNode.IsNull())
+      XmlNode attachedManagedPoliciesMember = attachedManagedPoliciesNode.FirstChild("member");
+      while(!attachedManagedPoliciesMember.IsNull())
       {
-        m_attachedManagedPolicies.push_back(attachedManagedPoliciesNode);
-        attachedManagedPoliciesNode = attachedManagedPoliciesNode.NextNode("member");
+        m_attachedManagedPolicies.push_back(attachedManagedPoliciesMember);
+        attachedManagedPoliciesMember = attachedManagedPoliciesMember.NextNode("member");
       }
 
       m_attachedManagedPoliciesHasBeenSet = true;

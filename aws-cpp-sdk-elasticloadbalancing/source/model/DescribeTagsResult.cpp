@@ -41,14 +41,17 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagDescriptionsNodeParent = resultNode.FirstChild("TagDescriptions");
-    XmlNode tagDescriptionsNode = tagDescriptionsNodeParent.FirstChild("member");
-    while(!tagDescriptionsNode.IsNull())
+    XmlNode tagDescriptionsNode = resultNode.FirstChild("TagDescriptions");
+    if(!tagDescriptionsNode.IsNull())
     {
-      m_tagDescriptions.push_back(tagDescriptionsNode);
-      tagDescriptionsNode = tagDescriptionsNode.NextNode("member");
-    }
+      XmlNode tagDescriptionsMember = tagDescriptionsNode.FirstChild("member");
+      while(!tagDescriptionsMember.IsNull())
+      {
+        m_tagDescriptions.push_back(tagDescriptionsMember);
+        tagDescriptionsMember = tagDescriptionsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -41,14 +41,17 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode accountQuotaNodeParent = resultNode.FirstChild("AccountQuota");
-    XmlNode accountQuotaNode = accountQuotaNodeParent.FirstChild("member");
-    while(!accountQuotaNode.IsNull())
+    XmlNode accountQuotasNode = resultNode.FirstChild("AccountQuotas");
+    if(!accountQuotasNode.IsNull())
     {
-      m_accountQuotas.push_back(accountQuotaNode);
-      accountQuotaNode = accountQuotaNode.NextNode("member");
-    }
+      XmlNode accountQuotasMember = accountQuotasNode.FirstChild("AccountQuota");
+      while(!accountQuotasMember.IsNull())
+      {
+        m_accountQuotas.push_back(accountQuotasMember);
+        accountQuotasMember = accountQuotasMember.NextNode("AccountQuota");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

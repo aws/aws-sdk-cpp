@@ -43,18 +43,27 @@ ListVirtualMFADevicesResult& ListVirtualMFADevicesResult::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode virtualMFADevicesNodeParent = resultNode.FirstChild("VirtualMFADevices");
-    XmlNode virtualMFADevicesNode = virtualMFADevicesNodeParent.FirstChild("member");
-    while(!virtualMFADevicesNode.IsNull())
+    XmlNode virtualMFADevicesNode = resultNode.FirstChild("VirtualMFADevices");
+    if(!virtualMFADevicesNode.IsNull())
     {
-      m_virtualMFADevices.push_back(virtualMFADevicesNode);
-      virtualMFADevicesNode = virtualMFADevicesNode.NextNode("member");
-    }
+      XmlNode virtualMFADevicesMember = virtualMFADevicesNode.FirstChild("member");
+      while(!virtualMFADevicesMember.IsNull())
+      {
+        m_virtualMFADevices.push_back(virtualMFADevicesMember);
+        virtualMFADevicesMember = virtualMFADevicesMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

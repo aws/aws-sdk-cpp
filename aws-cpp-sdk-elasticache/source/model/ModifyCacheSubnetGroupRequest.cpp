@@ -43,7 +43,7 @@ Aws::String ModifyCacheSubnetGroupRequest::SerializePayload() const
     unsigned subnetIdsCount = 1;
     for(auto& item : m_subnetIds)
     {
-      ss << "SubnetIdentifier." << subnetIdsCount << "="
+      ss << "SubnetIds.member." << subnetIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetIdsCount++;
     }

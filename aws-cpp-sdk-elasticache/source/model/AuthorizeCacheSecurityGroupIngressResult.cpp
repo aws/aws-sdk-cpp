@@ -42,7 +42,10 @@ AuthorizeCacheSecurityGroupIngressResult& AuthorizeCacheSecurityGroupIngressResu
   if(!resultNode.IsNull())
   {
     XmlNode cacheSecurityGroupNode = resultNode.FirstChild("CacheSecurityGroup");
-    m_cacheSecurityGroup = cacheSecurityGroupNode;
+    if(!cacheSecurityGroupNode.IsNull())
+    {
+      m_cacheSecurityGroup = cacheSecurityGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

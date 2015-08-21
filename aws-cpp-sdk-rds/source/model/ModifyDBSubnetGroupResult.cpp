@@ -42,7 +42,10 @@ ModifyDBSubnetGroupResult& ModifyDBSubnetGroupResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode dBSubnetGroupNode = resultNode.FirstChild("DBSubnetGroup");
-    m_dBSubnetGroup = dBSubnetGroupNode;
+    if(!dBSubnetGroupNode.IsNull())
+    {
+      m_dBSubnetGroup = dBSubnetGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

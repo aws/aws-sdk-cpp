@@ -61,29 +61,31 @@ MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
       m_binaryValue = HashingUtils::Base64Decode(StringUtils::Trim(binaryValueNode.GetText().c_str()));
       m_binaryValueHasBeenSet = true;
     }
-    XmlNode stringListValueNode = resultNode.FirstChild("StringListValue");
-    if(!stringListValueNode.IsNull())
+    XmlNode stringListValuesNode = resultNode.FirstChild("StringListValue");
+    if(!stringListValuesNode.IsNull())
     {
-      while(!stringListValueNode.IsNull())
+      XmlNode stringListValueMember = stringListValuesNode;
+      while(!stringListValueMember.IsNull())
       {
-        m_stringListValues.push_back(StringUtils::Trim(stringListValueNode.GetText().c_str()));
-        stringListValueNode = stringListValueNode.NextNode("StringListValue");
+        m_stringListValues.push_back(StringUtils::Trim(stringListValueMember.GetText().c_str()));
+        stringListValueMember = stringListValueMember.NextNode("StringListValue");
       }
 
       m_stringListValuesHasBeenSet = true;
     }
-    XmlNode binaryListValueNode = resultNode.FirstChild("BinaryListValue");
-    if(!binaryListValueNode.IsNull())
+    XmlNode binaryListValuesNode = resultNode.FirstChild("BinaryListValue");
+    if(!binaryListValuesNode.IsNull())
     {
-      while(!binaryListValueNode.IsNull())
+      XmlNode binaryListValueMember = binaryListValuesNode;
+      while(!binaryListValueMember.IsNull())
       {
-        binaryListValueNode = binaryListValueNode.NextNode("BinaryListValue");
+        binaryListValueMember = binaryListValueMember.NextNode("BinaryListValue");
       }
 
       m_binaryListValuesHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
-    if(!binaryListValueNode.IsNull())
+    if(!dataTypeNode.IsNull())
     {
       m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
       m_dataTypeHasBeenSet = true;

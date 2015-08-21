@@ -56,14 +56,14 @@ CacheParameterGroupStatus& CacheParameterGroupStatus::operator =(const XmlNode& 
       m_parameterApplyStatus = StringUtils::Trim(parameterApplyStatusNode.GetText().c_str());
       m_parameterApplyStatusHasBeenSet = true;
     }
-    XmlNode cacheNodeIdNodeParent = resultNode.FirstChild("CacheNodeId");
-    XmlNode cacheNodeIdNode = cacheNodeIdNodeParent.FirstChild("member");
-    if(!cacheNodeIdNode.IsNull())
+    XmlNode cacheNodeIdsToRebootNode = resultNode.FirstChild("CacheNodeIdsToReboot");
+    if(!cacheNodeIdsToRebootNode.IsNull())
     {
-      while(!cacheNodeIdNode.IsNull())
+      XmlNode cacheNodeIdsToRebootMember = cacheNodeIdsToRebootNode.FirstChild("CacheNodeId");
+      while(!cacheNodeIdsToRebootMember.IsNull())
       {
-        m_cacheNodeIdsToReboot.push_back(StringUtils::Trim(cacheNodeIdNode.GetText().c_str()));
-        cacheNodeIdNode = cacheNodeIdNode.NextNode("member");
+        m_cacheNodeIdsToReboot.push_back(StringUtils::Trim(cacheNodeIdsToRebootMember.GetText().c_str()));
+        cacheNodeIdsToRebootMember = cacheNodeIdsToRebootMember.NextNode("CacheNodeId");
       }
 
       m_cacheNodeIdsToRebootHasBeenSet = true;

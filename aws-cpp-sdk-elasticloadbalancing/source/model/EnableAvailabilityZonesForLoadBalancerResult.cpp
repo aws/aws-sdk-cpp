@@ -41,14 +41,17 @@ EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBala
 
   if(!resultNode.IsNull())
   {
-    XmlNode availabilityZonesNodeParent = resultNode.FirstChild("AvailabilityZones");
-    XmlNode availabilityZonesNode = availabilityZonesNodeParent.FirstChild("member");
-    while(!availabilityZonesNode.IsNull())
+    XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
+    if(!availabilityZonesNode.IsNull())
     {
-      m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesNode.GetText().c_str()));
-      availabilityZonesNode = availabilityZonesNode.NextNode("member");
-    }
+      XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
+      while(!availabilityZonesMember.IsNull())
+      {
+        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        availabilityZonesMember = availabilityZonesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

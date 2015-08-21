@@ -98,6 +98,30 @@ namespace Model
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
     /*
+     <p>The new DB subnet group for the DB instance. If the DB instance is not in a VPC, then the DB instance will be converted to use the VPC referred to by the new DB subnet group. </p> <p> Passing a value for this parameter causes an outage during the change and is applied during the next maintenance window, unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. </p>
+    */
+    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+    /*
+     <p>The new DB subnet group for the DB instance. If the DB instance is not in a VPC, then the DB instance will be converted to use the VPC referred to by the new DB subnet group. </p> <p> Passing a value for this parameter causes an outage during the change and is applied during the next maintenance window, unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. </p>
+    */
+    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /*
+     <p>The new DB subnet group for the DB instance. If the DB instance is not in a VPC, then the DB instance will be converted to use the VPC referred to by the new DB subnet group. </p> <p> Passing a value for this parameter causes an outage during the change and is applied during the next maintenance window, unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. </p>
+    */
+    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
+
+    /*
+     <p>The new DB subnet group for the DB instance. If the DB instance is not in a VPC, then the DB instance will be converted to use the VPC referred to by the new DB subnet group. </p> <p> Passing a value for this parameter causes an outage during the change and is applied during the next maintenance window, unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. </p>
+    */
+    inline ModifyDBInstanceRequest&  WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /*
+     <p>The new DB subnet group for the DB instance. If the DB instance is not in a VPC, then the DB instance will be converted to use the VPC referred to by the new DB subnet group. </p> <p> Passing a value for this parameter causes an outage during the change and is applied during the next maintenance window, unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. </p>
+    */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+
+    /*
      <p> A list of DB security groups to authorize on this DB instance. Changing this setting does not result in an outage and the change is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
     */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
@@ -160,26 +184,26 @@ namespace Model
     inline ModifyDBInstanceRequest&  WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
     /*
-     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
+     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
     */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
     /*
-     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
+     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /*
-     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
+     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
     */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /*
-     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
+     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
     */
     inline ModifyDBInstanceRequest&  WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /*
-     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
+     <p> The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".</p> <p> Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).</p> <note> Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked. </note>
     */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -493,6 +517,58 @@ namespace Model
     */
     inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
+    /*
+     <p> Specify the Active Directory Domain to move the instance to. </p> <p>The specified Active Directory Domain must be created prior to this operation. Currently only SQL Server instance can be created in a Domain</p>
+    */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+    /*
+     <p> Specify the Active Directory Domain to move the instance to. </p> <p>The specified Active Directory Domain must be created prior to this operation. Currently only SQL Server instance can be created in a Domain</p>
+    */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /*
+     <p> Specify the Active Directory Domain to move the instance to. </p> <p>The specified Active Directory Domain must be created prior to this operation. Currently only SQL Server instance can be created in a Domain</p>
+    */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /*
+     <p> Specify the Active Directory Domain to move the instance to. </p> <p>The specified Active Directory Domain must be created prior to this operation. Currently only SQL Server instance can be created in a Domain</p>
+    */
+    inline ModifyDBInstanceRequest&  WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /*
+     <p> Specify the Active Directory Domain to move the instance to. </p> <p>The specified Active Directory Domain must be created prior to this operation. Currently only SQL Server instance can be created in a Domain</p>
+    */
+    inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+    /*
+     <p>True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
+    */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+    /*
+     <p>True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
+    */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /*
+     <p>True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is false.</p>
+    */
+    inline ModifyDBInstanceRequest&  WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+    /*
+     <p>The interval, in seconds, between when metrics are collected for the DB instance. Specify 0 to disable collecting metrics.</p> <p><b>Valid Values:</b> <code>0, 1, 5, 10, 15, 30, 60</code></p>
+    */
+    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    /*
+     <p>The interval, in seconds, between when metrics are collected for the DB instance. Specify 0 to disable collecting metrics.</p> <p><b>Valid Values:</b> <code>0, 1, 5, 10, 15, 30, 60</code></p>
+    */
+    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+
+    /*
+     <p>The interval, in seconds, between when metrics are collected for the DB instance. Specify 0 to disable collecting metrics.</p> <p><b>Valid Values:</b> <code>0, 1, 5, 10, 15, 30, 60</code></p>
+    */
+    inline ModifyDBInstanceRequest&  WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
@@ -500,6 +576,8 @@ namespace Model
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+    Aws::String m_dBSubnetGroupName;
+    bool m_dBSubnetGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
@@ -538,6 +616,12 @@ namespace Model
     bool m_tdeCredentialPasswordHasBeenSet;
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
+    long m_monitoringInterval;
+    bool m_monitoringIntervalHasBeenSet;
   };
 
 } // namespace Model

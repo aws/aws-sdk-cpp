@@ -41,16 +41,22 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode platformApplicationsNodeParent = resultNode.FirstChild("PlatformApplications");
-    XmlNode platformApplicationsNode = platformApplicationsNodeParent.FirstChild("member");
-    while(!platformApplicationsNode.IsNull())
+    XmlNode platformApplicationsNode = resultNode.FirstChild("PlatformApplications");
+    if(!platformApplicationsNode.IsNull())
     {
-      m_platformApplications.push_back(platformApplicationsNode);
-      platformApplicationsNode = platformApplicationsNode.NextNode("member");
-    }
+      XmlNode platformApplicationsMember = platformApplicationsNode.FirstChild("member");
+      while(!platformApplicationsMember.IsNull())
+      {
+        m_platformApplications.push_back(platformApplicationsMember);
+        platformApplicationsMember = platformApplicationsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -16,7 +16,6 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
@@ -72,16 +71,26 @@ namespace Model
     /*
      <p> Specifies the source type for this event. </p>
     */
-    inline const SourceType& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
     /*
      <p> Specifies the source type for this event. </p>
     */
-    inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /*
      <p> Specifies the source type for this event. </p>
     */
-    inline Event&  WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
+    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
+
+    /*
+     <p> Specifies the source type for this event. </p>
+    */
+    inline Event&  WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
+
+    /*
+     <p> Specifies the source type for this event. </p>
+    */
+    inline Event& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
     /*
      <p> Provides the text of this event. </p>
@@ -148,7 +157,7 @@ namespace Model
   private:
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
-    SourceType m_sourceType;
+    Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;

@@ -42,37 +42,58 @@ ListHostInfoResult& ListHostInfoResult::operator =(const AmazonWebServiceResult<
   if(!resultNode.IsNull())
   {
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
-    m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
+    if(!hostNameNode.IsNull())
+    {
+      m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
+    }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
-    m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+    if(!stackNameNode.IsNull())
+    {
+      m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+    }
     XmlNode marketplaceNode = resultNode.FirstChild("Marketplace");
-    m_marketplace = StringUtils::Trim(marketplaceNode.GetText().c_str());
+    if(!marketplaceNode.IsNull())
+    {
+      m_marketplace = StringUtils::Trim(marketplaceNode.GetText().c_str());
+    }
     XmlNode regionNode = resultNode.FirstChild("Region");
-    m_region = StringUtils::Trim(regionNode.GetText().c_str());
-    XmlNode sdbDatastoreEndpointsNodeParent = resultNode.FirstChild("SdbDatastoreEndpoints");
-    XmlNode sdbDatastoreEndpointsNode = sdbDatastoreEndpointsNodeParent.FirstChild("member");
-    while(!sdbDatastoreEndpointsNode.IsNull())
+    if(!regionNode.IsNull())
     {
-      m_sdbDatastoreEndpoints.push_back(StringUtils::Trim(sdbDatastoreEndpointsNode.GetText().c_str()));
-      sdbDatastoreEndpointsNode = sdbDatastoreEndpointsNode.NextNode("member");
+      m_region = StringUtils::Trim(regionNode.GetText().c_str());
     }
-
-    XmlNode datastoreEndpointsNodeParent = resultNode.FirstChild("DatastoreEndpoints");
-    XmlNode datastoreEndpointsNode = datastoreEndpointsNodeParent.FirstChild("member");
-    while(!datastoreEndpointsNode.IsNull())
+    XmlNode sdbDatastoreEndpointsNode = resultNode.FirstChild("SdbDatastoreEndpoints");
+    if(!sdbDatastoreEndpointsNode.IsNull())
     {
-      m_datastoreEndpoints.push_back(StringUtils::Trim(datastoreEndpointsNode.GetText().c_str()));
-      datastoreEndpointsNode = datastoreEndpointsNode.NextNode("member");
-    }
+      XmlNode sdbDatastoreEndpointsMember = sdbDatastoreEndpointsNode.FirstChild("member");
+      while(!sdbDatastoreEndpointsMember.IsNull())
+      {
+        m_sdbDatastoreEndpoints.push_back(StringUtils::Trim(sdbDatastoreEndpointsMember.GetText().c_str()));
+        sdbDatastoreEndpointsMember = sdbDatastoreEndpointsMember.NextNode("member");
+      }
 
-    XmlNode ampQueuesNodeParent = resultNode.FirstChild("AmpQueues");
-    XmlNode ampQueuesNode = ampQueuesNodeParent.FirstChild("member");
-    while(!ampQueuesNode.IsNull())
+    }
+    XmlNode datastoreEndpointsNode = resultNode.FirstChild("DatastoreEndpoints");
+    if(!datastoreEndpointsNode.IsNull())
     {
-      m_ampQueues.push_back(StringUtils::Trim(ampQueuesNode.GetText().c_str()));
-      ampQueuesNode = ampQueuesNode.NextNode("member");
-    }
+      XmlNode datastoreEndpointsMember = datastoreEndpointsNode.FirstChild("member");
+      while(!datastoreEndpointsMember.IsNull())
+      {
+        m_datastoreEndpoints.push_back(StringUtils::Trim(datastoreEndpointsMember.GetText().c_str()));
+        datastoreEndpointsMember = datastoreEndpointsMember.NextNode("member");
+      }
 
+    }
+    XmlNode ampQueuesNode = resultNode.FirstChild("AmpQueues");
+    if(!ampQueuesNode.IsNull())
+    {
+      XmlNode ampQueuesMember = ampQueuesNode.FirstChild("member");
+      while(!ampQueuesMember.IsNull())
+      {
+        m_ampQueues.push_back(StringUtils::Trim(ampQueuesMember.GetText().c_str()));
+        ampQueuesMember = ampQueuesMember.NextNode("member");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

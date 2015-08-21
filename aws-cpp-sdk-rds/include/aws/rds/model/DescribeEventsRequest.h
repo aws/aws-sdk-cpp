@@ -16,7 +16,6 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Filter.h>
 
@@ -64,16 +63,26 @@ namespace Model
     /*
      <p> The event source to retrieve events for. If no value is specified, all events are returned. </p>
     */
-    inline const SourceType& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
     /*
      <p> The event source to retrieve events for. If no value is specified, all events are returned. </p>
     */
-    inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /*
      <p> The event source to retrieve events for. If no value is specified, all events are returned. </p>
     */
-    inline DescribeEventsRequest&  WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
+    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
+
+    /*
+     <p> The event source to retrieve events for. If no value is specified, all events are returned. </p>
+    */
+    inline DescribeEventsRequest&  WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
+
+    /*
+     <p> The event source to retrieve events for. If no value is specified, all events are returned. </p>
+    */
+    inline DescribeEventsRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
     /*
      <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p> <p>Example: 2009-07-08T18:00Z</p>
@@ -201,7 +210,7 @@ namespace Model
   private:
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
-    SourceType m_sourceType;
+    Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
     double m_startTime;
     bool m_startTimeHasBeenSet;

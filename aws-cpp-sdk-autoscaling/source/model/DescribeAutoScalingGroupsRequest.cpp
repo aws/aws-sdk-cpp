@@ -36,7 +36,7 @@ Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
     unsigned autoScalingGroupNamesCount = 1;
     for(auto& item : m_autoScalingGroupNames)
     {
-      ss << "AutoScalingGroupNames." << autoScalingGroupNamesCount << "="
+      ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       autoScalingGroupNamesCount++;
     }

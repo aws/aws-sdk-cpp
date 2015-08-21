@@ -27,5 +27,5 @@ AWSError<CoreErrors> MobileAnalyticsErrorMarshaller::FindErrorByName(const char*
     return error;
   }
 
-  return AWSRestfulJsonErrorMarshaller::FindErrorByName(errorName);
+  return AWSErrorMarshaller::FindErrorByName(errorName);
 }

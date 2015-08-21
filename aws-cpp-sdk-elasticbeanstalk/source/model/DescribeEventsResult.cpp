@@ -41,16 +41,22 @@ DescribeEventsResult& DescribeEventsResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode eventsNodeParent = resultNode.FirstChild("Events");
-    XmlNode eventsNode = eventsNodeParent.FirstChild("member");
-    while(!eventsNode.IsNull())
+    XmlNode eventsNode = resultNode.FirstChild("Events");
+    if(!eventsNode.IsNull())
     {
-      m_events.push_back(eventsNode);
-      eventsNode = eventsNode.NextNode("member");
-    }
+      XmlNode eventsMember = eventsNode.FirstChild("member");
+      while(!eventsMember.IsNull())
+      {
+        m_events.push_back(eventsMember);
+        eventsMember = eventsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

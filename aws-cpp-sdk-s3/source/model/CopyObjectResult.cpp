@@ -43,9 +43,15 @@ CopyObjectResult& CopyObjectResult::operator =(const AmazonWebServiceResult<XmlD
   if(!resultNode.IsNull())
   {
     XmlNode eTagNode = resultNode.FirstChild("ETag");
-    m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+    if(!eTagNode.IsNull())
+    {
+      m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+    }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
-    m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
+    if(!lastModifiedNode.IsNull())
+    {
+      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
+    }
   }
 
   return *this;

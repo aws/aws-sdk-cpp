@@ -42,7 +42,10 @@ ApplyPendingMaintenanceActionResult& ApplyPendingMaintenanceActionResult::operat
   if(!resultNode.IsNull())
   {
     XmlNode resourcePendingMaintenanceActionsNode = resultNode.FirstChild("ResourcePendingMaintenanceActions");
-    m_resourcePendingMaintenanceActions = resourcePendingMaintenanceActionsNode;
+    if(!resourcePendingMaintenanceActionsNode.IsNull())
+    {
+      m_resourcePendingMaintenanceActions = resourcePendingMaintenanceActionsNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

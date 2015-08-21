@@ -42,15 +42,21 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode labelNode = resultNode.FirstChild("Label");
-    m_label = StringUtils::Trim(labelNode.GetText().c_str());
-    XmlNode datapointsNodeParent = resultNode.FirstChild("Datapoints");
-    XmlNode datapointsNode = datapointsNodeParent.FirstChild("member");
-    while(!datapointsNode.IsNull())
+    if(!labelNode.IsNull())
     {
-      m_datapoints.push_back(datapointsNode);
-      datapointsNode = datapointsNode.NextNode("member");
+      m_label = StringUtils::Trim(labelNode.GetText().c_str());
     }
+    XmlNode datapointsNode = resultNode.FirstChild("Datapoints");
+    if(!datapointsNode.IsNull())
+    {
+      XmlNode datapointsMember = datapointsNode.FirstChild("member");
+      while(!datapointsMember.IsNull())
+      {
+        m_datapoints.push_back(datapointsMember);
+        datapointsMember = datapointsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

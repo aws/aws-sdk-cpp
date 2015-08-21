@@ -42,7 +42,10 @@ GetDistributionConfig2015_04_17Result& GetDistributionConfig2015_04_17Result::op
   if(!resultNode.IsNull())
   {
     XmlNode distributionConfigNode = resultNode.FirstChild("DistributionConfig");
-    m_distributionConfig = distributionConfigNode;
+    if(!distributionConfigNode.IsNull())
+    {
+      m_distributionConfig = distributionConfigNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

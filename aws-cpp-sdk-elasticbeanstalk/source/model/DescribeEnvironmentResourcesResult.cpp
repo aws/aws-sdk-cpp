@@ -42,7 +42,10 @@ DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode environmentResourcesNode = resultNode.FirstChild("EnvironmentResources");
-    m_environmentResources = environmentResourcesNode;
+    if(!environmentResourcesNode.IsNull())
+    {
+      m_environmentResources = environmentResourcesNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

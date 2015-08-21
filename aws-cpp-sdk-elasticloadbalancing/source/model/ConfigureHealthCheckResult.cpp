@@ -42,7 +42,10 @@ ConfigureHealthCheckResult& ConfigureHealthCheckResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
-    m_healthCheck = healthCheckNode;
+    if(!healthCheckNode.IsNull())
+    {
+      m_healthCheck = healthCheckNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

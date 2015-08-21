@@ -84,7 +84,7 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
     unsigned stepAdjustmentsCount = 1;
     for(auto& item : m_stepAdjustments)
     {
-      item.OutputToStream(ss, "StepAdjustments.", stepAdjustmentsCount, "");
+      item.OutputToStream(ss, "StepAdjustments.member.", stepAdjustmentsCount, "");
       stepAdjustmentsCount++;
     }
   }

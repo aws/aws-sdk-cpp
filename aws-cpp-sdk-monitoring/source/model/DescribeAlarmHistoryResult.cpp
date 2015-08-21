@@ -41,16 +41,22 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const AmazonW
 
   if(!resultNode.IsNull())
   {
-    XmlNode alarmHistoryItemsNodeParent = resultNode.FirstChild("AlarmHistoryItems");
-    XmlNode alarmHistoryItemsNode = alarmHistoryItemsNodeParent.FirstChild("member");
-    while(!alarmHistoryItemsNode.IsNull())
+    XmlNode alarmHistoryItemsNode = resultNode.FirstChild("AlarmHistoryItems");
+    if(!alarmHistoryItemsNode.IsNull())
     {
-      m_alarmHistoryItems.push_back(alarmHistoryItemsNode);
-      alarmHistoryItemsNode = alarmHistoryItemsNode.NextNode("member");
-    }
+      XmlNode alarmHistoryItemsMember = alarmHistoryItemsNode.FirstChild("member");
+      while(!alarmHistoryItemsMember.IsNull())
+      {
+        m_alarmHistoryItems.push_back(alarmHistoryItemsMember);
+        alarmHistoryItemsMember = alarmHistoryItemsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

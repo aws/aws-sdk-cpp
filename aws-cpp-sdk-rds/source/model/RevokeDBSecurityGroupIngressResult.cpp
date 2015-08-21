@@ -42,7 +42,10 @@ RevokeDBSecurityGroupIngressResult& RevokeDBSecurityGroupIngressResult::operator
   if(!resultNode.IsNull())
   {
     XmlNode dBSecurityGroupNode = resultNode.FirstChild("DBSecurityGroup");
-    m_dBSecurityGroup = dBSecurityGroupNode;
+    if(!dBSecurityGroupNode.IsNull())
+    {
+      m_dBSecurityGroup = dBSecurityGroupNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

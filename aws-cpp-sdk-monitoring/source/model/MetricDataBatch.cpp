@@ -60,20 +60,20 @@ MetricDataBatch& MetricDataBatch::operator =(const XmlNode& xmlNode)
       m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
       m_namespaceHasBeenSet = true;
     }
-    XmlNode metricDataNodeParent = resultNode.FirstChild("MetricData");
-    XmlNode metricDataNode = metricDataNodeParent.FirstChild("member");
+    XmlNode metricDataNode = resultNode.FirstChild("MetricData");
     if(!metricDataNode.IsNull())
     {
-      while(!metricDataNode.IsNull())
+      XmlNode metricDataMember = metricDataNode.FirstChild("member");
+      while(!metricDataMember.IsNull())
       {
-        m_metricData.push_back(metricDataNode);
-        metricDataNode = metricDataNode.NextNode("member");
+        m_metricData.push_back(metricDataMember);
+        metricDataMember = metricDataMember.NextNode("member");
       }
 
       m_metricDataHasBeenSet = true;
     }
     XmlNode autoDecomposeNode = resultNode.FirstChild("AutoDecompose");
-    if(!metricDataNode.IsNull())
+    if(!autoDecomposeNode.IsNull())
     {
       m_autoDecompose = StringUtils::ConvertToBool(StringUtils::Trim(autoDecomposeNode.GetText().c_str()).c_str());
       m_autoDecomposeHasBeenSet = true;

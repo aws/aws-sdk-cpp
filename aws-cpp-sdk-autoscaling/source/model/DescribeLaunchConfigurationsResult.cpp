@@ -41,16 +41,22 @@ DescribeLaunchConfigurationsResult& DescribeLaunchConfigurationsResult::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode launchConfigurationsNodeParent = resultNode.FirstChild("LaunchConfigurations");
-    XmlNode launchConfigurationsNode = launchConfigurationsNodeParent.FirstChild("member");
-    while(!launchConfigurationsNode.IsNull())
+    XmlNode launchConfigurationsNode = resultNode.FirstChild("LaunchConfigurations");
+    if(!launchConfigurationsNode.IsNull())
     {
-      m_launchConfigurations.push_back(launchConfigurationsNode);
-      launchConfigurationsNode = launchConfigurationsNode.NextNode("member");
-    }
+      XmlNode launchConfigurationsMember = launchConfigurationsNode.FirstChild("member");
+      while(!launchConfigurationsMember.IsNull())
+      {
+        m_launchConfigurations.push_back(launchConfigurationsMember);
+        launchConfigurationsMember = launchConfigurationsMember.NextNode("member");
+      }
 
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

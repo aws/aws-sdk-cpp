@@ -43,18 +43,27 @@ ListAccessKeysResult& ListAccessKeysResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode accessKeyMetadataNodeParent = resultNode.FirstChild("AccessKeyMetadata");
-    XmlNode accessKeyMetadataNode = accessKeyMetadataNodeParent.FirstChild("member");
-    while(!accessKeyMetadataNode.IsNull())
+    XmlNode accessKeyMetadataNode = resultNode.FirstChild("AccessKeyMetadata");
+    if(!accessKeyMetadataNode.IsNull())
     {
-      m_accessKeyMetadata.push_back(accessKeyMetadataNode);
-      accessKeyMetadataNode = accessKeyMetadataNode.NextNode("member");
-    }
+      XmlNode accessKeyMetadataMember = accessKeyMetadataNode.FirstChild("member");
+      while(!accessKeyMetadataMember.IsNull())
+      {
+        m_accessKeyMetadata.push_back(accessKeyMetadataMember);
+        accessKeyMetadataMember = accessKeyMetadataMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

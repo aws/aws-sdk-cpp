@@ -42,7 +42,10 @@ DeleteDBSnapshotResult& DeleteDBSnapshotResult::operator =(const AmazonWebServic
   if(!resultNode.IsNull())
   {
     XmlNode dBSnapshotNode = resultNode.FirstChild("DBSnapshot");
-    m_dBSnapshot = dBSnapshotNode;
+    if(!dBSnapshotNode.IsNull())
+    {
+      m_dBSnapshot = dBSnapshotNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -30,6 +30,12 @@ namespace S3
     class S3Client;
 } // namespace S3
 
+namespace Http
+{
+    class HttpRequest;
+    class HttpResponse;
+}
+
 namespace Transfer
 {
 
@@ -41,15 +47,13 @@ public:
     DownloadFileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client);
     ~DownloadFileRequest();
 
-    virtual float GetProgress() const override;
-
-    uint64_t GetFileSize() const;
-
     virtual bool ReadyForDelete() const override;
 
     bool DoSingleObjectDownload();
 
     bool IsReady() const override;
+
+    void OnDataReceived(const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long);
 
     friend class TransferClient;
 
@@ -68,7 +72,6 @@ private:
     mutable std::mutex m_fileRequestMutex;
 
     bool m_gotContents;
-    uint64_t m_fileSize;
 };
 
 } // namespace Transfer

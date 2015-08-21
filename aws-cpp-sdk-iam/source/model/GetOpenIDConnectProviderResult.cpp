@@ -44,25 +44,37 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
   if(!resultNode.IsNull())
   {
     XmlNode urlNode = resultNode.FirstChild("Url");
-    m_url = StringUtils::Trim(urlNode.GetText().c_str());
-    XmlNode clientIDListNodeParent = resultNode.FirstChild("ClientIDList");
-    XmlNode clientIDListNode = clientIDListNodeParent.FirstChild("member");
-    while(!clientIDListNode.IsNull())
+    if(!urlNode.IsNull())
     {
-      m_clientIDList.push_back(StringUtils::Trim(clientIDListNode.GetText().c_str()));
-      clientIDListNode = clientIDListNode.NextNode("member");
+      m_url = StringUtils::Trim(urlNode.GetText().c_str());
     }
-
-    XmlNode thumbprintListNodeParent = resultNode.FirstChild("ThumbprintList");
-    XmlNode thumbprintListNode = thumbprintListNodeParent.FirstChild("member");
-    while(!thumbprintListNode.IsNull())
+    XmlNode clientIDListNode = resultNode.FirstChild("ClientIDList");
+    if(!clientIDListNode.IsNull())
     {
-      m_thumbprintList.push_back(StringUtils::Trim(thumbprintListNode.GetText().c_str()));
-      thumbprintListNode = thumbprintListNode.NextNode("member");
-    }
+      XmlNode clientIDListMember = clientIDListNode.FirstChild("member");
+      while(!clientIDListMember.IsNull())
+      {
+        m_clientIDList.push_back(StringUtils::Trim(clientIDListMember.GetText().c_str()));
+        clientIDListMember = clientIDListMember.NextNode("member");
+      }
 
+    }
+    XmlNode thumbprintListNode = resultNode.FirstChild("ThumbprintList");
+    if(!thumbprintListNode.IsNull())
+    {
+      XmlNode thumbprintListMember = thumbprintListNode.FirstChild("member");
+      while(!thumbprintListMember.IsNull())
+      {
+        m_thumbprintList.push_back(StringUtils::Trim(thumbprintListMember.GetText().c_str()));
+        thumbprintListMember = thumbprintListMember.NextNode("member");
+      }
+
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    if(!createDateNode.IsNull())
+    {
+      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -42,16 +42,20 @@ GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult
   if(!resultNode.IsNull())
   {
     XmlNode verificationAttributesNode = resultNode.FirstChild("VerificationAttributes");
-    verificationAttributesNode = verificationAttributesNode.FirstChild("entry");
-    while(!verificationAttributesNode.IsNull())
-    {
-      XmlNode keyNode = verificationAttributesNode.FirstChild("key");
-      XmlNode valueNode = verificationAttributesNode.FirstChild("value");
-      m_verificationAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
-          valueNode;
-      verificationAttributesNode = verificationAttributesNode.NextNode("entry");
-    }
 
+    if(!verificationAttributesNode.IsNull())
+    {
+      XmlNode verificationAttributesEntry = verificationAttributesNode.FirstChild("entry");
+      while(!verificationAttributesEntry.IsNull())
+      {
+        XmlNode keyNode = verificationAttributesEntry.FirstChild("key");
+        XmlNode valueNode = verificationAttributesEntry.FirstChild("value");
+        m_verificationAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+            valueNode;
+        verificationAttributesEntry = verificationAttributesEntry.NextNode("entry");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

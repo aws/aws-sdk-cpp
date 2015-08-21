@@ -144,20 +144,6 @@ namespace Model
     */
     inline UpdateFunctionCodeRequest& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
 
-    /*
-     <p>This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as an atomic operation. </p>
-    */
-    inline bool GetPublish() const{ return m_publish; }
-    /*
-     <p>This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as an atomic operation. </p>
-    */
-    inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
-
-    /*
-     <p>This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as an atomic operation. </p>
-    */
-    inline UpdateFunctionCodeRequest&  WithPublish(bool value) { SetPublish(value); return *this;}
-
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -169,8 +155,6 @@ namespace Model
     bool m_s3KeyHasBeenSet;
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
-    bool m_publish;
-    bool m_publishHasBeenSet;
   };
 
 } // namespace Model

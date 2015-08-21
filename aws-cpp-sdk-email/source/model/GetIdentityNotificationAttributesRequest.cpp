@@ -33,7 +33,7 @@ Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
     unsigned identitiesCount = 1;
     for(auto& item : m_identities)
     {
-      ss << "Identities." << identitiesCount << "="
+      ss << "Identities.member." << identitiesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       identitiesCount++;
     }

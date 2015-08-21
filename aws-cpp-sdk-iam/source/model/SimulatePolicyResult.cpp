@@ -41,14 +41,17 @@ SimulatePolicyResult& SimulatePolicyResult::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode evaluatedScenariosNodeParent = resultNode.FirstChild("EvaluatedScenarios");
-    XmlNode evaluatedScenariosNode = evaluatedScenariosNodeParent.FirstChild("member");
-    while(!evaluatedScenariosNode.IsNull())
+    XmlNode evaluationResultsNode = resultNode.FirstChild("EvaluationResults");
+    if(!evaluationResultsNode.IsNull())
     {
-      m_evaluatedScenarios.push_back(evaluatedScenariosNode);
-      evaluatedScenariosNode = evaluatedScenariosNode.NextNode("member");
-    }
+      XmlNode evaluationResultsMember = evaluationResultsNode.FirstChild("member");
+      while(!evaluationResultsMember.IsNull())
+      {
+        m_evaluationResults.push_back(evaluationResultsMember);
+        evaluationResultsMember = evaluationResultsMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

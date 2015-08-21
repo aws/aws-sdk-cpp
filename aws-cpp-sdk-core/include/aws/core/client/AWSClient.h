@@ -155,7 +155,7 @@ namespace Aws
             JsonOutcome MakeRequest(const Aws::String& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
 
-        };
+        };       
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Xml::XmlDocument>, AWSError<CoreErrors>> XmlOutcome;
 
@@ -184,25 +184,7 @@ namespace Aws
 
             XmlOutcome MakeRequest(const Aws::String& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
-        };
-
-
-
-        class AWS_CORE_API AWSJsonRestClient : protected AWSJsonClient
-        {
-        public:
-            typedef AWSJsonClient BASECLASS;
-
-            AWSJsonRestClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-                const Aws::Client::ClientConfiguration& configuration,
-                const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-                const std::shared_ptr<AWSRestfulJsonErrorMarshaller>& errorMarshaller,
-                const char* hostHeaderOverride = nullptr);
-
-            virtual ~AWSJsonRestClient() = default;
-
-            virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
-        };
+        };       
 
     } // namespace Client
 } // namespace Aws

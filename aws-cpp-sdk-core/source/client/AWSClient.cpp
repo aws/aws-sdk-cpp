@@ -18,7 +18,6 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
-#include <aws/core/client/AWSRestfulJsonErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -131,7 +130,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
 
     AWS_LOG_DEBUG(LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
-            m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
+        m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
 
     if (DoesResponseGenerateError(httpResponse))
     {
@@ -157,7 +156,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMet
 
     AWS_LOG_DEBUG(LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
-            m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
+        m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
 
     if (DoesResponseGenerateError(httpResponse))
     {
@@ -232,6 +231,11 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
     //do headers first since the request likely will set content-length as it's own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
     AddContentBodyToRequest(httpRequest, request.GetBody());
+
+    // Pass along handlers for processing data sent/received in bytes
+    httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
+    httpRequest->SetDataSentEventHandler(request.GetDataSentEventHandler());
+
     request.AddQueryStringParameters(httpRequest->GetUri());
 }
 
@@ -248,12 +252,12 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = m_clientFactory->CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    if(m_signer->PresignRequest(*request, expirationInSeconds))
+    if (m_signer->PresignRequest(*request, expirationInSeconds))
     {
         return request->GetURIString();
     }
-   
-    return "";    
+
+    return "";
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -298,7 +302,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::String& uri,
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
-        if(!jsonValue.WasParseSuccessful())
+        if (!jsonValue.WasParseSuccessful())
         {
             return JsonOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", jsonValue.GetErrorMessage(), false));
         }
@@ -312,17 +316,24 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::String& uri,
     return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
 }
 
-AWSError<CoreErrors> AWSJsonClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
+const char* MESSAGE_LOWER_CASE = "message";
+const char* MESSAGE_CAMEL_CASE = "Message";
+const char* ERROR_TYPE_HEADER = "x-amzn-ErrorType";
+const char* TYPE = "__type";
+
+AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
+    const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
 {
     if (!httpResponse)
     {
         return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
     }
 
-    if (!httpResponse->GetResponseBody())
+    if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
         ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
+        AWS_LOG_ERROR(LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
 
@@ -330,7 +341,21 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(const std::shared_ptr<Http::Ht
 
     //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
     JsonValue exceptionPayload(httpResponse->GetResponseBody());
-    return GetErrorMarshaller()->Marshall(exceptionPayload.GetString("__type"), exceptionPayload.GetString("message"));
+    AWS_LOGSTREAM_TRACE(LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
+
+    Aws::String message(exceptionPayload.ValueExists(MESSAGE_CAMEL_CASE) ? exceptionPayload.GetString(MESSAGE_CAMEL_CASE) :
+        exceptionPayload.ValueExists(MESSAGE_LOWER_CASE) ? exceptionPayload.GetString(MESSAGE_LOWER_CASE) : "");
+
+    if (httpResponse->HasHeader(ERROR_TYPE_HEADER))
+    {
+        return GetErrorMarshaller()->Marshall(httpResponse->GetHeader(ERROR_TYPE_HEADER), message);
+    }
+    else if (exceptionPayload.ValueExists(TYPE))
+    {
+        return GetErrorMarshaller()->Marshall(exceptionPayload.GetString(TYPE), message);
+    }
+
+    return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", message, false);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -358,14 +383,14 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::String& uri,
     {
         XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
 
-        if(!xmlDoc.WasParseSuccessful())
+        if (!xmlDoc.WasParseSuccessful())
         {
             AWS_LOG_ERROR(LOG_TAG, "Xml parsing for error failed with message %s", xmlDoc.GetErrorMessage().c_str());
-           return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Xml Parse Error", xmlDoc.GetErrorMessage(), false);
+            return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Xml Parse Error", xmlDoc.GetErrorMessage(), false);
         }
 
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(std::move(xmlDoc),
-                httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
+            httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
     }
 
     return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
@@ -401,7 +426,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     {
         Aws::StringStream ss;
         ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
-        AWS_LOGSTREAM_ERROR(LOG_TAG, ss.str());
+        AWS_LOG_ERROR(LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
 
@@ -409,7 +434,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
     // file pointer back to the beginning in order to correctly read the input using the XML string iterator
-    if ((httpResponse->GetResponseBody().tellp() > 0) 
+    if ((httpResponse->GetResponseBody().tellp() > 0)
         && (httpResponse->GetResponseBody().tellg() > 0))
     {
         httpResponse->GetResponseBody().seekg(0);
@@ -424,57 +449,24 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         {
             errorNode = doc.GetRootElement().FirstChild("Error");
         }
-        XmlNode codeNode = errorNode.FirstChild("Code");
-        XmlNode messageNode = errorNode.FirstChild("Message");
 
-        return GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
-            StringUtils::Trim(messageNode.GetText().c_str()));
-    }
-    else
-    {
-        // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
-        // going to dump the XML parsing error and the http response code as a string
-        Aws::StringStream ss;
-        ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << httpResponse->GetResponseCode();
-        return GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
-    }
-}
+        if (!errorNode.IsNull())
+        {
+            XmlNode codeNode = errorNode.FirstChild("Code");
+            XmlNode messageNode = errorNode.FirstChild("Message");
 
-AWSJsonRestClient::AWSJsonRestClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
-    const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSRestfulJsonErrorMarshaller>& errorMarshaller,
-    const char* hostHeaderOverride) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller, hostHeaderOverride)
-{
-}
-
-AWSError<CoreErrors> AWSJsonRestClient::BuildAWSError(
-    const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
-{
-    if (!httpResponse)
-    {
-        return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+            if (!(codeNode.IsNull() || messageNode.IsNull()))
+            {
+                return GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
+                    StringUtils::Trim(messageNode.GetText().c_str()));
+            }
+        }
     }
 
-    if (httpResponse->GetResponseBody().tellp() < 1)
-    {
-        Aws::StringStream ss;
-        ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
-        AWS_LOGSTREAM_ERROR(LOG_TAG, ss.str());
-        return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
-    }
+    // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
+    // going to dump the XML parsing error and the http response code as a string
+    Aws::StringStream ss;
+    ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << httpResponse->GetResponseCode();
+    return GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
 
-    assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-
-    //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-    JsonValue exceptionPayload(httpResponse->GetResponseBody());
-    AWS_LOGSTREAM_TRACE(LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
-    if (httpResponse->HasHeader("x-amzn-errortype"))
-    {
-        return GetErrorMarshaller()->Marshall(httpResponse->GetHeader("x-amzn-errortype"),
-            exceptionPayload.GetString("message"));
-    }
-
-    return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", exceptionPayload.GetString("message"), false);
 }

@@ -27,5 +27,5 @@ AWSError<CoreErrors> GlacierErrorMarshaller::FindErrorByName(const char* errorNa
     return error;
   }
 
-  return AWSRestfulJsonErrorMarshaller::FindErrorByName(errorName);
+  return AWSErrorMarshaller::FindErrorByName(errorName);
 }

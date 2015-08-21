@@ -13,6 +13,7 @@ SET(PLATFORM_WINDOWS 0)
 SET(PLATFORM_LINUX 0)
 SET(PLATFORM_ANDROID 0)
 SET(PLATFORM_APPLE 0)
+SET(GENERATE_VERSION_INFO 0)
 
 if("${TARGET_ARCH}" STREQUAL "WINDOWS")
     SET(PLATFORM_WINDOWS 1)
@@ -99,7 +100,7 @@ elseif(PLATFORM_LINUX)
     set(SDK_INSTALL_BINARY_PREFIX "linux")
 elseif(PLATFORM_ANDROID)
     set(SDK_INSTALL_BINARY_PREFIX "android")
-elseif(PLATFORM_MAC)
+elseif(PLATFORM_APPLE)
     set(SDK_INSTALL_BINARY_PREFIX "mac")
 endif()
 
@@ -113,6 +114,7 @@ if(PLATFORM_WINDOWS OR PLATFORM_LINUX)
 endif()
 
 message(STATUS "Install binary prefix: ${SDK_INSTALL_BINARY_PREFIX}")
+
 
 if(BUILD_SHARED_LIBS)
     SET(LIBTYPE SHARED)
@@ -260,8 +262,8 @@ if(PLATFORM_ANDROID)
 
     ExternalProject_Add(OPENSSL
 			SOURCE_DIR ${OPENSSL_SOURCE_DIR}
-			URL http://www.openssl.org/source/openssl-1.0.2a.tar.gz
-			URL_MD5 a06c547dac9044161a477211049f60ef
+			URL http://www.openssl.org/source/openssl-1.0.2d.tar.gz
+			URL_MD5 38dd619b2e77cbac69b99f52a053d25a
 			UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py  # openssl does not have cmake files, this script fixes that
 			CMAKE_ARGS 
 			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
@@ -303,7 +305,7 @@ if(PLATFORM_ANDROID)
                         DEPENDS OPENSSL ZLIB 
 			SOURCE_DIR ${CURL_SOURCE_DIR}
 			GIT_REPOSITORY https://github.com/bagder/curl.git
-			GIT_TAG ff83742  # 7.41.0
+			GIT_TAG 38e0788  # 7.43.0
 			CMAKE_ARGS
 			   -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
 			   -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
@@ -330,6 +332,7 @@ endif()
 if(PLATFORM_WINDOWS)
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
     set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
+    set(CMAKE_STATIC_LINKER_FLAGS_RELEASE "${CMAKE_STATIC_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
 endif()
 
 # default libraries to link in per-platform
@@ -346,10 +349,7 @@ elseif(PLATFORM_ANDROID)
     set(PLATFORM_DEP_LIBS curl ssl crypto ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a log atomic)
 endif()
 
-if(NOT BRAZIL_BUILD)
-    set(GENERATE_VERSION_INFO 1)
-endif()
-
+#sdks
 add_subdirectory(aws-cpp-sdk-core)
 add_subdirectory(testing-resources)
 add_subdirectory(aws-cpp-sdk-dynamodb)
@@ -359,14 +359,13 @@ add_subdirectory(aws-cpp-sdk-sqs)
 add_subdirectory(aws-cpp-sdk-kinesis)
 add_subdirectory(aws-cpp-sdk-lambda)
 add_subdirectory(aws-cpp-sdk-s3)
-add_subdirectory(aws-cpp-sdk-elasticbeanstalk)
 add_subdirectory(aws-cpp-sdk-mobileanalytics)
 add_subdirectory(aws-cpp-sdk-elasticloadbalancing)
 add_subdirectory(aws-cpp-sdk-opsworks)
 add_subdirectory(aws-cpp-sdk-cloudfront)
 add_subdirectory(aws-cpp-sdk-kms)
 add_subdirectory(aws-cpp-sdk-codedeploy)
-#add_subdirectory(aws-cpp-sdk-redshift)
+add_subdirectory(aws-cpp-sdk-redshift)
 add_subdirectory(aws-cpp-sdk-iam)
 add_subdirectory(aws-cpp-sdk-ecs)
 add_subdirectory(aws-cpp-sdk-datapipeline)
@@ -388,6 +387,13 @@ add_subdirectory(aws-cpp-sdk-access-management)
 add_subdirectory(aws-cpp-sdk-transfer)
 add_subdirectory(aws-cpp-sdk-queues)
 
+if(NOT PLATFORM_ANDROID)
+    # the EventSeverity::DEBUG entry doesn't compile on android because DEBUG is #defined
+    # ToDo: fix the client generator to map DEBUG to something else
+    add_subdirectory(aws-cpp-sdk-elasticbeanstalk)
+endif()
+
+#testing
 if(PLATFORM_ANDROID)
     add_subdirectory(android-unified-tests)
 else()
@@ -400,6 +406,7 @@ else()
     add_subdirectory(aws-cpp-sdk-identity-management-tests)
     add_subdirectory(aws-cpp-sdk-logging-tests)
     add_subdirectory(aws-cpp-sdk-transfer-tests)
+    add_subdirectory(aws-cpp-sdk-redshift-integration-tests)
 
     if(PLATFORM_WINDOWS)
         add_subdirectory(aws-cpp-sdk-wininet-winhttp-test)

@@ -42,7 +42,10 @@ CreateOpenIDConnectProviderResult& CreateOpenIDConnectProviderResult::operator =
   if(!resultNode.IsNull())
   {
     XmlNode openIDConnectProviderArnNode = resultNode.FirstChild("OpenIDConnectProviderArn");
-    m_openIDConnectProviderArn = StringUtils::Trim(openIDConnectProviderArnNode.GetText().c_str());
+    if(!openIDConnectProviderArnNode.IsNull())
+    {
+      m_openIDConnectProviderArn = StringUtils::Trim(openIDConnectProviderArnNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

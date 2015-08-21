@@ -40,14 +40,17 @@ GetBucketTaggingResult& GetBucketTaggingResult::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
-    XmlNode tagNodeParent = resultNode.FirstChild("TagSet");
-    XmlNode tagNode = tagNodeParent.FirstChild("Tag");
-    while(!tagNode.IsNull())
+    XmlNode tagSetNode = resultNode.FirstChild("TagSet");
+    if(!tagSetNode.IsNull())
     {
-      m_tagSet.push_back(tagNode);
-      tagNode = tagNode.NextNode("Tag");
-    }
+      XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
+      while(!tagSetMember.IsNull())
+      {
+        m_tagSet.push_back(tagSetMember);
+        tagSetMember = tagSetMember.NextNode("Tag");
+      }
 
+    }
   }
 
   return *this;

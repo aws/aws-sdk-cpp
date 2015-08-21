@@ -42,7 +42,10 @@ VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const AmazonW
   if(!resultNode.IsNull())
   {
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
-    m_verificationToken = StringUtils::Trim(verificationTokenNode.GetText().c_str());
+    if(!verificationTokenNode.IsNull())
+    {
+      m_verificationToken = StringUtils::Trim(verificationTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

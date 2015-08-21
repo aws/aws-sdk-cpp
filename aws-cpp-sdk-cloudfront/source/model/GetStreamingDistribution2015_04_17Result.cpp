@@ -42,7 +42,10 @@ GetStreamingDistribution2015_04_17Result& GetStreamingDistribution2015_04_17Resu
   if(!resultNode.IsNull())
   {
     XmlNode streamingDistributionNode = resultNode.FirstChild("StreamingDistribution");
-    m_streamingDistribution = streamingDistributionNode;
+    if(!streamingDistributionNode.IsNull())
+    {
+      m_streamingDistribution = streamingDistributionNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

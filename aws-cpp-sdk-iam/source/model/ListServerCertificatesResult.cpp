@@ -43,18 +43,27 @@ ListServerCertificatesResult& ListServerCertificatesResult::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode serverCertificateMetadataListNodeParent = resultNode.FirstChild("ServerCertificateMetadataList");
-    XmlNode serverCertificateMetadataListNode = serverCertificateMetadataListNodeParent.FirstChild("member");
-    while(!serverCertificateMetadataListNode.IsNull())
+    XmlNode serverCertificateMetadataListNode = resultNode.FirstChild("ServerCertificateMetadataList");
+    if(!serverCertificateMetadataListNode.IsNull())
     {
-      m_serverCertificateMetadataList.push_back(serverCertificateMetadataListNode);
-      serverCertificateMetadataListNode = serverCertificateMetadataListNode.NextNode("member");
-    }
+      XmlNode serverCertificateMetadataListMember = serverCertificateMetadataListNode.FirstChild("member");
+      while(!serverCertificateMetadataListMember.IsNull())
+      {
+        m_serverCertificateMetadataList.push_back(serverCertificateMetadataListMember);
+        serverCertificateMetadataListMember = serverCertificateMetadataListMember.NextNode("member");
+      }
 
+    }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    if(!isTruncatedNode.IsNull())
+    {
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

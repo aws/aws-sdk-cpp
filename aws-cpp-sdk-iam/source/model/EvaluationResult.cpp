@@ -66,26 +66,26 @@ EvaluationResult& EvaluationResult::operator =(const XmlNode& xmlNode)
       m_evalDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(evalDecisionNode.GetText().c_str()).c_str());
       m_evalDecisionHasBeenSet = true;
     }
-    XmlNode matchedStatementsNodeParent = resultNode.FirstChild("MatchedStatements");
-    XmlNode matchedStatementsNode = matchedStatementsNodeParent.FirstChild("member");
+    XmlNode matchedStatementsNode = resultNode.FirstChild("MatchedStatements");
     if(!matchedStatementsNode.IsNull())
     {
-      while(!matchedStatementsNode.IsNull())
+      XmlNode matchedStatementsMember = matchedStatementsNode.FirstChild("member");
+      while(!matchedStatementsMember.IsNull())
       {
-        m_matchedStatements.push_back(matchedStatementsNode);
-        matchedStatementsNode = matchedStatementsNode.NextNode("member");
+        m_matchedStatements.push_back(matchedStatementsMember);
+        matchedStatementsMember = matchedStatementsMember.NextNode("member");
       }
 
       m_matchedStatementsHasBeenSet = true;
     }
-    XmlNode missingContextValuesNodeParent = resultNode.FirstChild("MissingContextValues");
-    XmlNode missingContextValuesNode = missingContextValuesNodeParent.FirstChild("member");
+    XmlNode missingContextValuesNode = resultNode.FirstChild("MissingContextValues");
     if(!missingContextValuesNode.IsNull())
     {
-      while(!missingContextValuesNode.IsNull())
+      XmlNode missingContextValuesMember = missingContextValuesNode.FirstChild("member");
+      while(!missingContextValuesMember.IsNull())
       {
-        m_missingContextValues.push_back(missingContextValuesNode);
-        missingContextValuesNode = missingContextValuesNode.NextNode("member");
+        m_missingContextValues.push_back(missingContextValuesMember);
+        missingContextValuesMember = missingContextValuesMember.NextNode("member");
       }
 
       m_missingContextValuesHasBeenSet = true;

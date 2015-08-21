@@ -689,4 +689,3 @@ void CognitoSyncClient::UpdateRecordsAsyncHelper(const UpdateRecordsRequest& req
   handler(this, request, UpdateRecords(request), context);
 }
 
-

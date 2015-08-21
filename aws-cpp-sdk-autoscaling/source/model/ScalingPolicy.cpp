@@ -128,38 +128,38 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
       m_cooldown = StringUtils::ConvertToInt32(StringUtils::Trim(cooldownNode.GetText().c_str()).c_str());
       m_cooldownHasBeenSet = true;
     }
-    XmlNode stepAdjustmentsNodeParent = resultNode.FirstChild("StepAdjustments");
-    XmlNode stepAdjustmentsNode = stepAdjustmentsNodeParent.FirstChild("member");
+    XmlNode stepAdjustmentsNode = resultNode.FirstChild("StepAdjustments");
     if(!stepAdjustmentsNode.IsNull())
     {
-      while(!stepAdjustmentsNode.IsNull())
+      XmlNode stepAdjustmentsMember = stepAdjustmentsNode.FirstChild("member");
+      while(!stepAdjustmentsMember.IsNull())
       {
-        m_stepAdjustments.push_back(stepAdjustmentsNode);
-        stepAdjustmentsNode = stepAdjustmentsNode.NextNode("member");
+        m_stepAdjustments.push_back(stepAdjustmentsMember);
+        stepAdjustmentsMember = stepAdjustmentsMember.NextNode("member");
       }
 
       m_stepAdjustmentsHasBeenSet = true;
     }
     XmlNode metricAggregationTypeNode = resultNode.FirstChild("MetricAggregationType");
-    if(!stepAdjustmentsNode.IsNull())
+    if(!metricAggregationTypeNode.IsNull())
     {
       m_metricAggregationType = StringUtils::Trim(metricAggregationTypeNode.GetText().c_str());
       m_metricAggregationTypeHasBeenSet = true;
     }
     XmlNode estimatedInstanceWarmupNode = resultNode.FirstChild("EstimatedInstanceWarmup");
-    if(!stepAdjustmentsNode.IsNull())
+    if(!estimatedInstanceWarmupNode.IsNull())
     {
       m_estimatedInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(estimatedInstanceWarmupNode.GetText().c_str()).c_str());
       m_estimatedInstanceWarmupHasBeenSet = true;
     }
-    XmlNode alarmsNodeParent = resultNode.FirstChild("Alarms");
-    XmlNode alarmsNode = alarmsNodeParent.FirstChild("member");
+    XmlNode alarmsNode = resultNode.FirstChild("Alarms");
     if(!alarmsNode.IsNull())
     {
-      while(!alarmsNode.IsNull())
+      XmlNode alarmsMember = alarmsNode.FirstChild("member");
+      while(!alarmsMember.IsNull())
       {
-        m_alarms.push_back(alarmsNode);
-        alarmsNode = alarmsNode.NextNode("member");
+        m_alarms.push_back(alarmsMember);
+        alarmsMember = alarmsMember.NextNode("member");
       }
 
       m_alarmsHasBeenSet = true;

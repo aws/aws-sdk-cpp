@@ -41,14 +41,17 @@ DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::oper
 
   if(!resultNode.IsNull())
   {
-    XmlNode terminationPolicyTypesNodeParent = resultNode.FirstChild("TerminationPolicyTypes");
-    XmlNode terminationPolicyTypesNode = terminationPolicyTypesNodeParent.FirstChild("member");
-    while(!terminationPolicyTypesNode.IsNull())
+    XmlNode terminationPolicyTypesNode = resultNode.FirstChild("TerminationPolicyTypes");
+    if(!terminationPolicyTypesNode.IsNull())
     {
-      m_terminationPolicyTypes.push_back(StringUtils::Trim(terminationPolicyTypesNode.GetText().c_str()));
-      terminationPolicyTypesNode = terminationPolicyTypesNode.NextNode("member");
-    }
+      XmlNode terminationPolicyTypesMember = terminationPolicyTypesNode.FirstChild("member");
+      while(!terminationPolicyTypesMember.IsNull())
+      {
+        m_terminationPolicyTypes.push_back(StringUtils::Trim(terminationPolicyTypesMember.GetText().c_str()));
+        terminationPolicyTypesMember = terminationPolicyTypesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

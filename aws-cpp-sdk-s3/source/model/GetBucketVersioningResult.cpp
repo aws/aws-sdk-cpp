@@ -41,9 +41,15 @@ GetBucketVersioningResult& GetBucketVersioningResult::operator =(const AmazonWeb
   if(!resultNode.IsNull())
   {
     XmlNode statusNode = resultNode.FirstChild("Status");
-    m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    if(!statusNode.IsNull())
+    {
+      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+    }
     XmlNode mFADeleteNode = resultNode.FirstChild("MFADelete");
-    m_mFADelete = MFADeleteStatusMapper::GetMFADeleteStatusForName(StringUtils::Trim(mFADeleteNode.GetText().c_str()).c_str());
+    if(!mFADeleteNode.IsNull())
+    {
+      m_mFADelete = MFADeleteStatusMapper::GetMFADeleteStatusForName(StringUtils::Trim(mFADeleteNode.GetText().c_str()).c_str());
+    }
   }
 
   return *this;

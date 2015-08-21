@@ -44,38 +44,38 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode toAddressesNodeParent = resultNode.FirstChild("ToAddresses");
-    XmlNode toAddressesNode = toAddressesNodeParent.FirstChild("member");
+    XmlNode toAddressesNode = resultNode.FirstChild("ToAddresses");
     if(!toAddressesNode.IsNull())
     {
-      while(!toAddressesNode.IsNull())
+      XmlNode toAddressesMember = toAddressesNode.FirstChild("member");
+      while(!toAddressesMember.IsNull())
       {
-        m_toAddresses.push_back(StringUtils::Trim(toAddressesNode.GetText().c_str()));
-        toAddressesNode = toAddressesNode.NextNode("member");
+        m_toAddresses.push_back(StringUtils::Trim(toAddressesMember.GetText().c_str()));
+        toAddressesMember = toAddressesMember.NextNode("member");
       }
 
       m_toAddressesHasBeenSet = true;
     }
-    XmlNode ccAddressesNodeParent = resultNode.FirstChild("CcAddresses");
-    XmlNode ccAddressesNode = ccAddressesNodeParent.FirstChild("member");
+    XmlNode ccAddressesNode = resultNode.FirstChild("CcAddresses");
     if(!ccAddressesNode.IsNull())
     {
-      while(!ccAddressesNode.IsNull())
+      XmlNode ccAddressesMember = ccAddressesNode.FirstChild("member");
+      while(!ccAddressesMember.IsNull())
       {
-        m_ccAddresses.push_back(StringUtils::Trim(ccAddressesNode.GetText().c_str()));
-        ccAddressesNode = ccAddressesNode.NextNode("member");
+        m_ccAddresses.push_back(StringUtils::Trim(ccAddressesMember.GetText().c_str()));
+        ccAddressesMember = ccAddressesMember.NextNode("member");
       }
 
       m_ccAddressesHasBeenSet = true;
     }
-    XmlNode bccAddressesNodeParent = resultNode.FirstChild("BccAddresses");
-    XmlNode bccAddressesNode = bccAddressesNodeParent.FirstChild("member");
+    XmlNode bccAddressesNode = resultNode.FirstChild("BccAddresses");
     if(!bccAddressesNode.IsNull())
     {
-      while(!bccAddressesNode.IsNull())
+      XmlNode bccAddressesMember = bccAddressesNode.FirstChild("member");
+      while(!bccAddressesMember.IsNull())
       {
-        m_bccAddresses.push_back(StringUtils::Trim(bccAddressesNode.GetText().c_str()));
-        bccAddressesNode = bccAddressesNode.NextNode("member");
+        m_bccAddresses.push_back(StringUtils::Trim(bccAddressesMember.GetText().c_str()));
+        bccAddressesMember = bccAddressesMember.NextNode("member");
       }
 
       m_bccAddressesHasBeenSet = true;

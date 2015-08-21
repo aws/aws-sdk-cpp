@@ -42,7 +42,10 @@ CreateAccessKeyResult& CreateAccessKeyResult::operator =(const AmazonWebServiceR
   if(!resultNode.IsNull())
   {
     XmlNode accessKeyNode = resultNode.FirstChild("AccessKey");
-    m_accessKey = accessKeyNode;
+    if(!accessKeyNode.IsNull())
+    {
+      m_accessKey = accessKeyNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

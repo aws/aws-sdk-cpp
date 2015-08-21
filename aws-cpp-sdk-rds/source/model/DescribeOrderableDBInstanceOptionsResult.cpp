@@ -41,16 +41,22 @@ DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResu
 
   if(!resultNode.IsNull())
   {
-    XmlNode orderableDBInstanceOptionNodeParent = resultNode.FirstChild("OrderableDBInstanceOption");
-    XmlNode orderableDBInstanceOptionNode = orderableDBInstanceOptionNodeParent.FirstChild("member");
-    while(!orderableDBInstanceOptionNode.IsNull())
+    XmlNode orderableDBInstanceOptionsNode = resultNode.FirstChild("OrderableDBInstanceOptions");
+    if(!orderableDBInstanceOptionsNode.IsNull())
     {
-      m_orderableDBInstanceOptions.push_back(orderableDBInstanceOptionNode);
-      orderableDBInstanceOptionNode = orderableDBInstanceOptionNode.NextNode("member");
-    }
+      XmlNode orderableDBInstanceOptionsMember = orderableDBInstanceOptionsNode.FirstChild("OrderableDBInstanceOption");
+      while(!orderableDBInstanceOptionsMember.IsNull())
+      {
+        m_orderableDBInstanceOptions.push_back(orderableDBInstanceOptionsMember);
+        orderableDBInstanceOptionsMember = orderableDBInstanceOptionsMember.NextNode("OrderableDBInstanceOption");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

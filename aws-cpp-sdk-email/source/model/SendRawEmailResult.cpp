@@ -42,7 +42,10 @@ SendRawEmailResult& SendRawEmailResult::operator =(const AmazonWebServiceResult<
   if(!resultNode.IsNull())
   {
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+    if(!messageIdNode.IsNull())
+    {
+      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

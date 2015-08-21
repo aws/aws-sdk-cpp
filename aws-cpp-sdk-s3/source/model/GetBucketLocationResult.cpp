@@ -41,7 +41,10 @@ GetBucketLocationResult& GetBucketLocationResult::operator =(const AmazonWebServ
   if(!resultNode.IsNull())
   {
     XmlNode locationConstraintNode = resultNode.FirstChild("LocationConstraint");
-    m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(locationConstraintNode.GetText().c_str()).c_str());
+    if(!locationConstraintNode.IsNull())
+    {
+      m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(locationConstraintNode.GetText().c_str()).c_str());
+    }
   }
 
   return *this;

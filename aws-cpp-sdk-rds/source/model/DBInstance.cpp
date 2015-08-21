@@ -72,7 +72,12 @@ DBInstance::DBInstance() :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_domainMembershipsHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false)
 {
 }
 
@@ -125,7 +130,12 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_domainMembershipsHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -202,209 +212,233 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_backupRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(backupRetentionPeriodNode.GetText().c_str()).c_str());
       m_backupRetentionPeriodHasBeenSet = true;
     }
-    XmlNode dBSecurityGroupNodeParent = resultNode.FirstChild("DBSecurityGroup");
-    XmlNode dBSecurityGroupNode = dBSecurityGroupNodeParent.FirstChild("member");
-    if(!dBSecurityGroupNode.IsNull())
+    XmlNode dBSecurityGroupsNode = resultNode.FirstChild("DBSecurityGroups");
+    if(!dBSecurityGroupsNode.IsNull())
     {
-      while(!dBSecurityGroupNode.IsNull())
+      XmlNode dBSecurityGroupsMember = dBSecurityGroupsNode.FirstChild("DBSecurityGroup");
+      while(!dBSecurityGroupsMember.IsNull())
       {
-        m_dBSecurityGroups.push_back(dBSecurityGroupNode);
-        dBSecurityGroupNode = dBSecurityGroupNode.NextNode("member");
+        m_dBSecurityGroups.push_back(dBSecurityGroupsMember);
+        dBSecurityGroupsMember = dBSecurityGroupsMember.NextNode("DBSecurityGroup");
       }
 
       m_dBSecurityGroupsHasBeenSet = true;
     }
-    XmlNode vpcSecurityGroupMembershipNodeParent = resultNode.FirstChild("VpcSecurityGroupMembership");
-    XmlNode vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNodeParent.FirstChild("member");
-    if(!vpcSecurityGroupMembershipNode.IsNull())
+    XmlNode vpcSecurityGroupsNode = resultNode.FirstChild("VpcSecurityGroups");
+    if(!vpcSecurityGroupsNode.IsNull())
     {
-      while(!vpcSecurityGroupMembershipNode.IsNull())
+      XmlNode vpcSecurityGroupsMember = vpcSecurityGroupsNode.FirstChild("VpcSecurityGroupMembership");
+      while(!vpcSecurityGroupsMember.IsNull())
       {
-        m_vpcSecurityGroups.push_back(vpcSecurityGroupMembershipNode);
-        vpcSecurityGroupMembershipNode = vpcSecurityGroupMembershipNode.NextNode("member");
+        m_vpcSecurityGroups.push_back(vpcSecurityGroupsMember);
+        vpcSecurityGroupsMember = vpcSecurityGroupsMember.NextNode("VpcSecurityGroupMembership");
       }
 
       m_vpcSecurityGroupsHasBeenSet = true;
     }
-    XmlNode dBParameterGroupNodeParent = resultNode.FirstChild("DBParameterGroup");
-    XmlNode dBParameterGroupNode = dBParameterGroupNodeParent.FirstChild("member");
-    if(!dBParameterGroupNode.IsNull())
+    XmlNode dBParameterGroupsNode = resultNode.FirstChild("DBParameterGroups");
+    if(!dBParameterGroupsNode.IsNull())
     {
-      while(!dBParameterGroupNode.IsNull())
+      XmlNode dBParameterGroupsMember = dBParameterGroupsNode.FirstChild("DBParameterGroup");
+      while(!dBParameterGroupsMember.IsNull())
       {
-        m_dBParameterGroups.push_back(dBParameterGroupNode);
-        dBParameterGroupNode = dBParameterGroupNode.NextNode("member");
+        m_dBParameterGroups.push_back(dBParameterGroupsMember);
+        dBParameterGroupsMember = dBParameterGroupsMember.NextNode("DBParameterGroup");
       }
 
       m_dBParameterGroupsHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
-    if(!dBParameterGroupNode.IsNull())
+    if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode dBSubnetGroupNode = resultNode.FirstChild("DBSubnetGroup");
-    if(!dBParameterGroupNode.IsNull())
+    if(!dBSubnetGroupNode.IsNull())
     {
       m_dBSubnetGroup = dBSubnetGroupNode;
       m_dBSubnetGroupHasBeenSet = true;
     }
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
-    if(!dBParameterGroupNode.IsNull())
+    if(!preferredMaintenanceWindowNode.IsNull())
     {
       m_preferredMaintenanceWindow = StringUtils::Trim(preferredMaintenanceWindowNode.GetText().c_str());
       m_preferredMaintenanceWindowHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
-    if(!dBParameterGroupNode.IsNull())
+    if(!pendingModifiedValuesNode.IsNull())
     {
       m_pendingModifiedValues = pendingModifiedValuesNode;
       m_pendingModifiedValuesHasBeenSet = true;
     }
     XmlNode latestRestorableTimeNode = resultNode.FirstChild("LatestRestorableTime");
-    if(!dBParameterGroupNode.IsNull())
+    if(!latestRestorableTimeNode.IsNull())
     {
       m_latestRestorableTime = StringUtils::ConvertToDouble(StringUtils::Trim(latestRestorableTimeNode.GetText().c_str()).c_str());
       m_latestRestorableTimeHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
-    if(!dBParameterGroupNode.IsNull())
+    if(!multiAZNode.IsNull())
     {
       m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(multiAZNode.GetText().c_str()).c_str());
       m_multiAZHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
-    if(!dBParameterGroupNode.IsNull())
+    if(!engineVersionNode.IsNull())
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode autoMinorVersionUpgradeNode = resultNode.FirstChild("AutoMinorVersionUpgrade");
-    if(!dBParameterGroupNode.IsNull())
+    if(!autoMinorVersionUpgradeNode.IsNull())
     {
       m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(autoMinorVersionUpgradeNode.GetText().c_str()).c_str());
       m_autoMinorVersionUpgradeHasBeenSet = true;
     }
     XmlNode readReplicaSourceDBInstanceIdentifierNode = resultNode.FirstChild("ReadReplicaSourceDBInstanceIdentifier");
-    if(!dBParameterGroupNode.IsNull())
+    if(!readReplicaSourceDBInstanceIdentifierNode.IsNull())
     {
       m_readReplicaSourceDBInstanceIdentifier = StringUtils::Trim(readReplicaSourceDBInstanceIdentifierNode.GetText().c_str());
       m_readReplicaSourceDBInstanceIdentifierHasBeenSet = true;
     }
-    XmlNode readReplicaDBInstanceIdentifierNodeParent = resultNode.FirstChild("ReadReplicaDBInstanceIdentifier");
-    XmlNode readReplicaDBInstanceIdentifierNode = readReplicaDBInstanceIdentifierNodeParent.FirstChild("member");
-    if(!readReplicaDBInstanceIdentifierNode.IsNull())
+    XmlNode readReplicaDBInstanceIdentifiersNode = resultNode.FirstChild("ReadReplicaDBInstanceIdentifiers");
+    if(!readReplicaDBInstanceIdentifiersNode.IsNull())
     {
-      while(!readReplicaDBInstanceIdentifierNode.IsNull())
+      XmlNode readReplicaDBInstanceIdentifiersMember = readReplicaDBInstanceIdentifiersNode.FirstChild("ReadReplicaDBInstanceIdentifier");
+      while(!readReplicaDBInstanceIdentifiersMember.IsNull())
       {
-        m_readReplicaDBInstanceIdentifiers.push_back(StringUtils::Trim(readReplicaDBInstanceIdentifierNode.GetText().c_str()));
-        readReplicaDBInstanceIdentifierNode = readReplicaDBInstanceIdentifierNode.NextNode("member");
+        m_readReplicaDBInstanceIdentifiers.push_back(StringUtils::Trim(readReplicaDBInstanceIdentifiersMember.GetText().c_str()));
+        readReplicaDBInstanceIdentifiersMember = readReplicaDBInstanceIdentifiersMember.NextNode("ReadReplicaDBInstanceIdentifier");
       }
 
       m_readReplicaDBInstanceIdentifiersHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
-    if(!readReplicaDBInstanceIdentifierNode.IsNull())
+    if(!licenseModelNode.IsNull())
     {
       m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
       m_licenseModelHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
-    if(!readReplicaDBInstanceIdentifierNode.IsNull())
+    if(!iopsNode.IsNull())
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
-    XmlNode optionGroupMembershipNodeParent = resultNode.FirstChild("OptionGroupMembership");
-    XmlNode optionGroupMembershipNode = optionGroupMembershipNodeParent.FirstChild("member");
-    if(!optionGroupMembershipNode.IsNull())
+    XmlNode optionGroupMembershipsNode = resultNode.FirstChild("OptionGroupMemberships");
+    if(!optionGroupMembershipsNode.IsNull())
     {
-      while(!optionGroupMembershipNode.IsNull())
+      XmlNode optionGroupMembershipsMember = optionGroupMembershipsNode.FirstChild("OptionGroupMembership");
+      while(!optionGroupMembershipsMember.IsNull())
       {
-        m_optionGroupMemberships.push_back(optionGroupMembershipNode);
-        optionGroupMembershipNode = optionGroupMembershipNode.NextNode("member");
+        m_optionGroupMemberships.push_back(optionGroupMembershipsMember);
+        optionGroupMembershipsMember = optionGroupMembershipsMember.NextNode("OptionGroupMembership");
       }
 
       m_optionGroupMembershipsHasBeenSet = true;
     }
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
-    if(!optionGroupMembershipNode.IsNull())
+    if(!characterSetNameNode.IsNull())
     {
       m_characterSetName = StringUtils::Trim(characterSetNameNode.GetText().c_str());
       m_characterSetNameHasBeenSet = true;
     }
     XmlNode secondaryAvailabilityZoneNode = resultNode.FirstChild("SecondaryAvailabilityZone");
-    if(!optionGroupMembershipNode.IsNull())
+    if(!secondaryAvailabilityZoneNode.IsNull())
     {
       m_secondaryAvailabilityZone = StringUtils::Trim(secondaryAvailabilityZoneNode.GetText().c_str());
       m_secondaryAvailabilityZoneHasBeenSet = true;
     }
     XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
-    if(!optionGroupMembershipNode.IsNull())
+    if(!publiclyAccessibleNode.IsNull())
     {
       m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
       m_publiclyAccessibleHasBeenSet = true;
     }
-    XmlNode dBInstanceStatusInfoNodeParent = resultNode.FirstChild("DBInstanceStatusInfo");
-    XmlNode dBInstanceStatusInfoNode = dBInstanceStatusInfoNodeParent.FirstChild("member");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    XmlNode statusInfosNode = resultNode.FirstChild("StatusInfos");
+    if(!statusInfosNode.IsNull())
     {
-      while(!dBInstanceStatusInfoNode.IsNull())
+      XmlNode statusInfosMember = statusInfosNode.FirstChild("DBInstanceStatusInfo");
+      while(!statusInfosMember.IsNull())
       {
-        m_statusInfos.push_back(dBInstanceStatusInfoNode);
-        dBInstanceStatusInfoNode = dBInstanceStatusInfoNode.NextNode("member");
+        m_statusInfos.push_back(statusInfosMember);
+        statusInfosMember = statusInfosMember.NextNode("DBInstanceStatusInfo");
       }
 
       m_statusInfosHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!storageTypeNode.IsNull())
     {
       m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
       m_storageTypeHasBeenSet = true;
     }
     XmlNode tdeCredentialArnNode = resultNode.FirstChild("TdeCredentialArn");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!tdeCredentialArnNode.IsNull())
     {
       m_tdeCredentialArn = StringUtils::Trim(tdeCredentialArnNode.GetText().c_str());
       m_tdeCredentialArnHasBeenSet = true;
     }
     XmlNode dbInstancePortNode = resultNode.FirstChild("DbInstancePort");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!dbInstancePortNode.IsNull())
     {
       m_dbInstancePort = StringUtils::ConvertToInt32(StringUtils::Trim(dbInstancePortNode.GetText().c_str()).c_str());
       m_dbInstancePortHasBeenSet = true;
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!dBClusterIdentifierNode.IsNull())
     {
       m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!storageEncryptedNode.IsNull())
     {
       m_storageEncrypted = StringUtils::ConvertToBool(StringUtils::Trim(storageEncryptedNode.GetText().c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode dbiResourceIdNode = resultNode.FirstChild("DbiResourceId");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!dbiResourceIdNode.IsNull())
     {
       m_dbiResourceId = StringUtils::Trim(dbiResourceIdNode.GetText().c_str());
       m_dbiResourceIdHasBeenSet = true;
     }
     XmlNode cACertificateIdentifierNode = resultNode.FirstChild("CACertificateIdentifier");
-    if(!dBInstanceStatusInfoNode.IsNull())
+    if(!cACertificateIdentifierNode.IsNull())
     {
       m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
       m_cACertificateIdentifierHasBeenSet = true;
+    }
+    XmlNode domainMembershipsNode = resultNode.FirstChild("DomainMemberships");
+    if(!domainMembershipsNode.IsNull())
+    {
+      XmlNode domainMembershipsMember = domainMembershipsNode.FirstChild("DomainMembership");
+      while(!domainMembershipsMember.IsNull())
+      {
+        m_domainMemberships.push_back(domainMembershipsMember);
+        domainMembershipsMember = domainMembershipsMember.NextNode("DomainMembership");
+      }
+
+      m_domainMembershipsHasBeenSet = true;
+    }
+    XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
+    if(!copyTagsToSnapshotNode.IsNull())
+    {
+      m_copyTagsToSnapshot = StringUtils::ConvertToBool(StringUtils::Trim(copyTagsToSnapshotNode.GetText().c_str()).c_str());
+      m_copyTagsToSnapshotHasBeenSet = true;
+    }
+    XmlNode monitoringIntervalNode = resultNode.FirstChild("MonitoringInterval");
+    if(!monitoringIntervalNode.IsNull())
+    {
+      m_monitoringInterval = StringUtils::ConvertToInt32(StringUtils::Trim(monitoringIntervalNode.GetText().c_str()).c_str());
+      m_monitoringIntervalHasBeenSet = true;
     }
   }
 
@@ -603,6 +637,23 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
+  if(m_domainMembershipsHasBeenSet)
+  {
+      for(auto& item : m_domainMemberships)
+      {
+        Aws::StringStream domainMembershipsSs;
+        domainMembershipsSs << location << index << locationValue << ".DomainMembership";
+        item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
+      }
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MonitoringInterval=" << m_monitoringInterval << "&";
+  }
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -796,5 +847,22 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_cACertificateIdentifierHasBeenSet)
   {
       oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+  if(m_domainMembershipsHasBeenSet)
+  {
+      for(auto& item : m_domainMemberships)
+      {
+        Aws::String locationAndListMember(location);
+        locationAndListMember += ".DomainMembership";
+        item.OutputToStream(oStream, locationAndListMember.c_str());
+      }
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+      oStream << location << ".MonitoringInterval=" << m_monitoringInterval << "&";
   }
 }

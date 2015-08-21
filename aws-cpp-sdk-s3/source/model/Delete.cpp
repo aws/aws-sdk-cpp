@@ -47,16 +47,17 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
     XmlNode objectsNode = resultNode.FirstChild("Objects");
     if(!objectsNode.IsNull())
     {
-      while(!objectsNode.IsNull())
+      XmlNode objectsMember = objectsNode;
+      while(!objectsMember.IsNull())
       {
-        m_objects.push_back(objectsNode);
-        objectsNode = objectsNode.NextNode("Objects");
+        m_objects.push_back(objectsMember);
+        objectsMember = objectsMember.NextNode("Object");
       }
 
       m_objectsHasBeenSet = true;
     }
     XmlNode quietNode = resultNode.FirstChild("Quiet");
-    if(!objectsNode.IsNull())
+    if(!quietNode.IsNull())
     {
       m_quiet = StringUtils::ConvertToBool(StringUtils::Trim(quietNode.GetText().c_str()).c_str());
       m_quietHasBeenSet = true;

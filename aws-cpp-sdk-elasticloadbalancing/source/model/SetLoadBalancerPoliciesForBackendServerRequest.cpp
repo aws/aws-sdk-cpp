@@ -44,7 +44,7 @@ Aws::String SetLoadBalancerPoliciesForBackendServerRequest::SerializePayload() c
     unsigned policyNamesCount = 1;
     for(auto& item : m_policyNames)
     {
-      ss << "PolicyNames." << policyNamesCount << "="
+      ss << "PolicyNames.member." << policyNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       policyNamesCount++;
     }

@@ -46,7 +46,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
   }
   if(m_sourceTypeHasBeenSet)
   {
-    ss << "SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+    ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
@@ -65,7 +65,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
     unsigned eventCategoriesCount = 1;
     for(auto& item : m_eventCategories)
     {
-      ss << "EventCategory." << eventCategoriesCount << "="
+      ss << "EventCategories.member." << eventCategoriesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       eventCategoriesCount++;
     }
@@ -75,7 +75,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
       filtersCount++;
     }
   }

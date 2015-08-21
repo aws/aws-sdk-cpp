@@ -41,14 +41,17 @@ DetachInstancesResult& DetachInstancesResult::operator =(const AmazonWebServiceR
 
   if(!resultNode.IsNull())
   {
-    XmlNode activitiesNodeParent = resultNode.FirstChild("Activities");
-    XmlNode activitiesNode = activitiesNodeParent.FirstChild("member");
-    while(!activitiesNode.IsNull())
+    XmlNode activitiesNode = resultNode.FirstChild("Activities");
+    if(!activitiesNode.IsNull())
     {
-      m_activities.push_back(activitiesNode);
-      activitiesNode = activitiesNode.NextNode("member");
-    }
+      XmlNode activitiesMember = activitiesNode.FirstChild("member");
+      while(!activitiesMember.IsNull())
+      {
+        m_activities.push_back(activitiesMember);
+        activitiesMember = activitiesMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

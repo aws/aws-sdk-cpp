@@ -65,6 +65,14 @@ namespace Model
     */
     inline Record& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+    
+    inline double GetApproximateArrivalTimestamp() const{ return m_approximateArrivalTimestamp; }
+    
+    inline void SetApproximateArrivalTimestamp(double value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
+
+    
+    inline Record&  WithApproximateArrivalTimestamp(double value) { SetApproximateArrivalTimestamp(value); return *this;}
+
     /*
      <p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes (KB) </p>
     */
@@ -106,6 +114,8 @@ namespace Model
   private:
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
+    double m_approximateArrivalTimestamp;
+    bool m_approximateArrivalTimestampHasBeenSet;
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
     Aws::String m_partitionKey;

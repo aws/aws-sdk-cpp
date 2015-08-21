@@ -42,15 +42,21 @@ DescribeReplicationGroupsResult& DescribeReplicationGroupsResult::operator =(con
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode replicationGroupNodeParent = resultNode.FirstChild("ReplicationGroup");
-    XmlNode replicationGroupNode = replicationGroupNodeParent.FirstChild("member");
-    while(!replicationGroupNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_replicationGroups.push_back(replicationGroupNode);
-      replicationGroupNode = replicationGroupNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode replicationGroupsNode = resultNode.FirstChild("ReplicationGroups");
+    if(!replicationGroupsNode.IsNull())
+    {
+      XmlNode replicationGroupsMember = replicationGroupsNode.FirstChild("ReplicationGroup");
+      while(!replicationGroupsMember.IsNull())
+      {
+        m_replicationGroups.push_back(replicationGroupsMember);
+        replicationGroupsMember = replicationGroupsMember.NextNode("ReplicationGroup");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

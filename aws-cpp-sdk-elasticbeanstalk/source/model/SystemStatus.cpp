@@ -48,14 +48,14 @@ SystemStatus& SystemStatus::operator =(const XmlNode& xmlNode)
       m_cPUUtilization = cPUUtilizationNode;
       m_cPUUtilizationHasBeenSet = true;
     }
-    XmlNode loadAverageNodeParent = resultNode.FirstChild("LoadAverage");
-    XmlNode loadAverageNode = loadAverageNodeParent.FirstChild("member");
+    XmlNode loadAverageNode = resultNode.FirstChild("LoadAverage");
     if(!loadAverageNode.IsNull())
     {
-      while(!loadAverageNode.IsNull())
+      XmlNode loadAverageMember = loadAverageNode.FirstChild("member");
+      while(!loadAverageMember.IsNull())
       {
-         m_loadAverage.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(loadAverageNode.GetText().c_str()).c_str()));
-        loadAverageNode = loadAverageNode.NextNode("member");
+         m_loadAverage.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(loadAverageMember.GetText().c_str()).c_str()));
+        loadAverageMember = loadAverageMember.NextNode("member");
       }
 
       m_loadAverageHasBeenSet = true;

@@ -42,6 +42,11 @@ namespace S3
     }
 } // namespace S3
 
+namespace Http
+{
+    class HttpRequest;
+}
+
 namespace Transfer
 {
 
@@ -79,11 +84,6 @@ public:
                       bool createBucket);
     ~UploadFileRequest();
 
-    // Progress is currently measured only in parts completed out of total parts
-    float GetProgress() const override;
-
-    uint64_t GetFileSize() const;
-
     // How many parts have we at least begun to upload
     uint32_t GetPartCount() const;
 
@@ -102,6 +102,9 @@ public:
 
     // How many parts do we have left to start sending (Parts which have begun upload are not considered "remaining" for the purpose of this call)
     uint32_t GetPartsRemaining() const;
+
+    // Data progress callback
+    void OnDataSent(const Aws::Http::HttpRequest*, long long);
 
     friend class TransferClient;
 
@@ -186,8 +189,7 @@ private:
     mutable std::mutex m_pendingMutex;
     std::mutex m_bufferMutex;
 
-    uint64_t m_fileSize;
-    uint64_t m_bytesRemaining;
+     uint64_t m_bytesRemaining;
 
     std::atomic<uint32_t> m_partCount;
     std::atomic<uint32_t> m_partsReturned;

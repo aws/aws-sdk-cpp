@@ -50,7 +50,7 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
     unsigned eventCategoriesCount = 1;
     for(auto& item : m_eventCategories)
     {
-      ss << "EventCategory." << eventCategoriesCount << "="
+      ss << "EventCategories.member." << eventCategoriesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       eventCategoriesCount++;
     }

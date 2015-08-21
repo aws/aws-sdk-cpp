@@ -56,14 +56,14 @@ Metric& Metric::operator =(const XmlNode& xmlNode)
       m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
       m_metricNameHasBeenSet = true;
     }
-    XmlNode dimensionsNodeParent = resultNode.FirstChild("Dimensions");
-    XmlNode dimensionsNode = dimensionsNodeParent.FirstChild("member");
+    XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
-      while(!dimensionsNode.IsNull())
+      XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      while(!dimensionsMember.IsNull())
       {
-        m_dimensions.push_back(dimensionsNode);
-        dimensionsNode = dimensionsNode.NextNode("member");
+        m_dimensions.push_back(dimensionsMember);
+        dimensionsMember = dimensionsMember.NextNode("member");
       }
 
       m_dimensionsHasBeenSet = true;

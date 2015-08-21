@@ -58,14 +58,14 @@ IdentityDkimAttributes& IdentityDkimAttributes::operator =(const XmlNode& xmlNod
       m_dkimVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(dkimVerificationStatusNode.GetText().c_str()).c_str());
       m_dkimVerificationStatusHasBeenSet = true;
     }
-    XmlNode dkimTokensNodeParent = resultNode.FirstChild("DkimTokens");
-    XmlNode dkimTokensNode = dkimTokensNodeParent.FirstChild("member");
+    XmlNode dkimTokensNode = resultNode.FirstChild("DkimTokens");
     if(!dkimTokensNode.IsNull())
     {
-      while(!dkimTokensNode.IsNull())
+      XmlNode dkimTokensMember = dkimTokensNode.FirstChild("member");
+      while(!dkimTokensMember.IsNull())
       {
-        m_dkimTokens.push_back(StringUtils::Trim(dkimTokensNode.GetText().c_str()));
-        dkimTokensNode = dkimTokensNode.NextNode("member");
+        m_dkimTokens.push_back(StringUtils::Trim(dkimTokensMember.GetText().c_str()));
+        dkimTokensMember = dkimTokensMember.NextNode("member");
       }
 
       m_dkimTokensHasBeenSet = true;

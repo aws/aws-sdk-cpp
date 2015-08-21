@@ -20,6 +20,8 @@ endif()
 set(AWS_COGNITO_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-access-management/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-iam/include/"
   "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
 )
 
@@ -31,5 +33,5 @@ endif()
 
 enable_testing()
 add_executable(runCognitoIntegrationTests ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
-target_link_libraries(runCognitoIntegrationTests aws-cpp-sdk-cognito-identity testing-resources)
-copyDlls(runCognitoIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-cognito-identity testing-resources)
+target_link_libraries(runCognitoIntegrationTests aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
+copyDlls(runCognitoIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)

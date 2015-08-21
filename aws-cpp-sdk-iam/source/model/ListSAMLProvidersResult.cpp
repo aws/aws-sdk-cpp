@@ -41,14 +41,17 @@ ListSAMLProvidersResult& ListSAMLProvidersResult::operator =(const AmazonWebServ
 
   if(!resultNode.IsNull())
   {
-    XmlNode sAMLProviderListNodeParent = resultNode.FirstChild("SAMLProviderList");
-    XmlNode sAMLProviderListNode = sAMLProviderListNodeParent.FirstChild("member");
-    while(!sAMLProviderListNode.IsNull())
+    XmlNode sAMLProviderListNode = resultNode.FirstChild("SAMLProviderList");
+    if(!sAMLProviderListNode.IsNull())
     {
-      m_sAMLProviderList.push_back(sAMLProviderListNode);
-      sAMLProviderListNode = sAMLProviderListNode.NextNode("member");
-    }
+      XmlNode sAMLProviderListMember = sAMLProviderListNode.FirstChild("member");
+      while(!sAMLProviderListMember.IsNull())
+      {
+        m_sAMLProviderList.push_back(sAMLProviderListMember);
+        sAMLProviderListMember = sAMLProviderListMember.NextNode("member");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

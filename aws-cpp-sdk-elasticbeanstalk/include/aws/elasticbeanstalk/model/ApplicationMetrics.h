@@ -32,7 +32,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /*
-    $shape.documentation
+    <p>Represents the application metrics for a specified environment.</p>
   */
   class AWS_ELASTICBEANSTALK_API ApplicationMetrics
   {
@@ -44,36 +44,60 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /*
+     <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
+    */
     inline long GetDuration() const{ return m_duration; }
-    
+    /*
+     <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
+    */
     inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
 
-    
+    /*
+     <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
+    */
     inline ApplicationMetrics&  WithDuration(long value) { SetDuration(value); return *this;}
 
-    
+    /*
+     <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
+    */
     inline long GetRequestCount() const{ return m_requestCount; }
-    
+    /*
+     <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
+    */
     inline void SetRequestCount(long value) { m_requestCountHasBeenSet = true; m_requestCount = value; }
 
-    
+    /*
+     <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
+    */
     inline ApplicationMetrics&  WithRequestCount(long value) { SetRequestCount(value); return *this;}
 
-    
+    /*
+     <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
+    */
     inline const StatusCodes& GetStatusCodes() const{ return m_statusCodes; }
-    
+    /*
+     <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
+    */
     inline void SetStatusCodes(const StatusCodes& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
 
-    
+    /*
+     <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
+    */
     inline ApplicationMetrics&  WithStatusCodes(const StatusCodes& value) { SetStatusCodes(value); return *this;}
 
-    
+    /*
+     <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+    */
     inline const Latency& GetLatency() const{ return m_latency; }
-    
+    /*
+     <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+    */
     inline void SetLatency(const Latency& value) { m_latencyHasBeenSet = true; m_latency = value; }
 
-    
+    /*
+     <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+    */
     inline ApplicationMetrics&  WithLatency(const Latency& value) { SetLatency(value); return *this;}
 
   private:

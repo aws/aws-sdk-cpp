@@ -202,14 +202,14 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
       m_snapshotWindowHasBeenSet = true;
     }
-    XmlNode nodeSnapshotNodeParent = resultNode.FirstChild("NodeSnapshot");
-    XmlNode nodeSnapshotNode = nodeSnapshotNodeParent.FirstChild("member");
-    if(!nodeSnapshotNode.IsNull())
+    XmlNode nodeSnapshotsNode = resultNode.FirstChild("NodeSnapshots");
+    if(!nodeSnapshotsNode.IsNull())
     {
-      while(!nodeSnapshotNode.IsNull())
+      XmlNode nodeSnapshotsMember = nodeSnapshotsNode.FirstChild("NodeSnapshot");
+      while(!nodeSnapshotsMember.IsNull())
       {
-        m_nodeSnapshots.push_back(nodeSnapshotNode);
-        nodeSnapshotNode = nodeSnapshotNode.NextNode("member");
+        m_nodeSnapshots.push_back(nodeSnapshotsMember);
+        nodeSnapshotsMember = nodeSnapshotsMember.NextNode("NodeSnapshot");
       }
 
       m_nodeSnapshotsHasBeenSet = true;

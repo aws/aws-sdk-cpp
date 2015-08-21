@@ -31,8 +31,6 @@
 #include <aws/lambda/model/InvokeResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
 #include <aws/lambda/model/ListFunctionsResult.h>
-#include <aws/lambda/model/ListVersionsByFunctionResult.h>
-#include <aws/lambda/model/PublishVersionResult.h>
 #include <aws/lambda/model/UpdateEventSourceMappingResult.h>
 #include <aws/lambda/model/UpdateFunctionCodeResult.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationResult.h>
@@ -94,8 +92,6 @@ namespace Model
         class InvokeRequest;
         class ListEventSourceMappingsRequest;
         class ListFunctionsRequest;
-        class ListVersionsByFunctionRequest;
-        class PublishVersionRequest;
         class RemovePermissionRequest;
         class UpdateEventSourceMappingRequest;
         class UpdateFunctionCodeRequest;
@@ -113,8 +109,6 @@ namespace Model
         typedef Utils::Outcome<InvokeResult, Client::AWSError<LambdaErrors>> InvokeOutcome;
         typedef Utils::Outcome<ListEventSourceMappingsResult, Client::AWSError<LambdaErrors>> ListEventSourceMappingsOutcome;
         typedef Utils::Outcome<ListFunctionsResult, Client::AWSError<LambdaErrors>> ListFunctionsOutcome;
-        typedef Utils::Outcome<ListVersionsByFunctionResult, Client::AWSError<LambdaErrors>> ListVersionsByFunctionOutcome;
-        typedef Utils::Outcome<PublishVersionResult, Client::AWSError<LambdaErrors>> PublishVersionOutcome;
         typedef Utils::Outcome<NoResult, Client::AWSError<LambdaErrors>> RemovePermissionOutcome;
         typedef Utils::Outcome<UpdateEventSourceMappingResult, Client::AWSError<LambdaErrors>> UpdateEventSourceMappingOutcome;
         typedef Utils::Outcome<UpdateFunctionCodeResult, Client::AWSError<LambdaErrors>> UpdateFunctionCodeOutcome;
@@ -132,8 +126,6 @@ namespace Model
         typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
         typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
         typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
-        typedef std::future<ListVersionsByFunctionOutcome> ListVersionsByFunctionOutcomeCallable;
-        typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<UpdateEventSourceMappingOutcome> UpdateEventSourceMappingOutcomeCallable;
         typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
@@ -154,8 +146,6 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::InvokeRequest&, const Model::InvokeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourceMappingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsResponseReceivedHandler;
-    typedef std::function<void(const LambdaClient*, const Model::ListVersionsByFunctionRequest&, const Model::ListVersionsByFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsByFunctionResponseReceivedHandler;
-    typedef std::function<void(const LambdaClient*, const Model::PublishVersionRequest&, const Model::PublishVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UpdateEventSourceMappingRequest&, const Model::UpdateEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionCodeRequest&, const Model::UpdateFunctionCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionCodeResponseReceivedHandler;
@@ -419,44 +409,6 @@ namespace Model
         void ListFunctionsAsync(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /*
-            <p>List all versions of a function.</p>
-        */
-        Model::ListVersionsByFunctionOutcome ListVersionsByFunction(const Model::ListVersionsByFunctionRequest& request) const;
-
-        /*
-            <p>List all versions of a function.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
-        Model::ListVersionsByFunctionOutcomeCallable ListVersionsByFunctionCallable(const Model::ListVersionsByFunctionRequest& request) const;
-
-        /*
-            <p>List all versions of a function.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
-        void ListVersionsByFunctionAsync(const Model::ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /*
-            <p>Publishes a version of your function from the current snapshot of HEAD. That is, AWS Lambda takes a snapshot of the function code and configuration information from HEAD and publishes a new version. The code and <code>handler</code> of this specific Lambda function version cannot be modified after publication, but you can modify the configuration information. </p>
-        */
-        Model::PublishVersionOutcome PublishVersion(const Model::PublishVersionRequest& request) const;
-
-        /*
-            <p>Publishes a version of your function from the current snapshot of HEAD. That is, AWS Lambda takes a snapshot of the function code and configuration information from HEAD and publishes a new version. The code and <code>handler</code> of this specific Lambda function version cannot be modified after publication, but you can modify the configuration information. </p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
-        Model::PublishVersionOutcomeCallable PublishVersionCallable(const Model::PublishVersionRequest& request) const;
-
-        /*
-            <p>Publishes a version of your function from the current snapshot of HEAD. That is, AWS Lambda takes a snapshot of the function code and configuration information from HEAD and publishes a new version. The code and <code>handler</code> of this specific Lambda function version cannot be modified after publication, but you can modify the configuration information. </p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
-        void PublishVersionAsync(const Model::PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /*
             <p>You can remove individual permissions from an access policy associated with a Lambda function by providing a Statement ID. </p> <p>Note that removal of a permission will cause an active event source to lose permission to the function. </p> <p>You need permission for the <code>lambda:RemovePermission</code> action.</p>
         */
         Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
@@ -549,8 +501,6 @@ namespace Model
         void InvokeAsyncHelper(const Model::InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourceMappingsAsyncHelper(const Model::ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVersionsByFunctionAsyncHelper(const Model::ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PublishVersionAsyncHelper(const Model::PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEventSourceMappingAsyncHelper(const Model::UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionCodeAsyncHelper(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

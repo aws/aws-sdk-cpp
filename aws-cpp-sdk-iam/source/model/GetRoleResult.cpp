@@ -42,7 +42,10 @@ GetRoleResult& GetRoleResult::operator =(const AmazonWebServiceResult<XmlDocumen
   if(!resultNode.IsNull())
   {
     XmlNode roleNode = resultNode.FirstChild("Role");
-    m_role = roleNode;
+    if(!roleNode.IsNull())
+    {
+      m_role = roleNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

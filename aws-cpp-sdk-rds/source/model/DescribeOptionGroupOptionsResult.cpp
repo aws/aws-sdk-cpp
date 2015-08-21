@@ -41,16 +41,22 @@ DescribeOptionGroupOptionsResult& DescribeOptionGroupOptionsResult::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode optionGroupOptionNodeParent = resultNode.FirstChild("OptionGroupOption");
-    XmlNode optionGroupOptionNode = optionGroupOptionNodeParent.FirstChild("member");
-    while(!optionGroupOptionNode.IsNull())
+    XmlNode optionGroupOptionsNode = resultNode.FirstChild("OptionGroupOptions");
+    if(!optionGroupOptionsNode.IsNull())
     {
-      m_optionGroupOptions.push_back(optionGroupOptionNode);
-      optionGroupOptionNode = optionGroupOptionNode.NextNode("member");
-    }
+      XmlNode optionGroupOptionsMember = optionGroupOptionsNode.FirstChild("OptionGroupOption");
+      while(!optionGroupOptionsMember.IsNull())
+      {
+        m_optionGroupOptions.push_back(optionGroupOptionsMember);
+        optionGroupOptionsMember = optionGroupOptionsMember.NextNode("OptionGroupOption");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

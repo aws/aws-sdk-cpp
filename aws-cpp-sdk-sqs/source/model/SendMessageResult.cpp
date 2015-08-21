@@ -42,11 +42,20 @@ SendMessageResult& SendMessageResult::operator =(const AmazonWebServiceResult<Xm
   if(!resultNode.IsNull())
   {
     XmlNode mD5OfMessageBodyNode = resultNode.FirstChild("MD5OfMessageBody");
-    m_mD5OfMessageBody = StringUtils::Trim(mD5OfMessageBodyNode.GetText().c_str());
+    if(!mD5OfMessageBodyNode.IsNull())
+    {
+      m_mD5OfMessageBody = StringUtils::Trim(mD5OfMessageBodyNode.GetText().c_str());
+    }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
-    m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());
+    if(!mD5OfMessageAttributesNode.IsNull())
+    {
+      m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());
+    }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+    if(!messageIdNode.IsNull())
+    {
+      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -42,15 +42,21 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode eventSubscriptionNodeParent = resultNode.FirstChild("EventSubscription");
-    XmlNode eventSubscriptionNode = eventSubscriptionNodeParent.FirstChild("member");
-    while(!eventSubscriptionNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_eventSubscriptionsList.push_back(eventSubscriptionNode);
-      eventSubscriptionNode = eventSubscriptionNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
+    XmlNode eventSubscriptionsListNode = resultNode.FirstChild("EventSubscriptionsList");
+    if(!eventSubscriptionsListNode.IsNull())
+    {
+      XmlNode eventSubscriptionsListMember = eventSubscriptionsListNode.FirstChild("EventSubscription");
+      while(!eventSubscriptionsListMember.IsNull())
+      {
+        m_eventSubscriptionsList.push_back(eventSubscriptionsListMember);
+        eventSubscriptionsListMember = eventSubscriptionsListMember.NextNode("EventSubscription");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

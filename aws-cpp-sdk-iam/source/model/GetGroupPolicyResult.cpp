@@ -42,11 +42,20 @@ GetGroupPolicyResult& GetGroupPolicyResult::operator =(const AmazonWebServiceRes
   if(!resultNode.IsNull())
   {
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
-    m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+    if(!groupNameNode.IsNull())
+    {
+      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+    }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
-    m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+    if(!policyNameNode.IsNull())
+    {
+      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+    }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
-    m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
+    if(!policyDocumentNode.IsNull())
+    {
+      m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -42,23 +42,32 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
   if(!resultNode.IsNull())
   {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
-    XmlNode parameterNodeParent = resultNode.FirstChild("Parameter");
-    XmlNode parameterNode = parameterNodeParent.FirstChild("member");
-    while(!parameterNode.IsNull())
+    if(!markerNode.IsNull())
     {
-      m_parameters.push_back(parameterNode);
-      parameterNode = parameterNode.NextNode("member");
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
     }
-
-    XmlNode cacheNodeTypeSpecificParameterNodeParent = resultNode.FirstChild("CacheNodeTypeSpecificParameter");
-    XmlNode cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNodeParent.FirstChild("member");
-    while(!cacheNodeTypeSpecificParameterNode.IsNull())
+    XmlNode parametersNode = resultNode.FirstChild("Parameters");
+    if(!parametersNode.IsNull())
     {
-      m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParameterNode);
-      cacheNodeTypeSpecificParameterNode = cacheNodeTypeSpecificParameterNode.NextNode("member");
-    }
+      XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      while(!parametersMember.IsNull())
+      {
+        m_parameters.push_back(parametersMember);
+        parametersMember = parametersMember.NextNode("Parameter");
+      }
 
+    }
+    XmlNode cacheNodeTypeSpecificParametersNode = resultNode.FirstChild("CacheNodeTypeSpecificParameters");
+    if(!cacheNodeTypeSpecificParametersNode.IsNull())
+    {
+      XmlNode cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersNode.FirstChild("CacheNodeTypeSpecificParameter");
+      while(!cacheNodeTypeSpecificParametersMember.IsNull())
+      {
+        m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParametersMember);
+        cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersMember.NextNode("CacheNodeTypeSpecificParameter");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -38,7 +38,8 @@ Aws::String GetContextKeysForPolicyRequest::SerializePayload() const
     unsigned policyInputListCount = 1;
     for(auto& item : m_policyInputList)
     {
-      item.OutputToStream(ss, "PolicyInputList.", policyInputListCount, "");
+      ss << "PolicyInputList.member." << policyInputListCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
       policyInputListCount++;
     }
   }

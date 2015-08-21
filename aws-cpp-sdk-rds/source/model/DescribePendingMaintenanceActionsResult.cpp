@@ -41,16 +41,22 @@ DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult
 
   if(!resultNode.IsNull())
   {
-    XmlNode resourcePendingMaintenanceActionsNodeParent = resultNode.FirstChild("ResourcePendingMaintenanceActions");
-    XmlNode resourcePendingMaintenanceActionsNode = resourcePendingMaintenanceActionsNodeParent.FirstChild("member");
-    while(!resourcePendingMaintenanceActionsNode.IsNull())
+    XmlNode pendingMaintenanceActionsNode = resultNode.FirstChild("PendingMaintenanceActions");
+    if(!pendingMaintenanceActionsNode.IsNull())
     {
-      m_pendingMaintenanceActions.push_back(resourcePendingMaintenanceActionsNode);
-      resourcePendingMaintenanceActionsNode = resourcePendingMaintenanceActionsNode.NextNode("member");
-    }
+      XmlNode pendingMaintenanceActionsMember = pendingMaintenanceActionsNode.FirstChild("ResourcePendingMaintenanceActions");
+      while(!pendingMaintenanceActionsMember.IsNull())
+      {
+        m_pendingMaintenanceActions.push_back(pendingMaintenanceActionsMember);
+        pendingMaintenanceActionsMember = pendingMaintenanceActionsMember.NextNode("ResourcePendingMaintenanceActions");
+      }
 
+    }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    if(!markerNode.IsNull())
+    {
+      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

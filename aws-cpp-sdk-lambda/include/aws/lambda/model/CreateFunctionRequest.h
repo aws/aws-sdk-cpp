@@ -187,20 +187,6 @@ namespace Model
     */
     inline CreateFunctionRequest&  WithCode(const FunctionCode& value) { SetCode(value); return *this;}
 
-    /*
-     <p>This boolean parameter can be used to request AWS Lambda to create the Lambda function and publish a version as an atomic operation. </p>
-    */
-    inline bool GetPublish() const{ return m_publish; }
-    /*
-     <p>This boolean parameter can be used to request AWS Lambda to create the Lambda function and publish a version as an atomic operation. </p>
-    */
-    inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
-
-    /*
-     <p>This boolean parameter can be used to request AWS Lambda to create the Lambda function and publish a version as an atomic operation. </p>
-    */
-    inline CreateFunctionRequest&  WithPublish(bool value) { SetPublish(value); return *this;}
-
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -218,8 +204,6 @@ namespace Model
     bool m_memorySizeHasBeenSet;
     FunctionCode m_code;
     bool m_codeHasBeenSet;
-    bool m_publish;
-    bool m_publishHasBeenSet;
   };
 
 } // namespace Model

@@ -41,20 +41,28 @@ DeleteMessageBatchResult& DeleteMessageBatchResult::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode deleteMessageBatchResultEntryNode = resultNode.FirstChild("DeleteMessageBatchResultEntry");
-    while(!deleteMessageBatchResultEntryNode.IsNull())
+    XmlNode successfulNode = resultNode.FirstChild("DeleteMessageBatchResultEntry");
+    if(!successfulNode.IsNull())
     {
-      m_successful.push_back(deleteMessageBatchResultEntryNode);
-      deleteMessageBatchResultEntryNode = deleteMessageBatchResultEntryNode.NextNode("DeleteMessageBatchResultEntry");
-    }
+      XmlNode deleteMessageBatchResultEntryMember = successfulNode;
+      while(!deleteMessageBatchResultEntryMember.IsNull())
+      {
+        m_successful.push_back(deleteMessageBatchResultEntryMember);
+        deleteMessageBatchResultEntryMember = deleteMessageBatchResultEntryMember.NextNode("DeleteMessageBatchResultEntry");
+      }
 
-    XmlNode batchResultErrorEntryNode = resultNode.FirstChild("BatchResultErrorEntry");
-    while(!batchResultErrorEntryNode.IsNull())
+    }
+    XmlNode failedNode = resultNode.FirstChild("BatchResultErrorEntry");
+    if(!failedNode.IsNull())
     {
-      m_failed.push_back(batchResultErrorEntryNode);
-      batchResultErrorEntryNode = batchResultErrorEntryNode.NextNode("BatchResultErrorEntry");
-    }
+      XmlNode batchResultErrorEntryMember = failedNode;
+      while(!batchResultErrorEntryMember.IsNull())
+      {
+        m_failed.push_back(batchResultErrorEntryMember);
+        batchResultErrorEntryMember = batchResultErrorEntryMember.NextNode("BatchResultErrorEntry");
+      }
 
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

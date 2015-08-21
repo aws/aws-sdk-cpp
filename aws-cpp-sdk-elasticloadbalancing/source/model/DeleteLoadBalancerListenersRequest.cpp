@@ -38,7 +38,7 @@ Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const
     unsigned loadBalancerPortsCount = 1;
     for(auto& item : m_loadBalancerPorts)
     {
-      ss << "LoadBalancerPorts." << loadBalancerPortsCount << "="
+      ss << "LoadBalancerPorts.member." << loadBalancerPortsCount << "="
           << item << "&";
       loadBalancerPortsCount++;
     }

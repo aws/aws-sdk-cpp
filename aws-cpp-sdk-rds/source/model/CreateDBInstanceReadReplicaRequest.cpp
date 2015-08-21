@@ -35,7 +35,11 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dBSubnetGroupNameHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false)
 {
 }
 
@@ -84,7 +88,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     unsigned tagsCount = 1;
     for(auto& item : m_tags)
     {
-      item.OutputToStream(ss, "Tag.", tagsCount, "");
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
   }
@@ -95,6 +99,14 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_storageTypeHasBeenSet)
   {
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
   }
   ss << "Version=2014-10-31";
   return ss.str();

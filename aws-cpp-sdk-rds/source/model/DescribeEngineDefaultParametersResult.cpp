@@ -42,7 +42,10 @@ DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::op
   if(!resultNode.IsNull())
   {
     XmlNode engineDefaultsNode = resultNode.FirstChild("EngineDefaults");
-    m_engineDefaults = engineDefaultsNode;
+    if(!engineDefaultsNode.IsNull())
+    {
+      m_engineDefaults = engineDefaultsNode;
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

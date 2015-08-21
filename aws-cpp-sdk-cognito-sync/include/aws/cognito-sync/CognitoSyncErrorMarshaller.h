@@ -15,14 +15,14 @@
 #pragma once
 
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
-#include <aws/core/client/AWSRestfulJsonErrorMarshaller.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Client
 {
 
-class AWS_COGNITOSYNC_API CognitoSyncErrorMarshaller : public Client::AWSRestfulJsonErrorMarshaller
+class AWS_COGNITOSYNC_API CognitoSyncErrorMarshaller : public Client::AWSErrorMarshaller
 {
 public:
   CognitoSyncErrorMarshaller() {}
@@ -31,5 +31,5 @@ public:
   virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
 };
 
-} // namespace Client
+} // namespace CognitoSync
 } // namespace Aws

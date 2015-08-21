@@ -42,20 +42,20 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode grantNodeParent = resultNode.FirstChild("Grant");
-    XmlNode grantNode = grantNodeParent.FirstChild("member");
-    if(!grantNode.IsNull())
+    XmlNode grantsNode = resultNode.FirstChild("Grants");
+    if(!grantsNode.IsNull())
     {
-      while(!grantNode.IsNull())
+      XmlNode grantsMember = grantsNode.FirstChild("Grant");
+      while(!grantsMember.IsNull())
       {
-        m_grants.push_back(grantNode);
-        grantNode = grantNode.NextNode("member");
+        m_grants.push_back(grantsMember);
+        grantsMember = grantsMember.NextNode("Grant");
       }
 
       m_grantsHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if(!grantNode.IsNull())
+    if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;

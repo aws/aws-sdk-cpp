@@ -21,6 +21,7 @@ def ParseArguments():
     parser.add_argument("--avd", action="store")
     parser.add_argument("--nobuild", action="store_true")
     parser.add_argument("--noinstall", action="store_true")
+    parser.add_argument("--notest", action="store_true")
     parser.add_argument("--credentials", action="store")
     parser.add_argument("--build", action="store")
     args = vars( parser.parse_args() )
@@ -34,6 +35,7 @@ def ParseArguments():
     argMap[ "noInstall" ] = args[ "noinstall" ]
     argMap[ "credentialsFile" ] = args[ "credentials" ] or "android-build/credentials"
     argMap[ "buildType" ] = args[ "build" ] or "Debug"
+    argMap[ "noTests" ] = args[ "notest" ]
 
     return argMap
 
@@ -154,6 +156,8 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType):
         os.mkdir( buildDir )
         os.chdir( buildDir )
         subprocess.check_call( [ "cmake", 
+                                 "-DSTATIC_LINKING=1",
+                                 "-DCUSTOM_MEMORY_MANAGEMENT=1",
                                  "-DANDROID_STL=gnustl_static", 
                                  "-DANDROID_STL_FORCE_FEATURES=OFF", 
                                  "-DTARGET_ARCH=ANDROID", 
@@ -317,6 +321,7 @@ def Main():
     credentialsFile = args[ "credentialsFile" ]
     buildType = args[ "buildType" ]
     noInstall = args[ "noInstall" ]
+    noTests = args[ "noTests" ]
 
     buildDir = "_build" + buildType
     installDir = os.path.join( "external", abi );
@@ -326,6 +331,9 @@ def Main():
     if not skipBuild:
         BuildNative(abi, clean, buildDir, jniDir, installDir, buildType)
         BuildJava(clean)
+
+    if noTests:
+        return 0
 
     print("Starting emulator...")
     InitializeEmulator(avd, useExistingEmu)
@@ -337,6 +345,8 @@ def Main():
         print("Installing certs...")
         BuildAndInstallCertSet("android-build", buildDir)
 
+    # don't forget: SSL verification is on for all tests and so if you want the integration tests to work you need
+    # to set the capath in the curl client temporarily since the emulator's cert set is crap and will not validate aws sites
     print("Running tests...")
     RunTests()
 
