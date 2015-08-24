@@ -98,7 +98,7 @@ void S3FileRequest::Cancel()
     SetDone();
 }
 
-void S3FileRequest::RegisterProgress(long long progressAmount)
+void S3FileRequest::RegisterProgress(int64_t progressAmount)
 {
     m_progress += progressAmount;
 }

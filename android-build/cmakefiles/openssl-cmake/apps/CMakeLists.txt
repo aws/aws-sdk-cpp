@@ -23,6 +23,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#bambrose 2015-06-01 commented out unneeded compile deps.
 
 include_directories ( .. ../include )
 add_definitions ( -DMONOLITH )

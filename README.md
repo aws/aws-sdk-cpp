@@ -5,6 +5,14 @@ This SDK has been specifically designed with game dev in mind, but we have also 
 
 ###Building:
 
+####Minimum Compiler Versions:
+#####Visual Studio
+Visual Studio 2013 (However, if you want default move constructors/operators, this version will not provide them). Later versions of Visual Studio provide a more standards compliant compiler.
+#####GCC
+GCC versions >= GCC 4.8.1
+#####Clang
+Clang versions >= 3.3
+
 ####Recommended Procedure for Out-of-Source Build:
 
 First, you need to make sure cmake and the relevant build tools for your platform are installed
@@ -16,19 +24,19 @@ Next create your build directory. For these instructions, let's call it BUILD_DI
 cd BUILD_DIR
 cmake <path-to-root-of-this-source-code>
 ```
-######For Non-Windows systems
+######For Auto Make build systems
 `make`
-######For Windows
+######For Visual Studio
 `msbuild ALL_BUILD.vcxproj`
 
 ######alternatively for release builds, you can run
-######For non-windows systems
+######For auto make systems
 ```
 cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
 make
 sudo make install
 ```
-######For windows systems
+######For visual studio
 ```
 cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
 msbuild INSTALL.vcxproj /p:Configuration=Release
@@ -40,7 +48,7 @@ That's it! This will build the entire source tree for your platform, run unit te
 #####CUSTOM_MEMORY_MANAGEMENT  
 
 Set this value to 1 to use a custom memory manager. When using this option, all STL types will use our custom allocation interface which you can install a custom allocator into.
-If this is set to 0, you should still use our STL template types to help with DLL safety on windows. Note: Whatever value you use here, you need to make sure you use accross your entire build system since a mismatch here will cause linker errors.
+If this is set to 0, you should still use our STL template types to help with DLL safety on windows. Note: Whatever value you use here, you need to make sure you use across your entire build system since a mismatch here will cause linker errors.
 Custom memory management defaults to off if static linking is enabled; because of the increased safety it adds in avoiding cross-DLL allocation/deallocation, it defaults to on if dynamic linking is enabled.
 
 #####STATIC_LINKING 
@@ -54,7 +62,7 @@ Options here are: WINDOWS | LINUX | APPLE | ANDROID
 
 #####G
 
-Especially for Windows, you want to specify this, example: -G "Visual Studio 12 Win64". Refer to the cmake documentation for your platform for more information.
+This generates build artifacts such as visual studio solutions and xcode projects. Especially for Windows, you want to specify this, example: -G "Visual Studio 12 Win64". Refer to the cmake documentation for your platform for more information.
 
 ###Running integration tests:
 
@@ -67,7 +75,7 @@ example:
    `sudo apt-get install libcurl-dev`
    
 ###Using the SDK
-The individual service clients are very similar to the other SDKs such as Java and .NET after you get them constructed. Here I'll explain the details of how core works, how to use each feature, and then how to then construct an individual client.
+The individual service clients are very similar to the other SDKs such as Java and .NET after you get them constructed. Here We'll explain the details of how core works, how to use each feature, and then how to then construct an individual client.
 *aws-cpp-sdk-core* does the heavy lifting of the system. In fact, you can trivially write a client to connect to any AWS service using just core itself. The individual service clients just make things a bit easier for you.
 
 ####Memory Management
@@ -108,8 +116,8 @@ Custom memory management is only available when using a version of the library t
 
 ####STL or What is... Aws::String, Aws::Vector, etc...
 
-If initialized with a memory manager, the native SDK will defer all allocation and deallocation to it. In the absence of a memory manager, the SDK falls back to global new and delete. But the SDK makes heavy use of STL and STL does plenty of memory allocation. How do we handle that?
-If you use custom STL allocators in your code, you are forced to alter the type signatures of all your STL objects to match the allocation policy. STL is used prominently within the SDK's implementation and interface (although the interface will become less STL-centric in the near future). This means that a one-size-fits-all approach within the SDK would either prevent developers who don't care about memory management from directly passing "standard"/default STL objects into the SDK (because everything's using custom allocators) or hardcore developers who do care about memory wouldn't be able to control STL allocation (because everything's using the default std::allocator). Using a hybrid approach -- use the custom allocators internally but the interface allows both default std:: objects (which get converted into custom allocator ones) as well as ones with custom allocators -- bloats the interface, and more dangerously, makes memory issues potentially much more difficult to track down if the SDK developer makes a mistake. We can revisit this if people feel strongly that the compile-time switch is a bad idea; I was extremely wary of debugging/mixing STL objects with two different allocation methods.
+If initialized with a memory manager, the native SDK will defer all allocation and deallocation to it. In the absence of a memory manager, the SDK falls back to global new and delete. Yet, the SDK makes heavy use of STL, and STL does plenty of memory allocation. How do we handle that?
+If you use custom STL allocators in your code, you are forced to alter the type signatures of all your STL objects to match the allocation policy. STL is used prominently within the SDK's implementation and interface (although the interface will become less STL-centric in the near future). This means that a one-size-fits-all approach within the SDK would either prevent developers who don't care about memory management from directly passing "standard"/default STL objects into the SDK (because everything's using custom allocators) or hardcore developers who do care about memory wouldn't be able to control STL allocation (because everything's using the default std::allocator). Using a hybrid approach -- use the custom allocators internally but the interface allows both default std:: objects (which get converted into custom allocator ones) as well as ones with custom allocators -- bloats the interface, and more dangerously, makes memory issues potentially much more difficult to track down if the SDK developer makes a mistake. We can revisit this if people feel strongly that the compile-time switch is a bad idea; We were extremely wary of debugging/mixing STL objects with two different allocation methods.
 
 Our solution to these semi-conflicting requirements is to have the memory system compile switch -- AWS_CUSTOM_MEMORY_MANAGEMENT -- control what stl types the native SDK uses. If the compile switch is on, then the types resolve to stl types with a custom allocator that hooks into the AWS memory system. If the compile switch is off, then all Aws::* types resolve to the default std::* corresponding type. This is better explained by a few code snippets from the SDK:
 In AWSAllocator.h:
@@ -189,7 +197,7 @@ int main(int argc, char** argv)
 ```
 
 ####Client Configuration
-The client configuration is the way that you control most functionality in the SDK. I'll now explain each piece of the client config.
+The client configuration is the way that you control most functionality in the SDK. We'll now explain each piece of the client config.
 
 Here is the declaration for ClientConfiguration:
 
@@ -224,10 +232,10 @@ You shouldn't alter this, this pulls various bits of information from your opera
 Defaults to HTTPS, if the information you are passing is not sensitive and the service you are connecting to supports an HTTP endpoint, then feel free to set this to HTTP. AWS Auth protects you from tampering.
 
 #####Region
-This is the region that you want the client to communicate with eg. us-east-1, us-west-1 etc... It is your reponsibility to make sure the service you are using has an endpoint in the region configure here.
+This is the region that you want the client to communicate with eg. us-east-1, us-west-1 etc... It is your responsibility to make sure the service you are using has an endpoint in the region configure here.
 
 #####Max Connections
-This is the maximum number of connections to allow to a single server for your http communications. For windows, either set this to 2 or see this documentation https://support.microsoft.com/en-us/kb/183110. For other systems, set this as high as you think you can support the bandwidth for. We recommend somewhere around 25.  The default for this value is 25.
+This is the maximum number of connections to allow to a single server for your http communications.  Set this as high as you think you can support the bandwidth for. We recommend somewhere around 25.  The default for this value is 25.
 
 #####Request Timeout and Connection Timeout
 In Milliseconds, how long to wait before timing out a request. Consider raising this value if you are doing large file transfers such as in S3 or cloud front.
@@ -248,7 +256,7 @@ This defaults to creating a thread for each async call and detaching it. If you 
 If you turn this off, you might as well turn SSL off; but if you must, set this to false to disable SSL certificate verification.
 
 #####Write Rate Limiter and Read Rate Limiter
-These throttle the bandwidth used by the transport layer to help you with resource budgets. The default is wide open. If you just want to set a budget then use our default implementation with your desired rates. You can also subclass RateLimiterInterface and inject your own instance.
+If you aren't writing a game for a console, you probably don't care about this. These throttle the bandwidth used by the transport layer to help you with resource budgets. The default is wide open. If you just want to set a budget then use our default implementation with your desired rates. You can also subclass RateLimiterInterface and inject your own instance.
 
 ####Credentials Providers
 The fundamental way of providing credentials to the AWS auth signing process is through the AWSCredentialProvider interface. You can implement this interface to provide your own method of credentials deployment. For convenience we've written some of these for you and provide them by default.
@@ -273,7 +281,7 @@ Furthermore, we provide a full identity-management solution via the Cognito-Iden
 Now that we have discussed the main interfaces in the system, we can use these items to construct a service client. Note, it is not necessary to do anything extra for a client. The default constructor will serve your needs most of the time. Yet, many times you may want to configure these things, so we will illustrate with DynamoDb.
 
 ```
-auto m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
+auto limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
 
 // Create a client
 ClientConfiguration config;
@@ -283,18 +291,18 @@ config.requestTimeoutMs = 30000;
 config.readRateLimiter = m_limiter;
 config.writeRateLimiter = m_limiter;
 
- auto m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
+ auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
 ```
 
 This code creates a DynamoDb client using a specialized ClientConfiguration, the default credentials provider chain, and the default http client factory.
 
 Alternatively, you could do this:
 
-`auto m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, AWSCredentials("access_key_id", "secret_key"), config);`
+`auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, AWSCredentials("access_key_id", "secret_key"), config);`
 
 to manually pass credentials, or you could do
 
-`auto m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, Aws::MakeShared<CognitoCachingAnonymousCredentialsProvider>(ALLOCATION_TAG, "identityPoolId", "accountId"), config);`
+`auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, Aws::MakeShared<CognitoCachingAnonymousCredentialsProvider>(ALLOCATION_TAG, "identityPoolId", "accountId"), config);`
 
 to use a custom credentials provider.
 
@@ -352,7 +360,7 @@ bool CreateTableAndWaitForItToBeActive()
 
 ####Advanced Topics
 #####Overriding your Http Client
-The default http client was chosen for ease of portability and stability for each platform. For Windows, this is WinInet, and for everything else this is curl. You shouldn't need to change this functionality, but if you do, you can simply create a custom HttpClientFactory and pass it to any Service Client's constructor.
+The default http client was chosen for ease of portability and stability for each platform. For Windows, this is WinHttp, and for everything else this is curl. You shouldn't need to change this functionality, but if you do, you can simply create a custom HttpClientFactory and pass it to any Service Client's constructor.
 
 #####Provided Utilities
 ######Http Stack
@@ -371,13 +379,13 @@ Provides hashing functions for SHA256, MD5, Base64, and SHA256_HMAC
 ######Json Parser
 /aws/core/utils/json/JsonSerializer.h
 
-Provides fully functioning, yet light-weight Json parser.
+Provides fully functioning, yet light-weight Json parser. This is just a very thin wrapper around JsonCpp.
 ######Xml Parser
 /aws/core/utils/xml/XmlSerializer.h
 
-Light-weight Xml Parser.
+Light-weight Xml Parser. This is just a thin wrapper around tinyxml2. We added RAII pattern to our interface.
 #####Controlling IOStreams used by the HttpClient and the AWSClient
-By default all responses use an input stream backed by a stringbuf. Obviously this is not performant for large response bodies. It is your responsibility to override this behavior if you want something else. For instance, when you are using S3 GetObject, you do not want to load the entire file into memory. Use the IOStreamFactory in the AmazonWebServiceRequest to pass a lambda creating a file stream for you.
+By default, all responses use an input stream backed by a stringbuf. Obviously this is not performant for large response bodies. It is your responsibility to override this behavior if you want something else. For instance, when you are using S3 GetObject, you likely do not want to load the entire file into memory. Use the IOStreamFactory in the AmazonWebServiceRequest to pass a lambda creating a file stream for you.
 
 For Example:
 ```
@@ -386,7 +394,7 @@ getObjectRequest.SetBucket(fullBucketName);
 getObjectRequest.SetKey(keyName);
 getObjectRequest.SetResponseStreamFactory([](){ return Aws::New<Aws::FStream>( ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out ); });
 
-GetObjectOutcome getObjectOutcome2 = s3Client->GetObject(getObjectRequest);
+auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 ```
 
 

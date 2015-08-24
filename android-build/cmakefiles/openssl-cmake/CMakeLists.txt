@@ -23,6 +23,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#bambrose 2015-06-01 commented out unneeded features that were breaking android build. Since this is only for android, we removed ocsp and wincrypt since they were not needed anyways.
 
 project( openssl )
 cmake_minimum_required( VERSION 2.8.3 )
