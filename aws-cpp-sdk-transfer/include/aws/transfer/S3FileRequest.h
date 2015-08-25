@@ -60,10 +60,6 @@ public:
     // Any progress will restart the counter to UPLOAD_WAIT_TIMEOUT back to 0 (Relies on a measurable incremental changes in GetProgress)
     virtual bool WaitUntilDone() const;
 
-    // Our catch all for "done and we've heard back on all parts" - hearing back on outstanding part uploads after a failure or cancel for example
-    // Is necessary to prevent the smart pointer from going out of scope when a future .get() call has not returned.
-    virtual bool ReadyForDelete() const = 0;
-
     // Human readable failure string routed through CompletionFailure
     const Aws::String& GetFailure() const;
 

@@ -74,6 +74,8 @@ class AWS_TRANSFER_API TransferClient
 
         const std::shared_ptr<Aws::S3::S3Client>& GetS3Client() { return m_s3Client; }
 
+        uint32_t GetConfigBufferCount() const { return m_config.m_uploadBufferCount; }
+
         friend class UploadFileRequest;
         friend class DownloadFileRequest;
     private:

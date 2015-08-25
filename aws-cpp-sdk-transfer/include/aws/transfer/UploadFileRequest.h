@@ -98,13 +98,16 @@ public:
 
     // Our catch all for "done and we've heard back on all parts" - hearing back on outstanding part uploads after a failure or cancel
     // Is necessary to prevent the smart pointer from going out of scope when a future .get() call has not returned.
-    bool ReadyForDelete() const override;
+    bool AllPartsReturned() const;
 
     // How many parts do we have left to start sending (Parts which have begun upload are not considered "remaining" for the purpose of this call)
     uint32_t GetPartsRemaining() const;
 
     // Data progress callback
     void OnDataSent(const Aws::Http::HttpRequest*, long long);
+
+    // How many buffers are we currently holding on to
+    size_t GetResourcesInUse() const;
 
     friend class TransferClient;
 

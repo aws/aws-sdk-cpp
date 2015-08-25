@@ -292,6 +292,16 @@ void UploadFileRequest::SetResourceSet(std::shared_ptr<UploadBufferScopedResourc
     m_resources = bufferSet;
 }
 
+size_t UploadFileRequest::GetResourcesInUse() const
+{
+    if (!m_resources)
+    {
+        return 0;
+    }
+
+    return m_resources->GetResources().size();
+}
+
 void UploadFileRequest::CheckReacquireBuffers()
 {
     std::lock_guard<std::mutex> resourceLock(m_resourceMutex);
@@ -299,12 +309,12 @@ void UploadFileRequest::CheckReacquireBuffers()
     {
         // Assuming we have something left to do let's see if we can increase our pool
 
-        size_t hadResources = m_resources->GetResources().size();
+        size_t hadResources = GetResourcesInUse();
 
         // Can we just make this return how many you got back?
         m_resources->TryReacquire();
       
-        if (hadResources != m_resources->GetResources().size())
+        if (hadResources != GetResourcesInUse())
         {
             std::for_each(m_resources->GetResources().begin() + hadResources, m_resources->GetResources().end(), [&](const std::shared_ptr<UploadBuffer>& buffer) {  if (!IsUsingBuffer(buffer)) { AddReadyBuffer(buffer); } });
             ProcessAvailableBuffers();
@@ -318,7 +328,11 @@ void UploadFileRequest::SetDone()
     {
         return;
     }
-    ReleaseResources();
+    // If we've completed successfully (Rather than cancelled) we know it's ok to go ahead and release the buffers - none of them are outstanding
+    if (CompletedSuccessfully())
+    {
+        ReleaseResources();
+    }
     S3FileRequest::SetDone();
 }
 
@@ -627,6 +641,12 @@ void UploadFileRequest::PartReturned(PartRequestRecord& partRequest)
 {
     ++m_partsReturned;
     ReusePart(partRequest);
+
+    // Whether we canceled midway or this was our final part it's ok to release the buffers now
+    if (AllPartsReturned())
+    {
+        ReleaseResources();
+    }
 }
 
 uint32_t UploadFileRequest::GetPartsReturned() const
@@ -634,10 +654,8 @@ uint32_t UploadFileRequest::GetPartsReturned() const
     return m_partsReturned.load();
 }
 
-bool UploadFileRequest::ReadyForDelete() const
+bool UploadFileRequest::AllPartsReturned() const
 {
-    // Todo - Add a backup timer for this.  If we're done but for some unknown reason our parts count has gone bad
-    // we should only stick around and wait for resolution for so long
     return (IsDone() && (GetPartsReturned() == m_partCount.load()));
 }
 

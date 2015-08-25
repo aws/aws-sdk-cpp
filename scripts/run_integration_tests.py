@@ -35,10 +35,12 @@ def ParseArguments():
 def Main():
     arguments = ParseArguments()
 
-    configDir = ''
-    if platform.system == "Windows":
-        configDir = arguments['configuration'] + "/"
-    
+    configDir = ""
+
+    #Visual Studio puts executables into a configuration sub-dir, so append that.
+    if platform.system() == "Windows":
+        configDir = arguments["configuration"]
+
     dynamoDbTest = arguments["buildDir"] + "/aws-cpp-sdk-dynamodb-integration-tests/" + configDir + "/runDynamoDBIntegrationTests"
     print "executing " + dynamoDbTest
     subprocess.check_call(dynamoDbTest)

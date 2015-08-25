@@ -56,11 +56,6 @@ void DownloadFileRequest::OnDataReceived(const Aws::Http::HttpRequest*, Aws::Htt
     RegisterProgress(amountReceived);
 }
 
-bool DownloadFileRequest::ReadyForDelete() const
-{ 
-    return (IsDone());
-}
-
 bool DownloadFileRequest::DoCancelAction()
 {
     // Do we need to tell S3 something here?

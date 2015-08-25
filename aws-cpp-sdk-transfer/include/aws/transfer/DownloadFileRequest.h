@@ -47,8 +47,6 @@ public:
     DownloadFileRequest(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const std::shared_ptr<Aws::S3::S3Client>& s3Client);
     ~DownloadFileRequest();
 
-    virtual bool ReadyForDelete() const override;
-
     bool DoSingleObjectDownload();
 
     bool IsReady() const override;

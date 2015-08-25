@@ -1,3 +1,4 @@
+
 /*
   * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
@@ -13,4 +14,5 @@
   * permissions and limitations under the License.
   */
 
-#define AWS_SDK_VERSION_STRING "0.9-358-g1dda04c"
+#define AWS_SDK_VERSION_STRING "0.9-336-gde31def"
+
