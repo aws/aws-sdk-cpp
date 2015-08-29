@@ -9,7 +9,7 @@ This SDK has been specifically designed with game dev in mind, but we have also 
 #####Visual Studio
 Visual Studio 2013 (However, if you want default move constructors/operators, this version will not provide them). Later versions of Visual Studio provide a more standards compliant compiler.
 #####GCC
-GCC versions >= GCC 4.8.1
+GCC versions >= GCC 4.9.0
 #####Clang
 Clang versions >= 3.3
 
