@@ -131,7 +131,7 @@ protected:
         const unsigned cNumExtraChars = 5;
         const unsigned cLettersToRandomize = 26;
         randomizedBucketName = TEST_BUCKET_NAME_BASE;
-        for (auto i = 0; i < cNumExtraChars; ++i)
+        for (unsigned i = 0; i < cNumExtraChars; ++i)
         {
             randomizedBucketName += static_cast<char>('a' + rand() % cLettersToRandomize);
         }
